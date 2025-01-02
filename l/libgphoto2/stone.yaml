@@ -1,0 +1,55 @@
+#
+# SPDX-FileCopyrightText: © 2020-2024 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : libgphoto2
+version     : 2.5.32
+release     : 1
+homepage    : http://www.gphoto.org/proj/libgphoto2/
+upstreams   :
+    - https://sourceforge.net/projects/gphoto/files/libgphoto/2.5.32/libgphoto2-2.5.32.tar.bz2 : 02b29ab0bcfceda1c7f81c75ec7cb5e64d329cf4b8fd0fcd5bc5a89ff09561bc
+summary     : libgphoto2 is the core library designed to allow access to digital camera by external programs
+description : |
+    libgphoto2 is the core library designed to allow access to digital camera by external programs
+license     : LGPL-2.1-or-later
+builddeps   :
+    - pkgconfig(libcurl)
+    - pkgconfig(libexif)
+    - pkgconfig(libjpeg)
+    - pkgconfig(libusb-1.0)
+    - pkgconfig(libxml-2.0)
+    - libtool-ltldl-devel
+# environment : |
+#     export LDFLAGS="${LDFLAGS} -Wl,--undefined-version"
+setup       : |
+    %configure
+build       : |
+    %make
+install     : |
+    %make_install
+
+    # Remove unused udev helper
+    rm -f %(installroot)%(libdir)/libgphoto2/print-camera-list
+
+    # Install hwdb and udev rules
+    export LD_LIBRARY_PATH="%(installroot)%(libdir)"
+    export CAMLIBS="%(installroot)%(libdir)/libgphoto2/%(version)"
+    %(installroot)%(libdir)/libgphoto2/print-camera-list hwdb version 201 \
+        | %install_file /dev/stdin "%(installroot)%(libdir)/hwdb.d/20-gphoto.hwdb"
+    %(installroot)%(libdir)/libgphoto2/print-camera-list udev-rules version 201 \
+        | %install_file /dev/stdin "%(installroot)%(udevrulesdir)/40-gphoto.rules"
+packages    :
+    - "%(name)":
+        paths:
+            - /usr/lib/libgphoto2/*/*.so
+            - /usr/lib/libgphoto2_port/*/*.so
+
+    - "%(name)-devel":
+        paths:
+            - /usr/bin/gphoto2*-config
+
+    - "%(name)-docs":
+        paths:
+            - /usr/share/doc
+
