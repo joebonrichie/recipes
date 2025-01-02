@@ -1,0 +1,22 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: "Brett T. Warden" <brett.t.warden@intel.com>
+Date: Fri, 7 Jun 2019 08:56:40 -0700
+Subject: [PATCH] Add stateless support
+
+---
+ sanei/sanei_config.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/sanei/sanei_config.c b/sanei/sanei_config.c
+index 07c85c9..94eece1 100644
+--- a/sanei/sanei_config.c
++++ b/sanei/sanei_config.c
+@@ -65,7 +65,7 @@
+ # define PATH_SEP	'/'
+ #endif
+ 
+-#define DEFAULT_DIRS	"." DIR_SEP STRINGIFY(PATH_SANE_CONFIG_DIR)
++#define DEFAULT_DIRS	"." DIR_SEP STRINGIFY(PATH_SANE_CONFIG_DIR) DIR_SEP "/usr/share/defaults/sane"
+ 
+ #ifdef __BEOS__
+ #include <FindDirectory.h>

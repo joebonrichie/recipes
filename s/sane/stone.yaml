@@ -1,0 +1,113 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : sane
+version     : 1.4.0
+release     : 1
+homepage    : https://gitlab.com/sane-project/backends
+upstreams   :
+    - https://gitlab.com/-/project/429008/uploads/843c156420e211859e974f78f64c3ea3/sane-backends-1.4.0.tar.gz : f99205c903dfe2fb8990f0c531232c9a00ec9c2c66ac7cb0ce50b4af9f407a72
+summary     : Scanner Access Now Easy
+description : |
+    SANE stands for Scanner Access Now Easy. This package contains the SANE libraries (this means backends and network scanning parts) and the command line frontend scanimage.
+license     : GPL-2.0-or-later
+builddeps   :
+    - binary(msgfmt)
+    - pkgconfig(avahi-client)
+    - pkgconfig(libcurl)
+    - pkgconfig(libgphoto2)
+    - pkgconfig(libjpeg)
+    - pkgconfig(libtiff-4)
+    - pkgconfig(libusb-1.0)
+    - pkgconfig(libxml-2.0)
+    - pkgconfig(poppler-glib)
+    # TODO:
+    # - libieee1284
+    # - Wherever sys/scanio.h comes from
+    # - v4l
+setup       : |
+    %patch %(pkgdir)/stateless.patch
+
+    %configure \
+        --disable-locking \
+        --with-pic \
+        --with-systemd
+build       : |
+    %make
+install     : |
+    %make_install
+
+    # Stateless
+    %install_dir %(installroot)%(vendordir)/sane
+    mv %(installroot)/etc/sane.d/* %(installroot)%(vendordir)/sane
+
+    # udev/hwdb
+    %install_dir %(installroot)/%(udevrulesdir)
+    tools/sane-desc -m udev+hwdb -s doc/descriptions/ > "%(installroot)%(udevrulesdir)/65-%(name).rules"
+    tools/sane-desc -m udev+hwdb -s doc/descriptions-external/ >> "%(installroot)%(udevrulesdir)/65-%(name).rules"
+    %install_dir %(installroot)/%(libdir)/udev/hwdb.d
+    tools/sane-desc -m hwdb -s doc/descriptions/ > "%(installroot)/%(libdir)/udev/hwdb.d/20-%(name).hwdb"
+    # NOTE: an empty new line is required between the two .desc collections
+    printf "\n" >> "%(installroot)/%(libdir)/udev/hwdb.d/20-%(name).hwdb"
+    tools/sane-desc -m hwdb -s doc/descriptions-external/ >> "%(installroot)/%(libdir)/udev/hwdb.d/20-%(name).hwdb"
+
+    # saned
+    %install_file %(pkgdir)/66-saned.rules -t %(installroot)%(udevrulesdir)
+    %install_file %(pkgdir)/sane.sysusers %(installroot)%(sysusersdir)/%(name).conf
+    %install_file %(pkgdir)/saned.socket -t %(installroot)%(libdir)/systemd/system
+    %install_file %(pkgdir)/saned.service %(installroot)%(libdir)/systemd/system/saned@.service
+packages    :
+    - "%(name)-libs":
+        summary: SANE libraries
+        description: SANE libraries
+        paths:
+            - /usr/lib/libsane.so.*
+
+    - "%(name)-drivers-scanners":
+        summary: SANE backend drivers for scanners
+        description: SANE backend drivers for scanners
+        rundeps:
+            - "%(name)"
+        paths:
+            # Glob all of them and then have -cameras override
+            - /usr/lib/sane/libsane-*.so*
+
+    - "%(name)-drivers-cameras":
+        summary: SANE backend drivers for digital cameras
+        description: SANE backend drivers for digital cameras
+        rundeps:
+            - "%(name)"
+        paths:
+            - /usr/lib/sane/libsane-dc210.so*
+            - /usr/lib/sane/libsane-dc240.so*
+            - /usr/lib/sane/libsane-dc25.so*
+            - /usr/lib/sane/libsane-dmc.so*
+            - /usr/lib/sane/libsane-gphoto2.so*
+            - /usr/lib/sane/libsane-qcam.so*
+            - /usr/lib/sane/libsane-stv680.so*
+
+    - "%(name)-daemon":
+        summary: Scanner network daemon
+        description: Scanner network daemon
+        rundeps:
+            - "%(name)"
+            - binary(setfacl) # udev rule
+        paths:
+            - /usr/sbin/saned
+            - /usr/lib/udev/rules.d/66-saned.rules
+            - /usr/lib/systemd/system/saned@.service
+            - /usr/lib/systemd/system/saned.socket
+            - /usr/lib/sysusers.d/sane.conf
+            - /usr/share/defaults/sane/saned.conf
+            - /usr/share/man/man8/saned*
+
+    - "%(name)-devel":
+        paths:
+            - /usr/bin/sane-config
+            - /usr/share/man/man1/sane-config*
+
+    - "%(name)-docs":
+        paths:
+            - /usr/share/doc
