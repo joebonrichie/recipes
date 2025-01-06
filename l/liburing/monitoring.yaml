@@ -1,0 +1,6 @@
+releases:
+  id: 230185
+  rss: https://github.com/axboe/liburing/releases.atom
+# Last checked 2024/12/26
+security:
+  cpe: ~
