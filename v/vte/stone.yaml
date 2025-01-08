@@ -5,7 +5,7 @@
 #
 name        : vte
 version     : 0.80.3
-release     : 17
+release     : 18
 homepage    : https://gitlab.gnome.org/GNOME/vte
 upstreams   :
     - https://download.gnome.org/sources/vte/0.80/vte-0.80.3.tar.xz : 2e596fd3fbeabb71531662224e71f6a2c37f684426136d62854627276ef4f699
