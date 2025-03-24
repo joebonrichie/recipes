@@ -5,7 +5,7 @@
 #
 name        : systemd
 version     : 254.24
-release     : 50
+release     : 51
 summary     : A System and Service Manager
 license     :
     - GPL-2.0-or-later
@@ -17,6 +17,7 @@ description : |
 upstreams   :
     - https://github.com/systemd/systemd-stable/archive/refs/tags/v254.24.tar.gz: 9f9ecbec18b91c85ff911ece120c89e2fd523f86f29b45d5112aa88e8d5068e7
 builddeps   :
+    - binary(bpftool)
     - binary(gperf)
     - binary(ld.bfd) # Can be removed in systemd >= 255
     - binary(m4)
@@ -24,8 +25,10 @@ builddeps   :
     - binary(xsltproc)
     - pkgconfig(gnutls)
     - pkgconfig(gpg-error)
+    - pkgconfig(libbpf)
     - pkgconfig(libcryptsetup)
     - pkgconfig(libdw)
+    - pkgconfig(libfido2)
     - pkgconfig(libgcrypt)
     - pkgconfig(libkmod)
     - pkgconfig(polkit-gobject-1)
@@ -115,6 +118,7 @@ profiles    :
                     -Dsysupdate=false \
                     -Duserdb=false \
                     -Dhomed=false \
+                    -Dlibfido2=false \
                     -Dlogind=false \
                     -Dnetworkd=false \
                     -Drfkill=false \
@@ -146,7 +150,7 @@ setup       : |
 
     %meson \
         -Dbpf-compiler=${CC} \
-        -Dbpf-framework=false \
+        -Dbpf-framework=true \
         -Defi=true \
         -Dbootloader=true \
         -Dfuzz-tests=false \

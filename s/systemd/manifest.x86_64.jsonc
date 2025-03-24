@@ -4,6 +4,7 @@
 	"packages": {
 		"systemd": {
 			"build-depends": [
+				"binary(bpftool)",
 				"binary(gperf)",
 				"binary(ld.bfd)",
 				"binary(m4)",
@@ -16,8 +17,10 @@
 				"gnu-efi-devel",
 				"pkgconfig(gnutls)",
 				"pkgconfig(gpg-error)",
+				"pkgconfig(libbpf)",
 				"pkgconfig(libcryptsetup)",
 				"pkgconfig(libdw)",
+				"pkgconfig(libfido2)",
 				"pkgconfig(libgcrypt)",
 				"pkgconfig(libkmod)",
 				"pkgconfig(polkit-gobject-1)",
@@ -131,6 +134,7 @@
 				"/usr/bin/userdbctl",
 				"/usr/lib/binfmt.d",
 				"/usr/lib/credstore",
+				"/usr/lib/cryptsetup/libcryptsetup-token-systemd-fido2.so",
 				"/usr/lib/cryptsetup/libcryptsetup-token-systemd-pkcs11.so",
 				"/usr/lib/cryptsetup/libcryptsetup-token-systemd-tpm2.so",
 				"/usr/lib/environment.d/99-environment.conf",
@@ -1254,6 +1258,7 @@
 				"binary(timedatectl)",
 				"binary(udevadm)",
 				"binary(userdbctl)",
+				"soname(cryptsetup/libcryptsetup-token-systemd-fido2.so(x86_64))",
 				"soname(cryptsetup/libcryptsetup-token-systemd-pkcs11.so(x86_64))",
 				"soname(cryptsetup/libcryptsetup-token-systemd-tpm2.so(x86_64))",
 				"soname(libnss_myhostname.so.2(x86_64))",
@@ -1279,6 +1284,7 @@
 		},
 		"systemd-32bit": {
 			"build-depends": [
+				"binary(bpftool)",
 				"binary(gperf)",
 				"binary(ld.bfd)",
 				"binary(m4)",
@@ -1291,8 +1297,10 @@
 				"gnu-efi-devel",
 				"pkgconfig(gnutls)",
 				"pkgconfig(gpg-error)",
+				"pkgconfig(libbpf)",
 				"pkgconfig(libcryptsetup)",
 				"pkgconfig(libdw)",
+				"pkgconfig(libfido2)",
 				"pkgconfig(libgcrypt)",
 				"pkgconfig(libkmod)",
 				"pkgconfig(polkit-gobject-1)",
@@ -1370,6 +1378,7 @@
 		},
 		"systemd-32bit-devel": {
 			"build-depends": [
+				"binary(bpftool)",
 				"binary(gperf)",
 				"binary(ld.bfd)",
 				"binary(m4)",
@@ -1382,8 +1391,10 @@
 				"gnu-efi-devel",
 				"pkgconfig(gnutls)",
 				"pkgconfig(gpg-error)",
+				"pkgconfig(libbpf)",
 				"pkgconfig(libcryptsetup)",
 				"pkgconfig(libdw)",
+				"pkgconfig(libfido2)",
 				"pkgconfig(libgcrypt)",
 				"pkgconfig(libkmod)",
 				"pkgconfig(polkit-gobject-1)",
@@ -1431,6 +1442,7 @@
 		},
 		"systemd-devel": {
 			"build-depends": [
+				"binary(bpftool)",
 				"binary(gperf)",
 				"binary(ld.bfd)",
 				"binary(m4)",
@@ -1443,8 +1455,10 @@
 				"gnu-efi-devel",
 				"pkgconfig(gnutls)",
 				"pkgconfig(gpg-error)",
+				"pkgconfig(libbpf)",
 				"pkgconfig(libcryptsetup)",
 				"pkgconfig(libdw)",
+				"pkgconfig(libfido2)",
 				"pkgconfig(libgcrypt)",
 				"pkgconfig(libkmod)",
 				"pkgconfig(polkit-gobject-1)",
@@ -2287,6 +2301,7 @@
 		},
 		"systemd-networkd": {
 			"build-depends": [
+				"binary(bpftool)",
 				"binary(gperf)",
 				"binary(ld.bfd)",
 				"binary(m4)",
@@ -2299,8 +2314,10 @@
 				"gnu-efi-devel",
 				"pkgconfig(gnutls)",
 				"pkgconfig(gpg-error)",
+				"pkgconfig(libbpf)",
 				"pkgconfig(libcryptsetup)",
 				"pkgconfig(libdw)",
+				"pkgconfig(libfido2)",
 				"pkgconfig(libgcrypt)",
 				"pkgconfig(libkmod)",
 				"pkgconfig(polkit-gobject-1)",
@@ -2383,6 +2400,6 @@
 		}
 	},
 	"source-name": "systemd",
-	"source-release": "50",
+	"source-release": "51",
 	"source-version": "254.24"
 }
