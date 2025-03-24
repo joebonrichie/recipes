@@ -1,0 +1,26 @@
+#
+# SPDX-FileCopyrightText: © 2020-2024 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : libbpf
+version     : 1.5.1
+release     : 1
+upstreams   :
+    - https://github.com/libbpf/libbpf/archive/refs/tags/v1.5.1.tar.gz : e5ff89750e48ab5ecdfc02a759aa0dacd1e7980e98e16bdb4bfa8ff0b3b4b98f
+homepage    : https://github.com/libbpf/libbpf
+license     :
+    - BSD-2-Clause
+    - LGPL-2.1-only
+summary     : Library for loading eBPF programs
+description : |
+    Library for loading eBPF programs and reading and manipulating eBPF objects from user-space
+builddeps   :
+    - pkgconfig(libelf)
+build       : |
+    %make -C src LIBSUBDIR=lib
+install     : |
+    %make_install -C src install_headers LIBSUBDIR=lib
+
+    rm -v %(installroot)/usr/lib/libbpf.a
+
