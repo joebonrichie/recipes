@@ -36,3 +36,6 @@
 - python-32bit
 - python-32bit-devel
 - python-32bit-dbginfo
+
+### Now part of linux-tools
+- perf-dbginfo
