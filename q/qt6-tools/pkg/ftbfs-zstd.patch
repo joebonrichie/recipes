@@ -27,10 +27,10 @@ Forwarded: not-needed
  2 files changed, 10 insertions(+), 9 deletions(-)
 
 diff --git a/configure.cmake b/configure.cmake
-index 80aacb46..56f59c9e 100644
+index 798078a4..c63ad1b0 100644
 --- a/configure.cmake
 +++ b/configure.cmake
-@@ -11,6 +11,16 @@
+@@ -3,6 +3,16 @@
  
  #### Tests
  
@@ -44,9 +44,9 @@ index 80aacb46..56f59c9e 100644
 +    )
 +endif()
 +
- # libclang
- # special case begin
- # Even though Qt builds with qmake and libclang 6.0, it fails with CMake.
+ qt_find_package(WrapLibClang 8 PROVIDED_TARGETS WrapLibClang::WrapLibClang)
+ 
+ if(TARGET WrapLibClang::WrapLibClang)
 diff --git a/src/designer/src/lib/CMakeLists.txt b/src/designer/src/lib/CMakeLists.txt
 index 5513f2b2..0cccbd5d 100644
 --- a/src/designer/src/lib/CMakeLists.txt
