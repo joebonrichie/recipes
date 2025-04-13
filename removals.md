@@ -24,3 +24,7 @@
 - libfuse2-32bit
 - libfuse2-32bit-dbginfo
 - libfuse2-32bit-devel
+
+### Split into gtk3/gtk4 specific packages
+- vte
+- vte-devel
