@@ -4,7 +4,6 @@
 	"packages": {
 		"cosmic-bg": {
 			"build-depends": [
-				"binary(cargo)",
 				"binary(just)",
 				"binary(which)",
 				"pkgconfig(xkbcommon)"
@@ -32,6 +31,6 @@
 		}
 	},
 	"source-name": "cosmic-bg",
-	"source-release": "13",
-	"source-version": "1.0.0-alpha.6"
+	"source-release": "14",
+	"source-version": "1.0.0-alpha.7"
 }
