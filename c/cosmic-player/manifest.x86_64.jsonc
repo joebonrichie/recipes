@@ -4,7 +4,6 @@
 	"packages": {
 		"cosmic-player": {
 			"build-depends": [
-				"binary(cargo)",
 				"binary(just)",
 				"pkgconfig(gstreamer-1.0)",
 				"pkgconfig(gstreamer-plugins-base-1.0)",
@@ -42,6 +41,6 @@
 		}
 	},
 	"source-name": "cosmic-player",
-	"source-release": "3",
-	"source-version": "1.0.0-alpha.6"
+	"source-release": "4",
+	"source-version": "1.0.0-alpha.7"
 }
