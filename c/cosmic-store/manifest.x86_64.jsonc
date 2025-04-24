@@ -4,7 +4,6 @@
 	"packages": {
 		"cosmic-store": {
 			"build-depends": [
-				"binary(cargo)",
 				"binary(just)",
 				"pkgconfig(dbus-1)",
 				"pkgconfig(flatpak)",
@@ -46,6 +45,6 @@
 		}
 	},
 	"source-name": "cosmic-store",
-	"source-release": "11",
-	"source-version": "1.0.0-alpha.6"
+	"source-release": "12",
+	"source-version": "1.0.0-alpha.7"
 }
