@@ -4,7 +4,6 @@
 	"packages": {
 		"cosmic-notifications": {
 			"build-depends": [
-				"binary(cargo)",
 				"binary(just)",
 				"binary(which)",
 				"pkgconfig(dbus-1)",
@@ -32,6 +31,6 @@
 		}
 	},
 	"source-name": "cosmic-notifications",
-	"source-release": "12",
-	"source-version": "1.0.0-alpha.6"
+	"source-release": "13",
+	"source-version": "1.0.0-alpha.7"
 }
