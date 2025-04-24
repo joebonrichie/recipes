@@ -4,7 +4,6 @@
 	"packages": {
 		"cosmic-panel": {
 			"build-depends": [
-				"binary(cargo)",
 				"binary(just)",
 				"pkgconfig(xkbcommon)"
 			],
@@ -64,6 +63,6 @@
 		}
 	},
 	"source-name": "cosmic-panel",
-	"source-release": "15",
-	"source-version": "1.0.0-alpha.6"
+	"source-release": "16",
+	"source-version": "1.0.0-alpha.7"
 }
