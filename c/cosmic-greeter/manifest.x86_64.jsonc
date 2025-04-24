@@ -4,7 +4,6 @@
 	"packages": {
 		"cosmic-greeter": {
 			"build-depends": [
-				"binary(cargo)",
 				"binary(just)",
 				"clang-devel",
 				"pkgconfig(dbus-1)",
@@ -48,6 +47,6 @@
 		}
 	},
 	"source-name": "cosmic-greeter",
-	"source-release": "19",
-	"source-version": "1.0.0-alpha.6"
+	"source-release": "20",
+	"source-version": "1.0.0-alpha.7"
 }
