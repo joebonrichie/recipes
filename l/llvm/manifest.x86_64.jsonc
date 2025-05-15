@@ -1416,7 +1416,7 @@
 				"/usr/lib/clang/20/include/zos_wrappers/builtins.h",
 				"/usr/lib/libclang-cpp.so.20.1",
 				"/usr/lib/libclang.so.20.1",
-				"/usr/lib/libclang.so.20.1.4"
+				"/usr/lib/libclang.so.20.1.5"
 			],
 			"name": "clang-libs",
 			"provides": [
@@ -1452,7 +1452,7 @@
 				"soname(libclang-cpp.so.20.1(x86_64))",
 				"soname(libclang.so.20.1(x86_64))",
 				"soname(libm.so.6(x86_64))",
-				"soname(libxml2.so.2(x86_64))"
+				"soname(libxml2.so.16(x86_64))"
 			],
 			"files": [
 				"/usr/bin/amdgpu-arch",
@@ -4439,7 +4439,7 @@
 				"soname(libffi.so.8(386))",
 				"soname(libm.so.6(386))",
 				"soname(libunwind.so.1(386))",
-				"soname(libxml2.so.2(386))",
+				"soname(libxml2.so.16(386))",
 				"soname(libz.so.1(386))",
 				"soname(libzstd.so.1(386))"
 			],
@@ -6831,7 +6831,7 @@
 				"soname(libffi.so.8(x86_64))",
 				"soname(libm.so.6(x86_64))",
 				"soname(libunwind.so.1(x86_64))",
-				"soname(libxml2.so.2(x86_64))",
+				"soname(libxml2.so.16(x86_64))",
 				"soname(libz.so.1(x86_64))",
 				"soname(libzstd.so.1(x86_64))"
 			],
@@ -8960,6 +8960,6 @@
 		}
 	},
 	"source-name": "llvm",
-	"source-release": "26",
-	"source-version": "20.1.4"
+	"source-release": "28",
+	"source-version": "20.1.5"
 }
