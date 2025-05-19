@@ -119,7 +119,8 @@ setup       : |
         -Dvideo-codecs=all \
         -Dmicrosoft-clc=disabled \
         -Dvulkan-drivers=amd,intel,intel_hasvk,swrast,virtio$EXTRA_VK_DRIVERS \
-        -Dvulkan-layers=device-select,overlay,screenshot,vram-report-limit
+        -Dvulkan-layers=device-select,overlay,screenshot,vram-report-limit \
+        --wrap-mode=default
 build       : |
     %meson_build
 install     : |
