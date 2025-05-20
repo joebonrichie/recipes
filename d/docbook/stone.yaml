@@ -6,13 +6,17 @@
 ## TODO: Once Moss has renaming support we should probably rename this to docbook-dtd or docbook-xml
 name        : docbook
 version     : 4.5
-release     : 4
+release     : 5
 homepage    : https://docbook.org
 upstreams   :
     - https://docbook.org/xml/4.5/docbook-xml-4.5.zip:
         hash: 4e4e037a2b83c98c6c94818390d4bdd3f6e10f6ec62dd79188594e26190dc7b4
         unpack: false
         rename: "4.5.zip"
+    - https://docbook.org/xml/4.3/docbook-xml-4.3.zip:
+        hash: 23068a94ea6fd484b004c5a73ec36a66aa47ea8f0d6b62cc1695931f5c143464
+        unpack: false
+        rename: "4.3.zip"
     - https://docbook.org/xml/4.1.2/docbkx412.zip:
         hash: 30f0644064e0ea71751438251940b1431f46acada814a062870f486c772e7772
         unpack: false
@@ -33,7 +37,7 @@ install     : |
     xml_catalog="%(installroot)/%(vendordir)/docbook/docbook-dtd/catalog"
     xmlcatalog --noout --create "$xml_catalog"
 
-    for ver in 4.1.2 %(version); do
+    for ver in 4.1.2 4.3 %(version); do
         mkdir docbook-xml-${ver}
         unzip -d docbook-xml-${ver} %(sourcedir)/${ver}.zip
 
