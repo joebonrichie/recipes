@@ -400,6 +400,8 @@
 				"/usr/share/man/man3/hwloc_info_s.3",
 				"/usr/share/man/man3/hwloc_levelzero_get_device_cpuset.3",
 				"/usr/share/man/man3/hwloc_levelzero_get_device_osdev.3",
+				"/usr/share/man/man3/hwloc_levelzero_get_sysman_device_cpuset.3",
+				"/usr/share/man/man3/hwloc_levelzero_get_sysman_device_osdev.3",
 				"/usr/share/man/man3/hwloc_linux_get_tid_cpubind.3",
 				"/usr/share/man/man3/hwloc_linux_get_tid_last_cpu_location.3",
 				"/usr/share/man/man3/hwloc_linux_read_path_as_cpumask.3",
@@ -508,6 +510,7 @@
 				"/usr/share/man/man3/hwloc_topology_get_allowed_nodeset.3",
 				"/usr/share/man/man3/hwloc_topology_get_complete_cpuset.3",
 				"/usr/share/man/man3/hwloc_topology_get_complete_nodeset.3",
+				"/usr/share/man/man3/hwloc_topology_get_default_nodeset.3",
 				"/usr/share/man/man3/hwloc_topology_get_depth.3",
 				"/usr/share/man/man3/hwloc_topology_get_flags.3",
 				"/usr/share/man/man3/hwloc_topology_get_topology_cpuset.3",
@@ -612,11 +615,11 @@
 				"soname(libm.so.6(x86_64))",
 				"soname(libpciaccess.so.0(x86_64))",
 				"soname(libudev.so.1(x86_64))",
-				"soname(libxml2.so.2(x86_64))"
+				"soname(libxml2.so.16(x86_64))"
 			],
 			"files": [
 				"/usr/lib/libhwloc.so.15",
-				"/usr/lib/libhwloc.so.15.8.1",
+				"/usr/lib/libhwloc.so.15.10.0",
 				"/usr/share/hwloc/hwloc-valgrind.supp",
 				"/usr/share/hwloc/hwloc.dtd",
 				"/usr/share/hwloc/hwloc2-diff.dtd",
@@ -630,6 +633,6 @@
 		}
 	},
 	"source-name": "hwloc",
-	"source-release": "1",
-	"source-version": "2.11.2"
+	"source-release": "2",
+	"source-version": "2.12.1"
 }
