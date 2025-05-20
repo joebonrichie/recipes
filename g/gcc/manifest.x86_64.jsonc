@@ -1581,13 +1581,14 @@
 			],
 			"depends": [
 				"binary(gcc)",
-				"soname(ld-linux-x86-64.so.2(x86_64))",
 				"soname(libc.so.6(x86_64))",
+				"soname(libgcc_s.so.1(x86_64))",
 				"soname(libgmp.so.10(x86_64))",
 				"soname(libisl.so.23(x86_64))",
 				"soname(libm.so.6(x86_64))",
 				"soname(libmpc.so.3(x86_64))",
 				"soname(libmpfr.so.6(x86_64))",
+				"soname(libstdc++.so.6(x86_64))",
 				"soname(libz.so.1(x86_64))",
 				"soname(libzstd.so.1(x86_64))"
 			],
@@ -1713,9 +1714,10 @@
 			],
 			"depends": [
 				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
-				"soname(ld-linux-x86-64.so.2(x86_64))",
 				"soname(libc.so.6(x86_64))",
-				"soname(libm.so.6(x86_64))"
+				"soname(libgcc_s.so.1(x86_64))",
+				"soname(libm.so.6(x86_64))",
+				"soname(libstdc++.so.6(x86_64))"
 			],
 			"files": [
 				"/usr/bin/sarif-replay",
@@ -3370,6 +3372,6 @@
 		}
 	},
 	"source-name": "gcc",
-	"source-release": "12",
+	"source-release": "13",
 	"source-version": "15.1.1+git.7317c72b"
 }

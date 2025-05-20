@@ -5,7 +5,7 @@
 #
 name        : gcc
 version     : 15.1.1+git.7317c72b
-release     : 12
+release     : 13
 summary     : GNU C++ standard library and compiler
 license     : GPL-3.0-or-later
 homepage    : https://gcc.gnu.org/
@@ -73,7 +73,7 @@ setup       : |
             --with-arch=%(march) \
             --with-arch_32=%(march) \
             --with-bugurl='https://github.com/AerynOS/recipes/issues' \
-            --with-build-config=bootstrap-O1 \
+            --with-build-config=bootstrap-lto-lean \
             --with-gcc-major-version-only \
             --with-gxx-libcxx-include-dir=/usr/include/c++/v1 \
             --with-isl \
@@ -105,7 +105,7 @@ setup       : |
         --enable-libgdiagnostics
     popd
 build       : |
-    env CCACHE_BASEDIR=${pwd}/gcc_build %make -C gcc_build bootstrap2-lean
+    env CCACHE_BASEDIR=${pwd}/gcc_build %make -C gcc_build profiledbootstrap
     env CCACHE_BASEDIR=${pwd}/libgccjit_build %make -C libgccjit_build all-gcc
 
     cp -a libgccjit_build/gcc/libgccjit.so* gcc_build/gcc/
