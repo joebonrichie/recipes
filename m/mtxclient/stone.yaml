@@ -23,6 +23,7 @@ builddeps   :
 tuning      :
     - lto: full
 setup       : |
+    %patch %(pkgdir)/ftbfs-fmt-11.patch
     %cmake -DBUILD_LIB_TESTS=false
 build       : |
     %cmake_build
