@@ -5,7 +5,7 @@
 #
 name        : libfuse
 version     : 3.16.2
-release     : 5
+release     : 6
 homepage    : https://github.com/libfuse/libfuse
 upstreams   :
     - https://github.com/libfuse/libfuse/releases/download/fuse-3.16.2/fuse-3.16.2.tar.gz : f797055d9296b275e981f5f62d4e32e089614fc253d1ef2985851025b8a0ce87
@@ -17,6 +17,9 @@ license     :
     - LGPL-2.1-or-later
 builddeps   :
     - pkgconfig(libudev)
+tuning      :
+    # ld.lld: error: lib/libfuse3.so.3.17.1.p/fuse.c.o <inline asm>:7:1: default version symbol fuse_session_loop_mt@@FUSE_3.12 must be defined
+    - lto: false
 setup       : |
     %patch %(pkgdir)/stateless/stateless.patch
     %meson \

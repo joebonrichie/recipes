@@ -52,6 +52,6 @@
 		}
 	},
 	"source-name": "libfuse",
-	"source-release": "5",
+	"source-release": "6",
 	"source-version": "3.16.2"
 }
