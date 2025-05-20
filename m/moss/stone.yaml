@@ -1,16 +1,17 @@
 #
 # SPDX-FileCopyrightText: © 2020-2024 Serpent OS Developers
+# SPDX-FileCopyrightText: © 2025- AerynOS Developers
 #
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : moss
-version     : 0.25.5+git.1805018
-release     : 81
+version     : 0.25.5+git.9bc7e7b
+release     : 82
 summary     : AerynOS package & system state manager
 license     : MPL-2.0
 homepage    : https://github.com/AerynOS/os-tools
 upstreams   :
-    - git|https://github.com/AerynOS/os-tools.git : 180501892adf5d5e6fed086a3520752dbc3798a9
+    - git|https://github.com/AerynOS/os-tools.git : 9bc7e7b0d7b417be496fafcd57667f66aa067f8d
 description : |
     Advanced package & system state manager with atomic transactions and content deduplication.
 builddeps   :
