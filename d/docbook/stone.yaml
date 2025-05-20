@@ -6,70 +6,93 @@
 ## TODO: Once Moss has renaming support we should probably rename this to docbook-dtd or docbook-xml
 name        : docbook
 version     : 4.5
-release     : 3
+release     : 4
 homepage    : https://docbook.org
 upstreams   :
-    - https://docbook.org/xml/4.5/docbook-xml-4.5.zip : 4e4e037a2b83c98c6c94818390d4bdd3f6e10f6ec62dd79188594e26190dc7b4
+    - https://docbook.org/xml/4.5/docbook-xml-4.5.zip:
+        hash: 4e4e037a2b83c98c6c94818390d4bdd3f6e10f6ec62dd79188594e26190dc7b4
+        unpack: false
+        rename: "4.5.zip"
+    - https://docbook.org/xml/4.1.2/docbkx412.zip:
+        hash: 30f0644064e0ea71751438251940b1431f46acada814a062870f486c772e7772
+        unpack: false
+        rename: "4.1.2.zip"
 summary     : Markup schema, suitable for writing technical books and documentation
 description : |
     %(name) is a schema (available in several languages including RELAX NG, W3C XML Schemas, and XML DTDs) maintained by the DocBook Technical Committee of OASIS. It is particularly well suited to books and papers about computer hardware and software (though it is by no means limited to these applications).
 license     : Copyright
 builddeps   :
     - binary(xmlcatalog)
+    - binary(unzip)
 rundeps     :
     - binary(xmlcatalog)
 install     : |
-    %install_dir %(installroot)/%(datadir)/xml/docbook/xml-dtd-%(version)
-    cp -dr docbook.cat *.dtd ent/ *.mod %(installroot)/%(datadir)/xml/docbook/xml-dtd-%(version)
-
     ## Setup the catalog
     %install_dir %(installroot)/%(vendordir)/docbook/docbook-dtd/
 
     xml_catalog="%(installroot)/%(vendordir)/docbook/docbook-dtd/catalog"
     xmlcatalog --noout --create "$xml_catalog"
 
-    xmlcatalog --noout --add "public" \
-        "-//OASIS//DTD DocBook XML V%(version)//EN" \
-        "http://www.oasis-open.org/docbook/xml/%(version)/docbookx.dtd" \
-        "$xml_catalog"
-    xmlcatalog --noout --add "public" \
-        "-//OASIS//DTD DocBook CALS Table Model V%(version)//EN" \
-        "http://www.oasis-open.org/docbook/xml/%(version)/calstblx.dtd" \
-        "$xml_catalog"
-    xmlcatalog --noout --add "public" \
-        "-//OASIS//DTD XML Exchange Table Model 19990315//EN" \
-        "http://www.oasis-open.org/docbook/xml/%(version)/soextblx.dtd" \
-        "$xml_catalog"
-    xmlcatalog --noout --add "public" \
-        "-//OASIS//ELEMENTS DocBook Information Pool V%(version)//EN" \
-        "http://www.oasis-open.org/docbook/xml/%(version)/dbpoolx.mod" \
-        "$xml_catalog"
-    xmlcatalog --noout --add "public" \
-        "-//OASIS//ELEMENTS DocBook Document Hierarchy V%(version)//EN" \
-        "http://www.oasis-open.org/docbook/xml/%(version)/dbhierx.mod" \
-        "$xml_catalog"
-    xmlcatalog --noout --add "public" \
-        "-//OASIS//ENTITIES DocBook Additional General Entities V%(version)//EN" \
-        "http://www.oasis-open.org/docbook/xml/%(version)/dbgenent.mod" \
-        "$xml_catalog"
-    xmlcatalog --noout --add "public" \
-        "-//OASIS//ENTITIES DocBook Notations V%(version)//EN" \
-        "http://www.oasis-open.org/docbook/xml/%(version)/dbnotnx.mod" \
-        "$xml_catalog"
-    xmlcatalog --noout --add "public" \
-        "-//OASIS//ENTITIES DocBook Character Entities V%(version)//EN" \
-        "http://www.oasis-open.org/docbook/xml/%(version)/dbcentx.mod" \
-        "$xml_catalog"
-    xmlcatalog --noout --add "public" \
-        "-//OASIS//ELEMENTS DocBook XML HTML Tables V%(version)//EN" \
-        "http://www.oasis-open.org/docbook/xml/%(version)/htmltblx.mod" \
-        "$xml_catalog"
+    for ver in 4.1.2 %(version); do
+        mkdir docbook-xml-${ver}
+        unzip -d docbook-xml-${ver} %(sourcedir)/${ver}.zip
 
-    xmlcatalog --noout --add "rewriteSystem" \
-        "http://www.oasis-open.org/docbook/xml/%(version)" \
-        "/usr/share/xml/docbook/xml-dtd-%(version)" \
-        "$xml_catalog"
-    xmlcatalog --noout --add "rewriteURI" \
-        "http://www.oasis-open.org/docbook/xml/%(version)" \
-        "/usr/share/xml/docbook/xml-dtd-%(version)" \
-        "$xml_catalog"
+        pushd docbook-xml-${ver}
+        %install_dir %(installroot)/%(datadir)/xml/docbook/xml-dtd-${ver}
+        cp -dr docbook.cat *.dtd ent/ *.mod %(installroot)/%(datadir)/xml/docbook/xml-dtd-${ver}
+
+        # Inspired by Arch
+        case $ver in
+            4.1.2) xml=' XML' ;;&
+            *)
+                xmlcatalog --noout --add "public" \
+                    "-//OASIS//DTD DocBook XML V${ver}//EN" \
+                    "http://www.oasis-open.org/docbook/xml/${ver}/docbookx.dtd" \
+                    "$xml_catalog"
+                xmlcatalog --noout --add "public" \
+                    "-//OASIS//DTD DocBook$xml CALS Table Model V${ver}//EN" \
+                    "http://www.oasis-open.org/docbook/xml/${ver}/calstblx.dtd" \
+                    "$xml_catalog"
+                xmlcatalog --noout --add "public" \
+                    "-//OASIS//DTD XML Exchange Table Model 19990315//EN" \
+                    "http://www.oasis-open.org/docbook/xml/${ver}/soextblx.dtd" \
+                    "$xml_catalog"
+                xmlcatalog --noout --add "public" \
+                    "-//OASIS//ELEMENTS DocBook$xml Information Pool V${ver}//EN" \
+                    "http://www.oasis-open.org/docbook/xml/${ver}/dbpoolx.mod" \
+                    "$xml_catalog"
+                xmlcatalog --noout --add "public" \
+                    "-//OASIS//ELEMENTS DocBook$xml Document Hierarchy V${ver}//EN" \
+                    "http://www.oasis-open.org/docbook/xml/${ver}/dbhierx.mod" \
+                    "$xml_catalog"
+                xmlcatalog --noout --add "public" \
+                    "-//OASIS//ENTITIES DocBook$xml Additional General Entities V${ver}//EN" \
+                    "http://www.oasis-open.org/docbook/xml/${ver}/dbgenent.mod" \
+                    "$xml_catalog"
+                xmlcatalog --noout --add "public" \
+                    "-//OASIS//ENTITIES DocBook$xml Notations V${ver}//EN" \
+                    "http://www.oasis-open.org/docbook/xml/${ver}/dbnotnx.mod" \
+                    "$xml_catalog"
+                xmlcatalog --noout --add "public" \
+                    "-//OASIS//ENTITIES DocBook$xml Character Entities V${ver}//EN" \
+                    "http://www.oasis-open.org/docbook/xml/${ver}/dbcentx.mod" \
+                    "$xml_catalog"
+                ;;&
+            4.[45])
+                xmlcatalog --noout --add "public" \
+                    "-//OASIS//ELEMENTS DocBook XML HTML Tables V${ver}//EN" \
+                    "http://www.oasis-open.org/docbook/xml/${ver}/htmltblx.mod" \
+                    "$xml_catalog"
+                ;;&
+            *)
+                xmlcatalog --noout --add "rewriteSystem" \
+                    "http://www.oasis-open.org/docbook/xml/${ver}" \
+                    "/usr/share/xml/docbook/xml-dtd-%(version)" \
+                    "$xml_catalog"
+                xmlcatalog --noout --add "rewriteURI" \
+                    "http://www.oasis-open.org/docbook/xml/${ver}" \
+                    "/usr/share/xml/docbook/xml-dtd-%(version)" \
+                    "$xml_catalog"
+                ;;&
+        esac
+    done

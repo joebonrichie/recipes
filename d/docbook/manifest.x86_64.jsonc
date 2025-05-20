@@ -4,6 +4,7 @@
 	"packages": {
 		"docbook": {
 			"build-depends": [
+				"binary(unzip)",
 				"binary(xmlcatalog)"
 			],
 			"depends": [
@@ -11,6 +12,34 @@
 			],
 			"files": [
 				"/usr/share/defaults/docbook/docbook-dtd/catalog",
+				"/usr/share/xml/docbook/xml-dtd-4.1.2/calstblx.dtd",
+				"/usr/share/xml/docbook/xml-dtd-4.1.2/dbcentx.mod",
+				"/usr/share/xml/docbook/xml-dtd-4.1.2/dbgenent.mod",
+				"/usr/share/xml/docbook/xml-dtd-4.1.2/dbhierx.mod",
+				"/usr/share/xml/docbook/xml-dtd-4.1.2/dbnotnx.mod",
+				"/usr/share/xml/docbook/xml-dtd-4.1.2/dbpoolx.mod",
+				"/usr/share/xml/docbook/xml-dtd-4.1.2/docbook.cat",
+				"/usr/share/xml/docbook/xml-dtd-4.1.2/docbookx.dtd",
+				"/usr/share/xml/docbook/xml-dtd-4.1.2/ent/iso-amsa.ent",
+				"/usr/share/xml/docbook/xml-dtd-4.1.2/ent/iso-amsb.ent",
+				"/usr/share/xml/docbook/xml-dtd-4.1.2/ent/iso-amsc.ent",
+				"/usr/share/xml/docbook/xml-dtd-4.1.2/ent/iso-amsn.ent",
+				"/usr/share/xml/docbook/xml-dtd-4.1.2/ent/iso-amso.ent",
+				"/usr/share/xml/docbook/xml-dtd-4.1.2/ent/iso-amsr.ent",
+				"/usr/share/xml/docbook/xml-dtd-4.1.2/ent/iso-box.ent",
+				"/usr/share/xml/docbook/xml-dtd-4.1.2/ent/iso-cyr1.ent",
+				"/usr/share/xml/docbook/xml-dtd-4.1.2/ent/iso-cyr2.ent",
+				"/usr/share/xml/docbook/xml-dtd-4.1.2/ent/iso-dia.ent",
+				"/usr/share/xml/docbook/xml-dtd-4.1.2/ent/iso-grk1.ent",
+				"/usr/share/xml/docbook/xml-dtd-4.1.2/ent/iso-grk2.ent",
+				"/usr/share/xml/docbook/xml-dtd-4.1.2/ent/iso-grk3.ent",
+				"/usr/share/xml/docbook/xml-dtd-4.1.2/ent/iso-grk4.ent",
+				"/usr/share/xml/docbook/xml-dtd-4.1.2/ent/iso-lat1.ent",
+				"/usr/share/xml/docbook/xml-dtd-4.1.2/ent/iso-lat2.ent",
+				"/usr/share/xml/docbook/xml-dtd-4.1.2/ent/iso-num.ent",
+				"/usr/share/xml/docbook/xml-dtd-4.1.2/ent/iso-pub.ent",
+				"/usr/share/xml/docbook/xml-dtd-4.1.2/ent/iso-tech.ent",
+				"/usr/share/xml/docbook/xml-dtd-4.1.2/soextblx.dtd",
 				"/usr/share/xml/docbook/xml-dtd-4.5/calstblx.dtd",
 				"/usr/share/xml/docbook/xml-dtd-4.5/dbcentx.mod",
 				"/usr/share/xml/docbook/xml-dtd-4.5/dbgenent.mod",
@@ -46,6 +75,6 @@
 		}
 	},
 	"source-name": "docbook",
-	"source-release": "3",
+	"source-release": "4",
 	"source-version": "4.5"
 }
