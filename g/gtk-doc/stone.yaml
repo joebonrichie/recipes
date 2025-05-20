@@ -5,7 +5,7 @@
 #
 name        : gtk-doc
 version     : 1.34.0
-release     : 2
+release     : 3
 homepage    : https://download.gnome.org/sources/gtk-doc/1.34
 upstreams   :
     - https://download.gnome.org/sources/gtk-doc/1.34/gtk-doc-1.34.0.tar.xz : b20b72b32a80bc18c7f975c9d4c16460c2276566a0b50f87d6852dff3aa7861c
@@ -23,9 +23,11 @@ builddeps   :
     - binary(xsltproc)
     - pkgconfig(glib-2.0)
     - python(pygments)
+    - python-libxml2
 rundeps     :
     - python(pygments)
     - docbook
+    - python-libxml2
 setup       : |
     %meson
 build       : |

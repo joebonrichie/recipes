@@ -8,11 +8,13 @@
 				"binary(msgmerge)",
 				"binary(xsltproc)",
 				"pkgconfig(glib-2.0)",
-				"python(pygments)"
+				"python(pygments)",
+				"python-libxml2"
 			],
 			"depends": [
 				"docbook",
-				"python(pygments)"
+				"python(pygments)",
+				"python-libxml2"
 			],
 			"files": [
 				"/usr/bin/gtkdoc-check",
@@ -121,6 +123,6 @@
 		}
 	},
 	"source-name": "gtk-doc",
-	"source-release": "2",
+	"source-release": "3",
 	"source-version": "1.34.0"
 }
