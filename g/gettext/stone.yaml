@@ -5,7 +5,7 @@
 #
 name        : gettext
 version     : 0.23.1
-release     : 5
+release     : 6
 summary     : GNU locale utilities
 license     : GPL-3.0-or-later
 homepage    : https://www.gnu.org/software/gettext/gettext.html
