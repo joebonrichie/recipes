@@ -5,7 +5,7 @@
 #
 name        : ccache
 version     : 4.10.2
-release     : 8
+release     : 9
 summary     : ccache - a fast C/C++ compiler cache
 license     : GPL-3.0-or-later
 homepage    : https://ccache.dev/
