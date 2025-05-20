@@ -5,7 +5,7 @@
 #
 name        : llvm
 version     : 20.1.5
-release     : 28
+release     : 29
 summary     : Low Level Virtual Machine
 license     :
     - Apache-2.0 WITH LLVM-exception
@@ -30,7 +30,10 @@ builddeps   :
     - binutils-devel
     - clang-32bit
     - gcc-32bit
+    - libatomic
+    - libatomic-32bit
     - libcxx-devel-static
+
     # TODO: Package python-myst-parser so we can build man pages
 tuning      :
     - fortify: false
