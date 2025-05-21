@@ -8,6 +8,7 @@
 				"binary(msgfmt)",
 				"binary(xsltproc)",
 				"docbook",
+				"docbook-xsl",
 				"pkgconfig(appstream)",
 				"pkgconfig(flatpak)",
 				"pkgconfig(gdk-pixbuf-2.0)",
@@ -379,6 +380,7 @@
 				"binary(msgfmt)",
 				"binary(xsltproc)",
 				"docbook",
+				"docbook-xsl",
 				"pkgconfig(appstream)",
 				"pkgconfig(flatpak)",
 				"pkgconfig(gdk-pixbuf-2.0)",
@@ -464,6 +466,6 @@
 		}
 	},
 	"source-name": "gnome-software",
-	"source-release": "14",
+	"source-release": "15",
 	"source-version": "48.0"
 }

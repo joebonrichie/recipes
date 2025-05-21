@@ -5,7 +5,7 @@
 #
 name        : gnome-software
 version     : 48.0
-release     : 14
+release     : 15
 homepage    : https://apps.gnome.org/Software/
 upstreams   :
     - https://download.gnome.org/sources/gnome-software/48/gnome-software-48.0.tar.xz : e607af554e838fd6d07c1631f634b20e8bd4e6adf16fc7535c4520874af544f7
@@ -35,8 +35,12 @@ builddeps   :
     - pkgconfig(polkit-gobject-1)
     - pkgconfig(xmlb)
     - docbook
+    - docbook-xsl
 rundeps     :
     - gnome-app-list
+environment : |
+    # Temporary, replace with boulder macro
+    export XML_CATALOG_FILES="file:///usr/share/defaults/docbook/docbook-dtd/catalog file:///usr/share/defaults/docbook/docbook-xsl/catalog"
 setup       : |
     %meson \
         -Dfwupd=false \
