@@ -8,6 +8,7 @@
 				"binary(python)",
 				"binary(xsltproc)",
 				"docbook",
+				"docbook-xsl",
 				"pkgconfig(e2p)",
 				"pkgconfig(fuse3)",
 				"pkgconfig(glib-2.0)",
@@ -112,6 +113,7 @@
 				"binary(python)",
 				"binary(xsltproc)",
 				"docbook",
+				"docbook-xsl",
 				"pkgconfig(e2p)",
 				"pkgconfig(fuse3)",
 				"pkgconfig(glib-2.0)",
@@ -169,6 +171,6 @@
 		}
 	},
 	"source-name": "libostree",
-	"source-release": "7",
+	"source-release": "8",
 	"source-version": "2024.9"
 }

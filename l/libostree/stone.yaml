@@ -5,7 +5,7 @@
 #
 name        : libostree
 version     : 2024.9
-release     : 7
+release     : 8
 homepage    : https://ostreedev.github.io/ostree/
 upstreams   :
     - https://github.com/ostreedev/ostree/releases/download/v2024.9/libostree-2024.9.tar.xz : 4356170ec5f7a09428b6add77e2c6f31d4049ab765ee67cf929bfa3b750d3e1b
@@ -28,7 +28,6 @@ builddeps   :
     - binary(bison)
     - binary(python)
     - binary(xsltproc)
-    - docbook
     - pkgconfig(e2p)
     - pkgconfig(fuse3)
     - pkgconfig(glib-2.0)
@@ -40,6 +39,11 @@ builddeps   :
     - pkgconfig(liblzma)
     - pkgconfig(libsystemd)
     - pkgconfig(openssl)
+    - docbook
+    - docbook-xsl
+environment : |
+    # Temporary, replace with boulder macro
+    export XML_CATALOG_FILES="file:///usr/share/defaults/docbook/docbook-dtd/catalog file:///usr/share/defaults/docbook/docbook-xsl/catalog"
 setup       : |
     sed -e '/Werror=missing-include-dirs/d' -i configure
     %configure --with-curl \
