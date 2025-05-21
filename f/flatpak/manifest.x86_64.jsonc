@@ -38,6 +38,7 @@
 			],
 			"depends": [
 				"binary(bwrap)",
+				"binary(fusermount3)",
 				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
 				"soname(libXau.so.6(x86_64))",
 				"soname(libappstream.so.5(x86_64))",
@@ -45,7 +46,7 @@
 				"soname(libc.so.6(x86_64))",
 				"soname(libcurl.so.4(x86_64))",
 				"soname(libdconf.so.1(x86_64))",
-				"soname(libfuse3.so.3(x86_64))",
+				"soname(libfuse3.so.4(x86_64))",
 				"soname(libgdk_pixbuf-2.0.so.0(x86_64))",
 				"soname(libgio-2.0.so.0(x86_64))",
 				"soname(libglib-2.0.so.0(x86_64))",
@@ -268,6 +269,6 @@
 		}
 	},
 	"source-name": "flatpak",
-	"source-release": "11",
+	"source-release": "12",
 	"source-version": "1.16.1"
 }
