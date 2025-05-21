@@ -6,7 +6,7 @@
 ## TODO: Once Moss has renaming support we should probably rename this to docbook-dtd or docbook-xml
 name        : docbook
 version     : 4.5
-release     : 5
+release     : 6
 homepage    : https://docbook.org
 upstreams   :
     - https://docbook.org/xml/4.5/docbook-xml-4.5.zip:
@@ -91,11 +91,11 @@ install     : |
             *)
                 xmlcatalog --noout --add "rewriteSystem" \
                     "http://www.oasis-open.org/docbook/xml/${ver}" \
-                    "/usr/share/xml/docbook/xml-dtd-%(version)" \
+                    "/usr/share/xml/docbook/xml-dtd-${ver}" \
                     "$xml_catalog"
                 xmlcatalog --noout --add "rewriteURI" \
                     "http://www.oasis-open.org/docbook/xml/${ver}" \
-                    "/usr/share/xml/docbook/xml-dtd-%(version)" \
+                    "/usr/share/xml/docbook/xml-dtd-${ver}" \
                     "$xml_catalog"
                 ;;&
         esac
