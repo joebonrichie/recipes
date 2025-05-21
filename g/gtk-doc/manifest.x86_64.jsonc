@@ -8,13 +8,11 @@
 				"binary(msgmerge)",
 				"binary(xsltproc)",
 				"pkgconfig(glib-2.0)",
-				"python(pygments)",
-				"python-libxml2"
+				"python(pygments)"
 			],
 			"depends": [
 				"docbook",
-				"python(pygments)",
-				"python-libxml2"
+				"python(pygments)"
 			],
 			"files": [
 				"/usr/bin/gtkdoc-check",

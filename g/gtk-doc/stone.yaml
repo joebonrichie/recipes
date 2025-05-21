@@ -23,11 +23,9 @@ builddeps   :
     - binary(xsltproc)
     - pkgconfig(glib-2.0)
     - python(pygments)
-    - python-libxml2
 rundeps     :
     - python(pygments)
     - docbook
-    - python-libxml2
 setup       : |
     %meson
 build       : |
