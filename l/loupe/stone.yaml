@@ -5,7 +5,7 @@
 #
 name        : loupe
 version     : 48.0
-release     : 8
+release     : 9
 homepage    : https://apps.gnome.org/Loupe/
 upstreams   :
     - https://download.gnome.org/sources/loupe/48/loupe-48.0.tar.xz : 21492b2382eba86b97571b4cc08c1eb0201ce5e96bd2b9b5333893f85fbd1d7d
