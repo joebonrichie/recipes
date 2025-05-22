@@ -28,16 +28,16 @@
 			],
 			"files": [
 				"/usr/bin/mesa_clc",
-				"/usr/bin/vtn_bindgen"
+				"/usr/bin/vtn_bindgen2"
 			],
 			"name": "mesa-clc",
 			"provides": [
 				"binary(mesa_clc)",
-				"binary(vtn_bindgen)"
+				"binary(vtn_bindgen2)"
 			]
 		}
 	},
 	"source-name": "mesa-clc",
-	"source-release": "3",
-	"source-version": "25.0.5"
+	"source-release": "4",
+	"source-version": "25.1.1"
 }
