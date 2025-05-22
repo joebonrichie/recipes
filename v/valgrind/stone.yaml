@@ -5,7 +5,7 @@
 #
 name        : valgrind
 version     : 3.0.25
-release     : 6
+release     : 7
 homepage    : https://valgrind.org/
 upstreams   :
     - https://sourceware.org/pub/valgrind/valgrind-3.25.0.tar.bz2 : 295f60291d6b64c0d90c1ce645634bdc5361d39b0c50ecf9de6385ee77586ecc
@@ -16,7 +16,6 @@ description : |
     and threading bugs, and profile your programs in detail.
 license     :
     - GPL-2.0-or-later
-toolchain   : gnu
 tuning      :
     - harden: none
     - bindnow: false
@@ -26,6 +25,7 @@ rundeps     :
 setup       : |
     # Undo a Makefile.am hack related to making non GCC compatible compilers behave w/mpi
     %patch %(pkgdir)/mpi-respect-flags.patch
+    %patch %(pkgdir)/rtlib.patch
 
     # We disable lto tuning above and instead enable Valgrind's own LTO -- otherwise we
     # get undefined symbol linker errors after running coregrind checks
