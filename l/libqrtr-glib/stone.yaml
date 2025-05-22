@@ -26,5 +26,3 @@ build       : |
     %meson_build
 install     : |
     %meson_install
-# g-ir-scanner/compiler woes
-# toolchain   : gnu
