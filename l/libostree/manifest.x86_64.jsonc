@@ -128,11 +128,20 @@
 			],
 			"depends": [
 				"libostree",
-				"pkgconfig(gio-unix-2.0)"
+				"pkgconfig(gio-unix-2.0)",
+				"pkgconfig(gpg-error)",
+				"pkgconfig(gpgme)",
+				"pkgconfig(libarchive)",
+				"pkgconfig(libcrypto)",
+				"pkgconfig(libcurl)",
+				"pkgconfig(liblzma)",
+				"pkgconfig(libsystemd)",
+				"pkgconfig(zlib)"
 			],
 			"files": [
 				"/usr/include/ostree-1/ostree-async-progress.h",
 				"/usr/include/ostree-1/ostree-autocleanups.h",
+				"/usr/include/ostree-1/ostree-blob-reader.h",
 				"/usr/include/ostree-1/ostree-bootconfig-parser.h",
 				"/usr/include/ostree-1/ostree-content-writer.h",
 				"/usr/include/ostree-1/ostree-core.h",
@@ -171,6 +180,6 @@
 		}
 	},
 	"source-name": "libostree",
-	"source-release": "9",
-	"source-version": "2024.9"
+	"source-release": "10",
+	"source-version": "2025.2"
 }
