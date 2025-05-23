@@ -112,7 +112,6 @@ setup       : |
         -Dglvnd=enabled \
         -Dllvm=enabled \
         -Dmesa-clc=system \
-        -Dosmesa=true \
         -Dzstd=enabled \
         -Dplatforms=x11,wayland \
         -Dshared-llvm=enabled \
