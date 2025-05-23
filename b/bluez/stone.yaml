@@ -5,7 +5,7 @@
 #
 name        : bluez
 version     : "5.82"
-release     : 4
+release     : 5
 homepage    : https://www.bluez.org/
 upstreams   :
     - https://www.kernel.org/pub/linux/bluetooth/bluez-5.82.tar.xz : 0739fa608a837967ee6d5572b43fb89946a938d1c6c26127158aaefd743a790b
@@ -136,6 +136,7 @@ packages    :
             - /usr/lib/bluez/bluetooth/obexd
             - /usr/lib/systemd/user-preset/obex.preset
             - /usr/lib/systemd/user/obex.service
+            - /usr/lib/systemd/user/dbus-org.bluez.obex.service
             - /usr/share/dbus-1/services/org.bluez.obex.service
             - /usr/share/dbus-1/system.d/obex.conf
             - /usr/share/man/man5/org.bluez.obex*
