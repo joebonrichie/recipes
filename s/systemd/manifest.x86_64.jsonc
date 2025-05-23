@@ -10,6 +10,7 @@
 				"binary(readelf.py)",
 				"binary(xsltproc)",
 				"docbook",
+				"docbook-xsl",
 				"gcc-32bit",
 				"gettext-devel",
 				"gnu-efi-devel",
@@ -1284,6 +1285,7 @@
 				"binary(readelf.py)",
 				"binary(xsltproc)",
 				"docbook",
+				"docbook-xsl",
 				"gcc-32bit",
 				"gettext-devel",
 				"gnu-efi-devel",
@@ -1374,6 +1376,7 @@
 				"binary(readelf.py)",
 				"binary(xsltproc)",
 				"docbook",
+				"docbook-xsl",
 				"gcc-32bit",
 				"gettext-devel",
 				"gnu-efi-devel",
@@ -1434,6 +1437,7 @@
 				"binary(readelf.py)",
 				"binary(xsltproc)",
 				"docbook",
+				"docbook-xsl",
 				"gcc-32bit",
 				"gettext-devel",
 				"gnu-efi-devel",
@@ -2289,6 +2293,7 @@
 				"binary(readelf.py)",
 				"binary(xsltproc)",
 				"docbook",
+				"docbook-xsl",
 				"gcc-32bit",
 				"gettext-devel",
 				"gnu-efi-devel",
@@ -2378,6 +2383,6 @@
 		}
 	},
 	"source-name": "systemd",
-	"source-release": "49",
+	"source-release": "50",
 	"source-version": "254.24"
 }
