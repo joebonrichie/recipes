@@ -31,6 +31,7 @@
 				"zita-convolver-devel"
 			],
 			"depends": [
+				"binary(pipewire)",
 				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
 				"lsp-plugins-lv2",
 				"soname(libSoundTouch.so.2(x86_64))",
@@ -212,6 +213,6 @@
 		}
 	},
 	"source-name": "easyeffects",
-	"source-release": "2",
+	"source-release": "3",
 	"source-version": "7.2.3"
 }
