@@ -6,6 +6,7 @@
 			"build-depends": [
 				"binary(bwrap)",
 				"binary(msgfmt)",
+				"binary(rst2man)",
 				"binary(xmlto)",
 				"binary(xsltproc)",
 				"pkgconfig(flatpak)",
@@ -22,6 +23,8 @@
 				"pkgconfig(libsystemd)"
 			],
 			"depends": [
+				"binary(bwrap)",
+				"binary(pipewire)",
 				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
 				"soname(libc.so.6(x86_64))",
 				"soname(libfuse3.so.4(x86_64))",
@@ -109,6 +112,7 @@
 				"/usr/share/dbus-1/services/org.freedesktop.portal.Desktop.service",
 				"/usr/share/dbus-1/services/org.freedesktop.portal.Documents.service",
 				"/usr/share/locale/be/LC_MESSAGES/xdg-desktop-portal.mo",
+				"/usr/share/locale/bg/LC_MESSAGES/xdg-desktop-portal.mo",
 				"/usr/share/locale/ca/LC_MESSAGES/xdg-desktop-portal.mo",
 				"/usr/share/locale/cs/LC_MESSAGES/xdg-desktop-portal.mo",
 				"/usr/share/locale/da/LC_MESSAGES/xdg-desktop-portal.mo",
@@ -141,7 +145,8 @@
 				"/usr/share/locale/tr/LC_MESSAGES/xdg-desktop-portal.mo",
 				"/usr/share/locale/uk/LC_MESSAGES/xdg-desktop-portal.mo",
 				"/usr/share/locale/zh_CN/LC_MESSAGES/xdg-desktop-portal.mo",
-				"/usr/share/locale/zh_TW/LC_MESSAGES/xdg-desktop-portal.mo"
+				"/usr/share/locale/zh_TW/LC_MESSAGES/xdg-desktop-portal.mo",
+				"/usr/share/man/man5/portals.conf.5"
 			],
 			"name": "xdg-desktop-portal"
 		},
@@ -149,6 +154,7 @@
 			"build-depends": [
 				"binary(bwrap)",
 				"binary(msgfmt)",
+				"binary(rst2man)",
 				"binary(xmlto)",
 				"binary(xsltproc)",
 				"pkgconfig(flatpak)",
@@ -177,6 +183,6 @@
 		}
 	},
 	"source-name": "xdg-desktop-portal",
-	"source-release": "5",
-	"source-version": "1.20.0"
+	"source-release": "6",
+	"source-version": "1.20.3"
 }
