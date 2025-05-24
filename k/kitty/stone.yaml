@@ -34,8 +34,9 @@ builddeps   :
     - binary(go)
     - font-symbols-nerd
 build       : |
-    %make
-    %make linux-package
+    # This dies on make -j32, so try with a lower job level that is likely to work on most machines
+    %make -j4
+    %make -j4 linux-package
 install     : |
     linux-package/bin/kitten __complete__ setup bash | %install_file /dev/stdin %(installroot)%(datadir)/bash-completion/completions/kitty
     linux-package/bin/kitten __complete__ setup fish | %install_file /dev/stdin %(installroot)%(datadir)/fish/vendor_completions.d/kitty.fish
