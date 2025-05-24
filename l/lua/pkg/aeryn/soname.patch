@@ -1,17 +1,8 @@
 diff --git a/Makefile b/Makefile
-index fef1af4..07817ee 100644
+index 416f444..eeaff03 100644
 --- a/Makefile
 +++ b/Makefile
-@@ -41,7 +41,7 @@ PLATS= guess aix bsd c89 freebsd generic linux linux-readline macosx mingw posix
- # What to install.
- TO_BIN= lua luac
- TO_INC= lua.h luaconf.h lualib.h lauxlib.h lua.hpp
--TO_LIB= liblua.a
-+TO_LIB= liblua.a liblua.so liblua.so.$(R) liblua.so.$(V)
- TO_MAN= lua.1 luac.1
- 
- # Lua version and release.
-@@ -52,7 +52,7 @@ R= $V.4
+@@ -52,7 +52,7 @@ R= $V.0
  all:	$(PLAT)
  
  $(PLATS) help test clean:
@@ -21,10 +12,10 @@ index fef1af4..07817ee 100644
  install: dummy
  	cd src && $(MKDIR) $(INSTALL_BIN) $(INSTALL_INC) $(INSTALL_LIB) $(INSTALL_MAN) $(INSTALL_LMOD) $(INSTALL_CMOD)
 diff --git a/src/Makefile b/src/Makefile
-index 1907381..16793f4 100644
+index 514593d..372a6dc 100644
 --- a/src/Makefile
 +++ b/src/Makefile
-@@ -33,6 +33,7 @@ CMCFLAGS=
+@@ -33,6 +33,7 @@ CMCFLAGS= -Os
  PLATS= guess aix bsd c89 freebsd generic linux linux-readline macosx mingw posix solaris
  
  LUA_A=	liblua.a
@@ -41,7 +32,7 @@ index 1907381..16793f4 100644
  ALL_A= $(LUA_A)
  
  # Targets start here.
-@@ -60,6 +61,11 @@ $(LUA_A): $(BASE_O)
+@@ -60,6 +61,12 @@ $(LUA_A): $(BASE_O)
  	$(AR) $@ $(BASE_O)
  	$(RANLIB) $@
  
@@ -49,6 +40,7 @@ index 1907381..16793f4 100644
 +	$(CC) -shared -ldl -Wl,-soname,$(LUA_SO).$(V) -o $@.$(R) $? -lm $(MYLDFLAGS)
 +	ln -sf $(LUA_SO).$(R) $(LUA_SO).$(V)
 +	ln -sf $(LUA_SO).$(R) $(LUA_SO)
++
 +
  $(LUA_T): $(LUA_O) $(LUA_A)
  	$(CC) -o $@ $(LDFLAGS) $(LUA_O) $(LUA_A) $(LIBS)
