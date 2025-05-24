@@ -8,7 +8,8 @@
 			],
 			"depends": [
 				"binary(python3)",
-				"python(backports.tarfile(3.11))"
+				"python(backports.tarfile(3.11))",
+				"python(backports.tarfile)"
 			],
 			"files": [
 				"/usr/lib/python3.11/site-packages/jaraco.context-6.0.1.dist-info/LICENSE",
@@ -29,6 +30,6 @@
 		}
 	},
 	"source-name": "python-jaraco.context",
-	"source-release": "1",
+	"source-release": "2",
 	"source-version": "6.0.1"
 }
