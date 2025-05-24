@@ -5,6 +5,7 @@
 		"kitty": {
 			"build-depends": [
 				"binary(go)",
+				"binary(tic)",
 				"font-symbols-nerd",
 				"pkgconfig(dbus-1)",
 				"pkgconfig(gl)",
@@ -1087,6 +1088,6 @@
 		}
 	},
 	"source-name": "kitty",
-	"source-release": "1",
+	"source-release": "2",
 	"source-version": "0.41.1"
 }

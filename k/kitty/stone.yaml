@@ -5,7 +5,7 @@
 #
 name        : kitty
 version     : 0.41.1
-release     : 1
+release     : 2
 homepage    : https://github.com/kovidgoyal/kitty
 upstreams   :
     - https://github.com/kovidgoyal/kitty/releases/download/v0.41.1/kitty-0.41.1.tar.xz : e30150fad1bcc885a7adbd87380696ef7b67a62a38f74634efbc05c3745f26aa
@@ -16,27 +16,27 @@ license     :
     - GPL-3.0-or-later
 networking  : true
 builddeps   :
-    - pkgconfig(python3)
-    - pkgconfig(libxxhash)
+    - binary(go)
+    - binary(tic)
+    - pkgconfig(dbus-1)
+    - pkgconfig(gl)
     - pkgconfig(harfbuzz)
     - pkgconfig(lcms2)
     - pkgconfig(libcrypto)
-    - pkgconfig(gl)
-    - pkgconfig(xkbcommon)
-    - pkgconfig(xrandr)
-    - pkgconfig(xinerama)
-    - pkgconfig(xcursor)
-    - pkgconfig(dbus-1)
+    - pkgconfig(libxxhash)
+    - pkgconfig(python3)
+    - pkgconfig(simde)
     - pkgconfig(wayland-protocols)
     - pkgconfig(wayland-scanner)
+    - pkgconfig(xcursor)
     - pkgconfig(xi)
-    - pkgconfig(simde)
-    - binary(go)
+    - pkgconfig(xinerama)
+    - pkgconfig(xkbcommon)
+    - pkgconfig(xrandr)
     - font-symbols-nerd
 build       : |
-    # This dies on make -j32, so try with a lower job level that is likely to work on most machines
-    %make -j4
-    %make -j4 linux-package
+    %make
+    %make linux-package
 install     : |
     linux-package/bin/kitten __complete__ setup bash | %install_file /dev/stdin %(installroot)%(datadir)/bash-completion/completions/kitty
     linux-package/bin/kitten __complete__ setup fish | %install_file /dev/stdin %(installroot)%(datadir)/fish/vendor_completions.d/kitty.fish
