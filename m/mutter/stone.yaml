@@ -5,7 +5,7 @@
 #
 name        : mutter
 version     : 48.2
-release     : 20
+release     : 21
 homepage    : https://gnome.org
 upstreams   :
     - https://download.gnome.org/sources/mutter/48/mutter-48.2.tar.xz : 3c18ba4e093ea9a378113dcafa7bdb5c1f9d6f5af9765026b7e66cb78daf614e
@@ -92,6 +92,7 @@ builddeps   :
     - pkgconfig(xwayland)
 rundeps     :
     - binary(gnome-session)
+    - binary(pipewire) # DMA-BUF
 setup       : |
     %patch %(pkgdir)/0001-kms-impl-device-Always-catch-pending-KMS-update-in-_.patch
     %patch %(pkgdir)/0002-Revert-onscreen-native-Account-for-all-posted-frames.patch

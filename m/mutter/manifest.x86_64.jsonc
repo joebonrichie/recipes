@@ -82,6 +82,7 @@
 			],
 			"depends": [
 				"binary(gnome-session)",
+				"binary(pipewire)",
 				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
 				"soname(libEGL.so.1(x86_64))",
 				"soname(libGL.so.1(x86_64))",
@@ -631,6 +632,6 @@
 		}
 	},
 	"source-name": "mutter",
-	"source-release": "20",
+	"source-release": "21",
 	"source-version": "48.2"
 }
