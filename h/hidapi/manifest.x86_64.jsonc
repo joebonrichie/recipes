@@ -53,6 +53,6 @@
 		}
 	},
 	"source-name": "hidapi",
-	"source-release": "1",
+	"source-release": "2",
 	"source-version": "0.14.0"
 }
