@@ -5,7 +5,7 @@
 #
 name        : hidapi
 version     : 0.14.0
-release     : 2
+release     : 3
 homepage    : https://libusb.info/hidapi/
 upstreams   :
     - https://github.com/libusb/hidapi/archive/refs/tags/hidapi-0.14.0.tar.gz : a5714234abe6e1f53647dd8cba7d69f65f71c558b7896ed218864ffcf405bcbd
@@ -18,7 +18,8 @@ builddeps   :
     - pkgconfig(libudev)
     - pkgconfig(libusb-1.0)
 setup       : |
-    %cmake
+    # without the policy override, this fails during the setup phase
+    %cmake -DCMAKE_POLICY_VERSION_MINIMUM=3.5
 build       : |
     %ninja
 install     : |
