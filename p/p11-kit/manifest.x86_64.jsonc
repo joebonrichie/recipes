@@ -161,12 +161,12 @@
 			"name": "p11-kit-libs",
 			"provides": [
 				"soname(libp11-kit.so.0(x86_64))",
-				"soname(p11-kit-client.so(x86_64))",
-				"soname(p11-kit-trust.so(x86_64))"
+				"soname(pkcs11/p11-kit-client.so(x86_64))",
+				"soname(pkcs11/p11-kit-trust.so(x86_64))"
 			]
 		}
 	},
 	"source-name": "p11-kit",
-	"source-release": "3",
+	"source-release": "4",
 	"source-version": "0.25.5"
 }
