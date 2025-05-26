@@ -11,6 +11,9 @@
 				"pkgconfig(sqlite3)",
 				"pkgconfig(zlib)"
 			],
+			"depends": [
+				"binary(update-ca-trust)"
+			],
 			"files": [
 				"/usr/share/ca-certificates/trust-source/mozilla.trust.p11-kit"
 			],
@@ -347,6 +350,6 @@
 		}
 	},
 	"source-name": "nss",
-	"source-release": "24",
+	"source-release": "25",
 	"source-version": "3.111"
 }

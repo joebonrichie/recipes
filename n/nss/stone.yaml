@@ -5,7 +5,7 @@
 #
 name        : nss
 version     : "3.111"
-release     : 24
+release     : 25
 summary     : Network Security Services
 license     : MPL-2.0
 homepage    : https://wiki.mozilla.org/NSS
@@ -72,5 +72,7 @@ packages    :
     - "ca-certificates-mozilla":
         summary: Mozilla's set of trusted CA certificates
         description: Mozilla's set of trusted CA certificates
+        rundeps:
+            - binary(update-ca-trust)
         paths:
             - /usr/share/ca-certificates
