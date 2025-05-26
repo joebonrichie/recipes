@@ -5,8 +5,8 @@
 #
 name        : ca-certificates
 version     : 20250516
-release     : 8
-homepage    : https://wiki.mozilla.org/CA
+release     : 9
+homepage    : https://fedoraproject.org/wiki/CA-Certificates
 upstreams   :
     # https://hg.mozilla.org/releases/mozilla-release/file/default/security/nss/lib/ckfw/builtins/certdata.txt <-- for date
     - https://hg.mozilla.org/releases/mozilla-release/raw-file/default/security/nss/lib/ckfw/builtins/certdata.txt :
@@ -17,17 +17,71 @@ upstreams   :
         unpack : no
 summary     : Certificate Authority Files
 description : |
-    The Public Key Inrastructure is used for many security issues in a Linux system. In order for a certificate to be trusted, it must be signed by a trusted agent called a Certificate Authority (CA).
+    The Public Key Infrastructure is used for many security issues in a Linux system. In order for a certificate to be trusted, it must be signed by a trusted agent called a Certificate Authority (CA).
 license     :
     - Apache-2.0
     - MPL-2.0
+    # TODO: Update the licenses for this
 builddeps  :
-    - golang
+    - binary(go)
+    # TODO: Need a2x for man page
 setup       : |
     %install_file %(sourcedir)/certdata.txt .
     %install_file %(sourcedir)/convert_mozilla_certdata.go .
 build       : |
     go run convert_mozilla_certdata.go --to-files
 install     : |
+    etcdir="/etc/%(name)"
+    ssldir="/etc/ssl"
+    usrdir="/usr/share/%(name)"
+
+    %install_file %(pkgdir)/README.* -t %(installroot)%(datadir)/doc/ca-certificates
+    %install_bin %(pkgdir)/update-ca-trust
+
+    %tmpfiles "# Trust source directories"
+    %tmpfiles "L+ ${etcdir}/README                    - - - - ../../usr/share/doc/ca-certificates/README.etc"
+    %tmpfiles "L+ ${etcdir}/trust-source/README       - - - - ../../../usr/share/doc/ca-certificates/README.src"
+    %tmpfiles ""
+    %tmpfiles "# Directories used by update-ca-trust"
+    %tmpfiles "L+ ${ssldir}/README                    - - - - ../../usr/share/doc/ca-certificates/README.etcssl"
+    %tmpfiles "L+ ${ssldir}/certs/java/README         - - - - ../../../../usr/share/doc/ca-certificates/README.java"
+    %tmpfiles "L+ ${etcdir}/extracted/README          - - - - ../../../usr/share/doc/ca-certificates/README.extr"
+    %tmpfiles ""
+    %tmpfiles "# Compatibility link for OpenSSL using /etc/ssl as CAdir"
+    %tmpfiles "L+ ${ssldir}/cert.pem                  - - - - ../ca-certificates/extracted/tls-ca-bundle.pem"
+    %tmpfiles "# Compatibility link for legacy bundle (Debian)"
+    %tmpfiles "L+ ${ssldir}/certs/ca-certificates.crt - - - - ../../ca-certificates/extracted/tls-ca-bundle.pem"
+    %tmpfiles "# Compatibility link for legacy bundle (RHEL/Fedora)"
+    %tmpfiles "L+ ${ssldir}/certs/ca-bundle.crt       - - - - ../../ca-certificates/extracted/tls-ca-bundle.pem"
+
+    %install_dir %(installroot)/${usrdir}/trust-source
+    ln -srv %(installroot)/usr/share/doc/ca-certificates/README.usr %(installroot)/${usrdir}/trust-source/README
+
+    %install_file %(pkgdir)/trigger.yaml %(installroot)/usr/share/moss/triggers/sys.d/certstore.yaml
+
+    # Ca-certificates
+    %install_dir %(installroot)%(docdir)/%(name)
+    echo "This file will disappear when virtual packages are introduced" > %(installroot)%(docdir)/%(name)/README
+
+    # TODO: Delete all this
     %install_file -t %(installroot)/%(vendordir)/etc/ssl/certs/ *.pem
     cat *.pem > %(installroot)/%(vendordir)/etc/ssl/certs/ca-certificates.crt
+packages    :
+    - "%(name)-utils":
+        summary: Common CA certificates (utilities)
+        description: Common CA certificates (utilities)
+        rundeps:
+            - binary(bash)
+            - binary(find)
+            - binary(ln)
+            - binary(trust)
+        paths:
+            - /usr/bin
+            - /usr/lib/tmpfiles.d
+            - /usr/share/ca-certificates
+            - /usr/share/doc/ca-certificates
+            - /usr/share/moss
+
+    - "%(name)":
+        rundeps:
+            - ca-certificates-mozilla

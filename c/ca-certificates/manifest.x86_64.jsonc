@@ -4,7 +4,10 @@
 	"packages": {
 		"ca-certificates": {
 			"build-depends": [
-				"golang"
+				"binary(go)"
+			],
+			"depends": [
+				"ca-certificates-mozilla"
 			],
 			"files": [
 				"/usr/share/defaults/etc/ssl/certs/ACCVRAIZ1.pem",
@@ -153,9 +156,37 @@
 				"/usr/share/defaults/etc/ssl/certs/vTrus_Root_CA.pem"
 			],
 			"name": "ca-certificates"
+		},
+		"ca-certificates-utils": {
+			"build-depends": [
+				"binary(go)"
+			],
+			"depends": [
+				"binary(bash)",
+				"binary(find)",
+				"binary(ln)",
+				"binary(trust)"
+			],
+			"files": [
+				"/usr/bin/update-ca-trust",
+				"/usr/lib/tmpfiles.d/ca-certificates.conf",
+				"/usr/share/ca-certificates/trust-source/README",
+				"/usr/share/doc/ca-certificates/README",
+				"/usr/share/doc/ca-certificates/README.etc",
+				"/usr/share/doc/ca-certificates/README.etcssl",
+				"/usr/share/doc/ca-certificates/README.extr",
+				"/usr/share/doc/ca-certificates/README.java",
+				"/usr/share/doc/ca-certificates/README.src",
+				"/usr/share/doc/ca-certificates/README.usr",
+				"/usr/share/moss/triggers/sys.d/certstore.yaml"
+			],
+			"name": "ca-certificates-utils",
+			"provides": [
+				"binary(update-ca-trust)"
+			]
 		}
 	},
 	"source-name": "ca-certificates",
-	"source-release": "8",
+	"source-release": "9",
 	"source-version": "20250516"
 }
