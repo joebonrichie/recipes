@@ -4,8 +4,8 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : openssl
-version     : 3.4.1
-release     : 21
+version     : 3.5.0
+release     : 22
 summary     : OpenSSL cryptography library
 license     :
     - OpenSSL
@@ -14,38 +14,46 @@ homepage    : https://www.openssl.org
 description : |
     OpenSSL cryptography library.
 upstreams   :
-    - https://www.openssl.org/source/openssl-3.4.1.tar.gz: 002a2d6b30b58bf4bea46c43bdd96365aaf8daa6c428782aa4feee06da197df3
+    - https://www.openssl.org/source/openssl-3.5.0.tar.gz: 344d0a79f1a9b08029b0744e2cc401a43f9c90acd1044d09a530b4885a8e9fc0
 builddeps   :
     - binary(perl)
+    - pkgconfig32(libzstd)
     - pkgconfig32(zlib)
-    - libatomic
     - libatomic-32bit
-rundeps     :
-    - ca-certificates
-    - binary(coreutils)
-    - binary(perl)
 emul32      : true
-packages    :
-    - "%(name)-docs":
-        paths:
-            - /usr/share/doc/*
 profiles    :
     - emul32:
         install: |
             %make_install MANSUFFIX=openssl
             rm -v %(installroot)%(libdir)/*.a
+environment : |
+    # OpenSSL is rife with strict aliasing violations and we really need to build it with this flag to be safe
+    # https://github.com/openssl/openssl/issues/12247
+    export CFLAGS+=" -fno-strict-aliasing"
 setup       : |
-    if [[ %(target_triple) = i686* ]]; then
-        export OSSL_TARGET="linux-x86-clang"
-    else
-        export OSSL_TARGET=linux-x86_64-clang""
-    fi
     %patch %(pkgdir)/stateless/0001-Use-OS-provided-copy-of-openssl.cnf-as-fallback.patch
     %patch %(pkgdir)/config.patch
-    ./Configure $OSSL_TARGET shared no-ssl zlib-dynamic no-rc4 no-ssl2 no-ssl3 enable-ktls \
-                --prefix=/usr \
-                --openssldir=/etc/ssl \
-                --libdir=%(libdir)
+    %patch %(pkgdir)/0001-Fix-soname-dynamic-loading.patch
+
+    if [[ %(target_triple) = i686* ]]; then
+        export OSSL_TARGET="linux-x86-clang"
+        _extra_opts=""
+    else
+        export OSSL_TARGET=linux-x86_64-clang""
+        _extra_opts="enable-ec_nistp_64_gcc_128"
+    fi
+
+    # We may want to add brotli support for compressed certificates, but as far as I know that's not common yet
+    ./Configure $OSSL_TARGET \
+        --prefix=/usr \
+        --openssldir=/etc/ssl \
+        --libdir=%(libdir) \
+        enable-ktls \
+        enable-zstd-dynamic \
+        no-rc4 \
+        shared \
+        zlib-dynamic \
+        ${_extra_opts}
 build       : |
     %make
 install     : |
@@ -64,3 +72,35 @@ install     : |
     %tmpfiles "# Create SSL compatibility link"
     %tmpfiles "d /etc/ssl 0755 - - -"
     %tmpfiles "L+ /etc/ssl/certs - - - - /usr/share/defaults/etc/ssl/certs"
+tuning      :
+    - lto: false # https://github.com/openssl/openssl/issues/18663
+packages    :
+    - "%(name)-libs":
+        summary: "Library files for %(name)"
+        description: |
+            Library files for %(name), typically pulled in as a dependency of another package.
+        rundeps:
+            - zlib
+            - zstd-libs
+        paths:
+            - /usr/lib/libcrypto.so.*
+            - /usr/lib/libssl.so.*
+            - /usr/lib/engines-*
+            - /usr/lib/ossl-modules
+
+    # Moss upgrade issue
+    - "%(name)":
+        rundeps:
+            - "%(name)-libs"
+            - ca-certificates
+            - binary(coreutils)
+            - binary(perl)
+
+    - "%(name)-32bit":
+        rundeps:
+            - zlib-32bit
+            - zstd-32bit
+
+    - "%(name)-docs":
+        paths:
+            - /usr/share/doc/*
