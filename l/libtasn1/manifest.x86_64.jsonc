@@ -1,22 +1,36 @@
 /** Human readable report. This is not consumed by boulder */
 {
-	"manifest-version": "0.1",
+	"manifest-version": "0.2",
 	"packages": {
 		"libtasn1": {
+			"build-depends": [
+				"binary(bison)"
+			],
 			"depends": [
-				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
 				"soname(libc.so.6(x86_64))"
 			],
 			"files": [
-				"/usr/bin/asn1Coding",
-				"/usr/bin/asn1Decoding",
-				"/usr/bin/asn1Parser",
 				"/usr/lib/libtasn1.so.6",
-				"/usr/lib/libtasn1.so.6.6.3",
-				"/usr/share/info/libtasn1.info",
-				"/usr/share/man/man1/asn1Coding.1",
-				"/usr/share/man/man1/asn1Decoding.1",
-				"/usr/share/man/man1/asn1Parser.1",
+				"/usr/lib/libtasn1.so.6.6.4",
+				"/usr/share/info/libtasn1.info"
+			],
+			"name": "libtasn1",
+			"provides": [
+				"soname(libtasn1.so.6(x86_64))"
+			]
+		},
+		"libtasn1-devel": {
+			"build-depends": [
+				"binary(bison)"
+			],
+			"depends": [
+				"libtasn1",
+				"libtasn1-tools"
+			],
+			"files": [
+				"/usr/include/libtasn1.h",
+				"/usr/lib/libtasn1.so",
+				"/usr/lib/pkgconfig/libtasn1.pc",
 				"/usr/share/man/man3/asn1_array2tree.3",
 				"/usr/share/man/man3/asn1_bit_der.3",
 				"/usr/share/man/man3/asn1_check_version.3",
@@ -59,26 +73,15 @@
 				"/usr/share/man/man3/asn1_strerror.3",
 				"/usr/share/man/man3/asn1_write_value.3"
 			],
-			"name": "libtasn1",
-			"provides": [
-				"binary(asn1Coding)",
-				"binary(asn1Decoding)",
-				"binary(asn1Parser)",
-				"soname(libtasn1.so.6(x86_64))"
-			]
-		},
-		"libtasn1-devel": {
-			"files": [
-				"/usr/include/libtasn1.h",
-				"/usr/lib/libtasn1.so",
-				"/usr/lib/pkgconfig/libtasn1.pc"
-			],
 			"name": "libtasn1-devel",
 			"provides": [
 				"pkgconfig(libtasn1)"
 			]
 		},
 		"libtasn1-docs": {
+			"build-depends": [
+				"binary(bison)"
+			],
 			"files": [
 				"/usr/share/gtk-doc/html/libtasn1/api-index-1-6.html",
 				"/usr/share/gtk-doc/html/libtasn1/api-index-2-0.html",
@@ -89,8 +92,6 @@
 				"/usr/share/gtk-doc/html/libtasn1/index.html",
 				"/usr/share/gtk-doc/html/libtasn1/left-insensitive.png",
 				"/usr/share/gtk-doc/html/libtasn1/left.png",
-				"/usr/share/gtk-doc/html/libtasn1/libtasn1-libtasn1.html",
-				"/usr/share/gtk-doc/html/libtasn1/libtasn1.devhelp2",
 				"/usr/share/gtk-doc/html/libtasn1/right-insensitive.png",
 				"/usr/share/gtk-doc/html/libtasn1/right.png",
 				"/usr/share/gtk-doc/html/libtasn1/style.css",
@@ -98,9 +99,33 @@
 				"/usr/share/gtk-doc/html/libtasn1/up.png"
 			],
 			"name": "libtasn1-docs"
+		},
+		"libtasn1-tools": {
+			"build-depends": [
+				"binary(bison)"
+			],
+			"depends": [
+				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
+				"soname(libc.so.6(x86_64))",
+				"soname(libtasn1.so.6(x86_64))"
+			],
+			"files": [
+				"/usr/bin/asn1Coding",
+				"/usr/bin/asn1Decoding",
+				"/usr/bin/asn1Parser",
+				"/usr/share/man/man1/asn1Coding.1",
+				"/usr/share/man/man1/asn1Decoding.1",
+				"/usr/share/man/man1/asn1Parser.1"
+			],
+			"name": "libtasn1-tools",
+			"provides": [
+				"binary(asn1Coding)",
+				"binary(asn1Decoding)",
+				"binary(asn1Parser)"
+			]
 		}
 	},
 	"source-name": "libtasn1",
-	"source-release": "1",
-	"source-version": "4.19.0"
+	"source-release": "2",
+	"source-version": "4.20.0"
 }
