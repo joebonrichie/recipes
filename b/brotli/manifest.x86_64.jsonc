@@ -4,34 +4,33 @@
 	"packages": {
 		"brotli": {
 			"build-depends": [
-				"pkgconfig(python3)"
+				"binary(find)",
+				"binary(python)",
+				"pkgconfig(python3)",
+				"python(setuptools)"
 			],
 			"depends": [
+				"brotli-libs",
 				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
-				"soname(libc.so.6(x86_64))",
-				"soname(libm.so.6(x86_64))"
+				"soname(libbrotlidec.so.1(x86_64))",
+				"soname(libbrotlienc.so.1(x86_64))",
+				"soname(libc.so.6(x86_64))"
 			],
 			"files": [
 				"/usr/bin/brotli",
-				"/usr/lib/libbrotlicommon.so.1",
-				"/usr/lib/libbrotlicommon.so.1.1.0",
-				"/usr/lib/libbrotlidec.so.1",
-				"/usr/lib/libbrotlidec.so.1.1.0",
-				"/usr/lib/libbrotlienc.so.1",
-				"/usr/lib/libbrotlienc.so.1.1.0",
 				"/usr/share/man/man1/brotli.1"
 			],
 			"name": "brotli",
 			"provides": [
-				"binary(brotli)",
-				"soname(libbrotlicommon.so.1(x86_64))",
-				"soname(libbrotlidec.so.1(x86_64))",
-				"soname(libbrotlienc.so.1(x86_64))"
+				"binary(brotli)"
 			]
 		},
 		"brotli-32bit": {
 			"build-depends": [
-				"pkgconfig(python3)"
+				"binary(find)",
+				"binary(python)",
+				"pkgconfig(python3)",
+				"python(setuptools)"
 			],
 			"depends": [
 				"brotli",
@@ -58,7 +57,10 @@
 		},
 		"brotli-32bit-devel": {
 			"build-depends": [
-				"pkgconfig(python3)"
+				"binary(find)",
+				"binary(python)",
+				"pkgconfig(python3)",
+				"python(setuptools)"
 			],
 			"depends": [
 				"brotli-32bit",
@@ -81,7 +83,10 @@
 		},
 		"brotli-devel": {
 			"build-depends": [
-				"pkgconfig(python3)"
+				"binary(find)",
+				"binary(python)",
+				"pkgconfig(python3)",
+				"python(setuptools)"
 			],
 			"depends": [
 				"brotli"
@@ -106,21 +111,52 @@
 				"pkgconfig(libbrotlienc)"
 			]
 		},
-		"python-brotli": {
+		"brotli-libs": {
 			"build-depends": [
-				"pkgconfig(python3)"
+				"binary(find)",
+				"binary(python)",
+				"pkgconfig(python3)",
+				"python(setuptools)"
 			],
 			"depends": [
-				"binary(python3)",
+				"soname(libc.so.6(x86_64))",
+				"soname(libm.so.6(x86_64))"
+			],
+			"files": [
+				"/usr/lib/libbrotlicommon.so.1",
+				"/usr/lib/libbrotlicommon.so.1.1.0",
+				"/usr/lib/libbrotlidec.so.1",
+				"/usr/lib/libbrotlidec.so.1.1.0",
+				"/usr/lib/libbrotlienc.so.1",
+				"/usr/lib/libbrotlienc.so.1.1.0"
+			],
+			"name": "brotli-libs",
+			"provides": [
+				"soname(libbrotlicommon.so.1(x86_64))",
+				"soname(libbrotlidec.so.1(x86_64))",
+				"soname(libbrotlienc.so.1(x86_64))"
+			]
+		},
+		"python-brotli": {
+			"build-depends": [
+				"binary(find)",
+				"binary(python)",
+				"pkgconfig(python3)",
+				"python(setuptools)"
+			],
+			"depends": [
+				"python-libs",
 				"soname(libc.so.6(x86_64))"
 			],
 			"files": [
-				"/usr/lib/python3.11/site-packages/Brotli-1.1.0-py3.11.egg-info/PKG-INFO",
-				"/usr/lib/python3.11/site-packages/Brotli-1.1.0-py3.11.egg-info/SOURCES.txt",
-				"/usr/lib/python3.11/site-packages/Brotli-1.1.0-py3.11.egg-info/dependency_links.txt",
-				"/usr/lib/python3.11/site-packages/Brotli-1.1.0-py3.11.egg-info/top_level.txt",
+				"/usr/lib/python3.11/site-packages/__pycache__/brotli.cpython-311.opt-1.pyc",
 				"/usr/lib/python3.11/site-packages/__pycache__/brotli.cpython-311.pyc",
 				"/usr/lib/python3.11/site-packages/_brotli.cpython-311-x86_64-linux-gnu.so",
+				"/usr/lib/python3.11/site-packages/brotli-1.1.0.dist-info/METADATA",
+				"/usr/lib/python3.11/site-packages/brotli-1.1.0.dist-info/RECORD",
+				"/usr/lib/python3.11/site-packages/brotli-1.1.0.dist-info/WHEEL",
+				"/usr/lib/python3.11/site-packages/brotli-1.1.0.dist-info/licenses/LICENSE",
+				"/usr/lib/python3.11/site-packages/brotli-1.1.0.dist-info/top_level.txt",
 				"/usr/lib/python3.11/site-packages/brotli.py"
 			],
 			"name": "python-brotli",
@@ -132,6 +168,6 @@
 		}
 	},
 	"source-name": "brotli",
-	"source-release": "6",
+	"source-release": "7",
 	"source-version": "1.1.0"
 }

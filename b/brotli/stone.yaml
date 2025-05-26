@@ -5,7 +5,7 @@
 #
 name        : brotli
 version     : '1.1.0'
-release     : 6
+release     : 7
 summary     : Generic-purpose lossless compression algorithm
 license     : MIT
 homepage    : https://github.com/google/brotli
@@ -15,6 +15,10 @@ upstreams   :
     - git|https://github.com/google/brotli: v1.1.0
 builddeps   :
     - pkgconfig(python3)
+    - python(setuptools)
+checkdeps   :
+    - binary(find)
+    - binary(python)
 emul32      : yes
 profiles    :
     - emul32:
@@ -23,27 +27,43 @@ profiles    :
         install: |
             %cmake_install
         check: |
-            ninja -C %(builddir) test
+            %cmake_test
 setup       : |
     %cmake -DBUILD_SHARED_LIBS=True \
-           -DCMAKE_C_FLAGS="$CFLAGS" \
            -DCMAKE_INSTALL_LIBDIR=%(libdir)
 build       : |
     %cmake_build
-    %python_setup
+    %pyproject_build
 install     : |
     %cmake_install
-    %python_install
+    %pyproject_install
+
     %install_file docs/brotli.1 %(installroot)/%(mandir)/man1/brotli.1
 check       : |
-    ninja -C %(builddir) test
-    python3 setup.py test
+    %cmake_test
+
+    python_lib="$(find ./bin -name "lib.linux-*")"
+    PYTHONPATH="$PWD/${python_lib}" python -m unittest discover python "*_test.py"
+tuning      :
+    - lto: full
 packages    :
+    - "%(name)-libs":
+        summary: "Library files for %(name)"
+        description: |
+            Library files for %(name), typically pulled in as a dependency of another package.
+        paths:
+            - /usr/lib/lib*.so.*
+
+    # Moss upgrade issue
+    - "%(name)":
+        rundeps:
+            - "%(name)-libs"
+
     - "python-%(name)":
         summary: "Generic-purpose lossless compression algorithm - Python library"
         description: |
             Generic-purpose lossless compression algorithm - Python Library
         rundeps:
-            - binary(python3)
+            - python-libs
         paths:
             - /usr/lib/python*
