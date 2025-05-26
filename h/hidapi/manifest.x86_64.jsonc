@@ -14,9 +14,9 @@
 			],
 			"files": [
 				"/usr/lib/libhidapi-hidraw.so.0",
-				"/usr/lib/libhidapi-hidraw.so.0.14.0",
+				"/usr/lib/libhidapi-hidraw.so.0.15.0",
 				"/usr/lib/libhidapi-libusb.so.0",
-				"/usr/lib/libhidapi-libusb.so.0.14.0"
+				"/usr/lib/libhidapi-libusb.so.0.15.0"
 			],
 			"name": "hidapi",
 			"provides": [
@@ -53,6 +53,6 @@
 		}
 	},
 	"source-name": "hidapi",
-	"source-release": "3",
-	"source-version": "0.14.0"
+	"source-release": "4",
+	"source-version": "0.15.0"
 }
