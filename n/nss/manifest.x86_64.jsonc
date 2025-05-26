@@ -2,8 +2,23 @@
 {
 	"manifest-version": "0.2",
 	"packages": {
+		"ca-certificates-mozilla": {
+			"build-depends": [
+				"binary(openssl)",
+				"binary(perl)",
+				"binary(python3)",
+				"pkgconfig(nspr)",
+				"pkgconfig(sqlite3)",
+				"pkgconfig(zlib)"
+			],
+			"files": [
+				"/usr/share/ca-certificates/trust-source/mozilla.trust.p11-kit"
+			],
+			"name": "ca-certificates-mozilla"
+		},
 		"nss": {
 			"build-depends": [
+				"binary(openssl)",
 				"binary(perl)",
 				"binary(python3)",
 				"pkgconfig(nspr)",
@@ -55,6 +70,7 @@
 		},
 		"nss-devel": {
 			"build-depends": [
+				"binary(openssl)",
 				"binary(perl)",
 				"binary(python3)",
 				"pkgconfig(nspr)",
@@ -331,6 +347,6 @@
 		}
 	},
 	"source-name": "nss",
-	"source-release": "23",
+	"source-release": "24",
 	"source-version": "3.111"
 }

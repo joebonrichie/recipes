@@ -5,7 +5,7 @@
 #
 name        : nss
 version     : "3.111"
-release     : 23
+release     : 24
 summary     : Network Security Services
 license     : MPL-2.0
 homepage    : https://wiki.mozilla.org/NSS
@@ -14,6 +14,7 @@ description : |
 upstreams   :
     - https://ftp.mozilla.org/pub/security/nss/releases/NSS_3_111_RTM/src/nss-3.111.tar.gz : 5a4d5a44e91ef03cdc0c4897cf616e3c92f4e590ea835d3e0ccad8b005bd73c6
 builddeps   :
+    - binary(openssl)
     - binary(perl)
     - binary(python3)
     - pkgconfig(nspr)
@@ -21,14 +22,14 @@ builddeps   :
     - pkgconfig(zlib)
 rundeps     :
     - ca-certificates
-packages    :
-    - "%(name)":
-        paths:
-            - /usr/lib/*.so
 setup       : |
     %patch %(pkgdir)/nss-3.97-standalone-1.patch
     %patch %(pkgdir)/respect-ldflags.patch
     %patch %(pkgdir)/clang-assembler.patch
+
+    cd nss
+    mkdir -p certs
+    ln -srft certs lib/ckfw/builtins/{certdata.txt,nssckbi.h}
 build       : |
     cd nss
     %make BUILT_OPT=1 \
@@ -42,6 +43,11 @@ build       : |
           AR="${AR} rc \$@" \
           NATIVE_FLAGS="${CFLAGS}" \
           NATIVE_LDFLAGS="${LDFLAGS}"
+
+    pushd certs
+    %(pkgdir)/certdata2pem.py
+    popd
+    %(pkgdir)/bundle.sh
 install     : |
     # NSS
     %install_dir %(installroot)%(libdir)
@@ -54,3 +60,17 @@ install     : |
         %install_file dist/Linux*/bin/${i} %(installroot)%(bindir)/${i}
     done
     %install_file dist/Linux*/lib/pkgconfig/nss.pc %(installroot)%(libdir)/pkgconfig/nss.pc
+
+    # ca-certificates-mozilla
+    %install_file nss/ca-bundle.trust.p11-kit %(installroot)%(datadir)/ca-certificates/trust-source/mozilla.trust.p11-kit
+
+packages    :
+    - "%(name)":
+        paths:
+            - /usr/lib/*.so
+
+    - "ca-certificates-mozilla":
+        summary: Mozilla's set of trusted CA certificates
+        description: Mozilla's set of trusted CA certificates
+        paths:
+            - /usr/share/ca-certificates
