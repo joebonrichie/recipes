@@ -22,9 +22,9 @@
 			"files": [
 				"/usr/bin/parsetrigrams6",
 				"/usr/lib/libKF6SonnetCore.so.6",
-				"/usr/lib/libKF6SonnetCore.so.6.12.0",
+				"/usr/lib/libKF6SonnetCore.so.6.14.0",
 				"/usr/lib/libKF6SonnetUi.so.6",
-				"/usr/lib/libKF6SonnetUi.so.6.12.0",
+				"/usr/lib/libKF6SonnetUi.so.6.14.0",
 				"/usr/lib/qt6/plugins/kf6/sonnet/sonnet_hunspell.so",
 				"/usr/lib/qt6/qml/org/kde/sonnet/kde-qmlmodule.version",
 				"/usr/lib/qt6/qml/org/kde/sonnet/libsonnetquickplugin.so",
@@ -205,6 +205,6 @@
 		}
 	},
 	"source-name": "kf6-sonnet",
-	"source-release": "2",
-	"source-version": "6.12.0"
+	"source-release": "3",
+	"source-version": "6.14.0"
 }
