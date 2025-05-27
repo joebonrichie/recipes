@@ -5,7 +5,7 @@
 #
 name        : golang
 version     : 1.24.3
-release     : 16
+release     : 17
 homepage    : https://go.dev
 upstreams   :
     - https://go.dev/dl/go1.24.3.linux-amd64.tar.gz : 3333f6ea53afa971e9078895eaa4ac7204a8c6b5c68c10e6bc9a33e8e391bdd8
@@ -19,6 +19,7 @@ builddeps   :
     - binary(go)
 rundeps     :
     - binary(ld.so) # Basically needs glibc for the internal linker implementation
+    - ca-certificates # Certificate validation during module downloading
 environment : |
     # This can mess up the automatic goroot detection if set. Explicitly unset it just in case it has made it's way into the buildenv
     unset GOROOT
@@ -33,7 +34,6 @@ environment : |
     # Note, this is also propagated into the default build config for the distribution. ALL linux AMD64 binaries built with this golang distribution will default to v2
     export GOAMD64=v2
 setup       : |
-    %patch %(pkgdir)/stateless/x509-certificate-path.patch
     %patch %(pkgdir)/0001-downstream-Default-to-clang-linker.patch
     %patch %(pkgdir)/go.env-toolchain-local.patch
 build       : |
