@@ -22,11 +22,7 @@
 				"/usr/bin/foomatic-ppdfile",
 				"/usr/bin/foomatic-printjob",
 				"/usr/bin/foomatic-searchprinter",
-				"/usr/lib/perl5/site_perl/5.38/Foomatic/DB.pm",
-				"/usr/lib/perl5/site_perl/5.38/Foomatic/Defaults.pm",
-				"/usr/lib/perl5/site_perl/5.38/Foomatic/PPD.pm",
-				"/usr/lib/perl5/site_perl/5.38/Foomatic/UIElem.pm",
-				"/usr/lib/perl5/site_perl/5.38/x86_64-linux-thread-multi/auto/Foomatic/.packlist",
+				"/usr/lib/perl5/vendor_perl/auto/Foomatic/.packlist",
 				"/usr/sbin/foomatic-addpjloptions",
 				"/usr/sbin/foomatic-cleanupdrivers",
 				"/usr/sbin/foomatic-extract-text",
@@ -50,7 +46,11 @@
 				"/usr/share/man/man8/foomatic-addpjloptions.8",
 				"/usr/share/man/man8/foomatic-getpjloptions.8",
 				"/usr/share/man/man8/foomatic-kitload.8",
-				"/usr/share/man/man8/foomatic-preferred-driver.8"
+				"/usr/share/man/man8/foomatic-preferred-driver.8",
+				"/usr/share/perl5/vendor_perl/Foomatic/DB.pm",
+				"/usr/share/perl5/vendor_perl/Foomatic/Defaults.pm",
+				"/usr/share/perl5/vendor_perl/Foomatic/PPD.pm",
+				"/usr/share/perl5/vendor_perl/Foomatic/UIElem.pm"
 			],
 			"name": "foomatic-db-engine",
 			"provides": [
@@ -78,6 +78,6 @@
 		}
 	},
 	"source-name": "foomatic-db-engine",
-	"source-release": "3",
+	"source-release": "4",
 	"source-version": "4.0.13"
 }
