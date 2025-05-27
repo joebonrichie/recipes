@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : cython
-version     : 3.0.11
-release     : 1
+version     : 3.1.1
+release     : 2
 homepage    : https://cython.org/
 upstreams   :
-    - https://pypi.debian.net/Cython/cython-3.0.11.tar.gz: 7146dd2af8682b4ca61331851e6aebce9fe5158e75300343f80c07ca80b1faff
+    - https://pypi.debian.net/Cython/cython-3.1.1.tar.gz: 505ccd413669d5132a53834d792c707974248088c4f60c497deb1b416e366397
 summary     : C-Extensions for Python
 description : |
     C-Extensions for Python
