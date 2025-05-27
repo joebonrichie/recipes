@@ -5,7 +5,7 @@
 #
 name        : linux-tools
 version     : '6.14.8'
-release     : 14
+release     : 15
 summary     : Tools included with the Linux source code
 license     : GPL-2.0-only
 homepage    : https://perf.wiki.kernel.org/
@@ -29,6 +29,7 @@ builddeps   :
     - pkgconfig(python3)
     - pkgconfig(slang)
     - linux-headers
+    - perl-devel
 environment : |
     # Maximize ccache efficiency
     export KBUILD_BUILD_USER=root

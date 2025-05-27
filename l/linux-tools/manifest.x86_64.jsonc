@@ -11,6 +11,7 @@
 				"binary(perl)",
 				"binary(which)",
 				"linux-headers",
+				"perl-devel",
 				"pkgconfig(libbpf)",
 				"pkgconfig(libcap)",
 				"pkgconfig(libcrypto)",
@@ -69,6 +70,7 @@
 				"binary(perl)",
 				"binary(which)",
 				"linux-headers",
+				"perl-devel",
 				"pkgconfig(libbpf)",
 				"pkgconfig(libcap)",
 				"pkgconfig(libcrypto)",
@@ -98,6 +100,7 @@
 				"binary(perl)",
 				"binary(which)",
 				"linux-headers",
+				"perl-devel",
 				"pkgconfig(libbpf)",
 				"pkgconfig(libcap)",
 				"pkgconfig(libcrypto)",
@@ -144,6 +147,7 @@
 				"binary(perl)",
 				"binary(which)",
 				"linux-headers",
+				"perl-devel",
 				"pkgconfig(libbpf)",
 				"pkgconfig(libcap)",
 				"pkgconfig(libcrypto)",
@@ -174,6 +178,7 @@
 				"binary(perl)",
 				"binary(which)",
 				"linux-headers",
+				"perl-devel",
 				"pkgconfig(libbpf)",
 				"pkgconfig(libcap)",
 				"pkgconfig(libcrypto)",
@@ -195,12 +200,12 @@
 				"soname(libelf.so.1(x86_64))",
 				"soname(liblzma.so.5(x86_64))",
 				"soname(libm.so.6(x86_64))",
+				"soname(libperl.so.5.40(x86_64))",
 				"soname(libpython3.11.so.1.0(x86_64))",
 				"soname(libslang.so.2(x86_64))",
 				"soname(libtraceevent.so.1(x86_64))",
 				"soname(libz.so.1(x86_64))",
-				"soname(libzstd.so.1(x86_64))",
-				"soname(perl5/5.38/x86_64-linux-thread-multi/CORE/libperl.so(x86_64))"
+				"soname(libzstd.so.1(x86_64))"
 			],
 			"files": [
 				"/usr/bin/perf",
@@ -454,6 +459,7 @@
 				"binary(perl)",
 				"binary(which)",
 				"linux-headers",
+				"perl-devel",
 				"pkgconfig(libbpf)",
 				"pkgconfig(libcap)",
 				"pkgconfig(libcrypto)",
@@ -486,6 +492,7 @@
 				"binary(perl)",
 				"binary(which)",
 				"linux-headers",
+				"perl-devel",
 				"pkgconfig(libbpf)",
 				"pkgconfig(libcap)",
 				"pkgconfig(libcrypto)",
@@ -510,6 +517,6 @@
 		}
 	},
 	"source-name": "linux-tools",
-	"source-release": "14",
+	"source-release": "15",
 	"source-version": "6.14.8"
 }
