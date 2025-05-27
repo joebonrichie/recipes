@@ -4,12 +4,12 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : qt5-declarative
-version     : 5.15.16+kde.e2b38659
-release     : 5
+version     : 5.15.17+kde.11ea94fc
+release     : 6
 homepage    : https://www.qt.io
 upstreams   :
     - git|https://invent.kde.org/qt/qt/qtdeclarative.git:
-        ref: e2b38659cb79104f157e1d0099c01e545d04d0db
+        ref: 11ea94fc8ea95d0ba95745a021a1b139283b8b36
         # Relative submodules
         staging: no
 summary     : Qt 5 Declarative Library
