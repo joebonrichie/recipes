@@ -5,7 +5,7 @@
 #
 name        : maturin
 version     : 1.8.6
-release     : 2
+release     : 3
 homepage    : https://www.maturin.rs
 upstreams   :
     - https://pypi.debian.net/maturin/maturin-1.8.6.tar.gz : 0e0dc2e0bfaa2e1bd238e0236cf8a2b7e2250ccaa29c1aa8d0e61fa664b0289d
@@ -24,6 +24,7 @@ builddeps   :
     - python(setuptools-rust)
 setup       : |
     %patch %(pkgdir)/revert-setuptools.patch
+    %patch %(pkgdir)/0001-Revert-Add-compression-level-option-to-build-command.patch
 
     %cargo_fetch
 build       : |
