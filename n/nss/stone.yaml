@@ -5,7 +5,7 @@
 #
 name        : nss
 version     : "3.111"
-release     : 25
+release     : 26
 summary     : Network Security Services
 license     : MPL-2.0
 homepage    : https://wiki.mozilla.org/NSS
@@ -20,8 +20,6 @@ builddeps   :
     - pkgconfig(nspr)
     - pkgconfig(sqlite3)
     - pkgconfig(zlib)
-rundeps     :
-    - ca-certificates
 setup       : |
     %patch %(pkgdir)/nss-3.97-standalone-1.patch
     %patch %(pkgdir)/respect-ldflags.patch
@@ -44,6 +42,7 @@ build       : |
           NATIVE_FLAGS="${CFLAGS}" \
           NATIVE_LDFLAGS="${LDFLAGS}"
 
+    # Build ca-certificates-mozilla
     pushd certs
     %(pkgdir)/certdata2pem.py
     popd
@@ -63,7 +62,6 @@ install     : |
 
     # ca-certificates-mozilla
     %install_file nss/ca-bundle.trust.p11-kit %(installroot)%(datadir)/ca-certificates/trust-source/mozilla.trust.p11-kit
-
 packages    :
     - "%(name)":
         paths:
