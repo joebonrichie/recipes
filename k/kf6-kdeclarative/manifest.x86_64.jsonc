@@ -28,9 +28,9 @@
 			],
 			"files": [
 				"/usr/lib/libKF6CalendarEvents.so.6",
-				"/usr/lib/libKF6CalendarEvents.so.6.12.0",
+				"/usr/lib/libKF6CalendarEvents.so.6.14.0",
 				"/usr/lib/libkquickcontrolsprivate.so.0",
-				"/usr/lib/libkquickcontrolsprivate.so.6.12.0",
+				"/usr/lib/libkquickcontrolsprivate.so.6.14.0",
 				"/usr/lib/qt6/qml/org/kde/draganddrop/draganddropplugin.qmltypes",
 				"/usr/lib/qt6/qml/org/kde/draganddrop/kde-qmlmodule.version",
 				"/usr/lib/qt6/qml/org/kde/draganddrop/libdraganddropplugin.so",
@@ -207,6 +207,6 @@
 		}
 	},
 	"source-name": "kf6-kdeclarative",
-	"source-release": "3",
-	"source-version": "6.12.0"
+	"source-release": "4",
+	"source-version": "6.14.0"
 }
