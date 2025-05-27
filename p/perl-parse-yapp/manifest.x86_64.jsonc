@@ -5,15 +5,15 @@
 		"perl-parse-yapp": {
 			"files": [
 				"/usr/bin/yapp",
-				"/usr/lib/perl5/5.40/vendor_perl/Parse/Yapp.pm",
-				"/usr/lib/perl5/5.40/vendor_perl/Parse/Yapp/Driver.pm",
-				"/usr/lib/perl5/5.40/vendor_perl/Parse/Yapp/Grammar.pm",
-				"/usr/lib/perl5/5.40/vendor_perl/Parse/Yapp/Lalr.pm",
-				"/usr/lib/perl5/5.40/vendor_perl/Parse/Yapp/Options.pm",
-				"/usr/lib/perl5/5.40/vendor_perl/Parse/Yapp/Output.pm",
-				"/usr/lib/perl5/5.40/vendor_perl/Parse/Yapp/Parse.pm",
 				"/usr/share/man/man1/yapp.1",
-				"/usr/share/man/man3/Parse::Yapp.3"
+				"/usr/share/man/man3/Parse::Yapp.3",
+				"/usr/share/perl5/vendor_perl/Parse/Yapp.pm",
+				"/usr/share/perl5/vendor_perl/Parse/Yapp/Driver.pm",
+				"/usr/share/perl5/vendor_perl/Parse/Yapp/Grammar.pm",
+				"/usr/share/perl5/vendor_perl/Parse/Yapp/Lalr.pm",
+				"/usr/share/perl5/vendor_perl/Parse/Yapp/Options.pm",
+				"/usr/share/perl5/vendor_perl/Parse/Yapp/Output.pm",
+				"/usr/share/perl5/vendor_perl/Parse/Yapp/Parse.pm"
 			],
 			"name": "perl-parse-yapp",
 			"provides": [
@@ -22,6 +22,6 @@
 		}
 	},
 	"source-name": "perl-parse-yapp",
-	"source-release": "4",
+	"source-release": "5",
 	"source-version": "1.21"
 }
