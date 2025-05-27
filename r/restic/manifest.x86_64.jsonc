@@ -4,8 +4,7 @@
 	"packages": {
 		"restic": {
 			"build-depends": [
-				"binary(go)",
-				"nss"
+				"binary(go)"
 			],
 			"files": [
 				"/usr/bin/restic",
@@ -56,6 +55,6 @@
 		}
 	},
 	"source-name": "restic",
-	"source-release": "6",
+	"source-release": "7",
 	"source-version": "0.17.3"
 }

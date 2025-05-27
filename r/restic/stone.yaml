@@ -5,7 +5,7 @@
 #
 name        : restic
 version     : '0.17.3'
-release     : 6
+release     : 7
 homepage    : https://restic.net
 upstreams   :
     - https://github.com/restic/restic/archive/refs/tags/v0.17.3.tar.gz : bf0dd73edfae531c24070e2e7833938613f7b179ed165e6b681098edfdf286c8
@@ -17,10 +17,7 @@ license     :
 networking  : yes
 builddeps   :
     - binary(go)
-    # [LATER] Remove when https://github.com/serpent-os/boulder/issues/28 is closed.
-    - nss
 build       : |
-    # This can probably be removed after golang reboostrap.
     export GOMODCACHE="%(workdir)/.cache"
 
     %make GO_BUILD_FLAGS="-trimpath -mod=readonly -modcacherw"
