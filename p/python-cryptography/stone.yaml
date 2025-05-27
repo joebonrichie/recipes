@@ -1,0 +1,34 @@
+#
+# SPDX-FileCopyrightText: © 2020-2024 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : python-cryptography
+version     : 45.0.3
+release     : 1
+homepage    : https://cryptography.io
+upstreams   :
+    - https://pypi.debian.net/cryptography/cryptography-45.0.3.tar.gz : ec21313dd335c51d7877baf2972569f40a4291b76a0ce51391523ae358d05899
+summary     : A package designed to expose cryptographic recipes and primitives to Python developers
+description : |
+    A package designed to expose cryptographic recipes and primitives to Python developers
+license     : Apache-2.0 OR BSD-3-Clause
+networking  : true
+builddeps   :
+    - pkgconfig(openssl)
+    - pkgconfig(python3)
+    - python(cffi)
+    - python(maturin)
+    - python(setuptools)
+rundeps     :
+    - binary(python3)
+# checkdeps   :
+#     - python(pytest)
+setup       : |
+    %cargo_fetch
+build       : |
+    %pyproject_build --skip-dependency-check
+install     : |
+    %pyproject_install
+# check       : |
+# TODO: Tests!
