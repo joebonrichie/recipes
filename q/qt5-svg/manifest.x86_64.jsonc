@@ -18,7 +18,7 @@
 			"files": [
 				"/usr/lib/libQt5Svg.so.5",
 				"/usr/lib/libQt5Svg.so.5.15",
-				"/usr/lib/libQt5Svg.so.5.15.16",
+				"/usr/lib/libQt5Svg.so.5.15.17",
 				"/usr/lib/qt5/plugins/iconengines/libqsvgicon.so",
 				"/usr/lib/qt5/plugins/imageformats/libqsvg.so"
 			],
@@ -211,14 +211,14 @@
 				"qt5-svg"
 			],
 			"files": [
-				"/usr/include/QtSvg/5.15.16/QtSvg/private/qsvgfont_p.h",
-				"/usr/include/QtSvg/5.15.16/QtSvg/private/qsvggraphics_p.h",
-				"/usr/include/QtSvg/5.15.16/QtSvg/private/qsvghandler_p.h",
-				"/usr/include/QtSvg/5.15.16/QtSvg/private/qsvgnode_p.h",
-				"/usr/include/QtSvg/5.15.16/QtSvg/private/qsvgstructure_p.h",
-				"/usr/include/QtSvg/5.15.16/QtSvg/private/qsvgstyle_p.h",
-				"/usr/include/QtSvg/5.15.16/QtSvg/private/qsvgtinydocument_p.h",
-				"/usr/include/QtSvg/5.15.16/QtSvg/private/qtsvgglobal_p.h",
+				"/usr/include/QtSvg/5.15.17/QtSvg/private/qsvgfont_p.h",
+				"/usr/include/QtSvg/5.15.17/QtSvg/private/qsvggraphics_p.h",
+				"/usr/include/QtSvg/5.15.17/QtSvg/private/qsvghandler_p.h",
+				"/usr/include/QtSvg/5.15.17/QtSvg/private/qsvgnode_p.h",
+				"/usr/include/QtSvg/5.15.17/QtSvg/private/qsvgstructure_p.h",
+				"/usr/include/QtSvg/5.15.17/QtSvg/private/qsvgstyle_p.h",
+				"/usr/include/QtSvg/5.15.17/QtSvg/private/qsvgtinydocument_p.h",
+				"/usr/include/QtSvg/5.15.17/QtSvg/private/qtsvgglobal_p.h",
 				"/usr/include/QtSvg/QGraphicsSvgItem",
 				"/usr/include/QtSvg/QSvgGenerator",
 				"/usr/include/QtSvg/QSvgRenderer",
@@ -250,6 +250,6 @@
 		}
 	},
 	"source-name": "qt5-svg",
-	"source-release": "4",
-	"source-version": "5.15.16+kde.9c3d4062"
+	"source-release": "5",
+	"source-version": "5.15.17+kde.9c149213"
 }
