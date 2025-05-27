@@ -5,7 +5,7 @@
 #
 name        : ca-certificates
 version     : 20250516 # TODO: Figure out what version we should use
-release     : 12
+release     : 13
 homepage    : https://fedoraproject.org/wiki/CA-Certificates
 # No upstreams!
 summary     : Certificate Authority Files
@@ -21,6 +21,12 @@ install     : |
 
     %install_file %(pkgdir)/README.* -t %(installroot)%(datadir)/doc/ca-certificates
     %install_bin %(pkgdir)/update-ca-trust
+
+    # The following lines are a workaround to /etc/ssl/certs being a symlink in the previous ca-certificates mechanism
+    # These lines can be removed ~6 months after 2025-05-27 to ensure that users can upgrade successfully
+    %tmpfiles "# Ensure that this is replaced by a directory (previous versions of AerynOS used a symlink)"
+    %tmpfiles "d= ${ssldir}/certs                     0755 root root -"
+    %tmpfiles ""
 
     %tmpfiles "# Trust source directories"
     %tmpfiles "L+ ${etcdir}/README                    - - - - ../../usr/share/doc/ca-certificates/README.etc"
