@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : nushell
-version     : 0.101.0
-release     : 2
+version     : 0.104.1
+release     : 3
 homepage    : https://www.nushell.sh/
 upstreams   :
-    - https://github.com/nushell/nushell/archive/refs/tags/0.101.0.tar.gz : 43e4a123e86f0fb4754e40d0e2962b69a04f8c2d58470f47cb9be81daabab347
+    - https://github.com/nushell/nushell/archive/refs/tags/0.104.1.tar.gz : 3dafca8bf892f5a2afaac1122a88a7eb7f22a0b62ef901f550173a11d5cbdf6e
 summary     : A new type of shell
 description : |
     Nu is a new type of shell, that combines the traditional Unix tools with modern languages.
@@ -16,10 +16,31 @@ description : |
 license     : MIT
 networking  : true
 builddeps   :
-    - pkgconfig(libssl)
+    - binary(find)
+    - pkgconfig(libcurl)
+    - pkgconfig(libgit2)
+    - pkgconfig(libssh2)
+    - pkgconfig(libzstd)
+    - pkgconfig(openssl)
+    - pkgconfig(sqlite3)
+environment : |
+    # Force use of system libs
+    export LIBSSH2_SYS_USE_PKG_CONFIG=1
+    export LIBSQLITE3_SYS_USE_PKG_CONFIG=1
+    export ZSTD_SYS_USE_PKG_CONFIG=1
 setup       : |
     %cargo_fetch
 build       : |
-    %cargo_build
+    %cargo_build \
+            --workspace \
+            --features=stable
 install     : |
     %cargo_install nu
+
+    find %(cargo_target_dir) -name "nu_plugin*" -executable -maxdepth 1 \
+        -exec install -vDm755 -t "%(installroot)%(bindir)" "{}" +
+
+    # Example plugins, not needed
+    rm -rfv %(installroot)%(bindir)/nu_plugin_example \
+            %(installroot)%(bindir)/nu_plugin_custom_values \
+            %(installroot)%(bindir)/nu_plugin_stress_internals
