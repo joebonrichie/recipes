@@ -12,7 +12,6 @@
 				"soname(libssl.so.3(x86_64))"
 			],
 			"files": [
-				"/usr/bin/event_rpcgen.py",
 				"/usr/lib/libevent-2.1.so.7",
 				"/usr/lib/libevent-2.1.so.7.0.1",
 				"/usr/lib/libevent_core-2.1.so.7",
@@ -26,7 +25,6 @@
 			],
 			"name": "libevent",
 			"provides": [
-				"binary(event_rpcgen.py)",
 				"soname(libevent-2.1.so.7(x86_64))",
 				"soname(libevent_core-2.1.so.7(x86_64))",
 				"soname(libevent_extra-2.1.so.7(x86_64))",
@@ -42,6 +40,7 @@
 				"libevent"
 			],
 			"files": [
+				"/usr/bin/event_rpcgen.py",
 				"/usr/include/evdns.h",
 				"/usr/include/event.h",
 				"/usr/include/event2/buffer.h",
@@ -95,6 +94,7 @@
 			],
 			"name": "libevent-devel",
 			"provides": [
+				"binary(event_rpcgen.py)",
 				"cmake(Libevent)",
 				"pkgconfig(libevent)",
 				"pkgconfig(libevent_core)",
@@ -105,6 +105,6 @@
 		}
 	},
 	"source-name": "libevent",
-	"source-release": "2",
+	"source-release": "3",
 	"source-version": "2.1.12"
 }
