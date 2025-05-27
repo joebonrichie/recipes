@@ -4,32 +4,16 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : ca-certificates
-version     : 20250516
-release     : 11
+version     : 20250516 # TODO: Figure out what version we should use
+release     : 12
 homepage    : https://fedoraproject.org/wiki/CA-Certificates
-upstreams   :
-    # https://hg.mozilla.org/releases/mozilla-release/file/default/security/nss/lib/ckfw/builtins/certdata.txt <-- for date
-    - https://hg.mozilla.org/releases/mozilla-release/raw-file/default/security/nss/lib/ckfw/builtins/certdata.txt :
-        hash : 8944ec6b572b577daee4fc681a425881f841ec2660e4cb5f0eee727f84620697
-        unpack : no
-    - https://raw.githubusercontent.com/agl/extract-nss-root-certs/492d8c9/convert_mozilla_certdata.go :
-        hash : 30afd0ca1df9b7788b830485645c4a2f72b07c1c9eb5c66941ae3d0b87e9e623
-        unpack : no
+# No upstreams!
 summary     : Certificate Authority Files
 description : |
     The Public Key Infrastructure is used for many security issues in a Linux system. In order for a certificate to be trusted, it must be signed by a trusted agent called a Certificate Authority (CA).
-license     :
-    - Apache-2.0
-    - MPL-2.0
-    # TODO: Update the licenses for this
-builddeps  :
-    - binary(go)
+license     : GPL-2.0-or-later
+# builddeps  :
     # TODO: Need a2x for man page
-setup       : |
-    %install_file %(sourcedir)/certdata.txt .
-    %install_file %(sourcedir)/convert_mozilla_certdata.go .
-build       : |
-    go run convert_mozilla_certdata.go --to-files
 install     : |
     etcdir="/etc/%(name)"
     ssldir="/etc/ssl"
@@ -61,11 +45,7 @@ install     : |
 
     # Ca-certificates
     %install_dir %(installroot)%(docdir)/%(name)
-    echo "This file will disappear when virtual packages are introduced" > %(installroot)%(docdir)/%(name)/README
-
-    # TODO: Delete all this
-    %install_file -t %(installroot)/%(vendordir)/etc/ssl/certs/ *.pem
-    cat *.pem > %(installroot)/%(vendordir)/etc/ssl/certs/ca-certificates.crt
+    echo "This file will disappear when virtual packages are introduced" > %(installroot)%(docdir)/%(name)/VIRTUAL
 packages    :
     - "%(name)-utils":
         summary: Common CA certificates (utilities)
@@ -85,3 +65,5 @@ packages    :
     - "%(name)":
         rundeps:
             - ca-certificates-mozilla
+        paths:
+            - /usr/share/doc/ca-certificates/VIRTUAL
