@@ -38,11 +38,11 @@
 				"/usr/bin/kcmshell6",
 				"/usr/lib/kf6/kcmdesktopfilegenerator",
 				"/usr/lib/libKF6KCMUtils.so.6",
-				"/usr/lib/libKF6KCMUtils.so.6.12.0",
+				"/usr/lib/libKF6KCMUtils.so.6.14.0",
 				"/usr/lib/libKF6KCMUtilsCore.so.6",
-				"/usr/lib/libKF6KCMUtilsCore.so.6.12.0",
+				"/usr/lib/libKF6KCMUtilsCore.so.6.14.0",
 				"/usr/lib/libKF6KCMUtilsQuick.so.6",
-				"/usr/lib/libKF6KCMUtilsQuick.so.6.12.0",
+				"/usr/lib/libKF6KCMUtilsQuick.so.6.14.0",
 				"/usr/lib/qt6/qml/org/kde/kcmutils/AbstractKCM.qml",
 				"/usr/lib/qt6/qml/org/kde/kcmutils/AbstractKCM.qmlc",
 				"/usr/lib/qt6/qml/org/kde/kcmutils/ContextualHelpButton.qml",
@@ -168,6 +168,7 @@
 				"/usr/share/locale/ml/LC_MESSAGES/kcmutils6.mo",
 				"/usr/share/locale/mr/LC_MESSAGES/kcmutils6.mo",
 				"/usr/share/locale/ms/LC_MESSAGES/kcmutils6.mo",
+				"/usr/share/locale/nb/LC_MESSAGES/kcmshell6.mo",
 				"/usr/share/locale/nb/LC_MESSAGES/kcmutils6.mo",
 				"/usr/share/locale/nds/LC_MESSAGES/kcmutils6.mo",
 				"/usr/share/locale/ne/LC_MESSAGES/kcmutils6.mo",
@@ -297,6 +298,6 @@
 		}
 	},
 	"source-name": "kf6-kcmutils",
-	"source-release": "2",
-	"source-version": "6.12.0"
+	"source-release": "3",
+	"source-version": "6.14.0"
 }

@@ -15,7 +15,7 @@
 			],
 			"files": [
 				"/usr/lib/libKF6ItemViews.so.6",
-				"/usr/lib/libKF6ItemViews.so.6.12.0",
+				"/usr/lib/libKF6ItemViews.so.6.14.0",
 				"/usr/share/locale/af/LC_MESSAGES/kitemviews6_qt.qm",
 				"/usr/share/locale/ar/LC_MESSAGES/kitemviews6_qt.qm",
 				"/usr/share/locale/as/LC_MESSAGES/kitemviews6_qt.qm",
@@ -174,6 +174,6 @@
 		}
 	},
 	"source-name": "kf6-kitemviews",
-	"source-release": "3",
-	"source-version": "6.12.0"
+	"source-release": "4",
+	"source-version": "6.14.0"
 }

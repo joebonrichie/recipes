@@ -8,6 +8,7 @@
 				"cmake(PlasmaWaylandProtocols)",
 				"cmake(Qt6Qml)",
 				"cmake(Qt6WaylandClient)",
+				"pkgconfig(wayland-protocols)",
 				"pkgconfig(x11)"
 			],
 			"depends": [
@@ -26,7 +27,7 @@
 			"files": [
 				"/usr/bin/kde-geo-uri-handler",
 				"/usr/lib/libKF6GuiAddons.so.6",
-				"/usr/lib/libKF6GuiAddons.so.6.12.0",
+				"/usr/lib/libKF6GuiAddons.so.6.14.0",
 				"/usr/lib/qt6/qml/org/kde/guiaddons/kde-qmlmodule.version",
 				"/usr/lib/qt6/qml/org/kde/guiaddons/kguiaddonsqml.qmltypes",
 				"/usr/lib/qt6/qml/org/kde/guiaddons/libkguiaddonsqml.so",
@@ -49,6 +50,7 @@
 				"cmake(PlasmaWaylandProtocols)",
 				"cmake(Qt6Qml)",
 				"cmake(Qt6WaylandClient)",
+				"pkgconfig(wayland-protocols)",
 				"pkgconfig(x11)"
 			],
 			"depends": [
@@ -110,6 +112,6 @@
 		}
 	},
 	"source-name": "kf6-kguiaddons",
-	"source-release": "3",
-	"source-version": "6.12.0"
+	"source-release": "4",
+	"source-version": "6.14.0"
 }
