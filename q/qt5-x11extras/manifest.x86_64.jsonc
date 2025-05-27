@@ -14,7 +14,7 @@
 			"files": [
 				"/usr/lib/libQt5X11Extras.so.5",
 				"/usr/lib/libQt5X11Extras.so.5.15",
-				"/usr/lib/libQt5X11Extras.so.5.15.16"
+				"/usr/lib/libQt5X11Extras.so.5.15.17"
 			],
 			"name": "qt5-x11extras",
 			"provides": [
@@ -54,6 +54,6 @@
 		}
 	},
 	"source-name": "qt5-x11extras",
-	"source-release": "2",
-	"source-version": "5.15.16+kde.0c61151b"
+	"source-release": "3",
+	"source-version": "5.15.16+kde.e6e7633b"
 }

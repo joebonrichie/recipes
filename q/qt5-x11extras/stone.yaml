@@ -4,11 +4,12 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : qt5-x11extras
-version     : 5.15.16+kde.0c61151b
-release     : 2
+version     : 5.15.16+kde.e6e7633b
+release     : 3
 homepage    : https://www.qt.io
 upstreams   :
-    - git|https://invent.kde.org/qt/qt/qtx11extras.git: 0c61151bf14e5b4c74187608b6b47b9d0d6ca745
+    - git|https://invent.kde.org/qt/qt/qtx11extras.git:
+        ref: e6e7633bbd0efcc56035fef77f3f45efccf03a64
 summary    : Qt5 X11 Extra Components
 description: |
     Qt X11 Extras enables the Qt programmer to write applications for the Linux/X11 platform. Applications developed with Qt can also be deployed across several other desktop and embedded operating systems without having to rewrite the source code.
