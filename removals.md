@@ -39,3 +39,6 @@
 
 ### Now part of linux-tools
 - perf-dbginfo
+
+### man3 is used by perl
+- perl-parse-yapp-devel
