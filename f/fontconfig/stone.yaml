@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : fontconfig
-version     : '2.15.0'
-release     : 10
+version     : '2.16.2'
+release     : 11
 homepage    : https://www.freedesktop.org/wiki/Software/fontconfig
 upstreams   :
-    - https://www.freedesktop.org/software/fontconfig/release/fontconfig-2.15.0.tar.xz : 63a0658d0e06e0fa886106452b58ef04f21f58202ea02a94c39de0d3335d7c0e
+    - https://gitlab.freedesktop.org/api/v4/projects/890/packages/generic/fontconfig/2.16.2/fontconfig-2.16.2.tar.xz : 165b8fd2a119864c87464b233986c4a1bc09efb09c65de1ca40cc1e85ffb77e2
 summary     : Library for configuring and customizing font access
 description : |
     Fontconfig can:
@@ -21,13 +21,13 @@ description : |
 license     : MIT
 builddeps   :
     - binary(gperf)
-    - pkgconfig(expat)
-    - pkgconfig(freetype2)
     - pkgconfig32(expat)
     - pkgconfig32(freetype2)
 emul32      : yes
 setup       : |
     %patch %(pkgdir)/stateless/Support-user-config.patch
+    %patch %(pkgdir)/383.patch
+
     %meson \
         --sysconfdir=%(vendordir)%(sysconfdir) \
         -Ddefault-hinting=slight \

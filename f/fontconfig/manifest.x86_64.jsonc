@@ -5,8 +5,6 @@
 		"fontconfig": {
 			"build-depends": [
 				"binary(gperf)",
-				"pkgconfig(expat)",
-				"pkgconfig(freetype2)",
 				"pkgconfig32(expat)",
 				"pkgconfig32(freetype2)"
 			],
@@ -27,7 +25,7 @@
 				"/usr/bin/fc-scan",
 				"/usr/bin/fc-validate",
 				"/usr/lib/libfontconfig.so.1",
-				"/usr/lib/libfontconfig.so.1.14.0",
+				"/usr/lib/libfontconfig.so.1.15.0",
 				"/usr/lib/tmpfiles.d/fontconfig.conf",
 				"/usr/share/fontconfig/conf.avail/05-reset-dirs-sample.conf",
 				"/usr/share/fontconfig/conf.avail/09-autohint-if-no-hinting.conf",
@@ -66,6 +64,8 @@
 				"/usr/share/fontconfig/conf.avail/65-khmer.conf",
 				"/usr/share/fontconfig/conf.avail/65-nonlatin.conf",
 				"/usr/share/fontconfig/conf.avail/69-unifont.conf",
+				"/usr/share/fontconfig/conf.avail/70-no-bitmaps-and-emoji.conf",
+				"/usr/share/fontconfig/conf.avail/70-no-bitmaps-except-emoji.conf",
 				"/usr/share/fontconfig/conf.avail/70-no-bitmaps.conf",
 				"/usr/share/fontconfig/conf.avail/70-yes-bitmaps.conf",
 				"/usr/share/fontconfig/conf.avail/80-delicious.conf",
@@ -116,20 +116,18 @@
 		"fontconfig-32bit": {
 			"build-depends": [
 				"binary(gperf)",
-				"pkgconfig(expat)",
-				"pkgconfig(freetype2)",
 				"pkgconfig32(expat)",
 				"pkgconfig32(freetype2)"
 			],
 			"depends": [
 				"fontconfig",
-				"soname(libc.so.6(x86))",
-				"soname(libexpat.so.1(x86))",
-				"soname(libfreetype.so.6(x86))"
+				"soname(libc.so.6(386))",
+				"soname(libexpat.so.1(386))",
+				"soname(libfreetype.so.6(386))"
 			],
 			"files": [
 				"/usr/lib32/libfontconfig.so.1",
-				"/usr/lib32/libfontconfig.so.1.14.0"
+				"/usr/lib32/libfontconfig.so.1.15.0"
 			],
 			"name": "fontconfig-32bit",
 			"provides": [
@@ -140,8 +138,6 @@
 		"fontconfig-32bit-devel": {
 			"build-depends": [
 				"binary(gperf)",
-				"pkgconfig(expat)",
-				"pkgconfig(freetype2)",
 				"pkgconfig32(expat)",
 				"pkgconfig32(freetype2)"
 			],
@@ -163,8 +159,6 @@
 		"fontconfig-devel": {
 			"build-depends": [
 				"binary(gperf)",
-				"pkgconfig(expat)",
-				"pkgconfig(freetype2)",
 				"pkgconfig32(expat)",
 				"pkgconfig32(freetype2)"
 			],
@@ -187,6 +181,6 @@
 		}
 	},
 	"source-name": "fontconfig",
-	"source-release": "10",
-	"source-version": "2.15.0"
+	"source-release": "11",
+	"source-version": "2.16.2"
 }
