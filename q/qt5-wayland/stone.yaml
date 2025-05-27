@@ -4,11 +4,12 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : qt5-wayland
-version     : 5.15.16+kde.9340737a
-release     : 3
+version     : 5.15.17+kde.c1ac089f
+release     : 4
 homepage    : https://www.qt.io
 upstreams   :
-    - git|https://invent.kde.org/qt/qt/qtwayland.git: 9340737a208b5dd4eda98eb74808951ddaef66c5
+    - git|https://invent.kde.org/qt/qt/qtwayland.git:
+        ref: c1ac089f3f37ab172d8010b0fabf4007d62d1812
 summary    : Qt 5 Wayland Library
 description: |
     QtWayland is a Qt 5 module that wraps the functionality of Wayland
