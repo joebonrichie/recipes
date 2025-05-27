@@ -5,7 +5,7 @@
 #
 name        : qt6-base
 version     : 6.9.0
-release     : 8
+release     : 9
 homepage    : https://www.qt.io
 upstreams   :
     - https://download.qt.io/official_releases/qt/6.9/6.9.0/submodules/qtbase-everywhere-src-6.9.0.tar.xz : c1800c2ea835801af04a05d4a32321d79a93954ee3ae2172bbeacf13d1f0598c
