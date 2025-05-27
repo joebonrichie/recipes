@@ -5,7 +5,7 @@
 #
 name        : openssl
 version     : 3.5.0
-release     : 24
+release     : 25
 summary     : OpenSSL cryptography library
 license     :
     - OpenSSL
@@ -74,7 +74,6 @@ packages    :
         description: |
             Library files for %(name), typically pulled in as a dependency of another package.
         rundeps:
-            - ca-certificates
             - zlib
             - zstd-libs
         paths:
@@ -91,7 +90,6 @@ packages    :
 
     - "%(name)-32bit":
         rundeps:
-            - ca-certificates
             - zlib-32bit
             - zstd-32bit
 
