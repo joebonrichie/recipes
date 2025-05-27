@@ -20,7 +20,7 @@
 			],
 			"files": [
 				"/usr/lib/libKF6CoreAddons.so.6",
-				"/usr/lib/libKF6CoreAddons.so.6.12.0",
+				"/usr/lib/libKF6CoreAddons.so.6.14.0",
 				"/usr/lib/qt6/qml/org/kde/coreaddons/kcoreaddonsplugin.qmltypes",
 				"/usr/lib/qt6/qml/org/kde/coreaddons/kde-qmlmodule.version",
 				"/usr/lib/qt6/qml/org/kde/coreaddons/libkcoreaddonsplugin.so",
@@ -151,7 +151,8 @@
 				"cmake(Qt6Qml)"
 			],
 			"depends": [
-				"kf6-kcoreaddons"
+				"kf6-kcoreaddons",
+				"pkgconfig(Qt6Core)"
 			],
 			"files": [
 				"/usr/include/KF6/KCoreAddons/KAboutComponent",
@@ -234,16 +235,18 @@
 				"/usr/lib/cmake/KF6CoreAddons/KF6CoreAddonsTargets-release.cmake",
 				"/usr/lib/cmake/KF6CoreAddons/KF6CoreAddonsTargets.cmake",
 				"/usr/lib/libKF6CoreAddons.so",
+				"/usr/lib/pkgconfig/KF6CoreAddons.pc",
 				"/usr/share/doc/qt6/KF6CoreAddons.qch",
 				"/usr/share/doc/qt6/KF6CoreAddons.tags"
 			],
 			"name": "kf6-kcoreaddons-devel",
 			"provides": [
-				"cmake(KF6CoreAddons)"
+				"cmake(KF6CoreAddons)",
+				"pkgconfig(KF6CoreAddons)"
 			]
 		}
 	},
 	"source-name": "kf6-kcoreaddons",
-	"source-release": "3",
-	"source-version": "6.12.0"
+	"source-release": "4",
+	"source-version": "6.14.0"
 }
