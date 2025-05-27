@@ -13,6 +13,7 @@
 				"pkgconfig32(zlib)"
 			],
 			"depends": [
+				"ca-certificates",
 				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
 				"soname(libbrotlidec.so.1(x86_64))",
 				"soname(libc.so.6(x86_64))",
@@ -653,6 +654,6 @@
 		}
 	},
 	"source-name": "curl",
-	"source-release": "21",
+	"source-release": "22",
 	"source-version": "8.13.0"
 }

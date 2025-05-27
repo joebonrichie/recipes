@@ -5,7 +5,7 @@
 #
 name        : curl
 version     : 8.13.0
-release     : 21
+release     : 22
 summary     : A utility for fetching files from remote servers
 license     : MIT
 homepage    : https://curl.se/
@@ -22,12 +22,14 @@ builddeps:
     - pkgconfig32(libzstd)
     # - pkgconfig32(rustls)
     - pkgconfig32(zlib)
+rundeps     :
+    - ca-certificates
 emul32      : true
 setup       : |
     # rustls temporarily disabled due to build failures
     %configure \
         --disable-static \
-        --with-ca-bundle=%(vendordir)/etc/ssl/certs/ca-certificates.crt \
+        --with-ca-bundle="/etc/ssl/certs/ca-certificates.crt" \
         --with-openssl
 build       : |
     %make
