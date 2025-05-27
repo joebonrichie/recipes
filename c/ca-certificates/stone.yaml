@@ -5,7 +5,7 @@
 #
 name        : ca-certificates
 version     : 20250516
-release     : 9
+release     : 11
 homepage    : https://fedoraproject.org/wiki/CA-Certificates
 upstreams   :
     # https://hg.mozilla.org/releases/mozilla-release/file/default/security/nss/lib/ckfw/builtins/certdata.txt <-- for date
@@ -57,7 +57,7 @@ install     : |
     %install_dir %(installroot)/${usrdir}/trust-source
     ln -srv %(installroot)/usr/share/doc/ca-certificates/README.usr %(installroot)/${usrdir}/trust-source/README
 
-    %install_file %(pkgdir)/trigger.yaml %(installroot)/usr/share/moss/triggers/sys.d/certstore.yaml
+    %install_file %(pkgdir)/trigger.yaml %(installroot)/usr/share/moss/triggers/sys.d/ca_certificates.yaml
 
     # Ca-certificates
     %install_dir %(installroot)%(docdir)/%(name)

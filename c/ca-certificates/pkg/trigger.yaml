@@ -1,11 +1,12 @@
-name: certstore
+name: ca_certificates
 after: systemd_tmpfiles
 description: |
     Rebuild the certificate stores
 
 handlers:
     certstore:
-        run: /usr/bin/update-ca-trust
+        run: "/usr/bin/update-ca-trust"
+        args: []
 
 paths:
     "/usr/share/ca-certificates/trust-source/*" :

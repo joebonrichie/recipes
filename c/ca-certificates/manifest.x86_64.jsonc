@@ -178,7 +178,7 @@
 				"/usr/share/doc/ca-certificates/README.java",
 				"/usr/share/doc/ca-certificates/README.src",
 				"/usr/share/doc/ca-certificates/README.usr",
-				"/usr/share/moss/triggers/sys.d/certstore.yaml"
+				"/usr/share/moss/triggers/sys.d/ca_certificates.yaml"
 			],
 			"name": "ca-certificates-utils",
 			"provides": [
@@ -187,6 +187,6 @@
 		}
 	},
 	"source-name": "ca-certificates",
-	"source-release": "9",
+	"source-release": "11",
 	"source-version": "20250516"
 }
