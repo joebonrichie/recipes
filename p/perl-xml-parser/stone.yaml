@@ -4,8 +4,8 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : perl-xml-parser
-version     : 2.47
-release     : 1
+version     : "2.47"
+release     : 2
 homepage    : https://metacpan.org/pod/XML::Parser
 upstreams   :
     - https://cpan.metacpan.org/authors/id/T/TO/TODDR/XML-Parser-2.47.tar.gz : ad4aae643ec784f489b956abe952432871a622d4e2b5c619e8855accbfc4d1d8
@@ -15,6 +15,7 @@ description : |
 license     : Artistic-1.0-Perl
 builddeps   :
     - pkgconfig(expat)
+    - perl-devel
 rundeps     :
     - binary(perl)
 setup       : |
@@ -23,3 +24,7 @@ build       : |
     %make
 install     : |
     %make_install
+packages    :
+    - "%(name)":
+        paths:
+            - /usr/share/man/man3

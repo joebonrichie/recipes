@@ -42,3 +42,4 @@
 
 ### man3 is used by perl
 - perl-parse-yapp-devel
+- perl-xml-parser-devel
