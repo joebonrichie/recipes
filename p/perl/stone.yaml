@@ -5,7 +5,7 @@
 #
 name        : perl
 version     : '5.40.2'
-release     : 10
+release     : 11
 summary     : Perl interpreter and modules
 license     :
     - Artistic-1.0
@@ -24,7 +24,7 @@ builddeps   :
 environment : |
     _majversion=$(echo %(version) | sed 's:\.[0-9]$::')
     _archlib="%(libdir)/perl5"
-    _privlib="%(libdir)/perl5/${_majversion}"
+    _privlib="%(datadir)/perl5"
     _sitearch="%(prefix)/local/lib/perl5/${_majversion}"
     _sitelib="%(prefix)/local/share/perl5/${_majversion}"
     _vendorarch="${_archlib}/vendor_perl"
@@ -114,6 +114,8 @@ packages    :
             - /usr/share/man/man3
 
     - "%(name)-devel":
+        rundeps:
+            - pkgconfig(libcrypt)
         paths:
             - /usr/bin/h2xs
             - /usr/bin/perlivp
