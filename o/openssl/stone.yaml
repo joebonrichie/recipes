@@ -5,7 +5,7 @@
 #
 name        : openssl
 version     : 3.5.0
-release     : 23
+release     : 24
 summary     : OpenSSL cryptography library
 license     :
     - OpenSSL
@@ -61,17 +61,11 @@ install     : |
     rm -v %(installroot)%(libdir)/*.a
 
     # Stateless
-    %install_dir %(installroot)/%(vendordir)/etc
-    mv %(installroot)/etc/ssl %(installroot)/%(vendordir)/etc/
+    %install_dir %(installroot)/%(vendordir)
+    mv %(installroot)/etc/ssl %(installroot)/%(vendordir)/
     rmdir %(installroot)/etc
-    rmdir %(installroot)/%(vendordir)/etc/ssl/certs
-    rmdir %(installroot)/%(vendordir)/etc/ssl/private
-
-    %install_file %(pkgdir)/ssl_certs.yaml %(installroot)/usr/share/moss/triggers/tx.d/ssl_certs.yaml
-    # tmpfiles configuration
-    %tmpfiles "# Create SSL compatibility link"
-    %tmpfiles "d /etc/ssl 0755 - - -"
-    %tmpfiles "L+ /etc/ssl/certs - - - - /usr/share/defaults/etc/ssl/certs"
+    rmdir %(installroot)/%(vendordir)/ssl/certs
+    rmdir %(installroot)/%(vendordir)/ssl/private
 tuning      :
     - lto: false # https://github.com/openssl/openssl/issues/18663
 packages    :
@@ -93,8 +87,7 @@ packages    :
     - "%(name)":
         rundeps:
             - "%(name)-libs"
-            - binary(coreutils)
-            - binary(perl)
+        # TODO: Can we just delete c_rehash now that we manage certificates properly in ca-certificates?
 
     - "%(name)-32bit":
         rundeps:
