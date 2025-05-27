@@ -4,8 +4,8 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : perl
-version     : '5.38.4'
-release     : 9
+version     : '5.40.2'
+release     : 10
 summary     : Perl interpreter and modules
 license     :
     - Artistic-1.0
@@ -14,39 +14,110 @@ homepage    : https://www.perl.org/
 description : |
     Perl interpreter and modules
 upstreams   :
-    - https://www.cpan.org/src/5.0/perl-5.38.4.tar.xz: f6777e856b22460e8091f9524593e93299f421cc23dbd408d3f5ed3328d357a7
+    - https://www.cpan.org/src/5.0/perl-5.40.2.tar.xz: 0551c717458e703ef7972307ab19385edfa231198d88998df74e12226abf563b
 builddeps   :
+    - pkgconfig(bzip2)
+    - pkgconfig(libcrypt)
+    - pkgconfig(zlib)
+    - binutils-devel
     - gdbm-devel
 environment : |
-    export majversion=$(echo %(version) | sed 's:\.[0-9]$::')
-    export archname="$(uname -m)-linux-thread-multi"
+    _majversion=$(echo %(version) | sed 's:\.[0-9]$::')
+    _archlib="%(libdir)/perl5"
+    _privlib="%(libdir)/perl5/${_majversion}"
+    _sitearch="%(prefix)/local/lib/perl5/${_majversion}"
+    _sitelib="%(prefix)/local/share/perl5/${_majversion}"
+    _vendorarch="${_archlib}/vendor_perl"
+    _vendorlib="${_privlib}/vendor_perl"
 setup       : |
-    %patch %(pkgdir)/serpent/soname.patch
+    %patch %(pkgdir)/patches/build/remove-rpath.patch
+    %patch %(pkgdir)/patches/build/perl-5.16.3-create_libperl_soname.patch
+    %patch %(pkgdir)/patches/build/perl-5.22.0-Install-libperl.so-to-shrpdir-on-Linux.patch
+    %patch %(pkgdir)/patches/build/perl-5.27.8-hints-linux-Add-lphtread-to-lddlflags.patch
+
+    # Ensure that we never accidentally bundle zlib or bzip2
+    rm -rf cpan/Compress-Raw-Zlib/zlib-src
+    rm -rf cpan/Compress-Raw-Bzip2/bzip2-src
+    sed -i '/\(bzip2\|zlib\)-src/d' MANIFEST
+
+    # Configure Compress::Zlib to use system zlib
+    sed -i 's|BUILD_ZLIB      = True|BUILD_ZLIB      = False|
+        s|INCLUDE         = ./zlib-src|INCLUDE         = %(includedir)|
+        s|LIB             = ./zlib-src|LIB             = %(libdir)|' \
+        cpan/Compress-Raw-Zlib/config.in
+
     ./Configure -des \
-        -Dprefix=/usr \
-        -Dscriptdir=/usr/bin \
-        -Dvendorprefix=/usr \
-        -Dprivlib=%(libdir)/perl5/${majversion} \
-        -Darchlib=%(libdir)/perl5/${majversion}/${archname} \
-        -Dsitelib=%(libdir)/perl5/site_perl/${majversion} \
-        -Dsitearch=%(libdir)/perl5/site_perl/${majversion}/${archname} \
-        -Dvendorlib=%(libdir)/perl5/vendor_perl/${majversion} \
-        -Dvendorarch=%(libdir)/perl5/vendor_perl/${majversion}/${archname} \
+        -Darchlib=${_archlib} \
         -Dcc="$CC" \
+        -Dccflags="$CFLAGS" \
+        -Dccdlflags="$LD_FLAGS" \
+        -Dcf_by="AerynOS" \
+        -DDEBUGGING=-g \
         -Dldflags="$LDFLAGS" \
-        -Dlddflags="$LDFLAGS" \
-        -Dman1dir=/usr/share/man/man1 \
-        -Dman3dir=/usr/share/man/man3 \
+        -Dlddflags="-shared $LDFLAGS" \
+        -Dman1dir=%(mandir)/man1 \
+        -Dman3dir=%(mandir)/man3 \
+        -Doptimize="none" \
+        -Dprefix=%(prefix) \
+        -Dprivlib=${_privlib} \
+        -Dscriptdir=%(bindir) \
+        -Dshrpdir=%(libdir) \
+        -Dsitearch=${_sitearch} \
+        -Dsitelib=${_sitelib} \
+        -Dsiteprefix=%(prefix)/local \
+        -Duse64bitint \
+        -Duseperlio \
         -Duseshrplib \
         -Dusethreads \
-        -Adefine:optimize="-O3 " \
-        -Aappend:optimize="$CFLAGS" \
-        -Adefine:ccflags="$CFLAGS" \
-        -Adefine:ldflags="$LDFLAGS" \
-        -Adefine:lddflags="$LDFLAGS"
+        -Dvendorarch=${_vendorarch} \
+        -Dvendorlib=${_vendorlib} \
+        -Dvendorprefix=%(prefix) \
+        -Dversion=%(version) \
+        -Ubincompat5005 \
+        -Uversiononly
+
+    # Prepare a symlink from proper DSO name to libperl.so now so that new perl
+    # can be executed from make.
+    ln -s libperl.so libperl.so.${_majversion}
 build       : |
+    BUILD_BZIP2=0
+    BZIP2_LIB=%(libdir)
+    export BUILD_BZIP2 BZIP2_LIB
+
     %make
 install     : |
     %make_install
+
+    # Setup libperl correctly
+    _build_archlib=%(installroot)/${_archlib}
+    mv "${_build_archlib}/CORE/libperl.so" "%(installroot)%(libdir)/libperl.so.%(version)"
+    ln -s "libperl.so.%(version)" "%(installroot)%(libdir)/libperl.so"
+    ln -s "libperl.so.%(version)" "%(installroot)%(libdir)/libperl.so.${_majversion}"
+
+    # Update the symlink in the previous location for things that expect that
+    ln -srvf "%(installroot)%(libdir)/libperl.%(version)" "${_build_archlib}/CORE/libperl.so"
+    # Remove build-system created soname
+    rm -fv "${_build_archlib}/CORE/libperl.so.${_majversion}"
+
+    # Don't need the .packlist
+    rm -fv ${_build_archlib}/.packlist
+
+    # /usr/local
+    rm -rfv %(installroot)/usr/local
 #workload    : |
 #    TEST_JOBS="%(jobs)" make test_harness ||:
+packages    :
+    # TODO: Perhaps split this into more packages?
+
+    - "%(name)":
+        paths:
+            - /usr/share/man/man3
+
+    - "%(name)-devel":
+        paths:
+            - /usr/bin/h2xs
+            - /usr/bin/perlivp
+            - /usr/lib/perl5/CORE/*.h
+            - /usr/lib/perl5/5*/ExtUtils/typemap
+            - /usr/share/man/man1/h2xs*
+            - /usr/share/man/man1/perlivp*

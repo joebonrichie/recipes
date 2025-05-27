@@ -1,0 +1,31 @@
+From c207d66477e5a20a5f2d0d8f63722f819a6a4dfe Mon Sep 17 00:00:00 2001
+From: Torsten Veller <tove@gentoo.org>
+Date: Sat, 14 Apr 2012 13:31:17 +0200
+Subject: [PATCH 04/28] Remove -rpath and append LDFLAGS to lddlflags
+
+Patch-Name: gentoo/config_over.diff
+---
+ config.over | 11 +++++++++++
+ 1 file changed, 11 insertions(+)
+ create mode 100644 config.over
+
+diff --git a/config.over b/config.over
+new file mode 100644
+index 0000000000..4cba549b1d
+--- /dev/null
++++ b/config.over
+@@ -0,0 +1,11 @@
++#!/bin/sh
++# remove -rpath (shared libperl is moved to /usr/lib by rules)
++tmp=
++for t in $ccdlflags ; do
++    case $t in
++        -Wl,-rpath,*) ;;
++        *) tmp="$tmp${tmp:+ }$t"
++    esac
++done
++ccdlflags="$tmp"
++lddlflags="$lddlflags $LDFLAGS"
+-- 
+2.39.3
+
