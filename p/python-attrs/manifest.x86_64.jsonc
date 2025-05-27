@@ -4,13 +4,12 @@
 	"packages": {
 		"python-attrs": {
 			"build-depends": [
-				"binary(python3)",
-				"python(hatchling)",
-				"python-hatch-fancy-pypi-readme",
-				"python-hatch-vcs"
+				"python(hatch-fancy-pypi-readme)",
+				"python(hatch-vcs)",
+				"python(hatchling)"
 			],
 			"depends": [
-				"binary(python3)"
+				"python-libs"
 			],
 			"files": [
 				"/usr/lib/python3.11/site-packages/attr/__init__.py",
@@ -95,6 +94,6 @@
 		}
 	},
 	"source-name": "python-attrs",
-	"source-release": "5",
+	"source-release": "6",
 	"source-version": "25.3.0"
 }
