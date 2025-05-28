@@ -5,7 +5,7 @@
 #
 name        : wine
 version     : "10.8"
-release     : 2
+release     : 3
 homepage    : https://www.winehq.org
 upstreams   :
     - https://dl.winehq.org/wine/source/10.x/wine-10.8.tar.xz : f2ffdb5650991d4cf6ce858c10da58da1cee06a9b7bbb6b5a307a02e47408b4e
@@ -43,7 +43,7 @@ builddeps   :
     - pkgconfig(libudev)
     - pkgconfig(libusb-1.0)
     - pkgconfig(odbc)
-    - pkgconfig(sdl2_compat)
+    - pkgconfig(sdl2-compat)
     - pkgconfig(vulkan)
     - pkgconfig(wayland-eglstream)
     - pkgconfig(wayland-client)

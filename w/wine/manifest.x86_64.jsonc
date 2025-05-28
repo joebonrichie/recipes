@@ -30,7 +30,7 @@
 				"pkgconfig(libudev)",
 				"pkgconfig(libusb-1.0)",
 				"pkgconfig(odbc)",
-				"pkgconfig(sdl2_compat)",
+				"pkgconfig(sdl2-compat)",
 				"pkgconfig(vulkan)",
 				"pkgconfig(wayland-client)",
 				"pkgconfig(wayland-eglstream)",
@@ -1911,7 +1911,7 @@
 				"pkgconfig(libudev)",
 				"pkgconfig(libusb-1.0)",
 				"pkgconfig(odbc)",
-				"pkgconfig(sdl2_compat)",
+				"pkgconfig(sdl2-compat)",
 				"pkgconfig(vulkan)",
 				"pkgconfig(wayland-client)",
 				"pkgconfig(wayland-eglstream)",
@@ -3823,6 +3823,6 @@
 		}
 	},
 	"source-name": "wine",
-	"source-release": "2",
+	"source-release": "3",
 	"source-version": "10.8"
 }
