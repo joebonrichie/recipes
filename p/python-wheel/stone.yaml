@@ -4,17 +4,21 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : python-wheel
-version     : 0.45.1
-release     : 3
+version     : 0.46.1
+release     : 4
 homepage    : https://github.com/pypa/wheel
 upstreams   :
-    - https://pypi.io/packages/source/w/wheel/wheel-0.45.1.tar.gz : 661e1abd9198507b1409a20c02106d9670b2576e916d58f520316666abca6729
+    - https://pypi.debian.net/wheel/wheel-0.46.1.tar.gz : fd477efb5da0f7df1d3c76c73c14394002c844451bd63229d8570f376f5e6a38
 summary     : The official binary distribution format for Python
 description : |
     python-wheel is the reference implementation of the Python wheel packaging standard, as defined in PEP 427.
-license     :
-    - MIT
+license     : MIT
+builddeps   :
+    - python(flit_core)
+rundeps     :
+    - binary(python)
+# TODO: Setup this for Python major update bootstrapping
 build       : |
-    %python_setup
+    %pyproject_build
 install     : |
-    %python_install
+    %pyproject_install
