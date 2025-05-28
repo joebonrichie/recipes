@@ -5,7 +5,7 @@
 #
 name        : wayland-protocols
 version     : "1.44"
-release     : 9
+release     : 10
 homepage    : https://gitlab.freedesktop.org/wayland/wayland-protocols
 upstreams   :
     - https://gitlab.freedesktop.org/wayland/wayland-protocols/-/archive/1.44/wayland-protocols-1.44.tar.bz2 : 4bc328e7c879c196d623b95849669cd1d6e48756e049663ff2a355522bede3c4
