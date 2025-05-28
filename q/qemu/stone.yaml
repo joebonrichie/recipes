@@ -5,7 +5,7 @@
 #
 name        : qemu
 version     : 9.2.3
-release     : 14
+release     : 15
 homepage    : http://www.qemu.org/
 upstreams   :
     - https://download.qemu.org/qemu-9.2.3.tar.xz : baed494270c361bf69816acc84512e3efed71c7a23f76691642b80bc3de7693e
@@ -19,6 +19,7 @@ builddeps   :
     - binary(meson)
     - binary(ninja)
     - binary(nm)
+    - binary(pip)
     - binary(python3)
     - pkgconfig(SDL2_image)
     - pkgconfig(alsa)
@@ -46,13 +47,14 @@ builddeps   :
     - pkgconfig(libusb-1.0)
     - pkgconfig(libzstd)
     - pkgconfig(pixman-1)
-    - pkgconfig(sdl2_compat)
+    - pkgconfig(sdl2-compat)
     - pkgconfig(spice-protocol)
     - pkgconfig(spice-server)
     - pkgconfig(virglrenderer)
     - pkgconfig(x11)
     - pkgconfig(xkbcommon)
     - pkgconfig(zlib)
+    - python(setuptools)
     - xkeyboard-config
 setup       : |
     %configure --disable-docs \

@@ -8,6 +8,7 @@
 				"binary(meson)",
 				"binary(ninja)",
 				"binary(nm)",
+				"binary(pip)",
 				"binary(python3)",
 				"pkgconfig(SDL2_image)",
 				"pkgconfig(alsa)",
@@ -34,7 +35,7 @@
 				"pkgconfig(libusb-1.0)",
 				"pkgconfig(libzstd)",
 				"pkgconfig(pixman-1)",
-				"pkgconfig(sdl2_compat)",
+				"pkgconfig(sdl2-compat)",
 				"pkgconfig(slirp)",
 				"pkgconfig(spice-protocol)",
 				"pkgconfig(spice-server)",
@@ -42,6 +43,7 @@
 				"pkgconfig(x11)",
 				"pkgconfig(xkbcommon)",
 				"pkgconfig(zlib)",
+				"python(setuptools)",
 				"xkeyboard-config"
 			],
 			"depends": [
@@ -247,6 +249,7 @@
 				"binary(meson)",
 				"binary(ninja)",
 				"binary(nm)",
+				"binary(pip)",
 				"binary(python3)",
 				"pkgconfig(SDL2_image)",
 				"pkgconfig(alsa)",
@@ -273,7 +276,7 @@
 				"pkgconfig(libusb-1.0)",
 				"pkgconfig(libzstd)",
 				"pkgconfig(pixman-1)",
-				"pkgconfig(sdl2_compat)",
+				"pkgconfig(sdl2-compat)",
 				"pkgconfig(slirp)",
 				"pkgconfig(spice-protocol)",
 				"pkgconfig(spice-server)",
@@ -281,6 +284,7 @@
 				"pkgconfig(x11)",
 				"pkgconfig(xkbcommon)",
 				"pkgconfig(zlib)",
+				"python(setuptools)",
 				"xkeyboard-config"
 			],
 			"depends": [
@@ -297,6 +301,7 @@
 				"binary(meson)",
 				"binary(ninja)",
 				"binary(nm)",
+				"binary(pip)",
 				"binary(python3)",
 				"pkgconfig(SDL2_image)",
 				"pkgconfig(alsa)",
@@ -323,7 +328,7 @@
 				"pkgconfig(libusb-1.0)",
 				"pkgconfig(libzstd)",
 				"pkgconfig(pixman-1)",
-				"pkgconfig(sdl2_compat)",
+				"pkgconfig(sdl2-compat)",
 				"pkgconfig(slirp)",
 				"pkgconfig(spice-protocol)",
 				"pkgconfig(spice-server)",
@@ -331,6 +336,7 @@
 				"pkgconfig(x11)",
 				"pkgconfig(xkbcommon)",
 				"pkgconfig(zlib)",
+				"python(setuptools)",
 				"xkeyboard-config"
 			],
 			"depends": [
@@ -353,6 +359,6 @@
 		}
 	},
 	"source-name": "qemu",
-	"source-release": "14",
+	"source-release": "15",
 	"source-version": "9.2.3"
 }
