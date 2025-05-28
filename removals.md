@@ -58,3 +58,6 @@
 - libxinerama-32bit
 - libxinerama-32bit-dbginfo
 - libxinerama-32bit-devel
+- libxtst-32bit
+- libxtst-32bit-dbginfo
+- libxtst-32bit-devel
