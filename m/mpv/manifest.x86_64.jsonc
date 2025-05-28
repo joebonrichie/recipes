@@ -31,7 +31,7 @@
 				"pkgconfig(libswscale)",
 				"pkgconfig(libva)",
 				"pkgconfig(luajit)",
-				"pkgconfig(sdl2_compat)",
+				"pkgconfig(sdl2-compat)",
 				"pkgconfig(shaderc)",
 				"pkgconfig(sndio)",
 				"pkgconfig(vulkan)",
@@ -135,7 +135,7 @@
 				"pkgconfig(libswscale)",
 				"pkgconfig(libva)",
 				"pkgconfig(luajit)",
-				"pkgconfig(sdl2_compat)",
+				"pkgconfig(sdl2-compat)",
 				"pkgconfig(shaderc)",
 				"pkgconfig(sndio)",
 				"pkgconfig(vulkan)",
@@ -222,7 +222,7 @@
 				"pkgconfig(libswscale)",
 				"pkgconfig(libva)",
 				"pkgconfig(luajit)",
-				"pkgconfig(sdl2_compat)",
+				"pkgconfig(sdl2-compat)",
 				"pkgconfig(shaderc)",
 				"pkgconfig(sndio)",
 				"pkgconfig(vulkan)",
@@ -287,6 +287,6 @@
 		}
 	},
 	"source-name": "mpv",
-	"source-release": "5",
+	"source-release": "6",
 	"source-version": "0.40.0"
 }
