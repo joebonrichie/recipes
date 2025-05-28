@@ -40,8 +40,7 @@
 			],
 			"name": "vulkan-loader-32bit",
 			"provides": [
-				"soname(libvulkan.so.1(386))",
-				"soname(libvulkan.so.1(x86))"
+				"soname(libvulkan.so.1(386))"
 			]
 		},
 		"vulkan-loader-32bit-devel": {
@@ -95,6 +94,6 @@
 		}
 	},
 	"source-name": "vulkan-loader",
-	"source-release": "11",
+	"source-release": "12",
 	"source-version": "1.4.309.0"
 }

@@ -5,7 +5,7 @@
 #
 name        : vulkan-loader
 version     : 1.4.309.0
-release     : 11
+release     : 12
 homepage    : https://vulkan.lunarg.com/doc/sdk
 upstreams   :
     - https://github.com/KhronosGroup/Vulkan-Loader/archive/refs/tags/vulkan-sdk-1.4.309.0.tar.gz : ddfeca84a868899fbb2c7f28b7c8fd1006e34b2b13ce653a63bddfb65cbc8d13
