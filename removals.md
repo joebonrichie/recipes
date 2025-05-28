@@ -55,3 +55,6 @@
 - libxdmcp-32bit
 - libxdmcp-32bit-dbginfo
 - libxdmcp-32bit-devel
+- libxinerama-32bit
+- libxinerama-32bit-dbginfo
+- libxinerama-32bit-devel
