@@ -7,7 +7,7 @@
 				"pkgconfig(alsa)",
 				"pkgconfig(libpulse)",
 				"pkgconfig(opus)",
-				"pkgconfig(sdl2_compat)",
+				"pkgconfig(sdl2-compat)",
 				"pkgconfig(vorbis)"
 			],
 			"depends": [
@@ -17,7 +17,7 @@
 			],
 			"files": [
 				"/usr/lib/libSDL2_mixer-2.0.so.0",
-				"/usr/lib/libSDL2_mixer-2.0.so.0.800.0"
+				"/usr/lib/libSDL2_mixer-2.0.so.0.800.1"
 			],
 			"name": "sdl2-mixer",
 			"provides": [
@@ -29,15 +29,27 @@
 				"pkgconfig(alsa)",
 				"pkgconfig(libpulse)",
 				"pkgconfig(opus)",
-				"pkgconfig(sdl2_compat)",
+				"pkgconfig(sdl2-compat)",
 				"pkgconfig(vorbis)"
 			],
 			"depends": [
-				"pkgconfig(sdl2_compat)",
+				"pkgconfig(sdl2-compat)",
 				"sdl2-mixer"
 			],
 			"files": [
 				"/usr/include/SDL2/SDL_mixer.h",
+				"/usr/lib/cmake/SDL2_mixer/FindFLAC.cmake",
+				"/usr/lib/cmake/SDL2_mixer/FindFluidSynth.cmake",
+				"/usr/lib/cmake/SDL2_mixer/FindOpusFile.cmake",
+				"/usr/lib/cmake/SDL2_mixer/FindVorbis.cmake",
+				"/usr/lib/cmake/SDL2_mixer/Findgme.cmake",
+				"/usr/lib/cmake/SDL2_mixer/Findlibxmp-lite.cmake",
+				"/usr/lib/cmake/SDL2_mixer/Findlibxmp.cmake",
+				"/usr/lib/cmake/SDL2_mixer/Findmodplug.cmake",
+				"/usr/lib/cmake/SDL2_mixer/Findmpg123.cmake",
+				"/usr/lib/cmake/SDL2_mixer/Findtremor.cmake",
+				"/usr/lib/cmake/SDL2_mixer/Findwavpack.cmake",
+				"/usr/lib/cmake/SDL2_mixer/PkgConfigHelper.cmake",
 				"/usr/lib/cmake/SDL2_mixer/sdl2_mixer-config-version.cmake",
 				"/usr/lib/cmake/SDL2_mixer/sdl2_mixer-config.cmake",
 				"/usr/lib/libSDL2_mixer.so",
@@ -51,6 +63,6 @@
 		}
 	},
 	"source-name": "sdl2-mixer",
-	"source-release": "2",
-	"source-version": "2.8.0"
+	"source-release": "3",
+	"source-version": "2.8.1"
 }
