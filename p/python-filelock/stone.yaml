@@ -5,7 +5,7 @@
 #
 name        : python-filelock
 version     : 3.18.0
-release     : 1
+release     : 2
 homepage    : https://github.com/tox-dev/filelock
 upstreams   :
     - https://pypi.debian.net/filelock/filelock-3.18.0.tar.gz : adbc88eabb99d2fec8c9c1b229b171f18afa655400173ddc653d5d01501fb9f2
