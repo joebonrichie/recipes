@@ -14,6 +14,7 @@
 				"/usr/share/wayland-protocols/stable/xdg-shell/xdg-shell.xml",
 				"/usr/share/wayland-protocols/staging/alpha-modifier/alpha-modifier-v1.xml",
 				"/usr/share/wayland-protocols/staging/color-management/color-management-v1.xml",
+				"/usr/share/wayland-protocols/staging/color-representation/color-representation-v1.xml",
 				"/usr/share/wayland-protocols/staging/commit-timing/commit-timing-v1.xml",
 				"/usr/share/wayland-protocols/staging/content-type/content-type-v1.xml",
 				"/usr/share/wayland-protocols/staging/cursor-shape/cursor-shape-v1.xml",
@@ -37,6 +38,7 @@
 				"/usr/share/wayland-protocols/staging/xdg-system-bell/xdg-system-bell-v1.xml",
 				"/usr/share/wayland-protocols/staging/xdg-toplevel-drag/xdg-toplevel-drag-v1.xml",
 				"/usr/share/wayland-protocols/staging/xdg-toplevel-icon/xdg-toplevel-icon-v1.xml",
+				"/usr/share/wayland-protocols/staging/xdg-toplevel-tag/xdg-toplevel-tag-v1.xml",
 				"/usr/share/wayland-protocols/staging/xwayland-shell/xwayland-shell-v1.xml",
 				"/usr/share/wayland-protocols/unstable/fullscreen-shell/fullscreen-shell-unstable-v1.xml",
 				"/usr/share/wayland-protocols/unstable/idle-inhibit/idle-inhibit-unstable-v1.xml",
@@ -73,6 +75,7 @@
 			"files": [
 				"/usr/include/wayland-protocols/alpha-modifier-v1-enum.h",
 				"/usr/include/wayland-protocols/color-management-v1-enum.h",
+				"/usr/include/wayland-protocols/color-representation-v1-enum.h",
 				"/usr/include/wayland-protocols/commit-timing-v1-enum.h",
 				"/usr/include/wayland-protocols/content-type-v1-enum.h",
 				"/usr/include/wayland-protocols/cursor-shape-v1-enum.h",
@@ -122,6 +125,7 @@
 				"/usr/include/wayland-protocols/xdg-system-bell-v1-enum.h",
 				"/usr/include/wayland-protocols/xdg-toplevel-drag-v1-enum.h",
 				"/usr/include/wayland-protocols/xdg-toplevel-icon-v1-enum.h",
+				"/usr/include/wayland-protocols/xdg-toplevel-tag-v1-enum.h",
 				"/usr/include/wayland-protocols/xwayland-keyboard-grab-unstable-v1-enum.h",
 				"/usr/include/wayland-protocols/xwayland-shell-v1-enum.h",
 				"/usr/share/pkgconfig/wayland-protocols.pc"
@@ -133,6 +137,6 @@
 		}
 	},
 	"source-name": "wayland-protocols",
-	"source-release": "8",
-	"source-version": "1.41"
+	"source-release": "9",
+	"source-version": "1.44"
 }
