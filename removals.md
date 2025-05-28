@@ -49,3 +49,6 @@
 - libxcomposite-32bit
 - libxcomposite-32bit-dbginfo
 - libxcomposite-32bit-devel
+- libxdamage-32bit
+- libxdamage-32bit-dbginfo
+- libxdamage-32bit-devel
