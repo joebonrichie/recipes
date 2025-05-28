@@ -5,7 +5,7 @@
 #
 name        : libksba
 version     : 1.6.7
-release     : 2
+release     : 3
 homepage    : https://gnupg.org/software/libksba
 upstreams   :
     - https://gnupg.org/ftp/gcrypt/libksba/libksba-1.6.7.tar.bz2 : cf72510b8ebb4eb6693eef765749d83677a03c79291a311040a5bfd79baab763
