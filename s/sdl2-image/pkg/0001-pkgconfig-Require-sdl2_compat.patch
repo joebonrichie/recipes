@@ -16,7 +16,7 @@ index 8711dd7..380b9b1 100644
  Description: image loading library for Simple DirectMedia Layer
  Version: @VERSION@
 -Requires: sdl2 >= @SDL_VERSION@
-+Requires: sdl2_compat >= @SDL_VERSION@
++Requires: sdl2-compat >= @SDL_VERSION@
  Libs: -L${libdir} -lSDL2_image
  Requires.private: @PC_REQUIRES@
  Libs.private: @PC_LIBS@

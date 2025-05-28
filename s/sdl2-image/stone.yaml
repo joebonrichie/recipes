@@ -4,25 +4,25 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : sdl2-image
-version     : 2.8.4
-release     : 3
+version     : 2.8.8
+release     : 4
 homepage    : https://www.libsdl.org/
 upstreams   :
-    - https://github.com/libsdl-org/SDL_image/releases/download/release-2.8.4/SDL2_image-2.8.4.tar.gz : f7c06a8783952cfe960adccdd3d8472b63ab31475b4390d10cfdcc1aea61238f
+    - https://github.com/libsdl-org/SDL_image/releases/download/release-2.8.8/SDL2_image-2.8.8.tar.gz : 2213b56fdaff2220d0e38c8e420cbe1a83c87374190cba8c70af2156097ce30a
 summary     : SDL2 - Image Loading Support
 description : |
     SDL2 - Image Loading Support
 license     :
     - Zlib
 builddeps   :
+    - pkgconfig(libavif)
     - pkgconfig(libjpeg)
     - pkgconfig(libjxl)
     - pkgconfig(libpng)
     - pkgconfig(libtiff-4)
     - pkgconfig(libwebp)
     - pkgconfig(libwebpdemux)
-    - pkgconfig(sdl2_compat)
-    # TODO build with libavif
+    - pkgconfig(sdl2-compat)
 setup       : |
     %patch %(pkgdir)/0001-pkgconfig-Require-sdl2_compat.patch
 
