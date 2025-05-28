@@ -1,0 +1,40 @@
+#
+# SPDX-FileCopyrightText: © 2020-2024 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : python-pip
+version     : 25.1.1
+release     : 1
+homepage    : https://pip.pypa.io/
+upstreams   :
+    - https://pypi.debian.net/pip/pip-25.1.1.tar.gz : 3de45d411d308d5054c2168185d8da7f9a2cd753dbac8acbfa88a8909ecd9077
+summary     : The PyPA recommended tool for installing Python packages
+description : |
+    The PyPA recommended tool for installing Python packages
+license     : MIT
+builddeps   :
+    - python(setuptools)
+rundeps     :
+    - binary(python3)
+    - python(attrs)
+    - python(cryptography)
+    - python(filelock)
+    - python(wheel)
+# TODO: Needs a chunk of deps for tests
+# TODO: Needs sphinx for man pages
+# checkdeps   :
+#     - python(pytest)
+build       : |
+    %pyproject_build
+install     : |
+    %pyproject_install
+
+    # Generate shell completions
+    _site_packages=$(python -c "import site; print(site.getsitepackages()[0])")
+    PYTHONPATH=%(installroot)/$_site_packages %(installroot)%(bindir)/pip completion --bash | %install_file /dev/stdin %(installroot)%(bashcompletionsdir)/pip
+    PYTHONPATH=%(installroot)/$_site_packages %(installroot)%(bindir)/pip completion --zsh | tail -n+3 | %install_file /dev/stdin %(installroot)%(zshcompletionsdir)/_pip
+    PYTHONPATH=%(installroot)/$_site_packages %(installroot)%(bindir)/pip completion --fish | %install_file /dev/stdin %(installroot)%(fishcompletionsdir)/pip.fish
+# check       : |
+#     # TODO replace with pytest macro
+#     PYTHONPATH="$PWD"/build/lib pytest
