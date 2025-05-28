@@ -5,7 +5,7 @@
 #
 name        : python-more-itertools
 version     : 10.7.0
-release     : 1
+release     : 2
 homepage    : https://github.com/more-itertools/more-itertools
 upstreams   :
     - https://pypi.debian.net/more-itertools/more_itertools-10.7.0.tar.gz : 9fddd5403be01a94b204faadcff459ec3568cf110265d3c54323e1e866ad29d3
