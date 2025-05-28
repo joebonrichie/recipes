@@ -5,7 +5,7 @@
 #
 name        : exempi
 version     : 2.6.5
-release     : 1
+release     : 2
 homepage    : https://libopenraw.freedesktop.org/exempi/
 upstreams   :
     - https://libopenraw.freedesktop.org/download/exempi-2.6.5.tar.xz : ff538114e82c51e5287064dfbec7d9790ac91479bf2390bcc6408fad4d77fb12
