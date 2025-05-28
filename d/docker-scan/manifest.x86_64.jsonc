@@ -17,6 +17,6 @@
 		}
 	},
 	"source-name": "docker-scan",
-	"source-release": "2",
+	"source-release": "3",
 	"source-version": "0.25.0"
 }

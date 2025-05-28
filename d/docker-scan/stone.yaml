@@ -5,7 +5,7 @@
 #
 name        : docker-scan
 version     : 0.25.0
-release     : 2
+release     : 3
 homepage    : https://github.com/docker/buildx 
 upstreams   :
     - https://github.com/docker/scan-cli-plugin/archive/refs/tags/v0.25.0.tar.gz : e08964c3be512c085002feefd979fcd9dca6cf23c4b5e71eede56e8b6623afed
