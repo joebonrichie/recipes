@@ -34,8 +34,7 @@
 			],
 			"name": "libxfixes-32bit",
 			"provides": [
-				"soname(libXfixes.so.3(386))",
-				"soname(libXfixes.so.3(x86))"
+				"soname(libXfixes.so.3(386))"
 			]
 		},
 		"libxfixes-32bit-devel": {
@@ -81,6 +80,6 @@
 		}
 	},
 	"source-name": "libxfixes",
-	"source-release": "8",
+	"source-release": "9",
 	"source-version": "6.0.1"
 }
