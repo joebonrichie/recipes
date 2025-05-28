@@ -52,3 +52,6 @@
 - libxdamage-32bit
 - libxdamage-32bit-dbginfo
 - libxdamage-32bit-devel
+- libxdmcp-32bit
+- libxdmcp-32bit-dbginfo
+- libxdmcp-32bit-devel
