@@ -5,7 +5,7 @@
 #
 name        : cmake
 version     : 4.0.2
-release     : 9
+release     : 10
 homepage    : https://cmake.org/
 upstreams   :
     - https://www.cmake.org/files/v4.0/cmake-4.0.2.tar.gz : 1c3a82c8ca7cf12e0b17178f9d0c32f7ac773bd5651a98fcfd80fbf4977f8d48
@@ -14,18 +14,16 @@ description : |
     CMake is an open-source, cross-platform family of tools designed to build, test and package software. CMake is used to control the software compilation process using simple platform and compiler independent configuration files, and generate native makefiles and workspaces that can be used in the compiler environment of your choice.
 license     :
     - BSD-3-Clause
-packages    :
-    - "%(name)":
-        paths:
-            - /usr/share/aclocal
 builddeps   :
     - binary(flang)
+    - cmake(Qt6Gui)
     - pkgconfig(expat)
     - pkgconfig(libarchive)
     - pkgconfig(libcurl)
     - pkgconfig(libuv)
     - pkgconfig(ncurses)
     - pkgconfig(zlib)
+    # TODO: system librhash, sphinx for man pages
 tuning      :
     - icf: all
     - lto: full
@@ -34,6 +32,7 @@ tuning      :
     - symbolic
 setup       : |
     %cmake \
+        -DBUILD_QtDialog=ON \
         -DBUILD_TESTING=OFF \
         -DCMAKE_DOC_DIR=share/doc/cmake \
         -DCMAKE_INSTALL_DO_STRIP=OFF \
@@ -47,3 +46,19 @@ build       : |
     %cmake_build
 install     : |
     %cmake_install
+packages    :
+    - "%(name)":
+        paths:
+            - /usr/share/aclocal
+
+    - "%(name)-gui":
+        # TODO: Add appdata
+        summary: "Qt based GUI for %(name)"
+        description: "Qt based GUI for %(name)"
+        rundeps:
+            - "%(name)"
+        paths:
+            - /usr/bin/cmake-gui
+            - /usr/share/applications
+            - /usr/share/icons
+            - /usr/share/mime

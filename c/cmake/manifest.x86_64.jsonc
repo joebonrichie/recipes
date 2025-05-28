@@ -5,6 +5,7 @@
 		"cmake": {
 			"build-depends": [
 				"binary(flang)",
+				"cmake(Qt6Gui)",
 				"pkgconfig(expat)",
 				"pkgconfig(libarchive)",
 				"pkgconfig(libcurl)",
@@ -3899,9 +3900,48 @@
 				"cmake(FindPkg)",
 				"cmake(UsePkg)"
 			]
+		},
+		"cmake-gui": {
+			"build-depends": [
+				"binary(flang)",
+				"cmake(Qt6Gui)",
+				"pkgconfig(expat)",
+				"pkgconfig(libarchive)",
+				"pkgconfig(libcurl)",
+				"pkgconfig(libuv)",
+				"pkgconfig(ncurses)",
+				"pkgconfig(zlib)"
+			],
+			"depends": [
+				"cmake",
+				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
+				"soname(ld-linux-x86-64.so.2(x86_64))",
+				"soname(libQt6Core.so.6(x86_64))",
+				"soname(libQt6Gui.so.6(x86_64))",
+				"soname(libQt6Widgets.so.6(x86_64))",
+				"soname(libarchive.so.13(x86_64))",
+				"soname(libc++.so.1(x86_64))",
+				"soname(libc.so.6(x86_64))",
+				"soname(libcurl.so.4(x86_64))",
+				"soname(libm.so.6(x86_64))",
+				"soname(libunwind.so.1(x86_64))",
+				"soname(libuv.so.1(x86_64))",
+				"soname(libz.so.1(x86_64))"
+			],
+			"files": [
+				"/usr/bin/cmake-gui",
+				"/usr/share/applications/cmake-gui.desktop",
+				"/usr/share/icons/hicolor/128x128/apps/CMakeSetup.png",
+				"/usr/share/icons/hicolor/32x32/apps/CMakeSetup.png",
+				"/usr/share/mime/packages/cmakecache.xml"
+			],
+			"name": "cmake-gui",
+			"provides": [
+				"binary(cmake-gui)"
+			]
 		}
 	},
 	"source-name": "cmake",
-	"source-release": "9",
+	"source-release": "10",
 	"source-version": "4.0.2"
 }
