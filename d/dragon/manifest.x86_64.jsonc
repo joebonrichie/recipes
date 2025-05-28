@@ -86,6 +86,7 @@
 				"/usr/share/locale/ga/LC_MESSAGES/dragonplayer.mo",
 				"/usr/share/locale/gl/LC_MESSAGES/dragonplayer.mo",
 				"/usr/share/locale/he/LC_MESSAGES/dragonplayer.mo",
+				"/usr/share/locale/hi/LC_MESSAGES/dragonplayer.mo",
 				"/usr/share/locale/hr/LC_MESSAGES/dragonplayer.mo",
 				"/usr/share/locale/hu/LC_MESSAGES/dragonplayer.mo",
 				"/usr/share/locale/ia/LC_MESSAGES/dragonplayer.mo",
@@ -112,6 +113,7 @@
 				"/usr/share/locale/pt_BR/LC_MESSAGES/dragonplayer.mo",
 				"/usr/share/locale/ro/LC_MESSAGES/dragonplayer.mo",
 				"/usr/share/locale/ru/LC_MESSAGES/dragonplayer.mo",
+				"/usr/share/locale/sa/LC_MESSAGES/dragonplayer.mo",
 				"/usr/share/locale/sk/LC_MESSAGES/dragonplayer.mo",
 				"/usr/share/locale/sl/LC_MESSAGES/dragonplayer.mo",
 				"/usr/share/locale/sq/LC_MESSAGES/dragonplayer.mo",
@@ -156,6 +158,6 @@
 		}
 	},
 	"source-name": "dragon",
-	"source-release": "2",
-	"source-version": "24.12.3"
+	"source-release": "3",
+	"source-version": "25.04.1"
 }
