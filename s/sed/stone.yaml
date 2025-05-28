@@ -5,7 +5,7 @@
 #
 name        : sed
 version     : 4.9
-release     : 2
+release     : 3
 summary     : GNU stream editor
 license     : GPL-3.0-or-later
 homepage    : https://www.gnu.org/software/sed
