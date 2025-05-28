@@ -22,6 +22,7 @@
 				"double-conversion"
 			],
 			"files": [
+				"/usr/include/double-conversion/bignum-dtoa.h",
 				"/usr/include/double-conversion/bignum.h",
 				"/usr/include/double-conversion/cached-powers.h",
 				"/usr/include/double-conversion/diy-fp.h",
@@ -46,6 +47,6 @@
 		}
 	},
 	"source-name": "double-conversion",
-	"source-release": "1",
-	"source-version": "3.3.0"
+	"source-release": "2",
+	"source-version": "3.3.1"
 }
