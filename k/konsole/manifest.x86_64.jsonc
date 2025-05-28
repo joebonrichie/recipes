@@ -27,7 +27,6 @@
 				"cmake(KF6WidgetsAddons)",
 				"cmake(KF6WindowSystem)",
 				"cmake(KF6XmlGui)",
-				"cmake(Qt6Core5Compat)",
 				"cmake(Qt6Multimedia)",
 				"pkgconfig(icu-uc)"
 			],
@@ -63,7 +62,6 @@
 				"soname(libKF6WindowSystem.so.6(x86_64))",
 				"soname(libKF6XmlGui.so.6(x86_64))",
 				"soname(libQt6Core.so.6(x86_64))",
-				"soname(libQt6Core5Compat.so.6(x86_64))",
 				"soname(libQt6DBus.so.6(x86_64))",
 				"soname(libQt6Gui.so.6(x86_64))",
 				"soname(libQt6Multimedia.so.6(x86_64))",
@@ -81,8 +79,8 @@
 				"/usr/bin/konsoleprofile",
 				"/usr/lib/kconf_update_bin/konsole_globalaccel",
 				"/usr/lib/kconf_update_bin/konsole_show_menubar",
-				"/usr/lib/libkonsoleapp.so.24.12.3",
-				"/usr/lib/libkonsoleprivate.so.24.12.3",
+				"/usr/lib/libkonsoleapp.so.25.04.1",
+				"/usr/lib/libkonsoleprivate.so.25.04.1",
 				"/usr/lib/qt6/plugins/kf6/parts/konsolepart.so",
 				"/usr/lib/qt6/plugins/konsoleplugins/konsole_quickcommandsplugin.so",
 				"/usr/lib/qt6/plugins/konsoleplugins/konsole_sshmanagerplugin.so",
@@ -161,6 +159,7 @@
 				"/usr/share/locale/pt_BR/LC_MESSAGES/konsole.mo",
 				"/usr/share/locale/ro/LC_MESSAGES/konsole.mo",
 				"/usr/share/locale/ru/LC_MESSAGES/konsole.mo",
+				"/usr/share/locale/sa/LC_MESSAGES/konsole.mo",
 				"/usr/share/locale/se/LC_MESSAGES/konsole.mo",
 				"/usr/share/locale/si/LC_MESSAGES/konsole.mo",
 				"/usr/share/locale/sk/LC_MESSAGES/konsole.mo",
@@ -193,8 +192,8 @@
 			"provides": [
 				"binary(konsole)",
 				"binary(konsoleprofile)",
-				"soname(libkonsoleapp.so.24.12.3(x86_64))",
-				"soname(libkonsoleprivate.so.24.12.3(x86_64))",
+				"soname(libkonsoleapp.so.25.04.1(x86_64))",
+				"soname(libkonsoleprivate.so.25.04.1(x86_64))",
 				"soname(qt6/plugins/kf6/parts/konsolepart.so(x86_64))",
 				"soname(qt6/plugins/konsoleplugins/konsole_quickcommandsplugin.so(x86_64))",
 				"soname(qt6/plugins/konsoleplugins/konsole_sshmanagerplugin.so(x86_64))"
@@ -202,6 +201,6 @@
 		}
 	},
 	"source-name": "konsole",
-	"source-release": "3",
-	"source-version": "24.12.3"
+	"source-release": "4",
+	"source-version": "25.04.1"
 }

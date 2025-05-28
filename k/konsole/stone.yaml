@@ -4,10 +4,10 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : konsole
-version     : 24.12.3
-release     : 3
+version     : 25.04.1
+release     : 4
 upstreams   :
-    - https://download.kde.org/stable/release-service/24.12.3/src/konsole-24.12.3.tar.xz : fe7c25e0dbf93c2d2a36988f479cd3202d8c8c58656395ce13e248c591c10241
+    - https://download.kde.org/stable/release-service/25.04.1/src/konsole-25.04.1.tar.xz : 961edfa0a3450fe06172a30a7b72cf810956a88b562847202feb8706068e745e
 homepage    : https://kde.org/applications/system/org.kde.konsole
 license     :
     - GFDL-1.2-or-later
@@ -40,7 +40,6 @@ builddeps   :
     - cmake(KF6WidgetsAddons)
     - cmake(KF6WindowSystem)
     - cmake(KF6XmlGui)
-    - cmake(Qt6Core5Compat)
     - cmake(Qt6Multimedia)
     - pkgconfig(icu-uc)
 rundeps     :
