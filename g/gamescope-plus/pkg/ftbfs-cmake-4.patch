@@ -1,0 +1,25 @@
+From 0ae614864de0b111db076477f00ba152fb0d9f4e Mon Sep 17 00:00:00 2001
+From: Matthew Schwartz <matthew.schwartz@linux.dev>
+Date: Sun, 30 Mar 2025 16:08:47 -0700
+Subject: [PATCH] build: add support for CMake 4.0
+
+Trying to build the project with CMake 4.0 will result in a build error:
+"Compatibility with CMake < 3.5 has been removed from CMake."
+
+To avoid this, switch to <min>...<max> syntax for the minimum required
+version check.
+---
+ CMakeLists.txt | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index fb4c7851..52678aff 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -1,5 +1,5 @@
+ # Set the minimum required version of CMake for this project.
+-cmake_minimum_required(VERSION 2.8)
++cmake_minimum_required(VERSION 2.8...4.0)
+ 
+ # Set project name.
+ project(OpenVRSDK)

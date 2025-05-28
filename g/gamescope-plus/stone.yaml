@@ -5,7 +5,7 @@
 #
 name        : gamescope-plus
 version     : 3.15.13.plus1
-release     : 5
+release     : 6
 homepage    : https://github.com/ChimeraOS/gamescope
 upstreams   :
     - git|https://github.com/ChimeraOS/gamescope.git : bfdccf935a35bde65ebcbb345315b46e9ac5337b
@@ -18,7 +18,6 @@ license     :
     - GPL-3.0-only
 networking: yes
 builddeps   :
-    - binary(g++) # For libstdc++
     - binary(glslangValidator)
     - cmake(VulkanHeaders)
     - pkgconfig(egl)
@@ -52,11 +51,12 @@ builddeps   :
     # TODO: Use system glm
     # TODO: xcb-errors
 setup       : |
-    # Doesn't work with libc++
-    # https://github.com/ValveSoftware/gamescope/issues/1509
-    export CXXFLAGS="${CXXFLAGS} -stdlib=libstdc++"
-
     %patch %(pkgdir)/1828.patch
+    %patch %(pkgdir)/ftbfs-libc++.patch
+
+    pushd subprojects/openvr
+    %patch %(pkgdir)/ftbfs-cmake-4.patch
+    popd
 
     %meson \
         --wrap-mode=default
