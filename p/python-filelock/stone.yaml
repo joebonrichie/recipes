@@ -1,0 +1,29 @@
+#
+# SPDX-FileCopyrightText: © 2020-2024 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : python-filelock
+version     : 3.18.0
+release     : 1
+homepage    : https://github.com/tox-dev/filelock
+upstreams   :
+    - https://pypi.debian.net/filelock/filelock-3.18.0.tar.gz : adbc88eabb99d2fec8c9c1b229b171f18afa655400173ddc653d5d01501fb9f2
+summary     : A platform independent file lock
+description : |
+    A platform independent file lock
+license     : Unlicense
+builddeps   :
+    - python(hatch-vcs)
+    - python(hatchling)
+rundeps     :
+    - python-libs
+# checkdeps   :
+#     - binary(pytest)
+build       : |
+    %pyproject_build
+install     : |
+    %pyproject_install
+# TODO: needs python-virtualenv for tests
+# check       : |
+#     PYTHONPATH="$PWD/src" pytest

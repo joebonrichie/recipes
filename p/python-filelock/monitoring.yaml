@@ -1,0 +1,6 @@
+releases:
+  id: 11739
+  rss: https://pypi.org/rss/project/filelock/releases.xml
+security:
+  # No known CPE. Checked 20250527
+  cpe: ~
