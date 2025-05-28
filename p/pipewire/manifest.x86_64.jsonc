@@ -28,7 +28,7 @@
 				"pkgconfig(opus)",
 				"pkgconfig(readline)",
 				"pkgconfig(sbc)",
-				"pkgconfig(sdl2_compat)",
+				"pkgconfig(sdl2-compat)",
 				"pkgconfig(sndfile)",
 				"pkgconfig(systemd)",
 				"pkgconfig(vulkan)",
@@ -81,7 +81,7 @@
 				"pkgconfig(opus)",
 				"pkgconfig(readline)",
 				"pkgconfig(sbc)",
-				"pkgconfig(sdl2_compat)",
+				"pkgconfig(sdl2-compat)",
 				"pkgconfig(sndfile)",
 				"pkgconfig(systemd)",
 				"pkgconfig(vulkan)",
@@ -532,7 +532,7 @@
 				"pkgconfig(opus)",
 				"pkgconfig(readline)",
 				"pkgconfig(sbc)",
-				"pkgconfig(sdl2_compat)",
+				"pkgconfig(sdl2-compat)",
 				"pkgconfig(sndfile)",
 				"pkgconfig(systemd)",
 				"pkgconfig(vulkan)",
@@ -789,7 +789,7 @@
 				"pkgconfig(opus)",
 				"pkgconfig(readline)",
 				"pkgconfig(sbc)",
-				"pkgconfig(sdl2_compat)",
+				"pkgconfig(sdl2-compat)",
 				"pkgconfig(sndfile)",
 				"pkgconfig(systemd)",
 				"pkgconfig(vulkan)",
@@ -813,6 +813,6 @@
 		}
 	},
 	"source-name": "pipewire",
-	"source-release": "10",
+	"source-release": "11",
 	"source-version": "1.4.2"
 }
