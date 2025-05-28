@@ -5,7 +5,7 @@
 #
 name        : protobuf
 version     : "31.0"
-release     : 4
+release     : 5
 homepage    : https://github.com/protocolbuffers/protobuf
 upstreams   :
     - https://github.com/protocolbuffers/protobuf/releases/download/v31.0/protobuf-31.0.tar.gz : 29372fc269325b491126d204931eda436bf9a593f46b3467fac42c40f9b32944
@@ -16,10 +16,6 @@ license     : BSD-3-Clause
 builddeps   :
     - cmake(absl)
     - pkgconfig(zlib)
-packages    :
-    - "%(name)-devel":
-        paths:
-            - /usr/bin/*
 setup       : |
     %cmake -Dprotobuf_LOCAL_DEPENDENCIES_ONLY=OFF . \
            -DBUILD_SHARED_LIBS=ON \
@@ -31,6 +27,15 @@ build       : |
     %cmake_build
 install     : |
     %cmake_install
+packages    :
+    - "%(name)-devel":
+        paths:
+            - /usr/bin/*
 
-    # No static
-    rm -rfv %(installroot)%(libdir)/lib*.a
+    - "%(name)-staticlib":
+        summary: Static libs for %(name)
+        description: Static libs for %(name)
+        rundeps:
+            - "%(name)-devel"
+        paths:
+            - /usr/lib/lib*.a

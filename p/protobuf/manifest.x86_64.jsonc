@@ -442,9 +442,22 @@
 				"pkgconfig(upb)",
 				"pkgconfig(utf8_range)"
 			]
+		},
+		"protobuf-staticlib": {
+			"build-depends": [
+				"cmake(absl)",
+				"pkgconfig(zlib)"
+			],
+			"depends": [
+				"protobuf-devel"
+			],
+			"files": [
+				"/usr/lib/libupb.a"
+			],
+			"name": "protobuf-staticlib"
 		}
 	},
 	"source-name": "protobuf",
-	"source-release": "4",
+	"source-release": "5",
 	"source-version": "31.0"
 }
