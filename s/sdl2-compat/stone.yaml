@@ -5,7 +5,7 @@
 #
 name        : sdl2-compat
 version     : 2.32.56
-release     : 2
+release     : 3
 homepage    : https://github.com/libsdl-org/sdl2-compat
 upstreams   :
     - https://github.com/libsdl-org/sdl2-compat/releases/download/release-2.32.56/sdl2-compat-2.32.56.tar.gz : 27e845b1b7dc0a91a85f1a1f18892ed205adb38caf767741eb258008d8264de0
@@ -31,11 +31,3 @@ packages    :
     - "%(name)-devel":
         paths:
             - /usr/bin
-
-    - "%(name)-staticlib":
-        summary: Static libs for %(name)
-        description: Static libs for %(name)
-        paths:
-            - /usr/lib/lib*.a
-        rundeps:
-            - "%(name)-devel"

@@ -135,6 +135,8 @@
 				"/usr/lib/cmake/SDL2/sdl2-config.cmake",
 				"/usr/lib/libSDL2-2.0.so",
 				"/usr/lib/libSDL2.so",
+				"/usr/lib/libSDL2_test.a",
+				"/usr/lib/libSDL2main.a",
 				"/usr/lib/pkgconfig/sdl2-compat.pc",
 				"/usr/share/aclocal/sdl2.m4"
 			],
@@ -145,23 +147,9 @@
 				"cmake(sdl2)",
 				"pkgconfig(sdl2-compat)"
 			]
-		},
-		"sdl2-compat-staticlib": {
-			"build-depends": [
-				"pkgconfig(sdl3)",
-				"pkgconfig(x11)"
-			],
-			"depends": [
-				"sdl2-compat-devel"
-			],
-			"files": [
-				"/usr/lib/libSDL2_test.a",
-				"/usr/lib/libSDL2main.a"
-			],
-			"name": "sdl2-compat-staticlib"
 		}
 	},
 	"source-name": "sdl2-compat",
-	"source-release": "2",
+	"source-release": "3",
 	"source-version": "2.32.56"
 }

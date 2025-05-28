@@ -61,3 +61,6 @@
 - libxtst-32bit
 - libxtst-32bit-dbginfo
 - libxtst-32bit-devel
+
+### Actually checked for by cmake
+- sdl2-compat-staticlib
