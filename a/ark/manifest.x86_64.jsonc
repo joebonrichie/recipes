@@ -58,8 +58,8 @@
 			],
 			"files": [
 				"/usr/bin/ark",
-				"/usr/lib/libkerfuffle.so.24",
-				"/usr/lib/libkerfuffle.so.24.12.3",
+				"/usr/lib/libkerfuffle.so.25",
+				"/usr/lib/libkerfuffle.so.25.04.1",
 				"/usr/lib/qt6/plugins/kerfuffle/kerfuffle_cli7z.so",
 				"/usr/lib/qt6/plugins/kerfuffle/kerfuffle_cliarj.so",
 				"/usr/lib/qt6/plugins/kerfuffle/kerfuffle_clirar.so",
@@ -138,6 +138,7 @@
 				"/usr/share/locale/pt_BR/LC_MESSAGES/ark.mo",
 				"/usr/share/locale/ro/LC_MESSAGES/ark.mo",
 				"/usr/share/locale/ru/LC_MESSAGES/ark.mo",
+				"/usr/share/locale/sa/LC_MESSAGES/ark.mo",
 				"/usr/share/locale/se/LC_MESSAGES/ark.mo",
 				"/usr/share/locale/sk/LC_MESSAGES/ark.mo",
 				"/usr/share/locale/sl/LC_MESSAGES/ark.mo",
@@ -180,7 +181,7 @@
 			"name": "ark",
 			"provides": [
 				"binary(ark)",
-				"soname(libkerfuffle.so.24(x86_64))",
+				"soname(libkerfuffle.so.25(x86_64))",
 				"soname(qt6/plugins/kerfuffle/kerfuffle_cli7z.so(x86_64))",
 				"soname(qt6/plugins/kerfuffle/kerfuffle_cliarj.so(x86_64))",
 				"soname(qt6/plugins/kerfuffle/kerfuffle_clirar.so(x86_64))",
@@ -197,6 +198,6 @@
 		}
 	},
 	"source-name": "ark",
-	"source-release": "2",
-	"source-version": "24.12.3"
+	"source-release": "3",
+	"source-version": "25.04.1"
 }
