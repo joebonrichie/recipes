@@ -5,7 +5,6 @@
 		"libxcb": {
 			"build-depends": [
 				"binary(python3)",
-				"pkgconfig(xau)",
 				"pkgconfig(xcb-proto)",
 				"pkgconfig32(xau)"
 			],
@@ -99,14 +98,13 @@
 		"libxcb-32bit": {
 			"build-depends": [
 				"binary(python3)",
-				"pkgconfig(xau)",
 				"pkgconfig(xcb-proto)",
 				"pkgconfig32(xau)"
 			],
 			"depends": [
 				"libxcb",
-				"soname(libXau.so.6(x86))",
-				"soname(libc.so.6(x86))"
+				"soname(libXau.so.6(386))",
+				"soname(libc.so.6(386))"
 			],
 			"files": [
 				"/usr/lib32/libxcb-composite.so.0",
@@ -217,7 +215,6 @@
 		"libxcb-32bit-devel": {
 			"build-depends": [
 				"binary(python3)",
-				"pkgconfig(xau)",
 				"pkgconfig(xcb-proto)",
 				"pkgconfig32(xau)"
 			],
@@ -310,7 +307,6 @@
 		"libxcb-devel": {
 			"build-depends": [
 				"binary(python3)",
-				"pkgconfig(xau)",
 				"pkgconfig(xcb-proto)",
 				"pkgconfig32(xau)"
 			],
@@ -2745,6 +2741,6 @@
 		}
 	},
 	"source-name": "libxcb",
-	"source-release": "4",
+	"source-release": "5",
 	"source-version": "1.17.0"
 }
