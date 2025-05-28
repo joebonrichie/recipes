@@ -4,8 +4,8 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : llvm
-version     : 20.1.5
-release     : 29
+version     : 20.1.6
+release     : 30
 summary     : Low Level Virtual Machine
 license     :
     - Apache-2.0 WITH LLVM-exception
@@ -14,7 +14,8 @@ homepage    : https://www.llvm.org
 description : |
     Low Level Virtual Machine
 upstreams   :
-    - https://github.com/llvm/llvm-project/releases/download/llvmorg-20.1.5/llvm-project-20.1.5.src.tar.xz : a069565cd1c6aee48ee0f36de300635b5781f355d7b3c96a28062d50d575fa3e
+    # TODO: Switch this back to src tar
+    - https://github.com/llvm/llvm-project/archive/refs/tags/llvmorg-20.1.6.tar.gz : afa487c401613f5e4a35935b2abfb5d07e6ebfa20df32787e34a5c7e97c6ea4b
 builddeps   :
     - binary(perl)
     - binary(python3)
@@ -33,7 +34,7 @@ builddeps   :
     - libatomic
     - libatomic-32bit
     - libcxx-devel-static
-
+    - mimalloc-static # TODO: Figure out if we can actually split mimalloc-static, or if it needs to go back in.
     # TODO: Package python-myst-parser so we can build man pages
 tuning      :
     - fortify: false
@@ -51,8 +52,9 @@ environment : |
 
         # We really only care about 32bit LLVM in the context of Mesa which doesn't need anything besides libLLVM
         # Additionally it's possible that we really only need it to support the AMDGPU target but that is untested.
+        # 2025-05: Add SPIRV just in case that's ever needed (seems possible in a graphics context)
         # TODO: Test that. Low priority since the 32bit build is already relatively short
-        _BUILD_TARGETS="AMDGPU;X86"
+        _BUILD_TARGETS="AMDGPU;SPIRV;X86"
         _PROJECTS="llvm"
         _RUNTIMES="libcxx;libcxxabi;libunwind"
 
