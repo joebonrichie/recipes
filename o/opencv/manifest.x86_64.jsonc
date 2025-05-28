@@ -17,7 +17,8 @@
 				"pkgconfig(libpng)",
 				"pkgconfig(libva)",
 				"pkgconfig(openblas)",
-				"pkgconfig(zlib)"
+				"pkgconfig(zlib)",
+				"protobuf-staticlib"
 			],
 			"depends": [
 				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
@@ -88,7 +89,8 @@
 				"pkgconfig(libpng)",
 				"pkgconfig(libva)",
 				"pkgconfig(openblas)",
-				"pkgconfig(zlib)"
+				"pkgconfig(zlib)",
+				"protobuf-staticlib"
 			],
 			"depends": [
 				"soname(libc++.so.1(x86_64))",
@@ -124,7 +126,8 @@
 				"pkgconfig(libpng)",
 				"pkgconfig(libva)",
 				"pkgconfig(openblas)",
-				"pkgconfig(zlib)"
+				"pkgconfig(zlib)",
+				"protobuf-staticlib"
 			],
 			"depends": [
 				"soname(libc++.so.1(x86_64))",
@@ -161,7 +164,8 @@
 				"pkgconfig(libpng)",
 				"pkgconfig(libva)",
 				"pkgconfig(openblas)",
-				"pkgconfig(zlib)"
+				"pkgconfig(zlib)",
+				"protobuf-staticlib"
 			],
 			"depends": [
 				"soname(libc++.so.1(x86_64))",
@@ -204,7 +208,8 @@
 				"pkgconfig(libpng)",
 				"pkgconfig(libva)",
 				"pkgconfig(openblas)",
-				"pkgconfig(zlib)"
+				"pkgconfig(zlib)",
+				"protobuf-staticlib"
 			],
 			"depends": [
 				"opencv",
@@ -535,19 +540,19 @@
 				"pkgconfig(libpng)",
 				"pkgconfig(libva)",
 				"pkgconfig(openblas)",
-				"pkgconfig(zlib)"
+				"pkgconfig(zlib)",
+				"protobuf-staticlib"
 			],
 			"depends": [
 				"soname(ld-linux-x86-64.so.2(x86_64))",
-				"soname(libabsl_hash.so.2501.0.0(x86_64))",
-				"soname(libabsl_log_internal_message.so.2501.0.0(x86_64))",
-				"soname(libabsl_log_internal_nullguard.so.2501.0.0(x86_64))",
+				"soname(libabsl_hash.so.2505.0.0(x86_64))",
+				"soname(libabsl_log_internal_message.so.2505.0.0(x86_64))",
 				"soname(libc++.so.1(x86_64))",
 				"soname(libc.so.6(x86_64))",
 				"soname(libm.so.6(x86_64))",
 				"soname(libopencv_core.so.411(x86_64))",
 				"soname(libopencv_imgproc.so.411(x86_64))",
-				"soname(libprotobuf.so.29.3.0(x86_64))",
+				"soname(libprotobuf.so.31.0.0(x86_64))",
 				"soname(libunwind.so.1(x86_64))"
 			],
 			"files": [
@@ -574,7 +579,8 @@
 				"pkgconfig(libpng)",
 				"pkgconfig(libva)",
 				"pkgconfig(openblas)",
-				"pkgconfig(zlib)"
+				"pkgconfig(zlib)",
+				"protobuf-staticlib"
 			],
 			"depends": [
 				"soname(libc++.so.1(x86_64))",
@@ -609,7 +615,8 @@
 				"pkgconfig(libpng)",
 				"pkgconfig(libva)",
 				"pkgconfig(openblas)",
-				"pkgconfig(zlib)"
+				"pkgconfig(zlib)",
+				"protobuf-staticlib"
 			],
 			"depends": [
 				"soname(libc++.so.1(x86_64))",
@@ -642,7 +649,8 @@
 				"pkgconfig(libpng)",
 				"pkgconfig(libva)",
 				"pkgconfig(openblas)",
-				"pkgconfig(zlib)"
+				"pkgconfig(zlib)",
+				"protobuf-staticlib"
 			],
 			"depends": [
 				"soname(libQt6Core.so.6(x86_64))",
@@ -679,7 +687,8 @@
 				"pkgconfig(libpng)",
 				"pkgconfig(libva)",
 				"pkgconfig(openblas)",
-				"pkgconfig(zlib)"
+				"pkgconfig(zlib)",
+				"protobuf-staticlib"
 			],
 			"depends": [
 				"soname(libavif.so.16(x86_64))",
@@ -722,7 +731,8 @@
 				"pkgconfig(libpng)",
 				"pkgconfig(libva)",
 				"pkgconfig(openblas)",
-				"pkgconfig(zlib)"
+				"pkgconfig(zlib)",
+				"protobuf-staticlib"
 			],
 			"depends": [
 				"soname(libc++.so.1(x86_64))",
@@ -755,7 +765,8 @@
 				"pkgconfig(libpng)",
 				"pkgconfig(libva)",
 				"pkgconfig(openblas)",
-				"pkgconfig(zlib)"
+				"pkgconfig(zlib)",
+				"protobuf-staticlib"
 			],
 			"depends": [
 				"soname(libc++.so.1(x86_64))",
@@ -788,7 +799,8 @@
 				"pkgconfig(libpng)",
 				"pkgconfig(libva)",
 				"pkgconfig(openblas)",
-				"pkgconfig(zlib)"
+				"pkgconfig(zlib)",
+				"protobuf-staticlib"
 			],
 			"depends": [
 				"soname(libc++.so.1(x86_64))",
@@ -824,7 +836,8 @@
 				"pkgconfig(libpng)",
 				"pkgconfig(libva)",
 				"pkgconfig(openblas)",
-				"pkgconfig(zlib)"
+				"pkgconfig(zlib)",
+				"protobuf-staticlib"
 			],
 			"depends": [
 				"soname(libc++.so.1(x86_64))",
@@ -858,7 +871,8 @@
 				"pkgconfig(libpng)",
 				"pkgconfig(libva)",
 				"pkgconfig(openblas)",
-				"pkgconfig(zlib)"
+				"pkgconfig(zlib)",
+				"protobuf-staticlib"
 			],
 			"depends": [
 				"soname(libc++.so.1(x86_64))",
@@ -891,7 +905,8 @@
 				"pkgconfig(libpng)",
 				"pkgconfig(libva)",
 				"pkgconfig(openblas)",
-				"pkgconfig(zlib)"
+				"pkgconfig(zlib)",
+				"protobuf-staticlib"
 			],
 			"depends": [
 				"soname(libc++.so.1(x86_64))",
@@ -928,7 +943,8 @@
 				"pkgconfig(libpng)",
 				"pkgconfig(libva)",
 				"pkgconfig(openblas)",
-				"pkgconfig(zlib)"
+				"pkgconfig(zlib)",
+				"protobuf-staticlib"
 			],
 			"depends": [
 				"soname(libc++.so.1(x86_64))",
@@ -963,7 +979,8 @@
 				"pkgconfig(libpng)",
 				"pkgconfig(libva)",
 				"pkgconfig(openblas)",
-				"pkgconfig(zlib)"
+				"pkgconfig(zlib)",
+				"protobuf-staticlib"
 			],
 			"depends": [
 				"soname(libc++.so.1(x86_64))",
@@ -1000,7 +1017,8 @@
 				"pkgconfig(libpng)",
 				"pkgconfig(libva)",
 				"pkgconfig(openblas)",
-				"pkgconfig(zlib)"
+				"pkgconfig(zlib)",
+				"protobuf-staticlib"
 			],
 			"depends": [
 				"soname(libavcodec.so.61(x86_64))",
@@ -1035,6 +1053,6 @@
 		}
 	},
 	"source-name": "opencv",
-	"source-release": "2",
+	"source-release": "3",
 	"source-version": "4.11.0"
 }
