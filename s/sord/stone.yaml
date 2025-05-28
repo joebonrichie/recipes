@@ -5,7 +5,7 @@
 #
 name        : sord
 version     : 0.16.18
-release     : 1
+release     : 2
 homepage    : https://gitlab.com/drobilla/sord
 upstreams   :
     - https://gitlab.com/drobilla/sord/-/archive/v0.16.18/sord-v0.16.18.tar.gz : cc006e6474875a26ff2caf8c4bb90c083a7abffb542408b28bd7b6e91791af5b
