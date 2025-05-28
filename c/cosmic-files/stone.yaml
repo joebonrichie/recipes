@@ -5,7 +5,7 @@
 #
 name        : cosmic-files
 version     : 1.0.0-alpha.6
-release     : 14
+release     : 15
 homepage    : https://github.com/pop-os/cosmic-files
 upstreams   :
     - git|https://github.com/pop-os/cosmic-files : cd43d722d643fec6c6bbab67bfdee5df764dbe25
@@ -17,11 +17,15 @@ license     :
 builddeps   :
     - binary(just)
     - binary(which)
+    - pkgconfig(bzip2)
     - pkgconfig(glib-2.0)
+    - pkgconfig(liblzma)
+    - pkgconfig(libzstd)
     - pkgconfig(xkbcommon)
 networking  : yes
-tuning      :
-    - lto: thin
+environment : |
+    # Force system libs
+    export ZSTD_SYS_USE_PKG_CONFIG=1
 setup       : |
     %cargo_fetch
 build       : |
