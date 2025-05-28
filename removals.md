@@ -44,3 +44,8 @@
 - perl-parse-yapp-devel
 - perl-xml-parser-devel
 - perl-uri-devel
+
+### Never used
+- libxcomposite-32bit
+- libxcomposite-32bit-dbginfo
+- libxcomposite-32bit-devel
