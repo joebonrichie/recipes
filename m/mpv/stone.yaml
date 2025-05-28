@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : mpv
-version     : 0.39.0
-release     : 4
+version     : 0.40.0
+release     : 5
 homepage    : https://mpv.io/
 upstreams   :
-    - https://github.com/mpv-player/mpv/archive/refs/tags/v0.39.0.tar.gz : 2ca92437affb62c2b559b4419ea4785c70d023590500e8a52e95ea3ab4554683
+    - https://github.com/mpv-player/mpv/archive/refs/tags/v0.40.0.tar.gz : 10a0f4654f62140a6dd4d380dcf0bbdbdcf6e697556863dc499c296182f081a3
 summary     : a free, open source, and cross-platform media player
 description : |
   mpv is a free (as in freedom) media player for the command line. It supports a wide variety of media file formats, audio and video codecs, and subtitle types.
@@ -38,6 +38,7 @@ builddeps   :
     # pkgconfig(libbluray)
     # pkgconfig(libcdio)
     # pkgconfig(libcdio_paranoia)
+    - pkgconfig(libdisplay-info)
     - pkgconfig(libdrm)
     - pkgconfig(libjpeg)
     - pkgconfig(libpipewire-0.3)
@@ -47,6 +48,7 @@ builddeps   :
     - pkgconfig(libswresample)
     - pkgconfig(libswscale)
     - pkgconfig(libva)
+    - pkgconfig(luajit)
     # pkgconfig(mujs)
     # pkgconfig(openal)
     # pkgconfig(rubberband)
@@ -56,7 +58,6 @@ builddeps   :
     # pkgconfig(spirv-cross-c-shared)
     # pkgconfig(uchardet)
     # pkgconfig(vapoursynth)
-    # pkgconfig(vdpau)
     - pkgconfig(vulkan)
     - pkgconfig(wayland-client)
     - pkgconfig(wayland-protocols)
@@ -69,7 +70,6 @@ builddeps   :
     - pkgconfig(xv)
     # pkgconfig(zimg)
     - pkgconfig(zlib)
-    # TODO add luajit
 setup       : |
     %meson -Dlibmpv=true
 build       : |
@@ -80,6 +80,7 @@ packages:
     - "%(name)-libs":
         paths:
             - /usr/lib/*.so.*
+
     - "%(name)-libs-devel":
         paths:
             - /usr/include
