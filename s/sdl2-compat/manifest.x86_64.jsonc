@@ -13,7 +13,7 @@
 			],
 			"files": [
 				"/usr/lib/libSDL2-2.0.so.0",
-				"/usr/lib/libSDL2-2.0.so.0.3000.51",
+				"/usr/lib/libSDL2-2.0.so.0.3200.56",
 				"/usr/share/licenses/sdl2-compat/LICENSE.txt"
 			],
 			"name": "sdl2-compat",
@@ -47,6 +47,7 @@
 				"/usr/include/SDL2/SDL_config_ngage.h",
 				"/usr/include/SDL2/SDL_config_os2.h",
 				"/usr/include/SDL2/SDL_config_pandora.h",
+				"/usr/include/SDL2/SDL_config_unix.h",
 				"/usr/include/SDL2/SDL_config_windows.h",
 				"/usr/include/SDL2/SDL_config_wingdk.h",
 				"/usr/include/SDL2/SDL_config_winrt.h",
@@ -130,22 +131,37 @@
 				"/usr/lib/cmake/SDL2/SDL2_testTargets.cmake",
 				"/usr/lib/cmake/SDL2/SDL2mainTargets-release.cmake",
 				"/usr/lib/cmake/SDL2/SDL2mainTargets.cmake",
+				"/usr/lib/cmake/SDL2/sdl2-config-version.cmake",
+				"/usr/lib/cmake/SDL2/sdl2-config.cmake",
 				"/usr/lib/libSDL2-2.0.so",
 				"/usr/lib/libSDL2.so",
-				"/usr/lib/libSDL2_test.a",
-				"/usr/lib/libSDL2main.a",
-				"/usr/lib/pkgconfig/sdl2_compat.pc",
+				"/usr/lib/pkgconfig/sdl2-compat.pc",
 				"/usr/share/aclocal/sdl2.m4"
 			],
 			"name": "sdl2-compat-devel",
 			"provides": [
 				"binary(sdl2-config)",
 				"cmake(SDL2)",
-				"pkgconfig(sdl2_compat)"
+				"cmake(sdl2)",
+				"pkgconfig(sdl2-compat)"
 			]
+		},
+		"sdl2-compat-staticlib": {
+			"build-depends": [
+				"pkgconfig(sdl3)",
+				"pkgconfig(x11)"
+			],
+			"depends": [
+				"sdl2-compat-devel"
+			],
+			"files": [
+				"/usr/lib/libSDL2_test.a",
+				"/usr/lib/libSDL2main.a"
+			],
+			"name": "sdl2-compat-staticlib"
 		}
 	},
 	"source-name": "sdl2-compat",
-	"source-release": "1",
-	"source-version": "2.30.51"
+	"source-release": "2",
+	"source-version": "2.32.56"
 }
