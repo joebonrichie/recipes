@@ -30,6 +30,9 @@
 				"pkgconfig(x11)",
 				"pkgconfig(xcb-aux)"
 			],
+			"depends": [
+				"startup-notification"
+			],
 			"files": [
 				"/usr/include/startup-notification-1.0/libsn/sn-common.h",
 				"/usr/include/startup-notification-1.0/libsn/sn-launchee.h",
@@ -47,6 +50,6 @@
 		}
 	},
 	"source-name": "startup-notification",
-	"source-release": "1",
+	"source-release": "2",
 	"source-version": "0.12"
 }
