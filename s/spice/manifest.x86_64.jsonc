@@ -4,14 +4,15 @@
 	"packages": {
 		"spice": {
 			"build-depends": [
-				"binary(cmake)",
 				"pkgconfig(gdk-pixbuf-2.0)",
 				"pkgconfig(glib-2.0)",
 				"pkgconfig(gstreamer-1.0)",
+				"pkgconfig(gstreamer-app-1.0)",
 				"pkgconfig(libjpeg)",
 				"pkgconfig(liblz4)",
 				"pkgconfig(libsasl2)",
 				"pkgconfig(openssl)",
+				"pkgconfig(opus)",
 				"pkgconfig(orc-0.4)",
 				"pkgconfig(pixman-1)",
 				"pkgconfig(spice-protocol)",
@@ -29,6 +30,7 @@
 				"soname(libjpeg.so.8(x86_64))",
 				"soname(liblz4.so.1(x86_64))",
 				"soname(libm.so.6(x86_64))",
+				"soname(libopus.so.0(x86_64))",
 				"soname(liborc-0.4.so.0(x86_64))",
 				"soname(libpixman-1.so.0(x86_64))",
 				"soname(libsasl2.so.3(x86_64))",
@@ -46,14 +48,15 @@
 		},
 		"spice-devel": {
 			"build-depends": [
-				"binary(cmake)",
 				"pkgconfig(gdk-pixbuf-2.0)",
 				"pkgconfig(glib-2.0)",
 				"pkgconfig(gstreamer-1.0)",
+				"pkgconfig(gstreamer-app-1.0)",
 				"pkgconfig(libjpeg)",
 				"pkgconfig(liblz4)",
 				"pkgconfig(libsasl2)",
 				"pkgconfig(openssl)",
+				"pkgconfig(opus)",
 				"pkgconfig(orc-0.4)",
 				"pkgconfig(pixman-1)",
 				"pkgconfig(spice-protocol)",
@@ -70,6 +73,7 @@
 				"pkgconfig(liblz4)",
 				"pkgconfig(libsasl2)",
 				"pkgconfig(openssl)",
+				"pkgconfig(opus)",
 				"pkgconfig(orc-0.4)",
 				"pkgconfig(pixman-1)",
 				"pkgconfig(spice-protocol)",
@@ -97,6 +101,6 @@
 		}
 	},
 	"source-name": "spice",
-	"source-release": "1",
+	"source-release": "2",
 	"source-version": "0.15.2"
 }
