@@ -5,7 +5,7 @@
 #
 name        : qt5-x11extras
 version     : 5.15.16+kde.e6e7633b
-release     : 3
+release     : 4
 homepage    : https://www.qt.io
 upstreams   :
     - git|https://invent.kde.org/qt/qt/qtx11extras.git:
