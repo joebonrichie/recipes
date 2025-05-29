@@ -5,7 +5,7 @@
 #
 name        : python-build
 version     : 1.2.2
-release     : 3
+release     : 4
 homepage    : https://github.com/pypa/build
 upstreams   :
     - https://files.pythonhosted.org/packages/source/b/build/build-1.2.2.tar.gz : 119b2fb462adef986483438377a13b2f42064a2a3a4161f24a0cca698a07ac8c
