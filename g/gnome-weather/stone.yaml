@@ -5,7 +5,7 @@
 #
 name        : gnome-weather
 version     : 48.0
-release     : 2
+release     : 3
 homepage    : https://apps.gnome.org/Weather/
 upstreams   :
     - https://download.gnome.org/sources/gnome-weather/48/gnome-weather-48.0.tar.xz : 4c0569b3d815ae2f9416d47134cbd3056340640ff186d31a94c865813b4bdbb5
