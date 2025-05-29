@@ -34,8 +34,7 @@
 			],
 			"name": "expat-32bit",
 			"provides": [
-				"soname(libexpat.so.1(386))",
-				"soname(libexpat.so.1(x86))"
+				"soname(libexpat.so.1(386))"
 			]
 		},
 		"expat-32bit-devel": {
@@ -80,6 +79,6 @@
 		}
 	},
 	"source-name": "expat",
-	"source-release": "6",
+	"source-release": "7",
 	"source-version": "2.6.4"
 }
