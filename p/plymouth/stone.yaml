@@ -5,7 +5,7 @@
 #
 name        : plymouth
 version     : 24.004.60+git.8bc9364c
-release     : 9
+release     : 10
 homepage    : https://www.freedesktop.org/wiki/Software/Plymouth/
 upstreams   :
     - git|https://gitlab.freedesktop.org/plymouth/plymouth.git : 8bc9364cac02179ae55344e32e30a8b459872d25

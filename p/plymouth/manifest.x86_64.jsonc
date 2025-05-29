@@ -467,6 +467,6 @@
 		}
 	},
 	"source-name": "plymouth",
-	"source-release": "9",
+	"source-release": "10",
 	"source-version": "24.004.60+git.8bc9364c"
 }
