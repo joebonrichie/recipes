@@ -42,8 +42,7 @@
 			],
 			"name": "libxscrnsaver-32bit",
 			"provides": [
-				"soname(libXss.so.1(386))",
-				"soname(libXss.so.1(x86))"
+				"soname(libXss.so.1(386))"
 			]
 		},
 		"libxscrnsaver-32bit-devel": {
@@ -106,6 +105,6 @@
 		}
 	},
 	"source-name": "libxscrnsaver",
-	"source-release": "1",
+	"source-release": "2",
 	"source-version": "1.2.4"
 }
