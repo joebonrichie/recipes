@@ -8,6 +8,7 @@
 				"pkgconfig(libusb-1.0)"
 			],
 			"depends": [
+				"hwdata",
 				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
 				"soname(libc.so.6(x86_64))",
 				"soname(libudev.so.1(x86_64))",
@@ -37,7 +38,8 @@
 			],
 			"depends": [
 				"pkgconfig(libudev)",
-				"pkgconfig(libusb-1.0)"
+				"pkgconfig(libusb-1.0)",
+				"usbutils"
 			],
 			"files": [
 				"/usr/lib/pkgconfig/usbutils.pc"
@@ -49,6 +51,6 @@
 		}
 	},
 	"source-name": "usbutils",
-	"source-release": "1",
+	"source-release": "3",
 	"source-version": "017"
 }
