@@ -4,7 +4,8 @@
 	"packages": {
 		"gi-docgen": {
 			"build-depends": [
-				"python(pygments)"
+				"python(pygments)",
+				"python(setuptools)"
 			],
 			"depends": [
 				"python(jinja2(3.11))",
@@ -16,12 +17,12 @@
 			],
 			"files": [
 				"/usr/bin/gi-docgen",
-				"/usr/lib/python3.11/site-packages/gi_docgen-2025.3.dist-info/Apache-2.0.txt",
-				"/usr/lib/python3.11/site-packages/gi_docgen-2025.3.dist-info/GPL-3.0-or-later.txt",
 				"/usr/lib/python3.11/site-packages/gi_docgen-2025.3.dist-info/METADATA",
 				"/usr/lib/python3.11/site-packages/gi_docgen-2025.3.dist-info/RECORD",
 				"/usr/lib/python3.11/site-packages/gi_docgen-2025.3.dist-info/WHEEL",
 				"/usr/lib/python3.11/site-packages/gi_docgen-2025.3.dist-info/entry_points.txt",
+				"/usr/lib/python3.11/site-packages/gi_docgen-2025.3.dist-info/licenses/LICENSES/Apache-2.0.txt",
+				"/usr/lib/python3.11/site-packages/gi_docgen-2025.3.dist-info/licenses/LICENSES/GPL-3.0-or-later.txt",
 				"/usr/lib/python3.11/site-packages/gi_docgen-2025.3.dist-info/top_level.txt",
 				"/usr/lib/python3.11/site-packages/gidocgen/__init__.py",
 				"/usr/lib/python3.11/site-packages/gidocgen/__pycache__/__init__.cpython-311.opt-1.pyc",
@@ -144,6 +145,6 @@
 		}
 	},
 	"source-name": "gi-docgen",
-	"source-release": "3",
+	"source-release": "4",
 	"source-version": "2025.3"
 }
