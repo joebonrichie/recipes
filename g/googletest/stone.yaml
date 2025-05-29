@@ -5,7 +5,7 @@
 #
 name        : googletest
 version     : 1.16.0
-release     : 1
+release     : 2
 upstreams   :
     - https://github.com/google/googletest/archive/refs/tags/v1.16.0.tar.gz : 78c676fc63881529bf97bf9d45948d905a66833fbfa5318ea2cd7478cb98f399
 homepage    : https://google.github.io/googletest/
