@@ -5,7 +5,7 @@
 #
 name        : gnome-font-viewer
 version     : 48.0
-release     : 2
+release     : 3
 homepage    : https://apps.gnome.org/FontViewer/
 upstreams   :
     - https://download.gnome.org/sources/gnome-font-viewer/48/gnome-font-viewer-48.0.tar.xz : 732624231b624ff5c7ac03a8ce71be12393daa53551d11550b20d7b0a3a872a7
