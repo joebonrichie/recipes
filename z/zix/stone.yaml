@@ -5,7 +5,7 @@
 #
 name        : zix
 version     : 0.6.2
-release     : 1
+release     : 2
 homepage    : https://gitlab.com/drobilla/zix
 upstreams   :
     - https://gitlab.com/drobilla/zix/-/archive/v0.6.2/zix-v0.6.2.tar.gz : caa1435c870767e12f71454e8b17e878fa9b4bb35730b8f570934fb7cb74031c
