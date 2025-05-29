@@ -5,7 +5,7 @@
 #
 name        : modemmanager
 version     : 1.24.0
-release     : 3
+release     : 4
 homepage    : https://gitlab.freedesktop.org/mobile-broadband/ModemManager
 upstreams   :
     - https://gitlab.freedesktop.org/mobile-broadband/ModemManager/-/archive/1.24.0/ModemManager-1.24.0.tar.gz : 50e166bb24acb00bcaed814483920dfbc5b26d5424faee974b54c702e425a7c7

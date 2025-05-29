@@ -173,7 +173,6 @@
 				"/usr/share/dbus-1/interfaces/org.freedesktop.ModemManager1.xml",
 				"/usr/share/dbus-1/system-services/org.freedesktop.ModemManager1.service",
 				"/usr/share/dbus-1/system.d/org.freedesktop.ModemManager1.conf",
-				"/usr/share/gir-1.0/ModemManager-1.0.gir",
 				"/usr/share/icons/hicolor/22x22/apps/ModemManager.png",
 				"/usr/share/locale/ca/LC_MESSAGES/ModemManager.mo",
 				"/usr/share/locale/cs/LC_MESSAGES/ModemManager.mo",
@@ -368,7 +367,8 @@
 				"/usr/include/libmm-glib/mm-unlock-retries.h",
 				"/usr/lib/libmm-glib.so",
 				"/usr/lib/pkgconfig/ModemManager.pc",
-				"/usr/lib/pkgconfig/mm-glib.pc"
+				"/usr/lib/pkgconfig/mm-glib.pc",
+				"/usr/share/gir-1.0/ModemManager-1.0.gir"
 			],
 			"name": "modemmanager-devel",
 			"provides": [
@@ -378,6 +378,6 @@
 		}
 	},
 	"source-name": "modemmanager",
-	"source-release": "3",
+	"source-release": "4",
 	"source-version": "1.24.0"
 }
