@@ -5,7 +5,7 @@
 #
 name        : atuin
 version     : 18.4.0
-release     : 1
+release     : 2
 homepage    : https://github.com/atuinsh/atuin
 upstreams   :
     - https://github.com/atuinsh/atuin/archive/refs/tags/v18.4.0.tar.gz : de6d2bcf10de4d757916c7e92a70f15929fc1dea75abc4df09b0baedf26a53b2
