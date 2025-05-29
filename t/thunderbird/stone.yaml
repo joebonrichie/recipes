@@ -5,7 +5,7 @@
 #
 name        : thunderbird
 version     : 138.0.2
-release     : 18
+release     : 19
 homepage    : https://www.thunderbird.net/
 upstreams   :
     - https://releases.mozilla.org/pub/thunderbird/releases/138.0.2/source/thunderbird-138.0.2.source.tar.xz:
