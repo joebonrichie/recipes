@@ -5,7 +5,7 @@
 #
 name        : linux-pam
 version     : 1.6.1
-release     : 11
+release     : 12
 summary     : Pluggable Authentication Modules
 license     :
     - BSD-3-Clause
