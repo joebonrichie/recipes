@@ -5,7 +5,7 @@
 #
 name        : svt-av1
 version     : 2.3.0
-release     : 1
+release     : 2
 homepage    : https://gitlab.com/AOMediaCodec/SVT-AV1
 upstreams   :
     - https://gitlab.com/AOMediaCodec/SVT-AV1/-/archive/v2.3.0/SVT-AV1-v2.3.0.tar.bz2 : f65358499f572a47d6b076dda73681a8162b02c0b619a551bc2d62ead8ee719a
@@ -23,6 +23,10 @@ setup      : |
     # Causes build failures like
     # error: always_inline function '_mm256_set1_epi32' requires target feature 'avx', but would be inlined into function 'svt_av1_calc_target_weighted_pred_above_avx2' that is compiled without support for 'avx'
     export CFLAGS="${CFLAGS/-Wa,--compress-debug-sections=zstd/}"
+
+    # This sucks, but patching this is a pain and this is all removed in newer versions
+    sed -i "s|CMAKE_MINIMUM_REQUIRED(VERSION 2.8.12|CMAKE_MINIMUM_REQUIRED(VERSION 3.10|g" third_party/cpuinfo/CMakeLists.txt
+    sed -i "s|CMAKE_MINIMUM_REQUIRED(VERSION 3.1|CMAKE_MINIMUM_REQUIRED(VERSION 3.10|g" third_party/cpuinfo/deps/clog/CMakeLists.txt
 
     %cmake \
            -DBUILD_APPS=OFF
