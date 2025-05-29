@@ -57,12 +57,11 @@
 			],
 			"name": "fakeroot-32bit",
 			"provides": [
-				"soname(fakeroot/libfakeroot-0.so(386))",
-				"soname(fakeroot/libfakeroot-0.so(x86))"
+				"soname(fakeroot/libfakeroot-0.so(386))"
 			]
 		}
 	},
 	"source-name": "fakeroot",
-	"source-release": "5",
+	"source-release": "6",
 	"source-version": "1.37.1.1"
 }

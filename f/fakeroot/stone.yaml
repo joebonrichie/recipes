@@ -5,7 +5,7 @@
 #
 name        : fakeroot
 version     : 1.37.1.1
-release     : 5
+release     : 6
 homepage    : https://packages.debian.org/fakeroot
 upstreams   :
     - https://deb.debian.org/debian/pool/main/f/fakeroot/fakeroot_1.37.1.1.orig.tar.gz : 86b0b75bf319ca42e525c098675b6ed10a06b76e69ec9ccf20ef5e03883b3a14
