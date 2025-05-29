@@ -16,6 +16,7 @@
 				"/usr/lib/python3.11/site-packages/codespell-2.3.0.dist-info/RECORD",
 				"/usr/lib/python3.11/site-packages/codespell-2.3.0.dist-info/WHEEL",
 				"/usr/lib/python3.11/site-packages/codespell-2.3.0.dist-info/entry_points.txt",
+				"/usr/lib/python3.11/site-packages/codespell-2.3.0.dist-info/licenses/COPYING",
 				"/usr/lib/python3.11/site-packages/codespell-2.3.0.dist-info/top_level.txt",
 				"/usr/lib/python3.11/site-packages/codespell_lib/__init__.py",
 				"/usr/lib/python3.11/site-packages/codespell_lib/__main__.py",
@@ -56,11 +57,12 @@
 			"name": "codespell",
 			"provides": [
 				"binary(codespell)",
+				"python(codespell(3.11))",
 				"python(codespell)"
 			]
 		}
 	},
 	"source-name": "codespell",
-	"source-release": "5",
+	"source-release": "6",
 	"source-version": "2.3.0"
 }
