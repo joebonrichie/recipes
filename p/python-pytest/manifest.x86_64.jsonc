@@ -226,12 +226,12 @@
 				"/usr/lib/python3.11/site-packages/_pytest/warning_types.py",
 				"/usr/lib/python3.11/site-packages/_pytest/warnings.py",
 				"/usr/lib/python3.11/site-packages/py.py",
-				"/usr/lib/python3.11/site-packages/pytest-8.3.5.dist-info/AUTHORS",
-				"/usr/lib/python3.11/site-packages/pytest-8.3.5.dist-info/LICENSE",
 				"/usr/lib/python3.11/site-packages/pytest-8.3.5.dist-info/METADATA",
 				"/usr/lib/python3.11/site-packages/pytest-8.3.5.dist-info/RECORD",
 				"/usr/lib/python3.11/site-packages/pytest-8.3.5.dist-info/WHEEL",
 				"/usr/lib/python3.11/site-packages/pytest-8.3.5.dist-info/entry_points.txt",
+				"/usr/lib/python3.11/site-packages/pytest-8.3.5.dist-info/licenses/AUTHORS",
+				"/usr/lib/python3.11/site-packages/pytest-8.3.5.dist-info/licenses/LICENSE",
 				"/usr/lib/python3.11/site-packages/pytest-8.3.5.dist-info/top_level.txt",
 				"/usr/lib/python3.11/site-packages/pytest/__init__.py",
 				"/usr/lib/python3.11/site-packages/pytest/__main__.py",
@@ -251,6 +251,6 @@
 		}
 	},
 	"source-name": "python-pytest",
-	"source-release": "1",
+	"source-release": "2",
 	"source-version": "8.3.5"
 }
