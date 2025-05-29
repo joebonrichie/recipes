@@ -5,7 +5,7 @@
 #
 name        : autoconf
 version     : 2.72
-release     : 4
+release     : 5
 summary     : Extensible package of M4 macros
 license     : GPL-2.0-or-later
 homepage    : https://www.gnu.org/software/autoconf

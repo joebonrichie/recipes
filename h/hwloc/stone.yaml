@@ -5,7 +5,7 @@
 #
 name        : hwloc
 version     : 2.12.1
-release     : 3
+release     : 4
 summary     : Portable Hardware Locality
 license     : BSD-3-Clause
 homepage    : https://www.open-mpi.org/projects/hwloc/

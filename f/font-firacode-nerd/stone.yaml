@@ -5,7 +5,7 @@
 #
 name        : font-firacode-nerd
 version     : 3.3.0
-release     : 1
+release     : 2
 homepage    : https://github.com/tonsky/FiraCode
 upstreams   :
     - https://github.com/ryanoasis/nerd-fonts/releases/download/v3.3.0/FiraCode.zip : 89978e6f870d044286a339161d5ed961569744b1cd2afee62337fa140cd0b397

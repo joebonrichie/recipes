@@ -5,7 +5,7 @@
 #
 name        : json-c
 version     : 0.18
-release     : 4
+release     : 5
 homepage    : https://github.com/json-c/json-c
 upstreams   :
     - https://s3.amazonaws.com/json-c_releases/releases/json-c-0.18.tar.gz : 876ab046479166b869afc6896d288183bbc0e5843f141200c677b3e8dfb11724
@@ -17,7 +17,8 @@ description : |
 license     : MIT
 setup       : |
     %cmake -DBUILD_STATIC_LIBS=OFF \
-           -DDISABLE_WERROR=ON
+           -DDISABLE_WERROR=ON \
+           -DCMAKE_POLICY_VERSION_MINIMUM=3.5
 build       : |
     %cmake_build
 install     : |

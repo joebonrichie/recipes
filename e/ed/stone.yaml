@@ -5,7 +5,7 @@
 #
 name        : ed
 version     : 1.21.1
-release     : 4
+release     : 5
 homepage    : https://www.gnu.org/software/ed/
 upstreams   :
     - https://ftp.gnu.org/gnu/ed/ed-1.21.1.tar.lz : d6d0c7192b02b0519c902a93719053e865ade5a784a3b327d93d888457b23c4b

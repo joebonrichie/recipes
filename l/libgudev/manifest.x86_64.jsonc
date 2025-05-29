@@ -18,8 +18,7 @@
 			"files": [
 				"/usr/lib/girepository-1.0/GUdev-1.0.typelib",
 				"/usr/lib/libgudev-1.0.so.0",
-				"/usr/lib/libgudev-1.0.so.0.3.0",
-				"/usr/share/gir-1.0/GUdev-1.0.gir"
+				"/usr/lib/libgudev-1.0.so.0.3.0"
 			],
 			"name": "libgudev",
 			"provides": [
@@ -48,7 +47,8 @@
 				"/usr/include/gudev-1.0/gudev/gudevenumtypes.h",
 				"/usr/include/gudev-1.0/gudev/gudevtypes.h",
 				"/usr/lib/libgudev-1.0.so",
-				"/usr/lib/pkgconfig/gudev-1.0.pc"
+				"/usr/lib/pkgconfig/gudev-1.0.pc",
+				"/usr/share/gir-1.0/GUdev-1.0.gir"
 			],
 			"name": "libgudev-devel",
 			"provides": [
@@ -57,6 +57,6 @@
 		}
 	},
 	"source-name": "libgudev",
-	"source-release": "5",
+	"source-release": "6",
 	"source-version": "238"
 }

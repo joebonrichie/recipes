@@ -5,7 +5,7 @@
 #
 name        : github-cli
 version     : 2.63.2
-release     : 5
+release     : 6
 homepage    : https://github.com/cli/cli
 upstreams   :
     - https://github.com/cli/cli/archive/refs/tags/v2.63.2.tar.gz : 2578a8b1f00cb292a8094793515743f2a86e02b8d0b18d6b95959ddbeebd6b8d

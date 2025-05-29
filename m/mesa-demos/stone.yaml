@@ -5,7 +5,7 @@
 #
 name        : mesa-demos
 version     : 9.0.0
-release     : 4
+release     : 5
 homepage    : https://gitlab.freedesktop.org/mesa/demos
 upstreams   :
     - https://archive.mesa3d.org/demos/mesa-demos-9.0.0.tar.xz : 3046a3d26a7b051af7ebdd257a5f23bfeb160cad6ed952329cdff1e9f1ed496b

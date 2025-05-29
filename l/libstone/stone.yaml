@@ -5,7 +5,7 @@
 #
 name        : libstone
 version     : 0.0.1
-release     : 2
+release     : 3
 homepage    : https://github.com/serpent-os/tools
 upstreams   :
     - https://github.com/serpent-os/tools/archive/64eafc2a67b9a46fbf35f025bb4908363894cdba.tar.gz : 90dd22784d79a61e585a7385c8f2c4646de4fb529abe4b3f0b40e6878ff08205

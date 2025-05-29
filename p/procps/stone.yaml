@@ -5,7 +5,7 @@
 #
 name        : procps
 version     : 4.0.5
-release     : 6
+release     : 7
 homepage    : https://gitlab.com/procps-ng/procps
 upstreams   :
     - https://sourceforge.net/projects/procps-ng/files/Production/procps-ng-4.0.5.tar.xz : c2e6d193cc78f84cd6ddb72aaf6d5c6a9162f0470e5992092057f5ff518562fa

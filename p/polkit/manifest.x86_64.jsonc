@@ -50,8 +50,6 @@
 				"/usr/share/defaults/etc/pam.d/polkit-1",
 				"/usr/share/gettext/its/polkit.its",
 				"/usr/share/gettext/its/polkit.loc",
-				"/usr/share/gir-1.0/Polkit-1.0.gir",
-				"/usr/share/gir-1.0/PolkitAgent-1.0.gir",
 				"/usr/share/locale/cs/LC_MESSAGES/polkit-1.mo",
 				"/usr/share/locale/da/LC_MESSAGES/polkit-1.mo",
 				"/usr/share/locale/de/LC_MESSAGES/polkit-1.mo",
@@ -144,7 +142,9 @@
 				"/usr/lib/libpolkit-agent-1.so",
 				"/usr/lib/libpolkit-gobject-1.so",
 				"/usr/lib/pkgconfig/polkit-agent-1.pc",
-				"/usr/lib/pkgconfig/polkit-gobject-1.pc"
+				"/usr/lib/pkgconfig/polkit-gobject-1.pc",
+				"/usr/share/gir-1.0/Polkit-1.0.gir",
+				"/usr/share/gir-1.0/PolkitAgent-1.0.gir"
 			],
 			"name": "polkit-devel",
 			"provides": [
@@ -154,6 +154,6 @@
 		}
 	},
 	"source-name": "polkit",
-	"source-release": "5",
+	"source-release": "6",
 	"source-version": "124"
 }

@@ -5,7 +5,7 @@
 #
 name        : fzf
 version     : 0.62.0
-release     : 1
+release     : 2
 homepage    : https://github.com/junegunn/fzf
 upstreams   :
     - https://github.com/junegunn/fzf/archive/refs/tags/v0.62.0.tar.gz : e5beae86a3d026b2c2cfc165715d45b831b9f337a9e96f711ba3bc3d15e50900

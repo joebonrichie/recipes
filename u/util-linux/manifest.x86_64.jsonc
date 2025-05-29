@@ -597,15 +597,10 @@
 			"name": "util-linux-32bit",
 			"provides": [
 				"soname(libblkid.so.1(386))",
-				"soname(libblkid.so.1(x86))",
 				"soname(libfdisk.so.1(386))",
-				"soname(libfdisk.so.1(x86))",
 				"soname(libmount.so.1(386))",
-				"soname(libmount.so.1(x86))",
 				"soname(libsmartcols.so.1(386))",
-				"soname(libsmartcols.so.1(x86))",
-				"soname(libuuid.so.1(386))",
-				"soname(libuuid.so.1(x86))"
+				"soname(libuuid.so.1(386))"
 			]
 		},
 		"util-linux-32bit-devel": {
@@ -697,6 +692,6 @@
 		}
 	},
 	"source-name": "util-linux",
-	"source-release": "10",
+	"source-release": "11",
 	"source-version": "2.40.2"
 }

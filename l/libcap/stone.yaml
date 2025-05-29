@@ -5,7 +5,7 @@
 #
 name        : libcap
 version     : 2.71
-release     : 7
+release     : 8
 summary     : Library for getting and setting POSIX.1e capabilities
 license     : GPL-3.0-or-later
 homepage    : https://sites.google.com/site/fullycapable

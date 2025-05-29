@@ -5,7 +5,7 @@
 #
 name        : fd
 version     : 10.2.0
-release     : 1
+release     : 2
 homepage    : https://github.com/sharkdp/fd
 upstreams   :
     - https://github.com/sharkdp/fd/archive/refs/tags/v10.2.0.tar.gz : 73329fe24c53f0ca47cd0939256ca5c4644742cb7c14cf4114c8c9871336d342

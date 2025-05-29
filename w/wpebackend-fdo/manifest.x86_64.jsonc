@@ -46,7 +46,8 @@
 				"pkgconfig(xkbcommon)"
 			],
 			"depends": [
-				"pkgconfig(wpe-1.0)"
+				"pkgconfig(wpe-1.0)",
+				"wpebackend-fdo"
 			],
 			"files": [
 				"/usr/include/wpe-fdo-1.0/wpe/exported-buffer-shm.h",
@@ -79,6 +80,6 @@
 		}
 	},
 	"source-name": "wpebackend-fdo",
-	"source-release": "1",
+	"source-release": "2",
 	"source-version": "1.14.2"
 }

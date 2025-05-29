@@ -42,13 +42,9 @@
 			"name": "pcre2-32bit",
 			"provides": [
 				"soname(libpcre2-16.so.0(386))",
-				"soname(libpcre2-16.so.0(x86))",
 				"soname(libpcre2-32.so.0(386))",
-				"soname(libpcre2-32.so.0(x86))",
 				"soname(libpcre2-8.so.0(386))",
-				"soname(libpcre2-8.so.0(x86))",
-				"soname(libpcre2-posix.so.3(386))",
-				"soname(libpcre2-posix.so.3(x86))"
+				"soname(libpcre2-posix.so.3(386))"
 			]
 		},
 		"pcre2-32bit-devel": {
@@ -103,6 +99,6 @@
 		}
 	},
 	"source-name": "pcre2",
-	"source-release": "5",
+	"source-release": "6",
 	"source-version": "10.45"
 }

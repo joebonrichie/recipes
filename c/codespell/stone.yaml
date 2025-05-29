@@ -5,7 +5,7 @@
 #
 name        : codespell
 version     : 2.3.0
-release     : 5
+release     : 6
 summary     : Check code for common misspellings
 license     : GPL-2.0-only
 homepage    : https://github.com/codespell-project/codespell

@@ -5,7 +5,7 @@
 #
 name        : polkit
 version     : 124
-release     : 5
+release     : 6
 summary     : Application-level authorization toolkit
 license     : GPL-2.0-or-later
 homepage    : https://gitlab.freedesktop.org/polkit/polkit

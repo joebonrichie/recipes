@@ -5,7 +5,7 @@
 #
 name        : libnvme
 version     : 1.11.1
-release     : 2
+release     : 3
 homepage    : https://github.com/linux-nvme/libnvme
 upstreams   :
     - https://github.com/linux-nvme/libnvme/archive/refs/tags/v1.11.1.tar.gz : 6d5d8ba2cc4c94a61a994c9f7f25b3b26ef973fb5c0daa37729890903f37a1f1

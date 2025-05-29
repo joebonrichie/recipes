@@ -6,7 +6,7 @@
 name        : mesa
 version     : 25.1.1
 # Note: keep mesa-clc in-sync with this package version-wise
-release     : 35
+release     : 36
 homepage    : https://mesa3d.org/
 upstreams   :
     - https://mesa.freedesktop.org/archive/mesa-25.1.1.tar.xz : cf942a18b7b9e9b88524dcbf0b31fed3cde18e6d52b3375b0ab6587a14415bce

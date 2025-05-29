@@ -40,8 +40,7 @@
 			],
 			"name": "libxxf86vm-32bit",
 			"provides": [
-				"soname(libXxf86vm.so.1(386))",
-				"soname(libXxf86vm.so.1(x86))"
+				"soname(libXxf86vm.so.1(386))"
 			]
 		},
 		"libxxf86vm-32bit-devel": {
@@ -113,6 +112,6 @@
 		}
 	},
 	"source-name": "libxxf86vm",
-	"source-release": "4",
+	"source-release": "5",
 	"source-version": "1.1.6"
 }

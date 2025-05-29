@@ -34,8 +34,6 @@
 				"/usr/lib/libnma-gtk4.so.0.0.0",
 				"/usr/lib/libnma.so.0",
 				"/usr/lib/libnma.so.0.0.0",
-				"/usr/share/gir-1.0/NMA-1.0.gir",
-				"/usr/share/gir-1.0/NMA4-1.0.gir",
 				"/usr/share/glib-2.0/schemas/org.gnome.nm-applet.eap.gschema.xml",
 				"/usr/share/glib-2.0/schemas/org.gnome.nm-applet.gschema.xml",
 				"/usr/share/vala/vapi/libnma-gtk4.deps",
@@ -87,7 +85,9 @@
 				"/usr/lib/libnma-gtk4.so",
 				"/usr/lib/libnma.so",
 				"/usr/lib/pkgconfig/libnma-gtk4.pc",
-				"/usr/lib/pkgconfig/libnma.pc"
+				"/usr/lib/pkgconfig/libnma.pc",
+				"/usr/share/gir-1.0/NMA-1.0.gir",
+				"/usr/share/gir-1.0/NMA4-1.0.gir"
 			],
 			"name": "libnma-devel",
 			"provides": [
@@ -97,6 +97,6 @@
 		}
 	},
 	"source-name": "libnma",
-	"source-release": "3",
+	"source-release": "4",
 	"source-version": "1.10.6"
 }

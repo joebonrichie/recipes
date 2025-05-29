@@ -5,7 +5,7 @@
 #
 name        : just
 version     : 1.40.0
-release     : 7
+release     : 8
 homepage    : https://github.com/casey/just
 upstreams   :
     - https://github.com/casey/just/archive/refs/tags/1.40.0.tar.gz : e0d48dcc7a086c5746b7f281a40e615c290cddf9c06134198c703dff2f62c1c4

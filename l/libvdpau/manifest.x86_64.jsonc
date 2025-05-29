@@ -40,9 +40,7 @@
 			"name": "libvdpau-32bit",
 			"provides": [
 				"soname(libvdpau.so.1(386))",
-				"soname(libvdpau.so.1(x86))",
-				"soname(vdpau/libvdpau_trace.so.1(386))",
-				"soname(vdpau/libvdpau_trace.so.1(x86))"
+				"soname(vdpau/libvdpau_trace.so.1(386))"
 			]
 		},
 		"libvdpau-32bit-devel": {
@@ -82,6 +80,6 @@
 		}
 	},
 	"source-name": "libvdpau",
-	"source-release": "2",
+	"source-release": "3",
 	"source-version": "1.5"
 }

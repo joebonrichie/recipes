@@ -100,11 +100,8 @@
 			"name": "libxkbcommon-32bit",
 			"provides": [
 				"soname(libxkbcommon-x11.so.0(386))",
-				"soname(libxkbcommon-x11.so.0(x86))",
 				"soname(libxkbcommon.so.0(386))",
-				"soname(libxkbcommon.so.0(x86))",
-				"soname(libxkbregistry.so.0(386))",
-				"soname(libxkbregistry.so.0(x86))"
+				"soname(libxkbregistry.so.0(386))"
 			]
 		},
 		"libxkbcommon-32bit-devel": {
@@ -183,6 +180,6 @@
 		}
 	},
 	"source-name": "libxkbcommon",
-	"source-release": "6",
+	"source-release": "7",
 	"source-version": "1.9.0"
 }

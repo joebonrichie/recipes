@@ -5,7 +5,7 @@
 #
 name        : less
 version     : 668
-release     : 9
+release     : 10
 homepage    : https://www.greenwoodsoftware.com/less
 upstreams   :
     - https://github.com/gwsw/less/archive/refs/tags/v668.tar.gz : 69d6c5587c361e4f2ae051b6c483ca979a0381e2b8145d3d2af37cea29577b6f

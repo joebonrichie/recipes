@@ -44,8 +44,7 @@
 			],
 			"name": "libxrandr-32bit",
 			"provides": [
-				"soname(libXrandr.so.2(386))",
-				"soname(libXrandr.so.2(x86))"
+				"soname(libXrandr.so.2(386))"
 			]
 		},
 		"libxrandr-32bit-devel": {
@@ -115,6 +114,6 @@
 		}
 	},
 	"source-name": "libxrandr",
-	"source-release": "6",
+	"source-release": "7",
 	"source-version": "1.5.4"
 }

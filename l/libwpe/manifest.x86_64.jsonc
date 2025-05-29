@@ -27,6 +27,7 @@
 				"pkgconfig(xkbcommon)"
 			],
 			"depends": [
+				"libwpe",
 				"pkgconfig(egl)",
 				"pkgconfig(xkbcommon)"
 			],
@@ -57,6 +58,6 @@
 		}
 	},
 	"source-name": "libwpe",
-	"source-release": "1",
+	"source-release": "2",
 	"source-version": "1.14.2"
 }

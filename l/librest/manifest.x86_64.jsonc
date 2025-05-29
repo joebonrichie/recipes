@@ -27,9 +27,7 @@
 				"/usr/lib/librest-1.0.so.0",
 				"/usr/lib/librest-1.0.so.0.0.0",
 				"/usr/lib/librest-extras-1.0.so.0",
-				"/usr/lib/librest-extras-1.0.so.0.0.0",
-				"/usr/share/gir-1.0/Rest-1.0.gir",
-				"/usr/share/gir-1.0/RestExtras-1.0.gir"
+				"/usr/lib/librest-extras-1.0.so.0.0.0"
 			],
 			"name": "librest",
 			"provides": [
@@ -77,6 +75,8 @@
 				"/usr/lib/librest-extras-1.0.so",
 				"/usr/lib/pkgconfig/rest-1.0.pc",
 				"/usr/lib/pkgconfig/rest-extras-1.0.pc",
+				"/usr/share/gir-1.0/Rest-1.0.gir",
+				"/usr/share/gir-1.0/RestExtras-1.0.gir",
 				"/usr/share/vala/vapi/rest-1.0.deps",
 				"/usr/share/vala/vapi/rest-1.0.vapi",
 				"/usr/share/vala/vapi/rest-extras-1.0.deps",
@@ -90,6 +90,6 @@
 		}
 	},
 	"source-name": "librest",
-	"source-release": "2",
+	"source-release": "3",
 	"source-version": "0.9.1"
 }

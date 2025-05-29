@@ -100,6 +100,6 @@
 		}
 	},
 	"source-name": "openssh",
-	"source-release": "9",
+	"source-release": "10",
 	"source-version": "10.0p1"
 }

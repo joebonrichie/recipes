@@ -4,18 +4,19 @@
 	"packages": {
 		"python-ruamel-yaml-clib": {
 			"build-depends": [
-				"pkgconfig(python3)"
+				"pkgconfig(python3)",
+				"python(setuptools)"
 			],
 			"depends": [
 				"soname(libc.so.6(x86_64))"
 			],
 			"files": [
 				"/usr/lib/python3.11/site-packages/_ruamel_yaml.cpython-311-x86_64-linux-gnu.so",
-				"/usr/lib/python3.11/site-packages/ruamel.yaml.clib-0.2.12.dist-info/LICENSE",
-				"/usr/lib/python3.11/site-packages/ruamel.yaml.clib-0.2.12.dist-info/METADATA",
-				"/usr/lib/python3.11/site-packages/ruamel.yaml.clib-0.2.12.dist-info/RECORD",
-				"/usr/lib/python3.11/site-packages/ruamel.yaml.clib-0.2.12.dist-info/WHEEL",
-				"/usr/lib/python3.11/site-packages/ruamel.yaml.clib-0.2.12.dist-info/top_level.txt"
+				"/usr/lib/python3.11/site-packages/ruamel_yaml_clib-0.2.12.dist-info/METADATA",
+				"/usr/lib/python3.11/site-packages/ruamel_yaml_clib-0.2.12.dist-info/RECORD",
+				"/usr/lib/python3.11/site-packages/ruamel_yaml_clib-0.2.12.dist-info/WHEEL",
+				"/usr/lib/python3.11/site-packages/ruamel_yaml_clib-0.2.12.dist-info/licenses/LICENSE",
+				"/usr/lib/python3.11/site-packages/ruamel_yaml_clib-0.2.12.dist-info/top_level.txt"
 			],
 			"name": "python-ruamel-yaml-clib",
 			"provides": [
@@ -26,6 +27,6 @@
 		}
 	},
 	"source-name": "python-ruamel-yaml-clib",
-	"source-release": "1",
+	"source-release": "2",
 	"source-version": "0.2.12"
 }

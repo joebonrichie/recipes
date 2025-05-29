@@ -5,7 +5,7 @@
 #
 name        : qt6-5compat
 version     : 6.9.0
-release     : 3
+release     : 4
 homepage    : https://www.qt.io
 upstreams   :
     - https://download.qt.io/official_releases/qt/6.9/6.9.0/submodules/qt5compat-everywhere-src-6.9.0.tar.xz : 55be0539d3a12071fbe0cd57af17d6dc3fc52578b1649824975e26301f710763

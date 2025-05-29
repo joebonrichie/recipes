@@ -5,7 +5,7 @@
 #
 name        : qt5-base
 version     : 5.15.17+kde.128a1d28
-release     : 9
+release     : 10
 homepage    : https://www.qt.io
 upstreams   :
     - git|https://invent.kde.org/qt/qt/qtbase.git:

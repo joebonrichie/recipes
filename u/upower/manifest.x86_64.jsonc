@@ -53,7 +53,6 @@
 				"/usr/share/dbus-1/system-services/org.freedesktop.UPower.service",
 				"/usr/share/dbus-1/system.d/org.freedesktop.UPower.conf",
 				"/usr/share/defaults/etc/UPower/UPower.conf",
-				"/usr/share/gir-1.0/UPowerGlib-1.0.gir",
 				"/usr/share/installed-tests/upower/upower-integration.test",
 				"/usr/share/locale/fr/LC_MESSAGES/upower.mo",
 				"/usr/share/locale/it/LC_MESSAGES/upower.mo",
@@ -100,7 +99,8 @@
 				"/usr/include/libupower-glib/up-version.h",
 				"/usr/include/libupower-glib/upower.h",
 				"/usr/lib/libupower-glib.so",
-				"/usr/lib/pkgconfig/upower-glib.pc"
+				"/usr/lib/pkgconfig/upower-glib.pc",
+				"/usr/share/gir-1.0/UPowerGlib-1.0.gir"
 			],
 			"name": "upower-devel",
 			"provides": [
@@ -155,6 +155,6 @@
 		}
 	},
 	"source-name": "upower",
-	"source-release": "9",
+	"source-release": "10",
 	"source-version": "1.90.8"
 }

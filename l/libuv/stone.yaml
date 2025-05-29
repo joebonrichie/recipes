@@ -5,7 +5,7 @@
 #
 name        : libuv
 version     : 1.49.2
-release     : 4
+release     : 5
 homepage    : https://libuv.org/
 upstreams   :
     - https://dist.libuv.org/dist/v1.49.2/libuv-v1.49.2.tar.gz : 8c10706bd2cf129045c42b94799a92df9aaa75d05f07e99cf083507239bae5a8

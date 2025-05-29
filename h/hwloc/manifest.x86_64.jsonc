@@ -627,6 +627,6 @@
 		}
 	},
 	"source-name": "hwloc",
-	"source-release": "3",
+	"source-release": "4",
 	"source-version": "2.12.1"
 }

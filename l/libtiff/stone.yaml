@@ -5,7 +5,7 @@
 #
 name        : libtiff
 version     : 4.7.0
-release     : 3
+release     : 4
 homepage    : https://download.osgeo.org/libtiff
 upstreams   :
     - https://download.osgeo.org/libtiff/tiff-4.7.0.tar.xz : 273a0a73b1f0bed640afee4a5df0337357ced5b53d3d5d1c405b936501f71017
@@ -20,7 +20,8 @@ builddeps   :
     - pkgconfig(libzstd)
     - pkgconfig(zlib)
 setup       : |
-    %cmake
+    # Fix cmake FTBFS
+    %cmake -DCMAKE_POLICY_VERSION_MINIMUM=3.5
 build       : |
     %cmake_build
 install     : |

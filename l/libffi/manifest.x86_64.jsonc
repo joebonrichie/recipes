@@ -27,8 +27,7 @@
 			],
 			"name": "libffi-32bit",
 			"provides": [
-				"soname(libffi.so.8(386))",
-				"soname(libffi.so.8(x86))"
+				"soname(libffi.so.8(386))"
 			]
 		},
 		"libffi-32bit-devel": {
@@ -66,6 +65,6 @@
 		}
 	},
 	"source-name": "libffi",
-	"source-release": "5",
+	"source-release": "6",
 	"source-version": "3.4.8"
 }

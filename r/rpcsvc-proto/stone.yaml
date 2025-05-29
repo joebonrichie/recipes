@@ -5,7 +5,7 @@
 #
 name        : rpcsvc-proto
 version     : 1.4.4
-release     : 2
+release     : 3
 homepage    : https://github.com/thkukuk/rpcsvc-proto
 upstreams   :
     - https://github.com/thkukuk/rpcsvc-proto/releases/download/v1.4.4/rpcsvc-proto-1.4.4.tar.xz : 81c3aa27edb5d8a18ef027081ebb984234d5b5860c65bd99d4ac8f03145a558b

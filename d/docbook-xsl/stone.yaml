@@ -5,7 +5,7 @@
 #
 name        : docbook-xsl
 version     : 1.79.2
-release     : 1
+release     : 2
 homepage    : https://docbook.org
 upstreams   :
     - https://github.com/docbook/xslt10-stylesheets/releases/download/release/1.79.2/docbook-xsl-nons-1.79.2.tar.bz2 :

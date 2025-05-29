@@ -6,6 +6,7 @@
 			"build-depends": [
 				"binary(doxygen)",
 				"binary(flex)",
+				"binary(pod2man)",
 				"pkgconfig(libsystemd)",
 				"pkgconfig(libudev)",
 				"pkgconfig(libusb-1.0)",
@@ -50,6 +51,7 @@
 			"build-depends": [
 				"binary(doxygen)",
 				"binary(flex)",
+				"binary(pod2man)",
 				"pkgconfig(libsystemd)",
 				"pkgconfig(libudev)",
 				"pkgconfig(libusb-1.0)",
@@ -78,6 +80,6 @@
 		}
 	},
 	"source-name": "pcsclite",
-	"source-release": "1",
+	"source-release": "2",
 	"source-version": "2.3.1"
 }

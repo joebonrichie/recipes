@@ -5,7 +5,7 @@
 #
 name        : distrobox
 version     : 1.8.1.2
-release     : 1
+release     : 2
 homepage    : https://github.com/89luca89/distrobox
 upstreams   :
     - https://github.com/89luca89/distrobox/archive/refs/tags/1.8.1.2.tar.gz : 3ecbce9b8c5b5df941f986798ffa6ea7fdf742223d42204207974c4323d5b9fc

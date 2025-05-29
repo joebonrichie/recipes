@@ -5,7 +5,7 @@
 #
 name        : docker-buildx
 version     : 0.22.0
-release     : 3
+release     : 4
 homepage    : https://github.com/docker/buildx
 upstreams   :
     - https://github.com/docker/buildx/archive/refs/tags/v0.22.0.tar.gz : afcfea302f639f86299d41657f2ea6ca8df0d8cc3e243c299c8ada0ecfbb1fc4

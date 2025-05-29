@@ -48,8 +48,7 @@
 			],
 			"name": "libsm-32bit",
 			"provides": [
-				"soname(libSM.so.6(386))",
-				"soname(libSM.so.6(x86))"
+				"soname(libSM.so.6(386))"
 			]
 		},
 		"libsm-32bit-devel": {
@@ -110,6 +109,6 @@
 		}
 	},
 	"source-name": "libsm",
-	"source-release": "2",
+	"source-release": "3",
 	"source-version": "1.2.5"
 }

@@ -5,7 +5,7 @@
 #
 name        : ldc
 version     : 1.40.1
-release     : 18
+release     : 19
 summary     : The LLVM-based D Compiler
 license     :
     - Apache-2.0
@@ -63,7 +63,8 @@ setup       : |
            -DLDC_INSTALL_LTOPLUGIN=ON \
            -DLDC_WITH_LLD=ON \
            -DPHOBOS_SYSTEM_ZLIB=ON \
-            "$@"
+           -DCMAKE_POLICY_VERSION_MINIMUM=3.5 \
+           "$@"
     }
 
     if [[ ${_bootstrap} == "1" ]]; then

@@ -583,6 +583,6 @@
 		}
 	},
 	"source-name": "qt5-tools",
-	"source-release": "9",
+	"source-release": "10",
 	"source-version": "5.15.17+kde.e02ce0df"
 }

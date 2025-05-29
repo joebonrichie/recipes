@@ -33,8 +33,7 @@
 				"/usr/lib/libharfbuzz-subset.so.0",
 				"/usr/lib/libharfbuzz-subset.so.0.61040.0",
 				"/usr/lib/libharfbuzz.so.0",
-				"/usr/lib/libharfbuzz.so.0.61040.0",
-				"/usr/share/gir-1.0/HarfBuzz-0.0.gir"
+				"/usr/lib/libharfbuzz.so.0.61040.0"
 			],
 			"name": "harfbuzz",
 			"provides": [
@@ -132,7 +131,8 @@
 				"/usr/lib/pkgconfig/harfbuzz-gobject.pc",
 				"/usr/lib/pkgconfig/harfbuzz-icu.pc",
 				"/usr/lib/pkgconfig/harfbuzz-subset.pc",
-				"/usr/lib/pkgconfig/harfbuzz.pc"
+				"/usr/lib/pkgconfig/harfbuzz.pc",
+				"/usr/share/gir-1.0/HarfBuzz-0.0.gir"
 			],
 			"name": "harfbuzz-devel",
 			"provides": [
@@ -151,6 +151,6 @@
 		}
 	},
 	"source-name": "harfbuzz",
-	"source-release": "13",
+	"source-release": "14",
 	"source-version": "10.4.0"
 }

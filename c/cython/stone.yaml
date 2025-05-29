@@ -5,7 +5,7 @@
 #
 name        : cython
 version     : 3.1.1
-release     : 2
+release     : 3
 homepage    : https://cython.org/
 upstreams   :
     - https://pypi.debian.net/Cython/cython-3.1.1.tar.gz: 505ccd413669d5132a53834d792c707974248088c4f60c497deb1b416e366397

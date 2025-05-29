@@ -19,6 +19,7 @@
 				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
 				"soname(libc.so.6(x86_64))",
 				"soname(libglib-2.0.so.0(x86_64))",
+				"soname(libgpm.so.2(x86_64))",
 				"soname(libslang.so.2(x86_64))",
 				"soname(libssh2.so.1(x86_64))"
 			],
@@ -380,6 +381,6 @@
 		}
 	},
 	"source-name": "midnight-commander",
-	"source-release": "1",
+	"source-release": "2",
 	"source-version": "4.8.33"
 }

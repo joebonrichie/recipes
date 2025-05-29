@@ -5,7 +5,7 @@
 #
 name        : python-shtab
 version     : 1.7.1
-release     : 2
+release     : 3
 homepage    : https://github.com/iterative/shtab
 upstreams   :
     - https://files.pythonhosted.org/packages/source/s/shtab/shtab-1.7.1.tar.gz : 4e4bcb02eeb82ec45920a5d0add92eac9c9b63b2804c9196c1f1fdc2d039243c

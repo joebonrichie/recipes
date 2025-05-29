@@ -9,7 +9,7 @@
 # https://github.com/acpica/acpica/issues/857
 name        : acpica
 version     : 20241212
-release     : 1
+release     : 2
 homepage    : https://acpica.org
 upstreams   :
     - https://github.com/user-attachments/files/18117992/acpica-unix-20241212.tar.gz : 9dca83cfee390b710485fbdf787048370049c05723b10cc220cfef6e13c31961

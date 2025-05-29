@@ -33,6 +33,7 @@
 				"pkgconfig(xrender)"
 			],
 			"depends": [
+				"libxft",
 				"pkgconfig(fontconfig)",
 				"pkgconfig(freetype2)",
 				"pkgconfig(xproto)",
@@ -129,6 +130,6 @@
 		}
 	},
 	"source-name": "libxft",
-	"source-release": "3",
+	"source-release": "4",
 	"source-version": "2.3.8"
 }

@@ -501,6 +501,6 @@
 		}
 	},
 	"source-name": "cython",
-	"source-release": "2",
+	"source-release": "3",
 	"source-version": "3.1.1"
 }

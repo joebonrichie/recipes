@@ -5,7 +5,7 @@
 #
 name        : libevdev
 version     : 1.13.3
-release     : 4
+release     : 5
 homepage    : https://www.freedesktop.org/wiki/Software/libevdev
 upstreams   :
     - https://www.freedesktop.org/software/libevdev/libevdev-1.13.3.tar.xz : abf1aace86208eebdd5d3550ffded4c8d73bb405b796d51c389c9d0604cbcfbf

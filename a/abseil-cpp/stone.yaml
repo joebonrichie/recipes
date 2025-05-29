@@ -5,7 +5,7 @@
 #
 name        : abseil-cpp
 version     : 20250512.0
-release     : 6
+release     : 7
 homepage    : https://abseil.io/
 upstreams   :
     - https://github.com/abseil/abseil-cpp/releases/download/20250512.0/abseil-cpp-20250512.0.tar.gz : 7262daa7c1711406248c10f41026d685e88223bc92817d16fb93c19adb57f669
