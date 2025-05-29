@@ -5,7 +5,7 @@
 #
 name        : cairo
 version     : 1.18.2
-release     : 6
+release     : 7
 homepage    : https://cairographics.org
 upstreams   :
     - https://cairographics.org/releases/cairo-1.18.2.tar.xz : a62b9bb42425e844cc3d6ddde043ff39dbabedd1542eba57a2eb79f85889d45a
@@ -17,6 +17,7 @@ license     :
     - LGPL-2.1-or-later
     - MPL-1.1
 builddeps   :
+    - binary(gs)
     - pkgconfig(fontconfig)
     - pkgconfig(freetype2)
     - pkgconfig(glib-2.0)
@@ -25,13 +26,14 @@ builddeps   :
     - pkgconfig(librsvg-2.0)
     - pkgconfig(lzo2)
     - pkgconfig(pixman-1)
-    # pkgconfig(poppler-glib)
+    - pkgconfig(poppler-glib)
     - pkgconfig(x11)
     - pkgconfig(xcb-render)
     - pkgconfig(xcb-shm)
     - pkgconfig(xext)
     - pkgconfig(xrender)
     - pkgconfig(zlib)
+    # TODO: libspectre
 setup       : |
     %meson
 build       : |
