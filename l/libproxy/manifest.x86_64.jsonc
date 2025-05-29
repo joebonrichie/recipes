@@ -27,7 +27,6 @@
 				"/usr/lib/libproxy.so.0.5.9",
 				"/usr/lib/libproxy.so.1",
 				"/usr/lib/libproxy/libpxbackend-1.0.so",
-				"/usr/share/gir-1.0/Libproxy-1.0.gir",
 				"/usr/share/man/man8/proxy.8",
 				"/usr/share/vala/vapi/libproxy-1.0.deps",
 				"/usr/share/vala/vapi/libproxy-1.0.vapi"
@@ -54,7 +53,8 @@
 			],
 			"files": [
 				"/usr/include/libproxy/proxy.h",
-				"/usr/lib/pkgconfig/libproxy-1.0.pc"
+				"/usr/lib/pkgconfig/libproxy-1.0.pc",
+				"/usr/share/gir-1.0/Libproxy-1.0.gir"
 			],
 			"name": "libproxy-devel",
 			"provides": [
@@ -63,6 +63,6 @@
 		}
 	},
 	"source-name": "libproxy",
-	"source-release": "5",
+	"source-release": "6",
 	"source-version": "0.5.9"
 }
