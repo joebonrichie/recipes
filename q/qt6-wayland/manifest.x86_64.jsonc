@@ -1021,6 +1021,6 @@
 		}
 	},
 	"source-name": "qt6-wayland",
-	"source-release": "5",
+	"source-release": "6",
 	"source-version": "6.9.0"
 }
