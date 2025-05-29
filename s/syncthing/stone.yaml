@@ -5,7 +5,7 @@
 #
 name        : syncthing
 version     : 1.29.2
-release     : 1
+release     : 2
 homepage    : https://syncthing.net
 upstreams   :
     - https://github.com/syncthing/syncthing/archive/refs/tags/v1.29.2.tar.gz : 6446e52cb5ca6584710c3abd9250e0d9708486d2dc2264f7c869ade169876a57
