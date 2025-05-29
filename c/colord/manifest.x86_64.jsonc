@@ -155,8 +155,6 @@
 				"/usr/share/dbus-1/services/org.freedesktop.ColorHelper.service",
 				"/usr/share/dbus-1/system-services/org.freedesktop.ColorManager.service",
 				"/usr/share/dbus-1/system.d/org.freedesktop.ColorManager.conf",
-				"/usr/share/gir-1.0/Colord-1.0.gir",
-				"/usr/share/gir-1.0/Colorhug-1.0.gir",
 				"/usr/share/glib-2.0/schemas/org.freedesktop.ColorHelper.gschema.xml",
 				"/usr/share/locale/as/LC_MESSAGES/colord.mo",
 				"/usr/share/locale/bn_IN/LC_MESSAGES/colord.mo",
@@ -305,7 +303,9 @@
 				"/usr/lib/libcolordprivate.so",
 				"/usr/lib/libcolorhug.so",
 				"/usr/lib/pkgconfig/colord.pc",
-				"/usr/lib/pkgconfig/colorhug.pc"
+				"/usr/lib/pkgconfig/colorhug.pc",
+				"/usr/share/gir-1.0/Colord-1.0.gir",
+				"/usr/share/gir-1.0/Colorhug-1.0.gir"
 			],
 			"name": "colord-devel",
 			"provides": [
@@ -315,6 +315,6 @@
 		}
 	},
 	"source-name": "colord",
-	"source-release": "4",
+	"source-release": "5",
 	"source-version": "1.4.7"
 }
