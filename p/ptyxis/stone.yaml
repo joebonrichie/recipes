@@ -5,7 +5,7 @@
 #
 name        : ptyxis
 version     : 48.1
-release     : 5
+release     : 6
 homepage    : https://gitlab.gnome.org/chergert/ptyxis
 upstreams   :
     - https://download.gnome.org/sources/ptyxis/48/ptyxis-48.1.tar.xz : e71bd6b6a5baedf83cef06e733265498b3f9f516e7efd056585379841652d94f
