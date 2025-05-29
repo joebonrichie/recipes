@@ -5,7 +5,7 @@
 #
 name        : runc
 version     : 1.2.6
-release     : 6
+release     : 7
 homepage    : https://runc.io/
 upstreams   :
     - https://github.com/opencontainers/runc/archive/refs/tags/v1.2.6.tar.gz : 19b280702341f33ff353fa254d1dbdb67f6aab2c74395f6d651a17524f68e752
