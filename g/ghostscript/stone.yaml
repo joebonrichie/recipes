@@ -5,7 +5,7 @@
 #
 name        : ghostscript
 version     : 10.05.1
-release     : 6
+release     : 7
 homepage    : https://www.ghostscript.com/
 upstreams   :
     - https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs10051/ghostpdl-10.05.1.tar.gz : c0be073366d19471320dce13e210b4c47e14b01070d6cf3d2d6d6e8415344615
