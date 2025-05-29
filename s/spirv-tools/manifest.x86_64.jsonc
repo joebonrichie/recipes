@@ -66,19 +66,12 @@
 			"name": "spirv-tools-32bit",
 			"provides": [
 				"soname(libSPIRV-Tools-diff.so(386))",
-				"soname(libSPIRV-Tools-diff.so(x86))",
 				"soname(libSPIRV-Tools-link.so(386))",
-				"soname(libSPIRV-Tools-link.so(x86))",
 				"soname(libSPIRV-Tools-lint.so(386))",
-				"soname(libSPIRV-Tools-lint.so(x86))",
 				"soname(libSPIRV-Tools-opt.so(386))",
-				"soname(libSPIRV-Tools-opt.so(x86))",
 				"soname(libSPIRV-Tools-reduce.so(386))",
-				"soname(libSPIRV-Tools-reduce.so(x86))",
 				"soname(libSPIRV-Tools-shared.so(386))",
-				"soname(libSPIRV-Tools-shared.so(x86))",
-				"soname(libSPIRV-Tools.so(386))",
-				"soname(libSPIRV-Tools.so(x86))"
+				"soname(libSPIRV-Tools.so(386))"
 			]
 		},
 		"spirv-tools-32bit-devel": {
@@ -211,6 +204,6 @@
 		}
 	},
 	"source-name": "spirv-tools",
-	"source-release": "9",
+	"source-release": "10",
 	"source-version": "2025.1"
 }
