@@ -5,7 +5,7 @@
 #
 name        : talloc
 version     : 2.4.3
-release     : 2
+release     : 3
 homepage    : https://talloc.samba.org/
 upstreams   :
     - https://www.samba.org/ftp/talloc/talloc-2.4.3.tar.gz : dc46c40b9f46bb34dd97fe41f548b0e8b247b77a918576733c528e83abd854dd
