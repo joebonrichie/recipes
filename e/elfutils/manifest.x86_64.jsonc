@@ -107,11 +107,8 @@
 			"name": "elfutils-32bit",
 			"provides": [
 				"soname(libasm.so.1(386))",
-				"soname(libasm.so.1(x86))",
 				"soname(libdw.so.1(386))",
-				"soname(libdw.so.1(x86))",
-				"soname(libelf.so.1(386))",
-				"soname(libelf.so.1(x86))"
+				"soname(libelf.so.1(386))"
 			]
 		},
 		"elfutils-32bit-devel": {
@@ -263,6 +260,6 @@
 		}
 	},
 	"source-name": "elfutils",
-	"source-release": "6",
+	"source-release": "7",
 	"source-version": "0.192"
 }
