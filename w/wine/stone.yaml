@@ -5,7 +5,7 @@
 #
 name        : wine
 version     : "10.8"
-release     : 3
+release     : 4
 homepage    : https://www.winehq.org
 upstreams   :
     - https://dl.winehq.org/wine/source/10.x/wine-10.8.tar.xz : f2ffdb5650991d4cf6ce858c10da58da1cee06a9b7bbb6b5a307a02e47408b4e
