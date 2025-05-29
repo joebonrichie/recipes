@@ -35,8 +35,7 @@
 			],
 			"name": "libxcrypt-32bit",
 			"provides": [
-				"soname(libcrypt.so.1(386))",
-				"soname(libcrypt.so.1(x86))"
+				"soname(libcrypt.so.1(386))"
 			]
 		},
 		"libxcrypt-32bit-devel": {
@@ -93,6 +92,6 @@
 		}
 	},
 	"source-name": "libxcrypt",
-	"source-release": "6",
+	"source-release": "7",
 	"source-version": "4.4.36"
 }
