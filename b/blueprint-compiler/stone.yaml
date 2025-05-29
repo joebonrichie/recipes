@@ -5,7 +5,7 @@
 #
 name        : blueprint-compiler
 version     : 0.16.0
-release     : 1
+release     : 2
 homepage    : https://gitlab.gnome.org/jwestman/blueprint-compiler/
 upstreams   :
     - https://gitlab.gnome.org/jwestman/blueprint-compiler/-/archive/v0.16.0/blueprint-compiler-v0.16.0.tar.gz : 01feb8263fe7a450b0a9fed0fd54cf88947aaf00f86cc7da345f8b39a0e7bd30
