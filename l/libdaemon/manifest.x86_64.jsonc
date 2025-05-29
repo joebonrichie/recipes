@@ -16,6 +16,9 @@
 			]
 		},
 		"libdaemon-devel": {
+			"depends": [
+				"libdaemon"
+			],
 			"files": [
 				"/usr/include/libdaemon/daemon.h",
 				"/usr/include/libdaemon/dexec.h",
@@ -36,6 +39,6 @@
 		}
 	},
 	"source-name": "libdaemon",
-	"source-release": "1",
+	"source-release": "2",
 	"source-version": "0.14"
 }
