@@ -5,7 +5,7 @@
 #
 name        : sqlite
 version     : 3.47.2
-release     : 8
+release     : 9
 homepage    : https://www.sqlite.org
 upstreams   :
     - https://www.sqlite.org/2024/sqlite-autoconf-3470200.tar.gz : f1b2ee412c28d7472bc95ba996368d6f0cdcf00362affdadb27ed286c179540b

@@ -43,8 +43,7 @@
 			],
 			"name": "sqlite-32bit",
 			"provides": [
-				"soname(libsqlite3.so.0(386))",
-				"soname(libsqlite3.so.0(x86))"
+				"soname(libsqlite3.so.0(386))"
 			]
 		},
 		"sqlite-32bit-devel": {
@@ -86,6 +85,6 @@
 		}
 	},
 	"source-name": "sqlite",
-	"source-release": "8",
+	"source-release": "9",
 	"source-version": "3.47.2"
 }
