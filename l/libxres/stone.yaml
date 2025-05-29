@@ -5,7 +5,7 @@
 #
 name        : libxres
 version     : 1.2.2
-release     : 1
+release     : 2
 homepage    : https://www.x.org/releases/individual/lib
 upstreams   :
     - https://www.x.org/releases/individual/lib/libXres-1.2.2.tar.gz : 8abce597ced4a7ab89032aee91f6f784d9960adc772b2b59f17e515cd4127950
