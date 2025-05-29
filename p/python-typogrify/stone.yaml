@@ -5,7 +5,7 @@
 #
 name        : python-typogrify
 version     : 2.0.7
-release     : 1
+release     : 2
 homepage    : https://github.com/mintchaos/typogrify
 upstreams   :
     - https://files.pythonhosted.org/packages/source/t/typogrify/typogrify-2.0.7.tar.gz : 8be4668cda434163ce229d87ca273a11922cb1614cb359970b7dc96eed13cb38
