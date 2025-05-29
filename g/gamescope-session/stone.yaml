@@ -5,7 +5,7 @@
 #
 name        : gamescope-session
 version     : r310.533e51f
-release     : 1
+release     : 2
 homepage    : https://github.com/ChimeraOS/gamescope-session
 upstreams   :
     - git|https://github.com/ChimeraOS/gamescope-session.git : 533e51f2f50aebc4457d04372ab9b05a9c56ac10
