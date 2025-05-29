@@ -36,8 +36,7 @@
 			],
 			"name": "hyper-ffi-32bit",
 			"provides": [
-				"soname(libhyper.so.0(386))",
-				"soname(libhyper.so.0(x86))"
+				"soname(libhyper.so.0(386))"
 			]
 		},
 		"hyper-ffi-32bit-devel": {
@@ -78,6 +77,6 @@
 		}
 	},
 	"source-name": "hyper-ffi",
-	"source-release": "3",
+	"source-release": "4",
 	"source-version": "1.5.1"
 }
