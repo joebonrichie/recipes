@@ -5,7 +5,7 @@
 #
 name        : libx11
 version     : 1.8.12
-release     : 7
+release     : 8
 homepage    : https://gitlab.freedesktop.org/xorg/lib/libx11
 upstreams   :
     - https://xorg.freedesktop.org/releases/individual/lib/libX11-1.8.12.tar.xz : fa026f9bb0124f4d6c808f9aef4057aad65e7b35d8ff43951cef0abe06bb9a9a

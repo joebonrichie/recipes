@@ -239,9 +239,7 @@
 			"name": "libx11-32bit",
 			"provides": [
 				"soname(libX11-xcb.so.1(386))",
-				"soname(libX11-xcb.so.1(x86))",
-				"soname(libX11.so.6(386))",
-				"soname(libX11.so.6(x86))"
+				"soname(libX11.so.6(386))"
 			]
 		},
 		"libx11-32bit-devel": {
@@ -1261,6 +1259,6 @@
 		}
 	},
 	"source-name": "libx11",
-	"source-release": "7",
+	"source-release": "8",
 	"source-version": "1.8.12"
 }
