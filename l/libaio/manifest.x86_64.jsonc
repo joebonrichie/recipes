@@ -1,6 +1,6 @@
 /** Human readable report. This is not consumed by boulder */
 {
-	"manifest-version": "0.1",
+	"manifest-version": "0.2",
 	"packages": {
 		"libaio": {
 			"depends": [
@@ -16,6 +16,9 @@
 			]
 		},
 		"libaio-devel": {
+			"depends": [
+				"libaio"
+			],
 			"files": [
 				"/usr/include/libaio.h",
 				"/usr/lib/libaio.a",
@@ -25,6 +28,6 @@
 		}
 	},
 	"source-name": "libaio",
-	"source-release": "1",
+	"source-release": "2",
 	"source-version": "0.3.113"
 }
