@@ -5,7 +5,7 @@
 #
 name        : libiio
 version     : "0.26"
-release     : 2
+release     : 3
 homepage    : https://github.com/analogdevicesinc/libiio
 upstreams   :
     - https://github.com/analogdevicesinc/libiio/archive/refs/tags/v0.26.tar.gz : fb445fb860ef1248759f45d4273a4eff360534480ec87af64c6b8db3b99be7e5
