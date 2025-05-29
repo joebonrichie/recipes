@@ -5,7 +5,7 @@
 #
 name        : spirv-headers
 version     : '2025.1'
-release     : 7
+release     : 8
 homepage    : https://registry.khronos.org/SPIR-V/
 upstreams   :
     - git|https://github.com/KhronosGroup/SPIRV-Headers.git : 09913f088a1197aba4aefd300a876b2ebbaa3391 # Tag: vulkan-sdk-1.4.309.0
