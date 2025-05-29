@@ -5,7 +5,7 @@
 #
 name        : msgraph
 version     : 0.3.3
-release     : 5
+release     : 6
 homepage    : https://gitlab.gnome.org/GNOME/msgraph
 upstreams   :
     - https://download.gnome.org/sources/msgraph/0.3/msgraph-0.3.3.tar.xz : 37d7e12f2a990490aea21184f0b27e0b915ebb4e5096f4d6632c62051c054012

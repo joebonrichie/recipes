@@ -246,8 +246,7 @@
 				"/usr/share/doc/msgraph-1/type_func.Service.handle_rate_limiting.html",
 				"/usr/share/doc/msgraph-1/type_func.Service.parse_response.html",
 				"/usr/share/doc/msgraph-1/vfunc.Authorizer.process_request.html",
-				"/usr/share/doc/msgraph-1/vfunc.Authorizer.refresh_authorization.html",
-				"/usr/share/gir-1.0/Msg-1.gir"
+				"/usr/share/doc/msgraph-1/vfunc.Authorizer.refresh_authorization.html"
 			],
 			"name": "msgraph",
 			"provides": [
@@ -297,7 +296,8 @@
 				"/usr/include/msg/user/msg-user-service.h",
 				"/usr/include/msg/user/msg-user.h",
 				"/usr/lib/libmsgraph-1.so",
-				"/usr/lib/pkgconfig/msgraph-1.pc"
+				"/usr/lib/pkgconfig/msgraph-1.pc",
+				"/usr/share/gir-1.0/Msg-1.gir"
 			],
 			"name": "msgraph-devel",
 			"provides": [
@@ -306,6 +306,6 @@
 		}
 	},
 	"source-name": "msgraph",
-	"source-release": "5",
+	"source-release": "6",
 	"source-version": "0.3.3"
 }
