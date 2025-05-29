@@ -5,7 +5,7 @@
 #
 name        : powerstation
 version     : 0.5.0
-release     : 4
+release     : 5
 homepage    : https://github.com/ShadowBlip/PowerStation
 upstreams   :
     - https://github.com/ShadowBlip/PowerStation/archive/refs/tags/v0.5.0.tar.gz : f7982dce5db5e32236e32205a33367e07c9e45b0f30b4f29a05b7d599f2441ce
