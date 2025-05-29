@@ -5,7 +5,7 @@
 #
 name        : tailscale
 version     : v1.78.3
-release     : 6
+release     : 7
 homepage    : https://github.com/tailscale/tailscale
 upstreams   :
     - https://github.com/tailscale/tailscale/archive/refs/tags/v1.78.3.tar.gz : bac059152e3fa8ab379ee5ec7a03940114e7ac65c6e1baea4f840f6fadd17d57

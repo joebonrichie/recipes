@@ -26,6 +26,6 @@
 		}
 	},
 	"source-name": "tailscale",
-	"source-release": "6",
+	"source-release": "7",
 	"source-version": "v1.78.3"
 }
