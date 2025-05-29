@@ -5,7 +5,7 @@
 #
 name        : nodejs-22
 version     : 22.16.0
-release     : 1
+release     : 2
 homepage    : https://nodejs.org/
 upstreams   :
     - https://nodejs.org/dist/v22.16.0/node-v22.16.0.tar.gz : 108f250ff79cc103b464b3ef41fa60f4866e4e6c962117171adaac7325ebdab2
