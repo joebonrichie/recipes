@@ -5,7 +5,7 @@
 #
 name        : libadwaita
 version     : 1.7.2
-release     : 11
+release     : 12
 homepage    : https://gitlab.gnome.org/GNOME/libadwaita
 upstreams   :
     - https://download.gnome.org/sources/libadwaita/1.7/libadwaita-1.7.2.tar.xz : 28ee2ff589c6debe47af9da7a56e37c97d6849e003918a4b223f690d25f960be

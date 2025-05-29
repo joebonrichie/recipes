@@ -30,7 +30,6 @@
 				"/usr/lib/girepository-1.0/Adw-1.typelib",
 				"/usr/lib/libadwaita-1.so.0",
 				"/usr/share/applications/org.gnome.Adwaita1.Demo.desktop",
-				"/usr/share/gir-1.0/Adw-1.gir",
 				"/usr/share/icons/hicolor/scalable/apps/org.gnome.Adwaita1.Demo.svg",
 				"/usr/share/icons/hicolor/symbolic/apps/org.gnome.Adwaita1.Demo-symbolic.svg",
 				"/usr/share/locale/ab/LC_MESSAGES/libadwaita.mo",
@@ -197,7 +196,8 @@
 				"/usr/include/libadwaita-1/adw-wrap-layout.h",
 				"/usr/include/libadwaita-1/adwaita.h",
 				"/usr/lib/libadwaita-1.so",
-				"/usr/lib/pkgconfig/libadwaita-1.pc"
+				"/usr/lib/pkgconfig/libadwaita-1.pc",
+				"/usr/share/gir-1.0/Adw-1.gir"
 			],
 			"name": "libadwaita-devel",
 			"provides": [
@@ -206,6 +206,6 @@
 		}
 	},
 	"source-name": "libadwaita",
-	"source-release": "11",
+	"source-release": "12",
 	"source-version": "1.7.2"
 }
