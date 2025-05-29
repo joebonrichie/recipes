@@ -5,7 +5,7 @@
 #
 name        : chezmoi
 version     : 2.59.0
-release     : 2
+release     : 3
 homepage    : https://github.com/twpayne/chezmoi
 upstreams   :
     - https://github.com/twpayne/chezmoi/archive/refs/tags/v2.59.0.tar.gz : af1244c07ff5f3b04d6a2af186a9f2bdd33044399c94a051b64162f238a6b8bb
