@@ -44,7 +44,6 @@
 				"/usr/share/dbus-1/services/org.freedesktop.portal.IBus.service",
 				"/usr/share/gettext/its/ibus.its",
 				"/usr/share/gettext/its/ibus.loc",
-				"/usr/share/gir-1.0/IBus-1.0.gir",
 				"/usr/share/glib-2.0/schemas/org.freedesktop.ibus.gschema.xml",
 				"/usr/share/ibus/component/dconf.xml",
 				"/usr/share/ibus/engine",
@@ -193,7 +192,8 @@
 				"/usr/include/ibus-1.0/ibusxevent.h",
 				"/usr/include/ibus-1.0/ibusxml.h",
 				"/usr/lib/libibus-1.0.so",
-				"/usr/lib/pkgconfig/ibus-1.0.pc"
+				"/usr/lib/pkgconfig/ibus-1.0.pc",
+				"/usr/share/gir-1.0/IBus-1.0.gir"
 			],
 			"name": "ibus-devel",
 			"provides": [
@@ -275,6 +275,6 @@
 		}
 	},
 	"source-name": "ibus",
-	"source-release": "4",
+	"source-release": "5",
 	"source-version": "1.5.29-rc2"
 }
