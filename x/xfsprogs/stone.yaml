@@ -5,7 +5,7 @@
 #
 name        : xfsprogs
 version     : '6.14.0'
-release     : 6
+release     : 7
 homepage    : https://xfs.wiki.kernel.org/
 upstreams   :
     - https://mirrors.edge.kernel.org/pub/linux/utils/fs/xfs/xfsprogs/xfsprogs-6.14.0.tar.xz : fa5ab77f8b5169ce48dd8de09446ad7e29834a05b8f52012bae411cf53ec1f58
