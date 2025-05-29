@@ -18,9 +18,9 @@
 			"files": [
 				"/usr/bin/plistutil",
 				"/usr/lib/libplist++-2.0.so.4",
-				"/usr/lib/libplist++-2.0.so.4.6.0",
+				"/usr/lib/libplist++-2.0.so.4.7.0",
 				"/usr/lib/libplist-2.0.so.4",
-				"/usr/lib/libplist-2.0.so.4.6.0",
+				"/usr/lib/libplist-2.0.so.4.7.0",
 				"/usr/lib/python3.11/site-packages/plist.so",
 				"/usr/share/man/man1/plistutil.1"
 			],
@@ -69,6 +69,6 @@
 		}
 	},
 	"source-name": "libplist",
-	"source-release": "1",
-	"source-version": "2.6.0"
+	"source-release": "2",
+	"source-version": "2.7.0"
 }
