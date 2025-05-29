@@ -5,7 +5,7 @@
 #
 name        : gnome-tweaks
 version     : 46.1+git.3ddc4b3
-release     : 2
+release     : 3
 homepage    : https://github.com/GNOME/gnome-tweaks
 upstreams   :
     - git|https://github.com/GNOME/gnome-tweaks.git : 3ddc4b3759f3e17de84b39ec432f36ab340fc62e
