@@ -78,19 +78,22 @@
 			],
 			"name": "cracklib",
 			"provides": [
+				"soname(libcrack.so.2(x86_64))",
 				"sysbinary(cracklib-check)",
 				"sysbinary(cracklib-format)",
 				"sysbinary(cracklib-packer)",
 				"sysbinary(cracklib-unpacker)",
 				"sysbinary(cracklib-update)",
-				"sysbinary(create-cracklib-dict)",
-				"soname(libcrack.so.2(x86_64))"
+				"sysbinary(create-cracklib-dict)"
 			]
 		},
 		"cracklib-devel": {
 			"build-depends": [
 				"binary(file)",
 				"binary(gzip)"
+			],
+			"depends": [
+				"cracklib"
 			],
 			"files": [
 				"/usr/include/crack.h",
@@ -102,6 +105,6 @@
 		}
 	},
 	"source-name": "cracklib",
-	"source-release": "1",
+	"source-release": "2",
 	"source-version": "2.9.11"
 }

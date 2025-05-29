@@ -5,7 +5,7 @@
 #
 name        : cracklib
 version     : 2.9.11
-release     : 1
+release     : 2
 homepage    : https://github.com/cracklib/cracklib
 upstreams   :
     - https://github.com/cracklib/cracklib/releases/download/v2.9.11/cracklib-2.9.11.tar.xz: 2c83a91dd21d035eab98bded764eb4579b73fd837b683e1a447b11ef604ee130
