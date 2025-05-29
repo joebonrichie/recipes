@@ -48,7 +48,6 @@
 				"/usr/share/dbus-1/system-services/org.freedesktop.GeoClue2.service",
 				"/usr/share/dbus-1/system.d/org.freedesktop.GeoClue2.Agent.conf",
 				"/usr/share/dbus-1/system.d/org.freedesktop.GeoClue2.conf",
-				"/usr/share/gir-1.0/Geoclue-2.0.gir",
 				"/usr/share/man/man5/geoclue.5",
 				"/usr/share/polkit-1/rules.d/org.freedesktop.GeoClue2.rules",
 				"/usr/share/vala/vapi/libgeoclue-2.0.deps",
@@ -89,7 +88,8 @@
 				"/usr/include/libgeoclue-2.0/geoclue.h",
 				"/usr/lib/libgeoclue-2.so",
 				"/usr/lib/pkgconfig/geoclue-2.0.pc",
-				"/usr/lib/pkgconfig/libgeoclue-2.0.pc"
+				"/usr/lib/pkgconfig/libgeoclue-2.0.pc",
+				"/usr/share/gir-1.0/Geoclue-2.0.gir"
 			],
 			"name": "geoclue-devel",
 			"provides": [
@@ -99,6 +99,6 @@
 		}
 	},
 	"source-name": "geoclue",
-	"source-release": "3",
+	"source-release": "4",
 	"source-version": "2.7.2"
 }
