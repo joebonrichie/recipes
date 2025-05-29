@@ -52,6 +52,9 @@
 			]
 		},
 		"popt-devel": {
+			"depends": [
+				"popt"
+			],
 			"files": [
 				"/usr/include/popt.h",
 				"/usr/lib/libpopt.so",
@@ -65,6 +68,6 @@
 		}
 	},
 	"source-name": "popt",
-	"source-release": "1",
+	"source-release": "2",
 	"source-version": "1.19"
 }
