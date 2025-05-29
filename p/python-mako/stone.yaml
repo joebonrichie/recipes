@@ -5,7 +5,7 @@
 #
 name        : python-mako
 version     : 1.3.9
-release     : 4
+release     : 5
 homepage    : https://pypi.org/project/Mako/
 upstreams   :
     - https://pypi.io/packages/source/M/Mako/mako-1.3.9.tar.gz : b5d65ff3462870feec922dbccf38f6efb44e5714d7b593a656be86663d8600ac
@@ -16,6 +16,7 @@ license     :
     - MIT
 builddeps   :
     - binary(python3)
+    - python(setuptools)
 build       : |
     %pyproject_build
 install     : |
