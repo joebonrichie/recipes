@@ -5,7 +5,7 @@
 #
 name        : python-iniconfig
 version     : 2.1.0
-release     : 1
+release     : 2
 homepage    : http://github.com/RonnyPfannschmidt/iniconfig
 upstreams   :
     - https://pypi.debian.net/iniconfig/iniconfig-2.1.0.tar.gz : 3abbd2e30b36733fee78f9c7f7308f2d0050e88f0087fd25c2645f63c773e1c7
