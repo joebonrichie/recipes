@@ -97,6 +97,6 @@
 		}
 	},
 	"source-name": "qt6-languageserver",
-	"source-release": "3",
+	"source-release": "4",
 	"source-version": "6.9.0"
 }
