@@ -5,7 +5,7 @@
 #
 name        : shaderc
 version     : '2025.1'
-release     : 5
+release     : 6
 homepage    : https://github.com/google/shaderc
 upstreams   :
     - https://github.com/google/shaderc/archive/refs/tags/v2025.1.tar.gz : 358f9fa87b503bc7a3efe1575fbf581fca7f16dbc6d502ea2b02628d2d0d4014
