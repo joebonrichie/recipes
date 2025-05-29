@@ -4,11 +4,9 @@
 	"packages": {
 		"python-setuptools": {
 			"build-depends": [
-				"python-backports.tarfile",
-				"python-jaraco.context",
-				"python-jaraco.functools",
-				"python-jaraco.text",
-				"python-more-itertools"
+				"binary(python)",
+				"python(jaraco.functools)",
+				"python(jaraco.text)"
 			],
 			"depends": [
 				"binary(python3)",
@@ -542,6 +540,6 @@
 		}
 	},
 	"source-name": "python-setuptools",
-	"source-release": "4",
+	"source-release": "5",
 	"source-version": "80.8.0"
 }

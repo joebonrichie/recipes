@@ -5,7 +5,7 @@
 #
 name        : python-setuptools
 version     : 80.8.0
-release     : 4
+release     : 5
 homepage    : https://setuptools.pypa.io/
 upstreams   :
     - https://pypi.debian.net/setuptools/setuptools-80.8.0.tar.gz : 49f7af965996f26d43c8ae34539c8d99c5042fbff34302ea151eaa9c207cd257
@@ -17,14 +17,9 @@ description : |
     Setuptools allows the easy download, build, install, upgrade, and uninstallation of Python packages.
 license     : MIT
 builddeps   :
-    # - binary(python)
-    # - python(jaraco.functools)
-    # - python(jaraco.text)
-    - python-jaraco.context
-    - python-jaraco.functools
-    - python-jaraco.text
-    - python-backports.tarfile
-    - python-more-itertools
+    - binary(python)
+    - python(jaraco.functools)
+    - python(jaraco.text)
 rundeps     :
     - binary(python3)
 environment : |
