@@ -5,7 +5,7 @@
 #
 name        : uutils-coreutils
 version     : 0.1.0
-release     : 23
+release     : 24
 homepage    : https://uutils.github.io/coreutils/
 upstreams   :
     - git|https://github.com/uutils/coreutils.git : 18b963ed6f612ac30ebca92426280cf4c1451f6a
