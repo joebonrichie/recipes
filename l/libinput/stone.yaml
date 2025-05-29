@@ -5,7 +5,7 @@
 #
 name        : libinput
 version     : 1.28.0
-release     : 6
+release     : 7
 homepage    : https://www.freedesktop.org/wiki/Software/libinput
 upstreams   :
     - https://gitlab.freedesktop.org/libinput/libinput/-/archive/1.28.0/libinput-1.28.0.tar.gz : d4719ff614835b305f9649899c5c2966f47e9295fa1b3925787d00171f869c21
