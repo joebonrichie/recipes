@@ -32,7 +32,6 @@
 				"soname(libcairo.so.2(x86_64))",
 				"soname(libcrypto.so.3(x86_64))",
 				"soname(libdbus-1.so.3(x86_64))",
-				"soname(libfreetype.so.6(x86_64))",
 				"soname(libharfbuzz.so.0(x86_64))",
 				"soname(liblcms2.so.2(x86_64))",
 				"soname(libm.so.6(x86_64))",
@@ -1088,6 +1087,6 @@
 		}
 	},
 	"source-name": "kitty",
-	"source-release": "2",
+	"source-release": "3",
 	"source-version": "0.41.1"
 }

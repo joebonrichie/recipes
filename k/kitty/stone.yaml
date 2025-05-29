@@ -5,7 +5,7 @@
 #
 name        : kitty
 version     : 0.41.1
-release     : 2
+release     : 3
 homepage    : https://github.com/kovidgoyal/kitty
 upstreams   :
     - https://github.com/kovidgoyal/kitty/releases/download/v0.41.1/kitty-0.41.1.tar.xz : e30150fad1bcc885a7adbd87380696ef7b67a62a38f74634efbc05c3745f26aa
@@ -35,6 +35,12 @@ builddeps   :
     - pkgconfig(xrandr)
     - font-symbols-nerd
 build       : |
+    export CGO_CPPFLAGS="${CPPFLAGS}"
+    export CGO_CFLAGS="${CFLAGS}"
+    export CGO_CXXFLAGS="${CXXFLAGS}"
+    export CGO_LDFLAGS="${LDFLAGS}"
+    export GOFLAGS="-buildmode=pie -trimpath -ldflags=-linkmode=external -mod=readonly -modcacherw"
+
     %make
     %make linux-package
 install     : |
