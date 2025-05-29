@@ -5,7 +5,7 @@
 #
 name        : php
 version     : 8.4.7
-release     : 6
+release     : 7
 homepage    : https://www.php.net/distributions
 upstreams   :
     - https://www.php.net/distributions/php-8.4.7.tar.xz : e29f4c23be2816ed005aa3f06bbb8eae0f22cc133863862e893515fc841e65e3
