@@ -5,7 +5,7 @@
 #
 name        : build-essential
 version     : 0
-release     : 4
+release     : 5
 summary     : Essential build tools for AerynOS
 license     : MPL-2.0
 homepage    : https://github.com/AerynOS
