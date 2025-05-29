@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : libblockdev
-version     : 3.1.1
-release     : 3
+version     : 3.3.0
+release     : 4
 homepage    : https://github.com/storaged-project/libblockdev
 upstreams   :
-    - https://github.com/storaged-project/libblockdev/releases/download/3.1.1-1/libblockdev-3.1.1.tar.gz : a5cb33a53ff5969067982704f45399d02555fdb2313ed0c56eac9555397dc2db
+    - https://github.com/storaged-project/libblockdev/releases/download/3.3.0/libblockdev-3.3.0.tar.gz : c4738e1abedefffe886521f9f0e7a9306c6f50f7691d88e011438c88608bdfa7
 summary     : A library for manipulating block devices
 description : |
     libblockdev is a C library supporting GObject introspection for manipulation of block devices. It has a plugin-based architecture where each technology (like LVM, Btrfs, MD RAID, Swap,...) is implemented in a separate plugin, possibly with multiple implementations (e.g. using LVM CLI or the new LVM DBus API).
@@ -20,6 +20,8 @@ builddeps   :
     - pkgconfig(ext2fs)
     - pkgconfig(gobject-introspection-1.0)
     - pkgconfig(glib-2.0)
+    - pkgconfig(json-glib-1.0)
+    - pkgconfig(libatasmart)
     - pkgconfig(libcryptsetup)
     - pkgconfig(libkeyutils)
     - pkgconfig(libkmod)
@@ -29,13 +31,13 @@ builddeps   :
     - pkgconfig(libudev)
     - pkgconfig(nss)
     - pkgconfig(uuid)
+    - pkgconfig(yaml-0.1)
 setup       : |
-    %patch %(pkgdir)/ftbfs-lld.patch
-
     # escrow requires volume_key which is crusty af
     # nvdimm requries ndctl which isn't yet packaged but relatively unimportant
-    %reconfigure --without-nvdimm --without-escrow
+    %configure --without-nvdimm --without-escrow
 build       : |
     %make
 install     : |
     %make_install
+# TODO: Subpackage this up

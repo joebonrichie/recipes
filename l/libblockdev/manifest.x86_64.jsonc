@@ -10,6 +10,8 @@
 				"pkgconfig(ext2fs)",
 				"pkgconfig(glib-2.0)",
 				"pkgconfig(gobject-introspection-1.0)",
+				"pkgconfig(json-glib-1.0)",
+				"pkgconfig(libatasmart)",
 				"pkgconfig(libcryptsetup)",
 				"pkgconfig(libkeyutils)",
 				"pkgconfig(libkmod)",
@@ -17,11 +19,13 @@
 				"pkgconfig(libparted)",
 				"pkgconfig(libudev)",
 				"pkgconfig(nss)",
-				"pkgconfig(uuid)"
+				"pkgconfig(uuid)",
+				"pkgconfig(yaml-0.1)"
 			],
 			"depends": [
 				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
 				"soname(ld-linux-x86-64.so.2(x86_64))",
+				"soname(libatasmart.so.4(x86_64))",
 				"soname(libblkid.so.1(x86_64))",
 				"soname(libbytesize.so.1(x86_64))",
 				"soname(libc.so.6(x86_64))",
@@ -33,6 +37,7 @@
 				"soname(libgio-2.0.so.0(x86_64))",
 				"soname(libglib-2.0.so.0(x86_64))",
 				"soname(libgobject-2.0.so.0(x86_64))",
+				"soname(libjson-glib-1.0.so.0(x86_64))",
 				"soname(libkeyutils.so.1(x86_64))",
 				"soname(libkmod.so.2(x86_64))",
 				"soname(libm.so.6(x86_64))",
@@ -41,7 +46,8 @@
 				"soname(libparted-fs-resize.so.0(x86_64))",
 				"soname(libparted.so.2(x86_64))",
 				"soname(libudev.so.1(x86_64))",
-				"soname(libuuid.so.1(x86_64))"
+				"soname(libuuid.so.1(x86_64))",
+				"soname(libyaml-0.so.2(x86_64))"
 			],
 			"files": [
 				"/usr/bin/lvm-cache-stats",
@@ -69,14 +75,17 @@
 				"/usr/lib/libbd_nvme.so.3.0.0",
 				"/usr/lib/libbd_part.so.3",
 				"/usr/lib/libbd_part.so.3.0.0",
+				"/usr/lib/libbd_smart.so.3",
+				"/usr/lib/libbd_smart.so.3.0.0",
+				"/usr/lib/libbd_smartmontools.so.3",
+				"/usr/lib/libbd_smartmontools.so.3.0.0",
 				"/usr/lib/libbd_swap.so.3",
 				"/usr/lib/libbd_swap.so.3.0.0",
 				"/usr/lib/libbd_utils.so.3",
 				"/usr/lib/libbd_utils.so.3.0.0",
 				"/usr/lib/libblockdev.so.3",
 				"/usr/lib/libblockdev.so.3.0.0",
-				"/usr/lib/python3.11/site-packages/gi/overrides/BlockDev.py",
-				"/usr/share/gir-1.0/BlockDev-3.0.gir"
+				"/usr/lib/python3.11/site-packages/gi/overrides/BlockDev.py"
 			],
 			"name": "libblockdev",
 			"provides": [
@@ -93,6 +102,8 @@
 				"soname(libbd_mpath.so.3(x86_64))",
 				"soname(libbd_nvme.so.3(x86_64))",
 				"soname(libbd_part.so.3(x86_64))",
+				"soname(libbd_smart.so.3(x86_64))",
+				"soname(libbd_smartmontools.so.3(x86_64))",
 				"soname(libbd_swap.so.3(x86_64))",
 				"soname(libbd_utils.so.3(x86_64))",
 				"soname(libblockdev.so.3(x86_64))"
@@ -106,6 +117,8 @@
 				"pkgconfig(ext2fs)",
 				"pkgconfig(glib-2.0)",
 				"pkgconfig(gobject-introspection-1.0)",
+				"pkgconfig(json-glib-1.0)",
+				"pkgconfig(libatasmart)",
 				"pkgconfig(libcryptsetup)",
 				"pkgconfig(libkeyutils)",
 				"pkgconfig(libkmod)",
@@ -113,7 +126,8 @@
 				"pkgconfig(libparted)",
 				"pkgconfig(libudev)",
 				"pkgconfig(nss)",
-				"pkgconfig(uuid)"
+				"pkgconfig(uuid)",
+				"pkgconfig(yaml-0.1)"
 			],
 			"depends": [
 				"libblockdev",
@@ -150,6 +164,7 @@
 				"/usr/include/blockdev/part.h",
 				"/usr/include/blockdev/plugins.h",
 				"/usr/include/blockdev/sizes.h",
+				"/usr/include/blockdev/smart.h",
 				"/usr/include/blockdev/swap.h",
 				"/usr/include/blockdev/utils.h",
 				"/usr/lib/libbd_btrfs.so",
@@ -163,11 +178,14 @@
 				"/usr/lib/libbd_mpath.so",
 				"/usr/lib/libbd_nvme.so",
 				"/usr/lib/libbd_part.so",
+				"/usr/lib/libbd_smart.so",
+				"/usr/lib/libbd_smartmontools.so",
 				"/usr/lib/libbd_swap.so",
 				"/usr/lib/libbd_utils.so",
 				"/usr/lib/libblockdev.so",
 				"/usr/lib/pkgconfig/blockdev-utils.pc",
-				"/usr/lib/pkgconfig/blockdev.pc"
+				"/usr/lib/pkgconfig/blockdev.pc",
+				"/usr/share/gir-1.0/BlockDev-3.0.gir"
 			],
 			"name": "libblockdev-devel",
 			"provides": [
@@ -177,6 +195,6 @@
 		}
 	},
 	"source-name": "libblockdev",
-	"source-release": "3",
-	"source-version": "3.1.1"
+	"source-release": "4",
+	"source-version": "3.3.0"
 }
