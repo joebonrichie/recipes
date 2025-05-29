@@ -66,6 +66,6 @@
 		}
 	},
 	"source-name": "lm_sensors",
-	"source-release": "2",
+	"source-release": "3",
 	"source-version": "3.6.0"
 }
