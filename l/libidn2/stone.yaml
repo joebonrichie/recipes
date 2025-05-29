@@ -5,7 +5,7 @@
 #
 name        : libidn2
 version     : 2.3.7
-release     : 3
+release     : 4
 summary     : Internationalized domain name support library
 license     :
     - GPL-2.0-or-later

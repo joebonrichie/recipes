@@ -64,8 +64,7 @@
 			],
 			"name": "libidn2-32bit",
 			"provides": [
-				"soname(libidn2.so.0(386))",
-				"soname(libidn2.so.0(x86))"
+				"soname(libidn2.so.0(386))"
 			]
 		},
 		"libidn2-32bit-devel": {
@@ -149,6 +148,6 @@
 		}
 	},
 	"source-name": "libidn2",
-	"source-release": "3",
+	"source-release": "4",
 	"source-version": "2.3.7"
 }
