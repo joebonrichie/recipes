@@ -5,7 +5,7 @@
 #
 name        : adwaita-icon-theme
 version     : 48.0
-release     : 7
+release     : 8
 homepage    : https://gitlab.gnome.org/GNOME/adwaita-icon-theme
 upstreams   :
     - https://download.gnome.org/sources/adwaita-icon-theme/48/adwaita-icon-theme-48.0.tar.xz : 847068888650d9673115be6dbf2bfdc31a46aebc528a6a9db4420e60e656b8d4
