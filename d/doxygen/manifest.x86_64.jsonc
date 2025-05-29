@@ -20,7 +20,7 @@
 				"soname(libclang-cpp.so.20.1(x86_64))",
 				"soname(libclang.so.20.1(x86_64))",
 				"soname(libm.so.6(x86_64))",
-				"soname(libspdlog.so.1.12(x86_64))",
+				"soname(libspdlog.so.1.15(x86_64))",
 				"soname(libsqlite3.so.0(x86_64))",
 				"soname(libunwind.so.1(x86_64))"
 			],
@@ -66,6 +66,6 @@
 		}
 	},
 	"source-name": "doxygen",
-	"source-release": "2",
+	"source-release": "3",
 	"source-version": "1.13.2"
 }
