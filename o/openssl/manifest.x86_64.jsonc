@@ -415,19 +415,12 @@
 			"name": "openssl-32bit",
 			"provides": [
 				"soname(engines-3/afalg.so(386))",
-				"soname(engines-3/afalg.so(x86))",
 				"soname(engines-3/capi.so(386))",
-				"soname(engines-3/capi.so(x86))",
 				"soname(engines-3/loader_attic.so(386))",
-				"soname(engines-3/loader_attic.so(x86))",
 				"soname(engines-3/padlock.so(386))",
-				"soname(engines-3/padlock.so(x86))",
 				"soname(libcrypto.so.3(386))",
-				"soname(libcrypto.so.3(x86))",
 				"soname(libssl.so.3(386))",
-				"soname(libssl.so.3(x86))",
-				"soname(ossl-modules/legacy.so(386))",
-				"soname(ossl-modules/legacy.so(x86))"
+				"soname(ossl-modules/legacy.so(386))"
 			]
 		},
 		"openssl-32bit-devel": {
@@ -7712,6 +7705,6 @@
 		}
 	},
 	"source-name": "openssl",
-	"source-release": "25",
+	"source-release": "26",
 	"source-version": "3.5.0"
 }

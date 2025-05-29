@@ -5,7 +5,7 @@
 #
 name        : openssl
 version     : 3.5.0
-release     : 25
+release     : 26
 summary     : OpenSSL cryptography library
 license     :
     - OpenSSL
