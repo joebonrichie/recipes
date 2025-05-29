@@ -4,10 +4,12 @@
 	"packages": {
 		"texinfo": {
 			"build-depends": [
-				"binary(perl)",
+				"binary(msgfmt)",
+				"perl-devel",
 				"pkgconfig(ncursesw)"
 			],
 			"depends": [
+				"binary(perl)",
 				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
 				"soname(ld-linux-x86-64.so.2(x86_64))",
 				"soname(libc.so.6(x86_64))",
@@ -579,6 +581,6 @@
 		}
 	},
 	"source-name": "texinfo",
-	"source-release": "9",
+	"source-release": "10",
 	"source-version": "7.1.1"
 }
