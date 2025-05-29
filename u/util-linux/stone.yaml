@@ -5,7 +5,7 @@
 #
 name        : util-linux
 version     : 2.40.2
-release     : 10
+release     : 11
 summary     : Random collection of Linux utilities
 license     :
     - BSD-3-Clause
