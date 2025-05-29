@@ -101,11 +101,6 @@
 				"/usr/lib/libgtk-4.so.1.1800.4",
 				"/usr/share/gettext/its/gtk4builder.its",
 				"/usr/share/gettext/its/gtk4builder.loc",
-				"/usr/share/gir-1.0/Gdk-4.0.gir",
-				"/usr/share/gir-1.0/GdkWayland-4.0.gir",
-				"/usr/share/gir-1.0/GdkX11-4.0.gir",
-				"/usr/share/gir-1.0/Gsk-4.0.gir",
-				"/usr/share/gir-1.0/Gtk-4.0.gir",
 				"/usr/share/glib-2.0/schemas/org.gtk.Demo4.gschema.xml",
 				"/usr/share/glib-2.0/schemas/org.gtk.gtk4.Inspector.gschema.xml",
 				"/usr/share/glib-2.0/schemas/org.gtk.gtk4.Settings.ColorChooser.gschema.xml",
@@ -853,7 +848,12 @@
 				"/usr/lib/pkgconfig/gtk4-unix-print.pc",
 				"/usr/lib/pkgconfig/gtk4-wayland.pc",
 				"/usr/lib/pkgconfig/gtk4-x11.pc",
-				"/usr/lib/pkgconfig/gtk4.pc"
+				"/usr/lib/pkgconfig/gtk4.pc",
+				"/usr/share/gir-1.0/Gdk-4.0.gir",
+				"/usr/share/gir-1.0/GdkWayland-4.0.gir",
+				"/usr/share/gir-1.0/GdkX11-4.0.gir",
+				"/usr/share/gir-1.0/Gsk-4.0.gir",
+				"/usr/share/gir-1.0/Gtk-4.0.gir"
 			],
 			"name": "gtk-4-devel",
 			"provides": [
@@ -867,6 +867,6 @@
 		}
 	},
 	"source-name": "gtk-4",
-	"source-release": "23",
+	"source-release": "24",
 	"source-version": "4.18.4"
 }
