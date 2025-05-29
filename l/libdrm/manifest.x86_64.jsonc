@@ -60,15 +60,10 @@
 			"name": "libdrm-32bit",
 			"provides": [
 				"soname(libdrm.so.2(386))",
-				"soname(libdrm.so.2(x86))",
 				"soname(libdrm_amdgpu.so.1(386))",
-				"soname(libdrm_amdgpu.so.1(x86))",
 				"soname(libdrm_intel.so.1(386))",
-				"soname(libdrm_intel.so.1(x86))",
 				"soname(libdrm_nouveau.so.2(386))",
-				"soname(libdrm_nouveau.so.2(x86))",
-				"soname(libdrm_radeon.so.1(386))",
-				"soname(libdrm_radeon.so.1(x86))"
+				"soname(libdrm_radeon.so.1(386))"
 			]
 		},
 		"libdrm-32bit-devel": {
@@ -179,6 +174,6 @@
 		}
 	},
 	"source-name": "libdrm",
-	"source-release": "7",
+	"source-release": "8",
 	"source-version": "2.4.124"
 }
