@@ -40,8 +40,7 @@
 			],
 			"name": "libseccomp-32bit",
 			"provides": [
-				"soname(libseccomp.so.2(386))",
-				"soname(libseccomp.so.2(x86))"
+				"soname(libseccomp.so.2(386))"
 			]
 		},
 		"libseccomp-32bit-devel": {
@@ -117,6 +116,6 @@
 		}
 	},
 	"source-name": "libseccomp",
-	"source-release": "4",
+	"source-release": "5",
 	"source-version": "2.5.5"
 }
