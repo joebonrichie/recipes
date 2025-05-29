@@ -41,8 +41,6 @@
 				"/usr/lib/glycin/glycin-loaders/1+/glycin-svg",
 				"/usr/lib/libglycin-1.so.0",
 				"/usr/lib/libglycin-gtk4-1.so.0",
-				"/usr/share/gir-1.0/Gly-1.gir",
-				"/usr/share/gir-1.0/GlyGtk4-1.gir",
 				"/usr/share/glycin-loaders/1+/conf.d/glycin-image-rs.conf",
 				"/usr/share/glycin-loaders/1+/conf.d/glycin-jxl.conf",
 				"/usr/share/glycin-loaders/1+/conf.d/glycin-svg.conf",
@@ -84,7 +82,9 @@
 				"/usr/lib/libglycin-1.so",
 				"/usr/lib/libglycin-gtk4-1.so",
 				"/usr/lib/pkgconfig/glycin-1.pc",
-				"/usr/lib/pkgconfig/glycin-gtk4-1.pc"
+				"/usr/lib/pkgconfig/glycin-gtk4-1.pc",
+				"/usr/share/gir-1.0/Gly-1.gir",
+				"/usr/share/gir-1.0/GlyGtk4-1.gir"
 			],
 			"name": "glycin-devel",
 			"provides": [
@@ -94,6 +94,6 @@
 		}
 	},
 	"source-name": "glycin",
-	"source-release": "6",
+	"source-release": "7",
 	"source-version": "1.2.1"
 }

@@ -5,7 +5,7 @@
 #
 name        : glycin
 version     : 1.2.1
-release     : 6
+release     : 7
 homepage    : https://gitlab.gnome.org/sophie-h/glycin
 upstreams   :
     - https://download.gnome.org/sources/glycin/1.2/glycin-1.2.1.tar.xz : ccc578e9a3e83d0dc1535737d1fda09baa95c7167f5e5ecb15f786654094eed5
