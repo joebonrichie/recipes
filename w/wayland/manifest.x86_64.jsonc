@@ -59,13 +59,9 @@
 			"name": "wayland-32bit",
 			"provides": [
 				"soname(libwayland-client.so.0(386))",
-				"soname(libwayland-client.so.0(x86))",
 				"soname(libwayland-cursor.so.0(386))",
-				"soname(libwayland-cursor.so.0(x86))",
 				"soname(libwayland-egl.so.1(386))",
-				"soname(libwayland-egl.so.1(x86))",
-				"soname(libwayland-server.so.0(386))",
-				"soname(libwayland-server.so.0(x86))"
+				"soname(libwayland-server.so.0(386))"
 			]
 		},
 		"wayland-32bit-devel": {
@@ -156,6 +152,6 @@
 		}
 	},
 	"source-name": "wayland",
-	"source-release": "6",
+	"source-release": "7",
 	"source-version": "1.23.1"
 }
