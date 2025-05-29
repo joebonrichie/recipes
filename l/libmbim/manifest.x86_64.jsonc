@@ -26,8 +26,7 @@
 				"/usr/lib/libmbim-glib.so.4",
 				"/usr/lib/libmbim-glib.so.4.9.0",
 				"/usr/lib/libmbim/mbim-proxy",
-				"/usr/share/bash-completion/completions/mbimcli",
-				"/usr/share/gir-1.0/Mbim-1.0.gir"
+				"/usr/share/bash-completion/completions/mbimcli"
 			],
 			"name": "libmbim",
 			"provides": [
@@ -95,7 +94,8 @@
 				"/usr/include/libmbim-glib/mbim-uuid.h",
 				"/usr/include/libmbim-glib/mbim-version.h",
 				"/usr/lib/libmbim-glib.so",
-				"/usr/lib/pkgconfig/mbim-glib.pc"
+				"/usr/lib/pkgconfig/mbim-glib.pc",
+				"/usr/share/gir-1.0/Mbim-1.0.gir"
 			],
 			"name": "libmbim-devel",
 			"provides": [
@@ -104,6 +104,6 @@
 		}
 	},
 	"source-name": "libmbim",
-	"source-release": "2",
+	"source-release": "3",
 	"source-version": "1.32.0"
 }

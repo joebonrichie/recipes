@@ -5,7 +5,7 @@
 #
 name        : libmbim
 version     : 1.32.0
-release     : 2
+release     : 3
 homepage    : https://gitlab.freedesktop.org/mobile-broadband/libmbim
 upstreams   :
     - https://gitlab.freedesktop.org/mobile-broadband/libmbim/-/archive/1.32.0/libmbim-1.32.0.tar.bz2 : 47228f0c07dfb2fbf51e35eb60f12c22113ef6923a0e23fcae3b2a4efee5ed29
