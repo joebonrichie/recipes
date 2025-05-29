@@ -5,7 +5,7 @@
 #
 name        : pciutils
 version     : 3.13.0
-release     : 4
+release     : 5
 homepage    : https://mirrors.edge.kernel.org/pub/software/utils/pciutils
 upstreams   :
     - https://mirrors.edge.kernel.org/pub/software/utils/pciutils/pciutils-3.13.0.tar.xz : 77f11f78298502634d1af50308f15a5788629f6cf45cba376f5009aea4cb4926
