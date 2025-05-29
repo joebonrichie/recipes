@@ -5,7 +5,7 @@
 #
 name        : inih
 version     : 58
-release     : 3
+release     : 4
 homepage    : https://github.com/benhoyt/inih
 upstreams   :
     - https://github.com/benhoyt/inih/archive/refs/tags/r58.tar.gz : e79216260d5dffe809bda840be48ab0eec7737b2bb9f02d2275c1b46344ea7b7

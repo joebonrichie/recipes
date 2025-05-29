@@ -19,6 +19,9 @@
 			]
 		},
 		"inih-devel": {
+			"depends": [
+				"inih"
+			],
 			"files": [
 				"/usr/include/INIReader.h",
 				"/usr/include/ini.h",
@@ -35,6 +38,6 @@
 		}
 	},
 	"source-name": "inih",
-	"source-release": "3",
+	"source-release": "4",
 	"source-version": "58"
 }
