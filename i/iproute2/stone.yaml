@@ -5,7 +5,7 @@
 #
 name        : iproute2
 version     : 6.15.0
-release     : 5
+release     : 6
 homepage    : https://wiki.linuxfoundation.org/networking/iproute2
 upstreams   :
     - https://mirrors.edge.kernel.org/pub/linux/utils/net/iproute2/iproute2-6.15.0.tar.xz : 8041854a882583ad5263466736c9c8c68c74b1a35754ab770d23343f947528fb
