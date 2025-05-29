@@ -71,13 +71,9 @@
 			"name": "ncurses-32bit",
 			"provides": [
 				"soname(libformw.so.6(386))",
-				"soname(libformw.so.6(x86))",
 				"soname(libmenuw.so.6(386))",
-				"soname(libmenuw.so.6(x86))",
 				"soname(libncursesw.so.6(386))",
-				"soname(libncursesw.so.6(x86))",
-				"soname(libpanelw.so.6(386))",
-				"soname(libpanelw.so.6(x86))"
+				"soname(libpanelw.so.6(386))"
 			]
 		},
 		"ncurses-32bit-c++-libs": {
@@ -97,8 +93,7 @@
 			],
 			"name": "ncurses-32bit-c++-libs",
 			"provides": [
-				"soname(libncurses++w.so.6(386))",
-				"soname(libncurses++w.so.6(x86))"
+				"soname(libncurses++w.so.6(386))"
 			]
 		},
 		"ncurses-32bit-devel": {
@@ -4115,6 +4110,6 @@
 		}
 	},
 	"source-name": "ncurses",
-	"source-release": "12",
+	"source-release": "13",
 	"source-version": "6.5-20250510"
 }
