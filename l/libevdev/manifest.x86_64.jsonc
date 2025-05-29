@@ -43,6 +43,6 @@
 		}
 	},
 	"source-name": "libevdev",
-	"source-release": "4",
+	"source-release": "5",
 	"source-version": "1.13.3"
 }
