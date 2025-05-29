@@ -4,23 +4,27 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : python-setuptools
-version     : 80.8.0
-release     : 2
+version     : 75.2.0
+release     : 3
 homepage    : https://setuptools.pypa.io/
 upstreams   :
-    - https://pypi.debian.net/setuptools/setuptools-80.8.0.tar.gz : 49f7af965996f26d43c8ae34539c8d99c5042fbff34302ea151eaa9c207cd257
+    # - https://pypi.debian.net/setuptools/setuptools-80.8.0.tar.gz : 49f7af965996f26d43c8ae34539c8d99c5042fbff34302ea151eaa9c207cd257
+    # Comment this out if not bootstrapping
+    - git|https://gitlab.archlinux.org/archlinux/python-bootstrap.git:
+        ref: aff0f1a48c377c419f49b61babd6af78322e86f1
 summary     : Easily download, build, install, upgrade, and uninstall Python packages
 description : |
     Setuptools allows the easy download, build, install, upgrade, and uninstallation of Python packages.
 license     : MIT
 builddeps   :
-    - python(jaraco.functools)
-    - python(jaraco.text)
+    - binary(python)
+#     - python(jaraco.functools)
+#     - python(jaraco.text)
 rundeps     :
     - binary(python3)
 environment : |
     # set to 1 if bootstrapping against a new python
-    _bootstrap=0
+    _bootstrap=1
 
     # Don't want .exe files
     export SETUPTOOLS_INSTALL_WINDOWS_SPECIFIC_FILES=0
@@ -41,15 +45,16 @@ setup       : |
     fi
 build       : |
     if [[ ${_bootstrap} == "1" ]]; then
-        %pyproject_build
+        python -m bootstrap.build
     else
-        %python_setup
+        echo "Something to prevent bash syntax errors due to an empty if block"
+        #python_setup
     fi
 install     : |
     if [[ ${_bootstrap} == "1" ]]; then
-        %pyproject_install
+        python -m bootstrap.install dist/setuptools-*-py3-none-any.whl -d "%(installroot)"
     else
-        %python_install
+        #python_install
 
         # Delete vendored packages
         # TODO replace with python_version macro
