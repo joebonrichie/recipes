@@ -5,7 +5,8 @@
 		"aom": {
 			"build-depends": [
 				"binary(doxygen)",
-				"binary(nasm)"
+				"binary(nasm)",
+				"binary(perl)"
 			],
 			"depends": [
 				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
@@ -30,7 +31,8 @@
 		"aom-devel": {
 			"build-depends": [
 				"binary(doxygen)",
-				"binary(nasm)"
+				"binary(nasm)",
+				"binary(perl)"
 			],
 			"depends": [
 				"aom"
@@ -56,6 +58,6 @@
 		}
 	},
 	"source-name": "aom",
-	"source-release": "1",
+	"source-release": "2",
 	"source-version": "3.12.0"
 }

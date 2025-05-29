@@ -5,7 +5,7 @@
 #
 name        : aom
 version     : 3.12.0
-release     : 1
+release     : 2
 homepage    : https://aomedia.googlesource.com/aom/
 upstreams   :
     - git|https://aomedia.googlesource.com/aom.git : v3.12.0
@@ -25,6 +25,7 @@ license     :
 builddeps   :
     - binary(doxygen)
     - binary(nasm)
+    - binary(perl)
 tuning      :
     - lto: full
 setup       : |
