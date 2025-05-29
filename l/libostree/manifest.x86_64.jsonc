@@ -48,7 +48,6 @@
 				"/usr/lib/ostree/ostree-prepare-root",
 				"/usr/lib/ostree/ostree-remount",
 				"/usr/share/bash-completion/completions/ostree",
-				"/usr/share/gir-1.0/OSTree-1.0.gir",
 				"/usr/share/man/man1/ostree-admin-cleanup.1",
 				"/usr/share/man/man1/ostree-admin-config-diff.1",
 				"/usr/share/man/man1/ostree-admin-deploy.1",
@@ -171,7 +170,8 @@
 				"/usr/include/ostree-1/ostree-version.h",
 				"/usr/include/ostree-1/ostree.h",
 				"/usr/lib/libostree-1.so",
-				"/usr/lib/pkgconfig/ostree-1.pc"
+				"/usr/lib/pkgconfig/ostree-1.pc",
+				"/usr/share/gir-1.0/OSTree-1.0.gir"
 			],
 			"name": "libostree-devel",
 			"provides": [
@@ -180,6 +180,6 @@
 		}
 	},
 	"source-name": "libostree",
-	"source-release": "10",
+	"source-release": "11",
 	"source-version": "2025.2"
 }
