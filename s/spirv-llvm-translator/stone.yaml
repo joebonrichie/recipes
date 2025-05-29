@@ -5,7 +5,7 @@
 #
 name        : spirv-llvm-translator
 version     : 20.1.2
-release     : 5
+release     : 6
 homepage    : https://github.com/KhronosGroup/SPIRV-LLVM-Translator
 upstreams   :
     - git|https://github.com/KhronosGroup/SPIRV-LLVM-Translator.git: 6dd8f2a1681a27f16c53d932d2765920f312aeb2

@@ -40,8 +40,7 @@
 			],
 			"name": "spirv-llvm-translator-32bit",
 			"provides": [
-				"soname(libLLVMSPIRVLib.so.20.1(386))",
-				"soname(libLLVMSPIRVLib.so.20.1(x86))"
+				"soname(libLLVMSPIRVLib.so.20.1(386))"
 			]
 		},
 		"spirv-llvm-translator-32bit-devel": {
@@ -84,6 +83,6 @@
 		}
 	},
 	"source-name": "spirv-llvm-translator",
-	"source-release": "5",
+	"source-release": "6",
 	"source-version": "20.1.2"
 }
