@@ -58,7 +58,6 @@
 			],
 			"name": "libsndfile",
 			"provides": [
-				"soname(libsndfile.so.1(x86_64))",
 				"binary(sndfile-cmp)",
 				"binary(sndfile-concat)",
 				"binary(sndfile-convert)",
@@ -68,7 +67,8 @@
 				"binary(sndfile-metadata-get)",
 				"binary(sndfile-metadata-set)",
 				"binary(sndfile-play)",
-				"binary(sndfile-salvage)"
+				"binary(sndfile-salvage)",
+				"soname(libsndfile.so.1(x86_64))"
 			]
 		},
 		"libsndfile-devel": {
@@ -78,6 +78,9 @@
 				"pkgconfig(ogg)",
 				"pkgconfig(sqlite3)",
 				"pkgconfig(vorbis)"
+			],
+			"depends": [
+				"libsndfile"
 			],
 			"files": [
 				"/usr/include/sndfile.h",
@@ -92,6 +95,6 @@
 		}
 	},
 	"source-name": "libsndfile",
-	"source-release": "1",
+	"source-release": "2",
 	"source-version": "1.2.2"
 }
