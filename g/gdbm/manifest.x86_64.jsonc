@@ -62,8 +62,7 @@
 			],
 			"name": "gdbm-32bit",
 			"provides": [
-				"soname(libgdbm.so.6(386))",
-				"soname(libgdbm.so.6(x86))"
+				"soname(libgdbm.so.6(386))"
 			]
 		},
 		"gdbm-32bit-devel": {
@@ -95,6 +94,6 @@
 		}
 	},
 	"source-name": "gdbm",
-	"source-release": "4",
+	"source-release": "5",
 	"source-version": "1.24"
 }

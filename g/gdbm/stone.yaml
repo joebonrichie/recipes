@@ -5,7 +5,7 @@
 #
 name        : gdbm
 version     : 1.24
-release     : 4
+release     : 5
 summary     : GNU database library
 license     : GPL-3.0-or-later
 homepage    : https://www.gnu.org.ua/software/gdbm/
