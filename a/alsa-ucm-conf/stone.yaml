@@ -5,7 +5,7 @@
 #
 name        : alsa-ucm-conf
 version     : 1.2.13
-release     : 3
+release     : 4
 homepage    : https://www.alsa-project.org/wiki/Main_Page
 upstreams   :
     - https://github.com/alsa-project/alsa-ucm-conf/archive/refs/tags/v1.2.13.tar.gz : 0b1c6740c665078a1c2818ef4902417d75bba4f0fb7fd558633707c367a727e7
@@ -16,3 +16,6 @@ license     : BSD-3-Clause
 install     : |
     %install_dir %(installroot)%(datadir)/alsa
     cp -rv --preserve=mode,timestamps ucm2 %(installroot)%(datadir)/alsa
+
+    # Fix groups having write permission
+    chmod -R g-w,o-w %(installroot)%(datadir)/alsa

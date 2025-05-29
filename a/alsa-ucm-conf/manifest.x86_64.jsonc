@@ -4,7 +4,6 @@
 	"packages": {
 		"alsa-ucm-conf": {
 			"files": [
-				"/usr/share/alsa",
 				"/usr/share/alsa/ucm2/AMD/acp3x-es83xx/HiFi.conf",
 				"/usr/share/alsa/ucm2/AMD/acp3x-es83xx/acp3x-es83xx.conf",
 				"/usr/share/alsa/ucm2/AMD/acp3xalc5682m98/HiFi.conf",
@@ -630,6 +629,6 @@
 		}
 	},
 	"source-name": "alsa-ucm-conf",
-	"source-release": "3",
+	"source-release": "4",
 	"source-version": "1.2.13"
 }
