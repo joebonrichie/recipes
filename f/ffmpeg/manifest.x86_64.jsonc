@@ -4,7 +4,9 @@
 	"packages": {
 		"ffmpeg": {
 			"build-depends": [
+				"binary(makeinfo)",
 				"binary(nasm)",
+				"binary(pod2man)",
 				"cmake(VulkanHeaders)",
 				"lame-devel",
 				"pkgconfig(SvtAv1Enc)",
@@ -32,7 +34,7 @@
 			],
 			"depends": [
 				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
-				"soname(libSvtAv1Enc.so.2(x86_64))",
+				"soname(libSvtAv1Enc.so.3(x86_64))",
 				"soname(libX11.so.6(x86_64))",
 				"soname(libaom.so.3(x86_64))",
 				"soname(libc.so.6(x86_64))",
@@ -67,7 +69,7 @@
 				"/usr/bin/ffmpeg",
 				"/usr/bin/ffprobe",
 				"/usr/lib/libavcodec.so.61",
-				"/usr/lib/libavcodec.so.61.19.100",
+				"/usr/lib/libavcodec.so.61.19.101",
 				"/usr/lib/libavdevice.so.61",
 				"/usr/lib/libavdevice.so.61.3.100",
 				"/usr/lib/libavfilter.so.10",
@@ -118,7 +120,9 @@
 		},
 		"ffmpeg-devel": {
 			"build-depends": [
+				"binary(makeinfo)",
 				"binary(nasm)",
+				"binary(pod2man)",
 				"cmake(VulkanHeaders)",
 				"lame-devel",
 				"pkgconfig(SvtAv1Enc)",
@@ -350,9 +354,75 @@
 				"pkgconfig(libswresample)",
 				"pkgconfig(libswscale)"
 			]
+		},
+		"ffmpeg-docs": {
+			"build-depends": [
+				"binary(makeinfo)",
+				"binary(nasm)",
+				"binary(pod2man)",
+				"cmake(VulkanHeaders)",
+				"lame-devel",
+				"pkgconfig(SvtAv1Enc)",
+				"pkgconfig(aom)",
+				"pkgconfig(dav1d)",
+				"pkgconfig(fdk-aac)",
+				"pkgconfig(fontconfig)",
+				"pkgconfig(freetype2)",
+				"pkgconfig(libjpeg)",
+				"pkgconfig(liblzma)",
+				"pkgconfig(libpng)",
+				"pkgconfig(libpulse)",
+				"pkgconfig(libssl)",
+				"pkgconfig(libva)",
+				"pkgconfig(libwebp)",
+				"pkgconfig(libxml-2.0)",
+				"pkgconfig(opus)",
+				"pkgconfig(rav1e)",
+				"pkgconfig(sndio)",
+				"pkgconfig(vorbis)",
+				"pkgconfig(vpx)",
+				"pkgconfig(vulkan)",
+				"pkgconfig(x11)",
+				"pkgconfig(xcb)"
+			],
+			"files": [
+				"/usr/share/doc/ffmpeg/bootstrap.min.css",
+				"/usr/share/doc/ffmpeg/community.html",
+				"/usr/share/doc/ffmpeg/default.css",
+				"/usr/share/doc/ffmpeg/developer.html",
+				"/usr/share/doc/ffmpeg/faq.html",
+				"/usr/share/doc/ffmpeg/fate.html",
+				"/usr/share/doc/ffmpeg/ffmpeg-all.html",
+				"/usr/share/doc/ffmpeg/ffmpeg-bitstream-filters.html",
+				"/usr/share/doc/ffmpeg/ffmpeg-codecs.html",
+				"/usr/share/doc/ffmpeg/ffmpeg-devices.html",
+				"/usr/share/doc/ffmpeg/ffmpeg-filters.html",
+				"/usr/share/doc/ffmpeg/ffmpeg-formats.html",
+				"/usr/share/doc/ffmpeg/ffmpeg-protocols.html",
+				"/usr/share/doc/ffmpeg/ffmpeg-resampler.html",
+				"/usr/share/doc/ffmpeg/ffmpeg-scaler.html",
+				"/usr/share/doc/ffmpeg/ffmpeg-utils.html",
+				"/usr/share/doc/ffmpeg/ffmpeg.html",
+				"/usr/share/doc/ffmpeg/ffprobe-all.html",
+				"/usr/share/doc/ffmpeg/ffprobe.html",
+				"/usr/share/doc/ffmpeg/general.html",
+				"/usr/share/doc/ffmpeg/git-howto.html",
+				"/usr/share/doc/ffmpeg/libavcodec.html",
+				"/usr/share/doc/ffmpeg/libavdevice.html",
+				"/usr/share/doc/ffmpeg/libavfilter.html",
+				"/usr/share/doc/ffmpeg/libavformat.html",
+				"/usr/share/doc/ffmpeg/libavutil.html",
+				"/usr/share/doc/ffmpeg/libswresample.html",
+				"/usr/share/doc/ffmpeg/libswscale.html",
+				"/usr/share/doc/ffmpeg/mailing-list-faq.html",
+				"/usr/share/doc/ffmpeg/nut.html",
+				"/usr/share/doc/ffmpeg/platform.html",
+				"/usr/share/doc/ffmpeg/style.min.css"
+			],
+			"name": "ffmpeg-docs"
 		}
 	},
 	"source-name": "ffmpeg",
-	"source-release": "3",
-	"source-version": "7.1"
+	"source-release": "4",
+	"source-version": "7.1.1"
 }
