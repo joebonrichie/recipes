@@ -5,7 +5,7 @@
 #
 name        : lv2
 version     : 1.18.10
-release     : 1
+release     : 2
 homepage    : https://lv2plug.in/
 upstreams   :
     - https://gitlab.com/lv2/lv2/-/archive/v1.18.10/lv2-v1.18.10.tar.gz : edc39ae4170d21574d7fe4da2d83d9f1cdf97316b87b4dfeda390a1864c4a8d6
