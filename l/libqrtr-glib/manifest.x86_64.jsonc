@@ -19,8 +19,7 @@
 			"files": [
 				"/usr/lib/girepository-1.0/Qrtr-1.0.typelib",
 				"/usr/lib/libqrtr-glib.so.0",
-				"/usr/lib/libqrtr-glib.so.0.0.0",
-				"/usr/share/gir-1.0/Qrtr-1.0.gir"
+				"/usr/lib/libqrtr-glib.so.0.0.0"
 			],
 			"name": "libqrtr-glib",
 			"provides": [
@@ -50,7 +49,8 @@
 				"/usr/include/libqrtr-glib/qrtr-utils.h",
 				"/usr/include/libqrtr-glib/qrtr-version.h",
 				"/usr/lib/libqrtr-glib.so",
-				"/usr/lib/pkgconfig/qrtr-glib.pc"
+				"/usr/lib/pkgconfig/qrtr-glib.pc",
+				"/usr/share/gir-1.0/Qrtr-1.0.gir"
 			],
 			"name": "libqrtr-glib-devel",
 			"provides": [
@@ -59,6 +59,6 @@
 		}
 	},
 	"source-name": "libqrtr-glib",
-	"source-release": "2",
+	"source-release": "3",
 	"source-version": "1.2.2"
 }
