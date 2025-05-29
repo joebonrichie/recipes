@@ -3,15 +3,14 @@
 	"manifest-version": "0.2",
 	"packages": {
 		"python-ruamel-yaml": {
+			"build-depends": [
+				"python(setuptools)"
+			],
 			"depends": [
-				"python(ruamel.yaml.clib(3.11))"
+				"python(ruamel.yaml.clib(3.11))",
+				"python-libs"
 			],
 			"files": [
-				"/usr/lib/python3.11/site-packages/ruamel.yaml-0.18.10.dist-info/LICENSE",
-				"/usr/lib/python3.11/site-packages/ruamel.yaml-0.18.10.dist-info/METADATA",
-				"/usr/lib/python3.11/site-packages/ruamel.yaml-0.18.10.dist-info/RECORD",
-				"/usr/lib/python3.11/site-packages/ruamel.yaml-0.18.10.dist-info/WHEEL",
-				"/usr/lib/python3.11/site-packages/ruamel.yaml-0.18.10.dist-info/top_level.txt",
 				"/usr/lib/python3.11/site-packages/ruamel/yaml/__init__.py",
 				"/usr/lib/python3.11/site-packages/ruamel/yaml/__pycache__/__init__.cpython-311.opt-1.pyc",
 				"/usr/lib/python3.11/site-packages/ruamel/yaml/__pycache__/__init__.cpython-311.pyc",
@@ -102,7 +101,12 @@
 				"/usr/lib/python3.11/site-packages/ruamel/yaml/tag.py",
 				"/usr/lib/python3.11/site-packages/ruamel/yaml/timestamp.py",
 				"/usr/lib/python3.11/site-packages/ruamel/yaml/tokens.py",
-				"/usr/lib/python3.11/site-packages/ruamel/yaml/util.py"
+				"/usr/lib/python3.11/site-packages/ruamel/yaml/util.py",
+				"/usr/lib/python3.11/site-packages/ruamel_yaml-0.18.10.dist-info/METADATA",
+				"/usr/lib/python3.11/site-packages/ruamel_yaml-0.18.10.dist-info/RECORD",
+				"/usr/lib/python3.11/site-packages/ruamel_yaml-0.18.10.dist-info/WHEEL",
+				"/usr/lib/python3.11/site-packages/ruamel_yaml-0.18.10.dist-info/licenses/LICENSE",
+				"/usr/lib/python3.11/site-packages/ruamel_yaml-0.18.10.dist-info/top_level.txt"
 			],
 			"name": "python-ruamel-yaml",
 			"provides": [
@@ -112,6 +116,6 @@
 		}
 	},
 	"source-name": "python-ruamel-yaml",
-	"source-release": "2",
+	"source-release": "3",
 	"source-version": "0.18.10"
 }
