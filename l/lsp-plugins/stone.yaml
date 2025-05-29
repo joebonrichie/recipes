@@ -5,7 +5,7 @@
 #
 name        : lsp-plugins
 version     : 1.2.21
-release     : 1
+release     : 2
 homepage    : https://lsp-plug.in
 upstreams   :
     - https://github.com/sadko4u/lsp-plugins/releases/download/1.2.21/lsp-plugins-src-1.2.21.tar.gz : ae2da1d0557ed645371d54a779061240a0295e399c2aa441c96fa236d76e12d9
@@ -18,6 +18,7 @@ builddeps   :
     - pkgconfig(sndfile)
     - pkgconfig(gl)
     - pkgconfig(gstreamer-1.0)
+    - pkgconfig(gstreamer-audio-1.0)
     - pkgconfig(xrandr)
 setup       : |
     # Currently we build just the lv2 and gstreamer plugins. xdg depends on jack which we don't yet have

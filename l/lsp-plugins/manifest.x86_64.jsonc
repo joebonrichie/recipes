@@ -7,6 +7,7 @@
 				"pkgconfig(cairo)",
 				"pkgconfig(gl)",
 				"pkgconfig(gstreamer-1.0)",
+				"pkgconfig(gstreamer-audio-1.0)",
 				"pkgconfig(sndfile)",
 				"pkgconfig(xrandr)"
 			],
@@ -403,6 +404,7 @@
 				"pkgconfig(cairo)",
 				"pkgconfig(gl)",
 				"pkgconfig(gstreamer-1.0)",
+				"pkgconfig(gstreamer-audio-1.0)",
 				"pkgconfig(sndfile)",
 				"pkgconfig(xrandr)"
 			],
@@ -609,6 +611,6 @@
 		}
 	},
 	"source-name": "lsp-plugins",
-	"source-release": "1",
+	"source-release": "2",
 	"source-version": "1.2.21"
 }
