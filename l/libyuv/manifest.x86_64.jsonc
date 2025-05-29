@@ -16,7 +16,7 @@
 			],
 			"files": [
 				"/usr/lib/libyuv.so.0",
-				"/usr/lib/libyuv.so.0.0.1905"
+				"/usr/lib/libyuv.so.0.0.1910"
 			],
 			"name": "libyuv",
 			"provides": [
@@ -64,6 +64,6 @@
 		}
 	},
 	"source-name": "libyuv",
-	"source-release": "1",
-	"source-version": "0.0.1905"
+	"source-release": "2",
+	"source-version": "0.0.1910+git.7e5863ae"
 }
