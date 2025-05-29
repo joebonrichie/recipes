@@ -5,7 +5,7 @@
 #
 name        : qt6-multimedia
 version     : 6.9.0
-release     : 2
+release     : 3
 homepage    : https://www.qt.io
 upstreams   :
     - https://download.qt.io/official_releases/qt/6.9/6.9.0/submodules/qtmultimedia-everywhere-src-6.9.0.tar.xz : 995c3b194f3de3e1929280639642f7661d94aa57523c459dbbf2f71dbdcaa18c
