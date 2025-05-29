@@ -5,7 +5,7 @@
 #
 name        : mutter
 version     : 48.2
-release     : 21
+release     : 22
 homepage    : https://gnome.org
 upstreams   :
     - https://download.gnome.org/sources/mutter/48/mutter-48.2.tar.xz : 3c18ba4e093ea9a378113dcafa7bdb5c1f9d6f5af9765026b7e66cb78daf614e
