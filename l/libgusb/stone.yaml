@@ -5,7 +5,7 @@
 #
 name        : libgusb
 version     : 0.4.9
-release     : 4
+release     : 5
 homepage    : https://github.com/hughsie/libgusb
 upstreams   :
     - https://github.com/hughsie/libgusb/releases/download/0.4.9/libgusb-0.4.9.tar.xz : 9df5ef301d6a4b361002aa52cce1165a87a89744055879bdbab31e7e86f1e846
@@ -21,12 +21,18 @@ builddeps   :
     - pkgconfig(json-glib-1.0)
     - pkgconfig(libusb-1.0)
 checkdeps   :
+    - binary(diff)
+    - python(setuptools)
     - hwdata
 setup       : |
+    # When updating this package make sure the setup line `Compiler for C supports link arguments -Wl,--version-script,/mason/build/x86_64/libgusb-0.4.9.tar.xz/gusb/libgusb_meson.ver: YES` succeeds
     %meson -Ddocs=false
 build       : |
     %meson_build
 install     : |
     %meson_install
 check       : |
+    # This is a stange Meson 1.8 issue where this task isn't properly a dependency of the test
+    meson compile gusb/gusb_mapfile -C %(builddir)
+
     %meson_test

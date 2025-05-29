@@ -4,12 +4,14 @@
 	"packages": {
 		"libgusb": {
 			"build-depends": [
+				"binary(diff)",
 				"binary(vapigen)",
 				"hwdata",
 				"pkgconfig(gio-2.0)",
 				"pkgconfig(gobject-introspection-1.0)",
 				"pkgconfig(json-glib-1.0)",
-				"pkgconfig(libusb-1.0)"
+				"pkgconfig(libusb-1.0)",
+				"python(setuptools)"
 			],
 			"depends": [
 				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
@@ -25,7 +27,6 @@
 				"/usr/lib/girepository-1.0/GUsb-1.0.typelib",
 				"/usr/lib/libgusb.so.2",
 				"/usr/lib/libgusb.so.2.0.10",
-				"/usr/share/gir-1.0/GUsb-1.0.gir",
 				"/usr/share/vala/vapi/gusb.deps",
 				"/usr/share/vala/vapi/gusb.vapi"
 			],
@@ -37,12 +38,14 @@
 		},
 		"libgusb-devel": {
 			"build-depends": [
+				"binary(diff)",
 				"binary(vapigen)",
 				"hwdata",
 				"pkgconfig(gio-2.0)",
 				"pkgconfig(gobject-introspection-1.0)",
 				"pkgconfig(json-glib-1.0)",
-				"pkgconfig(libusb-1.0)"
+				"pkgconfig(libusb-1.0)",
+				"python(setuptools)"
 			],
 			"depends": [
 				"libgusb",
@@ -69,7 +72,8 @@
 				"/usr/include/gusb-1/gusb/gusb-util.h",
 				"/usr/include/gusb-1/gusb/gusb-version.h",
 				"/usr/lib/libgusb.so",
-				"/usr/lib/pkgconfig/gusb.pc"
+				"/usr/lib/pkgconfig/gusb.pc",
+				"/usr/share/gir-1.0/GUsb-1.0.gir"
 			],
 			"name": "libgusb-devel",
 			"provides": [
@@ -78,6 +82,6 @@
 		}
 	},
 	"source-name": "libgusb",
-	"source-release": "4",
+	"source-release": "5",
 	"source-version": "0.4.9"
 }
