@@ -9,6 +9,9 @@
 			"name": "at-spi2-atk"
 		},
 		"at-spi2-atk-devel": {
+			"depends": [
+				"at-spi2-atk"
+			],
 			"files": [
 				"/usr/share/doc/at-spi2-atk-devel/README.md"
 			],
@@ -16,6 +19,6 @@
 		}
 	},
 	"source-name": "at-spi2-atk",
-	"source-release": "2",
+	"source-release": "3",
 	"source-version": "2.38.0"
 }
