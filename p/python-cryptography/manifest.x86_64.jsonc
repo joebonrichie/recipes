@@ -274,6 +274,6 @@
 		}
 	},
 	"source-name": "python-cryptography",
-	"source-release": "1",
+	"source-release": "2",
 	"source-version": "45.0.3"
 }
