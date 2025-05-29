@@ -5,7 +5,7 @@
 #
 name        : libjxl
 version     : 0.11.1
-release     : 2
+release     : 3
 homepage    : https://github.com/libjxl/libjxl
 upstreams   :
     - https://github.com/libjxl/libjxl/archive/refs/tags/v0.11.1.tar.gz : 1492dfef8dd6c3036446ac3b340005d92ab92f7d48ee3271b5dac1d36945d3d9
@@ -34,6 +34,10 @@ setup       : |
     ln -s ../../sjpeg.git third_party/sjpeg
     ln -s ../../skcms.git third_party/skcms
 
+    pushd third_party/sjpeg
+    %patch %(pkgdir)/sjpeg-ftbfs-cmake-4.patch
+    popd
+
     %cmake -DBUILD_TESTING=OFF \
            -DJPEGXL_ENABLE_PLUGINS=ON \
            -DJPEGXL_ENABLE_PLUGIN_MIME=ON \
@@ -42,3 +46,4 @@ build       : |
     %cmake_build
 install     : |
     %cmake_install
+# TODO: Split this package up, enable tests
