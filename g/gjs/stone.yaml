@@ -5,7 +5,7 @@
 #
 name        : gjs
 version     : 1.84.1
-release     : 7
+release     : 8
 homepage    : https://gitlab.gnome.org/GNOME/gjs
 upstreams   :
     - https://download.gnome.org/sources/gjs/1.84/gjs-1.84.1.tar.xz : 44796b91318dbbe221a13909f00fd872ef92f38c68603e0e3574e46bc6bac32c
