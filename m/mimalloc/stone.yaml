@@ -5,7 +5,7 @@
 #
 name        : mimalloc
 version     : 2.2.3
-release     : 7
+release     : 8
 homepage    : https://github.com/microsoft/mimalloc
 upstreams   :
     - https://github.com/microsoft/mimalloc/archive/refs/tags/v2.2.3.tar.gz: ac5ba94172b60823215a22b87ae923c5b05ef0cdd9047df2a832c16da02a6447
