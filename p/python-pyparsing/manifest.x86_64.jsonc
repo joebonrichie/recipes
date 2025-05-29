@@ -7,10 +7,10 @@
 				"python(flit_core)"
 			],
 			"files": [
-				"/usr/lib/python3.11/site-packages/pyparsing-3.2.3.dist-info/LICENSE",
 				"/usr/lib/python3.11/site-packages/pyparsing-3.2.3.dist-info/METADATA",
 				"/usr/lib/python3.11/site-packages/pyparsing-3.2.3.dist-info/RECORD",
 				"/usr/lib/python3.11/site-packages/pyparsing-3.2.3.dist-info/WHEEL",
+				"/usr/lib/python3.11/site-packages/pyparsing-3.2.3.dist-info/licenses/LICENSE",
 				"/usr/lib/python3.11/site-packages/pyparsing/__init__.py",
 				"/usr/lib/python3.11/site-packages/pyparsing/__pycache__/__init__.cpython-311.opt-1.pyc",
 				"/usr/lib/python3.11/site-packages/pyparsing/__pycache__/__init__.cpython-311.pyc",
@@ -60,6 +60,6 @@
 		}
 	},
 	"source-name": "python-pyparsing",
-	"source-release": "3",
+	"source-release": "4",
 	"source-version": "3.2.3"
 }

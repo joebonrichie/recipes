@@ -5,7 +5,7 @@
 #
 name        : python-pyparsing
 version     : 3.2.3
-release     : 3
+release     : 4
 homepage    : https://github.com/pyparsing/pyparsing
 upstreams   :
     - https://pypi.io/packages/source/p/pyparsing/pyparsing-3.2.3.tar.gz : b9c13f1ab8b3b542f72e28f634bad4de758ab3ce4546e4301970ad6fa77c38be
