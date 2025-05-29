@@ -57,8 +57,7 @@
 			],
 			"name": "bzip2-32bit",
 			"provides": [
-				"soname(libbz2.so.1.0(386))",
-				"soname(libbz2.so.1.0(x86))"
+				"soname(libbz2.so.1.0(386))"
 			]
 		},
 		"bzip2-32bit-devel": {
@@ -104,6 +103,6 @@
 		}
 	},
 	"source-name": "bzip2",
-	"source-release": "6",
+	"source-release": "7",
 	"source-version": "1.0.8"
 }
