@@ -5,7 +5,7 @@
 #
 name        : botan
 version     : 3.7.1
-release     : 1
+release     : 2
 homepage    : https://botan.randombit.net
 upstreams   :
     - https://botan.randombit.net/releases/Botan-3.7.1.tar.xz : fc0620463461caaea8e60f06711d7e437a3ad1eebd6de4ac29c14bbd901ccd1b
