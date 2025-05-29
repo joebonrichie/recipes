@@ -31,11 +31,8 @@
 			"name": "nspr-32bit",
 			"provides": [
 				"soname(libnspr4.so(386))",
-				"soname(libnspr4.so(x86))",
 				"soname(libplc4.so(386))",
-				"soname(libplc4.so(x86))",
-				"soname(libplds4.so(386))",
-				"soname(libplds4.so(x86))"
+				"soname(libplds4.so(386))"
 			]
 		},
 		"nspr-32bit-devel": {
@@ -142,6 +139,6 @@
 		}
 	},
 	"source-name": "nspr",
-	"source-release": "4",
+	"source-release": "5",
 	"source-version": "4.36"
 }

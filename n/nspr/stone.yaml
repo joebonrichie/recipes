@@ -5,7 +5,7 @@
 #
 name        : nspr
 version     : 4.36
-release     : 4
+release     : 5
 homepage    : https://firefox-source-docs.mozilla.org/nspr/index.html
 upstreams   :
     - https://archive.mozilla.org/pub/nspr/releases/v4.36/src/nspr-4.36.tar.gz : 55dec317f1401cd2e5dba844d340b930ab7547f818179a4002bce62e6f1c6895
