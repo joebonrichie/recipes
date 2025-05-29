@@ -97,17 +97,11 @@
 			"name": "icu-32bit",
 			"provides": [
 				"soname(libicudata.so.77(386))",
-				"soname(libicudata.so.77(x86))",
 				"soname(libicui18n.so.77(386))",
-				"soname(libicui18n.so.77(x86))",
 				"soname(libicuio.so.77(386))",
-				"soname(libicuio.so.77(x86))",
 				"soname(libicutest.so.77(386))",
-				"soname(libicutest.so.77(x86))",
 				"soname(libicutu.so.77(386))",
-				"soname(libicutu.so.77(x86))",
-				"soname(libicuuc.so.77(386))",
-				"soname(libicuuc.so.77(x86))"
+				"soname(libicuuc.so.77(386))"
 			]
 		},
 		"icu-32bit-devel": {
@@ -440,6 +434,6 @@
 		}
 	},
 	"source-name": "icu",
-	"source-release": "8",
+	"source-release": "9",
 	"source-version": "77.1"
 }
