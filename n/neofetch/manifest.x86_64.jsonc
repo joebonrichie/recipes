@@ -1,6 +1,6 @@
 /** Human readable report. This is not consumed by boulder */
 {
-	"manifest-version": "0.1",
+	"manifest-version": "0.2",
 	"packages": {
 		"neofetch": {
 			"files": [
@@ -14,6 +14,6 @@
 		}
 	},
 	"source-name": "neofetch",
-	"source-release": "2",
+	"source-release": "3",
 	"source-version": "7.1.0"
 }
