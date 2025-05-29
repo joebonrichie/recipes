@@ -5,7 +5,7 @@
 #
 name        : cosmic-applibrary
 version     : 1.0.0-alpha.6
-release     : 11
+release     : 12
 summary     : Cosmic Desktop App Launcher
 license     : GPL-3.0
 homepage    : https://github.com/pop-os/cosmic-applibrary
