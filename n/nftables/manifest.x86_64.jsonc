@@ -9,7 +9,8 @@
 				"pkgconfig(jansson)",
 				"pkgconfig(libmnl)",
 				"pkgconfig(libnftnl)",
-				"pkgconfig(readline)"
+				"pkgconfig(readline)",
+				"python(setuptools)"
 			],
 			"depends": [
 				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
@@ -55,7 +56,8 @@
 				"pkgconfig(jansson)",
 				"pkgconfig(libmnl)",
 				"pkgconfig(libnftnl)",
-				"pkgconfig(readline)"
+				"pkgconfig(readline)",
+				"python(setuptools)"
 			],
 			"depends": [
 				"nftables"
@@ -78,7 +80,8 @@
 				"pkgconfig(jansson)",
 				"pkgconfig(libmnl)",
 				"pkgconfig(libnftnl)",
-				"pkgconfig(readline)"
+				"pkgconfig(readline)",
+				"python(setuptools)"
 			],
 			"files": [
 				"/usr/share/doc/nftables/examples/ct_helpers.nft",
@@ -95,10 +98,12 @@
 				"pkgconfig(jansson)",
 				"pkgconfig(libmnl)",
 				"pkgconfig(libnftnl)",
-				"pkgconfig(readline)"
+				"pkgconfig(readline)",
+				"python(setuptools)"
 			],
 			"depends": [
-				"binary(python3)"
+				"nftables",
+				"python-libs"
 			],
 			"files": [
 				"/usr/lib/python3.11/site-packages/nftables-0.1.dist-info/METADATA",
@@ -121,6 +126,6 @@
 		}
 	},
 	"source-name": "nftables",
-	"source-release": "5",
+	"source-release": "6",
 	"source-version": "1.1.1"
 }
