@@ -59,9 +59,7 @@
 			"name": "libxml2-32bit",
 			"provides": [
 				"soname(libxml2.so.16(386))",
-				"soname(libxml2.so.16(x86))",
-				"soname(libxml2.so.2(386))",
-				"soname(libxml2.so.2(x86))"
+				"soname(libxml2.so.2(386))"
 			]
 		},
 		"libxml2-32bit-devel": {
@@ -276,6 +274,6 @@
 		}
 	},
 	"source-name": "libxml2",
-	"source-release": "10",
+	"source-release": "11",
 	"source-version": "2.14.3"
 }
