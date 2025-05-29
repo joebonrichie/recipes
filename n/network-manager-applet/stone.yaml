@@ -5,7 +5,7 @@
 #
 name        : network-manager-applet
 version     : 1.36.0
-release     : 2
+release     : 3
 homepage    : https://gitlab.gnome.org/GNOME/network-manager-applet
 upstreams   :
     - https://download.gnome.org/sources/network-manager-applet/1.36/network-manager-applet-1.36.0.tar.xz : a84704487ea3afe1485c47fb2ab598b8f779f540ae0dcbf0a1c5f85e64a7e253
