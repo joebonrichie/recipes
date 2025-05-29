@@ -33,6 +33,6 @@
 		}
 	},
 	"source-name": "duktape",
-	"source-release": "2",
+	"source-release": "3",
 	"source-version": "2.7.0"
 }
