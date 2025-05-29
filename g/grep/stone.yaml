@@ -5,7 +5,7 @@
 #
 name        : grep
 version     : "3.11"
-release     : 5
+release     : 6
 summary     : Pattern matching utilities
 license     : GPL-3.0-or-later
 homepage    : https://www.gnu.org/software/grep/grep.html
