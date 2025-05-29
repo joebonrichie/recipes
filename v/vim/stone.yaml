@@ -5,7 +5,7 @@
 #
 name        : vim
 version     : 9.1.1406
-release     : 9
+release     : 10
 homepage    : https://github.com/vim/vim
 upstreams   :
     - https://github.com/vim/vim/archive/refs/tags/v9.1.1406.tar.gz:
