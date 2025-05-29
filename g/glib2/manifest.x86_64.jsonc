@@ -75,13 +75,6 @@
 				"/usr/share/bash-completion/completions/gsettings",
 				"/usr/share/gettext/its/gschema.its",
 				"/usr/share/gettext/its/gschema.loc",
-				"/usr/share/gir-1.0/GIRepository-3.0.gir",
-				"/usr/share/gir-1.0/GLib-2.0.gir",
-				"/usr/share/gir-1.0/GLibUnix-2.0.gir",
-				"/usr/share/gir-1.0/GModule-2.0.gir",
-				"/usr/share/gir-1.0/GObject-2.0.gir",
-				"/usr/share/gir-1.0/Gio-2.0.gir",
-				"/usr/share/gir-1.0/GioUnix-2.0.gir",
 				"/usr/share/glib-2.0/codegen/__init__.py",
 				"/usr/share/glib-2.0/codegen/__pycache__/__init__.cpython-311.pyc",
 				"/usr/share/glib-2.0/codegen/__pycache__/codegen.cpython-311.pyc",
@@ -283,17 +276,11 @@
 			"name": "glib2-32bit",
 			"provides": [
 				"soname(libgio-2.0.so.0(386))",
-				"soname(libgio-2.0.so.0(x86))",
 				"soname(libgirepository-2.0.so.0(386))",
-				"soname(libgirepository-2.0.so.0(x86))",
 				"soname(libglib-2.0.so.0(386))",
-				"soname(libglib-2.0.so.0(x86))",
 				"soname(libgmodule-2.0.so.0(386))",
-				"soname(libgmodule-2.0.so.0(x86))",
 				"soname(libgobject-2.0.so.0(386))",
-				"soname(libgobject-2.0.so.0(x86))",
-				"soname(libgthread-2.0.so.0(386))",
-				"soname(libgthread-2.0.so.0(x86))"
+				"soname(libgthread-2.0.so.0(386))"
 			]
 		},
 		"glib2-32bit-devel": {
@@ -699,7 +686,14 @@
 				"/usr/share/gdb/auto-load/usr/lib/__pycache__/libglib-2.0.so.0.8400.2-gdb.cpython-311.pyc",
 				"/usr/share/gdb/auto-load/usr/lib/__pycache__/libgobject-2.0.so.0.8400.2-gdb.cpython-311.pyc",
 				"/usr/share/gdb/auto-load/usr/lib/libglib-2.0.so.0.8400.2-gdb.py",
-				"/usr/share/gdb/auto-load/usr/lib/libgobject-2.0.so.0.8400.2-gdb.py"
+				"/usr/share/gdb/auto-load/usr/lib/libgobject-2.0.so.0.8400.2-gdb.py",
+				"/usr/share/gir-1.0/GIRepository-3.0.gir",
+				"/usr/share/gir-1.0/GLib-2.0.gir",
+				"/usr/share/gir-1.0/GLibUnix-2.0.gir",
+				"/usr/share/gir-1.0/GModule-2.0.gir",
+				"/usr/share/gir-1.0/GObject-2.0.gir",
+				"/usr/share/gir-1.0/Gio-2.0.gir",
+				"/usr/share/gir-1.0/GioUnix-2.0.gir"
 			],
 			"name": "glib2-devel",
 			"provides": [
@@ -716,6 +710,6 @@
 		}
 	},
 	"source-name": "glib2",
-	"source-release": "25",
+	"source-release": "26",
 	"source-version": "2.84.2"
 }
