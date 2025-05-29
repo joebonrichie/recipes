@@ -43,10 +43,10 @@
 			],
 			"name": "kmod",
 			"provides": [
-				"sysbinary(depmod)",
-				"sysbinary(insmod)",
 				"binary(kmod)",
 				"soname(libkmod.so.2(x86_64))",
+				"sysbinary(depmod)",
+				"sysbinary(insmod)",
 				"sysbinary(lsmod)",
 				"sysbinary(modinfo)",
 				"sysbinary(modprobe)",
@@ -60,6 +60,9 @@
 				"pkgconfig(libzstd)",
 				"pkgconfig(zlib)"
 			],
+			"depends": [
+				"kmod"
+			],
 			"files": [
 				"/usr/include/libkmod.h",
 				"/usr/lib/libkmod.so",
@@ -72,6 +75,6 @@
 		}
 	},
 	"source-name": "kmod",
-	"source-release": "8",
+	"source-release": "9",
 	"source-version": "31"
 }
