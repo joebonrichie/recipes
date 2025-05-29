@@ -58,9 +58,7 @@
 			"name": "libcap-ng-32bit",
 			"provides": [
 				"soname(libcap-ng.so.0(386))",
-				"soname(libcap-ng.so.0(x86))",
-				"soname(libdrop_ambient.so.0(386))",
-				"soname(libdrop_ambient.so.0(x86))"
+				"soname(libdrop_ambient.so.0(386))"
 			]
 		},
 		"libcap-ng-32bit-devel": {
@@ -149,6 +147,6 @@
 		}
 	},
 	"source-name": "libcap-ng",
-	"source-release": "4",
+	"source-release": "5",
 	"source-version": "0.8.5"
 }
