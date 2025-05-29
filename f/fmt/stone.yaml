@@ -5,7 +5,7 @@
 #
 name        : fmt
 version     : 11.2.0
-release     : 4
+release     : 5
 homepage    : https://fmt.dev/
 upstreams   :
     - https://github.com/fmtlib/fmt/archive/refs/tags/11.2.0.tar.gz : bc23066d87ab3168f27cef3e97d545fa63314f5c79df5ea444d41d56f962c6af
