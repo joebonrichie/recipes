@@ -38,8 +38,7 @@
 			],
 			"name": "rustls-ffi-32bit",
 			"provides": [
-				"soname(librustls.so.0.14.0(386))",
-				"soname(librustls.so.0.14.0(x86))"
+				"soname(librustls.so.0.14.0(386))"
 			]
 		},
 		"rustls-ffi-32bit-devel": {
@@ -82,6 +81,6 @@
 		}
 	},
 	"source-name": "rustls-ffi",
-	"source-release": "9",
+	"source-release": "10",
 	"source-version": "0.14.0"
 }
