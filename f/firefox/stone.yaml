@@ -5,7 +5,7 @@
 #
 name        : firefox
 version     : 138.0.4
-release     : 23
+release     : 24
 homepage    : https://www.mozilla.org/
 upstreams   :
     - https://ftp.mozilla.org/pub/firefox/releases/138.0.4/source/firefox-138.0.4.source.tar.xz:
