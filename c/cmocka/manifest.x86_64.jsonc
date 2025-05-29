@@ -17,6 +17,9 @@
 			]
 		},
 		"cmocka-devel": {
+			"depends": [
+				"cmocka"
+			],
 			"files": [
 				"/usr/include/cmocka.h",
 				"/usr/include/cmocka_pbc.h",
@@ -28,12 +31,12 @@
 			],
 			"name": "cmocka-devel",
 			"provides": [
-				"pkgconfig(cmocka)",
-				"cmake(cmocka)"
+				"cmake(cmocka)",
+				"pkgconfig(cmocka)"
 			]
 		}
 	},
 	"source-name": "cmocka",
-	"source-release": "1",
+	"source-release": "2",
 	"source-version": "1.1.7"
 }
