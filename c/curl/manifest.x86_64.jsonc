@@ -65,8 +65,7 @@
 			],
 			"name": "curl-32bit",
 			"provides": [
-				"soname(libcurl.so.4(386))",
-				"soname(libcurl.so.4(x86))"
+				"soname(libcurl.so.4(386))"
 			]
 		},
 		"curl-32bit-devel": {
@@ -654,6 +653,6 @@
 		}
 	},
 	"source-name": "curl",
-	"source-release": "22",
+	"source-release": "23",
 	"source-version": "8.13.0"
 }
