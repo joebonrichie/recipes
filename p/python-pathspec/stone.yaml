@@ -5,7 +5,7 @@
 #
 name        : python-pathspec
 version     : 0.12.1
-release     : 2
+release     : 3
 homepage    : https://pypi.org/project/pathspec
 upstreams   :
     - https://files.pythonhosted.org/packages/source/p/pathspec/pathspec-0.12.1.tar.gz : a482d51503a1ab33b1c67a6c3813a26953dbdc71c31dacaef9a838c4e29f5712

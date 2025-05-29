@@ -11,10 +11,10 @@
 				"binary(python3)"
 			],
 			"files": [
-				"/usr/lib/python3.11/site-packages/pathspec-0.12.1.dist-info/LICENSE",
 				"/usr/lib/python3.11/site-packages/pathspec-0.12.1.dist-info/METADATA",
 				"/usr/lib/python3.11/site-packages/pathspec-0.12.1.dist-info/RECORD",
 				"/usr/lib/python3.11/site-packages/pathspec-0.12.1.dist-info/WHEEL",
+				"/usr/lib/python3.11/site-packages/pathspec-0.12.1.dist-info/licenses/LICENSE",
 				"/usr/lib/python3.11/site-packages/pathspec/__init__.py",
 				"/usr/lib/python3.11/site-packages/pathspec/__pycache__/__init__.cpython-311.opt-1.pyc",
 				"/usr/lib/python3.11/site-packages/pathspec/__pycache__/__init__.cpython-311.pyc",
@@ -49,6 +49,6 @@
 		}
 	},
 	"source-name": "python-pathspec",
-	"source-release": "2",
+	"source-release": "3",
 	"source-version": "0.12.1"
 }
