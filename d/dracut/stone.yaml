@@ -5,7 +5,7 @@
 #
 name        : dracut
 version     : '107'
-release     : 10
+release     : 11
 homepage    : https://github.com/dracut-ng/dracut-ng
 upstreams   :
     - https://github.com/dracut-ng/dracut-ng/archive/refs/tags/107.tar.gz : b39d0d1cd35ff43aba8771c5367d8c6c59bb432c0cac62f49601f21c0d634895
