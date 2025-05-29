@@ -1062,9 +1062,7 @@
 			"name": "gcc-32bit",
 			"provides": [
 				"soname(libasan.so.8(386))",
-				"soname(libasan.so.8(x86))",
-				"soname(libubsan.so.1(386))",
-				"soname(libubsan.so.1(x86))"
+				"soname(libubsan.so.1(386))"
 			]
 		},
 		"gcc-32bit-devel": {
@@ -1379,8 +1377,7 @@
 			],
 			"name": "libatomic-32bit",
 			"provides": [
-				"soname(libatomic.so.1(386))",
-				"soname(libatomic.so.1(x86))"
+				"soname(libatomic.so.1(386))"
 			]
 		},
 		"libatomic-32bit-static": {
@@ -1499,8 +1496,7 @@
 			],
 			"name": "libgcc-32bit",
 			"provides": [
-				"soname(libgcc_s.so.1(386))",
-				"soname(libgcc_s.so.1(x86))"
+				"soname(libgcc_s.so.1(386))"
 			]
 		},
 		"libgcc-32bit-static": {
@@ -1828,8 +1824,7 @@
 			],
 			"name": "libgfortran-32bit",
 			"provides": [
-				"soname(libgfortran.so.5(386))",
-				"soname(libgfortran.so.5(x86))"
+				"soname(libgfortran.so.5(386))"
 			]
 		},
 		"libgfortran-32bit-static": {
@@ -1950,8 +1945,7 @@
 			],
 			"name": "libgomp-32bit",
 			"provides": [
-				"soname(libgomp.so.1(386))",
-				"soname(libgomp.so.1(x86))"
+				"soname(libgomp.so.1(386))"
 			]
 		},
 		"libgomp-32bit-static": {
@@ -2071,8 +2065,7 @@
 			],
 			"name": "libitm-32bit",
 			"provides": [
-				"soname(libitm.so.1(386))",
-				"soname(libitm.so.1(x86))"
+				"soname(libitm.so.1(386))"
 			]
 		},
 		"libitm-32bit-static": {
@@ -2192,8 +2185,7 @@
 			],
 			"name": "libquadmath-32bit",
 			"provides": [
-				"soname(libquadmath.so.0(386))",
-				"soname(libquadmath.so.0(x86))"
+				"soname(libquadmath.so.0(386))"
 			]
 		},
 		"libquadmath-32bit-devel": {
@@ -2390,8 +2382,7 @@
 			],
 			"name": "libstdc++-32bit",
 			"provides": [
-				"soname(libstdc++.so.6(386))",
-				"soname(libstdc++.so.6(x86))"
+				"soname(libstdc++.so.6(386))"
 			]
 		},
 		"libstdc++-32bit-devel": {
@@ -3372,6 +3363,6 @@
 		}
 	},
 	"source-name": "gcc",
-	"source-release": "13",
+	"source-release": "14",
 	"source-version": "15.1.1+git.7317c72b"
 }
