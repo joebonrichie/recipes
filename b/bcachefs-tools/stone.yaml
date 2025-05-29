@@ -5,7 +5,7 @@
 #
 name        : bcachefs-tools
 version     : 1.25.2
-release     : 1
+release     : 2
 homepage    : https://bcachefs.org
 upstreams   :
     - https://evilpiepirate.org/bcachefs-tools/bcachefs-tools-vendored-1.25.2.tar.zst : 5989d8b75e3ac918895b08ed362c17985b872c5673f7f7116136fa4ac50c534f
