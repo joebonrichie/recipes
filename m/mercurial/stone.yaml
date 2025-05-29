@@ -5,7 +5,7 @@
 #
 name        : mercurial
 version     : 6.9
-release     : 3
+release     : 4
 homepage    : https://www.mercurial-scm.org
 upstreams   :
     - https://www.mercurial-scm.org/release/mercurial-6.9.tar.gz : 629604293df2be8171ec856bf4f8b4faa8e4305af13607dce0f89f74132836d6
@@ -14,7 +14,9 @@ description : |
     Mercurial Source Code Management
 license     : GPL-2.0
 builddeps   :
+    - binary(msgfmt)
     - pkgconfig(python3)
+    - python(setuptools)
 rundeps     :
     - binary(python3)
 build       : |

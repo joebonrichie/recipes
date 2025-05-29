@@ -4,7 +4,9 @@
 	"packages": {
 		"mercurial": {
 			"build-depends": [
-				"pkgconfig(python3)"
+				"binary(msgfmt)",
+				"pkgconfig(python3)",
+				"python(setuptools)"
 			],
 			"depends": [
 				"binary(python3)",
@@ -454,6 +456,7 @@
 				"/usr/lib/python3.11/site-packages/mercurial-6.9.dist-info/METADATA",
 				"/usr/lib/python3.11/site-packages/mercurial-6.9.dist-info/RECORD",
 				"/usr/lib/python3.11/site-packages/mercurial-6.9.dist-info/WHEEL",
+				"/usr/lib/python3.11/site-packages/mercurial-6.9.dist-info/licenses/COPYING",
 				"/usr/lib/python3.11/site-packages/mercurial-6.9.dist-info/top_level.txt",
 				"/usr/lib/python3.11/site-packages/mercurial/__init__.py",
 				"/usr/lib/python3.11/site-packages/mercurial/__main__.py",
@@ -969,6 +972,18 @@
 				"/usr/lib/python3.11/site-packages/mercurial/interfaces/util.py",
 				"/usr/lib/python3.11/site-packages/mercurial/keepalive.py",
 				"/usr/lib/python3.11/site-packages/mercurial/linelog.py",
+				"/usr/lib/python3.11/site-packages/mercurial/locale/da/LC_MESSAGES/hg.mo",
+				"/usr/lib/python3.11/site-packages/mercurial/locale/de/LC_MESSAGES/hg.mo",
+				"/usr/lib/python3.11/site-packages/mercurial/locale/el/LC_MESSAGES/hg.mo",
+				"/usr/lib/python3.11/site-packages/mercurial/locale/fr/LC_MESSAGES/hg.mo",
+				"/usr/lib/python3.11/site-packages/mercurial/locale/it/LC_MESSAGES/hg.mo",
+				"/usr/lib/python3.11/site-packages/mercurial/locale/ja/LC_MESSAGES/hg.mo",
+				"/usr/lib/python3.11/site-packages/mercurial/locale/pt_BR/LC_MESSAGES/hg.mo",
+				"/usr/lib/python3.11/site-packages/mercurial/locale/ro/LC_MESSAGES/hg.mo",
+				"/usr/lib/python3.11/site-packages/mercurial/locale/ru/LC_MESSAGES/hg.mo",
+				"/usr/lib/python3.11/site-packages/mercurial/locale/sv/LC_MESSAGES/hg.mo",
+				"/usr/lib/python3.11/site-packages/mercurial/locale/zh_CN/LC_MESSAGES/hg.mo",
+				"/usr/lib/python3.11/site-packages/mercurial/locale/zh_TW/LC_MESSAGES/hg.mo",
 				"/usr/lib/python3.11/site-packages/mercurial/localrepo.py",
 				"/usr/lib/python3.11/site-packages/mercurial/lock.py",
 				"/usr/lib/python3.11/site-packages/mercurial/logcmdutil.py",
@@ -1507,6 +1522,6 @@
 		}
 	},
 	"source-name": "mercurial",
-	"source-release": "3",
+	"source-release": "4",
 	"source-version": "6.9"
 }
