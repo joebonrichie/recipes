@@ -37,8 +37,7 @@
 			],
 			"name": "graphite-32bit",
 			"provides": [
-				"soname(libgraphite2.so.3(386))",
-				"soname(libgraphite2.so.3(x86))"
+				"soname(libgraphite2.so.3(386))"
 			]
 		},
 		"graphite-32bit-devel": {
@@ -82,6 +81,6 @@
 		}
 	},
 	"source-name": "graphite",
-	"source-release": "5",
+	"source-release": "6",
 	"source-version": "1.3.14"
 }
