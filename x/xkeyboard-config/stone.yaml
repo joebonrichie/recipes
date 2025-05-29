@@ -5,7 +5,7 @@
 #
 name        : xkeyboard-config
 version     : 2.44
-release     : 4
+release     : 5
 homepage    : https://www.freedesktop.org/wiki/Software/XKeyboardConfig/
 upstreams   :
     - http://www.x.org/releases/individual/data/xkeyboard-config/xkeyboard-config-2.44.tar.xz : 54d2c33eeebb031d48fa590c543e54c9bcbd0f00386ebc6489b2f47a0da4342a
