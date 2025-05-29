@@ -5,7 +5,7 @@
 #
 name        : onetbb
 version     : 2022.1.0
-release     : 2
+release     : 3
 summary     : Thread Building Blocks library
 license     : Apache-2.0 AND BSD-3-Clause
 homepage    : https://uxlfoundation.github.io/oneTBB/
