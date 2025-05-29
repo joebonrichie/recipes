@@ -5,7 +5,7 @@
 #
 name        : celluloid
 version     : 0.27
-release     : 1
+release     : 2
 homepage    : https://github.com/celluloid-player/celluloid
 upstreams   :
     - https://github.com/celluloid-player/celluloid/archive/refs/tags/v0.27.tar.gz : 6c216a3dead5baf931bd52876cab7e08abcb9aef2132ca3a9ea35bf9dffe7644
