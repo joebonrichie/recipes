@@ -25,6 +25,7 @@
 				"pkgconfig(datrie-0.2)"
 			],
 			"depends": [
+				"libthai",
 				"pkgconfig(datrie-0.2)"
 			],
 			"files": [
@@ -55,6 +56,6 @@
 		}
 	},
 	"source-name": "libthai",
-	"source-release": "1",
+	"source-release": "2",
 	"source-version": "0.1.29"
 }
