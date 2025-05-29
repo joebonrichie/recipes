@@ -5,7 +5,7 @@
 #
 name        : vulkan-volk
 version     : 1.4.309.0
-release     : 5
+release     : 6
 homepage    : https://github.com/zeux/volk
 upstreams   :
     - https://github.com/zeux/volk/archive/refs/tags/vulkan-sdk-1.4.309.0.tar.gz : 1724924d8e3dccf0c508887edb79d56d9dd11b0738eab5a44e2fa95b8a9ebe1c
