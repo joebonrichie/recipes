@@ -5,7 +5,7 @@
 #
 name        : poppler
 version     : 25.03.0
-release     : 4
+release     : 5
 homepage    : https://poppler.freedesktop.org
 upstreams   :
     - https://poppler.freedesktop.org/poppler-25.03.0.tar.xz : 97da4ff88517a6bbd729529f195f85c8d7a0c3bb4a3d57cb0c685cbb052fe837
