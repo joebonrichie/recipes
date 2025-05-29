@@ -43,8 +43,6 @@
 				"/usr/lib/libgcr-4.so.4.4.0",
 				"/usr/lib/systemd/user/gcr-ssh-agent.service",
 				"/usr/lib/systemd/user/gcr-ssh-agent.socket",
-				"/usr/share/gir-1.0/Gck-2.gir",
-				"/usr/share/gir-1.0/Gcr-4.gir",
 				"/usr/share/locale/ab/LC_MESSAGES/gcr-4.mo",
 				"/usr/share/locale/af/LC_MESSAGES/gcr-4.mo",
 				"/usr/share/locale/ar/LC_MESSAGES/gcr-4.mo",
@@ -208,7 +206,9 @@
 				"/usr/lib/libgck-2.so",
 				"/usr/lib/libgcr-4.so",
 				"/usr/lib/pkgconfig/gck-2.pc",
-				"/usr/lib/pkgconfig/gcr-4.pc"
+				"/usr/lib/pkgconfig/gcr-4.pc",
+				"/usr/share/gir-1.0/Gck-2.gir",
+				"/usr/share/gir-1.0/Gcr-4.gir"
 			],
 			"name": "gcr-devel",
 			"provides": [
@@ -218,6 +218,6 @@
 		}
 	},
 	"source-name": "gcr",
-	"source-release": "5",
+	"source-release": "6",
 	"source-version": "4.4.0.1"
 }
