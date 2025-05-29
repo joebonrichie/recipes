@@ -3,7 +3,11 @@
 	"manifest-version": "0.2",
 	"packages": {
 		"python-glad2": {
+			"build-depends": [
+				"python(setuptools)"
+			],
 			"depends": [
+				"binary(python3)",
 				"python(jinja2(3.11))"
 			],
 			"files": [
@@ -110,11 +114,11 @@
 				"/usr/lib/python3.11/site-packages/glad/sink.py",
 				"/usr/lib/python3.11/site-packages/glad/specification.py",
 				"/usr/lib/python3.11/site-packages/glad/util.py",
-				"/usr/lib/python3.11/site-packages/glad2-2.0.8.dist-info/LICENSE",
 				"/usr/lib/python3.11/site-packages/glad2-2.0.8.dist-info/METADATA",
 				"/usr/lib/python3.11/site-packages/glad2-2.0.8.dist-info/RECORD",
 				"/usr/lib/python3.11/site-packages/glad2-2.0.8.dist-info/WHEEL",
 				"/usr/lib/python3.11/site-packages/glad2-2.0.8.dist-info/entry_points.txt",
+				"/usr/lib/python3.11/site-packages/glad2-2.0.8.dist-info/licenses/LICENSE",
 				"/usr/lib/python3.11/site-packages/glad2-2.0.8.dist-info/top_level.txt"
 			],
 			"name": "python-glad2",
@@ -126,6 +130,6 @@
 		}
 	},
 	"source-name": "python-glad2",
-	"source-release": "2",
+	"source-release": "3",
 	"source-version": "2.0.8"
 }
