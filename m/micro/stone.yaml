@@ -5,7 +5,7 @@
 #
 name        : micro
 version     : 2.0.14
-release     : 4
+release     : 5
 homepage    : https://micro-editor.github.io/
 upstreams   :
     - https://github.com/zyedidia/micro/archive/refs/tags/v2.0.14.tar.gz : 40177579beb3846461036387b649c629395584a4bbe970f61ba7591bd9c0185a
