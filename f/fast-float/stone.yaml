@@ -5,7 +5,7 @@
 #
 name        : fast-float
 version     : 6.1.1
-release     : 1
+release     : 2
 homepage    : https://github.com/fastfloat/fast_float
 upstreams   :
     - https://github.com/fastfloat/fast_float/archive/refs/tags/v6.1.1.tar.gz : 10159a4a58ba95fe9389c3c97fe7de9a543622aa0dcc12dd9356d755e9a94cb4
