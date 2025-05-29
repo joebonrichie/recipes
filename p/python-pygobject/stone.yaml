@@ -5,7 +5,7 @@
 #
 name        : python-pygobject
 version     : 3.52.3
-release     : 6
+release     : 7
 homepage    : https://wiki.gnome.org/Projects/PyGObject
 upstreams   :
     - https://download.gnome.org/sources/pygobject/3.52/pygobject-3.52.3.tar.gz : 00e427d291e957462a8fad659a9f9c8be776ff82a8b76bdf402f1eaeec086d82
@@ -29,13 +29,7 @@ builddeps   :
     - python-installer
     - python-packaging
     - python-wheel
-networking  : yes
-environment : |
-    export PYTHONUSERBASE=%(workdir)
-    export PATH=$PATH:%(workdir)/bin/
 setup       : |
-    # TODO: package this up!
-    python3 -m pip install --user meson-python
     %meson
 build       : |
     %meson_build
