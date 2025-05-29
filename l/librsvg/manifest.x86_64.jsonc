@@ -39,7 +39,6 @@
 				"/usr/lib/girepository-1.0/Rsvg-2.0.typelib",
 				"/usr/lib/librsvg-2.so.2",
 				"/usr/lib/librsvg-2.so.2.60.0",
-				"/usr/share/gir-1.0/Rsvg-2.0.gir",
 				"/usr/share/thumbnailers/librsvg.thumbnailer"
 			],
 			"name": "librsvg",
@@ -86,7 +85,8 @@
 				"/usr/include/librsvg-2.0/librsvg/rsvg-version.h",
 				"/usr/include/librsvg-2.0/librsvg/rsvg.h",
 				"/usr/lib/librsvg-2.so",
-				"/usr/lib/pkgconfig/librsvg-2.0.pc"
+				"/usr/lib/pkgconfig/librsvg-2.0.pc",
+				"/usr/share/gir-1.0/Rsvg-2.0.gir"
 			],
 			"name": "librsvg-devel",
 			"provides": [
@@ -95,6 +95,6 @@
 		}
 	},
 	"source-name": "librsvg",
-	"source-release": "9",
+	"source-release": "10",
 	"source-version": "2.60.0"
 }
