@@ -38,8 +38,6 @@
 				"/usr/lib/girepository-1.0/GdkPixdata-2.0.typelib",
 				"/usr/lib/libgdk_pixbuf-2.0.so.0",
 				"/usr/lib/libgdk_pixbuf-2.0.so.0.4200.12",
-				"/usr/share/gir-1.0/GdkPixbuf-2.0.gir",
-				"/usr/share/gir-1.0/GdkPixdata-2.0.gir",
 				"/usr/share/moss/triggers/tx.d/gdk_pixbuf.yaml",
 				"/usr/share/thumbnailers/gdk-pixbuf-thumbnailer.thumbnailer"
 			],
@@ -90,7 +88,9 @@
 				"/usr/include/gdk-pixbuf-2.0/gdk-pixbuf/gdk-pixbuf.h",
 				"/usr/include/gdk-pixbuf-2.0/gdk-pixbuf/gdk-pixdata.h",
 				"/usr/lib/libgdk_pixbuf-2.0.so",
-				"/usr/lib/pkgconfig/gdk-pixbuf-2.0.pc"
+				"/usr/lib/pkgconfig/gdk-pixbuf-2.0.pc",
+				"/usr/share/gir-1.0/GdkPixbuf-2.0.gir",
+				"/usr/share/gir-1.0/GdkPixdata-2.0.gir"
 			],
 			"name": "gdk-pixbuf-devel",
 			"provides": [
@@ -99,6 +99,6 @@
 		}
 	},
 	"source-name": "gdk-pixbuf",
-	"source-release": "8",
+	"source-release": "9",
 	"source-version": "2.42.12"
 }
