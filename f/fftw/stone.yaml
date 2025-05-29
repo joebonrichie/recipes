@@ -5,7 +5,7 @@
 #
 name        : fftw
 version     : 3.3.10
-release     : 1
+release     : 2
 homepage    : http://www.fftw.org
 upstreams   :
     - http://www.fftw.org/fftw-3.3.10.tar.gz : 
