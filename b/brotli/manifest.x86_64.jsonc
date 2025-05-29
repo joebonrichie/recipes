@@ -48,11 +48,8 @@
 			"name": "brotli-32bit",
 			"provides": [
 				"soname(libbrotlicommon.so.1(386))",
-				"soname(libbrotlicommon.so.1(x86))",
 				"soname(libbrotlidec.so.1(386))",
-				"soname(libbrotlidec.so.1(x86))",
-				"soname(libbrotlienc.so.1(386))",
-				"soname(libbrotlienc.so.1(x86))"
+				"soname(libbrotlienc.so.1(386))"
 			]
 		},
 		"brotli-32bit-devel": {
@@ -168,6 +165,6 @@
 		}
 	},
 	"source-name": "brotli",
-	"source-release": "7",
+	"source-release": "8",
 	"source-version": "1.1.0"
 }
