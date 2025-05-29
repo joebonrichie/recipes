@@ -5,7 +5,7 @@
 #
 name        : pcsclite
 version     : 2.3.1
-release     : 1
+release     : 2
 homepage    : https://pcsclite.apdu.fr
 upstreams   :
     - https://github.com/LudovicRousseau/PCSC/archive/refs/tags/2.3.1.tar.gz : 7fcb59f66a323f63cf1ab492579a57d899806835c52ba377af9ac57df68bf39b
@@ -20,6 +20,7 @@ license     :
 builddeps   :
     - binary(doxygen)
     - binary(flex)
+    - binary(pod2man)
     - pkgconfig(libsystemd)
     - pkgconfig(libudev)
     - pkgconfig(libusb-1.0)
