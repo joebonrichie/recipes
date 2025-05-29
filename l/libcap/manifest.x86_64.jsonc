@@ -62,11 +62,8 @@
 			"name": "libcap-32bit",
 			"provides": [
 				"soname(libcap.so.2(386))",
-				"soname(libcap.so.2(x86))",
 				"soname(libpsx.so.2(386))",
-				"soname(libpsx.so.2(x86))",
-				"soname(security/pam_cap.so(386))",
-				"soname(security/pam_cap.so(x86))"
+				"soname(security/pam_cap.so(386))"
 			]
 		},
 		"libcap-32bit-devel": {
@@ -187,6 +184,6 @@
 		}
 	},
 	"source-name": "libcap",
-	"source-release": "7",
+	"source-release": "8",
 	"source-version": "2.71"
 }
