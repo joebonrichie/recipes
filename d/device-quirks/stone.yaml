@@ -5,7 +5,7 @@
 #
 name        : device-quirks
 version     : r265.d5f90e4
-release     : 2
+release     : 3
 homepage    : https://github.com/ChimeraOS/device-quirks
 upstreams   :
     - git|https://github.com/ChimeraOS/device-quirks.git : d5f90e494b91c1ccbb3f42e5fd961fa1c9f9685d
