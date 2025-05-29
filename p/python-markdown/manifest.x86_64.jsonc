@@ -3,14 +3,17 @@
 	"manifest-version": "0.2",
 	"packages": {
 		"python-markdown": {
+			"build-depends": [
+				"python(setuptools)"
+			],
 			"files": [
 				"/usr/bin/markdown_py",
-				"/usr/lib/python3.11/site-packages/Markdown-3.7.dist-info/LICENSE.md",
-				"/usr/lib/python3.11/site-packages/Markdown-3.7.dist-info/METADATA",
-				"/usr/lib/python3.11/site-packages/Markdown-3.7.dist-info/RECORD",
-				"/usr/lib/python3.11/site-packages/Markdown-3.7.dist-info/WHEEL",
-				"/usr/lib/python3.11/site-packages/Markdown-3.7.dist-info/entry_points.txt",
-				"/usr/lib/python3.11/site-packages/Markdown-3.7.dist-info/top_level.txt",
+				"/usr/lib/python3.11/site-packages/markdown-3.7.dist-info/METADATA",
+				"/usr/lib/python3.11/site-packages/markdown-3.7.dist-info/RECORD",
+				"/usr/lib/python3.11/site-packages/markdown-3.7.dist-info/WHEEL",
+				"/usr/lib/python3.11/site-packages/markdown-3.7.dist-info/entry_points.txt",
+				"/usr/lib/python3.11/site-packages/markdown-3.7.dist-info/licenses/LICENSE.md",
+				"/usr/lib/python3.11/site-packages/markdown-3.7.dist-info/top_level.txt",
 				"/usr/lib/python3.11/site-packages/markdown/__init__.py",
 				"/usr/lib/python3.11/site-packages/markdown/__main__.py",
 				"/usr/lib/python3.11/site-packages/markdown/__meta__.py",
@@ -120,6 +123,6 @@
 		}
 	},
 	"source-name": "python-markdown",
-	"source-release": "2",
+	"source-release": "3",
 	"source-version": "3.7"
 }
