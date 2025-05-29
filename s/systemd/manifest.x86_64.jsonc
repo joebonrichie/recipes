@@ -1361,19 +1361,12 @@
 			"name": "systemd-32bit",
 			"provides": [
 				"soname(libnss_myhostname.so.2(386))",
-				"soname(libnss_myhostname.so.2(x86))",
 				"soname(libnss_resolve.so.2(386))",
-				"soname(libnss_resolve.so.2(x86))",
 				"soname(libnss_systemd.so.2(386))",
-				"soname(libnss_systemd.so.2(x86))",
 				"soname(libsystemd.so.0(386))",
-				"soname(libsystemd.so.0(x86))",
 				"soname(libudev.so.1(386))",
-				"soname(libudev.so.1(x86))",
 				"soname(systemd/libsystemd-core-254.so(386))",
-				"soname(systemd/libsystemd-core-254.so(x86))",
-				"soname(systemd/libsystemd-shared-254.so(386))",
-				"soname(systemd/libsystemd-shared-254.so(x86))"
+				"soname(systemd/libsystemd-shared-254.so(386))"
 			]
 		},
 		"systemd-32bit-devel": {
@@ -2400,6 +2393,6 @@
 		}
 	},
 	"source-name": "systemd",
-	"source-release": "51",
+	"source-release": "52",
 	"source-version": "254.24"
 }
