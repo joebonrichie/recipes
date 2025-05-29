@@ -129,8 +129,12 @@
 				"binary(sclient)",
 				"binary(sim_client)",
 				"binary(uuclient)",
-				"soname(db2.so.0(x86_64))",
-				"soname(k5tls.so.0(x86_64))",
+				"soname(krb5/plugins/kdb/db2.so.0(x86_64))",
+				"soname(krb5/plugins/preauth/otp.so.0(x86_64))",
+				"soname(krb5/plugins/preauth/pkinit.so.0(x86_64))",
+				"soname(krb5/plugins/preauth/spake.so.0(x86_64))",
+				"soname(krb5/plugins/preauth/test.so.0(x86_64))",
+				"soname(krb5/plugins/tls/k5tls.so.0(x86_64))",
 				"soname(libgssapi_krb5.so.2(x86_64))",
 				"soname(libgssrpc.so.4(x86_64))",
 				"soname(libk5crypto.so.3(x86_64))",
@@ -141,10 +145,6 @@
 				"soname(libkrb5.so.3(x86_64))",
 				"soname(libkrb5support.so.0(x86_64))",
 				"soname(libverto.so.0(x86_64))",
-				"soname(otp.so.0(x86_64))",
-				"soname(pkinit.so.0(x86_64))",
-				"soname(spake.so.0(x86_64))",
-				"soname(test.so.0(x86_64))",
 				"sysbinary(gss-server)",
 				"sysbinary(kadmin.local)",
 				"sysbinary(kadmind)",
@@ -251,6 +251,6 @@
 		}
 	},
 	"source-name": "krb5",
-	"source-release": "2",
+	"source-release": "3",
 	"source-version": "1.21.3"
 }
