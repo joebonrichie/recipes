@@ -60,7 +60,6 @@
 				"/usr/share/applications/org.gnome.Nautilus.desktop",
 				"/usr/share/dbus-1/services/org.freedesktop.FileManager1.service",
 				"/usr/share/dbus-1/services/org.gnome.Nautilus.service",
-				"/usr/share/gir-1.0/Nautilus-4.0.gir",
 				"/usr/share/glib-2.0/schemas/org.gnome.nautilus.gschema.xml",
 				"/usr/share/gnome-shell/search-providers/org.gnome.Nautilus.search-provider.ini",
 				"/usr/share/icons/hicolor/scalable/apps/org.gnome.Nautilus.svg",
@@ -239,7 +238,8 @@
 				"/usr/include/nautilus/libnautilus-extension/nautilus-properties-model.h",
 				"/usr/include/nautilus/nautilus-extension.h",
 				"/usr/lib/libnautilus-extension.so",
-				"/usr/lib/pkgconfig/libnautilus-extension-4.pc"
+				"/usr/lib/pkgconfig/libnautilus-extension-4.pc",
+				"/usr/share/gir-1.0/Nautilus-4.0.gir"
 			],
 			"name": "nautilus-devel",
 			"provides": [
@@ -248,6 +248,6 @@
 		}
 	},
 	"source-name": "nautilus",
-	"source-release": "7",
+	"source-release": "8",
 	"source-version": "48.1"
 }
