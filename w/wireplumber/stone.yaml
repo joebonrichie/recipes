@@ -5,7 +5,7 @@
 #
 name        : wireplumber
 version     : 0.5.10
-release     : 8
+release     : 9
 homepage    : https://gitlab.freedesktop.org/pipewire/wireplumber/
 upstreams   :
     - https://gitlab.freedesktop.org/pipewire/wireplumber/-/archive/0.5.10/wireplumber-0.5.10.tar.gz : c2e021d8e6ef1db644facd4a97f5a644b67481c641da9100e851aab6752ba446
