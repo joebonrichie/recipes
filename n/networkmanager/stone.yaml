@@ -5,7 +5,7 @@
 #
 name        : networkmanager
 version     : 1.50.0
-release     : 6
+release     : 7
 homepage    : https://wiki.gnome.org/Projects/NetworkManager
 upstreams   :
     - https://download.gnome.org/sources/NetworkManager/1.50/NetworkManager-1.50.0.tar.xz : fc03e7388a656cebc454c5d89481626122b1975d7c26babc64dc7e488faa66e3

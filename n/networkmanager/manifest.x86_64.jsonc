@@ -78,7 +78,7 @@
 				"/usr/lib/networkmanager/nm-dispatcher",
 				"/usr/lib/networkmanager/nm-initrd-generator",
 				"/usr/lib/networkmanager/nm-priv-helper",
-				"/usr/lib/pppd/2.5.1/nm-pppd-plugin.so",
+				"/usr/lib/pppd/2.5.2/nm-pppd-plugin.so",
 				"/usr/lib/systemd/system/NetworkManager-dispatcher.service",
 				"/usr/lib/systemd/system/NetworkManager-wait-online.service",
 				"/usr/lib/systemd/system/NetworkManager.service",
@@ -148,7 +148,6 @@
 				"/usr/share/dbus-1/system.d/nm-priv-helper.conf",
 				"/usr/share/dbus-1/system.d/org.freedesktop.NetworkManager.conf",
 				"/usr/share/doc/NetworkManager/examples/server.conf",
-				"/usr/share/gir-1.0/NM-1.0.gir",
 				"/usr/share/locale/as/LC_MESSAGES/NetworkManager.mo",
 				"/usr/share/locale/be@latin/LC_MESSAGES/NetworkManager.mo",
 				"/usr/share/locale/bg/LC_MESSAGES/NetworkManager.mo",
@@ -229,7 +228,7 @@
 				"soname(NetworkManager/1.50.0/libnm-ppp-plugin.so(x86_64))",
 				"soname(NetworkManager/1.50.0/libnm-wwan.so(x86_64))",
 				"soname(libnm.so.0(x86_64))",
-				"soname(pppd/2.5.1/nm-pppd-plugin.so(x86_64))",
+				"soname(pppd/2.5.2/nm-pppd-plugin.so(x86_64))",
 				"sysbinary(NetworkManager)"
 			]
 		},
@@ -391,6 +390,7 @@
 				"/usr/include/libnm/nm-wimax-nsp.h",
 				"/usr/lib/libnm.so",
 				"/usr/lib/pkgconfig/libnm.pc",
+				"/usr/share/gir-1.0/NM-1.0.gir",
 				"/usr/share/vala/vapi/libnm.deps",
 				"/usr/share/vala/vapi/libnm.vapi"
 			],
@@ -401,6 +401,6 @@
 		}
 	},
 	"source-name": "networkmanager",
-	"source-release": "6",
+	"source-release": "7",
 	"source-version": "1.50.0"
 }
