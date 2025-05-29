@@ -5,7 +5,7 @@
 #
 name        : slibtool
 version     : 0.7.0
-release     : 9
+release     : 10
 homepage    : https://dev.midipix.org/cross/slibtool
 upstreams   :
     - https://dl.midipix.org/slibtool/slibtool-0.7.0.tar.gz : 5d70da716617f6fb10ca5d8fdcb57e87cd8f105a7e990827f28ec15ef14c7449
