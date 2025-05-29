@@ -79,6 +79,6 @@
 		}
 	},
 	"source-name": "python-argcomplete",
-	"source-release": "2",
+	"source-release": "3",
 	"source-version": "3.6.1"
 }
