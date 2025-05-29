@@ -5,7 +5,7 @@
 #
 name        : keepassxc
 version     : 2.7.9
-release     : 1
+release     : 2
 homepage    : https://keepassxc.org/
 upstreams   :
     - https://github.com/keepassxreboot/keepassxc/archive/refs/tags/2.7.9.tar.gz : 129dca68ef5a4744ff7fb8eb117c4b39bbaf32b9c87d18ecc494b548c5f64858
