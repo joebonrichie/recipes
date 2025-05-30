@@ -5,7 +5,7 @@
 #
 name        : slibtool
 version     : 0.7.0
-release     : 10
+release     : 11
 homepage    : https://dev.midipix.org/cross/slibtool
 upstreams   :
     - https://dl.midipix.org/slibtool/slibtool-0.7.0.tar.gz : 5d70da716617f6fb10ca5d8fdcb57e87cd8f105a7e990827f28ec15ef14c7449
@@ -30,12 +30,17 @@ license     :
 builddeps   :
     - binary(m4)
 setup       : |
-    %patch %(pkgdir)/0001-default-to-llvm.patch
+    %patch %(pkgdir)/0001-host-new-configure-options-with-preferred-host-ar-as.patch
+    %patch %(pkgdir)/0001-Fix-0.7-regression-breaking-builds.patch
 
     ./configure \
         --prefix=%(prefix) \
         --libdir=%(libdir) \
-        --toolchain=llvm
+        --toolchain=llvm \
+        --with-preferred-host-ar=llvm-ar \
+        --with-preferred-host-as=llvm-as \
+        --with-preferred-host-nm=llvm-nm \
+        --with-preferred-host-ranlib=llvm-ranlib
 build       : |
     %make
 install     : |

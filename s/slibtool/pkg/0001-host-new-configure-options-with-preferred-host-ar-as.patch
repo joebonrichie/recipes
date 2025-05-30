@@ -1,0 +1,227 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: midipix <writeonce@midipix.org>
+Date: Mon, 26 May 2025 17:56:52 +0000
+Subject: [PATCH] host: new configure options:
+ --with-preferred-host-{ar|as|nm|ranlib}
+
+With these configure options, it is possible to name the exact tools
+to be chosen by slibtool when carrying out a native build task and given
+that the tool variant had not been otherwise specified. This could come
+in handy, for instance, on systems where ar(1) is installed by is not
+the preferred native archiving tool.
+---
+ project/config/cfgdefs.sh   | 39 +++++++++++++++++++---
+ src/host/slbt_host_params.c | 65 ++++++++++++++++++++++++++++++++-----
+ 2 files changed, 91 insertions(+), 13 deletions(-)
+
+diff --git a/project/config/cfgdefs.sh b/project/config/cfgdefs.sh
+index 0d851ea..6510abd 100644
+--- a/project/config/cfgdefs.sh
++++ b/project/config/cfgdefs.sh
+@@ -15,8 +15,34 @@
+ . "$mb_project_dir/sofort/cfgtest/cfgtest.sh"
+ 
+ 
++# slibtool now provides a mechanism to specifiy the
++# preferred ar(1), as(1), nm(1), and ranlib(1) to be
++# invoked by slibtool(1) when used for native builds
++# and when no other tool had been specified. These
++# configure arguments only affect slibtool's runtime
++# tool choices, and the configure arguments below
++# accordingly refer to the preferred "host" (rather
++# than "native") tools.
++
++_mb_quotes='\"'
++
+ for arg ; do
+ 	case "$arg" in
++		--with-preferred-host-ar=*)
++                        slbt_preferred_host_ar=${_mb_quotes}${arg#*=}${_mb_quotes}
++			;;
++
++		--with-preferred-host-as=*)
++                        slbt_preferred_host_as=${_mb_quotes}${arg#*=}${_mb_quotes}
++			;;
++
++		--with-preferred-host-nm=*)
++                        slbt_preferred_host_nm=${_mb_quotes}${arg#*=}${_mb_quotes}
++			;;
++
++		--with-preferred-host-ranlib=*)
++                        slbt_preferred_host_ranlib=${_mb_quotes}${arg#*=}${_mb_quotes}
++			;;
+ 		*)
+ 			error_msg ${arg#}: "unsupported config argument."
+ 			exit 2
+@@ -26,7 +52,12 @@ done
+ 
+ cfgdefs_output_custom_defs()
+ {
+-	cat "$mb_project_dir/project/config/cfgdefs.in" > cfgdefs.mk
++	if [ $mb_cfgtest_cfgtype = 'host' ]; then
++		cfgtest_cflags_append -DSLBT_PREFERRED_HOST_AR=${slbt_preferred_host_ar:-0}
++		cfgtest_cflags_append -DSLBT_PREFERRED_HOST_AS=${slbt_preferred_host_as:-0}
++		cfgtest_cflags_append -DSLBT_PREFERRED_HOST_NM=${slbt_preferred_host_nm:-0}
++		cfgtest_cflags_append -DSLBT_PREFERRED_HOST_RANLIB=${slbt_preferred_host_ranlib:-0}
++	fi
+ }
+ 
+ 
+@@ -50,9 +81,6 @@ cfgdefs_perform_target_tests()
+ 	cfgtest_newline
+ }
+ 
+-# cfgdefs.in --> cfgdefs.mk
+-cfgdefs_output_custom_defs
+-
+ # strict: some tests might fail
+ set +e
+ 
+@@ -62,5 +90,8 @@ cfgdefs_perform_target_tests
+ # strict: restore mode
+ set -e
+ 
++# cfgdefs.in --> cfgdefs.mk
++cfgdefs_output_custom_defs
++
+ # all done
+ return 0
+diff --git a/src/host/slbt_host_params.c b/src/host/slbt_host_params.c
+index 16ef7c7..8776507 100644
+--- a/src/host/slbt_host_params.c
++++ b/src/host/slbt_host_params.c
+@@ -21,6 +21,11 @@
+ #include "slibtool_visibility_impl.h"
+ #include "slibtool_ar_impl.h"
+ 
++/* preferred native tools, specified at the time of configuration for the host */
++static const char * slbt_native_ar_variant     = SLBT_PREFERRED_HOST_AR;
++static const char * slbt_native_as_variant     = SLBT_PREFERRED_HOST_AS;
++static const char * slbt_native_nm_variant     = SLBT_PREFERRED_HOST_NM;
++static const char * slbt_native_ranlib_variant = SLBT_PREFERRED_HOST_RANLIB;
+ 
+ /* annotation strings */
+ static const char cfgexplicit[] = "command-line argument";
+@@ -31,7 +36,8 @@ static const char cfgtarget[]   = "derived from <target>";
+ static const char cfgcompiler[] = "derived from <compiler>";
+ static const char cfgnmachine[] = "native (cached in ccenv/host.mk)";
+ static const char cfgxmachine[] = "foreign (derived from -dumpmachine)";
+-static const char cfgnative[]   = "native";
++static const char cfguseropt[]  = "native (preferred alternative)";
++static const char cfgnative[]   = "native (system default)";
+ 
+ static void slbt_get_host_quad(
+ 	char *	hostbuf,
+@@ -102,6 +108,7 @@ slbt_hidden int slbt_init_host_params(
+ 	int		ecode;
+ 	int             cint;
+ 	size_t		toollen;
++	size_t          altlen;
+ 	char *		dash;
+ 	char *		base;
+ 	char *		mark;
+@@ -258,6 +265,22 @@ slbt_hidden int slbt_init_host_params(
+ 	toollen += strlen("-utility-name");
+ 	toollen += host->ranlib ? strlen(host->ranlib) : 0;
+ 
++	if (fnative && slbt_native_ar_variant)
++		if ((altlen = strlen(slbt_native_ar_variant)) > toollen)
++			toollen = altlen;
++
++	if (fnative && slbt_native_as_variant)
++		if ((altlen = strlen(slbt_native_as_variant)) > toollen)
++			toollen = altlen;
++
++	if (fnative && slbt_native_nm_variant)
++		if ((altlen = strlen(slbt_native_nm_variant)) > toollen)
++			toollen = altlen;
++
++	if (fnative && slbt_native_ranlib_variant)
++		if ((altlen = strlen(slbt_native_ranlib_variant)) > toollen)
++			toollen = altlen;
++
+ 	/* ar */
+ 	if (host->ar)
+ 		cfgmeta->ar = cfgmeta_ar ? cfgmeta_ar : cfgexplicit;
+@@ -265,7 +288,11 @@ slbt_hidden int slbt_init_host_params(
+ 		if (!(drvhost->ar = calloc(1,toollen)))
+ 			return -1;
+ 
+-		if (fnative) {
++		if (fnative && slbt_native_ar_variant) {
++			strcpy(drvhost->ar,slbt_native_ar_variant);
++			cfgmeta->ar = cfguseropt;
++			arprobe = 0;
++		} else if (fnative) {
+ 			strcpy(drvhost->ar,"ar");
+ 			cfgmeta->ar = cfgnative;
+ 			arprobe = 0;
+@@ -317,10 +344,14 @@ slbt_hidden int slbt_init_host_params(
+ 			}
+ 
+ 			/* if target is the native target, fallback to native ar */
+-			if (ecode && !strcmp(host->host,SLBT_MACHINE)) {
+-				strcpy(drvhost->ar,"ar");
+-				cfgmeta->ar = cfgnative;
+-				fnative     = true;
++			if ((fnative = (ecode && !strcmp(host->host,SLBT_MACHINE)))) {
++				if (slbt_native_ar_variant) {
++					strcpy(drvhost->ar,slbt_native_ar_variant);
++					cfgmeta->ar = cfguseropt;
++				} else {
++					strcpy(drvhost->ar,"ar");
++					cfgmeta->ar = cfgnative;
++				}
+ 			}
+ 
+ 			/* fdcwd */
+@@ -336,6 +367,13 @@ slbt_hidden int slbt_init_host_params(
+ 		host->ar = drvhost->ar;
+ 	}
+ 
++	if (!fnative && slbt_native_ar_variant) {
++		if (!strcmp(host->ar,slbt_native_ar_variant)) {
++			fnative   = true;
++			fnativear = true;
++		}
++	}
++
+ 	if (!fnative && !strncmp(host->ar,"ar",2)) {
+ 		if (!host->ar[2] || isspace((cint = host->ar[2]))) {
+ 			fnative   = true;
+@@ -350,7 +388,10 @@ slbt_hidden int slbt_init_host_params(
+ 		if (!(drvhost->as = calloc(1,toollen)))
+ 			return -1;
+ 
+-		if (fnative) {
++		if (fnative && slbt_native_as_variant) {
++			strcpy(drvhost->as,slbt_native_as_variant);
++			cfgmeta->as = cfguseropt;
++		} else if (fnative) {
+ 			strcpy(drvhost->as,"as");
+ 			cfgmeta->as = fnativear ? cfgar : cfgnative;
+ 		} else {
+@@ -381,7 +422,10 @@ slbt_hidden int slbt_init_host_params(
+ 		if (!(drvhost->nm = calloc(1,toollen)))
+ 			return -1;
+ 
+-		if (fnative) {
++		if (fnative && slbt_native_nm_variant) {
++			strcpy(drvhost->nm,slbt_native_nm_variant);
++			cfgmeta->nm = cfguseropt;
++		} else if (fnative) {
+ 			strcpy(drvhost->nm,"nm");
+ 			cfgmeta->nm = fnativear ? cfgar : cfgnative;
+ 		} else {
+@@ -399,7 +443,10 @@ slbt_hidden int slbt_init_host_params(
+ 		if (!(drvhost->ranlib = calloc(1,toollen)))
+ 			return -1;
+ 
+-		if (fnative) {
++		if (fnative && slbt_native_ranlib_variant) {
++			strcpy(drvhost->ranlib,slbt_native_ranlib_variant);
++			cfgmeta->ranlib = cfguseropt;
++		} else if (fnative) {
+ 			strcpy(drvhost->ranlib,"ranlib");
+ 			cfgmeta->ranlib = fnativear ? cfgar : cfgnative;
+ 		} else {
