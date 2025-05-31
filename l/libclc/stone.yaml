@@ -1,6 +1,6 @@
 name        : libclc
 version     : 20.1.5
-release     : 3
+release     : 4
 summary     : libclc is an open source implementation of the OpenCL 1.1 Specification
 license     :
     - Apache-2.0 WITH LLVM-exception
