@@ -67,7 +67,6 @@
 				"/usr/share/gdm/greeter/applications/mimeapps.list",
 				"/usr/share/gdm/greeter/autostart/orca-autostart.desktop",
 				"/usr/share/gdm/locale.alias",
-				"/usr/share/gir-1.0/Gdm-1.0.gir",
 				"/usr/share/gnome-session/sessions/gnome-login.session",
 				"/usr/share/help/C/gdm/index.docbook",
 				"/usr/share/help/C/gdm/legal.xml",
@@ -282,7 +281,8 @@
 				"/usr/include/gdm/gdm-user-switching.h",
 				"/usr/lib/libgdm.so",
 				"/usr/lib/pkgconfig/gdm-pam-extensions.pc",
-				"/usr/lib/pkgconfig/gdm.pc"
+				"/usr/lib/pkgconfig/gdm.pc",
+				"/usr/share/gir-1.0/Gdm-1.0.gir"
 			],
 			"name": "gdm-devel",
 			"provides": [
@@ -334,6 +334,6 @@
 		}
 	},
 	"source-name": "gdm",
-	"source-release": "17",
+	"source-release": "18",
 	"source-version": "48.0"
 }
