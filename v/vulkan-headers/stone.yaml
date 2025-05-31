@@ -5,7 +5,7 @@
 #
 name        : vulkan-headers
 version     : 1.4.309.0
-release     : 10
+release     : 11
 homepage    : https://www.vulkan.org/
 upstreams   :
     - https://github.com/KhronosGroup/Vulkan-Headers/archive/refs/tags/vulkan-sdk-1.4.309.0.tar.gz : 2bc1b4127950badc80212abf1edfa5c3b5032f3425edf37255863ba7592c1969
