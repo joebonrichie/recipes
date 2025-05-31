@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : scons
-version     : 4.8.1
-release     : 2
+version     : 4.9.1
+release     : 3
 homepage    : https://github.com/SCons/scons
 upstreams:
-    - https://github.com/SCons/scons/archive/refs/tags/4.8.1.tar.gz: 9735ac24f345a11c76561991e3c3bdf943f97c772ded54156243e7f4ea5f4bc5
+    - https://github.com/SCons/scons/archive/refs/tags/4.9.1.tar.gz: 810c3f82c23758f8eaa23f7263363e1ac1822253dc8719ffa897ee77604bbe02
 summary     : SCons - a software construction tool
 description : |
   SCons is an Open Source software construction tool which orchestrates the construction of software (and other tangible products such as
@@ -16,6 +16,9 @@ description : |
 license     : MIT
 rundeps     :
     - binary(python3)
+setup       : |
+    %patch %(pkgdir)/0001-posix-Support-AERYN_SCONS_ENV_PASSTHROUGH-1.patch
+    %patch %(pkgdir)/0001-posix-Also-force-common-toolchain-vars-for-Aeryn.patch
 build       : |
     %pyproject_build
 install     : |
