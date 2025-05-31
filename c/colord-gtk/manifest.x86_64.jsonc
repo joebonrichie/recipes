@@ -32,7 +32,6 @@
 				"/usr/lib/libcolord-gtk.so.1.0.3",
 				"/usr/lib/libcolord-gtk4.so.1",
 				"/usr/lib/libcolord-gtk4.so.1.0.3",
-				"/usr/share/gir-1.0/ColordGtk-1.0.gir",
 				"/usr/share/locale/en_GB/LC_MESSAGES/colord-gtk.mo",
 				"/usr/share/locale/ka/LC_MESSAGES/colord-gtk.mo"
 			],
@@ -70,7 +69,8 @@
 				"/usr/lib/libcolord-gtk.so",
 				"/usr/lib/libcolord-gtk4.so",
 				"/usr/lib/pkgconfig/colord-gtk.pc",
-				"/usr/lib/pkgconfig/colord-gtk4.pc"
+				"/usr/lib/pkgconfig/colord-gtk4.pc",
+				"/usr/share/gir-1.0/ColordGtk-1.0.gir"
 			],
 			"name": "colord-gtk-devel",
 			"provides": [
@@ -80,6 +80,6 @@
 		}
 	},
 	"source-name": "colord-gtk",
-	"source-release": "4",
+	"source-release": "5",
 	"source-version": "0.3.1"
 }
