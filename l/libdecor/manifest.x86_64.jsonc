@@ -32,8 +32,8 @@
 			"name": "libdecor",
 			"provides": [
 				"soname(libdecor-0.so.0(x86_64))",
-				"soname(libdecor-cairo.so(x86_64))",
-				"soname(libdecor-gtk.so(x86_64))"
+				"soname(libdecor/plugins-1/libdecor-cairo.so(x86_64))",
+				"soname(libdecor/plugins-1/libdecor-gtk.so(x86_64))"
 			]
 		},
 		"libdecor-devel": {
@@ -59,6 +59,6 @@
 		}
 	},
 	"source-name": "libdecor",
-	"source-release": "2",
+	"source-release": "3",
 	"source-version": "0.2.2"
 }
