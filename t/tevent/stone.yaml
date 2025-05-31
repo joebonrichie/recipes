@@ -5,7 +5,7 @@
 #
 name        : tevent
 version     : 0.16.2
-release     : 2
+release     : 3
 homepage    : https://tevent.samba.org/
 upstreams   :
     - https://www.samba.org/ftp/tevent/tevent-0.16.2.tar.gz : f0bbd29dfabbcbbce9f4718fc165410cdd4f7d8ee1f3dfc54618d4c03199cea3
