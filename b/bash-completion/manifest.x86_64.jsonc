@@ -939,6 +939,6 @@
 		}
 	},
 	"source-name": "bash-completion",
-	"source-release": "7",
+	"source-release": "8",
 	"source-version": "2.15.0"
 }
