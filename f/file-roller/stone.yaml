@@ -5,7 +5,7 @@
 #
 name        : file-roller
 version     : 44.5
-release     : 4
+release     : 5
 homepage    : https://gitlab.gnome.org/GNOME/file-roller
 upstreams   :
     - https://download.gnome.org/sources/file-roller/44/file-roller-44.5.tar.xz : dfaf4bb989c0b8986be8bdae9fffeab8d0f30669ae3a627e8c3df94f23888339
