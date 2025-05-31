@@ -5,7 +5,7 @@
 #
 name        : python-jaraco.text
 version     : 4.0.0
-release     : 1
+release     : 2
 homepage    : https://github.com/jaraco/jaraco.text
 upstreams   :
     - https://pypi.debian.net/jaraco.text/jaraco_text-4.0.0.tar.gz : 5b71fecea69ab6f939d4c906c04fee1eda76500d1641117df6ec45b865f10db0
@@ -23,6 +23,9 @@ rundeps     :
 #     - python(jaraco.functools)
 #     - python(pytest)
 # TODO: Add python-inflect for tests
+setup       : |
+    # We need to fix this in Boulder, but make sure we have the correct dependency on more-itertools
+    sed -i "s|more_itertools|more-itertools|g" pyproject.toml
 build       : |
     %pyproject_build
 install     : |
