@@ -99,7 +99,6 @@
 				"/usr/share/flatpak/triggers/desktop-database.trigger",
 				"/usr/share/flatpak/triggers/gtk-icon-cache.trigger",
 				"/usr/share/flatpak/triggers/mime-database.trigger",
-				"/usr/share/gir-1.0/Flatpak-1.0.gir",
 				"/usr/share/locale/bg/LC_MESSAGES/flatpak.mo",
 				"/usr/share/locale/cs/LC_MESSAGES/flatpak.mo",
 				"/usr/share/locale/da/LC_MESSAGES/flatpak.mo",
@@ -260,7 +259,8 @@
 				"/usr/include/flatpak/flatpak-version-macros.h",
 				"/usr/include/flatpak/flatpak.h",
 				"/usr/lib/libflatpak.so",
-				"/usr/lib/pkgconfig/flatpak.pc"
+				"/usr/lib/pkgconfig/flatpak.pc",
+				"/usr/share/gir-1.0/Flatpak-1.0.gir"
 			],
 			"name": "flatpak-devel",
 			"provides": [
@@ -269,6 +269,6 @@
 		}
 	},
 	"source-name": "flatpak",
-	"source-release": "12",
+	"source-release": "13",
 	"source-version": "1.16.1"
 }
