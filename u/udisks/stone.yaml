@@ -5,7 +5,7 @@
 #
 name        : udisks
 version     : 2.10.1
-release     : 4
+release     : 5
 homepage    : https://github.com/storaged-project/udisks
 upstreams   :
     - https://github.com/storaged-project/udisks/releases/download/udisks-2.10.1/udisks-2.10.1.tar.bz2 : b75734ccf602540dedb4068bec206adcb508a4c003725e117ae8f994d92d8ece

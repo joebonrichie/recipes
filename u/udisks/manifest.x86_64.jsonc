@@ -52,7 +52,6 @@
 				"/usr/share/dbus-1/system-services/org.freedesktop.UDisks2.service",
 				"/usr/share/dbus-1/system.d/org.freedesktop.UDisks2.conf",
 				"/usr/share/defaults/etc/udisks2/udisks2.conf",
-				"/usr/share/gir-1.0/UDisks-2.0.gir",
 				"/usr/share/locale/af/LC_MESSAGES/udisks2.mo",
 				"/usr/share/locale/ar/LC_MESSAGES/udisks2.mo",
 				"/usr/share/locale/as/LC_MESSAGES/udisks2.mo",
@@ -175,7 +174,8 @@
 				"/usr/lib/libudisks2.so",
 				"/usr/lib/pkgconfig/udisks2-btrfs.pc",
 				"/usr/lib/pkgconfig/udisks2-lvm2.pc",
-				"/usr/lib/pkgconfig/udisks2.pc"
+				"/usr/lib/pkgconfig/udisks2.pc",
+				"/usr/share/gir-1.0/UDisks-2.0.gir"
 			],
 			"name": "udisks-devel",
 			"provides": [
@@ -344,6 +344,6 @@
 		}
 	},
 	"source-name": "udisks",
-	"source-release": "4",
+	"source-release": "5",
 	"source-version": "2.10.1"
 }
