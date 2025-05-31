@@ -5,7 +5,7 @@
 #
 name        : xdg-desktop-portal-gnome
 version     : 48.0
-release     : 6
+release     : 7
 homepage    : https://gitlab.gnome.org/GNOME/xdg-desktop-portal-gnome
 upstreams   :
     - https://download.gnome.org/sources/xdg-desktop-portal-gnome/48/xdg-desktop-portal-gnome-48.0.tar.xz : cd15aca2e1364da308eb3796bb8ae4a577e60ca4fe12006b315232cfd19c8861
