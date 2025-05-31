@@ -38,7 +38,6 @@
 				"/usr/lib/girepository-1.0/GtkSource-5.typelib",
 				"/usr/lib/libgtksourceview-5.so.0",
 				"/usr/lib/libgtksourceview-5.so.0.0.0",
-				"/usr/share/gir-1.0/GtkSource-5.gir",
 				"/usr/share/gtksourceview-5/fonts/BuilderBlocks.ttf",
 				"/usr/share/gtksourceview-5/language-specs/language.dtd",
 				"/usr/share/gtksourceview-5/language-specs/language.rng",
@@ -238,7 +237,8 @@
 				"/usr/include/gtksourceview-5/gtksourceview/gtksourceview.h",
 				"/usr/include/gtksourceview-5/gtksourceview/gtksourcevimimcontext.h",
 				"/usr/lib/libgtksourceview-5.so",
-				"/usr/lib/pkgconfig/gtksourceview-5.pc"
+				"/usr/lib/pkgconfig/gtksourceview-5.pc",
+				"/usr/share/gir-1.0/GtkSource-5.gir"
 			],
 			"name": "gtksourceview-devel",
 			"provides": [
@@ -247,6 +247,6 @@
 		}
 	},
 	"source-name": "gtksourceview",
-	"source-release": "8",
+	"source-release": "9",
 	"source-version": "5.16.0"
 }
