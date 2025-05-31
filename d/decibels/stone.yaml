@@ -5,7 +5,7 @@
 #
 name        : decibels
 version     : 48.0
-release     : 1
+release     : 2
 homepage    : https://apps.gnome.org/Decibels/
 upstreams   :
     - https://download.gnome.org/sources/decibels/48/decibels-48.0.tar.xz : 229b11a9263147bcb8c3e21ff0d4af659fb26262f8aece547adcf8c65e031f74
