@@ -4,8 +4,8 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : libimobiledevice
-version     : 1.3.0
-release     : 1
+version     : 1.3.0+git.ba829e6f
+release     : 2
 homepage    : https://github.com/libimobiledevice/libimobiledevice
 upstreams   :
     - git|https://github.com/libimobiledevice/libimobiledevice.git : ba829e6f1a62bdad7866572d1e2cff1836ced742
@@ -25,6 +25,9 @@ builddeps   :
     - pkgconfig(openssl)
     - pkgconfig(python3)
 setup       : |
+    %patch %(pkgdir)/1616.patch
+    %patch %(pkgdir)/ftbfs-cython-31.patch
+
     %reconfigure
 build       : |
     %make
