@@ -5,7 +5,7 @@
 #
 name        : glibc
 version     : 2.41+git.bcd4cf9d
-release     : 22
+release     : 23
 summary     : The GNU libc libraries
 license     :
     - GPL-2.0-or-later
