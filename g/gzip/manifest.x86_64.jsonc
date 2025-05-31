@@ -19,6 +19,7 @@
 				"/usr/bin/zfgrep",
 				"/usr/bin/zforce",
 				"/usr/bin/zgrep",
+				"/usr/bin/zless",
 				"/usr/bin/zmore",
 				"/usr/bin/znew",
 				"/usr/share/info/gzip.info",
@@ -30,6 +31,7 @@
 				"/usr/share/man/man1/zdiff.1",
 				"/usr/share/man/man1/zforce.1",
 				"/usr/share/man/man1/zgrep.1",
+				"/usr/share/man/man1/zless.1",
 				"/usr/share/man/man1/zmore.1",
 				"/usr/share/man/man1/znew.1"
 			],
@@ -46,12 +48,13 @@
 				"binary(zfgrep)",
 				"binary(zforce)",
 				"binary(zgrep)",
+				"binary(zless)",
 				"binary(zmore)",
 				"binary(znew)"
 			]
 		}
 	},
 	"source-name": "gzip",
-	"source-release": "5",
+	"source-release": "6",
 	"source-version": "1.14"
 }
