@@ -5,25 +5,98 @@
 #
 name        : godot
 version     : 4.4.1
-release     : 4
+release     : 5
 homepage    : https://godotengine.org
 upstreams   :
     - https://github.com/godotengine/godot/archive/refs/tags/4.4.1-stable.tar.gz: a486c523494e155b6912a607b5813577f8f39285f8ad43ac76cb9141edad9888
 summary     : Godot Engine – Multi-platform 2D and 3D game engine
 description : |
-  Godot Engine is a feature-packed, cross-platform game engine to create 2D and 3D games from a unified interface.
-  It provides a comprehensive set of common tools, so that users can focus on making games without having to reinvent the wheel.
-  Games can be exported with one click to a number of platforms, including the major desktop platforms (Linux, macOS, Windows),
-  mobile platforms (Android, iOS), as well as Web-based platforms and consoles.
-license    : MIT
-builddeps  :
-    - binary(as)
-    - binary(g++)
+    Godot Engine is a feature-packed, cross-platform game engine to create 2D and 3D games from a unified interface.
+    It provides a comprehensive set of common tools, so that users can focus on making games without having to reinvent the wheel.
+    Games can be exported with one click to a number of platforms, including the major desktop platforms (Linux, macOS, Windows),
+    mobile platforms (Android, iOS), as well as Web-based platforms and consoles.
+license     : MIT
+builddeps   :
+    # 2025-05: I really, really tried to make it use llvm-ar but after diving deep in the godot and scons code I couldn't figure out where the definition was coming from
+    # Best of luck to you if you go down that rabbit hole.
+    - binary(ar)
     - binary(scons)
-build: |
-    scons platform=linuxbsd
-install: |
-    %install_exe %(workdir)/bin/godot.linuxbsd.editor.x86_64 %(installroot)/usr/bin/godot
-    %install_file %(workdir)/icon.svg %(installroot)/usr/share/pixmaps/$pkgname.svg
-    %install_file %(workdir)/misc/dist/linux/org.godotengine.Godot.desktop %(installroot)/usr/share/applications/org.godotengine.Godot.desktop
-    %install_file %(workdir)/misc/dist/linux/org.godotengine.Godot.xml %(installroot)/usr/share/mime/packages/org.godotengine.Godot.xml
+    - cmake(glslang)
+    - pkgconfig(dbus-1)
+    - pkgconfig(fontconfig)
+    - pkgconfig(graphite2)
+    - pkgconfig(libbrotlidec)
+    - pkgconfig(libdecor-0)
+    - pkgconfig(libpcre2-32)
+    - pkgconfig(libpng)
+    - pkgconfig(libpulse)
+    - pkgconfig(libudev)
+    - pkgconfig(libwebp)
+    - pkgconfig(libzstd)
+    - pkgconfig(ogg)
+    - pkgconfig(vorbis)
+    - pkgconfig(vulkan)
+    - pkgconfig(xkbcommon)
+    - pkgconfig(wayland-scanner)
+    - pkgconfig(zlib)
+    # TODO enet, libtheora, mbedtls, miniupnpc, wslay, speech-dispatcher
+setup       : |
+    %patch %(pkgdir)/0001-No-libatomic.patch
+    %patch %(pkgdir)/ftbfs-system-glslang.patch
+build       : |
+    export AERYN_SCONS_ENV_PASSTHROUGH=1
+    export BUILD_NAME="AerynOS"
+
+    # Harfbuzz and icu should NOT be devendored as they cause issues
+    # https://github.com/godotengine/godot/issues/91401
+    # https://github.com/godotengine/godot/issues/91401
+    # https://github.com/godotengine/godot/issues/100301
+    _scons_args=(
+        AR="$AR" CC="$CC" CXX="$CXX"
+        -j%(jobs)
+
+        production=yes
+        platform=linuxbsd
+        use_llvm=yes
+        use_static_cpp=no
+        debug_symbols=no
+        lto=none # use profile settings for lto
+        optimize=custom
+
+        engine_update_check=false
+
+        use_sowrap=false # Don't use dlopen()
+
+        alsa=false
+        vulkan=true
+        use_volk=false # Not needed when linking to libvulkan
+        wayland=true
+        x11=false
+
+        builtin_brotli=false
+        builtin_certs=false
+        builtin_freetype=false
+        builtin_glslang=false
+        builtin_graphite=false
+        builtin_libogg=false
+        builtin_libpng=false
+        builtin_libwebp=false
+        builtin_pcre2=false
+        builtin_zlib=false
+        builtin_zstd=false
+    )
+
+    %ccache_zero
+    scons "${_scons_args[@]}"
+    %ccache_stats
+install     : |
+    %install_exe bin/godot.linuxbsd.editor.x86_64.llvm %(installroot)/usr/bin/godot
+
+    %install_file misc/dist/linux/godot.6 -t %(installroot)%(mandir)/man6
+
+    %install_file misc/dist/linux/org.godotengine.Godot.desktop -t %(installroot)/usr/share/applications
+    %install_file misc/dist/linux/org.godotengine.Godot.appdata.xml -t %(installroot)/usr/share/metainfo
+    %install_file misc/dist/linux/org.godotengine.Godot.xml -t %(installroot)/usr/share/mime/packages
+
+    %install_file icon.png %(installroot)/usr/share/icons/hicolor/256x256/apps/godot.png
+    %install_file icon.svg %(installroot)/usr/share/icons/hicolor/scalable/apps/godot.svg
