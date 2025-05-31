@@ -30,7 +30,6 @@
 				"/usr/lib/libsecret-1.so.0",
 				"/usr/lib/libsecret-1.so.0.0.0",
 				"/usr/share/bash-completion/completions/secret-tool",
-				"/usr/share/gir-1.0/Secret-1.gir",
 				"/usr/share/man/man1/secret-tool.1",
 				"/usr/share/vala/vapi/libsecret-1.deps",
 				"/usr/share/vala/vapi/libsecret-1.vapi"
@@ -82,7 +81,8 @@
 				"/usr/include/libsecret-1/libsecret/secret.h",
 				"/usr/lib/libsecret-1.so",
 				"/usr/lib/pkgconfig/libsecret-1.pc",
-				"/usr/lib/pkgconfig/libsecret-unstable.pc"
+				"/usr/lib/pkgconfig/libsecret-unstable.pc",
+				"/usr/share/gir-1.0/Secret-1.gir"
 			],
 			"name": "libsecret-devel",
 			"provides": [
@@ -92,6 +92,6 @@
 		}
 	},
 	"source-name": "libsecret",
-	"source-release": "7",
+	"source-release": "8",
 	"source-version": "0.21.7"
 }
