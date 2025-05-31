@@ -217,6 +217,6 @@
 		}
 	},
 	"source-name": "docker",
-	"source-release": "6",
+	"source-release": "7",
 	"source-version": "28.0.4"
 }
