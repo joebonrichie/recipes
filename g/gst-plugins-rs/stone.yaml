@@ -5,7 +5,7 @@
 #
 name        : gst-plugins-rs
 version     : 1.26.1
-release     : 4
+release     : 5
 homepage    : https://gitlab.freedesktop.org/gstreamer/gst-plugins-rs
 upstreams   :
     - https://gitlab.freedesktop.org/gstreamer/gst-plugins-rs/-/archive/gstreamer-1.26.1/gst-plugins-rs-gstreamer-1.26.1.tar.gz : c0ead71078d3d67c588446cb9f3a61345569352d8ecfcefa2deccbb81ed005cc
