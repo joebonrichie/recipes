@@ -5,7 +5,7 @@
 #
 name        : lmdb
 version     : 0.9.31
-release     : 11
+release     : 12
 homepage    : https://www.symas.com/lmdb
 upstreams   :
     - https://github.com/LMDB/lmdb/archive/refs/tags/LMDB_0.9.31.tar.gz : dd70a8c67807b3b8532b3e987b0a4e998962ecc28643e1af5ec77696b081c9b0
