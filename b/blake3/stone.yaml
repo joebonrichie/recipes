@@ -5,7 +5,7 @@
 #
 name        : blake3
 version     : 1.5.5
-release     : 1
+release     : 2
 summary     : BLAKE3 hash algorithm
 license     : Apache-2.0
 homepage    : https://github.com/BLAKE3-team/BLAKE3
