@@ -32,8 +32,7 @@
 			],
 			"name": "nghttp2-32bit",
 			"provides": [
-				"soname(libnghttp2.so.14(386))",
-				"soname(libnghttp2.so.14(x86))"
+				"soname(libnghttp2.so.14(386))"
 			]
 		},
 		"nghttp2-32bit-devel": {
@@ -71,6 +70,6 @@
 		}
 	},
 	"source-name": "nghttp2",
-	"source-release": "7",
+	"source-release": "8",
 	"source-version": "1.64.0"
 }
