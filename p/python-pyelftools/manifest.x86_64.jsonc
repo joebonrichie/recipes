@@ -3,6 +3,9 @@
 	"manifest-version": "0.2",
 	"packages": {
 		"python-pyelftools": {
+			"build-depends": [
+				"python(setuptools)"
+			],
 			"files": [
 				"/usr/bin/readelf.py",
 				"/usr/lib/python3.11/site-packages/elftools/__init__.py",
@@ -165,10 +168,10 @@
 				"/usr/lib/python3.11/site-packages/elftools/elf/segments.py",
 				"/usr/lib/python3.11/site-packages/elftools/elf/structs.py",
 				"/usr/lib/python3.11/site-packages/elftools/py.typed",
-				"/usr/lib/python3.11/site-packages/pyelftools-0.32.dist-info/LICENSE",
 				"/usr/lib/python3.11/site-packages/pyelftools-0.32.dist-info/METADATA",
 				"/usr/lib/python3.11/site-packages/pyelftools-0.32.dist-info/RECORD",
 				"/usr/lib/python3.11/site-packages/pyelftools-0.32.dist-info/WHEEL",
+				"/usr/lib/python3.11/site-packages/pyelftools-0.32.dist-info/licenses/LICENSE",
 				"/usr/lib/python3.11/site-packages/pyelftools-0.32.dist-info/top_level.txt"
 			],
 			"name": "python-pyelftools",
@@ -180,6 +183,6 @@
 		}
 	},
 	"source-name": "python-pyelftools",
-	"source-release": "2",
+	"source-release": "3",
 	"source-version": "0.32"
 }
