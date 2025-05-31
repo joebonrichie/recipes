@@ -5,7 +5,7 @@
 #
 name        : typescript
 version     : 5.8.2
-release     : 2
+release     : 3
 homepage    : https://www.typescriptlang.org
 upstreams   :
     - https://registry.npmjs.org/typescript/-/typescript-5.8.2.tgz : ef938a45323df5775664ea5d55e8bc0ab2027a40db1ff857bb957fe7bbaa4434
@@ -20,3 +20,7 @@ rundeps     :
     - binary(node)
 install     : |
     npm install -g --prefix %(installroot)/usr %(sourcedir)/typescript-%(version).tgz
+
+    # TODO: Create a nodejs macro that does this.
+    # Move to node_modules_22 since that's the only node version we currently have
+    mv %(installroot)%(libdir)/node_modules %(installroot)%(libdir)/node_modules_22
