@@ -5,7 +5,7 @@
 #
 name        : zlib-ng
 version     : 2.2.4
-release     : 18
+release     : 19
 summary     : zlib replacement with optimizations for "next generation" systems.
 license     : Zlib
 homepage    : https://github.com/zlib-ng/zlib-ng

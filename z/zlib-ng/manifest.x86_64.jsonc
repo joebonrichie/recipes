@@ -25,8 +25,7 @@
 			],
 			"name": "zlib-32bit",
 			"provides": [
-				"soname(libz.so.1(386))",
-				"soname(libz.so.1(x86))"
+				"soname(libz.so.1(386))"
 			]
 		},
 		"zlib-32bit-devel": {
@@ -114,6 +113,6 @@
 		}
 	},
 	"source-name": "zlib-ng",
-	"source-release": "18",
+	"source-release": "19",
 	"source-version": "2.2.4"
 }
