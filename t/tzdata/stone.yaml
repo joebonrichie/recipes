@@ -5,7 +5,7 @@
 #
 name        : tzdata
 version     : 2025b
-release     : 6
+release     : 7
 summary     : Sources for time zone and daylight saving time data
 license     : Public-Domain
 homepage    : https://www.iana.org/time-zones
