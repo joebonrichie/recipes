@@ -5,7 +5,7 @@
 #
 name        : python-trove-classifiers
 version     : 2025.3.19.19
-release     : 4
+release     : 5
 homepage    : https://pypi.org/project/trove-classifiers
 upstreams   :
     - https://files.pythonhosted.org/packages/source/t/trove_classifiers/trove_classifiers-2025.3.19.19.tar.gz : 98e9d396fe908d5f43b7454fa4c43d17cd0fdadf046f45fb38a5e3af8d959ecd
@@ -16,8 +16,9 @@ license     :
     - Apache-2.0
 builddeps   :
     - python(calver)
+    - python(setuptools)
 rundeps     :
-    - binary(python3)
+    - python-libs
 build       : |
     %pyproject_build
 install     : |
