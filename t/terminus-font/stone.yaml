@@ -5,7 +5,7 @@
 #
 name        : terminus-font
 version     : 4.49.1
-release     : 1
+release     : 2
 homepage    : https://sourceforge.net/projects/terminus-font/files/terminus-font-4.49
 upstreams   :
     - https://sourceforge.net/projects/terminus-font/files/terminus-font-4.49/terminus-font-4.49.1.tar.gz : d961c1b781627bf417f9b340693d64fc219e0113ad3a3af1a3424c7aa373ef79
