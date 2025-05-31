@@ -331,8 +331,6 @@
 				"/usr/share/doc/Tsparql-3.0/type_func.SparqlError.quark.html",
 				"/usr/share/doc/Tsparql-3.0/urlmap.js",
 				"/usr/share/doc/Tsparql-3.0/xsd-ontology.html",
-				"/usr/share/gir-1.0/Tracker-3.0.gir",
-				"/usr/share/gir-1.0/Tsparql-3.0.gir",
 				"/usr/share/locale/ab/LC_MESSAGES/tinysparql3.mo",
 				"/usr/share/locale/ar/LC_MESSAGES/tinysparql3.mo",
 				"/usr/share/locale/as/LC_MESSAGES/tinysparql3.mo",
@@ -469,7 +467,9 @@
 				"/usr/lib/libtinysparql-3.0.so",
 				"/usr/lib/libtracker-sparql-3.0.so",
 				"/usr/lib/pkgconfig/tinysparql-3.0.pc",
-				"/usr/lib/pkgconfig/tracker-sparql-3.0.pc"
+				"/usr/lib/pkgconfig/tracker-sparql-3.0.pc",
+				"/usr/share/gir-1.0/Tracker-3.0.gir",
+				"/usr/share/gir-1.0/Tsparql-3.0.gir"
 			],
 			"name": "tinysparql-devel",
 			"provides": [
@@ -479,6 +479,6 @@
 		}
 	},
 	"source-name": "tinysparql",
-	"source-release": "6",
+	"source-release": "7",
 	"source-version": "3.9.1"
 }
