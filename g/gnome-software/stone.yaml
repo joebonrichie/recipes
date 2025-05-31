@@ -5,7 +5,7 @@
 #
 name        : gnome-software
 version     : 48.1
-release     : 16
+release     : 17
 homepage    : https://apps.gnome.org/Software/
 upstreams   :
     - https://download.gnome.org/sources/gnome-software/48/gnome-software-48.1.tar.xz : 084a985040294c36454b464a2144f981c0274906b4c49d71613e61ced6a96e8f
