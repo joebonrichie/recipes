@@ -5,7 +5,7 @@
 #
 name        : libeconf
 version     : 0.7.6
-release     : 4
+release     : 5
 homepage    : https://github.com/openSUSE/libeconf
 upstreams   :
     - https://github.com/openSUSE/libeconf/archive/refs/tags/v0.7.6.tar.gz : 2733b6af7856efac3a030c02fb816103e4130e8ffcc403ff6ffced6f677a12e3

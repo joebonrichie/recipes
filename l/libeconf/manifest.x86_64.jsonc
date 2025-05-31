@@ -34,8 +34,7 @@
 			],
 			"name": "libeconf-32bit",
 			"provides": [
-				"soname(libeconf.so.0(386))",
-				"soname(libeconf.so.0(x86))"
+				"soname(libeconf.so.0(386))"
 			]
 		},
 		"libeconf-32bit-devel": {
@@ -110,6 +109,6 @@
 		}
 	},
 	"source-name": "libeconf",
-	"source-release": "4",
+	"source-release": "5",
 	"source-version": "0.7.6"
 }
