@@ -5,7 +5,7 @@
 #
 name        : rnp
 version     : 0.17.1+git.f1865f24
-release     : 1
+release     : 2
 homepage    : https://github.com/rnpgp/rnp
 upstreams   :
     - git|https://github.com/rnpgp/rnp : f1865f249be2a849ee9f4990745ce5c1f5efbbb0
