@@ -5,7 +5,7 @@
 #
 name        : gtkmm-4
 version     : 4.18.0
-release     : 4
+release     : 5
 homepage    : https://gtkmm.org
 upstreams   :
     - https://download.gnome.org/sources/gtkmm/4.18/gtkmm-4.18.0.tar.xz : 2ee31c15479fc4d8e958b03c8b5fbbc8e17bc122c2a2f544497b4e05619e33ec
