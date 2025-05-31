@@ -3,6 +3,9 @@
 	"manifest-version": "0.2",
 	"packages": {
 		"libfuse2": {
+			"build-depends": [
+				"gettext-devel"
+			],
 			"depends": [
 				"soname(libc.so.6(x86_64))"
 			],
@@ -19,6 +22,9 @@
 			]
 		},
 		"libfuse2-devel": {
+			"build-depends": [
+				"gettext-devel"
+			],
 			"depends": [
 				"libfuse2"
 			],
@@ -44,6 +50,6 @@
 		}
 	},
 	"source-name": "libfuse2",
-	"source-release": "3",
+	"source-release": "4",
 	"source-version": "2.9.9"
 }
