@@ -5,7 +5,7 @@
 #
 name        : bash
 version     : 5.2.37
-release     : 22
+release     : 23
 homepage    : http://www.gnu.org/software/bash/bash.html
 upstreams   :
     - https://ftp.gnu.org/gnu/bash/bash-5.2.37.tar.gz : 9599b22ecd1d5787ad7d3b7bf0c59f312b3396d1e281175dd1f8a4014da621ff
@@ -28,6 +28,9 @@ setup       : |
 
     export CFLAGS="$CFLAGS -DRECYCLES_PIDS -DSYSLOG_HISTORY -DSYSLOG_SHOPT=0"
 
+    # Remove with Bash 5.3
+    export CFLAGS+=" -std=gnu17"
+
     # often hangs
     rm tests/run-jobs
 
@@ -43,8 +46,8 @@ setup       : |
         --with-installed-readline \
         --with-curses \
         --enable-history \
-        --enable-readline \
-        --enable-nls
+        --enable-nls \
+        --enable-readline
 build       : |
     %make
 install     : |
@@ -66,4 +69,5 @@ check       : |
 workload    : |
     %make check
 tuning      :
-    - lto : full
+    # Full seems to cause tests/run-assoc and tests/run-type to hang. This is possibly a Clang 20 bug and should be retested in the future
+    - lto : thin
