@@ -54,10 +54,6 @@
 				"/usr/lib/libgnome-desktop-4.so.2.1.1",
 				"/usr/lib/libgnome-rr-4.so.2",
 				"/usr/lib/libgnome-rr-4.so.2.1.1",
-				"/usr/share/gir-1.0/GnomeBG-4.0.gir",
-				"/usr/share/gir-1.0/GnomeDesktop-3.0.gir",
-				"/usr/share/gir-1.0/GnomeDesktop-4.0.gir",
-				"/usr/share/gir-1.0/GnomeRR-4.0.gir",
 				"/usr/share/help/C/fdl/index.docbook",
 				"/usr/share/help/C/gpl/index.docbook",
 				"/usr/share/help/C/lgpl/index.docbook",
@@ -325,7 +321,11 @@
 				"/usr/lib/pkgconfig/gnome-bg-4.pc",
 				"/usr/lib/pkgconfig/gnome-desktop-3.0.pc",
 				"/usr/lib/pkgconfig/gnome-desktop-4.pc",
-				"/usr/lib/pkgconfig/gnome-rr-4.pc"
+				"/usr/lib/pkgconfig/gnome-rr-4.pc",
+				"/usr/share/gir-1.0/GnomeBG-4.0.gir",
+				"/usr/share/gir-1.0/GnomeDesktop-3.0.gir",
+				"/usr/share/gir-1.0/GnomeDesktop-4.0.gir",
+				"/usr/share/gir-1.0/GnomeRR-4.0.gir"
 			],
 			"name": "gnome-desktop-devel",
 			"provides": [
@@ -337,6 +337,6 @@
 		}
 	},
 	"source-name": "gnome-desktop",
-	"source-release": "6",
+	"source-release": "7",
 	"source-version": "44.1"
 }
