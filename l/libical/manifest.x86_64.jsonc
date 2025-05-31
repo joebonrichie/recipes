@@ -37,9 +37,7 @@
 				"/usr/lib/libicalss_cxx.so.3.0.20",
 				"/usr/lib/libicalvcal.so.3",
 				"/usr/lib/libicalvcal.so.3.0.20",
-				"/usr/libexec/libical/ical-glib-src-generator",
-				"/usr/share/gir-1.0/ICal-3.0.gir",
-				"/usr/share/gir-1.0/ICalGLib-3.0.gir"
+				"/usr/libexec/libical/ical-glib-src-generator"
 			],
 			"name": "libical",
 			"provides": [
@@ -166,6 +164,8 @@
 				"/usr/lib/libicalvcal.so",
 				"/usr/lib/pkgconfig/libical-glib.pc",
 				"/usr/lib/pkgconfig/libical.pc",
+				"/usr/share/gir-1.0/ICal-3.0.gir",
+				"/usr/share/gir-1.0/ICalGLib-3.0.gir",
 				"/usr/share/vala/vapi/libical-glib.vapi"
 			],
 			"name": "libical-devel",
@@ -177,6 +177,6 @@
 		}
 	},
 	"source-name": "libical",
-	"source-release": "5",
+	"source-release": "6",
 	"source-version": "3.0.20"
 }
