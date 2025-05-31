@@ -5,7 +5,7 @@
 #
 name        : libepoxy
 version     : 1.5.11
-release     : 2
+release     : 3
 homepage    : https://github.com/anholt/libepoxy
 upstreams   :
     - git|https://github.com/anholt/libepoxy.git : 1a2ad512d4d77a30f9042b2a623e6c6dc38ab99d
