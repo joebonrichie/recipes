@@ -86,8 +86,6 @@
 				"/usr/share/defaults/avahi/hosts",
 				"/usr/share/defaults/avahi/services/sftp-ssh.service",
 				"/usr/share/defaults/avahi/services/ssh.service",
-				"/usr/share/gir-1.0/Avahi-0.6.gir",
-				"/usr/share/gir-1.0/AvahiCore-0.6.gir",
 				"/usr/share/locale/ach/LC_MESSAGES/avahi.mo",
 				"/usr/share/locale/ar/LC_MESSAGES/avahi.mo",
 				"/usr/share/locale/bg/LC_MESSAGES/avahi.mo",
@@ -239,7 +237,9 @@
 				"/usr/lib/pkgconfig/avahi-core.pc",
 				"/usr/lib/pkgconfig/avahi-glib.pc",
 				"/usr/lib/pkgconfig/avahi-gobject.pc",
-				"/usr/lib/pkgconfig/avahi-libevent.pc"
+				"/usr/lib/pkgconfig/avahi-libevent.pc",
+				"/usr/share/gir-1.0/Avahi-0.6.gir",
+				"/usr/share/gir-1.0/AvahiCore-0.6.gir"
 			],
 			"name": "avahi-devel",
 			"provides": [
