@@ -34,15 +34,18 @@
 				"binary(dltest)",
 				"binary(isql)",
 				"binary(iusql)",
-				"soname(libodbc.so.2(x86_64))",
-				"soname(libodbccr.so.2(x86_64))",
-				"soname(libodbcinst.so.2(x86_64))",
 				"binary(odbc_config)",
 				"binary(odbcinst)",
-				"binary(slencheck)"
+				"binary(slencheck)",
+				"soname(libodbc.so.2(x86_64))",
+				"soname(libodbccr.so.2(x86_64))",
+				"soname(libodbcinst.so.2(x86_64))"
 			]
 		},
 		"unixodbc-devel": {
+			"depends": [
+				"unixodbc"
+			],
 			"files": [
 				"/usr/include/autotest.h",
 				"/usr/include/odbcinst.h",
@@ -72,6 +75,6 @@
 		}
 	},
 	"source-name": "unixodbc",
-	"source-release": "1",
+	"source-release": "2",
 	"source-version": "2.3.12"
 }
