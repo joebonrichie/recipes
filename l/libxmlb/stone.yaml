@@ -5,7 +5,7 @@
 #
 name        : libxmlb
 version     : 0.3.22
-release     : 5
+release     : 6
 homepage    : https://github.com/hughsie/libxmlb
 upstreams   :
     - https://github.com/hughsie/libxmlb/releases/download/0.3.22/libxmlb-0.3.22.tar.xz : f3c46e85588145a1a86731c77824ec343444265a457647189a43b71941b20fa0
@@ -34,4 +34,7 @@ install     : |
     rm -fr %(installroot)/usr/share/installed-tests
     rmdir %(installroot)%(libdir)/libxmlb
 check       : |
+    # The dependency ordering for this is slightly broken, and this needs to be built before tests can run
+    meson compile src/libxmlb-mapfile -C %(builddir)
+
     %meson_test
