@@ -5,7 +5,7 @@
 #
 name        : asusd
 version     : 6.1.0-rc2
-release     : 1
+release     : 2
 summary     : Control ASUS laptop features easily
 license     : MPL-2.0
 homepage    : https://asus-linux.org/
