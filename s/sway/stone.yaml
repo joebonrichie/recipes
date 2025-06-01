@@ -5,7 +5,7 @@
 #
 name        : sway
 version     : 1.10.1
-release     : 5
+release     : 6
 homepage    : https://github.com/swaywm/sway
 upstreams   :
     - https://github.com/swaywm/sway/releases/download/1.10.1/sway-1.10.1.tar.gz : b2fbf3a2f94c8926efa18d6af59bb9f5f1eafa6d46491284b1610c57bef2d105
