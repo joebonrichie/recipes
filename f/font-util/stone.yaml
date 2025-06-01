@@ -5,7 +5,7 @@
 #
 name        : font-util
 version     : 1.4.1
-release     : 1
+release     : 2
 homepage    : https://www.x.org/archive/individual/font
 upstreams   :
     - https://www.x.org/archive/individual/font/font-util-1.4.1.tar.xz : 5c9f64123c194b150fee89049991687386e6ff36ef2af7b80ba53efaf368cc95
