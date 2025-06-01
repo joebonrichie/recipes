@@ -5,7 +5,7 @@
 #
 name        : iwd
 version     : 3.3
-release     : 3
+release     : 4
 homepage    : https://iwd.wiki.kernel.org/
 upstreams   :
     - https://mirrors.edge.kernel.org/pub/linux/network/wireless/iwd-3.3.tar.xz : 8189e15e701112f871fb5f5e9351f007c9098754b4168ed43cc5422a3adc0255
