@@ -5,7 +5,7 @@
 #
 name        : xdg-utils
 version     : 1.2.1
-release     : 4
+release     : 5
 homepage    : https://gitlab.freedesktop.org/xdg/xdg-utils/
 upstreams   :
     - https://gitlab.freedesktop.org/xdg/xdg-utils/-/archive/v1.2.1/xdg-utils-v1.2.1.tar.gz : f6b648c064464c2636884c05746e80428110a576f8daacf46ef2e554dcfdae75
