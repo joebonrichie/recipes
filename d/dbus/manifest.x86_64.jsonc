@@ -89,8 +89,7 @@
 			],
 			"name": "dbus-32bit",
 			"provides": [
-				"soname(libdbus-1.so.3(386))",
-				"soname(libdbus-1.so.3(x86))"
+				"soname(libdbus-1.so.3(386))"
 			]
 		},
 		"dbus-32bit-devel": {
@@ -157,6 +156,6 @@
 		}
 	},
 	"source-name": "dbus",
-	"source-release": "10",
+	"source-release": "11",
 	"source-version": "1.16.2"
 }
