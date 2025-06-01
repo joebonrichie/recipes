@@ -43,8 +43,7 @@
 			],
 			"name": "freetype-32bit",
 			"provides": [
-				"soname(libfreetype.so.6(386))",
-				"soname(libfreetype.so.6(x86))"
+				"soname(libfreetype.so.6(386))"
 			]
 		},
 		"freetype-32bit-devel": {
@@ -148,6 +147,6 @@
 		}
 	},
 	"source-name": "freetype",
-	"source-release": "12",
+	"source-release": "13",
 	"source-version": "2.13.3"
 }
