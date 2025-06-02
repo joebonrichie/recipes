@@ -5,7 +5,7 @@
 #
 name        : gnome-settings-daemon
 version     : 48.0
-release     : 10
+release     : 11
 homepage    : https://gitlab.gnome.org/GNOME/gnome-settings-daemon
 upstreams   :
     - https://download.gnome.org/sources/gnome-settings-daemon/48/gnome-settings-daemon-48.0.tar.xz : f3da20ab4a2ba56fd3e97b991f2bc267973d5619bd58bfa516410aa036305e45
