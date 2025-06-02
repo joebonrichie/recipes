@@ -12,15 +12,15 @@
 				"python(backports.tarfile)"
 			],
 			"files": [
-				"/usr/lib/python3.11/site-packages/jaraco.context-6.0.1.dist-info/LICENSE",
-				"/usr/lib/python3.11/site-packages/jaraco.context-6.0.1.dist-info/METADATA",
-				"/usr/lib/python3.11/site-packages/jaraco.context-6.0.1.dist-info/RECORD",
-				"/usr/lib/python3.11/site-packages/jaraco.context-6.0.1.dist-info/WHEEL",
-				"/usr/lib/python3.11/site-packages/jaraco.context-6.0.1.dist-info/top_level.txt",
 				"/usr/lib/python3.11/site-packages/jaraco/context/__init__.py",
 				"/usr/lib/python3.11/site-packages/jaraco/context/__pycache__/__init__.cpython-311.opt-1.pyc",
 				"/usr/lib/python3.11/site-packages/jaraco/context/__pycache__/__init__.cpython-311.pyc",
-				"/usr/lib/python3.11/site-packages/jaraco/context/py.typed"
+				"/usr/lib/python3.11/site-packages/jaraco/context/py.typed",
+				"/usr/lib/python3.11/site-packages/jaraco_context-6.0.1.dist-info/METADATA",
+				"/usr/lib/python3.11/site-packages/jaraco_context-6.0.1.dist-info/RECORD",
+				"/usr/lib/python3.11/site-packages/jaraco_context-6.0.1.dist-info/WHEEL",
+				"/usr/lib/python3.11/site-packages/jaraco_context-6.0.1.dist-info/licenses/LICENSE",
+				"/usr/lib/python3.11/site-packages/jaraco_context-6.0.1.dist-info/top_level.txt"
 			],
 			"name": "python-jaraco.context",
 			"provides": [
@@ -30,6 +30,6 @@
 		}
 	},
 	"source-name": "python-jaraco.context",
-	"source-release": "2",
+	"source-release": "3",
 	"source-version": "6.0.1"
 }
