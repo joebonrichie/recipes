@@ -5,7 +5,7 @@
 #
 name        : libarchive
 version     : 3.7.9
-release     : 10
+release     : 11
 summary     : Multi-format archive and compression library
 license     : BSD-2-Clause
 homepage    : https://www.libarchive.org
