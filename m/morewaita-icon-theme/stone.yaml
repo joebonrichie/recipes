@@ -5,7 +5,7 @@
 #
 name        : morewaita-icon-theme
 version     : 48.1
-release     : 5
+release     : 6
 homepage    : https://github.com/somepaulo/MoreWaita
 upstreams   :
     - https://github.com/somepaulo/MoreWaita/archive/refs/tags/v48.1.tar.gz : e379aee0eec070889b6fbb654c838937d01f25e3867c1575a18fb30a5421a408
