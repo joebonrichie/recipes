@@ -21,7 +21,6 @@
 				"/usr/lib/girepository-1.0/Uhm-1.0.typelib",
 				"/usr/lib/libuhttpmock-1.0.so.1",
 				"/usr/lib/libuhttpmock-1.0.so.1.2.3",
-				"/usr/share/gir-1.0/Uhm-1.0.gir",
 				"/usr/share/vala/vapi/libuhttpmock-1.0.deps",
 				"/usr/share/vala/vapi/libuhttpmock-1.0.vapi"
 			],
@@ -51,7 +50,8 @@
 				"/usr/include/libuhttpmock-1.0/uhttpmock/uhm-version.h",
 				"/usr/include/libuhttpmock-1.0/uhttpmock/uhm.h",
 				"/usr/lib/libuhttpmock-1.0.so",
-				"/usr/lib/pkgconfig/libuhttpmock-1.0.pc"
+				"/usr/lib/pkgconfig/libuhttpmock-1.0.pc",
+				"/usr/share/gir-1.0/Uhm-1.0.gir"
 			],
 			"name": "uhttpmock-devel",
 			"provides": [
@@ -60,6 +60,6 @@
 		}
 	},
 	"source-name": "uhttpmock",
-	"source-release": "2",
+	"source-release": "3",
 	"source-version": "0.11.0"
 }
