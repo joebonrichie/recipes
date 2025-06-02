@@ -18,15 +18,8 @@
 				"/usr/bin/pwscore",
 				"/usr/lib/libpwquality.so.1",
 				"/usr/lib/libpwquality.so.1.0.2",
-				"/usr/lib/python3.11/site-packages/pwquality-1.4.5-py3.11-linux-x86_64.egg/EGG-INFO/PKG-INFO",
-				"/usr/lib/python3.11/site-packages/pwquality-1.4.5-py3.11-linux-x86_64.egg/EGG-INFO/SOURCES.txt",
-				"/usr/lib/python3.11/site-packages/pwquality-1.4.5-py3.11-linux-x86_64.egg/EGG-INFO/dependency_links.txt",
-				"/usr/lib/python3.11/site-packages/pwquality-1.4.5-py3.11-linux-x86_64.egg/EGG-INFO/native_libs.txt",
-				"/usr/lib/python3.11/site-packages/pwquality-1.4.5-py3.11-linux-x86_64.egg/EGG-INFO/not-zip-safe",
-				"/usr/lib/python3.11/site-packages/pwquality-1.4.5-py3.11-linux-x86_64.egg/EGG-INFO/top_level.txt",
-				"/usr/lib/python3.11/site-packages/pwquality-1.4.5-py3.11-linux-x86_64.egg/__pycache__/pwquality.cpython-311.pyc",
-				"/usr/lib/python3.11/site-packages/pwquality-1.4.5-py3.11-linux-x86_64.egg/pwquality.cpython-311-x86_64-linux-gnu.so",
-				"/usr/lib/python3.11/site-packages/pwquality-1.4.5-py3.11-linux-x86_64.egg/pwquality.py",
+				"/usr/lib/python3.11/site-packages/pwquality-1.4.5-py3.11.egg-info",
+				"/usr/lib/python3.11/site-packages/pwquality.cpython-311-x86_64-linux-gnu.so",
 				"/usr/share/locale/ar/LC_MESSAGES/libpwquality.mo",
 				"/usr/share/locale/as/LC_MESSAGES/libpwquality.mo",
 				"/usr/share/locale/az/LC_MESSAGES/libpwquality.mo",
@@ -86,10 +79,10 @@
 			],
 			"name": "libpwquality",
 			"provides": [
-				"soname(libpwquality.so.1(x86_64))",
 				"binary(pwmake)",
-				"soname(pwquality.cpython-311-x86_64-linux-gnu.so(x86_64))",
-				"binary(pwscore)"
+				"binary(pwscore)",
+				"soname(libpwquality.so.1(x86_64))",
+				"soname(python3.11/site-packages/pwquality.cpython-311-x86_64-linux-gnu.so(x86_64))"
 			]
 		},
 		"libpwquality-devel": {
@@ -97,6 +90,9 @@
 				"binary(autopoint)",
 				"cracklib-devel",
 				"pkgconfig(python3)"
+			],
+			"depends": [
+				"libpwquality"
 			],
 			"files": [
 				"/usr/include/pwquality.h",
@@ -111,6 +107,6 @@
 		}
 	},
 	"source-name": "libpwquality",
-	"source-release": "1",
+	"source-release": "2",
 	"source-version": "1.4.5"
 }
