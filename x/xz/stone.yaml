@@ -5,7 +5,7 @@
 #
 name        : xz
 version     : 5.8.1
-release     : 12
+release     : 13
 homepage    : https://tukaani.org/xz
 upstreams   :
     - https://github.com/tukaani-project/xz/releases/download/v5.8.1/xz-5.8.1.tar.gz : 507825b599356c10dca1cd720c9d0d0c9d5400b9de300af00e4d1ea150795543
