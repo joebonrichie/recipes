@@ -5,7 +5,7 @@
 #
 name        : highway
 version     : 1.2.0
-release     : 1
+release     : 2
 homepage    : https://github.com/google/highway
 upstreams   :
     - https://github.com/google/highway/releases/download/1.2.0/highway-1.2.0.tar.gz : 58e9d5d41d6573ad15245ad76aec53a69499ca7480c092d899c4424812ed906f
