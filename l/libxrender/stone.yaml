@@ -5,7 +5,7 @@
 #
 name        : libxrender
 version     : 0.9.12
-release     : 5
+release     : 6
 homepage    : https://gitlab.freedesktop.org/xorg/lib/libxrender
 upstreams   :
     - https://www.x.org/releases/individual/lib/libXrender-0.9.12.tar.gz : 0fff64125819c02d1102b6236f3d7d861a07b5216d8eea336c3811d31494ecf7
