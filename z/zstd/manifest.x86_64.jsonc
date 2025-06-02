@@ -135,6 +135,6 @@
 		}
 	},
 	"source-name": "zstd",
-	"source-release": "9",
+	"source-release": "10",
 	"source-version": "1.5.7"
 }

@@ -5,7 +5,7 @@
 #
 name        : zstd
 version     : 1.5.7
-release     : 9
+release     : 10
 summary     : Fast real-time compression algorithm
 license     :
     - BSD-3-Clause
