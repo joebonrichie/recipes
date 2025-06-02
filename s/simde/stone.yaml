@@ -5,7 +5,7 @@
 #
 name        : simde
 version     : 0.8.2
-release     : 1
+release     : 2
 homepage    : https://github.com/simd-everywhere/simde
 upstreams   :
     - https://github.com/simd-everywhere/simde/archive/refs/tags/v0.8.2.tar.gz : ed2a3268658f2f2a9b5367628a85ccd4cf9516460ed8604eed369653d49b25fb
