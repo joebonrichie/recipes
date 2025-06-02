@@ -5,7 +5,7 @@
 #
 name        : qt6-tools
 version     : 6.9.0
-release     : 5
+release     : 6
 homepage    : https://www.qt.io
 upstreams   :
     - https://download.qt.io/official_releases/qt/6.9/6.9.0/submodules/qttools-everywhere-src-6.9.0.tar.xz : fa645589cc3f939022401a926825972a44277dead8ec8607d9f2662e6529c9a4
