@@ -5,7 +5,7 @@
 #
 name        : ldns
 version     : 1.8.4
-release     : 3
+release     : 4
 summary     : Fast DNS library supporting recent RFCs
 license     : BSD-3-Clause
 homepage    : https://www.nlnetlabs.nl/projects/ldns/
