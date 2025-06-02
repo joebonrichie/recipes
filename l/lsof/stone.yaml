@@ -5,7 +5,7 @@
 #
 name        : lsof
 version     : 4.99.4
-release     : 1
+release     : 2
 homepage    : https://github.com/lsof-org/lsof
 upstreams   :
     - https://github.com/lsof-org/lsof/archive/refs/tags/4.99.4.tar.gz : 90d02ae35cd14341bfb04ce80e0030767476b0fc414a0acb115d49e79b13d56c
