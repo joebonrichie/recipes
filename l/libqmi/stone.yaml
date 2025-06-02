@@ -5,7 +5,7 @@
 #
 name        : libqmi
 version     : 1.36.0
-release     : 2
+release     : 3
 homepage    : https://gitlab.freedesktop.org/mobile-broadband/libqmi
 upstreams   :
     - https://gitlab.freedesktop.org/mobile-broadband/libqmi/-/archive/1.36.0/libqmi-1.36.0.tar.bz2 : 67c97feee86e6709b9cdec303c3650059b298f1c2b886b6053a56aced1616b3f

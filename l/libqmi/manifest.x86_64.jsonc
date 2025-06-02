@@ -33,8 +33,7 @@
 				"/usr/lib/libqmi-glib.so.5",
 				"/usr/lib/libqmi-glib.so.5.11.0",
 				"/usr/lib/libqmi/qmi-proxy",
-				"/usr/share/bash-completion/completions/qmicli",
-				"/usr/share/gir-1.0/Qmi-1.0.gir"
+				"/usr/share/bash-completion/completions/qmicli"
 			],
 			"name": "libqmi",
 			"provides": [
@@ -133,7 +132,8 @@
 				"/usr/include/libqmi-glib/qmi-wds.h",
 				"/usr/include/libqmi-glib/qmi-wms.h",
 				"/usr/lib/libqmi-glib.so",
-				"/usr/lib/pkgconfig/qmi-glib.pc"
+				"/usr/lib/pkgconfig/qmi-glib.pc",
+				"/usr/share/gir-1.0/Qmi-1.0.gir"
 			],
 			"name": "libqmi-devel",
 			"provides": [
@@ -142,6 +142,6 @@
 		}
 	},
 	"source-name": "libqmi",
-	"source-release": "2",
+	"source-release": "3",
 	"source-version": "1.36.0"
 }
