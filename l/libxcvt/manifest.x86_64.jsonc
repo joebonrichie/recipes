@@ -30,8 +30,7 @@
 			],
 			"name": "libxcvt-32bit",
 			"provides": [
-				"soname(libxcvt.so.0(386))",
-				"soname(libxcvt.so.0(x86))"
+				"soname(libxcvt.so.0(386))"
 			]
 		},
 		"libxcvt-32bit-devel": {
@@ -65,6 +64,6 @@
 		}
 	},
 	"source-name": "libxcvt",
-	"source-release": "2",
+	"source-release": "3",
 	"source-version": "0.1.3"
 }
