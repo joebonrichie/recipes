@@ -16,6 +16,9 @@
 			]
 		},
 		"libogg-devel": {
+			"depends": [
+				"libogg"
+			],
 			"files": [
 				"/usr/include/ogg/config_types.h",
 				"/usr/include/ogg/ogg.h",
@@ -119,6 +122,6 @@
 		}
 	},
 	"source-name": "libogg",
-	"source-release": "1",
+	"source-release": "2",
 	"source-version": "1.3.5"
 }
