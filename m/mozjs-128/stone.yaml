@@ -5,7 +5,7 @@
 #
 name        : mozjs-128
 version     : 128.8.0
-release     : 6
+release     : 7
 homepage    : https://mozilla.org
 upstreams   :
     - https://archive.mozilla.org/pub/firefox/releases/128.8.0esr/source/firefox-128.8.0esr.source.tar.xz : 201fcb12c285470f2b3cdf050f0fe7d96d5e0c5d352e86ef8957b595329a32bf
