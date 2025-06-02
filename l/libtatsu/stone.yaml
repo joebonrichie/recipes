@@ -5,7 +5,7 @@
 #
 name        : libtatsu
 version     : 1.0.4
-release     : 1
+release     : 2
 homepage    : https://github.com/libimobiledevice/libtatsu
 upstreams   :
     - https://github.com/libimobiledevice/libtatsu/releases/download/1.0.4/libtatsu-1.0.4.tar.bz2 : 08094e58364858360e1743648581d9bad055ba3b06e398c660e481ebe0ae20b3
