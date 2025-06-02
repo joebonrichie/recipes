@@ -24,8 +24,7 @@
 			],
 			"files": [
 				"/usr/lib/girepository-1.0/Handy-1.typelib",
-				"/usr/lib/libhandy-1.so.0",
-				"/usr/share/gir-1.0/Handy-1.gir"
+				"/usr/lib/libhandy-1.so.0"
 			],
 			"name": "libhandy",
 			"provides": [
@@ -98,6 +97,7 @@
 				"/usr/include/libhandy-1/hdy-window.h",
 				"/usr/lib/libhandy-1.so",
 				"/usr/lib/pkgconfig/libhandy-1.pc",
+				"/usr/share/gir-1.0/Handy-1.gir",
 				"/usr/share/vala/vapi/libhandy-1.deps",
 				"/usr/share/vala/vapi/libhandy-1.vapi"
 			],
@@ -109,6 +109,6 @@
 		}
 	},
 	"source-name": "libhandy",
-	"source-release": "2",
+	"source-release": "3",
 	"source-version": "1.8.3"
 }
