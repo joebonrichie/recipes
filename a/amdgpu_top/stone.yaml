@@ -5,7 +5,7 @@
 #
 name        : amdgpu_top
 version     : 0.10.3
-release     : 1
+release     : 2
 homepage    : https://github.com/Umio-Yasuno/amdgpu_top
 upstreams   :
     - https://github.com/Umio-Yasuno/amdgpu_top/archive/refs/tags/v0.10.3.tar.gz : b74065ea89fb35a572dddccc22b71e81b7cb1e76b83027704814595e4fcdc6e4
