@@ -5,7 +5,7 @@
 #
 name        : python-hatch-vcs
 version     : 0.4.0
-release     : 2
+release     : 3
 homepage    : https://pypi.org/project/hatch-vcs
 upstreams   :
     - https://files.pythonhosted.org/packages/source/h/hatch_vcs/hatch_vcs-0.4.0.tar.gz : 093810748fe01db0d451fabcf2c1ac2688caefd232d4ede967090b1c1b07d9f7
