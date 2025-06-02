@@ -50,6 +50,6 @@
 		}
 	},
 	"source-name": "xcb-util-cursor",
-	"source-release": "2",
+	"source-release": "3",
 	"source-version": "0.1.5"
 }
