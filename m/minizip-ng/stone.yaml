@@ -5,7 +5,7 @@
 #
 name        : minizip-ng
 version     : 4.0.8
-release     : 2
+release     : 3
 summary     : Fork of the zlib zip library
 license     : Zlib
 homepage    : https://github.com/zlib-ng/minizip-ng
