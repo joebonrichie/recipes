@@ -28,9 +28,6 @@
 				"/usr/lib/libportal-gtk4.so.1.0.0",
 				"/usr/lib/libportal.so.1",
 				"/usr/lib/libportal.so.1.0.0",
-				"/usr/share/gir-1.0/Xdp-1.0.gir",
-				"/usr/share/gir-1.0/XdpGtk3-1.0.gir",
-				"/usr/share/gir-1.0/XdpGtk4-1.0.gir",
 				"/usr/share/vala/vapi/libportal-gtk3.deps",
 				"/usr/share/vala/vapi/libportal-gtk3.vapi",
 				"/usr/share/vala/vapi/libportal-gtk4.deps",
@@ -95,7 +92,10 @@
 				"/usr/lib/libportal.so",
 				"/usr/lib/pkgconfig/libportal-gtk3.pc",
 				"/usr/lib/pkgconfig/libportal-gtk4.pc",
-				"/usr/lib/pkgconfig/libportal.pc"
+				"/usr/lib/pkgconfig/libportal.pc",
+				"/usr/share/gir-1.0/Xdp-1.0.gir",
+				"/usr/share/gir-1.0/XdpGtk3-1.0.gir",
+				"/usr/share/gir-1.0/XdpGtk4-1.0.gir"
 			],
 			"name": "libportal-devel",
 			"provides": [
@@ -106,6 +106,6 @@
 		}
 	},
 	"source-name": "libportal",
-	"source-release": "5",
+	"source-release": "6",
 	"source-version": "0.9.1"
 }
