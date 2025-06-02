@@ -31,7 +31,8 @@
 			],
 			"depends": [
 				"pkgconfig(xcb)",
-				"pkgconfig(xcb-shm)"
+				"pkgconfig(xcb-shm)",
+				"xcb-util-image"
 			],
 			"files": [
 				"/usr/include/xcb/xcb_bitops.h",
@@ -47,6 +48,6 @@
 		}
 	},
 	"source-name": "xcb-util-image",
-	"source-release": "1",
+	"source-release": "2",
 	"source-version": "0.4.1"
 }
