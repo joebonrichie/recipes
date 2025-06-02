@@ -26,7 +26,6 @@
 				"/usr/lib/girepository-1.0/Spelling-1.typelib",
 				"/usr/lib/libspelling-1.so.2",
 				"/usr/lib/libspelling-1.so.2.0.0",
-				"/usr/share/gir-1.0/Spelling-1.gir",
 				"/usr/share/vala/vapi/libspelling-1.deps",
 				"/usr/share/vala/vapi/libspelling-1.vapi"
 			],
@@ -62,7 +61,8 @@
 				"/usr/include/libspelling-1/spelling-version-macros.h",
 				"/usr/include/libspelling-1/spelling-version.h",
 				"/usr/lib/libspelling-1.so",
-				"/usr/lib/pkgconfig/libspelling-1.pc"
+				"/usr/lib/pkgconfig/libspelling-1.pc",
+				"/usr/share/gir-1.0/Spelling-1.gir"
 			],
 			"name": "libspelling-devel",
 			"provides": [
@@ -71,6 +71,6 @@
 		}
 	},
 	"source-name": "libspelling",
-	"source-release": "3",
+	"source-release": "4",
 	"source-version": "0.4.7"
 }
