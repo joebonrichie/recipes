@@ -53,7 +53,6 @@
 				"/usr/share/applications/org.gnome.OnlineAccounts.OAuth2.desktop",
 				"/usr/share/dbus-1/services/org.gnome.Identity.service",
 				"/usr/share/dbus-1/services/org.gnome.OnlineAccounts.service",
-				"/usr/share/gir-1.0/Goa-1.0.gir",
 				"/usr/share/glib-2.0/schemas/org.gnome.online-accounts.gschema.xml",
 				"/usr/share/icons/hicolor/scalable/apps/goa-account-exchange.svg",
 				"/usr/share/icons/hicolor/scalable/apps/goa-account-fedora.svg",
@@ -119,6 +118,7 @@
 				"/usr/lib/libgoa-backend-1.0.so",
 				"/usr/lib/pkgconfig/goa-1.0.pc",
 				"/usr/lib/pkgconfig/goa-backend-1.0.pc",
+				"/usr/share/gir-1.0/Goa-1.0.gir",
 				"/usr/share/vala/vapi/goa-1.0.deps",
 				"/usr/share/vala/vapi/goa-1.0.vapi"
 			],
@@ -130,6 +130,6 @@
 		}
 	},
 	"source-name": "gnome-online-accounts",
-	"source-release": "13",
+	"source-release": "14",
 	"source-version": "3.54.2"
 }

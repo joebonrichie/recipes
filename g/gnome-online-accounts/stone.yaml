@@ -5,7 +5,7 @@
 #
 name        : gnome-online-accounts
 version     : 3.54.2
-release     : 13
+release     : 14
 homepage    : https://gitlab.gnome.org/GNOME/gnome-online-accounts
 upstreams   :
     - https://download.gnome.org/sources/gnome-online-accounts/3.54/gnome-online-accounts-3.54.2.tar.xz : 0f7f3d29c0666ffbcc503f3e0f3396362effdb9317d41664ce65df147ef35372
