@@ -23,7 +23,6 @@
 				"/usr/lib/libgtop-2.0.so.11.1.0",
 				"/usr/lib/libgtop/libgtop_daemon2",
 				"/usr/lib/libgtop/libgtop_server2",
-				"/usr/share/gir-1.0/GTop-2.0.gir",
 				"/usr/share/info/libgtop2.info",
 				"/usr/share/locale/ab/LC_MESSAGES/libgtop.mo",
 				"/usr/share/locale/am/LC_MESSAGES/libgtop.mo",
@@ -175,7 +174,8 @@
 				"/usr/include/libgtop-2.0/glibtop_suid.h",
 				"/usr/include/libgtop-2.0/libgtopconfig.h",
 				"/usr/lib/libgtop-2.0.so",
-				"/usr/lib/pkgconfig/libgtop-2.0.pc"
+				"/usr/lib/pkgconfig/libgtop-2.0.pc",
+				"/usr/share/gir-1.0/GTop-2.0.gir"
 			],
 			"name": "libgtop-devel",
 			"provides": [
@@ -244,6 +244,6 @@
 		}
 	},
 	"source-name": "libgtop",
-	"source-release": "3",
+	"source-release": "4",
 	"source-version": "2.41.3"
 }
