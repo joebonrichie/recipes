@@ -769,7 +769,7 @@
 				"/usr/share/dbus-1/system.d/org.freedesktop.systemd1.conf",
 				"/usr/share/dbus-1/system.d/org.freedesktop.timedate1.conf",
 				"/usr/share/dbus-1/system.d/org.freedesktop.timesync1.conf",
-				"/usr/share/defaults/etc/pam.d/systemd-user",
+				"/usr/share/defaults/pam.d/systemd-user",
 				"/usr/share/doc/systemd/CODING_STYLE.md",
 				"/usr/share/doc/systemd/DISTRO_PORTING.md",
 				"/usr/share/doc/systemd/ENVIRONMENT.md",
@@ -2393,6 +2393,6 @@
 		}
 	},
 	"source-name": "systemd",
-	"source-release": "53",
+	"source-release": "54",
 	"source-version": "254.26"
 }

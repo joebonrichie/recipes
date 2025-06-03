@@ -5,7 +5,7 @@
 #
 name        : systemd
 version     : 254.26
-release     : 53
+release     : 54
 summary     : A System and Service Manager
 license     :
     - GPL-2.0-or-later
@@ -107,7 +107,7 @@ profiles    :
                     -Dinstall-tests=false \
                     -Dmode=release \
                     -Dpamlibdir="%(libdir)/security" \
-                    -Dpamconfdir="%(vendordir)/etc/pam.d" \
+                    -Dpamconfdir="%(vendordir)/pam.d" \
                     -Dpcre2=true \
                     -Drpmmacrosdir=no \
                     -Dslow-tests=false \
@@ -157,7 +157,7 @@ setup       : |
         -Dinstall-tests=false \
         -Dmode=release \
         -Dpamlibdir="%(libdir)/security" \
-        -Dpamconfdir="%(vendordir)/etc/pam.d" \
+        -Dpamconfdir="%(vendordir)/pam.d" \
         -Dpcre2=true \
         -Drpmmacrosdir=no \
         -Dslow-tests=false \
