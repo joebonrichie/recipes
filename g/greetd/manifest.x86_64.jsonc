@@ -17,7 +17,7 @@
 			],
 			"files": [
 				"/usr/bin/greetd",
-				"/usr/share/defaults/etc/pam.d/greetd",
+				"/usr/share/defaults/pam.d/greetd",
 				"/usr/share/man/man1/greetd.1",
 				"/usr/share/man/man5/greetd.5",
 				"/usr/share/man/man7/greetd-ipc.7"
@@ -29,6 +29,6 @@
 		}
 	},
 	"source-name": "greetd",
-	"source-release": "4",
+	"source-release": "5",
 	"source-version": "0.10.3"
 }

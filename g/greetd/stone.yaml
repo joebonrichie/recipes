@@ -5,7 +5,7 @@
 #
 name        : greetd
 version     : 0.10.3
-release     : 4
+release     : 5
 homepage    : https://git.sr.ht/~kennylevinsen/greetd
 upstreams   :
     - https://git.sr.ht/~kennylevinsen/greetd/archive/0.10.3.tar.gz : ee5cb70e0add4ca9c9fe57e47581ab0002d44c07743fb5492469f3b570db640b
@@ -24,7 +24,7 @@ build       : |
     %cargo_build --all-features
 install     : |
     %cargo_install
-    %install_file %(pkgdir)/greetd.pam %(installroot)%(vendordir)%(sysconfdir)/pam.d/greetd
+    %install_file %(pkgdir)/greetd.pam %(installroot)%(vendordir)/pam.d/greetd
 
     pushd man
     %install_dir %(installroot)%(mandir)/man1
