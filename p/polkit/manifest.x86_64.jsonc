@@ -47,12 +47,13 @@
 				"/usr/lib/userdb/polkitd.user",
 				"/usr/share/dbus-1/system-services/org.freedesktop.PolicyKit1.service",
 				"/usr/share/dbus-1/system.d/org.freedesktop.PolicyKit1.conf",
-				"/usr/share/defaults/etc/pam.d/polkit-1",
+				"/usr/share/defaults/pam.d/polkit-1",
 				"/usr/share/gettext/its/polkit.its",
 				"/usr/share/gettext/its/polkit.loc",
 				"/usr/share/locale/cs/LC_MESSAGES/polkit-1.mo",
 				"/usr/share/locale/da/LC_MESSAGES/polkit-1.mo",
 				"/usr/share/locale/de/LC_MESSAGES/polkit-1.mo",
+				"/usr/share/locale/hi/LC_MESSAGES/polkit-1.mo",
 				"/usr/share/locale/hr/LC_MESSAGES/polkit-1.mo",
 				"/usr/share/locale/hu/LC_MESSAGES/polkit-1.mo",
 				"/usr/share/locale/id/LC_MESSAGES/polkit-1.mo",
@@ -66,6 +67,7 @@
 				"/usr/share/locale/ro/LC_MESSAGES/polkit-1.mo",
 				"/usr/share/locale/ru/LC_MESSAGES/polkit-1.mo",
 				"/usr/share/locale/sk/LC_MESSAGES/polkit-1.mo",
+				"/usr/share/locale/sl/LC_MESSAGES/polkit-1.mo",
 				"/usr/share/locale/sv/LC_MESSAGES/polkit-1.mo",
 				"/usr/share/locale/tr/LC_MESSAGES/polkit-1.mo",
 				"/usr/share/locale/uk/LC_MESSAGES/polkit-1.mo",
@@ -154,6 +156,6 @@
 		}
 	},
 	"source-name": "polkit",
-	"source-release": "6",
-	"source-version": "124"
+	"source-release": "7",
+	"source-version": "126"
 }
