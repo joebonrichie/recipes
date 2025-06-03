@@ -7,7 +7,7 @@ On Serpent OS we require packages work out of the box in the absence
 of custom configuration, as well as being extensible by local machine
 changes.
 
-As such we enforce the `/usr/share/defaults/etc/sudo/sudoers` path for sudo-rs
+As such we enforce the `/usr/share/defaults/sudo/sudoers` path for sudo-rs
 as we did for `sudo`, while having the drop-in dir, `/etc/sudoers.d`,
 used for local changes.
 
@@ -30,8 +30,8 @@ index 3b48326..3977ba7 100644
      } else {
 -        dev_info!("Running with /etc/sudoers file");
 -        Path::new("/etc/sudoers")
-+        dev_info!("Running with /usr/share/defaults/etc/sudo/sudoers file");
-+        Path::new("/usr/share/defaults/etc/sudo/sudoers")
++        dev_info!("Running with /usr/share/defaults/sudo/sudoers file");
++        Path::new("/usr/share/defaults/sudo/sudoers")
      }
  }
 

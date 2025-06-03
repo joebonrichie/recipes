@@ -10,4 +10,4 @@ root ALL=(ALL:ALL) ALL
 
 ## Read drop-in files from /etc/sudoers.d
 @includedir /etc/sudoers.d
-@includedir /usr/share/defaults/etc/sudo/sudoers.d
+@includedir /usr/share/defaults/sudo/sudoers.d
