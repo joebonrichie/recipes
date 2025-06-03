@@ -4,8 +4,8 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : linux-pam
-version     : 1.6.1
-release     : 12
+version     : 1.7.0
+release     : 13
 summary     : Pluggable Authentication Modules
 license     :
     - BSD-3-Clause
@@ -14,57 +14,62 @@ homepage    : http://www.linux-pam.org/
 description : |
     Pluggable Authentication Modules
 upstreams   :
-    - https://github.com/linux-pam/linux-pam/releases/download/v1.6.1/Linux-PAM-1.6.1.tar.xz: f8923c740159052d719dbfc2a2f81942d68dd34fcaf61c706a02c9b80feeef8e
+    - https://github.com/linux-pam/linux-pam/releases/download/v1.7.0/Linux-PAM-1.7.0.tar.xz: 57dcd7a6b966ecd5bbd95e1d11173734691e16b68692fa59661cdae9b13b1697
 builddeps   :
-    - binary(autopoint)
-    - pkgconfig(libsystemd)
+    - binary(bison)
+    - binary(flex)
+    - binary(gettext)
+    - binary(xsltproc)
     - pkgconfig32(libeconf)
+    - pkgconfig32(libsystemd)
     - pkgconfig32(libxcrypt)
+    - docbook-xsl
+    - docbook5-xml
 emul32      : true
 profiles    :
     - emul32:
-        setup: |
-            # Disabling systemd right now until available in 32-bit
-            %patch %(pkgdir)/pam_env_conf.patch
-            %reconfigure --disable-static \
-                       --disable-nis \
-                       --enable-econf \
-                       --disable-logind \
-                       --enable-lastlog \
-                       --enable-vendordir="%(vendordir)%(sysconfdir)" \
-                       --enable-read-both-confs \
-                       --with-kernel-overflow-uid=65534
-        build: |
-            %make
         install: |
-            %make_install
+            %meson_install
+
+            # _PROBABLY_ not needed, re-add if that assumption is false
+            rm -rfv %(installroot)%(libdir)/security
+environment : |
+    # Temporary, replace with boulder macro
+    export XML_CATALOG_FILES="file:///usr/share/defaults/docbook/docbook5-xml/catalog file:///usr/share/defaults/docbook/docbook-xsl/catalog"
 setup       : |
     %patch %(pkgdir)/pam_env_conf.patch
-    %reconfigure --disable-static \
-               --disable-nis \
-               --enable-econf \
-               --enable-logind \
-               --enable-lastlog \
-               --enable-vendordir="%(vendordir)%(sysconfdir)" \
-               --enable-read-both-confs \
-               --with-kernel-overflow-uid=65534
+
+    # version script assignment of 'global' to symbol 'pam_sm_chauthtok' failed: symbol not defined
+    export LDFLAGS="${LDFLAGS} -Wl,--undefined-version"
+
+    %meson \
+        -Dvendordir=%(vendordir)
 build       : |
-    %make
+    %meson_build
 install     : |
-    %make_install
+    %meson_install
 
-    # Stateless: Move files into the vendordir
-    %install_dir %(installroot)/%(vendordir)%(sysconfdir)/security
-    mv %(installroot)/etc/security/* %(installroot)/%(vendordir)%(sysconfdir)/security/.
-    rmdir %(installroot)/etc/security
-    mv %(installroot)/etc/environment %(installroot)/%(vendordir)%(sysconfdir)/
-    rmdir %(installroot)/etc
-
-    %install_file %(pkgdir)/pam.d/* -t %(installroot)/%(vendordir)%(sysconfdir)/pam.d
-    %install_file %(pkgdir)/shells -t %(installroot)/%(vendordir)%(sysconfdir)/.
+    %install_file %(pkgdir)/pam.d/* -t %(installroot)/%(vendordir)/pam.d
+    %install_file %(pkgdir)/shells -t %(installroot)/%(vendordir)/.
 
     %tmpfiles "# Create run/faillock directory"
     %tmpfiles "d /run/faillock 0755 root root -"
 
     # add ability to check pwd for any user instead only the current (required by cosmic-greeter)
     chmod u+s %(installroot)/usr/sbin/unix_chkpwd
+packages    :
+    - "%(name)-docs":
+        paths:
+            - /usr/share/doc
+
+    - "%(name)-libs":
+        summary: "Library files for %(name)"
+        description: |
+            Library files for %(name), typically pulled in as a dependency of another package.
+        paths:
+            - /usr/lib/lib*.so.*
+
+    # Moss upgrade issue
+    - "%(name)":
+        rundeps:
+            - "%(name)-libs"
