@@ -5,7 +5,7 @@
 #
 name        : cosmic-greeter
 version     : 1.0.0-alpha.6
-release     : 18
+release     : 19
 summary     : Cosmic Desktop Greeter
 license     : GPL-3.0
 homepage    : https://github.com/pop-os/cosmic-greeter
@@ -26,6 +26,8 @@ builddeps   :
 rundeps     :
     - binary(greetd)
     - cosmic-wallpapers
+    # Temporary workaround until we have some kind of virtual package that defines the base system
+    - linux-pam
 networking  : yes
 tuning      :
     - lto: thin
@@ -50,4 +52,4 @@ install     : |
     %install_file %(pkgdir)/cosmic-greeter.toml %(installroot)%(datadir)/greetd/cosmic-greeter.toml
 
     # pam bits
-    %install_file debian/cosmic-greeter.pam %(installroot)%(vendordir)%(sysconfdir)/pam.d/cosmic-greeter
+    %install_file debian/cosmic-greeter.pam %(installroot)%(vendordir)/pam.d/cosmic-greeter

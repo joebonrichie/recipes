@@ -18,6 +18,7 @@
 				"binary(greetd)",
 				"cosmic-wallpapers",
 				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
+				"linux-pam",
 				"soname(ld-linux-x86-64.so.2(x86_64))",
 				"soname(libc.so.6(x86_64))",
 				"soname(libm.so.6(x86_64))",
@@ -36,7 +37,7 @@
 				"/usr/lib/userdb/cosmic-greeter.group",
 				"/usr/lib/userdb/cosmic-greeter.user",
 				"/usr/share/dbus-1/system.d/com.system76.CosmicGreeter.conf",
-				"/usr/share/defaults/etc/pam.d/cosmic-greeter",
+				"/usr/share/defaults/pam.d/cosmic-greeter",
 				"/usr/share/greetd/cosmic-greeter.toml"
 			],
 			"name": "cosmic-greeter",
@@ -47,6 +48,6 @@
 		}
 	},
 	"source-name": "cosmic-greeter",
-	"source-release": "18",
+	"source-release": "19",
 	"source-version": "1.0.0-alpha.6"
 }
