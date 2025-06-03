@@ -23,8 +23,6 @@
 				"/usr/bin/xmllint",
 				"/usr/lib/libxml2.so.16",
 				"/usr/lib/libxml2.so.16.0.3",
-				"/usr/lib/libxml2.so.2",
-				"/usr/lib/libxml2.so.2.13.8",
 				"/usr/share/man/man1/xmlcatalog.1",
 				"/usr/share/man/man1/xmllint.1"
 			],
@@ -32,8 +30,7 @@
 			"provides": [
 				"binary(xmlcatalog)",
 				"binary(xmllint)",
-				"soname(libxml2.so.16(x86_64))",
-				"soname(libxml2.so.2(x86_64))"
+				"soname(libxml2.so.16(x86_64))"
 			]
 		},
 		"libxml2-32bit": {
@@ -52,14 +49,11 @@
 			],
 			"files": [
 				"/usr/lib32/libxml2.so.16",
-				"/usr/lib32/libxml2.so.16.0.3",
-				"/usr/lib32/libxml2.so.2",
-				"/usr/lib32/libxml2.so.2.13.8"
+				"/usr/lib32/libxml2.so.16.0.3"
 			],
 			"name": "libxml2-32bit",
 			"provides": [
-				"soname(libxml2.so.16(386))",
-				"soname(libxml2.so.2(386))"
+				"soname(libxml2.so.16(386))"
 			]
 		},
 		"libxml2-32bit-devel": {
@@ -274,6 +268,6 @@
 		}
 	},
 	"source-name": "libxml2",
-	"source-release": "11",
+	"source-release": "12",
 	"source-version": "2.14.3"
 }
