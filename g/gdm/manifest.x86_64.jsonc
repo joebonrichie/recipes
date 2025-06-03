@@ -29,6 +29,7 @@
 				"gdm-libs",
 				"gnome-settings-daemon",
 				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
+				"linux-pam",
 				"soname(libaccountsservice.so.0(x86_64))",
 				"soname(libc.so.6(x86_64))",
 				"soname(libgio-2.0.so.0(x86_64))",
@@ -55,11 +56,11 @@
 				"/usr/sbin/gdm",
 				"/usr/share/dbus-1/system.d/gdm.conf",
 				"/usr/share/dconf/profile/gdm",
-				"/usr/share/defaults/etc/pam.d/gdm-autologin",
-				"/usr/share/defaults/etc/pam.d/gdm-fingerprint",
-				"/usr/share/defaults/etc/pam.d/gdm-launch-environment",
-				"/usr/share/defaults/etc/pam.d/gdm-password",
-				"/usr/share/defaults/etc/pam.d/gdm-smartcard",
+				"/usr/share/defaults/pam.d/gdm-autologin",
+				"/usr/share/defaults/pam.d/gdm-fingerprint",
+				"/usr/share/defaults/pam.d/gdm-launch-environment",
+				"/usr/share/defaults/pam.d/gdm-password",
+				"/usr/share/defaults/pam.d/gdm-smartcard",
 				"/usr/share/gdm/gdb-cmd",
 				"/usr/share/gdm/gdm.schemas",
 				"/usr/share/gdm/greeter-dconf-defaults",
@@ -334,6 +335,6 @@
 		}
 	},
 	"source-name": "gdm",
-	"source-release": "18",
+	"source-release": "19",
 	"source-version": "48.0"
 }

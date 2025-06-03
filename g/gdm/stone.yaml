@@ -5,7 +5,7 @@
 #
 name        : gdm
 version     : 48.0
-release     : 18
+release     : 19
 homepage    : https://gitlab.gnome.org/GNOME/gdm
 upstreams   :
     - https://download.gnome.org/sources/gdm/48/gdm-48.0.tar.xz : 1bc06daff093ec7b5e37ecb4f92e5da3474a1b1ba076edb9151ee967d1c30adf
@@ -39,6 +39,8 @@ rundeps     :
     - binary(gnome-shell)
     - binary(Xwayland)
     - gnome-settings-daemon
+    # Temporary workaround until we have some kind of virtual package that defines the base system
+    - linux-pam
 setup       : |
     %patch %(pkgdir)/0001-rules-Disable-nvidia-wayland-checks.patch
     %meson -Ddbus-sys=%(datadir)/dbus-1/system.d \
@@ -47,7 +49,7 @@ setup       : |
            -Dpam-mod-dir=%(libdir)/security \
            -Dwayland-support=true \
            -Dudev-dir=%(libdir)/udev/rules.d \
-           -Dpam-prefix=%(vendordir)/etc \
+           -Dpam-prefix=%(vendordir) \
            -Duser-display-server=true \
            -Dx11-support=false \
            -Dplymouth=enabled
@@ -60,8 +62,8 @@ install     : |
     ln -s gdm.group %(installroot)%(libdir)/userdb/21.group
     %install_file %(pkgdir)/gdm.user %(installroot)%(libdir)/userdb/gdm.user
     ln -s gdm.user %(installroot)%(libdir)/userdb/21.user
-    rm -v %(installroot)%(vendordir)/etc/pam.d/*
-    %install_file %(pkgdir)/pam/gdm-* %(installroot)%(vendordir)/etc/pam.d/.
+    rm -v %(installroot)%(vendordir)/pam.d/*
+    %install_file %(pkgdir)/pam/gdm-* -t %(installroot)%(vendordir)/pam.d/
     %install_file %(pkgdir)/org.gnome.login-screen.gschema.override %(installroot)/usr/share/glib-2.0/schemas/org.gnome.login-screen.gschema.override
 packages    :
     - "%(name)":
