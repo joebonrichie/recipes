@@ -76,6 +76,7 @@
 				"/usr/lib/firefox/browser/chrome/icons/default/default48.png",
 				"/usr/lib/firefox/browser/chrome/icons/default/default64.png",
 				"/usr/lib/firefox/browser/omni.ja",
+				"/usr/lib/firefox/crashhelper",
 				"/usr/lib/firefox/crashreporter",
 				"/usr/lib/firefox/defaults/pref/channel-prefs.js",
 				"/usr/lib/firefox/defaults/pref/firefox-l10n.js",
@@ -210,11 +211,9 @@
 				"/usr/share/gnome-shell/search-providers/org.mozilla.firefox.search-provider.ini",
 				"/usr/share/icons/hicolor/128x128/apps/org.mozilla.firefox.png",
 				"/usr/share/icons/hicolor/16x16/apps/org.mozilla.firefox.png",
-				"/usr/share/icons/hicolor/22x22/apps/org.mozilla.firefox.png",
-				"/usr/share/icons/hicolor/24x24/apps/org.mozilla.firefox.png",
-				"/usr/share/icons/hicolor/256x256/apps/org.mozilla.firefox.png",
 				"/usr/share/icons/hicolor/32x32/apps/org.mozilla.firefox.png",
 				"/usr/share/icons/hicolor/48x48/apps/org.mozilla.firefox.png",
+				"/usr/share/icons/hicolor/64x64/apps/org.mozilla.firefox.png",
 				"/usr/share/icons/hicolor/symbolic/apps/firefox-symbolic.svg"
 			],
 			"name": "firefox",
@@ -234,6 +233,6 @@
 		}
 	},
 	"source-name": "firefox",
-	"source-release": "24",
-	"source-version": "138.0.4"
+	"source-release": "25",
+	"source-version": "139.0.1"
 }

@@ -4,15 +4,15 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : firefox
-version     : 138.0.4
-release     : 24
+version     : 139.0.1
+release     : 25
 homepage    : https://www.mozilla.org/
 upstreams   :
-    - https://ftp.mozilla.org/pub/firefox/releases/138.0.4/source/firefox-138.0.4.source.tar.xz:
-        hash: 3fd30db08dad90b339e08d27db1e3aab03a174817d336314327dc5305c145056
+    - https://ftp.mozilla.org/pub/firefox/releases/139.0.1/source/firefox-139.0.1.source.tar.xz:
+        hash: 5b716ee9e6339a0de8e42f81c1d7dadca5c03e91ee9b2fa8e78357a631b499b0
         unpackdir: firefox
-    - https://sources.getsol.us/mozilla/firefox/firefox-138.0.4-langpacks.tar.zst:
-        hash: f4c868a4805eedad5c626f429d8d8c22583e75658129d43e458fe7a8f437f3e7
+    - https://sources.getsol.us/mozilla/firefox/firefox-139.0.1-langpacks.tar.zst:
+        hash: 6265f133e76c8afecf4aa3dbb758b8434e615421c0b873d71f5ccaebfd41d24d
         unpackdir: firefox/langpacks
 summary     : Firefox web browser
 description : |
@@ -72,7 +72,7 @@ install     : |
         %install_file "langpacks/${lname}" "${langpackdir}/${lname}"
     done
 
-    for i in 16 22 24 32 48 128 256; do
+    for i in 16 32 48 64 128; do
         %install_dir %(installroot)/%(datadir)/icons/hicolor/${i}x${i}/apps
         ln -srv %(installroot)/%(libdir)/firefox/browser/chrome/icons/default/default${i}.png %(installroot)/%(datadir)/icons/hicolor/${i}x${i}/apps/org.mozilla.firefox.png
     done
