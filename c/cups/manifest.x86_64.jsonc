@@ -723,8 +723,8 @@
 				"/usr/share/defaults/etc/cups/snmp.conf",
 				"/usr/share/defaults/etc/cups/snmp.conf.default",
 				"/usr/share/defaults/etc/cups/ssl",
-				"/usr/share/defaults/etc/pam.d/cups",
-				"/usr/share/defaults/etc/pam.d/cups.N",
+				"/usr/share/defaults/pam.d/cups",
+				"/usr/share/defaults/pam.d/cups.N",
 				"/usr/share/doc/cups/apple-touch-icon.png",
 				"/usr/share/doc/cups/cups-printable.css",
 				"/usr/share/doc/cups/cups.css",
@@ -966,6 +966,6 @@
 		}
 	},
 	"source-name": "cups",
-	"source-release": "11",
-	"source-version": "2.4.11"
+	"source-release": "12",
+	"source-version": "2.4.12"
 }
