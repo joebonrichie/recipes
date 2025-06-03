@@ -5,7 +5,7 @@
 #
 name        : openssh
 version     : "10.0p1"
-release     : 10
+release     : 11
 summary     : OpenSSH (OpenBSD Secure Shell)
 license     :
     - BSD-2-Clause
@@ -59,7 +59,7 @@ install     : |
     %install_file %(pkgdir)/sshd*.service -t %(installroot)/%(libdir)/systemd/system/
 
     # PAM configuration
-    %install_file %(pkgdir)/sshd.pam %(installroot)/%(vendordir)%(sysconfdir)/pam.d/sshd
+    %install_file %(pkgdir)/sshd.pam %(installroot)/%(vendordir)/pam.d/sshd
 
     # Statelessness
     %install_dir %(installroot)/%(vendordir)/
@@ -91,7 +91,7 @@ packages    :
             - /usr/lib/systemd/
             - /usr/lib/sysusers.d/openssh-server.conf
             - /usr/lib/tmpfiles.d/openssh-server.conf
-            - /usr/share/defaults/etc/pam.d/
+            - /usr/share/defaults/pam.d/
             - /usr/share/defaults/ssh/moduli
             - /usr/share/defaults/ssh/sshd_config
             - /usr/share/man/*/moduli*

@@ -85,7 +85,7 @@
 				"/usr/lib/sysusers.d/openssh-server.conf",
 				"/usr/lib/tmpfiles.d/openssh-server.conf",
 				"/usr/sbin/sshd",
-				"/usr/share/defaults/etc/pam.d/sshd",
+				"/usr/share/defaults/pam.d/sshd",
 				"/usr/share/defaults/ssh/moduli",
 				"/usr/share/defaults/ssh/sshd_config",
 				"/usr/share/man/cat5/moduli.5",
@@ -100,6 +100,6 @@
 		}
 	},
 	"source-name": "openssh",
-	"source-release": "10",
+	"source-release": "11",
 	"source-version": "10.0p1"
 }
