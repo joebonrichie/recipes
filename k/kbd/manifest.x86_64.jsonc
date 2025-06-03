@@ -4,6 +4,7 @@
 	"packages": {
 		"kbd": {
 			"build-depends": [
+				"binary(flex)",
 				"binary(gzip)",
 				"pkgconfig(pam)"
 			],
@@ -43,7 +44,7 @@
 				"/usr/bin/unicode_start",
 				"/usr/bin/unicode_stop",
 				"/usr/bin/vlock",
-				"/usr/share/defaults/etc/pam.d/vlock",
+				"/usr/share/defaults/pam.d/vlock",
 				"/usr/share/kbd/consolefonts/161.cp.gz",
 				"/usr/share/kbd/consolefonts/162.cp.gz",
 				"/usr/share/kbd/consolefonts/163.cp.gz",
@@ -53,9 +54,6 @@
 				"/usr/share/kbd/consolefonts/880.cp.gz",
 				"/usr/share/kbd/consolefonts/928.cp.gz",
 				"/usr/share/kbd/consolefonts/972.cp.gz",
-				"/usr/share/kbd/consolefonts/Agafari-12.psfu.gz",
-				"/usr/share/kbd/consolefonts/Agafari-14.psfu.gz",
-				"/usr/share/kbd/consolefonts/Agafari-16.psfu.gz",
 				"/usr/share/kbd/consolefonts/Cyr_a8x14.psfu.gz",
 				"/usr/share/kbd/consolefonts/Cyr_a8x16.psfu.gz",
 				"/usr/share/kbd/consolefonts/Cyr_a8x8.psfu.gz",
@@ -72,6 +70,7 @@
 				"/usr/share/kbd/consolefonts/LatArCyrHeb-16+.psfu.gz",
 				"/usr/share/kbd/consolefonts/LatArCyrHeb-16.psfu.gz",
 				"/usr/share/kbd/consolefonts/LatArCyrHeb-19.psfu.gz",
+				"/usr/share/kbd/consolefonts/LatCyrHebKa-16_GIA.psfu.gz",
 				"/usr/share/kbd/consolefonts/LatGrkCyr-12x22.psfu.gz",
 				"/usr/share/kbd/consolefonts/LatGrkCyr-8x16.psfu.gz",
 				"/usr/share/kbd/consolefonts/LatKaCyrHeb-14.psfu.gz",
@@ -351,6 +350,7 @@
 				"/usr/share/kbd/keymaps/atari/atari-us.map.gz",
 				"/usr/share/kbd/keymaps/i386/azerty/azerty.map.gz",
 				"/usr/share/kbd/keymaps/i386/azerty/be-latin1.map.gz",
+				"/usr/share/kbd/keymaps/i386/azerty/fr-afnor.map.gz",
 				"/usr/share/kbd/keymaps/i386/azerty/fr-latin1.map.gz",
 				"/usr/share/kbd/keymaps/i386/azerty/fr-latin9.map.gz",
 				"/usr/share/kbd/keymaps/i386/azerty/fr-pc.map.gz",
@@ -450,6 +450,7 @@
 				"/usr/share/kbd/keymaps/i386/qwerty/et.map.gz",
 				"/usr/share/kbd/keymaps/i386/qwerty/fa.map.gz",
 				"/usr/share/kbd/keymaps/i386/qwerty/fi.map.gz",
+				"/usr/share/kbd/keymaps/i386/qwerty/ge.map.gz",
 				"/usr/share/kbd/keymaps/i386/qwerty/gr-pc.map.gz",
 				"/usr/share/kbd/keymaps/i386/qwerty/gr.map.gz",
 				"/usr/share/kbd/keymaps/i386/qwerty/hu101.map.gz",
@@ -689,16 +690,17 @@
 				"/usr/share/locale/el/LC_MESSAGES/kbd.mo",
 				"/usr/share/locale/eo/LC_MESSAGES/kbd.mo",
 				"/usr/share/locale/es/LC_MESSAGES/kbd.mo",
-				"/usr/share/locale/fr/LC_MESSAGES/kbd.mo",
-				"/usr/share/locale/gr/LC_MESSAGES/kbd.mo",
+				"/usr/share/locale/hu/LC_MESSAGES/kbd.mo",
 				"/usr/share/locale/id/LC_MESSAGES/kbd.mo",
 				"/usr/share/locale/it/LC_MESSAGES/kbd.mo",
+				"/usr/share/locale/ka/LC_MESSAGES/kbd.mo",
 				"/usr/share/locale/nl/LC_MESSAGES/kbd.mo",
 				"/usr/share/locale/pl/LC_MESSAGES/kbd.mo",
 				"/usr/share/locale/pt/LC_MESSAGES/kbd.mo",
 				"/usr/share/locale/pt_BR/LC_MESSAGES/kbd.mo",
 				"/usr/share/locale/ro/LC_MESSAGES/kbd.mo",
 				"/usr/share/locale/ru/LC_MESSAGES/kbd.mo",
+				"/usr/share/locale/sq/LC_MESSAGES/kbd.mo",
 				"/usr/share/locale/sr/LC_MESSAGES/kbd.mo",
 				"/usr/share/locale/sv/LC_MESSAGES/kbd.mo",
 				"/usr/share/locale/tr/LC_MESSAGES/kbd.mo",
@@ -767,6 +769,6 @@
 		}
 	},
 	"source-name": "kbd",
-	"source-release": "7",
-	"source-version": "2.6.4"
+	"source-release": "8",
+	"source-version": "2.8.0"
 }
