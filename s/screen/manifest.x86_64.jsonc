@@ -17,7 +17,7 @@
 			"files": [
 				"/usr/bin/screen",
 				"/usr/bin/screen-5.0.1",
-				"/usr/share/defaults/etc/pam.d/screen",
+				"/usr/share/defaults/pam.d/screen",
 				"/usr/share/info",
 				"/usr/share/man/man1/screen.1",
 				"/usr/share/screen/utf8encodings/01",
@@ -47,6 +47,6 @@
 		}
 	},
 	"source-name": "screen",
-	"source-release": "5",
+	"source-release": "6",
 	"source-version": "5.0.1"
 }
