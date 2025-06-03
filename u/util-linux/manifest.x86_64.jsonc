@@ -274,11 +274,11 @@
 				"/usr/share/bash-completion/completions/whereis",
 				"/usr/share/bash-completion/completions/wipefs",
 				"/usr/share/bash-completion/completions/zramctl",
-				"/usr/share/defaults/etc/pam.d/chfn",
-				"/usr/share/defaults/etc/pam.d/chsh",
-				"/usr/share/defaults/etc/pam.d/login",
-				"/usr/share/defaults/etc/pam.d/runuser",
-				"/usr/share/defaults/etc/pam.d/runuser-l",
+				"/usr/share/defaults/pam.d/chfn",
+				"/usr/share/defaults/pam.d/chsh",
+				"/usr/share/defaults/pam.d/login",
+				"/usr/share/defaults/pam.d/runuser",
+				"/usr/share/defaults/pam.d/runuser-l",
 				"/usr/share/doc/util-linux/getopt-example.bash",
 				"/usr/share/doc/util-linux/getopt-example.tcsh",
 				"/usr/share/locale/ca/LC_MESSAGES/util-linux.mo",
@@ -692,6 +692,6 @@
 		}
 	},
 	"source-name": "util-linux",
-	"source-release": "11",
-	"source-version": "2.40.2"
+	"source-release": "12",
+	"source-version": "2.40.4"
 }

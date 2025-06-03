@@ -4,8 +4,8 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : util-linux
-version     : 2.40.2
-release     : 11
+version     : 2.40.4
+release     : 12
 summary     : Random collection of Linux utilities
 license     :
     - BSD-3-Clause
@@ -19,7 +19,7 @@ homepage    : https://www.kernel.org/pub/linux/utils/util-linux
 description : |
     Random collection of Linux utilities
 upstreams   :
-    - https://mirrors.edge.kernel.org/pub/linux/utils/util-linux/v2.40/util-linux-2.40.2.tar.xz : d78b37a66f5922d70edf3bdfb01a6b33d34ed3c3cafd6628203b2a2b67c8e8b3
+    - https://mirrors.edge.kernel.org/pub/linux/utils/util-linux/v2.40/util-linux-2.40.4.tar.xz : 5c1daf733b04e9859afdc3bd87cc481180ee0f88b5c0946b16fdec931975fb79
 builddeps   :
     - pkgconfig32(libsystemd)
     - pkgconfig(python3)
@@ -58,9 +58,8 @@ install     : |
     %make_install
 
     # PAM configuration
-    %install_dir %(installroot)/%(vendordir)%(sysconfdir)/pam.d
-    %install_file %(pkgdir)/pam.d/pam-common %(installroot)/%(vendordir)%(sysconfdir)/pam.d/chfn
-    %install_file %(pkgdir)/pam.d/pam-common %(installroot)/%(vendordir)%(sysconfdir)/pam.d/chsh
-    %install_file %(pkgdir)/pam.d/pam-login %(installroot)/%(vendordir)%(sysconfdir)/pam.d/login
-    %install_file %(pkgdir)/pam.d/pam-runuser %(installroot)/%(vendordir)%(sysconfdir)/pam.d/runuser
-    %install_file %(pkgdir)/pam.d/pam-runuser %(installroot)/%(vendordir)%(sysconfdir)/pam.d/runuser-l
+    %install_file %(pkgdir)/pam.d/pam-common %(installroot)/%(vendordir)/pam.d/chfn
+    %install_file %(pkgdir)/pam.d/pam-common %(installroot)/%(vendordir)/pam.d/chsh
+    %install_file %(pkgdir)/pam.d/pam-login %(installroot)/%(vendordir)/pam.d/login
+    %install_file %(pkgdir)/pam.d/pam-runuser %(installroot)/%(vendordir)/pam.d/runuser
+    %install_file %(pkgdir)/pam.d/pam-runuser %(installroot)/%(vendordir)/pam.d/runuser-l
