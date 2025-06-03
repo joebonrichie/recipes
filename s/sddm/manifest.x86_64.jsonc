@@ -15,6 +15,7 @@
 			],
 			"depends": [
 				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
+				"linux-pam",
 				"qt6-wayland",
 				"soname(libQt6Core.so.6(x86_64))",
 				"soname(libQt6DBus.so.6(x86_64))",
@@ -69,9 +70,9 @@
 				"/usr/lib/userdb/sddm.group",
 				"/usr/lib/userdb/sddm.user",
 				"/usr/share/dbus-1/system.d/sddm_org.freedesktop.DisplayManager.conf",
-				"/usr/share/defaults/etc/pam.d/sddm",
-				"/usr/share/defaults/etc/pam.d/sddm-autologin",
-				"/usr/share/defaults/etc/pam.d/sddm-greeter",
+				"/usr/share/defaults/pam.d/sddm",
+				"/usr/share/defaults/pam.d/sddm-autologin",
+				"/usr/share/defaults/pam.d/sddm-greeter",
 				"/usr/share/sddm/faces/.face.icon",
 				"/usr/share/sddm/faces/root.face.icon",
 				"/usr/share/sddm/flags/ae.png",
@@ -256,6 +257,6 @@
 		}
 	},
 	"source-name": "sddm",
-	"source-release": "4",
+	"source-release": "5",
 	"source-version": "0.21.0"
 }
