@@ -1,0 +1,100 @@
+/** Human readable report. This is not consumed by boulder */
+{
+	"manifest-version": "0.2",
+	"packages": {
+		"pahole": {
+			"build-depends": [
+				"pkgconfig(libbpf)",
+				"pkgconfig(libdw)",
+				"pkgconfig(libelf)"
+			],
+			"depends": [
+				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
+				"soname(libbpf.so.1(x86_64))",
+				"soname(libc.so.6(x86_64))",
+				"soname(libdw.so.1(x86_64))",
+				"soname(libelf.so.1(x86_64))",
+				"soname(libz.so.1(x86_64))"
+			],
+			"files": [
+				"/usr/bin/btfdiff",
+				"/usr/bin/codiff",
+				"/usr/bin/ctracer",
+				"/usr/bin/dtagnames",
+				"/usr/bin/fullcircle",
+				"/usr/bin/ostra-cg",
+				"/usr/bin/pahole",
+				"/usr/bin/pdwtags",
+				"/usr/bin/pfunct",
+				"/usr/bin/pglobal",
+				"/usr/bin/prefcnt",
+				"/usr/bin/scncopy",
+				"/usr/bin/syscse",
+				"/usr/lib/libdwarves.so.1",
+				"/usr/lib/libdwarves.so.1.0.0",
+				"/usr/lib/libdwarves_emit.so.1",
+				"/usr/lib/libdwarves_emit.so.1.0.0",
+				"/usr/lib/libdwarves_reorganize.so.1",
+				"/usr/lib/libdwarves_reorganize.so.1.0.0",
+				"/usr/share/dwarves/runtime/Makefile",
+				"/usr/share/dwarves/runtime/ctracer_relay.c",
+				"/usr/share/dwarves/runtime/ctracer_relay.h",
+				"/usr/share/dwarves/runtime/linux.blacklist.cu",
+				"/usr/share/dwarves/runtime/python/ostra.py",
+				"/usr/share/man/man1/pahole.1"
+			],
+			"name": "pahole",
+			"provides": [
+				"binary(btfdiff)",
+				"binary(codiff)",
+				"binary(ctracer)",
+				"binary(dtagnames)",
+				"binary(fullcircle)",
+				"binary(ostra-cg)",
+				"binary(pahole)",
+				"binary(pdwtags)",
+				"binary(pfunct)",
+				"binary(pglobal)",
+				"binary(prefcnt)",
+				"binary(scncopy)",
+				"binary(syscse)",
+				"soname(libdwarves.so.1(x86_64))",
+				"soname(libdwarves_emit.so.1(x86_64))",
+				"soname(libdwarves_reorganize.so.1(x86_64))"
+			]
+		},
+		"pahole-devel": {
+			"build-depends": [
+				"pkgconfig(libbpf)",
+				"pkgconfig(libdw)",
+				"pkgconfig(libelf)"
+			],
+			"depends": [
+				"pahole"
+			],
+			"files": [
+				"/usr/include/dwarves/btf_encoder.h",
+				"/usr/include/dwarves/config.h",
+				"/usr/include/dwarves/ctf.h",
+				"/usr/include/dwarves/dutil.h",
+				"/usr/include/dwarves/dwarves.h",
+				"/usr/include/dwarves/dwarves_emit.h",
+				"/usr/include/dwarves/dwarves_reorganize.h",
+				"/usr/include/dwarves/elf_symtab.h",
+				"/usr/include/dwarves/elfcreator.h",
+				"/usr/include/dwarves/gobuffer.h",
+				"/usr/include/dwarves/hash.h",
+				"/usr/include/dwarves/libctf.h",
+				"/usr/include/dwarves/list.h",
+				"/usr/include/dwarves/rbtree.h",
+				"/usr/lib/libdwarves.so",
+				"/usr/lib/libdwarves_emit.so",
+				"/usr/lib/libdwarves_reorganize.so"
+			],
+			"name": "pahole-devel"
+		}
+	},
+	"source-name": "pahole",
+	"source-release": "1",
+	"source-version": "1.30"
+}

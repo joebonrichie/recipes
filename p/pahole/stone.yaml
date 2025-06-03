@@ -1,0 +1,26 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : pahole
+version     : "1.30"
+release     : 1
+upstreams   :
+    - https://fedorapeople.org/~acme/dwarves/dwarves-1.30.tar.xz : 1c89f47dc4f127c4b9d3fb46c8386a40be45c36ef82e8df472418de9423fc5bb
+homepage    : https://git.kernel.org/pub/scm/devel/pahole/pahole.git
+license     : GPL-2.0-only
+summary     : Pahole and other DWARF utils
+description : |
+    Pahole and other DWARF utils
+builddeps   :
+    - pkgconfig(libbpf)
+    - pkgconfig(libdw)
+    - pkgconfig(libelf)
+setup       : |
+    %cmake \
+        -DLIBBPF_EMBEDDED=OFF
+build       : |
+    %cmake_build
+install     : |
+    %cmake_install
