@@ -1,0 +1,7 @@
+releases:
+  id: 227335
+  rss: ~
+security:
+  cpe:
+  - vendor: redhat
+    product: docbook_stylesheets
