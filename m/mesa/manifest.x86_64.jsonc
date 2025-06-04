@@ -114,7 +114,7 @@
 				"/usr/lib/libVkLayer_MESA_overlay.so",
 				"/usr/lib/libVkLayer_MESA_screenshot.so",
 				"/usr/lib/libVkLayer_MESA_vram_report_limit.so",
-				"/usr/lib/libgallium-25.1.1-aeryn.36.so",
+				"/usr/lib/libgallium-25.1.2-aeryn.37.so",
 				"/usr/lib/libgbm.so.1",
 				"/usr/lib/libgbm.so.1.0.0",
 				"/usr/lib/libvulkan_gfxstream.so",
@@ -124,8 +124,6 @@
 				"/usr/lib/libvulkan_nouveau.so",
 				"/usr/lib/libvulkan_radeon.so",
 				"/usr/lib/libvulkan_virtio.so",
-				"/usr/lib/libxatracker.so.2",
-				"/usr/lib/libxatracker.so.2.5.0",
 				"/usr/lib/vdpau/libvdpau_nouveau.so",
 				"/usr/lib/vdpau/libvdpau_nouveau.so.1",
 				"/usr/lib/vdpau/libvdpau_nouveau.so.1.0",
@@ -170,7 +168,7 @@
 				"soname(libVkLayer_MESA_overlay.so(x86_64))",
 				"soname(libVkLayer_MESA_screenshot.so(x86_64))",
 				"soname(libVkLayer_MESA_vram_report_limit.so(x86_64))",
-				"soname(libgallium-25.1.1-aeryn.36.so(x86_64))",
+				"soname(libgallium-25.1.2-aeryn.37.so(x86_64))",
 				"soname(libgbm.so.1(x86_64))",
 				"soname(libvulkan_gfxstream.so(x86_64))",
 				"soname(libvulkan_intel.so(x86_64))",
@@ -178,8 +176,7 @@
 				"soname(libvulkan_lvp.so(x86_64))",
 				"soname(libvulkan_nouveau.so(x86_64))",
 				"soname(libvulkan_radeon.so(x86_64))",
-				"soname(libvulkan_virtio.so(x86_64))",
-				"soname(libxatracker.so.2(x86_64))"
+				"soname(libvulkan_virtio.so(x86_64))"
 			]
 		},
 		"mesa-32bit": {
@@ -292,7 +289,7 @@
 				"/usr/lib32/libVkLayer_MESA_overlay.so",
 				"/usr/lib32/libVkLayer_MESA_screenshot.so",
 				"/usr/lib32/libVkLayer_MESA_vram_report_limit.so",
-				"/usr/lib32/libgallium-25.1.1-aeryn.36.so",
+				"/usr/lib32/libgallium-25.1.2-aeryn.37.so",
 				"/usr/lib32/libgbm.so.1",
 				"/usr/lib32/libgbm.so.1.0.0",
 				"/usr/lib32/libvulkan_intel.so",
@@ -300,8 +297,6 @@
 				"/usr/lib32/libvulkan_lvp.so",
 				"/usr/lib32/libvulkan_radeon.so",
 				"/usr/lib32/libvulkan_virtio.so",
-				"/usr/lib32/libxatracker.so.2",
-				"/usr/lib32/libxatracker.so.2.5.0",
 				"/usr/lib32/vdpau/libvdpau_nouveau.so",
 				"/usr/lib32/vdpau/libvdpau_nouveau.so.1",
 				"/usr/lib32/vdpau/libvdpau_nouveau.so.1.0",
@@ -335,14 +330,13 @@
 				"soname(libVkLayer_MESA_overlay.so(386))",
 				"soname(libVkLayer_MESA_screenshot.so(386))",
 				"soname(libVkLayer_MESA_vram_report_limit.so(386))",
-				"soname(libgallium-25.1.1-aeryn.36.so(386))",
+				"soname(libgallium-25.1.2-aeryn.37.so(386))",
 				"soname(libgbm.so.1(386))",
 				"soname(libvulkan_intel.so(386))",
 				"soname(libvulkan_intel_hasvk.so(386))",
 				"soname(libvulkan_lvp.so(386))",
 				"soname(libvulkan_radeon.so(386))",
-				"soname(libvulkan_virtio.so(386))",
-				"soname(libxatracker.so.2(386))"
+				"soname(libvulkan_virtio.so(386))"
 			]
 		},
 		"mesa-32bit-devel": {
@@ -398,18 +392,15 @@
 				"/usr/lib32/libEGL_mesa.so",
 				"/usr/lib32/libGLX_mesa.so",
 				"/usr/lib32/libgbm.so",
-				"/usr/lib32/libxatracker.so",
 				"/usr/lib32/pkgconfig/d3d.pc",
 				"/usr/lib32/pkgconfig/dri.pc",
-				"/usr/lib32/pkgconfig/gbm.pc",
-				"/usr/lib32/pkgconfig/xatracker.pc"
+				"/usr/lib32/pkgconfig/gbm.pc"
 			],
 			"name": "mesa-32bit-devel",
 			"provides": [
 				"pkgconfig32(d3d)",
 				"pkgconfig32(dri)",
-				"pkgconfig32(gbm)",
-				"pkgconfig32(xatracker)"
+				"pkgconfig32(gbm)"
 			]
 		},
 		"mesa-devel": {
@@ -469,28 +460,22 @@
 				"/usr/include/d3dadapter/present.h",
 				"/usr/include/gbm.h",
 				"/usr/include/gbm_backend_abi.h",
-				"/usr/include/xa_composite.h",
-				"/usr/include/xa_context.h",
-				"/usr/include/xa_tracker.h",
 				"/usr/lib/libEGL_mesa.so",
 				"/usr/lib/libGLX_mesa.so",
 				"/usr/lib/libgbm.so",
-				"/usr/lib/libxatracker.so",
 				"/usr/lib/pkgconfig/d3d.pc",
 				"/usr/lib/pkgconfig/dri.pc",
-				"/usr/lib/pkgconfig/gbm.pc",
-				"/usr/lib/pkgconfig/xatracker.pc"
+				"/usr/lib/pkgconfig/gbm.pc"
 			],
 			"name": "mesa-devel",
 			"provides": [
 				"pkgconfig(d3d)",
 				"pkgconfig(dri)",
-				"pkgconfig(gbm)",
-				"pkgconfig(xatracker)"
+				"pkgconfig(gbm)"
 			]
 		}
 	},
 	"source-name": "mesa",
-	"source-release": "36",
-	"source-version": "25.1.1"
+	"source-release": "37",
+	"source-version": "25.1.2"
 }
