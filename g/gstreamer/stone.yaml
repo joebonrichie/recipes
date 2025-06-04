@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : gstreamer
-version     : 1.26.1
-release     : 10
+version     : 1.26.2
+release     : 11
 homepage    : https://gstreamer.freedesktop.org/
 upstreams   :
-    - https://gitlab.freedesktop.org/gstreamer/gstreamer/-/archive/1.26.1/gstreamer-1.26.1.tar.gz : 1cac791ecb88620cb2a8e4b615116c696c0ba8ba1e0ca8f36a9270cab554f4a2
+    - https://gitlab.freedesktop.org/gstreamer/gstreamer/-/archive/1.26.2/gstreamer-1.26.2.tar.gz : 1df6e7f7401d9552a95c1fd40168eb663d2aa4d108f891a2e60f110b96b2175f
 summary     : GStreamer multimedia framework
 description : |
     GStreamer can bridge to other multimedia frameworks in order to reuse existing components (e.g. codecs) and use platform input/output mechanisms.
@@ -154,6 +154,9 @@ setup       : |
     # popd
 
     # TODO: When boulder/moss supports capabilities use that for ptp-helper instead of setuid
+    # NOTE: When updating this package (major version) if you want to find out what subpackage a given file should go in
+    #  disable `base` through `python` below and then re-enable them one by one and build the package each time. The unpatterned
+    #  files that appear each time are the ones that should go in the subpackage you just enabled.
     %meson \
         --wrap-mode=nodownload \
         -D examples=disabled \
