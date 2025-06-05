@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : pipewire
-version     : 1.4.4
-release     : 13
+version     : 1.4.5
+release     : 14
 homepage    : https://pipewire.org/
 upstreams   :
-    - https://gitlab.freedesktop.org/pipewire/pipewire/-/archive/1.4.4/pipewire-1.4.4.tar.gz : 6136421723dfef16aea5e000ffe8e18564b26458b70356f6c0557ce8acaac952
+    - https://gitlab.freedesktop.org/pipewire/pipewire/-/archive/1.4.5/pipewire-1.4.5.tar.gz : 8dc846cdb060ee93050ccdae1517e9709b22fcf827b0b2f1a76dd53acb5a6b9e
 summary     : Linux audio + video multiplexing
 description : |
     PipeWire is a project that aims to greatly improve handling of audio and video under Linux. It provides a low-latency, graph-based processing engine on top of audio and video devices that can be used to support the use cases currently handled by both PulseAudio and JACK. PipeWire was designed with a powerful security model that makes interacting with audio and video devices from containerized applications easy, with support for Flatpak applications being the primary goal.
