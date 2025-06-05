@@ -6,11 +6,15 @@
 			"build-depends": [
 				"binary(cargo)",
 				"pkgconfig(gbm)",
+				"pkgconfig(gdk-pixbuf-2.0)",
 				"pkgconfig(glib-2.0)",
+				"pkgconfig(gtk4)",
+				"pkgconfig(libadwaita-1)",
 				"pkgconfig(libdisplay-info)",
 				"pkgconfig(libinput)",
 				"pkgconfig(libpipewire-0.3)",
 				"pkgconfig(libseat)",
+				"pkgconfig(libspa-0.2)",
 				"pkgconfig(libudev)",
 				"pkgconfig(pango)",
 				"pkgconfig(xkbcommon)"
@@ -22,6 +26,7 @@
 				"soname(libcairo.so.2(x86_64))",
 				"soname(libdisplay-info.so.2(x86_64))",
 				"soname(libgbm.so.1(x86_64))",
+				"soname(libglib-2.0.so.0(x86_64))",
 				"soname(libgobject-2.0.so.0(x86_64))",
 				"soname(libinput.so.10(x86_64))",
 				"soname(libm.so.6(x86_64))",
@@ -39,10 +44,13 @@
 				"/usr/bin/niri-session",
 				"/usr/lib/systemd/user/niri-shutdown.target",
 				"/usr/lib/systemd/user/niri.service",
+				"/usr/share/bash-completion/completions/niri",
 				"/usr/share/doc/niri/README.md",
 				"/usr/share/doc/niri/default-config.kdl",
+				"/usr/share/fish/vendor_completions.d/_niri",
 				"/usr/share/wayland-sessions/niri.desktop",
-				"/usr/share/xdg-desktop-portal/niri-portals.conf"
+				"/usr/share/xdg-desktop-portal/niri-portals.conf",
+				"/usr/share/zsh/site-functions/niri.fish"
 			],
 			"name": "niri",
 			"provides": [
@@ -52,6 +60,6 @@
 		}
 	},
 	"source-name": "niri",
-	"source-release": "8",
-	"source-version": "0.1.9"
+	"source-release": "9",
+	"source-version": "25.05.1"
 }
