@@ -7,6 +7,7 @@
 				"binary(cargo)",
 				"binary(cargo-cbuild)",
 				"binary(nasm)",
+				"libstdc++-devel",
 				"pkgconfig(dav1d)",
 				"pkgconfig(glib-2.0)",
 				"pkgconfig(gstreamer-allocators-1.0)",
@@ -43,6 +44,7 @@
 				"soname(libpangocairo-1.0.so.0(x86_64))",
 				"soname(libsodium.so.26(x86_64))",
 				"soname(libssl.so.3(x86_64))",
+				"soname(libstdc++.so.6(x86_64))",
 				"soname(libunwind.so.1(x86_64))",
 				"soname(libwebpdemux.so.2(x86_64))"
 			],
@@ -86,6 +88,7 @@
 				"/usr/lib/gstreamer-1.0/libgstrsvideofx.so",
 				"/usr/lib/gstreamer-1.0/libgstrswebp.so",
 				"/usr/lib/gstreamer-1.0/libgstrswebrtc.so",
+				"/usr/lib/gstreamer-1.0/libgstskia.so",
 				"/usr/lib/gstreamer-1.0/libgstsodium.so",
 				"/usr/lib/gstreamer-1.0/libgstspeechmatics.so",
 				"/usr/lib/gstreamer-1.0/libgstspotify.so",
@@ -138,6 +141,7 @@
 				"soname(gstreamer-1.0/libgstrsvideofx.so(x86_64))",
 				"soname(gstreamer-1.0/libgstrswebp.so(x86_64))",
 				"soname(gstreamer-1.0/libgstrswebrtc.so(x86_64))",
+				"soname(gstreamer-1.0/libgstskia.so(x86_64))",
 				"soname(gstreamer-1.0/libgstsodium.so(x86_64))",
 				"soname(gstreamer-1.0/libgstspeechmatics.so(x86_64))",
 				"soname(gstreamer-1.0/libgstspotify.so(x86_64))",
@@ -155,6 +159,7 @@
 				"binary(cargo)",
 				"binary(cargo-cbuild)",
 				"binary(nasm)",
+				"libstdc++-devel",
 				"pkgconfig(dav1d)",
 				"pkgconfig(glib-2.0)",
 				"pkgconfig(gstreamer-allocators-1.0)",
@@ -230,6 +235,7 @@
 				"/usr/lib/pkgconfig/gstrsvideofx.pc",
 				"/usr/lib/pkgconfig/gstrswebp.pc",
 				"/usr/lib/pkgconfig/gstrswebrtc.pc",
+				"/usr/lib/pkgconfig/gstskia.pc",
 				"/usr/lib/pkgconfig/gstsodium.pc",
 				"/usr/lib/pkgconfig/gstspeechmatics.pc",
 				"/usr/lib/pkgconfig/gstspotify.pc",
@@ -282,6 +288,7 @@
 				"pkgconfig(gstrsvideofx)",
 				"pkgconfig(gstrswebp)",
 				"pkgconfig(gstrswebrtc)",
+				"pkgconfig(gstskia)",
 				"pkgconfig(gstsodium)",
 				"pkgconfig(gstspeechmatics)",
 				"pkgconfig(gstspotify)",
@@ -299,6 +306,7 @@
 				"binary(cargo)",
 				"binary(cargo-cbuild)",
 				"binary(nasm)",
+				"libstdc++-devel",
 				"pkgconfig(dav1d)",
 				"pkgconfig(glib-2.0)",
 				"pkgconfig(gstreamer-allocators-1.0)",
@@ -332,6 +340,6 @@
 		}
 	},
 	"source-name": "gst-plugins-rs",
-	"source-release": "5",
-	"source-version": "1.26.1"
+	"source-release": "6",
+	"source-version": "1.26.2"
 }

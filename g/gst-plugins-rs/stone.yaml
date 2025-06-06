@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : gst-plugins-rs
-version     : 1.26.1
-release     : 5
+version     : 1.26.2
+release     : 6
 homepage    : https://gitlab.freedesktop.org/gstreamer/gst-plugins-rs
 upstreams   :
-    - https://gitlab.freedesktop.org/gstreamer/gst-plugins-rs/-/archive/gstreamer-1.26.1/gst-plugins-rs-gstreamer-1.26.1.tar.gz : c0ead71078d3d67c588446cb9f3a61345569352d8ecfcefa2deccbb81ed005cc
+    - https://gitlab.freedesktop.org/gstreamer/gst-plugins-rs/-/archive/gstreamer-1.26.2/gst-plugins-rs-gstreamer-1.26.2.tar.gz : 9d6f92fde63b680f09c671b23e6d625b7ffe571bed3953227e40510ee68099ce
 summary     : GStreamer plugins written in Rust.
 description : |
     These plugins can be used by applications written in other programming languages as well of course, they are just like any other GStreamer plugins available on the system.
@@ -30,6 +30,7 @@ builddeps   :
     - pkgconfig(libsodium)
     - pkgconfig(libwebp)
     - pkgconfig(openssl)
+    - libstdc++-devel # TODO: Fix this
 # Missing libraries:
 # - libvvdec
 environment: |
