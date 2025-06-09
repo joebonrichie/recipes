@@ -4,17 +4,16 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : cosmic-session
-version     : 1.0.0-alpha.6
-release     : 23
+version     : 1.0.0-alpha.7
+release     : 24
 summary     : Cosmic Session Management
 license     : GPL-3.0
 homepage    : https://github.com/pop-os/cosmic-session
 upstreams   :
-    - git|https://github.com/pop-os/cosmic-session.git : 6d16513d77db627b93332f4ad5125c47f4fedea3
+    - git|https://github.com/pop-os/cosmic-session.git : 80209d5aadcfc05803eaa5b5099a5db1550d3fb1
 description : |
     Cosmic Session Management
 builddeps   :
-    - binary(cargo)
     - binary(just)
     - pkgconfig(xkbcommon)
 rundeps     :
@@ -45,8 +44,6 @@ rundeps     :
     - wireplumber
     - xdg-desktop-portal-cosmic
 networking  : yes
-tuning      :
-    - lto: thin
 setup       : |
     %cargo_fetch
 build       : |

@@ -4,7 +4,6 @@
 	"packages": {
 		"cosmic-workspaces": {
 			"build-depends": [
-				"binary(cargo)",
 				"binary(just)",
 				"binary(which)",
 				"pkgconfig(dbus-1)",
@@ -34,6 +33,6 @@
 		}
 	},
 	"source-name": "cosmic-workspaces",
-	"source-release": "14",
-	"source-version": "1.0.0-alpha.6"
+	"source-release": "15",
+	"source-version": "1.0.0-alpha.7"
 }

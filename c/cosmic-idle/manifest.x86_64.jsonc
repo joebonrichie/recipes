@@ -4,9 +4,7 @@
 	"packages": {
 		"cosmic-idle": {
 			"build-depends": [
-				"binary(cargo)",
 				"binary(just)",
-				"pkgconfig(libpulse)",
 				"pkgconfig(xkbcommon)"
 			],
 			"depends": [
@@ -26,6 +24,6 @@
 		}
 	},
 	"source-name": "cosmic-idle",
-	"source-release": "9",
-	"source-version": "1.0.0-alpha.6"
+	"source-release": "10",
+	"source-version": "1.0.0-alpha.7"
 }

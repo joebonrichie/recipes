@@ -4,7 +4,6 @@
 	"packages": {
 		"cosmic-settings": {
 			"build-depends": [
-				"binary(cargo)",
 				"binary(just)",
 				"pkgconfig(libinput)",
 				"pkgconfig(libpipewire-0.3)",
@@ -29,6 +28,7 @@
 				"/usr/share/applications/com.system76.CosmicSettings.About.desktop",
 				"/usr/share/applications/com.system76.CosmicSettings.Accessibility.desktop",
 				"/usr/share/applications/com.system76.CosmicSettings.Appearance.desktop",
+				"/usr/share/applications/com.system76.CosmicSettings.Applications.desktop",
 				"/usr/share/applications/com.system76.CosmicSettings.Bluetooth.desktop",
 				"/usr/share/applications/com.system76.CosmicSettings.DateTime.desktop",
 				"/usr/share/applications/com.system76.CosmicSettings.DefaultApps.desktop",
@@ -38,6 +38,7 @@
 				"/usr/share/applications/com.system76.CosmicSettings.Firmware.desktop",
 				"/usr/share/applications/com.system76.CosmicSettings.Input.desktop",
 				"/usr/share/applications/com.system76.CosmicSettings.Keyboard.desktop",
+				"/usr/share/applications/com.system76.CosmicSettings.LegacyApplications.desktop",
 				"/usr/share/applications/com.system76.CosmicSettings.Mouse.desktop",
 				"/usr/share/applications/com.system76.CosmicSettings.Network.desktop",
 				"/usr/share/applications/com.system76.CosmicSettings.Notifications.desktop",
@@ -172,6 +173,6 @@
 		}
 	},
 	"source-name": "cosmic-settings",
-	"source-release": "19",
-	"source-version": "1.0.0-alpha.6"
+	"source-release": "20",
+	"source-version": "1.0.0-alpha.7"
 }

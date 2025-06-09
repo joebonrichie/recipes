@@ -4,7 +4,6 @@
 	"packages": {
 		"cosmic-applibrary": {
 			"build-depends": [
-				"binary(cargo)",
 				"binary(just)",
 				"pkgconfig(dbus-1)",
 				"pkgconfig(libudev)",
@@ -31,6 +30,6 @@
 		}
 	},
 	"source-name": "cosmic-applibrary",
-	"source-release": "12",
-	"source-version": "1.0.0-alpha.6"
+	"source-release": "13",
+	"source-version": "1.0.0-alpha.7"
 }
