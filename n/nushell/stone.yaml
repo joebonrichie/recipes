@@ -5,7 +5,7 @@
 #
 name        : nushell
 version     : 0.104.1
-release     : 4
+release     : 5
 homepage    : https://www.nushell.sh/
 upstreams   :
     - https://github.com/nushell/nushell/archive/refs/tags/0.104.1.tar.gz : 3dafca8bf892f5a2afaac1122a88a7eb7f22a0b62ef901f550173a11d5cbdf6e
@@ -25,6 +25,7 @@ builddeps   :
     - pkgconfig(sqlite3)
 environment : |
     # Force use of system libs
+    export LIBGIT2_NO_VENDOR=1
     export LIBSSH2_SYS_USE_PKG_CONFIG=1
     export LIBSQLITE3_SYS_USE_PKG_CONFIG=1
     export ZSTD_SYS_USE_PKG_CONFIG=1
