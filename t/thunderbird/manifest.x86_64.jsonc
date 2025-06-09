@@ -5,7 +5,6 @@
 		"thunderbird": {
 			"build-depends": [
 				"binary(cbindgen)",
-				"binary(gcc)",
 				"binary(m4)",
 				"binary(make)",
 				"binary(nasm)",
@@ -64,7 +63,7 @@
 				"soname(libsmime3.so(x86_64))",
 				"soname(libssl3.so(x86_64))",
 				"soname(libunwind.so.1(x86_64))",
-				"soname(libvpx.so.9(x86_64))",
+				"soname(libvpx.so.11(x86_64))",
 				"soname(libwebp.so.7(x86_64))",
 				"soname(libwebpdemux.so.2(x86_64))",
 				"soname(libz.so.1(x86_64))",
@@ -209,6 +208,6 @@
 		}
 	},
 	"source-name": "thunderbird",
-	"source-release": "19",
-	"source-version": "138.0.2"
+	"source-release": "20",
+	"source-version": "139.0.1"
 }

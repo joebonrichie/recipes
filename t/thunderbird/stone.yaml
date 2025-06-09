@@ -4,15 +4,15 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : thunderbird
-version     : 138.0.2
-release     : 19
+version     : 139.0.1
+release     : 20
 homepage    : https://www.thunderbird.net/
 upstreams   :
-    - https://releases.mozilla.org/pub/thunderbird/releases/138.0.2/source/thunderbird-138.0.2.source.tar.xz:
-        hash: 1bedb532edbd9d377022e398ae234348f9c91d9e89a6c9fe2352aed41c42121a
+    - https://releases.mozilla.org/pub/thunderbird/releases/139.0.1/source/thunderbird-139.0.1.source.tar.xz:
+        hash: 58c15a4681e27b1926e0131d2b4d92f74e1048a74c3a2c7a1c97ea8fd4ceffef
         unpackdir: thunderbird
-    - https://sources.getsol.us/mozilla/thunderbird/thunderbird-138.0.2-langpacks.tar.zst:
-        hash: ca8493548180cfa93be3858705f450a2329f5973474958f689b7ed33e0702bfd
+    - https://sources.getsol.us/mozilla/thunderbird/thunderbird-139.0.1-langpacks.tar.zst:
+        hash: a178dc2ab016f0c3a17f53d2679975f6fec8a592fe8225b4659f403e44d61b3c
         unpackdir: thunderbird/langpacks
 summary     : Thunderbird Email Client
 description : |
@@ -20,7 +20,6 @@ description : |
 license     : MPL-2.0
 builddeps   :
     - binary(cbindgen)
-    - binary(gcc) # libstdc++ location detection, might not be needed
     - binary(m4)
     - binary(make)
     - binary(nasm)
