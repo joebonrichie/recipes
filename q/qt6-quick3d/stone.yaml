@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : qt6-quick3d
-version     : 6.9.0
-release     : 3
+version     : 6.9.1
+release     : 4
 homepage    : https://www.qt.io
 upstreams   :
-    - https://download.qt.io/official_releases/qt/6.9/6.9.0/submodules/qtquick3d-everywhere-src-6.9.0.tar.xz : a295268fdca5aeaab6bb4bb1a0a4d2720b19679ab5145c5185dac7ac3399e488
+    - https://download.qt.io/official_releases/qt/6.9/6.9.1/submodules/qtquick3d-everywhere-src-6.9.1.tar.xz : f61600da8fbfd51b7d6b5c431cef453d7c24015c374ae25756c0faf0db2c9977
 summary     : Qt6 Quick 3D module
 description : |
     Qt Quick 3D provides a high-level API for creating 3D content and 3D user interfaces based on Qt Quick. Rather than using an external engine which creates syncing issues, and additional layers of abstraction, we provide extensions to the existing Qt Quick Scene Graph for spatial content, and a renderer for that extended scene graph. When using the spatial scene graph it is also possible to mix Qt Quick 2D content with 3D content.
@@ -17,11 +17,14 @@ license     :
     - GPL-3.0-or-later
     - LGPL-3.0-or-later
 builddeps   :
-    - pkgconfig(Qt6QuickTimeline)
-    - pkgconfig(Qt6ShaderTools)
+    - cmake(Qt6CorePrivate)
+    - cmake(Qt6QuickTimeline)
+    - cmake(Qt6ShaderTools)
     - pkgconfig(assimp)
+    # TODO: System openxr
 setup       : |
-    %cmake_qt6
+    %cmake_qt6 \
+               -DFEATURE_system_assimp=ON
 build       : |
     %cmake_build
 install     : |
