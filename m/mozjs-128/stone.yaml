@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : mozjs-128
-version     : 128.8.0
-release     : 7
+version     : 128.11.0
+release     : 8
 homepage    : https://mozilla.org
 upstreams   :
-    - https://archive.mozilla.org/pub/firefox/releases/128.8.0esr/source/firefox-128.8.0esr.source.tar.xz : 201fcb12c285470f2b3cdf050f0fe7d96d5e0c5d352e86ef8957b595329a32bf
+    - https://archive.mozilla.org/pub/firefox/releases/128.11.0esr/source/firefox-128.11.0esr.source.tar.xz : f2ed90374a670fe5eccfd5bf36d2e311affd955d1f3507861c738b9aa7a1ffec
 summary     : Mozilla's Spidermonkey JS Engine
 description : |
     SpiderMonkey is the code-name for the Mozilla's C++ implementation of JavaScript.
@@ -20,6 +20,9 @@ packages    :
         paths:
             # No actual soname, force it back into main package
             - /usr/lib/lib*.so
+    - "%(name)-devel":
+        paths:
+            - /usr/bin/js128-config
 builddeps   :
     - binary(cargo)
     - binary(cbindgen)

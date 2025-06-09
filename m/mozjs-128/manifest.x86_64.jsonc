@@ -23,13 +23,11 @@
 			],
 			"files": [
 				"/usr/bin/js128",
-				"/usr/bin/js128-config",
 				"/usr/lib/libmozjs-128.so"
 			],
 			"name": "mozjs-128",
 			"provides": [
 				"binary(js128)",
-				"binary(js128-config)",
 				"soname(libmozjs-128.so(x86_64))"
 			]
 		},
@@ -47,6 +45,7 @@
 				"mozjs-128"
 			],
 			"files": [
+				"/usr/bin/js128-config",
 				"/usr/include/mozjs-128/BaseProfiler.h",
 				"/usr/include/mozjs-128/BaseProfilerSharedLibraries.h",
 				"/usr/include/mozjs-128/BaseProfilingCategory.h",
@@ -603,11 +602,12 @@
 			],
 			"name": "mozjs-128-devel",
 			"provides": [
+				"binary(js128-config)",
 				"pkgconfig(mozjs-128)"
 			]
 		}
 	},
 	"source-name": "mozjs-128",
-	"source-release": "7",
-	"source-version": "128.8.0"
+	"source-release": "8",
+	"source-version": "128.11.0"
 }
