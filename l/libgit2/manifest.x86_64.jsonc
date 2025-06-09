@@ -20,13 +20,13 @@
 			],
 			"files": [
 				"/usr/bin/git2",
-				"/usr/lib/libgit2.so.1.8",
-				"/usr/lib/libgit2.so.1.8.4"
+				"/usr/lib/libgit2.so.1.9",
+				"/usr/lib/libgit2.so.1.9.1"
 			],
 			"name": "libgit2",
 			"provides": [
 				"binary(git2)",
-				"soname(libgit2.so.1.8(x86_64))"
+				"soname(libgit2.so.1.9(x86_64))"
 			]
 		},
 		"libgit2-devel": {
@@ -124,7 +124,6 @@
 				"/usr/include/git2/sys/openssl.h",
 				"/usr/include/git2/sys/path.h",
 				"/usr/include/git2/sys/refdb_backend.h",
-				"/usr/include/git2/sys/reflog.h",
 				"/usr/include/git2/sys/refs.h",
 				"/usr/include/git2/sys/remote.h",
 				"/usr/include/git2/sys/repository.h",
@@ -138,16 +137,21 @@
 				"/usr/include/git2/types.h",
 				"/usr/include/git2/version.h",
 				"/usr/include/git2/worktree.h",
+				"/usr/lib/cmake/libgit2/libgit2Config.cmake",
+				"/usr/lib/cmake/libgit2/libgit2ConfigVersion.cmake",
+				"/usr/lib/cmake/libgit2/libgit2Targets-release.cmake",
+				"/usr/lib/cmake/libgit2/libgit2Targets.cmake",
 				"/usr/lib/libgit2.so",
 				"/usr/lib/pkgconfig/libgit2.pc"
 			],
 			"name": "libgit2-devel",
 			"provides": [
+				"cmake(libgit2)",
 				"pkgconfig(libgit2)"
 			]
 		}
 	},
 	"source-name": "libgit2",
-	"source-release": "5",
-	"source-version": "1.8.4"
+	"source-release": "6",
+	"source-version": "1.9.1"
 }
