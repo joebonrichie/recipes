@@ -5,7 +5,7 @@
 #
 name        : firefox
 version     : 139.0.1
-release     : 25
+release     : 26
 homepage    : https://www.mozilla.org/
 upstreams   :
     - https://ftp.mozilla.org/pub/firefox/releases/139.0.1/source/firefox-139.0.1.source.tar.xz:
