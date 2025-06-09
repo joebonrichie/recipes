@@ -5,7 +5,7 @@
 #
 name        : gstreamer
 version     : 1.26.2
-release     : 11
+release     : 12
 homepage    : https://gstreamer.freedesktop.org/
 upstreams   :
     - https://gitlab.freedesktop.org/gstreamer/gstreamer/-/archive/1.26.2/gstreamer-1.26.2.tar.gz : 1df6e7f7401d9552a95c1fd40168eb663d2aa4d108f891a2e60f110b96b2175f
@@ -15,6 +15,7 @@ description : |
 license     :
     - LGPL-2.1-or-later
 builddeps   :
+    - cmake(Qt6GuiPrivate) # fatal error: 'QtGui/private/qrhi_p.h' file not found
     - cmake(Qt6Qml)
     - cmake(Qt6WaylandClient)
     - cmake(VulkanHeaders)
