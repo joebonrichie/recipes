@@ -56,7 +56,7 @@
 				"soname(libva.so.2(x86_64))",
 				"soname(libvorbis.so.0(x86_64))",
 				"soname(libvorbisenc.so.2(x86_64))",
-				"soname(libvpx.so.9(x86_64))",
+				"soname(libvpx.so.11(x86_64))",
 				"soname(libwebp.so.7(x86_64))",
 				"soname(libwebpmux.so.3(x86_64))",
 				"soname(libxcb-shape.so.0(x86_64))",
@@ -423,6 +423,6 @@
 		}
 	},
 	"source-name": "ffmpeg",
-	"source-release": "4",
+	"source-release": "5",
 	"source-version": "7.1.1"
 }
