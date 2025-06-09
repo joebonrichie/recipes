@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : qt6-declarative
-version     : 6.9.0
-release     : 4
+version     : 6.9.1
+release     : 5
 homepage    : https://www.qt.io
 upstreams   :
-    - https://download.qt.io/official_releases/qt/6.9/6.9.0/submodules/qtdeclarative-everywhere-src-6.9.0.tar.xz : a3175fa510847a136734f989e2bfea7f7bbb9dc9acc98b40b544d26f5ba20d3d
+    - https://download.qt.io/official_releases/qt/6.9/6.9.1/submodules/qtdeclarative-everywhere-src-6.9.1.tar.xz : ccb94665df0199d7ee387b965b29677c8b89cfb1782bb6f01239b1d1524cec97
 summary     : Classes for QML and JavaScript languages
 description : |
     The Qt Quick module is the standard library for writing QML applications. While the Qt QML module provides the QML engine and language infrastructure, the Qt Quick module provides all the basic types necessary for creating user interfaces with QML.
@@ -17,9 +17,10 @@ license     :
     - GPL-3.0-or-later
     - LGPL-3.0-or-later
 builddeps   :
-    - pkgconfig(Qt6ShaderTools)
-    - pkgconfig(Qt6Svg)
-    - qt6-languageserver-devel
+    - cmake(Qt6CorePrivate)
+    - cmake(Qt6LanguageServerPrivate)
+    - cmake(Qt6ShaderTools)
+    - cmake(Qt6Svg)
 setup       : |
     # Note that due to our build modifications Qt6LinguistTools will be reported as missing, but it uses it just fine
     # TODO fix that
