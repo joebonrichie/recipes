@@ -5,7 +5,7 @@
 #
 name        : assimp
 version     : 5.4.3
-release     : 3
+release     : 4
 homepage    : https://www.assimp.org/
 upstreams   :
     - https://github.com/assimp/assimp/archive/refs/tags/v5.4.3.tar.gz : 66dfbaee288f2bc43172440a55d0235dfc7bf885dda6435c038e8000e79582cb
@@ -19,6 +19,7 @@ builddeps   :
 setup       : |
     %patch %(pkgdir)/ftbfs.patch
     %cmake \
+           -DASSIMP_BUILD_ASSIMP_TOOLS=ON \
            -DASSIMP_BUILD_ZLIB=OFF
 build       : |
     %cmake_build
@@ -26,3 +27,8 @@ install     : |
     %cmake_install
 tuning      :
     - lto : full
+packages   :
+    - "%(name)-devel":
+        rundeps:
+            - pkgconfig(minizip)
+            - pkgconfig(zlib)
