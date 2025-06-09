@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : qt6-base
-version     : 6.9.0
-release     : 10
+version     : 6.9.1
+release     : 11
 homepage    : https://www.qt.io
 upstreams   :
-    - https://download.qt.io/official_releases/qt/6.9/6.9.0/submodules/qtbase-everywhere-src-6.9.0.tar.xz : c1800c2ea835801af04a05d4a32321d79a93954ee3ae2172bbeacf13d1f0598c
+    - https://download.qt.io/official_releases/qt/6.9/6.9.1/submodules/qtbase-everywhere-src-6.9.1.tar.xz : 40caedbf83cc9a1959610830563565889878bc95f115868bbf545d1914acf28e
 summary     : Cross platform application and UI framework
 description : |
     Cross platform application and UI framework
@@ -112,36 +112,69 @@ install     : |
 
     # We have the dedicated qt6-docs package for that.
     rm -rfv %(installroot)/%(datadir)/doc
+
+    # Used for Qt CI
+    rm -rfv %(installroot)%(libdir)/qt6/ensure_pro_file.cmake \
+            %(installroot)%(libdir)/qt6/qt-android-runner.py \
+            %(installroot)%(libdir)/qt6/qt-testrunner.py \
+            %(installroot)%(libdir)/qt6/sanitizer-testrunner.py
+
+    # Not used for desktop installs
+    rm -rfv %(installroot)%(libdir)/cmake/Qt6ExamplesAssetDownloaderPrivate \
+            %(installroot)%(includedir)/qt6/QtExamplesAssetDownloader \
+            %(installroot)%(libdir)/qt6/metatypes/qt6examplesassetdownloaderprivate*.json \
+            %(installroot)%(libdir)/qt6/modules/ExamplesAssetDownloaderPrivate.json \
+            %(installroot)%(libdir)/libQt6ExamplesAssetDownloader* \
+            %(installroot)%(libdir)/qt6/mkspecs/features/uikit
 packages    :
     - "%(name)":
         rundeps:
             - shared-mime-info
+
+    - "%(name)-gui":
+        summary: Qt6 GUI-related libraries
+        description: Qt6 GUI-related libraries
+        paths:
+            - /usr/lib/libQt6Egl*so.*
+            - /usr/lib/libQt6Gui.so.*
+            - /usr/lib/libQt6OpenGL.so.*
+            - /usr/lib/libQt6OpenGLWidgets.so.*
+            - /usr/lib/libQt6PrintSupport.so.*
+            - /usr/lib/libQt6Widgets.so.*
+            - /usr/lib/libQt6XcbQpa.so.*
+            - /usr/lib/qt6/plugins/egldeviceintegrations/*.so
+            - /usr/lib/qt6/plugins/platforms/*.so
+            - /usr/lib/qt6/plugins/generic/libqevdev*.so
+            - /usr/lib/qt6/plugins/generic/libqlibinputplugin.so
+            - /usr/lib/qt6/plugins/generic/libqtuiotouchplugin.so
+            - /usr/lib/qt6/plugins/imageformats/*.so
+            - /usr/lib/qt6/plugins/platforminputcontexts/*.so
+            - /usr/lib/qt6/plugins/platformthemes/*.so
+            - /usr/lib/qt6/plugins/printsupport/*.so
+            - /usr/lib/qt6/plugins/xcbglintegrations/*.so
+
     - "%(name)-devel":
         paths:
             - /usr/bin
-            - /usr/lib/objects-*
             - /usr/lib/qt6/*.cmake
             - /usr/lib/qt6/android_emulator_launcher.sh
             - /usr/lib/qt6/bin
             - /usr/lib/qt6/cmake_automoc_parser
             - /usr/lib/qt6/moc
             - /usr/lib/qt6/qlalr
-            - /usr/lib/qt6/qt-android-runner.py
             - /usr/lib/qt6/qt-cmake-private*
             - /usr/lib/qt6/qt-cmake-standalone-test
             - /usr/lib/qt6/qt-internal-configure-examples
             - /usr/lib/qt6/qt-internal-configure-tests
-            - /usr/lib/qt6/qt-testrunner.py
             - /usr/lib/qt6/rcc
             - /usr/lib/qt6/qvkgen
-            - /usr/lib/qt6/sanitizer-testrunner.py
             - /usr/lib/qt6/syncqt
             - /usr/lib/qt6/tracegen
             - /usr/lib/qt6/tracepointgen
             - /usr/lib/qt6/uic
         rundeps:
+            - "%(name)-gui"
             - cmake(VulkanHeaders)
-            - pkgconfig(cups)
             - pkgconfig(gl)
             - pkgconfig(libzstd)
             - pkgconfig(vulkan)
@@ -150,3 +183,53 @@ packages    :
             - pkgconfig(xcb-keysyms)
             - pkgconfig(xcb-util)
             - pkgconfig(xkbcommon)
+
+    # NOTE: If something has this as a builddep it needs to be rebuilt on version updates.
+    - "%(name)-private-devel":
+        paths:
+            - /usr/include/qt6/QtEgl*
+            - /usr/include/qt6/Qt*/6.*/
+            - /usr/lib/cmake/Qt6Egl*
+            - /usr/lib/cmake/Qt6*Private
+            - /usr/lib/libQt6Egl*.prl
+            - /usr/lib/libQt6Egl*.so
+            - /usr/lib/qt6/modules/Egl*.json
+            - /usr/lib/qt6/modules/XcbQpaPrivate.json
+            - /usr/lib/qt6/metatypes/qt6egl*.json
+            - /usr/lib/qt6/metatypes/qt6xcb*.json
+            - /usr/lib/qt6/modules/TestInternalsPrivate.json
+        rundeps:
+            - "%(name)-devel"
+            - pkgconfig(cups)
+
+    - "%(name)-staticlib":
+        paths:
+            - /usr/lib/lib*.a
+            - /usr/lib/libQt6DeviceDiscoverySupport.prl
+            - /usr/lib/libQt6ExampleIcons.prl
+            - /usr/lib/libQt6FbSupport.prl
+            - /usr/lib/libQt6InputSupport.prl
+            - /usr/lib/libQt6KmsSupport.prl
+            - /usr/lib/qt6/modules/DeviceDiscoverySupportPrivate.json
+            - /usr/lib/qt6/modules/ExampleIconsPrivate.json
+            - /usr/lib/qt6/modules/FbSupportPrivate.json
+            - /usr/lib/qt6/modules/InputSupportPrivate.json
+            - /usr/lib/qt6/modules/KmsSupportPrivate.json
+            - /usr/lib/qt6/metatypes/qt6devicediscoverysupportprivate_*metatypes.json
+            - /usr/lib/qt6/metatypes/qt6exampleiconsprivate_*metatypes.json
+            - /usr/lib/qt6/metatypes/qt6fbsupportprivate_*metatypes.json
+            - /usr/lib/qt6/metatypes/qt6inputsupportprivate_*metatypes.json
+            - /usr/lib/qt6/metatypes/qt6kmssupportprivate_*metatypes.json
+            - /usr/lib/objects-*
+            - /usr/lib/cmake/Qt6DeviceDiscoverySupportPrivate
+            - /usr/lib/cmake/Qt6ExampleIconsPrivate
+            - /usr/lib/cmake/Qt6FbSupportPrivate
+            - /usr/lib/cmake/Qt6InputSupportPrivate
+            - /usr/lib/cmake/Qt6KmsSupportPrivate
+            - /usr/include/qt6/QtDeviceDiscoverySupport
+            - /usr/include/qt6/QtExampleIcons
+            - /usr/include/qt6/QtFbSupport
+            - /usr/include/qt6/QtInputSupport
+            - /usr/include/qt6/QtKmsSupport
+        rundeps:
+            - "%(name)-devel"
