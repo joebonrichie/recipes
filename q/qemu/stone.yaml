@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : qemu
-version     : 9.2.3
-release     : 16
+version     : 9.2.4
+release     : 17
 homepage    : http://www.qemu.org/
 upstreams   :
-    - https://download.qemu.org/qemu-9.2.3.tar.xz : baed494270c361bf69816acc84512e3efed71c7a23f76691642b80bc3de7693e
+    - https://download.qemu.org/qemu-9.2.4.tar.xz : f3cc1c4eabfdb288218ac3e33763dbe9e276d8bc890b867a2335d58de2ddd39a
 summary     :  A generic and open source machine emulator and virtualizer
 description : |
      A generic and open source machine emulator and virtualizer
@@ -55,7 +55,6 @@ builddeps   :
     - pkgconfig(xkbcommon)
     - pkgconfig(zlib)
     - python(setuptools)
-    - xkeyboard-config
 setup       : |
     %configure --disable-docs \
                --target-list=x86_64-linux-user,i386-linux-user,i386-softmmu,x86_64-softmmu
