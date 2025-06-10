@@ -62,7 +62,8 @@ environment : |
     export MACH_BUILD_PYTHON_NATIVE_PACKAGE_SOURCE="none"
     export MOZ_BUILD_DATE="$(date -u${SOURCE_DATE_EPOCH:+d @$SOURCE_DATE_EPOCH} +%%Y%%m%%d%%H%%M%%S)"
 setup       : |
-    %patch %(pkgdir)/patches/pgo.patch
+    # Looks like this causes build hangs because it disables the watchdog...
+    # %%patch %(pkgdir)/patches/pgo.patch
     %patch %(pkgdir)/patches/0001-Fix-Firefox-Thunderbird-envvar-conflicts.patch
     %patch %(pkgdir)/patches/libcxx18.patch
     %patch %(pkgdir)/patches/icu76.patch
