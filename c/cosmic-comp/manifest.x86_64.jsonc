@@ -28,8 +28,7 @@
 				"soname(libseat.so.1(x86_64))",
 				"soname(libudev.so.1(x86_64))",
 				"soname(libunwind.so.1(x86_64))",
-				"soname(libxkbcommon.so.0(x86_64))",
-				"xkeyboard-config"
+				"soname(libxkbcommon.so.0(x86_64))"
 			],
 			"files": [
 				"/usr/bin/cosmic-comp",
@@ -43,6 +42,6 @@
 		}
 	},
 	"source-name": "cosmic-comp",
-	"source-release": "17",
+	"source-release": "18",
 	"source-version": "1.0.0-alpha.7"
 }
