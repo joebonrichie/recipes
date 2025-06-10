@@ -1,0 +1,41 @@
+#
+# SPDX-FileCopyrightText: © 2020-2024 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : qt6-charts
+version     : 6.9.1
+release     : 1
+homepage    : https://www.qt.io
+upstreams   :
+    - https://download.qt.io/official_releases/qt/6.9/6.9.1/submodules/qtcharts-everywhere-src-6.9.1.tar.xz : b8871beb7ac816e9241db9cbdc4803a53313f84a1e4b951f108bd00709aec3d3
+summary     : Qt6 Charts Library
+description : |
+    Qt Charts module provides a set of easy to use chart components. It uses the Qt Graphics View Framework, therefore charts can be easily integrated to modern user interfaces. Qt Charts can be used as QWidgets, QGraphicsWidget, or QML types. Users can easily create impressive graphs by selecting one of the charts themes.
+license     :
+    - GFDL-1.3-or-later
+    - GPL-3.0-or-later
+    - LGPL-3.0-or-later
+builddeps   :
+    - cmake(Qt6CorePrivate)
+    - cmake(Qt6Multimedia)
+    - cmake(Qt6Quick)
+    # - pkgconfig(libdrm)
+    # - pkgconfig(wayland-protocols)
+    # - pkgconfig(wayland-scanner)
+    # - pkgconfig(x11)
+setup       : |
+    %cmake_qt6
+build       : |
+    %cmake_build
+install     : |
+    %cmake_install
+    %qml_cache_qt6
+# packages    :
+#     - "%(name)-devel":
+#         paths:
+#             - /usr/lib/qt6/qtwaylandscanner
+#         rundeps:
+#             - pkgconfig(wayland-client)
+#             - pkgconfig(wayland-egl)
+#             - pkgconfig(wayland-server)
