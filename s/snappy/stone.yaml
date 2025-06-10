@@ -1,0 +1,35 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : snappy
+version     : 1.2.2
+release     : 1
+upstreams   :
+    - https://github.com/google/snappy/archive/1.2.2.tar.gz : 90f74bc1fbf78a6c56b3c4a082a05103b3a56bb17bca1a27e052ea11723292dc
+homepage    : https://google.github.io/snappy
+license     : BSD-3-Clause
+summary     : A compression/decompression library
+description : |
+    Snappy is a compression/decompression library. It does not aim for maximum compression, or compatibility with any other compression library; instead, it aims for very high speeds and reasonable compression.
+builddeps   :
+    - cmake(GTest)
+    - cmake(benchmark)
+setup       : |
+    %patch %(pkgdir)/cmake_add_pkgconfig.patch
+    %patch %(pkgdir)/system-gtest.patch
+
+    cp %(pkgdir)/snappy.pc.in .
+
+    %cmake \
+        -DBUILD_SHARED_LIBS=ON \
+        -DSNAPPY_USE_BUNDLED_GTEST=OFF \
+        -DSNAPPY_USE_BUNDLED_BENCHMARK_LIB=OFF \
+        -DCMAKE_CXX_STANDARD=23
+build       : |
+    %cmake_build
+install     : |
+    %cmake_install
+check       : |
+    %cmake_test

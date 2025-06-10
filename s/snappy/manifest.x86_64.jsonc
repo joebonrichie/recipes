@@ -1,0 +1,53 @@
+/** Human readable report. This is not consumed by boulder */
+{
+	"manifest-version": "0.2",
+	"packages": {
+		"snappy": {
+			"build-depends": [
+				"cmake(GTest)",
+				"cmake(benchmark)"
+			],
+			"depends": [
+				"soname(libc++.so.1(x86_64))",
+				"soname(libc.so.6(x86_64))"
+			],
+			"files": [
+				"/usr/lib/libsnappy.so.1",
+				"/usr/lib/libsnappy.so.1.2.2"
+			],
+			"name": "snappy",
+			"provides": [
+				"soname(libsnappy.so.1(x86_64))"
+			]
+		},
+		"snappy-devel": {
+			"build-depends": [
+				"cmake(GTest)",
+				"cmake(benchmark)"
+			],
+			"depends": [
+				"snappy"
+			],
+			"files": [
+				"/usr/include/snappy-c.h",
+				"/usr/include/snappy-sinksource.h",
+				"/usr/include/snappy-stubs-public.h",
+				"/usr/include/snappy.h",
+				"/usr/lib/cmake/Snappy/SnappyConfig.cmake",
+				"/usr/lib/cmake/Snappy/SnappyConfigVersion.cmake",
+				"/usr/lib/cmake/Snappy/SnappyTargets-release.cmake",
+				"/usr/lib/cmake/Snappy/SnappyTargets.cmake",
+				"/usr/lib/libsnappy.so",
+				"/usr/lib/pkgconfig/snappy.pc"
+			],
+			"name": "snappy-devel",
+			"provides": [
+				"cmake(Snappy)",
+				"pkgconfig(snappy)"
+			]
+		}
+	},
+	"source-name": "snappy",
+	"source-release": "1",
+	"source-version": "1.2.2"
+}
