@@ -1,0 +1,96 @@
+#
+# SPDX-FileCopyrightText: © 2020-2024 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : weston
+version     : 14.0.2
+release     : 1
+homepage    : https://gitlab.freedesktop.org/wayland/weston
+upstreams   :
+    - https://gitlab.freedesktop.org/wayland/weston/-/archive/14.0.2/weston-14.0.2.tar.gz : 633f4e0f232ad150300c95ffcbc646fedf1349487bf389dbd2045fa69013d6e2
+summary     : A lightweight and functional Wayland compositor
+description : |
+    Weston is the reference implementation of a Wayland compositor, as well as a useful environment in and of itself. Out of the box, Weston provides a very basic desktop, or a full-featured environment for non-desktop uses such as automotive, embedded, in-flight, industrial, kiosks, set-top boxes and TVs. It also provides a library allowing other projects to build their own full-featured environments on top of Weston's core.
+license     : MIT
+builddeps   :
+    - pkgconfig(cairo)
+    - pkgconfig(egl)
+    - pkgconfig(freerdp3)
+    - pkgconfig(gbm)
+    - pkgconfig(gstreamer-1.0)
+    - pkgconfig(gstreamer-allocators-1.0)
+    - pkgconfig(lcms2)
+    - pkgconfig(libdisplay-info)
+    - pkgconfig(libdrm)
+    - pkgconfig(libevdev)
+    - pkgconfig(libjpeg)
+    - pkgconfig(libinput)
+    - pkgconfig(libpipewire-0.3)
+    - pkgconfig(libseat)
+    - pkgconfig(libva)
+    - pkgconfig(libwebp)
+    - pkgconfig(pango)
+    - pkgconfig(pixman-1)
+    - pkgconfig(wayland-protocols)
+    - pkgconfig(wayland-server)
+    - pkgconfig(xcb-cursor)
+    - pkgconfig(xcursor)
+    - pkgconfig(xkbcommon)
+    - pkgconfig(xwayland)
+    # TODO: VNC
+setup       : |
+    # ld.lld: error: undefined symbol: __start_test_section
+    export LDFLAGS+=" -Wl,--no-gc-sections"
+
+    %meson \
+            -Dbackend-vnc=false \
+            -Dbackend-x11=false
+build       : |
+    %meson_build
+install     : |
+    %meson_install
+packages    :
+    - "%(name)-libs":
+        summary: Weston compositor libraries
+        description: Weston compositor libraries
+        paths:
+            - /usr/lib/libweston*.so.*
+            - /usr/lib/libweston-*/*.so
+
+    - "%(name)-session":
+        summary: Weston desktop session
+        description: Weston desktop session
+        rundeps:
+            - "%(name)"
+        paths:
+            - /usr/share/wayland-sessions
+
+    - "%(name)-demo":
+        summary: Weston demo program files
+        description: Weston demo program files
+        rundeps:
+            - "%(name)"
+        paths:
+            # Do a glob match and then override it in weston/weston-tools
+            - /usr/bin/weston-*
+
+    - "%(name)-tools":
+        rundeps:
+            - "%(name)"
+        paths:
+            - /usr/bin/weston-calibrator
+            - /usr/bin/weston-debug
+            - /usr/bin/weston-screenshooter
+            - /usr/bin/weston-tablet
+            - /usr/bin/weston-terminal
+            - /usr/bin/weston-touch-calibrator
+
+    - "%(name)":
+        paths:
+            - /usr/bin/weston
+            - /usr/bin/weston-screenshooter
+
+    - "%(name)-devel":
+        paths:
+            - /usr/share/libweston-*/protocols
