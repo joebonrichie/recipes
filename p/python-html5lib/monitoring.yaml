@@ -1,0 +1,7 @@
+releases:
+  id: 8053
+  rss: https://github.com/html5lib/html5lib-python/tags.atom
+security:
+  cpe:
+  - vendor: html5lib
+    product: html5lib

@@ -1,0 +1,29 @@
+#
+# SPDX-FileCopyrightText: © 2020-2024 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : python-html5lib
+version     : "1.1"
+release     : 1
+homepage    : https://github.com/html5lib/html5lib-python
+upstreams   :
+    - https://github.com/html5lib/html5lib-python/archive/1.1.tar.gz : 66e9e24a53c10c27abb6be8a3cf2cf55824c6ea1cef8570a633cb223ec46e894
+summary     : html5lib is a pure-python library for parsing HTML
+description : |
+    html5lib is a pure-python library for parsing HTML
+license     : MIT
+builddeps   :
+    - python(setuptools)
+rundeps     :
+    - python-libs
+# checkdeps   :
+#     - python(pytest)
+build       : |
+    %pyproject_build
+install     : |
+    %pyproject_install
+# check       : |
+#     # TODO replace with pytest macro
+#     PYTHONPATH="$PWD"/build/lib pytest
+# TODO: get tests running
