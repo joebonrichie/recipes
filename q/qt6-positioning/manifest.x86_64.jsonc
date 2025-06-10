@@ -6,6 +6,7 @@
 			"build-depends": [
 				"cmake(Qt6CorePrivate)",
 				"cmake(Qt6Qml)",
+				"cmake(Qt6SerialPort)",
 				"cmake(Qt6Svg)"
 			],
 			"depends": [
@@ -14,6 +15,7 @@
 				"soname(libQt6Network.so.6(x86_64))",
 				"soname(libQt6Qml.so.6(x86_64))",
 				"soname(libQt6Quick.so.6(x86_64))",
+				"soname(libQt6SerialPort.so.6(x86_64))",
 				"soname(libc++.so.1(x86_64))",
 				"soname(libc.so.6(x86_64))",
 				"soname(libm.so.6(x86_64))",
@@ -45,6 +47,7 @@
 			"build-depends": [
 				"cmake(Qt6CorePrivate)",
 				"cmake(Qt6Qml)",
+				"cmake(Qt6SerialPort)",
 				"cmake(Qt6Svg)"
 			],
 			"depends": [
@@ -71,6 +74,7 @@
 			"build-depends": [
 				"cmake(Qt6CorePrivate)",
 				"cmake(Qt6Qml)",
+				"cmake(Qt6SerialPort)",
 				"cmake(Qt6Svg)"
 			],
 			"depends": [
@@ -257,6 +261,6 @@
 		}
 	},
 	"source-name": "qt6-positioning",
-	"source-release": "3",
+	"source-release": "4",
 	"source-version": "6.9.1"
 }
