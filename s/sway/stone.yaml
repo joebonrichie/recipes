@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : sway
-version     : 1.10.1
-release     : 6
+version     : "1.11"
+release     : 7
 homepage    : https://github.com/swaywm/sway
 upstreams   :
-    - https://github.com/swaywm/sway/releases/download/1.10.1/sway-1.10.1.tar.gz : b2fbf3a2f94c8926efa18d6af59bb9f5f1eafa6d46491284b1610c57bef2d105
+    - https://github.com/swaywm/sway/releases/download/1.11/sway-1.11.tar.gz : 0e37a55b7c3379230e97e1ad982542b75016a0c7d6676198604e557f9b373dae
 summary     : i3-compatible Wayland compositor 
 description : |
     sway is an i3-compatible Wayland compositor.
@@ -39,7 +39,6 @@ rundeps     :
     - binary(wmenu)
     - liberation-fonts-ttf # need fonts
     - shared-mime-info # needed for png background
-    - xkeyboard-config # sway needs /usr/share/X11/xkb
 setup       : |
     %patch %(pkgdir)/0001-Aeryn-default-config-changes.patch
     %patch %(pkgdir)/0001-Make-sway-stateless.patch

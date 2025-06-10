@@ -45,11 +45,10 @@
 				"soname(libwayland-client.so.0(x86_64))",
 				"soname(libwayland-cursor.so.0(x86_64))",
 				"soname(libwayland-server.so.0(x86_64))",
-				"soname(libwlroots-0.18.so(x86_64))",
+				"soname(libwlroots-0.19.so(x86_64))",
 				"soname(libxcb-icccm.so.4(x86_64))",
 				"soname(libxcb.so.1(x86_64))",
-				"soname(libxkbcommon.so.0(x86_64))",
-				"xkeyboard-config"
+				"soname(libxkbcommon.so.0(x86_64))"
 			],
 			"files": [
 				"/usr/bin/sway",
@@ -95,6 +94,6 @@
 		}
 	},
 	"source-name": "sway",
-	"source-release": "6",
-	"source-version": "1.10.1"
+	"source-release": "7",
+	"source-version": "1.11"
 }
