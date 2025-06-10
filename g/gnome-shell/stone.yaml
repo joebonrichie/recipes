@@ -5,7 +5,7 @@
 #
 name        : gnome-shell
 version     : 48.1
-release     : 32
+release     : 33
 homepage    : https://gitlab.gnome.org/GNOME/gnome-shell
 upstreams   :
     - https://download.gnome.org/sources/gnome-shell/48/gnome-shell-48.1.tar.xz : ba4f455afd6213f387545946e3cd9daa39c904f7ab16dd830ac77a73ff1002ca
@@ -73,7 +73,6 @@ rundeps     :
     - librsvg
     - shared-mime-info
     - xdg-desktop-portal-gnome
-    - xkeyboard-config
 setup       : |
     # Redonkulous logo sizes are redonkulous
     %patch %(pkgdir)/3674.patch

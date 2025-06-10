@@ -91,8 +91,7 @@
 				"soname(mutter-16/libmutter-clutter-16.so.0(x86_64))",
 				"soname(mutter-16/libmutter-cogl-16.so.0(x86_64))",
 				"soname(mutter-16/libmutter-mtk-16.so.0(x86_64))",
-				"xdg-desktop-portal-gnome",
-				"xkeyboard-config"
+				"xdg-desktop-portal-gnome"
 			],
 			"files": [
 				"/usr/bin/gnome-extensions",
@@ -282,6 +281,6 @@
 		}
 	},
 	"source-name": "gnome-shell",
-	"source-release": "32",
+	"source-release": "33",
 	"source-version": "48.1"
 }
