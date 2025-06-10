@@ -20,10 +20,6 @@ builddeps   :
     - cmake(Qt6CorePrivate)
     - cmake(Qt6Multimedia)
     - cmake(Qt6Quick)
-    # - pkgconfig(libdrm)
-    # - pkgconfig(wayland-protocols)
-    # - pkgconfig(wayland-scanner)
-    # - pkgconfig(x11)
 setup       : |
     %cmake_qt6
 build       : |
@@ -31,11 +27,3 @@ build       : |
 install     : |
     %cmake_install
     %qml_cache_qt6
-# packages    :
-#     - "%(name)-devel":
-#         paths:
-#             - /usr/lib/qt6/qtwaylandscanner
-#         rundeps:
-#             - pkgconfig(wayland-client)
-#             - pkgconfig(wayland-egl)
-#             - pkgconfig(wayland-server)
