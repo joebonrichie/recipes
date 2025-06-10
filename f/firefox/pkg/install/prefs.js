@@ -49,3 +49,5 @@ pref("widget.content.gtk-theme-override","Adwaita:light");
 pref("widget.use-xdg-desktop-portal.file-picker", 1);
 // Allow gnome search provider to function by default
 pref("browser.gnome-search-provider.enabled", true);
+// Enable JPEG XL images
+pref("image.jxl.enabled", true);
