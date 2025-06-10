@@ -423,6 +423,6 @@
 		}
 	},
 	"source-name": "ffmpeg",
-	"source-release": "5",
+	"source-release": "6",
 	"source-version": "7.1.1"
 }
