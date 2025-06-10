@@ -1,0 +1,96 @@
+/** Human readable report. This is not consumed by boulder */
+{
+	"manifest-version": "0.2",
+	"packages": {
+		"qt6-imageformats": {
+			"build-depends": [
+				"cmake(Qt6CorePrivate)",
+				"pkgconfig(libtiff-4)",
+				"pkgconfig(libwebp)"
+			],
+			"depends": [
+				"soname(libQt6Core.so.6(x86_64))",
+				"soname(libQt6Gui.so.6(x86_64))",
+				"soname(libc++.so.1(x86_64))",
+				"soname(libc.so.6(x86_64))",
+				"soname(libm.so.6(x86_64))",
+				"soname(libtiff.so.6(x86_64))",
+				"soname(libwebp.so.7(x86_64))",
+				"soname(libwebpdemux.so.2(x86_64))",
+				"soname(libwebpmux.so.3(x86_64))"
+			],
+			"files": [
+				"/usr/lib/qt6/plugins/imageformats/libqicns.so",
+				"/usr/lib/qt6/plugins/imageformats/libqtga.so",
+				"/usr/lib/qt6/plugins/imageformats/libqtiff.so",
+				"/usr/lib/qt6/plugins/imageformats/libqwbmp.so",
+				"/usr/lib/qt6/plugins/imageformats/libqwebp.so"
+			],
+			"name": "qt6-imageformats",
+			"provides": [
+				"soname(qt6/plugins/imageformats/libqicns.so(x86_64))",
+				"soname(qt6/plugins/imageformats/libqtga.so(x86_64))",
+				"soname(qt6/plugins/imageformats/libqtiff.so(x86_64))",
+				"soname(qt6/plugins/imageformats/libqwbmp.so(x86_64))",
+				"soname(qt6/plugins/imageformats/libqwebp.so(x86_64))"
+			]
+		},
+		"qt6-imageformats-devel": {
+			"build-depends": [
+				"cmake(Qt6CorePrivate)",
+				"pkgconfig(libtiff-4)",
+				"pkgconfig(libwebp)"
+			],
+			"depends": [
+				"qt6-imageformats"
+			],
+			"files": [
+				"/usr/lib/cmake/Qt6/FindLibmng.cmake",
+				"/usr/lib/cmake/Qt6/FindWrapJasper.cmake",
+				"/usr/lib/cmake/Qt6/FindWrapWebP.cmake",
+				"/usr/lib/cmake/Qt6Gui/Qt6QICNSPluginAdditionalTargetInfo.cmake",
+				"/usr/lib/cmake/Qt6Gui/Qt6QICNSPluginConfig.cmake",
+				"/usr/lib/cmake/Qt6Gui/Qt6QICNSPluginConfigVersion.cmake",
+				"/usr/lib/cmake/Qt6Gui/Qt6QICNSPluginConfigVersionImpl.cmake",
+				"/usr/lib/cmake/Qt6Gui/Qt6QICNSPluginTargets-release.cmake",
+				"/usr/lib/cmake/Qt6Gui/Qt6QICNSPluginTargets.cmake",
+				"/usr/lib/cmake/Qt6Gui/Qt6QTgaPluginAdditionalTargetInfo.cmake",
+				"/usr/lib/cmake/Qt6Gui/Qt6QTgaPluginConfig.cmake",
+				"/usr/lib/cmake/Qt6Gui/Qt6QTgaPluginConfigVersion.cmake",
+				"/usr/lib/cmake/Qt6Gui/Qt6QTgaPluginConfigVersionImpl.cmake",
+				"/usr/lib/cmake/Qt6Gui/Qt6QTgaPluginTargets-release.cmake",
+				"/usr/lib/cmake/Qt6Gui/Qt6QTgaPluginTargets.cmake",
+				"/usr/lib/cmake/Qt6Gui/Qt6QTiffPluginAdditionalTargetInfo.cmake",
+				"/usr/lib/cmake/Qt6Gui/Qt6QTiffPluginConfig.cmake",
+				"/usr/lib/cmake/Qt6Gui/Qt6QTiffPluginConfigVersion.cmake",
+				"/usr/lib/cmake/Qt6Gui/Qt6QTiffPluginConfigVersionImpl.cmake",
+				"/usr/lib/cmake/Qt6Gui/Qt6QTiffPluginTargets-release.cmake",
+				"/usr/lib/cmake/Qt6Gui/Qt6QTiffPluginTargets.cmake",
+				"/usr/lib/cmake/Qt6Gui/Qt6QWbmpPluginAdditionalTargetInfo.cmake",
+				"/usr/lib/cmake/Qt6Gui/Qt6QWbmpPluginConfig.cmake",
+				"/usr/lib/cmake/Qt6Gui/Qt6QWbmpPluginConfigVersion.cmake",
+				"/usr/lib/cmake/Qt6Gui/Qt6QWbmpPluginConfigVersionImpl.cmake",
+				"/usr/lib/cmake/Qt6Gui/Qt6QWbmpPluginTargets-release.cmake",
+				"/usr/lib/cmake/Qt6Gui/Qt6QWbmpPluginTargets.cmake",
+				"/usr/lib/cmake/Qt6Gui/Qt6QWebpPluginAdditionalTargetInfo.cmake",
+				"/usr/lib/cmake/Qt6Gui/Qt6QWebpPluginConfig.cmake",
+				"/usr/lib/cmake/Qt6Gui/Qt6QWebpPluginConfigVersion.cmake",
+				"/usr/lib/cmake/Qt6Gui/Qt6QWebpPluginConfigVersionImpl.cmake",
+				"/usr/lib/cmake/Qt6Gui/Qt6QWebpPluginTargets-release.cmake",
+				"/usr/lib/cmake/Qt6Gui/Qt6QWebpPluginTargets.cmake",
+				"/usr/lib/qt6/sbom/qtimageformats-6.9.1.spdx"
+			],
+			"name": "qt6-imageformats-devel",
+			"provides": [
+				"cmake(Qt6QICNSPlugin)",
+				"cmake(Qt6QTgaPlugin)",
+				"cmake(Qt6QTiffPlugin)",
+				"cmake(Qt6QWbmpPlugin)",
+				"cmake(Qt6QWebpPlugin)"
+			]
+		}
+	},
+	"source-name": "qt6-imageformats",
+	"source-release": "1",
+	"source-version": "6.9.1"
+}
