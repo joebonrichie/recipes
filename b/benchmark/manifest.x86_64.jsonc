@@ -1,0 +1,51 @@
+/** Human readable report. This is not consumed by boulder */
+{
+	"manifest-version": "0.2",
+	"packages": {
+		"benchmark": {
+			"depends": [
+				"soname(libc++.so.1(x86_64))",
+				"soname(libc.so.6(x86_64))",
+				"soname(libm.so.6(x86_64))",
+				"soname(libunwind.so.1(x86_64))"
+			],
+			"files": [
+				"/usr/lib/libbenchmark.so.1",
+				"/usr/lib/libbenchmark.so.1.9.4",
+				"/usr/lib/libbenchmark_main.so.1",
+				"/usr/lib/libbenchmark_main.so.1.9.4"
+			],
+			"name": "benchmark",
+			"provides": [
+				"soname(libbenchmark.so.1(x86_64))",
+				"soname(libbenchmark_main.so.1(x86_64))"
+			]
+		},
+		"benchmark-devel": {
+			"depends": [
+				"benchmark"
+			],
+			"files": [
+				"/usr/include/benchmark/benchmark.h",
+				"/usr/include/benchmark/export.h",
+				"/usr/lib/cmake/benchmark/benchmarkConfig.cmake",
+				"/usr/lib/cmake/benchmark/benchmarkConfigVersion.cmake",
+				"/usr/lib/cmake/benchmark/benchmarkTargets-release.cmake",
+				"/usr/lib/cmake/benchmark/benchmarkTargets.cmake",
+				"/usr/lib/libbenchmark.so",
+				"/usr/lib/libbenchmark_main.so",
+				"/usr/lib/pkgconfig/benchmark.pc",
+				"/usr/lib/pkgconfig/benchmark_main.pc"
+			],
+			"name": "benchmark-devel",
+			"provides": [
+				"cmake(benchmark)",
+				"pkgconfig(benchmark)",
+				"pkgconfig(benchmark_main)"
+			]
+		}
+	},
+	"source-name": "benchmark",
+	"source-release": "1",
+	"source-version": "1.9.4"
+}
