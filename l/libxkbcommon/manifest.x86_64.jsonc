@@ -20,7 +20,8 @@
 				"soname(libwayland-client.so.0(x86_64))",
 				"soname(libxcb-xkb.so.1(x86_64))",
 				"soname(libxcb.so.1(x86_64))",
-				"soname(libxml2.so.16(x86_64))"
+				"soname(libxml2.so.16(x86_64))",
+				"xkeyboard-config"
 			],
 			"files": [
 				"/usr/bin/xkbcli",
@@ -180,6 +181,6 @@
 		}
 	},
 	"source-name": "libxkbcommon",
-	"source-release": "7",
+	"source-release": "8",
 	"source-version": "1.9.0"
 }
