@@ -5,7 +5,7 @@
 #
 name        : kf6-kcolorscheme
 version     : 6.14.0
-release     : 6
+release     : 7
 upstreams   :
     - https://download.kde.org/stable/frameworks/6.14/kcolorscheme-6.14.0.tar.xz : 601b304dd5cc2fb065d8e658bdb0b87e1e37021000cf6a6f5b2ee8a5bfbaf5c9
 homepage    : https://community.kde.org/Frameworks
@@ -21,6 +21,7 @@ builddeps   :
     - cmake(KF6Config)
     - cmake(KF6GuiAddons)
     - cmake(KF6I18n)
+    - cmake(Qt6CorePrivate)
 setup       : |
     %cmake_kf6
 build       : |

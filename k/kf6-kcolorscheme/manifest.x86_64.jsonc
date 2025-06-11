@@ -7,7 +7,8 @@
 				"cmake(ECM)",
 				"cmake(KF6Config)",
 				"cmake(KF6GuiAddons)",
-				"cmake(KF6I18n)"
+				"cmake(KF6I18n)",
+				"cmake(Qt6CorePrivate)"
 			],
 			"depends": [
 				"soname(ld-linux-x86-64.so.2(x86_64))",
@@ -78,7 +79,8 @@
 				"cmake(ECM)",
 				"cmake(KF6Config)",
 				"cmake(KF6GuiAddons)",
-				"cmake(KF6I18n)"
+				"cmake(KF6I18n)",
+				"cmake(Qt6CorePrivate)"
 			],
 			"depends": [
 				"cmake(KF6Config)",
@@ -111,6 +113,6 @@
 		}
 	},
 	"source-name": "kf6-kcolorscheme",
-	"source-release": "6",
+	"source-release": "7",
 	"source-version": "6.14.0"
 }
