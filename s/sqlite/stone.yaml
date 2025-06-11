@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : sqlite
-version     : 3.47.2
-release     : 9
+version     : 3.50.1
+release     : 10
 homepage    : https://www.sqlite.org
 upstreams   :
-    - https://www.sqlite.org/2024/sqlite-autoconf-3470200.tar.gz : f1b2ee412c28d7472bc95ba996368d6f0cdcf00362affdadb27ed286c179540b
+    - https://www.sqlite.org/2025/sqlite-autoconf-3500100.tar.gz : 00a65114d697cfaa8fe0630281d76fd1b77afcd95cd5e40ec6a02cbbadbfea71
 summary     : Small, self-contained SQL database engine
 description : |
     SQLite is a C-language library that implements a small, fast, self-contained, high-reliability, full-featured, SQL database engine. SQLite is the most used database engine in the world. SQLite is built into all mobile phones and most computers and comes bundled inside countless other applications that people use every day.
@@ -17,6 +17,7 @@ builddeps   :
     - pkgconfig32(zlib)
     - pkgconfig(readline)
 tuning      :
+    - asneeded: false # Otherwise the linking to libz gets optimized away
     - lto: full
     - optimize: speed
 emul32      : true
@@ -48,10 +49,15 @@ setup       : |
     # This option adds additional logic to the ANALYZE command and to the query planner that can help SQLite to chose a better query plan under certain situations
     export CFLAGS+=" -DSQLITE_ENABLE_STAT4=1"
 
+    # Autotools fix for CC detection
+    export CC_FOR_BUILD="$CC"
+
     # --enable-session is required for nodejs to use the system sqlite3
+    # --soname=legacy ensures that the soname is set to the legacy libsqlite3.so.0 value (https://sqlite.org/src/forumpost/5a3b44f510df8ded)
     %configure --disable-static \
-               --disable-static-shell \
+               --disable-static-cli-shell \
                --enable-session \
+               --soname=legacy \
                $extra_args
 build       : |
     %make
