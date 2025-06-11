@@ -1,0 +1,138 @@
+#
+# SPDX-FileCopyrightText: © 2020-2024 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : qt6-webengine
+version     : 6.9.1
+release     : 1
+homepage    : https://www.qt.io
+upstreams   :
+    - https://download.qt.io/official_releases/qt/6.9/6.9.1/submodules/qtwebengine-everywhere-src-6.9.1.tar.xz : 787dfde22b348f6d620f2207ed7e32ad0a5389373182614272de28ff3f91c26c
+summary     : Qt6 Webengine Module
+description : |
+    The Qt WebEngine module provides a web browser engine that makes it easy to embed content from the World Wide Web into your Qt application on platforms that do not have a native web engine.
+license     :
+    - GFDL-1.3-or-later
+    - GPL-3.0-or-later
+    - LGPL-3.0-or-later
+builddeps   :
+    - binary(bison)
+    - binary(flex)
+    - binary(gperf)
+    - binary(nasm)
+    - binary(node)
+    - binary(perl)
+    - binary(python3)
+    - binary(readelf)
+    - cmake(Qt6CorePrivate)
+    - cmake(Qt6Designer)
+    - cmake(Qt6Positioning)
+    - cmake(Qt6Quick)
+    - cmake(Qt6Svg)
+    - cmake(Qt6WebChannel)
+    - cmake(Qt6WebSockets)
+    - pkgconfig(alsa)
+    - pkgconfig(epoxy)
+    - pkgconfig(fontconfig)
+    - pkgconfig(gbm)
+    - pkgconfig(harfbuzz)
+    - pkgconfig(icu-i18n)
+    - pkgconfig(krb5)
+    - pkgconfig(lcms2)
+    - pkgconfig(libavcodec)
+    - pkgconfig(libdrm)
+    - pkgconfig(libjpeg)
+    - pkgconfig(libopenjp2)
+    - pkgconfig(libpci)
+    - pkgconfig(libpipewire-0.3)
+    - pkgconfig(libpng)
+    - pkgconfig(libpulse)
+    - pkgconfig(libtiff-4)
+    - pkgconfig(libva)
+    - pkgconfig(libwebp)
+    - pkgconfig(libxslt)
+    - pkgconfig(minizip)
+    - pkgconfig(nss)
+    - pkgconfig(opus)
+    - pkgconfig(re2)
+    - pkgconfig(snappy)
+    # - pkgconfig(vpx) # Disabled if VA-API used
+    - pkgconfig(x11)
+    - pkgconfig(xcomposite)
+    - pkgconfig(xcursor)
+    - pkgconfig(xdamage)
+    - pkgconfig(xi)
+    - pkgconfig(xkbfile)
+    - pkgconfig(xrandr)
+    - pkgconfig(xshmfence)
+    - pkgconfig(xtst)
+    - python(html5lib)
+    - libatomic # It builds NASM which requires this, not expressed in final ABI at least
+setup       : |
+    %patch %(pkgdir)/disable-spellchecker-demo.patch
+    %patch %(pkgdir)/ftbfs-gperf-3.2.patch
+
+    # 3rdparty patches
+    %patch %(pkgdir)/qtwebengine-link-pipewire.patch -d src/3rdparty
+
+    %cmake_qt6 \
+        -DQT_FEATURE_webengine_system_ffmpeg=ON \
+        -DQT_FEATURE_webengine_system_icu=ON \
+        -DQT_FEATURE_webengine_system_libevent=ON \
+        -DQT_FEATURE_webengine_system_libxml=ON \
+        -DQT_FEATURE_webengine_system_minizip=ON \
+        -DQT_FEATURE_webengine_system_pulseaudio=ON \
+        -DQT_FEATURE_webengine_system_re2=ON \
+        -DQT_FEATURE_webengine_system_zlib=ON \
+        -DQT_FEATURE_webengine_proprietary_codecs=ON \
+        -DQT_FEATURE_webengine_kerberos=ON \
+        -DQT_FEATURE_webengine_spellchecker=ON \
+        -DQT_FEATURE_webengine_vaapi=ON \
+        -DQT_FEATURE_webengine_webrtc=ON \
+        -DQT_FEATURE_webengine_webrtc_pipewire=ON \
+        -DQT_FEATURE_pdf_v8=ON \
+        -DINSTALL_GN=OFF
+build       : |
+    %cmake_build
+install     : |
+    %cmake_install
+    %qml_cache_qt6
+packages    :
+    - "qt6-pdf":
+        summary: Qt6 - QtPdf components
+        description: Qt6 - QtPdf components
+        paths:
+            - /usr/lib/libQt6Pdf*.so.*
+            - /usr/lib/qt6/plugins/imageformats/libqpdf.so
+            - /usr/lib/qt6/qml/QtQuick/Pdf
+
+    - "qt6-pdf-demos":
+        paths:
+            - /usr/lib/qt6/examples/pdf*
+
+    - "qt6-pdf-devel":
+        summary: Qt6 - QtPdf components - Devel
+        description: Qt6 - QtPdf components - Devel
+        rundeps:
+            - "qt6-pdf"
+        paths:
+            - /usr/include/qt6/QtPdf*
+            - /usr/lib/cmake/Qt6Gui/Qt6QPdf*
+            - /usr/lib/cmake/Qt6Pdf*
+            - /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6Pdf*
+            - /usr/lib/libQt6Pdf*.prl
+            - /usr/lib/libQt6Pdf*.so
+            - /usr/lib/pkgconfig/Qt6Pdf*.pc
+            - /usr/lib/qt6/metatypes/qt6pdf*
+            - /usr/lib/qt6/mkspecs/modules/qt_lib_pdf*
+            - /usr/lib/qt6/modules/Pdf*
+            - /usr/lib/qt6/sbom/qtpdf*
+
+    - "%(name)-devtools":
+        summary: WebEngine devtools_resources
+        description: WebEngine devtools_resources
+        rundeps:
+            - "%(name)"
+        paths:
+            - /usr/share/qt6/resources/qtwebengine_devtools_resources.pak
