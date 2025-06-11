@@ -10,6 +10,7 @@
 				"cmake(KF6GuiAddons)",
 				"cmake(KF6I18n)",
 				"cmake(KF6WidgetsAddons)",
+				"cmake(Qt6CorePrivate)",
 				"cmake(Qt6ShaderTools)"
 			],
 			"depends": [
@@ -181,6 +182,7 @@
 				"cmake(KF6GuiAddons)",
 				"cmake(KF6I18n)",
 				"cmake(KF6WidgetsAddons)",
+				"cmake(Qt6CorePrivate)",
 				"cmake(Qt6ShaderTools)"
 			],
 			"depends": [
@@ -207,6 +209,6 @@
 		}
 	},
 	"source-name": "kf6-kdeclarative",
-	"source-release": "5",
+	"source-release": "6",
 	"source-version": "6.14.0"
 }
