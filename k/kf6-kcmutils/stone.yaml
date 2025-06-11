@@ -5,7 +5,7 @@
 #
 name        : kf6-kcmutils
 version     : 6.14.0
-release     : 4
+release     : 5
 upstreams   :
     - https://download.kde.org/stable/frameworks/6.14/kcmutils-6.14.0.tar.xz : 2336f05ee46668de2be70c301660c9d3a881c40046ef90d1205e408260b46005
 homepage    : https://community.kde.org/Frameworks
@@ -23,6 +23,7 @@ builddeps   :
     - cmake(KF6I18n)
     - cmake(KF6KIO)
     - cmake(KF6XmlGui)
+    - cmake(Qt6CorePrivate)
     - cmake(Qt6Qml)
 setup       : |
     %cmake_kf6

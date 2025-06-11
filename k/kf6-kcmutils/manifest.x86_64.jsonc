@@ -10,6 +10,7 @@
 				"cmake(KF6I18n)",
 				"cmake(KF6KIO)",
 				"cmake(KF6XmlGui)",
+				"cmake(Qt6CorePrivate)",
 				"cmake(Qt6Qml)"
 			],
 			"depends": [
@@ -245,6 +246,7 @@
 				"cmake(KF6I18n)",
 				"cmake(KF6KIO)",
 				"cmake(KF6XmlGui)",
+				"cmake(Qt6CorePrivate)",
 				"cmake(Qt6Qml)"
 			],
 			"depends": [
@@ -298,6 +300,6 @@
 		}
 	},
 	"source-name": "kf6-kcmutils",
-	"source-release": "4",
+	"source-release": "5",
 	"source-version": "6.14.0"
 }
