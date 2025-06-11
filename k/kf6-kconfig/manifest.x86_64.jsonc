@@ -5,6 +5,7 @@
 		"kf6-kconfig": {
 			"build-depends": [
 				"cmake(ECM)",
+				"cmake(Qt6CorePrivate)",
 				"cmake(Qt6Qml)"
 			],
 			"depends": [
@@ -145,6 +146,7 @@
 		"kf6-kconfig-devel": {
 			"build-depends": [
 				"cmake(ECM)",
+				"cmake(Qt6CorePrivate)",
 				"cmake(Qt6Qml)"
 			],
 			"depends": [
@@ -218,6 +220,6 @@
 		}
 	},
 	"source-name": "kf6-kconfig",
-	"source-release": "6",
+	"source-release": "7",
 	"source-version": "6.14.0"
 }
