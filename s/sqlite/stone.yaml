@@ -5,7 +5,7 @@
 #
 name        : sqlite
 version     : 3.50.1
-release     : 10
+release     : 11
 homepage    : https://www.sqlite.org
 upstreams   :
     - https://www.sqlite.org/2025/sqlite-autoconf-3500100.tar.gz : 00a65114d697cfaa8fe0630281d76fd1b77afcd95cd5e40ec6a02cbbadbfea71
@@ -28,26 +28,26 @@ profiles    :
             extra_args="--enable-readline"
 setup       : |
     # When this C-preprocessor macro is defined, SQLite includes some additional APIs that provide convenient access to meta-data about tables and queries
-    export CFLAGS+=" -DSQLITE_ENABLE_COLUMN_METADATA=1"
+    export CPPFLAGS+=" -DSQLITE_ENABLE_COLUMN_METADATA=1"
 
     # This option enables the SQLITE_DBPAGE virtual table.
-    export CFLAGS+=" -DSQLITE_ENABLE_DBPAGE_VTAB=1"
+    export CPPFLAGS+=" -DSQLITE_ENABLE_DBPAGE_VTAB=1"
 
     # This option enables the dbstat virtual table.
-    export CFLAGS+=" -DSQLITE_ENABLE_DBSTAT_VTAB=1"
+    export CPPFLAGS+=" -DSQLITE_ENABLE_DBSTAT_VTAB=1"
 
     # This compile-time option enables the SQLITE_STMT virtual table logic.
-    export CFLAGS+=" -DSQLITE_ENABLE_STMTVTAB=1"
+    export CPPFLAGS+=" -DSQLITE_ENABLE_STMTVTAB=1"
 
     # This option enables the sqlite3_unlock_notify() interface and its associated functionality
-    export CFLAGS+=" -DSQLITE_ENABLE_UNLOCK_NOTIFY=1"
+    export CPPFLAGS+=" -DSQLITE_ENABLE_UNLOCK_NOTIFY=1"
 
     # When this option is present, secure_delete defaults to on
     # https://www.sqlite.org/pragma.html#pragma_secure_delete
-    export CFLAGS+=" -DSQLITE_SECURE_DELETE=1"
+    export CPPFLAGS+=" -DSQLITE_SECURE_DELETE=1"
 
     # This option adds additional logic to the ANALYZE command and to the query planner that can help SQLite to chose a better query plan under certain situations
-    export CFLAGS+=" -DSQLITE_ENABLE_STAT4=1"
+    export CPPFLAGS+=" -DSQLITE_ENABLE_STAT4=1"
 
     # Autotools fix for CC detection
     export CC_FOR_BUILD="$CC"
@@ -56,6 +56,10 @@ setup       : |
     # --soname=legacy ensures that the soname is set to the legacy libsqlite3.so.0 value (https://sqlite.org/src/forumpost/5a3b44f510df8ded)
     %configure --disable-static \
                --disable-static-cli-shell \
+               --enable-fts4 \
+               --enable-fts5 \
+               --enable-geopoly \
+               --enable-rtree \
                --enable-session \
                --soname=legacy \
                $extra_args
