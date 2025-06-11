@@ -1,0 +1,25 @@
+#
+# SPDX-FileCopyrightText: © 2020-2024 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : qt6-webview
+version     : 6.9.1
+release     : 1
+homepage    : https://www.qt.io
+upstreams   :
+    - https://download.qt.io/official_releases/qt/6.9/6.9.1/submodules/qtwebview-everywhere-src-6.9.1.tar.xz : c29ad4fbb8f7a2042c4941bef88bb13bd04757eed94d6937ae69e0e4ea0d59a5
+summary     : Qt6 WebView Library
+description : |
+    Qt WebView provides a way to display web content in a QML application without necessarily including a full web browser stack by using native APIs where it makes sense.
+license     : LGPL-3.0-only
+builddeps   :
+    - cmake(Qt6CorePrivate)
+    - cmake(Qt6Qml)
+    - cmake(Qt6WebEngineCore)
+setup       : |
+    %cmake_qt6
+build       : |
+    %cmake_build
+install     : |
+    %cmake_install
