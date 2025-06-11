@@ -13,7 +13,8 @@
 				"cmake(KF6Kirigami2)",
 				"cmake(KF6Package)",
 				"cmake(KF6Syndication)",
-				"cmake(KF6WidgetsAddons)"
+				"cmake(KF6WidgetsAddons)",
+				"cmake(Qt6CorePrivate)"
 			],
 			"depends": [
 				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
@@ -220,7 +221,8 @@
 				"cmake(KF6Kirigami2)",
 				"cmake(KF6Package)",
 				"cmake(KF6Syndication)",
-				"cmake(KF6WidgetsAddons)"
+				"cmake(KF6WidgetsAddons)",
+				"cmake(Qt6CorePrivate)"
 			],
 			"depends": [
 				"cmake(KF6Attica)",
@@ -304,6 +306,6 @@
 		}
 	},
 	"source-name": "kf6-knewstuff",
-	"source-release": "4",
+	"source-release": "5",
 	"source-version": "6.14.0"
 }
