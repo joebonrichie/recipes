@@ -6,6 +6,7 @@
 			"build-depends": [
 				"cmake(ECM)",
 				"cmake(PlasmaWaylandProtocols)",
+				"cmake(Qt6CorePrivate)",
 				"cmake(Qt6Qml)",
 				"cmake(Qt6WaylandClient)",
 				"pkgconfig(wayland-protocols)",
@@ -155,6 +156,7 @@
 			"build-depends": [
 				"cmake(ECM)",
 				"cmake(PlasmaWaylandProtocols)",
+				"cmake(Qt6CorePrivate)",
 				"cmake(Qt6Qml)",
 				"cmake(Qt6WaylandClient)",
 				"pkgconfig(wayland-protocols)",
@@ -223,6 +225,6 @@
 		}
 	},
 	"source-name": "kf6-kwindowsystem",
-	"source-release": "4",
+	"source-release": "5",
 	"source-version": "6.14.0"
 }
