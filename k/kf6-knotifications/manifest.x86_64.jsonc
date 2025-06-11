@@ -6,6 +6,7 @@
 			"build-depends": [
 				"cmake(ECM)",
 				"cmake(KF6Config)",
+				"cmake(Qt6CorePrivate)",
 				"cmake(Qt6Qml)",
 				"pkgconfig(libcanberra)"
 			],
@@ -141,6 +142,7 @@
 			"build-depends": [
 				"cmake(ECM)",
 				"cmake(KF6Config)",
+				"cmake(Qt6CorePrivate)",
 				"cmake(Qt6Qml)",
 				"pkgconfig(libcanberra)"
 			],
@@ -174,6 +176,6 @@
 		}
 	},
 	"source-name": "kf6-knotifications",
-	"source-release": "5",
+	"source-release": "6",
 	"source-version": "6.14.0"
 }
