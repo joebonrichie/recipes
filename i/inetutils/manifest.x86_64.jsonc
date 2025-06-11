@@ -11,8 +11,6 @@
 				"/usr/bin/dnsdomainname",
 				"/usr/bin/ftp",
 				"/usr/bin/hostname",
-				"/usr/bin/ping",
-				"/usr/bin/ping6",
 				"/usr/bin/rcp",
 				"/usr/bin/rexec",
 				"/usr/bin/rlogin",
@@ -26,8 +24,6 @@
 				"/usr/share/man/man1/dnsdomainname.1",
 				"/usr/share/man/man1/ftp.1",
 				"/usr/share/man/man1/hostname.1",
-				"/usr/share/man/man1/ping.1",
-				"/usr/share/man/man1/ping6.1",
 				"/usr/share/man/man1/rcp.1",
 				"/usr/share/man/man1/rexec.1",
 				"/usr/share/man/man1/rlogin.1",
@@ -42,8 +38,6 @@
 				"binary(dnsdomainname)",
 				"binary(ftp)",
 				"binary(hostname)",
-				"binary(ping)",
-				"binary(ping6)",
 				"binary(rcp)",
 				"binary(rexec)",
 				"binary(rlogin)",
@@ -56,6 +50,6 @@
 		}
 	},
 	"source-name": "inetutils",
-	"source-release": "5",
-	"source-version": "2.5"
+	"source-release": "6",
+	"source-version": "2.6"
 }
