@@ -5,7 +5,7 @@
 #
 name        : libbpf
 version     : 1.5.1
-release     : 2
+release     : 3
 upstreams   :
     - https://github.com/libbpf/libbpf/archive/refs/tags/v1.5.1.tar.gz : e5ff89750e48ab5ecdfc02a759aa0dacd1e7980e98e16bdb4bfa8ff0b3b4b98f
 homepage    : https://github.com/libbpf/libbpf
@@ -17,6 +17,9 @@ description : |
     Library for loading eBPF programs and reading and manipulating eBPF objects from user-space
 builddeps   :
     - pkgconfig(libelf)
+setup       : |
+    # Fixes an issue with Kernel 6.15+ where module sizes are significantly increased
+    %patch %(pkgdir)/kernel-6.15.patch
 build       : |
     %make -C src LIBSUBDIR=lib
 install     : |
