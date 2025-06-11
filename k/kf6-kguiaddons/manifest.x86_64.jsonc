@@ -6,6 +6,7 @@
 			"build-depends": [
 				"cmake(ECM)",
 				"cmake(PlasmaWaylandProtocols)",
+				"cmake(Qt6CorePrivate)",
 				"cmake(Qt6Qml)",
 				"cmake(Qt6WaylandClient)",
 				"pkgconfig(wayland-protocols)",
@@ -48,6 +49,7 @@
 			"build-depends": [
 				"cmake(ECM)",
 				"cmake(PlasmaWaylandProtocols)",
+				"cmake(Qt6CorePrivate)",
 				"cmake(Qt6Qml)",
 				"cmake(Qt6WaylandClient)",
 				"pkgconfig(wayland-protocols)",
@@ -112,6 +114,6 @@
 		}
 	},
 	"source-name": "kf6-kguiaddons",
-	"source-release": "5",
+	"source-release": "6",
 	"source-version": "6.14.0"
 }

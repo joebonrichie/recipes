@@ -4,7 +4,8 @@
 	"packages": {
 		"kf6-kglobalaccel": {
 			"build-depends": [
-				"cmake(ECM)"
+				"cmake(ECM)",
+				"cmake(Qt6CorePrivate)"
 			],
 			"depends": [
 				"soname(libQt6Core.so.6(x86_64))",
@@ -131,7 +132,8 @@
 		},
 		"kf6-kglobalaccel-devel": {
 			"build-depends": [
-				"cmake(ECM)"
+				"cmake(ECM)",
+				"cmake(Qt6CorePrivate)"
 			],
 			"depends": [
 				"kf6-kglobalaccel"
@@ -159,6 +161,6 @@
 		}
 	},
 	"source-name": "kf6-kglobalaccel",
-	"source-release": "4",
+	"source-release": "5",
 	"source-version": "6.14.0"
 }

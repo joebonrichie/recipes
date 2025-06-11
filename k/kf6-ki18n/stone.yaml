@@ -5,7 +5,7 @@
 #
 name        : kf6-ki18n
 version     : 6.14.0
-release     : 5
+release     : 6
 upstreams   :
     - https://download.kde.org/stable/frameworks/6.14/ki18n-6.14.0.tar.xz : 2a5135412caf0a07eba4eeb60867ac6929df1c83c145ae757a6a1230f842e669
 homepage    : https://community.kde.org/Frameworks
@@ -21,6 +21,7 @@ builddeps   :
     - binary(msgmerge) # gettext
     # Temporary, boulder doesn't handle build ordering resolution correctly when builddeps are added by macros, so add ECM manually
     - cmake(ECM)
+    - cmake(Qt6CorePrivate)
     - cmake(Qt6Qml)
     - pkgconfig(iso-codes)
 rundeps     :

@@ -5,6 +5,7 @@
 		"kf6-sonnet": {
 			"build-depends": [
 				"cmake(ECM)",
+				"cmake(Qt6CorePrivate)",
 				"cmake(Qt6Qml)",
 				"pkgconfig(hunspell)"
 			],
@@ -147,6 +148,7 @@
 		"kf6-sonnet-devel": {
 			"build-depends": [
 				"cmake(ECM)",
+				"cmake(Qt6CorePrivate)",
 				"cmake(Qt6Qml)",
 				"pkgconfig(hunspell)"
 			],
@@ -205,6 +207,6 @@
 		}
 	},
 	"source-name": "kf6-sonnet",
-	"source-release": "4",
+	"source-release": "5",
 	"source-version": "6.14.0"
 }

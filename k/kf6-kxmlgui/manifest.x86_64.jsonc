@@ -12,7 +12,8 @@
 				"cmake(KF6GuiAddons)",
 				"cmake(KF6I18n)",
 				"cmake(KF6IconThemes)",
-				"cmake(KF6ItemViews)"
+				"cmake(KF6ItemViews)",
+				"cmake(Qt6CorePrivate)"
 			],
 			"depends": [
 				"soname(libKF6ConfigCore.so.6(x86_64))",
@@ -163,7 +164,8 @@
 				"cmake(KF6GuiAddons)",
 				"cmake(KF6I18n)",
 				"cmake(KF6IconThemes)",
-				"cmake(KF6ItemViews)"
+				"cmake(KF6ItemViews)",
+				"cmake(Qt6CorePrivate)"
 			],
 			"depends": [
 				"cmake(KF6ConfigWidgets)",
@@ -236,6 +238,6 @@
 		}
 	},
 	"source-name": "kf6-kxmlgui",
-	"source-release": "4",
+	"source-release": "5",
 	"source-version": "6.14.0"
 }

@@ -27,9 +27,11 @@
 				"cmake(KF6Solid)",
 				"cmake(KF6Wallet)",
 				"cmake(KF6WindowSystem)",
+				"cmake(Qt6CorePrivate)",
 				"pkgconfig(libacl)",
 				"pkgconfig(libattr)",
-				"pkgconfig(libxslt)"
+				"pkgconfig(libxslt)",
+				"pkgconfig(mount)"
 			],
 			"depends": [
 				"binary(kded6)",
@@ -412,9 +414,11 @@
 				"cmake(KF6Solid)",
 				"cmake(KF6Wallet)",
 				"cmake(KF6WindowSystem)",
+				"cmake(Qt6CorePrivate)",
 				"pkgconfig(libacl)",
 				"pkgconfig(libattr)",
-				"pkgconfig(libxslt)"
+				"pkgconfig(libxslt)",
+				"pkgconfig(mount)"
 			],
 			"depends": [
 				"cmake(KF6Bookmarks)",
@@ -713,9 +717,11 @@
 				"cmake(KF6Solid)",
 				"cmake(KF6Wallet)",
 				"cmake(KF6WindowSystem)",
+				"cmake(Qt6CorePrivate)",
 				"pkgconfig(libacl)",
 				"pkgconfig(libattr)",
-				"pkgconfig(libxslt)"
+				"pkgconfig(libxslt)",
+				"pkgconfig(mount)"
 			],
 			"files": [
 				"/usr/share/doc/HTML/ca/kioworker6/data/index.cache.bz2",
@@ -985,6 +991,6 @@
 		}
 	},
 	"source-name": "kf6-kio",
-	"source-release": "8",
+	"source-release": "9",
 	"source-version": "6.14.0"
 }

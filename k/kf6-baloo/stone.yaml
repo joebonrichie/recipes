@@ -5,7 +5,7 @@
 #
 name        : kf6-baloo
 version     : 6.14.0
-release     : 4
+release     : 5
 upstreams   :
     - https://download.kde.org/stable/frameworks/6.14/baloo-6.14.0.tar.xz : ab60f943607f67929b619c029498f07fa8767aec6a7fb02ecf7392ced25734b4
 homepage    : https://community.kde.org/Frameworks
@@ -28,6 +28,7 @@ builddeps   :
     - cmake(KF6IdleTime)
     - cmake(KF6KIO)
     - cmake(KF6Solid)
+    - cmake(Qt6CorePrivate)
     - cmake(Qt6Qml)
     - lmdb-devel
 setup       : |
