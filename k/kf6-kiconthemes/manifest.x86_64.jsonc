@@ -10,6 +10,7 @@
 				"cmake(KF6ColorScheme)",
 				"cmake(KF6I18n)",
 				"cmake(KF6WidgetsAddons)",
+				"cmake(Qt6CorePrivate)",
 				"cmake(Qt6Qml)",
 				"cmake(Qt6Svg)"
 			],
@@ -152,6 +153,7 @@
 				"cmake(KF6ColorScheme)",
 				"cmake(KF6I18n)",
 				"cmake(KF6WidgetsAddons)",
+				"cmake(Qt6CorePrivate)",
 				"cmake(Qt6Qml)",
 				"cmake(Qt6Svg)"
 			],
@@ -206,6 +208,6 @@
 		}
 	},
 	"source-name": "kf6-kiconthemes",
-	"source-release": "5",
+	"source-release": "6",
 	"source-version": "6.14.0"
 }
