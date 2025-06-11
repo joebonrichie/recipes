@@ -5,7 +5,7 @@
 #
 name        : kf6-kcoreaddons
 version     : 6.14.0
-release     : 5
+release     : 6
 upstreams   :
     - https://download.kde.org/stable/frameworks/6.14/kcoreaddons-6.14.0.tar.xz : 9555d17295f4fece18b46e3d289055baf58b352e082e4da6e6e352d8d5c042ee
 homepage    : https://community.kde.org/Frameworks
@@ -20,6 +20,7 @@ description : |
 builddeps   :
     # Temporary, boulder doesn't handle build ordering resolution correctly when builddeps are added by macros, so add ECM manually
     - cmake(ECM)
+    - cmake(Qt6CorePrivate)
     - cmake(Qt6Qml)
     # TODO package pyside bindings, note that they need to be subpackaged. Let's wait till something needs them
 setup       : |
