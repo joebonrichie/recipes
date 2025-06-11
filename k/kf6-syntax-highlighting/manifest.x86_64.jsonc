@@ -6,6 +6,7 @@
 			"build-depends": [
 				"binary(perl)",
 				"cmake(ECM)",
+				"cmake(Qt6CorePrivate)",
 				"cmake(Qt6Qml)",
 				"cmake(Qt6Quick)"
 			],
@@ -129,6 +130,7 @@
 			"build-depends": [
 				"binary(perl)",
 				"cmake(ECM)",
+				"cmake(Qt6CorePrivate)",
 				"cmake(Qt6Qml)",
 				"cmake(Qt6Quick)"
 			],
@@ -174,6 +176,6 @@
 		}
 	},
 	"source-name": "kf6-syntax-highlighting",
-	"source-release": "4",
+	"source-release": "5",
 	"source-version": "6.14.0"
 }
