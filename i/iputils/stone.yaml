@@ -1,0 +1,42 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : iputils
+version     : "20250605"
+release     : 1
+homepage    : https://github.com/iputils/iputils
+upstreams   :
+    - https://github.com/iputils/iputils/releases/download/20250605/iputils-20250605.tar.xz : 6f213700dbf96b5cc4499ca70cb15ecd69c09f405b06785bb4a1a10b572b6276
+summary     : A set of small useful utilities for Linux networking.
+description : |
+    The iputils package is set of small useful utilities for Linux networking.
+license     :
+    - GPL-2.0-or-later
+    - BSD-3-Clause
+    - Rdisc
+networking  : yes # Tests
+builddeps   :
+    - binary(msgfmt)
+    - pkgconfig(libcap)
+    - pkgconfig(libidn2)
+    - pkgconfig(libsystemd)
+checkdeps   :
+    - sysbinary(ip)
+environment : |
+    export PATH="/usr/bin:/usr/sbin"
+setup       : |
+    %meson
+build       : |
+    %meson_build
+install     : |
+    %meson_install
+
+    # Create ping6 symlinks for those who want them
+    ln -sv ping %(installroot)%(bindir)/ping6
+    ln -sv ping.8 %(installroot)%(mandir)/man8/ping6.8
+
+    # TODO: Once moss supports capabilities we need to add caps for arping and clockdiff
+check       : |
+    %meson_test

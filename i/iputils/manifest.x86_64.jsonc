@@ -1,0 +1,64 @@
+/** Human readable report. This is not consumed by boulder */
+{
+	"manifest-version": "0.2",
+	"packages": {
+		"iputils": {
+			"build-depends": [
+				"binary(msgfmt)",
+				"pkgconfig(libcap)",
+				"pkgconfig(libidn2)",
+				"pkgconfig(libsystemd)",
+				"sysbinary(ip)"
+			],
+			"depends": [
+				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
+				"soname(libc.so.6(x86_64))",
+				"soname(libcap.so.2(x86_64))",
+				"soname(libidn2.so.0(x86_64))"
+			],
+			"files": [
+				"/usr/bin/arping",
+				"/usr/bin/clockdiff",
+				"/usr/bin/ping",
+				"/usr/bin/ping6",
+				"/usr/bin/tracepath",
+				"/usr/share/iputils/arping.html",
+				"/usr/share/iputils/clockdiff.html",
+				"/usr/share/iputils/ping.html",
+				"/usr/share/iputils/tracepath.html",
+				"/usr/share/locale/cs/LC_MESSAGES/iputils.mo",
+				"/usr/share/locale/de/LC_MESSAGES/iputils.mo",
+				"/usr/share/locale/es/LC_MESSAGES/iputils.mo",
+				"/usr/share/locale/fi/LC_MESSAGES/iputils.mo",
+				"/usr/share/locale/fr/LC_MESSAGES/iputils.mo",
+				"/usr/share/locale/id/LC_MESSAGES/iputils.mo",
+				"/usr/share/locale/ja/LC_MESSAGES/iputils.mo",
+				"/usr/share/locale/ka/LC_MESSAGES/iputils.mo",
+				"/usr/share/locale/kab/LC_MESSAGES/iputils.mo",
+				"/usr/share/locale/ko/LC_MESSAGES/iputils.mo",
+				"/usr/share/locale/pt_BR/LC_MESSAGES/iputils.mo",
+				"/usr/share/locale/ro/LC_MESSAGES/iputils.mo",
+				"/usr/share/locale/tr/LC_MESSAGES/iputils.mo",
+				"/usr/share/locale/uk/LC_MESSAGES/iputils.mo",
+				"/usr/share/locale/zh_CN/LC_MESSAGES/iputils.mo",
+				"/usr/share/locale/zh_Hant/LC_MESSAGES/iputils.mo",
+				"/usr/share/man/man8/arping.8",
+				"/usr/share/man/man8/clockdiff.8",
+				"/usr/share/man/man8/ping.8",
+				"/usr/share/man/man8/ping6.8",
+				"/usr/share/man/man8/tracepath.8"
+			],
+			"name": "iputils",
+			"provides": [
+				"binary(arping)",
+				"binary(clockdiff)",
+				"binary(ping)",
+				"binary(ping6)",
+				"binary(tracepath)"
+			]
+		}
+	},
+	"source-name": "iputils",
+	"source-release": "1",
+	"source-version": "20250605"
+}
