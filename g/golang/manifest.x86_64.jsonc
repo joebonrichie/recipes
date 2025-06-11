@@ -63,6 +63,7 @@
 				"/usr/lib/golang/lib/fips140/Makefile",
 				"/usr/lib/golang/lib/fips140/README.md",
 				"/usr/lib/golang/lib/fips140/fips140.sum",
+				"/usr/lib/golang/lib/fips140/inprocess.txt",
 				"/usr/lib/golang/lib/fips140/v1.0.0.zip",
 				"/usr/lib/golang/lib/time/README",
 				"/usr/lib/golang/lib/time/mkzip.go",
@@ -10371,6 +10372,6 @@
 		}
 	},
 	"source-name": "golang",
-	"source-release": "18",
-	"source-version": "1.24.3"
+	"source-release": "19",
+	"source-version": "1.24.4"
 }
