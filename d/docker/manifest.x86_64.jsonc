@@ -18,6 +18,7 @@
 				"/usr/share/bash-completion/completions/docker",
 				"/usr/share/fish/vendor_completions.d/docker.fish",
 				"/usr/share/man/man1/docker-attach.1",
+				"/usr/share/man/man1/docker-bake.1",
 				"/usr/share/man/man1/docker-build.1",
 				"/usr/share/man/man1/docker-builder-build.1",
 				"/usr/share/man/man1/docker-builder-prune.1",
@@ -217,6 +218,6 @@
 		}
 	},
 	"source-name": "docker",
-	"source-release": "7",
-	"source-version": "28.0.4"
+	"source-release": "8",
+	"source-version": "28.2.2"
 }
