@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : qemu
-version     : 9.2.4
-release     : 17
+version     : 10.0.2
+release     : 18
 homepage    : http://www.qemu.org/
 upstreams   :
-    - https://download.qemu.org/qemu-9.2.4.tar.xz : f3cc1c4eabfdb288218ac3e33763dbe9e276d8bc890b867a2335d58de2ddd39a
+    - https://download.qemu.org/qemu-10.0.2.tar.xz : ef786f2398cb5184600f69aef4d5d691efd44576a3cff4126d38d4c6fec87759
 summary     :  A generic and open source machine emulator and virtualizer
 description : |
      A generic and open source machine emulator and virtualizer
@@ -31,6 +31,8 @@ builddeps   :
     - pkgconfig(gmp)
     - pkgconfig(gtk+-3.0)
     - pkgconfig(gtk+-x11-3.0)
+    - pkgconfig(libbpf)
+    - pkgconfig(libcap-ng)
     - pkgconfig(libcurl)
     - pkgconfig(libdw)
     - pkgconfig(libfdt)
@@ -40,24 +42,31 @@ builddeps   :
     - pkgconfig(libpng)
     - pkgconfig(libpulse)
     - pkgconfig(libseccomp)
-    - pkgconfig(slirp)
     - pkgconfig(libssh)
     - pkgconfig(libtasn1)
     - pkgconfig(libudev)
     - pkgconfig(libusb-1.0)
     - pkgconfig(libzstd)
+    - pkgconfig(ncurses)
+    - pkgconfig(pam)
     - pkgconfig(pixman-1)
     - pkgconfig(sdl2-compat)
+    - pkgconfig(slirp)
+    - pkgconfig(snappy)
     - pkgconfig(spice-protocol)
     - pkgconfig(spice-server)
     - pkgconfig(virglrenderer)
+    - pkgconfig(vte-2.91)
     - pkgconfig(x11)
     - pkgconfig(xkbcommon)
     - pkgconfig(zlib)
     - python(setuptools)
 setup       : |
     %configure --disable-docs \
-               --target-list=x86_64-linux-user,i386-linux-user,i386-softmmu,x86_64-softmmu
+               --target-list=x86_64-linux-user,i386-linux-user,i386-softmmu,x86_64-softmmu \
+               -Db_lto=true \
+               -Db_lto_mode=thin \
+               -Dmodules=enabled
 build       : |
     %make
 install     : |
