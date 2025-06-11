@@ -5,11 +5,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : containerd
-version     : 2.0.4
-release     : 8
+version     : 2.1.1
+release     : 9
 homepage    : https://containerd.io/
 upstreams   :
-    - https://github.com/containerd/containerd/archive/refs/tags/v2.0.4.tar.gz : af0b18d125abf97fbe90d6d2cda53ffa0cd4cbb9e7d65fee61fc095bfb63cef5
+    - https://github.com/containerd/containerd/archive/refs/tags/v2.1.1.tar.gz : 6ac779e87926ac1fe4360ffee63efd9f829b15a887e612be9a7d2f8a652674e9
 summary     : An open and reliable container runtime
 description : |
     An open and reliable container runtime

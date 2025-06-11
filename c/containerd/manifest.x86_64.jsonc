@@ -38,6 +38,6 @@
 		}
 	},
 	"source-name": "containerd",
-	"source-release": "8",
-	"source-version": "2.0.4"
+	"source-release": "9",
+	"source-version": "2.1.1"
 }
