@@ -1,0 +1,7 @@
+releases:
+  id: 343
+  rss: https://github.com/coreutils/coreutils/tags.atom
+security:
+  cpe:
+  - vendor: gnu
+    product: coreutils

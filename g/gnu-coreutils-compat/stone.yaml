@@ -1,0 +1,50 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+# SPDX-FileCopyrightText: © 2025-     AerynOS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : gnu-coreutils-compat
+version     : '9.7'
+release     : 1
+homepage    : https://www.gnu.org/software/coreutils/
+upstreams   :
+    - https://ftp.gnu.org/gnu/coreutils/coreutils-9.7.tar.xz : e8bb26ad0293f9b5a1fc43fb42ba970e312c66ce92c1b0b16713d7500db251bf
+summary     : GNU core utilities (compatibility package)
+description : |
+    The GNU Core Utilities are the basic file, shell and text manipulation utilities of the GNU operating system. These are the core utilities which are expected to exist on every operating system.
+
+    This package provides GNU versions of coreutils programs where the uutils implementation is known to be deficient relative to the GNU version in some way.
+license     :
+    - GPL-3.0-or-later
+builddeps   :
+    - pkgconfig(gmp)
+    - pkgconfig(libacl)
+    - pkgconfig(libattr)
+    - pkgconfig(libcap)
+    - pkgconfig(libcrypto)
+setup       : |
+    export FORCE_UNSAFE_CONFIGURE=1
+    # There HAS to be a better way to do this
+    %configure \
+        --enable-install-program=sort,stty \
+        --enable-no-install-program=[,b2sum,base32,base64,basename,basenc,cat,chcon,chgrp,chmod,chown,chroot,cksum,comm,cp,csplit,cut,date,dd,df,dir,dircolors,dirname,du,echo,env,expand,expr,factor,false,fmt,fold,groups,head,hostid,id,install,join,kill,link,ln,logname,ls,md5sum,mkdir,mkfifo,mknod,mktemp,mv,nice,nl,nohup,nproc,numfmt,od,paste,pathchk,pinky,pr,printenv,printf,ptx,pwd,readlink,realpath,rm,rmdir,runcon,seq,sha1sum,sha224sum,sha256sum,sha384sum,sha512sum,shred,shuf,sleep,split,stat,stdbuf,sum,sync,tac,tail,tee,test,timeout,touch,tr,true,truncate,tsort,tty,uname,unexpand,uniq,unlink,uptime,users,vdir,wc,who,whoami,yes,
+build       : |
+    %make
+install     : |
+    %make_install
+
+    # Why isn't this removed by the above list?
+    rm -v %(installroot)/%(bindir)/install \
+          %(installroot)/%(mandir)/man1/install.1
+
+    # Rename so gnu coreutils tools don't conflict with uutils coreutils tools
+    cd %(installroot)/%(bindir)
+    for i in *; do
+        mv -v ${i} gnu-${i}
+    done
+
+    cd %(installroot)/%(mandir)/man1/
+    for i in *; do
+        mv -v ${i} gnu-${i}
+    done
