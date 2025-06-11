@@ -3,6 +3,9 @@
 	"manifest-version": "0.2",
 	"packages": {
 		"pixman": {
+			"build-depends": [
+				"pkgconfig(libpng)"
+			],
 			"depends": [
 				"soname(ld-linux-x86-64.so.2(x86_64))",
 				"soname(libc.so.6(x86_64))",
@@ -10,7 +13,7 @@
 			],
 			"files": [
 				"/usr/lib/libpixman-1.so.0",
-				"/usr/lib/libpixman-1.so.0.44.2"
+				"/usr/lib/libpixman-1.so.0.46.2"
 			],
 			"name": "pixman",
 			"provides": [
@@ -18,6 +21,9 @@
 			]
 		},
 		"pixman-devel": {
+			"build-depends": [
+				"pkgconfig(libpng)"
+			],
 			"depends": [
 				"pixman"
 			],
@@ -34,6 +40,6 @@
 		}
 	},
 	"source-name": "pixman",
-	"source-release": "7",
-	"source-version": "0.44.2"
+	"source-release": "8",
+	"source-version": "0.46.2"
 }
