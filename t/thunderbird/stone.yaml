@@ -4,15 +4,15 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : thunderbird
-version     : 139.0.1
-release     : 20
+version     : 139.0.2
+release     : 21
 homepage    : https://www.thunderbird.net/
 upstreams   :
-    - https://releases.mozilla.org/pub/thunderbird/releases/139.0.1/source/thunderbird-139.0.1.source.tar.xz:
-        hash: 58c15a4681e27b1926e0131d2b4d92f74e1048a74c3a2c7a1c97ea8fd4ceffef
+    - https://releases.mozilla.org/pub/thunderbird/releases/139.0.2/source/thunderbird-139.0.2.source.tar.xz:
+        hash: 1087eb5ea49049fb2a9d8e0f67757590bb5cb12d82d7f03045675f8162704584
         unpackdir: thunderbird
-    - https://sources.getsol.us/mozilla/thunderbird/thunderbird-139.0.1-langpacks.tar.zst:
-        hash: a178dc2ab016f0c3a17f53d2679975f6fec8a592fe8225b4659f403e44d61b3c
+    - https://sources.getsol.us/mozilla/thunderbird/thunderbird-139.0.2-langpacks.tar.zst:
+        hash: 4ef12d224e05f9374da541cff4a9686b83a125cba9174115eaf2e5c2b2fd971b
         unpackdir: thunderbird/langpacks
 summary     : Thunderbird Email Client
 description : |
@@ -20,6 +20,7 @@ description : |
 license     : MPL-2.0
 builddeps   :
     - binary(cbindgen)
+    - binary(dbus-run-session) # PGO
     - binary(m4)
     - binary(make)
     - binary(nasm)
@@ -27,11 +28,16 @@ builddeps   :
     - binary(python3)
     - binary(rustc)
     - binary(unzip)
+    - binary(weston) # PGO
+    - binary(wlheadless-run) # PGO
     - pkgconfig(alsa)
+    - pkgconfig(gbm)
     - pkgconfig(gtk+-3.0)
     - pkgconfig(icu-uc)
+    - pkgconfig(libdrm)
     - pkgconfig(libevent)
     - pkgconfig(libjpeg)
+    - pkgconfig(libpipewire-0.3)
     # - pkgconfig(libpng) # Not patched with APNG support
     - pkgconfig(libpulse)
     - pkgconfig(librnp)
@@ -46,25 +52,87 @@ builddeps   :
 rundeps     :
     - rnp
     - xdg-desktop-portal
+networking  : true # PGO
 environment : |
+    # Set this to 1 if you want to create a release build, 0 if you're just doing builds locally for testing purposes
+    # Note that you still need to do a full release build locally and test it before pushing it
+    # 2025-06-11: This seems to freeze during the tests for unknown reasons
+    FULL_BUILD=0
+
     export MOZ_NOSPAM=1
     export PIP_NETWORK_INSTALL_RESTRICTED_VIRTUALENVS=mach
     export MACH_BUILD_PYTHON_NATIVE_PACKAGE_SOURCE="none"
-
-    # Something in this still links against libstdc++ and I haven't figured out how to disable it
-    # It doesn't seem to end up reflected in the final ABI at least
-    export CXXFLAGS="${CXXFLAGS} -stdlib=libc++"
+    export MOZ_BUILD_DATE="$(date -u${SOURCE_DATE_EPOCH:+d @$SOURCE_DATE_EPOCH} +%%Y%%m%%d%%H%%M%%S)"
 setup       : |
+    # %patch %(pkgdir)/patches/pgo.patch
     %patch %(pkgdir)/patches/0001-Fix-Firefox-Thunderbird-envvar-conflicts.patch
     %patch %(pkgdir)/patches/libcxx-18.patch
     %patch %(pkgdir)/patches/icu76.patch
 
-    %install_file %(pkgdir)/mozconfig .
+    cp %(pkgdir)/build/mozconfig .
     sed -e 's|@@JOBCOUNT@@|%(jobs)|' -e 's|@@LIBDIR@@|%(libdir)|' -i mozconfig
+
+    if [ $FULL_BUILD -ne 0 ]; then
+        # PGO build, no LTO
+        echo "ac_add_options --enable-profile-generate=cross" >> mozconfig
+    else
+        # Might as well do it with LTO
+        echo "ac_add_options MOZ_LTO=cross,full" >> mozconfig
+        echo "ac_add_options --enable-lto=cross,full" >> mozconfig
+    fi
 
     ./mach configure
 build       : |
     ./mach build
+    if [ $FULL_BUILD -ne 0 ]; then
+        ./mach package
+
+        # PGO
+        # Much of this taken from https://github.com/chaotic-aur/packages/blob/main/firefox-nightly/PKGBUILD
+        env \
+            LLVM_PROFDATA=llvm-profdata \
+            JARLOG_FILE="${PWD}/jarlog" \
+            XDG_RUNTIME_DIR="$(mktemp -p $(pwd) -d xdg-runtime-XXXXXX)" \
+            LIBGL_ALWAYS_SOFTWARE=true \
+            MOZ_DISABLE_CONTENT_SANDBOX=1 \
+            MOZ_DISABLE_GMP_SANDBOX=1 \
+            MOZ_DISABLE_GPU_SANDBOX=1 \
+            MOZ_DISABLE_RDD_SANDBOX=1 \
+            MOZ_DISABLE_SOCKET_PROCESS_SANDBOX=1 \
+            MOZ_DISABLE_UTILITY_SANDBOX=1 \
+            MOZ_DISABLE_VR_SANDBOX=1 \
+            GTK_A11Y=none \
+            NO_AT_BRIDGE=1 \
+            MOZ_REMOTE_SETTINGS_DEVTOOLS=1 \
+        dbus-run-session \
+            wlheadless-run \
+                -c weston --width=1920 --height=1080 \
+                -- ./mach python build/pgo/profileserver.py
+
+        # Make sure PGO data is present
+        stat -c "Profile data found (%%s bytes)" merged.profdata
+        test -s merged.profdata
+        stat -c "Jar log found (%%s bytes)" jarlog
+        test -s jarlog
+
+        # Delete instrumented browser
+        ./mach clobber objdir
+
+        # Reset mozconfig
+        rm mozconfig && cp %(pkgdir)/build/mozconfig .
+        sed -e 's|@@JOBCOUNT@@|%(jobs)|' -e 's|@@LIBDIR@@|%(libdir)|' -i mozconfig
+
+        # Enable LTO
+        echo "ac_add_options MOZ_LTO=cross,full" >> mozconfig
+        echo "ac_add_options --enable-lto=cross,full" >> mozconfig
+
+        # PGO
+        echo "ac_add_options --enable-profile-use=cross" >> mozconfig
+        echo "ac_add_options --with-pgo-profile-path=${PWD}/merged.profdata" >> mozconfig
+        echo "ac_add_options --with-pgo-jarlog=${PWD}/jarlog" >> mozconfig
+
+        ./mach build
+    fi
 install     : |
     DESTDIR=%(installroot) ./mach install
 
@@ -82,12 +150,12 @@ install     : |
         ln -srv %(installroot)/%(libdir)/thunderbird/chrome/icons/default/default${i}.png %(installroot)/%(datadir)/icons/hicolor/${i}x${i}/apps/net.thunderbird.Thunderbird.png
     done
 
-    %install_file %(pkgdir)/thunderbird-symbolic.svg %(installroot)%(datadir)/icons/hicolor/symbolic/apps/thunderbird-symbolic.svg
-    %install_file %(pkgdir)/net.thunderbird.Thunderbird.desktop %(installroot)%(datadir)/applications/net.thunderbird.Thunderbird.desktop
+    %install_file %(pkgdir)/install/thunderbird-symbolic.svg %(installroot)%(datadir)/icons/hicolor/symbolic/apps/thunderbird-symbolic.svg
+    %install_file %(pkgdir)/install/net.thunderbird.Thunderbird.desktop %(installroot)%(datadir)/applications/net.thunderbird.Thunderbird.desktop
 
-    %install_file %(pkgdir)/distribution.ini %(installroot)%(libdir)/thunderbird/distribution/distribution.ini
-    %install_file %(pkgdir)/prefs.js %(installroot)/%(libdir)/thunderbird/defaults/pref/prefs.js
+    %install_file %(pkgdir)/install/distribution.ini %(installroot)%(libdir)/thunderbird/distribution/distribution.ini
+    %install_file %(pkgdir)/install/prefs.js %(installroot)/%(libdir)/thunderbird/defaults/pref/prefs.js
 
     # Use a wrapper script to configure langpacks
     rm -v %(installroot)/%(bindir)/thunderbird
-    install -D -m 00755 %(pkgdir)/thunderbird-wrapper.sh %(installroot)/%(bindir)/thunderbird
+    install -D -m 00755 %(pkgdir)/install/thunderbird-wrapper.sh %(installroot)/%(bindir)/thunderbird
