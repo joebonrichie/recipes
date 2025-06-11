@@ -46,9 +46,7 @@
 			"name": "readline-32bit",
 			"provides": [
 				"soname(libhistory.so.8(386))",
-				"soname(libhistory.so.8(x86))",
-				"soname(libreadline.so.8(386))",
-				"soname(libreadline.so.8(x86))"
+				"soname(libreadline.so.8(386))"
 			]
 		},
 		"readline-32bit-devel": {
@@ -104,6 +102,6 @@
 		}
 	},
 	"source-name": "readline",
-	"source-release": "6",
+	"source-release": "7",
 	"source-version": "8.2.013"
 }
