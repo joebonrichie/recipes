@@ -84,6 +84,9 @@ extract() {
   trust extract --overwrite --format=pem-directory-hash --filter=ca-anchors \
     --purpose=server-auth "$dest/cadir"
 
+  # Workaround for https://github.com/AerynOS/os-tools/issues/498
+  chmod u+w "$dest/cadir"
+
   if [[ $dest == $DEST ]]; then
     # We can't extract directly to /etc/ssl/certs as this would indiscriminately
     # empty the directory, but it contains packaged symlinks and directories.
