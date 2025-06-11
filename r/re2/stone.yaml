@@ -5,7 +5,7 @@
 #
 name        : re2
 version     : "2024-07-02"
-release     : 4
+release     : 5
 upstreams   :
     - https://github.com/google/re2/archive/refs/tags/2024-07-02.tar.gz : eb2df807c781601c14a260a507a5bb4509be1ee626024cb45acbd57cb9d4032b
 license     : BSD-3-Clause
@@ -15,13 +15,21 @@ description : |
     RE2 is a fast, safe, thread-friendly alternative to backtracking regular expression engines
 builddeps   :
     - pkgconfig(absl_config)
+    - pkgconfig(icu-i18n)
+checkdeps   :
+    - pkgconfig(benchmark)
 tuning      :
     - lto: full
 setup       : |
     %cmake \
-           -DBUILD_SHARED_LIBS=ON
+           -DBUILD_SHARED_LIBS=ON \
+           -DRE2_BUILD_TESTING=ON \
+           -DRE2_USE_ICU=ON
 build       : |
     %cmake_build
 install     : |
     %cmake_install
-# TODO: Need benchmark for tests
+# check       : |
+#     # Error parsing '\140\440\174\271\150\656\106\201\004\332': invalid escape sequence
+#     # Possible libc++ issue?
+#     %cmake_test
