@@ -1,0 +1,50 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : zram-generator
+# Updating this package? See the note about Cargo.lock below
+version     : 1.2.1
+release     : 1
+homepage    : https://github.com/systemd/zram-generator
+upstreams   :
+    - https://github.com/systemd/zram-generator/archive/refs/tags/v1.2.1.tar.gz : 9c82cd3db386e82fba2adfe01c3d09436c9e9cfe3ca8bb341d7eb882768c58af
+summary     : Systemd unit generator for zram devices
+description : |
+    Systemd unit generator for zram devices
+networking  : yes
+license     : MIT
+builddeps   :
+    - binary(gem)
+    - binary(groff)
+    - pkgconfig(libsystemd)
+    - pkgconfig(ruby)
+environment : |
+    export GEM_PATH=%(workdir)/gems
+    export GEM_HOME=%(workdir)/gems
+    export PATH=$PATH:$GEM_PATH/bin
+setup       : |
+    gem install ronn-ng
+
+    # When updating this package please checkout the source and tag and run `cargo fetch` to get a new version. We check it in for build reproducibility.
+    cp %(pkgdir)/Cargo.lock .
+    %cargo_fetch
+
+    # `--release` is already specified in the Makefile
+    sed -i 's|CARGOFLAGS ?=|CARGOFLAGS :=--frozen --config profile.release.debug=\\"full\\" --config profile.release.split-debuginfo=\\"off\\" --config profile.release.strip=\\"none\\"|g' Makefile
+build       : |
+    %make build man
+install     : |
+    %make_install
+
+    # Default configuration files
+    %install_file %(pkgdir)/zram.conf %(installroot)/usr/lib/systemd/zram-generator.conf
+    %install_file %(pkgdir)/sysctl.conf %(installroot)/usr/lib/sysctl.d/70-zram.conf
+packages    :
+    - "%(name)-defaults":
+        rundeps:
+            - "%(name)"
+        paths:
+            - /usr/lib/systemd/zram-generator.conf
+            - /usr/lib/sysctl.d/70-zram.conf

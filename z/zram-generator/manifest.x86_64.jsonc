@@ -1,0 +1,48 @@
+/** Human readable report. This is not consumed by boulder */
+{
+	"manifest-version": "0.2",
+	"packages": {
+		"zram-generator": {
+			"build-depends": [
+				"binary(gem)",
+				"binary(groff)",
+				"pkgconfig(libsystemd)",
+				"pkgconfig(ruby)"
+			],
+			"depends": [
+				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
+				"soname(ld-linux-x86-64.so.2(x86_64))",
+				"soname(libc.so.6(x86_64))",
+				"soname(libm.so.6(x86_64))",
+				"soname(libunwind.so.1(x86_64))"
+			],
+			"files": [
+				"/usr/lib/systemd/system-generators/zram-generator",
+				"/usr/lib/systemd/system/systemd-zram-setup@.service",
+				"/usr/share/doc/zram-generator/zram-generator.conf.example",
+				"/usr/share/man/man5/zram-generator.conf.5",
+				"/usr/share/man/man8/zram-generator.8"
+			],
+			"name": "zram-generator"
+		},
+		"zram-generator-defaults": {
+			"build-depends": [
+				"binary(gem)",
+				"binary(groff)",
+				"pkgconfig(libsystemd)",
+				"pkgconfig(ruby)"
+			],
+			"depends": [
+				"zram-generator"
+			],
+			"files": [
+				"/usr/lib/sysctl.d/70-zram.conf",
+				"/usr/lib/systemd/zram-generator.conf"
+			],
+			"name": "zram-generator-defaults"
+		}
+	},
+	"source-name": "zram-generator",
+	"source-release": "1",
+	"source-version": "1.2.1"
+}
