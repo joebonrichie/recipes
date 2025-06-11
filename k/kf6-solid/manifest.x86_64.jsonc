@@ -7,6 +7,7 @@
 				"binary(bison)",
 				"binary(flex)",
 				"cmake(ECM)",
+				"cmake(Qt6CorePrivate)",
 				"pkgconfig(mount)"
 			],
 			"depends": [
@@ -104,6 +105,7 @@
 				"binary(bison)",
 				"binary(flex)",
 				"cmake(ECM)",
+				"cmake(Qt6CorePrivate)",
 				"pkgconfig(mount)"
 			],
 			"depends": [
@@ -162,6 +164,6 @@
 		}
 	},
 	"source-name": "kf6-solid",
-	"source-release": "5",
+	"source-release": "6",
 	"source-version": "6.14.0"
 }
