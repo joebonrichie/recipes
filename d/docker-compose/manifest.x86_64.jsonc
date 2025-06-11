@@ -4,6 +4,7 @@
 	"packages": {
 		"docker-compose": {
 			"build-depends": [
+				"binary(git)",
 				"binary(go)"
 			],
 			"depends": [
@@ -22,6 +23,6 @@
 		}
 	},
 	"source-name": "docker-compose",
-	"source-release": "6",
-	"source-version": "2.34.0"
+	"source-release": "7",
+	"source-version": "2.37.0"
 }
