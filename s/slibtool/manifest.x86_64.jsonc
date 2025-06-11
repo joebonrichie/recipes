@@ -39,7 +39,9 @@
 				"/usr/share/slibtool/ltmain.sh",
 				"/usr/share/slibtool/slibtool.m4",
 				"/usr/share/slibtool/slibtool.sh",
-				"/usr/share/slibtool/sltdl.m4"
+				"/usr/share/slibtool/sltdl.h.in",
+				"/usr/share/slibtool/sltdl.m4",
+				"/usr/share/slibtool/sltdl.mk.in"
 			],
 			"name": "slibtool",
 			"provides": [
@@ -70,6 +72,6 @@
 		}
 	},
 	"source-name": "slibtool",
-	"source-release": "11",
-	"source-version": "0.7.0"
+	"source-release": "12",
+	"source-version": "0.7.1"
 }
