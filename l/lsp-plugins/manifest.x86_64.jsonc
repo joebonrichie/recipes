@@ -12,6 +12,7 @@
 				"pkgconfig(xrandr)"
 			],
 			"depends": [
+				"gstreamer-plugins-base",
 				"soname(ld-linux-x86-64.so.2(x86_64))",
 				"soname(libc++.so.1(x86_64))",
 				"soname(libc.so.6(x86_64))",
@@ -611,6 +612,6 @@
 		}
 	},
 	"source-name": "lsp-plugins",
-	"source-release": "2",
+	"source-release": "3",
 	"source-version": "1.2.21"
 }
