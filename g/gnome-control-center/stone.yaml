@@ -5,7 +5,7 @@
 #
 name        : gnome-control-center
 version     : 48.2
-release     : 21
+release     : 22
 homepage    : https://apps.gnome.org/Settings/
 upstreams   :
     - https://download.gnome.org/sources/gnome-control-center/48/gnome-control-center-48.2.tar.xz : d2ec4a5e27e191d92f98ed4dbc4a861d7f1ac4a5a24b6524b492a12007dd460c
@@ -64,6 +64,8 @@ rundeps     :
     - cups-pk-helper
     - gnome-remote-desktop
     - tecla
+    # Moss upgrade bug
+    - gstreamer-plugins-good
 setup       : |
     %meson -Ddistributor_logo=%(datadir)/icons/aerynos-logo.svg \
            -Ddark_mode_distributor_logo=%(datadir)/icons/aerynos-logo-dark.svg
