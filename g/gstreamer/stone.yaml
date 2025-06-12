@@ -5,7 +5,7 @@
 #
 name        : gstreamer
 version     : 1.26.2
-release     : 12
+release     : 13
 homepage    : https://gstreamer.freedesktop.org/
 upstreams   :
     - https://gitlab.freedesktop.org/gstreamer/gstreamer/-/archive/1.26.2/gstreamer-1.26.2.tar.gz : 1df6e7f7401d9552a95c1fd40168eb663d2aa4d108f891a2e60f110b96b2175f
@@ -186,6 +186,8 @@ build       : |
     %ccache_stats
 install     : |
     %meson_install
+
+# TODO: Remove all of the manual gstreamer rundeps below once moss has that upgrade bug fixed
 packages    :
     - "%(name)-devel":
         paths:
@@ -197,6 +199,8 @@ packages    :
         summary: Python bindings for GStreamer
         description: Python bindings for GStreamer
         rundeps:
+            - "%(name)"
+            - "%(name)-plugins-base"
             - python(pygobject)
         paths:
             - /usr/lib/python3*/site-packages/gi
@@ -258,6 +262,8 @@ packages    :
     - "%(name)-plugins-base":
         summary: GStreamer streaming media framework base plugins
         description: GStreamer streaming media framework base plugins
+        rundeps:
+            - "%(name)"
         paths:
             - /usr/lib/girepository-1.0/GstAllocators-1.0.typelib
             - /usr/lib/girepository-1.0/GstApp-1.0.typelib
@@ -321,6 +327,9 @@ packages    :
     - "%(name)-plugins-base-tools":
         summary: GStreamer streaming media framework base plugins
         description: GStreamer streaming media framework base plugins
+        rundeps:
+            - "%(name)"
+            - "%(name)-plugins-base"
         paths:
             - /usr/bin/gst-device-monitor-1.0
             - /usr/bin/gst-discoverer-1.0
@@ -395,6 +404,10 @@ packages    :
     - "%(name)-plugins-bad":
         summary: GStreamer streaming media framework "bad" plugins
         description: GStreamer streaming media framework "bad" plugins
+        rundeps:
+            - "%(name)"
+            - "%(name)-plugins-base"
+            - "%(name)-plugins-bad-libs"
         paths:
             - /usr/bin/gst-transcoder-1.0
             - /usr/lib/gstreamer-1.0/libgstaccurip.so
@@ -507,6 +520,9 @@ packages    :
     - "%(name)-plugins-bad-libs":
         summary: GStreamer streaming media framework "bad" plugins - libs
         description: GStreamer streaming media framework "bad" plugins - libs
+        rundeps:
+            - "%(name)"
+            - "%(name)-plugins-base"
         paths:
             - /usr/lib/girepository-1.0/CudaGst-1.0.typelib
             - /usr/lib/girepository-1.0/GstAnalytics-1.0.typelib
@@ -551,6 +567,10 @@ packages    :
     - "%(name)-plugins-bad-extras":
         summary: GStreamer streaming media framework "bad" plugins
         description: GStreamer streaming media framework "bad" plugins
+        rundeps:
+            - "%(name)"
+            - "%(name)-plugins-base"
+            - "%(name)-plugins-bad-libs"
         paths:
             - /usr/lib/gstreamer-1.0/libgstaom.so
             - /usr/lib/gstreamer-1.0/libgstassrender.so
@@ -649,6 +669,9 @@ packages    :
     - "%(name)-plugins-good":
         summary: GStreamer streaming media framework "good" plugins
         description: GStreamer streaming media framework "good" plugins
+        rundeps:
+            - "%(name)"
+            - "%(name)-plugins-base"
         paths:
             - /usr/lib/gstreamer-1.0/libgstadaptivedemux2.so
             - /usr/lib/gstreamer-1.0/libgstalaw.so
@@ -720,6 +743,9 @@ packages    :
     - "%(name)-plugins-ugly":
         summary: GStreamer streaming media framework "ugly" plugins
         description: GStreamer streaming media framework "ugly" plugins
+        rundeps:
+            - "%(name)"
+            - "%(name)-plugins-base"
         paths:
             - /usr/lib/gstreamer-1.0/libgstasf.so
             - /usr/lib/gstreamer-1.0/libgstdvdlpcmdec.so
@@ -731,6 +757,10 @@ packages    :
     - "%(name)-plugin-gtk3":
         summary: GStreamer gtk3 plugin
         description: GStreamer gtk3 plugin
+        rundeps:
+            - "%(name)"
+            - "%(name)-plugins-base"
+            - "%(name)-plugins-bad-libs"
         paths:
             - /usr/lib/gstreamer-1.0/libgstgtk.so
             - /usr/lib/gstreamer-1.0/libgstgtkwayland.so
@@ -738,12 +768,18 @@ packages    :
     - "%(name)-plugin-libav":
         summary: GStreamer FFmpeg/LibAV plugin
         description: GStreamer FFmpeg/LibAV plugin
+        rundeps:
+            - "%(name)"
+            - "%(name)-plugins-base"
         paths:
             - /usr/lib/gstreamer-1.0/libgstlibav.so
 
     - "%(name)-plugin-opencv":
         summary: GStreamer "bad" plugins OpenCV plugin
         description: GStreamer "bad" plugins OpenCV plugin
+        rundeps:
+            - "%(name)"
+            - "%(name)-plugins-base"
         paths:
             - /usr/lib/gstreamer-1.0/libgstopencv.so
             - /usr/lib/libgstopencv-1.0.so.*
@@ -760,6 +796,9 @@ packages    :
     - "%(name)-plugin-qt6":
         summary: GStreamer qt6 plugin
         description: GStreamer qt6 plugin
+        rundeps:
+            - "%(name)"
+            - "%(name)-plugins-base"
         paths:
             - /usr/lib/gstreamer-1.0/libgstqml6.so
 
