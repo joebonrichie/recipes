@@ -41,6 +41,7 @@
 			],
 			"depends": [
 				"gsettings-desktop-schemas",
+				"gstreamer-plugins-base",
 				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
 				"soname(libX11.so.6(x86_64))",
 				"soname(libXcursor.so.1(x86_64))",
@@ -867,6 +868,6 @@
 		}
 	},
 	"source-name": "gtk-4",
-	"source-release": "25",
+	"source-release": "26",
 	"source-version": "4.18.6"
 }
