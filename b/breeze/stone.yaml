@@ -1,0 +1,48 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : breeze
+version     : 6.3.91
+release     : 1
+upstreams   :
+    - https://download.kde.org/unstable/plasma/6.3.91/breeze-6.3.91.tar.xz : 2b5ee527072b983325746eec8cafaa4ecc1de3fcc74bc9bc304149a4f1f5b11b
+homepage    : https://kde.org/plasma-desktop/
+license     :
+    - BSD-3-Clause
+    - GPL-2.0-only
+    - GPL-2.0-or-later
+    - MIT
+summary     : Artwork, styles and assets for the Breeze visual style for the Plasma Desktop
+description : |
+    Artwork, styles and assets for the Breeze visual style for the Plasma Desktop
+builddeps   :
+    # Temporary, boulder doesn't handle build ordering resolution correctly when builddeps are added by macros, so add ECM manually
+    - cmake(ECM)
+    - cmake(KDecoration3)
+    - cmake(KF6CoreAddons)
+    - cmake(KF6FrameworkIntegration)
+    - cmake(KF6GuiAddons)
+    - cmake(KF6I18n)
+    - cmake(KF6IconThemes)
+    - cmake(KF6KCMUtils)
+    - cmake(KF6KirigamiPlatform)
+    - cmake(KF6WindowSystem)
+    - cmake(Qt6Svg)
+tuning      :
+    - lto: full
+    - optimize: speed
+setup       : |
+    %cmake_kf6 \
+        -DBUILD_QT5=OFF \
+        -DBUILD_QT6=ON
+build       : |
+    %cmake_build
+install     : |
+    %cmake_install
+packages    :
+    - "%(name)-cursor-theme":
+        paths:
+            - /usr/share/icons/Breeze_Light
+            - /usr/share/icons/breeze_cursors
