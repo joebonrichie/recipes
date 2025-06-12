@@ -5,7 +5,7 @@
 #
 name        : xdg-desktop-portal
 version     : 1.20.3
-release     : 8
+release     : 9
 homepage    : https://flatpak.github.io/xdg-desktop-portal/
 upstreams   :
     - https://github.com/flatpak/xdg-desktop-portal/releases/download/1.20.3/xdg-desktop-portal-1.20.3.tar.xz : 4bfb164937f59107eb1a3cc21abaa948d903c76f3b99fac210cea38ce1da9edc
@@ -39,6 +39,7 @@ rundeps     :
     - binary(pipewire)
     - sysbinary(mount.fuse3)
     # Moss upgrade bug
+    - gstreamer
     - gstreamer-plugins-base
 setup       : |
     %meson -Dtests=disabled
