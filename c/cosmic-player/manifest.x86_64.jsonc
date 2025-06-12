@@ -10,6 +10,7 @@
 				"pkgconfig(xkbcommon)"
 			],
 			"depends": [
+				"gstreamer-plugins-good",
 				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
 				"soname(ld-linux-x86-64.so.2(x86_64))",
 				"soname(libc.so.6(x86_64))",
@@ -41,6 +42,6 @@
 		}
 	},
 	"source-name": "cosmic-player",
-	"source-release": "4",
+	"source-release": "5",
 	"source-version": "1.0.0-alpha.7"
 }

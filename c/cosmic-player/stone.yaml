@@ -5,8 +5,8 @@
 #
 name        : cosmic-player
 version     : 1.0.0-alpha.7
-release     : 4
-summary     : Cosmic Desktop Compositor
+release     : 5
+summary     : COSMIC media player
 license     : GPL-3.0
 homepage    : https://github.com/pop-os/cosmic-player
 upstreams   :
@@ -18,6 +18,9 @@ builddeps   :
     - pkgconfig(gstreamer-1.0)
     - pkgconfig(gstreamer-plugins-base-1.0)
     - pkgconfig(xkbcommon)
+rundeps     :
+    # Moss upgrade bug
+    - gstreamer-plugins-good
 networking  : yes
 setup       : |
     %cargo_fetch
