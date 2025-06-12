@@ -5,10 +5,16 @@
 #
 name        : libvpx
 version     : 1.15.2
-release     : 3
+release     : 4
 homepage    : https://www.webmproject.org/code/
 upstreams   :
-    - https://github.com/webmproject/libvpx/archive/refs/tags/v1.15.2.tar.gz : 26fcd3db88045dee380e581862a6ef106f49b74b6396ee95c2993a260b4636aa
+    - https://github.com/webmproject/libvpx/archive/refs/tags/v1.15.2.tar.gz:
+        hash: 26fcd3db88045dee380e581862a6ef106f49b74b6396ee95c2993a260b4636aa
+        unpackdir: current
+
+    - https://github.com/webmproject/libvpx/archive/refs/tags/v1.14.1.tar.gz:
+        hash: 901747254d80a7937c933d03bd7c5d41e8e6c883e0665fadcb172542167c7977
+        unpackdir: compat
 summary     : WebM VP8/VP9 Codec SDK
 description : |
     WebM VP8/VP9 Codec SDK
@@ -27,6 +33,18 @@ environment : |
     export AS=nasm
     export STRIP=eu-strip
 setup       : |
+    if [ -d ../compat ]; then
+        pushd ../compat
+        mkdir _build && cd _build
+        ../configure --prefix=%(prefix) \
+                --libdir=%(libdir) \
+                --disable-static \
+                --enable-shared \
+                --enable-unit-tests \
+                --enable-decode-perf-tests
+        popd
+    fi
+
     mkdir _build && cd _build
     ../configure --prefix=%(prefix) \
                 --libdir=%(libdir) \
@@ -35,9 +53,38 @@ setup       : |
                 --enable-unit-tests \
                 --enable-decode-perf-tests
 build       : |
+    if [ -d ../compat ]; then
+        pushd ../compat
+            export CCACHE_BASEDIR="${pwd}"
+            pushd _build
+            %ccache_zero
+            %make
+            %ccache_stats
+            popd
+        popd
+    fi
+
+    export CCACHE_BASEDIR="${pwd}"
     pushd _build
+    %ccache_zero
     %make
+    %ccache_stats
+    popd
 install     : |
+    if [ -d ../compat ]; then
+        pushd ../compat
+            pushd _build
+            mkdir tmp
+            make install DESTDIR="${pwd}/tmp"
+
+            # Only copy the sonames
+            %install_dir %(installroot)/%(libdir)
+            find ${pwd}/tmp%(libdir) -name "libvpx.so.*" -type l -print -exec mv {} %(installroot)%(libdir) \;
+            find ${pwd}/tmp%(libdir) -name "libvpx.so.*" -type f -print -exec mv {} %(installroot)%(libdir) \;
+            popd
+        popd
+    fi
+
     pushd _build
     %make_install
 # Needs a long time. Consider a specific set of encoding tests.
