@@ -24,6 +24,7 @@
 				"pkgconfig(tinysparql-3.0)"
 			],
 			"depends": [
+				"gstreamer-plugins-base",
 				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
 				"localsearch",
 				"soname(libX11.so.6(x86_64))",
@@ -248,6 +249,6 @@
 		}
 	},
 	"source-name": "nautilus",
-	"source-release": "9",
+	"source-release": "10",
 	"source-version": "48.2"
 }
