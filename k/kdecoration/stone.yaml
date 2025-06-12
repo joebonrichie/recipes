@@ -5,7 +5,7 @@
 #
 name        : kdecoration
 version     : 6.3.91
-release     : 1
+release     : 2
 upstreams   :
     - https://download.kde.org/unstable/plasma/6.3.91/kdecoration-6.3.91.tar.xz : 72ec753e7f42cbc970b47118a627f957b7c091c049333d377533463b55d78619
 homepage    : https://kde.org/plasma-desktop/
@@ -17,6 +17,9 @@ builddeps   :
     # Temporary, boulder doesn't handle build ordering resolution correctly when builddeps are added by macros, so add ECM manually
     - cmake(ECM)
     - cmake(KF6I18n)
+tuning      :
+    - lto: full
+    - optimize: speed
 setup       : |
     %cmake_kf6
 build       : |
