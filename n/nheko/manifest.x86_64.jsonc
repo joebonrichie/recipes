@@ -9,6 +9,7 @@
 				"cmake(KDSingleApplication-qt6)",
 				"cmake(KF6Kirigami)",
 				"cmake(MatrixClient)",
+				"cmake(Qt6CorePrivate)",
 				"cmake(Qt6Keychain)",
 				"cmake(Qt6LinguistTools)",
 				"cmake(Qt6Multimedia)",
@@ -24,6 +25,7 @@
 				"pkgconfig(spdlog)"
 			],
 			"depends": [
+				"gstreamer-plugin-qt6",
 				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
 				"kf6-kirigami",
 				"qt6-wayland",
@@ -79,6 +81,6 @@
 		}
 	},
 	"source-name": "nheko",
-	"source-release": "4",
+	"source-release": "5",
 	"source-version": "0.12.0"
 }

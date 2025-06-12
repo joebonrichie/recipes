@@ -5,7 +5,7 @@
 #
 name        : nheko
 version     : 0.12.0
-release     : 4
+release     : 5
 upstreams   :
     - https://nheko.im/nheko-reborn/nheko/-/archive/v0.12.0/nheko-v0.12.0.tar.gz : f9c40da73dd4bc481bdc6846545d0ec00a1216b523eaceb19fb5da50d8f5dd49
 license     : GPL-2.0-or-later
@@ -19,6 +19,7 @@ builddeps   :
     - cmake(KDSingleApplication-qt6)
     - cmake(KF6Kirigami)
     - cmake(MatrixClient)
+    - cmake(Qt6CorePrivate)
     - cmake(Qt6Keychain)
     - cmake(Qt6LinguistTools)
     - cmake(Qt6Multimedia)
@@ -33,6 +34,7 @@ builddeps   :
     - pkgconfig(spdlog)
     - lmdbxx
 rundeps     :
+    - gstreamer-plugin-qt6 # Video calls
     - kf6-kirigami
     - qt6-wayland
 tuning      :
