@@ -13,6 +13,12 @@
 				"pkgconfig(gtk4)",
 				"pkgconfig(libadwaita-1)"
 			],
+			"depends": [
+				"gstreamer-plugin-libav",
+				"gstreamer-plugins-bad",
+				"gstreamer-plugins-good",
+				"gstreamer-plugins-ugly"
+			],
 			"files": [
 				"/usr/bin/org.gnome.Decibels",
 				"/usr/share/applications/org.gnome.Decibels.desktop",
@@ -71,6 +77,6 @@
 		}
 	},
 	"source-name": "decibels",
-	"source-release": "2",
+	"source-release": "3",
 	"source-version": "48.0"
 }
