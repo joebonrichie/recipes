@@ -5,7 +5,7 @@
 #
 name        : snapshot
 version     : 48.0.1
-release     : 5
+release     : 6
 homepage    : https://apps.gnome.org/Snapshot/
 upstreams   :
     - https://download.gnome.org/sources/snapshot/48/snapshot-48.0.1.tar.xz : 393176859a20b7d235dfc303031ba20c686441106988dc911dd91b7b6d66e1fd
@@ -31,6 +31,8 @@ builddeps   :
 rundeps     :
     - gstreamer-plugin-gtk4
     - gstreamer-plugin-pipewire
+    # Moss upgrade bug
+    - gstreamer-plugins-good
 setup       : |
     %meson
 build       : |
