@@ -2,6 +2,5 @@ releases:
   id: 8761
   rss: https://invent.kde.org/plasma/kdecoration/-/tags?format=atom
 security:
-  cpe:
-  - vendor: kde
-    product: kconfig
+  # No known CPE, last checked 2025-06-11
+  cpe: ~
