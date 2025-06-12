@@ -11,6 +11,9 @@
 				"linux-desktop",
 				"linux-desktop-devel"
 			],
+			"depends": [
+				"sysbinary(depmod)"
+			],
 			"files": [
 				"/usr/lib/kernel/6.14.11-99.desktop/60-nvidia.cmdline",
 				"/usr/lib/kernel/6.14.11-99.desktop/60-nvidia.initrd",
@@ -26,6 +29,6 @@
 		}
 	},
 	"source-name": "nvidia-open-gpu-kernel-modules",
-	"source-release": "38",
+	"source-release": "39",
 	"source-version": "570.133.07"
 }
