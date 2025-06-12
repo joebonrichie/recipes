@@ -250,6 +250,7 @@
 				"cmake(Qt6Qml)"
 			],
 			"depends": [
+				"cmake(KF6ConfigWidgets)",
 				"kf6-kcmutils"
 			],
 			"files": [
@@ -300,6 +301,6 @@
 		}
 	},
 	"source-name": "kf6-kcmutils",
-	"source-release": "5",
+	"source-release": "6",
 	"source-version": "6.14.0"
 }
