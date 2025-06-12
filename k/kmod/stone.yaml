@@ -1,9 +1,9 @@
 name        : kmod
-version     : '31'
-release     : 9
+version     : '34.2'
+release     : 10
 homepage    : https://github.com/kmod-project/kmod
 upstreams   :
-    - https://mirrors.edge.kernel.org/pub/linux/utils/kernel/kmod/kmod-31.tar.xz : f5a6949043cc72c001b728d8c218609c5a15f3c33d75614b78c79418fcf00d80
+    - https://mirrors.edge.kernel.org/pub/linux/utils/kernel/kmod/kmod-34.2.tar.xz : 5a5d5073070cc7e0c7a7a3c6ec2a0e1780850c8b47b3e3892226b93ffcb9cb54
 summary     : Linux kernel module handling
 description : |
     kmod is a set of tools to handle common tasks with Linux kernel modules like insert, remove, list, check properties, resolve dependencies and aliases.
@@ -11,27 +11,34 @@ license     :
     - GPL-2.0-or-later
     - LGPL-2.1-or-later
 builddeps   :
+    - binary(scdoc)
     - pkgconfig(liblzma)
     - pkgconfig(libssl)
     - pkgconfig(libzstd)
     - pkgconfig(zlib)
+tuning      :
+    - lto: full
+    - optimize: size
 setup       : |
-    %patch %(pkgdir)/stateless/0001-libkmod-Support-usr-lib-to-enable-stateless-configs-.patch
-
-    %configure \
-        --disable-static \
-        --disable-python \
-        --with-openssl \
-        --with-xz \
-        --with-zstd \
-        --with-zlib \
+    # On Aeryn we compress kernel modules with zstd. Users may use
+    # lzma/zlib so build support for those but use dlopen() if necessary
+    %meson \
+        -Ddlopen=xz,zlib
 build       : |
-    %make
+    %meson_build
 install     : |
-    %make_install
-    %install_dir %(installroot)%(sbindir)
-    for tool in modprobe modinfo insmod rmmod depmod lsmod ; do
-        ln -sf ../bin/kmod %(installroot)/usr/sbin/${tool}
-    done
+    %meson_install
 
     %install_file %(pkgdir)/trigger.yaml %(installroot)/usr/share/moss/triggers/tx.d/kmod.yaml
+packages    :
+    - "%(name)-libs":
+        summary: "Library files for %(name)"
+        description: |
+            Library files for %(name), typically pulled in as a dependency of another package.
+        paths:
+            - /usr/lib/lib*.so.*
+
+    # Moss upgrade bug
+    - "%(name)":
+        rundeps:
+            - "%(name)-libs"
