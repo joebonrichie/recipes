@@ -4,14 +4,14 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : lichen
-version     : 0.1.0+git.f277f7d
-release     : 31
+version     : 0.1.0+git.de0a78d
+release     : 32
 summary     : OS installer
 license     : MPL-2.0
 homepage    : https://github.com/AerynOS/lichen
 upstreams   :
     - git|https://github.com/AerynOS/lichen.git :
-        ref : f277f7ddacf1f437c4034fb91fa2e3dfff2ac70b
+        ref : de0a78dfc7d8f4aab6178961d62bf4657458472c
 description : |
     Experimental OS installer
 builddeps   :
