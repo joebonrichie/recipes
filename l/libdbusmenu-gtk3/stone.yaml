@@ -4,7 +4,7 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : libdbusmenu-gtk3
-version     : "16.04.0"
+version     : '16.04.0'
 release     : 1
 homepage    : https://launchpad.net/libdbusmenu
 upstreams   :
@@ -36,8 +36,7 @@ setup       : |
 build       : |
     %make
 install     : |
-    # -j 16 is constantly causing build failures
-    make -j 1 install DESTDIR=/mason/install
+    %make_install -j 1
 packages    :
     - "%(name)-devel":
             "paths":

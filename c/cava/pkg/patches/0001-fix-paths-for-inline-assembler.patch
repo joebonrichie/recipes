@@ -1,0 +1,30 @@
+diff '--color=auto' -crB a/src/config.c b/src/config.c
+*** a/src/config.c	2024-09-27 23:46:56.000000000 +0200
+--- b/src/config.c	2025-06-16 20:20:01.025287546 +0200
+***************
+*** 35,46 ****
+  #define INCBIN_SILENCE_BITCODE_WARNING
+  #include "third_party/incbin.h"
+  
+! INCTXT(ConfigFile, "example_files/config");
+  
+  // add your custom shaders to be installed here
+! INCTXT(bar_spectrum, "src/output/shaders/bar_spectrum.frag");
+! INCTXT(northern_lightsfrag, "src/output/shaders/northern_lights.frag");
+! INCTXT(pass_throughvert, "src/output/shaders/pass_through.vert");
+  
+  // INCTXT will create a char g<name>Data
+  const char *default_shader_data[NUMBER_OF_SHADERS] = {gnorthern_lightsfragData,
+--- 35,46 ----
+  #define INCBIN_SILENCE_BITCODE_WARNING
+  #include "third_party/incbin.h"
+  
+! INCTXT(ConfigFile, "/mason/build/x86_64/0.10.3.tar.gz/example_files/config");
+  
+  // add your custom shaders to be installed here
+! INCTXT(bar_spectrum, "/mason/build/x86_64/0.10.3.tar.gz/src/output/shaders/bar_spectrum.frag");
+! INCTXT(northern_lightsfrag, "/mason/build/x86_64/0.10.3.tar.gz/src/output/shaders/northern_lights.frag");
+! INCTXT(pass_throughvert, "/mason/build/x86_64/0.10.3.tar.gz/src/output/shaders/pass_through.vert");
+  
+  // INCTXT will create a char g<name>Data
+  const char *default_shader_data[NUMBER_OF_SHADERS] = {gnorthern_lightsfragData,

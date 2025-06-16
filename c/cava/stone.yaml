@@ -4,7 +4,7 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : cava
-version     : "0.10.3"
+version     : '0.10.3'
 release     : 1
 homepage    : https://github.com/LukashonakV/cava
 upstreams   :
@@ -23,10 +23,9 @@ builddeps   :
     - pkgconfig(ncursesw)
     - sdl2-devel
 setup       : |
+    %patch %(pkgdir)/patches/0001-fix-paths-for-inline-assembler.patch
+
     %meson -Dbuild_target=all
-    # fix paths for inline assembler
-    sed -i 's;example_files;%(workdir)/example_files;g' %(workdir)/src/config.c
-    sed -i 's;src\/output;%(workdir)/src/output;g' %(workdir)/src/config.c
 build       : |
     %meson_build
 install     : |
