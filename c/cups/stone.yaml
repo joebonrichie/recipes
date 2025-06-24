@@ -5,7 +5,7 @@
 #
 name        : cups
 version     : 2.4.12
-release     : 12
+release     : 13
 homepage    : https://openprinting.github.io/cups/
 upstreams   :
     - https://github.com/OpenPrinting/cups/releases/download/v2.4.12/cups-2.4.12-source.tar.gz : b1dde191a4ae2760c47220c82ca6155a28c382701e6c1a0159d1054990231d59
@@ -23,6 +23,9 @@ builddeps   :
     - pkgconfig(libusb-1.0)
     - pkgconfig(pam)
     - libpaper-devel
+tuning      :
+    - lto: full
+    - optimize: size # This doesn't need to be fast, so we might as well make it small
 setup       : |
     %patch %(pkgdir)/0001-stateless-cupsd.patch
     %configure \
@@ -54,3 +57,52 @@ install     : |
     %tmpfiles "d     /var/cache/cups/rss 0750 root lp      -   -"
 
     rm -rvf %(installroot)/{var,run,etc}
+packages    :
+    - "%(name)-libs":
+        summary: "Library files for %(name)"
+        description: |
+            Library files for %(name), typically pulled in as a dependency of another package.
+        paths:
+            - /usr/lib/libcups*.so.*
+
+    - "%(name)-client":
+        paths:
+            - /usr/bin/cancel
+            - /usr/bin/lp*
+            - /usr/sbin/lpc
+            - /usr/share/man/man1/cancel*
+            - /usr/share/man/man1/lp*
+            - /usr/share/man/man8/lpc.8*
+
+    - "%(name)":
+        rundeps:
+            - "%(name)-libs"
+        paths:
+            - /usr/bin/lpadmin
+            - /usr/bin/lpinfo
+            - /usr/bin/lpmove
+
+    - "%(name)-lpd":
+        rundeps:
+            - "%(name)"
+        paths:
+            - /usr/lib/cups/daemon/cups-lpd
+            - /usr/lib/systemd/system/cups-lpd*.*
+            - /usr/share/man/man8/cups-lpd.8
+
+    - "%(name)-ipptool":
+        paths:
+            - /usr/bin/ipp*
+            - /usr/share/cups/ipptool
+            - /usr/share/man/man*/ipp*
+
+    - "%(name)-printerapp":
+        paths:
+            - /usr/bin/ippeveprinter
+            - /usr/lib/cups/command/ippeve*
+            - /usr/share/man/man*/ippeve*
+
+    - "%(name)-devel":
+        paths:
+            - /usr/bin/cups-config
+            - /usr/share/man/man1/cups-config.1
