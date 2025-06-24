@@ -5,7 +5,7 @@
 #
 name        : godot
 version     : 4.4.1
-release     : 5
+release     : 6
 homepage    : https://godotengine.org
 upstreams   :
     - https://github.com/godotengine/godot/archive/refs/tags/4.4.1-stable.tar.gz: a486c523494e155b6912a607b5813577f8f39285f8ad43ac76cb9141edad9888
@@ -51,6 +51,11 @@ build       : |
     # https://github.com/godotengine/godot/issues/91401
     # https://github.com/godotengine/godot/issues/91401
     # https://github.com/godotengine/godot/issues/100301
+
+    # Freetype seems to break building opengamepadui TODO fix that
+    # ERROR: Condition "!_ensure_cache_for_size(fd, size, ffsd)" is true. Returning: 0.0
+    #    at: _font_get_ascent (modules/text_server_adv/text_server_adv.cpp:2697)
+    # ERROR: FreeType: Error loading font: ''.
     _scons_args=(
         AR="$AR" CC="$CC" CXX="$CXX"
         -j%(jobs)
@@ -75,7 +80,7 @@ build       : |
 
         builtin_brotli=false
         builtin_certs=false
-        builtin_freetype=false
+        builtin_freetype=true
         builtin_glslang=false
         builtin_graphite=false
         builtin_libogg=false

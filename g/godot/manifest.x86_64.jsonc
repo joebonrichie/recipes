@@ -34,7 +34,6 @@
 				"soname(libdbus-1.so.3(x86_64))",
 				"soname(libdecor-0.so.0(x86_64))",
 				"soname(libfontconfig.so.1(x86_64))",
-				"soname(libfreetype.so.6(x86_64))",
 				"soname(libglslang-default-resource-limits.so.15(x86_64))",
 				"soname(libglslang.so.15(x86_64))",
 				"soname(libgraphite2.so.3(x86_64))",
@@ -69,6 +68,6 @@
 		}
 	},
 	"source-name": "godot",
-	"source-release": "5",
+	"source-release": "6",
 	"source-version": "4.4.1"
 }
