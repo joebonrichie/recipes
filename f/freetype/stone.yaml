@@ -5,7 +5,7 @@
 #
 name        : freetype
 version     : 2.13.3
-release     : 13
+release     : 14
 homepage    : http://freetype.org
 upstreams   :
     - https://sourceforge.net/projects/freetype/files/freetype2/2.13.3/freetype-2.13.3.tar.xz : 0550350666d427c74daeb85d5ac7bb353acba5f76956395995311a9c6f063289
@@ -17,12 +17,15 @@ license     :
 builddeps   :
     - binary(python3)
     - pkgconfig(harfbuzz)
+    - pkgconfig32(bzip2)
+    - pkgconfig32(libbrotlidec)
     - pkgconfig32(libpng)
     - pkgconfig32(zlib)
 emul32      : yes
 profiles    :
     - emul32:
         setup: |
+            %patch %(pkgdir)/subpixel.patch
             # Currently the emul32 chain for harfbuzz is on the large side. Revisit
             %meson -Dharfbuzz=disabled
         build: |
@@ -30,6 +33,7 @@ profiles    :
         install: |
             %meson_install
 setup       : |
+    %patch %(pkgdir)/subpixel.patch
     %meson
 build       : |
     %meson_build
