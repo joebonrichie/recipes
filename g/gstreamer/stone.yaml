@@ -5,7 +5,7 @@
 #
 name        : gstreamer
 version     : 1.26.2
-release     : 13
+release     : 14
 homepage    : https://gstreamer.freedesktop.org/
 upstreams   :
     - https://gitlab.freedesktop.org/gstreamer/gstreamer/-/archive/1.26.2/gstreamer-1.26.2.tar.gz : 1df6e7f7401d9552a95c1fd40168eb663d2aa4d108f891a2e60f110b96b2175f
@@ -88,6 +88,8 @@ builddeps   :
     - pkgconfig(vulkan)
     - pkgconfig(wayland-client)
     - pkgconfig(wayland-protocols)
+    - pkgconfig(x264)
+    - pkgconfig(x265)
     - pkgconfig(xkbcommon)
     - pkgconfig(xv)
     - lame-devel
@@ -137,14 +139,12 @@ builddeps   :
 # - vo-aacenc
 # - webrtc-audio-processing
 # - wildmidi
-# - x265
 # - zxing
 # - zbar
 # ugly:
 # - liba52
 # - libcdio
 # - libmpeg2
-# - x264
 networking  : yes # cargo deps
 environment : |
     # Make cargo use system libzstd
@@ -512,6 +512,7 @@ packages    :
             - /usr/lib/gstreamer-1.0/libgstvulkan.so
             - /usr/lib/gstreamer-1.0/libgstwaylandsink.so
             - /usr/lib/gstreamer-1.0/libgstwebp.so
+            - /usr/lib/gstreamer-1.0/libgstx265.so
             - /usr/lib/gstreamer-1.0/libgsty4mdec.so
             - /usr/share/gstreamer-1.0/encoding-profiles
             - /usr/share/gstreamer-1.0/presets/GstFreeverb.prs
@@ -752,6 +753,8 @@ packages    :
             - /usr/lib/gstreamer-1.0/libgstdvdread.so
             - /usr/lib/gstreamer-1.0/libgstdvdsub.so
             - /usr/lib/gstreamer-1.0/libgstrealmedia.so
+            - /usr/lib/gstreamer-1.0/libgstx264.so
+            - /usr/share/gstreamer-1.0/presets/GstX264Enc.prs
             - /usr/share/locale/**/**/gst-plugins-ugly-1.0.mo
 
     - "%(name)-plugin-gtk3":

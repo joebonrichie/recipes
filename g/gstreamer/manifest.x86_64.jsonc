@@ -79,6 +79,8 @@
 				"pkgconfig(vulkan)",
 				"pkgconfig(wayland-client)",
 				"pkgconfig(wayland-protocols)",
+				"pkgconfig(x264)",
+				"pkgconfig(x265)",
 				"pkgconfig(xkbcommon)",
 				"pkgconfig(xv)"
 			],
@@ -265,6 +267,8 @@
 				"pkgconfig(vulkan)",
 				"pkgconfig(wayland-client)",
 				"pkgconfig(wayland-protocols)",
+				"pkgconfig(x264)",
+				"pkgconfig(x265)",
 				"pkgconfig(xkbcommon)",
 				"pkgconfig(xv)"
 			],
@@ -511,6 +515,8 @@
 				"pkgconfig(vulkan)",
 				"pkgconfig(wayland-client)",
 				"pkgconfig(wayland-protocols)",
+				"pkgconfig(x264)",
+				"pkgconfig(x265)",
 				"pkgconfig(xkbcommon)",
 				"pkgconfig(xv)"
 			],
@@ -618,6 +624,8 @@
 				"pkgconfig(vulkan)",
 				"pkgconfig(wayland-client)",
 				"pkgconfig(wayland-protocols)",
+				"pkgconfig(x264)",
+				"pkgconfig(x265)",
 				"pkgconfig(xkbcommon)",
 				"pkgconfig(xv)"
 			],
@@ -722,6 +730,8 @@
 				"pkgconfig(vulkan)",
 				"pkgconfig(wayland-client)",
 				"pkgconfig(wayland-protocols)",
+				"pkgconfig(x264)",
+				"pkgconfig(x265)",
 				"pkgconfig(xkbcommon)",
 				"pkgconfig(xv)"
 			],
@@ -835,6 +845,8 @@
 				"pkgconfig(vulkan)",
 				"pkgconfig(wayland-client)",
 				"pkgconfig(wayland-protocols)",
+				"pkgconfig(x264)",
+				"pkgconfig(x265)",
 				"pkgconfig(xkbcommon)",
 				"pkgconfig(xv)"
 			],
@@ -926,6 +938,8 @@
 				"pkgconfig(vulkan)",
 				"pkgconfig(wayland-client)",
 				"pkgconfig(wayland-protocols)",
+				"pkgconfig(x264)",
+				"pkgconfig(x265)",
 				"pkgconfig(xkbcommon)",
 				"pkgconfig(xv)"
 			],
@@ -1031,6 +1045,8 @@
 				"pkgconfig(vulkan)",
 				"pkgconfig(wayland-client)",
 				"pkgconfig(wayland-protocols)",
+				"pkgconfig(x264)",
+				"pkgconfig(x265)",
 				"pkgconfig(xkbcommon)",
 				"pkgconfig(xv)"
 			],
@@ -1105,6 +1121,7 @@
 				"soname(libvulkan.so.1(x86_64))",
 				"soname(libwebp.so.7(x86_64))",
 				"soname(libwebpmux.so.3(x86_64))",
+				"soname(libx265.so.215(x86_64))",
 				"soname(libxml2.so.16(x86_64))"
 			],
 			"files": [
@@ -1215,6 +1232,7 @@
 				"/usr/lib/gstreamer-1.0/libgstvulkan.so",
 				"/usr/lib/gstreamer-1.0/libgstwaylandsink.so",
 				"/usr/lib/gstreamer-1.0/libgstwebp.so",
+				"/usr/lib/gstreamer-1.0/libgstx265.so",
 				"/usr/lib/gstreamer-1.0/libgsty4mdec.so",
 				"/usr/share/gstreamer-1.0/encoding-profiles/device/dvd.gep",
 				"/usr/share/gstreamer-1.0/encoding-profiles/file-extension/avi.gep",
@@ -1382,6 +1400,7 @@
 				"soname(gstreamer-1.0/libgstvulkan.so(x86_64))",
 				"soname(gstreamer-1.0/libgstwaylandsink.so(x86_64))",
 				"soname(gstreamer-1.0/libgstwebp.so(x86_64))",
+				"soname(gstreamer-1.0/libgstx265.so(x86_64))",
 				"soname(gstreamer-1.0/libgsty4mdec.so(x86_64))"
 			]
 		},
@@ -1462,6 +1481,8 @@
 				"pkgconfig(vulkan)",
 				"pkgconfig(wayland-client)",
 				"pkgconfig(wayland-protocols)",
+				"pkgconfig(x264)",
+				"pkgconfig(x265)",
 				"pkgconfig(xkbcommon)",
 				"pkgconfig(xv)"
 			],
@@ -1833,6 +1854,8 @@
 				"pkgconfig(vulkan)",
 				"pkgconfig(wayland-client)",
 				"pkgconfig(wayland-protocols)",
+				"pkgconfig(x264)",
+				"pkgconfig(x265)",
 				"pkgconfig(xkbcommon)",
 				"pkgconfig(xv)"
 			],
@@ -1959,6 +1982,8 @@
 				"pkgconfig(vulkan)",
 				"pkgconfig(wayland-client)",
 				"pkgconfig(wayland-protocols)",
+				"pkgconfig(x264)",
+				"pkgconfig(x265)",
 				"pkgconfig(xkbcommon)",
 				"pkgconfig(xv)"
 			],
@@ -2156,6 +2181,8 @@
 				"pkgconfig(vulkan)",
 				"pkgconfig(wayland-client)",
 				"pkgconfig(wayland-protocols)",
+				"pkgconfig(x264)",
+				"pkgconfig(x265)",
 				"pkgconfig(xkbcommon)",
 				"pkgconfig(xv)"
 			],
@@ -2434,6 +2461,8 @@
 				"pkgconfig(vulkan)",
 				"pkgconfig(wayland-client)",
 				"pkgconfig(wayland-protocols)",
+				"pkgconfig(x264)",
+				"pkgconfig(x265)",
 				"pkgconfig(xkbcommon)",
 				"pkgconfig(xv)"
 			],
@@ -2805,6 +2834,8 @@
 				"pkgconfig(vulkan)",
 				"pkgconfig(wayland-client)",
 				"pkgconfig(wayland-protocols)",
+				"pkgconfig(x264)",
+				"pkgconfig(x265)",
 				"pkgconfig(xkbcommon)",
 				"pkgconfig(xv)"
 			],
@@ -2913,6 +2944,8 @@
 				"pkgconfig(vulkan)",
 				"pkgconfig(wayland-client)",
 				"pkgconfig(wayland-protocols)",
+				"pkgconfig(x264)",
+				"pkgconfig(x265)",
 				"pkgconfig(xkbcommon)",
 				"pkgconfig(xv)"
 			],
@@ -3211,6 +3244,8 @@
 				"pkgconfig(vulkan)",
 				"pkgconfig(wayland-client)",
 				"pkgconfig(wayland-protocols)",
+				"pkgconfig(x264)",
+				"pkgconfig(x265)",
 				"pkgconfig(xkbcommon)",
 				"pkgconfig(xv)"
 			],
@@ -3231,7 +3266,8 @@
 				"soname(libgstrtsp-1.0.so.0(x86_64))",
 				"soname(libgstsdp-1.0.so.0(x86_64))",
 				"soname(libgsttag-1.0.so.0(x86_64))",
-				"soname(libgstvideo-1.0.so.0(x86_64))"
+				"soname(libgstvideo-1.0.so.0(x86_64))",
+				"soname(libx264.so.164(x86_64))"
 			],
 			"files": [
 				"/usr/lib/gstreamer-1.0/libgstasf.so",
@@ -3239,6 +3275,8 @@
 				"/usr/lib/gstreamer-1.0/libgstdvdread.so",
 				"/usr/lib/gstreamer-1.0/libgstdvdsub.so",
 				"/usr/lib/gstreamer-1.0/libgstrealmedia.so",
+				"/usr/lib/gstreamer-1.0/libgstx264.so",
+				"/usr/share/gstreamer-1.0/presets/GstX264Enc.prs",
 				"/usr/share/locale/af/LC_MESSAGES/gst-plugins-ugly-1.0.mo",
 				"/usr/share/locale/ast/LC_MESSAGES/gst-plugins-ugly-1.0.mo",
 				"/usr/share/locale/az/LC_MESSAGES/gst-plugins-ugly-1.0.mo",
@@ -3291,7 +3329,8 @@
 				"soname(gstreamer-1.0/libgstdvdlpcmdec.so(x86_64))",
 				"soname(gstreamer-1.0/libgstdvdread.so(x86_64))",
 				"soname(gstreamer-1.0/libgstdvdsub.so(x86_64))",
-				"soname(gstreamer-1.0/libgstrealmedia.so(x86_64))"
+				"soname(gstreamer-1.0/libgstrealmedia.so(x86_64))",
+				"soname(gstreamer-1.0/libgstx264.so(x86_64))"
 			]
 		},
 		"python-gstreamer": {
@@ -3371,6 +3410,8 @@
 				"pkgconfig(vulkan)",
 				"pkgconfig(wayland-client)",
 				"pkgconfig(wayland-protocols)",
+				"pkgconfig(x264)",
+				"pkgconfig(x265)",
 				"pkgconfig(xkbcommon)",
 				"pkgconfig(xv)"
 			],
@@ -3409,6 +3450,6 @@
 		}
 	},
 	"source-name": "gstreamer",
-	"source-release": "13",
+	"source-release": "14",
 	"source-version": "1.26.2"
 }
