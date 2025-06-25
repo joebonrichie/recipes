@@ -1,0 +1,83 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : x265
+version     : 4.1+git.32e25ff
+release     : 1
+upstreams   :
+    # Latest from Release_4.1 branch
+    - git|https://bitbucket.org/multicoreware/x265_git.git : 32e25ffcf810c5fe284901859b369270824c4596
+homepage    : https://bitbucket.org/multicoreware/x265_git
+license     : GPL-2.0-or-later
+summary    : x265 is an open source HEVC encoder
+description: |
+    The primary objective of x265 is to become the best H.265/HEVC encoder available anywhere, offering the highest compression efficiency and the highest performance on a wide variety of hardware platforms.
+builddeps   :
+    - binary(nasm)
+setup       : |
+    %patch %(pkgdir)/0001-Fix-CMake-build-error-with-latest-CMake-4.0-release.patch
+    %patch %(pkgdir)/0002-Fix-for-CMake-Build-Errors-in-MacOS.patch
+    %patch %(pkgdir)/0003-Bump-CMake-Version-for-dynamicHDR10.patch
+
+    function x265_common() {
+        %cmake \
+            -S source \
+            -DENABLE_HDR10_PLUS=TRUE \
+            "$@"
+    }
+    function x265_hdr() {
+        x265_common \
+            -DENABLE_CLI=FALSE \
+            -DENABLE_SHARED=FALSE \
+            -DEXPORT_C_API=FALSE \
+            -DHIGH_BIT_DEPTH=TRUE \
+            "$@"
+    }
+
+    # HDR 10-bit and 12-bit support
+    x265_hdr \
+        -B build-10
+    x265_hdr \
+        -B build-12 \
+        -DMAIN12=TRUE
+
+    x265_common \
+        -DENABLE_SHARED=TRUE \
+        -DEXTRA_LIB='x265_main10.a;x265_main12.a' \
+        -DEXTRA_LINK_FLAGS='-L .' \
+        -DLINKED_10BIT=TRUE \
+        -DLINKED_12BIT=TRUE
+build       : |
+    # 10 and 12-bit
+    for i in 10 12; do
+        %ccache_zero
+        BUILDDIR=build-${i}
+        env CCACHE_BASEDIR="${PWD}/build-${i}" %cmake_build
+        %ccache_stats
+        ln -srv build-${i}/libx265.a %(builddir)/libx265_main${i}.a
+    done
+
+    # Final build
+    %ccache_zero
+    BUILDDIR=%(builddir)
+    env CCACHE_BASEDIR="${PWD}/%(builddir)" %cmake_build
+    %ccache_stats
+install     : |
+    %cmake_install
+
+    rm -rfv %(installroot)%(libdir)/*.a
+tuning      :
+    - lto: full
+    - optimize: speed
+packages    :
+    - "%(name)-libs":
+        summary: x265 video coding library
+        paths:
+            - /usr/lib/libx265.so.*
+            - /usr/lib/libhdr10plus.so
+
+    - "%(name)-devel":
+        rundeps:
+            - "%(name)-libs"

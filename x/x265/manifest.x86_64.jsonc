@@ -1,0 +1,66 @@
+/** Human readable report. This is not consumed by boulder */
+{
+	"manifest-version": "0.2",
+	"packages": {
+		"x265": {
+			"build-depends": [
+				"binary(nasm)"
+			],
+			"depends": [
+				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
+				"soname(libc++.so.1(x86_64))",
+				"soname(libc.so.6(x86_64))",
+				"soname(libx265.so.215(x86_64))"
+			],
+			"files": [
+				"/usr/bin/x265"
+			],
+			"name": "x265",
+			"provides": [
+				"binary(x265)"
+			]
+		},
+		"x265-devel": {
+			"build-depends": [
+				"binary(nasm)"
+			],
+			"depends": [
+				"x265",
+				"x265-libs"
+			],
+			"files": [
+				"/usr/include/hdr10plus.h",
+				"/usr/include/x265.h",
+				"/usr/include/x265_config.h",
+				"/usr/lib/libx265.so",
+				"/usr/lib/pkgconfig/x265.pc"
+			],
+			"name": "x265-devel",
+			"provides": [
+				"pkgconfig(x265)"
+			]
+		},
+		"x265-libs": {
+			"build-depends": [
+				"binary(nasm)"
+			],
+			"depends": [
+				"soname(libc++.so.1(x86_64))",
+				"soname(libc.so.6(x86_64))",
+				"soname(libm.so.6(x86_64))"
+			],
+			"files": [
+				"/usr/lib/libhdr10plus.so",
+				"/usr/lib/libx265.so.215"
+			],
+			"name": "x265-libs",
+			"provides": [
+				"soname(libhdr10plus.so(x86_64))",
+				"soname(libx265.so.215(x86_64))"
+			]
+		}
+	},
+	"source-name": "x265",
+	"source-release": "1",
+	"source-version": "4.1+git.32e25ff"
+}
