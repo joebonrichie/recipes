@@ -4,8 +4,8 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : llvm
-version     : 20.1.6
-release     : 30
+version     : 20.1.7
+release     : 31
 summary     : Low Level Virtual Machine
 license     :
     - Apache-2.0 WITH LLVM-exception
@@ -14,8 +14,7 @@ homepage    : https://www.llvm.org
 description : |
     Low Level Virtual Machine
 upstreams   :
-    # TODO: Switch this back to src tar
-    - https://github.com/llvm/llvm-project/archive/refs/tags/llvmorg-20.1.6.tar.gz : afa487c401613f5e4a35935b2abfb5d07e6ebfa20df32787e34a5c7e97c6ea4b
+    - https://github.com/llvm/llvm-project/releases/download/llvmorg-20.1.7/llvm-project-20.1.7.src.tar.xz : cd8fd55d97ad3e360b1d5aaf98388d1f70dfffb7df36beee478be3b839ff9008
 builddeps   :
     - binary(perl)
     - binary(python3)
