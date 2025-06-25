@@ -66,6 +66,7 @@
 				"/usr/share/ECM/kde-modules/KDEInstallDirs6.cmake",
 				"/usr/share/ECM/kde-modules/KDEInstallDirs6.cmake.orig",
 				"/usr/share/ECM/kde-modules/KDEInstallDirsCommon.cmake",
+				"/usr/share/ECM/kde-modules/KDEInstallDirsCommon.cmake.orig",
 				"/usr/share/ECM/kde-modules/KDEMetaInfoPlatformCheck.cmake",
 				"/usr/share/ECM/kde-modules/KDEPackageAppTemplates.cmake",
 				"/usr/share/ECM/kde-modules/KDESetupPrefixScript.cmake",
@@ -156,6 +157,6 @@
 		}
 	},
 	"source-name": "extra-cmake-modules",
-	"source-release": "5",
-	"source-version": "6.14.0"
+	"source-release": "6",
+	"source-version": "6.15.0"
 }
