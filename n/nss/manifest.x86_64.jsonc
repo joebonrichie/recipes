@@ -38,7 +38,6 @@
 			],
 			"files": [
 				"/usr/bin/certutil",
-				"/usr/bin/nss-config",
 				"/usr/bin/pk12util",
 				"/usr/lib/libfreebl3.so",
 				"/usr/lib/libfreeblpriv3.so",
@@ -55,7 +54,6 @@
 			"name": "nss",
 			"provides": [
 				"binary(certutil)",
-				"binary(nss-config)",
 				"binary(pk12util)",
 				"soname(libfreebl3.so(x86_64))",
 				"soname(libfreeblpriv3.so(x86_64))",
@@ -84,6 +82,7 @@
 				"pkgconfig(nspr)"
 			],
 			"files": [
+				"/usr/bin/nss-config",
 				"/usr/include/nss/alghmac.h",
 				"/usr/include/nss/base.h",
 				"/usr/include/nss/base64.h",
@@ -344,11 +343,12 @@
 			],
 			"name": "nss-devel",
 			"provides": [
+				"binary(nss-config)",
 				"pkgconfig(nss)"
 			]
 		}
 	},
 	"source-name": "nss",
-	"source-release": "28",
-	"source-version": "3.112"
+	"source-release": "29",
+	"source-version": "3.113"
 }
