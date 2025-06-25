@@ -1,0 +1,43 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : x264
+version     : 0.164.3108+git.31e19f9
+release     : 1
+upstreams   :
+    # Note for packagers: must be updated to the latest commits on 'stable' branch.
+    - git|https://code.videolan.org/videolan/x264.git : 31e19f92f00c7003fa115047ce50978bc98c3a0d
+homepage    : https://code.videolan.org/videolan/x264
+license     : GPL-2.0-or-later
+summary     : A library for encoding video streams into the H.264/MPEG-4 AVC format.
+description : |
+    A library for encoding video streams into the H.264/MPEG-4 AVC format.
+builddeps   :
+    - binary(nasm)
+    - binary(strings)
+    - pkgconfig(bash-completion)
+setup       : |
+    %configure_with_bash \
+        --enable-lto \
+        --enable-pic \
+        --enable-shared \
+        --disable-avs \
+        --system-libx264
+build       : |
+    %make
+install     : |
+    %make_install
+tuning      :
+    - lto: full
+    - optimize: speed
+packages    :
+    - "%(name)-libs":
+        summary: x264 video coding library
+        paths:
+            - /usr/lib/libx264.so.*
+
+    - "%(name)-devel":
+        rundeps:
+            - "%(name)-libs"
