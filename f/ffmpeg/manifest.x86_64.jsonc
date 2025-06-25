@@ -43,6 +43,8 @@
 				"pkgconfig(vpx)",
 				"pkgconfig(vulkan)",
 				"pkgconfig(x11)",
+				"pkgconfig(x264)",
+				"pkgconfig(x265)",
 				"pkgconfig(xcb)"
 			],
 			"depends": [
@@ -128,6 +130,8 @@
 				"pkgconfig(vpx)",
 				"pkgconfig(vulkan)",
 				"pkgconfig(x11)",
+				"pkgconfig(x264)",
+				"pkgconfig(x265)",
 				"pkgconfig(xcb)"
 			],
 			"depends": [
@@ -212,6 +216,8 @@
 				"pkgconfig(vpx)",
 				"pkgconfig(vulkan)",
 				"pkgconfig(x11)",
+				"pkgconfig(x264)",
+				"pkgconfig(x265)",
 				"pkgconfig(xcb)"
 			],
 			"files": [
@@ -291,6 +297,8 @@
 				"pkgconfig(vpx)",
 				"pkgconfig(vulkan)",
 				"pkgconfig(x11)",
+				"pkgconfig(x264)",
+				"pkgconfig(x265)",
 				"pkgconfig(xcb)"
 			],
 			"depends": [
@@ -318,6 +326,8 @@
 				"soname(libvpx.so.11(x86_64))",
 				"soname(libwebp.so.7(x86_64))",
 				"soname(libwebpmux.so.3(x86_64))",
+				"soname(libx264.so.164(x86_64))",
+				"soname(libx265.so.215(x86_64))",
 				"soname(libz.so.1(x86_64))"
 			],
 			"files": [
@@ -370,6 +380,8 @@
 				"pkgconfig(vpx)",
 				"pkgconfig(vulkan)",
 				"pkgconfig(x11)",
+				"pkgconfig(x264)",
+				"pkgconfig(x265)",
 				"pkgconfig(xcb)"
 			],
 			"depends": [
@@ -452,6 +464,8 @@
 				"pkgconfig(vpx)",
 				"pkgconfig(vulkan)",
 				"pkgconfig(x11)",
+				"pkgconfig(x264)",
+				"pkgconfig(x265)",
 				"pkgconfig(xcb)"
 			],
 			"depends": [
@@ -519,6 +533,8 @@
 				"pkgconfig(vpx)",
 				"pkgconfig(vulkan)",
 				"pkgconfig(x11)",
+				"pkgconfig(x264)",
+				"pkgconfig(x265)",
 				"pkgconfig(xcb)"
 			],
 			"depends": [
@@ -585,6 +601,8 @@
 				"pkgconfig(vpx)",
 				"pkgconfig(vulkan)",
 				"pkgconfig(x11)",
+				"pkgconfig(x264)",
+				"pkgconfig(x265)",
 				"pkgconfig(xcb)"
 			],
 			"depends": [
@@ -656,6 +674,8 @@
 				"pkgconfig(vpx)",
 				"pkgconfig(vulkan)",
 				"pkgconfig(x11)",
+				"pkgconfig(x264)",
+				"pkgconfig(x265)",
 				"pkgconfig(xcb)"
 			],
 			"depends": [
@@ -723,11 +743,14 @@
 				"pkgconfig(vpx)",
 				"pkgconfig(vulkan)",
 				"pkgconfig(x11)",
+				"pkgconfig(x264)",
+				"pkgconfig(x265)",
 				"pkgconfig(xcb)"
 			],
 			"depends": [
 				"soname(libavcodec.so.61(x86_64))",
 				"soname(libavutil.so.59(x86_64))",
+				"soname(libbz2.so.1.0(x86_64))",
 				"soname(libc.so.6(x86_64))",
 				"soname(libcrypto.so.3(x86_64))",
 				"soname(libdvdnav.so.4(x86_64))",
@@ -788,6 +811,8 @@
 				"pkgconfig(vpx)",
 				"pkgconfig(vulkan)",
 				"pkgconfig(x11)",
+				"pkgconfig(x264)",
+				"pkgconfig(x265)",
 				"pkgconfig(xcb)"
 			],
 			"depends": [
@@ -851,6 +876,8 @@
 				"pkgconfig(vpx)",
 				"pkgconfig(vulkan)",
 				"pkgconfig(x11)",
+				"pkgconfig(x264)",
+				"pkgconfig(x265)",
 				"pkgconfig(xcb)"
 			],
 			"depends": [
@@ -914,6 +941,8 @@
 				"pkgconfig(vpx)",
 				"pkgconfig(vulkan)",
 				"pkgconfig(x11)",
+				"pkgconfig(x264)",
+				"pkgconfig(x265)",
 				"pkgconfig(xcb)"
 			],
 			"depends": [
@@ -1066,6 +1095,8 @@
 				"pkgconfig(vpx)",
 				"pkgconfig(vulkan)",
 				"pkgconfig(x11)",
+				"pkgconfig(x264)",
+				"pkgconfig(x265)",
 				"pkgconfig(xcb)"
 			],
 			"depends": [
@@ -1122,6 +1153,8 @@
 				"pkgconfig(vpx)",
 				"pkgconfig(vulkan)",
 				"pkgconfig(x11)",
+				"pkgconfig(x264)",
+				"pkgconfig(x265)",
 				"pkgconfig(xcb)"
 			],
 			"depends": [
@@ -1181,6 +1214,8 @@
 				"pkgconfig(vpx)",
 				"pkgconfig(vulkan)",
 				"pkgconfig(x11)",
+				"pkgconfig(x264)",
+				"pkgconfig(x265)",
 				"pkgconfig(xcb)"
 			],
 			"depends": [
@@ -1238,6 +1273,8 @@
 				"pkgconfig(vpx)",
 				"pkgconfig(vulkan)",
 				"pkgconfig(x11)",
+				"pkgconfig(x264)",
+				"pkgconfig(x265)",
 				"pkgconfig(xcb)"
 			],
 			"depends": [
@@ -1298,6 +1335,8 @@
 				"pkgconfig(vpx)",
 				"pkgconfig(vulkan)",
 				"pkgconfig(x11)",
+				"pkgconfig(x264)",
+				"pkgconfig(x265)",
 				"pkgconfig(xcb)"
 			],
 			"depends": [
@@ -1355,6 +1394,8 @@
 				"pkgconfig(vpx)",
 				"pkgconfig(vulkan)",
 				"pkgconfig(x11)",
+				"pkgconfig(x264)",
+				"pkgconfig(x265)",
 				"pkgconfig(xcb)"
 			],
 			"depends": [
@@ -1376,6 +1417,6 @@
 		}
 	},
 	"source-name": "ffmpeg",
-	"source-release": "7",
+	"source-release": "8",
 	"source-version": "7.1.1"
 }

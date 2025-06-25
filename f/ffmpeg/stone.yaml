@@ -5,7 +5,7 @@
 #
 name        : ffmpeg
 version     : '7.1.1'
-release     : 7
+release     : 8
 homepage    : https://ffmpeg.org/releases
 upstreams   :
     - https://ffmpeg.org/releases/ffmpeg-7.1.1.tar.xz : 733984395e0dbbe5c046abda2dc49a5544e7e0e1e2366bba849222ae9e3a03b1
@@ -56,6 +56,8 @@ builddeps   :
     - pkgconfig(vpx)
     - pkgconfig(vulkan)
     - pkgconfig(x11)
+    - pkgconfig(x264)
+    - pkgconfig(x265)
     - pkgconfig(xcb)
     - ladspa-devel
     - lame-devel
@@ -80,8 +82,6 @@ builddeps   :
 # - libv4l2
 # - libvidstab
 # - libvmaf
-# - libx264
-# - libx265
 # - libxvid
 # - libzimg
 # - libzmq
@@ -128,6 +128,8 @@ setup       : |
                 --enable-libvorbis \
                 --enable-libvpx \
                 --enable-libwebp \
+                --enable-libx264 \
+                --enable-libx265 \
                 --enable-libxcb \
                 --enable-libxml2 \
                 --enable-opengl \
