@@ -6,7 +6,7 @@
 #
 name        : boulder
 version     : 0.25.5+git.00f9746
-release     : 96
+release     : 97
 summary     : Modern package building tool
 license     : MPL-2.0
 homepage    : https://github.com/AerynOS/os-tools
@@ -18,7 +18,7 @@ upstreams   :
 builddeps   :
     - binary(cargo)
 rundeps     :
-    - binary(tar) # needed for `boulder recipe (...)` actions
+    - binary(bsdtar-static) # needed for `boulder recipe (...)` actions
 networking  : yes
 tuning      :
     - optimize: size
