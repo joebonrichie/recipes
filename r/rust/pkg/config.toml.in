@@ -1,8 +1,9 @@
-# At the end of the install phase Rust will print a message about the new change-id. Please
-# review any changed settings and then update the following field when updating to new Rust versions
-change-id = 138986
+# To get the most recent change-id go to `src/bootstrap/src/utils/change_tracker.rs` for the Rust version
+# you're updating to, and find the bottom-most entry. Make sure you review all change entries between the
+# previous ID and the new one to see if anything should be changed in this config.
+change-id = 140732
 
-# Inherit from src/bootstrap/defaults/config.dist.toml
+# Inherit from src/bootstrap/defaults/bootstrap.dist.toml
 profile = "dist"
 
 [llvm]

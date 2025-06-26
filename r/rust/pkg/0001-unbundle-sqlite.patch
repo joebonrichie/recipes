@@ -9,27 +9,27 @@ Subject: [PATCH] unbundle sqlite
  2 files changed, 1 insertion(+), 2 deletions(-)
 
 diff --git a/Cargo.lock b/Cargo.lock
-index c50824f12b..60563b83cb 100644
+index c63294ade..1827dc6ab 100644
 --- a/Cargo.lock
 +++ b/Cargo.lock
-@@ -2581,7 +2581,6 @@ version = "0.31.0"
+@@ -2573,7 +2573,6 @@ version = "0.32.0"
  source = "registry+https://github.com/rust-lang/crates.io-index"
- checksum = "ad8935b44e7c13394a179a438e0cebba0fe08fe01b54f152e29a93b5cf993fd4"
+ checksum = "fbb8270bb4060bd76c6e96f20c52d80620f1d82a3470885694e41e0f81ef6fe7"
  dependencies = [
 - "cc",
   "pkg-config",
   "vcpkg",
  ]
 diff --git a/Cargo.toml b/Cargo.toml
-index 534ecdd539..21dff7dca7 100644
+index 8348c65bb..a557dfb51 100644
 --- a/Cargo.toml
 +++ b/Cargo.toml
-@@ -79,7 +79,7 @@ proptest = "1.6.0"
+@@ -80,7 +80,7 @@ proptest = "1.6.0"
  pulldown-cmark = { version = "0.13.0", default-features = false, features = ["html"] }
  rand = "0.9.0"
  regex = "1.11.1"
--rusqlite = { version = "0.33.0", features = ["bundled"] }
-+rusqlite = { version = "0.33.0", features = [] }
+-rusqlite = { version = "0.34.0", features = ["bundled"] }
++rusqlite = { version = "0.34.0", features = [] }
  rustc-hash = "2.1.1"
  rustc-stable-hash = "0.1.2"
  rustfix = { version = "0.9.0", path = "crates/rustfix" }
