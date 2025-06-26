@@ -7,7 +7,7 @@
       "id": "aerynos",
       "id_like": "linux",
       "name": "AerynOS",
-      "display": "AerynOS 2025.03",
+      "display": "AerynOS 2025.06",
       "ansi_color": "1;35",
       "former_identities": [
         {
@@ -37,10 +37,10 @@
       ]
     },
     "version": {
-      "full": "2025.03",
-      "short": "2025.03",
-      "build_id": "2025.03",
-      "released": "2025-03-23T00:00:00Z"
+      "full": "2025.06",
+      "short": "2025.06",
+      "build_id": "2025.06",
+      "released": "2025-06-28T00:00:00Z"
     }
   },
   "system": {
