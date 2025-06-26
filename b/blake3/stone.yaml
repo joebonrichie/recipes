@@ -5,7 +5,7 @@
 #
 name        : blake3
 version     : 1.8.2
-release     : 3
+release     : 4
 summary     : BLAKE3 hash algorithm
 license     : Apache-2.0
 homepage    : https://github.com/BLAKE3-team/BLAKE3
@@ -13,9 +13,13 @@ upstreams   :
     - https://github.com/BLAKE3-team/BLAKE3/archive/refs/tags/1.8.2.tar.gz : 6b51aefe515969785da02e87befafc7fdc7a065cd3458cf1141f29267749e81f
 description : |
     BLAKE3 hash algorithm
+builddeps   :
+    - cmake(TBB)
 setup       : |
     cd c
-    %cmake -DBUILD_SHARED_LIBS=ON
+    %cmake \
+        -DBUILD_SHARED_LIBS=ON \
+        -DBLAKE3_USE_TBB=ON
 build       : |
     cd c
     %cmake_build
