@@ -44,9 +44,9 @@
 			"files": [
 				"/usr/bin/knewstuff-dialog6",
 				"/usr/lib/libKF6NewStuffCore.so.6",
-				"/usr/lib/libKF6NewStuffCore.so.6.14.0",
+				"/usr/lib/libKF6NewStuffCore.so.6.15.0",
 				"/usr/lib/libKF6NewStuffWidgets.so.6",
-				"/usr/lib/libKF6NewStuffWidgets.so.6.14.0",
+				"/usr/lib/libKF6NewStuffWidgets.so.6.15.0",
 				"/usr/lib/qt6/qml/org/kde/newstuff/Action.qml",
 				"/usr/lib/qt6/qml/org/kde/newstuff/Action.qmlc",
 				"/usr/lib/qt6/qml/org/kde/newstuff/Button.qml",
@@ -281,21 +281,15 @@
 				"/usr/include/KF6/KNewStuffWidgets/KNSWidgets/knewstuffwidgets_export.h",
 				"/usr/lib/cmake/KF6NewStuff/KF6NewStuffConfig.cmake",
 				"/usr/lib/cmake/KF6NewStuff/KF6NewStuffConfigVersion.cmake",
-				"/usr/lib/cmake/KF6NewStuff/KF6NewStuffQchTargets.cmake",
 				"/usr/lib/cmake/KF6NewStuff/KF6NewStuffTargets-release.cmake",
 				"/usr/lib/cmake/KF6NewStuff/KF6NewStuffTargets.cmake",
 				"/usr/lib/cmake/KF6NewStuffCore/KF6NewStuffCoreConfig.cmake",
 				"/usr/lib/cmake/KF6NewStuffCore/KF6NewStuffCoreConfigVersion.cmake",
-				"/usr/lib/cmake/KF6NewStuffCore/KF6NewStuffCoreQchTargets.cmake",
 				"/usr/lib/cmake/KF6NewStuffCore/KF6NewStuffCoreTargets-release.cmake",
 				"/usr/lib/cmake/KF6NewStuffCore/KF6NewStuffCoreTargets.cmake",
 				"/usr/lib/libKF6NewStuffCore.so",
 				"/usr/lib/libKF6NewStuffWidgets.so",
-				"/usr/lib/qt6/plugins/designer/knewstuff6widgets.so",
-				"/usr/share/doc/qt6/KF6NewStuffCore.qch",
-				"/usr/share/doc/qt6/KF6NewStuffCore.tags",
-				"/usr/share/doc/qt6/KF6NewStuffWidgets.qch",
-				"/usr/share/doc/qt6/KF6NewStuffWidgets.tags"
+				"/usr/lib/qt6/plugins/designer/knewstuff6widgets.so"
 			],
 			"name": "kf6-knewstuff-devel",
 			"provides": [
@@ -306,6 +300,6 @@
 		}
 	},
 	"source-name": "kf6-knewstuff",
-	"source-release": "5",
-	"source-version": "6.14.0"
+	"source-release": "6",
+	"source-version": "6.15.0"
 }
