@@ -23,7 +23,7 @@
 			],
 			"files": [
 				"/usr/lib/libKF6ColorScheme.so.6",
-				"/usr/lib/libKF6ColorScheme.so.6.14.0",
+				"/usr/lib/libKF6ColorScheme.so.6.15.0",
 				"/usr/share/locale/ar/LC_MESSAGES/kcolorscheme6.mo",
 				"/usr/share/locale/ast/LC_MESSAGES/kcolorscheme6.mo",
 				"/usr/share/locale/be/LC_MESSAGES/kcolorscheme6.mo",
@@ -99,12 +99,9 @@
 				"/usr/include/KF6/KColorScheme/kstatefulbrush.h",
 				"/usr/lib/cmake/KF6ColorScheme/KF6ColorSchemeConfig.cmake",
 				"/usr/lib/cmake/KF6ColorScheme/KF6ColorSchemeConfigVersion.cmake",
-				"/usr/lib/cmake/KF6ColorScheme/KF6ColorSchemeQchTargets.cmake",
 				"/usr/lib/cmake/KF6ColorScheme/KF6ColorSchemeTargets-release.cmake",
 				"/usr/lib/cmake/KF6ColorScheme/KF6ColorSchemeTargets.cmake",
-				"/usr/lib/libKF6ColorScheme.so",
-				"/usr/share/doc/qt6/KF6ColorScheme.qch",
-				"/usr/share/doc/qt6/KF6ColorScheme.tags"
+				"/usr/lib/libKF6ColorScheme.so"
 			],
 			"name": "kf6-kcolorscheme-devel",
 			"provides": [
@@ -113,6 +110,6 @@
 		}
 	},
 	"source-name": "kf6-kcolorscheme",
-	"source-release": "7",
-	"source-version": "6.14.0"
+	"source-release": "8",
+	"source-version": "6.15.0"
 }
