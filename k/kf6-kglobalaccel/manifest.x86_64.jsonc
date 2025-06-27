@@ -17,7 +17,7 @@
 			],
 			"files": [
 				"/usr/lib/libKF6GlobalAccel.so.6",
-				"/usr/lib/libKF6GlobalAccel.so.6.14.0",
+				"/usr/lib/libKF6GlobalAccel.so.6.15.0",
 				"/usr/share/dbus-1/interfaces/kf6_org.kde.KGlobalAccel.xml",
 				"/usr/share/dbus-1/interfaces/kf6_org.kde.kglobalaccel.Component.xml",
 				"/usr/share/locale/af/LC_MESSAGES/kglobalaccel6_qt.qm",
@@ -147,12 +147,9 @@
 				"/usr/include/KF6/KGlobalAccel/kglobalshortcutinfo.h",
 				"/usr/lib/cmake/KF6GlobalAccel/KF6GlobalAccelConfig.cmake",
 				"/usr/lib/cmake/KF6GlobalAccel/KF6GlobalAccelConfigVersion.cmake",
-				"/usr/lib/cmake/KF6GlobalAccel/KF6GlobalAccelQchTargets.cmake",
 				"/usr/lib/cmake/KF6GlobalAccel/KF6GlobalAccelTargets-release.cmake",
 				"/usr/lib/cmake/KF6GlobalAccel/KF6GlobalAccelTargets.cmake",
-				"/usr/lib/libKF6GlobalAccel.so",
-				"/usr/share/doc/qt6/KF6GlobalAccel.qch",
-				"/usr/share/doc/qt6/KF6GlobalAccel.tags"
+				"/usr/lib/libKF6GlobalAccel.so"
 			],
 			"name": "kf6-kglobalaccel-devel",
 			"provides": [
@@ -161,6 +158,6 @@
 		}
 	},
 	"source-name": "kf6-kglobalaccel",
-	"source-release": "5",
-	"source-version": "6.14.0"
+	"source-release": "6",
+	"source-version": "6.15.0"
 }
