@@ -26,21 +26,23 @@
 			],
 			"files": [
 				"/usr/lib/libKirigami.so.6",
-				"/usr/lib/libKirigami.so.6.14.0",
+				"/usr/lib/libKirigami.so.6.15.0",
 				"/usr/lib/libKirigamiDelegates.so.6",
-				"/usr/lib/libKirigamiDelegates.so.6.14.0",
+				"/usr/lib/libKirigamiDelegates.so.6.15.0",
 				"/usr/lib/libKirigamiDialogs.so.6",
-				"/usr/lib/libKirigamiDialogs.so.6.14.0",
+				"/usr/lib/libKirigamiDialogs.so.6.15.0",
 				"/usr/lib/libKirigamiLayouts.so.6",
-				"/usr/lib/libKirigamiLayouts.so.6.14.0",
+				"/usr/lib/libKirigamiLayouts.so.6.15.0",
 				"/usr/lib/libKirigamiLayoutsPrivate.so.6",
-				"/usr/lib/libKirigamiLayoutsPrivate.so.6.14.0",
+				"/usr/lib/libKirigamiLayoutsPrivate.so.6.15.0",
 				"/usr/lib/libKirigamiPlatform.so.6",
-				"/usr/lib/libKirigamiPlatform.so.6.14.0",
+				"/usr/lib/libKirigamiPlatform.so.6.15.0",
+				"/usr/lib/libKirigamiPolyfill.so.6",
+				"/usr/lib/libKirigamiPolyfill.so.6.15.0",
 				"/usr/lib/libKirigamiPrimitives.so.6",
-				"/usr/lib/libKirigamiPrimitives.so.6.14.0",
+				"/usr/lib/libKirigamiPrimitives.so.6.15.0",
 				"/usr/lib/libKirigamiPrivate.so.6",
-				"/usr/lib/libKirigamiPrivate.so.6.14.0",
+				"/usr/lib/libKirigamiPrivate.so.6.15.0",
 				"/usr/lib/qt6/qml/org/kde/kirigami/AboutItem.qml",
 				"/usr/lib/qt6/qml/org/kde/kirigami/AboutItem.qmlc",
 				"/usr/lib/qt6/qml/org/kde/kirigami/AboutPage.qml",
@@ -225,6 +227,10 @@
 				"/usr/lib/qt6/qml/org/kde/kirigami/private/globaltoolbar/ToolBarPageHeader.qmlc",
 				"/usr/lib/qt6/qml/org/kde/kirigami/private/kde-qmlmodule.version",
 				"/usr/lib/qt6/qml/org/kde/kirigami/private/libKirigamiPrivateplugin.so",
+				"/usr/lib/qt6/qml/org/kde/kirigami/private/polyfill/KirigamiPolyfill.qmltypes",
+				"/usr/lib/qt6/qml/org/kde/kirigami/private/polyfill/kde-qmlmodule.version",
+				"/usr/lib/qt6/qml/org/kde/kirigami/private/polyfill/libKirigamiPolyfillplugin.so",
+				"/usr/lib/qt6/qml/org/kde/kirigami/private/polyfill/qmldir",
 				"/usr/lib/qt6/qml/org/kde/kirigami/private/qmldir",
 				"/usr/lib/qt6/qml/org/kde/kirigami/qmldir",
 				"/usr/lib/qt6/qml/org/kde/kirigami/styles/Material/InlineMessage.qml",
@@ -335,6 +341,7 @@
 				"soname(libKirigamiLayouts.so.6(x86_64))",
 				"soname(libKirigamiLayoutsPrivate.so.6(x86_64))",
 				"soname(libKirigamiPlatform.so.6(x86_64))",
+				"soname(libKirigamiPolyfill.so.6(x86_64))",
 				"soname(libKirigamiPrimitives.so.6(x86_64))",
 				"soname(libKirigamiPrivate.so.6(x86_64))",
 				"soname(qt6/qml/org/kde/kirigami/delegates/libKirigamiDelegatesplugin.so(x86_64))",
@@ -344,7 +351,8 @@
 				"soname(qt6/qml/org/kde/kirigami/libKirigamiplugin.so(x86_64))",
 				"soname(qt6/qml/org/kde/kirigami/platform/libKirigamiPlatformplugin.so(x86_64))",
 				"soname(qt6/qml/org/kde/kirigami/primitives/libKirigamiPrimitivesplugin.so(x86_64))",
-				"soname(qt6/qml/org/kde/kirigami/private/libKirigamiPrivateplugin.so(x86_64))"
+				"soname(qt6/qml/org/kde/kirigami/private/libKirigamiPrivateplugin.so(x86_64))",
+				"soname(qt6/qml/org/kde/kirigami/private/polyfill/libKirigamiPolyfillplugin.so(x86_64))"
 			]
 		},
 		"kf6-kirigami-devel": {
@@ -391,10 +399,9 @@
 				"/usr/lib/libKirigamiLayouts.so",
 				"/usr/lib/libKirigamiLayoutsPrivate.so",
 				"/usr/lib/libKirigamiPlatform.so",
+				"/usr/lib/libKirigamiPolyfill.so",
 				"/usr/lib/libKirigamiPrimitives.so",
 				"/usr/lib/libKirigamiPrivate.so",
-				"/usr/share/doc/qt6/KF6KirigamiPlatform.qch",
-				"/usr/share/doc/qt6/KF6KirigamiPlatform.tags",
 				"/usr/share/kdevappwizard/templates/kirigami6.tar.bz2"
 			],
 			"name": "kf6-kirigami-devel",
@@ -406,6 +413,6 @@
 		}
 	},
 	"source-name": "kf6-kirigami",
-	"source-release": "6",
-	"source-version": "6.14.0"
+	"source-release": "7",
+	"source-version": "6.15.0"
 }
