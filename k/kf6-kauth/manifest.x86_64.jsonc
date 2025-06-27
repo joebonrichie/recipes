@@ -23,7 +23,7 @@
 			"files": [
 				"/usr/lib/kf6/kauth/kauth-policy-gen",
 				"/usr/lib/libKF6AuthCore.so.6",
-				"/usr/lib/libKF6AuthCore.so.6.14.0",
+				"/usr/lib/libKF6AuthCore.so.6.15.0",
 				"/usr/lib/qt6/plugins/kf6/kauth/backend/kauth_backend_plugin.so",
 				"/usr/lib/qt6/plugins/kf6/kauth/helper/kauth_helper_plugin.so",
 				"/usr/share/dbus-1/system.d/org.kde.kf6auth.conf",
@@ -165,14 +165,11 @@
 				"/usr/lib/cmake/KF6Auth/KF6AuthConfig.cmake",
 				"/usr/lib/cmake/KF6Auth/KF6AuthConfigVersion.cmake",
 				"/usr/lib/cmake/KF6Auth/KF6AuthMacros.cmake",
-				"/usr/lib/cmake/KF6Auth/KF6AuthQchTargets.cmake",
 				"/usr/lib/cmake/KF6Auth/KF6AuthTargets-release.cmake",
 				"/usr/lib/cmake/KF6Auth/KF6AuthTargets.cmake",
 				"/usr/lib/cmake/KF6Auth/KF6AuthToolsTargets-release.cmake",
 				"/usr/lib/cmake/KF6Auth/KF6AuthToolsTargets.cmake",
-				"/usr/lib/libKF6AuthCore.so",
-				"/usr/share/doc/qt6/KF6Auth.qch",
-				"/usr/share/doc/qt6/KF6Auth.tags"
+				"/usr/lib/libKF6AuthCore.so"
 			],
 			"name": "kf6-kauth-devel",
 			"provides": [
@@ -181,6 +178,6 @@
 		}
 	},
 	"source-name": "kf6-kauth",
-	"source-release": "4",
-	"source-version": "6.14.0"
+	"source-release": "5",
+	"source-version": "6.15.0"
 }
