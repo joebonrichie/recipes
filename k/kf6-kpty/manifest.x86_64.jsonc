@@ -19,7 +19,7 @@
 			],
 			"files": [
 				"/usr/lib/libKF6Pty.so.6",
-				"/usr/lib/libKF6Pty.so.6.14.0",
+				"/usr/lib/libKF6Pty.so.6.15.0",
 				"/usr/share/locale/af/LC_MESSAGES/kpty6.mo",
 				"/usr/share/locale/ar/LC_MESSAGES/kpty6.mo",
 				"/usr/share/locale/as/LC_MESSAGES/kpty6.mo",
@@ -150,12 +150,9 @@
 				"/usr/include/KF6/KPty/kptyprocess.h",
 				"/usr/lib/cmake/KF6Pty/KF6PtyConfig.cmake",
 				"/usr/lib/cmake/KF6Pty/KF6PtyConfigVersion.cmake",
-				"/usr/lib/cmake/KF6Pty/KF6PtyQchTargets.cmake",
 				"/usr/lib/cmake/KF6Pty/KF6PtyTargets-release.cmake",
 				"/usr/lib/cmake/KF6Pty/KF6PtyTargets.cmake",
-				"/usr/lib/libKF6Pty.so",
-				"/usr/share/doc/qt6/KF6Pty.qch",
-				"/usr/share/doc/qt6/KF6Pty.tags"
+				"/usr/lib/libKF6Pty.so"
 			],
 			"name": "kf6-kpty-devel",
 			"provides": [
@@ -164,6 +161,6 @@
 		}
 	},
 	"source-name": "kf6-kpty",
-	"source-release": "4",
-	"source-version": "6.14.0"
+	"source-release": "5",
+	"source-version": "6.15.0"
 }

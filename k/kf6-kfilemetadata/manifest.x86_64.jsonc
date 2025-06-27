@@ -13,6 +13,7 @@
 				"cmake(exiv2)",
 				"pkgconfig(libattr)",
 				"pkgconfig(libavcodec)",
+				"pkgconfig(libavformat)",
 				"pkgconfig(poppler-qt6)"
 			],
 			"depends": [
@@ -37,7 +38,7 @@
 			"files": [
 				"/usr/bin/kfilemetadata_dump6",
 				"/usr/lib/libKF6FileMetaData.so.3",
-				"/usr/lib/libKF6FileMetaData.so.6.14.0",
+				"/usr/lib/libKF6FileMetaData.so.6.15.0",
 				"/usr/lib/qt6/plugins/kf6/kfilemetadata/kfilemetadata_exiv2extractor.so",
 				"/usr/lib/qt6/plugins/kf6/kfilemetadata/kfilemetadata_fb2extractor.so",
 				"/usr/lib/qt6/plugins/kf6/kfilemetadata/kfilemetadata_ffmpegextractor.so",
@@ -141,6 +142,7 @@
 				"cmake(exiv2)",
 				"pkgconfig(libattr)",
 				"pkgconfig(libavcodec)",
+				"pkgconfig(libavformat)",
 				"pkgconfig(poppler-qt6)"
 			],
 			"depends": [
@@ -183,12 +185,9 @@
 				"/usr/include/KF6/KFileMetaData/kfilemetadata_version.h",
 				"/usr/lib/cmake/KF6FileMetaData/KF6FileMetaDataConfig.cmake",
 				"/usr/lib/cmake/KF6FileMetaData/KF6FileMetaDataConfigVersion.cmake",
-				"/usr/lib/cmake/KF6FileMetaData/KF6FileMetaDataQchTargets.cmake",
 				"/usr/lib/cmake/KF6FileMetaData/KF6FileMetaDataTargets-release.cmake",
 				"/usr/lib/cmake/KF6FileMetaData/KF6FileMetaDataTargets.cmake",
-				"/usr/lib/libKF6FileMetaData.so",
-				"/usr/share/doc/qt6/KF6FileMetaData.qch",
-				"/usr/share/doc/qt6/KF6FileMetaData.tags"
+				"/usr/lib/libKF6FileMetaData.so"
 			],
 			"name": "kf6-kfilemetadata-devel",
 			"provides": [
@@ -197,6 +196,6 @@
 		}
 	},
 	"source-name": "kf6-kfilemetadata",
-	"source-release": "4",
-	"source-version": "6.14.0"
+	"source-release": "5",
+	"source-version": "6.15.0"
 }

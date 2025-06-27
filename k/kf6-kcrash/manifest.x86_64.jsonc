@@ -19,7 +19,7 @@
 			],
 			"files": [
 				"/usr/lib/libKF6Crash.so.6",
-				"/usr/lib/libKF6Crash.so.6.14.0",
+				"/usr/lib/libKF6Crash.so.6.15.0",
 				"/usr/share/qlogging-categories6/kcrash.categories",
 				"/usr/share/qlogging-categories6/kcrash.renamecategories"
 			],
@@ -44,12 +44,9 @@
 				"/usr/include/KF6/KCrash/kcrash_version.h",
 				"/usr/lib/cmake/KF6Crash/KF6CrashConfig.cmake",
 				"/usr/lib/cmake/KF6Crash/KF6CrashConfigVersion.cmake",
-				"/usr/lib/cmake/KF6Crash/KF6CrashQchTargets.cmake",
 				"/usr/lib/cmake/KF6Crash/KF6CrashTargets-release.cmake",
 				"/usr/lib/cmake/KF6Crash/KF6CrashTargets.cmake",
-				"/usr/lib/libKF6Crash.so",
-				"/usr/share/doc/qt6/KF6Crash.qch",
-				"/usr/share/doc/qt6/KF6Crash.tags"
+				"/usr/lib/libKF6Crash.so"
 			],
 			"name": "kf6-kcrash-devel",
 			"provides": [
@@ -58,6 +55,6 @@
 		}
 	},
 	"source-name": "kf6-kcrash",
-	"source-release": "4",
-	"source-version": "6.14.0"
+	"source-release": "5",
+	"source-version": "6.15.0"
 }

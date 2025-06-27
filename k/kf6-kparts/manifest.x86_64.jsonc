@@ -28,7 +28,7 @@
 			],
 			"files": [
 				"/usr/lib/libKF6Parts.so.6",
-				"/usr/lib/libKF6Parts.so.6.14.0",
+				"/usr/lib/libKF6Parts.so.6.15.0",
 				"/usr/share/locale/af/LC_MESSAGES/kparts6.mo",
 				"/usr/share/locale/ar/LC_MESSAGES/kparts6.mo",
 				"/usr/share/locale/as/LC_MESSAGES/kparts6.mo",
@@ -192,12 +192,9 @@
 				"/usr/include/KF6/KParts/kparts_version.h",
 				"/usr/lib/cmake/KF6Parts/KF6PartsConfig.cmake",
 				"/usr/lib/cmake/KF6Parts/KF6PartsConfigVersion.cmake",
-				"/usr/lib/cmake/KF6Parts/KF6PartsQchTargets.cmake",
 				"/usr/lib/cmake/KF6Parts/KF6PartsTargets-release.cmake",
 				"/usr/lib/cmake/KF6Parts/KF6PartsTargets.cmake",
 				"/usr/lib/libKF6Parts.so",
-				"/usr/share/doc/qt6/KF6Parts.qch",
-				"/usr/share/doc/qt6/KF6Parts.tags",
 				"/usr/share/kdevappwizard/templates/kparts6-app.tar.bz2"
 			],
 			"name": "kf6-kparts-devel",
@@ -207,6 +204,6 @@
 		}
 	},
 	"source-name": "kf6-kparts",
-	"source-release": "5",
-	"source-version": "6.14.0"
+	"source-release": "6",
+	"source-version": "6.15.0"
 }

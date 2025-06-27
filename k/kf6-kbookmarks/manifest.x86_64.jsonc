@@ -23,9 +23,9 @@
 			],
 			"files": [
 				"/usr/lib/libKF6Bookmarks.so.6",
-				"/usr/lib/libKF6Bookmarks.so.6.14.0",
+				"/usr/lib/libKF6Bookmarks.so.6.15.0",
 				"/usr/lib/libKF6BookmarksWidgets.so.6",
-				"/usr/lib/libKF6BookmarksWidgets.so.6.14.0",
+				"/usr/lib/libKF6BookmarksWidgets.so.6.15.0",
 				"/usr/share/locale/af/LC_MESSAGES/kbookmarks6_qt.qm",
 				"/usr/share/locale/ar/LC_MESSAGES/kbookmarks6_qt.qm",
 				"/usr/share/locale/ast/LC_MESSAGES/kbookmarks6_qt.qm",
@@ -159,15 +159,10 @@
 				"/usr/include/KF6/KBookmarksWidgets/kbookmarkswidgets_export.h",
 				"/usr/lib/cmake/KF6Bookmarks/KF6BookmarksConfig.cmake",
 				"/usr/lib/cmake/KF6Bookmarks/KF6BookmarksConfigVersion.cmake",
-				"/usr/lib/cmake/KF6Bookmarks/KF6BookmarksQchTargets.cmake",
 				"/usr/lib/cmake/KF6Bookmarks/KF6BookmarksTargets-release.cmake",
 				"/usr/lib/cmake/KF6Bookmarks/KF6BookmarksTargets.cmake",
 				"/usr/lib/libKF6Bookmarks.so",
-				"/usr/lib/libKF6BookmarksWidgets.so",
-				"/usr/share/doc/qt6/KF6Bookmarks.qch",
-				"/usr/share/doc/qt6/KF6Bookmarks.tags",
-				"/usr/share/doc/qt6/KF6BookmarksWidgets.qch",
-				"/usr/share/doc/qt6/KF6BookmarksWidgets.tags"
+				"/usr/lib/libKF6BookmarksWidgets.so"
 			],
 			"name": "kf6-kbookmarks-devel",
 			"provides": [
@@ -176,6 +171,6 @@
 		}
 	},
 	"source-name": "kf6-kbookmarks",
-	"source-release": "6",
-	"source-version": "6.14.0"
+	"source-release": "7",
+	"source-version": "6.15.0"
 }

@@ -14,7 +14,7 @@
 			],
 			"files": [
 				"/usr/lib/libKF6Codecs.so.6",
-				"/usr/lib/libKF6Codecs.so.6.14.0",
+				"/usr/lib/libKF6Codecs.so.6.15.0",
 				"/usr/share/locale/af/LC_MESSAGES/kcodecs6_qt.qm",
 				"/usr/share/locale/ar/LC_MESSAGES/kcodecs6_qt.qm",
 				"/usr/share/locale/as/LC_MESSAGES/kcodecs6_qt.qm",
@@ -146,12 +146,9 @@
 				"/usr/include/KF6/KCodecs/kencodingprober.h",
 				"/usr/lib/cmake/KF6Codecs/KF6CodecsConfig.cmake",
 				"/usr/lib/cmake/KF6Codecs/KF6CodecsConfigVersion.cmake",
-				"/usr/lib/cmake/KF6Codecs/KF6CodecsQchTargets.cmake",
 				"/usr/lib/cmake/KF6Codecs/KF6CodecsTargets-release.cmake",
 				"/usr/lib/cmake/KF6Codecs/KF6CodecsTargets.cmake",
-				"/usr/lib/libKF6Codecs.so",
-				"/usr/share/doc/qt6/KF6Codecs.qch",
-				"/usr/share/doc/qt6/KF6Codecs.tags"
+				"/usr/lib/libKF6Codecs.so"
 			],
 			"name": "kf6-kcodecs-devel",
 			"provides": [
@@ -160,6 +157,6 @@
 		}
 	},
 	"source-name": "kf6-kcodecs",
-	"source-release": "5",
-	"source-version": "6.14.0"
+	"source-release": "6",
+	"source-version": "6.15.0"
 }

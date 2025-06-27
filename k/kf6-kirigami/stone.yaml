@@ -4,10 +4,10 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : kf6-kirigami
-version     : 6.14.0
-release     : 6
+version     : 6.15.0
+release     : 7
 upstreams   :
-    - https://download.kde.org/stable/frameworks/6.14/kirigami-6.14.0.tar.xz : 162c629ba50e7dae4439ef50272a0c150cbab371415a7d1eb160dbe3638f619a
+    - https://download.kde.org/stable/frameworks/6.15/kirigami-6.15.0.tar.xz : 733ac7d9c197fe7de90f41643549be3ce0f3723ecd4d4a15758c4c71cafc2531
 homepage    : https://community.kde.org/Frameworks
 license     : LGPL-2.0-or-later
 summary     : QtQuick components for mobile and desktop UI development.

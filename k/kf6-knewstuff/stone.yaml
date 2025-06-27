@@ -4,10 +4,10 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : kf6-knewstuff
-version     : 6.14.0
-release     : 5
+version     : 6.15.0
+release     : 6
 upstreams   :
-    - https://download.kde.org/stable/frameworks/6.14/knewstuff-6.14.0.tar.xz : 1e44b71efc5dc4cb05cc7add344d9a55fc8c998de26e74867d300afbd16f8d04
+    - https://download.kde.org/stable/frameworks/6.15/knewstuff-6.15.0.tar.xz : d749fe21589a87cdf648416ebd13038a536cd8e019531357a67194e5ea30067d
 homepage    : https://community.kde.org/Frameworks
 license     :
     - LGPL-2.0-or-later

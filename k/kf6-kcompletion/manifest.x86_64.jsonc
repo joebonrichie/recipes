@@ -22,7 +22,7 @@
 			],
 			"files": [
 				"/usr/lib/libKF6Completion.so.6",
-				"/usr/lib/libKF6Completion.so.6.14.0",
+				"/usr/lib/libKF6Completion.so.6.15.0",
 				"/usr/share/locale/af/LC_MESSAGES/kcompletion6_qt.qm",
 				"/usr/share/locale/ar/LC_MESSAGES/kcompletion6_qt.qm",
 				"/usr/share/locale/as/LC_MESSAGES/kcompletion6_qt.qm",
@@ -170,13 +170,10 @@
 				"/usr/include/KF6/KCompletion/ksortablelist.h",
 				"/usr/lib/cmake/KF6Completion/KF6CompletionConfig.cmake",
 				"/usr/lib/cmake/KF6Completion/KF6CompletionConfigVersion.cmake",
-				"/usr/lib/cmake/KF6Completion/KF6CompletionQchTargets.cmake",
 				"/usr/lib/cmake/KF6Completion/KF6CompletionTargets-release.cmake",
 				"/usr/lib/cmake/KF6Completion/KF6CompletionTargets.cmake",
 				"/usr/lib/libKF6Completion.so",
-				"/usr/lib/qt6/plugins/designer/kcompletion6widgets.so",
-				"/usr/share/doc/qt6/KF6Completion.qch",
-				"/usr/share/doc/qt6/KF6Completion.tags"
+				"/usr/lib/qt6/plugins/designer/kcompletion6widgets.so"
 			],
 			"name": "kf6-kcompletion-devel",
 			"provides": [
@@ -186,6 +183,6 @@
 		}
 	},
 	"source-name": "kf6-kcompletion",
-	"source-release": "5",
-	"source-version": "6.14.0"
+	"source-release": "6",
+	"source-version": "6.15.0"
 }

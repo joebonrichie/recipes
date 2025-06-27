@@ -39,11 +39,11 @@
 				"/usr/bin/kcmshell6",
 				"/usr/lib/kf6/kcmdesktopfilegenerator",
 				"/usr/lib/libKF6KCMUtils.so.6",
-				"/usr/lib/libKF6KCMUtils.so.6.14.0",
+				"/usr/lib/libKF6KCMUtils.so.6.15.0",
 				"/usr/lib/libKF6KCMUtilsCore.so.6",
-				"/usr/lib/libKF6KCMUtilsCore.so.6.14.0",
+				"/usr/lib/libKF6KCMUtilsCore.so.6.15.0",
 				"/usr/lib/libKF6KCMUtilsQuick.so.6",
-				"/usr/lib/libKF6KCMUtilsQuick.so.6.14.0",
+				"/usr/lib/libKF6KCMUtilsQuick.so.6.15.0",
 				"/usr/lib/qt6/qml/org/kde/kcmutils/AbstractKCM.qml",
 				"/usr/lib/qt6/qml/org/kde/kcmutils/AbstractKCM.qmlc",
 				"/usr/lib/qt6/qml/org/kde/kcmutils/ContextualHelpButton.qml",
@@ -281,7 +281,6 @@
 				"/usr/lib/cmake/KF6KCMUtils/KF6KCMUtilsConfig.cmake",
 				"/usr/lib/cmake/KF6KCMUtils/KF6KCMUtilsConfigVersion.cmake",
 				"/usr/lib/cmake/KF6KCMUtils/KF6KCMUtilsMacros.cmake",
-				"/usr/lib/cmake/KF6KCMUtils/KF6KCMUtilsQchTargets.cmake",
 				"/usr/lib/cmake/KF6KCMUtils/KF6KCMUtilsTargets-release.cmake",
 				"/usr/lib/cmake/KF6KCMUtils/KF6KCMUtilsTargets.cmake",
 				"/usr/lib/cmake/KF6KCMUtils/KF6KCMUtilsToolingTargets-release.cmake",
@@ -290,9 +289,7 @@
 				"/usr/lib/cmake/KF6KCMUtils/kcmutilsgeneratemoduledata.h.in",
 				"/usr/lib/libKF6KCMUtils.so",
 				"/usr/lib/libKF6KCMUtilsCore.so",
-				"/usr/lib/libKF6KCMUtilsQuick.so",
-				"/usr/share/doc/qt6/KF6KCMUtils.qch",
-				"/usr/share/doc/qt6/KF6KCMUtils.tags"
+				"/usr/lib/libKF6KCMUtilsQuick.so"
 			],
 			"name": "kf6-kcmutils-devel",
 			"provides": [
@@ -301,6 +298,6 @@
 		}
 	},
 	"source-name": "kf6-kcmutils",
-	"source-release": "6",
-	"source-version": "6.14.0"
+	"source-release": "7",
+	"source-version": "6.15.0"
 }

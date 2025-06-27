@@ -31,7 +31,7 @@
 			],
 			"files": [
 				"/usr/lib/libKF6ConfigWidgets.so.6",
-				"/usr/lib/libKF6ConfigWidgets.so.6.14.0",
+				"/usr/lib/libKF6ConfigWidgets.so.6.15.0",
 				"/usr/share/locale/af/LC_MESSAGES/kconfigwidgets6.mo",
 				"/usr/share/locale/af/kf6_entry.desktop",
 				"/usr/share/locale/ar/LC_MESSAGES/kconfigwidgets6.mo",
@@ -142,6 +142,7 @@
 				"/usr/share/locale/ku/kf6_entry.desktop",
 				"/usr/share/locale/lb/LC_MESSAGES/kconfigwidgets6.mo",
 				"/usr/share/locale/lb/kf6_entry.desktop",
+				"/usr/share/locale/lg/LC_MESSAGES/kconfigwidgets6.mo",
 				"/usr/share/locale/lt/LC_MESSAGES/kconfigwidgets6.mo",
 				"/usr/share/locale/lt/kf6_entry.desktop",
 				"/usr/share/locale/lv/LC_MESSAGES/kconfigwidgets6.mo",
@@ -304,13 +305,10 @@
 				"/usr/include/KF6/KConfigWidgets/kviewstatemaintainer.h",
 				"/usr/lib/cmake/KF6ConfigWidgets/KF6ConfigWidgetsConfig.cmake",
 				"/usr/lib/cmake/KF6ConfigWidgets/KF6ConfigWidgetsConfigVersion.cmake",
-				"/usr/lib/cmake/KF6ConfigWidgets/KF6ConfigWidgetsQchTargets.cmake",
 				"/usr/lib/cmake/KF6ConfigWidgets/KF6ConfigWidgetsTargets-release.cmake",
 				"/usr/lib/cmake/KF6ConfigWidgets/KF6ConfigWidgetsTargets.cmake",
 				"/usr/lib/libKF6ConfigWidgets.so",
-				"/usr/lib/qt6/plugins/designer/kconfigwidgets6widgets.so",
-				"/usr/share/doc/qt6/KF6ConfigWidgets.qch",
-				"/usr/share/doc/qt6/KF6ConfigWidgets.tags"
+				"/usr/lib/qt6/plugins/designer/kconfigwidgets6widgets.so"
 			],
 			"name": "kf6-kconfigwidgets-devel",
 			"provides": [
@@ -320,6 +318,6 @@
 		}
 	},
 	"source-name": "kf6-kconfigwidgets",
-	"source-release": "6",
-	"source-version": "6.14.0"
+	"source-release": "7",
+	"source-version": "6.15.0"
 }

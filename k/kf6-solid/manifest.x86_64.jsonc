@@ -24,7 +24,7 @@
 			"files": [
 				"/usr/bin/solid-hardware6",
 				"/usr/lib/libKF6Solid.so.6",
-				"/usr/lib/libKF6Solid.so.6.14.0",
+				"/usr/lib/libKF6Solid.so.6.15.0",
 				"/usr/share/locale/ar/LC_MESSAGES/solid6_qt.qm",
 				"/usr/share/locale/ast/LC_MESSAGES/solid6_qt.qm",
 				"/usr/share/locale/az/LC_MESSAGES/solid6_qt.qm",
@@ -150,12 +150,9 @@
 				"/usr/include/KF6/Solid/solid_version.h",
 				"/usr/lib/cmake/KF6Solid/KF6SolidConfig.cmake",
 				"/usr/lib/cmake/KF6Solid/KF6SolidConfigVersion.cmake",
-				"/usr/lib/cmake/KF6Solid/KF6SolidQchTargets.cmake",
 				"/usr/lib/cmake/KF6Solid/KF6SolidTargets-release.cmake",
 				"/usr/lib/cmake/KF6Solid/KF6SolidTargets.cmake",
-				"/usr/lib/libKF6Solid.so",
-				"/usr/share/doc/qt6/KF6Solid.qch",
-				"/usr/share/doc/qt6/KF6Solid.tags"
+				"/usr/lib/libKF6Solid.so"
 			],
 			"name": "kf6-solid-devel",
 			"provides": [
@@ -164,6 +161,6 @@
 		}
 	},
 	"source-name": "kf6-solid",
-	"source-release": "6",
-	"source-version": "6.14.0"
+	"source-release": "7",
+	"source-version": "6.15.0"
 }

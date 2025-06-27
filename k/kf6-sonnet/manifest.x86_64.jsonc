@@ -23,9 +23,9 @@
 			"files": [
 				"/usr/bin/parsetrigrams6",
 				"/usr/lib/libKF6SonnetCore.so.6",
-				"/usr/lib/libKF6SonnetCore.so.6.14.0",
+				"/usr/lib/libKF6SonnetCore.so.6.15.0",
 				"/usr/lib/libKF6SonnetUi.so.6",
-				"/usr/lib/libKF6SonnetUi.so.6.14.0",
+				"/usr/lib/libKF6SonnetUi.so.6.15.0",
 				"/usr/lib/qt6/plugins/kf6/sonnet/sonnet_hunspell.so",
 				"/usr/lib/qt6/qml/org/kde/sonnet/kde-qmlmodule.version",
 				"/usr/lib/qt6/qml/org/kde/sonnet/libsonnetquickplugin.so",
@@ -188,16 +188,11 @@
 				"/usr/include/KF6/SonnetUi/sonnet/spellcheckdecorator.h",
 				"/usr/lib/cmake/KF6Sonnet/KF6SonnetConfig.cmake",
 				"/usr/lib/cmake/KF6Sonnet/KF6SonnetConfigVersion.cmake",
-				"/usr/lib/cmake/KF6Sonnet/KF6SonnetQchTargets.cmake",
 				"/usr/lib/cmake/KF6Sonnet/KF6SonnetTargets-release.cmake",
 				"/usr/lib/cmake/KF6Sonnet/KF6SonnetTargets.cmake",
 				"/usr/lib/libKF6SonnetCore.so",
 				"/usr/lib/libKF6SonnetUi.so",
-				"/usr/lib/qt6/plugins/designer/sonnet6widgets.so",
-				"/usr/share/doc/qt6/KF6SonnetCore.qch",
-				"/usr/share/doc/qt6/KF6SonnetCore.tags",
-				"/usr/share/doc/qt6/KF6SonnetUi.qch",
-				"/usr/share/doc/qt6/KF6SonnetUi.tags"
+				"/usr/lib/qt6/plugins/designer/sonnet6widgets.so"
 			],
 			"name": "kf6-sonnet-devel",
 			"provides": [
@@ -207,6 +202,6 @@
 		}
 	},
 	"source-name": "kf6-sonnet",
-	"source-release": "5",
-	"source-version": "6.14.0"
+	"source-release": "6",
+	"source-version": "6.15.0"
 }

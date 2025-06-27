@@ -18,7 +18,7 @@
 			"files": [
 				"/usr/bin/kquitapp6",
 				"/usr/lib/libKF6DBusAddons.so.6",
-				"/usr/lib/libKF6DBusAddons.so.6.14.0",
+				"/usr/lib/libKF6DBusAddons.so.6.15.0",
 				"/usr/share/locale/ar/LC_MESSAGES/kdbusaddons6_qt.qm",
 				"/usr/share/locale/ast/LC_MESSAGES/kdbusaddons6_qt.qm",
 				"/usr/share/locale/az/LC_MESSAGES/kdbusaddons6_qt.qm",
@@ -106,13 +106,10 @@
 				"/usr/lib/cmake/KF6DBusAddons/KF6DBusAddonsConfig.cmake",
 				"/usr/lib/cmake/KF6DBusAddons/KF6DBusAddonsConfigVersion.cmake",
 				"/usr/lib/cmake/KF6DBusAddons/KF6DBusAddonsMacros.cmake",
-				"/usr/lib/cmake/KF6DBusAddons/KF6DBusAddonsQchTargets.cmake",
 				"/usr/lib/cmake/KF6DBusAddons/KF6DBusAddonsTargets-release.cmake",
 				"/usr/lib/cmake/KF6DBusAddons/KF6DBusAddonsTargets.cmake",
 				"/usr/lib/cmake/KF6DBusAddons/KF6dbus.service.in",
-				"/usr/lib/libKF6DBusAddons.so",
-				"/usr/share/doc/qt6/KF6DBusAddons.qch",
-				"/usr/share/doc/qt6/KF6DBusAddons.tags"
+				"/usr/lib/libKF6DBusAddons.so"
 			],
 			"name": "kf6-kdbusaddons-devel",
 			"provides": [
@@ -121,6 +118,6 @@
 		}
 	},
 	"source-name": "kf6-kdbusaddons",
-	"source-release": "5",
-	"source-version": "6.14.0"
+	"source-release": "6",
+	"source-version": "6.15.0"
 }

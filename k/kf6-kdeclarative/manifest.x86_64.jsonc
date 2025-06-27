@@ -29,9 +29,9 @@
 			],
 			"files": [
 				"/usr/lib/libKF6CalendarEvents.so.6",
-				"/usr/lib/libKF6CalendarEvents.so.6.14.0",
+				"/usr/lib/libKF6CalendarEvents.so.6.15.0",
 				"/usr/lib/libkquickcontrolsprivate.so.0",
-				"/usr/lib/libkquickcontrolsprivate.so.6.14.0",
+				"/usr/lib/libkquickcontrolsprivate.so.6.15.0",
 				"/usr/lib/qt6/qml/org/kde/draganddrop/draganddropplugin.qmltypes",
 				"/usr/lib/qt6/qml/org/kde/draganddrop/kde-qmlmodule.version",
 				"/usr/lib/qt6/qml/org/kde/draganddrop/libdraganddropplugin.so",
@@ -195,12 +195,9 @@
 				"/usr/include/KF6/KDeclarative/kdeclarative_version.h",
 				"/usr/lib/cmake/KF6Declarative/KF6DeclarativeConfig.cmake",
 				"/usr/lib/cmake/KF6Declarative/KF6DeclarativeConfigVersion.cmake",
-				"/usr/lib/cmake/KF6Declarative/KF6DeclarativeQchTargets.cmake",
 				"/usr/lib/cmake/KF6Declarative/KF6DeclarativeTargets-release.cmake",
 				"/usr/lib/cmake/KF6Declarative/KF6DeclarativeTargets.cmake",
-				"/usr/lib/libKF6CalendarEvents.so",
-				"/usr/share/doc/qt6/KF6Declarative.qch",
-				"/usr/share/doc/qt6/KF6Declarative.tags"
+				"/usr/lib/libKF6CalendarEvents.so"
 			],
 			"name": "kf6-kdeclarative-devel",
 			"provides": [
@@ -209,6 +206,6 @@
 		}
 	},
 	"source-name": "kf6-kdeclarative",
-	"source-release": "6",
-	"source-version": "6.14.0"
+	"source-release": "7",
+	"source-version": "6.15.0"
 }

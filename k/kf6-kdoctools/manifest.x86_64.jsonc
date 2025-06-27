@@ -28,7 +28,7 @@
 				"/usr/bin/checkXML6",
 				"/usr/bin/meinproc6",
 				"/usr/lib/libKF6DocTools.so.6",
-				"/usr/lib/libKF6DocTools.so.6.14.0",
+				"/usr/lib/libKF6DocTools.so.6.15.0",
 				"/usr/share/doc/HTML/af/kdoctools6-common/kde-localised.css",
 				"/usr/share/doc/HTML/ca/kdoctools6-common/kde-localised.css",
 				"/usr/share/doc/HTML/cs/kdoctools6-common/kde-localised.css",
@@ -1143,6 +1143,10 @@
 				"/usr/share/man/ca/man1/meinproc6.1",
 				"/usr/share/man/ca/man7/kf6options.7",
 				"/usr/share/man/ca/man7/qt6options.7",
+				"/usr/share/man/ca@valencia/man1/checkXML6.1",
+				"/usr/share/man/ca@valencia/man1/meinproc6.1",
+				"/usr/share/man/ca@valencia/man7/kf6options.7",
+				"/usr/share/man/ca@valencia/man7/qt6options.7",
 				"/usr/share/man/es/man1/checkXML6.1",
 				"/usr/share/man/es/man1/meinproc6.1",
 				"/usr/share/man/es/man7/kf6options.7",
@@ -1199,14 +1203,11 @@
 				"/usr/lib/cmake/KF6DocTools/KF6DocToolsConfig.cmake",
 				"/usr/lib/cmake/KF6DocTools/KF6DocToolsConfigVersion.cmake",
 				"/usr/lib/cmake/KF6DocTools/KF6DocToolsMacros.cmake",
-				"/usr/lib/cmake/KF6DocTools/KF6DocToolsQchTargets.cmake",
 				"/usr/lib/cmake/KF6DocTools/KF6DocToolsTargets-release.cmake",
 				"/usr/lib/cmake/KF6DocTools/KF6DocToolsTargets.cmake",
 				"/usr/lib/cmake/KF6DocTools/KF6DocToolsToolsTargets-release.cmake",
 				"/usr/lib/cmake/KF6DocTools/KF6DocToolsToolsTargets.cmake",
-				"/usr/lib/libKF6DocTools.so",
-				"/usr/share/doc/qt6/KF6DocTools.qch",
-				"/usr/share/doc/qt6/KF6DocTools.tags"
+				"/usr/lib/libKF6DocTools.so"
 			],
 			"name": "kf6-kdoctools-devel",
 			"provides": [
@@ -1215,6 +1216,6 @@
 		}
 	},
 	"source-name": "kf6-kdoctools",
-	"source-release": "7",
-	"source-version": "6.14.0"
+	"source-release": "8",
+	"source-version": "6.15.0"
 }

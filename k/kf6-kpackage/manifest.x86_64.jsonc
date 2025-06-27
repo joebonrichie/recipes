@@ -23,7 +23,7 @@
 			"files": [
 				"/usr/bin/kpackagetool6",
 				"/usr/lib/libKF6Package.so.6",
-				"/usr/lib/libKF6Package.so.6.14.0",
+				"/usr/lib/libKF6Package.so.6.15.0",
 				"/usr/share/locale/ar/LC_MESSAGES/libkpackage6.mo",
 				"/usr/share/locale/ast/LC_MESSAGES/libkpackage6.mo",
 				"/usr/share/locale/az/LC_MESSAGES/libkpackage6.mo",
@@ -83,6 +83,7 @@
 				"/usr/share/locale/zh_CN/LC_MESSAGES/libkpackage6.mo",
 				"/usr/share/locale/zh_TW/LC_MESSAGES/libkpackage6.mo",
 				"/usr/share/man/ca/man1/kpackagetool6.1",
+				"/usr/share/man/ca@valencia/man1/kpackagetool6.1",
 				"/usr/share/man/es/man1/kpackagetool6.1",
 				"/usr/share/man/fr/man1/kpackagetool6.1",
 				"/usr/share/man/it/man1/kpackagetool6.1",
@@ -128,14 +129,11 @@
 				"/usr/lib/cmake/KF6Package/KF6PackageConfig.cmake",
 				"/usr/lib/cmake/KF6Package/KF6PackageConfigVersion.cmake",
 				"/usr/lib/cmake/KF6Package/KF6PackageMacros.cmake",
-				"/usr/lib/cmake/KF6Package/KF6PackageQchTargets.cmake",
 				"/usr/lib/cmake/KF6Package/KF6PackageTargets-release.cmake",
 				"/usr/lib/cmake/KF6Package/KF6PackageTargets.cmake",
 				"/usr/lib/cmake/KF6Package/KF6PackageToolsTargets-release.cmake",
 				"/usr/lib/cmake/KF6Package/KF6PackageToolsTargets.cmake",
-				"/usr/lib/libKF6Package.so",
-				"/usr/share/doc/qt6/KF6Package.qch",
-				"/usr/share/doc/qt6/KF6Package.tags"
+				"/usr/lib/libKF6Package.so"
 			],
 			"name": "kf6-kpackage-devel",
 			"provides": [
@@ -144,6 +142,6 @@
 		}
 	},
 	"source-name": "kf6-kpackage",
-	"source-release": "4",
-	"source-version": "6.14.0"
+	"source-release": "5",
+	"source-version": "6.15.0"
 }

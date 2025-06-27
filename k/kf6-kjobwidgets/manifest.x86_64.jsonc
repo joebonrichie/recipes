@@ -23,7 +23,7 @@
 			],
 			"files": [
 				"/usr/lib/libKF6JobWidgets.so.6",
-				"/usr/lib/libKF6JobWidgets.so.6.14.0",
+				"/usr/lib/libKF6JobWidgets.so.6.15.0",
 				"/usr/share/dbus-1/interfaces/kf6_org.kde.JobView.xml",
 				"/usr/share/dbus-1/interfaces/kf6_org.kde.JobViewServer.xml",
 				"/usr/share/dbus-1/interfaces/kf6_org.kde.JobViewV2.xml",
@@ -168,12 +168,9 @@
 				"/usr/include/KF6/KJobWidgets/kwidgetjobtracker.h",
 				"/usr/lib/cmake/KF6JobWidgets/KF6JobWidgetsConfig.cmake",
 				"/usr/lib/cmake/KF6JobWidgets/KF6JobWidgetsConfigVersion.cmake",
-				"/usr/lib/cmake/KF6JobWidgets/KF6JobWidgetsQchTargets.cmake",
 				"/usr/lib/cmake/KF6JobWidgets/KF6JobWidgetsTargets-release.cmake",
 				"/usr/lib/cmake/KF6JobWidgets/KF6JobWidgetsTargets.cmake",
-				"/usr/lib/libKF6JobWidgets.so",
-				"/usr/share/doc/qt6/KF6JobWidgets.qch",
-				"/usr/share/doc/qt6/KF6JobWidgets.tags"
+				"/usr/lib/libKF6JobWidgets.so"
 			],
 			"name": "kf6-kjobwidgets-devel",
 			"provides": [
@@ -182,6 +179,6 @@
 		}
 	},
 	"source-name": "kf6-kjobwidgets",
-	"source-release": "5",
-	"source-version": "6.14.0"
+	"source-release": "6",
+	"source-version": "6.15.0"
 }

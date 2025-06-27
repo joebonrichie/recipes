@@ -5,7 +5,7 @@
 #
 name        : extra-cmake-modules
 version     : 6.15.0
-release     : 6
+release     : 7
 upstreams   :
     - https://download.kde.org/stable/frameworks/6.15/extra-cmake-modules-6.15.0.tar.xz : f7cd022095a9e6bdbe5897720a24bfda81d211757b7c08b173061962bf2ee0b2
 homepage    : https://community.kde.org/Frameworks
