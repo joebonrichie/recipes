@@ -24,7 +24,7 @@
 			"files": [
 				"/usr/bin/ksyntaxhighlighter6",
 				"/usr/lib/libKF6SyntaxHighlighting.so.6",
-				"/usr/lib/libKF6SyntaxHighlighting.so.6.14.0",
+				"/usr/lib/libKF6SyntaxHighlighting.so.6.15.0",
 				"/usr/lib/qt6/qml/org/kde/syntaxhighlighting/kde-qmlmodule.version",
 				"/usr/lib/qt6/qml/org/kde/syntaxhighlighting/kquicksyntaxhighlightingplugin.qmltypes",
 				"/usr/lib/qt6/qml/org/kde/syntaxhighlighting/libkquicksyntaxhighlightingplugin.so",
@@ -162,12 +162,9 @@
 				"/usr/include/KF6/KSyntaxHighlighting/ksyntaxhighlighting_version.h",
 				"/usr/lib/cmake/KF6SyntaxHighlighting/KF6SyntaxHighlightingConfig.cmake",
 				"/usr/lib/cmake/KF6SyntaxHighlighting/KF6SyntaxHighlightingConfigVersion.cmake",
-				"/usr/lib/cmake/KF6SyntaxHighlighting/KF6SyntaxHighlightingQchTargets.cmake",
 				"/usr/lib/cmake/KF6SyntaxHighlighting/KF6SyntaxHighlightingTargets-release.cmake",
 				"/usr/lib/cmake/KF6SyntaxHighlighting/KF6SyntaxHighlightingTargets.cmake",
-				"/usr/lib/libKF6SyntaxHighlighting.so",
-				"/usr/share/doc/qt6/KF6SyntaxHighlighting.qch",
-				"/usr/share/doc/qt6/KF6SyntaxHighlighting.tags"
+				"/usr/lib/libKF6SyntaxHighlighting.so"
 			],
 			"name": "kf6-syntax-highlighting-devel",
 			"provides": [
@@ -176,6 +173,6 @@
 		}
 	},
 	"source-name": "kf6-syntax-highlighting",
-	"source-release": "5",
-	"source-version": "6.14.0"
+	"source-release": "6",
+	"source-version": "6.15.0"
 }
