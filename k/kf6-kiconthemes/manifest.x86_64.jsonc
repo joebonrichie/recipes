@@ -37,9 +37,9 @@
 			"files": [
 				"/usr/bin/kiconfinder6",
 				"/usr/lib/libKF6IconThemes.so.6",
-				"/usr/lib/libKF6IconThemes.so.6.14.0",
+				"/usr/lib/libKF6IconThemes.so.6.15.0",
 				"/usr/lib/libKF6IconWidgets.so.6",
-				"/usr/lib/libKF6IconWidgets.so.6.14.0",
+				"/usr/lib/libKF6IconWidgets.so.6.15.0",
 				"/usr/lib/qt6/plugins/kiconthemes6/iconengines/KIconEnginePlugin.so",
 				"/usr/lib/qt6/qml/org/kde/iconthemes/iconthemesplugin.qmltypes",
 				"/usr/lib/qt6/qml/org/kde/iconthemes/kde-qmlmodule.version",
@@ -189,16 +189,11 @@
 				"/usr/include/KF6/KIconWidgets/kpixmapsequenceloader.h",
 				"/usr/lib/cmake/KF6IconThemes/KF6IconThemesConfig.cmake",
 				"/usr/lib/cmake/KF6IconThemes/KF6IconThemesConfigVersion.cmake",
-				"/usr/lib/cmake/KF6IconThemes/KF6IconThemesQchTargets.cmake",
 				"/usr/lib/cmake/KF6IconThemes/KF6IconThemesTargets-release.cmake",
 				"/usr/lib/cmake/KF6IconThemes/KF6IconThemesTargets.cmake",
 				"/usr/lib/libKF6IconThemes.so",
 				"/usr/lib/libKF6IconWidgets.so",
-				"/usr/lib/qt6/plugins/designer/kiconthemes6widgets.so",
-				"/usr/share/doc/qt6/KF6IconThemes.qch",
-				"/usr/share/doc/qt6/KF6IconThemes.tags",
-				"/usr/share/doc/qt6/KF6IconWidgets.qch",
-				"/usr/share/doc/qt6/KF6IconWidgets.tags"
+				"/usr/lib/qt6/plugins/designer/kiconthemes6widgets.so"
 			],
 			"name": "kf6-kiconthemes-devel",
 			"provides": [
@@ -208,6 +203,6 @@
 		}
 	},
 	"source-name": "kf6-kiconthemes",
-	"source-release": "6",
-	"source-version": "6.14.0"
+	"source-release": "7",
+	"source-version": "6.15.0"
 }
