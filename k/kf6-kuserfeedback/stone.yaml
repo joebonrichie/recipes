@@ -4,10 +4,10 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : kf6-kuserfeedback
-version     : 6.14.0
-release     : 5
+version     : 6.15.0
+release     : 6
 upstreams   :
-    - https://download.kde.org/stable/frameworks/6.14/kuserfeedback-6.14.0.tar.xz : 24acd6d2b8582bdd6ae9bfca97278a96763ee184a6cdecbc0dcd64fd4fc238b2
+    - https://download.kde.org/stable/frameworks/6.15/kuserfeedback-6.15.0.tar.xz : 0c1ead89ba98f7aa2d3e427620a365cd4f1c9ca30250eec6afb4f90fec187f83
 homepage    : https://community.kde.org/Frameworks
 license     : MIT
 summary     : Framework for collecting user feedback for applications via telemetry and surveys
