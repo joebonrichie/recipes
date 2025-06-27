@@ -51,9 +51,9 @@
 				"/usr/bin/kwallet-query",
 				"/usr/bin/kwalletd6",
 				"/usr/lib/libKF6Wallet.so.6",
-				"/usr/lib/libKF6Wallet.so.6.14.0",
+				"/usr/lib/libKF6Wallet.so.6.15.0",
 				"/usr/lib/libKF6WalletBackend.so.6",
-				"/usr/lib/libKF6WalletBackend.so.6.14.0",
+				"/usr/lib/libKF6WalletBackend.so.6.15.0",
 				"/usr/share/applications/org.kde.ksecretd.desktop",
 				"/usr/share/dbus-1/interfaces/kf6_org.kde.KWallet.xml",
 				"/usr/share/dbus-1/services/org.kde.kwalletd5.service",
@@ -237,12 +237,9 @@
 				"/usr/include/KF6/KWallet/kwallet_version.h",
 				"/usr/lib/cmake/KF6Wallet/KF6WalletConfig.cmake",
 				"/usr/lib/cmake/KF6Wallet/KF6WalletConfigVersion.cmake",
-				"/usr/lib/cmake/KF6Wallet/KF6WalletQchTargets.cmake",
 				"/usr/lib/cmake/KF6Wallet/KF6WalletTargets-release.cmake",
 				"/usr/lib/cmake/KF6Wallet/KF6WalletTargets.cmake",
-				"/usr/lib/libKF6Wallet.so",
-				"/usr/share/doc/qt6/KF6Wallet.qch",
-				"/usr/share/doc/qt6/KF6Wallet.tags"
+				"/usr/lib/libKF6Wallet.so"
 			],
 			"name": "kf6-kwallet-devel",
 			"provides": [
@@ -251,6 +248,6 @@
 		}
 	},
 	"source-name": "kf6-kwallet",
-	"source-release": "4",
-	"source-version": "6.14.0"
+	"source-release": "5",
+	"source-version": "6.15.0"
 }
