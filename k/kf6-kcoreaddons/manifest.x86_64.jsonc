@@ -21,7 +21,7 @@
 			],
 			"files": [
 				"/usr/lib/libKF6CoreAddons.so.6",
-				"/usr/lib/libKF6CoreAddons.so.6.14.0",
+				"/usr/lib/libKF6CoreAddons.so.6.15.0",
 				"/usr/lib/qt6/qml/org/kde/coreaddons/kcoreaddonsplugin.qmltypes",
 				"/usr/lib/qt6/qml/org/kde/coreaddons/kde-qmlmodule.version",
 				"/usr/lib/qt6/qml/org/kde/coreaddons/libkcoreaddonsplugin.so",
@@ -191,6 +191,7 @@
 				"/usr/include/KF6/KCoreAddons/KShell",
 				"/usr/include/KF6/KCoreAddons/KSignalHandler",
 				"/usr/include/KF6/KCoreAddons/KStringHandler",
+				"/usr/include/KF6/KCoreAddons/KSystemClockSkewNotifier",
 				"/usr/include/KF6/KCoreAddons/KTextToHTML",
 				"/usr/include/KF6/KCoreAddons/KUrlMimeData",
 				"/usr/include/KF6/KCoreAddons/KUser",
@@ -227,19 +228,17 @@
 				"/usr/include/KF6/KCoreAddons/kshell.h",
 				"/usr/include/KF6/KCoreAddons/ksignalhandler.h",
 				"/usr/include/KF6/KCoreAddons/kstringhandler.h",
+				"/usr/include/KF6/KCoreAddons/ksystemclockskewnotifier.h",
 				"/usr/include/KF6/KCoreAddons/ktexttohtml.h",
 				"/usr/include/KF6/KCoreAddons/kurlmimedata.h",
 				"/usr/include/KF6/KCoreAddons/kuser.h",
 				"/usr/lib/cmake/KF6CoreAddons/KF6CoreAddonsConfig.cmake",
 				"/usr/lib/cmake/KF6CoreAddons/KF6CoreAddonsConfigVersion.cmake",
 				"/usr/lib/cmake/KF6CoreAddons/KF6CoreAddonsMacros.cmake",
-				"/usr/lib/cmake/KF6CoreAddons/KF6CoreAddonsQchTargets.cmake",
 				"/usr/lib/cmake/KF6CoreAddons/KF6CoreAddonsTargets-release.cmake",
 				"/usr/lib/cmake/KF6CoreAddons/KF6CoreAddonsTargets.cmake",
 				"/usr/lib/libKF6CoreAddons.so",
-				"/usr/lib/pkgconfig/KF6CoreAddons.pc",
-				"/usr/share/doc/qt6/KF6CoreAddons.qch",
-				"/usr/share/doc/qt6/KF6CoreAddons.tags"
+				"/usr/lib/pkgconfig/KF6CoreAddons.pc"
 			],
 			"name": "kf6-kcoreaddons-devel",
 			"provides": [
@@ -249,6 +248,6 @@
 		}
 	},
 	"source-name": "kf6-kcoreaddons",
-	"source-release": "6",
-	"source-version": "6.14.0"
+	"source-release": "7",
+	"source-version": "6.15.0"
 }
