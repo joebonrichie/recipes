@@ -14,7 +14,7 @@
 			],
 			"files": [
 				"/usr/lib/libKF6Attica.so.6",
-				"/usr/lib/libKF6Attica.so.6.14.0",
+				"/usr/lib/libKF6Attica.so.6.15.0",
 				"/usr/share/qlogging-categories6/attica.categories",
 				"/usr/share/qlogging-categories6/attica.renamecategories"
 			],
@@ -119,13 +119,10 @@
 				"/usr/include/KF6/Attica/attica_version.h",
 				"/usr/lib/cmake/KF6Attica/KF6AtticaConfig.cmake",
 				"/usr/lib/cmake/KF6Attica/KF6AtticaConfigVersion.cmake",
-				"/usr/lib/cmake/KF6Attica/KF6AtticaQchTargets.cmake",
 				"/usr/lib/cmake/KF6Attica/KF6AtticaTargets-release.cmake",
 				"/usr/lib/cmake/KF6Attica/KF6AtticaTargets.cmake",
 				"/usr/lib/libKF6Attica.so",
-				"/usr/lib/pkgconfig/KF6Attica.pc",
-				"/usr/share/doc/qt6/KF6Attica.qch",
-				"/usr/share/doc/qt6/KF6Attica.tags"
+				"/usr/lib/pkgconfig/KF6Attica.pc"
 			],
 			"name": "kf6-attica-devel",
 			"provides": [
@@ -135,6 +132,6 @@
 		}
 	},
 	"source-name": "kf6-attica",
-	"source-release": "4",
-	"source-version": "6.14.0"
+	"source-release": "5",
+	"source-version": "6.15.0"
 }
