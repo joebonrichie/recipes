@@ -17,7 +17,7 @@
 			],
 			"files": [
 				"/usr/lib/libKF6Syndication.so.6",
-				"/usr/lib/libKF6Syndication.so.6.14.0",
+				"/usr/lib/libKF6Syndication.so.6.15.0",
 				"/usr/share/qlogging-categories6/syndication.categories",
 				"/usr/share/qlogging-categories6/syndication.renamecategories"
 			],
@@ -103,12 +103,9 @@
 				"/usr/include/KF6/Syndication/syndication_version.h",
 				"/usr/lib/cmake/KF6Syndication/KF6SyndicationConfig.cmake",
 				"/usr/lib/cmake/KF6Syndication/KF6SyndicationConfigVersion.cmake",
-				"/usr/lib/cmake/KF6Syndication/KF6SyndicationQchTargets.cmake",
 				"/usr/lib/cmake/KF6Syndication/KF6SyndicationTargets-release.cmake",
 				"/usr/lib/cmake/KF6Syndication/KF6SyndicationTargets.cmake",
-				"/usr/lib/libKF6Syndication.so",
-				"/usr/share/doc/qt6/KF6Syndication.qch",
-				"/usr/share/doc/qt6/KF6Syndication.tags"
+				"/usr/lib/libKF6Syndication.so"
 			],
 			"name": "kf6-syndication-devel",
 			"provides": [
@@ -117,6 +114,6 @@
 		}
 	},
 	"source-name": "kf6-syndication",
-	"source-release": "4",
-	"source-version": "6.14.0"
+	"source-release": "5",
+	"source-version": "6.15.0"
 }
