@@ -23,7 +23,7 @@
 			"files": [
 				"/usr/bin/kbuildsycoca6",
 				"/usr/lib/libKF6Service.so.6",
-				"/usr/lib/libKF6Service.so.6.14.0",
+				"/usr/lib/libKF6Service.so.6.15.0",
 				"/usr/share/locale/af/LC_MESSAGES/kservice6.mo",
 				"/usr/share/locale/ar/LC_MESSAGES/kservice6.mo",
 				"/usr/share/locale/as/LC_MESSAGES/kservice6.mo",
@@ -127,6 +127,7 @@
 				"/usr/share/locale/zh_HK/LC_MESSAGES/kservice6.mo",
 				"/usr/share/locale/zh_TW/LC_MESSAGES/kservice6.mo",
 				"/usr/share/man/ca/man8/kbuildsycoca6.8",
+				"/usr/share/man/ca@valencia/man8/kbuildsycoca6.8",
 				"/usr/share/man/es/man8/kbuildsycoca6.8",
 				"/usr/share/man/fr/man8/kbuildsycoca6.8",
 				"/usr/share/man/it/man8/kbuildsycoca6.8",
@@ -176,12 +177,9 @@
 				"/usr/include/KF6/KService/ksycocatype.h",
 				"/usr/lib/cmake/KF6Service/KF6ServiceConfig.cmake",
 				"/usr/lib/cmake/KF6Service/KF6ServiceConfigVersion.cmake",
-				"/usr/lib/cmake/KF6Service/KF6ServiceQchTargets.cmake",
 				"/usr/lib/cmake/KF6Service/KF6ServiceTargets-release.cmake",
 				"/usr/lib/cmake/KF6Service/KF6ServiceTargets.cmake",
-				"/usr/lib/libKF6Service.so",
-				"/usr/share/doc/qt6/KF6Service.qch",
-				"/usr/share/doc/qt6/KF6Service.tags"
+				"/usr/lib/libKF6Service.so"
 			],
 			"name": "kf6-kservice-devel",
 			"provides": [
@@ -190,6 +188,6 @@
 		}
 	},
 	"source-name": "kf6-kservice",
-	"source-release": "5",
-	"source-version": "6.14.0"
+	"source-release": "6",
+	"source-version": "6.15.0"
 }
