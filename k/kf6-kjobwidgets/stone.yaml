@@ -4,10 +4,10 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : kf6-kjobwidgets
-version     : 6.14.0
-release     : 5
+version     : 6.15.0
+release     : 6
 upstreams   :
-    - https://download.kde.org/stable/frameworks/6.14/kjobwidgets-6.14.0.tar.xz : 8c47042afae57447945b43cc91d897fa353286237a63e35294be4eb4a4662abd
+    - https://download.kde.org/stable/frameworks/6.15/kjobwidgets-6.15.0.tar.xz : d5c7b68ea8829785a91fd6e4c7b3ac571d58bdee193777648e52098c49f054fe
 homepage    : https://community.kde.org/Frameworks
 license     :
     - LGPL-2.0-only
@@ -23,7 +23,7 @@ builddeps   :
     - cmake(KF6WidgetsAddons)
     - cmake(Qt6CorePrivate)
 setup       : |
-    %cmake_kf6
+    %cmake_kf6 -DBUILD_PYTHON_BINDINGS=OFF
 build       : |
     %cmake_build
 install     : |
