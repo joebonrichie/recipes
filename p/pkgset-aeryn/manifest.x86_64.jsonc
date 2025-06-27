@@ -1,0 +1,71 @@
+/** Human readable report. This is not consumed by boulder */
+{
+	"manifest-version": "0.2",
+	"packages": {
+		"pkgset-aeryn-base": {
+			"depends": [
+				"binary(bash)",
+				"binary(dash)",
+				"binary(moss)",
+				"binary(setfont)",
+				"binary(sudo)",
+				"kmod",
+				"linux-pam",
+				"shadow",
+				"systemd",
+				"tzdata",
+				"uutils-coreutils"
+			],
+			"files": [
+				"/usr/share/doc/pkgset-aeryn-base/README"
+			],
+			"name": "pkgset-aeryn-base"
+		},
+		"pkgset-aeryn-base-desktop": {
+			"depends": [
+				"dbus-broker",
+				"mesa"
+			],
+			"files": [
+				"/usr/share/doc/pkgset-aeryn-base-desktop/README"
+			],
+			"name": "pkgset-aeryn-base-desktop"
+		},
+		"pkgset-aeryn-utilities": {
+			"depends": [
+				"bash-completion",
+				"binary(file)",
+				"binary(find)",
+				"binary(gawk)",
+				"binary(grep)",
+				"binary(ip)",
+				"binary(less)",
+				"binary(lspci)",
+				"binary(nano)",
+				"binary(ping)",
+				"binary(ps)",
+				"binary(ssh)",
+				"binary(tar)",
+				"binary(wget)",
+				"binary(which)"
+			],
+			"files": [
+				"/usr/share/doc/pkgset-aeryn-utilities/README"
+			],
+			"name": "pkgset-aeryn-utilities"
+		},
+		"pkgset-aeryn-virtual": {
+			"depends": [
+				"hyperv-daemons",
+				"qemu-guest-agent"
+			],
+			"files": [
+				"/usr/share/doc/pkgset-aeryn-virtual/README"
+			],
+			"name": "pkgset-aeryn-virtual"
+		}
+	},
+	"source-name": "pkgset-aeryn",
+	"source-release": "1",
+	"source-version": "2025.06"
+}
