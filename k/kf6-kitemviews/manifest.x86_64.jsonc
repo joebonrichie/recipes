@@ -15,7 +15,7 @@
 			],
 			"files": [
 				"/usr/lib/libKF6ItemViews.so.6",
-				"/usr/lib/libKF6ItemViews.so.6.14.0",
+				"/usr/lib/libKF6ItemViews.so.6.15.0",
 				"/usr/share/locale/af/LC_MESSAGES/kitemviews6_qt.qm",
 				"/usr/share/locale/ar/LC_MESSAGES/kitemviews6_qt.qm",
 				"/usr/share/locale/as/LC_MESSAGES/kitemviews6_qt.qm",
@@ -158,13 +158,10 @@
 				"/usr/include/KF6/KItemViews/kwidgetitemdelegate.h",
 				"/usr/lib/cmake/KF6ItemViews/KF6ItemViewsConfig.cmake",
 				"/usr/lib/cmake/KF6ItemViews/KF6ItemViewsConfigVersion.cmake",
-				"/usr/lib/cmake/KF6ItemViews/KF6ItemViewsQCHTargets.cmake",
 				"/usr/lib/cmake/KF6ItemViews/KF6ItemViewsTargets-release.cmake",
 				"/usr/lib/cmake/KF6ItemViews/KF6ItemViewsTargets.cmake",
 				"/usr/lib/libKF6ItemViews.so",
-				"/usr/lib/qt6/plugins/designer/kitemviews6widgets.so",
-				"/usr/share/doc/qt6/KF6ItemViews.qch",
-				"/usr/share/doc/qt6/KF6ItemViews.tags"
+				"/usr/lib/qt6/plugins/designer/kitemviews6widgets.so"
 			],
 			"name": "kf6-kitemviews-devel",
 			"provides": [
@@ -174,6 +171,6 @@
 		}
 	},
 	"source-name": "kf6-kitemviews",
-	"source-release": "5",
-	"source-version": "6.14.0"
+	"source-release": "6",
+	"source-version": "6.15.0"
 }
