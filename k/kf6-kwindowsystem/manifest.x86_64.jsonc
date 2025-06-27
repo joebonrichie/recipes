@@ -32,7 +32,7 @@
 			],
 			"files": [
 				"/usr/lib/libKF6WindowSystem.so.6",
-				"/usr/lib/libKF6WindowSystem.so.6.14.0",
+				"/usr/lib/libKF6WindowSystem.so.6.15.0",
 				"/usr/lib/qt6/plugins/kf6/kwindowsystem/KF6WindowSystemKWaylandPlugin.so",
 				"/usr/lib/qt6/plugins/kf6/kwindowsystem/KF6WindowSystemX11Plugin.so",
 				"/usr/lib/qt6/qml/org/kde/kwindowsystem/KWindowSystem.qmltypes",
@@ -209,13 +209,10 @@
 				"/usr/include/KF6/KWindowSystem/private/kwindowsystemplugininterface_p.h",
 				"/usr/lib/cmake/KF6WindowSystem/KF6WindowSystemConfig.cmake",
 				"/usr/lib/cmake/KF6WindowSystem/KF6WindowSystemConfigVersion.cmake",
-				"/usr/lib/cmake/KF6WindowSystem/KF6WindowSystemQchTargets.cmake",
 				"/usr/lib/cmake/KF6WindowSystem/KF6WindowSystemTargets-release.cmake",
 				"/usr/lib/cmake/KF6WindowSystem/KF6WindowSystemTargets.cmake",
 				"/usr/lib/libKF6WindowSystem.so",
-				"/usr/lib/pkgconfig/KF6WindowSystem.pc",
-				"/usr/share/doc/qt6/KF6WindowSystem.qch",
-				"/usr/share/doc/qt6/KF6WindowSystem.tags"
+				"/usr/lib/pkgconfig/KF6WindowSystem.pc"
 			],
 			"name": "kf6-kwindowsystem-devel",
 			"provides": [
@@ -225,6 +222,6 @@
 		}
 	},
 	"source-name": "kf6-kwindowsystem",
-	"source-release": "5",
-	"source-version": "6.14.0"
+	"source-release": "6",
+	"source-version": "6.15.0"
 }
