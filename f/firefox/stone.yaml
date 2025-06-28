@@ -4,15 +4,15 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : firefox
-version     : 139.0.4
-release     : 28
+version     : 140.0.1
+release     : 29
 homepage    : https://www.mozilla.org/
 upstreams   :
-    - https://ftp.mozilla.org/pub/firefox/releases/139.0.4/source/firefox-139.0.4.source.tar.xz:
-        hash: 535e053fc3f949c6d7dd78a0a0b4997e5e26db7ef1e11d51b2b9a9f4022287f5
+    - https://ftp.mozilla.org/pub/firefox/releases/140.0.1/source/firefox-140.0.1.source.tar.xz:
+        hash: de848d56f5bd9f9bb9bbea17f425d1d887c1f4bb07d7e0be58c0e4a397ea86f0
         unpackdir: firefox
-    - https://sources.getsol.us/mozilla/firefox/firefox-139.0.4-langpacks.tar.zst:
-        hash: 5b251595211ad5af6fdc24bb8b3fb5efa2ecdc7f052ae5855df8c9c9337dfa32
+    - https://sources.getsol.us/mozilla/firefox/firefox-140.0.1-langpacks.tar.zst:
+        hash: 5f26e8b0d1aa957d08fa626be8acba23836404c5d76d32f84ced5eceee9b2967
         unpackdir: firefox/langpacks
 summary     : Firefox web browser
 description : |
@@ -27,6 +27,7 @@ builddeps   :
     - binary(node)
     - binary(python3)
     - binary(rustc)
+    - binary(tar)
     - binary(unzip)
     - binary(weston) # PGO
     - binary(wlheadless-run) # PGO
@@ -66,7 +67,6 @@ setup       : |
     # %%patch %(pkgdir)/patches/pgo.patch
     %patch %(pkgdir)/patches/0001-Fix-Firefox-Thunderbird-envvar-conflicts.patch
     %patch %(pkgdir)/patches/libcxx18.patch
-    %patch %(pkgdir)/patches/icu76.patch
 
     cp %(pkgdir)/build/mozconfig .
     sed -e 's|@@JOBCOUNT@@|%(jobs)|' -e 's|@@LIBDIR@@|%(libdir)|' -i mozconfig
