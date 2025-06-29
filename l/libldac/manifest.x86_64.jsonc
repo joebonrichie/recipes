@@ -1,0 +1,43 @@
+/** Human readable report. This is not consumed by boulder */
+{
+	"manifest-version": "0.2",
+	"packages": {
+		"libldac": {
+			"depends": [
+				"soname(libc.so.6(x86_64))"
+			],
+			"files": [
+				"/usr/lib/libldacBT_abr.so.2",
+				"/usr/lib/libldacBT_abr.so.2.0.2.3",
+				"/usr/lib/libldacBT_enc.so.2",
+				"/usr/lib/libldacBT_enc.so.2.0.2.3"
+			],
+			"name": "libldac",
+			"provides": [
+				"soname(libldacBT_abr.so.2(x86_64))",
+				"soname(libldacBT_enc.so.2(x86_64))"
+			]
+		},
+		"libldac-devel": {
+			"depends": [
+				"libldac"
+			],
+			"files": [
+				"/usr/include/ldac/ldacBT.h",
+				"/usr/include/ldac/ldacBT_abr.h",
+				"/usr/lib/libldacBT_abr.so",
+				"/usr/lib/libldacBT_enc.so",
+				"/usr/lib/pkgconfig/ldacBT-abr.pc",
+				"/usr/lib/pkgconfig/ldacBT-enc.pc"
+			],
+			"name": "libldac-devel",
+			"provides": [
+				"pkgconfig(ldacBT-abr)",
+				"pkgconfig(ldacBT-enc)"
+			]
+		}
+	},
+	"source-name": "libldac",
+	"source-release": "1",
+	"source-version": "2.0.2.3"
+}
