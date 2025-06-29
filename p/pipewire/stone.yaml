@@ -5,7 +5,7 @@
 #
 name        : pipewire
 version     : 1.4.6
-release     : 15
+release     : 16
 homepage    : https://pipewire.org/
 upstreams   :
     - https://gitlab.freedesktop.org/pipewire/pipewire/-/archive/1.4.6/pipewire-1.4.6.tar.gz : 0470a38cf62485f53899896efc94f538cc4e7ad69704a67d70004024a3e478ea
@@ -15,6 +15,7 @@ description : |
 license     :
     - MIT
 builddeps   :
+    - binary(doxygen)
     - binary(gettext)
     - cmake(VulkanHeaders)
     - pkgconfig(alsa)
@@ -22,20 +23,25 @@ builddeps   :
     - pkgconfig(bluez)
     - pkgconfig(dbus-1)
     - pkgconfig(fdk-aac)
+    - pkgconfig(fftw3f)
     - pkgconfig(gio-2.0)
     - pkgconfig(glib-2.0)
     - pkgconfig(gstreamer-1.0)
     - pkgconfig(gstreamer-video-1.0)
+    - pkgconfig(lc3)
+    - pkgconfig(ldacBT-enc)
     - pkgconfig(libavcodec)
     - pkgconfig(libavformat)
     - pkgconfig(libcanberra)
     - pkgconfig(libcap)
     - pkgconfig(libdrm)
     - pkgconfig(libebur128)
+    - pkgconfig(libfreeaptx)
     - pkgconfig(libpulse)
     - pkgconfig(libswscale)
     - pkgconfig(libsystemd)
     - pkgconfig(libusb-1.0)
+    - pkgconfig(lilv-0)
     - pkgconfig(ncursesw)
     - pkgconfig(openssl)
     - pkgconfig(readline)
@@ -47,16 +53,20 @@ builddeps   :
     - pkgconfig(opus)
     - pkgconfig(sbc)
     - pkgconfig(sdl2-compat)
+    - pkgconfig(webrtc-audio-processing-2)
+    # libffado?
 setup       : |
     %patch %(pkgdir)/0001-Fix-clang-build-error.patch
 
-    %meson -Dsession-managers=[] \
-           -Dvulkan=enabled \
-           -Dudev=enabled \
-           -Dgstreamer=enabled \
-           -Dudevrulesdir=%(libdir)/udev/rules.d \
+    %meson \
            -Dbluez5=enabled \
-           -Dffmpeg=enabled
+           -Dffmpeg=enabled \
+           -Dgstreamer=enabled \
+           -Dman=enabled \
+           -Dsession-managers=[] \
+           -Dudev=enabled \
+           -Dudevrulesdir=%(libdir)/udev/rules.d \
+           -Dvulkan=enabled
 build       : |
     %meson_build
 install     : |
