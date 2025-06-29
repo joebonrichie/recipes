@@ -5,7 +5,7 @@
 #
 name        : gstreamer
 version     : 1.26.3
-release     : 15
+release     : 16
 homepage    : https://gstreamer.freedesktop.org/
 upstreams   :
     - https://gitlab.freedesktop.org/gstreamer/gstreamer/-/archive/1.26.3/gstreamer-1.26.3.tar.gz : aeee898f3b123ceec1883d06b63adbc85df1b067414590f5938fcf8e3be891f2
@@ -47,7 +47,9 @@ builddeps   :
     - pkgconfig(gudev-1.0)
     - pkgconfig(iso-codes)
     - pkgconfig(json-glib-1.0)
+    - pkgconfig(lc3)
     - pkgconfig(lcms2)
+    - pkgconfig(ldacBT-enc)
     - pkgconfig(libass)
     - pkgconfig(libavfilter)
     - pkgconfig(libbs2b)
@@ -55,6 +57,7 @@ builddeps   :
     - pkgconfig(libdrm)
     - pkgconfig(libdw)
     - pkgconfig(libexif)
+    - pkgconfig(libfreeaptx)
     - pkgconfig(libgcrypt)
     - pkgconfig(lilv-0)
     - pkgconfig(libopenjp2)
@@ -88,6 +91,7 @@ builddeps   :
     - pkgconfig(vulkan)
     - pkgconfig(wayland-client)
     - pkgconfig(wayland-protocols)
+    - pkgconfig(webrtc-audio-processing-2)
     - pkgconfig(x264)
     - pkgconfig(x265)
     - pkgconfig(xkbcommon)
@@ -122,22 +126,18 @@ builddeps   :
 # - fluidsynth
 # - gsm
 # - lrdf
-# - lc3
-# - ldacbt-enc
 # - libde265
 # - microdns
 # - libmodplug
 # - mjpegtools
 # - mpeg2encpp
 # - openal
-# - libopenaptx
 # - openexr
 # - libopenmpt
 # - librtmp
 # - srt
 # - libsrtp2
 # - vo-aacenc
-# - webrtc-audio-processing
 # - wildmidi
 # - zxing
 # - zbar
@@ -460,6 +460,8 @@ packages    :
             - /usr/lib/gstreamer-1.0/libgstjp2kdecimator.so
             - /usr/lib/gstreamer-1.0/libgstjpegformat.so
             - /usr/lib/gstreamer-1.0/libgstkms.so
+            - /usr/lib/gstreamer-1.0/libgstlc3.so
+            - /usr/lib/gstreamer-1.0/libgstldac.so
             - /usr/lib/gstreamer-1.0/libgstlegacyrawparse.so
             - /usr/lib/gstreamer-1.0/libgstlv2.so
             - /usr/lib/gstreamer-1.0/libgstmidi.so
@@ -468,6 +470,7 @@ packages    :
             - /usr/lib/gstreamer-1.0/libgstmxf.so
             - /usr/lib/gstreamer-1.0/libgstnetsim.so
             - /usr/lib/gstreamer-1.0/libgstnvcodec.so
+            - /usr/lib/gstreamer-1.0/libgstopenaptx.so
             - /usr/lib/gstreamer-1.0/libgstopusparse.so
             - /usr/lib/gstreamer-1.0/libgstpcapparse.so
             - /usr/lib/gstreamer-1.0/libgstpnm.so
@@ -512,6 +515,7 @@ packages    :
             - /usr/lib/gstreamer-1.0/libgstvulkan.so
             - /usr/lib/gstreamer-1.0/libgstwaylandsink.so
             - /usr/lib/gstreamer-1.0/libgstwebp.so
+            - /usr/lib/gstreamer-1.0/libgstwebrtcdsp.so
             - /usr/lib/gstreamer-1.0/libgstx265.so
             - /usr/lib/gstreamer-1.0/libgsty4mdec.so
             - /usr/share/gstreamer-1.0/encoding-profiles
