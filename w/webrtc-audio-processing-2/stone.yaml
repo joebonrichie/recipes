@@ -1,0 +1,23 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : webrtc-audio-processing-2
+version     : "2.1"
+release     : 1
+upstreams   :
+    - http://freedesktop.org/software/pulseaudio/webrtc-audio-processing/webrtc-audio-processing-2.1.tar.xz : ae9302824b2038d394f10213cab05312c564a038434269f11dbf68f511f9f9fe
+homepage    : https://freedesktop.org/software/pulseaudio/webrtc-audio-processing
+license     : BSD-3-Clause
+summary     : AudioProcessing module from the WebRTC project
+description : |
+    AudioProcessing module from the WebRTC project
+builddeps   :
+    - pkgconfig(absl_base)
+setup       : |
+    %meson
+build       : |
+    %meson_build
+install     : |
+    %meson_install

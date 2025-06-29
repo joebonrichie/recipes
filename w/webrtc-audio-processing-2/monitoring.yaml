@@ -1,0 +1,7 @@
+releases:
+  id: 15929
+  rss: https://gitlab.freedesktop.org/pulseaudio/webrtc-audio-processing/-/tags?format=atom
+security:
+  cpe:
+  - vendor: webrtc_project
+    product: webrtc
