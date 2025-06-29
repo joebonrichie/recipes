@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : linux-firmware
-version     : 20250509
-release     : 24
+version     : 20250627
+release     : 25
 homepage    : https://kernel.org
 upstreams   :
-    - git|https://gitlab.com/kernel-firmware/linux-firmware.git : 788aadc8f73d93908cf8545b2fc770fb6580a3f2
+    - git|https://gitlab.com/kernel-firmware/linux-firmware.git : f40eafe216833d083f4e5598b7f45e894c373ad1
 summary     : Firmware to allow devices to function correctly
 description : |
     Firmware to allow devices to function correctly
@@ -21,32 +21,252 @@ builddeps   :
     - binary(rdfind)
     - binary(unzstd)
     - binary(which)
-packages    :
-    - "%(name)-amd":
-        summary: Support for AMD devices
-        paths:
-            - /usr/lib/firmware/amd*
-            - /usr/lib/firmware/radeon
-    - "%(name)-nvidia":
-        summary: Support for NVIDIA devices
-        paths:
-            - /usr/lib/firmware/nvidia
-    - "%(name)-intel":
-        summary: Support for Intel devices
-        paths:
-            - /usr/lib/firmware/intel
-            - /usr/lib/firmware/i915
-    - "%(name)-iwlwifi":
-        summary: Support for Intel WiFi devices
-        paths:
-            - /usr/lib/firmware/iwlwifi*
 install     : |
     make install-zst FIRMWAREDIR=/usr/lib/firmware DESTDIR=%(installroot)
+
     # Remove conflicting and/or forbidden assets
-    for forbidden in carl9170fw netronome liquidio qed Makefile GPL-3 ; do
+    for forbidden in carl9170fw qed Makefile GPL-3 ; do
         rm -rvf "%(installroot)/%(libdir)/firmware/${forbidden}"
     done
+
     # unzstd the amd microcode to unfudge dracut
     for file in %(installroot)%(libdir)/firmware/amd-ucode/*.zst ; do
         unzstd --rm $file
     done
+packages    :
+    # TODO: Replace -amd, -intel, -nvidia
+    - "%(name)-amd64-microcode":
+        summary: Platform firmware and microcode for AMD CPUs and SoCs
+        paths:
+            - /usr/lib/firmware/amd-ucode
+            - /usr/lib/firmware/amd/amd_sev*
+            - /usr/lib/firmware/amdtee
+
+    - "%(name)-amd-graphics":
+        summary: Support for AMD graphics and NPU chips
+        paths:
+            - /usr/lib/firmware/amdgpu
+            - /usr/lib/firmware/amdnpu
+            - /usr/lib/firmware/r128
+            - /usr/lib/firmware/radeon
+
+    - "%(name)-atheros":
+        summary: Support for Qualcomm Atheros wireless chips
+        paths:
+            - /usr/lib/firmware/ar5523.bin*
+            - /usr/lib/firmware/ar7010*.fw*
+            - /usr/lib/firmware/ar9170*.fw*
+            - /usr/lib/firmware/ar9271*.fw*
+            - /usr/lib/firmware/ath3k-1.fw*
+            - /usr/lib/firmware/htc_*.fw*
+            - /usr/lib/firmware/wil6210*
+            - /usr/lib/firmware/ar3k/
+            - /usr/lib/firmware/ath6k/
+            - /usr/lib/firmware/ath10k/
+            - /usr/lib/firmware/ath11k/
+            - /usr/lib/firmware/ath12k/
+            - /usr/lib/firmware/ath9k_htc/
+            - /usr/lib/firmware/qca/
+
+    - "%(name)-bnx2":
+        summary: Support for Broadcom NetXtremeII network adapters
+        paths:
+            - /usr/lib/firmware/bnx2
+
+    - "%(name)-bnx2x":
+        summary: Support for Broadcom NetXtreme II network adapters
+        paths:
+            - /usr/lib/firmware/bnx2x
+
+    - "%(name)-brcm80211":
+        summary: Support for Broadcom/Cypress 802.11 wireless cards
+        paths:
+            - /usr/lib/firmware/brcm/bcm43xx*
+            - /usr/lib/firmware/brcm/brcmfmac*
+            - /usr/lib/firmware/cypress/cyfmac*
+
+    - "%(name)-cavium":
+        summary: Support for Cavium Ethernet adapters
+        paths:
+            - /usr/lib/firmware/cavium
+            - /usr/lib/firmware/liquidio
+
+    - "%(name)-cirrus":
+        summary: Support for Cirrus Logic audio chips
+        paths:
+            - /usr/lib/firmware/cirrus
+            - /usr/lib/firmware/cs42l43.bin*
+
+    - "%(name)-intel-graphics":
+        summary: Support for Intel iGPUs and IPUs
+        paths:
+            - /usr/lib/firmware/i915
+            - /usr/lib/firmware/intel/ipu
+            - /usr/lib/firmware/intel/irci_*
+            - /usr/lib/firmware/intel/vsc
+            - /usr/lib/firmware/xe
+
+    - "%(name)-intel-misc":
+        summary: Support for misc Intel hardware
+        paths:
+            - /usr/lib/firmware/hfi1_*
+            - /usr/lib/firmware/qat_*
+            - /usr/lib/firmware/e100
+            - /usr/lib/firmware/intel/ice
+            - /usr/lib/firmware/intel/ish
+            - /usr/lib/firmware/intel/vpu
+
+    - "%(name)-intel-sound":
+        summary: Support for Intel sound DSPs
+        paths:
+            - /usr/lib/firmware/intel/dsp_fw_*
+            - /usr/lib/firmware/intel/fw_sst_*
+            - /usr/lib/firmware/intel/IntcSST2.bin*
+            - /usr/lib/firmware/intel/avs/
+            - /usr/lib/firmware/intel/catpt/bdw/dsp_basefw.bin*
+
+    - "%(name)-ipw2x00":
+        summary: Support for Intel Pro Wireless 2100, 2200 and 2915 chips
+        paths:
+            - /usr/lib/firmware/ipw2100-1.3.fw*
+            - /usr/lib/firmware/ipw2100-1.3-i.fw*
+            - /usr/lib/firmware/ipw2100-1.3-p.fw*
+            - /usr/lib/firmware/ipw2200-bss.fw*
+            - /usr/lib/firmware/ipw2200-ibss.fw*
+            - /usr/lib/firmware/ipw2200-sniffer.fw*
+
+    - "%(name)-ivtv":
+        summary: Support for iTVC15-family MPEG codecs
+        paths:
+            - /usr/lib/firmware/v4l-cx2341x-dec.fw*
+            - /usr/lib/firmware/v4l-cx2341x-enc.fw*
+            - /usr/lib/firmware/v4l-cx2341x-init.mpg*
+            - /usr/lib/firmware/v4l-pvrusb2-24xxx-01.fw*
+            - /usr/lib/firmware/v4l-pvrusb2-29xxx-01.fw*
+
+    - "%(name)-iwlwifi":
+        summary: Support for Intel Wireless cards
+        paths:
+            - /usr/lib/firmware/iwlwifi-*
+            - /usr/lib/firmware/intel/ibt-*
+
+    - "%(name)-libertas":
+        summary: Support for Marvell Wireless cards
+        paths:
+            - /usr/lib/firmware/lbtf_usb.bin*
+            - /usr/lib/firmware/libertas_cs*
+            - /usr/lib/firmware/sd8385*.bin*
+            - /usr/lib/firmware/sd8686*.bin*
+            - /usr/lib/firmware/sd8688*.bin*
+            - /usr/lib/firmware/usb8388.bin*
+            - /usr/lib/firmware/libertas
+            - /usr/lib/firmware/mrvl
+            - /usr/lib/firmware/mwl8k
+
+    - "%(name)-marvell-prestera":
+        summary: Support for Marvell Prestera ASIC devices
+        paths:
+            - /usr/lib/firmware/mrvl/prestera
+
+    - "%(name)-mediatek":
+        summary: Support for MediaTek and Ralink chips
+        paths:
+            - /usr/lib/firmware/mt76*
+            - /usr/lib/firmware/rt73.bin*
+            - /usr/lib/firmware/rt2561.bin*
+            - /usr/lib/firmware/rt2561s.bin*
+            - /usr/lib/firmware/rt2661.bin*
+            - /usr/lib/firmware/rt2860.bin*
+            - /usr/lib/firmware/rt2870.bin*
+            - /usr/lib/firmware/rt3070.bin*
+            - /usr/lib/firmware/rt3071.bin*
+            - /usr/lib/firmware/rt3090.bin*
+            - /usr/lib/firmware/rt3290.bin*
+            - /usr/lib/firmware/vpu_d.bin*
+            - /usr/lib/firmware/vpu_p.bin*
+            - /usr/lib/firmware/mediatek
+
+    - "%(name)-myricom":
+        summary: Support for Myri-10G Ethernet adapters
+        paths:
+            - /usr/lib/firmware/myri10ge_*
+
+    - "%(name)-netronome":
+        summary: Support for Netronome network adapters
+        paths:
+            - /usr/lib/firmware/netronome
+
+    - "%(name)-netxen":
+        summary: Support for QLogic Intelligent Ethernet network adapters
+        paths:
+            - /usr/lib/firmware/phanfw.bin*
+
+    - "%(name)-nvidia-graphics":
+        summary: Support for NVIDIA GPU chips
+        paths:
+            - /usr/lib/firmware/nvidia
+
+    - "%(name)-qcom-soc":
+        summary: Support for Qualcomm SoCs
+        paths:
+            - /usr/lib/firmware/a300_pfp.fw*
+            - /usr/lib/firmware/a300_pm4.fw*
+            - /usr/lib/firmware/qcom/
+
+    - "%(name)-qlogic":
+        summary: Support for QLogic HBAs
+        paths:
+            - /usr/lib/firmware/cbfw-3.2.5.1.bin*
+            - /usr/lib/firmware/ct2fw-3.2.5.1.bin*
+            - /usr/lib/firmware/ctfw-3.2.5.1.bin*
+            - /usr/lib/firmware/ql2*_fw.bin*
+            - /usr/lib/firmware/qed
+            - /usr/lib/firmware/qlogic
+
+    - "%(name)-realtek":
+        summary: Support for Realtek network and audio chips
+        paths:
+            - /usr/lib/firmware/realtek/rt1320
+            - /usr/lib/firmware/rtl_bt
+            - /usr/lib/firmware/rtl_nic
+            - /usr/lib/firmware/rtlwifi
+            - /usr/lib/firmware/rtw88
+            - /usr/lib/firmware/rtw89
+
+    - "%(name)-samsung":
+        summary: Support for Samsung MFC video codecs
+        paths:
+            - /usr/lib/firmware/s5p-mfc*
+
+    - "%(name)-siano":
+        summary: Support for Siano MDTV receivers
+        paths:
+            - /usr/lib/firmware/cmmb_*.inp*
+            - /usr/lib/firmware/dvb_nova_*.inp*
+            - /usr/lib/firmware/isdbt_**
+            - /usr/lib/firmware/sms1xxx-**
+            - /usr/lib/firmware/tdmb_nova_*.inp*
+
+    - "%(name)-ti-connectivity":
+        summary: Support for TI Connectivity Wi-Fi and BT/FM/GPS adapters
+        paths:
+            - /usr/lib/firmware/ti-connectivity
+
+    - "%(name)-misc":
+        summary: Support for misc hardware
+        paths:
+            - /usr/lib/firmware/INT8866RCA2*
+            - /usr/lib/firmware/TAS*.bin*
+            - /usr/lib/firmware/TIAS*.bin*
+            - /usr/lib/firmware/TXNW*.bin*
+            - /usr/lib/firmware/agere_*_fw.bin*
+            - /usr/lib/firmware/as102_*_st.hex*
+            - /usr/lib/firmware/qat_4xxx*
+            - /usr/lib/firmware/intel/dsp_fw_*_v*.bin*
+            - /usr/lib/firmware/mrvl/cpt*
+            - /usr/lib/firmware/nvidia/tegra*
+            - /usr/lib/firmware/3com/
+            - /usr/lib/firmware/advansys/
+            - /usr/lib/firmware/amphion/vpu/
+            - /usr/lib/firmware/arm/mali/
+            - /usr/lib/firmware/qcom/sc8280xp/LENOVO/21BX/

@@ -1,0 +1,6 @@
+releases:
+  id: 378954
+  rss: https://github.com/google/liblc3/releases.atom
+security:
+  # Last checked 20250629
+  cpe: ~
