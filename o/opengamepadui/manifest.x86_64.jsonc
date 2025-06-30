@@ -12,6 +12,7 @@
 				"sysbinary(setcap)"
 			],
 			"depends": [
+				"binary(brightnessctl)",
 				"binary(glxinfo)",
 				"binary(inputplumber)",
 				"binary(vulkaninfo)",
@@ -49,6 +50,6 @@
 		}
 	},
 	"source-name": "opengamepadui",
-	"source-release": "12",
-	"source-version": "0.40.1"
+	"source-release": "13",
+	"source-version": "0.40.3"
 }
