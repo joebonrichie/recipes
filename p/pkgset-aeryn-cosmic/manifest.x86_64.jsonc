@@ -1,0 +1,36 @@
+/** Human readable report. This is not consumed by boulder */
+{
+	"manifest-version": "0.2",
+	"packages": {
+		"pkgset-aeryn-cosmic-full": {
+			"depends": [
+				"pkgset-aeryn-cosmic-recommended"
+			],
+			"files": [
+				"/usr/share/doc/pkgset-aeryn-cosmic-full/README"
+			],
+			"name": "pkgset-aeryn-cosmic-full"
+		},
+		"pkgset-aeryn-cosmic-minimal": {
+			"depends": [
+				"pkgset-aeryn-base-desktop"
+			],
+			"files": [
+				"/usr/share/doc/pkgset-aeryn-cosmic-minimal/README"
+			],
+			"name": "pkgset-aeryn-cosmic-minimal"
+		},
+		"pkgset-aeryn-cosmic-recommended": {
+			"depends": [
+				"pkgset-aeryn-cosmic-minimal"
+			],
+			"files": [
+				"/usr/share/doc/pkgset-aeryn-cosmic-recommended/README"
+			],
+			"name": "pkgset-aeryn-cosmic-recommended"
+		}
+	},
+	"source-name": "pkgset-aeryn-cosmic",
+	"source-release": "1",
+	"source-version": "2025.06"
+}
