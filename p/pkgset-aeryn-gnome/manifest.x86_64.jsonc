@@ -1,0 +1,36 @@
+/** Human readable report. This is not consumed by boulder */
+{
+	"manifest-version": "0.2",
+	"packages": {
+		"pkgset-aeryn-gnome-full": {
+			"depends": [
+				"pkgset-aeryn-gnome-recommended"
+			],
+			"files": [
+				"/usr/share/doc/pkgset-aeryn-gnome-full/README"
+			],
+			"name": "pkgset-aeryn-gnome-full"
+		},
+		"pkgset-aeryn-gnome-minimal": {
+			"depends": [
+				"pkgset-aeryn-base-desktop"
+			],
+			"files": [
+				"/usr/share/doc/pkgset-aeryn-gnome-minimal/README"
+			],
+			"name": "pkgset-aeryn-gnome-minimal"
+		},
+		"pkgset-aeryn-gnome-recommended": {
+			"depends": [
+				"pkgset-aeryn-gnome-minimal"
+			],
+			"files": [
+				"/usr/share/doc/pkgset-aeryn-gnome-recommended/README"
+			],
+			"name": "pkgset-aeryn-gnome-recommended"
+		}
+	},
+	"source-name": "pkgset-aeryn-gnome",
+	"source-release": "1",
+	"source-version": "2025.06"
+}
