@@ -5,7 +5,7 @@
 #
 name        : linux-firmware
 version     : 20250627
-release     : 25
+release     : 26
 homepage    : https://kernel.org
 upstreams   :
     - git|https://gitlab.com/kernel-firmware/linux-firmware.git : f40eafe216833d083f4e5598b7f45e894c373ad1
@@ -32,6 +32,15 @@ install     : |
     # unzstd the amd microcode to unfudge dracut
     for file in %(installroot)%(libdir)/firmware/amd-ucode/*.zst ; do
         unzstd --rm $file
+    done
+
+    # Meta linux-firmware
+    %install_dir %(installroot)%(docdir)/%(name)
+    echo "This file will disappear when virtual packages are introduced" > %(installroot)%(docdir)/%(name)/README
+
+    for i in amd intel nvidia; do
+        %install_dir %(installroot)%(docdir)/%(name)-${i}
+        echo "DEPRECATED" > %(installroot)%(docdir)/%(name)-${i}/README
     done
 packages    :
     # TODO: Replace -amd, -intel, -nvidia
@@ -100,11 +109,12 @@ packages    :
     - "%(name)-intel-graphics":
         summary: Support for Intel iGPUs and IPUs
         paths:
-            - /usr/lib/firmware/i915
-            - /usr/lib/firmware/intel/ipu
+            - /usr/lib/firmware/i915/
+            - /usr/lib/firmware/intel/ipu3-fw.bin* # Webcam firmware, is this the best place?
+            - /usr/lib/firmware/intel/ipu/
             - /usr/lib/firmware/intel/irci_*
-            - /usr/lib/firmware/intel/vsc
-            - /usr/lib/firmware/xe
+            - /usr/lib/firmware/intel/vsc/
+            - /usr/lib/firmware/xe/
 
     - "%(name)-intel-misc":
         summary: Support for misc Intel hardware
@@ -186,6 +196,11 @@ packages    :
             - /usr/lib/firmware/vpu_p.bin*
             - /usr/lib/firmware/mediatek
 
+    - "%(name)-mellanox":
+        summary: Support for Mellanox Spectrum switches
+        paths:
+            - /usr/lib/firmware/mellanox/
+
     - "%(name)-myricom":
         summary: Support for Myri-10G Ethernet adapters
         paths:
@@ -254,6 +269,7 @@ packages    :
 
     - "%(name)-misc":
         summary: Support for misc hardware
+        # This should include all firmware that is either excluded from an above package or otherwise not subpackaged (the "catch-all")
         paths:
             - /usr/lib/firmware/INT8866RCA2*
             - /usr/lib/firmware/TAS*.bin*
@@ -261,12 +277,154 @@ packages    :
             - /usr/lib/firmware/TXNW*.bin*
             - /usr/lib/firmware/agere_*_fw.bin*
             - /usr/lib/firmware/as102_*_st.hex*
+            - /usr/lib/firmware/bmi260-init-data.fw*
+            - /usr/lib/firmware/ct*.bin*
+            - /usr/lib/firmware/dvb-*.fw*
+            - /usr/lib/firmware/f2255usb.bin*
+            - /usr/lib/firmware/isdbt_*.inp*
+            - /usr/lib/firmware/lgs8g75.fw*
+            - /usr/lib/firmware/lt9611uxc_fw.bin*
+            - /usr/lib/firmware/mts_*.fw*
             - /usr/lib/firmware/qat_4xxx*
+            - /usr/lib/firmware/r8a779x_*.dlmem*
+            - /usr/lib/firmware/rp2.fw*
+            - /usr/lib/firmware/rsi_91x.fw*
+            - /usr/lib/firmware/s2250*.fw*
+            - /usr/lib/firmware/sdd_sagrad_1091_1098.bin*
+            - /usr/lib/firmware/sms1xxx-*.fw*
+            - /usr/lib/firmware/ti_*.fw*
+            - /usr/lib/firmware/tlg2300_firmware.bin*
+            - /usr/lib/firmware/tsse_firmware.bin*
+            - /usr/lib/firmware/usbdux*_firmware.bin*
+            - /usr/lib/firmware/v4l-*.fw*
+            - /usr/lib/firmware/vntwusb.fw*
+            - /usr/lib/firmware/whiteheat*.fw*
+            - /usr/lib/firmware/wsm_22.bin*
             - /usr/lib/firmware/intel/dsp_fw_*_v*.bin*
+            - /usr/lib/firmware/brcm/BCM*.hcd*
+            - /usr/lib/firmware/brcm/bcm4329-fullmac-4.bin*
+            - /usr/lib/firmware/carl9170-1.fw*
             - /usr/lib/firmware/mrvl/cpt*
+            - /usr/lib/firmware/myricom/lanai.bin*
             - /usr/lib/firmware/nvidia/tegra*
             - /usr/lib/firmware/3com/
+            - /usr/lib/firmware/acenic/
+            - /usr/lib/firmware/adaptec/
             - /usr/lib/firmware/advansys/
+            - /usr/lib/firmware/aeonsemi/
+            - /usr/lib/firmware/airoha/
+            - /usr/lib/firmware/amlogic/
             - /usr/lib/firmware/amphion/vpu/
             - /usr/lib/firmware/arm/mali/
+            - /usr/lib/firmware/atmel/
+            - /usr/lib/firmware/atusb/
+            - /usr/lib/firmware/av7110
+            - /usr/lib/firmware/cadence/
+            - /usr/lib/firmware/cis/
+            - /usr/lib/firmware/cnm/
+            - /usr/lib/firmware/cpia2/
+            - /usr/lib/firmware/cxgb3/
+            - /usr/lib/firmware/cxgb4/
+            - /usr/lib/firmware/dabusb/
+            - /usr/lib/firmware/dpaa2/
+            - /usr/lib/firmware/dsp56k/
+            - /usr/lib/firmware/edgeport/
+            - /usr/lib/firmware/emi26/
+            - /usr/lib/firmware/emi62/
+            - /usr/lib/firmware/ene-ub6250/
+            - /usr/lib/firmware/ess/
+            - /usr/lib/firmware/go7007/
+            - /usr/lib/firmware/imx/
+            - /usr/lib/firmware/inside-secure/
+            - /usr/lib/firmware/isci/
+            - /usr/lib/firmware/ixp4xx/
+            - /usr/lib/firmware/kaweth/
+            - /usr/lib/firmware/keyspan/
+            - /usr/lib/firmware/keyspan_pda/
+            - /usr/lib/firmware/korg/
+            - /usr/lib/firmware/matrox/
+            - /usr/lib/firmware/meson/
+            - /usr/lib/firmware/microchip/
+            - /usr/lib/firmware/moxa/
+            - /usr/lib/firmware/mwlwifi/
+            - /usr/lib/firmware/nxp/
+            - /usr/lib/firmware/ositech/
+            - /usr/lib/firmware/powervr/
+            - /usr/lib/firmware/rockchip/
+            - /usr/lib/firmware/rsi/
+            - /usr/lib/firmware/sb16/
+            - /usr/lib/firmware/slicoss/
+            - /usr/lib/firmware/sun/
+            - /usr/lib/firmware/sxg/
+            - /usr/lib/firmware/tehuti/
+            - /usr/lib/firmware/ti-keystone/
+            - /usr/lib/firmware/ti/
+            - /usr/lib/firmware/tigon/
+            - /usr/lib/firmware/ttusb-budget/
+            - /usr/lib/firmware/ueagle-atm/
+            - /usr/lib/firmware/vicam/
+            - /usr/lib/firmware/vxge/
+            - /usr/lib/firmware/wfx/
+            - /usr/lib/firmware/yam/
+            - /usr/lib/firmware/yamaha/
             - /usr/lib/firmware/qcom/sc8280xp/LENOVO/21BX/
+
+    - "%(name)":
+        summary: Meta-package for all upstream linux-firmware
+        description: |
+            Meta-package for all of linux-firmware. If you uninstall this package note that you will need to manage firmware yourself and AerynOS developers are not responsible if something breaks
+        # This should include all subpackages we create (except for the deprecated ones)
+        rundeps:
+            - "%(name)-amd64-microcode"
+            - "%(name)-amd-graphics"
+            - "%(name)-atheros"
+            - "%(name)-bnx2"
+            - "%(name)-bnx2x"
+            - "%(name)-brcm80211"
+            - "%(name)-cavium"
+            - "%(name)-cirrus"
+            - "%(name)-intel-graphics"
+            - "%(name)-intel-misc"
+            - "%(name)-intel-sound"
+            - "%(name)-iwlwifi"
+            - "%(name)-libertas"
+            - "%(name)-marvell-prestera"
+            - "%(name)-mediatek"
+            - "%(name)-mellanox"
+            - "%(name)-misc"
+            - "%(name)-myricom"
+            - "%(name)-netronome"
+            - "%(name)-netxen"
+            - "%(name)-nvidia-graphics"
+            - "%(name)-qcom-soc"
+            - "%(name)-qlogic"
+            - "%(name)-realtek"
+            - "%(name)-samsung"
+            - "%(name)-siano"
+            - "%(name)-ti-connectivity"
+
+    # Compat packages below, remove in future once we can "replace"
+    - "%(name)-amd":
+        summary: DEPRECATED - Compat package for AMD
+        rundeps:
+            - "%(name)-amd64-microcode"
+            - "%(name)-amd-graphics"
+        paths:
+            - /usr/share/doc/linux-firmware-amd/README
+
+    - "%(name)-intel":
+        summary: DEPRECATED - Compat package for Intel
+        rundeps:
+            - "%(name)-intel-graphics"
+            - "%(name)-intel-misc"
+            - "%(name)-intel-sound"
+            - "%(name)-iwlwifi"
+        paths:
+            - /usr/share/doc/linux-firmware-intel/README
+
+    - "%(name)-nvidia":
+        summary: DEPRECATED - Compat package for Nvidia
+        rundeps:
+            - "%(name)-nvidia-graphics"
+        paths:
+            - /usr/share/doc/linux-firmware-nvidia/README

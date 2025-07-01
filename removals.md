@@ -64,3 +64,8 @@
 
 ### Actually checked for by cmake
 - sdl2-compat-staticlib
+
+### Renamed and split
+- linux-firmware-amd
+- linux-firmware-intel
+- linux-firmware-nvidia
