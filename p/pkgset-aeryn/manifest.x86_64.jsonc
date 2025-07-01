@@ -24,7 +24,8 @@
 		"pkgset-aeryn-base-desktop": {
 			"depends": [
 				"dbus-broker",
-				"mesa"
+				"mesa",
+				"pkgset-aeryn-base"
 			],
 			"files": [
 				"/usr/share/doc/pkgset-aeryn-base-desktop/README"
@@ -66,6 +67,6 @@
 		}
 	},
 	"source-name": "pkgset-aeryn",
-	"source-release": "1",
+	"source-release": "2",
 	"source-version": "2025.06"
 }

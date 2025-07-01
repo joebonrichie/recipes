@@ -5,7 +5,7 @@
 #
 name        : pkgset-aeryn
 version     : "2025.06" # I guess let's just match the OS version for now
-release     : 1
+release     : 2
 homepage    : https://aerynos.com/
 # No upstreams!
 summary     : pkgset virtual packages
@@ -78,5 +78,6 @@ packages    :
         rundeps:
             - dbus-broker
             - mesa
+            - "%(name)-base"
         paths:
             - /usr/share/doc/pkgset-aeryn-base-desktop/README
