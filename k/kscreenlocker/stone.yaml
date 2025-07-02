@@ -1,0 +1,50 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : kscreenlocker
+version     : 6.4.2
+release     : 1
+upstreams   :
+    - https://download.kde.org/stable/plasma/6.4.2/kscreenlocker-6.4.2.tar.xz : ef2bc8c2f1f0df75c67778c4208a5ee02c0546356ef8352dd1ffdee867283cc4
+homepage    : https://kde.org/plasma-desktop/
+license     : GPL-2.0-or-later
+summary     : Library and components for secure lock screen architecture
+description : |
+    Library and components for secure lock screen architecture
+builddeps   :
+    # Temporary, boulder doesn't handle build ordering resolution correctly when builddeps are added by macros, so add ECM manually
+    - cmake(ECM)
+    - cmake(KF6Crash)
+    - cmake(KF6GlobalAccel)
+    - cmake(KF6I18n)
+    - cmake(KF6IdleTime)
+    - cmake(KF6KCMUtils)
+    - cmake(KF6KIO)
+    - cmake(KF6Notifications)
+    - cmake(KF6Package)
+    - cmake(KF6Screen)
+    - cmake(KF6Solid)
+    - cmake(KF6Svg)
+    - cmake(KF6WindowSystem)
+    - cmake(KF6XmlGui)
+    - cmake(LayerShellQt)
+    - cmake(PlasmaQuick)
+    - cmake(Qt6Quick)
+    - pkgconfig(pam)
+    - pkgconfig(wayland-server)
+tuning      :
+    - lto: full
+    - optimize: speed
+setup       : |
+    %cmake_kf6
+build       : |
+    %cmake_build
+install     : |
+    %cmake_install
+    %install_file %(pkgdir)/pam.d/* -t %(installroot)%(vendordir)/pam.d/
+packages    :
+    - "%(name)-devel":
+        paths:
+            - /usr/share/dbus-1/interfaces
