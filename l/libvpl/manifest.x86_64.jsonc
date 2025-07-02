@@ -1,0 +1,66 @@
+/** Human readable report. This is not consumed by boulder */
+{
+	"manifest-version": "0.2",
+	"packages": {
+		"libvpl": {
+			"depends": [
+				"soname(libc++.so.1(x86_64))",
+				"soname(libc.so.6(x86_64))",
+				"soname(libunwind.so.1(x86_64))"
+			],
+			"files": [
+				"/usr/etc/vpl/vars.sh",
+				"/usr/lib/libvpl.so.2",
+				"/usr/lib/libvpl.so.2.15",
+				"/usr/share/vpl/licensing/license.txt",
+				"/usr/share/vpl/licensing/third-party-programs.txt"
+			],
+			"name": "libvpl",
+			"provides": [
+				"soname(libvpl.so.2(x86_64))"
+			]
+		},
+		"libvpl-devel": {
+			"depends": [
+				"libvpl"
+			],
+			"files": [
+				"/usr/include/vpl/mfx.h",
+				"/usr/include/vpl/mfxadapter.h",
+				"/usr/include/vpl/mfxbrc.h",
+				"/usr/include/vpl/mfxcamera.h",
+				"/usr/include/vpl/mfxcommon.h",
+				"/usr/include/vpl/mfxdefs.h",
+				"/usr/include/vpl/mfxdispatcher.h",
+				"/usr/include/vpl/mfxdispatcherprefixedfunctions.h",
+				"/usr/include/vpl/mfxencodestats.h",
+				"/usr/include/vpl/mfximplcaps.h",
+				"/usr/include/vpl/mfxjpeg.h",
+				"/usr/include/vpl/mfxmemory.h",
+				"/usr/include/vpl/mfxmvc.h",
+				"/usr/include/vpl/mfxpcp.h",
+				"/usr/include/vpl/mfxsession.h",
+				"/usr/include/vpl/mfxstructures.h",
+				"/usr/include/vpl/mfxsurfacepool.h",
+				"/usr/include/vpl/mfxvideo++.h",
+				"/usr/include/vpl/mfxvideo.h",
+				"/usr/include/vpl/mfxvp8.h",
+				"/usr/include/vpl/preview/README.txt",
+				"/usr/include/vpl/preview/legacy/README.txt",
+				"/usr/include/vpl/preview/legacy/mfxvideo++.h",
+				"/usr/lib/cmake/vpl/VPLConfig.cmake",
+				"/usr/lib/cmake/vpl/VPLConfigVersion.cmake",
+				"/usr/lib/libvpl.so",
+				"/usr/lib/pkgconfig/vpl.pc"
+			],
+			"name": "libvpl-devel",
+			"provides": [
+				"cmake(VPL)",
+				"pkgconfig(vpl)"
+			]
+		}
+	},
+	"source-name": "libvpl",
+	"source-release": "1",
+	"source-version": "2.15.0"
+}
