@@ -1,0 +1,49 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : qcoro
+version     : 0.12.0
+release     : 1
+upstreams   :
+    - https://github.com/qcoro/qcoro/archive/refs/tags/v0.12.0.tar.gz : 809afafab61593f994c005ca6e242300e1e3e7f4db8b5d41f8c642aab9450fbc
+homepage    : https://qcoro.dvratil.cz/
+license     : MIT
+summary     : C++ Coroutines for Qt
+description : |
+    C++ Coroutines for Qt
+builddeps   :
+    - cmake(Qt6Core)
+    - cmake(Qt6CorePrivate)
+    - cmake(Qt6Quick)
+    - cmake(Qt6WebSockets)
+tuning      :
+    - lto: full
+    - optimize: speed
+setup       : |
+    %cmake \
+        -DUSE_QT_VERSION=6 \
+        -DBUILD_SHARED_LIBS=ON \
+        -DBUILD_EXAMPLES=OFF
+build       : |
+    %cmake_build
+install     : |
+    %cmake_install
+packages    :
+    - "%(name)-qt6":
+        summary: C++ Coroutines for Qt6
+        description: C++ Coroutines for Qt6
+        paths:
+            - /usr/lib/libQCoro6*.so.*
+
+    - "%(name)-qt6-devel":
+        summary: C++ Coroutines for Qt6
+        description: C++ Coroutines for Qt6
+        rundeps:
+            - "%(name)-qt6"
+        paths:
+            - /usr/include/qcoro6/
+            - /usr/lib/cmake/QCoro6*/
+            - /usr/lib/qt6/mkspecs/
+            - /usr/lib/libQCoro6*.so
