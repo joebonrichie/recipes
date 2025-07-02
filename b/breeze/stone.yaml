@@ -4,10 +4,10 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : breeze
-version     : 6.3.91
-release     : 1
+version     : 6.4.2
+release     : 2
 upstreams   :
-    - https://download.kde.org/unstable/plasma/6.3.91/breeze-6.3.91.tar.xz : 2b5ee527072b983325746eec8cafaa4ecc1de3fcc74bc9bc304149a4f1f5b11b
+    - https://download.kde.org/stable/plasma/6.4.2/breeze-6.4.2.tar.xz : 4607ab451d0d15f0d0815243d07fd5f5709985f7eb2bef1bf4ca1691b470aab5
 homepage    : https://kde.org/plasma-desktop/
 license     :
     - BSD-3-Clause
