@@ -1,0 +1,91 @@
+/** Human readable report. This is not consumed by boulder */
+{
+	"manifest-version": "0.2",
+	"packages": {
+		"plasma-activities": {
+			"build-depends": [
+				"cmake(Boost)",
+				"cmake(ECM)",
+				"cmake(KF6Config)",
+				"cmake(KF6CoreAddons)",
+				"cmake(Qt6CorePrivate)",
+				"cmake(Qt6Qml)"
+			],
+			"depends": [
+				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
+				"soname(libKF6ConfigCore.so.6(x86_64))",
+				"soname(libKF6CoreAddons.so.6(x86_64))",
+				"soname(libQt6Core.so.6(x86_64))",
+				"soname(libQt6DBus.so.6(x86_64))",
+				"soname(libQt6Gui.so.6(x86_64))",
+				"soname(libQt6Qml.so.6(x86_64))",
+				"soname(libc++.so.1(x86_64))",
+				"soname(libc.so.6(x86_64))"
+			],
+			"files": [
+				"/usr/bin/plasma-activities-cli6",
+				"/usr/lib/libPlasmaActivities.so.6",
+				"/usr/lib/libPlasmaActivities.so.6.4.2",
+				"/usr/lib/qt6/qml/org/kde/activities/kde-qmlmodule.version",
+				"/usr/lib/qt6/qml/org/kde/activities/libplasmaactivitiesextensionplugin.so",
+				"/usr/lib/qt6/qml/org/kde/activities/plasmaactivitiesextensionplugin.qmltypes",
+				"/usr/lib/qt6/qml/org/kde/activities/qmldir",
+				"/usr/share/qlogging-categories6/plasma-activities.categories",
+				"/usr/share/qlogging-categories6/plasma-activities.renamecategories"
+			],
+			"name": "plasma-activities",
+			"provides": [
+				"binary(plasma-activities-cli6)",
+				"soname(libPlasmaActivities.so.6(x86_64))",
+				"soname(qt6/qml/org/kde/activities/libplasmaactivitiesextensionplugin.so(x86_64))"
+			]
+		},
+		"plasma-activities-devel": {
+			"build-depends": [
+				"cmake(Boost)",
+				"cmake(ECM)",
+				"cmake(KF6Config)",
+				"cmake(KF6CoreAddons)",
+				"cmake(Qt6CorePrivate)",
+				"cmake(Qt6Qml)"
+			],
+			"depends": [
+				"pkgconfig(Qt6Core)",
+				"plasma-activities"
+			],
+			"files": [
+				"/usr/include/PlasmaActivities/PlasmaActivities/ActivitiesModel",
+				"/usr/include/PlasmaActivities/PlasmaActivities/Consumer",
+				"/usr/include/PlasmaActivities/PlasmaActivities/Controller",
+				"/usr/include/PlasmaActivities/PlasmaActivities/Info",
+				"/usr/include/PlasmaActivities/PlasmaActivities/ResourceInstance",
+				"/usr/include/PlasmaActivities/PlasmaActivities/Version",
+				"/usr/include/PlasmaActivities/plasma_activities_version.h",
+				"/usr/include/PlasmaActivities/plasmaactivities/activitiesmodel.h",
+				"/usr/include/PlasmaActivities/plasmaactivities/consumer.h",
+				"/usr/include/PlasmaActivities/plasmaactivities/controller.h",
+				"/usr/include/PlasmaActivities/plasmaactivities/info.h",
+				"/usr/include/PlasmaActivities/plasmaactivities/plasma_activities_export.h",
+				"/usr/include/PlasmaActivities/plasmaactivities/resourceinstance.h",
+				"/usr/include/PlasmaActivities/plasmaactivities/version.h",
+				"/usr/lib/cmake/PlasmaActivities/PlasmaActivitiesConfig.cmake",
+				"/usr/lib/cmake/PlasmaActivities/PlasmaActivitiesConfigVersion.cmake",
+				"/usr/lib/cmake/PlasmaActivities/PlasmaActivitiesLibraryQchTargets.cmake",
+				"/usr/lib/cmake/PlasmaActivities/PlasmaActivitiesLibraryTargets-release.cmake",
+				"/usr/lib/cmake/PlasmaActivities/PlasmaActivitiesLibraryTargets.cmake",
+				"/usr/lib/libPlasmaActivities.so",
+				"/usr/lib/pkgconfig/PlasmaActivities.pc",
+				"/usr/share/doc/qt6/PlasmaActivities.qch",
+				"/usr/share/doc/qt6/PlasmaActivities.tags"
+			],
+			"name": "plasma-activities-devel",
+			"provides": [
+				"cmake(PlasmaActivities)",
+				"pkgconfig(PlasmaActivities)"
+			]
+		}
+	},
+	"source-name": "plasma-activities",
+	"source-release": "1",
+	"source-version": "6.4.2"
+}
