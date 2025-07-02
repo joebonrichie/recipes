@@ -1,0 +1,70 @@
+/** Human readable report. This is not consumed by boulder */
+{
+	"manifest-version": "0.2",
+	"packages": {
+		"layer-shell-qt": {
+			"build-depends": [
+				"cmake(ECM)",
+				"cmake(Qt6CorePrivate)",
+				"cmake(Qt6Qml)",
+				"cmake(Qt6WaylandClient)",
+				"pkgconfig(wayland-protocols)"
+			],
+			"depends": [
+				"soname(libQt6Core.so.6(x86_64))",
+				"soname(libQt6Gui.so.6(x86_64))",
+				"soname(libQt6Qml.so.6(x86_64))",
+				"soname(libQt6WaylandClient.so.6(x86_64))",
+				"soname(libc++.so.1(x86_64))",
+				"soname(libc.so.6(x86_64))",
+				"soname(libwayland-client.so.0(x86_64))"
+			],
+			"files": [
+				"/usr/lib/libLayerShellQtInterface.so.6",
+				"/usr/lib/libLayerShellQtInterface.so.6.4.2",
+				"/usr/lib/qt6/plugins/wayland-shell-integration/liblayer-shell.so",
+				"/usr/lib/qt6/qml/org/kde/layershell/LayerShellQtQml.qmltypes",
+				"/usr/lib/qt6/qml/org/kde/layershell/kde-qmlmodule.version",
+				"/usr/lib/qt6/qml/org/kde/layershell/libLayerShellQtQml.so",
+				"/usr/lib/qt6/qml/org/kde/layershell/qmldir"
+			],
+			"name": "layer-shell-qt",
+			"provides": [
+				"soname(libLayerShellQtInterface.so.6(x86_64))",
+				"soname(qt6/plugins/wayland-shell-integration/liblayer-shell.so(x86_64))",
+				"soname(qt6/qml/org/kde/layershell/libLayerShellQtQml.so(x86_64))"
+			]
+		},
+		"layer-shell-qt-devel": {
+			"build-depends": [
+				"cmake(ECM)",
+				"cmake(Qt6CorePrivate)",
+				"cmake(Qt6Qml)",
+				"cmake(Qt6WaylandClient)",
+				"pkgconfig(wayland-protocols)"
+			],
+			"depends": [
+				"layer-shell-qt"
+			],
+			"files": [
+				"/usr/include/LayerShellQt/Shell",
+				"/usr/include/LayerShellQt/Window",
+				"/usr/include/LayerShellQt/layershellqt_export.h",
+				"/usr/include/LayerShellQt/shell.h",
+				"/usr/include/LayerShellQt/window.h",
+				"/usr/lib/cmake/LayerShellQt/LayerShellQtConfig.cmake",
+				"/usr/lib/cmake/LayerShellQt/LayerShellQtConfigVersion.cmake",
+				"/usr/lib/cmake/LayerShellQt/LayerShellQtTargets-release.cmake",
+				"/usr/lib/cmake/LayerShellQt/LayerShellQtTargets.cmake",
+				"/usr/lib/libLayerShellQtInterface.so"
+			],
+			"name": "layer-shell-qt-devel",
+			"provides": [
+				"cmake(LayerShellQt)"
+			]
+		}
+	},
+	"source-name": "layer-shell-qt",
+	"source-release": "1",
+	"source-version": "6.4.2"
+}
