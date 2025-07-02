@@ -4,10 +4,12 @@
 	"packages": {
 		"nvidia-graphics-driver": {
 			"build-depends": [
-				"binary(sh)",
+				"binary(bzip2)",
+				"binary(tar)",
 				"glibc-32bit",
 				"pkgconfig32(libglvnd)",
-				"pkgconfig32(vulkan)"
+				"pkgconfig32(vulkan)",
+				"sysbinary(modprobe)"
 			],
 			"depends": [
 				"egl-gbm",
@@ -63,16 +65,10 @@
 				"/usr/lib/gbm/nvidia-drm_gbm.so",
 				"/usr/lib/libEGL_nvidia.so.0",
 				"/usr/lib/libEGL_nvidia.so.570.133.07",
-				"/usr/lib/libGLESv1_CM_nvidia.so.1",
-				"/usr/lib/libGLESv1_CM_nvidia.so.570.133.07",
 				"/usr/lib/libGLESv2_nvidia.so.2",
 				"/usr/lib/libGLESv2_nvidia.so.570.133.07",
 				"/usr/lib/libGLX_nvidia.so.0",
 				"/usr/lib/libGLX_nvidia.so.570.133.07",
-				"/usr/lib/libOpenCL.so",
-				"/usr/lib/libOpenCL.so.1",
-				"/usr/lib/libOpenCL.so.1.0",
-				"/usr/lib/libOpenCL.so.1.0.0",
 				"/usr/lib/libcuda.so",
 				"/usr/lib/libcuda.so.1",
 				"/usr/lib/libcuda.so.570.133.07",
@@ -178,10 +174,8 @@
 				"binary(nvidia-smi)",
 				"binary(nvidia-xconfig)",
 				"soname(libEGL_nvidia.so.0(x86_64))",
-				"soname(libGLESv1_CM_nvidia.so.1(x86_64))",
 				"soname(libGLESv2_nvidia.so.2(x86_64))",
 				"soname(libGLX_nvidia.so.0(x86_64))",
-				"soname(libOpenCL.so.1(x86_64))",
 				"soname(libcuda.so.1(x86_64))",
 				"soname(libcudadebugger.so.1(x86_64))",
 				"soname(libnvcuvid.so.1(x86_64))",
@@ -218,10 +212,12 @@
 		},
 		"nvidia-graphics-driver-32bit": {
 			"build-depends": [
-				"binary(sh)",
+				"binary(bzip2)",
+				"binary(tar)",
 				"glibc-32bit",
 				"pkgconfig32(libglvnd)",
-				"pkgconfig32(vulkan)"
+				"pkgconfig32(vulkan)",
+				"sysbinary(modprobe)"
 			],
 			"depends": [
 				"egl-gbm-32bit",
@@ -246,16 +242,10 @@
 				"/usr/lib32/gbm/nvidia-drm_gbm.so",
 				"/usr/lib32/libEGL_nvidia.so.0",
 				"/usr/lib32/libEGL_nvidia.so.570.133.07",
-				"/usr/lib32/libGLESv1_CM_nvidia.so.1",
-				"/usr/lib32/libGLESv1_CM_nvidia.so.570.133.07",
 				"/usr/lib32/libGLESv2_nvidia.so.2",
 				"/usr/lib32/libGLESv2_nvidia.so.570.133.07",
 				"/usr/lib32/libGLX_nvidia.so.0",
 				"/usr/lib32/libGLX_nvidia.so.570.133.07",
-				"/usr/lib32/libOpenCL.so",
-				"/usr/lib32/libOpenCL.so.1",
-				"/usr/lib32/libOpenCL.so.1.0",
-				"/usr/lib32/libOpenCL.so.1.0.0",
 				"/usr/lib32/libcuda.so",
 				"/usr/lib32/libcuda.so.1",
 				"/usr/lib32/libcuda.so.570.133.07",
@@ -300,10 +290,8 @@
 			"name": "nvidia-graphics-driver-32bit",
 			"provides": [
 				"soname(libEGL_nvidia.so.0(386))",
-				"soname(libGLESv1_CM_nvidia.so.1(386))",
 				"soname(libGLESv2_nvidia.so.2(386))",
 				"soname(libGLX_nvidia.so.0(386))",
-				"soname(libOpenCL.so.1(386))",
 				"soname(libcuda.so.1(386))",
 				"soname(libnvcuvid.so.1(386))",
 				"soname(libnvidia-allocator.so.1(386))",
@@ -327,6 +315,6 @@
 		}
 	},
 	"source-name": "nvidia-graphics-driver",
-	"source-release": "24",
+	"source-release": "25",
 	"source-version": "570.133.07"
 }

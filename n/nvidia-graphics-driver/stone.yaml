@@ -5,7 +5,7 @@
 #
 name        : nvidia-graphics-driver
 version     : 570.133.07
-release     : 24
+release     : 25
 homepage    : https://www.nvidia.com/
 upstreams   :
     - https://us.download.nvidia.com/XFree86/Linux-x86_64/570.133.07/NVIDIA-Linux-x86_64-570.133.07.run:
@@ -23,25 +23,11 @@ license     : Proprietary
 strip       : false
 builddeps   :
     - glibc-32bit
-    - binary(sh)
+    - binary(bzip2)
+    - binary(tar)
     - pkgconfig32(libglvnd)
     - pkgconfig32(vulkan)
-rundeps     :
-    - egl-gbm
-    - egl-wayland
-    - eglexternalplatform
-    - nvidia-open-gpu-kernel-modules
-packages    :
-    - "%(name)":
-        paths:
-            # Prevent emission of -devel subpackage
-            - /usr/lib/lib*.so*
-    - "%(name)-32bit":
-        paths:
-            - /usr/lib32/lib*.so*
-        rundeps:
-            - egl-gbm-32bit
-            - egl-wayland-32bit
+    - sysbinary(modprobe)
 install     : |
     sh %(sourcedir)/NVIDIA.run --extract-only --target extracted
     %install_dir %(installroot)%(libdir)/firmware/nvidia/%(version)
@@ -109,13 +95,33 @@ install     : |
     popd
 
     # conflicts by egl-wayland/egl-gbm
-    rm -v %(installroot)%(libdir)/libnvidia-egl-wayland*
-    rm -v %(installroot)/usr/lib32/libnvidia-egl-wayland*
-    rm -v %(installroot)%(libdir)/libnvidia-egl-gbm*
-    rm -v %(installroot)/usr/lib32/libnvidia-egl-gbm*
+    rm -v %(installroot)%(libdir){,32}/libnvidia-egl-wayland*
+    rm -v %(installroot)%(libdir){,32}/libnvidia-egl-gbm*
+
+    # Conflicts with ocl-icd
+    rm -v %(installroot)%(libdir){,32}/libOpenCL*
+
+    # We don't support GLESv1 on Aeryn
+    rm -v %(installroot)%(libdir){,32}/libGLESv1_CM_nvidia*
 
     # Finally, documentation files for nvidia-settings
     %install_file extracted/nvidia-application-profiles-%(version)-key-documentation %(installroot)%(datadir)/nvidia/nvidia-application-profiles-%(version)-key-documentation
     %install_file extracted/nvidia-application-profiles-%(version)-rc %(installroot)%(datadir)/nvidia/nvidia-application-profiles-%(version)-rc
 
     chmod 4755 %(installroot)%(bindir)/nvidia-modprobe
+packages    :
+    - "%(name)":
+        paths:
+            # Prevent emission of -devel subpackage
+            - /usr/lib/lib*.so*
+        rundeps     :
+            - egl-gbm
+            - egl-wayland
+            - eglexternalplatform
+            - nvidia-open-gpu-kernel-modules
+    - "%(name)-32bit":
+        paths:
+            - /usr/lib32/lib*.so*
+        rundeps:
+            - egl-gbm-32bit
+            - egl-wayland-32bit
