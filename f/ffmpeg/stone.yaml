@@ -5,7 +5,7 @@
 #
 name        : ffmpeg
 version     : '7.1.1'
-release     : 8
+release     : 9
 homepage    : https://ffmpeg.org/releases
 upstreams   :
     - https://ffmpeg.org/releases/ffmpeg-7.1.1.tar.xz : 733984395e0dbbe5c046abda2dc49a5544e7e0e1e2366bba849222ae9e3a03b1
@@ -26,6 +26,7 @@ builddeps   :
     - pkgconfig(SvtAv1Enc)
     - pkgconfig(aom)
     - pkgconfig(dav1d)
+    - pkgconfig(ffnvcodec)
     - pkgconfig(fontconfig)
     - pkgconfig(freetype2)
     - pkgconfig(libass)
@@ -53,6 +54,7 @@ builddeps   :
     - pkgconfig(sndio)
     - pkgconfig(vdpau)
     - pkgconfig(vorbis)
+    - pkgconfig(vpl)
     - pkgconfig(vpx)
     - pkgconfig(vulkan)
     - pkgconfig(x11)
@@ -64,8 +66,6 @@ builddeps   :
 # TODO
 # - Figure out build issue with glslang
 # hwaccels:
-# - ffnvcodec
-# - libvpl
 # - nvdec/nvenc (llvm-cuda?)
 # Codecs:
 # - libbluray
@@ -126,12 +126,15 @@ setup       : |
                 --enable-libssh \
                 --enable-libsvtav1 \
                 --enable-libvorbis \
+                --enable-libvpl \
                 --enable-libvpx \
                 --enable-libwebp \
                 --enable-libx264 \
                 --enable-libx265 \
                 --enable-libxcb \
                 --enable-libxml2 \
+                --enable-nvdec \
+                --enable-nvenc \
                 --enable-opengl \
                 --enable-openssl \
                 --enable-vaapi \
