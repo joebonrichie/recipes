@@ -5,7 +5,7 @@
 #
 name        : gstreamer
 version     : 1.26.3
-release     : 16
+release     : 17
 homepage    : https://gstreamer.freedesktop.org/
 upstreams   :
     - https://gitlab.freedesktop.org/gstreamer/gstreamer/-/archive/1.26.3/gstreamer-1.26.3.tar.gz : aeee898f3b123ceec1883d06b63adbc85df1b067414590f5938fcf8e3be891f2
@@ -86,6 +86,7 @@ builddeps   :
     - pkgconfig(sndfile)
     - pkgconfig(soundtouch)
     - pkgconfig(vapigen)
+    - pkgconfig(vpl)
     - pkgconfig(vpx)
     - pkgconfig(vorbis)
     - pkgconfig(vulkan)
@@ -118,7 +119,6 @@ builddeps   :
 # bad:
 # - libnice
 # - libltc
-# - libvpl
 # - libchromaprint
 # - libdc1394-2
 # - libfaad
@@ -466,6 +466,7 @@ packages    :
             - /usr/lib/gstreamer-1.0/libgstlv2.so
             - /usr/lib/gstreamer-1.0/libgstmidi.so
             - /usr/lib/gstreamer-1.0/libgstmpeg*mux.so
+            - /usr/lib/gstreamer-1.0/libgstmsdk.so
             - /usr/lib/gstreamer-1.0/libgstmse.so
             - /usr/lib/gstreamer-1.0/libgstmxf.so
             - /usr/lib/gstreamer-1.0/libgstnetsim.so
