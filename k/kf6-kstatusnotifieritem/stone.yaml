@@ -1,0 +1,29 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : kf6-kstatusnotifieritem
+version     : 6.15.0
+release     : 8
+upstreams   :
+    - https://download.kde.org/stable/frameworks/6.15/kstatusnotifieritem-6.15.0.tar.xz : 24132cc967570478b54e44eef1063c193217801260dc51860e0881fa0d90bd0d
+homepage    : https://community.kde.org/Frameworks
+license     : LGPL-2.0-or-later
+summary     : Implementation of Status Notifier Items
+description : |
+    Implementation of Status Notifier Items
+builddeps   :
+    # Temporary, boulder doesn't handle build ordering resolution correctly when builddeps are added by macros, so add ECM manually
+    - cmake(ECM)
+    - cmake(KF6WindowSystem)
+setup       : |
+    %cmake_kf6 -DBUILD_PYTHON_BINDINGS=OFF
+build       : |
+    %cmake_build
+install     : |
+    %cmake_install
+packages    :
+    - "%(name)-devel":
+        paths:
+            - /usr/share/dbus-1/interfaces/
