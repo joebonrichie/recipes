@@ -1,0 +1,82 @@
+/** Human readable report. This is not consumed by boulder */
+{
+	"manifest-version": "0.2",
+	"packages": {
+		"libigfxcmrt": {
+			"build-depends": [
+				"pkgconfig(igdgmm)",
+				"pkgconfig(libva)",
+				"pkgconfig(x11)"
+			],
+			"depends": [
+				"libva-intel-media-driver",
+				"soname(libc++.so.1(x86_64))",
+				"soname(libc.so.6(x86_64))",
+				"soname(libm.so.6(x86_64))",
+				"soname(libunwind.so.1(x86_64))",
+				"soname(libva.so.2(x86_64))"
+			],
+			"files": [
+				"/usr/lib/libigfxcmrt.so.7",
+				"/usr/lib/libigfxcmrt.so.7.2.0"
+			],
+			"name": "libigfxcmrt",
+			"provides": [
+				"soname(libigfxcmrt.so.7(x86_64))"
+			]
+		},
+		"libigfxcmrt-devel": {
+			"build-depends": [
+				"pkgconfig(igdgmm)",
+				"pkgconfig(libva)",
+				"pkgconfig(x11)"
+			],
+			"depends": [
+				"libigfxcmrt"
+			],
+			"files": [
+				"/usr/include/igfxcmrt/cm_hw_vebox_cmd_g10.h",
+				"/usr/include/igfxcmrt/cm_rt.h",
+				"/usr/include/igfxcmrt/cm_rt_api_os.h",
+				"/usr/include/igfxcmrt/cm_rt_def_os.h",
+				"/usr/include/igfxcmrt/cm_rt_extension.h",
+				"/usr/include/igfxcmrt/cm_rt_g10.h",
+				"/usr/include/igfxcmrt/cm_rt_g11.h",
+				"/usr/include/igfxcmrt/cm_rt_g12_dg1.h",
+				"/usr/include/igfxcmrt/cm_rt_g12_tgl.h",
+				"/usr/include/igfxcmrt/cm_rt_g8.h",
+				"/usr/include/igfxcmrt/cm_rt_g9.h",
+				"/usr/lib/libigfxcmrt.so",
+				"/usr/lib/pkgconfig/igfxcmrt.pc"
+			],
+			"name": "libigfxcmrt-devel",
+			"provides": [
+				"pkgconfig(igfxcmrt)"
+			]
+		},
+		"libva-intel-media-driver": {
+			"build-depends": [
+				"pkgconfig(igdgmm)",
+				"pkgconfig(libva)",
+				"pkgconfig(x11)"
+			],
+			"depends": [
+				"soname(libc++.so.1(x86_64))",
+				"soname(libc.so.6(x86_64))",
+				"soname(libigdgmm.so.12(x86_64))",
+				"soname(libm.so.6(x86_64))",
+				"soname(libunwind.so.1(x86_64))"
+			],
+			"files": [
+				"/usr/lib/dri/iHD_drv_video.so"
+			],
+			"name": "libva-intel-media-driver",
+			"provides": [
+				"soname(dri/iHD_drv_video.so(x86_64))"
+			]
+		}
+	},
+	"source-name": "intel-media-driver",
+	"source-release": "1",
+	"source-version": "25.1.4"
+}
