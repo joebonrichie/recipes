@@ -1,0 +1,32 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : libkscreen
+version     : 6.4.2
+release     : 1
+upstreams   :
+    - https://download.kde.org/stable/plasma/6.4.2/libkscreen-6.4.2.tar.xz : 73dfbaf6c437a5c1d01f768b4f140070d047f8fec306442acd93ab54837ec1aa
+homepage    : https://kde.org/plasma-desktop/
+license     :
+    - GPL-2.0-or-later
+    - LGPL-2.1-only
+summary     : KDE's screen management software
+description : |
+    KDE's screen management software
+builddeps   :
+    # Temporary, boulder doesn't handle build ordering resolution correctly when builddeps are added by macros, so add ECM manually
+    - cmake(ECM)
+    - cmake(PlasmaWaylandProtocols)
+    - cmake(Qt6CorePrivate)
+    - cmake(Qt6WaylandClient)
+tuning      :
+    - lto: full
+    - optimize: speed
+setup       : |
+    %cmake_kf6
+build       : |
+    %cmake_build
+install     : |
+    %cmake_install
