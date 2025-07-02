@@ -1,0 +1,28 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : gmmlib
+version     : '22.7.3'
+release     : 1
+homepage    : https://github.com/intel/gmmlib/
+upstreams   :
+    - https://github.com/intel/gmmlib/archive/refs/tags/intel-gmmlib-22.7.3.tar.gz : c37d3378482ef80e1eb3eb2a8e615d4343ef0c4562e694b46f4276a797fad667
+summary     : Intel(R) Graphics Memory Management Library
+description : |
+    Intel(R) Graphics Memory Management Library
+license     : MIT
+checkdeps   :
+    - libgcc
+setup       : |
+    # This runds the test suite after the install for some odd reason
+    %cmake \
+        -DRUN_TEST_SUITE=ON
+build       : |
+    %cmake_build
+install     : |
+    %cmake_install
+tuning      :
+    - lto: full
+    - optimize: speed
