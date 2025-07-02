@@ -5,7 +5,7 @@
 #
 name        : libglvnd
 version     : 1.7.0
-release     : 8
+release     : 9
 homepage    : https://gitlab.freedesktop.org/glvnd/libglvnd
 upstreams   :
     - https://gitlab.freedesktop.org/-/project/4399/uploads/c24806c283070dc70700234ca8ffacf8/libglvnd-1.7.0.tar.gz : 13ae5bb99a5a2869fbe00aadb49b21fd9c13dfbf59844b0f88d521098094d44a
@@ -18,12 +18,46 @@ builddeps   :
     - pkgconfig32(xext)
 tuning      :
     - bindnow: false
+    - lto: full
     - symbolic: false
     - optimize: speed
 emul32      : yes
 setup       : |
-    %meson
+    %meson \
+        -Dgles1=false
 build       : |
     %meson_build
 install     : |
     %meson_install
+packages    :
+    - "%(name)-egl":
+        summary: EGL support for libglvnd
+        description: EGL support for libglvnd
+        paths:
+            - /usr/lib/libEGL.so.*
+
+    - "%(name)-gles":
+        summary: GLES support for libglvnd
+        description: GLES support for libglvnd
+        paths:
+            - /usr/lib/libGLESv2.so.*
+
+    - "%(name)-glx":
+        summary: GLX support for libglvnd
+        description: GLX support for libglvnd
+        paths:
+            - /usr/lib/libGL.so.*
+            - /usr/lib/libGLX.so.*
+
+    - "%(name)-opengl":
+        summary: OpenGL support for libglvnd
+        description: OpenGL support for libglvnd
+        paths:
+            - /usr/lib/libOpenGL.so.*
+
+    - "%(name)-devel":
+        rundeps:
+            - "%(name)-egl"
+            - "%(name)-gles"
+            - "%(name)-glx"
+            - "%(name)-opengl"
