@@ -1,0 +1,29 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : kf6-kitemmodels
+version     : 6.15.0
+release     : 1
+upstreams   :
+    - https://download.kde.org/stable/frameworks/6.15/kitemmodels-6.15.0.tar.xz : 8e8c9d31a00c41ed836189755a86b82fd968474d6388f033259dd65ab18e7c94
+homepage    : https://community.kde.org/Frameworks
+license     :
+    - LGPL-2.0-or-later
+    - LGPL-2.1-only
+    - LGPL-2.1-or-later
+summary     : Set of item models extending the Qt model-view framework.
+description : |
+    Set of item models extending the Qt model-view framework.
+builddeps   :
+    # Temporary, boulder doesn't handle build ordering resolution correctly when builddeps are added by macros, so add ECM manually
+    - cmake(ECM)
+    - cmake(Qt6CorePrivate)
+    - cmake(Qt6Qml)
+setup       : |
+    %cmake_kf6
+build       : |
+    %cmake_build
+install     : |
+    %cmake_install
