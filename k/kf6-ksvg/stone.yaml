@@ -1,0 +1,36 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : kf6-ksvg
+version     : 6.15.0
+release     : 1
+upstreams   :
+    - https://download.kde.org/stable/frameworks/6.15/ksvg-6.15.0.tar.xz : 955c5ceb28879d10106cb807f4f259810c705bbbbddaf170af0d563fbd580197
+homepage    : https://community.kde.org/Frameworks
+license     :
+    - GPL-2.0-or-later
+    - LGPL-2.0-or-later
+
+summary     : Components for handling SVGs
+description : |
+    Components for handling SVGs
+builddeps   :
+    # Temporary, boulder doesn't handle build ordering resolution correctly when builddeps are added by macros, so add ECM manually
+    - cmake(ECM)
+    - cmake(Qt6CorePrivate)
+    - cmake(Qt6Quick)
+    - cmake(Qt6Svg)
+    - cmake(KF6Archive)
+    - cmake(KF6ColorScheme)
+    - cmake(KF6Config)
+    - cmake(KF6CoreAddons)
+    - cmake(KF6GuiAddons)
+    - cmake(KF6KirigamiPlatform)
+setup       : |
+    %cmake_kf6
+build       : |
+    %cmake_build
+install     : |
+    %cmake_install

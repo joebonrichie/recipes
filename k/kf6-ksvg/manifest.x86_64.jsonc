@@ -1,0 +1,88 @@
+/** Human readable report. This is not consumed by boulder */
+{
+	"manifest-version": "0.2",
+	"packages": {
+		"kf6-ksvg": {
+			"build-depends": [
+				"cmake(ECM)",
+				"cmake(KF6Archive)",
+				"cmake(KF6ColorScheme)",
+				"cmake(KF6Config)",
+				"cmake(KF6CoreAddons)",
+				"cmake(KF6GuiAddons)",
+				"cmake(KF6KirigamiPlatform)",
+				"cmake(Qt6CorePrivate)",
+				"cmake(Qt6Quick)",
+				"cmake(Qt6Svg)"
+			],
+			"depends": [
+				"soname(libKF6Archive.so.6(x86_64))",
+				"soname(libKF6ColorScheme.so.6(x86_64))",
+				"soname(libKF6ConfigCore.so.6(x86_64))",
+				"soname(libKF6CoreAddons.so.6(x86_64))",
+				"soname(libKF6GuiAddons.so.6(x86_64))",
+				"soname(libKirigamiPlatform.so.6(x86_64))",
+				"soname(libQt6Core.so.6(x86_64))",
+				"soname(libQt6Gui.so.6(x86_64))",
+				"soname(libQt6Qml.so.6(x86_64))",
+				"soname(libQt6Quick.so.6(x86_64))",
+				"soname(libQt6Svg.so.6(x86_64))",
+				"soname(libc++.so.1(x86_64))",
+				"soname(libc.so.6(x86_64))"
+			],
+			"files": [
+				"/usr/lib/libKF6Svg.so.6",
+				"/usr/lib/libKF6Svg.so.6.15.0",
+				"/usr/lib/qt6/qml/org/kde/ksvg/corebindingsplugin.qmltypes",
+				"/usr/lib/qt6/qml/org/kde/ksvg/kde-qmlmodule.version",
+				"/usr/lib/qt6/qml/org/kde/ksvg/libcorebindingsplugin.so",
+				"/usr/lib/qt6/qml/org/kde/ksvg/qmldir",
+				"/usr/share/qlogging-categories6/ksvg.categories"
+			],
+			"name": "kf6-ksvg",
+			"provides": [
+				"soname(libKF6Svg.so.6(x86_64))",
+				"soname(qt6/qml/org/kde/ksvg/libcorebindingsplugin.so(x86_64))"
+			]
+		},
+		"kf6-ksvg-devel": {
+			"build-depends": [
+				"cmake(ECM)",
+				"cmake(KF6Archive)",
+				"cmake(KF6ColorScheme)",
+				"cmake(KF6Config)",
+				"cmake(KF6CoreAddons)",
+				"cmake(KF6GuiAddons)",
+				"cmake(KF6KirigamiPlatform)",
+				"cmake(Qt6CorePrivate)",
+				"cmake(Qt6Quick)",
+				"cmake(Qt6Svg)"
+			],
+			"depends": [
+				"kf6-ksvg"
+			],
+			"files": [
+				"/usr/include/KF6/KSvg/KSvg/FrameSvg",
+				"/usr/include/KF6/KSvg/KSvg/ImageSet",
+				"/usr/include/KF6/KSvg/KSvg/Svg",
+				"/usr/include/KF6/KSvg/ksvg/framesvg.h",
+				"/usr/include/KF6/KSvg/ksvg/imageset.h",
+				"/usr/include/KF6/KSvg/ksvg/ksvg_export.h",
+				"/usr/include/KF6/KSvg/ksvg/svg.h",
+				"/usr/include/KF6/KSvg/ksvg_version.h",
+				"/usr/lib/cmake/KF6Svg/KF6SvgConfig.cmake",
+				"/usr/lib/cmake/KF6Svg/KF6SvgConfigVersion.cmake",
+				"/usr/lib/cmake/KF6Svg/KF6SvgTargets-release.cmake",
+				"/usr/lib/cmake/KF6Svg/KF6SvgTargets.cmake",
+				"/usr/lib/libKF6Svg.so"
+			],
+			"name": "kf6-ksvg-devel",
+			"provides": [
+				"cmake(KF6Svg)"
+			]
+		}
+	},
+	"source-name": "kf6-ksvg",
+	"source-release": "1",
+	"source-version": "6.15.0"
+}
