@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name       : nv-codec-headers
-version    : '12.2.72.0'
-release    : 2
+version    : '13.0.19.0'
+release    : 3
 homepage   : https://github.com/FFmpeg/nv-codec-headers
 upstreams  :
-    - https://github.com/FFmpeg/nv-codec-headers/releases/download/n12.2.72.0/nv-codec-headers-12.2.72.0.tar.gz : c295a2ba8a06434d4bdc5c2208f8a825285210d71d91d572329b2c51fd0d4d03
+    - https://github.com/FFmpeg/nv-codec-headers/releases/download/n13.0.19.0/nv-codec-headers-13.0.19.0.tar.gz : 13da39edb3a40ed9713ae390ca89faa2f1202c9dda869ef306a8d4383e242bee
 summary    : Headers for Nvidia Video Codec API.
 description: |
     FFmpeg version of headers required to interface with Nvidias codec APIs.
