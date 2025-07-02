@@ -1,0 +1,102 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : kwin
+version     : 6.4.2
+release     : 1
+upstreams   :
+    - https://download.kde.org/stable/plasma/6.4.2/kwin-6.4.2.tar.xz : 1cb00c603bb010d450e08be27439418be659940e885a90ac4e2f5bc61ae3b71b
+homepage    : https://kde.org/plasma-desktop/
+license     : GPL-2.0-or-later
+summary     : Config module for SDDM
+description : |
+    Hosts the KCM module for SDDM. This module allows for configuring SDDM in Plasma System Settings.
+builddeps   :
+    - binary(Xwayland)
+    - cmake(Aurorae)
+    - cmake(Breeze)
+    # Temporary, boulder doesn't handle build ordering resolution correctly when builddeps are added by macros, so add ECM manually
+    - cmake(ECM)
+    - cmake(KDecoration3)
+    - cmake(KF6Auth)
+    - cmake(KF6ColorScheme)
+    - cmake(KF6Config)
+    - cmake(KF6CoreAddons)
+    - cmake(KF6Crash)
+    - cmake(KF6DBusAddons)
+    - cmake(KF6Declarative)
+    - cmake(KF6DocTools)
+    - cmake(KF6GlobalAccel)
+    - cmake(KF6GuiAddons)
+    - cmake(KF6I18n)
+    - cmake(KF6IdleTime)
+    - cmake(KF6KCMUtils)
+    - cmake(KF6Kirigami)
+    - cmake(KF6NewStuff)
+    - cmake(KF6Notifications)
+    - cmake(KF6Package)
+    - cmake(KF6Service)
+    - cmake(KF6Svg)
+    - cmake(KF6WidgetsAddons)
+    - cmake(KF6WindowSystem)
+    - cmake(KF6XmlGui)
+    - cmake(KGlobalAccelD)
+    - cmake(KScreenLocker)
+    - cmake(KWayland)
+    - cmake(Plasma)
+    - cmake(PlasmaActivities)
+    - cmake(PlasmaWaylandProtocols)
+    - cmake(QAccessibilityClient6)
+    - cmake(Qt6Core5Compat)
+    - cmake(Qt6CorePrivate)
+    - cmake(Qt6Quick)
+    - cmake(Qt6Sensors)
+    - cmake(Qt6Svg)
+    - cmake(Qt6WaylandClient)
+    - pkgconfig(epoxy)
+    - pkgconfig(gbm)
+    - pkgconfig(hwdata)
+    - pkgconfig(lcms2)
+    - pkgconfig(libcanberra)
+    - pkgconfig(libdisplay-info)
+    - pkgconfig(libdrm)
+    - pkgconfig(libeis-1.0)
+    - pkgconfig(libinput)
+    - pkgconfig(libpipewire-0.3)
+    - pkgconfig(libxcvt)
+    - pkgconfig(wayland-protocols)
+tuning      :
+    - lto: full
+    - optimize: speed
+setup       : |
+    %cmake_kf6
+build       : |
+    %cmake_build
+install     : |
+    %cmake_install
+    %qml_cache_qt6
+
+    rm -rfv %(installroot)%(docdir)
+
+    # TODO: When we support capabilities make sure to add CAP_SYS_NICE to the kwin binary
+packages    :
+    - "%(name)":
+        rundeps:
+            - aurorae # Support for downloaded themeable window decorations
+            - kf6-kdeclarative # QML dep
+            - kf6-kirigami # QML dep
+            - libplasma # QML dep
+            - binary(Xwayland)
+
+    - "%(name)-libs":
+        summary: ~
+        paths:
+            - /usr/lib/libkwin.so.*
+            - /usr/lib/libkcmkwincommon.so.*
+            - /usr/share/qlogging-categories6
+
+    - "%(name)-devel":
+        paths:
+            - /usr/share/dbus-1/interfaces
