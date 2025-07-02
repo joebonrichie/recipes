@@ -69,3 +69,6 @@
 - linux-firmware-amd
 - linux-firmware-intel
 - linux-firmware-nvidia
+
+### Split
+- mesa-devel
