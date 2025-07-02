@@ -1,0 +1,25 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : kf6-kunitconversion
+version     : 6.15.0
+release     : 1
+upstreams   :
+    - https://download.kde.org/stable/frameworks/6.15/kunitconversion-6.15.0.tar.xz : 413b0254d51e357171d41f1cb16262be45775fb94a6ae5c26934fb5ff00d2af8
+homepage    : https://community.kde.org/Frameworks
+license     : LGPL-2.0-or-later
+summary     : Converting physical units
+description : |
+    Converting physical units
+builddeps   :
+    # Temporary, boulder doesn't handle build ordering resolution correctly when builddeps are added by macros, so add ECM manually
+    - cmake(ECM)
+    - cmake(KF6I18n)
+setup       : |
+    %cmake_kf6 -DBUILD_PYTHON_BINDINGS=OFF
+build       : |
+    %cmake_build
+install     : |
+    %cmake_install
