@@ -1,0 +1,51 @@
+/** Human readable report. This is not consumed by boulder */
+{
+	"manifest-version": "0.2",
+	"packages": {
+		"plasma-keyboard": {
+			"build-depends": [
+				"cmake(ECM)",
+				"cmake(KF6CoreAddons)",
+				"cmake(KF6I18n)",
+				"cmake(Qt6CorePrivate)",
+				"cmake(Qt6Qml)",
+				"cmake(Qt6VirtualKeyboard)",
+				"cmake(Qt6WaylandClient)",
+				"pkgconfig(wayland-protocols)"
+			],
+			"depends": [
+				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
+				"soname(libKF6CoreAddons.so.6(x86_64))",
+				"soname(libKF6I18n.so.6(x86_64))",
+				"soname(libQt6Core.so.6(x86_64))",
+				"soname(libQt6Gui.so.6(x86_64))",
+				"soname(libQt6Qml.so.6(x86_64))",
+				"soname(libQt6Quick.so.6(x86_64))",
+				"soname(libQt6VirtualKeyboard.so.6(x86_64))",
+				"soname(libQt6WaylandClient.so.6(x86_64))",
+				"soname(libc++.so.1(x86_64))",
+				"soname(libc.so.6(x86_64))",
+				"soname(libwayland-client.so.0(x86_64))",
+				"soname(libxkbcommon.so.0(x86_64))"
+			],
+			"files": [
+				"/usr/bin/plasma-keyboard",
+				"/usr/lib/qt6/qml/QtQuick/VirtualKeyboard/Styles/Breeze/breezestyle.qmltypes",
+				"/usr/lib/qt6/qml/QtQuick/VirtualKeyboard/Styles/Breeze/kde-qmlmodule.version",
+				"/usr/lib/qt6/qml/QtQuick/VirtualKeyboard/Styles/Breeze/libbreezestyle.so",
+				"/usr/lib/qt6/qml/QtQuick/VirtualKeyboard/Styles/Breeze/qmldir",
+				"/usr/lib/qt6/qml/QtQuick/VirtualKeyboard/Styles/Breeze/style.qml",
+				"/usr/lib/qt6/qml/QtQuick/VirtualKeyboard/Styles/Breeze/style.qmlc",
+				"/usr/share/applications/org.kde.plasma.keyboard.desktop"
+			],
+			"name": "plasma-keyboard",
+			"provides": [
+				"binary(plasma-keyboard)",
+				"soname(qt6/qml/QtQuick/VirtualKeyboard/Styles/Breeze/libbreezestyle.so(x86_64))"
+			]
+		}
+	},
+	"source-name": "plasma-keyboard",
+	"source-release": "1",
+	"source-version": "1.0"
+}

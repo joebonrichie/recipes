@@ -1,0 +1,39 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : plasma-keyboard
+version     : "1.0"
+release     : 1
+upstreams   :
+    # TODO: Fill out the monitoring.yaml with the correct values once this is actually released
+    - git|https://invent.kde.org/plasma/plasma-keyboard : 93cfff2b712a74c6ee678fd2e033d2ca9d4a6a0d
+homepage    : https://kde.org/plasma-desktop/
+license     : GPL-2.0-or-later
+summary     : Virtual keyboard for Plasma
+description : |
+    Virtual keyboard for Plasma
+builddeps   :
+    # Temporary, boulder doesn't handle build ordering resolution correctly when builddeps are added by macros, so add ECM manually
+    - cmake(ECM)
+    - cmake(KF6CoreAddons)
+    - cmake(KF6I18n)
+    - cmake(Qt6CorePrivate)
+    - cmake(Qt6Qml)
+    - cmake(Qt6VirtualKeyboard)
+    - cmake(Qt6WaylandClient)
+    - pkgconfig(wayland-protocols)
+tuning      :
+    - lto: full
+    - optimize: speed
+setup       : |
+    %patch %(pkgdir)/14.patch
+    %patch %(pkgdir)/15.patch
+
+    %cmake_kf6
+build       : |
+    %cmake_build
+install     : |
+    %cmake_install
+    %qml_cache_qt6
