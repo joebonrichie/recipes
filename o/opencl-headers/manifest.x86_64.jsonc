@@ -1,0 +1,36 @@
+/** Human readable report. This is not consumed by boulder */
+{
+	"manifest-version": "0.2",
+	"packages": {
+		"opencl-headers": {
+			"files": [
+				"/usr/include/CL/cl.h",
+				"/usr/include/CL/cl_egl.h",
+				"/usr/include/CL/cl_ext.h",
+				"/usr/include/CL/cl_ext_intel.h",
+				"/usr/include/CL/cl_function_types.h",
+				"/usr/include/CL/cl_gl.h",
+				"/usr/include/CL/cl_gl_ext.h",
+				"/usr/include/CL/cl_half.h",
+				"/usr/include/CL/cl_icd.h",
+				"/usr/include/CL/cl_layer.h",
+				"/usr/include/CL/cl_platform.h",
+				"/usr/include/CL/cl_va_api_media_sharing_intel.h",
+				"/usr/include/CL/cl_version.h",
+				"/usr/include/CL/opencl.h",
+				"/usr/share/cmake/OpenCLHeaders/OpenCLHeadersConfig.cmake",
+				"/usr/share/cmake/OpenCLHeaders/OpenCLHeadersConfigVersion.cmake",
+				"/usr/share/cmake/OpenCLHeaders/OpenCLHeadersTargets.cmake",
+				"/usr/share/pkgconfig/OpenCL-Headers.pc"
+			],
+			"name": "opencl-headers",
+			"provides": [
+				"cmake(OpenCLHeaders)",
+				"pkgconfig(OpenCL-Headers)"
+			]
+		}
+	},
+	"source-name": "opencl-headers",
+	"source-release": "1",
+	"source-version": "2025.1"
+}
