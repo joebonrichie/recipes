@@ -1,0 +1,31 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : ocl-icd
+version     : '2.3.3'
+release     : 1
+homepage    : https://github.com/KhronosGroup/OpenCL-Headers/
+upstreams   :
+    - https://github.com/OCL-dev/ocl-icd/archive/refs/tags/v2.3.3.tar.gz : 8cd8e8e129db3081a64090fc1252bec39dc88cdb7b3f929315e014b75069bd9d # Tag: vulkan-sdk-1.4.309.0
+summary     : Vendor Neutral OpenCL Implementation
+description : |
+    Vendor Neutral OpenCL Implementation
+license     : BSD-2-Clause
+builddeps   :
+    - binary(ruby)
+    - pkgconfig(OpenCL-Headers)
+setup       : |
+    %reconfigure \
+        --disable-static \
+        --enable-custom-vendordir=/usr/share/OpenCL/vendors
+build       : |
+    %make
+install     : |
+    %make_install
+packages    :
+    - "%(name)-devel":
+        paths:
+            - /usr/bin/cllayerinfo
+            - /usr/share/doc/ocl-icd/examples/

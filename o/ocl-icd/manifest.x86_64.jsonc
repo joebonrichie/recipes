@@ -1,0 +1,54 @@
+/** Human readable report. This is not consumed by boulder */
+{
+	"manifest-version": "0.2",
+	"packages": {
+		"ocl-icd": {
+			"build-depends": [
+				"binary(ruby)",
+				"pkgconfig(OpenCL-Headers)"
+			],
+			"depends": [
+				"soname(ld-linux-x86-64.so.2(x86_64))",
+				"soname(libc.so.6(x86_64))"
+			],
+			"files": [
+				"/usr/lib/libOpenCL.so.1",
+				"/usr/lib/libOpenCL.so.1.0.0"
+			],
+			"name": "ocl-icd",
+			"provides": [
+				"soname(libOpenCL.so.1(x86_64))"
+			]
+		},
+		"ocl-icd-devel": {
+			"build-depends": [
+				"binary(ruby)",
+				"pkgconfig(OpenCL-Headers)"
+			],
+			"depends": [
+				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
+				"ocl-icd",
+				"pkgconfig(OpenCL-Headers)",
+				"soname(ld-linux-x86-64.so.2(x86_64))",
+				"soname(libc.so.6(x86_64))"
+			],
+			"files": [
+				"/usr/bin/cllayerinfo",
+				"/usr/include/ocl_icd.h",
+				"/usr/lib/libOpenCL.so",
+				"/usr/lib/pkgconfig/OpenCL.pc",
+				"/usr/lib/pkgconfig/ocl-icd.pc",
+				"/usr/share/doc/ocl-icd/examples/ocl_icd_bindings.c"
+			],
+			"name": "ocl-icd-devel",
+			"provides": [
+				"binary(cllayerinfo)",
+				"pkgconfig(OpenCL)",
+				"pkgconfig(ocl-icd)"
+			]
+		}
+	},
+	"source-name": "ocl-icd",
+	"source-release": "1",
+	"source-version": "2.3.3"
+}
