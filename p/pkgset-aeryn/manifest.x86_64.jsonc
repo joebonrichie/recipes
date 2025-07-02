@@ -23,8 +23,13 @@
 		},
 		"pkgset-aeryn-base-desktop": {
 			"depends": [
+				"bluez",
 				"dbus-broker",
-				"mesa",
+				"libva-intel-media-driver",
+				"mesa-dri-drivers",
+				"mesa-libegl",
+				"mesa-libgl",
+				"mesa-vulkan-drivers",
 				"pkgset-aeryn-base"
 			],
 			"files": [
@@ -67,6 +72,6 @@
 		}
 	},
 	"source-name": "pkgset-aeryn",
-	"source-release": "2",
+	"source-release": "4",
 	"source-version": "2025.06"
 }
