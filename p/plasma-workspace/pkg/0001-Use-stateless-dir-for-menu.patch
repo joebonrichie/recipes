@@ -1,0 +1,33 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: Reilly Brogan <reilly@reillybrogan.com>
+Date: Sat, 2 Mar 2024 11:35:42 -0600
+Subject: [PATCH] Use stateless dir for menu
+
+---
+ CMakeLists.txt              | 2 +-
+ menu/desktop/CMakeLists.txt | 2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index c5b4ad6477..81ca19850f 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -394,7 +394,7 @@ add_subdirectory(login-sessions)
+ add_subdirectory(lookandfeel)
+ 
+ if (INSTALL_SDDM_WAYLAND_SESSION)
+-    install(FILES sddm-wayland-session/plasma-wayland.conf DESTINATION /etc/sddm.conf.d)
++    install(FILES sddm-wayland-session/plasma-wayland.conf DESTINATION /usr/share/sddm/sddm.conf.d)
+ else()
+     message(STATUS "INSTALL_SDDM_WAYLAND_SESSION is disabled. As soon as it's installed, SDDM will default to use Wayland and KWin for its greeter session (BETA, do not deploy to final users yet).")
+ endif()
+diff --git a/menu/desktop/CMakeLists.txt b/menu/desktop/CMakeLists.txt
+index 7a40e809d2..78e43c09f4 100644
+--- a/menu/desktop/CMakeLists.txt
++++ b/menu/desktop/CMakeLists.txt
+@@ -43,4 +43,4 @@
+    kf5-utilities-xutils.directory
+ DESTINATION  ${KDE_INSTALL_DESKTOPDIR} )
+ 
+-install( FILES plasma-applications.menu  DESTINATION  ${KDE_INSTALL_SYSCONFDIR}/xdg/menus )
++install( FILES plasma-applications.menu  DESTINATION  /usr/share/xdg/menus )
