@@ -1,0 +1,45 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : plasma5support
+version     : 6.4.2
+release     : 1
+upstreams   :
+    - https://download.kde.org/stable/plasma/6.4.2/plasma5support-6.4.2.tar.xz : 24a07ceff083a6a7a2d9b4152812549050623c434ef7319109963085a114aef2
+homepage    : https://kde.org/plasma-desktop/
+license     :
+    - GPL-2.0-or-later
+    - LGPL-2.1-only
+summary     : Support components for porting from KF5/Qt5 to KF6/Qt6
+description : |
+    Support components for porting from KF5/Qt5 to KF6/Qt6
+builddeps   :
+    # Temporary, boulder doesn't handle build ordering resolution correctly when builddeps are added by macros, so add ECM manually
+    - cmake(ECM)
+    - cmake(KF6Config)
+    - cmake(KF6CoreAddons)
+    - cmake(KF6GuiAddons)
+    - cmake(KF6I18n)
+    - cmake(KF6IdleTime)
+    - cmake(KF6KIO)
+    - cmake(KF6NetworkManagerQt)
+    - cmake(KF6Notifications)
+    - cmake(KF6Service)
+    - cmake(KF6Solid)
+    - cmake(KSysGuard)
+    - cmake(PlasmaActivities)
+    - cmake(Qt6CorePrivate)
+    - cmake(Qt6Quick)
+    - pkgconfig(xfixes)
+    # TODO: libgps
+tuning      :
+    - lto: full
+    - optimize: speed
+setup       : |
+    %cmake_kf6
+build       : |
+    %cmake_build
+install     : |
+    %cmake_install
