@@ -1,0 +1,83 @@
+/** Human readable report. This is not consumed by boulder */
+{
+	"manifest-version": "0.2",
+	"packages": {
+		"kf6-kquickcharts": {
+			"build-depends": [
+				"cmake(ECM)",
+				"cmake(Qt6CorePrivate)",
+				"cmake(Qt6Qml)",
+				"cmake(Qt6ShaderTools)"
+			],
+			"depends": [
+				"soname(libQt6Core.so.6(x86_64))",
+				"soname(libQt6Gui.so.6(x86_64))",
+				"soname(libQt6Qml.so.6(x86_64))",
+				"soname(libQt6Quick.so.6(x86_64))",
+				"soname(libc++.so.1(x86_64))",
+				"soname(libc.so.6(x86_64))",
+				"soname(libm.so.6(x86_64))"
+			],
+			"files": [
+				"/usr/lib/libQuickCharts.so.1",
+				"/usr/lib/libQuickCharts.so.6.15.0",
+				"/usr/lib/libQuickChartsControls.so.1",
+				"/usr/lib/libQuickChartsControls.so.6.15.0",
+				"/usr/lib/qt6/qml/org/kde/quickcharts/QuickCharts.qmltypes",
+				"/usr/lib/qt6/qml/org/kde/quickcharts/controls/KirigamiTheme.qml",
+				"/usr/lib/qt6/qml/org/kde/quickcharts/controls/KirigamiTheme.qmlc",
+				"/usr/lib/qt6/qml/org/kde/quickcharts/controls/Legend.qml",
+				"/usr/lib/qt6/qml/org/kde/quickcharts/controls/Legend.qmlc",
+				"/usr/lib/qt6/qml/org/kde/quickcharts/controls/LegendDelegate.qml",
+				"/usr/lib/qt6/qml/org/kde/quickcharts/controls/LegendDelegate.qmlc",
+				"/usr/lib/qt6/qml/org/kde/quickcharts/controls/LineChartControl.qml",
+				"/usr/lib/qt6/qml/org/kde/quickcharts/controls/LineChartControl.qmlc",
+				"/usr/lib/qt6/qml/org/kde/quickcharts/controls/PieChartControl.qml",
+				"/usr/lib/qt6/qml/org/kde/quickcharts/controls/PieChartControl.qmlc",
+				"/usr/lib/qt6/qml/org/kde/quickcharts/controls/QuickChartsControls.qmltypes",
+				"/usr/lib/qt6/qml/org/kde/quickcharts/controls/Theme.qml",
+				"/usr/lib/qt6/qml/org/kde/quickcharts/controls/Theme.qmlc",
+				"/usr/lib/qt6/qml/org/kde/quickcharts/controls/kde-qmlmodule.version",
+				"/usr/lib/qt6/qml/org/kde/quickcharts/controls/libQuickChartsControlsplugin.so",
+				"/usr/lib/qt6/qml/org/kde/quickcharts/controls/qmldir",
+				"/usr/lib/qt6/qml/org/kde/quickcharts/kde-qmlmodule.version",
+				"/usr/lib/qt6/qml/org/kde/quickcharts/libQuickChartsplugin.so",
+				"/usr/lib/qt6/qml/org/kde/quickcharts/qmldir",
+				"/usr/share/qlogging-categories6/kquickcharts.categories"
+			],
+			"name": "kf6-kquickcharts",
+			"provides": [
+				"soname(libQuickCharts.so.1(x86_64))",
+				"soname(libQuickChartsControls.so.1(x86_64))",
+				"soname(qt6/qml/org/kde/quickcharts/controls/libQuickChartsControlsplugin.so(x86_64))",
+				"soname(qt6/qml/org/kde/quickcharts/libQuickChartsplugin.so(x86_64))"
+			]
+		},
+		"kf6-kquickcharts-devel": {
+			"build-depends": [
+				"cmake(ECM)",
+				"cmake(Qt6CorePrivate)",
+				"cmake(Qt6Qml)",
+				"cmake(Qt6ShaderTools)"
+			],
+			"depends": [
+				"kf6-kquickcharts"
+			],
+			"files": [
+				"/usr/lib/cmake/KF6QuickCharts/KF6QuickChartsConfig.cmake",
+				"/usr/lib/cmake/KF6QuickCharts/KF6QuickChartsConfigVersion.cmake",
+				"/usr/lib/cmake/KF6QuickCharts/KF6QuickChartsTargets-release.cmake",
+				"/usr/lib/cmake/KF6QuickCharts/KF6QuickChartsTargets.cmake",
+				"/usr/lib/libQuickCharts.so",
+				"/usr/lib/libQuickChartsControls.so"
+			],
+			"name": "kf6-kquickcharts-devel",
+			"provides": [
+				"cmake(KF6QuickCharts)"
+			]
+		}
+	},
+	"source-name": "kf6-kquickcharts",
+	"source-release": "1",
+	"source-version": "6.15.0"
+}

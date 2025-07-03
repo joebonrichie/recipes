@@ -1,0 +1,30 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : kf6-kquickcharts
+version     : 6.15.0
+release     : 1
+upstreams   :
+    - https://download.kde.org/stable/frameworks/6.15/kquickcharts-6.15.0.tar.xz : f9f2f4bea577fed8a7f1ddea34617efe74517a492e9c0721f02f2cc08fb6786d
+homepage    : https://community.kde.org/Frameworks
+license     :
+    - LGPL-2.1-only
+    - MIT
+summary     : QtQuick plugin providing high-performance charts
+description : |
+    QtQuick plugin providing high-performance charts
+builddeps   :
+    # Temporary, boulder doesn't handle build ordering resolution correctly when builddeps are added by macros, so add ECM manually
+    - cmake(ECM)
+    - cmake(Qt6CorePrivate)
+    - cmake(Qt6Qml)
+    - cmake(Qt6ShaderTools)
+setup       : |
+    %cmake_kf6
+build       : |
+    %cmake_build
+install     : |
+    %cmake_install
+    %qml_cache_qt6
