@@ -618,6 +618,7 @@
 				"lmdb-devel"
 			],
 			"depends": [
+				"cmake(KF6FileMetaData)",
 				"kf6-baloo",
 				"pkgconfig(Qt6Core)"
 			],
@@ -654,6 +655,6 @@
 		}
 	},
 	"source-name": "kf6-baloo",
-	"source-release": "6",
+	"source-release": "7",
 	"source-version": "6.15.0"
 }

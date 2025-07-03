@@ -5,7 +5,7 @@
 #
 name        : kf6-baloo
 version     : 6.15.0
-release     : 6
+release     : 7
 upstreams   :
     - https://download.kde.org/stable/frameworks/6.15/baloo-6.15.0.tar.xz : 241015fd14ea0fcf281080fd160994f92b6e0ba0750cfafd488d31bf0e0a7f4f
 homepage    : https://community.kde.org/Frameworks
@@ -37,3 +37,7 @@ build       : |
     %cmake_build
 install     : |
     %cmake_install
+packages    :
+    - "%(name)-devel":
+        rundeps:
+            - cmake(KF6FileMetaData)
