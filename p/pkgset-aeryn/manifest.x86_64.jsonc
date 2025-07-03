@@ -44,7 +44,6 @@
 				"binary(find)",
 				"binary(gawk)",
 				"binary(grep)",
-				"binary(ip)",
 				"binary(less)",
 				"binary(lspci)",
 				"binary(nano)",
@@ -53,7 +52,8 @@
 				"binary(ssh)",
 				"binary(tar)",
 				"binary(wget)",
-				"binary(which)"
+				"binary(which)",
+				"sysbinary(ip)"
 			],
 			"files": [
 				"/usr/share/doc/pkgset-aeryn-utilities/README"
@@ -63,7 +63,8 @@
 		"pkgset-aeryn-virtual": {
 			"depends": [
 				"hyperv-daemons",
-				"qemu-guest-agent"
+				"qemu-guest-agent",
+				"spice-vdagent"
 			],
 			"files": [
 				"/usr/share/doc/pkgset-aeryn-virtual/README"
