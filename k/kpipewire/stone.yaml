@@ -1,0 +1,44 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : kpipewire
+version     : 6.4.2
+release     : 1
+upstreams   :
+    - https://download.kde.org/stable/plasma/6.4.2/kpipewire-6.4.2.tar.xz : d59f8be954d23ac4b9f3ed28bcc5a22e8aaebeadf51c2834499b7694ca90ce1c
+homepage    : https://kde.org/plasma-desktop/
+license     : LGPL-2.1-or-later
+summary     : Components relating to pipewire use in Plasma
+description : |
+    Components relating to pipewire use in Plasma
+builddeps   :
+    # Temporary, boulder doesn't handle build ordering resolution correctly when builddeps are added by macros, so add ECM manually
+    - cmake(ECM)
+    - cmake(KF6CoreAddons)
+    - cmake(KF6I18n)
+    - cmake(Qt6CorePrivate)
+    - cmake(Qt6Quick)
+    - pkgconfig(epoxy)
+    - pkgconfig(gbm)
+    - pkgconfig(libavcodec)
+    - pkgconfig(libavfilter)
+    - pkgconfig(libavformat)
+    - pkgconfig(libdrm)
+    - pkgconfig(libpipewire-0.3)
+    - pkgconfig(libva)
+tuning      :
+    - lto: full
+    - optimize: speed
+setup       : |
+    %cmake_kf6
+build       : |
+    %cmake_build
+install     : |
+    %cmake_install
+packages    :
+    - "%(name)-devel":
+        rundeps:
+            - pkgconfig(epoxy) # For epoxy/egl.h
+            - pkgconfig(libpipewire-0.3)
