@@ -5,7 +5,7 @@
 #
 name        : lm_sensors
 version     : 3.6.2
-release     : 4
+release     : 5
 homepage    : https://hwmon.wiki.kernel.org/lm_sensors
 upstreams   :
     - https://github.com/hramrach/lm-sensors/archive/refs/tags/V3-6-2.tar.gz : c6a0587e565778a40d88891928bf8943f27d353f382d5b745a997d635978a8f0
@@ -31,6 +31,11 @@ install     : |
 
     mkdir -p %(installroot)/usr/lib/systemd/system/
     %install_file prog/init/{fancontrol,lm_sensors}.service -t %(installroot)/usr/lib/systemd/system/
+
+    %install_dir %(installroot)%(vendordir)
+    mv %(installroot)/etc/sensors3.conf %(installroot)%(vendordir)/sensors3.conf
+    rmdir -v %(installroot)/etc/sensors.d \
+             %(installroot)/etc
 packages    :
     - "%(name)-libs":
         summary: "Library files for %(name)"

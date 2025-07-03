@@ -23,6 +23,7 @@
 				"/usr/sbin/isaset",
 				"/usr/sbin/pwmconfig",
 				"/usr/sbin/sensors-detect",
+				"/usr/share/defaults/sensors3.conf",
 				"/usr/share/man/man1/sensors.1",
 				"/usr/share/man/man5/sensors.conf.5",
 				"/usr/share/man/man5/sensors3.conf.5",
@@ -84,6 +85,6 @@
 		}
 	},
 	"source-name": "lm_sensors",
-	"source-release": "4",
+	"source-release": "5",
 	"source-version": "3.6.2"
 }
