@@ -1,0 +1,58 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : systemsettings
+version     : 6.4.2
+release     : 1
+upstreams   :
+    - https://download.kde.org/stable/plasma/6.4.2/systemsettings-6.4.2.tar.xz : bc56680aed6da67dea026a0bc60574c3f3a5cfab3993131923b698d28102d60b
+homepage    : https://kde.org/plasma-desktop/
+license     :
+    - GFDL-1.2-only
+    - GPL-2.0-or-later
+summary     : System settings utility for Plasma
+description : |
+    System settings utility for Plasma
+builddeps   :
+    # Temporary, boulder doesn't handle build ordering resolution correctly when builddeps are added by macros, so add ECM manually
+    - cmake(ECM)
+    - cmake(KF6Auth)
+    - cmake(KF6Crash)
+    - cmake(KF6ItemViews)
+    - cmake(KF6ItemModels)
+    - cmake(KF6KCMUtils)
+    - cmake(KF6I18n)
+    - cmake(KF6KIO)
+    - cmake(KF6Service)
+    - cmake(KF6IconThemes)
+    - cmake(KF6WidgetsAddons)
+    - cmake(KF6WindowSystem)
+    - cmake(KF6XmlGui)
+    - cmake(KF6DBusAddons)
+    - cmake(KF6Config)
+    - cmake(KF6GuiAddons)
+    - cmake(KF6Kirigami)
+    - cmake(KF6JobWidgets)
+    - cmake(KF6Runner)
+    - cmake(KF6ColorScheme)
+    - cmake(KF6DocTools)
+    - cmake(PlasmaActivities)
+    - cmake(Qt6CorePrivate)
+    - cmake(Qt6Quick)
+rundeps     :
+    - kf6-kirigami
+tuning      :
+    - lto: full
+    - optimize: speed
+setup       : |
+    %cmake_kf6
+build       : |
+    %cmake_build
+install     : |
+    %cmake_install
+packages    :
+    - "%(name)-docs":
+        paths:
+            - /usr/share/doc
