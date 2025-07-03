@@ -1,0 +1,36 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : kf6-qqc2-desktop-style
+version     : 6.15.0
+release     : 1
+upstreams   :
+    - https://download.kde.org/stable/frameworks/6.15/qqc2-desktop-style-6.15.0.tar.xz : abe2aafd04eb6b700776ca5764eb85cf8705a987624cba18941393a67c21510a
+homepage    : https://community.kde.org/Frameworks
+license     :
+    - LGPL-2.0-or-later
+    - LGPL-3.0-only
+summary     : QtQuickControls 2 style that integrates with the desktop
+description : |
+    QtQuickControls 2 style that integrates with the desktop
+builddeps   :
+    # Temporary, boulder doesn't handle build ordering resolution correctly when builddeps are added by macros, so add ECM manually
+    - cmake(ECM)
+    - cmake(KF6ColorScheme)
+    - cmake(KF6Config)
+    - cmake(KF6IconThemes)
+    - cmake(KF6KirigamiPlatform)
+    - cmake(KF6Sonnet)
+    - cmake(Qt6CorePrivate)
+    - pkgconfig(x11)
+rundeps     :
+    - kf6-sonnet
+setup       : |
+    %cmake_kf6
+build       : |
+    %cmake_build
+install     : |
+    %cmake_install
+    %qml_cache_qt6
