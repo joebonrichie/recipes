@@ -1,0 +1,52 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : libqalculate
+version     : 5.6.0
+release     : 1
+upstreams   :
+    - https://github.com/Qalculate/libqalculate/releases/download/v5.6.0/libqalculate-5.6.0.tar.gz : 2d44130954f327e595af74d0d035f450b560e7997eceb9af16503456d5196f39
+homepage    : https://qalculate.github.io/
+license     : GPL-2.0-or-later
+summary     : Qalculate! library
+description : |
+    Qalculate! library
+builddeps   :
+    - binary(doxygen)
+    - binary(intltool-update)
+    - binary(msgfmt)
+    - pkgconfig(gmp)
+    - pkgconfig(icu-uc)
+    - pkgconfig(libcurl)
+    - pkgconfig(libxml-2.0)
+    - pkgconfig(mpfr)
+    - pkgconfig(readline)
+tuning      :
+    - lto: full
+    - optimize: speed
+setup       : |
+    %configure_with_bash \
+        CC_FOR_BUILD=${CC} \
+        CXX_FOR_BUILD=${CXX}
+build       : |
+    %make
+install     : |
+    %make_install
+packages    :
+    - "qalculate":
+        summary: Multi-purpose calculator, text mode interface
+        description: Multi-purpose calculator, text mode interface
+        paths:
+            - /usr/bin/qalc
+            - /usr/share/man/man1/qalc*
+    
+    - "%(name)-devel":
+        rundeps:
+            - pkgconfig(gmp)
+            - pkgconfig(mpfr)
+
+    - "%(name)-docs":
+        paths:
+            - /usr/share/doc
