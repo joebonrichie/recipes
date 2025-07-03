@@ -1,0 +1,64 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : plasma-integration
+version     : 6.4.2
+release     : 1
+upstreams   :
+    - https://download.kde.org/stable/plasma/6.4.2/plasma-integration-6.4.2.tar.xz : f0b56ce04ae1117cc0f22a72a600164fd2148a25b7e79dc0c4c507f88990a5cc
+homepage    : https://kde.org/plasma-desktop/
+license     :
+    - GPL-2.0-or-later
+    - LGPL-2.1-only
+summary     : Integration of Qt application with KDE workspaces
+description : |
+    Integration of Qt application with KDE workspaces
+builddeps   :
+    # Temporary, boulder doesn't handle build ordering resolution correctly when builddeps are added by macros, so add ECM manually
+    - cmake(ECM)
+    - cmake(KF6Config)
+    - cmake(KF6ConfigWidgets)
+    - cmake(KF6GuiAddons)
+    - cmake(KF6I18n)
+    - cmake(KF6IconThemes)
+    - cmake(KF6KIO)
+    - cmake(KF6Notifications)
+    - cmake(KF6StatusNotifierItem)
+    - cmake(KF6WindowSystem)
+    - cmake(KF6XmlGui)
+    - cmake(PlasmaWaylandProtocols)
+    - cmake(Qt6CorePrivate)
+    - cmake(Qt6QuickControls2)
+    - cmake(Qt6WaylandClient)
+    - pkgconfig(wayland-client)
+    - pkgconfig(xcursor)
+    - font-hack
+    - font-noto
+    - font-noto-emoji
+    - xdg-desktop-portal-kde
+rundeps     :
+    - breeze
+    - breeze-cursor-theme
+    - breeze-icons
+    - font-hack
+    - font-noto
+    - font-noto-emoji
+    - kf6-qqc2-desktop-style
+    - xdg-desktop-portal-kde
+tuning      :
+    - lto: full
+    - optimize: speed
+setup       : |
+    %cmake_kf6 \
+        -DBUILD_QT5=OFF \
+        -DBUILD_QT6=ON \
+        -DCMAKE_DISABLE_FIND_PACKAGE_FontNotoSans=true \
+        -DCMAKE_DISABLE_FIND_PACKAGE_FontNotoColorEmoji=true \
+        -DCMAKE_DISABLE_FIND_PACKAGE_FontHack=true \
+        -DCMAKE_DISABLE_FIND_PACKAGE_XDGDesktopPortalKDE=true
+build       : |
+    %cmake_build
+install     : |
+    %cmake_install
