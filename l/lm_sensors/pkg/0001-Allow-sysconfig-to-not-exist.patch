@@ -1,0 +1,37 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: Reilly Brogan <reilly@reillybrogan.com>
+Date: Wed, 2 Jul 2025 19:06:22 -0500
+Subject: [PATCH] Allow sysconfig to not exist
+
+Signed-off-by: Reilly Brogan <reilly@reillybrogan.com>
+---
+ prog/init/lm_sensors.service | 2 +-
+ prog/init/sensord.service    | 2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/prog/init/lm_sensors.service b/prog/init/lm_sensors.service
+index 0d772416..62e8b2e3 100644
+--- a/prog/init/lm_sensors.service
++++ b/prog/init/lm_sensors.service
+@@ -11,7 +11,7 @@ ProtectKernelLogs=true
+ ProtectControlGroups=true
+ RestrictRealtime=true
+ # end of automatic additions
+-EnvironmentFile=/etc/sysconfig/lm_sensors
++EnvironmentFile=-/etc/sysconfig/lm_sensors
+ Type=oneshot
+ RemainAfterExit=yes
+ ExecStart=-/sbin/modprobe -qab $BUS_MODULES $HWMON_MODULES
+diff --git a/prog/init/sensord.service b/prog/init/sensord.service
+index 1f975de7..dac15219 100644
+--- a/prog/init/sensord.service
++++ b/prog/init/sensord.service
+@@ -13,7 +13,7 @@ ProtectKernelLogs=true
+ ProtectControlGroups=true
+ RestrictRealtime=true
+ # end of automatic additions
+-EnvironmentFile=/etc/sysconfig/sensord
++EnvironmentFile=-/etc/sysconfig/sensord
+ Type=forking
+ PIDFile=/run/sensord.pid
+ ExecStart=/usr/sbin/sensord -i $INTERVAL -l $LOG_INTERVAL -f daemon $SENSORD_ARGS

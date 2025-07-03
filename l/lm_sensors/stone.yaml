@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : lm_sensors
-version     : 3.6.0
-release     : 3
+version     : 3.6.2
+release     : 4
 homepage    : https://hwmon.wiki.kernel.org/lm_sensors
 upstreams   :
-    - https://github.com/lm-sensors/lm-sensors/archive/V3-6-0.tar.gz : 0591f9fa0339f0d15e75326d0365871c2d4e2ed8aa1ff759b3a55d3734b7d197
+    - https://github.com/hramrach/lm-sensors/archive/refs/tags/V3-6-2.tar.gz : c6a0587e565778a40d88891928bf8943f27d353f382d5b745a997d635978a8f0
 summary     : User space hardware monitoring
 description : |
     User-space support for the hardware monitoring drivers in the Linux kernel
@@ -19,13 +19,11 @@ builddeps   :
     - binary(bison)
     - binary(flex)
     - binary(which)
-tuning      :
-    - lto: false
 environment : |
-    export MAKE_ARGS="EXLDFLAGS=\\"$LDFLAGS\\" CC=$CC AR=$AR PREFIX=/usr LIBDIR=%(libdir) MANDIR=/usr/share/man BUILD_STATIC_LIB=0"
+    export MAKE_ARGS="CC=$CC AR=$AR PREFIX=/usr LIBDIR=%(libdir) MANDIR=/usr/share/man BUILD_STATIC_LIB=0"
 setup       : |
-    %patch %(pkgdir)/0001-Change-PIDFile-path-from-var-run-to-run.patch
-    %patch %(pkgdir)/lm_sensors-3.6.0-sensors-detect-Add-support-for-AMD-CPU-Family-19h.patch
+    %patch %(pkgdir)/0001-Allow-sysconfig-to-not-exist.patch
+    %patch %(pkgdir)/0001-Stateless.patch
 build       : |
     %make $MAKE_ARGS
 install     : |
@@ -33,3 +31,10 @@ install     : |
 
     mkdir -p %(installroot)/usr/lib/systemd/system/
     %install_file prog/init/{fancontrol,lm_sensors}.service -t %(installroot)/usr/lib/systemd/system/
+packages    :
+    - "%(name)-libs":
+        summary: "Library files for %(name)"
+        description: |
+            Library files for %(name), typically pulled in as a dependency of another package.
+        paths:
+            - /usr/lib/libsensors.so.*
