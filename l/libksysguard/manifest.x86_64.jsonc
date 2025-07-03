@@ -748,6 +748,7 @@
 				"pkgconfig(libpcap)"
 			],
 			"depends": [
+				"cmake(KF6I18n)",
 				"libksysguard"
 			],
 			"files": [
@@ -805,6 +806,6 @@
 		}
 	},
 	"source-name": "libksysguard",
-	"source-release": "1",
+	"source-release": "2",
 	"source-version": "6.4.2"
 }
