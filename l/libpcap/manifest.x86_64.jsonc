@@ -6,27 +6,26 @@
 			"build-depends": [
 				"binary(flex)",
 				"binary(yacc)",
+				"pkgconfig(bluez)",
+				"pkgconfig(dbus-1)",
 				"pkgconfig(libnl-3.0)"
 			],
 			"depends": [
 				"soname(ld-linux-x86-64.so.2(x86_64))",
 				"soname(libc.so.6(x86_64))",
+				"soname(libdbus-1.so.3(x86_64))",
 				"soname(libnl-3.so.200(x86_64))",
 				"soname(libnl-genl-3.so.200(x86_64))"
 			],
 			"files": [
-				"/usr/bin/pcap-config",
 				"/usr/lib/libpcap.so.1",
 				"/usr/lib/libpcap.so.1.10.5",
-				"/usr/share/man/man1/pcap-config.1",
-				"/usr/share/man/man5/pcap-savefile.5",
 				"/usr/share/man/man7/pcap-filter.7",
 				"/usr/share/man/man7/pcap-linktype.7",
 				"/usr/share/man/man7/pcap-tstamp.7"
 			],
 			"name": "libpcap",
 			"provides": [
-				"binary(pcap-config)",
 				"soname(libpcap.so.1(x86_64))"
 			]
 		},
@@ -34,13 +33,17 @@
 			"build-depends": [
 				"binary(flex)",
 				"binary(yacc)",
+				"pkgconfig(bluez)",
+				"pkgconfig(dbus-1)",
 				"pkgconfig(libnl-3.0)"
 			],
 			"depends": [
 				"libpcap",
+				"pkgconfig(dbus-1)",
 				"pkgconfig(libnl-genl-3.0)"
 			],
 			"files": [
+				"/usr/bin/pcap-config",
 				"/usr/include/pcap-bpf.h",
 				"/usr/include/pcap-namedb.h",
 				"/usr/include/pcap.h",
@@ -61,6 +64,7 @@
 				"/usr/include/pcap/vlan.h",
 				"/usr/lib/libpcap.so",
 				"/usr/lib/pkgconfig/libpcap.pc",
+				"/usr/share/man/man1/pcap-config.1",
 				"/usr/share/man/man3/pcap.3pcap",
 				"/usr/share/man/man3/pcap_activate.3pcap",
 				"/usr/share/man/man3/pcap_breakloop.3pcap",
@@ -135,15 +139,17 @@
 				"/usr/share/man/man3/pcap_strerror.3pcap",
 				"/usr/share/man/man3/pcap_tstamp_type_name_to_val.3pcap",
 				"/usr/share/man/man3/pcap_tstamp_type_val_to_description.3pcap",
-				"/usr/share/man/man3/pcap_tstamp_type_val_to_name.3pcap"
+				"/usr/share/man/man3/pcap_tstamp_type_val_to_name.3pcap",
+				"/usr/share/man/man5/pcap-savefile.5"
 			],
 			"name": "libpcap-devel",
 			"provides": [
+				"binary(pcap-config)",
 				"pkgconfig(libpcap)"
 			]
 		}
 	},
 	"source-name": "libpcap",
-	"source-release": "4",
+	"source-release": "5",
 	"source-version": "1.10.5"
 }
