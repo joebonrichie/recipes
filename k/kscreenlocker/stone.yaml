@@ -5,7 +5,7 @@
 #
 name        : kscreenlocker
 version     : 6.4.2
-release     : 1
+release     : 2
 upstreams   :
     - https://download.kde.org/stable/plasma/6.4.2/kscreenlocker-6.4.2.tar.xz : ef2bc8c2f1f0df75c67778c4208a5ee02c0546356ef8352dd1ffdee867283cc4
 homepage    : https://kde.org/plasma-desktop/
@@ -43,7 +43,6 @@ build       : |
     %cmake_build
 install     : |
     %cmake_install
-    %install_file %(pkgdir)/pam.d/* -t %(installroot)%(vendordir)/pam.d/
 packages    :
     - "%(name)-devel":
         paths:

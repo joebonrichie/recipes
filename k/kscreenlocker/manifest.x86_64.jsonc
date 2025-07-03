@@ -66,9 +66,6 @@
 				"/usr/lib/libKScreenLocker.so.6.4.2",
 				"/usr/lib/qt6/plugins/plasma/kcms/systemsettings/kcm_screenlocker.so",
 				"/usr/share/applications/kcm_screenlocker.desktop",
-				"/usr/share/defaults/pam.d/kde",
-				"/usr/share/defaults/pam.d/kde-fingerprint",
-				"/usr/share/defaults/pam.d/kde-smartcard",
 				"/usr/share/knotifications6/ksmserver.notifyrc",
 				"/usr/share/ksmserver/screenlocker/org.kde.passworddialog/metadata.desktop",
 				"/usr/share/locale/ar/LC_MESSAGES/kcm_screenlocker.mo",
@@ -300,6 +297,6 @@
 		}
 	},
 	"source-name": "kscreenlocker",
-	"source-release": "1",
+	"source-release": "2",
 	"source-version": "6.4.2"
 }
