@@ -1,0 +1,76 @@
+/** Human readable report. This is not consumed by boulder */
+{
+	"manifest-version": "0.2",
+	"packages": {
+		"plasma-activities-stats": {
+			"build-depends": [
+				"cmake(ECM)",
+				"cmake(KF6Config)",
+				"cmake(PlasmaActivities)"
+			],
+			"depends": [
+				"soname(libKF6ConfigCore.so.6(x86_64))",
+				"soname(libPlasmaActivities.so.6(x86_64))",
+				"soname(libQt6Core.so.6(x86_64))",
+				"soname(libQt6DBus.so.6(x86_64))",
+				"soname(libQt6Sql.so.6(x86_64))",
+				"soname(libc++.so.1(x86_64))",
+				"soname(libc.so.6(x86_64))"
+			],
+			"files": [
+				"/usr/lib/libPlasmaActivitiesStats.so.1",
+				"/usr/lib/libPlasmaActivitiesStats.so.6.4.2",
+				"/usr/share/qlogging-categories6/plasma-activities-stats.categories",
+				"/usr/share/qlogging-categories6/plasma-activities-stats.renamecategories"
+			],
+			"name": "plasma-activities-stats",
+			"provides": [
+				"soname(libPlasmaActivitiesStats.so.1(x86_64))"
+			]
+		},
+		"plasma-activities-stats-devel": {
+			"build-depends": [
+				"cmake(ECM)",
+				"cmake(KF6Config)",
+				"cmake(PlasmaActivities)"
+			],
+			"depends": [
+				"pkgconfig(Qt6Core)",
+				"plasma-activities-stats"
+			],
+			"files": [
+				"/usr/include/PlasmaActivitiesStats/PlasmaActivities/Stats/Cleaning",
+				"/usr/include/PlasmaActivitiesStats/PlasmaActivities/Stats/Query",
+				"/usr/include/PlasmaActivitiesStats/PlasmaActivities/Stats/ResultModel",
+				"/usr/include/PlasmaActivitiesStats/PlasmaActivities/Stats/ResultSet",
+				"/usr/include/PlasmaActivitiesStats/PlasmaActivities/Stats/ResultWatcher",
+				"/usr/include/PlasmaActivitiesStats/PlasmaActivities/Stats/Terms",
+				"/usr/include/PlasmaActivitiesStats/plasmaactivitiesstats/cleaning.h",
+				"/usr/include/PlasmaActivitiesStats/plasmaactivitiesstats/plasmaactivitiesstats_export.h",
+				"/usr/include/PlasmaActivitiesStats/plasmaactivitiesstats/query.h",
+				"/usr/include/PlasmaActivitiesStats/plasmaactivitiesstats/resultmodel.h",
+				"/usr/include/PlasmaActivitiesStats/plasmaactivitiesstats/resultset.h",
+				"/usr/include/PlasmaActivitiesStats/plasmaactivitiesstats/resultwatcher.h",
+				"/usr/include/PlasmaActivitiesStats/plasmaactivitiesstats/terms.h",
+				"/usr/include/PlasmaActivitiesStats/plasmaactivitiesstats_version.h",
+				"/usr/lib/cmake/PlasmaActivitiesStats/PlasmaActivitiesStatsConfig.cmake",
+				"/usr/lib/cmake/PlasmaActivitiesStats/PlasmaActivitiesStatsConfigVersion.cmake",
+				"/usr/lib/cmake/PlasmaActivitiesStats/PlasmaActivitiesStatsLibraryQchTargets.cmake",
+				"/usr/lib/cmake/PlasmaActivitiesStats/PlasmaActivitiesStatsLibraryTargets-release.cmake",
+				"/usr/lib/cmake/PlasmaActivitiesStats/PlasmaActivitiesStatsLibraryTargets.cmake",
+				"/usr/lib/libPlasmaActivitiesStats.so",
+				"/usr/lib/pkgconfig/PlasmaActivitiesStats.pc",
+				"/usr/share/doc/qt6/PlasmaActivitiesStats.qch",
+				"/usr/share/doc/qt6/PlasmaActivitiesStats.tags"
+			],
+			"name": "plasma-activities-stats-devel",
+			"provides": [
+				"cmake(PlasmaActivitiesStats)",
+				"pkgconfig(PlasmaActivitiesStats)"
+			]
+		}
+	},
+	"source-name": "plasma-activities-stats",
+	"source-release": "1",
+	"source-version": "6.4.2"
+}

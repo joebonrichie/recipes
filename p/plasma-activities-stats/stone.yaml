@@ -1,0 +1,35 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : plasma-activities-stats
+version     : 6.4.2
+release     : 1
+upstreams   :
+    - https://download.kde.org/stable/plasma/6.4.2/plasma-activities-stats-6.4.2.tar.xz : c689f51d29f0b65a913e6d746484347d516df9a172f2c51e7bc85cade72a8e7a
+homepage    : https://kde.org/plasma-desktop/
+license     :
+    - GPL-2.0-only
+    - GPL-2.0-or-later
+    - GPL-3.0-only
+    - LGPL-2.0-or-later
+    - LGPL-2.1-only
+    - LGPL-3.0-only
+summary     : library for accessing the usage data collected by the activities system
+description : |
+    library for accessing the usage data collected by the activities system
+builddeps   :
+    # Temporary, boulder doesn't handle build ordering resolution correctly when builddeps are added by macros, so add ECM manually
+    - cmake(ECM)
+    - cmake(KF6Config)
+    - cmake(PlasmaActivities)
+tuning      :
+    - lto: full
+    - optimize: speed
+setup       : |
+    %cmake_kf6
+build       : |
+    %cmake_build
+install     : |
+    %cmake_install
