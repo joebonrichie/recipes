@@ -1,0 +1,45 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : kf6-purpose
+version     : 6.15.0
+release     : 1
+upstreams   :
+    - https://download.kde.org/stable/frameworks/6.15/purpose-6.15.0.tar.xz : d1c0c94a6a6ca11e2dc447431d005e11a73dec33692bef619b0b97bb525fc49e
+homepage    : https://community.kde.org/Frameworks
+license     :
+    - GPL-2.0-or-later
+    - LGPL-2.0-or-later
+    - LGPL-2.1-or-later
+summary     : Framework for providing abstractions to get the developer's purposes fulfilled
+description : |
+    Framework for providing abstractions to get the developer's purposes fulfilled
+builddeps   :
+    - binary(intltool-merge)
+    # Temporary, boulder doesn't handle build ordering resolution correctly when builddeps are added by macros, so add ECM manually
+    - cmake(ECM)
+    - cmake(KAccounts6)
+    - cmake(KF6Config)
+    - cmake(KF6CoreAddons)
+    - cmake(KF6I18n)
+    - cmake(KF6KIO)
+    - cmake(KF6Kirigami)
+    - cmake(KF6Notifications)
+    - cmake(KF6Service)
+    - cmake(Qt6CorePrivate)
+    - accounts-qml-module-qt6
+    - kf6-kdeclarative
+    - kf6-prison
+rundeps     :
+    - accounts-qml-module-qt6 # QML dep
+    - kf6-kdeclarative # QML dep
+    - kf6-prison # QML dep
+setup       : |
+    %cmake_kf6
+build       : |
+    %cmake_build
+install     : |
+    %cmake_install
+    %qml_cache_qt6
