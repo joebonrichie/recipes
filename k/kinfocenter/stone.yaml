@@ -1,0 +1,77 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : kinfocenter
+version     : 6.4.2
+release     : 1
+upstreams   :
+    - https://download.kde.org/stable/plasma/6.4.2/kinfocenter-6.4.2.tar.xz : 1d25ffed7904bdb7ae4d2ff56d4173b48a15384cb970a78a145127866dd199da
+homepage    : https://kde.org/plasma-desktop/
+license     :
+    - GFDL-1.2-only
+    - GPL-2.0-or-later
+    - LGPL-2.1-or-later
+summary     : KDE Info Center
+description : |
+    KDE Info Center
+builddeps   :
+    - binary(di-edid-decode)
+    - binary(eglinfo)
+    - binary(glxinfo)
+    - binary(lspci)
+    - binary(sensors)
+    - binary(vulkaninfo)
+    # Temporary, boulder doesn't handle build ordering resolution correctly when builddeps are added by macros, so add ECM manually
+    - cmake(ECM)
+    - cmake(KF6Auth)
+    - cmake(KF6Config)
+    - cmake(KF6CoreAddons)
+    - cmake(KF6DocTools)
+    - cmake(KF6I18n)
+    - cmake(KF6KCMUtils)
+    - cmake(KF6KIO)
+    - cmake(KF6Kirigami)
+    - cmake(KF6Service)
+    - cmake(KF6Solid)
+    - cmake(Qt6CorePrivate)
+    - pkgconfig(libdrm)
+    - pkgconfig(libpipewire-0.3)
+    - pkgconfig(libusb-1.0)
+    - pkgconfig(udev)
+    - sysbinary(ip)
+    - sysbinary(dmidecode)
+    # TODO: wayland-info, xdpyinfo(?), fwupdmgr, aha, clinfo
+rundeps     :
+    - binary(di-edid-decode)
+    - binary(eglinfo)
+    - binary(glxinfo)
+    - binary(lspci)
+    - binary(sensors)
+    - binary(vulkaninfo)
+    - sysbinary(dmidecode)
+    - sysbinary(ip)
+    - kf6-kirigami
+    - systemsettings
+tuning      :
+    - lto: full
+    - optimize: speed
+setup       : |
+    %cmake_kf6
+build       : |
+    %cmake_build
+install     : |
+    %cmake_install
+    %qml_cache_qt6
+
+    # TODO: Needs to be rebuilt once we support capabilities
+packages     :
+    - "%(name)":
+        paths:
+            - /usr/lib/libKInfoCenterInternal.so
+
+    - "%(name)-docs":
+        paths:
+            - /usr/share/doc
+
