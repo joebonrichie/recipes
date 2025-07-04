@@ -251,6 +251,7 @@
 			],
 			"depends": [
 				"cmake(KF6ConfigWidgets)",
+				"cmake(KF6CoreAddons)",
 				"kf6-kcmutils"
 			],
 			"files": [
@@ -298,6 +299,6 @@
 		}
 	},
 	"source-name": "kf6-kcmutils",
-	"source-release": "7",
+	"source-release": "8",
 	"source-version": "6.15.0"
 }
