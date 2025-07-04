@@ -9,7 +9,6 @@
 				"pkgconfig(SignOnExtension)"
 			],
 			"depends": [
-				"qt6-wayland",
 				"soname(libKF6Wallet.so.6(x86_64))",
 				"soname(libQt6Core.so.6(x86_64))",
 				"soname(libc++.so.1(x86_64))",
@@ -27,6 +26,6 @@
 		}
 	},
 	"source-name": "signon-kwallet-extension",
-	"source-release": "1",
+	"source-release": "2",
 	"source-version": "25.04.3"
 }
