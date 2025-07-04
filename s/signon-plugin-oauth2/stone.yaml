@@ -1,0 +1,47 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : signon-plugin-oauth2
+version     : "0.25+git.fab69886"
+release     : 1
+upstreams   :
+    # Temporary source for Qt6 support
+    - git|https://gitlab.com/nicolasfella/signon-plugin-oauth2.git : fab698862466994a8fdc9aa335c87b4f05430ce6
+homepage    : https://gitlab.com/accounts-sso/signon-plugin-oauth2
+license     : LGPL-2.1-only
+summary     : Signon OAuth 1.0 and 2.0 plugin
+description : |
+    Signon OAuth 1.0 and 2.0 plugin
+builddeps   :
+    # - binary(ar)
+    # - binary(doxygen)
+    - binary(qmake6)
+    - pkgconfig(signon-plugins)
+rundeps     :
+    - binary(signon-ui)
+tuning      :
+    - lto: full
+    - optimize: speed
+setup       : |
+    qmake6 \
+        CONFIG+=release \
+        QMAKE_CFLAGS_RELEASE="${CFLAGS}" \
+        QMAKE_CXXFLAGS_RELEASE="${CXXFLAGS}" \
+        QMAKE_LFLAGS="${LDFLAGS}"
+build       : |
+    %make
+install     : |
+    %make_install INSTALL_ROOT="%(installroot)"
+
+    # No need for this
+    rm -v %(installroot)%(bindir)/signon-oauth2plugin-tests \
+          %(installroot)%(datadir)/signon-oauth2plugin-tests/tests.xml
+    rmdir -v %(installroot)%(datadir)/signon-oauth2plugin-tests/ \
+             %(installroot)%(datadir)/ \
+             %(installroot)%(bindir)/
+
+    # Cleanup libdir
+    mv %(installroot)/usr/lib64/* %(installroot)%(libdir)
+    rmdir -v %(installroot)/usr/lib64
