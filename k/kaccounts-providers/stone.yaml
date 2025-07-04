@@ -1,0 +1,41 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : kaccounts-providers
+version     : 25.04.3
+release     : 1
+upstreams   :
+    - https://download.kde.org/stable/release-service/25.04.3/src/kaccounts-providers-25.04.3.tar.xz : a8d8245157f4b867190671432acf15a0f3f658654992f69ab3b9e0f7666177b3
+homepage    : https://kde.org/
+license     : GPL-2.0-or-later
+summary     : KDE Providers
+description : |
+    KDE providers for accounts sign-on Provides additional configuration files for libaccounts and libsignon to recognize online services such as Facebook and Google.
+builddeps   :
+    - binary(intltool-merge)
+    # Temporary, boulder doesn't handle build ordering resolution correctly when builddeps are added by macros, so add ECM manually
+    - cmake(ECM)
+    - cmake(KF6CoreAddons)
+    - cmake(KF6I18n)
+    - cmake(KF6KIO)
+    - cmake(KF6Package)
+    - cmake(KAccounts6)
+    - cmake(QCoro6)
+    - cmake(Qt6Qml)
+    - cmake(Qt6WebEngineQuick)
+rundeps     :
+    - binary(signon-ui)
+    - signon-plugin-oauth2 # Google provider
+setup       : |
+    %cmake_kf6
+build       : |
+    %cmake_build
+install     : |
+    %cmake_install
+    %qml_cache_qt6
+
+    # Presumably unused config files (no reference in any related source project)
+    rm -rfv %(installroot)/etc/signon-ui
+    rmdir -v %(installroot)/etc
