@@ -1,0 +1,63 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : kaccounts-integration
+version     : 25.04.3
+release     : 1
+upstreams   :
+    - https://download.kde.org/stable/release-service/25.04.3/src/kaccounts-integration-25.04.3.tar.xz : 71a0475a2274fa4e9f332d8903518b26b5d025614f7e79c747a35ba126e2988c
+homepage    : https://kde.org/
+license     : GPL-2.0-or-later
+summary     : System to administer web accounts - shared library
+description : |
+    System to administer web accounts - shared library
+builddeps   :
+    - cmake(AccountsQt6)
+    # Temporary, boulder doesn't handle build ordering resolution correctly when builddeps are added by macros, so add ECM manually
+    - cmake(ECM)
+    - cmake(KF6CoreAddons)
+    - cmake(KF6DBusAddons)
+    - cmake(KF6I18n)
+    - cmake(KF6KCMUtils)
+    - cmake(KF6KIO)
+    - cmake(KF6Wallet)
+    - cmake(QCoro6)
+    - cmake(Qt6CorePrivate)
+    - cmake(Qt6Qml)
+    - cmake(SignOnQt6)
+setup       : |
+    %cmake_kf6
+build       : |
+    %cmake_build
+install     : |
+    %cmake_install
+
+    # # remove docs
+    # rm -rf %(installroot)/%(datadir)/doc
+packages    :
+    - "%(name)-qt6":
+        summary: System to administer web accounts - Qt6 bindings
+        description: |
+            System to administer web accounts - Qt6 bindings
+        paths:
+            - /usr/lib/qt6/plugins/
+            - /usr/lib/qt6/qml/
+            - /usr/share/applications/kcm_kaccounts.desktop
+            - /usr/share/locale/
+            - /usr/share/qlogging-categories6/
+            - /usr/lib/libkaccounts6.so.*
+
+    - "%(name)-qt6-devel":
+        summary: System to administer web accounts - Qt6 bindings - devel package
+        description: |
+            System to administer web accounts - Qt6 bindings - devel package
+        rundeps:
+            - "%(name)-qt6"
+            - cmake(AccountsQt6)
+            - cmake(SignOnQt6)
+        paths:
+            - /usr/include/KAccounts6/
+            - /usr/lib/cmake/KAccounts6/
+            - /usr/lib/libkaccounts6.so
