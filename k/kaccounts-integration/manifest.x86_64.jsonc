@@ -125,6 +125,7 @@
 				"cmake(SignOnQt6)"
 			],
 			"depends": [
+				"binary(intltool-merge)",
 				"cmake(AccountsQt6)",
 				"cmake(SignOnQt6)",
 				"kaccounts-integration-qt6"
@@ -168,6 +169,6 @@
 		}
 	},
 	"source-name": "kaccounts-integration",
-	"source-release": "1",
+	"source-release": "2",
 	"source-version": "25.04.3"
 }
