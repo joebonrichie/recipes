@@ -5,7 +5,7 @@
 #
 name        : signon-ui-qt
 version     : "0.15+git.eef943f0"
-release     : 1
+release     : 2
 upstreams   :
     # Temporary (?) source for Qt6 support
     - git|https://gitlab.com/accounts-sso/signon-ui.git : eef943f0edf3beee8ecb85d4a9dae3656002fc24
@@ -22,6 +22,8 @@ builddeps   :
     - pkgconfig(libnotify)
     - pkgconfig(libproxy-1.0)
     - pkgconfig(signon-plugins-common)
+rundeps     :
+    - qt6-wayland
 tuning      :
     - lto: full
     - optimize: speed
