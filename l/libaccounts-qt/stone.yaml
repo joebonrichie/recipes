@@ -1,0 +1,60 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : libaccounts-qt
+version     : "1.17"
+release     : 1
+upstreams   :
+    - https://gitlab.com/accounts-sso/libaccounts-qt/-/archive/VERSION_1.17/libaccounts-qt-VERSION_1.17.tar.gz : 6ed3e976133962c1c88f6c66928ba0d0a17a570843577d31e783dc891659e5d8
+homepage    : https://gitlab.com/accounts-sso/libaccounts-qt
+license     : LGPL-2.1-only
+summary     : QT library for single sign on
+description : |
+    QT library for single sign on
+builddeps   :
+    - binary(doxygen)
+    - binary(qmake6)
+    - pkgconfig(glib-2.0)
+    - pkgconfig(libaccounts-glib)
+tuning      :
+    - lto: full
+    - optimize: speed
+setup       : |
+    qmake6 \
+        CONFIG+=release \
+        QMAKE_CFLAGS_RELEASE="${CFLAGS}" \
+        QMAKE_CXXFLAGS_RELEASE="${CXXFLAGS}" \
+        QMAKE_LFLAGS="${LDFLAGS}"
+build       : |
+    %make
+install     : |
+    %make_install INSTALL_ROOT="%(installroot)"
+
+    # Remove tests
+    rm -v %(installroot)%(bindir)/accountstest
+    rmdir -v %(installroot)%(bindir)
+packages    :
+    - "%(name)-qt6":
+        summary: QT library for single sign on - Qt6 bindings
+        description: |
+            QT library for single sign on - Qt6 bindings
+        paths:
+            - /usr/lib/libaccounts-qt6.so.*
+
+    - "%(name)-qt6-devel":
+        summary: QT library for single sign on - Qt6 bindings - devel package
+        description: |
+            QT library for single sign on - Qt6 bindings - devel package
+        rundeps:
+            - "%(name)-qt6"
+        paths:
+            - /usr/include/accounts-qt6/
+            - /usr/lib/cmake/AccountsQt6/
+            - /usr/lib/pkgconfig/accounts-qt6.pc
+            - /usr/lib/libaccounts-qt6.so
+
+    - "%(name)-docs":
+        paths:
+            - /usr/share/doc
