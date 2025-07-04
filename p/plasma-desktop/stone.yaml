@@ -1,0 +1,104 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : plasma-desktop
+version     : 6.4.2
+release     : 1
+upstreams   :
+    - https://download.kde.org/stable/plasma/6.4.2/plasma-desktop-6.4.2.tar.xz : 329691b92f368c22114604650e39db91c63870c80c0c08e853c6a040dbd30a84
+homepage    : https://kde.org/plasma-desktop/
+license     :
+    - GPL-2.0-only
+    - GPL-2.0-or-later
+    - LGPL-2.0-only
+    - LGPL-2.1-only
+summary     : KDE's next generation desktop
+description : |
+    KDE's next generation desktop
+builddeps   :
+    - binary(xdg-user-dir)
+    # Temporary, boulder doesn't handle build ordering resolution correctly when builddeps are added by macros, so add ECM manually
+    - cmake(ECM)
+    - cmake(KF6Attica)
+    - cmake(KF6Auth)
+    - cmake(KF6Baloo)
+    - cmake(KF6Codecs)
+    - cmake(KF6Config)
+    - cmake(KF6Config)
+    - cmake(KF6CoreAddons)
+    - cmake(KF6Crash)
+    - cmake(KF6DBusAddons)
+    - cmake(KF6DocTools)
+    - cmake(KF6GlobalAccel)
+    - cmake(KF6GuiAddons)
+    - cmake(KF6I18n)
+    - cmake(KF6IconThemes)
+    - cmake(KF6ItemModels)
+    - cmake(KF6KCMUtils)
+    - cmake(KF6KDED)
+    - cmake(KF6KIO)
+    - cmake(KF6Kirigami)
+    - cmake(KF6KirigamiAddons)
+    - cmake(KF6NewStuff)
+    - cmake(KF6Notifications)
+    - cmake(KF6NotifyConfig)
+    - cmake(KF6Package)
+    - cmake(KF6QQC2DesktopStyle)
+    - cmake(KF6Runner)
+    - cmake(KF6Sonnet)
+    - cmake(KF6Svg)
+    - cmake(KF6WidgetsAddons)
+    - cmake(KF6XmlGui)
+    - cmake(KSysGuard)
+    - cmake(KWinDBusInterface)
+    - cmake(LibKWorkspace)
+    - cmake(Plasma)
+    - cmake(Plasma5Support)
+    - cmake(PlasmaActivities)
+    - cmake(PlasmaActivitiesStats)
+    - cmake(Qt6Core5Compat)
+    - cmake(Qt6CorePrivate)
+    - cmake(Qt6Svg)
+    - cmake(Qt6WaylandClient)
+    - cmake(ScreenSaverDBusInterface)
+    - pkgconfig(ibus-1.0)
+    - pkgconfig(libcanberra)
+    - pkgconfig(libwacom)
+    - pkgconfig(sdl2-compat)
+    - pkgconfig(wayland-protocols)
+    - pkgconfig(xkbfile)
+    - pkgconfig(xkbregistry)
+    - pkgconfig(xkeyboard-config)
+    - font-noto
+    - font-noto-emoji
+tuning      :
+    - lto: full
+    - optimize: speed
+setup       : |
+    # X11 XInput is not found but required to keep layouts with keyboard hotplugging (-DBUILD_KCM_MOUSE_X11=OFF)
+    %cmake_kf6 \
+        -DBUILD_KCM_MOUSE_X11=OFF \
+        -DBUILD_KCM_TOUCHPAD_X11=OFF
+build       : |
+    %cmake_build
+install     : |
+    %cmake_install
+    %qml_cache_qt6
+packages    :
+    - "%(name)":
+        rundeps:
+            - kf6-kded # Device mounting
+            - kf6-kirigami
+            - kf6-kirigami-addons
+            - kf6-qqc2-desktop-style
+            # - kmenuedit # TODO
+            - iso-codes # Keyboard internationalization
+            - plasma-integration # Breeze
+            - plasma-workspace # All the logic bits and bobs
+            - systemsettings # Ability to show all the settings
+
+    - "%(name)-docs":
+        paths:
+            - /usr/share/doc
