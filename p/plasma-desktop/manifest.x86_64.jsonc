@@ -5,7 +5,9 @@
 		"plasma-desktop": {
 			"build-depends": [
 				"binary(xdg-user-dir)",
+				"cmake(AccountsQt6)",
 				"cmake(ECM)",
+				"cmake(KAccounts6)",
 				"cmake(KF6Attica)",
 				"cmake(KF6Auth)",
 				"cmake(KF6Baloo)",
@@ -67,6 +69,8 @@
 				"kf6-qqc2-desktop-style",
 				"plasma-integration",
 				"plasma-workspace",
+				"signon-plugin-oauth2",
+				"soname(libKF6Attica.so.6(x86_64))",
 				"soname(libKF6AuthCore.so.6(x86_64))",
 				"soname(libKF6Baloo.so.6(x86_64))",
 				"soname(libKF6Bookmarks.so.6(x86_64))",
@@ -110,6 +114,7 @@
 				"soname(libQt6Core.so.6(x86_64))",
 				"soname(libQt6DBus.so.6(x86_64))",
 				"soname(libQt6Gui.so.6(x86_64))",
+				"soname(libQt6Network.so.6(x86_64))",
 				"soname(libQt6Qml.so.6(x86_64))",
 				"soname(libQt6Quick.so.6(x86_64))",
 				"soname(libQt6QuickWidgets.so.6(x86_64))",
@@ -120,6 +125,7 @@
 				"soname(libSDL2-2.0.so.0(x86_64))",
 				"soname(libX11.so.6(x86_64))",
 				"soname(libXi.so.6(x86_64))",
+				"soname(libaccounts-qt6.so.1(x86_64))",
 				"soname(libc++.so.1(x86_64))",
 				"soname(libc.so.6(x86_64))",
 				"soname(libcanberra.so.0(x86_64))",
@@ -127,6 +133,7 @@
 				"soname(libglib-2.0.so.0(x86_64))",
 				"soname(libgobject-2.0.so.0(x86_64))",
 				"soname(libibus-1.0.so.5(x86_64))",
+				"soname(libkaccounts6.so.2(x86_64))",
 				"soname(libkworkspace6.so.6(x86_64))",
 				"soname(libm.so.6(x86_64))",
 				"soname(libnotificationmanager.so.1(x86_64))",
@@ -152,6 +159,7 @@
 				"/usr/lib/kf6/kauth/kcmdatetimehelper",
 				"/usr/lib/kf6/kimpanel-ibus-panel",
 				"/usr/lib/kf6/kimpanel-ibus-panel-launcher",
+				"/usr/lib/qt6/plugins/attica_kde.so",
 				"/usr/lib/qt6/plugins/kf6/kded/device_automounter.so",
 				"/usr/lib/qt6/plugins/kf6/kded/kded_touchpad.so",
 				"/usr/lib/qt6/plugins/kf6/kded/keyboard.so",
@@ -220,6 +228,8 @@
 				"/usr/lib/qt6/qml/org/kde/private/desktopcontainment/folder/libfolderplugin.so",
 				"/usr/lib/qt6/qml/org/kde/private/desktopcontainment/folder/qmldir",
 				"/usr/lib/systemd/user/plasma-kaccess.service",
+				"/usr/share/accounts/providers/kde/opendesktop.provider",
+				"/usr/share/accounts/services/kde/opendesktop-rating.service",
 				"/usr/share/applications/kaccess.desktop",
 				"/usr/share/applications/kcm_access.desktop",
 				"/usr/share/applications/kcm_activities.desktop",
@@ -3832,6 +3842,7 @@
 				"binary(plasma-emojier)",
 				"binary(solid-action-desktop-gen)",
 				"binary(tastenbrett)",
+				"soname(qt6/plugins/attica_kde.so(x86_64))",
 				"soname(qt6/plugins/kf6/kded/device_automounter.so(x86_64))",
 				"soname(qt6/plugins/kf6/kded/kded_touchpad.so(x86_64))",
 				"soname(qt6/plugins/kf6/kded/keyboard.so(x86_64))",
@@ -3875,7 +3886,9 @@
 		"plasma-desktop-docs": {
 			"build-depends": [
 				"binary(xdg-user-dir)",
+				"cmake(AccountsQt6)",
 				"cmake(ECM)",
+				"cmake(KAccounts6)",
 				"cmake(KF6Attica)",
 				"cmake(KF6Auth)",
 				"cmake(KF6Baloo)",
@@ -4615,6 +4628,6 @@
 		}
 	},
 	"source-name": "plasma-desktop",
-	"source-release": "1",
+	"source-release": "2",
 	"source-version": "6.4.2"
 }

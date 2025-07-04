@@ -5,7 +5,7 @@
 #
 name        : plasma-desktop
 version     : 6.4.2
-release     : 1
+release     : 2
 upstreams   :
     - https://download.kde.org/stable/plasma/6.4.2/plasma-desktop-6.4.2.tar.xz : 329691b92f368c22114604650e39db91c63870c80c0c08e853c6a040dbd30a84
 homepage    : https://kde.org/plasma-desktop/
@@ -19,8 +19,10 @@ description : |
     KDE's next generation desktop
 builddeps   :
     - binary(xdg-user-dir)
+    - cmake(AccountsQt6)
     # Temporary, boulder doesn't handle build ordering resolution correctly when builddeps are added by macros, so add ECM manually
     - cmake(ECM)
+    - cmake(KAccounts6)
     - cmake(KF6Attica)
     - cmake(KF6Auth)
     - cmake(KF6Baloo)
@@ -80,7 +82,9 @@ setup       : |
     # X11 XInput is not found but required to keep layouts with keyboard hotplugging (-DBUILD_KCM_MOUSE_X11=OFF)
     %cmake_kf6 \
         -DBUILD_KCM_MOUSE_X11=OFF \
-        -DBUILD_KCM_TOUCHPAD_X11=OFF
+        -DBUILD_KCM_TOUCHPAD_X11=OFF \
+        -DCMAKE_DISABLE_FIND_PACKAGE_FontNotoSans=true \
+        -DCMAKE_DISABLE_FIND_PACKAGE_FontNotoColorEmoji=true
 build       : |
     %cmake_build
 install     : |
@@ -97,7 +101,9 @@ packages    :
             - iso-codes # Keyboard internationalization
             - plasma-integration # Breeze
             - plasma-workspace # All the logic bits and bobs
+            - signon-plugin-oauth2 # Google provider
             - systemsettings # Ability to show all the settings
+            # TODO: sddm-breeze deps
 
     - "%(name)-docs":
         paths:
