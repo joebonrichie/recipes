@@ -5,7 +5,7 @@
 #
 name        : kaccounts-providers
 version     : 25.04.3
-release     : 1
+release     : 2
 upstreams   :
     - https://download.kde.org/stable/release-service/25.04.3/src/kaccounts-providers-25.04.3.tar.xz : a8d8245157f4b867190671432acf15a0f3f658654992f69ab3b9e0f7666177b3
 homepage    : https://kde.org/
@@ -14,7 +14,6 @@ summary     : KDE Providers
 description : |
     KDE providers for accounts sign-on Provides additional configuration files for libaccounts and libsignon to recognize online services such as Facebook and Google.
 builddeps   :
-    - binary(intltool-merge)
     # Temporary, boulder doesn't handle build ordering resolution correctly when builddeps are added by macros, so add ECM manually
     - cmake(ECM)
     - cmake(KF6CoreAddons)

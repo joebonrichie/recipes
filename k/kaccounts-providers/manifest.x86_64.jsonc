@@ -4,7 +4,6 @@
 	"packages": {
 		"kaccounts-providers": {
 			"build-depends": [
-				"binary(intltool-merge)",
 				"cmake(ECM)",
 				"cmake(KAccounts6)",
 				"cmake(KF6CoreAddons)",
@@ -120,6 +119,6 @@
 		}
 	},
 	"source-name": "kaccounts-providers",
-	"source-release": "1",
+	"source-release": "2",
 	"source-version": "25.04.3"
 }
