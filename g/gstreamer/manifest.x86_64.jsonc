@@ -87,7 +87,8 @@
 				"pkgconfig(x264)",
 				"pkgconfig(x265)",
 				"pkgconfig(xkbcommon)",
-				"pkgconfig(xv)"
+				"pkgconfig(xv)",
+				"pkgconfig(zxing)"
 			],
 			"depends": [
 				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
@@ -280,7 +281,8 @@
 				"pkgconfig(x264)",
 				"pkgconfig(x265)",
 				"pkgconfig(xkbcommon)",
-				"pkgconfig(xv)"
+				"pkgconfig(xv)",
+				"pkgconfig(zxing)"
 			],
 			"depends": [
 				"gstreamer",
@@ -533,7 +535,8 @@
 				"pkgconfig(x264)",
 				"pkgconfig(x265)",
 				"pkgconfig(xkbcommon)",
-				"pkgconfig(xv)"
+				"pkgconfig(xv)",
+				"pkgconfig(zxing)"
 			],
 			"depends": [
 				"gstreamer",
@@ -647,7 +650,8 @@
 				"pkgconfig(x264)",
 				"pkgconfig(x265)",
 				"pkgconfig(xkbcommon)",
-				"pkgconfig(xv)"
+				"pkgconfig(xv)",
+				"pkgconfig(zxing)"
 			],
 			"depends": [
 				"gstreamer",
@@ -758,7 +762,8 @@
 				"pkgconfig(x264)",
 				"pkgconfig(x265)",
 				"pkgconfig(xkbcommon)",
-				"pkgconfig(xv)"
+				"pkgconfig(xv)",
+				"pkgconfig(zxing)"
 			],
 			"depends": [
 				"gstreamer",
@@ -878,7 +883,8 @@
 				"pkgconfig(x264)",
 				"pkgconfig(x265)",
 				"pkgconfig(xkbcommon)",
-				"pkgconfig(xv)"
+				"pkgconfig(xv)",
+				"pkgconfig(zxing)"
 			],
 			"depends": [
 				"gstreamer-plugin-opencv"
@@ -976,7 +982,8 @@
 				"pkgconfig(x264)",
 				"pkgconfig(x265)",
 				"pkgconfig(xkbcommon)",
-				"pkgconfig(xv)"
+				"pkgconfig(xv)",
+				"pkgconfig(zxing)"
 			],
 			"depends": [
 				"gstreamer",
@@ -1088,7 +1095,8 @@
 				"pkgconfig(x264)",
 				"pkgconfig(x265)",
 				"pkgconfig(xkbcommon)",
-				"pkgconfig(xv)"
+				"pkgconfig(xv)",
+				"pkgconfig(zxing)"
 			],
 			"depends": [
 				"gstreamer",
@@ -1545,7 +1553,8 @@
 				"pkgconfig(x264)",
 				"pkgconfig(x265)",
 				"pkgconfig(xkbcommon)",
-				"pkgconfig(xv)"
+				"pkgconfig(xv)",
+				"pkgconfig(zxing)"
 			],
 			"depends": [
 				"gstreamer-plugins-bad",
@@ -1923,12 +1932,14 @@
 				"pkgconfig(x264)",
 				"pkgconfig(x265)",
 				"pkgconfig(xkbcommon)",
-				"pkgconfig(xv)"
+				"pkgconfig(xv)",
+				"pkgconfig(zxing)"
 			],
 			"depends": [
 				"gstreamer",
 				"gstreamer-plugins-bad-libs",
 				"gstreamer-plugins-base",
+				"soname(libZXing.so.3(x86_64))",
 				"soname(libaom.so.3(x86_64))",
 				"soname(libass.so.9(x86_64))",
 				"soname(libbs2b.so.0(x86_64))",
@@ -1957,7 +1968,8 @@
 				"/usr/lib/gstreamer-1.0/libgstdecklink.so",
 				"/usr/lib/gstreamer-1.0/libgstladspa.so",
 				"/usr/lib/gstreamer-1.0/libgstopenjpeg.so",
-				"/usr/lib/gstreamer-1.0/libgstqroverlay.so"
+				"/usr/lib/gstreamer-1.0/libgstqroverlay.so",
+				"/usr/lib/gstreamer-1.0/libgstzxing.so"
 			],
 			"name": "gstreamer-plugins-bad-extras",
 			"provides": [
@@ -1968,7 +1980,8 @@
 				"soname(gstreamer-1.0/libgstdecklink.so(x86_64))",
 				"soname(gstreamer-1.0/libgstladspa.so(x86_64))",
 				"soname(gstreamer-1.0/libgstopenjpeg.so(x86_64))",
-				"soname(gstreamer-1.0/libgstqroverlay.so(x86_64))"
+				"soname(gstreamer-1.0/libgstqroverlay.so(x86_64))",
+				"soname(gstreamer-1.0/libgstzxing.so(x86_64))"
 			]
 		},
 		"gstreamer-plugins-bad-libs": {
@@ -2056,7 +2069,8 @@
 				"pkgconfig(x264)",
 				"pkgconfig(x265)",
 				"pkgconfig(xkbcommon)",
-				"pkgconfig(xv)"
+				"pkgconfig(xv)",
+				"pkgconfig(zxing)"
 			],
 			"depends": [
 				"gstreamer",
@@ -2260,7 +2274,8 @@
 				"pkgconfig(x264)",
 				"pkgconfig(x265)",
 				"pkgconfig(xkbcommon)",
-				"pkgconfig(xv)"
+				"pkgconfig(xv)",
+				"pkgconfig(zxing)"
 			],
 			"depends": [
 				"gstreamer",
@@ -2545,7 +2560,8 @@
 				"pkgconfig(x264)",
 				"pkgconfig(x265)",
 				"pkgconfig(xkbcommon)",
-				"pkgconfig(xv)"
+				"pkgconfig(xv)",
+				"pkgconfig(zxing)"
 			],
 			"depends": [
 				"gstreamer-plugins-base",
@@ -2923,7 +2939,8 @@
 				"pkgconfig(x264)",
 				"pkgconfig(x265)",
 				"pkgconfig(xkbcommon)",
-				"pkgconfig(xv)"
+				"pkgconfig(xv)",
+				"pkgconfig(zxing)"
 			],
 			"depends": [
 				"gstreamer",
@@ -3038,7 +3055,8 @@
 				"pkgconfig(x264)",
 				"pkgconfig(x265)",
 				"pkgconfig(xkbcommon)",
-				"pkgconfig(xv)"
+				"pkgconfig(xv)",
+				"pkgconfig(zxing)"
 			],
 			"depends": [
 				"gstreamer",
@@ -3343,7 +3361,8 @@
 				"pkgconfig(x264)",
 				"pkgconfig(x265)",
 				"pkgconfig(xkbcommon)",
-				"pkgconfig(xv)"
+				"pkgconfig(xv)",
+				"pkgconfig(zxing)"
 			],
 			"depends": [
 				"gstreamer",
@@ -3514,7 +3533,8 @@
 				"pkgconfig(x264)",
 				"pkgconfig(x265)",
 				"pkgconfig(xkbcommon)",
-				"pkgconfig(xv)"
+				"pkgconfig(xv)",
+				"pkgconfig(zxing)"
 			],
 			"depends": [
 				"gstreamer",
@@ -3553,6 +3573,6 @@
 		}
 	},
 	"source-name": "gstreamer",
-	"source-release": "17",
+	"source-release": "18",
 	"source-version": "1.26.3"
 }
