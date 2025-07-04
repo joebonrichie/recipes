@@ -80,7 +80,6 @@
 				"pkgconfig(libjxl)"
 			],
 			"depends": [
-				"cmake(Qt6Qml)",
 				"kf6-kimageformats"
 			],
 			"files": [
@@ -94,6 +93,6 @@
 		}
 	},
 	"source-name": "kf6-kimageformats",
-	"source-release": "1",
+	"source-release": "2",
 	"source-version": "6.15.0"
 }
