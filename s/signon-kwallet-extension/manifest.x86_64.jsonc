@@ -1,0 +1,32 @@
+/** Human readable report. This is not consumed by boulder */
+{
+	"manifest-version": "0.2",
+	"packages": {
+		"signon-kwallet-extension": {
+			"build-depends": [
+				"cmake(ECM)",
+				"cmake(KF6Wallet)",
+				"pkgconfig(SignOnExtension)"
+			],
+			"depends": [
+				"qt6-wayland",
+				"soname(libKF6Wallet.so.6(x86_64))",
+				"soname(libQt6Core.so.6(x86_64))",
+				"soname(libc++.so.1(x86_64))",
+				"soname(libc.so.6(x86_64))",
+				"soname(libsignon-extension.so.1(x86_64))",
+				"soname(libunwind.so.1(x86_64))"
+			],
+			"files": [
+				"/usr/lib/signon/extensions/libkeyring-kwallet.so"
+			],
+			"name": "signon-kwallet-extension",
+			"provides": [
+				"soname(signon/extensions/libkeyring-kwallet.so(x86_64))"
+			]
+		}
+	},
+	"source-name": "signon-kwallet-extension",
+	"source-release": "1",
+	"source-version": "25.04.3"
+}
