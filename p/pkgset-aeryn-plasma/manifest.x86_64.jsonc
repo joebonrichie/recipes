@@ -13,6 +13,9 @@
 		},
 		"pkgset-aeryn-plasma-minimal": {
 			"depends": [
+				"dolphin",
+				"konsole",
+				"kwrite",
 				"pkgset-aeryn-base-desktop",
 				"plasma-desktop"
 			],
@@ -32,6 +35,6 @@
 		}
 	},
 	"source-name": "pkgset-aeryn-plasma",
-	"source-release": "1",
+	"source-release": "2",
 	"source-version": "2025.06"
 }
