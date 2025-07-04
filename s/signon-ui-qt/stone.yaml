@@ -1,0 +1,39 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : signon-ui-qt
+version     : "0.15+git.eef943f0"
+release     : 1
+upstreams   :
+    # Temporary (?) source for Qt6 support
+    - git|https://gitlab.com/accounts-sso/signon-ui.git : eef943f0edf3beee8ecb85d4a9dae3656002fc24
+homepage    : https://gitlab.com/accounts-sso/signond
+license     : LGPL-2.1-only
+summary     : Signond Qt UI
+description : |
+    Signond Qt UI
+builddeps   :
+    - binary(qmake6)
+    - cmake(Qt6Quick)
+    - cmake(Qt6WebEngineQuick)
+    - pkgconfig(accounts-qt6)
+    - pkgconfig(libnotify)
+    - pkgconfig(libproxy-1.0)
+    - pkgconfig(signon-plugins-common)
+tuning      :
+    - lto: full
+    - optimize: speed
+setup       : |
+    %patch %(pkgdir)/fake-user-agent.patch
+
+    qmake6 \
+        CONFIG+=release \
+        QMAKE_CFLAGS_RELEASE="${CFLAGS}" \
+        QMAKE_CXXFLAGS_RELEASE="${CXXFLAGS}" \
+        QMAKE_LFLAGS="${LDFLAGS}"
+build       : |
+    %make
+install     : |
+    %make_install INSTALL_ROOT="%(installroot)"

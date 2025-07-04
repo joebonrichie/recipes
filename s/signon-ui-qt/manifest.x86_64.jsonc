@@ -1,0 +1,49 @@
+/** Human readable report. This is not consumed by boulder */
+{
+	"manifest-version": "0.2",
+	"packages": {
+		"signon-ui-qt": {
+			"build-depends": [
+				"binary(qmake6)",
+				"cmake(Qt6Quick)",
+				"cmake(Qt6WebEngineQuick)",
+				"pkgconfig(accounts-qt6)",
+				"pkgconfig(libnotify)",
+				"pkgconfig(libproxy-1.0)",
+				"pkgconfig(signon-plugins-common)"
+			],
+			"depends": [
+				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
+				"soname(libQt6Core.so.6(x86_64))",
+				"soname(libQt6DBus.so.6(x86_64))",
+				"soname(libQt6Gui.so.6(x86_64))",
+				"soname(libQt6Network.so.6(x86_64))",
+				"soname(libQt6Qml.so.6(x86_64))",
+				"soname(libQt6Quick.so.6(x86_64))",
+				"soname(libQt6WebEngineQuick.so.6(x86_64))",
+				"soname(libQt6Widgets.so.6(x86_64))",
+				"soname(libaccounts-qt6.so.1(x86_64))",
+				"soname(libc++.so.1(x86_64))",
+				"soname(libc.so.6(x86_64))",
+				"soname(libglib-2.0.so.0(x86_64))",
+				"soname(libgobject-2.0.so.0(x86_64))",
+				"soname(libnotify.so.4(x86_64))",
+				"soname(libproxy.so.1(x86_64))",
+				"soname(libsignon-qt6.so.1(x86_64))"
+			],
+			"files": [
+				"/usr/bin/signon-ui",
+				"/usr/share/applications/signon-ui.desktop",
+				"/usr/share/dbus-1/services/com.canonical.indicators.webcredentials.service",
+				"/usr/share/dbus-1/services/com.nokia.singlesignonui.service"
+			],
+			"name": "signon-ui-qt",
+			"provides": [
+				"binary(signon-ui)"
+			]
+		}
+	},
+	"source-name": "signon-ui-qt",
+	"source-release": "1",
+	"source-version": "0.15+git.eef943f0"
+}
