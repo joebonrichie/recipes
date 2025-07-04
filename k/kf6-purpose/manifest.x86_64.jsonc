@@ -5,7 +5,6 @@
 		"kf6-purpose": {
 			"build-depends": [
 				"accounts-qml-module-qt6",
-				"binary(intltool-merge)",
 				"cmake(ECM)",
 				"cmake(KAccounts6)",
 				"cmake(KF6Config)",
@@ -796,7 +795,6 @@
 		"kf6-purpose-devel": {
 			"build-depends": [
 				"accounts-qml-module-qt6",
-				"binary(intltool-merge)",
 				"cmake(ECM)",
 				"cmake(KAccounts6)",
 				"cmake(KF6Config)",
@@ -841,6 +839,6 @@
 		}
 	},
 	"source-name": "kf6-purpose",
-	"source-release": "1",
+	"source-release": "2",
 	"source-version": "6.15.0"
 }

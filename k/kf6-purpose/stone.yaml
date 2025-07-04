@@ -5,7 +5,7 @@
 #
 name        : kf6-purpose
 version     : 6.15.0
-release     : 1
+release     : 2
 upstreams   :
     - https://download.kde.org/stable/frameworks/6.15/purpose-6.15.0.tar.xz : d1c0c94a6a6ca11e2dc447431d005e11a73dec33692bef619b0b97bb525fc49e
 homepage    : https://community.kde.org/Frameworks
@@ -17,7 +17,6 @@ summary     : Framework for providing abstractions to get the developer's purpos
 description : |
     Framework for providing abstractions to get the developer's purposes fulfilled
 builddeps   :
-    - binary(intltool-merge)
     # Temporary, boulder doesn't handle build ordering resolution correctly when builddeps are added by macros, so add ECM manually
     - cmake(ECM)
     - cmake(KAccounts6)
