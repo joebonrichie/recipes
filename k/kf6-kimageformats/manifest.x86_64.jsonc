@@ -1,0 +1,99 @@
+/** Human readable report. This is not consumed by boulder */
+{
+	"manifest-version": "0.2",
+	"packages": {
+		"kf6-kimageformats": {
+			"build-depends": [
+				"cmake(ECM)",
+				"cmake(KF6Archive)",
+				"cmake(OpenJPEG)",
+				"pkgconfig(libavif)",
+				"pkgconfig(libjxl)"
+			],
+			"depends": [
+				"qt6-imageformats",
+				"soname(libKF6Archive.so.6(x86_64))",
+				"soname(libQt6Core.so.6(x86_64))",
+				"soname(libQt6Gui.so.6(x86_64))",
+				"soname(libQt6PrintSupport.so.6(x86_64))",
+				"soname(libavif.so.16(x86_64))",
+				"soname(libc++.so.1(x86_64))",
+				"soname(libc.so.6(x86_64))",
+				"soname(libjxl.so.0.11(x86_64))",
+				"soname(libjxl_cms.so.0.11(x86_64))",
+				"soname(libjxl_threads.so.0.11(x86_64))",
+				"soname(libm.so.6(x86_64))",
+				"soname(libopenjp2.so.7(x86_64))"
+			],
+			"files": [
+				"/usr/lib/qt6/plugins/imageformats/kimg_ani.so",
+				"/usr/lib/qt6/plugins/imageformats/kimg_avif.so",
+				"/usr/lib/qt6/plugins/imageformats/kimg_dds.so",
+				"/usr/lib/qt6/plugins/imageformats/kimg_eps.so",
+				"/usr/lib/qt6/plugins/imageformats/kimg_hdr.so",
+				"/usr/lib/qt6/plugins/imageformats/kimg_jp2.so",
+				"/usr/lib/qt6/plugins/imageformats/kimg_jxl.so",
+				"/usr/lib/qt6/plugins/imageformats/kimg_kra.so",
+				"/usr/lib/qt6/plugins/imageformats/kimg_ora.so",
+				"/usr/lib/qt6/plugins/imageformats/kimg_pcx.so",
+				"/usr/lib/qt6/plugins/imageformats/kimg_pfm.so",
+				"/usr/lib/qt6/plugins/imageformats/kimg_pic.so",
+				"/usr/lib/qt6/plugins/imageformats/kimg_psd.so",
+				"/usr/lib/qt6/plugins/imageformats/kimg_pxr.so",
+				"/usr/lib/qt6/plugins/imageformats/kimg_qoi.so",
+				"/usr/lib/qt6/plugins/imageformats/kimg_ras.so",
+				"/usr/lib/qt6/plugins/imageformats/kimg_rgb.so",
+				"/usr/lib/qt6/plugins/imageformats/kimg_sct.so",
+				"/usr/lib/qt6/plugins/imageformats/kimg_tga.so",
+				"/usr/lib/qt6/plugins/imageformats/kimg_xcf.so"
+			],
+			"name": "kf6-kimageformats",
+			"provides": [
+				"soname(qt6/plugins/imageformats/kimg_ani.so(x86_64))",
+				"soname(qt6/plugins/imageformats/kimg_avif.so(x86_64))",
+				"soname(qt6/plugins/imageformats/kimg_dds.so(x86_64))",
+				"soname(qt6/plugins/imageformats/kimg_eps.so(x86_64))",
+				"soname(qt6/plugins/imageformats/kimg_hdr.so(x86_64))",
+				"soname(qt6/plugins/imageformats/kimg_jp2.so(x86_64))",
+				"soname(qt6/plugins/imageformats/kimg_jxl.so(x86_64))",
+				"soname(qt6/plugins/imageformats/kimg_kra.so(x86_64))",
+				"soname(qt6/plugins/imageformats/kimg_ora.so(x86_64))",
+				"soname(qt6/plugins/imageformats/kimg_pcx.so(x86_64))",
+				"soname(qt6/plugins/imageformats/kimg_pfm.so(x86_64))",
+				"soname(qt6/plugins/imageformats/kimg_pic.so(x86_64))",
+				"soname(qt6/plugins/imageformats/kimg_psd.so(x86_64))",
+				"soname(qt6/plugins/imageformats/kimg_pxr.so(x86_64))",
+				"soname(qt6/plugins/imageformats/kimg_qoi.so(x86_64))",
+				"soname(qt6/plugins/imageformats/kimg_ras.so(x86_64))",
+				"soname(qt6/plugins/imageformats/kimg_rgb.so(x86_64))",
+				"soname(qt6/plugins/imageformats/kimg_sct.so(x86_64))",
+				"soname(qt6/plugins/imageformats/kimg_tga.so(x86_64))",
+				"soname(qt6/plugins/imageformats/kimg_xcf.so(x86_64))"
+			]
+		},
+		"kf6-kimageformats-devel": {
+			"build-depends": [
+				"cmake(ECM)",
+				"cmake(KF6Archive)",
+				"cmake(OpenJPEG)",
+				"pkgconfig(libavif)",
+				"pkgconfig(libjxl)"
+			],
+			"depends": [
+				"cmake(Qt6Qml)",
+				"kf6-kimageformats"
+			],
+			"files": [
+				"/usr/lib/cmake/KF6ImageFormats/KF6ImageFormatsConfig.cmake",
+				"/usr/lib/cmake/KF6ImageFormats/KF6ImageFormatsConfigVersion.cmake"
+			],
+			"name": "kf6-kimageformats-devel",
+			"provides": [
+				"cmake(KF6ImageFormats)"
+			]
+		}
+	},
+	"source-name": "kf6-kimageformats",
+	"source-release": "1",
+	"source-version": "6.15.0"
+}
