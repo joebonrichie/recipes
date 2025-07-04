@@ -1,0 +1,48 @@
+#
+# SPDX-FileCopyrightText: © 2020-2024 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : pkgset-aeryn-plasma
+version     : "2025.06" # I guess let's just match the OS version for now
+release     : 1
+homepage    : https://aerynos.com/
+# No upstreams!
+summary     : pkgset virtual packages - Plasma/KDE Desktop
+description : |
+    pkgset virtual packages - Plasma/KDE Desktop
+license     : MPL-2.0
+install     : |
+    for i in minimal recommended full; do
+        %install_dir %(installroot)%(docdir)/%(name)-${i}
+        echo "This file will disappear when virtual packages are introduced" > %(installroot)%(docdir)/%(name)-${i}/README
+    done
+packages    :
+    - "%(name)-minimal":
+        summary: Minimal packages for a Plasma/KDE Desktop session
+        description: |
+            Minimal packages for a Plasma/KDE Desktop session
+        rundeps:
+            - pkgset-aeryn-base-desktop
+            - plasma-desktop
+        paths:
+            - /usr/share/doc/%(name)-minimal/README
+
+    - "%(name)-recommended":
+        summary: Plasma Desktop plus recommended applications
+        description: |
+            Plasma Desktop plus recommended applications
+        rundeps:
+            - "%(name)-minimal"
+        paths:
+            - /usr/share/doc/%(name)-recommended/README
+
+    - "%(name)-full":
+        summary: Plasma Desktop plus all KDE applications
+        description: |
+            Plasma Desktop plus all KDE applications. You probably don't want this.
+        rundeps:
+            - "%(name)-recommended"
+        paths:
+            - /usr/share/doc/%(name)-full/README
+

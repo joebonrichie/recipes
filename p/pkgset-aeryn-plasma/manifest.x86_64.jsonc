@@ -1,0 +1,37 @@
+/** Human readable report. This is not consumed by boulder */
+{
+	"manifest-version": "0.2",
+	"packages": {
+		"pkgset-aeryn-plasma-full": {
+			"depends": [
+				"pkgset-aeryn-plasma-recommended"
+			],
+			"files": [
+				"/usr/share/doc/pkgset-aeryn-plasma-full/README"
+			],
+			"name": "pkgset-aeryn-plasma-full"
+		},
+		"pkgset-aeryn-plasma-minimal": {
+			"depends": [
+				"pkgset-aeryn-base-desktop",
+				"plasma-desktop"
+			],
+			"files": [
+				"/usr/share/doc/pkgset-aeryn-plasma-minimal/README"
+			],
+			"name": "pkgset-aeryn-plasma-minimal"
+		},
+		"pkgset-aeryn-plasma-recommended": {
+			"depends": [
+				"pkgset-aeryn-plasma-minimal"
+			],
+			"files": [
+				"/usr/share/doc/pkgset-aeryn-plasma-recommended/README"
+			],
+			"name": "pkgset-aeryn-plasma-recommended"
+		}
+	},
+	"source-name": "pkgset-aeryn-plasma",
+	"source-release": "1",
+	"source-version": "2025.06"
+}
