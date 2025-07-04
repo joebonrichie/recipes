@@ -1,0 +1,56 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : spectacle
+version     : 6.4.2
+release     : 1
+upstreams   :
+    - https://download.kde.org/stable/plasma/6.4.2/spectacle-6.4.2.tar.xz : 18b1d0b7e26680666eb86a2b0908c36d9e17a498b352944d89b901183920e0cb
+homepage    : https://kde.org/plasma-desktop/
+license     : GPL-2.0-only
+summary     : KDE Screenshot Utility
+description : |
+    KDE Screenshot Utility
+builddeps   :
+    # Temporary, boulder doesn't handle build ordering resolution correctly when builddeps are added by macros, so add ECM manually
+    - cmake(ECM)
+    - cmake(KF6Config)
+    - cmake(KF6CoreAddons)
+    - cmake(KF6Crash)
+    - cmake(KF6DBusAddons)
+    - cmake(KF6DocTools)
+    - cmake(KF6GlobalAccel)
+    - cmake(KF6GuiAddons)
+    - cmake(KF6I18n)
+    - cmake(KF6KIO)
+    - cmake(KF6KirigamiPlatform)
+    - cmake(KF6Notifications)
+    - cmake(KF6Prison)
+    - cmake(KF6Purpose)
+    - cmake(KF6StatusNotifierItem)
+    - cmake(KF6WidgetsAddons)
+    - cmake(KF6WindowSystem)
+    - cmake(KF6XmlGui)
+    - cmake(KPipeWire)
+    - cmake(LayerShellQt)
+    - cmake(OpenCV)
+    - cmake(PlasmaWaylandProtocols)
+    - cmake(Qt6CorePrivate)
+    - cmake(Qt6Multimedia)
+    - cmake(Qt6Qml)
+    - cmake(Qt6WaylandClient)
+tuning      :
+    - lto: full
+    - optimize: speed
+setup       : |
+    %cmake_kf6
+build       : |
+    %cmake_build
+install     : |
+    %cmake_install
+packages    :
+    - "%(name)-docs":
+        paths:
+            - /usr/share/doc
