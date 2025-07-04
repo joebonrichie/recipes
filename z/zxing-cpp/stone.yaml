@@ -1,0 +1,28 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : zxing-cpp
+version     : 2.3.0
+release     : 1
+upstreams   :
+    - https://github.com/zxing-cpp/zxing-cpp/archive/refs/tags/v2.3.0.tar.gz : 64e4139103fdbc57752698ee15b5f0b0f7af9a0331ecbdc492047e0772c417ba
+homepage    : https://github.com/zxing-cpp/zxing-cpp
+license     : Apache-2.0
+summary     : ZXing-C++ ("zebra crossing") is an open-source, multi-format linear/matrix barcode image processing library implemented in C++
+description : |
+    ZXing-C++ ("zebra crossing") is an open-source, multi-format linear/matrix barcode image processing library implemented in C++. It was originally ported from the Java ZXing Library but has been developed further and now includes many improvements in terms of quality and performance. It can both read and write barcodes in a number of formats.
+# builddeps   :
+# TODO add pybind11 for Python bindings, STB so this can be de-vendored
+# This is the only package that uses STB currently, so open up networking so it can just download it
+networking  : true
+setup       : |
+    %cmake \
+        -DBUILD_PYTHON_MODULE=OFF \
+        -DBUILD_EXAMPLES=OFF \
+        -DBUILD_SHARED_LIBS=ON \         
+build       : |
+    %cmake_build
+install     : |
+    %cmake_install
