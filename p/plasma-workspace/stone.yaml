@@ -5,7 +5,7 @@
 #
 name        : plasma-workspace
 version     : 6.4.2
-release     : 1
+release     : 2
 upstreams   :
     - https://download.kde.org/stable/plasma/6.4.2/plasma-workspace-6.4.2.tar.xz : ed657be39ec9bc1d4e5ba4c5e717b4ab683dd27bececfaef6e7e209f771b4850
 homepage    : https://kde.org/plasma-desktop/
@@ -58,6 +58,7 @@ builddeps   :
     - cmake(KF6UnitConversion)
     - cmake(KF6UserFeedback)
     - cmake(KF6Wallet)
+    - cmake(KExiv2Qt6)
     - cmake(KSysGuard)
     - cmake(KWayland)
     - cmake(KWinDBusInterface)
@@ -89,7 +90,7 @@ builddeps   :
     - pkgconfig(ice)
     - pkgconfig(sm)
 
-    # TODO: KExiv2Qt6 (after Gear)
+    # TODO: kio-extras
     # Powerdevil
     # AppMenuGtkModule
 tuning      :
@@ -134,6 +135,7 @@ packages    :
             - plasma-keyboard # Used for SDDM virtual keyboard
             # - powerdevil
             - qt6-virtualkeyboard # QML dep
+            - systemd # Used for session init
             # - xrdb # Used for fonts, can we get away without it?
             # - xprop # Can we avoid this?
             - xwaylandvideobridge # Used for streaming Wayland windows to Xwayland clients

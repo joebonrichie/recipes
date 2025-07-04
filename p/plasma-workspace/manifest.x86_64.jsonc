@@ -7,6 +7,7 @@
 				"cmake(AppStreamQt)",
 				"cmake(Breeze)",
 				"cmake(ECM)",
+				"cmake(KExiv2Qt6)",
 				"cmake(KF6Archive)",
 				"cmake(KF6Auth)",
 				"cmake(KF6Baloo)",
@@ -106,6 +107,7 @@
 				"cmake(AppStreamQt)",
 				"cmake(Breeze)",
 				"cmake(ECM)",
+				"cmake(KExiv2Qt6)",
 				"cmake(KF6Archive)",
 				"cmake(KF6Auth)",
 				"cmake(KF6Baloo)",
@@ -187,6 +189,7 @@
 				"qt6-virtualkeyboard",
 				"soname(libAppStreamQt.so.3(x86_64))",
 				"soname(libICE.so.6(x86_64))",
+				"soname(libKExiv2Qt6.so.0(x86_64))",
 				"soname(libKF6Archive.so.6(x86_64))",
 				"soname(libKF6AuthCore.so.6(x86_64))",
 				"soname(libKF6Baloo.so.6(x86_64))",
@@ -276,6 +279,7 @@
 				"soname(libxcb-shape.so.0(x86_64))",
 				"soname(libxcb-util.so.1(x86_64))",
 				"soname(libxcb.so.1(x86_64))",
+				"systemd",
 				"xwaylandvideobridge"
 			],
 			"files": [
@@ -6301,6 +6305,7 @@
 				"cmake(AppStreamQt)",
 				"cmake(Breeze)",
 				"cmake(ECM)",
+				"cmake(KExiv2Qt6)",
 				"cmake(KF6Archive)",
 				"cmake(KF6Auth)",
 				"cmake(KF6Baloo)",
@@ -6467,6 +6472,7 @@
 				"cmake(AppStreamQt)",
 				"cmake(Breeze)",
 				"cmake(ECM)",
+				"cmake(KExiv2Qt6)",
 				"cmake(KF6Archive)",
 				"cmake(KF6Auth)",
 				"cmake(KF6Baloo)",
@@ -7024,6 +7030,7 @@
 				"cmake(AppStreamQt)",
 				"cmake(Breeze)",
 				"cmake(ECM)",
+				"cmake(KExiv2Qt6)",
 				"cmake(KF6Archive)",
 				"cmake(KF6Auth)",
 				"cmake(KF6Baloo)",
@@ -7398,6 +7405,6 @@
 		}
 	},
 	"source-name": "plasma-workspace",
-	"source-release": "1",
+	"source-release": "2",
 	"source-version": "6.4.2"
 }
