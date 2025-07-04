@@ -5,7 +5,7 @@
 #
 name        : pkgset-aeryn-plasma
 version     : "2025.06" # I guess let's just match the OS version for now
-release     : 2
+release     : 3
 homepage    : https://aerynos.com/
 # No upstreams!
 summary     : pkgset virtual packages - Plasma/KDE Desktop
@@ -23,11 +23,23 @@ packages    :
         description: |
             Minimal packages for a Plasma/KDE Desktop session
         rundeps:
-            - pkgset-aeryn-base-desktop
+            # Plasma bits
             - plasma-desktop
+            - kinfocenter
+            - kscreen
+            - spectacle
+
+            # Basic apps (Gear)
+            - ark
             - dolphin
             - konsole
             - kwrite
+
+            # Other gear
+            - kaccounts-providers # Used for logging into various providers
+
+            # Desktop base profile
+            - pkgset-aeryn-base-desktop
         paths:
             - /usr/share/doc/%(name)-minimal/README
 

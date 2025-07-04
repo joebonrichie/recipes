@@ -13,11 +13,16 @@
 		},
 		"pkgset-aeryn-plasma-minimal": {
 			"depends": [
+				"ark",
 				"dolphin",
+				"kaccounts-providers",
+				"kinfocenter",
 				"konsole",
+				"kscreen",
 				"kwrite",
 				"pkgset-aeryn-base-desktop",
-				"plasma-desktop"
+				"plasma-desktop",
+				"spectacle"
 			],
 			"files": [
 				"/usr/share/doc/pkgset-aeryn-plasma-minimal/README"
@@ -35,6 +40,6 @@
 		}
 	},
 	"source-name": "pkgset-aeryn-plasma",
-	"source-release": "2",
+	"source-release": "3",
 	"source-version": "2025.06"
 }
