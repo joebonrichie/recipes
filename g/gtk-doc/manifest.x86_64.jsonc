@@ -11,6 +11,7 @@
 				"python(pygments)"
 			],
 			"depends": [
+				"binary(xsltproc)",
 				"docbook",
 				"python(pygments)"
 			],
@@ -121,6 +122,6 @@
 		}
 	},
 	"source-name": "gtk-doc",
-	"source-release": "5",
+	"source-release": "6",
 	"source-version": "1.34.0"
 }
