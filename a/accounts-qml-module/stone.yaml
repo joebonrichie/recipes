@@ -1,0 +1,43 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : accounts-qml-module
+version     : "0.7+git.05e79ebb"
+release     : 1
+upstreams   :
+    - git|https://gitlab.com/accounts-sso/accounts-qml-module.git : 05e79ebbbf3784a87f72b7be571070125c10dfe3
+homepage    : https://accounts-sso.gitlab.io/
+license     : LGPL-2.1-only
+summary     : QML bindings for libaccounts-qt + libsignon-qt
+description : |
+    This QML module provides an API to manage the user's online accounts and get their authentication data.
+builddeps   :
+    - binary(qdoc6)
+    - binary(qmake6)
+    - cmake(Qt6Qml)
+    - pkgconfig(accounts-qt6)
+    - pkgconfig(libsignon-qt6)
+# rundeps     :
+#     - qt6-wayland
+setup       : |
+    qmake6 \
+        CONFIG+=release \
+        QMAKE_CFLAGS_RELEASE="${CFLAGS}" \
+        QMAKE_CXXFLAGS_RELEASE="${CXXFLAGS}" \
+        QMAKE_LFLAGS="${LDFLAGS}"
+build       : |
+    %make
+install     : |
+    %make INSTALL_ROOT="%(installroot)" install_subtargets
+
+    # Test binary, unneeded
+    rm -rfv %(installroot)%(bindir)
+packages    :
+    - "%(name)-qt6":
+        summary: QML bindings for libaccounts-qt + libsignon-qt - Qt6
+        description: |
+            QML bindings for libaccounts-qt + libsignon-qt - Qt6
+        paths:
+            - /usr/lib/qt6/qml/

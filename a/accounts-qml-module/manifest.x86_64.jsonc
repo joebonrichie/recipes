@@ -1,0 +1,35 @@
+/** Human readable report. This is not consumed by boulder */
+{
+	"manifest-version": "0.2",
+	"packages": {
+		"accounts-qml-module-qt6": {
+			"build-depends": [
+				"binary(qdoc6)",
+				"binary(qmake6)",
+				"cmake(Qt6Qml)",
+				"pkgconfig(accounts-qt6)",
+				"pkgconfig(libsignon-qt6)"
+			],
+			"depends": [
+				"soname(libQt6Core.so.6(x86_64))",
+				"soname(libQt6Qml.so.6(x86_64))",
+				"soname(libaccounts-qt6.so.1(x86_64))",
+				"soname(libc++.so.1(x86_64))",
+				"soname(libc.so.6(x86_64))",
+				"soname(libsignon-qt6.so.1(x86_64))"
+			],
+			"files": [
+				"/usr/lib/qt6/qml/SSO/OnlineAccounts/libAccounts.so",
+				"/usr/lib/qt6/qml/SSO/OnlineAccounts/plugin.qmltypes",
+				"/usr/lib/qt6/qml/SSO/OnlineAccounts/qmldir"
+			],
+			"name": "accounts-qml-module-qt6",
+			"provides": [
+				"soname(qt6/qml/SSO/OnlineAccounts/libAccounts.so(x86_64))"
+			]
+		}
+	},
+	"source-name": "accounts-qml-module",
+	"source-release": "1",
+	"source-version": "0.7+git.05e79ebb"
+}
