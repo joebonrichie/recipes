@@ -1,0 +1,63 @@
+/** Human readable report. This is not consumed by boulder */
+{
+	"manifest-version": "0.2",
+	"packages": {
+		"libkexiv2": {
+			"build-depends": [
+				"cmake(ECM)",
+				"cmake(exiv2)"
+			],
+			"depends": [
+				"soname(libQt6Core.so.6(x86_64))",
+				"soname(libQt6Gui.so.6(x86_64))",
+				"soname(libc++.so.1(x86_64))",
+				"soname(libc.so.6(x86_64))",
+				"soname(libexiv2.so.28(x86_64))",
+				"soname(libm.so.6(x86_64))",
+				"soname(libunwind.so.1(x86_64))"
+			],
+			"files": [
+				"/usr/lib/libKExiv2Qt6.so.0",
+				"/usr/lib/libKExiv2Qt6.so.5.1.0",
+				"/usr/share/qlogging-categories6/libkexiv2.categories"
+			],
+			"name": "libkexiv2",
+			"provides": [
+				"soname(libKExiv2Qt6.so.0(x86_64))"
+			]
+		},
+		"libkexiv2-devel": {
+			"build-depends": [
+				"cmake(ECM)",
+				"cmake(exiv2)"
+			],
+			"depends": [
+				"libkexiv2"
+			],
+			"files": [
+				"/usr/include/KExiv2Qt6/KExiv2/KExiv2",
+				"/usr/include/KExiv2Qt6/KExiv2/KExiv2Data",
+				"/usr/include/KExiv2Qt6/KExiv2/KExiv2Previews",
+				"/usr/include/KExiv2Qt6/KExiv2/RotationMatrix",
+				"/usr/include/KExiv2Qt6/kexiv2/kexiv2.h",
+				"/usr/include/KExiv2Qt6/kexiv2/kexiv2data.h",
+				"/usr/include/KExiv2Qt6/kexiv2/kexiv2previews.h",
+				"/usr/include/KExiv2Qt6/kexiv2/libkexiv2_export.h",
+				"/usr/include/KExiv2Qt6/kexiv2/rotationmatrix.h",
+				"/usr/include/KExiv2Qt6/libkexiv2_version.h",
+				"/usr/lib/cmake/KExiv2Qt6/KExiv2Qt6Config.cmake",
+				"/usr/lib/cmake/KExiv2Qt6/KExiv2Qt6ConfigVersion.cmake",
+				"/usr/lib/cmake/KExiv2Qt6/KExiv2Qt6Targets-release.cmake",
+				"/usr/lib/cmake/KExiv2Qt6/KExiv2Qt6Targets.cmake",
+				"/usr/lib/libKExiv2Qt6.so"
+			],
+			"name": "libkexiv2-devel",
+			"provides": [
+				"cmake(KExiv2Qt6)"
+			]
+		}
+	},
+	"source-name": "libkexiv2",
+	"source-release": "1",
+	"source-version": "25.04.3"
+}

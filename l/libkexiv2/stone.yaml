@@ -1,0 +1,29 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : libkexiv2
+version     : 25.04.3
+release     : 1
+upstreams   :
+    - https://download.kde.org/stable/release-service/25.04.3/src/libkexiv2-25.04.3.tar.xz : d7b8d791e9db8facf16a95447daa597efaaa6b42d300fa7cbe9d1ff5b9e7b5a8
+homepage    : https://kde.org/
+license     : GPL-2.0-or-later
+summary     : Exiv2 library interface for KDE
+description : |
+    Libkexiv2 is a wrapper around Exiv2 library to manipulate pictures metadata as EXIF/IPTC and XMP.
+builddeps   :
+    # Temporary, boulder doesn't handle build ordering resolution correctly when builddeps are added by macros, so add ECM manually
+    - cmake(ECM)
+    - cmake(exiv2)
+setup       : |
+    %cmake_kf6 \
+        -DBUILD_WITH_QT6=ON
+build       : |
+    %cmake_build
+install     : |
+    %cmake_install
+
+    # remove docs
+    rm -rf %(installroot)/%(datadir)/doc
