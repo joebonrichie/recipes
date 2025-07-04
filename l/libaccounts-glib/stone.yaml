@@ -1,0 +1,42 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : libaccounts-glib
+version     : "1.27"
+release     : 1
+upstreams   :
+    - https://gitlab.com/accounts-sso/libaccounts-glib/-/archive/VERSION_1.27/libaccounts-glib-VERSION_1.27.tar.gz : a8407a5897a2e425ea1aa955ecf88485dd2fd417919de275b27c781a5d0637a5
+homepage    : https://gitlab.com/accounts-sso/libaccounts-glib
+license     : LGPL-2.1-only
+summary     : GLib-based client library for the accounts database
+description : |
+    GLib-based client library for the accounts database
+builddeps   :
+    - binary(gtkdoc-scan)
+    - binary(vapigen)
+    - pkgconfig(check)
+    - pkgconfig(glib-2.0)
+    - pkgconfig(gobject-introspection-1.0)
+    - pkgconfig(libxml-2.0)
+    - pkgconfig(sqlite3)
+    - docbook-xsl
+tuning      :
+    - lto: full
+    - optimize: speed
+environment : |
+    # Temporary, replace with boulder macro
+    export XML_CATALOG_FILES="file:///usr/share/defaults/docbook/docbook-xsl/catalog"
+setup       : |
+    %meson
+build       : |
+    %meson_build
+install     : |
+    %meson_install
+packages    :
+    - "%(name)-devel":
+        paths:
+            - /usr/share/dbus-1/interfaces/
+            - /usr/share/gettext/
+            - /usr/share/vala/vapi/
