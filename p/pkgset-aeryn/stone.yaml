@@ -5,7 +5,7 @@
 #
 name        : pkgset-aeryn
 version     : "2025.06" # I guess let's just match the OS version for now
-release     : 5
+release     : 6
 homepage    : https://aerynos.com/
 # No upstreams!
 summary     : pkgset virtual packages
@@ -79,11 +79,17 @@ packages    :
         rundeps:
             - bluez # Temp, this should be a rundep of the various bluetooth daemons instead
             - dbus-broker
+
+            # Intel/AMD/virt drivers
             - libva-intel-media-driver
             - mesa-dri-drivers
             - mesa-libegl
             - mesa-libgl
             - mesa-vulkan-drivers
+
+            # Networking
+            - networkmanager
+
             - "%(name)-base"
         paths:
             - /usr/share/doc/pkgset-aeryn-base-desktop/README

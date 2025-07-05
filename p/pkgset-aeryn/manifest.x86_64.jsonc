@@ -30,6 +30,7 @@
 				"mesa-libegl",
 				"mesa-libgl",
 				"mesa-vulkan-drivers",
+				"networkmanager",
 				"pkgset-aeryn-base"
 			],
 			"files": [
@@ -73,6 +74,6 @@
 		}
 	},
 	"source-name": "pkgset-aeryn",
-	"source-release": "5",
+	"source-release": "6",
 	"source-version": "2025.06"
 }
