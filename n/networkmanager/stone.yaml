@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : networkmanager
-version     : 1.50.0
-release     : 7
+version     : 1.52.0
+release     : 8
 homepage    : https://wiki.gnome.org/Projects/NetworkManager
 upstreams   :
-    - https://download.gnome.org/sources/NetworkManager/1.50/NetworkManager-1.50.0.tar.xz : fc03e7388a656cebc454c5d89481626122b1975d7c26babc64dc7e488faa66e3
+    - https://gitlab.freedesktop.org/NetworkManager/NetworkManager/-/releases/1.52.0/downloads/NetworkManager-1.52.0.tar.xz : 356f21a15da51e4218fd4d0fd78cea61e067b1116a25cddee4af9df05062e92d
 summary     : NetworkManager — network management daemon
 description : |
     NetworkManager attempts to keep an active network connection available at all times.  The point of NetworkManager is to make networking configuration and setup as painless and automatic as possible.  NetworkManager is intended to replace default route, replace other routes, set IP addresses, and in general configure networking as NM sees fit (with the possibility of manual override as necessary).  In effect, the goal of NetworkManager is to make networking Just Work with a minimum of user hassle, but still allow customization and a high level of manual network control.  If you have special needs, we'd like to hear about them, but understand that NetworkManager is not intended for every use-case.
@@ -18,6 +18,7 @@ license     :
     - LGPL-2.1-or-later
 builddeps   :
     - binary(eu-readelf)
+    - binary(gtkdoc-scan)
     - binary(msgfmt)
     - binary(perl)
     - binary(vapigen)
@@ -29,8 +30,8 @@ builddeps   :
     - pkgconfig(gnutls)
     - pkgconfig(gobject-introspection-1.0)
     - pkgconfig(jansson)
+    - pkgconfig(libnewt)
     - pkgconfig(libcurl)
-    - pkgconfig(libedit)
     - pkgconfig(libndp)
     - pkgconfig(libpsl)
     - pkgconfig(libsystemd)
@@ -39,29 +40,85 @@ builddeps   :
     - pkgconfig(mobile-broadband-provider-info)
     - pkgconfig(nss)
     - pkgconfig(polkit-gobject-1)
+    - pkgconfig(readline)
     - pkgconfig(systemd)
     - pkgconfig(uuid)
+    - python(pygobject) # Docs
+    - docbook
+    - docbook-xsl
     - ppp-devel
-    # pkgconfig(libnewt)
 rundeps     :
     - binary(iwmon)
-packages    :
-    - "%(name)-devel":
-        paths:
-            - /usr/share/vala/vapi
+tuning      :
+    - lto: false # Handled by meson flag
 environment : |
-    # gcc 14 changes, no upstream issue found
-    export CFLAGS="${CFLAGS} -Wno-incompatible-pointer-types"
+    # Temporary, replace with boulder macro
+    export XML_CATALOG_FILES="file:///usr/share/defaults/docbook/docbook-dtd/catalog file:///usr/share/defaults/docbook/docbook-xsl/catalog"
 setup       : |
+    # TODO:
+    # - Setup online check
+    # - More bluez configuration
+
+    %patch %(pkgdir)/2164.patch
+    %patch %(pkgdir)/2173.patch
+
     %meson \
-        -Dselinux=false \
-        -Dlibaudit=no \
-        -Dnmtui=false \
-        -Diwd=true \
+        -Db_lto=true \
+        -Dconfig_dhcp_default=internal \
+        -Dconfig_dns_rc_manager_default=auto \
+        -Dconfig_logging_backend_default=journal \
+        -Dconfig_plugins_default=keyfile \
         -Dconfig_wifi_backend_default=iwd \
+        -Ddhcpcd=no \
+        -Ddocs=true \
+        -Diwd=true \
+        -Dlibaudit=no \
+        -Dmodify_system=true \
+        -Dnmtui=true \
+        -Dpppd_plugin_dir="$(pkgconf --variable=plugindir pppd)" \
         -Dqt=false \
+        -Dresolvconf=no \
+        -Dselinux=false \
         -Dvapi=true
 build       : |
     %meson_build
 install     : |
     %meson_install
+
+    %install_file %(pkgdir)/NetworkManager.tmpfiles %(installroot)%(tmpfilesdir)/%(name).conf
+packages    :
+    # TODO: More splitting
+
+    - "%(name)-libnm":
+        paths:
+            - /usr/lib/libnm.so.*
+            - /usr/lib/girepository-1.0/NM-1.0.typelib
+
+    - "%(name)-libnm-devel":
+        rundeps:
+            - "%(name)-libnm"
+        paths:
+            - /usr/include/libnm/
+            - /usr/lib/pkgconfig/libnm.pc
+            - /usr/lib/libnm.so
+            - /usr/share/dbus-1/interfaces/
+            - /usr/share/gir-1.0/NM-1.0.gir
+            - /usr/share/vala/vapi/libnm.*
+
+    - "%(name)-cloud-setup":
+        summary: Automatically configure NetworkManager in cloud
+        description: Automatically configure NetworkManager in cloud
+        rundeps:
+            - "%(name)"
+        paths:
+            - /usr/lib/networkmanager/nm-cloud-setup
+            - /usr/lib/systemd/system/nm-cloud-setup.*
+            - /usr/lib/NetworkManager/dispatcher.d/**/90-nm-cloud-setup.sh
+            - /usr/share/man/man8/nm-cloud-setup.*
+
+    - "%(name)-tui":
+        summary: NetworkManager curses-based UI
+        description: NetworkManager curses-based UI
+        paths:
+            - /usr/bin/nmtui*
+            - /usr/share/man/man1/nmtui*
