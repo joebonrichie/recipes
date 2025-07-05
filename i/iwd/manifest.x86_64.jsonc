@@ -4,6 +4,7 @@
 	"packages": {
 		"iwd": {
 			"build-depends": [
+				"binary(rst2man)",
 				"pkgconfig(dbus-1)",
 				"pkgconfig(libedit)",
 				"pkgconfig(readline)",
@@ -15,30 +16,39 @@
 				"soname(libedit.so.0(x86_64))"
 			],
 			"files": [
+				"/usr/bin/hwsim",
 				"/usr/bin/iwctl",
 				"/usr/bin/iwmon",
+				"/usr/lib/iwd/ead",
 				"/usr/lib/iwd/iwd",
 				"/usr/lib/modules-load.d/pkcs8.conf",
 				"/usr/lib/systemd/network/80-iwd.link",
+				"/usr/lib/systemd/system/ead.service",
 				"/usr/lib/systemd/system/iwd.service",
+				"/usr/share/dbus-1/system-services/net.connman.ead.service",
 				"/usr/share/dbus-1/system-services/net.connman.iwd.service",
+				"/usr/share/dbus-1/system.d/ead-dbus.conf",
+				"/usr/share/dbus-1/system.d/hwsim-dbus.conf",
 				"/usr/share/dbus-1/system.d/iwd-dbus.conf",
+				"/usr/share/man/man1/hwsim.1",
 				"/usr/share/man/man1/iwctl.1",
 				"/usr/share/man/man1/iwmon.1",
 				"/usr/share/man/man5/iwd.ap.5",
 				"/usr/share/man/man5/iwd.config.5",
 				"/usr/share/man/man5/iwd.network.5",
 				"/usr/share/man/man7/iwd.debug.7",
+				"/usr/share/man/man8/ead.8",
 				"/usr/share/man/man8/iwd.8"
 			],
 			"name": "iwd",
 			"provides": [
+				"binary(hwsim)",
 				"binary(iwctl)",
 				"binary(iwmon)"
 			]
 		}
 	},
 	"source-name": "iwd",
-	"source-release": "4",
-	"source-version": "3.3"
+	"source-release": "5",
+	"source-version": "3.9"
 }
