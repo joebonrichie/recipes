@@ -5,6 +5,7 @@
 		"qt6-imageformats": {
 			"build-depends": [
 				"cmake(Qt6CorePrivate)",
+				"pkgconfig(jasper)",
 				"pkgconfig(libtiff-4)",
 				"pkgconfig(libwebp)"
 			],
@@ -13,6 +14,7 @@
 				"soname(libQt6Gui.so.6(x86_64))",
 				"soname(libc++.so.1(x86_64))",
 				"soname(libc.so.6(x86_64))",
+				"soname(libjasper.so.7(x86_64))",
 				"soname(libm.so.6(x86_64))",
 				"soname(libtiff.so.6(x86_64))",
 				"soname(libwebp.so.7(x86_64))",
@@ -21,6 +23,7 @@
 			],
 			"files": [
 				"/usr/lib/qt6/plugins/imageformats/libqicns.so",
+				"/usr/lib/qt6/plugins/imageformats/libqjp2.so",
 				"/usr/lib/qt6/plugins/imageformats/libqtga.so",
 				"/usr/lib/qt6/plugins/imageformats/libqtiff.so",
 				"/usr/lib/qt6/plugins/imageformats/libqwbmp.so",
@@ -29,6 +32,7 @@
 			"name": "qt6-imageformats",
 			"provides": [
 				"soname(qt6/plugins/imageformats/libqicns.so(x86_64))",
+				"soname(qt6/plugins/imageformats/libqjp2.so(x86_64))",
 				"soname(qt6/plugins/imageformats/libqtga.so(x86_64))",
 				"soname(qt6/plugins/imageformats/libqtiff.so(x86_64))",
 				"soname(qt6/plugins/imageformats/libqwbmp.so(x86_64))",
@@ -38,6 +42,7 @@
 		"qt6-imageformats-devel": {
 			"build-depends": [
 				"cmake(Qt6CorePrivate)",
+				"pkgconfig(jasper)",
 				"pkgconfig(libtiff-4)",
 				"pkgconfig(libwebp)"
 			],
@@ -54,6 +59,12 @@
 				"/usr/lib/cmake/Qt6Gui/Qt6QICNSPluginConfigVersionImpl.cmake",
 				"/usr/lib/cmake/Qt6Gui/Qt6QICNSPluginTargets-release.cmake",
 				"/usr/lib/cmake/Qt6Gui/Qt6QICNSPluginTargets.cmake",
+				"/usr/lib/cmake/Qt6Gui/Qt6QJp2PluginAdditionalTargetInfo.cmake",
+				"/usr/lib/cmake/Qt6Gui/Qt6QJp2PluginConfig.cmake",
+				"/usr/lib/cmake/Qt6Gui/Qt6QJp2PluginConfigVersion.cmake",
+				"/usr/lib/cmake/Qt6Gui/Qt6QJp2PluginConfigVersionImpl.cmake",
+				"/usr/lib/cmake/Qt6Gui/Qt6QJp2PluginTargets-release.cmake",
+				"/usr/lib/cmake/Qt6Gui/Qt6QJp2PluginTargets.cmake",
 				"/usr/lib/cmake/Qt6Gui/Qt6QTgaPluginAdditionalTargetInfo.cmake",
 				"/usr/lib/cmake/Qt6Gui/Qt6QTgaPluginConfig.cmake",
 				"/usr/lib/cmake/Qt6Gui/Qt6QTgaPluginConfigVersion.cmake",
@@ -83,6 +94,7 @@
 			"name": "qt6-imageformats-devel",
 			"provides": [
 				"cmake(Qt6QICNSPlugin)",
+				"cmake(Qt6QJp2Plugin)",
 				"cmake(Qt6QTgaPlugin)",
 				"cmake(Qt6QTiffPlugin)",
 				"cmake(Qt6QWbmpPlugin)",
@@ -91,6 +103,6 @@
 		}
 	},
 	"source-name": "qt6-imageformats",
-	"source-release": "1",
+	"source-release": "2",
 	"source-version": "6.9.1"
 }
