@@ -1,0 +1,69 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : haruna
+version     : 1.4.0
+release     : 1
+upstreams   :
+    - https://download.kde.org/stable/haruna/1.4.0/haruna-1.4.0.tar.xz : 3cb47be3148dcc8637ff5262573390ca5edc2ece00028af790d7355347d8df6e
+homepage    : https://invent.kde.org/multimedia/haruna/
+license     :
+    - BSD-3-Clause
+    - CC-BY-4.0
+    - CC-BY-SA-4.0
+    - GPL-2.0-or-later
+    - GPL-3.0-or-later
+summary     : Video player built with Qt/QML on top of libmpv
+description : |
+    Video player built with Qt/QML on top of libmpv
+builddeps   :
+    - binary(patchelf)
+    - cmake(Breeze)
+    - cmake(ECM)
+    - cmake(KDSingleApplication-qt6)
+    - cmake(KF6ColorScheme)
+    - cmake(KF6CoreAddons)
+    - cmake(KF6Config)
+    - cmake(KF6Crash)
+    - cmake(KF6FileMetaData)
+    - cmake(KF6I18n)
+    - cmake(KF6IconThemes)
+    - cmake(KF6KIO)
+    - cmake(KF6Kirigami)
+    - cmake(KF6WindowSystem)
+    - cmake(MpvQt)
+    - cmake(Qt6Core5Compat)
+    - cmake(Qt6CorePrivate)
+    - cmake(Qt6Qml)
+    - pkgconfig(libavcodec)
+    - pkgconfig(libavfilter)
+    - pkgconfig(libavformat)
+    - pkgconfig(libavdevice)
+    - pkgconfig(libavutil)
+    - pkgconfig(libpostproc)
+    - pkgconfig(libswscale)
+    # Ytdlp
+rundeps     :
+    - breeze-icons # Default icon theme
+    - kf6-kirigami # QML dep
+    - kf6-qqc2-desktop-style # QML dep
+    - qt6-wayland
+tuning      :
+    - lto: full
+    - optimize: speed
+setup       : |
+    %cmake
+build       : |
+    %cmake_build
+install     : |
+    %cmake_install
+
+    # Where does rpath even come from here?
+    patchelf --remove-rpath %(installroot)/%(bindir)/haruna
+
+    # Cleaning icons with non-standard resolution
+    for i in 44 150 310; do	
+        rm -rf %(installroot)/usr/share/icons/hicolor/"${i}x${i}"
+    done
