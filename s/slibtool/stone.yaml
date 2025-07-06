@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : slibtool
-version     : 0.7.1
-release     : 12
+version     : 0.7.3
+release     : 13
 homepage    : https://dev.midipix.org/cross/slibtool
 upstreams   :
-    - https://dl.midipix.org/slibtool/slibtool-0.7.1.tar.gz : a8de1359247609712615c51fff61b5fb398e64788627c9b0ecf6ec39263004ca
+    - https://dl.midipix.org/slibtool/slibtool-0.7.3.tar.gz : 634736b9bbe16b04d7dc22abff0afb916dd56f45b4641e0afc542c6595035ea9
 summary     : a surrogate libtool implementation, written in C
 description : |
     `slibtool` is an independent reimplementation of the widely used libtool,
@@ -30,8 +30,6 @@ license     :
 builddeps   :
     - binary(m4)
 setup       : |
-    %patch %(pkgdir)/0001-Fix-0.7-regression-breaking-builds.patch
-
     ./configure \
         --prefix=%(prefix) \
         --libdir=%(libdir) \
