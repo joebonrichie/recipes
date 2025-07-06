@@ -1,0 +1,91 @@
+/** Human readable report. This is not consumed by boulder */
+{
+	"manifest-version": "0.2",
+	"packages": {
+		"kimageannotator": {
+			"build-depends": [
+				"cmake(Qt6LinguistTools)",
+				"cmake(Qt6Svg)",
+				"cmake(kColorPicker-Qt6)",
+				"pkgconfig(x11)"
+			],
+			"depends": [
+				"soname(libQt6Core.so.6(x86_64))",
+				"soname(libQt6Gui.so.6(x86_64))",
+				"soname(libQt6Svg.so.6(x86_64))",
+				"soname(libQt6Widgets.so.6(x86_64))",
+				"soname(libX11.so.6(x86_64))",
+				"soname(libc++.so.1(x86_64))",
+				"soname(libc.so.6(x86_64))",
+				"soname(libkColorPicker.so.0(x86_64))",
+				"soname(libunwind.so.1(x86_64))"
+			],
+			"files": [
+				"/usr/lib/libkImageAnnotator.so.0",
+				"/usr/lib/libkImageAnnotator.so.0.7.1",
+				"/usr/share/kImageAnnotator/translations/kImageAnnotator_ar.qm",
+				"/usr/share/kImageAnnotator/translations/kImageAnnotator_bg.qm",
+				"/usr/share/kImageAnnotator/translations/kImageAnnotator_ca.qm",
+				"/usr/share/kImageAnnotator/translations/kImageAnnotator_cs.qm",
+				"/usr/share/kImageAnnotator/translations/kImageAnnotator_da.qm",
+				"/usr/share/kImageAnnotator/translations/kImageAnnotator_de.qm",
+				"/usr/share/kImageAnnotator/translations/kImageAnnotator_el.qm",
+				"/usr/share/kImageAnnotator/translations/kImageAnnotator_es.qm",
+				"/usr/share/kImageAnnotator/translations/kImageAnnotator_eu.qm",
+				"/usr/share/kImageAnnotator/translations/kImageAnnotator_fr.qm",
+				"/usr/share/kImageAnnotator/translations/kImageAnnotator_fr_CA.qm",
+				"/usr/share/kImageAnnotator/translations/kImageAnnotator_gl.qm",
+				"/usr/share/kImageAnnotator/translations/kImageAnnotator_hr.qm",
+				"/usr/share/kImageAnnotator/translations/kImageAnnotator_hu.qm",
+				"/usr/share/kImageAnnotator/translations/kImageAnnotator_id.qm",
+				"/usr/share/kImageAnnotator/translations/kImageAnnotator_it.qm",
+				"/usr/share/kImageAnnotator/translations/kImageAnnotator_ja.qm",
+				"/usr/share/kImageAnnotator/translations/kImageAnnotator_ko.qm",
+				"/usr/share/kImageAnnotator/translations/kImageAnnotator_nl.qm",
+				"/usr/share/kImageAnnotator/translations/kImageAnnotator_no.qm",
+				"/usr/share/kImageAnnotator/translations/kImageAnnotator_pl.qm",
+				"/usr/share/kImageAnnotator/translations/kImageAnnotator_pt.qm",
+				"/usr/share/kImageAnnotator/translations/kImageAnnotator_pt_BR.qm",
+				"/usr/share/kImageAnnotator/translations/kImageAnnotator_ro.qm",
+				"/usr/share/kImageAnnotator/translations/kImageAnnotator_ru.qm",
+				"/usr/share/kImageAnnotator/translations/kImageAnnotator_si.qm",
+				"/usr/share/kImageAnnotator/translations/kImageAnnotator_sq.qm",
+				"/usr/share/kImageAnnotator/translations/kImageAnnotator_sv.qm",
+				"/usr/share/kImageAnnotator/translations/kImageAnnotator_tr.qm",
+				"/usr/share/kImageAnnotator/translations/kImageAnnotator_uk.qm",
+				"/usr/share/kImageAnnotator/translations/kImageAnnotator_zh_CN.qm"
+			],
+			"name": "kimageannotator",
+			"provides": [
+				"soname(libkImageAnnotator.so.0(x86_64))"
+			]
+		},
+		"kimageannotator-devel": {
+			"build-depends": [
+				"cmake(Qt6LinguistTools)",
+				"cmake(Qt6Svg)",
+				"cmake(kColorPicker-Qt6)",
+				"pkgconfig(x11)"
+			],
+			"depends": [
+				"kimageannotator"
+			],
+			"files": [
+				"/usr/include/kImageAnnotator-Qt6/kImageAnnotator/KImageAnnotator.h",
+				"/usr/include/kImageAnnotator-Qt6/kImageAnnotator/KImageAnnotatorExport.h",
+				"/usr/lib/cmake/kImageAnnotator-Qt6/kImageAnnotator-Qt6Config-version.cmake",
+				"/usr/lib/cmake/kImageAnnotator-Qt6/kImageAnnotator-Qt6Config.cmake",
+				"/usr/lib/cmake/kImageAnnotator-Qt6/kImageAnnotator-targets-release.cmake",
+				"/usr/lib/cmake/kImageAnnotator-Qt6/kImageAnnotator-targets.cmake",
+				"/usr/lib/libkImageAnnotator.so"
+			],
+			"name": "kimageannotator-devel",
+			"provides": [
+				"cmake(kImageAnnotator-Qt6)"
+			]
+		}
+	},
+	"source-name": "kimageannotator",
+	"source-release": "1",
+	"source-version": "0.7.1"
+}
