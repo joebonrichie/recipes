@@ -1,0 +1,28 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : kf6-kdnssd
+version     : 6.15.0
+release     : 1
+upstreams   :
+    - https://download.kde.org/stable/frameworks/6.15/kdnssd-6.15.0.tar.xz : 192164a395ce9f0667184cae78f369a7c0b8acab0e0d073cdedb2a54bc7c4d5a
+homepage    : https://community.kde.org/Frameworks
+license     :
+    - BSD-3-Clause
+    - LGPL-2.0-or-later
+summary     : Network service discovery using Zeroconf
+description : |
+    Network service discovery using Zeroconf
+builddeps   :
+    # Temporary, boulder doesn't handle build ordering resolution correctly when builddeps are added by macros, so add ECM manually
+    - cmake(ECM)
+    - pkgconfig(avahi-core)
+    # TODO nss-mdns (as rundep)
+setup       : |
+    %cmake_kf6
+build       : |
+    %cmake_build
+install     : |
+    %cmake_install
