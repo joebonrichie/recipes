@@ -1,0 +1,36 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : jasper
+version     : 4.2.5
+release     : 1
+upstreams   :
+    - https://github.com/jasper-software/jasper/releases/download/version-4.2.5/jasper-4.2.5.tar.gz : 6e49075b47204a9879600f85628a248cdb19abc1bb74d0b7a2177bcdb87c95eb
+homepage    : https://ece.engr.uvic.ca/~frodo/jasper/
+license     : JasPer-2.0
+summary     : JasPer Image Processing/Coding Tool Kit
+description : |
+    JasPer Project is an open-source initiative to provide a free software-based reference implementation of the codec specified in the JPEG-2000 Part-1 standard
+builddeps   :
+    - pkgconfig(glut)
+    - pkgconfig(libjpeg)
+    - pkgconfig(opengl)
+    # TODO:
+    # libheif
+setup       : |
+    %cmake \
+        -DALLOW_IN_SOURCE_BUILD=TRUE \
+        -DJAS_ENABLE_DOC:BOOL=OFF
+build       : |
+    %cmake_build
+install     : |
+    %cmake_install
+packages    :
+    - "%(name)-libs":
+        summary: "Library files for %(name)"
+        description: |
+            Library files for %(name), typically pulled in as a dependency of another package.
+        paths:
+            - /usr/lib/libjasper.so.*

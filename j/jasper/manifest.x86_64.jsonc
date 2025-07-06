@@ -1,0 +1,106 @@
+/** Human readable report. This is not consumed by boulder */
+{
+	"manifest-version": "0.2",
+	"packages": {
+		"jasper": {
+			"build-depends": [
+				"pkgconfig(glut)",
+				"pkgconfig(libjpeg)",
+				"pkgconfig(opengl)"
+			],
+			"depends": [
+				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
+				"soname(libGLU.so.1(x86_64))",
+				"soname(libOpenGL.so.0(x86_64))",
+				"soname(libc.so.6(x86_64))",
+				"soname(libglut.so.3(x86_64))",
+				"soname(libjasper.so.7(x86_64))",
+				"soname(libm.so.6(x86_64))"
+			],
+			"files": [
+				"/usr/bin/imgcmp",
+				"/usr/bin/imginfo",
+				"/usr/bin/jasper",
+				"/usr/bin/jiv",
+				"/usr/share/doc/JasPer/README.md",
+				"/usr/share/man/man1/imgcmp.1",
+				"/usr/share/man/man1/imginfo.1",
+				"/usr/share/man/man1/jasper.1",
+				"/usr/share/man/man1/jiv.1"
+			],
+			"name": "jasper",
+			"provides": [
+				"binary(imgcmp)",
+				"binary(imginfo)",
+				"binary(jasper)",
+				"binary(jiv)"
+			]
+		},
+		"jasper-devel": {
+			"build-depends": [
+				"pkgconfig(glut)",
+				"pkgconfig(libjpeg)",
+				"pkgconfig(opengl)"
+			],
+			"depends": [
+				"jasper",
+				"pkgconfig(libjpeg)"
+			],
+			"files": [
+				"/usr/include/jasper/jas_cm.h",
+				"/usr/include/jasper/jas_compiler.h",
+				"/usr/include/jasper/jas_config.h",
+				"/usr/include/jasper/jas_debug.h",
+				"/usr/include/jasper/jas_dll.h",
+				"/usr/include/jasper/jas_export_cmake.h",
+				"/usr/include/jasper/jas_fix.h",
+				"/usr/include/jasper/jas_getopt.h",
+				"/usr/include/jasper/jas_icc.h",
+				"/usr/include/jasper/jas_image.h",
+				"/usr/include/jasper/jas_init.h",
+				"/usr/include/jasper/jas_log.h",
+				"/usr/include/jasper/jas_malloc.h",
+				"/usr/include/jasper/jas_math.h",
+				"/usr/include/jasper/jas_seq.h",
+				"/usr/include/jasper/jas_stream.h",
+				"/usr/include/jasper/jas_string.h",
+				"/usr/include/jasper/jas_thread.h",
+				"/usr/include/jasper/jas_tmr.h",
+				"/usr/include/jasper/jas_tvp.h",
+				"/usr/include/jasper/jas_types.h",
+				"/usr/include/jasper/jas_version.h",
+				"/usr/include/jasper/jasper.h",
+				"/usr/lib/libjasper.so",
+				"/usr/lib/pkgconfig/jasper.pc"
+			],
+			"name": "jasper-devel",
+			"provides": [
+				"pkgconfig(jasper)"
+			]
+		},
+		"jasper-libs": {
+			"build-depends": [
+				"pkgconfig(glut)",
+				"pkgconfig(libjpeg)",
+				"pkgconfig(opengl)"
+			],
+			"depends": [
+				"soname(ld-linux-x86-64.so.2(x86_64))",
+				"soname(libc.so.6(x86_64))",
+				"soname(libjpeg.so.8(x86_64))",
+				"soname(libm.so.6(x86_64))"
+			],
+			"files": [
+				"/usr/lib/libjasper.so.7",
+				"/usr/lib/libjasper.so.7.0.0"
+			],
+			"name": "jasper-libs",
+			"provides": [
+				"soname(libjasper.so.7(x86_64))"
+			]
+		}
+	},
+	"source-name": "jasper",
+	"source-release": "1",
+	"source-version": "4.2.5"
+}
