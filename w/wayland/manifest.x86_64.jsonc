@@ -15,16 +15,13 @@
 			],
 			"files": [
 				"/usr/lib/libwayland-client.so.0",
-				"/usr/lib/libwayland-client.so.0.23.1",
+				"/usr/lib/libwayland-client.so.0.24.0",
 				"/usr/lib/libwayland-cursor.so.0",
-				"/usr/lib/libwayland-cursor.so.0.23.1",
+				"/usr/lib/libwayland-cursor.so.0.24.0",
 				"/usr/lib/libwayland-egl.so.1",
-				"/usr/lib/libwayland-egl.so.1.23.1",
+				"/usr/lib/libwayland-egl.so.1.24.0",
 				"/usr/lib/libwayland-server.so.0",
-				"/usr/lib/libwayland-server.so.0.23.1",
-				"/usr/share/wayland/wayland-scanner.mk",
-				"/usr/share/wayland/wayland.dtd",
-				"/usr/share/wayland/wayland.xml"
+				"/usr/lib/libwayland-server.so.0.24.0"
 			],
 			"name": "wayland",
 			"provides": [
@@ -48,13 +45,13 @@
 			],
 			"files": [
 				"/usr/lib32/libwayland-client.so.0",
-				"/usr/lib32/libwayland-client.so.0.23.1",
+				"/usr/lib32/libwayland-client.so.0.24.0",
 				"/usr/lib32/libwayland-cursor.so.0",
-				"/usr/lib32/libwayland-cursor.so.0.23.1",
+				"/usr/lib32/libwayland-cursor.so.0.24.0",
 				"/usr/lib32/libwayland-egl.so.1",
-				"/usr/lib32/libwayland-egl.so.1.23.1",
+				"/usr/lib32/libwayland-egl.so.1.24.0",
 				"/usr/lib32/libwayland-server.so.0",
-				"/usr/lib32/libwayland-server.so.0.23.1"
+				"/usr/lib32/libwayland-server.so.0.24.0"
 			],
 			"name": "wayland-32bit",
 			"provides": [
@@ -137,7 +134,10 @@
 				"/usr/lib/pkgconfig/wayland-egl.pc",
 				"/usr/lib/pkgconfig/wayland-scanner.pc",
 				"/usr/lib/pkgconfig/wayland-server.pc",
-				"/usr/share/aclocal/wayland-scanner.m4"
+				"/usr/share/aclocal/wayland-scanner.m4",
+				"/usr/share/wayland/wayland-scanner.mk",
+				"/usr/share/wayland/wayland.dtd",
+				"/usr/share/wayland/wayland.xml"
 			],
 			"name": "wayland-devel",
 			"provides": [
@@ -152,6 +152,6 @@
 		}
 	},
 	"source-name": "wayland",
-	"source-release": "7",
-	"source-version": "1.23.1"
+	"source-release": "8",
+	"source-version": "1.24.0"
 }

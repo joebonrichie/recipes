@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : wayland
-version     : 1.23.1
-release     : 7
+version     : 1.24.0
+release     : 8
 homepage    : https://wayland.freedesktop.org
 upstreams   :
-    - https://gitlab.freedesktop.org/wayland/wayland/-/releases/1.23.1/downloads/wayland-1.23.1.tar.xz : 864fb2a8399e2d0ec39d56e9d9b753c093775beadc6022ce81f441929a81e5ed
+    - https://gitlab.freedesktop.org/wayland/wayland/-/releases/1.24.0/downloads/wayland-1.24.0.tar.xz : 82892487a01ad67b334eca83b54317a7c86a03a89cfadacfef5211f11a5d0536
 summary     : Modern protocol which replaces X11
 description : |
     Wayland is a replacement for the X11 window system protocol and architecture with the aim to be easier to develop, extend, and maintain.
@@ -21,14 +21,17 @@ builddeps   :
     - pkgconfig32(libffi)
     - pkgconfig32(libxml-2.0)
 emul32      : yes
-packages    :
-    - "%(name)-devel":
-        paths:
-            # Development tools
-            - /usr/bin
 setup       : |
-    %meson -Ddocumentation=false -Dtests=false
+    %meson \
+        -Ddocumentation=false \
+        -Dtests=false
 build       : |
     %meson_build
 install     : |
     %meson_install
+packages    :
+    - "%(name)-devel":
+        paths:
+            # Development tools
+            - /usr/bin/
+            - /usr/share/wayland/
