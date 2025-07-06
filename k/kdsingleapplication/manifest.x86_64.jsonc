@@ -14,8 +14,8 @@
 				"soname(libunwind.so.1(x86_64))"
 			],
 			"files": [
-				"/usr/lib/libkdsingleapplication-qt6.so.1.1",
-				"/usr/lib/libkdsingleapplication-qt6.so.1.1.0",
+				"/usr/lib/libkdsingleapplication-qt6.so.1.2",
+				"/usr/lib/libkdsingleapplication-qt6.so.1.2.0",
 				"/usr/share/doc/KDSingleApplication-qt6/LICENSE.txt",
 				"/usr/share/doc/KDSingleApplication-qt6/LICENSES/BSD-3-Clause.txt",
 				"/usr/share/doc/KDSingleApplication-qt6/LICENSES/MIT.txt",
@@ -23,7 +23,7 @@
 			],
 			"name": "kdsingleapplication-qt6",
 			"provides": [
-				"soname(libkdsingleapplication-qt6.so.1.1(x86_64))"
+				"soname(libkdsingleapplication-qt6.so.1.2(x86_64))"
 			]
 		},
 		"kdsingleapplication-qt6-devel": {
@@ -54,6 +54,6 @@
 		}
 	},
 	"source-name": "kdsingleapplication",
-	"source-release": "2",
-	"source-version": "1.1.0"
+	"source-release": "3",
+	"source-version": "1.2.0"
 }
