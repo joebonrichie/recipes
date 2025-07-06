@@ -1,0 +1,58 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : plasma-nm
+version     : 6.4.2
+release     : 1
+upstreams   :
+    - https://download.kde.org/stable/plasma/6.4.2/plasma-nm-6.4.2.tar.xz : 786faceb41c0ad912e05c54780ed9331c4019707fb11dcd904f1813a2fd68769
+homepage    : https://kde.org/plasma-desktop/
+license     :
+    - GPL-2.0-only
+    - LGPL-2.1-only
+summary     : Plasma applet for managing network connections
+description : |
+    Plasma applet written in QML for managing network connections
+builddeps   :
+    # Temporary, boulder doesn't handle build ordering resolution correctly when builddeps are added by macros, so add ECM manually
+    - cmake(ECM)
+    - cmake(KF6ColorScheme)
+    - cmake(KF6Completion)
+    - cmake(KF6CoreAddons)
+    - cmake(KF6DBusAddons)
+    - cmake(KF6I18n)
+    - cmake(KF6KIO)
+    - cmake(KF6KCMUtils)
+    - cmake(KF6Kirigami)
+    - cmake(KF6ModemManagerQt)
+    - cmake(KF6NetworkManagerQt)
+    - cmake(KF6Notifications)
+    - cmake(KF6Prison)
+    - cmake(KF6Service)
+    - cmake(KF6Solid)
+    - cmake(KF6Svg)
+    - cmake(KF6Wallet)
+    - cmake(KF6WidgetsAddons)
+    - cmake(KF6WindowSystem)
+    - cmake(Plasma)
+    - cmake(Qca-qt6)
+    - cmake(QCoro6)
+    - cmake(Qt6CorePrivate)
+    - cmake(Qt6Quick)
+rundeps     :
+    - kf6-kirigami
+    - kf6-prison
+    - networkmanager
+tuning      :
+    - lto: full
+    - optimize: speed
+setup       : |
+    %cmake_kf6
+build       : |
+    %cmake_build
+install     : |
+    %cmake_install
+
+# TODO: Split up the VPN support into subpackages that depend on the appropriate networkmanager plugin
