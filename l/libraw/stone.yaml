@@ -1,0 +1,35 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : libraw
+version     : 0.21.4
+release     : 1
+upstreams   :
+    - https://www.libraw.org/data/LibRaw-0.21.4.tar.gz : 6be43f19397e43214ff56aab056bf3ff4925ca14012ce5a1538a172406a09e63
+homepage    : https://www.libraw.org/
+license     :
+    - CDDL-1.0
+    - LGPL-2.1-or-later
+summary     : LibRaw is a library for reading RAW files from digital cameras
+description : |
+    LibRaw is a library for reading RAW files from digital cameras
+builddeps   :
+    - pkgconfig(jasper)
+    - pkgconfig(lcms2)
+    - pkgconfig(libjpeg)
+    - pkgconfig(zlib)
+setup       : |
+    %configure \
+        --disable-static
+build       : |
+    %make
+install     : |
+    %make_install
+packages    :
+    - "%(name)-samples":
+        summary: LibRaw sample programs
+        description: LibRaw sample programs
+        paths:
+            - /usr/bin/
