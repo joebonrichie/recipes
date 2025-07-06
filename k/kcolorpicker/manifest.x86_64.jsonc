@@ -1,0 +1,51 @@
+/** Human readable report. This is not consumed by boulder */
+{
+	"manifest-version": "0.2",
+	"packages": {
+		"kcolorpicker": {
+			"build-depends": [
+				"cmake(Qt6Core)"
+			],
+			"depends": [
+				"soname(libQt6Core.so.6(x86_64))",
+				"soname(libQt6Gui.so.6(x86_64))",
+				"soname(libQt6Widgets.so.6(x86_64))",
+				"soname(libc++.so.1(x86_64))",
+				"soname(libc.so.6(x86_64))",
+				"soname(libunwind.so.1(x86_64))"
+			],
+			"files": [
+				"/usr/lib/libkColorPicker.so.0",
+				"/usr/lib/libkColorPicker.so.0.3.1"
+			],
+			"name": "kcolorpicker",
+			"provides": [
+				"soname(libkColorPicker.so.0(x86_64))"
+			]
+		},
+		"kcolorpicker-devel": {
+			"build-depends": [
+				"cmake(Qt6Core)"
+			],
+			"depends": [
+				"kcolorpicker"
+			],
+			"files": [
+				"/usr/include/kColorPicker-Qt6/kColorPicker/KColorPicker.h",
+				"/usr/include/kColorPicker-Qt6/kColorPicker/KColorPickerExport.h",
+				"/usr/lib/cmake/kColorPicker-Qt6/kColorPicker-Qt6Config-version.cmake",
+				"/usr/lib/cmake/kColorPicker-Qt6/kColorPicker-Qt6Config.cmake",
+				"/usr/lib/cmake/kColorPicker-Qt6/kColorPicker-targets-release.cmake",
+				"/usr/lib/cmake/kColorPicker-Qt6/kColorPicker-targets.cmake",
+				"/usr/lib/libkColorPicker.so"
+			],
+			"name": "kcolorpicker-devel",
+			"provides": [
+				"cmake(kColorPicker-Qt6)"
+			]
+		}
+	},
+	"source-name": "kcolorpicker",
+	"source-release": "1",
+	"source-version": "0.3.1"
+}
