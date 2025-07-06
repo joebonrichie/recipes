@@ -4,10 +4,10 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : konsole
-version     : 25.04.1
-release     : 5
+version     : 25.04.3
+release     : 7
 upstreams   :
-    - https://download.kde.org/stable/release-service/25.04.1/src/konsole-25.04.1.tar.xz : 961edfa0a3450fe06172a30a7b72cf810956a88b562847202feb8706068e745e
+    - https://download.kde.org/stable/release-service/25.04.3/src/konsole-25.04.3.tar.xz : 2f6833e22a71f4191e7ee45f3dce37e22a3be36d0fa592fdfffce207acac3939
 homepage    : https://kde.org/applications/system/org.kde.konsole
 license     :
     - GFDL-1.2-or-later
@@ -45,6 +45,7 @@ builddeps   :
 rundeps     :
     - qt6-wayland
 setup       : |
+    %patch %(pkgdir)/upstream-1103.patch
     %cmake_kf6
 build       : |
     %cmake_build
@@ -53,3 +54,14 @@ install     : |
 
     # remove docs
     rm -rf %(installroot)/%(datadir)/doc
+packages    :
+    # Mostly for Yakuake
+    - "%(name)-part":
+        summary: "%(name) kpart plugin"
+        description: |
+            %(name) kpart plugin
+        paths:
+            - /usr/lib/libkonsoleapp.so.*
+            - /usr/lib/libkonsoleprivate.so.*
+            - /usr/lib/qt6/plugins/konsoleplugins/
+            - /usr/lib/qt6/plugins/kf6/parts/
