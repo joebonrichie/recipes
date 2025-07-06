@@ -7,7 +7,13 @@
 				"cmake(ECM)",
 				"cmake(KF6Config)",
 				"cmake(KF6KIO)",
-				"pkgconfig(libavcodec)"
+				"pkgconfig(libavcodec)",
+				"pkgconfig(libavdevice)",
+				"pkgconfig(libavfilter)",
+				"pkgconfig(libavformat)",
+				"pkgconfig(libavutil)",
+				"pkgconfig(libpostproc)",
+				"pkgconfig(libswscale)"
 			],
 			"depends": [
 				"soname(libKF6ConfigCore.so.6(x86_64))",
@@ -38,6 +44,6 @@
 		}
 	},
 	"source-name": "ffmpegthumbs",
-	"source-release": "4",
-	"source-version": "25.04.1"
+	"source-release": "5",
+	"source-version": "25.04.3"
 }
