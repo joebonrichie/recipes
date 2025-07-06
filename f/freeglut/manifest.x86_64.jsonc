@@ -49,7 +49,6 @@
 				"/usr/lib/cmake/FreeGLUT/FreeGLUTConfigVersion.cmake",
 				"/usr/lib/cmake/FreeGLUT/FreeGLUTTargets-release.cmake",
 				"/usr/lib/cmake/FreeGLUT/FreeGLUTTargets.cmake",
-				"/usr/lib/libglut.a",
 				"/usr/lib/libglut.so",
 				"/usr/lib/pkgconfig/glut.pc"
 			],
@@ -61,6 +60,6 @@
 		}
 	},
 	"source-name": "freeglut",
-	"source-release": "2",
+	"source-release": "3",
 	"source-version": "3.6.0"
 }
