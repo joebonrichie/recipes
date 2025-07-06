@@ -5,7 +5,7 @@
 #
 name        : kinfocenter
 version     : 6.4.2
-release     : 1
+release     : 2
 upstreams   :
     - https://download.kde.org/stable/plasma/6.4.2/kinfocenter-6.4.2.tar.xz : 1d25ffed7904bdb7ae4d2ff56d4173b48a15384cb970a78a145127866dd199da
 homepage    : https://kde.org/plasma-desktop/
@@ -21,6 +21,7 @@ builddeps   :
     - binary(eglinfo)
     - binary(glxinfo)
     - binary(lspci)
+    - binary(pactl)
     - binary(sensors)
     - binary(vulkaninfo)
     # Temporary, boulder doesn't handle build ordering resolution correctly when builddeps are added by macros, so add ECM manually
@@ -48,6 +49,7 @@ rundeps     :
     - binary(eglinfo)
     - binary(glxinfo)
     - binary(lspci)
+    - binary(pactl)
     - binary(sensors)
     - binary(vulkaninfo)
     - sysbinary(dmidecode)

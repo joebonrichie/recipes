@@ -8,6 +8,7 @@
 				"binary(eglinfo)",
 				"binary(glxinfo)",
 				"binary(lspci)",
+				"binary(pactl)",
 				"binary(sensors)",
 				"binary(vulkaninfo)",
 				"cmake(ECM)",
@@ -34,6 +35,7 @@
 				"binary(eglinfo)",
 				"binary(glxinfo)",
 				"binary(lspci)",
+				"binary(pactl)",
 				"binary(sensors)",
 				"binary(vulkaninfo)",
 				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
@@ -479,6 +481,7 @@
 				"binary(eglinfo)",
 				"binary(glxinfo)",
 				"binary(lspci)",
+				"binary(pactl)",
 				"binary(sensors)",
 				"binary(vulkaninfo)",
 				"cmake(ECM)",
@@ -543,6 +546,6 @@
 		}
 	},
 	"source-name": "kinfocenter",
-	"source-release": "1",
+	"source-release": "2",
 	"source-version": "6.4.2"
 }
