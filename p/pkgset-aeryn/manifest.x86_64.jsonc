@@ -30,6 +30,7 @@
 				"mesa-libegl",
 				"mesa-libgl",
 				"mesa-vulkan-drivers",
+				"modemmanager",
 				"networkmanager",
 				"pkgset-aeryn-base"
 			],
@@ -74,6 +75,6 @@
 		}
 	},
 	"source-name": "pkgset-aeryn",
-	"source-release": "6",
+	"source-release": "7",
 	"source-version": "2025.06"
 }
