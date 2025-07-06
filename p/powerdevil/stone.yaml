@@ -1,0 +1,66 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : powerdevil
+version     : 6.4.2
+release     : 1
+upstreams   :
+    - https://download.kde.org/stable/plasma/6.4.2/powerdevil-6.4.2.tar.xz : cbf89f25efc8cb87c47c52eb575781b236a353796f73172a43b88d441662c6c5
+homepage    : https://kde.org/plasma-desktop/
+license     : GPL-2.0-or-later
+summary     : Manages the power settings of KDE Plasma
+description : |
+    Manages the power settings of KDE Plasma
+builddeps   :
+    # Temporary, boulder doesn't handle build ordering resolution correctly when builddeps are added by macros, so add ECM manually
+    - cmake(ECM)
+    - cmake(KF6Auth)
+    - cmake(KF6Config)
+    - cmake(KF6Crash)
+    - cmake(KF6DBusAddons)
+    - cmake(KF6DocTools)
+    - cmake(KF6I18n)
+    - cmake(KF6IdleTime)
+    - cmake(KF6ItemModels)
+    - cmake(KF6GlobalAccel)
+    - cmake(KF6KIO)
+    - cmake(KF6Kirigami)
+    - cmake(KF6KCMUtils)
+    - cmake(KF6Notifications)
+    - cmake(KF6Runner)
+    - cmake(KF6Screen)
+    - cmake(KF6Solid)
+    - cmake(KF6WindowSystem)
+    - cmake(KF6XmlGui)
+    - cmake(LibKWorkspace)
+    - cmake(QCoro6)
+    - cmake(Qt6CorePrivate)
+    - cmake(Qt6Qml)
+    - cmake(Qt6WaylandClient)
+    - cmake(Plasma)
+    - cmake(PlasmaActivities)
+    - cmake(PlasmaWaylandProtocols)
+    - pkgconfig(ddcutil)
+    - pkgconfig(udev)
+tuning      :
+    - lto: full
+    - optimize: speed
+setup       : |
+    %cmake_kf6
+build       : |
+    %cmake_build
+install     : |
+    %cmake_install
+packages    :
+    - "%(name)":
+        rundeps:
+            - ddcutil
+            - power-profiles-daemon
+        paths:
+            - /usr/lib/libpowerdevilcore.so # This is the only file that would be added to the devel package
+
+    - "%(name)-docs":
+        paths:
+            - /usr/share/doc
