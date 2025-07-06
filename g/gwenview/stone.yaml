@@ -1,0 +1,77 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : gwenview
+version     : 25.04.3
+release     : 1
+upstreams   :
+    - https://download.kde.org/stable/release-service/25.04.3/src/gwenview-25.04.3.tar.xz : 59bf9fc4a4be87260781ccb5872212484b697caa53fa0ee7e128bdb08eaf5e87
+homepage    : https://apps.kde.org/gwenview/
+license     :
+    - GFDL-1.2-or-later
+    - GPL-2.0-or-later
+summary     : Fast and easy to use image viewer by KDE
+description : |
+    Gwenview is able to load and save to a variety of image formats supported by KDE applications, such as PNG, JPEG, and even the Gimp's XCF! Gwenview also sports a beautiful thumbnail toolbar when viewing images in fullscreen. Gwenview's simple interface doesn't get in the way and lets you view your images quickly and easily.
+builddeps   :
+    # Temporary, boulder doesn't handle build ordering resolution correctly when builddeps are added by macros, so add ECM manually
+    - cmake(ECM)
+    - cmake(KDcrawQt6)
+    - cmake(KExiv2Qt6)
+    - cmake(KF6Baloo)
+    - cmake(KF6Crash)
+    - cmake(KF6DocTools)
+    - cmake(KF6GuiAddons)
+    - cmake(KF6I18n)
+    - cmake(KF6IconThemes)
+    - cmake(KF6ItemModels)
+    - cmake(KF6KIO)
+    - cmake(KF6Notifications)
+    - cmake(KF6Parts)
+    - cmake(KF6Purpose)
+    - cmake(KF6WidgetsAddons)
+    - cmake(KF6WindowSystem)
+    - cmake(Phonon4Qt6)
+    - cmake(PlasmaActivities)
+    - cmake(Qt6CorePrivate)
+    - cmake(Qt6Svg)
+    - cmake(Qt6WaylandClient)
+    - cmake(exiv2)
+    - cmake(kColorPicker-Qt6)
+    - cmake(kImageAnnotator-Qt6)
+    - pkgconfig(lcms2)
+    - pkgconfig(libjpeg)
+    - pkgconfig(libpng)
+    - pkgconfig(libtiff-4)
+    - pkgconfig(wayland-client)
+    - pkgconfig(wayland-protocols)
+    # TODO:
+    # - cfitsio
+rundeps     :
+    - phonon-backend-mpv-qt6
+    - qt6-wayland
+
+    # More image formats
+    - kf6-kimageformats
+    - qt6-imageformats
+setup       : |
+    %cmake_kf6
+build       : |
+    %cmake_build
+install     : |
+    %cmake_install
+packages    :
+    - "%(name)-libs":
+        summary: "Library files for %(name)"
+        description: |
+            Library files for %(name), typically pulled in as a dependency of another package.
+        paths:
+            - /usr/lib/libgwenviewlib.so.*
+            - /usr/lib/qt6/plugins/kf6/kfileitemaction/
+            - /usr/lib/qt6/plugins/kf6/parts/
+
+    - "%(name)-docs":
+        paths:
+            - /usr/share/doc
