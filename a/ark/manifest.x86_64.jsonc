@@ -59,7 +59,7 @@
 			"files": [
 				"/usr/bin/ark",
 				"/usr/lib/libkerfuffle.so.25",
-				"/usr/lib/libkerfuffle.so.25.04.1",
+				"/usr/lib/libkerfuffle.so.25.04.3",
 				"/usr/lib/qt6/plugins/kerfuffle/kerfuffle_cli7z.so",
 				"/usr/lib/qt6/plugins/kerfuffle/kerfuffle_cliarj.so",
 				"/usr/lib/qt6/plugins/kerfuffle/kerfuffle_clirar.so",
@@ -198,6 +198,6 @@
 		}
 	},
 	"source-name": "ark",
-	"source-release": "4",
-	"source-version": "25.04.1"
+	"source-release": "5",
+	"source-version": "25.04.3"
 }
