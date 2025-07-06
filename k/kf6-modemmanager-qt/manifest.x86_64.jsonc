@@ -1,0 +1,95 @@
+/** Human readable report. This is not consumed by boulder */
+{
+	"manifest-version": "0.2",
+	"packages": {
+		"kf6-modemmanager-qt": {
+			"build-depends": [
+				"cmake(ECM)",
+				"pkgconfig(ModemManager)"
+			],
+			"depends": [
+				"soname(libQt6Core.so.6(x86_64))",
+				"soname(libQt6DBus.so.6(x86_64))",
+				"soname(libQt6Xml.so.6(x86_64))",
+				"soname(libc++.so.1(x86_64))",
+				"soname(libc.so.6(x86_64))"
+			],
+			"files": [
+				"/usr/lib/libKF6ModemManagerQt.so.6",
+				"/usr/lib/libKF6ModemManagerQt.so.6.15.0",
+				"/usr/share/qlogging-categories6/modemmanagerqt.categories",
+				"/usr/share/qlogging-categories6/modemmanagerqt.renamecategories"
+			],
+			"name": "kf6-modemmanager-qt",
+			"provides": [
+				"soname(libKF6ModemManagerQt.so.6(x86_64))"
+			]
+		},
+		"kf6-modemmanager-qt-devel": {
+			"build-depends": [
+				"cmake(ECM)",
+				"pkgconfig(ModemManager)"
+			],
+			"depends": [
+				"kf6-modemmanager-qt",
+				"pkgconfig(ModemManager)"
+			],
+			"files": [
+				"/usr/include/KF6/ModemManagerQt/ModemManagerQt/Bearer",
+				"/usr/include/KF6/ModemManagerQt/ModemManagerQt/Call",
+				"/usr/include/KF6/ModemManagerQt/ModemManagerQt/GenericTypes",
+				"/usr/include/KF6/ModemManagerQt/ModemManagerQt/Interface",
+				"/usr/include/KF6/ModemManagerQt/ModemManagerQt/Manager",
+				"/usr/include/KF6/ModemManagerQt/ModemManagerQt/Modem",
+				"/usr/include/KF6/ModemManagerQt/ModemManagerQt/Modem3Gpp",
+				"/usr/include/KF6/ModemManagerQt/ModemManagerQt/Modem3GppUssd",
+				"/usr/include/KF6/ModemManagerQt/ModemManagerQt/ModemCdma",
+				"/usr/include/KF6/ModemManagerQt/ModemManagerQt/ModemDevice",
+				"/usr/include/KF6/ModemManagerQt/ModemManagerQt/ModemFirmware",
+				"/usr/include/KF6/ModemManagerQt/ModemManagerQt/ModemLocation",
+				"/usr/include/KF6/ModemManagerQt/ModemManagerQt/ModemMessaging",
+				"/usr/include/KF6/ModemManagerQt/ModemManagerQt/ModemOma",
+				"/usr/include/KF6/ModemManagerQt/ModemManagerQt/ModemSignal",
+				"/usr/include/KF6/ModemManagerQt/ModemManagerQt/ModemSimple",
+				"/usr/include/KF6/ModemManagerQt/ModemManagerQt/ModemTime",
+				"/usr/include/KF6/ModemManagerQt/ModemManagerQt/ModemVoice",
+				"/usr/include/KF6/ModemManagerQt/ModemManagerQt/Sim",
+				"/usr/include/KF6/ModemManagerQt/ModemManagerQt/Sms",
+				"/usr/include/KF6/ModemManagerQt/modemmanagerqt/bearer.h",
+				"/usr/include/KF6/ModemManagerQt/modemmanagerqt/call.h",
+				"/usr/include/KF6/ModemManagerQt/modemmanagerqt/generictypes.h",
+				"/usr/include/KF6/ModemManagerQt/modemmanagerqt/interface.h",
+				"/usr/include/KF6/ModemManagerQt/modemmanagerqt/manager.h",
+				"/usr/include/KF6/ModemManagerQt/modemmanagerqt/modem.h",
+				"/usr/include/KF6/ModemManagerQt/modemmanagerqt/modem3gpp.h",
+				"/usr/include/KF6/ModemManagerQt/modemmanagerqt/modem3gppussd.h",
+				"/usr/include/KF6/ModemManagerQt/modemmanagerqt/modemcdma.h",
+				"/usr/include/KF6/ModemManagerQt/modemmanagerqt/modemdevice.h",
+				"/usr/include/KF6/ModemManagerQt/modemmanagerqt/modemfirmware.h",
+				"/usr/include/KF6/ModemManagerQt/modemmanagerqt/modemlocation.h",
+				"/usr/include/KF6/ModemManagerQt/modemmanagerqt/modemmessaging.h",
+				"/usr/include/KF6/ModemManagerQt/modemmanagerqt/modemoma.h",
+				"/usr/include/KF6/ModemManagerQt/modemmanagerqt/modemsignal.h",
+				"/usr/include/KF6/ModemManagerQt/modemmanagerqt/modemsimple.h",
+				"/usr/include/KF6/ModemManagerQt/modemmanagerqt/modemtime.h",
+				"/usr/include/KF6/ModemManagerQt/modemmanagerqt/modemvoice.h",
+				"/usr/include/KF6/ModemManagerQt/modemmanagerqt/sim.h",
+				"/usr/include/KF6/ModemManagerQt/modemmanagerqt/sms.h",
+				"/usr/include/KF6/ModemManagerQt/modemmanagerqt_export.h",
+				"/usr/include/KF6/ModemManagerQt/modemmanagerqt_version.h",
+				"/usr/lib/cmake/KF6ModemManagerQt/KF6ModemManagerQtConfig.cmake",
+				"/usr/lib/cmake/KF6ModemManagerQt/KF6ModemManagerQtConfigVersion.cmake",
+				"/usr/lib/cmake/KF6ModemManagerQt/KF6ModemManagerQtTargets-release.cmake",
+				"/usr/lib/cmake/KF6ModemManagerQt/KF6ModemManagerQtTargets.cmake",
+				"/usr/lib/libKF6ModemManagerQt.so"
+			],
+			"name": "kf6-modemmanager-qt-devel",
+			"provides": [
+				"cmake(KF6ModemManagerQt)"
+			]
+		}
+	},
+	"source-name": "kf6-modemmanager-qt",
+	"source-release": "1",
+	"source-version": "6.15.0"
+}
