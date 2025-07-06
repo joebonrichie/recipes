@@ -44,6 +44,6 @@
 		}
 	},
 	"source-name": "power-profiles-daemon",
-	"source-release": "5",
-	"source-version": "0.23"
+	"source-release": "6",
+	"source-version": "0.30"
 }
