@@ -6,7 +6,7 @@
 #
 name        : os-artwork
 version     : 1
-release     : 4
+release     : 5
 summary     : Operating System Artwork
 license     : Distributable
 homepage    : https://www.aerynos.com/
@@ -40,3 +40,7 @@ install     : |
 
     ln -s /usr/share/icons/aerynos-logo-dark.svg %(installroot)/usr/share/pixmaps/system-logo-white.svg
     ln -s /usr/share/icons/aerynos-logo.svg %(installroot)/usr/share/pixmaps/system-logo-black.svg
+
+    # This could be part of plasma-defaults instead, but if the Aeryn artwork is present we always want the
+    # logo to show up in kcminfocenter even if the plasma-defaults package is uninstalled
+    %install_file %(pkgdir)/kcm-about-distrorc -t %(installroot)%(datadir)/xdg

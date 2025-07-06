@@ -26,12 +26,13 @@
 				"/usr/share/pixmaps/system-logo-black.png",
 				"/usr/share/pixmaps/system-logo-black.svg",
 				"/usr/share/pixmaps/system-logo-white.png",
-				"/usr/share/pixmaps/system-logo-white.svg"
+				"/usr/share/pixmaps/system-logo-white.svg",
+				"/usr/share/xdg/kcm-about-distrorc"
 			],
 			"name": "os-artwork"
 		}
 	},
 	"source-name": "os-artwork",
-	"source-release": "4",
+	"source-release": "5",
 	"source-version": "1"
 }
