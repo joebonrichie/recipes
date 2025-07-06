@@ -5,7 +5,7 @@
 #
 name        : pkgset-aeryn-plasma
 version     : "2025.06" # I guess let's just match the OS version for now
-release     : 3
+release     : 4
 homepage    : https://aerynos.com/
 # No upstreams!
 summary     : pkgset virtual packages - Plasma/KDE Desktop
@@ -25,8 +25,12 @@ packages    :
         rundeps:
             # Plasma bits
             - plasma-desktop
+            - bluedevil
             - kinfocenter
             - kscreen
+            - plasma-nm
+            - plasma-pa
+            - powerdevil
             - spectacle
 
             # Basic apps (Gear)
@@ -48,6 +52,11 @@ packages    :
         description: |
             Plasma Desktop plus recommended applications
         rundeps:
+            # Additional apps
+            - gwenview
+            - haruna
+            - kate
+
             - "%(name)-minimal"
         paths:
             - /usr/share/doc/%(name)-recommended/README
@@ -57,6 +66,9 @@ packages    :
         description: |
             Plasma Desktop plus all KDE applications. You probably don't want this.
         rundeps:
+            # Way more apps
+            - dragon
+
             - "%(name)-recommended"
         paths:
             - /usr/share/doc/%(name)-full/README

@@ -4,6 +4,7 @@
 	"packages": {
 		"pkgset-aeryn-plasma-full": {
 			"depends": [
+				"dragon",
 				"pkgset-aeryn-plasma-recommended"
 			],
 			"files": [
@@ -14,6 +15,7 @@
 		"pkgset-aeryn-plasma-minimal": {
 			"depends": [
 				"ark",
+				"bluedevil",
 				"dolphin",
 				"kaccounts-providers",
 				"kinfocenter",
@@ -22,6 +24,9 @@
 				"kwrite",
 				"pkgset-aeryn-base-desktop",
 				"plasma-desktop",
+				"plasma-nm",
+				"plasma-pa",
+				"powerdevil",
 				"spectacle"
 			],
 			"files": [
@@ -31,6 +36,9 @@
 		},
 		"pkgset-aeryn-plasma-recommended": {
 			"depends": [
+				"gwenview",
+				"haruna",
+				"kate",
 				"pkgset-aeryn-plasma-minimal"
 			],
 			"files": [
@@ -40,6 +48,6 @@
 		}
 	},
 	"source-name": "pkgset-aeryn-plasma",
-	"source-release": "3",
+	"source-release": "4",
 	"source-version": "2025.06"
 }
