@@ -5,7 +5,7 @@
 #
 name        : pulseaudio
 version     : "17.0"
-release     : 4
+release     : 5
 homepage    : https://freedesktop.org/software/pulseaudio/releases
 upstreams   :
     - https://freedesktop.org/software/pulseaudio/releases/pulseaudio-17.0.tar.xz : 053794d6671a3e397d849e478a80b82a63cb9d8ca296bd35b73317bb5ceb87b5
@@ -26,24 +26,57 @@ builddeps   :
     - pkgconfig(libudev)
     - pkgconfig(sndfile)
     - pkgconfig(x11-xcb)
-packages    :
-    - "%(name)-devel":
-        paths:
-            - /usr/share/vala/vapi
+    - perl-xml-parser
 setup       : |
+    %patch %(pkgdir)/0001-Support-a-stateless-configuration.patch
+
     # version script assignment of 'PULSE_0' to symbol 'pa_glib_mainloop_free' failed: symbol not defined
     export LDFLAGS="$LDFLAGS -Wl,--undefined-version"
 
-    %meson -Ddaemon=false \
-           -Dclient=true \
-           -Dgsettings=enabled \
-           -Dgstreamer=disabled \
-           -Dglib=enabled \
-           -Dsystemd=enabled \
-           -Dtests=false \
-           -Ddoxygen=false \
-           -Dman=false
+    %meson \
+        -Dclient=true \
+        -Ddaemon=false \
+        -Ddoxygen=false \
+        -Dglib=enabled \
+        -Dgsettings=enabled \
+        -Dgstreamer=disabled \
+        -Dman=true \
+        -Dsystemd=enabled \
+        -Dtests=false
 build       : |
     %meson_build
 install     : |
     %meson_install
+
+    # Not useful
+    rm -rfv %(installroot)%(bindir)/pa-info
+
+    %install_dir %(installroot)%(docdir)/%(name)
+    echo "DEPRECATED" > %(installroot)%(docdir)/%(name)/README
+packages    :
+    - "%(name)-libs":
+        paths:
+            - /usr/lib/libpulse.so.*
+            - /usr/lib/libpulse-simple.so.*
+            - /usr/lib/pulseaudio/*.so
+            - /usr/share/pulseaudio/client.conf
+            - /usr/share/man/man5/pulse-client.conf.*
+
+    - "%(name)-libs-glib2":
+        paths:
+            - /usr/lib/libpulse-mainloop-glib.so.*
+
+    - "%(name)-utils":
+        paths:
+            - /usr/bin/pa*
+            - /usr/share/bash-completion/
+            - /usr/share/locale/
+            - /usr/share/man/man1/
+            - /usr/share/zsh/site-functions/
+
+    - "%(name)-devel":
+        rundeps:
+            - "%(name)-libs"
+            - "%(name)-libs-glib2"
+        paths:
+            - /usr/share/vala/vapi

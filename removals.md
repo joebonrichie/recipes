@@ -72,3 +72,6 @@
 
 ### Split
 - mesa-devel
+
+### Split
+- pulseaudio
