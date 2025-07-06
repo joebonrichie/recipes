@@ -29,7 +29,8 @@
 				"cmake(KF6UserFeedback)",
 				"cmake(KF6WidgetsAddons)",
 				"cmake(KF6WindowSystem)",
-				"cmake(Phonon4Qt6)"
+				"cmake(Phonon4Qt6)",
+				"cmake(Qt6CorePrivate)"
 			],
 			"depends": [
 				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
@@ -84,9 +85,9 @@
 				"/usr/bin/dolphin",
 				"/usr/bin/servicemenuinstaller",
 				"/usr/lib/kconf_update_bin/dolphin_25.04_update_statusandlocationbarssettings",
-				"/usr/lib/libdolphinprivate.so.25.04.1",
+				"/usr/lib/libdolphinprivate.so.25.04.3",
 				"/usr/lib/libdolphinprivate.so.6",
-				"/usr/lib/libdolphinvcs.so.25.04.1",
+				"/usr/lib/libdolphinvcs.so.25.04.3",
 				"/usr/lib/libdolphinvcs.so.6",
 				"/usr/lib/qt6/plugins/dolphin/kcms/kcm_dolphingeneral.so",
 				"/usr/lib/qt6/plugins/dolphin/kcms/kcm_dolphinviewmodes.so",
@@ -299,7 +300,8 @@
 				"cmake(KF6UserFeedback)",
 				"cmake(KF6WidgetsAddons)",
 				"cmake(KF6WindowSystem)",
-				"cmake(Phonon4Qt6)"
+				"cmake(Phonon4Qt6)",
+				"cmake(Qt6CorePrivate)"
 			],
 			"depends": [
 				"dolphin"
@@ -323,6 +325,6 @@
 		}
 	},
 	"source-name": "dolphin",
-	"source-release": "4",
-	"source-version": "25.04.1"
+	"source-release": "5",
+	"source-version": "25.04.3"
 }
