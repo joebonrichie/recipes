@@ -1,0 +1,58 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : ddcutil
+version     : 2.2.0
+release     : 1
+upstreams   :
+    - https://github.com/rockowitz/ddcutil/archive/v2.2.0.tar.gz : 2a9a994b885974423a5b765aaa2c17159f7341881d15f9cb430c0bf1842185ee
+homepage    : https://ddcutil.com/
+license     :
+    - GPL-2.0-only
+    - GPL-2.0-or-later
+    - GPL-3.0-only
+    - LGPL-2.1-only
+summary     : Query and change Linux monitor settings using DDC/CI and USB
+description : |
+    ddcutil is a program for querying and changing monitor settings, such as brightness and color levels.
+
+    ddcutil uses DDC/CI to communicate with monitors implementing MCCS (Monitor Control Command Set) over I2C. Normally, the video driver for the monitor exposes the I2C channel as devices named /dev/i2c-n. There is also psupport for monitors (such as Apple Cinema and Eizo ColorEdge) that implement MCCS using a USB connection.
+
+    A particular use case for ddcutil is as part of color profile management. Monitor calibration is relative to the monitor color settings currently in effect, e.g. red gain. ddcutil allows color related settings to be saved at the time a monitor is calibrated, and then restored when the calibration is applied.
+builddeps   :
+    - pkgconfig(glib-2.0)
+    - pkgconfig(jansson)
+    - pkgconfig(libdrm)
+    - pkgconfig(libusb-1.0)
+    - pkgconfig(udev)
+    - pkgconfig(x11)
+    - pkgconfig(xrandr)
+tuning      :
+    - lto: full
+    - optimize: speed
+setup       : |
+    %patch %(pkgdir)/0001-Fix-build-with-slibtool.patch
+
+    %reconfigure
+build       : |
+    %make
+install     : |
+    %make_install
+packages    :
+    - "%(name)-libs":
+        summary: "Library files for %(name)"
+        description: |
+            Library files for %(name), typically pulled in as a dependency of another package.
+        paths:
+            - /usr/lib/libddcutil.so.*
+
+    - "%(name)-libs-devel":
+        rundeps:
+            - "%(name)-libs"
+        paths:
+            - /usr/include/ddcutil*.h
+            - /usr/lib/cmake/ddcutil/
+            - /usr/lib/pkgconfig/ddcutil.pc
+            - /usr/lib/libddcutil.so
