@@ -16,6 +16,7 @@
 				"cmake(KF6NewStuff)",
 				"cmake(KF6TextEditor)",
 				"cmake(KF6UserFeedback)",
+				"cmake(Qt6CorePrivate)",
 				"cmake(Qt6Keychain)"
 			],
 			"depends": [
@@ -60,7 +61,7 @@
 				"soname(libQt6Xml.so.6(x86_64))",
 				"soname(libc++.so.1(x86_64))",
 				"soname(libc.so.6(x86_64))",
-				"soname(libkateprivate.so.25.04.1(x86_64))",
+				"soname(libkateprivate.so.25.04.3(x86_64))",
 				"soname(libqt6keychain.so.1(x86_64))"
 			],
 			"files": [
@@ -698,6 +699,7 @@
 				"/usr/share/locale/he/LC_MESSAGES/kateexternaltoolsplugin.mo",
 				"/usr/share/locale/he/LC_MESSAGES/katefilebrowserplugin.mo",
 				"/usr/share/locale/he/LC_MESSAGES/katefiletree.mo",
+				"/usr/share/locale/he/LC_MESSAGES/kategdbplugin.mo",
 				"/usr/share/locale/he/LC_MESSAGES/kategitblameplugin.mo",
 				"/usr/share/locale/he/LC_MESSAGES/katekeyboardmacros.mo",
 				"/usr/share/locale/he/LC_MESSAGES/katekonsoleplugin.mo",
@@ -1861,6 +1863,7 @@
 				"cmake(KF6NewStuff)",
 				"cmake(KF6TextEditor)",
 				"cmake(KF6UserFeedback)",
+				"cmake(Qt6CorePrivate)",
 				"cmake(Qt6Keychain)"
 			],
 			"depends": [
@@ -1893,11 +1896,11 @@
 				"soname(libc.so.6(x86_64))"
 			],
 			"files": [
-				"/usr/lib/libkateprivate.so.25.04.1"
+				"/usr/lib/libkateprivate.so.25.04.3"
 			],
 			"name": "kate-libs",
 			"provides": [
-				"soname(libkateprivate.so.25.04.1(x86_64))"
+				"soname(libkateprivate.so.25.04.3(x86_64))"
 			]
 		},
 		"kwrite": {
@@ -1914,11 +1917,13 @@
 				"cmake(KF6NewStuff)",
 				"cmake(KF6TextEditor)",
 				"cmake(KF6UserFeedback)",
+				"cmake(Qt6CorePrivate)",
 				"cmake(Qt6Keychain)"
 			],
 			"depends": [
 				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
 				"kate-libs",
+				"qt6-wayland",
 				"soname(libKF6CoreAddons.so.6(x86_64))",
 				"soname(libKF6DBusAddons.so.6(x86_64))",
 				"soname(libKF6I18n.so.6(x86_64))",
@@ -1926,7 +1931,7 @@
 				"soname(libQt6Gui.so.6(x86_64))",
 				"soname(libQt6Widgets.so.6(x86_64))",
 				"soname(libc.so.6(x86_64))",
-				"soname(libkateprivate.so.25.04.1(x86_64))"
+				"soname(libkateprivate.so.25.04.3(x86_64))"
 			],
 			"files": [
 				"/usr/bin/kwrite",
@@ -1951,6 +1956,6 @@
 		}
 	},
 	"source-name": "kate",
-	"source-release": "4",
-	"source-version": "25.04.1"
+	"source-release": "5",
+	"source-version": "25.04.3"
 }

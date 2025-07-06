@@ -4,10 +4,10 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : kate
-version     : 25.04.1
-release     : 4
+version     : 25.04.3
+release     : 5
 upstreams   :
-    - https://download.kde.org/stable/release-service/25.04.1/src/kate-25.04.1.tar.xz : 820f0412a8485472844ea83881c47e1b90093ce3e2729e6910f9d3593fe530aa
+    - https://download.kde.org/stable/release-service/25.04.3/src/kate-25.04.3.tar.xz : 1d4546f8382e1e3bc8410be1c1af88e06eb66ce12c8160c4c84ac28bfb618e97
 homepage    : https://apps.kde.org/kate
 license     :
     - GPL-2.0-or-later
@@ -34,9 +34,8 @@ builddeps   :
     - cmake(KF6NewStuff)
     - cmake(KF6TextEditor)
     - cmake(KF6UserFeedback)
+    - cmake(Qt6CorePrivate)
     - cmake(Qt6Keychain)
-rundeps     :
-    - qt6-wayland
 setup       : |
     %cmake_kf6
 build       : |
@@ -58,15 +57,16 @@ packages    :
     - "%(name)":
         rundeps:
             - "%(name)-libs"
+            - qt6-wayland
 
     - "kwrite":
         summary: Text editor
         description: Text editor
         rundeps:
             - "%(name)-libs"
+            - qt6-wayland
         paths:
             - /usr/bin/kwrite
             - /usr/share/applications/org.kde.kwrite.desktop
             - /usr/share/icons/hicolor/*/apps/kwrite.png
             - /usr/share/metainfo/org.kde.kwrite.appdata.xml
-
