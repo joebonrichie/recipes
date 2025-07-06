@@ -1,0 +1,38 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : mpvqt
+version     : 1.1.1
+release     : 1
+homepage    : https://mpv.io/
+upstreams   :
+    - https://download.kde.org/stable/mpvqt/mpvqt-1.1.1.tar.xz : bdd1ea69338cf3017f628a886218b8c185ca24e8257f03207a3cf1bbb51e3d32
+summary     : MpvQt is a libmpv wrapper for QtQuick and QML
+description : |
+    MpvQt is a libmpv wrapper for QtQuick and QML
+license     :
+    - BSD-2-Clause
+    - BSD-3-Clause
+    - CC-BY-SA-4.0
+    - CC0-1.0
+    - LGPL-2.1-only
+    - LGPL-3.0-only
+    - LicenseRef-KDE-Accepted-LGPL
+    - MIT
+builddeps   :
+    - cmake(ECM)
+    - cmake(Qt6Quick)
+    - pkgconfig(mpv)
+setup       : |
+    %cmake
+build       : |
+    %cmake_build
+install     : |
+    %cmake_install
+packages    :
+    - "%(name)-devel":
+        rundeps:
+            - cmake(Qt6Quick)
+            - pkgconfig(mpv)

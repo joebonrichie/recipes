@@ -1,0 +1,63 @@
+/** Human readable report. This is not consumed by boulder */
+{
+	"manifest-version": "0.2",
+	"packages": {
+		"mpvqt": {
+			"build-depends": [
+				"cmake(ECM)",
+				"cmake(Qt6Quick)",
+				"pkgconfig(mpv)"
+			],
+			"depends": [
+				"soname(libQt6Core.so.6(x86_64))",
+				"soname(libQt6Gui.so.6(x86_64))",
+				"soname(libQt6OpenGL.so.6(x86_64))",
+				"soname(libQt6Quick.so.6(x86_64))",
+				"soname(libc++.so.1(x86_64))",
+				"soname(libc.so.6(x86_64))",
+				"soname(libmpv.so.2(x86_64))"
+			],
+			"files": [
+				"/usr/lib/libMpvQt.so.1.1.1",
+				"/usr/lib/libMpvQt.so.2"
+			],
+			"name": "mpvqt",
+			"provides": [
+				"soname(libMpvQt.so.2(x86_64))"
+			]
+		},
+		"mpvqt-devel": {
+			"build-depends": [
+				"cmake(ECM)",
+				"cmake(Qt6Quick)",
+				"pkgconfig(mpv)"
+			],
+			"depends": [
+				"cmake(Qt6Quick)",
+				"mpvqt",
+				"pkgconfig(mpv)"
+			],
+			"files": [
+				"/usr/include/MpvQt/MpvAbstractItem",
+				"/usr/include/MpvQt/MpvController",
+				"/usr/include/MpvQt/mpvabstractitem.h",
+				"/usr/include/MpvQt/mpvcontroller.h",
+				"/usr/include/MpvQt/mpvqt_export.h",
+				"/usr/include/MpvQt/mpvqt_version.h",
+				"/usr/lib/cmake/MpvQt/FindLibmpv.cmake",
+				"/usr/lib/cmake/MpvQt/MpvQtConfig.cmake",
+				"/usr/lib/cmake/MpvQt/MpvQtConfigVersion.cmake",
+				"/usr/lib/cmake/MpvQt/MpvQtTargets-release.cmake",
+				"/usr/lib/cmake/MpvQt/MpvQtTargets.cmake",
+				"/usr/lib/libMpvQt.so"
+			],
+			"name": "mpvqt-devel",
+			"provides": [
+				"cmake(MpvQt)"
+			]
+		}
+	},
+	"source-name": "mpvqt",
+	"source-release": "1",
+	"source-version": "1.1.1"
+}
