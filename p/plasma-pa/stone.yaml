@@ -1,0 +1,59 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : plasma-pa
+version     : 6.4.2
+release     : 1
+upstreams   :
+    - https://download.kde.org/stable/plasma/6.4.2/plasma-pa-6.4.2.tar.xz : 57d71d404ad79e86dc101e28e7e83b8f4c6dbd825be1db22f29af81a2da2cd45
+homepage    : https://kde.org/plasma-desktop/
+license     :
+    - GPL-2.0-only
+    - LGPL-2.1-only
+summary     : Plasma applet for audio volume management
+description : |
+    Plasma applet for audio volume management
+builddeps   :
+    # Temporary, boulder doesn't handle build ordering resolution correctly when builddeps are added by macros, so add ECM manually
+    - cmake(ECM)
+    - cmake(KF6Config)
+    - cmake(KF6CoreAddons)
+    - cmake(KF6DBusAddons)
+    - cmake(KF6Declarative)
+    - cmake(KF6DocTools)
+    - cmake(KF6GlobalAccel)
+    - cmake(KF6I18n)
+    - cmake(KF6KCMUtils)
+    - cmake(KF6Kirigami)
+    - cmake(KF6KirigamiAddons)
+    - cmake(KF6ItemModels)
+    - cmake(KF6PulseAudioQt)
+    - cmake(KF6StatusNotifierItem)
+    - cmake(KF6Svg)
+    - cmake(Plasma)
+    - cmake(Qt6CorePrivate)
+    - cmake(Qt6Qml)
+    - cmake(Qt6Quick)
+    - pkgconfig(libcanberra)
+    - pkgconfig(libpulse)
+    - sound-theme-freedesktop
+rundeps     :
+    - kf6-kirigami
+    - kf6-kirigami-addons
+    - kf6-kitemmodels
+    - sound-theme-freedesktop
+tuning      :
+    - lto: full
+    - optimize: speed
+setup       : |
+    %cmake_kf6
+build       : |
+    %cmake_build
+install     : |
+    %cmake_install
+packages    :
+    - "%(name)-docs":
+        paths:
+            - /usr/share/doc
