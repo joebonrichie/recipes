@@ -1,0 +1,29 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : kf6-bluez-qt
+version     : 6.15.0
+release     : 1
+upstreams   :
+    - https://download.kde.org/stable/frameworks/6.15/bluez-qt-6.15.0.tar.xz : 0c70a8437e3b10a6259260623d4802c4422f7f9bd4fdf79bf52c25fee5501227
+homepage    : https://community.kde.org/Frameworks
+license     : LGPL-2.1-only
+summary     : Qt wrapper for BlueZ 5 DBus API
+description : |
+    BluezQt is a library for communication with BlueZ system and session daemons.
+    * Manager class is used to communicate with system daemon - org.bluez
+    * ObexManager class is used to communicate with session daemon - org.bluez.obex
+builddeps   :
+    # Temporary, boulder doesn't handle build ordering resolution correctly when builddeps are added by macros, so add ECM manually
+    - cmake(ECM)
+    - cmake(Qt6CorePrivate)
+    - cmake(Qt6Qml)
+setup       : |
+    %cmake_kf6
+build       : |
+    %cmake_build
+install     : |
+    %cmake_install
+    %qml_cache_qt6
