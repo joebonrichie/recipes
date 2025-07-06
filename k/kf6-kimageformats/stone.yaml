@@ -5,7 +5,7 @@
 #
 name        : kf6-kimageformats
 version     : 6.15.0
-release     : 2
+release     : 3
 upstreams   :
     - https://download.kde.org/stable/frameworks/6.15/kimageformats-6.15.0.tar.xz : 2fab119c64f117026166f49840abe5c1efe3e8f9a10d966b3406ffb6a6084030
 homepage    : https://community.kde.org/Frameworks
@@ -24,9 +24,9 @@ builddeps   :
     - cmake(OpenJPEG)
     - pkgconfig(libavif)
     - pkgconfig(libjxl)
+    - pkgconfig(libraw)
     # TODO:
     # - libheif
-    # - libraw
     # - OpenEXR
 rundeps    :
     - qt6-imageformats

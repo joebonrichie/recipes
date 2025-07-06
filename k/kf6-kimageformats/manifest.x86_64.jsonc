@@ -8,7 +8,8 @@
 				"cmake(KF6Archive)",
 				"cmake(OpenJPEG)",
 				"pkgconfig(libavif)",
-				"pkgconfig(libjxl)"
+				"pkgconfig(libjxl)",
+				"pkgconfig(libraw)"
 			],
 			"depends": [
 				"qt6-imageformats",
@@ -23,7 +24,9 @@
 				"soname(libjxl_cms.so.0.11(x86_64))",
 				"soname(libjxl_threads.so.0.11(x86_64))",
 				"soname(libm.so.6(x86_64))",
-				"soname(libopenjp2.so.7(x86_64))"
+				"soname(libopenjp2.so.7(x86_64))",
+				"soname(libraw.so.23(x86_64))",
+				"soname(libunwind.so.1(x86_64))"
 			],
 			"files": [
 				"/usr/lib/qt6/plugins/imageformats/kimg_ani.so",
@@ -42,6 +45,7 @@
 				"/usr/lib/qt6/plugins/imageformats/kimg_pxr.so",
 				"/usr/lib/qt6/plugins/imageformats/kimg_qoi.so",
 				"/usr/lib/qt6/plugins/imageformats/kimg_ras.so",
+				"/usr/lib/qt6/plugins/imageformats/kimg_raw.so",
 				"/usr/lib/qt6/plugins/imageformats/kimg_rgb.so",
 				"/usr/lib/qt6/plugins/imageformats/kimg_sct.so",
 				"/usr/lib/qt6/plugins/imageformats/kimg_tga.so",
@@ -65,6 +69,7 @@
 				"soname(qt6/plugins/imageformats/kimg_pxr.so(x86_64))",
 				"soname(qt6/plugins/imageformats/kimg_qoi.so(x86_64))",
 				"soname(qt6/plugins/imageformats/kimg_ras.so(x86_64))",
+				"soname(qt6/plugins/imageformats/kimg_raw.so(x86_64))",
 				"soname(qt6/plugins/imageformats/kimg_rgb.so(x86_64))",
 				"soname(qt6/plugins/imageformats/kimg_sct.so(x86_64))",
 				"soname(qt6/plugins/imageformats/kimg_tga.so(x86_64))",
@@ -77,7 +82,8 @@
 				"cmake(KF6Archive)",
 				"cmake(OpenJPEG)",
 				"pkgconfig(libavif)",
-				"pkgconfig(libjxl)"
+				"pkgconfig(libjxl)",
+				"pkgconfig(libraw)"
 			],
 			"depends": [
 				"kf6-kimageformats"
@@ -93,6 +99,6 @@
 		}
 	},
 	"source-name": "kf6-kimageformats",
-	"source-release": "2",
+	"source-release": "3",
 	"source-version": "6.15.0"
 }
