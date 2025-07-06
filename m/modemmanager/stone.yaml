@@ -5,7 +5,7 @@
 #
 name        : modemmanager
 version     : 1.24.0
-release     : 4
+release     : 5
 homepage    : https://gitlab.freedesktop.org/mobile-broadband/ModemManager
 upstreams   :
     - https://gitlab.freedesktop.org/mobile-broadband/ModemManager/-/archive/1.24.0/ModemManager-1.24.0.tar.gz : 50e166bb24acb00bcaed814483920dfbc5b26d5424faee974b54c702e425a7c7
@@ -35,10 +35,29 @@ builddeps   :
     - pkgconfig(systemd)
     - pkgconfig(udev)
 setup       : |
-    %meson -Ddbus_policy_dir=/usr/share/dbus-1/system.d
+    %meson \
+        -Ddbus_policy_dir=/usr/share/dbus-1/system.d
 build       : |
     %meson_build
 install     : |
     %meson_install
 
     # TODO: Vendor enable by default?
+packages    :
+    - "%(name)":
+        rundeps:
+            - polkit
+
+    - "%(name)-glib":
+        paths:
+            - /usr/lib/libmm-glib.so.*
+            - /usr/lib/girepository-1.0/ModemManager-1.0.typelib
+
+    - "%(name)-glib-devel":
+        rundeps:
+            - "%(name)-glib"
+        paths:
+            - /usr/include/libmm-glib/
+            - /usr/lib/pkgconfig/mm-glib.pc
+            - /usr/lib/libmm-glib.so
+            - /usr/share/gir-1.0/ModemManager-1.0.gir

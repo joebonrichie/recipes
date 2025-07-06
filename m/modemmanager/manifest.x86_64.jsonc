@@ -25,6 +25,7 @@
 			],
 			"depends": [
 				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
+				"polkit",
 				"soname(libc.so.6(x86_64))",
 				"soname(libgio-2.0.so.0(x86_64))",
 				"soname(libglib-2.0.so.0(x86_64))",
@@ -32,6 +33,7 @@
 				"soname(libgobject-2.0.so.0(x86_64))",
 				"soname(libgudev-1.0.so.0(x86_64))",
 				"soname(libmbim-glib.so.4(x86_64))",
+				"soname(libmm-glib.so.0(x86_64))",
 				"soname(libpolkit-gobject-1.so.0(x86_64))",
 				"soname(libqmi-glib.so.5(x86_64))",
 				"soname(libqrtr-glib.so.0(x86_64))",
@@ -96,9 +98,6 @@
 				"/usr/lib/ModemManager/libmm-shared-telit.so",
 				"/usr/lib/ModemManager/libmm-shared-xmm.so",
 				"/usr/lib/ModemManager/modem-setup.d",
-				"/usr/lib/girepository-1.0/ModemManager-1.0.typelib",
-				"/usr/lib/libmm-glib.so.0",
-				"/usr/lib/libmm-glib.so.0.11.0",
 				"/usr/lib/systemd/system/ModemManager.service",
 				"/usr/lib/udev/rules.d/77-mm-broadmobi-port-types.rules",
 				"/usr/lib/udev/rules.d/77-mm-cellient.rules",
@@ -258,7 +257,6 @@
 				"soname(ModemManager/libmm-shared-sierra.so(x86_64))",
 				"soname(ModemManager/libmm-shared-telit.so(x86_64))",
 				"soname(ModemManager/libmm-shared-xmm.so(x86_64))",
-				"soname(libmm-glib.so.0(x86_64))",
 				"sysbinary(ModemManager)"
 			]
 		},
@@ -284,11 +282,7 @@
 				"pkgconfig(udev)"
 			],
 			"depends": [
-				"modemmanager",
-				"pkgconfig(gio-2.0)",
-				"pkgconfig(gio-unix-2.0)",
-				"pkgconfig(glib-2.0)",
-				"pkgconfig(gobject-2.0)"
+				"modemmanager"
 			],
 			"files": [
 				"/usr/include/ModemManager/ModemManager-compat.h",
@@ -297,6 +291,80 @@
 				"/usr/include/ModemManager/ModemManager-names.h",
 				"/usr/include/ModemManager/ModemManager-version.h",
 				"/usr/include/ModemManager/ModemManager.h",
+				"/usr/lib/pkgconfig/ModemManager.pc"
+			],
+			"name": "modemmanager-devel",
+			"provides": [
+				"pkgconfig(ModemManager)"
+			]
+		},
+		"modemmanager-glib": {
+			"build-depends": [
+				"binary(msgfmt)",
+				"binary(xsltproc)",
+				"pkgconfig(bash-completion)",
+				"pkgconfig(dbus-1)",
+				"pkgconfig(gio-2.0)",
+				"pkgconfig(gio-unix-2.0)",
+				"pkgconfig(glib-2.0)",
+				"pkgconfig(gmodule-2.0)",
+				"pkgconfig(gobject-2.0)",
+				"pkgconfig(gobject-introspection-1.0)",
+				"pkgconfig(gudev-1.0)",
+				"pkgconfig(libsystemd)",
+				"pkgconfig(mbim-glib)",
+				"pkgconfig(polkit-gobject-1)",
+				"pkgconfig(qmi-glib)",
+				"pkgconfig(qrtr-glib)",
+				"pkgconfig(systemd)",
+				"pkgconfig(udev)"
+			],
+			"depends": [
+				"soname(libc.so.6(x86_64))",
+				"soname(libgio-2.0.so.0(x86_64))",
+				"soname(libglib-2.0.so.0(x86_64))",
+				"soname(libgobject-2.0.so.0(x86_64))"
+			],
+			"files": [
+				"/usr/lib/girepository-1.0/ModemManager-1.0.typelib",
+				"/usr/lib/libmm-glib.so.0",
+				"/usr/lib/libmm-glib.so.0.11.0"
+			],
+			"name": "modemmanager-glib",
+			"provides": [
+				"soname(libmm-glib.so.0(x86_64))"
+			]
+		},
+		"modemmanager-glib-devel": {
+			"build-depends": [
+				"binary(msgfmt)",
+				"binary(xsltproc)",
+				"pkgconfig(bash-completion)",
+				"pkgconfig(dbus-1)",
+				"pkgconfig(gio-2.0)",
+				"pkgconfig(gio-unix-2.0)",
+				"pkgconfig(glib-2.0)",
+				"pkgconfig(gmodule-2.0)",
+				"pkgconfig(gobject-2.0)",
+				"pkgconfig(gobject-introspection-1.0)",
+				"pkgconfig(gudev-1.0)",
+				"pkgconfig(libsystemd)",
+				"pkgconfig(mbim-glib)",
+				"pkgconfig(polkit-gobject-1)",
+				"pkgconfig(qmi-glib)",
+				"pkgconfig(qrtr-glib)",
+				"pkgconfig(systemd)",
+				"pkgconfig(udev)"
+			],
+			"depends": [
+				"modemmanager-glib",
+				"pkgconfig(ModemManager)",
+				"pkgconfig(gio-2.0)",
+				"pkgconfig(gio-unix-2.0)",
+				"pkgconfig(glib-2.0)",
+				"pkgconfig(gobject-2.0)"
+			],
+			"files": [
 				"/usr/include/libmm-glib/libmm-glib.h",
 				"/usr/include/libmm-glib/mm-3gpp-profile.h",
 				"/usr/include/libmm-glib/mm-bearer-ip-config.h",
@@ -366,18 +434,16 @@
 				"/usr/include/libmm-glib/mm-sms.h",
 				"/usr/include/libmm-glib/mm-unlock-retries.h",
 				"/usr/lib/libmm-glib.so",
-				"/usr/lib/pkgconfig/ModemManager.pc",
 				"/usr/lib/pkgconfig/mm-glib.pc",
 				"/usr/share/gir-1.0/ModemManager-1.0.gir"
 			],
-			"name": "modemmanager-devel",
+			"name": "modemmanager-glib-devel",
 			"provides": [
-				"pkgconfig(ModemManager)",
 				"pkgconfig(mm-glib)"
 			]
 		}
 	},
 	"source-name": "modemmanager",
-	"source-release": "4",
+	"source-release": "5",
 	"source-version": "1.24.0"
 }
