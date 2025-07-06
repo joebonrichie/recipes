@@ -5,7 +5,7 @@
 #
 name        : fastfetch
 version     : 2.46.0
-release     : 7
+release     : 8
 homepage    : https://github.com/fastfetch-cli/fastfetch
 upstreams   :
     - https://github.com/fastfetch-cli/fastfetch/archive/refs/tags/2.46.0.tar.gz : 7e4e4ab8d3e0e2ad896f97effc58df4c8d23bb88273bbdf1221bd8f0a4beb736
@@ -15,8 +15,10 @@ description : |
 license     : MIT
 builddeps   :
     - cmake(VulkanHeaders)
+    - pkgconfig(OpenCL)
     - pkgconfig(dbus-1)
     - pkgconfig(dconf)
+    - pkgconfig(ddcutil)
     - pkgconfig(egl)
     - pkgconfig(gio-2.0)
     - pkgconfig(glib-2.0)
@@ -31,7 +33,7 @@ builddeps   :
     - pkgconfig(xrandr)
     - pkgconfig(zlib)
     # TODO missing deps:
-    # ocl-icd, xfconf, imagemagick, ddcutil
+    # xfconf, imagemagick
 tuning      :
     - lto: thin
     - optimize: speed
