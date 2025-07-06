@@ -37,7 +37,8 @@
 				"pkgconfig(xxf86vm)"
 			],
 			"depends": [
-				"freeglut"
+				"freeglut",
+				"pkgconfig(glu)"
 			],
 			"files": [
 				"/usr/include/GL/freeglut.h",
@@ -60,6 +61,6 @@
 		}
 	},
 	"source-name": "freeglut",
-	"source-release": "3",
+	"source-release": "4",
 	"source-version": "3.6.0"
 }
