@@ -1,0 +1,57 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : bluedevil
+version     : 6.4.2
+release     : 1
+upstreams   :
+    - https://download.kde.org/stable/plasma/6.4.2/bluedevil-6.4.2.tar.xz : 253bd63305ab2b76391feca721f735b6bae6c5c13799164b8caa09fbfa3a0e06
+homepage    : https://kde.org/plasma-desktop/
+license     :
+    - BSD-3-Clause
+    - GPL-2.0-or-later
+    - LGPL-2.0-or-later
+    - LGPL-2.1-only
+summary     : Bluetooth stack for KDE Plasma
+description : |
+    Bluedevil is a project which intends to integrate the Bluetooth technology within KDE workspace and applications.
+builddeps   :
+    # Temporary, boulder doesn't handle build ordering resolution correctly when builddeps are added by macros, so add ECM manually
+    - cmake(ECM)
+    - cmake(KF6BluezQt)
+    - cmake(KF6CoreAddons)
+    - cmake(KF6DBusAddons)
+    - cmake(KF6DocTools)
+    - cmake(KF6I18n)
+    - cmake(KF6JobWidgets)
+    - cmake(KF6KCMUtils)
+    - cmake(KF6KIO)
+    - cmake(KF6Kirigami)
+    - cmake(KF6Notifications)
+    - cmake(KF6Service)
+    - cmake(KF6Svg)
+    - cmake(KF6WidgetsAddons)
+    - cmake(KF6WindowSystem)
+    - cmake(Plasma)
+    - cmake(Qt6CorePrivate)
+rundeps     :
+    - bluez
+    - bluez-obexd
+    - kf6-kirigami
+    # - pipewire-bluetooth (when split)
+tuning      :
+    - lto: full
+    - optimize: speed
+setup       : |
+    %cmake_kf6
+build       : |
+    %cmake_build
+install     : |
+    %cmake_install
+    %qml_cache_qt6
+packages    :
+    - "%(name)-docs":
+        paths:
+            - /usr/share/doc
