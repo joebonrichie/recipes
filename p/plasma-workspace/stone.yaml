@@ -5,7 +5,7 @@
 #
 name        : plasma-workspace
 version     : 6.4.2
-release     : 2
+release     : 3
 upstreams   :
     - https://download.kde.org/stable/plasma/6.4.2/plasma-workspace-6.4.2.tar.xz : ed657be39ec9bc1d4e5ba4c5e717b4ab683dd27bececfaef6e7e209f771b4850
 homepage    : https://kde.org/plasma-desktop/
@@ -84,14 +84,13 @@ builddeps   :
     - pkgconfig(libqalculate)
     - pkgconfig(libxcrypt)
     - iso-codes
+    - kio-extras
     - kio-fuse
 
     # Libs that can be removed once we can do WITH_X11=OFF
     - pkgconfig(ice)
     - pkgconfig(sm)
 
-    # TODO: kio-extras
-    # Powerdevil
     # AppMenuGtkModule
 tuning      :
     - lto: full
@@ -128,17 +127,22 @@ packages    :
             - kf6-kirigami # QML dep
             - kf6-kirigami-addons # QML dep
             - kf6-kquickcharts # QML dep
+            - kio-extras # Many extras including thumbnail support for common formats
             - kio-fuse # Provide KIO support to legacy applications
             - kwin # Doesn't work with any other compositor
             - ocean-sound-theme # Default sound theme
             - plasma-integration # Plugin used for reloading fonts
             - plasma-keyboard # Used for SDDM virtual keyboard
-            # - powerdevil
             - qt6-virtualkeyboard # QML dep
             - systemd # Used for session init
             # - xrdb # Used for fonts, can we get away without it?
             # - xprop # Can we avoid this?
             - xwaylandvideobridge # Used for streaming Wayland windows to Xwayland clients
+
+            # Power management
+            # Note: Because this depends on libkworkspace (part of this package) it will likely be necessary to comment this out
+            # if the soname of that lib changes (for example this is likely for the Plasma 6 -> Plasma 7 upgrade)
+            - powerdevil
 
     - "libkworkspace":
         summary: Runtime libkworkspace6 library
