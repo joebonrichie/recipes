@@ -4,15 +4,15 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : nss
-version     : "3.113"
-release     : 29
+version     : "3.113.1"
+release     : 30
 summary     : Network Security Services
 license     : MPL-2.0
 homepage    : https://wiki.mozilla.org/NSS
 description : |
     Network Security Services (NSS) is a set of libraries designed to support cross-platform development of security-enabled client and server applications.
 upstreams   :
-    - https://ftp.mozilla.org/pub/security/nss/releases/NSS_3_113_RTM/src/nss-3.113.tar.gz : acef06b512d3bd81c87a63b3c8653d258bb689d2191fc0e64decf5a1efa01c0f
+    - https://ftp.mozilla.org/pub/security/nss/releases/NSS_3_113_1_RTM/src/nss-3.113.1.tar.gz : b8c586cc0ac60b76477f62483f664f119c26000a8189dd9ef417df7dbd33a2cc
 builddeps   :
     - binary(openssl)
     - binary(perl)
@@ -56,7 +56,7 @@ install     : |
         %install_file $f %(installroot)%(includedir)/nss/.
     done
     for i in certutil nss-config pk12util; do
-        %install_file dist/Linux*/bin/${i} %(installroot)%(bindir)/${i}
+        %install_exe dist/Linux*/bin/${i} %(installroot)%(bindir)/${i}
     done
     %install_file dist/Linux*/lib/pkgconfig/nss.pc %(installroot)%(libdir)/pkgconfig/nss.pc
 
