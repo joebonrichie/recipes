@@ -1,0 +1,16 @@
+name: vlc_cache_gen
+after: systemd_tmpfiles
+description: |
+    Generate the VLC plugins cache
+
+handlers:
+    vlc-cache-gen:
+        run: "/usr/lib/vlc/vlc-cache-gen"
+        args: [
+            "/usr/lib/vlc/plugins/"
+        ]
+
+paths:
+    "/usr/lib/vlc/plugins/**":
+        handlers:
+            - vlc-cache-gen
