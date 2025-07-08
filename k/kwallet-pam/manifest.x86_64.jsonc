@@ -1,0 +1,35 @@
+/** Human readable report. This is not consumed by boulder */
+{
+	"manifest-version": "0.2",
+	"packages": {
+		"kwallet-pam": {
+			"build-depends": [
+				"binary(socat)",
+				"cmake(ECM)",
+				"cmake(KF6Wallet)",
+				"pkgconfig(libgcrypt)",
+				"pkgconfig(pam)"
+			],
+			"depends": [
+				"binary(socat)",
+				"kf6-kwallet",
+				"soname(libc.so.6(x86_64))",
+				"soname(libgcrypt.so.20(x86_64))",
+				"soname(libpam.so.0(x86_64))"
+			],
+			"files": [
+				"/usr/lib/kf6/pam_kwallet_init",
+				"/usr/lib/security/pam_kwallet5.so",
+				"/usr/lib/systemd/user/plasma-kwallet-pam.service",
+				"/usr/share/xdg/autostart/pam_kwallet_init.desktop"
+			],
+			"name": "kwallet-pam",
+			"provides": [
+				"soname(security/pam_kwallet5.so(x86_64))"
+			]
+		}
+	},
+	"source-name": "kwallet-pam",
+	"source-release": "1",
+	"source-version": "6.4.2"
+}
