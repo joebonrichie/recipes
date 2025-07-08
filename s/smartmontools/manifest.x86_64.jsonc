@@ -1,0 +1,59 @@
+/** Human readable report. This is not consumed by boulder */
+{
+	"manifest-version": "0.2",
+	"packages": {
+		"smartmontools": {
+			"build-depends": [
+				"pkgconfig(libcap-ng)",
+				"pkgconfig(libsystemd)"
+			],
+			"depends": [
+				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
+				"soname(libc++.so.1(x86_64))",
+				"soname(libc.so.6(x86_64))",
+				"soname(libcap-ng.so.0(x86_64))",
+				"soname(libsystemd.so.0(x86_64))",
+				"soname(libunwind.so.1(x86_64))"
+			],
+			"files": [
+				"/usr/lib/systemd/system-preset/smartmontools.preset",
+				"/usr/lib/systemd/system/smartd.service",
+				"/usr/sbin/smartctl",
+				"/usr/sbin/smartd",
+				"/usr/sbin/update-smart-drivedb",
+				"/usr/share/doc/smartmontools/AUTHORS",
+				"/usr/share/doc/smartmontools/COPYING",
+				"/usr/share/doc/smartmontools/ChangeLog",
+				"/usr/share/doc/smartmontools/ChangeLog-6.0-7.0",
+				"/usr/share/doc/smartmontools/INSTALL",
+				"/usr/share/doc/smartmontools/NEWS",
+				"/usr/share/doc/smartmontools/README",
+				"/usr/share/doc/smartmontools/TODO",
+				"/usr/share/doc/smartmontools/examplescripts/Example1",
+				"/usr/share/doc/smartmontools/examplescripts/Example2",
+				"/usr/share/doc/smartmontools/examplescripts/Example3",
+				"/usr/share/doc/smartmontools/examplescripts/Example4",
+				"/usr/share/doc/smartmontools/examplescripts/Example5",
+				"/usr/share/doc/smartmontools/examplescripts/Example6",
+				"/usr/share/doc/smartmontools/examplescripts/Example7",
+				"/usr/share/doc/smartmontools/examplescripts/Example8",
+				"/usr/share/doc/smartmontools/examplescripts/README",
+				"/usr/share/doc/smartmontools/smartd.conf",
+				"/usr/share/man/man5/smartd.conf.5",
+				"/usr/share/man/man8/smartctl.8",
+				"/usr/share/man/man8/smartd.8",
+				"/usr/share/man/man8/update-smart-drivedb.8",
+				"/usr/share/smartmontools/drivedb.h"
+			],
+			"name": "smartmontools",
+			"provides": [
+				"sysbinary(smartctl)",
+				"sysbinary(smartd)",
+				"sysbinary(update-smart-drivedb)"
+			]
+		}
+	},
+	"source-name": "smartmontools",
+	"source-release": "1",
+	"source-version": "7.5"
+}
