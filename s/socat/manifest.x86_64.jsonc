@@ -1,0 +1,43 @@
+/** Human readable report. This is not consumed by boulder */
+{
+	"manifest-version": "0.2",
+	"packages": {
+		"socat": {
+			"build-depends": [
+				"pkgconfig(openssl)",
+				"pkgconfig(readline)"
+			],
+			"depends": [
+				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
+				"soname(libc.so.6(x86_64))",
+				"soname(libcrypto.so.3(x86_64))",
+				"soname(libreadline.so.8(x86_64))",
+				"soname(libssl.so.3(x86_64))"
+			],
+			"files": [
+				"/usr/bin/filan",
+				"/usr/bin/procan",
+				"/usr/bin/socat",
+				"/usr/bin/socat-broker.sh",
+				"/usr/bin/socat-chain.sh",
+				"/usr/bin/socat-mux.sh",
+				"/usr/bin/socat1",
+				"/usr/share/man/man1/socat.1",
+				"/usr/share/man/man1/socat1.1"
+			],
+			"name": "socat",
+			"provides": [
+				"binary(filan)",
+				"binary(procan)",
+				"binary(socat)",
+				"binary(socat-broker.sh)",
+				"binary(socat-chain.sh)",
+				"binary(socat-mux.sh)",
+				"binary(socat1)"
+			]
+		}
+	},
+	"source-name": "socat",
+	"source-release": "1",
+	"source-version": "1.8.0.3"
+}

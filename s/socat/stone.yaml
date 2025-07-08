@@ -1,0 +1,24 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : socat
+version     : 1.8.0.3
+release     : 1
+upstreams   :
+    - http://www.dest-unreach.org/socat/download/socat-1.8.0.3.tar.gz : a9f9eb6cfb9aa6b1b4b8fe260edbac3f2c743f294db1e362b932eb3feca37ba4
+homepage    : https://www.dest-unreach.org/socat/
+license     : GPL-2.0-or-later
+summary     : MesBidirectional data transfer relay
+description : |
+    Bidirectional data transfer relay
+builddeps   :
+    - pkgconfig(openssl)
+    - pkgconfig(readline)
+setup       : |
+    %configure
+build       : |
+    %make
+install     : |
+    %make_install
