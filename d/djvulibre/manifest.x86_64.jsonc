@@ -1,0 +1,160 @@
+/** Human readable report. This is not consumed by boulder */
+{
+	"manifest-version": "0.2",
+	"packages": {
+		"djvulibre": {
+			"build-depends": [
+				"binary(rsvg-convert)",
+				"pkgconfig(libjpeg)",
+				"pkgconfig(libtiff-4)"
+			],
+			"depends": [
+				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
+				"soname(libc++.so.1(x86_64))",
+				"soname(libc.so.6(x86_64))",
+				"soname(libdjvulibre.so.21(x86_64))",
+				"soname(libm.so.6(x86_64))",
+				"soname(libtiff.so.6(x86_64))",
+				"soname(libunwind.so.1(x86_64))"
+			],
+			"files": [
+				"/usr/bin/any2djvu",
+				"/usr/bin/bzz",
+				"/usr/bin/c44",
+				"/usr/bin/cjb2",
+				"/usr/bin/cpaldjvu",
+				"/usr/bin/csepdjvu",
+				"/usr/bin/ddjvu",
+				"/usr/bin/djvm",
+				"/usr/bin/djvmcvt",
+				"/usr/bin/djvudigital",
+				"/usr/bin/djvudump",
+				"/usr/bin/djvuextract",
+				"/usr/bin/djvumake",
+				"/usr/bin/djvups",
+				"/usr/bin/djvused",
+				"/usr/bin/djvuserve",
+				"/usr/bin/djvutoxml",
+				"/usr/bin/djvutxt",
+				"/usr/bin/djvuxmlparser",
+				"/usr/share/djvu/osi/cs/messages.xml",
+				"/usr/share/djvu/osi/de/libdjvu++.xml",
+				"/usr/share/djvu/osi/de/messages.xml",
+				"/usr/share/djvu/osi/en/djvutools-reference.xml",
+				"/usr/share/djvu/osi/en/libdjvu++.xml",
+				"/usr/share/djvu/osi/en/messages.xml",
+				"/usr/share/djvu/osi/fr/libdjvu++.xml",
+				"/usr/share/djvu/osi/fr/messages.xml",
+				"/usr/share/djvu/osi/ja/libdjvu++.xml",
+				"/usr/share/djvu/osi/ja/messages.xml",
+				"/usr/share/djvu/osi/languages.xml",
+				"/usr/share/djvu/osi/zh/libdjvu++.xml",
+				"/usr/share/djvu/osi/zh/messages.xml",
+				"/usr/share/djvu/pubtext/DjVuMessages.dtd",
+				"/usr/share/djvu/pubtext/DjVuOCR.dtd",
+				"/usr/share/djvu/pubtext/DjVuXML-s.dtd",
+				"/usr/share/icons/hicolor/128x128/mimetypes/image-vnd.djvu.png",
+				"/usr/share/icons/hicolor/16x16/mimetypes/image-vnd.djvu.png",
+				"/usr/share/icons/hicolor/20x20/mimetypes/image-vnd.djvu.png",
+				"/usr/share/icons/hicolor/22x22/mimetypes/image-vnd.djvu.png",
+				"/usr/share/icons/hicolor/24x24/mimetypes/image-vnd.djvu.png",
+				"/usr/share/icons/hicolor/256x256/mimetypes/image-vnd.djvu.png",
+				"/usr/share/icons/hicolor/32x32/mimetypes/image-vnd.djvu.png",
+				"/usr/share/icons/hicolor/48x48/mimetypes/image-vnd.djvu.png",
+				"/usr/share/icons/hicolor/64x64/mimetypes/image-vnd.djvu.png",
+				"/usr/share/icons/hicolor/72x72/mimetypes/image-vnd.djvu.png",
+				"/usr/share/icons/hicolor/96x96/mimetypes/image-vnd.djvu.png",
+				"/usr/share/icons/hicolor/scalable/mimetypes/image-vnd.djvu.svgz",
+				"/usr/share/man/man1/any2djvu.1",
+				"/usr/share/man/man1/bzz.1",
+				"/usr/share/man/man1/c44.1",
+				"/usr/share/man/man1/cjb2.1",
+				"/usr/share/man/man1/cpaldjvu.1",
+				"/usr/share/man/man1/csepdjvu.1",
+				"/usr/share/man/man1/ddjvu.1",
+				"/usr/share/man/man1/djvm.1",
+				"/usr/share/man/man1/djvmcvt.1",
+				"/usr/share/man/man1/djvu.1",
+				"/usr/share/man/man1/djvudigital.1",
+				"/usr/share/man/man1/djvudump.1",
+				"/usr/share/man/man1/djvuextract.1",
+				"/usr/share/man/man1/djvumake.1",
+				"/usr/share/man/man1/djvups.1",
+				"/usr/share/man/man1/djvused.1",
+				"/usr/share/man/man1/djvuserve.1",
+				"/usr/share/man/man1/djvutoxml.1",
+				"/usr/share/man/man1/djvutxt.1",
+				"/usr/share/man/man1/djvuxml.1",
+				"/usr/share/man/man1/djvuxmlparser.1"
+			],
+			"name": "djvulibre",
+			"provides": [
+				"binary(any2djvu)",
+				"binary(bzz)",
+				"binary(c44)",
+				"binary(cjb2)",
+				"binary(cpaldjvu)",
+				"binary(csepdjvu)",
+				"binary(ddjvu)",
+				"binary(djvm)",
+				"binary(djvmcvt)",
+				"binary(djvudigital)",
+				"binary(djvudump)",
+				"binary(djvuextract)",
+				"binary(djvumake)",
+				"binary(djvups)",
+				"binary(djvused)",
+				"binary(djvuserve)",
+				"binary(djvutoxml)",
+				"binary(djvutxt)",
+				"binary(djvuxmlparser)"
+			]
+		},
+		"djvulibre-devel": {
+			"build-depends": [
+				"binary(rsvg-convert)",
+				"pkgconfig(libjpeg)",
+				"pkgconfig(libtiff-4)"
+			],
+			"depends": [
+				"djvulibre"
+			],
+			"files": [
+				"/usr/include/libdjvu/ddjvuapi.h",
+				"/usr/include/libdjvu/miniexp.h",
+				"/usr/lib/libdjvulibre.so",
+				"/usr/lib/pkgconfig/ddjvuapi.pc"
+			],
+			"name": "djvulibre-devel",
+			"provides": [
+				"pkgconfig(ddjvuapi)"
+			]
+		},
+		"djvulibre-libs": {
+			"build-depends": [
+				"binary(rsvg-convert)",
+				"pkgconfig(libjpeg)",
+				"pkgconfig(libtiff-4)"
+			],
+			"depends": [
+				"soname(ld-linux-x86-64.so.2(x86_64))",
+				"soname(libc++.so.1(x86_64))",
+				"soname(libc.so.6(x86_64))",
+				"soname(libjpeg.so.8(x86_64))",
+				"soname(libm.so.6(x86_64))",
+				"soname(libunwind.so.1(x86_64))"
+			],
+			"files": [
+				"/usr/lib/libdjvulibre.so.21",
+				"/usr/lib/libdjvulibre.so.21.8.0"
+			],
+			"name": "djvulibre-libs",
+			"provides": [
+				"soname(libdjvulibre.so.21(x86_64))"
+			]
+		}
+	},
+	"source-name": "djvulibre",
+	"source-release": "1",
+	"source-version": "3.5.29"
+}
