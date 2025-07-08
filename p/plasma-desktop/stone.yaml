@@ -5,7 +5,7 @@
 #
 name        : plasma-desktop
 version     : 6.4.2
-release     : 2
+release     : 3
 upstreams   :
     - https://download.kde.org/stable/plasma/6.4.2/plasma-desktop-6.4.2.tar.xz : 329691b92f368c22114604650e39db91c63870c80c0c08e853c6a040dbd30a84
 homepage    : https://kde.org/plasma-desktop/
@@ -97,7 +97,7 @@ packages    :
             - kf6-kirigami
             - kf6-kirigami-addons
             - kf6-qqc2-desktop-style
-            # - kmenuedit # TODO
+            - kmenuedit
             - iso-codes # Keyboard internationalization
             - plasma-integration # Breeze
             - plasma-workspace # All the logic bits and bobs

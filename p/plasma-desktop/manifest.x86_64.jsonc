@@ -67,6 +67,7 @@
 				"kf6-kirigami",
 				"kf6-kirigami-addons",
 				"kf6-qqc2-desktop-style",
+				"kmenuedit",
 				"plasma-integration",
 				"plasma-workspace",
 				"signon-plugin-oauth2",
@@ -4628,6 +4629,6 @@
 		}
 	},
 	"source-name": "plasma-desktop",
-	"source-release": "2",
+	"source-release": "3",
 	"source-version": "6.4.2"
 }
