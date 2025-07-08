@@ -1,0 +1,43 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : krdp
+version     : 6.4.2
+release     : 1
+upstreams   :
+    - https://download.kde.org/stable/plasma/6.4.2/krdp-6.4.2.tar.xz : ecf2a51737e160e9a8e7b85572a2c000a93c7b5938b29c9591189ab0624a0bb6
+homepage    : https://kde.org/plasma-desktop/
+license     : LGPL-2.1-or-later
+summary     : Library and examples for creating an RDP server
+description : |
+    Library and examples for creating an RDP server
+builddeps   :
+    # Temporary, boulder doesn't handle build ordering resolution correctly when builddeps are added by macros, so add ECM manually
+    - cmake(ECM)
+    - cmake(FreeRDP)
+    - cmake(Qt6Quick)
+    - cmake(Qt6WaylandClient)
+    - cmake(KF6Config)
+    - cmake(KF6CoreAddons)
+    - cmake(KF6Crash)
+    - cmake(KF6DBusAddons)
+    - cmake(KF6I18n)
+    - cmake(KF6KCMUtils)
+    - cmake(KF6StatusNotifierItem)
+    - cmake(KPipeWire)
+    - cmake(PlasmaWaylandProtocols)
+    - cmake(Qt6CorePrivate)
+    - cmake(Qt6Keychain)
+rundeps     :
+    - binary(openssl)
+tuning      :
+    - lto: full
+    - optimize: speed
+setup       : |
+    %cmake_kf6
+build       : |
+    %cmake_build
+install     : |
+    %cmake_install
