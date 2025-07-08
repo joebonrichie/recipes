@@ -5,7 +5,7 @@
 #
 name        : dolphin
 version     : 25.04.3
-release     : 5
+release     : 6
 upstreams   :
     - https://download.kde.org/stable/release-service/25.04.3/src/dolphin-25.04.3.tar.xz : e822faf02d3d727faf14789eacd331288cb8a74bb9b9881f1e7cd1789752c3f1
 homepage    : https://kde.org/applications/system/org.kde.dolphin
@@ -46,14 +46,34 @@ builddeps   :
     - cmake(Qt6CorePrivate)
     # Todo build with packagekit support
 rundeps     :
+    # KIO features
+    - kio-extras
+    - kio-fuse
+
+    - konsole-part # Integrated terminal
+    # Phonon Backend
     - phonon-backend-mpv-qt6
+    # So it always runs correctly on Wayland
     - qt6-wayland
+
+    # Image previews
+    - qt6-imageformats
+    - kf6-kimageformats
 setup       : |
     %cmake_kf6
 build       : |
     %cmake_build
 install     : |
     %cmake_install
+packages    :
+    - "%(name)-libs":
+        paths:
+            - /usr/lib/libdolphinprivate.so.*
+            - /usr/lib/libdolphinvcs.so.*
+            - /usr/lib/qt6/plugins/dolphin/
+            - /usr/lib/qt6/plugins/kf6/kfileitemaction/
+            - /usr/lib/qt6/plugins/kf6/parts/dolphinpart.so
 
-    # remove docs
-    rm -rf %(installroot)/%(datadir)/doc
+    - "%(name)-docs":
+        paths:
+            - /usr/share/doc
