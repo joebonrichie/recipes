@@ -11,6 +11,7 @@
 				"pkgconfig(gobject-2.0)",
 				"pkgconfig(libpng)",
 				"pkgconfig(librsvg-2.0)",
+				"pkgconfig(libspectre)",
 				"pkgconfig(lzo2)",
 				"pkgconfig(pixman-1)",
 				"pkgconfig(poppler-glib)",
@@ -28,8 +29,6 @@
 				"soname(libc.so.6(x86_64))",
 				"soname(libfontconfig.so.1(x86_64))",
 				"soname(libfreetype.so.6(x86_64))",
-				"soname(libglib-2.0.so.0(x86_64))",
-				"soname(libgobject-2.0.so.0(x86_64))",
 				"soname(liblzo2.so.2(x86_64))",
 				"soname(libm.so.6(x86_64))",
 				"soname(libpixman-1.so.0(x86_64))",
@@ -40,18 +39,13 @@
 				"soname(libz.so.1(x86_64))"
 			],
 			"files": [
-				"/usr/lib/cairo/libcairo-fdr.so",
-				"/usr/lib/libcairo-gobject.so.2",
-				"/usr/lib/libcairo-gobject.so.2.11802.2",
 				"/usr/lib/libcairo-script-interpreter.so.2",
-				"/usr/lib/libcairo-script-interpreter.so.2.11802.2",
+				"/usr/lib/libcairo-script-interpreter.so.2.11804.4",
 				"/usr/lib/libcairo.so.2",
-				"/usr/lib/libcairo.so.2.11802.2"
+				"/usr/lib/libcairo.so.2.11804.4"
 			],
 			"name": "cairo",
 			"provides": [
-				"soname(cairo/libcairo-fdr.so(x86_64))",
-				"soname(libcairo-gobject.so.2(x86_64))",
 				"soname(libcairo-script-interpreter.so.2(x86_64))",
 				"soname(libcairo.so.2(x86_64))"
 			]
@@ -65,6 +59,7 @@
 				"pkgconfig(gobject-2.0)",
 				"pkgconfig(libpng)",
 				"pkgconfig(librsvg-2.0)",
+				"pkgconfig(libspectre)",
 				"pkgconfig(lzo2)",
 				"pkgconfig(pixman-1)",
 				"pkgconfig(poppler-glib)",
@@ -79,8 +74,6 @@
 				"cairo",
 				"pkgconfig(fontconfig)",
 				"pkgconfig(freetype2)",
-				"pkgconfig(glib-2.0)",
-				"pkgconfig(gobject-2.0)",
 				"pkgconfig(libpng)",
 				"pkgconfig(lzo2)",
 				"pkgconfig(pixman-1)",
@@ -91,15 +84,13 @@
 				"pkgconfig(xext)",
 				"pkgconfig(xrender)",
 				"pkgconfig(zlib)",
-				"soname(libc.so.6(x86_64))",
-				"soname(libz.so.1(x86_64))"
+				"soname(libc.so.6(x86_64))"
 			],
 			"files": [
 				"/usr/bin/cairo-trace",
 				"/usr/include/cairo/cairo-deprecated.h",
 				"/usr/include/cairo/cairo-features.h",
 				"/usr/include/cairo/cairo-ft.h",
-				"/usr/include/cairo/cairo-gobject.h",
 				"/usr/include/cairo/cairo-pdf.h",
 				"/usr/include/cairo/cairo-ps.h",
 				"/usr/include/cairo/cairo-script-interpreter.h",
@@ -111,13 +102,12 @@
 				"/usr/include/cairo/cairo-xlib-xrender.h",
 				"/usr/include/cairo/cairo-xlib.h",
 				"/usr/include/cairo/cairo.h",
+				"/usr/lib/cairo/libcairo-fdr.so",
 				"/usr/lib/cairo/libcairo-trace.so",
-				"/usr/lib/libcairo-gobject.so",
 				"/usr/lib/libcairo-script-interpreter.so",
 				"/usr/lib/libcairo.so",
 				"/usr/lib/pkgconfig/cairo-fc.pc",
 				"/usr/lib/pkgconfig/cairo-ft.pc",
-				"/usr/lib/pkgconfig/cairo-gobject.pc",
 				"/usr/lib/pkgconfig/cairo-pdf.pc",
 				"/usr/lib/pkgconfig/cairo-png.pc",
 				"/usr/lib/pkgconfig/cairo-ps.pc",
@@ -137,7 +127,6 @@
 				"pkgconfig(cairo)",
 				"pkgconfig(cairo-fc)",
 				"pkgconfig(cairo-ft)",
-				"pkgconfig(cairo-gobject)",
 				"pkgconfig(cairo-pdf)",
 				"pkgconfig(cairo-png)",
 				"pkgconfig(cairo-ps)",
@@ -149,11 +138,94 @@
 				"pkgconfig(cairo-xcb-shm)",
 				"pkgconfig(cairo-xlib)",
 				"pkgconfig(cairo-xlib-xrender)",
+				"soname(cairo/libcairo-fdr.so(x86_64))",
 				"soname(cairo/libcairo-trace.so(x86_64))"
+			]
+		},
+		"cairo-gobject": {
+			"build-depends": [
+				"binary(gs)",
+				"pkgconfig(fontconfig)",
+				"pkgconfig(freetype2)",
+				"pkgconfig(glib-2.0)",
+				"pkgconfig(gobject-2.0)",
+				"pkgconfig(libpng)",
+				"pkgconfig(librsvg-2.0)",
+				"pkgconfig(libspectre)",
+				"pkgconfig(lzo2)",
+				"pkgconfig(pixman-1)",
+				"pkgconfig(poppler-glib)",
+				"pkgconfig(x11)",
+				"pkgconfig(xcb-render)",
+				"pkgconfig(xcb-shm)",
+				"pkgconfig(xext)",
+				"pkgconfig(xrender)",
+				"pkgconfig(zlib)"
+			],
+			"depends": [
+				"soname(libc.so.6(x86_64))",
+				"soname(libcairo.so.2(x86_64))",
+				"soname(libglib-2.0.so.0(x86_64))",
+				"soname(libgobject-2.0.so.0(x86_64))"
+			],
+			"files": [
+				"/usr/lib/libcairo-gobject.so.2",
+				"/usr/lib/libcairo-gobject.so.2.11804.4"
+			],
+			"name": "cairo-gobject",
+			"provides": [
+				"soname(libcairo-gobject.so.2(x86_64))"
+			]
+		},
+		"cairo-gobject-devel": {
+			"build-depends": [
+				"binary(gs)",
+				"pkgconfig(fontconfig)",
+				"pkgconfig(freetype2)",
+				"pkgconfig(glib-2.0)",
+				"pkgconfig(gobject-2.0)",
+				"pkgconfig(libpng)",
+				"pkgconfig(librsvg-2.0)",
+				"pkgconfig(libspectre)",
+				"pkgconfig(lzo2)",
+				"pkgconfig(pixman-1)",
+				"pkgconfig(poppler-glib)",
+				"pkgconfig(x11)",
+				"pkgconfig(xcb-render)",
+				"pkgconfig(xcb-shm)",
+				"pkgconfig(xext)",
+				"pkgconfig(xrender)",
+				"pkgconfig(zlib)"
+			],
+			"depends": [
+				"cairo-gobject",
+				"pkgconfig(cairo)",
+				"pkgconfig(fontconfig)",
+				"pkgconfig(freetype2)",
+				"pkgconfig(glib-2.0)",
+				"pkgconfig(gobject-2.0)",
+				"pkgconfig(libpng)",
+				"pkgconfig(pixman-1)",
+				"pkgconfig(x11)",
+				"pkgconfig(xcb)",
+				"pkgconfig(xcb-render)",
+				"pkgconfig(xcb-shm)",
+				"pkgconfig(xext)",
+				"pkgconfig(xrender)",
+				"pkgconfig(zlib)"
+			],
+			"files": [
+				"/usr/include/cairo/cairo-gobject.h",
+				"/usr/lib/libcairo-gobject.so",
+				"/usr/lib/pkgconfig/cairo-gobject.pc"
+			],
+			"name": "cairo-gobject-devel",
+			"provides": [
+				"pkgconfig(cairo-gobject)"
 			]
 		}
 	},
 	"source-name": "cairo",
-	"source-release": "7",
-	"source-version": "1.18.2"
+	"source-release": "8",
+	"source-version": "1.18.4"
 }
