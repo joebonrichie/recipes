@@ -1,0 +1,47 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : print-manager
+version     : 6.4.2
+release     : 1
+upstreams   :
+    - https://download.kde.org/stable/plasma/6.4.2/print-manager-6.4.2.tar.xz : 6eb93e00065ade17137ff6b4aeec48865b5149bcfc25f7f9c593df4d1a1668bd
+homepage    : https://kde.org/plasma-desktop/
+license     : GPL-2.0-or-later
+summary     : Tool for managing print jobs and printers
+description : |
+    Tool for managing print jobs and printers
+builddeps   :
+    - binary(smbspool)
+    # Temporary, boulder doesn't handle build ordering resolution correctly when builddeps are added by macros, so add ECM manually
+    - cmake(ECM)
+    - cmake(KF6Config)
+    - cmake(KF6ConfigWidgets)
+    - cmake(KF6CoreAddons)
+    - cmake(KF6DBusAddons)
+    - cmake(KF6I18n)
+    - cmake(KF6KCMUtils)
+    - cmake(KF6Kirigami)
+    - cmake(KF6KIO)
+    - cmake(KF6Notifications)
+    - cmake(KF6WidgetsAddons)
+    - cmake(KF6WindowSystem)
+    - cmake(Plasma)
+    - cmake(Qt6CorePrivate)
+    - pkgconfig(cups)
+rundeps     :
+    - binary(smbspool)
+    - cups
+    - plasma-workspace
+tuning      :
+    - lto: full
+    - optimize: speed
+setup       : |
+    %cmake_kf6
+build       : |
+    %cmake_build
+install     : |
+    %cmake_install
+    %qml_cache_qt6
