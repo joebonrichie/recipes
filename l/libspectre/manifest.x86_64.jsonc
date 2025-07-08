@@ -2,7 +2,7 @@
 {
 	"manifest-version": "0.2",
 	"packages": {
-		"libmd": {
+		"libspectre": {
 			"build-depends": [
 				"ghostscript-devel",
 				"pkgconfig(cairo)"
@@ -15,18 +15,18 @@
 				"/usr/lib/libspectre.so.1",
 				"/usr/lib/libspectre.so.1.1.12"
 			],
-			"name": "libmd",
+			"name": "libspectre",
 			"provides": [
 				"soname(libspectre.so.1(x86_64))"
 			]
 		},
-		"libmd-devel": {
+		"libspectre-devel": {
 			"build-depends": [
 				"ghostscript-devel",
 				"pkgconfig(cairo)"
 			],
 			"depends": [
-				"libmd"
+				"libspectre"
 			],
 			"files": [
 				"/usr/include/libspectre/spectre-document.h",
@@ -40,13 +40,13 @@
 				"/usr/lib/libspectre.so",
 				"/usr/lib/pkgconfig/libspectre.pc"
 			],
-			"name": "libmd-devel",
+			"name": "libspectre-devel",
 			"provides": [
 				"pkgconfig(libspectre)"
 			]
 		}
 	},
-	"source-name": "libmd",
+	"source-name": "libspectre",
 	"source-release": "1",
 	"source-version": "0.2.12"
 }

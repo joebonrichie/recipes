@@ -3,7 +3,7 @@
 #
 # SPDX-License-Identifier: MPL-2.0
 #
-name        : libmd
+name        : libspectre
 version     : 0.2.12
 release     : 1
 upstreams   :
