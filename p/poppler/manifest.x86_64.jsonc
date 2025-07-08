@@ -4,6 +4,7 @@
 	"packages": {
 		"poppler": {
 			"build-depends": [
+				"binary(msgfmt)",
 				"binary(python3)",
 				"cmake(Boost)",
 				"cmake(OpenJPEG)",
@@ -16,21 +17,17 @@
 				"pkgconfig(lcms2)",
 				"pkgconfig(libcurl)",
 				"pkgconfig(libtiff-4)",
-				"pkgconfig(nss)"
+				"pkgconfig(nss)",
+				"poppler-data"
 			],
 			"depends": [
-				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
 				"poppler-data",
 				"soname(ld-linux-x86-64.so.2(x86_64))",
 				"soname(libc++.so.1(x86_64))",
 				"soname(libc.so.6(x86_64))",
-				"soname(libcairo.so.2(x86_64))",
 				"soname(libcurl.so.4(x86_64))",
 				"soname(libfontconfig.so.1(x86_64))",
 				"soname(libfreetype.so.6(x86_64))",
-				"soname(libgio-2.0.so.0(x86_64))",
-				"soname(libglib-2.0.so.0(x86_64))",
-				"soname(libgobject-2.0.so.0(x86_64))",
 				"soname(libgpgmepp.so.6(x86_64))",
 				"soname(libjpeg.so.8(x86_64))",
 				"soname(liblcms2.so.2(x86_64))",
@@ -45,62 +42,18 @@
 				"soname(libz.so.1(x86_64))"
 			],
 			"files": [
-				"/usr/bin/pdfattach",
-				"/usr/bin/pdfdetach",
-				"/usr/bin/pdffonts",
-				"/usr/bin/pdfimages",
-				"/usr/bin/pdfinfo",
-				"/usr/bin/pdfseparate",
-				"/usr/bin/pdfsig",
-				"/usr/bin/pdftocairo",
-				"/usr/bin/pdftohtml",
-				"/usr/bin/pdftoppm",
-				"/usr/bin/pdftops",
-				"/usr/bin/pdftotext",
-				"/usr/bin/pdfunite",
-				"/usr/lib/girepository-1.0/Poppler-0.18.typelib",
-				"/usr/lib/libpoppler-cpp.so.2",
-				"/usr/lib/libpoppler-cpp.so.2.0.0",
-				"/usr/lib/libpoppler-glib.so.8",
-				"/usr/lib/libpoppler-glib.so.8.29.0",
-				"/usr/lib/libpoppler.so.147",
-				"/usr/lib/libpoppler.so.147.0.0",
-				"/usr/share/man/man1/pdfattach.1",
-				"/usr/share/man/man1/pdfdetach.1",
-				"/usr/share/man/man1/pdffonts.1",
-				"/usr/share/man/man1/pdfimages.1",
-				"/usr/share/man/man1/pdfinfo.1",
-				"/usr/share/man/man1/pdfseparate.1",
-				"/usr/share/man/man1/pdfsig.1",
-				"/usr/share/man/man1/pdftocairo.1",
-				"/usr/share/man/man1/pdftohtml.1",
-				"/usr/share/man/man1/pdftoppm.1",
-				"/usr/share/man/man1/pdftops.1",
-				"/usr/share/man/man1/pdftotext.1",
-				"/usr/share/man/man1/pdfunite.1"
+				"/usr/lib/libpoppler.so.150",
+				"/usr/lib/libpoppler.so.150.0.0",
+				"/usr/share/locale/ca/LC_MESSAGES/pdfsig.mo"
 			],
 			"name": "poppler",
 			"provides": [
-				"binary(pdfattach)",
-				"binary(pdfdetach)",
-				"binary(pdffonts)",
-				"binary(pdfimages)",
-				"binary(pdfinfo)",
-				"binary(pdfseparate)",
-				"binary(pdfsig)",
-				"binary(pdftocairo)",
-				"binary(pdftohtml)",
-				"binary(pdftoppm)",
-				"binary(pdftops)",
-				"binary(pdftotext)",
-				"binary(pdfunite)",
-				"soname(libpoppler-cpp.so.2(x86_64))",
-				"soname(libpoppler-glib.so.8(x86_64))",
-				"soname(libpoppler.so.147(x86_64))"
+				"soname(libpoppler.so.150(x86_64))"
 			]
 		},
-		"poppler-devel": {
+		"poppler-cpp": {
 			"build-depends": [
+				"binary(msgfmt)",
 				"binary(python3)",
 				"cmake(Boost)",
 				"cmake(OpenJPEG)",
@@ -113,13 +66,44 @@
 				"pkgconfig(lcms2)",
 				"pkgconfig(libcurl)",
 				"pkgconfig(libtiff-4)",
-				"pkgconfig(nss)"
+				"pkgconfig(nss)",
+				"poppler-data"
 			],
 			"depends": [
-				"pkgconfig(cairo)",
-				"pkgconfig(glib-2.0)",
-				"pkgconfig(gobject-2.0)",
-				"poppler"
+				"soname(libc++.so.1(x86_64))",
+				"soname(libc.so.6(x86_64))",
+				"soname(libpoppler.so.150(x86_64))"
+			],
+			"files": [
+				"/usr/lib/libpoppler-cpp.so.2",
+				"/usr/lib/libpoppler-cpp.so.2.1.0"
+			],
+			"name": "poppler-cpp",
+			"provides": [
+				"soname(libpoppler-cpp.so.2(x86_64))"
+			]
+		},
+		"poppler-cpp-devel": {
+			"build-depends": [
+				"binary(msgfmt)",
+				"binary(python3)",
+				"cmake(Boost)",
+				"cmake(OpenJPEG)",
+				"cmake(Qt6)",
+				"pkgconfig(freetype2)",
+				"pkgconfig(gdk-pixbuf-2.0)",
+				"pkgconfig(gobject-introspection-1.0)",
+				"pkgconfig(gpgme)",
+				"pkgconfig(gtk+-3.0)",
+				"pkgconfig(lcms2)",
+				"pkgconfig(libcurl)",
+				"pkgconfig(libtiff-4)",
+				"pkgconfig(nss)",
+				"poppler-data"
+			],
+			"depends": [
+				"pkgconfig(poppler)",
+				"poppler-cpp"
 			],
 			"files": [
 				"/usr/include/poppler/cpp/poppler-destination.h",
@@ -136,6 +120,109 @@
 				"/usr/include/poppler/cpp/poppler-toc.h",
 				"/usr/include/poppler/cpp/poppler-version.h",
 				"/usr/include/poppler/cpp/poppler_cpp_export.h",
+				"/usr/lib/libpoppler-cpp.so",
+				"/usr/lib/pkgconfig/poppler-cpp.pc"
+			],
+			"name": "poppler-cpp-devel",
+			"provides": [
+				"pkgconfig(poppler-cpp)"
+			]
+		},
+		"poppler-devel": {
+			"build-depends": [
+				"binary(msgfmt)",
+				"binary(python3)",
+				"cmake(Boost)",
+				"cmake(OpenJPEG)",
+				"cmake(Qt6)",
+				"pkgconfig(freetype2)",
+				"pkgconfig(gdk-pixbuf-2.0)",
+				"pkgconfig(gobject-introspection-1.0)",
+				"pkgconfig(gpgme)",
+				"pkgconfig(gtk+-3.0)",
+				"pkgconfig(lcms2)",
+				"pkgconfig(libcurl)",
+				"pkgconfig(libtiff-4)",
+				"pkgconfig(nss)",
+				"poppler-data"
+			],
+			"depends": [
+				"poppler"
+			],
+			"files": [
+				"/usr/lib/libpoppler.so",
+				"/usr/lib/pkgconfig/poppler.pc"
+			],
+			"name": "poppler-devel",
+			"provides": [
+				"pkgconfig(poppler)"
+			]
+		},
+		"poppler-glib": {
+			"build-depends": [
+				"binary(msgfmt)",
+				"binary(python3)",
+				"cmake(Boost)",
+				"cmake(OpenJPEG)",
+				"cmake(Qt6)",
+				"pkgconfig(freetype2)",
+				"pkgconfig(gdk-pixbuf-2.0)",
+				"pkgconfig(gobject-introspection-1.0)",
+				"pkgconfig(gpgme)",
+				"pkgconfig(gtk+-3.0)",
+				"pkgconfig(lcms2)",
+				"pkgconfig(libcurl)",
+				"pkgconfig(libtiff-4)",
+				"pkgconfig(nss)",
+				"poppler-data"
+			],
+			"depends": [
+				"soname(libc++.so.1(x86_64))",
+				"soname(libc.so.6(x86_64))",
+				"soname(libcairo.so.2(x86_64))",
+				"soname(libfreetype.so.6(x86_64))",
+				"soname(libgio-2.0.so.0(x86_64))",
+				"soname(libglib-2.0.so.0(x86_64))",
+				"soname(libgobject-2.0.so.0(x86_64))",
+				"soname(libm.so.6(x86_64))",
+				"soname(libpoppler.so.150(x86_64))"
+			],
+			"files": [
+				"/usr/lib/girepository-1.0/Poppler-0.18.typelib",
+				"/usr/lib/libpoppler-glib.so.8",
+				"/usr/lib/libpoppler-glib.so.8.30.0"
+			],
+			"name": "poppler-glib",
+			"provides": [
+				"soname(libpoppler-glib.so.8(x86_64))"
+			]
+		},
+		"poppler-glib-devel": {
+			"build-depends": [
+				"binary(msgfmt)",
+				"binary(python3)",
+				"cmake(Boost)",
+				"cmake(OpenJPEG)",
+				"cmake(Qt6)",
+				"pkgconfig(freetype2)",
+				"pkgconfig(gdk-pixbuf-2.0)",
+				"pkgconfig(gobject-introspection-1.0)",
+				"pkgconfig(gpgme)",
+				"pkgconfig(gtk+-3.0)",
+				"pkgconfig(lcms2)",
+				"pkgconfig(libcurl)",
+				"pkgconfig(libtiff-4)",
+				"pkgconfig(nss)",
+				"poppler-data"
+			],
+			"depends": [
+				"pkgconfig(cairo)",
+				"pkgconfig(glib-2.0)",
+				"pkgconfig(gobject-2.0)",
+				"pkgconfig(poppler)",
+				"poppler-glib"
+			],
+			"files": [
 				"/usr/include/poppler/glib/poppler-action.h",
 				"/usr/include/poppler/glib/poppler-annot.h",
 				"/usr/include/poppler/glib/poppler-attachment.h",
@@ -151,23 +238,18 @@
 				"/usr/include/poppler/glib/poppler-page.h",
 				"/usr/include/poppler/glib/poppler-structure-element.h",
 				"/usr/include/poppler/glib/poppler.h",
-				"/usr/lib/libpoppler-cpp.so",
 				"/usr/lib/libpoppler-glib.so",
-				"/usr/lib/libpoppler.so",
-				"/usr/lib/pkgconfig/poppler-cpp.pc",
 				"/usr/lib/pkgconfig/poppler-glib.pc",
-				"/usr/lib/pkgconfig/poppler.pc",
 				"/usr/share/gir-1.0/Poppler-0.18.gir"
 			],
-			"name": "poppler-devel",
+			"name": "poppler-glib-devel",
 			"provides": [
-				"pkgconfig(poppler)",
-				"pkgconfig(poppler-cpp)",
 				"pkgconfig(poppler-glib)"
 			]
 		},
 		"poppler-qt6": {
 			"build-depends": [
+				"binary(msgfmt)",
 				"binary(python3)",
 				"cmake(Boost)",
 				"cmake(OpenJPEG)",
@@ -180,7 +262,8 @@
 				"pkgconfig(lcms2)",
 				"pkgconfig(libcurl)",
 				"pkgconfig(libtiff-4)",
-				"pkgconfig(nss)"
+				"pkgconfig(nss)",
+				"poppler-data"
 			],
 			"depends": [
 				"soname(libQt6Core.so.6(x86_64))",
@@ -189,7 +272,7 @@
 				"soname(libc.so.6(x86_64))",
 				"soname(libfreetype.so.6(x86_64))",
 				"soname(liblcms2.so.2(x86_64))",
-				"soname(libpoppler.so.147(x86_64))"
+				"soname(libpoppler.so.150(x86_64))"
 			],
 			"files": [
 				"/usr/lib/libpoppler-qt6.so.3",
@@ -202,6 +285,7 @@
 		},
 		"poppler-qt6-devel": {
 			"build-depends": [
+				"binary(msgfmt)",
 				"binary(python3)",
 				"cmake(Boost)",
 				"cmake(OpenJPEG)",
@@ -214,7 +298,8 @@
 				"pkgconfig(lcms2)",
 				"pkgconfig(libcurl)",
 				"pkgconfig(libtiff-4)",
-				"pkgconfig(nss)"
+				"pkgconfig(nss)",
+				"poppler-data"
 			],
 			"depends": [
 				"pkgconfig(poppler)",
@@ -239,9 +324,82 @@
 			"provides": [
 				"pkgconfig(poppler-qt6)"
 			]
+		},
+		"poppler-utils": {
+			"build-depends": [
+				"binary(msgfmt)",
+				"binary(python3)",
+				"cmake(Boost)",
+				"cmake(OpenJPEG)",
+				"cmake(Qt6)",
+				"pkgconfig(freetype2)",
+				"pkgconfig(gdk-pixbuf-2.0)",
+				"pkgconfig(gobject-introspection-1.0)",
+				"pkgconfig(gpgme)",
+				"pkgconfig(gtk+-3.0)",
+				"pkgconfig(lcms2)",
+				"pkgconfig(libcurl)",
+				"pkgconfig(libtiff-4)",
+				"pkgconfig(nss)",
+				"poppler-data"
+			],
+			"depends": [
+				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
+				"soname(libc++.so.1(x86_64))",
+				"soname(libc.so.6(x86_64))",
+				"soname(libcairo.so.2(x86_64))",
+				"soname(libfreetype.so.6(x86_64))",
+				"soname(liblcms2.so.2(x86_64))",
+				"soname(libm.so.6(x86_64))",
+				"soname(libpoppler.so.150(x86_64))"
+			],
+			"files": [
+				"/usr/bin/pdfattach",
+				"/usr/bin/pdfdetach",
+				"/usr/bin/pdffonts",
+				"/usr/bin/pdfimages",
+				"/usr/bin/pdfinfo",
+				"/usr/bin/pdfseparate",
+				"/usr/bin/pdfsig",
+				"/usr/bin/pdftocairo",
+				"/usr/bin/pdftohtml",
+				"/usr/bin/pdftoppm",
+				"/usr/bin/pdftops",
+				"/usr/bin/pdftotext",
+				"/usr/bin/pdfunite",
+				"/usr/share/man/man1/pdfattach.1",
+				"/usr/share/man/man1/pdfdetach.1",
+				"/usr/share/man/man1/pdffonts.1",
+				"/usr/share/man/man1/pdfimages.1",
+				"/usr/share/man/man1/pdfinfo.1",
+				"/usr/share/man/man1/pdfseparate.1",
+				"/usr/share/man/man1/pdfsig.1",
+				"/usr/share/man/man1/pdftocairo.1",
+				"/usr/share/man/man1/pdftohtml.1",
+				"/usr/share/man/man1/pdftoppm.1",
+				"/usr/share/man/man1/pdftops.1",
+				"/usr/share/man/man1/pdftotext.1",
+				"/usr/share/man/man1/pdfunite.1"
+			],
+			"name": "poppler-utils",
+			"provides": [
+				"binary(pdfattach)",
+				"binary(pdfdetach)",
+				"binary(pdffonts)",
+				"binary(pdfimages)",
+				"binary(pdfinfo)",
+				"binary(pdfseparate)",
+				"binary(pdfsig)",
+				"binary(pdftocairo)",
+				"binary(pdftohtml)",
+				"binary(pdftoppm)",
+				"binary(pdftops)",
+				"binary(pdftotext)",
+				"binary(pdfunite)"
+			]
 		}
 	},
 	"source-name": "poppler",
-	"source-release": "5",
-	"source-version": "25.03.0"
+	"source-release": "6",
+	"source-version": "25.06.0"
 }

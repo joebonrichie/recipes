@@ -4,17 +4,18 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : poppler
-version     : 25.03.0
-release     : 5
+version     : 25.06.0
+release     : 6
 homepage    : https://poppler.freedesktop.org
 upstreams   :
-    - https://poppler.freedesktop.org/poppler-25.03.0.tar.xz : 97da4ff88517a6bbd729529f195f85c8d7a0c3bb4a3d57cb0c685cbb052fe837
-    - git|https://gitlab.freedesktop.org/poppler/test.git : 91ee031c882634c36f2f0f2f14eb6646dd542fb9
+    - https://poppler.freedesktop.org/poppler-25.06.0.tar.xz : 8199532d38984fab46dbd0020ec9c40f20e928e33e9b4cc6043572603a821d83
+    - git|https://gitlab.freedesktop.org/poppler/test.git : c79c6839e859dbee6b73ac260788fa2de8618ba4
 summary     : A PDF rendering library
 description : |
     Poppler is a PDF rendering library based on the xpdf-3.0 code base
 license     : GPL-2.0-or-later
 builddeps   :
+    - binary(msgfmt)
     - binary(python3)
     - cmake(Boost)
     - cmake(OpenJPEG)
@@ -28,6 +29,7 @@ builddeps   :
     - pkgconfig(libcurl)
     - pkgconfig(libtiff-4)
     - pkgconfig(nss)
+    - poppler-data
 rundeps     :
     - poppler-data
 setup       : |
@@ -43,18 +45,60 @@ check       : |
 workload    : |
     %cmake_test
 packages    :
+    - "%(name)-glib":
+        summary: A PDF rendering library - glib bindings
+        description: Poppler is a PDF rendering library based on the xpdf-3.0 code base - glib bindings
+        paths:
+            - /usr/lib/libpoppler-glib.so.*
+            - /usr/lib/girepository-1.0/Poppler*.typelib
+
+    - "%(name)-glib-devel":
+        summary: Development files for %(name)-glib
+        description: Development files for %(name)-glib
+        rundeps:
+            - "%(name)-glib"
+        paths:
+            - /usr/include/poppler/glib
+            - /usr/lib/libpoppler-glib.so
+            - /usr/share/gir-1.0/Poppler*.gir
+            - /usr/lib/pkgconfig/poppler-glib.pc
+
+    - "%(name)-cpp":
+        summary: Pure C++ wrapper for poppler
+        description: Pure C++ wrapper for poppler
+        paths:
+            - /usr/lib/libpoppler-cpp.so.*
+
+    - "%(name)-cpp-devel":
+        summary: Development files for %(name)-cpp
+        description: Development files for %(name)-cpp
+        rundeps:
+            - "%(name)-cpp"
+        paths:
+            - /usr/include/poppler/cpp
+            - /usr/lib/libpoppler-cpp.so
+            - /usr/lib/pkgconfig/poppler-cpp.pc
+
     - "%(name)-qt6":
         summary: A PDF rendering library - Qt6 bindings
         description: Poppler is a PDF rendering library based on the xpdf-3.0 code base - Qt6 bindings
         paths:
             - /usr/lib/libpoppler-qt6.so.*
+
     - "%(name)-qt6-devel":
         summary: Development files for %(name)-qt6
         description: Development files for %(name)-qt6
         paths:
-            - /usr/lib/libpoppler-qt6.so
             - /usr/include/poppler/qt6
+            - /usr/lib/libpoppler-qt6.so
             - /usr/lib/pkgconfig/poppler-qt6.pc
         rundeps:
             - "%(name)-qt6"
             - "%(name)-devel"
+
+    - "%(name)-utils":
+        summary: A PDF rendering library - glib bindings
+        description: Poppler is a PDF rendering library based on the xpdf-3.0 code base - glib bindings
+        paths:
+            - /usr/bin/pdf*
+            - /usr/share/man/man1/
