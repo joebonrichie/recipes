@@ -21,6 +21,7 @@
 				"kinfocenter",
 				"konsole",
 				"kscreen",
+				"kwallet-pam",
 				"kwrite",
 				"pkgset-aeryn-base-desktop",
 				"plasma-desktop",
@@ -48,6 +49,6 @@
 		}
 	},
 	"source-name": "pkgset-aeryn-plasma",
-	"source-release": "4",
+	"source-release": "5",
 	"source-version": "2025.06"
 }
