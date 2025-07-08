@@ -1,0 +1,24 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : libmd
+version     : 0.2.12
+release     : 1
+upstreams   :
+    - https://libspectre.freedesktop.org/releases/libspectre-0.2.12.tar.gz : 55a7517cd3572bd2565df0cf450944a04d5273b279ebb369a895391957f0f960
+homepage    : https://libspectre.freedesktop.org
+license     : GPL-2.0-or-later
+summary     : libspectre is a small library for rendering Postscript documents
+description : |
+    libspectre is a small library for rendering Postscript documents
+builddeps   :
+    - pkgconfig(cairo)
+    - ghostscript-devel
+setup       : |
+    %configure --disable-static
+build       : |
+    %make
+install     : |
+    %make_install

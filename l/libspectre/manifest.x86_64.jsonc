@@ -1,0 +1,52 @@
+/** Human readable report. This is not consumed by boulder */
+{
+	"manifest-version": "0.2",
+	"packages": {
+		"libmd": {
+			"build-depends": [
+				"ghostscript-devel",
+				"pkgconfig(cairo)"
+			],
+			"depends": [
+				"soname(libc.so.6(x86_64))",
+				"soname(libgs.so.10(x86_64))"
+			],
+			"files": [
+				"/usr/lib/libspectre.so.1",
+				"/usr/lib/libspectre.so.1.1.12"
+			],
+			"name": "libmd",
+			"provides": [
+				"soname(libspectre.so.1(x86_64))"
+			]
+		},
+		"libmd-devel": {
+			"build-depends": [
+				"ghostscript-devel",
+				"pkgconfig(cairo)"
+			],
+			"depends": [
+				"libmd"
+			],
+			"files": [
+				"/usr/include/libspectre/spectre-document.h",
+				"/usr/include/libspectre/spectre-exporter.h",
+				"/usr/include/libspectre/spectre-macros.h",
+				"/usr/include/libspectre/spectre-page.h",
+				"/usr/include/libspectre/spectre-render-context.h",
+				"/usr/include/libspectre/spectre-status.h",
+				"/usr/include/libspectre/spectre-version.h",
+				"/usr/include/libspectre/spectre.h",
+				"/usr/lib/libspectre.so",
+				"/usr/lib/pkgconfig/libspectre.pc"
+			],
+			"name": "libmd-devel",
+			"provides": [
+				"pkgconfig(libspectre)"
+			]
+		}
+	},
+	"source-name": "libmd",
+	"source-release": "1",
+	"source-version": "0.2.12"
+}
