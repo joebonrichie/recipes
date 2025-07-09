@@ -1,0 +1,89 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : okular
+version     : 25.04.3
+release     : 1
+upstreams   :
+    - https://download.kde.org/stable/release-service/25.04.3/src/okular-25.04.3.tar.xz : d0b5bb0b0eeab46aa2367c8d81096185bd2261710701c84f1c6e2398e5058bfb
+homepage    : https://apps.kde.org/okular/
+license     :
+    - GFDL-1.2-or-later
+    - GPL-2.0-or-later
+summary     : KDE document viewer
+description : |
+    Okular is a universal document viewer developed by KDE. Okular combines the excellent functionalities with the versatility of supporting different kind of documents.
+builddeps   :
+    # Temporary, boulder doesn't handle build ordering resolution correctly when builddeps are added by macros, so add ECM manually
+    - cmake(ECM)
+    - cmake(KExiv2Qt6)
+    - cmake(KF6Archive)
+    - cmake(KF6Bookmarks)
+    - cmake(KF6Completion)
+    - cmake(KF6Config)
+    - cmake(KF6ConfigWidgets)
+    - cmake(KF6CoreAddons)
+    - cmake(KF6Crash)
+    - cmake(KF6DocTools)
+    - cmake(KF6I18n)
+    - cmake(KF6IconThemes)
+    - cmake(KF6KIO)
+    - cmake(KF6Parts)
+    - cmake(KF6Pty)
+    - cmake(KF6Purpose)
+    - cmake(KF6TextWidgets)
+    - cmake(KF6ThreadWeaver)
+    - cmake(KF6Wallet)
+    - cmake(KF6WindowSystem)
+    - cmake(KF6XmlGui)
+    - cmake(Phonon4Qt6)
+    - cmake(PlasmaActivities)
+    - cmake(Qt6CorePrivate)
+    - cmake(Qt6Svg)
+    - cmake(Qt6TextToSpeech)
+    - pkgconfig(ddjvuapi)
+    - pkgconfig(freetype2)
+    - pkgconfig(libspectre)
+    - pkgconfig(libtiff-4)
+    - pkgconfig(poppler-qt6)
+    # TODO:
+    # EPub
+    # QMobipocket6
+    # libmarkdown
+    # Discount
+setup       : |
+    %cmake_kf6 \
+        -DFORCE_NOT_REQUIRED_DEPENDENCIES="EPub;Discount;"
+build       : |
+    %cmake_build
+install     : |
+    %cmake_install
+
+    # remove docs
+    # rm -rf %(installroot)/%(datadir)/doc
+packages    :
+    - "%(name)-libs":
+        summary: Runtime files for %(name)
+        description: Runtime files for %(name)
+        paths:
+            - /usr/lib/libOkular6Core.so.*
+
+    - "%(name)-part":
+        summary: "%(name) kpart plugin"
+        description: "%(name) kpart plugin"
+        paths:
+            - /usr/lib/qt6/plugins/okular_generators/
+            - /usr/lib/qt6/plugins/kf6/parts/okularpart.so
+            - /usr/share/config.kcfg/
+
+    - "%(name)-docs":
+        paths:
+            - /usr/share/doc
+
+    - "%(name)":
+        rundeps     :
+            - "%(name)-part"
+            - phonon-backend-mpv-qt6
+            - qt6-wayland
