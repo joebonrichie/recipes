@@ -9436,6 +9436,8 @@
 				"/usr/lib/golang/test/fixedbugs/issue7316.go",
 				"/usr/lib/golang/test/fixedbugs/issue7346.go",
 				"/usr/lib/golang/test/fixedbugs/issue7366.go",
+				"/usr/lib/golang/test/fixedbugs/issue73748a.go",
+				"/usr/lib/golang/test/fixedbugs/issue73748b.go",
 				"/usr/lib/golang/test/fixedbugs/issue7405.go",
 				"/usr/lib/golang/test/fixedbugs/issue7419.go",
 				"/usr/lib/golang/test/fixedbugs/issue7525.go",
@@ -10372,6 +10374,6 @@
 		}
 	},
 	"source-name": "golang",
-	"source-release": "19",
-	"source-version": "1.24.4"
+	"source-release": "20",
+	"source-version": "1.24.5"
 }
