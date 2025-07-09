@@ -4,10 +4,8 @@
 	"packages": {
 		"vlc": {
 			"build-depends": [
-				"binary(ar)",
 				"binary(bison)",
 				"binary(flex)",
-				"binary(gcc-ar)",
 				"binary(tar)",
 				"binary(valgrind)",
 				"pkgconfig(Qt5Gui)",
@@ -202,10 +200,8 @@
 		},
 		"vlc-cli": {
 			"build-depends": [
-				"binary(ar)",
 				"binary(bison)",
 				"binary(flex)",
-				"binary(gcc-ar)",
 				"binary(tar)",
 				"binary(valgrind)",
 				"pkgconfig(Qt5Gui)",
@@ -289,10 +285,8 @@
 		},
 		"vlc-devel": {
 			"build-depends": [
-				"binary(ar)",
 				"binary(bison)",
 				"binary(flex)",
-				"binary(gcc-ar)",
 				"binary(tar)",
 				"binary(valgrind)",
 				"pkgconfig(Qt5Gui)",
@@ -467,10 +461,8 @@
 		},
 		"vlc-libs": {
 			"build-depends": [
-				"binary(ar)",
 				"binary(bison)",
 				"binary(flex)",
-				"binary(gcc-ar)",
 				"binary(tar)",
 				"binary(valgrind)",
 				"pkgconfig(Qt5Gui)",
@@ -554,10 +546,8 @@
 		},
 		"vlc-ncurses": {
 			"build-depends": [
-				"binary(ar)",
 				"binary(bison)",
 				"binary(flex)",
-				"binary(gcc-ar)",
 				"binary(tar)",
 				"binary(valgrind)",
 				"pkgconfig(Qt5Gui)",
@@ -638,10 +628,8 @@
 		},
 		"vlc-plugin-ffmpeg": {
 			"build-depends": [
-				"binary(ar)",
 				"binary(bison)",
 				"binary(flex)",
-				"binary(gcc-ar)",
 				"binary(tar)",
 				"binary(valgrind)",
 				"pkgconfig(Qt5Gui)",
@@ -745,10 +733,8 @@
 		},
 		"vlc-plugin-gnome": {
 			"build-depends": [
-				"binary(ar)",
 				"binary(bison)",
 				"binary(flex)",
-				"binary(gcc-ar)",
 				"binary(tar)",
 				"binary(valgrind)",
 				"pkgconfig(Qt5Gui)",
@@ -830,10 +816,8 @@
 		},
 		"vlc-plugin-gstreamer": {
 			"build-depends": [
-				"binary(ar)",
 				"binary(bison)",
 				"binary(flex)",
-				"binary(gcc-ar)",
 				"binary(tar)",
 				"binary(valgrind)",
 				"pkgconfig(Qt5Gui)",
@@ -918,10 +902,8 @@
 		},
 		"vlc-plugin-kde": {
 			"build-depends": [
-				"binary(ar)",
 				"binary(bison)",
 				"binary(flex)",
-				"binary(gcc-ar)",
 				"binary(tar)",
 				"binary(valgrind)",
 				"pkgconfig(Qt5Gui)",
@@ -999,10 +981,8 @@
 		},
 		"vlc-plugin-lua": {
 			"build-depends": [
-				"binary(ar)",
 				"binary(bison)",
 				"binary(flex)",
-				"binary(gcc-ar)",
 				"binary(tar)",
 				"binary(valgrind)",
 				"pkgconfig(Qt5Gui)",
@@ -1176,10 +1156,8 @@
 		},
 		"vlc-plugin-notify": {
 			"build-depends": [
-				"binary(ar)",
 				"binary(bison)",
 				"binary(flex)",
-				"binary(gcc-ar)",
 				"binary(tar)",
 				"binary(valgrind)",
 				"pkgconfig(Qt5Gui)",
@@ -1262,10 +1240,8 @@
 		},
 		"vlc-plugin-pulseaudio": {
 			"build-depends": [
-				"binary(ar)",
 				"binary(bison)",
 				"binary(flex)",
-				"binary(gcc-ar)",
 				"binary(tar)",
 				"binary(valgrind)",
 				"pkgconfig(Qt5Gui)",
@@ -1352,10 +1328,8 @@
 		},
 		"vlc-plugin-samba": {
 			"build-depends": [
-				"binary(ar)",
 				"binary(bison)",
 				"binary(flex)",
-				"binary(gcc-ar)",
 				"binary(tar)",
 				"binary(valgrind)",
 				"pkgconfig(Qt5Gui)",
@@ -1434,10 +1408,8 @@
 		},
 		"vlc-plugin-svg": {
 			"build-depends": [
-				"binary(ar)",
 				"binary(bison)",
 				"binary(flex)",
-				"binary(gcc-ar)",
 				"binary(tar)",
 				"binary(valgrind)",
 				"pkgconfig(Qt5Gui)",
@@ -1520,10 +1492,8 @@
 		},
 		"vlc-plugin-visualization": {
 			"build-depends": [
-				"binary(ar)",
 				"binary(bison)",
 				"binary(flex)",
-				"binary(gcc-ar)",
 				"binary(tar)",
 				"binary(valgrind)",
 				"pkgconfig(Qt5Gui)",
@@ -1604,10 +1574,8 @@
 		},
 		"vlc-plugins-all": {
 			"build-depends": [
-				"binary(ar)",
 				"binary(bison)",
 				"binary(flex)",
-				"binary(gcc-ar)",
 				"binary(tar)",
 				"binary(valgrind)",
 				"pkgconfig(Qt5Gui)",
@@ -1689,10 +1657,8 @@
 		},
 		"vlc-plugins-base": {
 			"build-depends": [
-				"binary(ar)",
 				"binary(bison)",
 				"binary(flex)",
-				"binary(gcc-ar)",
 				"binary(tar)",
 				"binary(valgrind)",
 				"pkgconfig(Qt5Gui)",
@@ -2351,10 +2317,8 @@
 		},
 		"vlc-plugins-extra": {
 			"build-depends": [
-				"binary(ar)",
 				"binary(bison)",
 				"binary(flex)",
-				"binary(gcc-ar)",
 				"binary(tar)",
 				"binary(valgrind)",
 				"pkgconfig(Qt5Gui)",
@@ -2492,10 +2456,8 @@
 		},
 		"vlc-plugins-video-out": {
 			"build-depends": [
-				"binary(ar)",
 				"binary(bison)",
 				"binary(flex)",
-				"binary(gcc-ar)",
 				"binary(tar)",
 				"binary(valgrind)",
 				"pkgconfig(Qt5Gui)",
@@ -2632,10 +2594,8 @@
 		},
 		"vlc-qt": {
 			"build-depends": [
-				"binary(ar)",
 				"binary(bison)",
 				"binary(flex)",
-				"binary(gcc-ar)",
 				"binary(tar)",
 				"binary(valgrind)",
 				"pkgconfig(Qt5Gui)",
@@ -2728,6 +2688,6 @@
 		}
 	},
 	"source-name": "vlc",
-	"source-release": "1",
+	"source-release": "2",
 	"source-version": "3.0.21+git.c495a9a1"
 }

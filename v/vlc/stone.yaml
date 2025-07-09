@@ -5,7 +5,7 @@
 #
 name        : vlc
 version     : 3.0.21+git.c495a9a1
-release     : 1
+release     : 2
 upstreams   :
     # Use the latest from the 3.0.x series branch which has fixed VAAPI support for FFMPEG 7.x
     - git|https://code.videolan.org/videolan/vlc.git : c495a9a12249943823a44a2494ff0981c8d39b5a
@@ -85,10 +85,6 @@ builddeps   :
     - pkgconfig(xpm)
     - pkgconfig(zlib)
 
-    # Temporary workaround for slibtool issue
-    - binary(gcc-ar)
-    - binary(ar)
-
     # TODO (This list may include things we don't actually want):
     # live555
     # libdc1394-2
@@ -138,9 +134,6 @@ setup       : |
     export BUILDCC="$CC"
     %patch %(pkgdir)/libidn2.patch
     %patch %(pkgdir)/oneVPL.patch
-
-    # Temporary workaround for slibtool issue
-    export AR=gcc-ar
 
     %reconfigure \
         --disable-a52 \
