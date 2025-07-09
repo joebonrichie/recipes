@@ -15,6 +15,7 @@ upstreams   :
     - https://www.kernel.org/pub/software/scm/git/git-2.50.1.tar.gz: 522d1635f8b62b484b0ce24993818aad3cab8e11ebb57e196bda38a3140ea915
 builddeps   :
     - binary(msgfmt)
+    - binary(tar)
     - pkgconfig(expat)
     - pkgconfig(gobject-2.0)
     - pkgconfig(libcurl)

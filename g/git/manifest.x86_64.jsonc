@@ -5,6 +5,7 @@
 		"git": {
 			"build-depends": [
 				"binary(msgfmt)",
+				"binary(tar)",
 				"pkgconfig(expat)",
 				"pkgconfig(gobject-2.0)",
 				"pkgconfig(libcurl)",
