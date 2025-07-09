@@ -42,6 +42,7 @@
 				"/usr/lib/git/git-core/git-apply",
 				"/usr/lib/git/git-core/git-archimport",
 				"/usr/lib/git/git-core/git-archive",
+				"/usr/lib/git/git-core/git-backfill",
 				"/usr/lib/git/git-core/git-bisect",
 				"/usr/lib/git/git-core/git-blame",
 				"/usr/lib/git/git-core/git-branch",
@@ -79,6 +80,7 @@
 				"/usr/lib/git/git-core/git-diff",
 				"/usr/lib/git/git-core/git-diff-files",
 				"/usr/lib/git/git-core/git-diff-index",
+				"/usr/lib/git/git-core/git-diff-pairs",
 				"/usr/lib/git/git-core/git-diff-tree",
 				"/usr/lib/git/git-core/git-difftool",
 				"/usr/lib/git/git-core/git-difftool--helper",
@@ -234,7 +236,6 @@
 				"/usr/lib/git/git-core/mergetools/xxdiff",
 				"/usr/lib/git/git-core/scalar",
 				"/usr/share/bash-completion/completions/git",
-				"/usr/share/git-core/templates/branches",
 				"/usr/share/git-core/templates/description",
 				"/usr/share/git-core/templates/hooks/applypatch-msg.sample",
 				"/usr/share/git-core/templates/hooks/commit-msg.sample",
@@ -262,6 +263,7 @@
 				"/usr/share/locale/el/LC_MESSAGES/git.mo",
 				"/usr/share/locale/es/LC_MESSAGES/git.mo",
 				"/usr/share/locale/fr/LC_MESSAGES/git.mo",
+				"/usr/share/locale/ga/LC_MESSAGES/git.mo",
 				"/usr/share/locale/id/LC_MESSAGES/git.mo",
 				"/usr/share/locale/is/LC_MESSAGES/git.mo",
 				"/usr/share/locale/it/LC_MESSAGES/git.mo",
@@ -309,6 +311,6 @@
 		}
 	},
 	"source-name": "git",
-	"source-release": "13",
-	"source-version": "2.47.1"
+	"source-release": "14",
+	"source-version": "2.50.1"
 }
