@@ -20,14 +20,18 @@
 				"kaccounts-providers",
 				"kinfocenter",
 				"konsole",
+				"krdp",
 				"kscreen",
 				"kwallet-pam",
 				"kwrite",
 				"pkgset-aeryn-base-desktop",
 				"plasma-desktop",
+				"plasma-disks",
 				"plasma-nm",
 				"plasma-pa",
+				"plasma-thunderbolt",
 				"powerdevil",
+				"print-manager",
 				"spectacle"
 			],
 			"files": [
@@ -40,6 +44,7 @@
 				"gwenview",
 				"haruna",
 				"kate",
+				"okular",
 				"pkgset-aeryn-plasma-minimal"
 			],
 			"files": [
@@ -49,6 +54,6 @@
 		}
 	},
 	"source-name": "pkgset-aeryn-plasma",
-	"source-release": "5",
+	"source-release": "6",
 	"source-version": "2025.06"
 }
