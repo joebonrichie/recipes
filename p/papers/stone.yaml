@@ -5,7 +5,7 @@
 #
 name        : papers
 version     : 48.4
-release     : 5
+release     : 6
 homepage    : https://apps.gnome.org/Papers/
 upstreams   :
     - https://download.gnome.org/sources/papers/48/papers-48.4.tar.xz : f11aa1c544ac211259e230b40c804ae64077339a57bdefa3dbbeb57f9166e3fd
@@ -21,7 +21,7 @@ builddeps   :
     - binary(msgfmt)
     - binary(update-desktop-database)
     - pkgconfig(cairo)
-    # pkgconfig(ddjvuapi)
+    - pkgconfig(ddjvuapi)
     - pkgconfig(exempi-2.0)
     - pkgconfig(gdk-pixbuf-2.0)
     - pkgconfig(glib-2.0)
@@ -32,7 +32,7 @@ builddeps   :
     - pkgconfig(libarchive)
     # pkgconfig(libgxps)
     - pkgconfig(libnautilus-extension-4)
-    # pkgconfig(libspectre)
+    - pkgconfig(libspectre)
     - pkgconfig(libspelling-1)
     - pkgconfig(libtiff-4)
     - pkgconfig(poppler-glib)

@@ -9,6 +9,7 @@
 				"binary(msgfmt)",
 				"binary(update-desktop-database)",
 				"pkgconfig(cairo)",
+				"pkgconfig(ddjvuapi)",
 				"pkgconfig(exempi-2.0)",
 				"pkgconfig(gdk-pixbuf-2.0)",
 				"pkgconfig(glib-2.0)",
@@ -18,6 +19,7 @@
 				"pkgconfig(libadwaita-1)",
 				"pkgconfig(libarchive)",
 				"pkgconfig(libnautilus-extension-4)",
+				"pkgconfig(libspectre)",
 				"pkgconfig(libspelling-1)",
 				"pkgconfig(libtiff-4)",
 				"pkgconfig(poppler-glib)"
@@ -29,6 +31,7 @@
 				"soname(libarchive.so.13(x86_64))",
 				"soname(libc.so.6(x86_64))",
 				"soname(libcairo.so.2(x86_64))",
+				"soname(libdjvulibre.so.21(x86_64))",
 				"soname(libexempi.so.8(x86_64))",
 				"soname(libgdk_pixbuf-2.0.so.0(x86_64))",
 				"soname(libgio-2.0.so.0(x86_64))",
@@ -56,7 +59,9 @@
 				"/usr/lib/libppsview-4.0.so.4.0.0",
 				"/usr/lib/nautilus/extensions-4/libpapers-document-properties.so",
 				"/usr/lib/papers/5/backends/comicsdocument.papers-backend",
+				"/usr/lib/papers/5/backends/djvudocument.papers-backend",
 				"/usr/lib/papers/5/backends/libcomicsdocument.so",
+				"/usr/lib/papers/5/backends/libdjvudocument.so",
 				"/usr/lib/papers/5/backends/libpdfdocument.so",
 				"/usr/lib/papers/5/backends/libtiffdocument.so",
 				"/usr/lib/papers/5/backends/pdfdocument.papers-backend",
@@ -2583,6 +2588,7 @@
 				"/usr/share/man/man1/papers.1",
 				"/usr/share/metainfo/org.gnome.Papers.metainfo.xml",
 				"/usr/share/metainfo/papers-comicsdocument.metainfo.xml",
+				"/usr/share/metainfo/papers-djvudocument.metainfo.xml",
 				"/usr/share/metainfo/papers-pdfdocument.metainfo.xml",
 				"/usr/share/metainfo/papers-tiffdocument.metainfo.xml",
 				"/usr/share/thumbnailers/papers.thumbnailer"
@@ -2596,6 +2602,7 @@
 				"soname(libppsview-4.0.so.4(x86_64))",
 				"soname(nautilus/extensions-4/libpapers-document-properties.so(x86_64))",
 				"soname(papers/5/backends/libcomicsdocument.so(x86_64))",
+				"soname(papers/5/backends/libdjvudocument.so(x86_64))",
 				"soname(papers/5/backends/libpdfdocument.so(x86_64))",
 				"soname(papers/5/backends/libtiffdocument.so(x86_64))"
 			]
@@ -2607,6 +2614,7 @@
 				"binary(msgfmt)",
 				"binary(update-desktop-database)",
 				"pkgconfig(cairo)",
+				"pkgconfig(ddjvuapi)",
 				"pkgconfig(exempi-2.0)",
 				"pkgconfig(gdk-pixbuf-2.0)",
 				"pkgconfig(glib-2.0)",
@@ -2616,6 +2624,7 @@
 				"pkgconfig(libadwaita-1)",
 				"pkgconfig(libarchive)",
 				"pkgconfig(libnautilus-extension-4)",
+				"pkgconfig(libspectre)",
 				"pkgconfig(libspelling-1)",
 				"pkgconfig(libtiff-4)",
 				"pkgconfig(poppler-glib)"
@@ -2699,6 +2708,6 @@
 		}
 	},
 	"source-name": "papers",
-	"source-release": "5",
+	"source-release": "6",
 	"source-version": "48.4"
 }
