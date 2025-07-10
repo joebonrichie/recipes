@@ -1,0 +1,29 @@
+#
+# SPDX-FileCopyrightText: © 2020-2024 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : python-psutil
+version     : 7.0.0
+release     : 1
+homepage    : https://github.com/giampaolo/psutil
+upstreams   :
+    - https://pypi.debian.net/psutil/psutil-7.0.0.tar.gz : 7be9c3eba38beccb6495ea33afd982a44074b78f28c434a1f51cc07fd315c456
+summary     : Cross-platform lib for process and system monitoring in Python
+description : |
+    psutil (process and system utilities) is a cross-platform library for retrieving information on running processes and system utilization (CPU, memory, disks, network, sensors) in Python.
+license     : BSD-3-Clause
+builddeps   :
+    - pkgconfig(python3)
+    - python(setuptools)
+rundeps     :
+    - python-libs
+# checkdeps   :
+#     - python(pytest)
+build       : |
+    %pyproject_build
+install     : |
+    %pyproject_install
+# check       : |
+#     # TODO replace with pytest macro
+#     PYTHONPATH="$PWD"/build/lib pytest
