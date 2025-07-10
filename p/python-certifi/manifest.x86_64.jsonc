@@ -1,0 +1,41 @@
+/** Human readable report. This is not consumed by boulder */
+{
+	"manifest-version": "0.2",
+	"packages": {
+		"python-certifi": {
+			"build-depends": [
+				"python(pytest)",
+				"python(setuptools)"
+			],
+			"depends": [
+				"python-libs"
+			],
+			"files": [
+				"/usr/lib/python3.11/site-packages/certifi-2025.7.9.dist-info/METADATA",
+				"/usr/lib/python3.11/site-packages/certifi-2025.7.9.dist-info/RECORD",
+				"/usr/lib/python3.11/site-packages/certifi-2025.7.9.dist-info/WHEEL",
+				"/usr/lib/python3.11/site-packages/certifi-2025.7.9.dist-info/licenses/LICENSE",
+				"/usr/lib/python3.11/site-packages/certifi-2025.7.9.dist-info/top_level.txt",
+				"/usr/lib/python3.11/site-packages/certifi/__init__.py",
+				"/usr/lib/python3.11/site-packages/certifi/__main__.py",
+				"/usr/lib/python3.11/site-packages/certifi/__pycache__/__init__.cpython-311.opt-1.pyc",
+				"/usr/lib/python3.11/site-packages/certifi/__pycache__/__init__.cpython-311.pyc",
+				"/usr/lib/python3.11/site-packages/certifi/__pycache__/__main__.cpython-311.opt-1.pyc",
+				"/usr/lib/python3.11/site-packages/certifi/__pycache__/__main__.cpython-311.pyc",
+				"/usr/lib/python3.11/site-packages/certifi/__pycache__/core.cpython-311.opt-1.pyc",
+				"/usr/lib/python3.11/site-packages/certifi/__pycache__/core.cpython-311.pyc",
+				"/usr/lib/python3.11/site-packages/certifi/cacert.pem",
+				"/usr/lib/python3.11/site-packages/certifi/core.py",
+				"/usr/lib/python3.11/site-packages/certifi/py.typed"
+			],
+			"name": "python-certifi",
+			"provides": [
+				"python(certifi(3.11))",
+				"python(certifi)"
+			]
+		}
+	},
+	"source-name": "python-certifi",
+	"source-release": "1",
+	"source-version": "2025.7.9"
+}

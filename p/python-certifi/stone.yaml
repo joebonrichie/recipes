@@ -1,0 +1,40 @@
+#
+# SPDX-FileCopyrightText: © 2020-2024 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : python-certifi
+version     : 2025.7.9
+release     : 1
+homepage    : https://github.com/certifi/python-certifi
+upstreams   :
+    - https://github.com/certifi/python-certifi/archive/refs/tags/2025.07.09.tar.gz : 4450dfe6ecdadf34a4678f58dab79c82cee93570a31e330ef00c243cd1faa5f1
+summary     : Python package for providing Mozilla's CA Bundle
+description : |
+    Certifi is a carefully curated collection of Root Certificates for validating the trustworthiness of SSL certificates while verifying the identity of TLS hosts. It has been extracted from the Requests project.
+license     : LGPL-3.0-or-later
+builddeps   :
+    - python(setuptools)
+rundeps     :
+    - python-libs
+checkdeps   :
+    - python(pytest)
+setup       : |
+    # Use system CA store. Replacing the copy in the source tree so the test
+    # suite is actually run against it.
+    ln -sf /etc/ssl/certs/ca-certificates.crt certifi/cacert.pem
+
+    # Our CA store has non-ASCII comments, but we are not packaging for JVM
+    # https://github.com/certifi/python-certifi/issues/50
+    sed -i 's/encoding="ascii"/encoding="utf-8"/' certifi/core.py
+build       : |
+    %pyproject_build
+install     : |
+    %pyproject_install
+
+    # Replace CA store here again because the symlink was installed as a file
+    _site_packages=$(python -c "import site; print(site.getsitepackages()[0])")
+    ln -sf ../../../../../etc/ssl/certs/ca-certificates.crt %(installroot)/${_site_packages}/certifi/cacert.pem
+check       : |
+    # TODO replace with pytest macro
+    PYTHONPATH="$PWD"/build/lib pytest
