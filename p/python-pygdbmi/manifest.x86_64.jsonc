@@ -1,0 +1,60 @@
+/** Human readable report. This is not consumed by boulder */
+{
+	"manifest-version": "0.2",
+	"packages": {
+		"python-pygdbmi": {
+			"build-depends": [
+				"binary(as)",
+				"binary(gcc)",
+				"binary(gdb)",
+				"binary(make)",
+				"python(pytest)",
+				"python(setuptools)"
+			],
+			"depends": [
+				"binary(gdb)",
+				"python-libs"
+			],
+			"files": [
+				"/usr/lib/python3.11/site-packages/pygdbmi-0.11.0.0.dist-info/METADATA",
+				"/usr/lib/python3.11/site-packages/pygdbmi-0.11.0.0.dist-info/RECORD",
+				"/usr/lib/python3.11/site-packages/pygdbmi-0.11.0.0.dist-info/WHEEL",
+				"/usr/lib/python3.11/site-packages/pygdbmi-0.11.0.0.dist-info/licenses/LICENSE",
+				"/usr/lib/python3.11/site-packages/pygdbmi-0.11.0.0.dist-info/top_level.txt",
+				"/usr/lib/python3.11/site-packages/pygdbmi/IoManager.py",
+				"/usr/lib/python3.11/site-packages/pygdbmi/StringStream.py",
+				"/usr/lib/python3.11/site-packages/pygdbmi/__init__.py",
+				"/usr/lib/python3.11/site-packages/pygdbmi/__pycache__/IoManager.cpython-311.opt-1.pyc",
+				"/usr/lib/python3.11/site-packages/pygdbmi/__pycache__/IoManager.cpython-311.pyc",
+				"/usr/lib/python3.11/site-packages/pygdbmi/__pycache__/StringStream.cpython-311.opt-1.pyc",
+				"/usr/lib/python3.11/site-packages/pygdbmi/__pycache__/StringStream.cpython-311.pyc",
+				"/usr/lib/python3.11/site-packages/pygdbmi/__pycache__/__init__.cpython-311.opt-1.pyc",
+				"/usr/lib/python3.11/site-packages/pygdbmi/__pycache__/__init__.cpython-311.pyc",
+				"/usr/lib/python3.11/site-packages/pygdbmi/__pycache__/constants.cpython-311.opt-1.pyc",
+				"/usr/lib/python3.11/site-packages/pygdbmi/__pycache__/constants.cpython-311.pyc",
+				"/usr/lib/python3.11/site-packages/pygdbmi/__pycache__/gdbcontroller.cpython-311.opt-1.pyc",
+				"/usr/lib/python3.11/site-packages/pygdbmi/__pycache__/gdbcontroller.cpython-311.pyc",
+				"/usr/lib/python3.11/site-packages/pygdbmi/__pycache__/gdbescapes.cpython-311.opt-1.pyc",
+				"/usr/lib/python3.11/site-packages/pygdbmi/__pycache__/gdbescapes.cpython-311.pyc",
+				"/usr/lib/python3.11/site-packages/pygdbmi/__pycache__/gdbmiparser.cpython-311.opt-1.pyc",
+				"/usr/lib/python3.11/site-packages/pygdbmi/__pycache__/gdbmiparser.cpython-311.pyc",
+				"/usr/lib/python3.11/site-packages/pygdbmi/__pycache__/printcolor.cpython-311.opt-1.pyc",
+				"/usr/lib/python3.11/site-packages/pygdbmi/__pycache__/printcolor.cpython-311.pyc",
+				"/usr/lib/python3.11/site-packages/pygdbmi/constants.py",
+				"/usr/lib/python3.11/site-packages/pygdbmi/gdbcontroller.py",
+				"/usr/lib/python3.11/site-packages/pygdbmi/gdbescapes.py",
+				"/usr/lib/python3.11/site-packages/pygdbmi/gdbmiparser.py",
+				"/usr/lib/python3.11/site-packages/pygdbmi/printcolor.py",
+				"/usr/lib/python3.11/site-packages/pygdbmi/py.typed"
+			],
+			"name": "python-pygdbmi",
+			"provides": [
+				"python(pygdbmi(3.11))",
+				"python(pygdbmi)"
+			]
+		}
+	},
+	"source-name": "python-pygdbmi",
+	"source-release": "1",
+	"source-version": "0.11.0.0"
+}
