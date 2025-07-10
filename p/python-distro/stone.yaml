@@ -1,0 +1,28 @@
+#
+# SPDX-FileCopyrightText: © 2020-2024 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : python-distro
+version     : 1.9.0
+release     : 1
+homepage    : https://github.com/python-distro/distro
+upstreams   :
+    - https://pypi.debian.net/distro/distro-1.9.0.tar.gz : 2fa77c6fd8940f116ee1d6b94a2f90b13b5ea8d019b98bc8bafdcabcdd9bdbed
+summary     : An OS platform information API
+description : |
+    Distro provides information about the OS distribution it runs on, such as a reliable machine-readable ID, or version information.
+license     : Apache-2.0
+builddeps   :
+    - python(setuptools)
+rundeps     :
+    - binary(python3)
+checkdeps   :
+    - python(pytest)
+build       : |
+    %pyproject_build
+install     : |
+    %pyproject_install
+check       : |
+    # TODO replace with pytest macro
+    PYTHONPATH="$PWD"/build/lib pytest
