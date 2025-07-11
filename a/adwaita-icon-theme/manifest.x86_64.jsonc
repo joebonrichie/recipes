@@ -67,6 +67,7 @@
 				"/usr/share/icons/Adwaita/16x16/places/user-trash.png",
 				"/usr/share/icons/Adwaita/cursors/X_cursor",
 				"/usr/share/icons/Adwaita/cursors/alias",
+				"/usr/share/icons/Adwaita/cursors/all-resize",
 				"/usr/share/icons/Adwaita/cursors/all-scroll",
 				"/usr/share/icons/Adwaita/cursors/arrow",
 				"/usr/share/icons/Adwaita/cursors/bd_double_arrow",
@@ -844,6 +845,6 @@
 		}
 	},
 	"source-name": "adwaita-icon-theme",
-	"source-release": "8",
-	"source-version": "48.0"
+	"source-release": "9",
+	"source-version": "48.1"
 }
