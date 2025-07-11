@@ -8,10 +8,10 @@
 			],
 			"depends": [
 				"binary(python3)",
-				"python(autocommand(3.11))",
-				"python(jaraco.context(3.11))",
-				"python(jaraco.functools(3.11))",
-				"python(more-itertools(3.11))"
+				"python(autocommand)",
+				"python(jaraco-context)",
+				"python(jaraco-functools)",
+				"python(more-itertools)"
 			],
 			"files": [
 				"/usr/lib/python3.11/site-packages/jaraco/text/Lorem ipsum.txt",
@@ -41,8 +41,8 @@
 			],
 			"name": "python-jaraco.text",
 			"provides": [
-				"python(jaraco.text(3.11))",
-				"python(jaraco.text)"
+				"python(jaraco-text(3.11))",
+				"python(jaraco-text)"
 			]
 		}
 	},
