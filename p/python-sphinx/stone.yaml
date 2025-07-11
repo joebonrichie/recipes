@@ -1,0 +1,61 @@
+#
+# SPDX-FileCopyrightText: © 2020-2024 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : python-sphinx
+version     : 8.3.0
+release     : 1
+homepage    : https://www.sphinx-doc.org
+upstreams   :
+    - https://pypi.debian.net/Sphinx/sphinx-8.3.0.tar.gz : 3bad4314a7fa72ce92344eaaa14c42ddf3177ee6a79c227e4ff8ae07d416f584
+summary     : Python documentation generator
+description : |
+    Python documentation generator
+license     : BSD-2-Clause
+builddeps   :
+    - binary(make)
+    - python(alabaster)
+    - python(babel)
+    - python(docutils)
+    - python(flit-core)
+    - python(imagesize)
+    - python(jinja2)
+    - python(pygments)
+    - python(requests)
+    - python(roman-numerals-py)
+    - python(snowballstemmer)
+rundeps     :
+    - binary(python3)
+# checkdeps   :
+#     - python(babel)
+#     - python(docutils)
+#     - python(imagesize)
+#     - python(jinja2)
+#     - python(pygments)
+#     - python(pytest)
+#     - python(requests)
+#     - python(roman-numerals-py)
+#     - python(snowballstemmer)
+# TODO: needs defusedxml or whatever that is for tests
+setup       : |
+    %patch %(pkgdir)/contribhelp-optional.patch
+build       : |
+    %pyproject_build
+    
+    export PYTHONPATH="$PWD"
+
+    cd doc
+    make man SPHINXBUILD="python ../sphinx/cmd/build.py"
+install     : |
+    %pyproject_install
+
+    cd doc
+    %install_dir %(installroot)%(mandir)/man1
+    for f in _build/man/sphinx-*.1;
+    do
+        cp -p $f %(installroot)%(mandir)/man1/$(basename $f)
+    done
+# check       : |
+#     # TODO replace with pytest macro
+#     PYTHONPATH="$PWD"/build/lib pytest
