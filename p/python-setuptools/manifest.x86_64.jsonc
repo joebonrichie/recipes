@@ -6,12 +6,7 @@
 			"build-depends": [
 				"binary(python)",
 				"python(jaraco-functools)",
-				"python(jaraco-text)",
-				"python-backports.tarfile",
-				"python-jaraco.context",
-				"python-jaraco.functools",
-				"python-jaraco.text",
-				"python-more-itertools"
+				"python(jaraco-text)"
 			],
 			"depends": [
 				"binary(python3)",
@@ -545,6 +540,6 @@
 		}
 	},
 	"source-name": "python-setuptools",
-	"source-release": "7",
+	"source-release": "8",
 	"source-version": "80.9.0"
 }

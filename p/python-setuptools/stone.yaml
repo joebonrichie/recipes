@@ -5,7 +5,7 @@
 #
 name        : python-setuptools
 version     : 80.9.0
-release     : 7
+release     : 8
 homepage    : https://setuptools.pypa.io/
 upstreams   :
     - https://pypi.debian.net/setuptools/setuptools-80.9.0.tar.gz:
@@ -26,11 +26,6 @@ builddeps   :
     - binary(python)
     - python(jaraco-functools)
     - python(jaraco-text)
-    - python-jaraco.context
-    - python-jaraco.functools
-    - python-jaraco.text
-    - python-more-itertools
-    - python-backports.tarfile
 rundeps     :
     - binary(python3)
 environment : |
