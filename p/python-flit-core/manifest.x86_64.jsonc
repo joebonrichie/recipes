@@ -37,13 +37,11 @@
 			"name": "python-flit-core",
 			"provides": [
 				"python(flit-core(3.11))",
-				"python(flit-core)",
-				"python(flit_core(3.11))",
-				"python(flit_core)"
+				"python(flit-core)"
 			]
 		}
 	},
 	"source-name": "python-flit-core",
-	"source-release": "4",
+	"source-release": "5",
 	"source-version": "3.12.0"
 }
