@@ -1,0 +1,23 @@
+#
+# SPDX-FileCopyrightText: © 2020-2024 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : python-sphinxcontrib-jquery
+version     : "4.1"
+release     : 1
+homepage    : https://github.com/sphinx-contrib/jquery
+upstreams   :
+    - https://pypi.debian.net/sphinxcontrib-jquery/sphinxcontrib-jquery-4.1.tar.gz : 1620739f04e36a2c779f1a131a2dfd49b2fd07351bf1968ced074365933abc7a
+summary     : Extension to include jQuery on newer Sphinx releases
+description : |
+    sphinxcontrib-jquery ensures that jQuery is always installed for use in Sphinx themes or extensions.
+license     : 0BSD
+builddeps   :
+    - python(flit-core)
+rundeps     :
+    - python-libs
+build       : |
+    %pyproject_build
+install     : |
+    %pyproject_install
