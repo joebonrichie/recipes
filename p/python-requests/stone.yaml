@@ -1,0 +1,32 @@
+#
+# SPDX-FileCopyrightText: © 2020-2024 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : python-requests
+version     : 2.32.4
+release     : 1
+homepage    : https://requests.readthedocs.io/en/latest/
+upstreams   :
+    - https://pypi.debian.net/requests/requests-2.32.4.tar.gz : 27d0316682c8a29834d3264820024b62a36942083d52caf2f14c0591336d3422
+summary     : Python HTTP for Humans
+description : |
+    Requests allows you to send organic, grass-fed HTTP/1.1 requests, without the need for manual labor. There's no need to manually add query strings to your URLs, or to form-encode your POST data. Keep-alive and HTTP connection pooling are 100% automatic, thanks to urllib3.
+license     : Apache-2.0
+builddeps   :
+    - python(setuptools)
+rundeps     :
+    - python-libs
+# checkdeps   :
+#     - python(certifi)
+#     - python(pytest)
+#     - python(idna)
+#     - python(urllib3)
+    # TODO add httpbin for tests (at least)
+build       : |
+    %pyproject_build
+install     : |
+    %pyproject_install
+# check       : |
+#     # TODO replace with pytest macro
+#     PYTHONPATH="$PWD"/build/lib pytest
