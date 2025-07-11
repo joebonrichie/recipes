@@ -5,7 +5,7 @@
 #
 name        : python-setuptools-rust
 version     : 1.11.1
-release     : 2
+release     : 3
 homepage    : https://github.com/Lucretiel/autocommand
 upstreams   :
     - https://pypi.debian.net/setuptools-rust/setuptools_rust-1.11.1.tar.gz : 7dabc4392252ced314b8050d63276e05fdc5d32398fc7d3cce1f6a6ac35b76c0
@@ -25,7 +25,7 @@ checkdeps   :
     - binary(rustc)
     - pkgconfig(python3)
     - python(cffi)
-    - python(semantic_version)
+    - python(semantic-version)
 build       : |
     %pyproject_build
 install     : |

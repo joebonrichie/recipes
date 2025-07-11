@@ -8,14 +8,14 @@
 				"binary(rustc)",
 				"pkgconfig(python3)",
 				"python(cffi)",
-				"python(semantic_version)",
+				"python(semantic-version)",
 				"python(setuptools)",
 				"python(setuptools-scm)"
 			],
 			"depends": [
 				"binary(rustc)",
-				"python(semantic_version(3.11))",
-				"python(setuptools(3.11))",
+				"python(semantic-version)",
+				"python(setuptools)",
 				"python-libs"
 			],
 			"files": [
@@ -63,6 +63,6 @@
 		}
 	},
 	"source-name": "python-setuptools-rust",
-	"source-release": "2",
+	"source-release": "3",
 	"source-version": "1.11.1"
 }
