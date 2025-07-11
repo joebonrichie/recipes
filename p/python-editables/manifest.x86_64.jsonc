@@ -5,7 +5,7 @@
 		"python-editables": {
 			"build-depends": [
 				"binary(python3)",
-				"python(flit_core)"
+				"python(flit-core)"
 			],
 			"depends": [
 				"binary(python3)"
@@ -31,6 +31,6 @@
 		}
 	},
 	"source-name": "python-editables",
-	"source-release": "3",
+	"source-release": "4",
 	"source-version": "0.5"
 }
