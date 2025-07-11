@@ -4,13 +4,13 @@
 	"packages": {
 		"python-jaraco.collections": {
 			"build-depends": [
-				"python(jaraco.text)",
+				"python(jaraco-text)",
 				"python(pytest)",
 				"python(setuptools-scm)"
 			],
 			"depends": [
 				"binary(python3)",
-				"python(jaraco.text(3.11))"
+				"python(jaraco-text)"
 			],
 			"files": [
 				"/usr/lib/python3.11/site-packages/jaraco/collections/__init__.py",
@@ -25,12 +25,12 @@
 			],
 			"name": "python-jaraco.collections",
 			"provides": [
-				"python(jaraco.collections(3.11))",
-				"python(jaraco.collections)"
+				"python(jaraco-collections(3.11))",
+				"python(jaraco-collections)"
 			]
 		}
 	},
 	"source-name": "python-jaraco.collections",
-	"source-release": "2",
+	"source-release": "3",
 	"source-version": "5.1.0"
 }
