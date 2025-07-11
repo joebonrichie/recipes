@@ -5,10 +5,10 @@
 #
 name        : python-pathspec
 version     : 0.12.1
-release     : 3
+release     : 4
 homepage    : https://pypi.org/project/pathspec
 upstreams   :
-    - https://files.pythonhosted.org/packages/source/p/pathspec/pathspec-0.12.1.tar.gz : a482d51503a1ab33b1c67a6c3813a26953dbdc71c31dacaef9a838c4e29f5712
+    - https://pypi.debian.net/pathspec/pathspec-0.12.1.tar.gz : a482d51503a1ab33b1c67a6c3813a26953dbdc71c31dacaef9a838c4e29f5712
 summary     : Utility library for gitignore style pattern matching of file paths.
 description : |
     pathspec is a utility library for pattern matching of file paths. So far this only includes Git's wildmatch pattern matching which itself is derived from Rsync's wildmatch. Git uses wildmatch for its gitignore files.
