@@ -11,7 +11,9 @@
 				"pkgconfig(libzstd)",
 				"pkgconfig(lzo2)",
 				"pkgconfig(uuid)",
-				"pkgconfig(zlib)"
+				"pkgconfig(zlib)",
+				"python(sphinx)",
+				"python(sphinx-rtd-theme)"
 			],
 			"depends": [
 				"btrfs-progs-libs",
@@ -43,7 +45,33 @@
 				"/usr/lib/systemd/system/btrfs-scrub@.timer",
 				"/usr/lib/udev/rules.d/64-btrfs-dm.rules",
 				"/usr/lib/udev/rules.d/64-btrfs-zoned.rules",
-				"/usr/share/bash-completion/completions/btrfs"
+				"/usr/share/bash-completion/completions/btrfs",
+				"/usr/share/man/man5/btrfs.5",
+				"/usr/share/man/man8/btrfs-balance.8",
+				"/usr/share/man/man8/btrfs-check.8",
+				"/usr/share/man/man8/btrfs-convert.8",
+				"/usr/share/man/man8/btrfs-device.8",
+				"/usr/share/man/man8/btrfs-filesystem.8",
+				"/usr/share/man/man8/btrfs-find-root.8",
+				"/usr/share/man/man8/btrfs-image.8",
+				"/usr/share/man/man8/btrfs-inspect-internal.8",
+				"/usr/share/man/man8/btrfs-map-logical.8",
+				"/usr/share/man/man8/btrfs-property.8",
+				"/usr/share/man/man8/btrfs-qgroup.8",
+				"/usr/share/man/man8/btrfs-quota.8",
+				"/usr/share/man/man8/btrfs-receive.8",
+				"/usr/share/man/man8/btrfs-replace.8",
+				"/usr/share/man/man8/btrfs-rescue.8",
+				"/usr/share/man/man8/btrfs-restore.8",
+				"/usr/share/man/man8/btrfs-scrub.8",
+				"/usr/share/man/man8/btrfs-select-super.8",
+				"/usr/share/man/man8/btrfs-send.8",
+				"/usr/share/man/man8/btrfs-subvolume.8",
+				"/usr/share/man/man8/btrfs.8",
+				"/usr/share/man/man8/btrfsck.8",
+				"/usr/share/man/man8/btrfstune.8",
+				"/usr/share/man/man8/fsck.btrfs.8",
+				"/usr/share/man/man8/mkfs.btrfs.8"
 			],
 			"name": "btrfs-progs",
 			"provides": [
@@ -68,7 +96,9 @@
 				"pkgconfig(libzstd)",
 				"pkgconfig(lzo2)",
 				"pkgconfig(uuid)",
-				"pkgconfig(zlib)"
+				"pkgconfig(zlib)",
+				"python(sphinx)",
+				"python(sphinx-rtd-theme)"
 			],
 			"depends": [
 				"btrfs-progs"
@@ -85,7 +115,8 @@
 				"/usr/include/btrfsutil.h",
 				"/usr/lib/libbtrfs.so",
 				"/usr/lib/libbtrfsutil.so",
-				"/usr/lib/pkgconfig/libbtrfsutil.pc"
+				"/usr/lib/pkgconfig/libbtrfsutil.pc",
+				"/usr/share/man/man2/btrfs-ioctl.2"
 			],
 			"name": "btrfs-progs-devel",
 			"provides": [
@@ -101,7 +132,9 @@
 				"pkgconfig(libzstd)",
 				"pkgconfig(lzo2)",
 				"pkgconfig(uuid)",
-				"pkgconfig(zlib)"
+				"pkgconfig(zlib)",
+				"python(sphinx)",
+				"python(sphinx-rtd-theme)"
 			],
 			"depends": [
 				"soname(libc.so.6(x86_64))"
@@ -122,6 +155,6 @@
 		}
 	},
 	"source-name": "btrfs-progs",
-	"source-release": "10",
-	"source-version": "6.14"
+	"source-release": "11",
+	"source-version": "6.15"
 }
