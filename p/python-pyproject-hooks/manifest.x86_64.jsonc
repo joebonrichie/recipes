@@ -26,13 +26,11 @@
 			"name": "python-pyproject-hooks",
 			"provides": [
 				"python(pyproject-hooks(3.11))",
-				"python(pyproject-hooks)",
-				"python(pyproject_hooks(3.11))",
-				"python(pyproject_hooks)"
+				"python(pyproject-hooks)"
 			]
 		}
 	},
 	"source-name": "python-pyproject-hooks",
-	"source-release": "3",
+	"source-release": "4",
 	"source-version": "1.2.0"
 }
