@@ -5,19 +5,19 @@
 #
 name        : python-build
 version     : 1.2.2
-release     : 5
+release     : 6
 homepage    : https://github.com/pypa/build
 upstreams   :
     - https://pypi.debian.net/build/build-1.2.2.tar.gz:
         hash: 119b2fb462adef986483438377a13b2f42064a2a3a4161f24a0cca698a07ac8c
         unpackdir: pythonbuild
 
-    # Comment both of these out if not bootstrapping
-    - git|https://gitlab.archlinux.org/archlinux/python-bootstrap.git:
-        ref: aff0f1a48c377c419f49b61babd6af78322e86f1
-    # Bootstrapping seemingly requires git source for build (?)
-    - git|https://github.com/pypa/build.git:
-        ref: 3b0b5d07077473f5da3f038cf7b74cd2b65d2a98 # Should correspond to the tag of the build version
+    # # Comment both of these out if not bootstrapping
+    # - git|https://gitlab.archlinux.org/archlinux/python-bootstrap.git:
+    #     ref: aff0f1a48c377c419f49b61babd6af78322e86f1
+    # # Bootstrapping seemingly requires git source for build (?)
+    # - git|https://github.com/pypa/build.git:
+    #     ref: 3b0b5d07077473f5da3f038cf7b74cd2b65d2a98 # Should correspond to the tag of the build version
 summary     : Simple and correct PEP 517 build frontend
 description : |
     python-build is a simple and correct PEP 517 build frontend.
@@ -25,10 +25,12 @@ license     :
     - MIT
 builddeps   :
     - python(flit-core)
-    - python(pyproject_hooks)
+    - python(pyproject-hooks)
+rundeps     :
+    - binary(python)
 environment : |
     # set to 1 if bootstrapping against a new python
-    _bootstrap=1
+    _bootstrap=0
 
     if [[ ${_bootstrap} == "1" ]]; then
         cd ../python-bootstrap.git
