@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : gnome-shell
-version     : 48.2
-release     : 34
+version     : 48.3
+release     : 35
 homepage    : https://gitlab.gnome.org/GNOME/gnome-shell
 upstreams   :
-    - https://download.gnome.org/sources/gnome-shell/48/gnome-shell-48.2.tar.xz : 5d26cc7efca63485b7ddb6c7a3932ca1af9fa8fcbe38b8c99ea3f4ab2173a6a9
+    - https://download.gnome.org/sources/gnome-shell/48/gnome-shell-48.3.tar.xz : fb0203fc748593f14e51732618e1f042525fd719764a0fdb0ee3f6fe413a9b2b
 summary     : The core GNOME desktop experience
 description : |
     GNOME Shell provides core user interface functions for the GNOME desktop,
@@ -57,9 +57,9 @@ builddeps   :
     - pkgconfig(systemd)
     - pkgconfig(x11)
 rundeps     :
-    - adwaita-icon-theme
     - binary(Xwayland)
     - binary(rtkitctl)
+    - adwaita-icon-theme
     - font-cantarell
     - gdm-libs
     - geoclue
