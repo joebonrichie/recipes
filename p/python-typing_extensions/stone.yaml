@@ -4,18 +4,18 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : python-typing_extensions
-version     : 4.12.2
-release     : 3
+version     : 4.14.1
+release     : 4
 homepage    : https://pypi.org/project/typing-extensions/
 upstreams   :
-    - https://pypi.io/packages/source/t/typing_extensions/typing_extensions-4.12.2.tar.gz : 1a7ead55c7e559dd4dee8856e3a88b41225abfe1ce8df57b7c13915fe121ffb8
+    - https://pypi.debian.net/typing-extensions/typing_extensions-4.14.1.tar.gz : 38b39f4aeeab64884ce9f74c94263ef78f3c22467c8724005483154c26648d36
 summary     : Backported and experimental type hints for Python
 description : |
     Backported and experimental type hints for Python
 license     :
     - Python-2.0
 builddeps   :
-    - python(flit_core)
+    - python(flit-core)
 build       : |
     %pyproject_build
 install     : |
