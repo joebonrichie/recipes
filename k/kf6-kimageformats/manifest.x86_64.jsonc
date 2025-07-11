@@ -34,6 +34,7 @@
 				"/usr/lib/qt6/plugins/imageformats/kimg_dds.so",
 				"/usr/lib/qt6/plugins/imageformats/kimg_eps.so",
 				"/usr/lib/qt6/plugins/imageformats/kimg_hdr.so",
+				"/usr/lib/qt6/plugins/imageformats/kimg_iff.so",
 				"/usr/lib/qt6/plugins/imageformats/kimg_jp2.so",
 				"/usr/lib/qt6/plugins/imageformats/kimg_jxl.so",
 				"/usr/lib/qt6/plugins/imageformats/kimg_kra.so",
@@ -58,6 +59,7 @@
 				"soname(qt6/plugins/imageformats/kimg_dds.so(x86_64))",
 				"soname(qt6/plugins/imageformats/kimg_eps.so(x86_64))",
 				"soname(qt6/plugins/imageformats/kimg_hdr.so(x86_64))",
+				"soname(qt6/plugins/imageformats/kimg_iff.so(x86_64))",
 				"soname(qt6/plugins/imageformats/kimg_jp2.so(x86_64))",
 				"soname(qt6/plugins/imageformats/kimg_jxl.so(x86_64))",
 				"soname(qt6/plugins/imageformats/kimg_kra.so(x86_64))",
@@ -99,6 +101,6 @@
 		}
 	},
 	"source-name": "kf6-kimageformats",
-	"source-release": "3",
-	"source-version": "6.15.0"
+	"source-release": "4",
+	"source-version": "6.16.0"
 }

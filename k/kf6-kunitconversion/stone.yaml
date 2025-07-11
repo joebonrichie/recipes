@@ -4,10 +4,10 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : kf6-kunitconversion
-version     : 6.15.0
-release     : 1
+version     : 6.16.0
+release     : 2
 upstreams   :
-    - https://download.kde.org/stable/frameworks/6.15/kunitconversion-6.15.0.tar.xz : 413b0254d51e357171d41f1cb16262be45775fb94a6ae5c26934fb5ff00d2af8
+    - https://download.kde.org/stable/frameworks/6.16/kunitconversion-6.16.0.tar.xz : a5a472e9bf584191195dd407d09bc4679a34b869a97ab9fdf83aaca58e8b0e0d
 homepage    : https://community.kde.org/Frameworks
 license     : LGPL-2.0-or-later
 summary     : Converting physical units
