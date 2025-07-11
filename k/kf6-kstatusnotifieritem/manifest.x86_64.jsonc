@@ -18,7 +18,7 @@
 			],
 			"files": [
 				"/usr/lib/libKF6StatusNotifierItem.so.6",
-				"/usr/lib/libKF6StatusNotifierItem.so.6.15.0",
+				"/usr/lib/libKF6StatusNotifierItem.so.6.16.0",
 				"/usr/share/locale/ar/LC_MESSAGES/kstatusnotifieritem6_qt.qm",
 				"/usr/share/locale/ast/LC_MESSAGES/kstatusnotifieritem6_qt.qm",
 				"/usr/share/locale/bg/LC_MESSAGES/kstatusnotifieritem6_qt.qm",
@@ -94,6 +94,6 @@
 		}
 	},
 	"source-name": "kf6-kstatusnotifieritem",
-	"source-release": "8",
-	"source-version": "6.15.0"
+	"source-release": "9",
+	"source-version": "6.16.0"
 }
