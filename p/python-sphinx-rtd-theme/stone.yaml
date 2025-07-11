@@ -1,0 +1,30 @@
+#
+# SPDX-FileCopyrightText: © 2020-2024 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : python-sphinx-rtd-theme
+version     : 3.0.2
+release     : 1
+homepage    : https://github.com/readthedocs/sphinx_rtd_theme
+upstreams   :
+    - https://pypi.debian.net/sphinx-rtd-theme/sphinx_rtd_theme-3.0.2.tar.gz : b7457bc25dda723b20b086a670b9953c859eab60a2a03ee8eb2bb23e176e5f85
+summary     : Read the Docs theme for Sphinx
+description : |
+    This Sphinx theme was designed to provide a great reader experience for documentation users on both desktop and mobile devices. This theme is commonly used with projects on Read the Docs but can work with any Sphinx project.
+license     : MIT
+builddeps   :
+    - python(setuptools)
+rundeps     :
+    - python-libs
+checkdeps   :
+    - python(pytest)
+    - python(sphinx)
+    - python(sphinxcontrib-jquery)
+build       : |
+    %pyproject_build
+install     : |
+    %pyproject_install
+check       : |
+    # TODO replace with pytest macro
+    PYTHONPATH="$PWD"/build/lib pytest
