@@ -1,0 +1,28 @@
+#
+# SPDX-FileCopyrightText: © 2020-2024 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : python-idna
+version     : "3.10"
+release     : 1
+homepage    : https://github.com/Lucretiel/autocommand
+upstreams   :
+    - https://pypi.debian.net/idna/idna-3.10.tar.gz : 12f65c9b470abda6dc35cf8e63cc574b1c52b11df2c86030af0ac09b01b13ea9
+summary     : A python library to support the Internationalised Domain Names in Applications
+description : |
+    A python library to support the Internationalised Domain Names in Applications.
+license     : BSD-3-Clause
+builddeps   :
+    - python(flit-core)
+rundeps     :
+    - python-libs
+checkdeps   :
+    - python(pytest)
+build       : |
+    %pyproject_build
+install     : |
+    %pyproject_install
+check       : |
+    # TODO replace with pytest macro
+    PYTHONPATH="$PWD"/build/lib pytest
