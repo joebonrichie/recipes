@@ -33,12 +33,12 @@
 			],
 			"name": "python-backports.tarfile",
 			"provides": [
-				"python(backports.tarfile(3.11))",
-				"python(backports.tarfile)"
+				"python(backports-tarfile(3.11))",
+				"python(backports-tarfile)"
 			]
 		}
 	},
 	"source-name": "python-backports.tarfile",
-	"source-release": "2",
+	"source-release": "3",
 	"source-version": "1.2.0"
 }
