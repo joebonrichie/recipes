@@ -8,7 +8,6 @@
 			],
 			"depends": [
 				"binary(python3)",
-				"python(more-itertools(3.11))",
 				"python(more-itertools)"
 			],
 			"files": [
@@ -25,12 +24,12 @@
 			],
 			"name": "python-jaraco.functools",
 			"provides": [
-				"python(jaraco.functools(3.11))",
-				"python(jaraco.functools)"
+				"python(jaraco-functools(3.11))",
+				"python(jaraco-functools)"
 			]
 		}
 	},
 	"source-name": "python-jaraco.functools",
-	"source-release": "4",
+	"source-release": "5",
 	"source-version": "4.1.0"
 }
