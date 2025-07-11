@@ -5,7 +5,7 @@
 #
 name        : python-pathspec
 version     : 0.12.1
-release     : 4
+release     : 5
 homepage    : https://pypi.org/project/pathspec
 upstreams   :
     - https://pypi.debian.net/pathspec/pathspec-0.12.1.tar.gz : a482d51503a1ab33b1c67a6c3813a26953dbdc71c31dacaef9a838c4e29f5712
@@ -16,7 +16,7 @@ license     :
     - MPL-2.0-no-copyleft-exception
 builddeps   :
     - binary(python3)
-    - python(flit_core)
+    - python(flit-core)
 rundeps     :
     - binary(python3)
 build       : |
