@@ -4,7 +4,7 @@
 	"packages": {
 		"python-more-itertools": {
 			"build-depends": [
-				"python(flit_core)"
+				"python(flit-core)"
 			],
 			"depends": [
 				"binary(python3)"
@@ -36,6 +36,6 @@
 		}
 	},
 	"source-name": "python-more-itertools",
-	"source-release": "2",
+	"source-release": "3",
 	"source-version": "10.7.0"
 }
