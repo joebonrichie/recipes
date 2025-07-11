@@ -1,0 +1,29 @@
+#
+# SPDX-FileCopyrightText: © 2020-2024 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : python-imagesize
+version     : 1.4.1
+release     : 1
+homepage    : https://github.com/shibukawa/imagesize_py
+upstreams   :
+    - https://pypi.debian.net/imagesize/imagesize-1.4.1.tar.gz : 69150444affb9cb0d5cc5a92b3676f0b2fb7cd9ae39e947a5e11a36b4497cd4a
+summary     : Python lib for getting image size from png/jpeg/jpeg2000/gif file
+description : |
+    This module analyzes JPEG/JPEG 2000/PNG/GIF/TIFF/SVG/Netpbm/WebP image headers and returns image size or DIP.
+license     : MIT
+builddeps   :
+    - python(setuptools)
+rundeps     :
+    - python-libs
+checkdeps   :
+    - python(pytest)
+build       : |
+    %pyproject_build
+install     : |
+    %pyproject_install
+check       : |
+    # TODO replace with pytest macro
+    # test_get_filelike would need networking
+    PYTHONPATH="$PWD"/build/lib pytest -k 'not test_get_filelike'
