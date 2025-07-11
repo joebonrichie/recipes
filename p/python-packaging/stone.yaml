@@ -4,8 +4,8 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : python-packaging
-version     : 25.0
-release     : 5
+version     : "25.0"
+release     : 6
 homepage    : https://packaging.pypa.io
 upstreams   :
     - https://pypi.debian.net/packaging/packaging-25.0.tar.gz : d443872c98d677bf60f6a1f2f8c1cb748e8fe762d2bf9d3148b5599295b0fc4f
@@ -16,7 +16,7 @@ license     :
     - Apache-2.0
     - BSD-2-Clause
 builddeps   :
-    - python(flit_core)
+    - python(flit-core)
 rundeps     :
     - binary(python3)
 build       : |
