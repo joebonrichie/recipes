@@ -7,7 +7,7 @@
 				"python(setuptools)"
 			],
 			"depends": [
-				"python(ruamel.yaml.clib(3.11))",
+				"python(ruamel-yaml-clib)",
 				"python-libs"
 			],
 			"files": [
@@ -110,12 +110,12 @@
 			],
 			"name": "python-ruamel-yaml",
 			"provides": [
-				"python(ruamel.yaml(3.11))",
-				"python(ruamel.yaml)"
+				"python(ruamel-yaml(3.11))",
+				"python(ruamel-yaml)"
 			]
 		}
 	},
 	"source-name": "python-ruamel-yaml",
-	"source-release": "3",
+	"source-release": "4",
 	"source-version": "0.18.10"
 }

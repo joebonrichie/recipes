@@ -5,7 +5,7 @@
 #
 name        : python-ruamel-yaml
 version     : 0.18.10
-release     : 3
+release     : 4
 homepage    : https://yaml.readthedocs.io/en/latest/
 upstreams   :
     - https://files.pythonhosted.org/packages/source/r/ruamel.yaml/ruamel.yaml-0.18.10.tar.gz : 20c86ab29ac2153f80a428e1254a8adf686d3383df04490514ca3b79a362db58
