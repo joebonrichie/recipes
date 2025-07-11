@@ -142,6 +142,7 @@
 				"/usr/lib/firmware/amdgpu/dcn_3_2_1_dmcub.bin.zst",
 				"/usr/lib/firmware/amdgpu/dcn_3_5_1_dmcub.bin.zst",
 				"/usr/lib/firmware/amdgpu/dcn_3_5_dmcub.bin.zst",
+				"/usr/lib/firmware/amdgpu/dcn_3_6_dmcub.bin.zst",
 				"/usr/lib/firmware/amdgpu/dcn_4_0_1_dmcub.bin.zst",
 				"/usr/lib/firmware/amdgpu/dimgrey_cavefish_ce.bin.zst",
 				"/usr/lib/firmware/amdgpu/dimgrey_cavefish_dmcub.bin.zst",
@@ -242,6 +243,13 @@
 				"/usr/lib/firmware/amdgpu/gc_11_5_2_mes_2.bin.zst",
 				"/usr/lib/firmware/amdgpu/gc_11_5_2_pfp.bin.zst",
 				"/usr/lib/firmware/amdgpu/gc_11_5_2_rlc.bin.zst",
+				"/usr/lib/firmware/amdgpu/gc_11_5_3_imu.bin.zst",
+				"/usr/lib/firmware/amdgpu/gc_11_5_3_me.bin.zst",
+				"/usr/lib/firmware/amdgpu/gc_11_5_3_mec.bin.zst",
+				"/usr/lib/firmware/amdgpu/gc_11_5_3_mes1.bin.zst",
+				"/usr/lib/firmware/amdgpu/gc_11_5_3_mes_2.bin.zst",
+				"/usr/lib/firmware/amdgpu/gc_11_5_3_pfp.bin.zst",
+				"/usr/lib/firmware/amdgpu/gc_11_5_3_rlc.bin.zst",
 				"/usr/lib/firmware/amdgpu/gc_12_0_0_imu.bin.zst",
 				"/usr/lib/firmware/amdgpu/gc_12_0_0_me.bin.zst",
 				"/usr/lib/firmware/amdgpu/gc_12_0_0_mec.bin.zst",
@@ -513,6 +521,8 @@
 				"/usr/lib/firmware/amdgpu/psp_14_0_3_ta.bin.zst",
 				"/usr/lib/firmware/amdgpu/psp_14_0_4_ta.bin.zst",
 				"/usr/lib/firmware/amdgpu/psp_14_0_4_toc.bin.zst",
+				"/usr/lib/firmware/amdgpu/psp_14_0_5_ta.bin.zst",
+				"/usr/lib/firmware/amdgpu/psp_14_0_5_toc.bin.zst",
 				"/usr/lib/firmware/amdgpu/raven2_asd.bin.zst",
 				"/usr/lib/firmware/amdgpu/raven2_ce.bin.zst",
 				"/usr/lib/firmware/amdgpu/raven2_gpu_info.bin.zst",
@@ -563,6 +573,7 @@
 				"/usr/lib/firmware/amdgpu/sdma_6_1_0.bin.zst",
 				"/usr/lib/firmware/amdgpu/sdma_6_1_1.bin.zst",
 				"/usr/lib/firmware/amdgpu/sdma_6_1_2.bin.zst",
+				"/usr/lib/firmware/amdgpu/sdma_6_1_3.bin.zst",
 				"/usr/lib/firmware/amdgpu/sdma_7_0_0.bin.zst",
 				"/usr/lib/firmware/amdgpu/sdma_7_0_1.bin.zst",
 				"/usr/lib/firmware/amdgpu/si58_mc.bin.zst",
@@ -2990,9 +3001,12 @@
 				"/usr/lib/firmware/intel/vsc/ivsc_skucfg_ovti9738_0_1.bin.zst",
 				"/usr/lib/firmware/xe/bmg_guc_70.bin.zst",
 				"/usr/lib/firmware/xe/bmg_huc.bin.zst",
+				"/usr/lib/firmware/xe/fan_control_8086_e20b_8086_1100.bin.zst",
 				"/usr/lib/firmware/xe/lnl_gsc_1.bin.zst",
 				"/usr/lib/firmware/xe/lnl_guc_70.bin.zst",
-				"/usr/lib/firmware/xe/lnl_huc.bin.zst"
+				"/usr/lib/firmware/xe/lnl_huc.bin.zst",
+				"/usr/lib/firmware/xe/ptl_guc_70.bin.zst",
+				"/usr/lib/firmware/xe/ptl_huc.bin.zst"
 			],
 			"name": "linux-firmware-intel-graphics"
 		},
@@ -4957,6 +4971,7 @@
 				"/usr/lib/firmware/qcom/sdm845/modem_nm.mbn.zst",
 				"/usr/lib/firmware/qcom/sdm845/modemuw.jsn",
 				"/usr/lib/firmware/qcom/sdm845/wlanmdsp.mbn.zst",
+				"/usr/lib/firmware/qcom/sdx61/foxconn/prog_firehose_lite.elf.zst",
 				"/usr/lib/firmware/qcom/sm8250/Thundercomm/RB5/slpi.mbn.zst",
 				"/usr/lib/firmware/qcom/sm8250/Thundercomm/RB5/slpir.jsn",
 				"/usr/lib/firmware/qcom/sm8250/Thundercomm/RB5/slpius.jsn",
@@ -5208,6 +5223,7 @@
 				"/usr/lib/firmware/rtw89/rtw8922a_fw-1.bin.zst",
 				"/usr/lib/firmware/rtw89/rtw8922a_fw-2.bin.zst",
 				"/usr/lib/firmware/rtw89/rtw8922a_fw-3.bin.zst",
+				"/usr/lib/firmware/rtw89/rtw8922a_fw-4.bin.zst",
 				"/usr/lib/firmware/rtw89/rtw8922a_fw.bin.zst"
 			],
 			"name": "linux-firmware-realtek"
@@ -5298,6 +5314,6 @@
 		}
 	},
 	"source-name": "linux-firmware",
-	"source-release": "26",
-	"source-version": "20250627"
+	"source-release": "27",
+	"source-version": "20250708"
 }
