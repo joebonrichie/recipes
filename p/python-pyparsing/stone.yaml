@@ -5,17 +5,17 @@
 #
 name        : python-pyparsing
 version     : 3.2.3
-release     : 4
+release     : 5
 homepage    : https://github.com/pyparsing/pyparsing
 upstreams   :
-    - https://pypi.io/packages/source/p/pyparsing/pyparsing-3.2.3.tar.gz : b9c13f1ab8b3b542f72e28f634bad4de758ab3ce4546e4301970ad6fa77c38be
+    - https://pypi.debian.net/pyparsing/pyparsing-3.2.3.tar.gz : b9c13f1ab8b3b542f72e28f634bad4de758ab3ce4546e4301970ad6fa77c38be
 summary     : Library for creating PEG parsers
 description : |
     The pyparsing module is an alternative approach to creating and executing simple grammars, vs. the traditional lex/yacc approach, or the use of regular expressions. The pyparsing module provides a library of classes that client code uses to construct the grammar directly in Python code.
 license     :
     - MIT
 builddeps   :
-    - python(flit_core)
+    - python(flit-core)
 build       : |
     %pyproject_build
 install     : |

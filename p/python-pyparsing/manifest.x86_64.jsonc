@@ -4,7 +4,7 @@
 	"packages": {
 		"python-pyparsing": {
 			"build-depends": [
-				"python(flit_core)"
+				"python(flit-core)"
 			],
 			"files": [
 				"/usr/lib/python3.11/site-packages/pyparsing-3.2.3.dist-info/METADATA",
@@ -60,6 +60,6 @@
 		}
 	},
 	"source-name": "python-pyparsing",
-	"source-release": "4",
+	"source-release": "5",
 	"source-version": "3.2.3"
 }
