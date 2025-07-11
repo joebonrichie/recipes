@@ -1,0 +1,23 @@
+#
+# SPDX-FileCopyrightText: © 2020-2024 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : alabaster
+version     : "1.0.0"
+release     : 1
+homepage    : https://alabaster.readthedocs.io/
+upstreams   :
+    - https://pypi.debian.net/alabaster/alabaster-1.0.0.tar.gz : c00dca57bca26fa62a6d7d0a9fcce65f3e026e9bfe33e9c538fd3fbb2144fd9e
+summary     : Alabaster is a visually (c)lean, responsive, configurable theme for the Sphinx documentation system.
+description : |
+    Alabaster is a visually (c)lean, responsive, configurable theme for the Sphinx documentation system.
+license     : BSD-3-Clause
+builddeps   :
+    - python(flit-core)
+rundeps     :
+    - python-libs
+build       : |
+    %pyproject_build
+install     : |
+    %pyproject_install
