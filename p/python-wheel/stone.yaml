@@ -5,7 +5,7 @@
 #
 name        : python-wheel
 version     : 0.46.1
-release     : 5
+release     : 6
 homepage    : https://github.com/pypa/wheel
 upstreams   :
     - https://pypi.debian.net/wheel/wheel-0.46.1.tar.gz : fd477efb5da0f7df1d3c76c73c14394002c844451bd63229d8570f376f5e6a38
@@ -14,7 +14,7 @@ description : |
     python-wheel is the reference implementation of the Python wheel packaging standard, as defined in PEP 427.
 license     : MIT
 builddeps   :
-    - python(flit_core)
+    - python(flit-core)
 rundeps     :
     - binary(python)
 # TODO: Setup this for Python major update bootstrapping
