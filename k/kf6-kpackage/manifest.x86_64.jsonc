@@ -23,7 +23,7 @@
 			"files": [
 				"/usr/bin/kpackagetool6",
 				"/usr/lib/libKF6Package.so.6",
-				"/usr/lib/libKF6Package.so.6.15.0",
+				"/usr/lib/libKF6Package.so.6.16.0",
 				"/usr/share/locale/ar/LC_MESSAGES/libkpackage6.mo",
 				"/usr/share/locale/ast/LC_MESSAGES/libkpackage6.mo",
 				"/usr/share/locale/az/LC_MESSAGES/libkpackage6.mo",
@@ -142,6 +142,6 @@
 		}
 	},
 	"source-name": "kf6-kpackage",
-	"source-release": "5",
-	"source-version": "6.15.0"
+	"source-release": "6",
+	"source-version": "6.16.0"
 }
