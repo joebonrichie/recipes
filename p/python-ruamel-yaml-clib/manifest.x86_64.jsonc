@@ -20,13 +20,13 @@
 			],
 			"name": "python-ruamel-yaml-clib",
 			"provides": [
-				"python(ruamel.yaml.clib(3.11))",
-				"python(ruamel.yaml.clib)",
+				"python(ruamel-yaml-clib(3.11))",
+				"python(ruamel-yaml-clib)",
 				"soname(python3.11/site-packages/_ruamel_yaml.cpython-311-x86_64-linux-gnu.so(x86_64))"
 			]
 		}
 	},
 	"source-name": "python-ruamel-yaml-clib",
-	"source-release": "2",
+	"source-release": "3",
 	"source-version": "0.2.12"
 }
