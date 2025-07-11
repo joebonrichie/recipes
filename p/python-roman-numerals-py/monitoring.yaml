@@ -1,0 +1,6 @@
+releases:
+  id: 377048
+  rss: https://pypi.org/rss/project/roman-numerals-py/releases.xml
+security:
+  # No known CPE. Checked 20250711
+  cpe: ~
