@@ -5,7 +5,7 @@
 #
 name        : extra-cmake-modules
 version     : 6.16.0
-release     : 8
+release     : 9
 upstreams   :
     - https://download.kde.org/stable/frameworks/6.16/extra-cmake-modules-6.16.0.tar.xz : e881c19e335beb82326e02d000766e7ee8324d7ce8583df0f5bfd4c26998fbfe
 homepage    : https://community.kde.org/Frameworks
@@ -20,8 +20,8 @@ builddeps   :
     - binary(doxygen)
     - cmake(Qt6)
     - cmake(Qt6ToolsTools)
-    # - python-sphinx
-    # TODO need python-sphinx
+    - python(sphinx)
+    - python(sphinxcontrib-qthelp)
 rundeps     :
     - binary(doxygen)
     - cmake(Qt6) # We default to Qt6
@@ -36,3 +36,7 @@ build       : |
     %cmake_build
 install     : |
     %cmake_install
+packages    :
+    - "%(name)-docs":
+        paths:
+            - /usr/share/doc
