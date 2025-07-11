@@ -8,8 +8,7 @@
 			],
 			"depends": [
 				"binary(python3)",
-				"python(backports.tarfile(3.11))",
-				"python(backports.tarfile)"
+				"python(backports-tarfile)"
 			],
 			"files": [
 				"/usr/lib/python3.11/site-packages/jaraco/context/__init__.py",
@@ -24,12 +23,12 @@
 			],
 			"name": "python-jaraco.context",
 			"provides": [
-				"python(jaraco.context(3.11))",
-				"python(jaraco.context)"
+				"python(jaraco-context(3.11))",
+				"python(jaraco-context)"
 			]
 		}
 	},
 	"source-name": "python-jaraco.context",
-	"source-release": "3",
+	"source-release": "4",
 	"source-version": "6.0.1"
 }
