@@ -5,16 +5,16 @@
 #
 name        : python-jinja
 version     : 3.1.6
-release     : 6
+release     : 7
 summary     : Jinja2 is a template engine written in pure Python.
 license     : BSD-3-Clause
 homepage    : https://palletsprojects.com/p/jinja/
 description : |
     Jinja2 is a template engine written in pure Python.
 upstreams   :
-    - https://files.pythonhosted.org/packages/source/J/Jinja2/jinja2-3.1.6.tar.gz: 0137fb05990d35f1275a587e9aee6d56da821fc83491a0fb838183be43f66d6d
+    - https://pypi.debian.net/Jinja2/jinja2-3.1.6.tar.gz: 0137fb05990d35f1275a587e9aee6d56da821fc83491a0fb838183be43f66d6d
 builddeps     :
-    - python(flit_core)
+    - python(flit-core)
 # checkdeps   :
 #     - python-markupsafe
 #     - python-pytest

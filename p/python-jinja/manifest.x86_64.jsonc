@@ -4,10 +4,10 @@
 	"packages": {
 		"python-jinja": {
 			"build-depends": [
-				"python(flit_core)"
+				"python(flit-core)"
 			],
 			"depends": [
-				"python(markupsafe(3.11))"
+				"python(markupsafe)"
 			],
 			"files": [
 				"/usr/lib/python3.11/site-packages/jinja2-3.1.6.dist-info/METADATA",
@@ -100,6 +100,6 @@
 		}
 	},
 	"source-name": "python-jinja",
-	"source-release": "6",
+	"source-release": "7",
 	"source-version": "3.1.6"
 }
