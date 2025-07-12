@@ -1,0 +1,23 @@
+#
+# SPDX-FileCopyrightText: © 2020-2024 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : python-sphinx-inline-tabs
+version     : 2023.4.21
+release     : 1
+homepage    : https://github.com/pradyunsg/sphinx-inline-tabs
+upstreams   :
+    - https://pypi.debian.net/sphinx-inline-tabs/sphinx_inline_tabs-2023.4.21.tar.gz : 5df2f13f602c158f3f5f6c509e008aeada199a8c76d97ba3aa2822206683bebc
+summary     : Add inline tabbed content to your Sphinx documentation
+description : |
+    Add inline tabbed content to your Sphinx documentation
+license     : MIT
+builddeps   :
+    - python(flit-core)
+rundeps     :
+    - python-libs
+build       : |
+    %pyproject_build
+install     : |
+    %pyproject_install

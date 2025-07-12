@@ -1,0 +1,6 @@
+releases:
+  id: 141349
+  rss: https://pypi.org/rss/project/sphinx-inline-tabs/releases.xml
+security:
+  # No known CPE. Checked 20250523
+  cpe: ~
