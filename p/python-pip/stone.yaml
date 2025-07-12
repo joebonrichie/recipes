@@ -5,7 +5,7 @@
 #
 name        : python-pip
 version     : 25.1.1
-release     : 2
+release     : 3
 homepage    : https://pip.pypa.io/
 upstreams   :
     - https://pypi.debian.net/pip/pip-25.1.1.tar.gz : 3de45d411d308d5054c2168185d8da7f9a2cd753dbac8acbfa88a8909ecd9077
@@ -14,7 +14,12 @@ description : |
     The PyPA recommended tool for installing Python packages
 license     : MIT
 builddeps   :
+    - python(myst-parser)
     - python(setuptools)
+    - python(sphinx)
+    - python(sphinx-copybutton)
+    - python(sphinx-inline-tabs)
+    - python(sphinx-issues)
 rundeps     :
     - binary(python3)
     - python(attrs)
@@ -22,11 +27,19 @@ rundeps     :
     - python(filelock)
     - python(wheel)
 # TODO: Needs a chunk of deps for tests
-# TODO: Needs sphinx for man pages
 # checkdeps   :
 #     - python(pytest)
+setup       : |
+    # Towncrier is broken and not needed for man pages
+    sed '/towncrier/d' -i docs/html/conf.py
 build       : |
     %pyproject_build
+
+    # Build man pages
+    export PYTHONPATH="$PWD/src"
+    cd docs
+    python pip_sphinxext.py
+    sphinx-build -b man -d build/doctrees/man man build/man -c html
 install     : |
     %pyproject_install
 
@@ -35,6 +48,9 @@ install     : |
     PYTHONPATH=%(installroot)/$_site_packages %(installroot)%(bindir)/pip completion --bash | %install_file /dev/stdin %(installroot)%(bashcompletionsdir)/pip
     PYTHONPATH=%(installroot)/$_site_packages %(installroot)%(bindir)/pip completion --zsh | tail -n+3 | %install_file /dev/stdin %(installroot)%(zshcompletionsdir)/_pip
     PYTHONPATH=%(installroot)/$_site_packages %(installroot)%(bindir)/pip completion --fish | %install_file /dev/stdin %(installroot)%(fishcompletionsdir)/pip.fish
+
+    # Install man pages
+    %install_file docs/build/man/*.1 -t %(installroot)%(mandir)/man1
 # check       : |
 #     # TODO replace with pytest macro
 #     PYTHONPATH="$PWD"/build/lib pytest

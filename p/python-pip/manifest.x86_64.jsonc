@@ -4,7 +4,12 @@
 	"packages": {
 		"python-pip": {
 			"build-depends": [
-				"python(setuptools)"
+				"python(myst-parser)",
+				"python(setuptools)",
+				"python(sphinx)",
+				"python(sphinx-copybutton)",
+				"python(sphinx-inline-tabs)",
+				"python(sphinx-issues)"
 			],
 			"depends": [
 				"binary(python3)",
@@ -1280,6 +1285,23 @@
 				"/usr/lib/python3.11/site-packages/pip/py.typed",
 				"/usr/share/bash-completion/completions/pip",
 				"/usr/share/fish/vendor_completions.d/pip.fish",
+				"/usr/share/man/man1/pip-cache.1",
+				"/usr/share/man/man1/pip-check.1",
+				"/usr/share/man/man1/pip-config.1",
+				"/usr/share/man/man1/pip-debug.1",
+				"/usr/share/man/man1/pip-download.1",
+				"/usr/share/man/man1/pip-freeze.1",
+				"/usr/share/man/man1/pip-hash.1",
+				"/usr/share/man/man1/pip-help.1",
+				"/usr/share/man/man1/pip-index.1",
+				"/usr/share/man/man1/pip-install.1",
+				"/usr/share/man/man1/pip-list.1",
+				"/usr/share/man/man1/pip-lock.1",
+				"/usr/share/man/man1/pip-search.1",
+				"/usr/share/man/man1/pip-show.1",
+				"/usr/share/man/man1/pip-uninstall.1",
+				"/usr/share/man/man1/pip-wheel.1",
+				"/usr/share/man/man1/pip.1",
 				"/usr/share/zsh/site-functions/_pip"
 			],
 			"name": "python-pip",
@@ -1292,6 +1314,6 @@
 		}
 	},
 	"source-name": "python-pip",
-	"source-release": "2",
+	"source-release": "3",
 	"source-version": "25.1.1"
 }
