@@ -11,7 +11,8 @@
 				"pkgconfig(libcurl)",
 				"pkgconfig(libuv)",
 				"pkgconfig(ncurses)",
-				"pkgconfig(zlib)"
+				"pkgconfig(zlib)",
+				"python(sphinx)"
 			],
 			"depends": [
 				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
@@ -3887,6 +3888,32 @@
 				"/usr/share/doc/cmake/cmlibrhash/COPYING",
 				"/usr/share/doc/cmake/cmsys/Copyright.txt",
 				"/usr/share/emacs/site-lisp/cmake-mode.el",
+				"/usr/share/man/man1/ccmake.1",
+				"/usr/share/man/man1/cmake.1",
+				"/usr/share/man/man1/cpack.1",
+				"/usr/share/man/man1/ctest.1",
+				"/usr/share/man/man7/cmake-buildsystem.7",
+				"/usr/share/man/man7/cmake-commands.7",
+				"/usr/share/man/man7/cmake-compile-features.7",
+				"/usr/share/man/man7/cmake-configure-log.7",
+				"/usr/share/man/man7/cmake-cxxmodules.7",
+				"/usr/share/man/man7/cmake-developer.7",
+				"/usr/share/man/man7/cmake-env-variables.7",
+				"/usr/share/man/man7/cmake-file-api.7",
+				"/usr/share/man/man7/cmake-generator-expressions.7",
+				"/usr/share/man/man7/cmake-generators.7",
+				"/usr/share/man/man7/cmake-instrumentation.7",
+				"/usr/share/man/man7/cmake-language.7",
+				"/usr/share/man/man7/cmake-modules.7",
+				"/usr/share/man/man7/cmake-packages.7",
+				"/usr/share/man/man7/cmake-policies.7",
+				"/usr/share/man/man7/cmake-presets.7",
+				"/usr/share/man/man7/cmake-properties.7",
+				"/usr/share/man/man7/cmake-qt.7",
+				"/usr/share/man/man7/cmake-server.7",
+				"/usr/share/man/man7/cmake-toolchains.7",
+				"/usr/share/man/man7/cmake-variables.7",
+				"/usr/share/man/man7/cpack-generators.7",
 				"/usr/share/vim/vimfiles/indent/cmake.vim",
 				"/usr/share/vim/vimfiles/syntax/cmake.vim"
 			],
@@ -3910,7 +3937,8 @@
 				"pkgconfig(libcurl)",
 				"pkgconfig(libuv)",
 				"pkgconfig(ncurses)",
-				"pkgconfig(zlib)"
+				"pkgconfig(zlib)",
+				"python(sphinx)"
 			],
 			"depends": [
 				"cmake",
@@ -3933,6 +3961,7 @@
 				"/usr/share/applications/cmake-gui.desktop",
 				"/usr/share/icons/hicolor/128x128/apps/CMakeSetup.png",
 				"/usr/share/icons/hicolor/32x32/apps/CMakeSetup.png",
+				"/usr/share/man/man1/cmake-gui.1",
 				"/usr/share/mime/packages/cmakecache.xml"
 			],
 			"name": "cmake-gui",
@@ -3942,6 +3971,6 @@
 		}
 	},
 	"source-name": "cmake",
-	"source-release": "10",
-	"source-version": "4.0.2"
+	"source-release": "11",
+	"source-version": "4.0.3"
 }
