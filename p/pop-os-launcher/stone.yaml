@@ -5,7 +5,7 @@
 #
 name        : pop-os-launcher
 version     : "1.2.4+git.58a8f2d"
-release     : 7
+release     : 8
 summary     : Pop!_OS Launcher
 license     : MPL-2.0
 homepage    : https://github.com/pop-os/launcher
@@ -16,6 +16,8 @@ description : |
 builddeps   :
     - binary(just)
     - pkgconfig(xkbcommon)
+rundeps     :
+    - binary(qalc) # Used for math expressions (https://github.com/pop-os/launcher/blob/8d9da92dbae520b37ab93fc2364a01d7adbd2f29/plugins/src/calc/mod.rs#L117)
 networking  : yes
 setup       : |
     %cargo_fetch
