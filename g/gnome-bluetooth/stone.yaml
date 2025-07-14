@@ -5,7 +5,7 @@
 #
 name        : gnome-bluetooth
 version     : 47.1
-release     : 9
+release     : 10
 homepage    : https://gitlab.gnome.org/GNOME/gnome-bluetooth
 upstreams   :
     - https://download.gnome.org/sources/gnome-bluetooth/47/gnome-bluetooth-47.1.tar.xz : 03e3e7403a15108ffc1496210a1da5c2961b2834a5c07eccc7a3f493195daba3
@@ -26,6 +26,9 @@ builddeps   :
     - pkgconfig(libnotify)
     - pkgconfig(libudev)
     - pkgconfig(upower-glib)
+rundeps     :
+    - bluez
+    - bluez-obexd
 setup       : |
     %meson
 build       : |
