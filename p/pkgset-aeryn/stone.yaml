@@ -5,7 +5,7 @@
 #
 name        : pkgset-aeryn
 version     : "2025.06" # I guess let's just match the OS version for now
-release     : 7
+release     : 8
 homepage    : https://aerynos.com/
 # No upstreams!
 summary     : pkgset virtual packages
@@ -77,7 +77,6 @@ packages    :
         description: |
             Base packages common to graphical environments. It is not recommened to uninstall this package unless you are only interested in non-graphical usage.
         rundeps:
-            - bluez # Temp, this should be a rundep of the various bluetooth daemons instead
             - dbus-broker
 
             # Intel/AMD/virt drivers
