@@ -1,0 +1,30 @@
+#
+# SPDX-FileCopyrightText: © 2020-2024 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : osinfo-db-tools
+version     : 1.12.0
+release     : 1
+homepage    : https://gitlab.com/libosinfo/osinfo-db-tools
+upstreams   :
+    - https://gitlab.com/libosinfo/osinfo-db-tools/-/archive/v1.12.0/osinfo-db-tools-v1.12.0.tar.gz : 5c2ef41e3395be7df090840d171996510c4c87ea8b40763ddf59ab9fb62e0be3
+summary     : Tools for managing the libosinfo database files
+description : |
+    libosinfo is a project providing information about operating systems, hypervisors and the (virtual) hardware devices they can support.
+license     : GPL-2.0-or-later
+builddeps   :
+    - binary(pod2man)
+    - pkgconfig(gio-2.0)
+    - pkgconfig(glib-2.0)
+    - pkgconfig(gobject-2.0)
+    - pkgconfig(json-glib-1.0)
+    - pkgconfig(libarchive)
+    - pkgconfig(libsoup-3.0)
+    - pkgconfig(libxml-2.0)
+setup       : |
+    %meson
+build       : |
+    %meson_build
+install     : |
+    %meson_install

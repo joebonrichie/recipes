@@ -1,0 +1,44 @@
+#
+# SPDX-FileCopyrightText: © 2020-2024 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : gtk-vnc
+version     : 1.5.0
+release     : 1
+homepage    : https://gitlab.gnome.org/GNOME/gtk-vnc/
+upstreams   :
+    - https://download.gnome.org/sources/gtk-vnc/1.5/gtk-vnc-1.5.0.tar.xz : c0beb4747528ad931da43acc567c6a0190f7fc624465571ed9ccece02c34dd23
+summary     : A VNC client viewer widget for GTK
+description : |
+    gtk-vnc is a project providing client side APIs for the RFB protocol / VNC remote desktop technology.
+license     : LGPL-2.1-or-later
+builddeps   :
+    - binary(g-ir-scanner)
+    - binary(gi-docgen)
+    - binary(msgfmt)
+    - binary(pod2man)
+    - pkgconfig(cairo)
+    - pkgconfig(gdk-pixbuf-2.0)
+    - pkgconfig(gio-2.0)
+    - pkgconfig(gio-unix-2.0)
+    - pkgconfig(gnutls)
+    - pkgconfig(gmp)
+    - pkgconfig(gobject-2.0)
+    - pkgconfig(gthread-2.0)
+    - pkgconfig(gtk+-3.0)
+    - pkgconfig(libgcrypt)
+    - pkgconfig(libpulse-simple)
+    - pkgconfig(libsasl2)
+    - pkgconfig(x11)
+    - pkgconfig(zlib)
+setup       : |
+    %meson
+build       : |
+    %meson_build
+install     : |
+    %meson_install
+packages    :
+    - "%(name)-docs":
+        paths:
+            - /usr/share/doc
