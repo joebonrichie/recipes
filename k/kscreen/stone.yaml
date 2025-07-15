@@ -4,10 +4,10 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : kscreen
-version     : 6.4.2
-release     : 1
+version     : 6.4.3
+release     : 2
 upstreams   :
-    - https://download.kde.org/stable/plasma/6.4.2/kscreen-6.4.2.tar.xz : 771a6c4a17c34db7628bab58ee6d1977d58eee28a4d394fb9ec208cf79e76819
+    - https://download.kde.org/stable/plasma/6.4.3/kscreen-6.4.3.tar.xz : 37ef7032a2136293cfeceb41faeff525de80c7119cd8c854116b8b300efa60a9
 homepage    : https://kde.org/plasma-desktop/
 license     :
     - GPL-2.0-or-later
@@ -19,6 +19,7 @@ builddeps   :
     # Temporary, boulder doesn't handle build ordering resolution correctly when builddeps are added by macros, so add ECM manually
     - cmake(ECM)
     - cmake(KF6Config)
+    - cmake(KF6Crash)
     - cmake(KF6DBusAddons)
     - cmake(KF6I18n)
     - cmake(KF6KCMUtils)

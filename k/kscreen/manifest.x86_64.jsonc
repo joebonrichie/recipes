@@ -6,6 +6,7 @@
 			"build-depends": [
 				"cmake(ECM)",
 				"cmake(KF6Config)",
+				"cmake(KF6Crash)",
 				"cmake(KF6DBusAddons)",
 				"cmake(KF6I18n)",
 				"cmake(KF6KCMUtils)",
@@ -25,6 +26,7 @@
 				"soname(libKF6ConfigCore.so.6(x86_64))",
 				"soname(libKF6ConfigGui.so.6(x86_64))",
 				"soname(libKF6CoreAddons.so.6(x86_64))",
+				"soname(libKF6Crash.so.6(x86_64))",
 				"soname(libKF6DBusAddons.so.6(x86_64))",
 				"soname(libKF6I18n.so.6(x86_64))",
 				"soname(libKF6I18nQml.so.6(x86_64))",
@@ -261,6 +263,6 @@
 		}
 	},
 	"source-name": "kscreen",
-	"source-release": "1",
-	"source-version": "6.4.2"
+	"source-release": "2",
+	"source-version": "6.4.3"
 }
