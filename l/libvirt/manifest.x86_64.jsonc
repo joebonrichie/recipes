@@ -48,6 +48,7 @@
 				"soname(libc.so.6(x86_64))",
 				"soname(libcap-ng.so.0(x86_64))",
 				"soname(libcurl.so.4(x86_64))",
+				"soname(libdevmapper.so.1.02(x86_64))",
 				"soname(libfuse3.so.4(x86_64))",
 				"soname(libgio-2.0.so.0(x86_64))",
 				"soname(libglib-2.0.so.0(x86_64))",
@@ -111,6 +112,15 @@
 				"/usr/lib/libvirt/libvirt_leaseshelper",
 				"/usr/lib/libvirt/libvirt_lxc",
 				"/usr/lib/libvirt/libvirt_parthelper",
+				"/usr/lib/libvirt/lock-driver/lockd.so",
+				"/usr/lib/libvirt/storage-backend/libvirt_storage_backend_disk.so",
+				"/usr/lib/libvirt/storage-backend/libvirt_storage_backend_fs.so",
+				"/usr/lib/libvirt/storage-backend/libvirt_storage_backend_iscsi.so",
+				"/usr/lib/libvirt/storage-backend/libvirt_storage_backend_logical.so",
+				"/usr/lib/libvirt/storage-backend/libvirt_storage_backend_mpath.so",
+				"/usr/lib/libvirt/storage-backend/libvirt_storage_backend_scsi.so",
+				"/usr/lib/libvirt/storage-backend/libvirt_storage_backend_vstorage.so",
+				"/usr/lib/libvirt/storage-backend/libvirt_storage_backend_zfs.so",
 				"/usr/lib/libvirt/storage-file",
 				"/usr/lib/libvirt/virt-login-shell-helper",
 				"/usr/lib/sysctl.d/60-libvirtd.conf",
@@ -557,6 +567,15 @@
 				"soname(libvirt/connection-driver/libvirt_driver_secret.so(x86_64))",
 				"soname(libvirt/connection-driver/libvirt_driver_storage.so(x86_64))",
 				"soname(libvirt/connection-driver/libvirt_driver_vbox.so(x86_64))",
+				"soname(libvirt/lock-driver/lockd.so(x86_64))",
+				"soname(libvirt/storage-backend/libvirt_storage_backend_disk.so(x86_64))",
+				"soname(libvirt/storage-backend/libvirt_storage_backend_fs.so(x86_64))",
+				"soname(libvirt/storage-backend/libvirt_storage_backend_iscsi.so(x86_64))",
+				"soname(libvirt/storage-backend/libvirt_storage_backend_logical.so(x86_64))",
+				"soname(libvirt/storage-backend/libvirt_storage_backend_mpath.so(x86_64))",
+				"soname(libvirt/storage-backend/libvirt_storage_backend_scsi.so(x86_64))",
+				"soname(libvirt/storage-backend/libvirt_storage_backend_vstorage.so(x86_64))",
+				"soname(libvirt/storage-backend/libvirt_storage_backend_zfs.so(x86_64))",
 				"sysbinary(libvirtd)",
 				"sysbinary(virtchd)",
 				"sysbinary(virtinterfaced)",
@@ -610,13 +629,7 @@
 				"pkgconfig(readline)"
 			],
 			"depends": [
-				"libvirt",
-				"soname(libc.so.6(x86_64))",
-				"soname(libdevmapper.so.1.02(x86_64))",
-				"soname(libglib-2.0.so.0(x86_64))",
-				"soname(libtirpc.so.3(x86_64))",
-				"soname(libunwind.so.1(x86_64))",
-				"soname(libvirt.so.0(x86_64))"
+				"libvirt"
 			],
 			"files": [
 				"/usr/include/libvirt/libvirt-admin.h",
@@ -641,15 +654,6 @@
 				"/usr/lib/libvirt-lxc.so",
 				"/usr/lib/libvirt-qemu.so",
 				"/usr/lib/libvirt.so",
-				"/usr/lib/libvirt/lock-driver/lockd.so",
-				"/usr/lib/libvirt/storage-backend/libvirt_storage_backend_disk.so",
-				"/usr/lib/libvirt/storage-backend/libvirt_storage_backend_fs.so",
-				"/usr/lib/libvirt/storage-backend/libvirt_storage_backend_iscsi.so",
-				"/usr/lib/libvirt/storage-backend/libvirt_storage_backend_logical.so",
-				"/usr/lib/libvirt/storage-backend/libvirt_storage_backend_mpath.so",
-				"/usr/lib/libvirt/storage-backend/libvirt_storage_backend_scsi.so",
-				"/usr/lib/libvirt/storage-backend/libvirt_storage_backend_vstorage.so",
-				"/usr/lib/libvirt/storage-backend/libvirt_storage_backend_zfs.so",
 				"/usr/lib/pkgconfig/libvirt-admin.pc",
 				"/usr/lib/pkgconfig/libvirt-lxc.pc",
 				"/usr/lib/pkgconfig/libvirt-qemu.pc",
@@ -660,16 +664,7 @@
 				"pkgconfig(libvirt)",
 				"pkgconfig(libvirt-admin)",
 				"pkgconfig(libvirt-lxc)",
-				"pkgconfig(libvirt-qemu)",
-				"soname(libvirt/lock-driver/lockd.so(x86_64))",
-				"soname(libvirt/storage-backend/libvirt_storage_backend_disk.so(x86_64))",
-				"soname(libvirt/storage-backend/libvirt_storage_backend_fs.so(x86_64))",
-				"soname(libvirt/storage-backend/libvirt_storage_backend_iscsi.so(x86_64))",
-				"soname(libvirt/storage-backend/libvirt_storage_backend_logical.so(x86_64))",
-				"soname(libvirt/storage-backend/libvirt_storage_backend_mpath.so(x86_64))",
-				"soname(libvirt/storage-backend/libvirt_storage_backend_scsi.so(x86_64))",
-				"soname(libvirt/storage-backend/libvirt_storage_backend_vstorage.so(x86_64))",
-				"soname(libvirt/storage-backend/libvirt_storage_backend_zfs.so(x86_64))"
+				"pkgconfig(libvirt-qemu)"
 			]
 		},
 		"libvirt-docs": {
@@ -1005,6 +1000,6 @@
 		}
 	},
 	"source-name": "libvirt",
-	"source-release": "1",
+	"source-release": "2",
 	"source-version": "11.5.0"
 }

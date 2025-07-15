@@ -5,7 +5,7 @@
 #
 name        : libvirt
 version     : 11.5.0
-release     : 1
+release     : 2
 homepage    : https://gitlab.com/libvirt/libvirt
 upstreams   :
     - https://libvirt.org/sources/libvirt-11.5.0.tar.xz : 2b63b9d60538e1e2fa4e3f6d836409e6ff705249c79001914ac3400859d72423
@@ -84,6 +84,8 @@ packages    :
     - "%(name)":
         paths:
             - /usr/lib/libvirt/connection-driver/*.so
+            - /usr/lib/libvirt/lock-driver/*.so
+            - /usr/lib/libvirt/storage-backend/*.so
 
     - "%(name)-docs":
         paths:
