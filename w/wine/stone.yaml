@@ -5,7 +5,7 @@
 #
 name        : wine
 version     : "10.11"
-release     : 5
+release     : 6
 homepage    : https://www.winehq.org
 upstreams   :
     - https://dl.winehq.org/wine/source/10.x/wine-10.11.tar.xz : 185be98699b914bc29e724430947986bb78a867e62e422f00c75341932b678ce
@@ -38,6 +38,7 @@ builddeps   :
     - pkgconfig(libavcodec)
     - pkgconfig(libavformat)
     - pkgconfig(libavutil)
+    - pkgconfig(libgphoto2)
     - pkgconfig(libpcap)
     - pkgconfig(libpcsclite)
     - pkgconfig(libpulse)
@@ -58,7 +59,7 @@ builddeps   :
     - pkgconfig(freetype2)
     - gettext-devel
     # TODO Missing deps:
-    # libsane, libv4l2, libgphoto2
+    # libsane, libv4l2
 setup       : |
     %patch %(pkgdir)/llvm-libunwind.patch
     %patch %(pkgdir)/0001-Prefer-wayland-over-x11.patch
