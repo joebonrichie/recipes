@@ -96,7 +96,7 @@
 			],
 			"files": [
 				"/usr/lib/libkworkspace6.so.6",
-				"/usr/lib/libkworkspace6.so.6.4.2"
+				"/usr/lib/libkworkspace6.so.6.4.3"
 			],
 			"name": "libkworkspace",
 			"provides": [
@@ -7205,22 +7205,22 @@
 				"/usr/lib/kconf_update_bin/plasmashell-6.0-keep-default-floating-setting-for-plasma-5-panels",
 				"/usr/lib/kf6/plasma-sourceenv.sh",
 				"/usr/lib/libbatterycontrol.so.6",
-				"/usr/lib/libbatterycontrol.so.6.4.2",
+				"/usr/lib/libbatterycontrol.so.6.4.3",
 				"/usr/lib/libcolorcorrect.so.6",
-				"/usr/lib/libcolorcorrect.so.6.4.2",
+				"/usr/lib/libcolorcorrect.so.6.4.3",
 				"/usr/lib/libkfontinst.so.6",
-				"/usr/lib/libkfontinst.so.6.4.2",
+				"/usr/lib/libkfontinst.so.6.4.3",
 				"/usr/lib/libkfontinstui.so.6",
-				"/usr/lib/libkfontinstui.so.6.4.2",
+				"/usr/lib/libkfontinstui.so.6.4.3",
 				"/usr/lib/libklipper.so.6",
-				"/usr/lib/libklipper.so.6.4.2",
+				"/usr/lib/libklipper.so.6.4.3",
 				"/usr/lib/libkmpris.so.6",
-				"/usr/lib/libkmpris.so.6.4.2",
+				"/usr/lib/libkmpris.so.6.4.3",
 				"/usr/lib/libkrdb.so",
 				"/usr/lib/libnotificationmanager.so.1",
-				"/usr/lib/libnotificationmanager.so.6.4.2",
+				"/usr/lib/libnotificationmanager.so.6.4.3",
 				"/usr/lib/libtaskmanager.so.6",
-				"/usr/lib/libtaskmanager.so.6.4.2",
+				"/usr/lib/libtaskmanager.so.6.4.3",
 				"/usr/lib/libweather_ion.so.7",
 				"/usr/lib/libweather_ion.so.7.0.0",
 				"/usr/lib/qt6/plugins/kf6/kded/appmenu.so",
@@ -7412,6 +7412,6 @@
 		}
 	},
 	"source-name": "plasma-workspace",
-	"source-release": "3",
-	"source-version": "6.4.2"
+	"source-release": "4",
+	"source-version": "6.4.3"
 }
