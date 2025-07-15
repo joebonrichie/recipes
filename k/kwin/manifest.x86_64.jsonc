@@ -1578,6 +1578,7 @@
 				"/usr/include/kwin/wayland/surface.h",
 				"/usr/include/kwin/wayland/tablet_v2.h",
 				"/usr/include/kwin/wayland/tearingcontrol_v1.h",
+				"/usr/include/kwin/wayland/textinput.h",
 				"/usr/include/kwin/wayland/textinput_v1.h",
 				"/usr/include/kwin/wayland/textinput_v2.h",
 				"/usr/include/kwin/wayland/textinput_v3.h",
@@ -1757,9 +1758,9 @@
 			],
 			"files": [
 				"/usr/lib/libkcmkwincommon.so.6",
-				"/usr/lib/libkcmkwincommon.so.6.4.2",
+				"/usr/lib/libkcmkwincommon.so.6.4.3",
 				"/usr/lib/libkwin.so.6",
-				"/usr/lib/libkwin.so.6.4.2",
+				"/usr/lib/libkwin.so.6.4.3",
 				"/usr/share/qlogging-categories6/org_kde_kwin.categories"
 			],
 			"name": "kwin-libs",
@@ -1770,6 +1771,6 @@
 		}
 	},
 	"source-name": "kwin",
-	"source-release": "1",
-	"source-version": "6.4.2"
+	"source-release": "2",
+	"source-version": "6.4.3"
 }
