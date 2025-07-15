@@ -4,10 +4,10 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : kdecoration
-version     : 6.4.2
-release     : 3
+version     : 6.4.3
+release     : 4
 upstreams   :
-    - https://download.kde.org/stable/plasma/6.4.2/kdecoration-6.4.2.tar.xz : d7abe73dc0930453f197b7a022fc193cd112c254af29c72f316abfe75ee75f33
+    - https://download.kde.org/stable/plasma/6.4.3/kdecoration-6.4.3.tar.xz : bd0f99bdf487a859da8b1227e3443259ad28e90f110bd3a7bcecc386fded7824
 homepage    : https://kde.org/plasma-desktop/
 license     : LGPL-2.1-only
 summary     : Plugin based library to create window decorations
