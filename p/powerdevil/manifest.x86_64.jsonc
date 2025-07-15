@@ -80,7 +80,7 @@
 				"/usr/lib/kf6/org_kde_powerdevil",
 				"/usr/lib/libpowerdevilcore.so",
 				"/usr/lib/libpowerdevilcore.so.2",
-				"/usr/lib/libpowerdevilcore.so.6.4.2",
+				"/usr/lib/libpowerdevilcore.so.6.4.3",
 				"/usr/lib/qt6/plugins/kf6/krunner/krunner_powerdevil.so",
 				"/usr/lib/qt6/plugins/plasma/kcms/systemsettings/kcm_mobile_power.so",
 				"/usr/lib/qt6/plugins/plasma/kcms/systemsettings/kcm_powerdevilprofilesconfig.so",
@@ -635,6 +635,6 @@
 		}
 	},
 	"source-name": "powerdevil",
-	"source-release": "1",
-	"source-version": "6.4.2"
+	"source-release": "2",
+	"source-version": "6.4.3"
 }
