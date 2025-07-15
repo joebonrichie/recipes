@@ -4,8 +4,8 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : llvm
-version     : 20.1.7
-release     : 31
+version     : 20.1.8
+release     : 32
 summary     : Low Level Virtual Machine
 license     :
     - Apache-2.0 WITH LLVM-exception
@@ -14,7 +14,7 @@ homepage    : https://www.llvm.org
 description : |
     Low Level Virtual Machine
 upstreams   :
-    - https://github.com/llvm/llvm-project/releases/download/llvmorg-20.1.7/llvm-project-20.1.7.src.tar.xz : cd8fd55d97ad3e360b1d5aaf98388d1f70dfffb7df36beee478be3b839ff9008
+    - https://github.com/llvm/llvm-project/releases/download/llvmorg-20.1.8/llvm-project-20.1.8.src.tar.xz : 6898f963c8e938981e6c4a302e83ec5beb4630147c7311183cf61069af16333d
 builddeps   :
     - binary(perl)
     - binary(python3)
@@ -27,6 +27,7 @@ builddeps   :
     - pkgconfig32(libxml-2.0)
     - pkgconfig32(libzstd)
     - pkgconfig32(zlib)
+    - python(myst-parser)
     - binutils-devel
     - clang-32bit
     - gcc-32bit
@@ -34,7 +35,6 @@ builddeps   :
     - libatomic-32bit
     - libcxx-devel-static
     - mimalloc-static # TODO: Figure out if we can actually split mimalloc-static, or if it needs to go back in.
-    # TODO: Package python-myst-parser so we can build man pages
 tuning      :
     - fortify: false
     - frame-pointer: false
@@ -110,6 +110,9 @@ environment : |
         %patch %(pkgdir)/patches/upstream/0004-Add-more-comments-and-adjust-Zfh.patch
         %patch %(pkgdir)/patches/upstream/0005-Remove-vector-and-address-comments.patch
         %patch %(pkgdir)/patches/upstream/0006-Fix-errors-after-rebasing-and-add-a-release-note.patch
+        # Fixes for Flang man page generation
+        %patch %(pkgdir)/patches/upstream/0001-flang-NFC-Create-required-Source-dir-for-flang-doc.-.patch
+        %patch %(pkgdir)/patches/upstream/0002-Flang-Add-Sphinx-man-page-and-html-support-for-Flang.patch
     }
 
     # 2025-03-25: Add LIBCXX_TYPEINFO_COMPARISON_IMPLEMENTATION=2 for https://bugs.kde.org/show_bug.cgi?id=479679
@@ -155,10 +158,12 @@ environment : |
             -DLIBUNWIND_USE_COMPILER_RT=ON \
             -DLLVM_APPEND_VC_REV=OFF \
             -DLLVM_BINUTILS_INCDIR=/usr/include \
+            -DLLVM_BUILD_DOCS=$_IS_64BIT_BUILD \
             -DLLVM_BUILD_LLVM_DYLIB=ON \
             -DLLVM_BUILD_TOOLS=ON \
             -DLLVM_DEFAULT_TARGET_TRIPLE=%(build_platform) \
             -DLLVM_DYLIB_COMPONENTS="all" \
+            -DLLVM_ENABLE_DOXYGEN=OFF \
             -DLLVM_ENABLE_FFI=ON \
             -DLLVM_ENABLE_LIBCXX=ON \
             -DLLVM_ENABLE_LIBXML2=ON \
@@ -170,9 +175,11 @@ environment : |
             -DLLVM_ENABLE_PROJECTS=$_PROJECTS \
             -DLLVM_ENABLE_RTTI=ON \
             -DLLVM_ENABLE_RUNTIMES=$_RUNTIMES \
+            -DLLVM_ENABLE_SPHINX=$_IS_64BIT_BUILD \
             -DLLVM_ENABLE_ZLIB=ON \
             -DLLVM_ENABLE_ZSTD=ON \
             -DLLVM_INCLUDE_BENCHMARKS=OFF \
+            -DLLVM_INCLUDE_DOCS=$_IS_64BIT_BUILD \
             -DLLVM_INCLUDE_EXAMPLES=OFF \
             -DLLVM_INCLUDE_TESTS=OFF \
             -DLLVM_INCLUDE_UTILS=$_IS_64BIT_BUILD \
@@ -190,11 +197,13 @@ environment : |
             -DMLIR_INSTALL_AGGREGATE_OBJECTS=OFF \
             -DMLIR_LINK_MLIR_DYLIB=ON \
             -DOPENMP_INSTALL_LIBDIR="%(libdir)" \
+            -DSPHINX_OUTPUT_MAN=$_IS_64BIT_BUILD \
+            -DSPHINX_OUTPUT_HTML=OFF \
             $EXTRA_LLVM_FLAGS \
             "$@"
     }
 
-    # Inspired by Gentoo, use LLVM_DISTRIBUTION_COMPONENTS to avoid installing static libs
+    # "Inspired by"/"Gratuitously copied from" Gentoo, use LLVM_DISTRIBUTION_COMPONENTS to avoid installing static libs
     # and other unnecessary things. This works by extracting the target list from ninja and
     # filtering it to only have the things we really need. This way when cmake target files
     # are generated it results in the components we didn't include not being added to the
@@ -380,9 +389,19 @@ profiles    :
         build:   |
             %ccache_zero
             %cmake_build --target distribution
+
+            # Generate man pages (this list will need to be updated on every major LLVM update)
+            %cmake_build --target docs-clang-man docs-clang-tools-man docs-dsymutil-man docs-flang-man docs-llvm-dwarfdump-man docs-llvm-man docs-polly-man
             %ccache_stats
         install: |
             DESTDIR="%(installroot)" cmake --build "%(builddir)" --verbose --target install-distribution
+
+            # Install man pages
+            DESTDIR="%(installroot)" cmake --build "%(builddir)" --verbose --target install-docs-clang-man install-docs-clang-tools-man install-docs-dsymutil-man install-docs-flang-man install-docs-llvm-dwarfdump-man install-docs-llvm-man install-docs-polly-man
+
+            # Unused man pages (or used elsewhere like the lldb-tblgen one)
+            rm -fv %(installroot)%(mandir)/man1/lit* \
+                   %(installroot)%(mandir)/man1/lldb-tblgen*
 
             # TODO: Restore the bolt'd build
 
@@ -426,6 +445,12 @@ profiles    :
             done
             # LLVM (end)
 
+            ### Clang (begin)
+            # Fix bash completion dir
+            %install_dir %(installroot)%(bashcompletionsdir)
+            mv %(installroot)/usr/share/clang/bash-autocomplete.sh %(installroot)%(bashcompletionsdir)/clang
+            ### Clang (end)
+
             ### libcxx/libunwind (begin)
             # Origin: https://raw.githubusercontent.com/kraj/meta-clang/master/recipes-devtools/clang/clang/libunwind.pc.in
             %install_dir %(installroot)%(libdir)/pkgconfig
@@ -461,6 +486,13 @@ packages    :
             - /usr/bin/split-file
             - /usr/bin/verify-uselistorder
             - /usr/bin/yaml2obj
+            - /usr/share/man/man1/FileCheck*
+            - /usr/share/man/man1/bugpoint*
+            - /usr/share/man/man1/dsymutil*
+            - /usr/share/man/man1/llc*
+            - /usr/share/man/man1/lli*
+            - /usr/share/man/man1/llvm-*
+            - /usr/share/man/man1/opt*
             - /usr/share/opt-viewer
 
     # We can't split out the static libraries from this because the cmake files reference them
@@ -478,6 +510,9 @@ packages    :
             - /usr/lib/libLLVM*.a
             - /usr/lib/libLTO.so
             - /usr/lib/libRemarks.so
+            - /usr/share/man/man1/llvm-config*
+            - /usr/share/man/man1/llvm-tblgen*
+            - /usr/share/man/man1/tblgen* # Maybe?
         rundeps:
             - pkgconfig(libedit)
             - pkgconfig(libzstd)
@@ -546,7 +581,8 @@ packages    :
             - /usr/lib/clang/*/bin/*
             - /usr/lib/clang/*/lib/linux/*x86_64*
             - /usr/lib/clang/*/share/*
-            - /usr/share/clang
+            - /usr/share/bash-completion/completions/clang
+            - /usr/share/man/man1/clang*
 
     - "clang-tools":
         summary: "Additional Clang tools"
@@ -595,7 +631,9 @@ packages    :
             - /usr/share/clang/clang-tidy-diff*
             - /usr/share/clang/run-find-all-symbols*
             - /usr/share/clang-doc
-            - /usr/share/man
+            - /usr/share/man/man1/diagtool*
+            - /usr/share/man/man1/extraclangtools*
+            - /usr/share/man/man1/scan-build*
             - /usr/share/scan-*
 
     - "clang-devel":
@@ -612,6 +650,7 @@ packages    :
             - /usr/lib/cmake/clang
             - /usr/lib/libclang*.so
             - /usr/include/clang*
+            - /usr/share/man/man1/clang-tblgen*
 
     - "clang-32bit":
         summary: "Provides 32-bit object files for clang"
@@ -642,6 +681,7 @@ packages    :
             - /usr/lib/clang/*/include/ISO_Fortran_binding.h
             - /usr/lib/libFortran*.a
             - /usr/include/flang
+            - /usr/share/man/man1/flang*
 
     - "libcxx":
         summary: "Modern C++ standard library"
@@ -763,6 +803,7 @@ packages    :
             - /usr/lib/libMLIR*.a
             - /usr/lib/libMLIR*.so
             - /usr/lib/libmlir*.so
+            - /usr/share/man/man1/mlir-tblgen*
         rundeps:
             - mlir
 
@@ -820,6 +861,7 @@ packages    :
             - /usr/lib/libPolly.so.*
             - /usr/lib/libPollyISL.so
             - /usr/lib/LLVMPolly.so
+            - /usr/share/man/man1/polly*
 
     - "polly-devel":
         summary: "LLVM Framework for High-Level Loop and Data-Locality Optimizations"

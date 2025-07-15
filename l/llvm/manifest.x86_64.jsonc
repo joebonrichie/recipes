@@ -21,7 +21,8 @@
 				"pkgconfig32(libxcrypt)",
 				"pkgconfig32(libxml-2.0)",
 				"pkgconfig32(libzstd)",
-				"pkgconfig32(zlib)"
+				"pkgconfig32(zlib)",
+				"python(myst-parser)"
 			],
 			"depends": [
 				"glibc-devel",
@@ -125,7 +126,8 @@
 				"/usr/lib/clang/20/share/dfsan_abilist.txt",
 				"/usr/lib/clang/20/share/hwasan_ignorelist.txt",
 				"/usr/lib/clang/20/share/msan_ignorelist.txt",
-				"/usr/share/clang/bash-autocomplete.sh"
+				"/usr/share/bash-completion/completions/clang",
+				"/usr/share/man/man1/clang.1"
 			],
 			"name": "clang",
 			"provides": [
@@ -166,7 +168,8 @@
 				"pkgconfig32(libxcrypt)",
 				"pkgconfig32(libxml-2.0)",
 				"pkgconfig32(libzstd)",
-				"pkgconfig32(zlib)"
+				"pkgconfig32(zlib)",
+				"python(myst-parser)"
 			],
 			"depends": [
 				"glibc-32bit-devel",
@@ -232,7 +235,8 @@
 				"pkgconfig32(libxcrypt)",
 				"pkgconfig32(libxml-2.0)",
 				"pkgconfig32(libzstd)",
-				"pkgconfig32(zlib)"
+				"pkgconfig32(zlib)",
+				"python(myst-parser)"
 			],
 			"depends": [
 				"clang",
@@ -1093,7 +1097,8 @@
 				"/usr/lib/cmake/clang/ClangTargets-release.cmake",
 				"/usr/lib/cmake/clang/ClangTargets.cmake",
 				"/usr/lib/libclang-cpp.so",
-				"/usr/lib/libclang.so"
+				"/usr/lib/libclang.so",
+				"/usr/share/man/man1/clang-tblgen.1"
 			],
 			"name": "clang-devel",
 			"provides": [
@@ -1120,7 +1125,8 @@
 				"pkgconfig32(libxcrypt)",
 				"pkgconfig32(libxml-2.0)",
 				"pkgconfig32(libzstd)",
-				"pkgconfig32(zlib)"
+				"pkgconfig32(zlib)",
+				"python(myst-parser)"
 			],
 			"depends": [
 				"soname(ld-linux-x86-64.so.2(x86_64))",
@@ -1424,7 +1430,7 @@
 				"/usr/lib/clang/20/include/zos_wrappers/builtins.h",
 				"/usr/lib/libclang-cpp.so.20.1",
 				"/usr/lib/libclang.so.20.1",
-				"/usr/lib/libclang.so.20.1.7"
+				"/usr/lib/libclang.so.20.1.8"
 			],
 			"name": "clang-libs",
 			"provides": [
@@ -1451,7 +1457,8 @@
 				"pkgconfig32(libxcrypt)",
 				"pkgconfig32(libxml-2.0)",
 				"pkgconfig32(libzstd)",
-				"pkgconfig32(zlib)"
+				"pkgconfig32(zlib)",
+				"python(myst-parser)"
 			],
 			"depends": [
 				"clang",
@@ -1533,6 +1540,8 @@
 				"/usr/share/clang/clang-include-fixer.py",
 				"/usr/share/clang/clang-tidy-diff.py",
 				"/usr/share/clang/run-find-all-symbols.py",
+				"/usr/share/man/man1/diagtool.1",
+				"/usr/share/man/man1/extraclangtools.1",
 				"/usr/share/man/man1/scan-build.1",
 				"/usr/share/scan-build/scanview.css",
 				"/usr/share/scan-build/sorttable.js",
@@ -1600,7 +1609,8 @@
 				"pkgconfig32(libxcrypt)",
 				"pkgconfig32(libxml-2.0)",
 				"pkgconfig32(libzstd)",
-				"pkgconfig32(zlib)"
+				"pkgconfig32(zlib)",
+				"python(myst-parser)"
 			],
 			"depends": [
 				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
@@ -1639,7 +1649,8 @@
 				"/usr/include/flang/omp_lib_kinds.mod",
 				"/usr/lib/clang/20/include/ISO_Fortran_binding.h",
 				"/usr/lib/libFortranDecimal.a",
-				"/usr/lib/libFortranRuntime.a"
+				"/usr/lib/libFortranRuntime.a",
+				"/usr/share/man/man1/flang.1"
 			],
 			"name": "flang",
 			"provides": [
@@ -1672,7 +1683,8 @@
 				"pkgconfig32(libxcrypt)",
 				"pkgconfig32(libxml-2.0)",
 				"pkgconfig32(libzstd)",
-				"pkgconfig32(zlib)"
+				"pkgconfig32(zlib)",
+				"python(myst-parser)"
 			],
 			"depends": [
 				"soname(ld-linux-x86-64.so.2(x86_64))",
@@ -1709,7 +1721,8 @@
 				"pkgconfig32(libxcrypt)",
 				"pkgconfig32(libxml-2.0)",
 				"pkgconfig32(libzstd)",
-				"pkgconfig32(zlib)"
+				"pkgconfig32(zlib)",
+				"python(myst-parser)"
 			],
 			"depends": [
 				"soname(ld-linux.so.2(386))",
@@ -1746,7 +1759,8 @@
 				"pkgconfig32(libxcrypt)",
 				"pkgconfig32(libxml-2.0)",
 				"pkgconfig32(libzstd)",
-				"pkgconfig32(zlib)"
+				"pkgconfig32(zlib)",
+				"python(myst-parser)"
 			],
 			"depends": [
 				"libcxx-32bit",
@@ -1782,7 +1796,8 @@
 				"pkgconfig32(libxcrypt)",
 				"pkgconfig32(libxml-2.0)",
 				"pkgconfig32(libzstd)",
-				"pkgconfig32(zlib)"
+				"pkgconfig32(zlib)",
+				"python(myst-parser)"
 			],
 			"depends": [
 				"libcxx-32bit-devel",
@@ -1815,7 +1830,8 @@
 				"pkgconfig32(libxcrypt)",
 				"pkgconfig32(libxml-2.0)",
 				"pkgconfig32(libzstd)",
-				"pkgconfig32(zlib)"
+				"pkgconfig32(zlib)",
+				"python(myst-parser)"
 			],
 			"depends": [
 				"libcxx"
@@ -4074,7 +4090,8 @@
 				"pkgconfig32(libxcrypt)",
 				"pkgconfig32(libxml-2.0)",
 				"pkgconfig32(libzstd)",
-				"pkgconfig32(zlib)"
+				"pkgconfig32(zlib)",
+				"python(myst-parser)"
 			],
 			"depends": [
 				"libcxx-devel"
@@ -4106,7 +4123,8 @@
 				"pkgconfig32(libxcrypt)",
 				"pkgconfig32(libxml-2.0)",
 				"pkgconfig32(libzstd)",
-				"pkgconfig32(zlib)"
+				"pkgconfig32(zlib)",
+				"python(myst-parser)"
 			],
 			"depends": [
 				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
@@ -4156,7 +4174,8 @@
 				"pkgconfig32(libxcrypt)",
 				"pkgconfig32(libxml-2.0)",
 				"pkgconfig32(libzstd)",
-				"pkgconfig32(zlib)"
+				"pkgconfig32(zlib)",
+				"python(myst-parser)"
 			],
 			"depends": [
 				"lld",
@@ -4212,7 +4231,8 @@
 				"pkgconfig32(libxcrypt)",
 				"pkgconfig32(libxml-2.0)",
 				"pkgconfig32(libzstd)",
-				"pkgconfig32(zlib)"
+				"pkgconfig32(zlib)",
+				"python(myst-parser)"
 			],
 			"depends": [
 				"soname(ld-linux-x86-64.so.2(x86_64))",
@@ -4259,7 +4279,8 @@
 				"pkgconfig32(libxcrypt)",
 				"pkgconfig32(libxml-2.0)",
 				"pkgconfig32(libzstd)",
-				"pkgconfig32(zlib)"
+				"pkgconfig32(zlib)",
+				"python(myst-parser)"
 			],
 			"depends": [
 				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
@@ -4359,6 +4380,55 @@
 				"/usr/bin/split-file",
 				"/usr/bin/verify-uselistorder",
 				"/usr/bin/yaml2obj",
+				"/usr/share/man/man1/FileCheck.1",
+				"/usr/share/man/man1/bugpoint.1",
+				"/usr/share/man/man1/dsymutil.1",
+				"/usr/share/man/man1/llc.1",
+				"/usr/share/man/man1/lli.1",
+				"/usr/share/man/man1/llvm-addr2line.1",
+				"/usr/share/man/man1/llvm-ar.1",
+				"/usr/share/man/man1/llvm-as.1",
+				"/usr/share/man/man1/llvm-bcanalyzer.1",
+				"/usr/share/man/man1/llvm-cgdata.1",
+				"/usr/share/man/man1/llvm-cov.1",
+				"/usr/share/man/man1/llvm-cxxfilt.1",
+				"/usr/share/man/man1/llvm-cxxmap.1",
+				"/usr/share/man/man1/llvm-debuginfo-analyzer.1",
+				"/usr/share/man/man1/llvm-diff.1",
+				"/usr/share/man/man1/llvm-dis.1",
+				"/usr/share/man/man1/llvm-dwarfdump.1",
+				"/usr/share/man/man1/llvm-dwarfutil.1",
+				"/usr/share/man/man1/llvm-exegesis.1",
+				"/usr/share/man/man1/llvm-extract.1",
+				"/usr/share/man/man1/llvm-ifs.1",
+				"/usr/share/man/man1/llvm-install-name-tool.1",
+				"/usr/share/man/man1/llvm-lib.1",
+				"/usr/share/man/man1/llvm-libtool-darwin.1",
+				"/usr/share/man/man1/llvm-link.1",
+				"/usr/share/man/man1/llvm-lipo.1",
+				"/usr/share/man/man1/llvm-locstats.1",
+				"/usr/share/man/man1/llvm-mc.1",
+				"/usr/share/man/man1/llvm-mca.1",
+				"/usr/share/man/man1/llvm-nm.1",
+				"/usr/share/man/man1/llvm-objcopy.1",
+				"/usr/share/man/man1/llvm-objdump.1",
+				"/usr/share/man/man1/llvm-opt-report.1",
+				"/usr/share/man/man1/llvm-otool.1",
+				"/usr/share/man/man1/llvm-pdbutil.1",
+				"/usr/share/man/man1/llvm-profdata.1",
+				"/usr/share/man/man1/llvm-profgen.1",
+				"/usr/share/man/man1/llvm-ranlib.1",
+				"/usr/share/man/man1/llvm-readelf.1",
+				"/usr/share/man/man1/llvm-readobj.1",
+				"/usr/share/man/man1/llvm-reduce.1",
+				"/usr/share/man/man1/llvm-remarkutil.1",
+				"/usr/share/man/man1/llvm-size.1",
+				"/usr/share/man/man1/llvm-stress.1",
+				"/usr/share/man/man1/llvm-strings.1",
+				"/usr/share/man/man1/llvm-strip.1",
+				"/usr/share/man/man1/llvm-symbolizer.1",
+				"/usr/share/man/man1/llvm-tli-checker.1",
+				"/usr/share/man/man1/opt.1",
 				"/usr/share/opt-viewer/opt-diff.py",
 				"/usr/share/opt-viewer/opt-stats.py",
 				"/usr/share/opt-viewer/opt-viewer.py",
@@ -4474,7 +4544,8 @@
 				"pkgconfig32(libxcrypt)",
 				"pkgconfig32(libxml-2.0)",
 				"pkgconfig32(libzstd)",
-				"pkgconfig32(zlib)"
+				"pkgconfig32(zlib)",
+				"python(myst-parser)"
 			],
 			"depends": [
 				"llvm",
@@ -4521,7 +4592,8 @@
 				"pkgconfig32(libxcrypt)",
 				"pkgconfig32(libxml-2.0)",
 				"pkgconfig32(libzstd)",
-				"pkgconfig32(zlib)"
+				"pkgconfig32(zlib)",
+				"python(myst-parser)"
 			],
 			"depends": [
 				"interpreter(/usr/lib32/ld-linux.so.2(386))",
@@ -4612,7 +4684,8 @@
 				"pkgconfig32(libxcrypt)",
 				"pkgconfig32(libxml-2.0)",
 				"pkgconfig32(libzstd)",
-				"pkgconfig32(zlib)"
+				"pkgconfig32(zlib)",
+				"python(myst-parser)"
 			],
 			"depends": [
 				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
@@ -4664,7 +4737,8 @@
 				"pkgconfig32(libxcrypt)",
 				"pkgconfig32(libxml-2.0)",
 				"pkgconfig32(libzstd)",
-				"pkgconfig32(zlib)"
+				"pkgconfig32(zlib)",
+				"python(myst-parser)"
 			],
 			"depends": [
 				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
@@ -6843,7 +6917,10 @@
 				"/usr/lib/libLLVMSupport.a",
 				"/usr/lib/libLLVMTableGen.a",
 				"/usr/lib/libLTO.so",
-				"/usr/lib/libRemarks.so"
+				"/usr/lib/libRemarks.so",
+				"/usr/share/man/man1/llvm-config.1",
+				"/usr/share/man/man1/llvm-tblgen.1",
+				"/usr/share/man/man1/tblgen.1"
 			],
 			"name": "llvm-devel",
 			"provides": [
@@ -6874,7 +6951,8 @@
 				"pkgconfig32(libxcrypt)",
 				"pkgconfig32(libxml-2.0)",
 				"pkgconfig32(libzstd)",
-				"pkgconfig32(zlib)"
+				"pkgconfig32(zlib)",
+				"python(myst-parser)"
 			],
 			"depends": [
 				"soname(ld-linux-x86-64.so.2(x86_64))",
@@ -6922,7 +7000,8 @@
 				"pkgconfig32(libxcrypt)",
 				"pkgconfig32(libxml-2.0)",
 				"pkgconfig32(libzstd)",
-				"pkgconfig32(zlib)"
+				"pkgconfig32(zlib)",
+				"python(myst-parser)"
 			],
 			"depends": [
 				"soname(ld-linux-x86-64.so.2(x86_64))",
@@ -6974,7 +7053,8 @@
 				"pkgconfig32(libxcrypt)",
 				"pkgconfig32(libxml-2.0)",
 				"pkgconfig32(libzstd)",
-				"pkgconfig32(zlib)"
+				"pkgconfig32(zlib)",
+				"python(myst-parser)"
 			],
 			"depends": [
 				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
@@ -8726,7 +8806,8 @@
 				"/usr/lib/libmlir_async_runtime.so",
 				"/usr/lib/libmlir_c_runner_utils.so",
 				"/usr/lib/libmlir_float16_utils.so",
-				"/usr/lib/libmlir_runner_utils.so"
+				"/usr/lib/libmlir_runner_utils.so",
+				"/usr/share/man/man1/mlir-tblgen.1"
 			],
 			"name": "mlir-devel",
 			"provides": [
@@ -8765,7 +8846,8 @@
 				"pkgconfig32(libxcrypt)",
 				"pkgconfig32(libxml-2.0)",
 				"pkgconfig32(libzstd)",
-				"pkgconfig32(zlib)"
+				"pkgconfig32(zlib)",
+				"python(myst-parser)"
 			],
 			"depends": [
 				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
@@ -8808,7 +8890,8 @@
 				"pkgconfig32(libxcrypt)",
 				"pkgconfig32(libxml-2.0)",
 				"pkgconfig32(libzstd)",
-				"pkgconfig32(zlib)"
+				"pkgconfig32(zlib)",
+				"python(myst-parser)"
 			],
 			"depends": [
 				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
@@ -8854,7 +8937,8 @@
 				"pkgconfig32(libxcrypt)",
 				"pkgconfig32(libxml-2.0)",
 				"pkgconfig32(libzstd)",
-				"pkgconfig32(zlib)"
+				"pkgconfig32(zlib)",
+				"python(myst-parser)"
 			],
 			"depends": [
 				"soname(ld-linux-x86-64.so.2(x86_64))",
@@ -8895,7 +8979,8 @@
 				"pkgconfig32(libxcrypt)",
 				"pkgconfig32(libxml-2.0)",
 				"pkgconfig32(libzstd)",
-				"pkgconfig32(zlib)"
+				"pkgconfig32(zlib)",
+				"python(myst-parser)"
 			],
 			"depends": [
 				"openmp"
@@ -8929,7 +9014,8 @@
 				"pkgconfig32(libxcrypt)",
 				"pkgconfig32(libxml-2.0)",
 				"pkgconfig32(libzstd)",
-				"pkgconfig32(zlib)"
+				"pkgconfig32(zlib)",
+				"python(myst-parser)"
 			],
 			"depends": [
 				"soname(libLLVM.so.20.1(x86_64))",
@@ -8939,7 +9025,8 @@
 			"files": [
 				"/usr/lib/LLVMPolly.so",
 				"/usr/lib/libPolly.so.20.1",
-				"/usr/lib/libPollyISL.so"
+				"/usr/lib/libPollyISL.so",
+				"/usr/share/man/man1/polly.1"
 			],
 			"name": "polly",
 			"provides": [
@@ -8967,7 +9054,8 @@
 				"pkgconfig32(libxcrypt)",
 				"pkgconfig32(libxml-2.0)",
 				"pkgconfig32(libzstd)",
-				"pkgconfig32(zlib)"
+				"pkgconfig32(zlib)",
+				"python(myst-parser)"
 			],
 			"depends": [
 				"polly"
@@ -9037,6 +9125,6 @@
 		}
 	},
 	"source-name": "llvm",
-	"source-release": "31",
-	"source-version": "20.1.7"
+	"source-release": "32",
+	"source-version": "20.1.8"
 }
