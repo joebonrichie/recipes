@@ -5,7 +5,7 @@
 #
 name        : gvfs
 version     : 1.57.2
-release     : 12
+release     : 13
 homepage    : https://wiki.gnome.org/Projects/gvfs
 upstreams   :
     - https://download.gnome.org/sources/gvfs/1.57/gvfs-1.57.2.tar.xz : f16bef8eca1fd6c117e85db011d21e915669790d55867349c5f1b291299e9585
@@ -34,7 +34,7 @@ builddeps   :
     # - pkgconfig(libcdio_paranoia)
     - pkgconfig(libgcrypt)
     # - pkgconfig(libgdata)
-    # - pkgconfig(libgphoto2)
+    - pkgconfig(libgphoto2)
     - pkgconfig(libimobiledevice-1.0)
     - pkgconfig(libmtp)
     # - pkgconfig(libnfs)
@@ -59,7 +59,6 @@ setup       : |
     %meson -Dbluray=false \
            -Dcdda=false \
            -Dgoogle=false \
-           -Dgphoto2=false \
            -Dnfs=false
 build       : |
     %meson_build
