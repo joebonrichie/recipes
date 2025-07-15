@@ -51,7 +51,7 @@
 			"files": [
 				"/usr/bin/configure-printer",
 				"/usr/bin/kde-print-queue",
-				"/usr/lib/libkcupslib.so.6.4.2",
+				"/usr/lib/libkcupslib.so.6.4.3",
 				"/usr/lib/qt6/plugins/kf6/kded/printmanager.so",
 				"/usr/lib/qt6/plugins/plasma/kcms/systemsettings/kcm_printer_manager.so",
 				"/usr/lib/qt6/qml/org/kde/plasma/printmanager/kcupslib.qmltypes",
@@ -242,7 +242,7 @@
 			"provides": [
 				"binary(configure-printer)",
 				"binary(kde-print-queue)",
-				"soname(libkcupslib.so.6.4.2(x86_64))",
+				"soname(libkcupslib.so.6.4.3(x86_64))",
 				"soname(qt6/plugins/kf6/kded/printmanager.so(x86_64))",
 				"soname(qt6/plugins/plasma/kcms/systemsettings/kcm_printer_manager.so(x86_64))",
 				"soname(qt6/qml/org/kde/plasma/printmanager/libkcupslibplugin.so(x86_64))"
@@ -250,6 +250,6 @@
 		}
 	},
 	"source-name": "print-manager",
-	"source-release": "1",
-	"source-version": "6.4.2"
+	"source-release": "2",
+	"source-version": "6.4.3"
 }

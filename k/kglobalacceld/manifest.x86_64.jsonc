@@ -42,7 +42,7 @@
 			"files": [
 				"/usr/lib/kf6/kglobalacceld",
 				"/usr/lib/libKGlobalAccelD.so.0",
-				"/usr/lib/libKGlobalAccelD.so.6.4.2",
+				"/usr/lib/libKGlobalAccelD.so.6.4.3",
 				"/usr/lib/qt6/plugins/org.kde.kglobalacceld.platforms/KGlobalAccelDXcb.so",
 				"/usr/lib/systemd/user/plasma-kglobalaccel.service",
 				"/usr/share/xdg/autostart/kglobalacceld.desktop"
@@ -85,6 +85,6 @@
 		}
 	},
 	"source-name": "kglobalacceld",
-	"source-release": "1",
-	"source-version": "6.4.2"
+	"source-release": "2",
+	"source-version": "6.4.3"
 }
