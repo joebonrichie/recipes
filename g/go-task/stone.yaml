@@ -4,31 +4,25 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : go-task
-version     : 3.24.0
-release     : 3
+version     : 3.44.0
+release     : 4
 homepage    : https://taskfile.dev/
 upstreams   :
-    - https://github.com/go-task/task/archive/refs/tags/v3.24.0.tar.gz : e1ab3c92299ad5741b8b0e9dc18593db80efaca449b8ccc318a6ff1848b44338
-summary     : A task runner / simpler Make alternative written in Go 
+    - https://github.com/go-task/task/archive/refs/tags/v3.44.0.tar.gz : 9a4d91baf8fb3bfa018557f60f8516d8f8b9ee2012eaf5c1eb5d9484db429a06
+summary     : A task runner / simpler Make alternative written in Go
 description : |
-    A task runner / simpler Make alternative written in Go 
+    A task runner / simpler Make alternative written in Go
 license     :
     - MIT
 builddeps   :
    - binary(go)
 networking  : yes
 environment : |
-    # This can probably be removed after golang reboostrap.
-    export GOMODCACHE="%(workdir)/.cache"
-
     export GO111MODULE=auto
     export GOFLAGS="-buildmode=pie -trimpath -mod=readonly -modcacherw -ldflags=-linkmode=external"
 
     # Make sure the version ends up in the binary. go-releaser typically handles this but we're not using that
     sed -i "s|version = \"\"|version = \"v%(version)\"|g" internal/version/version.go
-
-    # https://github.com/serpent-os/boulder/issues/74
-    export CGO_CFLAGS="${CGO_CFLAGS} -Wno-error=unused-command-line-argument"
 build       : |
     go build -v -o bin ./cmd/task
 install     : |
@@ -38,12 +32,12 @@ install     : |
     ln -s task %(installroot)/%(bindir)/go-task
 
     # Completions
-    %install_file completion/bash/task.bash %(installroot)/%(completionsdir)/task
-    %install_file completion/zsh/_task %(installroot)/%(datadir)/zsh/site-functions/_task
-    %install_file completion/fish/task.fish %(installroot)/%(datadir)/fish/vendor_completions.d/task.fish
+    %install_file completion/bash/task.bash %(installroot)/%(bashcompletionsdir)/task
+    %install_file completion/zsh/_task %(installroot)/%(zshcompletionsdir)/_task
+    %install_file completion/fish/task.fish %(installroot)/%(fishcompletionsdir)/task.fish
 check       : |
     # Fix wonky tests
-    export HOME=%(workdir)
+    #export HOME=%(workdir)
 
     # Fix a couple of tests that are broken because we're overriding the version
     sed -i "s|TASK_VERSION=unknown|TASK_VERSION=v%(version)|g" task_test.go
