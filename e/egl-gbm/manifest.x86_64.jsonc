@@ -17,7 +17,8 @@
 			"files": [
 				"/usr/lib/libnvidia-egl-gbm.so",
 				"/usr/lib/libnvidia-egl-gbm.so.1",
-				"/usr/lib/libnvidia-egl-gbm.so.1.1.2"
+				"/usr/lib/libnvidia-egl-gbm.so.1.1.2",
+				"/usr/share/egl/egl_external_platform.d/15_nvidia_gbm.json"
 			],
 			"name": "egl-gbm",
 			"provides": [
@@ -44,12 +45,11 @@
 			],
 			"name": "egl-gbm-32bit",
 			"provides": [
-				"soname(libnvidia-egl-gbm.so.1(386))",
-				"soname(libnvidia-egl-gbm.so.1(x86))"
+				"soname(libnvidia-egl-gbm.so.1(386))"
 			]
 		}
 	},
 	"source-name": "egl-gbm",
-	"source-release": "3",
-	"source-version": "1.1.2"
+	"source-release": "4",
+	"source-version": "1.1.2.1"
 }
