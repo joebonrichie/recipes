@@ -4,8 +4,8 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : util-linux
-version     : 2.40.4
-release     : 12
+version     : 2.41.1
+release     : 13
 summary     : Random collection of Linux utilities
 license     :
     - BSD-3-Clause
@@ -19,43 +19,92 @@ homepage    : https://www.kernel.org/pub/linux/utils/util-linux
 description : |
     Random collection of Linux utilities
 upstreams   :
-    - https://mirrors.edge.kernel.org/pub/linux/utils/util-linux/v2.40/util-linux-2.40.4.tar.xz : 5c1daf733b04e9859afdc3bd87cc481180ee0f88b5c0946b16fdec931975fb79
+    # Missing some bash completion files, so use the git archive for now
+    # - https://mirrors.edge.kernel.org/pub/linux/utils/util-linux/v2.41/util-linux-2.41.1.tar.xz : be9ad9a276f4305ab7dd2f5225c8be1ff54352f565ff4dede9628c1aaa7dec57
+    - git|https://github.com/util-linux/util-linux.git : 67b6f19adad289cc4ff4071ae8eceda41bdce9e8
 builddeps   :
-    - pkgconfig32(libsystemd)
-    - pkgconfig(python3)
+    - binary(asciidoctor)
+    - binary(bison)
+    - binary(flex)
+    - binary(gettext)
+    - pkgconfig32(libeconf)
     - pkgconfig32(libcap-ng)
     - pkgconfig32(libcrypt)
+    - pkgconfig32(libsystemd)
     - pkgconfig32(ncursesw)
     - pkgconfig32(pam)
+    - pkgconfig32(readline)
     - pkgconfig32(zlib)
+    - pkgconfig(bash-completion)
+    - pkgconfig(libcryptsetup)
+    - pkgconfig(libmagic)
+    - pkgconfig(python3)
+    - libutempter-devel
 rundeps     :
     - binary(su)
 emul32      : true
 profiles    :
     - emul32:
         setup: |
-            %configure --disable-makeinstall-chown \
-                       --disable-static \
-                       --disable-su \
-                       --disable-sulogin \
-                       --disable-liblastlog2 \
-                       --disable-uuidd \
-                       --without-python \
-                       --without-systemd \
-                       --with-vendordir=%(vendordir)
+            %patch %(pkgdir)/0001-fix-build-with-econf.patch
+
+            # Just disable everything that's not a library
+            %meson \
+                -Dbuild-bits=disabled \
+                -Dbuild-chfn-chsh=disabled \
+                -Dbuild-last=disabled \
+                -Dbuild-chmem=disabled \
+                -Dbuild-col=disabled \
+                -Dbuild-colcrt=disabled \
+                -Dbuild-colrm=disabled \
+                -Dbuild-hexdump=disabled \
+                -Dbuild-ipcmk=disabled \
+                -Dbuild-ipcrm=disabled \
+                -Dbuild-ipcs=disabled \
+                -Dbuild-liblastlog2=disabled \
+                -Dbuild-line=disabled \
+                -Dbuild-lslogins=disabled \
+                -Dbuild-lsmem=disabled \
+                -Dbuild-more=disabled \
+                -Dbuild-newgrp=disabled \
+                -Dbuild-nologin=disabled \
+                -Dbuild-pg=disabled \
+                -Dbuild-python=disabled \
+                -Dbuild-rev=disabled \
+                -Dbuild-rfkill=disabled \
+                -Dbuild-runuser=disabled \
+                -Dbuild-su=disabled \
+                -Dbuild-sulogin=disabled \
+                -Dbuild-ul=disabled \
+                -Dbuild-uuidd=disabled \
+                -Dbuild-utmpdump=disabled \
+                -Dbuild-vipw=disabled \
+                -Dcryptsetup=disabled \
+                -Dmagic=disabled \
+                -Dpython=disabled \
+                -Dvendordir=%(vendordir)
+        install     : |
+            %meson_install
+            rm -fv %(installroot)%(libdir)/*.a
 setup       : |
-    # Can fix these issues once fakeroot is implemented
-    %configure --disable-makeinstall-chown \
-               --disable-static \
-               --disable-su \
-               --disable-sulogin \
-               --disable-liblastlog2 \
-               --disable-uuidd \
-               --with-vendordir=%(vendordir)
+    %patch %(pkgdir)/0001-fix-build-with-econf.patch
+
+    # TODO:
+    # - figure out what we want to do with uuidd, if anything
+    # - line command conflicts with mesa-demos, should it be disabled there instead?
+    %meson \
+        -Dbuild-liblastlog2=disabled \
+        -Dbuild-line=disabled \
+        -Dbuild-newgrp=disabled \
+        -Dbuild-su=disabled \
+        -Dbuild-sulogin=disabled \
+        -Dbuild-uuidd=disabled \
+        -Dbuild-vipw=disabled \
+        -Dvendordir=%(vendordir)
 build       : |
-    %make
+    %meson_build
 install     : |
-    %make_install
+    %meson_install
 
     # PAM configuration
     %install_file %(pkgdir)/pam.d/pam-common %(installroot)/%(vendordir)/pam.d/chfn
@@ -63,3 +112,100 @@ install     : |
     %install_file %(pkgdir)/pam.d/pam-login %(installroot)/%(vendordir)/pam.d/login
     %install_file %(pkgdir)/pam.d/pam-runuser %(installroot)/%(vendordir)/pam.d/runuser
     %install_file %(pkgdir)/pam.d/pam-runuser %(installroot)/%(vendordir)/pam.d/runuser-l
+
+    %install_dir %(installroot)%(docdir)/%(name)-devel
+    echo "DEPRECATED" > %(installroot)%(docdir)/%(name)-devel/README
+packages    :
+    - "%(name)-devel":
+        rundeps:
+            - libblkid-devel
+            - libfdisk-devel
+            - libmount-devel
+            - libsmartcols-devel
+            - libuuid-devel
+        paths:
+            - /usr/share/doc/util-linux-devel/
+
+    - libblkid:
+        paths:
+            - /usr/lib/libblkid.so.*
+
+    - libblkid-devel:
+        rundeps:
+            - libblkid
+        paths:
+            - /usr/include/blkid/
+            - /usr/lib/libblkid.so
+            - /usr/lib/pkgconfig/blkid.pc
+            - /usr/share/man/man3/libblkid*
+
+    - libblkid-staticlib:
+        rundeps:
+            - libblkid-devel
+        paths:
+            - /usr/lib/libblkid.a
+
+    - libfdisk:
+        paths:
+            - /usr/lib/libfdisk.so.*
+
+    - libfdisk-devel:
+        rundeps:
+            - libfdisk
+        paths:
+            - /usr/include/libfdisk/
+            - /usr/lib/libfdisk.so
+            - /usr/lib/pkgconfig/fdisk.pc
+
+    - libfdisk-staticlib:
+        rundeps:
+            - libfdisk-devel
+        paths:
+            - /usr/lib/libfdisk.a
+
+    - libmount:
+        paths:
+            - /usr/lib/libmount.so.*
+
+    - libmount-devel:
+        rundeps:
+            - libmount
+        paths:
+            - /usr/include/libmount/
+            - /usr/lib/libmount.so
+            - /usr/lib/pkgconfig/mount.pc
+
+    - python-libmount:
+        paths:
+            - /usr/lib/python3*/site-packages/libmount/
+
+    - libsmartcols:
+        paths:
+            - /usr/lib/libsmartcols.so.*
+
+    - libsmartcols-devel:
+        rundeps:
+            - libsmartcols
+        paths:
+            - /usr/include/libsmartcols/
+            - /usr/lib/libsmartcols.so
+            - /usr/lib/pkgconfig/smartcols.pc
+
+    - libsmartcols-staticlib:
+        rundeps:
+            - libsmartcols-devel
+        paths:
+            - /usr/lib/libsmartcols.a
+
+    - libuuid:
+        paths:
+            - /usr/lib/libuuid.so.*
+
+    - libuuid-devel:
+        rundeps:
+            - libuuid
+        paths:
+            - /usr/include/uuid/
+            - /usr/lib/libuuid.so
+            - /usr/lib/pkgconfig/uuid.pc
+            - /usr/share/man/man3/uuid*

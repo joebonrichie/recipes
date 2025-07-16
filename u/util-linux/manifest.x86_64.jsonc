@@ -2,30 +2,519 @@
 {
 	"manifest-version": "0.2",
 	"packages": {
-		"util-linux": {
+		"libblkid": {
 			"build-depends": [
+				"binary(asciidoctor)",
+				"binary(bison)",
+				"binary(flex)",
+				"binary(gettext)",
+				"libutempter-devel",
+				"pkgconfig(bash-completion)",
+				"pkgconfig(libcryptsetup)",
+				"pkgconfig(libmagic)",
 				"pkgconfig(python3)",
 				"pkgconfig32(libcap-ng)",
 				"pkgconfig32(libcrypt)",
+				"pkgconfig32(libeconf)",
 				"pkgconfig32(libsystemd)",
 				"pkgconfig32(ncursesw)",
 				"pkgconfig32(pam)",
+				"pkgconfig32(readline)",
+				"pkgconfig32(zlib)"
+			],
+			"depends": [
+				"soname(libc.so.6(x86_64))",
+				"soname(libeconf.so.0(x86_64))"
+			],
+			"files": [
+				"/usr/lib/libblkid.so.1",
+				"/usr/lib/libblkid.so.1.1.0"
+			],
+			"name": "libblkid",
+			"provides": [
+				"soname(libblkid.so.1(x86_64))"
+			]
+		},
+		"libblkid-devel": {
+			"build-depends": [
+				"binary(asciidoctor)",
+				"binary(bison)",
+				"binary(flex)",
+				"binary(gettext)",
+				"libutempter-devel",
+				"pkgconfig(bash-completion)",
+				"pkgconfig(libcryptsetup)",
+				"pkgconfig(libmagic)",
+				"pkgconfig(python3)",
+				"pkgconfig32(libcap-ng)",
+				"pkgconfig32(libcrypt)",
+				"pkgconfig32(libeconf)",
+				"pkgconfig32(libsystemd)",
+				"pkgconfig32(ncursesw)",
+				"pkgconfig32(pam)",
+				"pkgconfig32(readline)",
+				"pkgconfig32(zlib)"
+			],
+			"depends": [
+				"libblkid",
+				"pkgconfig(libeconf)"
+			],
+			"files": [
+				"/usr/include/blkid/blkid.h",
+				"/usr/lib/libblkid.so",
+				"/usr/lib/pkgconfig/blkid.pc",
+				"/usr/share/man/man3/libblkid.3"
+			],
+			"name": "libblkid-devel",
+			"provides": [
+				"pkgconfig(blkid)"
+			]
+		},
+		"libblkid-staticlib": {
+			"build-depends": [
+				"binary(asciidoctor)",
+				"binary(bison)",
+				"binary(flex)",
+				"binary(gettext)",
+				"libutempter-devel",
+				"pkgconfig(bash-completion)",
+				"pkgconfig(libcryptsetup)",
+				"pkgconfig(libmagic)",
+				"pkgconfig(python3)",
+				"pkgconfig32(libcap-ng)",
+				"pkgconfig32(libcrypt)",
+				"pkgconfig32(libeconf)",
+				"pkgconfig32(libsystemd)",
+				"pkgconfig32(ncursesw)",
+				"pkgconfig32(pam)",
+				"pkgconfig32(readline)",
+				"pkgconfig32(zlib)"
+			],
+			"depends": [
+				"libblkid-devel"
+			],
+			"files": [
+				"/usr/lib/libblkid.a"
+			],
+			"name": "libblkid-staticlib"
+		},
+		"libfdisk": {
+			"build-depends": [
+				"binary(asciidoctor)",
+				"binary(bison)",
+				"binary(flex)",
+				"binary(gettext)",
+				"libutempter-devel",
+				"pkgconfig(bash-completion)",
+				"pkgconfig(libcryptsetup)",
+				"pkgconfig(libmagic)",
+				"pkgconfig(python3)",
+				"pkgconfig32(libcap-ng)",
+				"pkgconfig32(libcrypt)",
+				"pkgconfig32(libeconf)",
+				"pkgconfig32(libsystemd)",
+				"pkgconfig32(ncursesw)",
+				"pkgconfig32(pam)",
+				"pkgconfig32(readline)",
+				"pkgconfig32(zlib)"
+			],
+			"depends": [
+				"soname(ld-linux-x86-64.so.2(x86_64))",
+				"soname(libblkid.so.1(x86_64))",
+				"soname(libc.so.6(x86_64))",
+				"soname(libuuid.so.1(x86_64))"
+			],
+			"files": [
+				"/usr/lib/libfdisk.so.1",
+				"/usr/lib/libfdisk.so.1.1.0"
+			],
+			"name": "libfdisk",
+			"provides": [
+				"soname(libfdisk.so.1(x86_64))"
+			]
+		},
+		"libfdisk-devel": {
+			"build-depends": [
+				"binary(asciidoctor)",
+				"binary(bison)",
+				"binary(flex)",
+				"binary(gettext)",
+				"libutempter-devel",
+				"pkgconfig(bash-completion)",
+				"pkgconfig(libcryptsetup)",
+				"pkgconfig(libmagic)",
+				"pkgconfig(python3)",
+				"pkgconfig32(libcap-ng)",
+				"pkgconfig32(libcrypt)",
+				"pkgconfig32(libeconf)",
+				"pkgconfig32(libsystemd)",
+				"pkgconfig32(ncursesw)",
+				"pkgconfig32(pam)",
+				"pkgconfig32(readline)",
+				"pkgconfig32(zlib)"
+			],
+			"depends": [
+				"libfdisk",
+				"pkgconfig(blkid)",
+				"pkgconfig(uuid)"
+			],
+			"files": [
+				"/usr/include/libfdisk/libfdisk.h",
+				"/usr/lib/libfdisk.so",
+				"/usr/lib/pkgconfig/fdisk.pc"
+			],
+			"name": "libfdisk-devel",
+			"provides": [
+				"pkgconfig(fdisk)"
+			]
+		},
+		"libfdisk-staticlib": {
+			"build-depends": [
+				"binary(asciidoctor)",
+				"binary(bison)",
+				"binary(flex)",
+				"binary(gettext)",
+				"libutempter-devel",
+				"pkgconfig(bash-completion)",
+				"pkgconfig(libcryptsetup)",
+				"pkgconfig(libmagic)",
+				"pkgconfig(python3)",
+				"pkgconfig32(libcap-ng)",
+				"pkgconfig32(libcrypt)",
+				"pkgconfig32(libeconf)",
+				"pkgconfig32(libsystemd)",
+				"pkgconfig32(ncursesw)",
+				"pkgconfig32(pam)",
+				"pkgconfig32(readline)",
+				"pkgconfig32(zlib)"
+			],
+			"depends": [
+				"libfdisk-devel"
+			],
+			"files": [
+				"/usr/lib/libfdisk.a"
+			],
+			"name": "libfdisk-staticlib"
+		},
+		"libmount": {
+			"build-depends": [
+				"binary(asciidoctor)",
+				"binary(bison)",
+				"binary(flex)",
+				"binary(gettext)",
+				"libutempter-devel",
+				"pkgconfig(bash-completion)",
+				"pkgconfig(libcryptsetup)",
+				"pkgconfig(libmagic)",
+				"pkgconfig(python3)",
+				"pkgconfig32(libcap-ng)",
+				"pkgconfig32(libcrypt)",
+				"pkgconfig32(libeconf)",
+				"pkgconfig32(libsystemd)",
+				"pkgconfig32(ncursesw)",
+				"pkgconfig32(pam)",
+				"pkgconfig32(readline)",
+				"pkgconfig32(zlib)"
+			],
+			"depends": [
+				"soname(libblkid.so.1(x86_64))",
+				"soname(libc.so.6(x86_64))",
+				"soname(libcryptsetup.so.12(x86_64))"
+			],
+			"files": [
+				"/usr/lib/libmount.so.1",
+				"/usr/lib/libmount.so.1.1.0"
+			],
+			"name": "libmount",
+			"provides": [
+				"soname(libmount.so.1(x86_64))"
+			]
+		},
+		"libmount-devel": {
+			"build-depends": [
+				"binary(asciidoctor)",
+				"binary(bison)",
+				"binary(flex)",
+				"binary(gettext)",
+				"libutempter-devel",
+				"pkgconfig(bash-completion)",
+				"pkgconfig(libcryptsetup)",
+				"pkgconfig(libmagic)",
+				"pkgconfig(python3)",
+				"pkgconfig32(libcap-ng)",
+				"pkgconfig32(libcrypt)",
+				"pkgconfig32(libeconf)",
+				"pkgconfig32(libsystemd)",
+				"pkgconfig32(ncursesw)",
+				"pkgconfig32(pam)",
+				"pkgconfig32(readline)",
+				"pkgconfig32(zlib)"
+			],
+			"depends": [
+				"libmount",
+				"pkgconfig(blkid)",
+				"pkgconfig(libcryptsetup)"
+			],
+			"files": [
+				"/usr/include/libmount/libmount.h",
+				"/usr/lib/libmount.so",
+				"/usr/lib/pkgconfig/mount.pc"
+			],
+			"name": "libmount-devel",
+			"provides": [
+				"pkgconfig(mount)"
+			]
+		},
+		"libsmartcols": {
+			"build-depends": [
+				"binary(asciidoctor)",
+				"binary(bison)",
+				"binary(flex)",
+				"binary(gettext)",
+				"libutempter-devel",
+				"pkgconfig(bash-completion)",
+				"pkgconfig(libcryptsetup)",
+				"pkgconfig(libmagic)",
+				"pkgconfig(python3)",
+				"pkgconfig32(libcap-ng)",
+				"pkgconfig32(libcrypt)",
+				"pkgconfig32(libeconf)",
+				"pkgconfig32(libsystemd)",
+				"pkgconfig32(ncursesw)",
+				"pkgconfig32(pam)",
+				"pkgconfig32(readline)",
+				"pkgconfig32(zlib)"
+			],
+			"depends": [
+				"soname(libc.so.6(x86_64))"
+			],
+			"files": [
+				"/usr/lib/libsmartcols.so.1",
+				"/usr/lib/libsmartcols.so.1.1.0"
+			],
+			"name": "libsmartcols",
+			"provides": [
+				"soname(libsmartcols.so.1(x86_64))"
+			]
+		},
+		"libsmartcols-devel": {
+			"build-depends": [
+				"binary(asciidoctor)",
+				"binary(bison)",
+				"binary(flex)",
+				"binary(gettext)",
+				"libutempter-devel",
+				"pkgconfig(bash-completion)",
+				"pkgconfig(libcryptsetup)",
+				"pkgconfig(libmagic)",
+				"pkgconfig(python3)",
+				"pkgconfig32(libcap-ng)",
+				"pkgconfig32(libcrypt)",
+				"pkgconfig32(libeconf)",
+				"pkgconfig32(libsystemd)",
+				"pkgconfig32(ncursesw)",
+				"pkgconfig32(pam)",
+				"pkgconfig32(readline)",
+				"pkgconfig32(zlib)"
+			],
+			"depends": [
+				"libsmartcols"
+			],
+			"files": [
+				"/usr/include/libsmartcols/libsmartcols.h",
+				"/usr/lib/libsmartcols.so",
+				"/usr/lib/pkgconfig/smartcols.pc"
+			],
+			"name": "libsmartcols-devel",
+			"provides": [
+				"pkgconfig(smartcols)"
+			]
+		},
+		"libsmartcols-staticlib": {
+			"build-depends": [
+				"binary(asciidoctor)",
+				"binary(bison)",
+				"binary(flex)",
+				"binary(gettext)",
+				"libutempter-devel",
+				"pkgconfig(bash-completion)",
+				"pkgconfig(libcryptsetup)",
+				"pkgconfig(libmagic)",
+				"pkgconfig(python3)",
+				"pkgconfig32(libcap-ng)",
+				"pkgconfig32(libcrypt)",
+				"pkgconfig32(libeconf)",
+				"pkgconfig32(libsystemd)",
+				"pkgconfig32(ncursesw)",
+				"pkgconfig32(pam)",
+				"pkgconfig32(readline)",
+				"pkgconfig32(zlib)"
+			],
+			"depends": [
+				"libsmartcols-devel"
+			],
+			"files": [
+				"/usr/lib/libsmartcols.a"
+			],
+			"name": "libsmartcols-staticlib"
+		},
+		"libuuid": {
+			"build-depends": [
+				"binary(asciidoctor)",
+				"binary(bison)",
+				"binary(flex)",
+				"binary(gettext)",
+				"libutempter-devel",
+				"pkgconfig(bash-completion)",
+				"pkgconfig(libcryptsetup)",
+				"pkgconfig(libmagic)",
+				"pkgconfig(python3)",
+				"pkgconfig32(libcap-ng)",
+				"pkgconfig32(libcrypt)",
+				"pkgconfig32(libeconf)",
+				"pkgconfig32(libsystemd)",
+				"pkgconfig32(ncursesw)",
+				"pkgconfig32(pam)",
+				"pkgconfig32(readline)",
+				"pkgconfig32(zlib)"
+			],
+			"depends": [
+				"soname(ld-linux-x86-64.so.2(x86_64))",
+				"soname(libc.so.6(x86_64))"
+			],
+			"files": [
+				"/usr/lib/libuuid.so.1",
+				"/usr/lib/libuuid.so.1.3.0"
+			],
+			"name": "libuuid",
+			"provides": [
+				"soname(libuuid.so.1(x86_64))"
+			]
+		},
+		"libuuid-devel": {
+			"build-depends": [
+				"binary(asciidoctor)",
+				"binary(bison)",
+				"binary(flex)",
+				"binary(gettext)",
+				"libutempter-devel",
+				"pkgconfig(bash-completion)",
+				"pkgconfig(libcryptsetup)",
+				"pkgconfig(libmagic)",
+				"pkgconfig(python3)",
+				"pkgconfig32(libcap-ng)",
+				"pkgconfig32(libcrypt)",
+				"pkgconfig32(libeconf)",
+				"pkgconfig32(libsystemd)",
+				"pkgconfig32(ncursesw)",
+				"pkgconfig32(pam)",
+				"pkgconfig32(readline)",
+				"pkgconfig32(zlib)"
+			],
+			"depends": [
+				"libuuid"
+			],
+			"files": [
+				"/usr/include/uuid/uuid.h",
+				"/usr/lib/libuuid.so",
+				"/usr/lib/pkgconfig/uuid.pc",
+				"/usr/share/man/man3/uuid.3",
+				"/usr/share/man/man3/uuid_clear.3",
+				"/usr/share/man/man3/uuid_compare.3",
+				"/usr/share/man/man3/uuid_copy.3",
+				"/usr/share/man/man3/uuid_generate.3",
+				"/usr/share/man/man3/uuid_generate_random.3",
+				"/usr/share/man/man3/uuid_generate_time.3",
+				"/usr/share/man/man3/uuid_generate_time_safe.3",
+				"/usr/share/man/man3/uuid_is_null.3",
+				"/usr/share/man/man3/uuid_parse.3",
+				"/usr/share/man/man3/uuid_time.3",
+				"/usr/share/man/man3/uuid_unparse.3"
+			],
+			"name": "libuuid-devel",
+			"provides": [
+				"pkgconfig(uuid)"
+			]
+		},
+		"python-libmount": {
+			"build-depends": [
+				"binary(asciidoctor)",
+				"binary(bison)",
+				"binary(flex)",
+				"binary(gettext)",
+				"libutempter-devel",
+				"pkgconfig(bash-completion)",
+				"pkgconfig(libcryptsetup)",
+				"pkgconfig(libmagic)",
+				"pkgconfig(python3)",
+				"pkgconfig32(libcap-ng)",
+				"pkgconfig32(libcrypt)",
+				"pkgconfig32(libeconf)",
+				"pkgconfig32(libsystemd)",
+				"pkgconfig32(ncursesw)",
+				"pkgconfig32(pam)",
+				"pkgconfig32(readline)",
+				"pkgconfig32(zlib)"
+			],
+			"depends": [
+				"soname(libc.so.6(x86_64))",
+				"soname(libmount.so.1(x86_64))",
+				"soname(libpython3.11.so.1.0(x86_64))"
+			],
+			"files": [
+				"/usr/lib/python3.11/site-packages/libmount/__init__.py",
+				"/usr/lib/python3.11/site-packages/libmount/__pycache__/__init__.cpython-311.pyc",
+				"/usr/lib/python3.11/site-packages/libmount/pylibmount.cpython-311-x86_64-linux-gnu.so"
+			],
+			"name": "python-libmount",
+			"provides": [
+				"soname(python3.11/site-packages/libmount/pylibmount.cpython-311-x86_64-linux-gnu.so(x86_64))"
+			]
+		},
+		"util-linux": {
+			"build-depends": [
+				"binary(asciidoctor)",
+				"binary(bison)",
+				"binary(flex)",
+				"binary(gettext)",
+				"libutempter-devel",
+				"pkgconfig(bash-completion)",
+				"pkgconfig(libcryptsetup)",
+				"pkgconfig(libmagic)",
+				"pkgconfig(python3)",
+				"pkgconfig32(libcap-ng)",
+				"pkgconfig32(libcrypt)",
+				"pkgconfig32(libeconf)",
+				"pkgconfig32(libsystemd)",
+				"pkgconfig32(ncursesw)",
+				"pkgconfig32(pam)",
+				"pkgconfig32(readline)",
 				"pkgconfig32(zlib)"
 			],
 			"depends": [
 				"binary(su)",
 				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
 				"soname(ld-linux-x86-64.so.2(x86_64))",
+				"soname(libblkid.so.1(x86_64))",
 				"soname(libc.so.6(x86_64))",
 				"soname(libcap-ng.so.0(x86_64))",
+				"soname(libeconf.so.0(x86_64))",
+				"soname(libfdisk.so.1(x86_64))",
+				"soname(libmagic.so.1(x86_64))",
+				"soname(libmount.so.1(x86_64))",
 				"soname(libncursesw.so.6(x86_64))",
 				"soname(libpam.so.0(x86_64))",
 				"soname(libpam_misc.so.0(x86_64))",
+				"soname(libreadline.so.8(x86_64))",
+				"soname(libsmartcols.so.1(x86_64))",
 				"soname(libsystemd.so.0(x86_64))",
 				"soname(libudev.so.1(x86_64))",
+				"soname(libutempter.so.0(x86_64))",
+				"soname(libuuid.so.1(x86_64))",
 				"soname(libz.so.1(x86_64))"
 			],
 			"files": [
+				"/usr/bin/bits",
 				"/usr/bin/cal",
 				"/usr/bin/chfn",
 				"/usr/bin/chmem",
@@ -36,6 +525,7 @@
 				"/usr/bin/colcrt",
 				"/usr/bin/colrm",
 				"/usr/bin/column",
+				"/usr/bin/coresched",
 				"/usr/bin/dmesg",
 				"/usr/bin/eject",
 				"/usr/bin/enosys",
@@ -80,6 +570,7 @@
 				"/usr/bin/mountpoint",
 				"/usr/bin/namei",
 				"/usr/bin/nsenter",
+				"/usr/bin/pg",
 				"/usr/bin/pipesz",
 				"/usr/bin/prlimit",
 				"/usr/bin/rename",
@@ -106,24 +597,10 @@
 				"/usr/bin/wall",
 				"/usr/bin/wdctl",
 				"/usr/bin/whereis",
+				"/usr/bin/write",
 				"/usr/bin/x86_64",
-				"/usr/lib/libblkid.so.1",
-				"/usr/lib/libblkid.so.1.1.0",
-				"/usr/lib/libfdisk.so.1",
-				"/usr/lib/libfdisk.so.1.1.0",
-				"/usr/lib/libmount.so.1",
-				"/usr/lib/libmount.so.1.1.0",
-				"/usr/lib/libsmartcols.so.1",
-				"/usr/lib/libsmartcols.so.1.1.0",
-				"/usr/lib/libuuid.so.1",
-				"/usr/lib/libuuid.so.1.3.0",
-				"/usr/lib/python3.11/site-packages/libmount/__init__.py",
-				"/usr/lib/python3.11/site-packages/libmount/__pycache__/__init__.cpython-311.opt-1.pyc",
-				"/usr/lib/python3.11/site-packages/libmount/__pycache__/__init__.cpython-311.pyc",
-				"/usr/lib/python3.11/site-packages/libmount/pylibmount.so",
 				"/usr/lib/systemd/system/fstrim.service",
 				"/usr/lib/systemd/system/fstrim.timer",
-				"/usr/lib/tmpfiles.d",
 				"/usr/sbin/addpart",
 				"/usr/sbin/agetty",
 				"/usr/sbin/blkdiscard",
@@ -163,9 +640,11 @@
 				"/usr/sbin/swapoff",
 				"/usr/sbin/swapon",
 				"/usr/sbin/switch_root",
+				"/usr/sbin/tunelp",
 				"/usr/sbin/wipefs",
 				"/usr/sbin/zramctl",
 				"/usr/share/bash-completion/completions/addpart",
+				"/usr/share/bash-completion/completions/bits",
 				"/usr/share/bash-completion/completions/blkdiscard",
 				"/usr/share/bash-completion/completions/blkid",
 				"/usr/share/bash-completion/completions/blkzone",
@@ -175,12 +654,14 @@
 				"/usr/share/bash-completion/completions/chcpu",
 				"/usr/share/bash-completion/completions/chfn",
 				"/usr/share/bash-completion/completions/chmem",
+				"/usr/share/bash-completion/completions/choom",
 				"/usr/share/bash-completion/completions/chrt",
 				"/usr/share/bash-completion/completions/chsh",
 				"/usr/share/bash-completion/completions/col",
 				"/usr/share/bash-completion/completions/colcrt",
 				"/usr/share/bash-completion/completions/colrm",
 				"/usr/share/bash-completion/completions/column",
+				"/usr/share/bash-completion/completions/coresched",
 				"/usr/share/bash-completion/completions/ctrlaltdel",
 				"/usr/share/bash-completion/completions/delpart",
 				"/usr/share/bash-completion/completions/dmesg",
@@ -237,6 +718,7 @@
 				"/usr/share/bash-completion/completions/namei",
 				"/usr/share/bash-completion/completions/nsenter",
 				"/usr/share/bash-completion/completions/partx",
+				"/usr/share/bash-completion/completions/pg",
 				"/usr/share/bash-completion/completions/pipesz",
 				"/usr/share/bash-completion/completions/pivot_root",
 				"/usr/share/bash-completion/completions/prlimit",
@@ -261,11 +743,13 @@
 				"/usr/share/bash-completion/completions/swapoff",
 				"/usr/share/bash-completion/completions/swapon",
 				"/usr/share/bash-completion/completions/taskset",
+				"/usr/share/bash-completion/completions/tunelp",
 				"/usr/share/bash-completion/completions/uclampset",
 				"/usr/share/bash-completion/completions/ul",
 				"/usr/share/bash-completion/completions/umount",
 				"/usr/share/bash-completion/completions/unshare",
 				"/usr/share/bash-completion/completions/utmpdump",
+				"/usr/share/bash-completion/completions/uuidd",
 				"/usr/share/bash-completion/completions/uuidgen",
 				"/usr/share/bash-completion/completions/uuidparse",
 				"/usr/share/bash-completion/completions/waitpid",
@@ -273,6 +757,7 @@
 				"/usr/share/bash-completion/completions/wdctl",
 				"/usr/share/bash-completion/completions/whereis",
 				"/usr/share/bash-completion/completions/wipefs",
+				"/usr/share/bash-completion/completions/write",
 				"/usr/share/bash-completion/completions/zramctl",
 				"/usr/share/defaults/pam.d/chfn",
 				"/usr/share/defaults/pam.d/chsh",
@@ -313,6 +798,7 @@
 				"/usr/share/locale/vi/LC_MESSAGES/util-linux.mo",
 				"/usr/share/locale/zh_CN/LC_MESSAGES/util-linux.mo",
 				"/usr/share/locale/zh_TW/LC_MESSAGES/util-linux.mo",
+				"/usr/share/man/man1/bits.1",
 				"/usr/share/man/man1/cal.1",
 				"/usr/share/man/man1/chfn.1",
 				"/usr/share/man/man1/choom.1",
@@ -322,6 +808,7 @@
 				"/usr/share/man/man1/colcrt.1",
 				"/usr/share/man/man1/colrm.1",
 				"/usr/share/man/man1/column.1",
+				"/usr/share/man/man1/coresched.1",
 				"/usr/share/man/man1/dmesg.1",
 				"/usr/share/man/man1/eject.1",
 				"/usr/share/man/man1/enosys.1",
@@ -357,6 +844,7 @@
 				"/usr/share/man/man1/mountpoint.1",
 				"/usr/share/man/man1/namei.1",
 				"/usr/share/man/man1/nsenter.1",
+				"/usr/share/man/man1/pg.1",
 				"/usr/share/man/man1/pipesz.1",
 				"/usr/share/man/man1/prlimit.1",
 				"/usr/share/man/man1/rename.1",
@@ -380,6 +868,7 @@
 				"/usr/share/man/man1/waitpid.1",
 				"/usr/share/man/man1/wall.1",
 				"/usr/share/man/man1/whereis.1",
+				"/usr/share/man/man1/write.1",
 				"/usr/share/man/man5/adjtime_config.5",
 				"/usr/share/man/man5/fstab.5",
 				"/usr/share/man/man5/scols-filter.5",
@@ -405,16 +894,17 @@
 				"/usr/share/man/man8/fsfreeze.8",
 				"/usr/share/man/man8/fstrim.8",
 				"/usr/share/man/man8/hwclock.8",
+				"/usr/share/man/man8/i386.8",
 				"/usr/share/man/man8/isosize.8",
 				"/usr/share/man/man8/ldattach.8",
+				"/usr/share/man/man8/linux32.8",
+				"/usr/share/man/man8/linux64.8",
 				"/usr/share/man/man8/losetup.8",
 				"/usr/share/man/man8/lsblk.8",
 				"/usr/share/man/man8/lslocks.8",
 				"/usr/share/man/man8/lsns.8",
 				"/usr/share/man/man8/mkfs.8",
 				"/usr/share/man/man8/mkfs.bfs.8",
-				"/usr/share/man/man8/mkfs.cramfs.8",
-				"/usr/share/man/man8/mkfs.minix.8",
 				"/usr/share/man/man8/mkswap.8",
 				"/usr/share/man/man8/mount.8",
 				"/usr/share/man/man8/nologin.8",
@@ -430,13 +920,18 @@
 				"/usr/share/man/man8/swapoff.8",
 				"/usr/share/man/man8/swapon.8",
 				"/usr/share/man/man8/switch_root.8",
+				"/usr/share/man/man8/tunelp.8",
 				"/usr/share/man/man8/umount.8",
+				"/usr/share/man/man8/uname26.8",
+				"/usr/share/man/man8/uuidd.8",
 				"/usr/share/man/man8/wdctl.8",
 				"/usr/share/man/man8/wipefs.8",
+				"/usr/share/man/man8/x86_64.8",
 				"/usr/share/man/man8/zramctl.8"
 			],
 			"name": "util-linux",
 			"provides": [
+				"binary(bits)",
 				"binary(cal)",
 				"binary(chfn)",
 				"binary(chmem)",
@@ -447,6 +942,7 @@
 				"binary(colcrt)",
 				"binary(colrm)",
 				"binary(column)",
+				"binary(coresched)",
 				"binary(dmesg)",
 				"binary(eject)",
 				"binary(enosys)",
@@ -491,6 +987,7 @@
 				"binary(mountpoint)",
 				"binary(namei)",
 				"binary(nsenter)",
+				"binary(pg)",
 				"binary(pipesz)",
 				"binary(prlimit)",
 				"binary(rename)",
@@ -517,13 +1014,8 @@
 				"binary(wall)",
 				"binary(wdctl)",
 				"binary(whereis)",
+				"binary(write)",
 				"binary(x86_64)",
-				"soname(libblkid.so.1(x86_64))",
-				"soname(libfdisk.so.1(x86_64))",
-				"soname(libmount.so.1(x86_64))",
-				"soname(libsmartcols.so.1(x86_64))",
-				"soname(libuuid.so.1(x86_64))",
-				"soname(python3.11/site-packages/libmount/pylibmount.so(x86_64))",
 				"sysbinary(addpart)",
 				"sysbinary(agetty)",
 				"sysbinary(blkdiscard)",
@@ -563,23 +1055,35 @@
 				"sysbinary(swapoff)",
 				"sysbinary(swapon)",
 				"sysbinary(switch_root)",
+				"sysbinary(tunelp)",
 				"sysbinary(wipefs)",
 				"sysbinary(zramctl)"
 			]
 		},
 		"util-linux-32bit": {
 			"build-depends": [
+				"binary(asciidoctor)",
+				"binary(bison)",
+				"binary(flex)",
+				"binary(gettext)",
+				"libutempter-devel",
+				"pkgconfig(bash-completion)",
+				"pkgconfig(libcryptsetup)",
+				"pkgconfig(libmagic)",
 				"pkgconfig(python3)",
 				"pkgconfig32(libcap-ng)",
 				"pkgconfig32(libcrypt)",
+				"pkgconfig32(libeconf)",
 				"pkgconfig32(libsystemd)",
 				"pkgconfig32(ncursesw)",
 				"pkgconfig32(pam)",
+				"pkgconfig32(readline)",
 				"pkgconfig32(zlib)"
 			],
 			"depends": [
 				"soname(ld-linux.so.2(386))",
 				"soname(libc.so.6(386))",
+				"soname(libeconf.so.0(386))",
 				"util-linux"
 			],
 			"files": [
@@ -605,15 +1109,26 @@
 		},
 		"util-linux-32bit-devel": {
 			"build-depends": [
+				"binary(asciidoctor)",
+				"binary(bison)",
+				"binary(flex)",
+				"binary(gettext)",
+				"libutempter-devel",
+				"pkgconfig(bash-completion)",
+				"pkgconfig(libcryptsetup)",
+				"pkgconfig(libmagic)",
 				"pkgconfig(python3)",
 				"pkgconfig32(libcap-ng)",
 				"pkgconfig32(libcrypt)",
+				"pkgconfig32(libeconf)",
 				"pkgconfig32(libsystemd)",
 				"pkgconfig32(ncursesw)",
 				"pkgconfig32(pam)",
+				"pkgconfig32(readline)",
 				"pkgconfig32(zlib)"
 			],
 			"depends": [
+				"pkgconfig32(libeconf)",
 				"util-linux-32bit",
 				"util-linux-devel"
 			],
@@ -640,58 +1155,39 @@
 		},
 		"util-linux-devel": {
 			"build-depends": [
+				"binary(asciidoctor)",
+				"binary(bison)",
+				"binary(flex)",
+				"binary(gettext)",
+				"libutempter-devel",
+				"pkgconfig(bash-completion)",
+				"pkgconfig(libcryptsetup)",
+				"pkgconfig(libmagic)",
 				"pkgconfig(python3)",
 				"pkgconfig32(libcap-ng)",
 				"pkgconfig32(libcrypt)",
+				"pkgconfig32(libeconf)",
 				"pkgconfig32(libsystemd)",
 				"pkgconfig32(ncursesw)",
 				"pkgconfig32(pam)",
+				"pkgconfig32(readline)",
 				"pkgconfig32(zlib)"
 			],
 			"depends": [
+				"libblkid-devel",
+				"libfdisk-devel",
+				"libmount-devel",
+				"libsmartcols-devel",
+				"libuuid-devel",
 				"util-linux"
 			],
 			"files": [
-				"/usr/include/blkid/blkid.h",
-				"/usr/include/libfdisk/libfdisk.h",
-				"/usr/include/libmount/libmount.h",
-				"/usr/include/libsmartcols/libsmartcols.h",
-				"/usr/include/uuid/uuid.h",
-				"/usr/lib/libblkid.so",
-				"/usr/lib/libfdisk.so",
-				"/usr/lib/libmount.so",
-				"/usr/lib/libsmartcols.so",
-				"/usr/lib/libuuid.so",
-				"/usr/lib/pkgconfig/blkid.pc",
-				"/usr/lib/pkgconfig/fdisk.pc",
-				"/usr/lib/pkgconfig/mount.pc",
-				"/usr/lib/pkgconfig/smartcols.pc",
-				"/usr/lib/pkgconfig/uuid.pc",
-				"/usr/share/man/man3/libblkid.3",
-				"/usr/share/man/man3/uuid.3",
-				"/usr/share/man/man3/uuid_clear.3",
-				"/usr/share/man/man3/uuid_compare.3",
-				"/usr/share/man/man3/uuid_copy.3",
-				"/usr/share/man/man3/uuid_generate.3",
-				"/usr/share/man/man3/uuid_generate_random.3",
-				"/usr/share/man/man3/uuid_generate_time.3",
-				"/usr/share/man/man3/uuid_generate_time_safe.3",
-				"/usr/share/man/man3/uuid_is_null.3",
-				"/usr/share/man/man3/uuid_parse.3",
-				"/usr/share/man/man3/uuid_time.3",
-				"/usr/share/man/man3/uuid_unparse.3"
+				"/usr/share/doc/util-linux-devel/README"
 			],
-			"name": "util-linux-devel",
-			"provides": [
-				"pkgconfig(blkid)",
-				"pkgconfig(fdisk)",
-				"pkgconfig(mount)",
-				"pkgconfig(smartcols)",
-				"pkgconfig(uuid)"
-			]
+			"name": "util-linux-devel"
 		}
 	},
 	"source-name": "util-linux",
-	"source-release": "12",
-	"source-version": "2.40.4"
+	"source-release": "13",
+	"source-version": "2.41.1"
 }
