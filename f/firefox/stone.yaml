@@ -4,15 +4,15 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : firefox
-version     : 140.0.1
+version     : 140.0.4
 release     : 29
 homepage    : https://www.mozilla.org/
 upstreams   :
-    - https://ftp.mozilla.org/pub/firefox/releases/140.0.1/source/firefox-140.0.1.source.tar.xz:
-        hash: de848d56f5bd9f9bb9bbea17f425d1d887c1f4bb07d7e0be58c0e4a397ea86f0
+    - https://ftp.mozilla.org/pub/firefox/releases/140.0.4/source/firefox-140.0.4.source.tar.xz:
+        hash: 4027beb34f43ce4da8c0053a1d740ec6a2e766dc8b700216316aa7adcc59e377
         unpackdir: firefox
-    - https://sources.getsol.us/mozilla/firefox/firefox-140.0.1-langpacks.tar.zst:
-        hash: 5f26e8b0d1aa957d08fa626be8acba23836404c5d76d32f84ced5eceee9b2967
+    - https://sources.getsol.us/mozilla/firefox/firefox-140.0.4-langpacks.tar.zst:
+        hash: e8a704b2bb8b94eca2207a9bb17894df1990c2f2f942e12b36fdfaad4bb5dfbf
         unpackdir: firefox/langpacks
 summary     : Firefox web browser
 description : |
