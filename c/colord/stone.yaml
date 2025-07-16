@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : colord
-version     : 1.4.7
-release     : 5
+version     : 1.4.8
+release     : 6
 homepage    : https://www.freedesktop.org/software/colord/releases
 upstreams   :
-    - https://www.freedesktop.org/software/colord/releases/colord-1.4.7.tar.xz : de02d9910634ae159547585cec414e450f711c27235453b4f9b38a9f2361a653
+    - https://www.freedesktop.org/software/colord/releases/colord-1.4.8.tar.xz : 21500bd68975312a7f0f3ce6019d9f75f42aacaa75ca7115ec720b5445406896
 summary     : Making color management just work
 description : |
     colord is a system service that makes it easy to manage, install and generate color profiles to accurately color manage input and output devices. This functionality is implemented as a system activated daemon called colord. Being system activated means that it's only started when the user is using a text mode or graphical tool.
@@ -33,16 +33,17 @@ builddeps   :
     - pkgconfig(libsystemd)
     - pkgconfig(libudev)
     - pkgconfig(polkit-gobject-1)
-    # pkgconfig(sane-backends)
+    - pkgconfig(sane-backends)
     - pkgconfig(sqlite3)
     - pkgconfig(systemd)
     - pkgconfig(udev)
 setup       : |
-    %patch %(pkgdir)/Fix-writing-to-the-database-with-ProtectSystem-strict.patch
     %meson \
         -Ddocs=false \
         -Dman=false \
-        -Ddaemon_user=colord
+        -Ddaemon_user=colord \
+        -Dsane=true \
+        -Dvapi=true
 build       : |
     %meson_build
 install     : |
@@ -53,3 +54,14 @@ install     : |
     ln -s colord.group %(installroot)%(libdir)/userdb/124.group
     %install_file %(pkgdir)/colord.user %(installroot)%(libdir)/userdb/colord.user
     ln -s colord.user %(installroot)%(libdir)/userdb/124.user
+packages    :
+    - "%(name)-libs":
+        summary: Color daemon library
+        description: Color daemon library
+        paths:
+            - /usr/lib/libcolor*.so.*
+            - /usr/lib/girepository-1.0/Color*-1.0.typelib
+
+    - "%(name)-devel":
+        paths:
+            - /usr/share/vala/vapi/

@@ -21,6 +21,7 @@
 				"pkgconfig(libsystemd)",
 				"pkgconfig(libudev)",
 				"pkgconfig(polkit-gobject-1)",
+				"pkgconfig(sane-backends)",
 				"pkgconfig(sqlite3)",
 				"pkgconfig(systemd)",
 				"pkgconfig(udev)"
@@ -28,6 +29,10 @@
 			"depends": [
 				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
 				"soname(libc.so.6(x86_64))",
+				"soname(libcolord.so.2(x86_64))",
+				"soname(libcolordprivate.so.2(x86_64))",
+				"soname(libcolorhug.so.2(x86_64))",
+				"soname(libdbus-1.so.3(x86_64))",
 				"soname(libgio-2.0.so.0(x86_64))",
 				"soname(libglib-2.0.so.0(x86_64))",
 				"soname(libgmodule-2.0.so.0(x86_64))",
@@ -37,9 +42,9 @@
 				"soname(liblcms2.so.2(x86_64))",
 				"soname(libm.so.6(x86_64))",
 				"soname(libpolkit-gobject-1.so.0(x86_64))",
+				"soname(libsane.so.1(x86_64))",
 				"soname(libsqlite3.so.0(x86_64))",
-				"soname(libsystemd.so.0(x86_64))",
-				"soname(libudev.so.1(x86_64))"
+				"soname(libsystemd.so.0(x86_64))"
 			],
 			"files": [
 				"/usr/bin/cd-create-profile",
@@ -48,6 +53,7 @@
 				"/usr/bin/cd-it8",
 				"/usr/bin/colormgr",
 				"/usr/lib/colord-plugins/libcolord_sensor_camera.so",
+				"/usr/lib/colord-plugins/libcolord_sensor_sane.so",
 				"/usr/lib/colord-plugins/libcolord_sensor_scanner.so",
 				"/usr/lib/colord-sensors/libcolord_sensor_argyll.so",
 				"/usr/lib/colord-sensors/libcolord_sensor_colorhug.so",
@@ -55,17 +61,11 @@
 				"/usr/lib/colord-sensors/libcolord_sensor_dummy.so",
 				"/usr/lib/colord-sensors/libcolord_sensor_huey.so",
 				"/usr/lib/colord/colord",
+				"/usr/lib/colord/colord-sane",
 				"/usr/lib/colord/colord-session",
-				"/usr/lib/girepository-1.0/Colord-1.0.typelib",
-				"/usr/lib/girepository-1.0/Colorhug-1.0.typelib",
-				"/usr/lib/libcolord.so.2",
-				"/usr/lib/libcolord.so.2.0.5",
-				"/usr/lib/libcolordprivate.so.2",
-				"/usr/lib/libcolordprivate.so.2.0.5",
-				"/usr/lib/libcolorhug.so.2",
-				"/usr/lib/libcolorhug.so.2.0.5",
 				"/usr/lib/systemd/system/colord.service",
 				"/usr/lib/systemd/user/colord-session.service",
+				"/usr/lib/sysusers.d/colord-sysusers.conf",
 				"/usr/lib/tmpfiles.d/colord.conf",
 				"/usr/lib/udev/rules.d/69-cd-sensors.rules",
 				"/usr/lib/udev/rules.d/95-cd-devices.rules",
@@ -156,7 +156,10 @@
 				"/usr/share/dbus-1/system-services/org.freedesktop.ColorManager.service",
 				"/usr/share/dbus-1/system.d/org.freedesktop.ColorManager.conf",
 				"/usr/share/glib-2.0/schemas/org.freedesktop.ColorHelper.gschema.xml",
+				"/usr/share/locale/ar/LC_MESSAGES/colord.mo",
 				"/usr/share/locale/as/LC_MESSAGES/colord.mo",
+				"/usr/share/locale/be/LC_MESSAGES/colord.mo",
+				"/usr/share/locale/bg/LC_MESSAGES/colord.mo",
 				"/usr/share/locale/bn_IN/LC_MESSAGES/colord.mo",
 				"/usr/share/locale/ca/LC_MESSAGES/colord.mo",
 				"/usr/share/locale/cs/LC_MESSAGES/colord.mo",
@@ -211,6 +214,7 @@
 				"/usr/share/locale/uk/LC_MESSAGES/colord.mo",
 				"/usr/share/locale/zh_CN/LC_MESSAGES/colord.mo",
 				"/usr/share/locale/zh_TW/LC_MESSAGES/colord.mo",
+				"/usr/share/metainfo/org.freedesktop.colord.metainfo.xml",
 				"/usr/share/polkit-1/actions/org.freedesktop.color.policy"
 			],
 			"name": "colord",
@@ -221,15 +225,13 @@
 				"binary(cd-it8)",
 				"binary(colormgr)",
 				"soname(colord-plugins/libcolord_sensor_camera.so(x86_64))",
+				"soname(colord-plugins/libcolord_sensor_sane.so(x86_64))",
 				"soname(colord-plugins/libcolord_sensor_scanner.so(x86_64))",
 				"soname(colord-sensors/libcolord_sensor_argyll.so(x86_64))",
 				"soname(colord-sensors/libcolord_sensor_colorhug.so(x86_64))",
 				"soname(colord-sensors/libcolord_sensor_dtp94.so(x86_64))",
 				"soname(colord-sensors/libcolord_sensor_dummy.so(x86_64))",
-				"soname(colord-sensors/libcolord_sensor_huey.so(x86_64))",
-				"soname(libcolord.so.2(x86_64))",
-				"soname(libcolordprivate.so.2(x86_64))",
-				"soname(libcolorhug.so.2(x86_64))"
+				"soname(colord-sensors/libcolord_sensor_huey.so(x86_64))"
 			]
 		},
 		"colord-devel": {
@@ -251,6 +253,7 @@
 				"pkgconfig(libsystemd)",
 				"pkgconfig(libudev)",
 				"pkgconfig(polkit-gobject-1)",
+				"pkgconfig(sane-backends)",
 				"pkgconfig(sqlite3)",
 				"pkgconfig(systemd)",
 				"pkgconfig(udev)"
@@ -305,16 +308,69 @@
 				"/usr/lib/pkgconfig/colord.pc",
 				"/usr/lib/pkgconfig/colorhug.pc",
 				"/usr/share/gir-1.0/Colord-1.0.gir",
-				"/usr/share/gir-1.0/Colorhug-1.0.gir"
+				"/usr/share/gir-1.0/Colorhug-1.0.gir",
+				"/usr/share/vala/vapi/colord.deps",
+				"/usr/share/vala/vapi/colord.vapi"
 			],
 			"name": "colord-devel",
 			"provides": [
 				"pkgconfig(colord)",
 				"pkgconfig(colorhug)"
 			]
+		},
+		"colord-libs": {
+			"build-depends": [
+				"binary(msgfmt)",
+				"binary(vapigen)",
+				"pkgconfig(bash-completion)",
+				"pkgconfig(colord-gtk)",
+				"pkgconfig(dbus-1)",
+				"pkgconfig(gio-2.0)",
+				"pkgconfig(gio-unix-2.0)",
+				"pkgconfig(glib-2.0)",
+				"pkgconfig(gmodule-2.0)",
+				"pkgconfig(gnome-desktop-3.0)",
+				"pkgconfig(gobject-introspection-1.0)",
+				"pkgconfig(gudev-1.0)",
+				"pkgconfig(gusb)",
+				"pkgconfig(lcms2)",
+				"pkgconfig(libsystemd)",
+				"pkgconfig(libudev)",
+				"pkgconfig(polkit-gobject-1)",
+				"pkgconfig(sane-backends)",
+				"pkgconfig(sqlite3)",
+				"pkgconfig(systemd)",
+				"pkgconfig(udev)"
+			],
+			"depends": [
+				"soname(libc.so.6(x86_64))",
+				"soname(libgio-2.0.so.0(x86_64))",
+				"soname(libglib-2.0.so.0(x86_64))",
+				"soname(libgobject-2.0.so.0(x86_64))",
+				"soname(libgusb.so.2(x86_64))",
+				"soname(liblcms2.so.2(x86_64))",
+				"soname(libm.so.6(x86_64))",
+				"soname(libudev.so.1(x86_64))"
+			],
+			"files": [
+				"/usr/lib/girepository-1.0/Colord-1.0.typelib",
+				"/usr/lib/girepository-1.0/Colorhug-1.0.typelib",
+				"/usr/lib/libcolord.so.2",
+				"/usr/lib/libcolord.so.2.0.5",
+				"/usr/lib/libcolordprivate.so.2",
+				"/usr/lib/libcolordprivate.so.2.0.5",
+				"/usr/lib/libcolorhug.so.2",
+				"/usr/lib/libcolorhug.so.2.0.5"
+			],
+			"name": "colord-libs",
+			"provides": [
+				"soname(libcolord.so.2(x86_64))",
+				"soname(libcolordprivate.so.2(x86_64))",
+				"soname(libcolorhug.so.2(x86_64))"
+			]
 		}
 	},
 	"source-name": "colord",
-	"source-release": "5",
-	"source-version": "1.4.7"
+	"source-release": "6",
+	"source-version": "1.4.8"
 }
