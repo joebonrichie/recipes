@@ -16,14 +16,19 @@
 			"depends": [
 				"ark",
 				"bluedevil",
+				"breeze-gtk-theme",
 				"dolphin",
+				"drkonqi",
+				"flatpak-kcm",
 				"kaccounts-providers",
+				"kcalc",
 				"kinfocenter",
 				"konsole",
 				"krdp",
 				"kscreen",
 				"kwallet-pam",
 				"kwrite",
+				"milou",
 				"pkgset-aeryn-base-desktop",
 				"plasma-desktop",
 				"plasma-disks",
@@ -54,6 +59,6 @@
 		}
 	},
 	"source-name": "pkgset-aeryn-plasma",
-	"source-release": "6",
+	"source-release": "7",
 	"source-version": "2025.06"
 }

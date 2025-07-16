@@ -5,7 +5,7 @@
 #
 name        : pkgset-aeryn-plasma
 version     : "2025.06" # I guess let's just match the OS version for now
-release     : 6
+release     : 7
 homepage    : https://aerynos.com/
 # No upstreams!
 summary     : pkgset virtual packages - Plasma/KDE Desktop
@@ -25,11 +25,16 @@ packages    :
         rundeps:
             # Plasma bits
             - plasma-desktop
+
             - bluedevil
+            - breeze-gtk-theme
+            - drkonqi
+            - flatpak-kcm
             - kinfocenter
             - krdp
             - kscreen
             - kwallet-pam
+            - milou
             - plasma-disks
             - plasma-nm
             - plasma-pa
@@ -41,6 +46,7 @@ packages    :
             # Basic apps (Gear)
             - ark
             - dolphin
+            - kcalc
             - konsole
             - kwrite
 
