@@ -147,7 +147,6 @@
 				"/usr/share/applications/nvidia-settings.desktop",
 				"/usr/share/dbus-1/system.d/nvidia-dbus.conf",
 				"/usr/share/egl/egl_external_platform.d/10_nvidia_wayland.json",
-				"/usr/share/egl/egl_external_platform.d/15_nvidia_gbm.json",
 				"/usr/share/egl/egl_external_platform.d/20_nvidia_xcb.json",
 				"/usr/share/egl/egl_external_platform.d/20_nvidia_xlib.json",
 				"/usr/share/glvnd/egl_vendor.d/10_nvidia.json",
@@ -315,6 +314,6 @@
 		}
 	},
 	"source-name": "nvidia-graphics-driver",
-	"source-release": "26",
+	"source-release": "27",
 	"source-version": "570.169"
 }
