@@ -4,6 +4,9 @@
 	"packages": {
 		"pinentry": {
 			"build-depends": [
+				"cmake(KF6GuiAddons)",
+				"cmake(KF6WindowSystem)",
+				"pkgconfig(Qt6Core)",
 				"pkgconfig(gcr-4)",
 				"pkgconfig(libassuan)",
 				"pkgconfig(libsecret-1)",
@@ -12,7 +15,13 @@
 			],
 			"depends": [
 				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
+				"soname(libKF6GuiAddons.so.6(x86_64))",
+				"soname(libKF6WindowSystem.so.6(x86_64))",
+				"soname(libQt6Core.so.6(x86_64))",
+				"soname(libQt6Gui.so.6(x86_64))",
+				"soname(libQt6Widgets.so.6(x86_64))",
 				"soname(libassuan.so.9(x86_64))",
+				"soname(libc++.so.1(x86_64))",
 				"soname(libc.so.6(x86_64))",
 				"soname(libgcr-4.so.4(x86_64))",
 				"soname(libgio-2.0.so.0(x86_64))",
@@ -20,21 +29,30 @@
 				"soname(libgobject-2.0.so.0(x86_64))",
 				"soname(libgpg-error.so.0(x86_64))",
 				"soname(libncursesw.so.6(x86_64))",
-				"soname(libsecret-1.so.0(x86_64))"
+				"soname(libsecret-1.so.0(x86_64))",
+				"soname(libunwind.so.1(x86_64))"
 			],
 			"files": [
 				"/usr/bin/pinentry",
+				"/usr/bin/pinentry-curses",
 				"/usr/bin/pinentry-gnome3",
-				"/usr/share/info/pinentry.info"
+				"/usr/bin/pinentry-qt",
+				"/usr/bin/pinentry-tty",
+				"/usr/share/applications/org.gnupg.pinentry-qt.desktop",
+				"/usr/share/info/pinentry.info",
+				"/usr/share/pixmaps/pinentry.png"
 			],
 			"name": "pinentry",
 			"provides": [
 				"binary(pinentry)",
-				"binary(pinentry-gnome3)"
+				"binary(pinentry-curses)",
+				"binary(pinentry-gnome3)",
+				"binary(pinentry-qt)",
+				"binary(pinentry-tty)"
 			]
 		}
 	},
 	"source-name": "pinentry",
-	"source-release": "7",
+	"source-release": "8",
 	"source-version": "1.3.1"
 }
