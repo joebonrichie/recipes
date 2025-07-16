@@ -8,14 +8,14 @@ Subject: [PATCH] Add read-only for stone mimetype
  1 file changed, 1 insertion(+)
 
 diff --git a/plugins/libarchive/kerfuffle_libarchive_readonly.json.cmake b/plugins/libarchive/kerfuffle_libarchive_readonly.json.cmake
-index cdacad7f..5b450ada 100644
+index cdacad7f..3d8048da 100644
 --- a/plugins/libarchive/kerfuffle_libarchive_readonly.json.cmake
 +++ b/plugins/libarchive/kerfuffle_libarchive_readonly.json.cmake
 @@ -51,6 +51,7 @@
              "application/x-sv4cpio",
              "application/x-sv4crc",
              "application/x-rpm",
-+            "application/x-stone-archive",
++            "application/x-stone",
              "application/x-compress",
              "application/gzip",
              "application/x-bzip",
