@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : gstreamer
-version     : 1.26.3
-release     : 18
+version     : 1.26.4
+release     : 19
 homepage    : https://gstreamer.freedesktop.org/
 upstreams   :
-    - https://gitlab.freedesktop.org/gstreamer/gstreamer/-/archive/1.26.3/gstreamer-1.26.3.tar.gz : aeee898f3b123ceec1883d06b63adbc85df1b067414590f5938fcf8e3be891f2
+    - https://gitlab.freedesktop.org/gstreamer/gstreamer/-/archive/1.26.4/gstreamer-1.26.4.tar.gz : c26ede6f5188f35f0d7068226ff8d77f6a5b0cca64f507b265a5eeaed8f00741
 summary     : GStreamer multimedia framework
 description : |
     GStreamer can bridge to other multimedia frameworks in order to reuse existing components (e.g. codecs) and use platform input/output mechanisms.
@@ -39,6 +39,7 @@ builddeps   :
     - pkgconfig(dvdnav)
     - pkgconfig(dvdread)
     - pkgconfig(fdk-aac)
+    - pkgconfig(flac)
     - pkgconfig(gbm)
     - pkgconfig(gl)
     - pkgconfig(glib-2.0)
@@ -106,7 +107,6 @@ builddeps   :
 # good:
 # - libv4l2
 # - aalib
-# - flac
 # - caca
 # - libdv
 # - libmpg123
@@ -697,6 +697,7 @@ packages    :
             - /usr/lib/gstreamer-1.0/libgstdtmf.so
             - /usr/lib/gstreamer-1.0/libgsteffectv.so
             - /usr/lib/gstreamer-1.0/libgstequalizer.so
+            - /usr/lib/gstreamer-1.0/libgstflac.so
             - /usr/lib/gstreamer-1.0/libgstflv.so
             - /usr/lib/gstreamer-1.0/libgstflxdec.so
             - /usr/lib/gstreamer-1.0/libgstgdkpixbuf.so
