@@ -5,7 +5,7 @@
 #
 name        : kf6-krunner
 version     : 6.16.0
-release     : 2
+release     : 3
 upstreams   :
     - https://download.kde.org/stable/frameworks/6.16/krunner-6.16.0.tar.xz : f311741131552d14875880707d70402028bfb000d0d96f8073464311fcab5dbc
 homepage    : https://community.kde.org/Frameworks
@@ -28,6 +28,8 @@ install     : |
     %cmake_install
 packages    :
     - "%(name)-devel":
+        rundeps:
+            - cmake(KF6CoreAddons)
         paths:
             - /usr/share/dbus-1/interfaces/
             - /usr/share/kdevappwizard/

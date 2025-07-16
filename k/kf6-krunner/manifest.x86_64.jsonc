@@ -42,6 +42,7 @@
 				"cmake(KF6ItemModels)"
 			],
 			"depends": [
+				"cmake(KF6CoreAddons)",
 				"kf6-krunner"
 			],
 			"files": [
@@ -80,6 +81,6 @@
 		}
 	},
 	"source-name": "kf6-krunner",
-	"source-release": "2",
+	"source-release": "3",
 	"source-version": "6.16.0"
 }
