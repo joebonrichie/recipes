@@ -4,10 +4,10 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : libbpf
-version     : 1.5.1
-release     : 3
+version     : 1.6.0
+release     : 4
 upstreams   :
-    - https://github.com/libbpf/libbpf/archive/refs/tags/v1.5.1.tar.gz : e5ff89750e48ab5ecdfc02a759aa0dacd1e7980e98e16bdb4bfa8ff0b3b4b98f
+    - https://github.com/libbpf/libbpf/archive/refs/tags/v1.6.0.tar.gz : d360ed1541fa4fc036132e7732fdf1e4569c187d3e4a4ddc07fd9dbfd121c4eb
 homepage    : https://github.com/libbpf/libbpf
 license     :
     - BSD-2-Clause
@@ -17,13 +17,13 @@ description : |
     Library for loading eBPF programs and reading and manipulating eBPF objects from user-space
 builddeps   :
     - pkgconfig(libelf)
-setup       : |
-    # Fixes an issue with Kernel 6.15+ where module sizes are significantly increased
-    %patch %(pkgdir)/kernel-6.15.patch
 build       : |
     %make -C src LIBSUBDIR=lib
 install     : |
     %make_install -C src install_headers LIBSUBDIR=lib
-
-    rm -v %(installroot)/usr/lib/libbpf.a
-
+packages    :
+    - "%(name)-staticlib":
+        rundeps:
+            - "%(name)-devel"
+        paths:
+            - /usr/lib/lib*.a

@@ -7,13 +7,14 @@
 				"pkgconfig(libelf)"
 			],
 			"depends": [
+				"soname(ld-linux-x86-64.so.2(x86_64))",
 				"soname(libc.so.6(x86_64))",
 				"soname(libelf.so.1(x86_64))",
 				"soname(libz.so.1(x86_64))"
 			],
 			"files": [
 				"/usr/lib/libbpf.so.1",
-				"/usr/lib/libbpf.so.1.5.1"
+				"/usr/lib/libbpf.so.1.6.0"
 			],
 			"name": "libbpf",
 			"provides": [
@@ -50,9 +51,21 @@
 			"provides": [
 				"pkgconfig(libbpf)"
 			]
+		},
+		"libbpf-staticlib": {
+			"build-depends": [
+				"pkgconfig(libelf)"
+			],
+			"depends": [
+				"libbpf-devel"
+			],
+			"files": [
+				"/usr/lib/libbpf.a"
+			],
+			"name": "libbpf-staticlib"
 		}
 	},
 	"source-name": "libbpf",
-	"source-release": "3",
-	"source-version": "1.5.1"
+	"source-release": "4",
+	"source-version": "1.6.0"
 }
