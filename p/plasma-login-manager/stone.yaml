@@ -1,0 +1,53 @@
+#
+# SPDX-FileCopyrightText: © 2020-2024 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : plasma-login-manager
+version     : 0.0.1+git.0ae04d54
+release     : 1
+homepage    : https://github.com/sddm/sddm
+upstreams   :
+    - git|https://invent.kde.org/plasma/plasma-login-manager.git : 0ae04d540a342ee6806034e2a9e68d9a25deab74
+summary     : Display manager for KDE Plasam
+description : |
+    Plasma Login provides a display manager for KDE Plasma, forked from SDDM and with a new frontend providing a greeter, wallpaper plugin integration and System Settings module (KCM).
+license     : GPL-2.0-only
+builddeps   :
+    # Temporary, boulder doesn't handle build ordering resolution correctly when builddeps are added by macros, so add ECM manually
+    - cmake(ECM)
+    - cmake(Qt6Qml)
+    - cmake(KF6Auth)
+    - cmake(KF6Config)
+    - cmake(KF6DBusAddons)
+    - cmake(KF6I18n)
+    - cmake(KF6KCMUtils)
+    - cmake(KF6KIO)
+    - cmake(KF6Package)
+    - cmake(KF6WindowSystem)
+    - cmake(LayerShellQt)
+    - cmake(LibKWorkspace)
+    - cmake(PlasmaQuick)
+    - cmake(Qt6CorePrivate)
+    - pkgconfig(pam)
+    - pkgconfig(systemd)
+rundeps     :
+    # Temporary workaround until we have some kind of virtual package that defines the base system
+    - linux-pam
+    - qt6-wayland
+setup       : |
+    %cmake_kf6 \
+        -DUID_MAX=60513 \
+        -DUID_MIN=1000
+build       : |
+    %cmake_build
+install     : |
+    %cmake_install
+
+    %install_file %(pkgdir)/plasmalogin.group %(installroot)%(libdir)/userdb/plasmalogin.group
+    ln -s plasmalogin.group %(installroot)%(libdir)/userdb/24.group
+    %install_file %(pkgdir)/plasmalogin.user %(installroot)%(libdir)/userdb/plasmalogin.user
+    ln -s plasmalogin.user %(installroot)%(libdir)/userdb/24.user
+
+    # Install our PAM configs
+    %install_file %(pkgdir)/pam.d/* -t %(installroot)%(vendordir)/pam.d
