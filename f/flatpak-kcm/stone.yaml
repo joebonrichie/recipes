@@ -1,0 +1,35 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : flatpak-kcm
+version     : 6.4.3
+release     : 1
+upstreams   :
+    - https://download.kde.org/stable/plasma/6.4.3/flatpak-kcm-6.4.3.tar.xz : 2b854759fd1125e47061cdad3aa164e3fec8bc101d4b6d3d1fa2d490774d2139
+homepage    : https://kde.org/plasma-desktop/
+license     : GPL-2.0-or-later
+summary     : Flatpak Permissions Management KCM
+description : |
+    Flatpak Permissions Management KCM
+builddeps   :
+    # Temporary, boulder doesn't handle build ordering resolution correctly when builddeps are added by macros, so add ECM manually
+    - cmake(ECM)
+    - cmake(KF6Config)
+    - cmake(KF6CoreAddons)
+    - cmake(KF6I18n)
+    - cmake(KF6ItemModels)
+    - cmake(KF6KCMUtils)
+    - cmake(Qt6Quick)
+    - cmake(Qt6Svg)
+    - pkgconfig(flatpak)
+tuning      :
+    - lto: full
+    - optimize: speed
+setup       : |
+    %cmake_kf6
+build       : |
+    %cmake_build
+install     : |
+    %cmake_install
