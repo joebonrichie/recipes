@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : plasma-keyboard
-version     : "1.0"
-release     : 1
+version     : "0.0.1+git.e13754f2"
+release     : 2
 upstreams   :
     # TODO: Fill out the monitoring.yaml with the correct values once this is actually released
-    - git|https://invent.kde.org/plasma/plasma-keyboard : 93cfff2b712a74c6ee678fd2e033d2ca9d4a6a0d
+    - git|https://invent.kde.org/plasma/plasma-keyboard : e13754f23c22e115ad45e0fcc86b3b06b71b01ef
 homepage    : https://kde.org/plasma-desktop/
 license     : GPL-2.0-or-later
 summary     : Virtual keyboard for Plasma
@@ -17,8 +17,10 @@ description : |
 builddeps   :
     # Temporary, boulder doesn't handle build ordering resolution correctly when builddeps are added by macros, so add ECM manually
     - cmake(ECM)
+    - cmake(KF6Config)
     - cmake(KF6CoreAddons)
     - cmake(KF6I18n)
+    - cmake(KF6KCMUtils)
     - cmake(Qt6CorePrivate)
     - cmake(Qt6Qml)
     - cmake(Qt6VirtualKeyboard)
@@ -28,9 +30,6 @@ tuning      :
     - lto: full
     - optimize: speed
 setup       : |
-    %patch %(pkgdir)/14.patch
-    %patch %(pkgdir)/15.patch
-
     %cmake_kf6
 build       : |
     %cmake_build

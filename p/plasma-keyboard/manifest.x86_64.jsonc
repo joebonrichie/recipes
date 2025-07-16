@@ -5,8 +5,10 @@
 		"plasma-keyboard": {
 			"build-depends": [
 				"cmake(ECM)",
+				"cmake(KF6Config)",
 				"cmake(KF6CoreAddons)",
 				"cmake(KF6I18n)",
+				"cmake(KF6KCMUtils)",
 				"cmake(Qt6CorePrivate)",
 				"cmake(Qt6Qml)",
 				"cmake(Qt6VirtualKeyboard)",
@@ -15,9 +17,14 @@
 			],
 			"depends": [
 				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
+				"soname(libKF6ConfigCore.so.6(x86_64))",
+				"soname(libKF6ConfigGui.so.6(x86_64))",
 				"soname(libKF6CoreAddons.so.6(x86_64))",
 				"soname(libKF6I18n.so.6(x86_64))",
+				"soname(libKF6KCMUtilsCore.so.6(x86_64))",
+				"soname(libKF6KCMUtilsQuick.so.6(x86_64))",
 				"soname(libQt6Core.so.6(x86_64))",
+				"soname(libQt6DBus.so.6(x86_64))",
 				"soname(libQt6Gui.so.6(x86_64))",
 				"soname(libQt6Qml.so.6(x86_64))",
 				"soname(libQt6Quick.so.6(x86_64))",
@@ -30,22 +37,38 @@
 			],
 			"files": [
 				"/usr/bin/plasma-keyboard",
+				"/usr/lib/qt6/plugins/plasma/kcms/systemsettings/kcm_plasmakeyboard.so",
+				"/usr/lib/qt6/qml/QtQuick/VirtualKeyboard/Styles/Breeze/BreezeKeyPanel.qml",
+				"/usr/lib/qt6/qml/QtQuick/VirtualKeyboard/Styles/Breeze/BreezeKeyPanel.qmlc",
 				"/usr/lib/qt6/qml/QtQuick/VirtualKeyboard/Styles/Breeze/breezestyle.qmltypes",
 				"/usr/lib/qt6/qml/QtQuick/VirtualKeyboard/Styles/Breeze/kde-qmlmodule.version",
 				"/usr/lib/qt6/qml/QtQuick/VirtualKeyboard/Styles/Breeze/libbreezestyle.so",
 				"/usr/lib/qt6/qml/QtQuick/VirtualKeyboard/Styles/Breeze/qmldir",
 				"/usr/lib/qt6/qml/QtQuick/VirtualKeyboard/Styles/Breeze/style.qml",
 				"/usr/lib/qt6/qml/QtQuick/VirtualKeyboard/Styles/Breeze/style.qmlc",
-				"/usr/share/applications/org.kde.plasma.keyboard.desktop"
+				"/usr/share/applications/kcm_plasmakeyboard.desktop",
+				"/usr/share/applications/org.kde.plasma.keyboard.desktop",
+				"/usr/share/locale/ca/LC_MESSAGES/kcm_plasmakeyboard.mo",
+				"/usr/share/locale/ca@valencia/LC_MESSAGES/kcm_plasmakeyboard.mo",
+				"/usr/share/locale/es/LC_MESSAGES/kcm_plasmakeyboard.mo",
+				"/usr/share/locale/eu/LC_MESSAGES/kcm_plasmakeyboard.mo",
+				"/usr/share/locale/he/LC_MESSAGES/kcm_plasmakeyboard.mo",
+				"/usr/share/locale/ka/LC_MESSAGES/kcm_plasmakeyboard.mo",
+				"/usr/share/locale/nl/LC_MESSAGES/kcm_plasmakeyboard.mo",
+				"/usr/share/locale/sl/LC_MESSAGES/kcm_plasmakeyboard.mo",
+				"/usr/share/locale/tr/LC_MESSAGES/kcm_plasmakeyboard.mo",
+				"/usr/share/locale/uk/LC_MESSAGES/kcm_plasmakeyboard.mo",
+				"/usr/share/locale/zh_CN/LC_MESSAGES/kcm_plasmakeyboard.mo"
 			],
 			"name": "plasma-keyboard",
 			"provides": [
 				"binary(plasma-keyboard)",
+				"soname(qt6/plugins/plasma/kcms/systemsettings/kcm_plasmakeyboard.so(x86_64))",
 				"soname(qt6/qml/QtQuick/VirtualKeyboard/Styles/Breeze/libbreezestyle.so(x86_64))"
 			]
 		}
 	},
 	"source-name": "plasma-keyboard",
-	"source-release": "1",
-	"source-version": "1.0"
+	"source-release": "2",
+	"source-version": "0.0.1+git.e13754f2"
 }
