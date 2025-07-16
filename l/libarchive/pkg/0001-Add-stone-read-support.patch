@@ -19,10 +19,10 @@ Subject: [PATCH] Add stone read support
  create mode 100644 libarchive/archive_read_support_format_stone.c
 
 diff --git a/CMakeLists.txt b/CMakeLists.txt
-index 2c2f7100..cdae102d 100644
+index 4c1f8770..049c63a0 100644
 --- a/CMakeLists.txt
 +++ b/CMakeLists.txt
-@@ -228,6 +228,7 @@ OPTION(ENABLE_EXPAT "Enable the use of the system EXPAT library if found" ON)
+@@ -232,6 +232,7 @@ OPTION(ENABLE_WIN32_XMLLITE "Enable the use of the Windows XmlLite library if fo
  OPTION(ENABLE_PCREPOSIX "Enable the use of the system PCREPOSIX library if found" ON)
  OPTION(ENABLE_PCRE2POSIX "Enable the use of the system PCRE2POSIX library if found" ON)
  OPTION(ENABLE_LIBGCC "Enable the use of the system LibGCC library if found" ON)
@@ -30,7 +30,7 @@ index 2c2f7100..cdae102d 100644
  # CNG is used for encrypt/decrypt Zip archives on Windows.
  OPTION(ENABLE_CNG "Enable the use of CNG(Crypto Next Generation)" ON)
  
-@@ -664,6 +665,39 @@ IF(ZSTD_FOUND)
+@@ -677,6 +678,39 @@ IF(ZSTD_FOUND)
  ENDIF(ZSTD_FOUND)
  MARK_AS_ADVANCED(CLEAR ZSTD_INCLUDE_DIR)
  MARK_AS_ADVANCED(CLEAR ZSTD_LIBRARY)
@@ -68,13 +68,13 @@ index 2c2f7100..cdae102d 100644
 +MARK_AS_ADVANCED(CLEAR LIBSTONE_INCLUDE_DIR)
 +MARK_AS_ADVANCED(CLEAR LIBSTONE_LIBRARY)
  
- 
  #
+ # Check headers
 diff --git a/Makefile.am b/Makefile.am
-index 4fafc41c..db6387fa 100644
+index 05232712..e0c2f066 100644
 --- a/Makefile.am
 +++ b/Makefile.am
-@@ -193,6 +193,7 @@ libarchive_la_SOURCES= \
+@@ -192,6 +192,7 @@ libarchive_la_SOURCES= \
  	libarchive/archive_read_support_format_warc.c \
  	libarchive/archive_read_support_format_xar.c \
  	libarchive/archive_read_support_format_zip.c \
@@ -83,12 +83,12 @@ index 4fafc41c..db6387fa 100644
  	libarchive/archive_string.h \
  	libarchive/archive_string_composition.h \
 diff --git a/build/cmake/config.h.in b/build/cmake/config.h.in
-index 1f6b0c21..4199c994 100644
+index 692d4516..0e461fe1 100644
 --- a/build/cmake/config.h.in
 +++ b/build/cmake/config.h.in
-@@ -774,6 +774,9 @@ typedef uint64_t uintmax_t;
- /* Define to 1 if you have the ZSTD_compressStream function. */
- #cmakedefine HAVE_ZSTD_compressStream 1
+@@ -783,6 +783,9 @@ typedef uint64_t uintmax_t;
+ /* Define to 1 if you have the ZSTD_minCLevel function. */
+ #cmakedefine HAVE_ZSTD_minCLevel 1
  
 +/* Define to 1 if you have the `stone' library (-lstone). */
 +#cmakedefine HAVE_LIBSTONE 1
@@ -96,7 +96,7 @@ index 1f6b0c21..4199c994 100644
  /* Define to 1 if you have the <limits.h> header file. */
  #cmakedefine HAVE_LIMITS_H 1
  
-@@ -1271,6 +1274,9 @@ typedef uint64_t uintmax_t;
+@@ -1291,6 +1294,9 @@ typedef uint64_t uintmax_t;
  /* Define to 1 if you have the <zstd.h> header file. */
  #cmakedefine HAVE_ZSTD_H 1
  
@@ -107,11 +107,11 @@ index 1f6b0c21..4199c994 100644
  #cmakedefine HAVE_CTIME_S 1
  
 diff --git a/configure.ac b/configure.ac
-index 5532afbe..9250c511 100644
+index d8d85eda..1134e4ed 100644
 --- a/configure.ac
 +++ b/configure.ac
-@@ -485,6 +485,14 @@ if test "x$with_zstd" != "xno"; then
-     AC_DEFINE([HAVE_ZSTD_compressStream], [1], [Define to 1 if you have the `zstd' library (-lzstd) with compression support.]))
+@@ -500,6 +500,14 @@ if test "x$with_zstd" != "xno"; then
+     AC_DEFINE([HAVE_ZSTD_minCLevel], [1], [Define to 1 if you have a `zstd' library version with ZSTD_minCLevel().]))
  fi
  
 +AC_ARG_WITH([libstone],
@@ -126,10 +126,10 @@ index 5532afbe..9250c511 100644
    AS_HELP_STRING([--without-lzma], [Don't build support for xz through lzma]))
  
 diff --git a/libarchive/CMakeLists.txt b/libarchive/CMakeLists.txt
-index dd0b2808..c19831a8 100644
+index fd997db4..dd7ed3e1 100644
 --- a/libarchive/CMakeLists.txt
 +++ b/libarchive/CMakeLists.txt
-@@ -113,6 +113,7 @@ SET(libarchive_SOURCES
+@@ -112,6 +112,7 @@ SET(libarchive_SOURCES
    archive_read_support_format_warc.c
    archive_read_support_format_xar.c
    archive_read_support_format_zip.c
@@ -138,10 +138,10 @@ index dd0b2808..c19831a8 100644
    archive_string.h
    archive_string_composition.h
 diff --git a/libarchive/archive.h b/libarchive/archive.h
-index ddbf66c1..9dea6349 100644
+index 002190a2..3d3bce67 100644
 --- a/libarchive/archive.h
 +++ b/libarchive/archive.h
-@@ -344,6 +344,7 @@ typedef const char *archive_passphrase_callback(struct archive *,
+@@ -383,6 +383,7 @@ typedef const char *archive_passphrase_callback(struct archive *,
  #define	ARCHIVE_FORMAT_7ZIP			0xE0000
  #define	ARCHIVE_FORMAT_WARC			0xF0000
  #define	ARCHIVE_FORMAT_RAR_V5			0x100000
@@ -149,7 +149,7 @@ index ddbf66c1..9dea6349 100644
  
  /*
   * Codes returned by archive_read_format_capabilities().
-@@ -469,6 +470,8 @@ __LA_DECL int archive_read_support_format_zip_streamable(struct archive *);
+@@ -510,6 +511,8 @@ __LA_DECL int archive_read_support_format_zip_streamable(struct archive *);
  /* Reads starting from central directory; requires seekable input. */
  __LA_DECL int archive_read_support_format_zip_seekable(struct archive *);
  
