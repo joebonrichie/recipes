@@ -5,7 +5,7 @@
 #
 name        : libarchive
 version     : 3.8.1
-release     : 12
+release     : 13
 summary     : Multi-format archive and compression library
 license     : BSD-2-Clause
 homepage    : https://www.libarchive.org
@@ -39,7 +39,7 @@ setup       : |
 
     function libarchive_configure() {
         # libstone support disabled until it doesn't break zip files
-        %patch %(pkgdir)/stone-read-support.patch
+        %patch %(pkgdir)/0001-Add-stone-read-support.patch
 
         %reconfigure \
             --disable-rpath \
