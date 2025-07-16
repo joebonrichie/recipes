@@ -1,0 +1,28 @@
+#
+# SPDX-FileCopyrightText: © 2020-2024 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : python-cairo
+version     : 1.28.0
+release     : 1
+homepage    : https://pycairo.readthedocs.io/
+upstreams   :
+    - https://github.com/pygobject/pycairo/archive/refs/tags/v1.28.0.tar.gz : e7e1a487820467a174512633f3ec4c49d567041e40f2d0135d14679045b054e9
+summary     : Python Cairo Bindings
+description : |
+    Python Cairo Bindings
+license     : LGPL-2.1-or-later
+builddeps   :
+    - pkgconfig(cairo)
+    - pkgconfig(python3)
+checkdeps   :
+    - python(pytest)
+setup       : |
+    %meson
+build       : |
+    %meson_build
+install     : |
+    %meson_install
+check       : |
+    %meson_test
