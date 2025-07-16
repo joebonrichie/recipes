@@ -21,11 +21,8 @@
 			],
 			"files": [
 				"/usr/lib/libnvidia-egl-wayland.so.1",
-				"/usr/lib/libnvidia-egl-wayland.so.1.1.17",
-				"/usr/share/egl/egl_external_platform.d",
-				"/usr/share/wayland-eglstream/wayland-drm.xml",
-				"/usr/share/wayland-eglstream/wayland-eglstream-controller.xml",
-				"/usr/share/wayland-eglstream/wayland-eglstream.xml"
+				"/usr/lib/libnvidia-egl-wayland.so.1.1.19",
+				"/usr/share/egl/egl_external_platform.d/10_nvidia_wayland.json"
 			],
 			"name": "egl-wayland",
 			"provides": [
@@ -52,7 +49,7 @@
 			],
 			"files": [
 				"/usr/lib32/libnvidia-egl-wayland.so.1",
-				"/usr/lib32/libnvidia-egl-wayland.so.1.1.17"
+				"/usr/lib32/libnvidia-egl-wayland.so.1.1.19"
 			],
 			"name": "egl-wayland-32bit",
 			"provides": [
@@ -102,7 +99,10 @@
 			"files": [
 				"/usr/lib/libnvidia-egl-wayland.so",
 				"/usr/lib/pkgconfig/wayland-eglstream.pc",
-				"/usr/share/pkgconfig/wayland-eglstream-protocols.pc"
+				"/usr/share/pkgconfig/wayland-eglstream-protocols.pc",
+				"/usr/share/wayland-eglstream/wayland-drm.xml",
+				"/usr/share/wayland-eglstream/wayland-eglstream-controller.xml",
+				"/usr/share/wayland-eglstream/wayland-eglstream.xml"
 			],
 			"name": "egl-wayland-devel",
 			"provides": [
@@ -112,6 +112,6 @@
 		}
 	},
 	"source-name": "egl-wayland",
-	"source-release": "3",
-	"source-version": "1.1.17"
+	"source-release": "4",
+	"source-version": "1.1.19"
 }
