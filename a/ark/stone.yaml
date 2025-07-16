@@ -5,7 +5,7 @@
 #
 name        : ark
 version     : 25.04.3
-release     : 6
+release     : 7
 upstreams   :
     - https://download.kde.org/stable/release-service/25.04.3/src/ark-25.04.3.tar.xz : f93a428c88226d61e5a632e0660391189731f80adb574825108015a07bb1051c
 homepage    : https://kde.org/applications/utilities/org.kde.ark
@@ -36,6 +36,8 @@ builddeps   :
 rundeps     :
     - qt6-wayland
 setup       : |
+    %patch %(pkgdir)/0001-Add-read-only-for-stone-mimetype.patch
+
     %cmake_kf6
 build       : |
     %cmake_build
