@@ -1,0 +1,43 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : kcalc
+version     : 25.04.3
+release     : 1
+upstreams   :
+    - https://download.kde.org/stable/release-service/25.04.3/src/kcalc-25.04.3.tar.xz : 1b6f52ff6950a5c7f6754bb41fd036af4a016939227b2f4351f3836ba705348b
+homepage    : https://apps.kde.org/kcalc/
+license     : GPL-2.0-or-later
+summary     : Scientific calculator by KDE
+description : |
+    KCalc is a calculator which offers many more mathematical functions than meet the eye on a first glance.
+builddeps   :
+    # Temporary, boulder doesn't handle build ordering resolution correctly when builddeps are added by macros, so add ECM manually
+    - cmake(ECM)
+    - cmake(KF6ColorScheme)
+    - cmake(KF6Config)
+    - cmake(KF6ConfigWidgets)
+    - cmake(KF6CoreAddons)
+    - cmake(KF6Crash)
+    - cmake(KF6DocTools)
+    - cmake(KF6GuiAddons)
+    - cmake(KF6I18n)
+    - cmake(KF6Notifications)
+    - cmake(KF6XmlGui)
+    - pkgconfig(gmp)
+    - pkgconfig(mpfr)
+    - mpc-devel
+rundeps     :
+    - qt6-wayland
+setup       : |
+    %cmake_kf6
+build       : |
+    %cmake_build
+install     : |
+    %cmake_install
+packages    :
+    - "%(name)-docs":
+        paths:
+            - /usr/share/doc
