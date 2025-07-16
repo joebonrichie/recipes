@@ -1,0 +1,23 @@
+#
+# SPDX-FileCopyrightText: © 2020-2024 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : python-sentry-sdk
+version     : 2.33.0
+release     : 1
+homepage    : https://sentry.io/for/python
+upstreams   :
+    - https://pypi.debian.net/sentry-sdk/sentry_sdk-2.33.0.tar.gz : cdceed05e186846fdf80ceea261fe0a11ebc93aab2f228ed73d076a07804152e
+summary     : The official Python SDK for Sentry.io
+description : |
+    The official Python SDK for Sentry.io
+license     : MIT
+builddeps   :
+    - python(setuptools)
+rundeps     :
+    - python-libs
+build       : |
+    %pyproject_build
+install     : |
+    %pyproject_install
