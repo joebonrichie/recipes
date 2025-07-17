@@ -1,7 +1,7 @@
-From e2581357fded7020793952a8c29ec5fe307b01fb Mon Sep 17 00:00:00 2001
+From 63b846da4973b068ab697c7a8e2b31f216e21ff6 Mon Sep 17 00:00:00 2001
 From: Luke Jones <luke@ljones.dev>
 Date: Mon, 31 Mar 2025 19:54:24 +1300
-Subject: [PATCH 2/6] xpad: gate the zotac-zone PID behind #if
+Subject: [PATCH 2/5] xpad: gate the zotac-zone PID behind #if
  !IS_REACHABLE(CONFIG_ZOTAC_ZONE_HID)
 
 Signed-off-by: Luke Jones <luke@ljones.dev>
@@ -10,10 +10,10 @@ Signed-off-by: Luke Jones <luke@ljones.dev>
  1 file changed, 4 insertions(+)
 
 diff --git a/drivers/input/joystick/xpad.c b/drivers/input/joystick/xpad.c
-index 8ee7d8e5d1c7..ddf73ba2d6c9 100644
+index 1008858f78e2..8e3cf2a55bea 100644
 --- a/drivers/input/joystick/xpad.c
 +++ b/drivers/input/joystick/xpad.c
-@@ -350,7 +350,9 @@ static const struct xpad_device {
+@@ -353,7 +353,9 @@ static const struct xpad_device {
  	{ 0x1bad, 0xfa01, "MadCatz GamePad", 0, XTYPE_XBOX360 },
  	{ 0x1bad, 0xfd00, "Razer Onza TE", 0, XTYPE_XBOX360 },
  	{ 0x1bad, 0xfd01, "Razer Onza", 0, XTYPE_XBOX360 },
@@ -22,8 +22,8 @@ index 8ee7d8e5d1c7..ddf73ba2d6c9 100644
 +	#endif /* !IS_REACHABLE(CONFIG_ZOTAC_ZONE_HID) */
  	{ 0x20d6, 0x2001, "BDA Xbox Series X Wired Controller", 0, XTYPE_XBOXONE },
  	{ 0x20d6, 0x2009, "PowerA Enhanced Wired Controller for Xbox Series X|S", 0, XTYPE_XBOXONE },
- 	{ 0x20d6, 0x281f, "PowerA Wired Controller For Xbox 360", 0, XTYPE_XBOX360 },
-@@ -542,7 +544,9 @@ static const struct usb_device_id xpad_table[] = {
+ 	{ 0x20d6, 0x2064, "PowerA Wired Controller for Xbox", MAP_SHARE_BUTTON, XTYPE_XBOXONE },
+@@ -550,7 +552,9 @@ static const struct usb_device_id xpad_table[] = {
  	XPAD_XBOX360_VENDOR(0x1949),		/* Amazon controllers */
  	XPAD_XBOX360_VENDOR(0x1a86),		/* Nanjing Qinheng Microelectronics (WCH) */
  	XPAD_XBOX360_VENDOR(0x1bad),		/* Harmonix Rock Band guitar and drums */
@@ -34,5 +34,5 @@ index 8ee7d8e5d1c7..ddf73ba2d6c9 100644
  	XPAD_XBOXONE_VENDOR(0x20d6),		/* PowerA controllers */
  	XPAD_XBOX360_VENDOR(0x2345),		/* Machenike Controllers */
 -- 
-2.49.0
+2.50.0
 

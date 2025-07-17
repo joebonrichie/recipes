@@ -1,7 +1,7 @@
-From d7fd7a1d129ced2cd480850a1ebd5dbcf3969fc9 Mon Sep 17 00:00:00 2001
+From f7114c27551cbd57a192353ceba38249c153fabb Mon Sep 17 00:00:00 2001
 From: Luke Jones <luke@ljones.dev>
 Date: Wed, 5 Mar 2025 17:40:54 +1300
-Subject: [PATCH 1/6] zotac-zone-hid: initial impl
+Subject: [PATCH 1/5] zotac-zone-hid: initial impl
 
 The full base driver for HID and platform is implemented.
 This now requires splitting in to base commits for upstreaming.
@@ -16,12 +16,12 @@ Signed-off-by: Luke Jones <luke@ljones.dev>
  .../zotac-zone-hid/zotac-zone-hid-config.c    | 2231 +++++++++++++++++
  .../hid/zotac-zone-hid/zotac-zone-hid-core.c  |  597 +++++
  .../hid/zotac-zone-hid/zotac-zone-hid-input.c |  522 ++++
- .../hid/zotac-zone-hid/zotac-zone-hid-rgb.c   |  730 ++++++
+ .../hid/zotac-zone-hid/zotac-zone-hid-rgb.c   |  717 ++++++
  drivers/hid/zotac-zone-hid/zotac-zone.h       |  214 ++
  drivers/platform/x86/Kconfig                  |   10 +
  drivers/platform/x86/Makefile                 |    2 +
  drivers/platform/x86/zotac-zone-platform.c    | 1122 +++++++++
- 13 files changed, 5450 insertions(+)
+ 13 files changed, 5437 insertions(+)
  create mode 100644 drivers/hid/zotac-zone-hid/Kconfig
  create mode 100644 drivers/hid/zotac-zone-hid/Makefile
  create mode 100644 drivers/hid/zotac-zone-hid/zotac-zone-hid-config.c
@@ -32,10 +32,10 @@ Signed-off-by: Luke Jones <luke@ljones.dev>
  create mode 100644 drivers/platform/x86/zotac-zone-platform.c
 
 diff --git a/drivers/hid/Kconfig b/drivers/hid/Kconfig
-index 4cfea399ebab..0eabb7ac217f 100644
+index f83b415092ba..a478fb628614 100644
 --- a/drivers/hid/Kconfig
 +++ b/drivers/hid/Kconfig
-@@ -1407,4 +1407,6 @@ endif # HID
+@@ -1435,4 +1435,6 @@ endif # HID
  
  source "drivers/hid/usbhid/Kconfig"
  
@@ -43,12 +43,12 @@ index 4cfea399ebab..0eabb7ac217f 100644
 +
  endif # HID_SUPPORT
 diff --git a/drivers/hid/Makefile b/drivers/hid/Makefile
-index c7ecfbb3e228..bec6e6b1b018 100644
+index 85af5331ebd2..c099b0210c63 100644
 --- a/drivers/hid/Makefile
 +++ b/drivers/hid/Makefile
-@@ -170,6 +170,8 @@ obj-$(CONFIG_INTEL_ISH_HID)	+= intel-ish-hid/
+@@ -174,6 +174,8 @@ obj-$(CONFIG_AMD_SFH_HID)       += amd-sfh-hid/
  
- obj-$(CONFIG_AMD_SFH_HID)       += amd-sfh-hid/
+ obj-$(CONFIG_ASUS_ALLY_HID)  += asus-ally-hid/
  
 +obj-$(CONFIG_ZOTAC_ZONE_HID)  += zotac-zone-hid/
 +
@@ -56,10 +56,10 @@ index c7ecfbb3e228..bec6e6b1b018 100644
  
  obj-$(CONFIG_INTEL_THC_HID)     += intel-thc-hid/
 diff --git a/drivers/hid/hid-ids.h b/drivers/hid/hid-ids.h
-index 288a2b864cc4..99e538701960 100644
+index 594cde034707..88fcc117a731 100644
 --- a/drivers/hid/hid-ids.h
 +++ b/drivers/hid/hid-ids.h
-@@ -1488,6 +1488,10 @@
+@@ -1493,6 +1493,10 @@
  #define USB_VENDOR_ID_ZYTRONIC		0x14c8
  #define USB_DEVICE_ID_ZYTRONIC_ZXY100	0x0005
  
@@ -3466,10 +3466,10 @@ index 000000000000..571eec2df446
 +}
 diff --git a/drivers/hid/zotac-zone-hid/zotac-zone-hid-rgb.c b/drivers/hid/zotac-zone-hid/zotac-zone-hid-rgb.c
 new file mode 100644
-index 000000000000..3f5b35132a9d
+index 000000000000..0305de2bd549
 --- /dev/null
 +++ b/drivers/hid/zotac-zone-hid/zotac-zone-hid-rgb.c
-@@ -0,0 +1,730 @@
+@@ -0,0 +1,717 @@
 +// SPDX-License-Identifier: GPL-2.0-or-later
 +/*
 +	* HID driver for ZOTAC Gaming Zone Controller - RGB LED control
@@ -3477,7 +3477,6 @@ index 000000000000..3f5b35132a9d
 +	* Copyright (c) 2025 Luke D. Jones <luke@ljones.dev>
 +	*/
 +
-+#include "linux/kstrtox.h"
 +#include <linux/device.h>
 +#include <linux/hid.h>
 +#include <linux/module.h>
@@ -3655,7 +3654,7 @@ index 000000000000..3f5b35132a9d
 +		container_of(work, struct zotac_rgb_dev, work);
 +	struct zotac_device *zotac = led->zotac;
 +	u8 zone_idx = led - zotac->led_rgb_dev;
-+	u8 zone_data[1 + ZOTAC_RGB_LEDS_PER_ZONE * 3];
++	u8 zone_data[3 + ZOTAC_RGB_LEDS_PER_ZONE * 3];
 +	unsigned long flags;
 +	int j, led_index;
 +
@@ -3668,11 +3667,12 @@ index 000000000000..3f5b35132a9d
 +
 +	zone_data[0] = zone_idx;
 +
++	// [0] = zone number, [1..2] = blank, [3..] = data
 +	for (j = 0; j < ZOTAC_RGB_LEDS_PER_ZONE; j++) {
 +		led_index = zone_idx * ZOTAC_RGB_LEDS_PER_ZONE + j;
-+		zone_data[1 + (j * 3)] = led->red[led_index];
-+		zone_data[1 + (j * 3) + 1] = led->green[led_index];
-+		zone_data[1 + (j * 3) + 2] = led->blue[led_index];
++		zone_data[3 + (j * 3)] = led->red[led_index];
++		zone_data[4 + (j * 3)] = led->green[led_index];
++		zone_data[5 + (j * 3)] = led->blue[led_index];
 +	}
 +	spin_unlock_irqrestore(&led->lock, flags);
 +
@@ -3711,17 +3711,13 @@ index 000000000000..3f5b35132a9d
 +	for (i = 0; i < ZOTAC_RGB_LEDS_PER_ZONE; i++) {
 +		led_index = zone_idx * ZOTAC_RGB_LEDS_PER_ZONE + i;
 +		intensity = mc_cdev->subled_info[i].intensity;
-+		led->red[led_index] =
-+			(((intensity >> 16) & 0xFF) * bright) / 255;
-+		led->green[led_index] =
-+			(((intensity >> 8) & 0xFF) * bright) / 255;
++		led->red[led_index] = (((intensity >> 16) & 0xFF) * bright) / 255;
++		led->green[led_index] = (((intensity >> 8) & 0xFF) * bright) / 255;
 +		led->blue[led_index] = ((intensity & 0xFF) * bright) / 255;
 +
 +		zotac->led_rgb_data.zone[zone_idx].red[i] = led->red[led_index];
-+		zotac->led_rgb_data.zone[zone_idx].green[i] =
-+			led->green[led_index];
-+		zotac->led_rgb_data.zone[zone_idx].blue[i] =
-+			led->blue[led_index];
++		zotac->led_rgb_data.zone[zone_idx].green[i] = led->green[led_index];
++		zotac->led_rgb_data.zone[zone_idx].blue[i] = led->blue[led_index];
 +	}
 +
 +	zotac->led_rgb_data.zone[zone_idx].brightness = bright;
@@ -3781,12 +3777,11 @@ index 000000000000..3f5b35132a9d
 +static ssize_t rgb_effect_show(struct device *dev,
 +			       struct device_attribute *attr, char *buf)
 +{
-+	struct zotac_device *zotac = dev_get_drvdata(dev);
 +	int effect;
 +
-+	if (!zotac || !zotac->cfg_data)
++	if (!zotac.cfg_data)
 +		return -ENODEV;
-+	effect = zotac_send_get_byte(zotac, CMD_GET_RGB, SETTING_EFFECT, NULL,
++	effect = zotac_send_get_byte(&zotac, CMD_GET_RGB, SETTING_EFFECT, NULL,
 +				     0);
 +	if (effect < 0)
 +		return effect;
@@ -3798,11 +3793,10 @@ index 000000000000..3f5b35132a9d
 +				struct device_attribute *attr, const char *buf,
 +				size_t count)
 +{
-+	struct zotac_device *zotac = dev_get_drvdata(dev);
 +	int effect, ret;
 +	u8 effect_val;
 +
-+	if (!zotac || !zotac->cfg_data)
++	if (!zotac.cfg_data)
 +		return -ENODEV;
 +
 +	ret = kstrtoint(buf, 10, &effect);
@@ -3822,28 +3816,26 @@ index 000000000000..3f5b35132a9d
 +	}
 +
 +	effect_val = (u8)effect;
-+	ret = zotac_send_set_command(zotac, CMD_SET_RGB, SETTING_EFFECT,
++	ret = zotac_send_set_command(&zotac, CMD_SET_RGB, SETTING_EFFECT,
 +				     &effect_val, 1);
 +	if (ret < 0)
 +		return ret;
 +
-+	zotac->led_rgb_data.effect = effect_val;
++	zotac.led_rgb_data.effect = effect_val;
 +
 +	return count;
 +}
-+
-+static DEVICE_ATTR_RW(rgb_effect);
++static DEVICE_ATTR_RW_NAMED(rgb_effect, "effect");
 +
 +static ssize_t rgb_speed_show(struct device *dev, struct device_attribute *attr,
 +			      char *buf)
 +{
-+	struct zotac_device *zotac = dev_get_drvdata(dev);
 +	int speed;
 +
-+	if (!zotac || !zotac->cfg_data)
++	if (!zotac.cfg_data)
 +		return -ENODEV;
 +
-+	speed = zotac_send_get_byte(zotac, CMD_GET_RGB, SETTING_SPEED, NULL, 0);
++	speed = zotac_send_get_byte(&zotac, CMD_GET_RGB, SETTING_SPEED, NULL, 0);
 +	if (speed < 0)
 +		return speed;
 +
@@ -3854,11 +3846,10 @@ index 000000000000..3f5b35132a9d
 +			       struct device_attribute *attr, const char *buf,
 +			       size_t count)
 +{
-+	struct zotac_device *zotac = dev_get_drvdata(dev);
 +	int speed, ret;
 +	u8 speed_val;
 +
-+	if (!zotac || !zotac->cfg_data)
++	if (!zotac.cfg_data)
 +		return -ENODEV;
 +
 +	ret = kstrtoint(buf, 10, &speed);
@@ -3878,19 +3869,18 @@ index 000000000000..3f5b35132a9d
 +	}
 +
 +	speed_val = (u8)speed;
-+	ret = zotac_send_set_command(zotac, CMD_SET_RGB, SETTING_SPEED,
++	ret = zotac_send_set_command(&zotac, CMD_SET_RGB, SETTING_SPEED,
 +				     &speed_val, 1);
 +	if (ret < 0) {
 +		dev_err(dev, "Failed to set RGB speed: %d\n", ret);
 +		return ret;
 +	}
 +
-+	zotac->led_rgb_data.speed = speed_val;
++	zotac.led_rgb_data.speed = speed_val;
 +
 +	return count;
 +}
-+
-+static DEVICE_ATTR_RW(rgb_speed);
++static DEVICE_ATTR_RW_NAMED(rgb_speed, "speed");
 +
 +static u8 brightness_level_to_value(unsigned int level)
 +{
@@ -3927,14 +3917,13 @@ index 000000000000..3f5b35132a9d
 +static ssize_t rgb_brightness_show(struct device *dev,
 +				   struct device_attribute *attr, char *buf)
 +{
-+	struct zotac_device *zotac = dev_get_drvdata(dev);
 +	int brightness = 0;
 +	unsigned int level;
 +
-+	if (!zotac || !zotac->cfg_data)
++	if (!zotac.cfg_data)
 +		return -ENODEV;
 +
-+	brightness = zotac_send_get_byte(zotac, CMD_GET_RGB, SETTING_BRIGHTNESS,
++	brightness = zotac_send_get_byte(&zotac, CMD_GET_RGB, SETTING_BRIGHTNESS,
 +					 NULL, 0);
 +	if (brightness < 0)
 +		return brightness;
@@ -3948,11 +3937,10 @@ index 000000000000..3f5b35132a9d
 +				    struct device_attribute *attr,
 +				    const char *buf, size_t count)
 +{
-+	struct zotac_device *zotac = dev_get_drvdata(dev);
 +	int level, ret;
 +	u8 brightness;
 +
-+	if (!zotac || !zotac->cfg_data)
++	if (!zotac.cfg_data)
 +		return -ENODEV;
 +
 +	ret = kstrtoint(buf, 10, &level);
@@ -3964,20 +3952,20 @@ index 000000000000..3f5b35132a9d
 +
 +	brightness = brightness_level_to_value(level);
 +
-+	ret = zotac_send_set_command(zotac, CMD_SET_RGB, SETTING_BRIGHTNESS,
++	ret = zotac_send_set_command(&zotac, CMD_SET_RGB, SETTING_BRIGHTNESS,
 +				     &brightness, 1);
 +	if (ret < 0)
 +		return ret;
 +
-+	ret = zotac_send_set_command(zotac, CMD_SAVE_CONFIG, 0, NULL, 0);
++	ret = zotac_send_set_command(&zotac, CMD_SAVE_CONFIG, 0, NULL, 0);
 +	if (ret < 0)
 +		return ret;
 +
-+	zotac->led_rgb_data.brightness = brightness;
++	zotac.led_rgb_data.brightness = brightness;
 +
 +	return count;
 +}
-+static DEVICE_ATTR_RW(rgb_brightness);
++static DEVICE_ATTR_RW_NAMED(rgb_brightness, "brightness");
 +
 +static struct attribute *zotac_rgb_attrs[] = { &dev_attr_rgb_effect.attr,
 +					       &dev_attr_rgb_speed.attr,
@@ -4088,6 +4076,11 @@ index 000000000000..3f5b35132a9d
 +		return err;
 +	}
 +
++	err = sysfs_create_group(&led_cdev->dev->kobj, &zotac_rgb_attr_group);
++	if (err) {
++		return err;
++	}
++
 +	return 0;
 +}
 +
@@ -4133,7 +4126,7 @@ index 000000000000..3f5b35132a9d
 +	if (!zotac->led_rgb_dev)
 +		return;
 +
-+	sysfs_remove_group(&zotac->hdev->dev.kobj, &zotac_rgb_attr_group);
++	sysfs_remove_group(&zotac->led_rgb_dev->led_rgb_dev.led_cdev.dev->kobj, &zotac_rgb_attr_group);
 +
 +	for (i = 0; i < ZOTAC_RGB_ZONE_COUNT; i++) {
 +		led_rgb = &zotac->led_rgb_dev[i];
@@ -4185,12 +4178,6 @@ index 000000000000..3f5b35132a9d
 +	}
 +
 +	zotac->led_rgb_data.initialized = true;
-+
-+	ret = sysfs_create_group(&zotac->hdev->dev.kobj, &zotac_rgb_attr_group);
-+	if (ret) {
-+		hid_err(zotac->hdev, "Failed to create RGB sysfs group: %d\n",
-+			ret);
-+	}
 +
 +	for (i = 0; i < ZOTAC_RGB_ZONE_COUNT; i++) {
 +		led_rgb = &zotac->led_rgb_dev[i];
@@ -4421,10 +4408,10 @@ index 000000000000..31188cee80f8
 +
 +#endif /* __HID_ZOTAC_ZONE_H */
 diff --git a/drivers/platform/x86/Kconfig b/drivers/platform/x86/Kconfig
-index 7edab99d3ae9..103840183905 100644
+index 731d18308cb6..12d81d6c7cec 100644
 --- a/drivers/platform/x86/Kconfig
 +++ b/drivers/platform/x86/Kconfig
-@@ -1209,6 +1209,16 @@ config SEL3350_PLATFORM
+@@ -1224,6 +1224,16 @@ config SEL3350_PLATFORM
  	  To compile this driver as a module, choose M here: the module
  	  will be called sel3350-platform.
  
@@ -4442,10 +4429,10 @@ index 7edab99d3ae9..103840183905 100644
  
  config P2SB
 diff --git a/drivers/platform/x86/Makefile b/drivers/platform/x86/Makefile
-index fe3e7e7dede8..6ba0bf65069f 100644
+index 3a0085f941d9..2428b79ff295 100644
 --- a/drivers/platform/x86/Makefile
 +++ b/drivers/platform/x86/Makefile
-@@ -154,3 +154,5 @@ obj-$(CONFIG_WINMATE_FM07_KEYS)		+= winmate-fm07-keys.o
+@@ -155,3 +155,5 @@ obj-$(CONFIG_WINMATE_FM07_KEYS)		+= winmate-fm07-keys.o
  
  # SEL
  obj-$(CONFIG_SEL3350_PLATFORM)		+= sel3350-platform.o
@@ -5580,5 +5567,5 @@ index 000000000000..5f1123de4fb4
 +MODULE_DESCRIPTION("Zotac Handheld Platform Driver");
 +MODULE_LICENSE("GPL");
 -- 
-2.49.0
+2.50.0
 

@@ -1,14 +1,14 @@
-From 8dd89877fdf7b48576445a4e0ccbaed7e2b3f60b Mon Sep 17 00:00:00 2001
+From cc4a3b7101c3bb2bd7425aaf353bb11326e93005 Mon Sep 17 00:00:00 2001
 From: Luke Jones <luke@ljones.dev>
 Date: Sun, 27 Apr 2025 09:15:16 +0000
-Subject: [PATCH 4/6] TEMPORARY: terrible hack for zotac screen while debugging
+Subject: [PATCH 4/5] TEMPORARY: terrible hack for zotac screen while debugging
 
 ---
  .../link/protocols/link_edp_panel_control.c   | 28 +++++++++++++++++--
  1 file changed, 26 insertions(+), 2 deletions(-)
 
 diff --git a/drivers/gpu/drm/amd/display/dc/link/protocols/link_edp_panel_control.c b/drivers/gpu/drm/amd/display/dc/link/protocols/link_edp_panel_control.c
-index e0e3bb865359..b1b7b828b292 100644
+index 1e4adbc764ea..08d0f253433c 100644
 --- a/drivers/gpu/drm/amd/display/dc/link/protocols/link_edp_panel_control.c
 +++ b/drivers/gpu/drm/amd/display/dc/link/protocols/link_edp_panel_control.c
 @@ -28,6 +28,8 @@
@@ -70,5 +70,5 @@ index e0e3bb865359..b1b7b828b292 100644
  
  		if (core_link_write_dpcd(link, DP_SOURCE_BACKLIGHT_CONTROL,
 -- 
-2.49.0
+2.50.0
 
