@@ -1,0 +1,135 @@
+/** Human readable report. This is not consumed by boulder */
+{
+	"manifest-version": "0.2",
+	"packages": {
+		"scx-scheds": {
+			"build-depends": [
+				"binary(bpftool)",
+				"binary(cargo)",
+				"binary(jq)",
+				"binary(make)",
+				"binary(protoc)",
+				"pkgconfig(libbpf)",
+				"pkgconfig(libelf)",
+				"pkgconfig(libseccomp)",
+				"pkgconfig(libsystemd)"
+			],
+			"depends": [
+				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
+				"soname(ld-linux-x86-64.so.2(x86_64))",
+				"soname(libbpf.so.1(x86_64))",
+				"soname(libc.so.6(x86_64))",
+				"soname(libelf.so.1(x86_64))",
+				"soname(libm.so.6(x86_64))",
+				"soname(libseccomp.so.2(x86_64))",
+				"soname(libunwind.so.1(x86_64))",
+				"soname(libz.so.1(x86_64))"
+			],
+			"files": [
+				"/usr/bin/scx_bpfland",
+				"/usr/bin/scx_central",
+				"/usr/bin/scx_chaos",
+				"/usr/bin/scx_flash",
+				"/usr/bin/scx_flatcg",
+				"/usr/bin/scx_lavd",
+				"/usr/bin/scx_layered",
+				"/usr/bin/scx_lib_selftests",
+				"/usr/bin/scx_loader",
+				"/usr/bin/scx_nest",
+				"/usr/bin/scx_p2dq",
+				"/usr/bin/scx_pair",
+				"/usr/bin/scx_prev",
+				"/usr/bin/scx_qmap",
+				"/usr/bin/scx_rlfifo",
+				"/usr/bin/scx_rustland",
+				"/usr/bin/scx_rusty",
+				"/usr/bin/scx_sdt",
+				"/usr/bin/scx_simple",
+				"/usr/bin/scx_tickless",
+				"/usr/bin/scx_userland",
+				"/usr/bin/scxctl",
+				"/usr/bin/scxtop",
+				"/usr/lib/systemd/system/scx_loader.service",
+				"/usr/share/dbus-1/system-services/org.scx.Loader.service",
+				"/usr/share/dbus-1/system.d/org.scx.Loader.conf"
+			],
+			"name": "scx-scheds",
+			"provides": [
+				"binary(scx_bpfland)",
+				"binary(scx_central)",
+				"binary(scx_chaos)",
+				"binary(scx_flash)",
+				"binary(scx_flatcg)",
+				"binary(scx_lavd)",
+				"binary(scx_layered)",
+				"binary(scx_lib_selftests)",
+				"binary(scx_loader)",
+				"binary(scx_nest)",
+				"binary(scx_p2dq)",
+				"binary(scx_pair)",
+				"binary(scx_prev)",
+				"binary(scx_qmap)",
+				"binary(scx_rlfifo)",
+				"binary(scx_rustland)",
+				"binary(scx_rusty)",
+				"binary(scx_sdt)",
+				"binary(scx_simple)",
+				"binary(scx_tickless)",
+				"binary(scx_userland)",
+				"binary(scxctl)",
+				"binary(scxtop)"
+			]
+		},
+		"scx-scheds-devel": {
+			"build-depends": [
+				"binary(bpftool)",
+				"binary(cargo)",
+				"binary(jq)",
+				"binary(make)",
+				"binary(protoc)",
+				"pkgconfig(libbpf)",
+				"pkgconfig(libelf)",
+				"pkgconfig(libseccomp)",
+				"pkgconfig(libsystemd)"
+			],
+			"depends": [
+				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
+				"scx-scheds",
+				"soname(ld-linux-x86-64.so.2(x86_64))",
+				"soname(libc.so.6(x86_64))",
+				"soname(libunwind.so.1(x86_64))"
+			],
+			"files": [
+				"/usr/bin/vmlinux_docify",
+				"/usr/include/scx/arena_userspace_interrop.bpf.h",
+				"/usr/include/scx/bpf_arena_common.bpf.h",
+				"/usr/include/scx/bpf_arena_common.h",
+				"/usr/include/scx/bpf_arena_spin_lock.h",
+				"/usr/include/scx/bpf_atomic.h",
+				"/usr/include/scx/common.bpf.h",
+				"/usr/include/scx/common.h",
+				"/usr/include/scx/compat.bpf.h",
+				"/usr/include/scx/compat.h",
+				"/usr/include/scx/enum_defs.autogen.h",
+				"/usr/include/scx/enums.autogen.bpf.h",
+				"/usr/include/scx/enums.autogen.h",
+				"/usr/include/scx/enums.bpf.h",
+				"/usr/include/scx/enums.h",
+				"/usr/include/scx/namespace.bpf.h",
+				"/usr/include/scx/namespace_impl.bpf.h",
+				"/usr/include/scx/ravg.bpf.h",
+				"/usr/include/scx/ravg_impl.bpf.h",
+				"/usr/include/scx/user_exit_info.bpf.h",
+				"/usr/include/scx/user_exit_info.h",
+				"/usr/include/scx/user_exit_info_common.h"
+			],
+			"name": "scx-scheds-devel",
+			"provides": [
+				"binary(vmlinux_docify)"
+			]
+		}
+	},
+	"source-name": "scx-scheds",
+	"source-release": "1",
+	"source-version": "1.0.14"
+}

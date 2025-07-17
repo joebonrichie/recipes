@@ -1,0 +1,22 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: Reilly Brogan <reilly@reillybrogan.com>
+Date: Wed, 16 Jul 2025 18:14:03 -0500
+Subject: [PATCH] Backport build fix
+
+---
+ lib/scxtest/overrides.h | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/lib/scxtest/overrides.h b/lib/scxtest/overrides.h
+index f1b25c7a..9091dc5f 100644
+--- a/lib/scxtest/overrides.h
++++ b/lib/scxtest/overrides.h
+@@ -13,7 +13,7 @@
+  * that we want to get rid of that belongs here.
+  */
+ #define __builtin_preserve_field_info(x,y) 1
+-#define __builtin_preserve_enum_value(x,y,z) 1
++#define __builtin_preserve_enum_value(x,y) 1
+ 
+ #define bpf_addr_space_cast(var, dst_as, src_as)
+ 

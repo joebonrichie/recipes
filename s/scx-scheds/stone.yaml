@@ -1,0 +1,51 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : scx-scheds
+version     : 1.0.14
+release     : 1
+homepage    : https://github.com/sched-ext/scx
+upstreams   :
+    - https://github.com/sched-ext/scx/archive/refs/tags/v1.0.14.tar.gz : 8d3fec0c79e27c17a0152e65bd87371ad7dc08b6e892db001f325cb3018f2ed4
+summary     : sched_ext schedulers and tools
+description : |
+    sched_ext schedulers and tools
+networking  : yes
+license     :
+    - MIT
+builddeps   :
+    - binary(bpftool)
+    - binary(cargo)
+    - binary(make)
+    - binary(jq)
+    - binary(protoc)
+    - pkgconfig(libbpf)
+    - pkgconfig(libelf)
+    - pkgconfig(libseccomp)
+    - pkgconfig(libsystemd)
+environment : |
+    # sccache is currently broken with this build for unknown reasons. Disable it for now
+    unset RUSTC_WRAPPER
+setup       : |
+    %patch %(pkgdir)/0001-Backport-build-fix.patch
+    %patch %(pkgdir)/0001-scx_loader-add-config-search-path-for-distributions.patch
+    %patch %(pkgdir)/0002-scx_loader-Support-build-time-configuration-of-vendo.patch
+
+    %meson \
+        -Dbpftool=disabled \
+        -Dlibbpf_a=disabled \
+        -Dvendordir=%(vendordir)
+    %cargo_fetch
+build       : |
+    %meson_build
+install     : |
+    %meson_install
+
+    # Unsupported, use scx_loader
+    rm -v %(installroot)%(libdir)/systemd/system/scx.service
+packages    :
+    - "%(name)-devel":
+        paths:
+            - /usr/bin/vmlinux_docify
