@@ -4,22 +4,22 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : discord
-version     : 0.0.95
-release     : 20
+version     : 0.0.102
+release     : 21
 summary     : Group chat, video, and voice calling app
 license     : Distributable
 homepage    : https://discord.com/
 upstreams   :
-    - https://stable.dl2.discordapp.net/apps/linux/0.0.95/discord-0.0.95.deb:
-        hash: 189f72cd12e9dd1010aa39bc8df09964cd3d129d9918264f05643062b09c303b
+    - https://stable.dl2.discordapp.net/apps/linux/0.0.102/discord-0.0.102.deb:
+        hash: ab1655cc6493d0e126eeddc4880b2d70ffb836eb558d0b17e1dfff508725f5a4
         unpack: false
         rename: discord.deb
 description : |
     Discord is a proprietary freeware VoIP application and digital distribution platform designed for video gaming communities, that specializes in text, image, video and audio communication between users in a chat channel.
 builddeps   :
     - binary(ar)
+    - binary(bsdtar-static)
     - binary(ln)
-    - binary(tar)
 rundeps     :
     - binary(xdg-open)
     - binary(python3)
@@ -28,7 +28,7 @@ rundeps     :
 strip       : false
 setup       : |
     ar xf %(sourcedir)/discord.deb
-    tar xf data.tar.*
+    bsdtar-static xf data.tar.*
 install     : |
     _discord_root=%(libdir)/discord
     _discord_install=%(installroot)/$_discord_root

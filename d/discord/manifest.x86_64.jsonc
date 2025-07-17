@@ -5,8 +5,8 @@
 		"discord": {
 			"build-depends": [
 				"binary(ar)",
-				"binary(ln)",
-				"binary(tar)"
+				"binary(bsdtar-static)",
+				"binary(ln)"
 			],
 			"depends": [
 				"binary(python3)",
@@ -139,6 +139,6 @@
 		}
 	},
 	"source-name": "discord",
-	"source-release": "20",
-	"source-version": "0.0.95"
+	"source-release": "21",
+	"source-version": "0.0.102"
 }
