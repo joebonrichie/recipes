@@ -75,3 +75,7 @@
 
 ### Split
 - pulseaudio
+
+### Double packaged
+- pycairo
+- pycairo-devel

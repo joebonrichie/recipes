@@ -1,0 +1,24 @@
+/** Human readable report. This is not consumed by boulder */
+{
+	"manifest-version": "0.2",
+	"packages": {
+		"pycairo": {
+			"files": [
+				"/usr/share/doc/pycairo/README"
+			],
+			"name": "pycairo"
+		},
+		"pycairo-devel": {
+			"depends": [
+				"pycairo"
+			],
+			"files": [
+				"/usr/share/doc/pycairo-devel/README"
+			],
+			"name": "pycairo-devel"
+		}
+	},
+	"source-name": "pycairo",
+	"source-release": "5",
+	"source-version": "1.27.0"
+}
