@@ -1,0 +1,174 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : edk2
+version     : "202505"
+release     : 1
+upstreams   :
+    - git|https://github.com/tianocore/edk2 : 6951dfe7d59d144a3a980bd7eda699db2d8554ac # tag edk2-stable202505
+homepage    : https://github.com/tianocore/tianocore.github.io/wiki/EDK-II
+license     :
+    - BSD-2-Clause
+    - BSD-3-Clause
+    - MIT
+    - Python-2.0
+    - Zlib
+summary     : UEFI support for Virtual Machines
+description : |
+    OVMF is an EDK II based project to enable UEFI support for Virtual Machines. OVMF contains UEFI firmware for QEMU and KVM.
+builddeps   :
+    - binary(dd)
+    - binary(iasl)
+    - binary(make)
+    - binary(nasm)
+    - pkgconfig(uuid)
+environment : |
+    # TODO: Enable ARM and AARCH64
+    _BUILD_ARCHS=(IA32 X64)
+
+    # Options that should be used by every build, including the shells
+    _CC_OPTS=(
+        -b "RELEASE"
+        -n "%(jobs)"
+        -t "CLANGPDB"
+    )
+
+    # Options that should be used for all EFI binaries
+    _EFI_OPTS=(
+        -D FD_SIZE_4MB
+        -D NETWORK_HTTP_BOOT_ENABLE
+        -D NETWORK_IP6_ENABLE
+        -D TPM1_ENABLE
+        -D TPM2_ENABLE
+        -D TPM2_CONFIG_ENABLE
+    )
+
+    # network TLS for some targets (all but )
+    _NETWORK_TLS=(
+        -D NETWORK_TLS_ENABLE
+    )
+
+    # Toolchain setup
+    export CLANGPDB_BIN="%(cc)"
+
+    # Sanitize build environment
+    unset CFLAGS CXXFLAGS LDFLAGS
+build       : |
+    make -j%(jobs) -C BaseTools
+
+    . edksetup.sh
+
+    # Shell
+    for _ARCH in ${_BUILD_ARCHS[@]}; do
+        # Shell not currently used
+        # echo "Building shell for ${_ARCH}"
+        # BaseTools/BinWrappers/PosixLike/build \
+        #     -p ShellPkg/ShellPkg.dsc \
+        #     -a "${_ARCH}" \
+        #     ${_CC_OPTS[@]}
+        
+        case "${_ARCH}" in
+            IA32)
+                echo "Building ovmf ($_ARCH) with secure boot support (4MB FD)"
+                _build_options=(
+                    -p OvmfPkg/OvmfPkgIa32.dsc
+                    -a "$_ARCH"
+                    "${_CC_OPTS[@]}"
+                    "${_EFI_OPTS[@]}"
+                    "${_NETWORK_TLS[@]}"
+                    -D LOAD_X64_ON_IA32_ENABLE
+                    -D SECURE_BOOT_ENABLE
+                    -D SMM_REQUIRE
+                )
+                BaseTools/BinWrappers/PosixLike/build "${_build_options[@]}"
+                mv -v Build/Ovmf{Ia32,IA32-secure-4mb}
+
+                echo "Building ovmf ($_ARCH) default (4MB FD)"
+                _build_options=(
+                    -p OvmfPkg/OvmfPkgIa32.dsc
+                    -a "$_ARCH"
+                    "${_CC_OPTS[@]}"
+                    "${_EFI_OPTS[@]}"
+                    "${_NETWORK_TLS[@]}"
+                    -D LOAD_X64_ON_IA32_ENABLE
+                )
+                BaseTools/BinWrappers/PosixLike/build "${_build_options[@]}"
+                mv -v Build/Ovmf{Ia32,IA32-4mb}
+            ;;
+
+            X64)
+                echo "Building ovmf ($_ARCH) with microvm support (4MB FD)"
+                _build_options=(
+                    -p OvmfPkg/Microvm/Microvm$_ARCH.dsc
+                    -a "$_ARCH"
+                    "${_CC_OPTS[@]}"
+                    "${_EFI_OPTS[@]}"
+                    "${_NETWORK_TLS[@]}"
+                )
+                BaseTools/BinWrappers/PosixLike/build "${_build_options[@]}"
+                mv -v Build/MicrovmX64{,-4mb}
+
+                echo "Building ovmf ($_ARCH) with secure boot support (4MB FD)"
+                _build_options=(
+                    -p OvmfPkg/OvmfPkgIa32X64.dsc
+                    -a IA32
+                    -a "${_ARCH}"
+                    "${_CC_OPTS[@]}"
+                    "${_EFI_OPTS[@]}"
+                    "${_NETWORK_TLS[@]}"
+                    -D SECURE_BOOT_ENABLE
+                    -D SMM_REQUIRE
+                )
+                BaseTools/BinWrappers/PosixLike/build "${_build_options[@]}"
+                mv -v Build/Ovmf3264{,-secure-4mb}
+
+                echo "Building ovmf (${_ARCH}) without secure boot (4MB FD)"
+                _build_options=(
+                    -p OvmfPkg/OvmfPkg$_ARCH.dsc
+                    -a "$_ARCH"
+                    "${_CC_OPTS[@]}"
+                    "${_EFI_OPTS[@]}"
+                    "${_NETWORK_TLS[@]}"
+                )
+                BaseTools/BinWrappers/PosixLike/build "${_build_options[@]}"
+                mv -v Build/OvmfX64{,-4mb}
+            ;;
+        esac
+    done
+install     : |
+    # QEMU descriptors
+    %install_file %(pkgdir)/*.json -t %(installroot)/usr/share/qemu/firmware
+
+    # IA32
+    %install_file Build/OvmfIA32-4mb/RELEASE_CLANGPDB/FV/OVMF_CODE.fd %(installroot)/usr/share/%(name)/ia32/OVMF_CODE.4m.fd
+    %install_file Build/OvmfIA32-4mb/RELEASE_CLANGPDB/FV/OVMF_VARS.fd %(installroot)/usr/share/%(name)/ia32/OVMF_VARS.4m.fd
+
+    # Secure boot
+    %install_file Build/OvmfIA32-secure-4mb/RELEASE_CLANGPDB/FV/OVMF_CODE.fd %(installroot)/usr/share/%(name)/ia32/OVMF_CODE.secboot.4m.fd
+
+    # This is only used by xen which we don't currently support
+    # %install_file Build/OvmfIA32-4mb/RELEASE_CLANGPDB/FV/OVMF.fd %(installroot)/usr/share/%(name)/ia32/OVMF.4m.fd
+
+    # X64
+    %install_file Build/OvmfX64-4mb/RELEASE_CLANGPDB/FV/OVMF_CODE.fd %(installroot)/usr/share/%(name)/x64/OVMF_CODE.4m.fd
+    %install_file Build/OvmfX64-4mb/RELEASE_CLANGPDB/FV/OVMF_VARS.fd %(installroot)/usr/share/%(name)/x64/OVMF_VARS.4m.fd
+
+    # Secure boot/microvm
+    %install_file Build/Ovmf3264-secure-4mb/RELEASE_CLANGPDB/FV/OVMF_CODE.fd %(installroot)/usr/share/%(name)/x64/OVMF_CODE.secboot.4m.fd
+    %install_file Build/MicrovmX64-4mb/RELEASE_CLANGPDB/FV/MICROVM.fd %(installroot)/usr/share/%(name)/x64/MICROVM.4m.fd
+
+    # This is only used by xen which we don't currently support
+    # %install_file Build/OvmfX64-4mb/RELEASE_CLANGPDB/FV/OVMF.fd %(installroot)/usr/share/%(name)/x64/OVMF.4m.fd
+packages    :
+    - "%(name)-ovmf":
+        summary: Firmware for Virtual Machines (x86_64, i686)
+        description: Firmware for Virtual Machines (x86_64, i686)
+        paths:
+            - /usr/share/edk2/ia32/
+            - /usr/share/edk2/x64/
+            - /usr/share/qemu/firmware/*i386*.json
+            - /usr/share/qemu/firmware/*ia32*.json
+            - /usr/share/qemu/firmware/*x86_64*.json
+            - /usr/share/qemu/firmware/*microvm*.json

@@ -1,0 +1,35 @@
+/** Human readable report. This is not consumed by boulder */
+{
+	"manifest-version": "0.2",
+	"packages": {
+		"edk2-ovmf": {
+			"build-depends": [
+				"binary(dd)",
+				"binary(iasl)",
+				"binary(make)",
+				"binary(nasm)",
+				"pkgconfig(uuid)"
+			],
+			"files": [
+				"/usr/share/edk2/ia32/OVMF_CODE.4m.fd",
+				"/usr/share/edk2/ia32/OVMF_CODE.secboot.4m.fd",
+				"/usr/share/edk2/ia32/OVMF_VARS.4m.fd",
+				"/usr/share/edk2/x64/MICROVM.4m.fd",
+				"/usr/share/edk2/x64/OVMF_CODE.4m.fd",
+				"/usr/share/edk2/x64/OVMF_CODE.secboot.4m.fd",
+				"/usr/share/edk2/x64/OVMF_VARS.4m.fd",
+				"/usr/share/qemu/firmware/50-edk2-ovmf-i386-secure-4m.json",
+				"/usr/share/qemu/firmware/50-edk2-ovmf-x86_64-secure-4m.json",
+				"/usr/share/qemu/firmware/60-edk2-ovmf-i386-4m.json",
+				"/usr/share/qemu/firmware/60-edk2-ovmf-microvm-4m.json",
+				"/usr/share/qemu/firmware/60-edk2-ovmf-x86_64-4m.json",
+				"/usr/share/qemu/firmware/80-edk2-ovmf-ia32-on-x86_64-secure-4m.json",
+				"/usr/share/qemu/firmware/81-edk2-ovmf-ia32-on-x86_64-4m.json"
+			],
+			"name": "edk2-ovmf"
+		}
+	},
+	"source-name": "edk2",
+	"source-release": "1",
+	"source-version": "202505"
+}
