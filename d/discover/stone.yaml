@@ -1,0 +1,63 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : discover
+version     : 6.4.3
+release     : 1
+upstreams   :
+    - https://download.kde.org/stable/plasma/6.4.3/discover-6.4.3.tar.xz : c2dd8238aaa8c801a12c6f29d70f24467bad59209c5fc8fae97cbbbac45dde10
+homepage    : https://apps.kde.org/discover/
+license     : GPL-2.0-or-later
+summary     : Discover helps you find and install applications, games, and tools.
+description : |
+    Discover helps you find and install applications, games, and tools. You can search or browse by category, and look at screenshots and read reviews to help you pick the perfect app. With Discover, you can manage software from multiple sources, including your operating system's software repository, Flatpak repos, the Snap store, or even AppImages from store.kde.org. Finally, Discover also allows you to find, install, and manage add-ons for Plasma and all your favorite KDE apps!
+builddeps   :
+    - cmake(AppStreamQt)
+    # Temporary, boulder doesn't handle build ordering resolution correctly when builddeps are added by macros, so add ECM manually
+    - cmake(ECM)
+    - cmake(KF6Archive)
+    - cmake(KF6Attica)
+    - cmake(KF6Auth)
+    - cmake(KF6CoreAddons)
+    - cmake(KF6Config)
+    - cmake(KF6Crash)
+    - cmake(KF6DBusAddons)
+    - cmake(KF6I18n)
+    - cmake(KF6IconThemes)
+    - cmake(KF6IdleTime)
+    - cmake(KF6ItemModels)
+    - cmake(KF6KCMUtils)
+    - cmake(KF6KIO)
+    - cmake(KF6Kirigami)
+    - cmake(KF6KirigamiAddons)
+    - cmake(KF6NewStuff)
+    - cmake(KF6Notifications)
+    - cmake(KF6Purpose)
+    - cmake(KF6StatusNotifierItem)
+    - cmake(KF6UserFeedback)
+    - cmake(KF6XmlGui)
+    - cmake(QCoro6)
+    - cmake(Qt6Quick)
+    - cmake(Qt6WebView)
+    - pkgconfig(flatpak)
+    - pkgconfig(ostree-1)
+    # TODO:
+    # - fwupd
+    # - libmarkdown
+    # - packagekitqt
+rundeps    :
+    - kf6-kirigami
+    - kf6-kitemmodels
+    - kf6-purpose
+    - kf6-qqc2-desktop-style
+tuning      :
+    - lto: full
+    - optimize: speed
+setup       : |
+    %cmake_kf6
+build       : |
+    %cmake_build
+install     : |
+    %cmake_install
