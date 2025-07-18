@@ -5,7 +5,9 @@
 		"pkgset-aeryn-plasma-full": {
 			"depends": [
 				"dragon",
-				"pkgset-aeryn-plasma-recommended"
+				"filelight",
+				"pkgset-aeryn-plasma-recommended",
+				"yakuake"
 			],
 			"files": [
 				"/usr/share/doc/pkgset-aeryn-plasma-full/README"
@@ -17,6 +19,7 @@
 				"ark",
 				"bluedevil",
 				"breeze-gtk-theme",
+				"discover",
 				"dolphin",
 				"drkonqi",
 				"flatpak-kcm",
@@ -29,15 +32,20 @@
 				"konsole",
 				"krdp",
 				"kscreen",
+				"ksshaskpass",
 				"kwallet-pam",
 				"kwrite",
 				"milou",
 				"pkgset-aeryn-base-desktop",
+				"plasma-browser-integration",
 				"plasma-desktop",
 				"plasma-disks",
 				"plasma-nm",
 				"plasma-pa",
+				"plasma-systemmonitor",
 				"plasma-thunderbolt",
+				"plasma-welcome",
+				"plasma-workspace-wallpapers",
 				"powerdevil",
 				"print-manager",
 				"spectacle"
@@ -49,10 +57,12 @@
 		},
 		"pkgset-aeryn-plasma-recommended": {
 			"depends": [
+				"elisa",
 				"gwenview",
 				"haruna",
 				"kate",
 				"okular",
+				"partitionmanager",
 				"pkgset-aeryn-plasma-minimal"
 			],
 			"files": [
@@ -62,6 +72,6 @@
 		}
 	},
 	"source-name": "pkgset-aeryn-plasma",
-	"source-release": "8",
+	"source-release": "9",
 	"source-version": "2025.06"
 }
