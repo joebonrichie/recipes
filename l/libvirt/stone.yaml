@@ -4,8 +4,8 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : libvirt
-version     : 11.5.0
-release     : 2
+version     : '11.5.0'
+release     : 3
 homepage    : https://gitlab.com/libvirt/libvirt
 upstreams   :
     - https://libvirt.org/sources/libvirt-11.5.0.tar.xz : 2b63b9d60538e1e2fa4e3f6d836409e6ff705249c79001914ac3400859d72423
@@ -16,6 +16,7 @@ license     :
     - LGPL-2.1-or-later
     - GPL-2.0-or-later
 builddeps   :
+    - binary(dnsmasq)
     - binary(msgfmt)
     - binary(perl)
     - binary(rst2html5)
@@ -55,6 +56,7 @@ builddeps   :
     - pkgconfig(polkit-agent-1)
     - pkgconfig(readline)
     # pkgconfig(wireshark)
+    - sysbinary(iptables)
 rundeps     :
     - osinfo-db
 setup       : |
