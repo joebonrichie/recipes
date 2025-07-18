@@ -5,7 +5,7 @@
 #
 name        : gnome-session
 version     : 48.0
-release     : 19
+release     : 20
 homepage    : https://gitlab.gnome.org/GNOME/gnome-session
 upstreams   :
     - https://download.gnome.org/sources/gnome-session/48/gnome-session-48.0.tar.xz : dd909fbc5b22cdbdb2fc4df1a47d78d1b5943ccc5e61e6a20a1846246347c417
@@ -51,4 +51,6 @@ install    : |
     %meson_install
 
     %install_file %(pkgdir)/50-gnome.preset %(installroot)%(libdir)/systemd/system-preset/50-gnome.preset
-    rm %(installroot)%(datadir)/xsessions/gnome-xorg.desktop
+
+    # KILL IT
+    rm -rfv %(installroot)/usr/share/xsessions
