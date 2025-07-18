@@ -1,0 +1,44 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : filelight
+version     : 25.04.3
+release     : 1
+upstreams   :
+    - https://download.kde.org/stable/release-service/25.04.3/src/filelight-25.04.3.tar.xz : 0f6d96addcdcc6a4ed6a19539547a8a80bdc098fffb768885a3464e441a91acd
+homepage    : https://apps.kde.org/filelight/
+license     :
+    - GFDL-1.2-or-later
+    - GPL-2.0-or-later
+summary     : Graphical representation of your filesystem
+description : |
+    Filelight allows you to quickly understand exactly where your diskspace is being used by graphically representing your file system.
+builddeps   :
+    # Temporary, boulder doesn't handle build ordering resolution correctly when builddeps are added by macros, so add ECM manually
+    - cmake(ECM)
+    - cmake(KF6ColorScheme)
+    - cmake(KF6Config)
+    - cmake(KF6Crash)
+    - cmake(KF6DocTools)
+    - cmake(KF6KIO)
+    - cmake(KF6I18n)
+    - cmake(KF6QQC2DesktopStyle)
+    - cmake(Qt6Quick)
+    - kf6-kirigami
+rundeps     :
+    - kf6-kcoreaddons
+    - kf6-kirigami
+    - kf6-qqc2-desktop-style
+    - qt6-wayland
+setup       : |
+    %cmake_kf6
+build       : |
+    %cmake_build
+install     : |
+    %cmake_install
+packages    :
+    - "%(name)-docs":
+        paths:
+            - /usr/share/doc
