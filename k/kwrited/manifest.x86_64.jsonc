@@ -1,0 +1,38 @@
+/** Human readable report. This is not consumed by boulder */
+{
+	"manifest-version": "0.2",
+	"packages": {
+		"kwrited": {
+			"build-depends": [
+				"cmake(ECM)",
+				"cmake(KF6CoreAddons)",
+				"cmake(KF6I18n)",
+				"cmake(KF6Notifications)",
+				"cmake(KF6Pty)"
+			],
+			"depends": [
+				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
+				"soname(libKF6CoreAddons.so.6(x86_64))",
+				"soname(libKF6I18n.so.6(x86_64))",
+				"soname(libKF6Notifications.so.6(x86_64))",
+				"soname(libKF6Pty.so.6(x86_64))",
+				"soname(libQt6Core.so.6(x86_64))",
+				"soname(libQt6Gui.so.6(x86_64))",
+				"soname(libc++.so.1(x86_64))",
+				"soname(libc.so.6(x86_64))"
+			],
+			"files": [
+				"/usr/bin/kwrited",
+				"/usr/share/knotifications6/kwrited.notifyrc",
+				"/usr/share/xdg/autostart/kwrited-autostart.desktop"
+			],
+			"name": "kwrited",
+			"provides": [
+				"binary(kwrited)"
+			]
+		}
+	},
+	"source-name": "kwrited",
+	"source-release": "1",
+	"source-version": "6.4.3"
+}

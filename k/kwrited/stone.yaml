@@ -1,0 +1,31 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : kwrited
+version     : 6.4.3
+release     : 1
+upstreams   :
+    - https://download.kde.org/stable/plasma/6.4.3/kwrited-6.4.3.tar.xz : fe144b5ed4270cbd45f71187b970e4c4e3e0035c1afc40719b1c862b8adb098b
+homepage    : https://kde.org/plasma-desktop/
+license     : GPL-2.0-or-later
+summary     : KDE daemon listening for wall and write messages
+description : |
+    KDE daemon listening for wall and write messages.
+builddeps   :
+    # Temporary, boulder doesn't handle build ordering resolution correctly when builddeps are added by macros, so add ECM manually
+    - cmake(ECM)
+    - cmake(KF6CoreAddons)
+    - cmake(KF6I18n)
+    - cmake(KF6Notifications)
+    - cmake(KF6Pty)
+tuning      :
+    - lto: full
+    - optimize: speed
+setup       : |
+    %cmake_kf6
+build       : |
+    %cmake_build
+install     : |
+    %cmake_install
