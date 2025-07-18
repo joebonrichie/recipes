@@ -5,7 +5,7 @@
 #
 name        : sddm
 version     : 0.21.0
-release     : 8
+release     : 9
 homepage    : https://github.com/sddm/sddm
 upstreams   :
     - https://github.com/sddm/sddm/archive/refs/tags/v0.21.0.tar.gz : f895de2683627e969e4849dbfbbb2b500787481ca5ba0de6d6dfdae5f1549abf
@@ -25,9 +25,8 @@ builddeps   :
     - pkgconfig(xau)
     - pkgconfig(xcb)
 rundeps     :
-    # Temporary workaround until we have some kind of virtual package that defines the base system
-    - linux-pam
     - qt6-wayland
+    - binary(weston) # default compositor
 setup       : |
     %patch %(pkgdir)/0001-Use-aeryn-defaults.patch
     %patch %(pkgdir)/dont-error-for-logindef.patch
@@ -49,6 +48,9 @@ install     : |
     %cmake_install
     %qml_cache_qt6
 
+    # Default config file
+    %install_file %(pkgdir)/sddm.conf %(installroot)/usr/share/sddm/sddm.conf.d/10_aerynos_default.conf
+
     %install_file %(pkgdir)/sddm.group %(installroot)%(libdir)/userdb/sddm.group
     ln -s sddm.group %(installroot)%(libdir)/userdb/953.group
     %install_file %(pkgdir)/sddm.user %(installroot)%(libdir)/userdb/sddm.user
@@ -59,3 +61,4 @@ install     : |
 
     # SDDM ships pam configs but we need to override a few
     %install_file %(pkgdir)/pam.d/* -t %(installroot)%(vendordir)/pam.d
+# TODO: move cursor theme to branding

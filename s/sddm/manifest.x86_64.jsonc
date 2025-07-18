@@ -14,8 +14,8 @@
 				"pkgconfig(xcb)"
 			],
 			"depends": [
+				"binary(weston)",
 				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
-				"linux-pam",
 				"qt6-wayland",
 				"soname(libQt6Core.so.6(x86_64))",
 				"soname(libQt6DBus.so.6(x86_64))",
@@ -158,6 +158,7 @@
 				"/usr/share/sddm/scripts/Xsetup",
 				"/usr/share/sddm/scripts/Xstop",
 				"/usr/share/sddm/scripts/wayland-session",
+				"/usr/share/sddm/sddm.conf.d/10_aerynos_default.conf",
 				"/usr/share/sddm/themes/elarun/Main.qml",
 				"/usr/share/sddm/themes/elarun/Main.qmlc",
 				"/usr/share/sddm/themes/elarun/README",
@@ -257,6 +258,6 @@
 		}
 	},
 	"source-name": "sddm",
-	"source-release": "8",
+	"source-release": "9",
 	"source-version": "0.21.0"
 }
