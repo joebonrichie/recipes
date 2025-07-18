@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : libwacom
-version     : 2.14.0
-release     : 6
+version     : 2.16.1
+release     : 7
 homepage    : https://linuxwacom.github.io
 upstreams   :
-    - https://github.com/linuxwacom/libwacom/releases/download/libwacom-2.14.0/libwacom-2.14.0.tar.xz : 5900b3ad3d780e1b864103ace99cace9470db727a162517e1648c86a1bdec0e3
+    - https://github.com/linuxwacom/libwacom/releases/download/libwacom-2.16.1/libwacom-2.16.1.tar.xz : 0f9bc90babad92b2c4c6571b53af3aee065f437cce01c06c860599e1a10680aa
 summary     : Tablet description library
 description : |
     %(name) is a library to identify graphics tablets and their model-specific features. It provides easy access to information such as "is this a built-in on-screen tablet", "what is the size of this model", etc.
@@ -19,8 +19,50 @@ builddeps   :
     - pkgconfig(gudev-1.0)
     - pkgconfig(libxml-2.0)
 setup       : |
-    %meson -Dtests=disabled
+    %patch %(pkgdir)/surface/0001-Add-support-for-BUS_VIRTUAL.patch
+    %patch %(pkgdir)/surface/0002-Add-support-for-Intel-Management-Engine-bus.patch
+    %patch %(pkgdir)/surface/0003-data-Add-Microsoft-Surface-Pro-3.patch
+    %patch %(pkgdir)/surface/0004-data-Add-Microsoft-Surface-Pro-4.patch
+    %patch %(pkgdir)/surface/0005-data-Add-Microsoft-Surface-Pro-5.patch
+    %patch %(pkgdir)/surface/0006-data-Add-Microsoft-Surface-Pro-6.patch
+    %patch %(pkgdir)/surface/0007-data-Add-Microsoft-Surface-Pro-7.patch
+    %patch %(pkgdir)/surface/0008-data-Add-Microsoft-Surface-Pro-7.patch
+    %patch %(pkgdir)/surface/0009-data-Add-Microsoft-Surface-Pro-8.patch
+    %patch %(pkgdir)/surface/0010-data-Add-Microsoft-Surface-Pro-9.patch
+    %patch %(pkgdir)/surface/0011-data-Add-Microsoft-Surface-Book.patch
+    %patch %(pkgdir)/surface/0012-data-Add-Microsoft-Surface-Book-2-13.5.patch
+    %patch %(pkgdir)/surface/0013-data-Add-Microsoft-Surface-Book-2-15.patch
+    %patch %(pkgdir)/surface/0014-data-Add-Microsoft-Surface-Book-3-13.5.patch
+    %patch %(pkgdir)/surface/0015-data-Add-Microsoft-Surface-Book-3-15.patch
+    %patch %(pkgdir)/surface/0016-data-Add-Microsoft-Surface-Laptop-Studio.patch
+
+    %meson \
+        -Dtests=disabled
 build       : |
     %meson_build
 install     : |
     %meson_install
+packages    :
+    - "%(name)-data":
+        summary: Tablet Information Client Library Data Files
+        description: Tablet Information Client Library Data Files
+        paths:
+            - /usr/lib/udev/hwdb.d/
+            - /usr/lib/udev/rules.d/
+            - /usr/share/libwacom/
+
+    - "%(name)-utils":
+        summary: Tablet Information Client Library Utilities Package
+        description: Tablet Information Client Library Utilities Package
+        # rundeps:
+            # - python-libevdev #TODO package this
+            # - pyudev # TODO package this
+        paths:
+            - /usr/bin/libwacom-list-devices
+            - /usr/bin/libwacom-show-stylus
+            - /usr/share/man/man1/libwacom-list-devices.1*
+            - /usr/share/man/man1/libwacom-show-stylus.1*
+
+    - "%(name)":
+        rundeps:
+            - "%(name)-data"
