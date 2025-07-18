@@ -1,0 +1,43 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : kde-gtk-config
+version     : 6.4.3
+release     : 1
+upstreams   :
+    - https://download.kde.org/stable/plasma/6.4.3/kde-gtk-config-6.4.3.tar.xz : 22f72253bc801bb1757b7d56ab36bb279c1a1255ef888cadc950c5b2559b5912
+homepage    : https://kde.org/plasma-desktop/
+license     :
+    - BSD-2-Clause
+    - BSD-3-Clause
+    - GPL-2.0-only
+    - GPL-2.0-or-later
+summary     : KDE settings to set GTK look and feel
+description : |
+    KDE system settings to set GTK look and feel.
+builddeps   :
+    - binary(sassc)
+    # Temporary, boulder doesn't handle build ordering resolution correctly when builddeps are added by macros, so add ECM manually
+    - cmake(ECM)
+    - cmake(KDecoration3)
+    - cmake(KF6ColorScheme)
+    - cmake(KF6CoreAddons)
+    - cmake(KF6Config)
+    - cmake(KF6GuiAddons)
+    - cmake(KF6DBusAddons)
+    - cmake(KF6WindowSystem)
+    - cmake(Qt6Svg)
+    - pkgconfig(glib-2.0)
+    - pkgconfig(gtk+-3.0)
+    # NOTE: xsettingsd is only required for x11 sessions which we don't support
+tuning      :
+    - lto: full
+    - optimize: speed
+setup       : |
+    %cmake_kf6
+build       : |
+    %cmake_build
+install     : |
+    %cmake_install
