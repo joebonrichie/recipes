@@ -5,7 +5,7 @@
 #
 name        : linux-pam
 version     : 1.7.0
-release     : 13
+release     : 14
 summary     : Pluggable Authentication Modules
 license     :
     - BSD-3-Clause
@@ -50,7 +50,10 @@ install     : |
     %meson_install
 
     %install_file %(pkgdir)/pam.d/* -t %(installroot)/%(vendordir)/pam.d
-    %install_file %(pkgdir)/shells -t %(installroot)/%(vendordir)/.
+    %install_file %(pkgdir)/conf/shells -t %(installroot)/%(vendordir)/.
+
+    # Ensure that this environmental variable is always set
+    %install_file %(pkgdir)/conf/XDG_CONFIG_DIRS.environment %(installroot)/usr/share/defaults/environment.d/XDG_CONFIG_DIRS.conf
 
     %tmpfiles "# Create run/faillock directory"
     %tmpfiles "d /run/faillock 0755 root root -"

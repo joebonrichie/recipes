@@ -75,6 +75,7 @@
 				"/usr/sbin/pwhistory_helper",
 				"/usr/sbin/unix_chkpwd",
 				"/usr/share/defaults/environment",
+				"/usr/share/defaults/environment.d/XDG_CONFIG_DIRS.conf",
 				"/usr/share/defaults/pam.d/other",
 				"/usr/share/defaults/pam.d/system-auth",
 				"/usr/share/defaults/pam.d/system-local-login",
@@ -583,6 +584,6 @@
 		}
 	},
 	"source-name": "linux-pam",
-	"source-release": "13",
+	"source-release": "14",
 	"source-version": "1.7.0"
 }
