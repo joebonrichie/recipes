@@ -1,0 +1,62 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : kdeplasma-addons
+version     : 6.4.3
+release     : 1
+upstreams   :
+    - https://download.kde.org/stable/plasma/6.4.3/kdeplasma-addons-6.4.3.tar.xz : 7dad9176fee99f4e95f6573aab18326eeff6742609e8739b9b59c2e9f2aad19b
+homepage    : https://kde.org/plasma-desktop/
+license     :
+    - GPL-2.0-or-later
+    - LGPL-2.1-only
+summary     : A plugin based system monitoring daemon
+description : |
+    A plugin based system monitoring daemon
+builddeps   :
+    # Temporary, boulder doesn't handle build ordering resolution correctly when builddeps are added by macros, so add ECM manually
+    - cmake(ECM)
+    - cmake(KF6Auth)
+    - cmake(KF6Config)
+    - cmake(KF6CoreAddons)
+    - cmake(KF6DBusAddons)
+    - cmake(KF6Declarative)
+    - cmake(KF6GlobalAccel)
+    - cmake(KF6Holidays)
+    - cmake(KF6I18n)
+    - cmake(KF6KIO)
+    - cmake(KF6KCMUtils)
+    - cmake(KF6KirigamiAddons)
+    - cmake(KF6ItemModels)
+    - cmake(KF6JobWidgets)
+    - cmake(KF6NewStuff)
+    - cmake(KF6Notifications)
+    - cmake(KF6Runner)
+    - cmake(KF6Service)
+    - cmake(KF6Sonnet)
+    - cmake(KF6UnitConversion)
+    - cmake(KF6XmlGui)
+    - cmake(Plasma)
+    - cmake(Plasma5Support)
+    - cmake(Qt6Core5Compat)
+    - cmake(Qt6CorePrivate)
+    - cmake(Qt6Qml)
+    - cmake(Qt6Quick)
+    - cmake(Qt6Quick3D)
+    - cmake(Qt6WebEngineQuick)
+rundeps     :
+    - kf6-kirigami-addons
+    - kf6-kitemmodels
+    - qt6-quick3d
+tuning      :
+    - lto: full
+    - optimize: speed
+setup       : |
+    %cmake_kf6
+build       : |
+    %cmake_build
+install     : |
+    %cmake_install
+    %qml_cache_qt6
