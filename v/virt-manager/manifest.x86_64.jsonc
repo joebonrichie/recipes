@@ -16,7 +16,7 @@
 				"libvirt-python",
 				"python(requests)",
 				"python-libxml2",
-				"qemu"
+				"qemu-desktop"
 			],
 			"files": [
 				"/usr/bin/virt-clone",
@@ -442,6 +442,6 @@
 		}
 	},
 	"source-name": "virt-manager",
-	"source-release": "2",
+	"source-release": "3",
 	"source-version": "5.0.0"
 }

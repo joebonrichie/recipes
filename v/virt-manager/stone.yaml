@@ -5,7 +5,7 @@
 #
 name        : virt-manager
 version     : 5.0.0
-release     : 2
+release     : 3
 homepage    : https://virt-manager.org/
 upstreams   :
     - https://releases.pagure.org/virt-manager/virt-manager-5.0.0.tar.xz : bc89ae46e0c997bd754ed62a419ca39c6aadec27e3d8b850cea5282f0083f84a
@@ -24,7 +24,7 @@ rundeps     :
     - libosinfo
     - libvirt-glib
     - libvirt-python
-    - qemu
+    - qemu-desktop
     - python-libxml2
 setup       : |
     %meson
