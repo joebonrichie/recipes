@@ -1,0 +1,32 @@
+#
+# SPDX-FileCopyrightText: © 2020-2024 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : virtiofsd
+version     : 1.13.2
+release     : 1
+homepage    : https://gitlab.com/virtio-fs/virtiofsd
+upstreams   :
+    - https://gitlab.com/virtio-fs/virtiofsd/-/archive/v1.13.2/virtiofsd-v1.13.2.tar.gz : 3d611cc8c0ed9d028cd472fa6f31a491dc5623485e469af1a99f02ac6549c7c7
+summary     : Vhost-user virtio-fs device backend
+description : |
+    Vhost-user virtio-fs device backend written in Rust
+license     :
+    - Apache-2.0
+    - BSD-3-Clause
+networking  : yes
+builddeps   :
+    - pkgconfig(libcap-ng)
+    - pkgconfig(libseccomp)
+setup       : |
+    %patch %(pkgdir)/0001-downstream-Use-correct-libexec.patch
+
+    %cargo_fetch
+build       : |
+    %cargo_build
+install     : |
+    %install_exe %(cargo_target_dir)/virtiofsd -t %(installroot)%(libdir)/qemu/
+    %install_file 50-virtiofsd.json %(installroot)/usr/share/qemu/vhost-user/50-virtiofsd.json
+check       : |
+    %cargo_test
