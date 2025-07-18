@@ -5,7 +5,7 @@
 #
 name        : sddm
 version     : 0.21.0
-release     : 7
+release     : 8
 homepage    : https://github.com/sddm/sddm
 upstreams   :
     - https://github.com/sddm/sddm/archive/refs/tags/v0.21.0.tar.gz : f895de2683627e969e4849dbfbbb2b500787481ca5ba0de6d6dfdae5f1549abf
@@ -29,6 +29,7 @@ rundeps     :
     - linux-pam
     - qt6-wayland
 setup       : |
+    %patch %(pkgdir)/0001-Use-aeryn-defaults.patch
     %patch %(pkgdir)/dont-error-for-logindef.patch
     %patch %(pkgdir)/make-qt6-themes-default.patch
     %patch %(pkgdir)/qt6-themes.patch
