@@ -5,7 +5,7 @@
 #
 name        : discover
 version     : 6.4.3
-release     : 1
+release     : 2
 upstreams   :
     - https://download.kde.org/stable/plasma/6.4.3/discover-6.4.3.tar.xz : c2dd8238aaa8c801a12c6f29d70f24467bad59209c5fc8fae97cbbbac45dde10
 homepage    : https://apps.kde.org/discover/
@@ -52,6 +52,7 @@ rundeps    :
     - kf6-kitemmodels
     - kf6-purpose
     - kf6-qqc2-desktop-style
+    - qt6-wayland
 tuning      :
     - lto: full
     - optimize: speed

@@ -39,6 +39,7 @@
 				"kf6-kitemmodels",
 				"kf6-purpose",
 				"kf6-qqc2-desktop-style",
+				"qt6-wayland",
 				"soname(libAppStreamQt.so.3(x86_64))",
 				"soname(libDiscoverCommon.so(x86_64))",
 				"soname(libKF6Attica.so.6(x86_64))",
@@ -359,6 +360,6 @@
 		}
 	},
 	"source-name": "discover",
-	"source-release": "1",
+	"source-release": "2",
 	"source-version": "6.4.3"
 }
