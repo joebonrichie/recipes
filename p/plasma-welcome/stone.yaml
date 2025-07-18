@@ -5,7 +5,7 @@
 #
 name        : plasma-welcome
 version     : 6.4.3
-release     : 1
+release     : 2
 upstreams   :
     - https://download.kde.org/stable/plasma/6.4.3/plasma-welcome-6.4.3.tar.xz : d71cd6399f759fa4fcfa30f508a460ab37d2ab4fbdcddf9a2e7f2b5ab870b463
 homepage    : https://kde.org/plasma-desktop/
@@ -39,7 +39,7 @@ builddeps   :
     - cmake(Qt6Svg)
 rundeps     :
     - kf6-kirigami
-    - kf6-kirigamiaddons
+    - kf6-kirigami-addons
     - kf6-kuserfeedback
 tuning      :
     - lto: full
