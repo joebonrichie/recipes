@@ -1,0 +1,87 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: Reilly Brogan <reilly@reillybrogan.com>
+Date: Fri, 18 Jul 2025 15:35:13 -0500
+Subject: [PATCH] downstream: Nuke rpath
+
+---
+ discover/CMakeLists.txt                               | 1 -
+ libdiscover/CMakeLists.txt                            | 2 +-
+ libdiscover/backends/FlatpakBackend/CMakeLists.txt    | 2 +-
+ libdiscover/backends/PackageKitBackend/CMakeLists.txt | 2 --
+ libdiscover/notifiers/CMakeLists.txt                  | 2 +-
+ notifier/CMakeLists.txt                               | 1 -
+ 6 files changed, 3 insertions(+), 7 deletions(-)
+
+diff --git a/discover/CMakeLists.txt b/discover/CMakeLists.txt
+index 8fda6621a..f0712a625 100644
+--- a/discover/CMakeLists.txt
++++ b/discover/CMakeLists.txt
+@@ -37,7 +37,6 @@ add_executable(plasma-discover ${plasma_discover_SRCS}
+     RefreshNotifier.cpp
+ )
+ add_executable(Plasma::Discover ALIAS plasma-discover)
+-set_target_properties(plasma-discover PROPERTIES INSTALL_RPATH ${CMAKE_INSTALL_FULL_LIBDIR}/plasma-discover)
+ 
+ target_link_libraries(plasma-discover PUBLIC
+                                      KF6::Crash
+diff --git a/libdiscover/CMakeLists.txt b/libdiscover/CMakeLists.txt
+index ae19146ce..67cfe8e83 100644
+--- a/libdiscover/CMakeLists.txt
++++ b/libdiscover/CMakeLists.txt
+@@ -96,5 +96,5 @@ generate_export_header(DiscoverCommon)
+ 
+ target_include_directories(DiscoverCommon PRIVATE ${PHONON_INCLUDES} PUBLIC ${CMAKE_CURRENT_BINARY_DIR} ${CMAKE_CURRENT_SOURCE_DIR})
+ 
+-install(TARGETS DiscoverCommon DESTINATION ${KDE_INSTALL_LIBDIR}/plasma-discover)
++install(TARGETS DiscoverCommon DESTINATION ${KDE_INSTALL_LIBDIR})
+ install(FILES resources/discoverabstractnotifier.notifyrc DESTINATION ${KDE_INSTALL_KNOTIFYRCDIR})
+diff --git a/libdiscover/backends/FlatpakBackend/CMakeLists.txt b/libdiscover/backends/FlatpakBackend/CMakeLists.txt
+index 918e64ac7..ac954ae7c 100644
+--- a/libdiscover/backends/FlatpakBackend/CMakeLists.txt
++++ b/libdiscover/backends/FlatpakBackend/CMakeLists.txt
+@@ -65,7 +65,7 @@ target_link_libraries(FlatpakNotifier
+         libdiscover-backend-flatpak-logging-category
+ 
+ )
+-set_target_properties(FlatpakNotifier PROPERTIES INSTALL_RPATH ${CMAKE_INSTALL_FULL_LIBDIR}/plasma-discover)
++set_target_properties(FlatpakNotifier PROPERTIES INSTALL_RPATH ${CMAKE_INSTALL_FULL_LIBDIR})
+ 
+ if (Flatpak_VERSION VERSION_LESS 1.10.2)
+     target_compile_definitions(flatpak-backend PRIVATE -DFLATPAK_EXTERNC_REQUIRED)
+diff --git a/libdiscover/backends/PackageKitBackend/CMakeLists.txt b/libdiscover/backends/PackageKitBackend/CMakeLists.txt
+index 358b4d66a..826013eff 100644
+--- a/libdiscover/backends/PackageKitBackend/CMakeLists.txt
++++ b/libdiscover/backends/PackageKitBackend/CMakeLists.txt
+@@ -74,8 +74,6 @@ target_link_libraries(DiscoverPackageKitNotifier
+         libdiscover-backend-packagekit-logging-category
+ )
+ 
+-set_target_properties(DiscoverPackageKitNotifier PROPERTIES INSTALL_RPATH ${CMAKE_INSTALL_FULL_LIBDIR}/plasma-discover)
+-
+ install(FILES packagekit-backend-categories.xml DESTINATION ${KDE_INSTALL_DATADIR}/libdiscover/categories)
+ 
+ install(FILES org.kde.discover.packagekit.appdata.xml DESTINATION ${KDE_INSTALL_METAINFODIR} )
+diff --git a/libdiscover/notifiers/CMakeLists.txt b/libdiscover/notifiers/CMakeLists.txt
+index 6c167659e..c177ca784 100644
+--- a/libdiscover/notifiers/CMakeLists.txt
++++ b/libdiscover/notifiers/CMakeLists.txt
+@@ -7,6 +7,6 @@ target_link_libraries(DiscoverNotifiers
+ generate_export_header(DiscoverNotifiers)
+ 
+ target_include_directories(DiscoverNotifiers PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
+-install(TARGETS DiscoverNotifiers DESTINATION ${KDE_INSTALL_LIBDIR}/plasma-discover)
++install(TARGETS DiscoverNotifiers DESTINATION ${KDE_INSTALL_LIBDIR})
+ 
+ add_library(Discover::Notifiers ALIAS DiscoverNotifiers)
+diff --git a/notifier/CMakeLists.txt b/notifier/CMakeLists.txt
+index adda7010f..daadd073f 100644
+--- a/notifier/CMakeLists.txt
++++ b/notifier/CMakeLists.txt
+@@ -36,7 +36,6 @@ ecm_qt_declare_logging_category(DiscoverNotifier
+     EXPORT DISCOVER
+ )
+ 
+-set_target_properties(DiscoverNotifier PROPERTIES INSTALL_RPATH ${CMAKE_INSTALL_FULL_LIBDIR}/plasma-discover)
+ install(TARGETS DiscoverNotifier DESTINATION ${KDE_INSTALL_LIBEXECDIR})
+ 
+ set(DesktopExec "${KDE_INSTALL_FULL_LIBEXECDIR}/DiscoverNotifier")

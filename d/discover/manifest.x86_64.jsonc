@@ -41,7 +41,6 @@
 				"kf6-qqc2-desktop-style",
 				"qt6-wayland",
 				"soname(libAppStreamQt.so.3(x86_64))",
-				"soname(libDiscoverCommon.so(x86_64))",
 				"soname(libKF6Attica.so.6(x86_64))",
 				"soname(libKF6ConfigCore.so.6(x86_64))",
 				"soname(libKF6ConfigGui.so.6(x86_64))",
@@ -85,8 +84,8 @@
 			"files": [
 				"/usr/bin/plasma-discover",
 				"/usr/lib/kf6/DiscoverNotifier",
-				"/usr/lib/plasma-discover/libDiscoverCommon.so",
-				"/usr/lib/plasma-discover/libDiscoverNotifiers.so",
+				"/usr/lib/libDiscoverCommon.so",
+				"/usr/lib/libDiscoverNotifiers.so",
 				"/usr/lib/qt6/plugins/discover-notifier/FlatpakNotifier.so",
 				"/usr/lib/qt6/plugins/discover/flatpak-backend.so",
 				"/usr/lib/qt6/plugins/discover/kns-backend.so",
@@ -350,8 +349,8 @@
 			"name": "discover",
 			"provides": [
 				"binary(plasma-discover)",
-				"soname(plasma-discover/libDiscoverCommon.so(x86_64))",
-				"soname(plasma-discover/libDiscoverNotifiers.so(x86_64))",
+				"soname(libDiscoverCommon.so(x86_64))",
+				"soname(libDiscoverNotifiers.so(x86_64))",
 				"soname(qt6/plugins/discover-notifier/FlatpakNotifier.so(x86_64))",
 				"soname(qt6/plugins/discover/flatpak-backend.so(x86_64))",
 				"soname(qt6/plugins/discover/kns-backend.so(x86_64))",
@@ -360,6 +359,6 @@
 		}
 	},
 	"source-name": "discover",
-	"source-release": "2",
+	"source-release": "3",
 	"source-version": "6.4.3"
 }
