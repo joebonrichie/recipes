@@ -1,0 +1,31 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : kpmcore
+version     : 25.04.3
+release     : 1
+upstreams   :
+    - https://download.kde.org/stable/release-service/25.04.3/src/kpmcore-25.04.3.tar.xz : 6c22e9068fa1e7a4a4a64def7636bb3498b977cf77752d126f1b4e1143f48c95
+homepage    : https://invent.kde.org/system/kpmcore
+license     : GPL-3.0-or-later
+summary     : Library for managing partitions
+description : |
+    Common code for KDE Partition Manager and other projects. Library for managing partitions.
+builddeps   :
+    # Temporary, boulder doesn't handle build ordering resolution correctly when builddeps are added by macros, so add ECM manually
+    - cmake(ECM)
+    - cmake(KF6CoreAddons)
+    - cmake(KF6I18n)
+    - cmake(KF6WidgetsAddons)
+    - cmake(PolkitQt6-1)
+    - pkgconfig(blkid)
+# rundeps     :
+#     - qt6-wayland
+setup       : |
+    %cmake_kf6
+build       : |
+    %cmake_build
+install     : |
+    %cmake_install
