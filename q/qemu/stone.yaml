@@ -5,7 +5,7 @@
 #
 name        : qemu
 version     : 10.0.2
-release     : 18
+release     : 19
 homepage    : http://www.qemu.org/
 upstreams   :
     - https://download.qemu.org/qemu-10.0.2.tar.xz : ef786f2398cb5184600f69aef4d5d691efd44576a3cff4126d38d4c6fec87759
@@ -16,11 +16,13 @@ license     :
     - GPL-2.0
 builddeps   :
     - binary(bzip2)
+    - binary(iasl)
     - binary(meson)
     - binary(ninja)
     - binary(nm)
     - binary(pip)
     - binary(python3)
+    - binary(sphinx-build)
     - pkgconfig(SDL2_image)
     - pkgconfig(alsa)
     - pkgconfig(epoxy)
@@ -61,12 +63,13 @@ builddeps   :
     - pkgconfig(xkbcommon)
     - pkgconfig(zlib)
     - python(setuptools)
+    - python(sphinx-rtd-theme)
 setup       : |
-    %configure --disable-docs \
-               --target-list=x86_64-linux-user,i386-linux-user,i386-softmmu,x86_64-softmmu \
-               -Db_lto=true \
-               -Db_lto_mode=thin \
-               -Dmodules=enabled
+    %configure \
+        --target-list=x86_64-linux-user,i386-linux-user,i386-softmmu,x86_64-softmmu \
+        -Db_lto=true \
+        -Db_lto_mode=thin \
+        -Dmodules=enabled
 build       : |
     %make
 install     : |
@@ -80,14 +83,494 @@ install     : |
     mkdir -p %(installroot)%(tmpfilesdir)
     echo "d /var/log/qemu-ga 0755 root root -" >> %(installroot)%(tmpfilesdir)/qemu-guest-agent.conf
 
-    # TODO: Stop boulder emitting dependencies for these guys
+    # TODO: Stop boulder emitting dependencies for these gys
     rm -v %(installroot)%(datadir)/qemu/s390*
     rm -v %(installroot)%(datadir)/qemu/hppa*
+
+    # Provided by EDK2
+    rm -rv %(installroot)/usr/share/qemu/firmware/ \
+           %(installroot)/usr/share/qemu/*.fd \
+           %(installroot)/usr/share/qemu/edk2-licenses.txt
+    
+    # Virtual packages
+    for i in %(name)-base %(name)-desktop %(name)-full; do
+        %install_dir %(installroot)%(docdir)/${i}/
+        echo "VIRTUAL" > %(installroot)%(docdir)/${i}/README
+    done
+
+    # Deprecated
+    %install_dir %(installroot)%(docdir)/%(name)/
+    echo "DEPRECATED" > %(installroot)%(docdir)/%(name)/README
 packages    :
-    - "qemu-guest-agent":
+    - "%(name)-guest-agent":
         paths:
             - /usr/bin/qemu-ga
             - /usr/lib/systemd/system/qemu-guest-agent.service
             - /usr/lib/systemd/system-preset/99-qemu-guest-agent.preset
             - /usr/lib/udev/rules.d/99-qemu-guest-agent.rules
             - /usr/lib/tmpfiles.d/qemu-guest-agent.conf
+            - /usr/share/man/man8/qemu-ga.8*
+
+    - "%(name)-docs":
+        paths:
+            - /usr/share/doc/
+
+    - "%(name)-common":
+        paths:
+            - /usr/lib/qemu/qemu-bridge-helper
+            - /usr/share/applications/qemu.desktop
+            - /usr/share/icons/hicolor/*/apps/qemu.*
+            - /usr/share/man/man1/qemu.1*
+            - /usr/share/man/man7/qemu*.7*
+            - /usr/share/qemu/*.bin
+            - /usr/share/qemu/*.bmp
+            - /usr/share/qemu/*.rom
+            - /usr/share/qemu/keymaps/
+
+    - "%(name)-audio-alsa":
+        summary: QEMU ALSA audio driver
+        description: QEMU ALSA audio driver
+        rundeps:
+            - "%(name)-common"
+        paths:
+            - /usr/lib/qemu/audio-alsa.so
+
+    - "%(name)-audio-dbus":
+        summary: QEMU D-Bus audio driver
+        description: QEMU D-Bus audio driver
+        rundeps:
+            - "%(name)-common"
+        paths:
+            - /usr/lib/qemu/audio-dbus.so
+
+    - "%(name)-audio-oss":
+        summary: QEMU OSS audio driver
+        description: QEMU OSS audio driver
+        rundeps:
+            - "%(name)-common"
+        paths:
+            - /usr/lib/qemu/audio-oss.so
+
+    - "%(name)-audio-pa":
+        summary: QEMU PulseAudio audio driver
+        description: QEMU PulseAudio audio driver
+        rundeps:
+            - "%(name)-common"
+        paths:
+            - /usr/lib/qemu/audio-pa.so
+
+    - "%(name)-audio-pipewire":
+        summary: QEMU PipeWire audio driver
+        description: QEMU PipeWire audio driver
+        rundeps:
+            - "%(name)-common"
+        paths:
+            - /usr/lib/qemu/audio-pipewire.so
+
+    - "%(name)-audio-sdl":
+        summary: QEMU SDL audio driver
+        description: QEMU SDL audio driver
+        rundeps:
+            - "%(name)-common"
+        paths:
+            - /usr/lib/qemu/audio-sdl.so
+
+    - "%(name)-audio-spice":
+        summary: QEMU spice audio driver
+        description: QEMU spice audio driver
+        rundeps:
+            - "%(name)-common"
+            - "%(name)-ui-spice-core"
+        paths:
+            - /usr/lib/qemu/audio-spice.so
+
+    - "%(name)-block-curl":
+        summary: QEMU curl block driver
+        description: QEMU curl block driver
+        rundeps:
+            - "%(name)-common"
+        paths:
+            - /usr/lib/qemu/block-curl.so
+
+    - "%(name)-block-dmg":
+        summary: QEMU dmg block driver
+        description: QEMU dmg block driver
+        rundeps:
+            - "%(name)-common"
+        paths:
+            - /usr/lib/qemu/block-dmg-bz2.so
+
+    - "%(name)-block-ssh":
+        summary: QEMU SSH block driver
+        description: QEMU SSH block driver
+        rundeps:
+            - "%(name)-common"
+        paths:
+            - /usr/lib/qemu/block-ssh.so
+
+    - "%(name)-chardev-spice":
+        summary: QEMU spice chardev driver
+        description: QEMU spice chardev driver
+        rundeps:
+            - "%(name)-common"
+            - "%(name)-ui-spice-core"
+        paths:
+            - /usr/lib/qemu/chardev-spice.so
+
+    - "%(name)-hw-display-qxl":
+        summary: QEMU QXL display device
+        description: QEMU QXL display device
+        rundeps:
+            - "%(name)-common"
+            - "%(name)-ui-spice-core"
+        paths:
+            - /usr/lib/qemu/hw-display-qxl.so
+
+    - "%(name)-hw-display-virtio-gpu":
+        summary: QEMU virtio-gpu display device
+        description: QEMU virtio-gpu display device
+        rundeps:
+            - "%(name)-common"
+        paths:
+            - /usr/lib/qemu/hw-display-virtio-gpu.so
+
+    - "%(name)-hw-display-virtio-gpu-gl":
+        summary: QEMU virtio-gpu-gl display device
+        description: QEMU virtio-gpu-gl display device
+        rundeps:
+            - "%(name)-common"
+        paths:
+            - /usr/lib/qemu/hw-display-virtio-gpu-gl.so
+
+    - "%(name)-hw-display-virtio-gpu-pci":
+        summary: QEMU virtio-gpu-gl-pci display device
+        description: QEMU virtio-gpu-gl-pci display device
+        rundeps:
+            - "%(name)-common"
+        paths:
+            - /usr/lib/qemu/hw-display-virtio-gpu-pci.so
+
+    - "%(name)-hw-display-virtio-gpu-pci-gl":
+        summary: QEMU virtio-gpu-gl-pci-gl display device
+        description: QEMU virtio-gpu-gl-pci-gl display device
+        rundeps:
+            - "%(name)-common"
+        paths:
+            - /usr/lib/qemu/hw-display-virtio-gpu-pci-gl.so
+
+    - "%(name)-hw-display-virtio-vga":
+        summary: QEMU virtio-vga display device
+        description: QEMU virtio-vga display device
+        rundeps:
+            - "%(name)-common"
+        paths:
+            - /usr/lib/qemu/hw-display-virtio-vga.so
+
+    - "%(name)-hw-display-virtio-vga-gl":
+        summary: QEMU virtio-vga-gl display device
+        description: QEMU virtio-vga-gl display device
+        rundeps:
+            - "%(name)-common"
+        paths:
+            - /usr/lib/qemu/hw-display-virtio-vga-gl.so
+
+    - "%(name)-hw-s390x-virtio-gpu-ccw":
+        summary: QEMU s390x-virtio-gpu-ccw display device
+        description: QEMU s390x-virtio-gpu-ccw display device
+        rundeps:
+            - "%(name)-common"
+        paths:
+            - /usr/lib/qemu/hw-s390x-virtio-gpu-ccw.so
+
+    - "%(name)-hw-uefi-vars":
+        summary: QEMU UEFI vars handling
+        description: QEMU UEFI vars handling
+        rundeps:
+            - "%(name)-common"
+        paths:
+            - /usr/lib/qemu/hw-uefi-vars.so
+
+    - "%(name)-hw-usb-host":
+        summary: QEMU USB host device
+        description: QEMU USB host device
+        rundeps:
+            - "%(name)-common"
+        paths:
+            - /usr/lib/qemu/hw-usb-host.so
+
+    - "%(name)-ui-curses":
+        summary: QEMU curses UI driver
+        description: QEMU curses UI driver
+        rundeps:
+            - "%(name)-common"
+        paths:
+            - /usr/lib/qemu/ui-curses.so
+
+    - "%(name)-ui-dbus":
+        summary: QEMU D-Bus UI driver
+        description: QEMU D-Bus UI driver
+        rundeps:
+            - "%(name)-common"
+        paths:
+            - /usr/lib/qemu/ui-dbus.so
+
+    - "%(name)-ui-egl-headless":
+        summary: QEMU EGL headless UI driver
+        description: QEMU EGL headless UI driver
+        rundeps:
+            - "%(name)-common"
+            - "%(name)-ui-opengl"
+        paths:
+            - /usr/lib/qemu/ui-egl-headless.so
+
+    - "%(name)-ui-gtk":
+        summary: QEMU GTK UI driver
+        description: QEMU GTK UI driver
+        rundeps:
+            - "%(name)-common"
+            - "%(name)-ui-opengl"
+        paths:
+            - /usr/lib/qemu/ui-gtk.so
+
+    - "%(name)-ui-opengl":
+        summary: QEMU OpenGL UI driver
+        description: QEMU OpenGL UI driver
+        rundeps:
+            - "%(name)-common"
+            - mesa-libgl
+            - mesa-libegl
+        paths:
+            - /usr/lib/qemu/ui-opengl.so
+
+    - "%(name)-ui-sdl":
+        summary: QEMU SDL UI driver
+        description: QEMU SDL UI driver
+        rundeps:
+            - "%(name)-common"
+            - "%(name)-ui-opengl"
+        paths:
+            - /usr/lib/qemu/ui-sdl.so
+
+    - "%(name)-ui-spice-app":
+        summary: QEMU spice app UI driver
+        description: QEMU spice app UI driver
+        rundeps:
+            - "%(name)-common"
+            - "%(name)-ui-spice-core"
+            - "%(name)-chardev-spice"
+        paths:
+            - /usr/lib/qemu/ui-spice-app.so
+
+    - "%(name)-ui-spice-core":
+        summary: QEMU spice core UI driver
+        description: QEMU spice core UI driver
+        rundeps:
+            - "%(name)-common"
+            - "%(name)-ui-opengl"
+        paths:
+            - /usr/lib/qemu/ui-spice-core.so
+
+    - "%(name)-vhost-user-gpu":
+        summary: QEMU vhost-user-gpu display-device
+        description: QEMU vhost-user-gpu display-device
+        rundeps:
+            - "%(name)-common"
+        paths:
+            - /usr/lib/qemu/vhost-user-gpu
+            - /usr/share/qemu/vhost-user/50-qemu-gpu.json
+
+    - "%(name)-img":
+        summary: QEMU tooling for manipulating disk images
+        description: QEMU tooling for manipulating disk images
+        paths:
+            - /usr/bin/qemu-img
+            - /usr/bin/qemu-io
+            - /usr/bin/qemu-nbd
+            - /usr/bin/qemu-storage-daemon
+            - /usr/share/man/man1/qemu-img.1*
+            - /usr/share/man/man1/qemu-storage-daemon.1*
+            - /usr/share/man/man7/qemu-storage-daemon-qmp-ref.7*
+            - /usr/share/man/man8/qemu-nbd.8*
+
+    - "%(name)-pr-helper":
+        summary: QEMU persistent reservation utility
+        description: QEMU persistent reservation utility
+        paths:
+            - /usr/bin/qemu-pr-helper
+            - /usr/share/man/man8/qemu-pr-helper.8*
+
+    - "%(name)-vmsr-helper":
+        summary: QEMU Running Average Power Limit (RAPL) MSR
+        description: QEMU Running Average Power Limit (RAPL) MSR
+        paths:
+            - /usr/bin/qemu-vmsr-helper
+
+    - "%(name)-tests":
+        summary: QEMU tests
+        description: QEMU tests
+        paths:
+            - /usr/lib/qemu/accel-qtest-*.so
+
+    - "%(name)-tools":
+        summary: QEMU tools
+        description: QEMU tools
+        paths:
+            - /usr/bin/elf2dmp
+            - /usr/bin/qemu-edid
+            - /usr/bin/qemu-keymap
+            - /usr/share/qemu/trace-events-all
+
+    - "%(name)-user":
+        summary: QEMU user mode emulation
+        description: QEMU user mode emulation
+        paths:
+            - /usr/bin/qemu-i386
+            - /usr/bin/qemu-x86_64
+
+    - "%(name)-system-x86":
+        summary: QEMU system emulator for x86
+        description: QEMU system emulator for x86
+        rundeps:
+            - "%(name)-common"
+            - "%(name)-system-x86-firmware"
+            - edk2-ovmf
+        paths:
+            - /usr/bin/qemu-system-i386
+            - /usr/bin/qemu-system-x86_64
+
+    - "%(name)-system-x86-firmware":
+        summary: Firmware for QEMU system emulator for x86
+        description: Firmware for QEMU system emulator for x86
+        paths:
+            - /usr/share/qemu/kvmvapic.bin
+            - /usr/share/qemu/linuxboot.bin
+            - /usr/share/qemu/multiboot.bin
+            - /usr/share/qemu/multiboot_dma.bin
+            - /usr/share/qemu/pvh.bin
+            - /usr/share/qemu/qboot.rom
+
+    - "%(name)-system-ppc-firmware":
+        summary: Firmware for QEMU system emulator for PPC
+        description: Firmware for QEMU system emulator for PPC
+        paths:
+            - /usr/share/qemu/bamboo.dtb
+            - /usr/share/qemu/canyonlands.dtb
+            - /usr/share/qemu/openbios-ppc
+            - /usr/share/qemu/pnv-pnor.bin
+            - /usr/share/qemu/qemu_vga.ndrv
+            - /usr/share/qemu/skiboot.lid
+            - /usr/share/qemu/slof.bin
+            - /usr/share/qemu/u-boot.e500
+            - /usr/share/qemu/u-boot-sam460-20100605.bin
+
+    - "%(name)-system-alpha-firmware":
+        summary: Firmware for QEMU system emulator for Alpha
+        description: Firmware for QEMU system emulator for Alpha
+        paths:
+            - /usr/share/qemu/palcode-clipper
+
+    - "%(name)-system-microblaze-firmware":
+        summary: Firmware for QEMU system emulator for Microblaze
+        description: Firmware for QEMU system emulator for Microblaze
+        paths:
+            - /usr/share/qemu/petalogix-*.dtb
+
+    - "%(name)-system-riscv-firmware":
+        summary: Firmware for QEMU system emulator for SPARC
+        description: Firmware for QEMU system emulator for SPARC
+        paths:
+            - /usr/share/qemu/opensbi-riscv*.bin
+
+    - "%(name)-system-sparc-firmware":
+        summary: Firmware for QEMU system emulator for SPARC
+        description: Firmware for QEMU system emulator for SPARC
+        paths:
+            - /usr/share/qemu/openbios-sparc*
+            - /usr/share/qemu/QEMU,cgthree.bin
+            - /usr/share/qemu/QEMU,tcx.bin
+
+    ## Virtual packages
+    - "%(name)-base":
+        summary: A basic QEMU setup for headless environments
+        description: A basic QEMU setup for headless environments
+        rundeps:
+            - "%(name)-common"
+            - "%(name)-img"
+            - "%(name)-system-x86"
+            - virtiofsd
+        paths:
+            - /usr/share/doc/qemu-base/
+
+    - "%(name)-desktop":
+        summary: A QEMU setup for desktop environments
+        description: A QEMU setup for desktop environments
+        rundeps:
+            - "%(name)-base"
+            - "%(name)-audio-alsa"
+            - "%(name)-audio-dbus"
+            - "%(name)-audio-oss"
+            - "%(name)-audio-pa"
+            - "%(name)-audio-pipewire"
+            - "%(name)-audio-sdl"
+            - "%(name)-audio-spice"
+            - "%(name)-block-curl"
+            - "%(name)-block-dmg"
+            - "%(name)-block-ssh"
+            - "%(name)-chardev-spice"
+            - "%(name)-hw-display-qxl"
+            - "%(name)-hw-display-virtio-gpu"
+            - "%(name)-hw-display-virtio-gpu-gl"
+            - "%(name)-hw-display-virtio-gpu-pci"
+            - "%(name)-hw-display-virtio-gpu-pci-gl"
+            - "%(name)-hw-display-virtio-vga"
+            - "%(name)-hw-display-virtio-vga-gl"
+            - "%(name)-hw-uefi-vars"
+            - "%(name)-hw-usb-host"
+            - "%(name)-ui-curses"
+            - "%(name)-ui-dbus"
+            - "%(name)-ui-egl-headless"
+            - "%(name)-ui-gtk"
+            - "%(name)-ui-opengl"
+            - "%(name)-ui-sdl"
+            - "%(name)-ui-spice-app"
+            - "%(name)-ui-spice-core"
+            - "%(name)-vhost-user-gpu"
+        paths:
+            - /usr/share/doc/qemu-desktop/
+
+    - "%(name)-full":
+        summary: A full QEMU setup
+        description: A full QEMU setup
+        rundeps:
+            - "%(name)-desktop"
+            - "%(name)-docs"
+            - "%(name)-hw-s390x-virtio-gpu-ccw"
+            - "%(name)-pr-helper"
+            - "%(name)-system-alpha-firmware"
+            - "%(name)-system-microblaze-firmware"
+            - "%(name)-system-ppc-firmware"
+            - "%(name)-system-sparc-firmware"
+            - "%(name)-tests"
+            - "%(name)-tools"
+            - "%(name)-user"
+            - "%(name)-vmsr-helper"
+        paths:
+            - /usr/share/doc/qemu-full/
+
+    # Deprecated
+    - "%(name)":
+        rundeps:
+            - "%(name)-full"
+        paths:
+            - /usr/share/doc/qemu/README
+
+# TODO:
+# - Figure out if we need bridge permission file
+# - Cleanup docs
+# - Figure out users
+# - Package seabios
+# - package seavgabios
+# - package ipxe
+# - package openbios
+# - package SLOF
+# - Package and build against usbredir
