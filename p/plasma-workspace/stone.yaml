@@ -5,7 +5,7 @@
 #
 name        : plasma-workspace
 version     : 6.4.3
-release     : 4
+release     : 5
 upstreams   :
     - https://download.kde.org/stable/plasma/6.4.3/plasma-workspace-6.4.3.tar.xz : 7254f285a91ec802b0612a7adb242d98362accdff866fc1285bb65b8048dedb8
 homepage    : https://kde.org/plasma-desktop/
@@ -188,6 +188,8 @@ packages    :
             - /usr/share/xdg/taskmanagerrulesrc
 
     - "%(name)-devel":
+        rundeps:
+            - cmake(KF6ItemModels)
         paths:
             - /usr/share/dbus-1/interfaces/
 
