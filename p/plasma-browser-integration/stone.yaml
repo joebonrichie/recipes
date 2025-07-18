@@ -1,0 +1,55 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : plasma-browser-integration
+version     : 6.4.3
+release     : 1
+upstreams   :
+    - https://download.kde.org/stable/plasma/6.4.3/plasma-browser-integration-6.4.3.tar.xz : 58cce717ab4ec3ae9418be05e867c2c83d23286d1dc68f2650cea18b3179abcb
+homepage    : https://kde.org/plasma-desktop/
+license     : GPL-3.0-or-later
+summary     : Integrate browsers into the Plasma Desktop
+description : |
+    Components necessary to integrate browsers into the Plasma Desktop.
+builddeps   :
+    # Temporary, boulder doesn't handle build ordering resolution correctly when builddeps are added by macros, so add ECM manually
+    - cmake(ECM)
+    - cmake(KF6Config)
+    - cmake(KF6CoreAddons)
+    - cmake(KF6Crash)
+    - cmake(KF6DBusAddons)
+    - cmake(KF6FileMetaData)
+    - cmake(KF6I18n)
+    - cmake(KF6JobWidgets)
+    - cmake(KF6KIO)
+    - cmake(KF6Notifications)
+    - cmake(KF6Purpose)
+    - cmake(KF6Runner)
+    - cmake(KF6Service)
+    - cmake(KF6StatusNotifierItem)
+    - cmake(LibTaskManager)
+    - cmake(PlasmaActivities)
+tuning      :
+    - lto: full
+    - optimize: speed
+setup       : |
+    %cmake_kf6 \
+        -DINSTALL_CHROME_MANIFEST=ON
+build       : |
+    %cmake_build
+install     : |
+    %cmake_install
+
+    # Add policy file so Firefox downloads the extension automatically
+    %install_file %(pkgdir)/firefox-policy.json %(installroot)%(libdir)/firefox/distribution/policies.json
+
+    # Stateless
+    # All of these are the same, so move one of them to /usr and use tmpfiles to create the other links
+    %install_dir %(installroot)%(libdir)/%(name)
+    mv %(installroot)/etc/chromium/native-messaging-hosts/org.kde.plasma.browser_integration.json %(installroot)%(libdir)/%(name)
+    %tmpfiles "# Configuration for Chromium browsers"
+    %tmpfiles "L+ /etc/chromium/native-messaging-hosts/org.kde.plasma.browser_integration.json    - - - - ../../..%(libdir)/%(name)/org.kde.plasma.browser_integration.json"
+    %tmpfiles "L+ /etc/opt/edge/native-messaging-hosts/org.kde.plasma.browser_integration.json    - - - - ../../../..%(libdir)/%(name)/org.kde.plasma.browser_integration.json"
+    %tmpfiles "L+ /etc/opt/chrome/native-messaging-hosts/org.kde.plasma.browser_integration.json  - - - - ../../../..%(libdir)/%(name)/org.kde.plasma.browser_integration.json"
