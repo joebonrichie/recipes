@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : virglrenderer
-version     : 1.1.0
-release     : 3
+version     : 1.1.1
+release     : 4
 homepage    : https://gitlab.freedesktop.org/virgl/virglrenderer
 upstreams   :
-    - https://gitlab.freedesktop.org/virgl/virglrenderer/-/archive/1.1.0/virglrenderer-1.1.0.tar.gz : 9996b87bda2fbf515473b60f32b00ed58847da733b47053923fd2cb035a6f5a2
+    - https://gitlab.freedesktop.org/virgl/virglrenderer/-/archive/1.1.1/virglrenderer-1.1.1.tar.gz : 1fc34ffbf2a4f5cf161228f13242e28283bd818901d7daf0027e6ae5fcaeaf9b
 summary     : Virtual OpenGL Renderer
 description : |
     Virtual OpenGL Renderer
@@ -22,9 +22,15 @@ builddeps   :
     - pkgconfig(libva-drm)
     - pkgconfig(vulkan)
     - pkgconfig(x11)
+    - python(pyyaml)
 setup       : |
-    %meson
+    %meson \
+        -Dvenus=true \
+        -Dvideo=true
 build       : |
     %meson_build
 install     : |
     %meson_install
+
+    # Not needed
+    rm -rfv %(installroot)/%(bindir)

@@ -10,7 +10,8 @@
 				"pkgconfig(libva)",
 				"pkgconfig(libva-drm)",
 				"pkgconfig(vulkan)",
-				"pkgconfig(x11)"
+				"pkgconfig(x11)",
+				"python(pyyaml)"
 			],
 			"depends": [
 				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
@@ -19,16 +20,18 @@
 				"soname(libdrm.so.2(x86_64))",
 				"soname(libepoxy.so.0(x86_64))",
 				"soname(libgbm.so.1(x86_64))",
-				"soname(libm.so.6(x86_64))"
+				"soname(libm.so.6(x86_64))",
+				"soname(libva-drm.so.2(x86_64))",
+				"soname(libva.so.2(x86_64))",
+				"soname(libvulkan.so.1(x86_64))"
 			],
 			"files": [
-				"/usr/bin/virgl_test_server",
 				"/usr/lib/libvirglrenderer.so.1",
-				"/usr/lib/libvirglrenderer.so.1.9.0"
+				"/usr/lib/libvirglrenderer.so.1.9.1",
+				"/usr/lib/virglrenderer/virgl_render_server"
 			],
 			"name": "virglrenderer",
 			"provides": [
-				"binary(virgl_test_server)",
 				"soname(libvirglrenderer.so.1(x86_64))"
 			]
 		},
@@ -40,12 +43,16 @@
 				"pkgconfig(libva)",
 				"pkgconfig(libva-drm)",
 				"pkgconfig(vulkan)",
-				"pkgconfig(x11)"
+				"pkgconfig(x11)",
+				"python(pyyaml)"
 			],
 			"depends": [
 				"pkgconfig(epoxy)",
 				"pkgconfig(gbm)",
 				"pkgconfig(libdrm)",
+				"pkgconfig(libva)",
+				"pkgconfig(libva-drm)",
+				"pkgconfig(vulkan)",
 				"pkgconfig(x11)",
 				"virglrenderer"
 			],
@@ -62,6 +69,6 @@
 		}
 	},
 	"source-name": "virglrenderer",
-	"source-release": "3",
-	"source-version": "1.1.0"
+	"source-release": "4",
+	"source-version": "1.1.1"
 }
