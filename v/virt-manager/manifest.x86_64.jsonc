@@ -7,16 +7,24 @@
 				"binary(gtk-update-icon-cache)",
 				"binary(msgfmt)",
 				"binary(rst2man)",
-				"pkgconfig(gio-2.0)"
+				"pkgconfig(gio-2.0)",
+				"pkgconfig(spice-protocol)"
 			],
 			"depends": [
+				"binary(dnsmasq)",
+				"binary(xorriso)",
 				"gtk-vnc",
+				"gtksourceview4",
 				"libosinfo",
 				"libvirt-glib",
 				"libvirt-python",
+				"python(argcomplete)",
 				"python(requests)",
 				"python-libxml2",
-				"qemu-desktop"
+				"qemu-desktop",
+				"spice",
+				"spice-gtk",
+				"vte-gtk3"
 			],
 			"files": [
 				"/usr/bin/virt-clone",
@@ -442,6 +450,6 @@
 		}
 	},
 	"source-name": "virt-manager",
-	"source-release": "3",
+	"source-release": "4",
 	"source-version": "5.0.0"
 }
