@@ -1,0 +1,16 @@
+#
+# SPDX-FileCopyrightText: © 2020-2024 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : branding-aeryn-plasma
+version     : "2025.06" # I guess let's just match the OS version for now
+release     : 1
+homepage    : https://aerynos.com/
+# No upstreams!
+summary     : AerynOS Plasma Branding
+description : |
+    AerynOS Plasma Branding
+license     : MPL-2.0
+install     : |
+    %install_file %(pkgdir)/sddm.conf %(installroot)/usr/share/sddm/sddm.conf.d/20_aeryn_config.conf

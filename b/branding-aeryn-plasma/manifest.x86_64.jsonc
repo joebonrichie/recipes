@@ -1,0 +1,15 @@
+/** Human readable report. This is not consumed by boulder */
+{
+	"manifest-version": "0.2",
+	"packages": {
+		"branding-aeryn-plasma": {
+			"files": [
+				"/usr/share/sddm/sddm.conf.d/20_aeryn_config.conf"
+			],
+			"name": "branding-aeryn-plasma"
+		}
+	},
+	"source-name": "branding-aeryn-plasma",
+	"source-release": "1",
+	"source-version": "2025.06"
+}
