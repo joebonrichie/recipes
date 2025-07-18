@@ -23,7 +23,7 @@
 			],
 			"depends": [
 				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
-				"linux-pam",
+				"kwin",
 				"qt6-wayland",
 				"soname(libKF6AuthCore.so.6(x86_64))",
 				"soname(libKF6ConfigCore.so.6(x86_64))",
@@ -148,6 +148,6 @@
 		}
 	},
 	"source-name": "plasma-login-manager",
-	"source-release": "1",
-	"source-version": "0.0.1+git.0ae04d54"
+	"source-release": "2",
+	"source-version": "0.0.1+git.925ce5c9"
 }

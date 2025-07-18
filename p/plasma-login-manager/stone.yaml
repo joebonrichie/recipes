@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : plasma-login-manager
-version     : 0.0.1+git.0ae04d54
-release     : 1
+version     : 0.0.1+git.925ce5c9
+release     : 2
 homepage    : https://github.com/sddm/sddm
 upstreams   :
-    - git|https://invent.kde.org/plasma/plasma-login-manager.git : 0ae04d540a342ee6806034e2a9e68d9a25deab74
+    - git|https://invent.kde.org/plasma/plasma-login-manager.git : 925ce5c9eec33451bb879ccbbff5c007035143c5
 summary     : Display manager for KDE Plasam
 description : |
     Plasma Login provides a display manager for KDE Plasma, forked from SDDM and with a new frontend providing a greeter, wallpaper plugin integration and System Settings module (KCM).
@@ -32,8 +32,7 @@ builddeps   :
     - pkgconfig(pam)
     - pkgconfig(systemd)
 rundeps     :
-    # Temporary workaround until we have some kind of virtual package that defines the base system
-    - linux-pam
+    - kwin # Doesn't support any other compositor AFAIK
     - qt6-wayland
 setup       : |
     %cmake_kf6 \
