@@ -1,0 +1,44 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : elisa
+version     : 25.04.3
+release     : 1
+upstreams   :
+    - https://download.kde.org/stable/release-service/25.04.3/src/elisa-25.04.3.tar.xz : 16e4e38a9e7dcf9b42441c66707d5bbb52aef5c95422d8ee04a4a21e7f157392
+homepage    : https://apps.kde.org/elisa/
+license     : LGPL-3.0-or-later
+summary     : Music player from KDE
+description : |
+    Elisa is a simple music player aiming to provide a nice experience for its users. Elisa allows to browse music by album, artist or all tracks. The music is indexed using either a private indexer or an indexer using Baloo.
+builddeps   :
+    # Temporary, boulder doesn't handle build ordering resolution correctly when builddeps are added by macros, so add ECM manually
+    - cmake(ECM)
+    - cmake(KF6Codecs)
+    - cmake(KF6ColorScheme)
+    - cmake(KF6Config)
+    - cmake(KF6CoreAddons)
+    - cmake(KF6I18n)
+    - cmake(KF6IconThemes)
+    - cmake(KF6KIO)
+    - cmake(Qt6CorePrivate)
+    - cmake(Qt6Multimedia)
+    - cmake(Qt6Qml)
+    - cmake(Qt6Svg)
+    # - pkgconfig(libvlc) # Qt6-multimedia is a sufficient backend
+    - kf6-kirigami
+    - kf6-kirigami-addons
+rundeps     :
+    - breeze-icons
+    - kf6-kirigami
+    - kf6-qqc2-desktop-style
+    - qt6-5compat
+    - qt6-wayland
+setup       : |
+    %cmake_kf6
+build       : |
+    %cmake_build
+install     : |
+    %cmake_install
