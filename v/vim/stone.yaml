@@ -4,12 +4,12 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : vim
-version     : 9.1.1406
-release     : 10
+version     : 9.1.1563
+release     : 11
 homepage    : https://github.com/vim/vim
 upstreams   :
-    - https://github.com/vim/vim/archive/refs/tags/v9.1.1406.tar.gz:
-        hash: 89e5e1eda6c23e4cdd3959356ca2163fe32efeaa48614aba1ece4c7bdb27e646
+    - https://github.com/vim/vim/archive/refs/tags/v9.1.1563.tar.gz:
+        hash: 393a8293ac6810b6bddac083b16c9996afea3f13b2dfd48d4aab2550e0947170
         unpack: false
         rename: vim.tar.gz
 summary     : Vi IMproved, an advanced text editor
@@ -17,6 +17,7 @@ description : |
     Vim, which stands for Vi IMproved, is an open-source, multiplatform text editor extended from vi. It was first released by Bram Moolenaar in 1991. Since then, numerous features have been added to Vim, many of which are helpful in editing program source code.
 license     : Vim
 builddeps   :
+    - binary(bsdtar-static)
     - pkgconfig(gtk+-3.0)
     - pkgconfig(ice)
     - pkgconfig(libcanberra)
@@ -35,7 +36,6 @@ environment : |
     function vim_configure() {
         %patch %(pkgdir)/0001-Make-vim-stateless.patch
         %patch %(pkgdir)/0001-Read-vimrc-from-etc-vim.patch
-        %patch %(pkgdir)/0001-force-override-symlink.patch
 
         %configure \
                     --disable-netbeans \
@@ -55,8 +55,8 @@ environment : |
     }
 setup       : |
     mkdir vim gvim
-    tar -xf %(sourcedir)/vim.tar.gz --strip-components=1 -C vim
-    tar -xf %(sourcedir)/vim.tar.gz --strip-components=1 -C gvim
+    bsdtar-static -xf %(sourcedir)/vim.tar.gz --strip-components=1 -C vim
+    bsdtar-static -xf %(sourcedir)/vim.tar.gz --strip-components=1 -C gvim
 
     pushd gvim
     vim_configure \
@@ -71,7 +71,8 @@ setup       : |
     vim_configure \
                   --disable-canberra \
                   --enable-gui=no \
-                  --without-x
+                  --with-x=no \
+                  --with-wayland=no
     popd
 build       : |
     # The gvim build is a superset of the vim build so we can hit a 100% ccache hit rate with the latter by using CCACHE_BASEDIR
