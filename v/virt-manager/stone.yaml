@@ -5,7 +5,7 @@
 #
 name        : virt-manager
 version     : 5.0.0
-release     : 4
+release     : 5
 homepage    : https://virt-manager.org/
 upstreams   :
     - https://releases.pagure.org/virt-manager/virt-manager-5.0.0.tar.xz : bc89ae46e0c997bd754ed62a419ca39c6aadec27e3d8b850cea5282f0083f84a
@@ -20,10 +20,9 @@ builddeps   :
     - pkgconfig(gio-2.0)
     - pkgconfig(spice-protocol)
 rundeps     :
+    - binary(xorriso)
     - python(argcomplete)
     - python(requests)
-    - binary(dnsmasq)
-    - binary(xorriso)
     - gtk-vnc
     - gtksourceview4
     - libosinfo

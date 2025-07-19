@@ -4,6 +4,7 @@
 	"packages": {
 		"libvirt": {
 			"build-depends": [
+				"binary(dnsmasq)",
 				"binary(msgfmt)",
 				"binary(perl)",
 				"binary(rst2html5)",
@@ -36,7 +37,8 @@
 				"pkgconfig(libxml-2.0)",
 				"pkgconfig(pciaccess)",
 				"pkgconfig(polkit-agent-1)",
-				"pkgconfig(readline)"
+				"pkgconfig(readline)",
+				"sysbinary(iptables)"
 			],
 			"depends": [
 				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
@@ -594,6 +596,7 @@
 		},
 		"libvirt-devel": {
 			"build-depends": [
+				"binary(dnsmasq)",
 				"binary(msgfmt)",
 				"binary(perl)",
 				"binary(rst2html5)",
@@ -626,7 +629,8 @@
 				"pkgconfig(libxml-2.0)",
 				"pkgconfig(pciaccess)",
 				"pkgconfig(polkit-agent-1)",
-				"pkgconfig(readline)"
+				"pkgconfig(readline)",
+				"sysbinary(iptables)"
 			],
 			"depends": [
 				"libvirt"
@@ -669,6 +673,7 @@
 		},
 		"libvirt-docs": {
 			"build-depends": [
+				"binary(dnsmasq)",
 				"binary(msgfmt)",
 				"binary(perl)",
 				"binary(rst2html5)",
@@ -701,7 +706,8 @@
 				"pkgconfig(libxml-2.0)",
 				"pkgconfig(pciaccess)",
 				"pkgconfig(polkit-agent-1)",
-				"pkgconfig(readline)"
+				"pkgconfig(readline)",
+				"sysbinary(iptables)"
 			],
 			"files": [
 				"/usr/share/doc/libvirt/examples/c/admin/client_close.c",
@@ -1000,6 +1006,6 @@
 		}
 	},
 	"source-name": "libvirt",
-	"source-release": "2",
+	"source-release": "3",
 	"source-version": "11.5.0"
 }

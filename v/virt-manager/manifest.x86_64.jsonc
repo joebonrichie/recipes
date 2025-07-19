@@ -11,7 +11,6 @@
 				"pkgconfig(spice-protocol)"
 			],
 			"depends": [
-				"binary(dnsmasq)",
 				"binary(xorriso)",
 				"gtk-vnc",
 				"gtksourceview4",
@@ -450,6 +449,6 @@
 		}
 	},
 	"source-name": "virt-manager",
-	"source-release": "4",
+	"source-release": "5",
 	"source-version": "5.0.0"
 }
