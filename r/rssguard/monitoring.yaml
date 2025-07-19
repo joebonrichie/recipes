@@ -1,0 +1,7 @@
+releases:
+  id: 19046
+  # Heh.
+  rss: https://github.com/martinrotter/rssguard/releases.atom
+security:
+  # No known CPE, last checked 2025-06-11
+  cpe: ~
