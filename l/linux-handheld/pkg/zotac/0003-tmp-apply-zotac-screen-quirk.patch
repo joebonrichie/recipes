@@ -1,7 +1,7 @@
-From 6118539d6d9588fd9d0455426aa1a4167ddc5e40 Mon Sep 17 00:00:00 2001
+From b073215fb043b45df528340c15b3f8b60cbb8bc8 Mon Sep 17 00:00:00 2001
 From: Luke Jones <luke@ljones.dev>
 Date: Sat, 12 Apr 2025 14:20:08 +1200
-Subject: [PATCH 3/6] tmp: apply zotac screen quirk
+Subject: [PATCH 3/5] tmp: apply zotac screen quirk
 
 ---
  drivers/gpu/drm/drm_panel_orientation_quirks.c | 6 ++++++
@@ -25,5 +25,5 @@ index c554ad8f246b..858f114cd3b5 100644
  		.matches = {
  		  DMI_EXACT_MATCH(DMI_SYS_VENDOR, "OrangePi"),
 -- 
-2.49.0
+2.50.0
 
