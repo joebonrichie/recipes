@@ -6,6 +6,7 @@
 			"build-depends": [
 				"binary(file)",
 				"binary(msgfmt)",
+				"pkgconfig(blkid)",
 				"pkgconfig(devmapper)",
 				"pkgconfig(icu-i18n)",
 				"pkgconfig(inih)",
@@ -142,6 +143,7 @@
 			"build-depends": [
 				"binary(file)",
 				"binary(msgfmt)",
+				"pkgconfig(blkid)",
 				"pkgconfig(devmapper)",
 				"pkgconfig(icu-i18n)",
 				"pkgconfig(inih)",
@@ -208,6 +210,6 @@
 		}
 	},
 	"source-name": "xfsprogs",
-	"source-release": "7",
-	"source-version": "6.14.0"
+	"source-release": "8",
+	"source-version": "6.15.0"
 }

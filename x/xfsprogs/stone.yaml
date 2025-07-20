@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : xfsprogs
-version     : '6.14.0'
-release     : 7
+version     : '6.15.0'
+release     : 8
 homepage    : https://xfs.wiki.kernel.org/
 upstreams   :
-    - https://mirrors.edge.kernel.org/pub/linux/utils/fs/xfs/xfsprogs/xfsprogs-6.14.0.tar.xz : fa5ab77f8b5169ce48dd8de09446ad7e29834a05b8f52012bae411cf53ec1f58
+    - https://mirrors.edge.kernel.org/pub/linux/utils/fs/xfs/xfsprogs/xfsprogs-6.15.0.tar.xz : 13b91f74beef8ad11137f7d9d71055573d91e961bc55bb0245956f69b84cd704
 summary     : Filesystem utilities for xfs filesystems
 description : |
     Filesystem utilities for xfs filesystems
@@ -18,6 +18,7 @@ license     :
 builddeps   :
     - binary(file)
     - binary(msgfmt)
+    - pkgconfig(blkid)
     - pkgconfig(devmapper)
     - pkgconfig(icu-i18n)
     - pkgconfig(inih)
