@@ -19,7 +19,8 @@
 				"pkgconfig(libpci)",
 				"pkgconfig(libtraceevent)",
 				"pkgconfig(python3)",
-				"pkgconfig(slang)"
+				"pkgconfig(slang)",
+				"python(setuptools)"
 			],
 			"depends": [
 				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
@@ -30,8 +31,8 @@
 			"files": [
 				"/usr/bin/cpufreq-bench_plot.sh",
 				"/usr/bin/cpupower",
-				"/usr/lib/libcpupower.so.0.0.1",
 				"/usr/lib/libcpupower.so.1",
+				"/usr/lib/libcpupower.so.1.0.1",
 				"/usr/sbin/cpufreq-bench",
 				"/usr/share/bash-completion/completions/cpupower",
 				"/usr/share/doc/cpupower/README-BENCH",
@@ -78,7 +79,8 @@
 				"pkgconfig(libpci)",
 				"pkgconfig(libtraceevent)",
 				"pkgconfig(python3)",
-				"pkgconfig(slang)"
+				"pkgconfig(slang)",
+				"python(setuptools)"
 			],
 			"depends": [
 				"cpupower"
@@ -108,7 +110,8 @@
 				"pkgconfig(libpci)",
 				"pkgconfig(libtraceevent)",
 				"pkgconfig(python3)",
-				"pkgconfig(slang)"
+				"pkgconfig(slang)",
+				"python(setuptools)"
 			],
 			"depends": [
 				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
@@ -155,7 +158,8 @@
 				"pkgconfig(libpci)",
 				"pkgconfig(libtraceevent)",
 				"pkgconfig(python3)",
-				"pkgconfig(slang)"
+				"pkgconfig(slang)",
+				"python(setuptools)"
 			],
 			"depends": [
 				"cpupower",
@@ -186,7 +190,8 @@
 				"pkgconfig(libpci)",
 				"pkgconfig(libtraceevent)",
 				"pkgconfig(python3)",
-				"pkgconfig(slang)"
+				"pkgconfig(slang)",
+				"python(setuptools)"
 			],
 			"depends": [
 				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
@@ -362,11 +367,9 @@
 				"/usr/lib/perf/tests/shell/base_probe/test_basic.sh",
 				"/usr/lib/perf/tests/shell/base_probe/test_invalid_options.sh",
 				"/usr/lib/perf/tests/shell/base_probe/test_line_semantics.sh",
-				"/usr/lib/perf/tests/shell/base_report/test_adding_blacklisted.sh",
-				"/usr/lib/perf/tests/shell/base_report/test_adding_kernel.sh",
+				"/usr/lib/perf/tests/shell/base_report/setup.sh",
+				"/usr/lib/perf/tests/shell/base_report/stderr-whitelist.txt",
 				"/usr/lib/perf/tests/shell/base_report/test_basic.sh",
-				"/usr/lib/perf/tests/shell/base_report/test_invalid_options.sh",
-				"/usr/lib/perf/tests/shell/base_report/test_line_semantics.sh",
 				"/usr/lib/perf/tests/shell/buildid.sh",
 				"/usr/lib/perf/tests/shell/common/check_all_lines_matched.pl",
 				"/usr/lib/perf/tests/shell/common/check_all_patterns_found.pl",
@@ -438,6 +441,7 @@
 				"/usr/lib/perf/tests/shell/trace_btf_enum.sh",
 				"/usr/lib/perf/tests/shell/trace_btf_general.sh",
 				"/usr/lib/perf/tests/shell/trace_exit_race.sh",
+				"/usr/lib/perf/tests/shell/trace_record_replay.sh",
 				"/usr/share/bash-completion/completions/perf",
 				"/usr/share/doc/perf-tip/tips.txt"
 			],
@@ -467,7 +471,8 @@
 				"pkgconfig(libpci)",
 				"pkgconfig(libtraceevent)",
 				"pkgconfig(python3)",
-				"pkgconfig(slang)"
+				"pkgconfig(slang)",
+				"python(setuptools)"
 			],
 			"depends": [
 				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
@@ -500,7 +505,8 @@
 				"pkgconfig(libpci)",
 				"pkgconfig(libtraceevent)",
 				"pkgconfig(python3)",
-				"pkgconfig(slang)"
+				"pkgconfig(slang)",
+				"python(setuptools)"
 			],
 			"depends": [
 				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
@@ -517,6 +523,6 @@
 		}
 	},
 	"source-name": "linux-tools",
-	"source-release": "16",
-	"source-version": "6.14.8"
+	"source-release": "17",
+	"source-version": "6.15.7"
 }
