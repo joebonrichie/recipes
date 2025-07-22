@@ -5,7 +5,7 @@
 #
 name        : branding-aeryn-plasma
 version     : "2025.06" # I guess let's just match the OS version for now
-release     : 1
+release     : 2
 homepage    : https://aerynos.com/
 # No upstreams!
 summary     : AerynOS Plasma Branding
@@ -14,3 +14,5 @@ description : |
 license     : MPL-2.0
 install     : |
     %install_file %(pkgdir)/sddm.conf %(installroot)/usr/share/sddm/sddm.conf.d/20_aeryn_config.conf
+
+    # %install_file %(pkgdir)/xdg/* -t %(installroot)/usr/share/xdg/
