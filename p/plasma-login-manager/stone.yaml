@@ -5,7 +5,7 @@
 #
 name        : plasma-login-manager
 version     : 0.0.1+git.925ce5c9
-release     : 2
+release     : 3
 homepage    : https://github.com/sddm/sddm
 upstreams   :
     - git|https://invent.kde.org/plasma/plasma-login-manager.git : 925ce5c9eec33451bb879ccbbff5c007035143c5
@@ -35,6 +35,8 @@ rundeps     :
     - kwin # Doesn't support any other compositor AFAIK
     - qt6-wayland
 setup       : |
+    %patch %(pkgdir)/0001-downstream-Update-defaults-conf-dir.patch
+
     %cmake_kf6 \
         -DUID_MAX=60513 \
         -DUID_MIN=1000
@@ -50,3 +52,6 @@ install     : |
 
     # Install our PAM configs
     %install_file %(pkgdir)/pam.d/* -t %(installroot)%(vendordir)/pam.d
+
+    # Default vendor configs
+    %install_file %(pkgdir)/plasmalogin.conf %(installroot)/usr/share/plasmalogin/plasmalogin.conf.d/10_aerynos_default.conf

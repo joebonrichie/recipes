@@ -132,6 +132,7 @@
 				"/usr/share/locale/zh_CN/LC_MESSAGES/plasma_login.mo",
 				"/usr/share/locale/zh_TW/LC_MESSAGES/kcm_plasmalogin.mo",
 				"/usr/share/locale/zh_TW/LC_MESSAGES/plasma_login.mo",
+				"/usr/share/plasmalogin/plasmalogin.conf.d/10_aerynos_default.conf",
 				"/usr/share/plasmalogin/scripts/Xsession",
 				"/usr/share/plasmalogin/scripts/Xsetup",
 				"/usr/share/plasmalogin/scripts/Xstop",
@@ -148,6 +149,6 @@
 		}
 	},
 	"source-name": "plasma-login-manager",
-	"source-release": "2",
+	"source-release": "3",
 	"source-version": "0.0.1+git.925ce5c9"
 }
