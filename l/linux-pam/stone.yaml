@@ -5,7 +5,7 @@
 #
 name        : linux-pam
 version     : 1.7.0
-release     : 14
+release     : 15
 summary     : Pluggable Authentication Modules
 license     :
     - BSD-3-Clause
@@ -37,8 +37,6 @@ environment : |
     # Temporary, replace with boulder macro
     export XML_CATALOG_FILES="file:///usr/share/defaults/docbook/docbook5-xml/catalog file:///usr/share/defaults/docbook/docbook-xsl/catalog"
 setup       : |
-    %patch %(pkgdir)/pam_env_conf.patch
-
     # version script assignment of 'global' to symbol 'pam_sm_chauthtok' failed: symbol not defined
     export LDFLAGS="${LDFLAGS} -Wl,--undefined-version"
 
