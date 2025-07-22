@@ -4,15 +4,15 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : thunderbird
-version     : 139.0.2
-release     : 21
+version     : 140.1.0
+release     : 22
 homepage    : https://www.thunderbird.net/
 upstreams   :
-    - https://releases.mozilla.org/pub/thunderbird/releases/139.0.2/source/thunderbird-139.0.2.source.tar.xz:
-        hash: 1087eb5ea49049fb2a9d8e0f67757590bb5cb12d82d7f03045675f8162704584
+    - https://releases.mozilla.org/pub/thunderbird/releases/140.1.0esr/source/thunderbird-140.1.0esr.source.tar.xz:
+        hash: 43f0a68902a9733b8020c3db725d5fa4965044e3d3cc2830d2b054f45b7fc5cb
         unpackdir: thunderbird
-    - https://sources.getsol.us/mozilla/thunderbird/thunderbird-139.0.2-langpacks.tar.zst:
-        hash: 4ef12d224e05f9374da541cff4a9686b83a125cba9174115eaf2e5c2b2fd971b
+    - https://sources.getsol.us/mozilla/thunderbird/thunderbird-140.1.0esr-langpacks.tar.zst:
+        hash: d5eb6584fe5693a42304a3f8b82f7737bddae6234efaac36c013478e68e58fea
         unpackdir: thunderbird/langpacks
 summary     : Thunderbird Email Client
 description : |
@@ -27,6 +27,7 @@ builddeps   :
     - binary(node)
     - binary(python3)
     - binary(rustc)
+    - binary(tar)
     - binary(unzip)
     - binary(weston) # PGO
     - binary(wlheadless-run) # PGO
@@ -67,7 +68,6 @@ setup       : |
     # %patch %(pkgdir)/patches/pgo.patch
     %patch %(pkgdir)/patches/0001-Fix-Firefox-Thunderbird-envvar-conflicts.patch
     %patch %(pkgdir)/patches/libcxx-18.patch
-    %patch %(pkgdir)/patches/icu76.patch
 
     cp %(pkgdir)/build/mozconfig .
     sed -e 's|@@JOBCOUNT@@|%(jobs)|' -e 's|@@LIBDIR@@|%(libdir)|' -i mozconfig

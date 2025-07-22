@@ -12,6 +12,7 @@
 				"binary(node)",
 				"binary(python3)",
 				"binary(rustc)",
+				"binary(tar)",
 				"binary(unzip)",
 				"binary(weston)",
 				"binary(wlheadless-run)",
@@ -219,6 +220,6 @@
 		}
 	},
 	"source-name": "thunderbird",
-	"source-release": "21",
-	"source-version": "139.0.2"
+	"source-release": "22",
+	"source-version": "140.1.0"
 }
