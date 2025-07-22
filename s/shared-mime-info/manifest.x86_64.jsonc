@@ -24,6 +24,7 @@
 			],
 			"files": [
 				"/usr/bin/update-mime-database",
+				"/usr/share/applications/mimeapps.list",
 				"/usr/share/gettext/its/shared-mime-info.its",
 				"/usr/share/gettext/its/shared-mime-info.loc",
 				"/usr/share/locale/af/LC_MESSAGES/shared-mime-info.mo",
@@ -116,6 +117,6 @@
 		}
 	},
 	"source-name": "shared-mime-info",
-	"source-release": "8",
+	"source-release": "9",
 	"source-version": "2.4"
 }
