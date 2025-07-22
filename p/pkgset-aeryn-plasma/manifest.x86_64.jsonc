@@ -46,8 +46,11 @@
 				"plasma-thunderbolt",
 				"plasma-welcome",
 				"plasma-workspace-wallpapers",
+				"plymouth-kcm",
+				"polkit-kde-agent",
 				"powerdevil",
 				"print-manager",
+				"sddm-kcm",
 				"spectacle"
 			],
 			"files": [
@@ -72,6 +75,6 @@
 		}
 	},
 	"source-name": "pkgset-aeryn-plasma",
-	"source-release": "9",
+	"source-release": "10",
 	"source-version": "2025.06"
 }
