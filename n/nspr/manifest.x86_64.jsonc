@@ -125,7 +125,6 @@
 				"/usr/include/nspr/prtrace.h",
 				"/usr/include/nspr/prtypes.h",
 				"/usr/include/nspr/prvrsion.h",
-				"/usr/include/nspr/prwin.h",
 				"/usr/lib/pkgconfig/nspr.pc",
 				"/usr/share/aclocal/nspr.m4"
 			],
@@ -139,6 +138,6 @@
 		}
 	},
 	"source-name": "nspr",
-	"source-release": "5",
-	"source-version": "4.36"
+	"source-release": "6",
+	"source-version": "4.37"
 }
