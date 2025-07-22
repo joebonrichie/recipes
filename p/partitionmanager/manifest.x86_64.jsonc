@@ -21,6 +21,7 @@
 				"cmake(PolkitQt6-1)"
 			],
 			"depends": [
+				"binary(mkfs.btrfs)",
 				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
 				"qt6-wayland",
 				"soname(libKF6ColorScheme.so.6(x86_64))",
@@ -42,7 +43,13 @@
 				"soname(libc++.so.1(x86_64))",
 				"soname(libc.so.6(x86_64))",
 				"soname(libkpmcore.so.13(x86_64))",
-				"soname(libpolkit-qt6-core-1.so.1(x86_64))"
+				"soname(libpolkit-qt6-core-1.so.1(x86_64))",
+				"sysbinary(mkfs.bcachefs)",
+				"sysbinary(mkfs.exfat)",
+				"sysbinary(mkfs.ext4)",
+				"sysbinary(mkfs.f2fs)",
+				"sysbinary(mkfs.vfat)",
+				"sysbinary(mkfs.xfs)"
 			],
 			"files": [
 				"/usr/bin/partitionmanager",
@@ -339,6 +346,6 @@
 		}
 	},
 	"source-name": "partitionmanager",
-	"source-release": "1",
+	"source-release": "2",
 	"source-version": "25.04.3"
 }

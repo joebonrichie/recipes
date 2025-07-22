@@ -5,7 +5,7 @@
 #
 name        : partitionmanager
 version     : 25.04.3
-release     : 1
+release     : 2
 upstreams   :
     - https://download.kde.org/stable/release-service/25.04.3/src/partitionmanager-25.04.3.tar.xz : 216a4574d9b63b52c74ab386c92cf8d5c2b634afecbcfbdd734b68d9fce5ebca
 homepage    : https://apps.kde.org/partitionmanager/
@@ -31,6 +31,13 @@ builddeps   :
     - cmake(KPMcore)
     - cmake(PolkitQt6-1)
 rundeps     :
+    - binary(mkfs.btrfs)
+    - sysbinary(mkfs.bcachefs)
+    - sysbinary(mkfs.exfat)
+    - sysbinary(mkfs.ext4)
+    - sysbinary(mkfs.f2fs)
+    - sysbinary(mkfs.vfat)
+    - sysbinary(mkfs.xfs)
     - qt6-wayland
 setup       : |
     %cmake_kf6
