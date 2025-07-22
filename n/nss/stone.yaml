@@ -5,7 +5,7 @@
 #
 name        : nss
 version     : "3.114"
-release     : 30
+release     : 31
 summary     : Network Security Services
 license     : MPL-2.0
 homepage    : https://wiki.mozilla.org/NSS
