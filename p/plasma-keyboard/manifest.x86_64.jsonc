@@ -40,6 +40,8 @@
 				"/usr/lib/qt6/plugins/plasma/kcms/systemsettings/kcm_plasmakeyboard.so",
 				"/usr/lib/qt6/qml/QtQuick/VirtualKeyboard/Styles/Breeze/BreezeKeyPanel.qml",
 				"/usr/lib/qt6/qml/QtQuick/VirtualKeyboard/Styles/Breeze/BreezeKeyPanel.qmlc",
+				"/usr/lib/qt6/qml/QtQuick/VirtualKeyboard/Styles/Breeze/Theme.qml",
+				"/usr/lib/qt6/qml/QtQuick/VirtualKeyboard/Styles/Breeze/Theme.qmlc",
 				"/usr/lib/qt6/qml/QtQuick/VirtualKeyboard/Styles/Breeze/breezestyle.qmltypes",
 				"/usr/lib/qt6/qml/QtQuick/VirtualKeyboard/Styles/Breeze/kde-qmlmodule.version",
 				"/usr/lib/qt6/qml/QtQuick/VirtualKeyboard/Styles/Breeze/libbreezestyle.so",
@@ -50,11 +52,16 @@
 				"/usr/share/applications/org.kde.plasma.keyboard.desktop",
 				"/usr/share/locale/ca/LC_MESSAGES/kcm_plasmakeyboard.mo",
 				"/usr/share/locale/ca@valencia/LC_MESSAGES/kcm_plasmakeyboard.mo",
+				"/usr/share/locale/de/LC_MESSAGES/kcm_plasmakeyboard.mo",
 				"/usr/share/locale/es/LC_MESSAGES/kcm_plasmakeyboard.mo",
 				"/usr/share/locale/eu/LC_MESSAGES/kcm_plasmakeyboard.mo",
+				"/usr/share/locale/fr/LC_MESSAGES/kcm_plasmakeyboard.mo",
 				"/usr/share/locale/he/LC_MESSAGES/kcm_plasmakeyboard.mo",
+				"/usr/share/locale/it/LC_MESSAGES/kcm_plasmakeyboard.mo",
 				"/usr/share/locale/ka/LC_MESSAGES/kcm_plasmakeyboard.mo",
+				"/usr/share/locale/ko/LC_MESSAGES/kcm_plasmakeyboard.mo",
 				"/usr/share/locale/nl/LC_MESSAGES/kcm_plasmakeyboard.mo",
+				"/usr/share/locale/ru/LC_MESSAGES/kcm_plasmakeyboard.mo",
 				"/usr/share/locale/sl/LC_MESSAGES/kcm_plasmakeyboard.mo",
 				"/usr/share/locale/tr/LC_MESSAGES/kcm_plasmakeyboard.mo",
 				"/usr/share/locale/uk/LC_MESSAGES/kcm_plasmakeyboard.mo",
@@ -69,6 +76,6 @@
 		}
 	},
 	"source-name": "plasma-keyboard",
-	"source-release": "2",
-	"source-version": "0.0.1+git.e13754f2"
+	"source-release": "3",
+	"source-version": "0.0.1+git.e320323a"
 }
