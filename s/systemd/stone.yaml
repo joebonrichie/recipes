@@ -4,8 +4,8 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : systemd
-version     : 254.27
-release     : 55
+version     : "254.27"
+release     : 56
 summary     : A System and Service Manager
 license     :
     - GPL-2.0-or-later
@@ -134,7 +134,8 @@ profiles    :
                     -Dkernel-install=false \
                     -Dinstall-sysconfdir=false \
                     -Dnss-systemd=true \
-                    -Dman=false
+                    -Dman=false \
+                    -Duser-path=/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin
         install: |
             %meson_install
 environment : |
@@ -166,6 +167,7 @@ setup       : |
         -Dtests=false \
         -Drepart=true \
         -Dsysupdate=false \
+        -Duser-path=/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin \
         -Duserdb=true \
         -Dhomed=true \
         -Dinstall-sysconfdir=false \
