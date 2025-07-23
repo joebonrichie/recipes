@@ -1,0 +1,55 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : akonadi
+version     : 25.04.3
+release     : 1
+upstreams   :
+    - https://download.kde.org/stable/release-service/25.04.3/src/akonadi-25.04.3.tar.xz : 042cd3319eadfb82547773e52ce7d41d361d58c4e92fe75a5179c1574ed4f5df
+homepage    : https://kde.org
+license     : LGPL-2.1-or-later
+summary     : KDE centralized database to store, index and retrieve the user's personal information
+description : |
+    The Akonadi framework is responsible for providing applications with a centralized database to store, index and retrieve the user's personal information. This includes the user's emails, contacts, calendars, events, journals, alarms, notes, etc.
+builddeps   :
+    # Temporary, boulder doesn't handle build ordering resolution correctly when builddeps are added by macros, so add ECM manually
+    - cmake(ECM)
+    - cmake(KAccounts6)
+    - cmake(KF6Config)
+    - cmake(KF6ConfigWidgets)
+    - cmake(KF6CoreAddons)
+    - cmake(KF6Crash)
+    - cmake(KF6I18n)
+    - cmake(KF6IconThemes)
+    - cmake(KF6ItemModels)
+    - cmake(KF6XmlGui)
+    - pkgconfig(liblzma)
+setup       : |
+    %cmake_kf6 \
+        -DDATABASE_BACKEND=SQLITE \
+        -DINSTALL_APPARMOR=OFF \
+        -DMYSQLD_EXECUTABLE="/usr/sbin/mysqld" \
+        -DMYSQLD_SCRIPTS_PATH="/usr/bin/mysql_install_db"
+build       : |
+    %cmake_build
+install     : |
+    %cmake_install
+packages    :
+    - "%(name)-mysql":
+        summary: Mysql server support for %(name)
+        description: Mysql server support for %(name)
+        rundeps:
+            - "%(name)"
+            - binary(mysql_install_db)
+            - sysbinary(mysqld)
+        paths:
+            - /usr/share/xdg/akonadi/
+
+    - "%(name)-devel":
+        paths:
+            - /usr/share/dbus-1/interfaces/
+            - /usr/lib/qt6/plugins/pim6/akonadi/akonadi_test_searchplugin.so
+            - /usr/share/kdevappwizard/
+
