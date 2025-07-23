@@ -79,3 +79,7 @@
 ### Double packaged
 - pycairo
 - pycairo-devel
+
+### Split
+- gnome-desktop
+- gnome-desktop-devel

@@ -4,8 +4,8 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : gnome-desktop
-version     : 44.3
-release     : 8
+version     : "44.3"
+release     : 9
 homepage    : https://gitlab.gnome.org/GNOME/gnome-desktop
 upstreams   :
     - https://download.gnome.org/sources/gnome-desktop/44/gnome-desktop-44.3.tar.xz : 40efa9aa8d50effed9227a3d70671e32e9dc35e20f331cab3b562975978f4f8d
@@ -26,13 +26,65 @@ builddeps   :
     - pkgconfig(udev)
     - pkgconfig(xkbfile)
     - pkgconfig(xkeyboard-config)
-rundeps     :
-    - bubblewrap
 setup       : |
-    %meson -Dbuild_gtk4=true \
-           -Dlegacy_library=true \
-           -Dgtk_doc=false
+    %meson \
+        -Dbuild_gtk4=true \
+        -Ddesktop_docs=false \
+        -Dgtk_doc=false \
+        -Dlegacy_library=true
 build       : |
     %meson_build
 install     : |
     %meson_install
+
+    for i in %(name) %(name)-devel; do
+        %install_dir %(installroot)%(docdir)/${i}
+        echo "DEPRECATED" > %(installroot)%(docdir)/${i}/README
+    done
+packages    :
+    # DEPRECATED
+    - "%(name)":
+        paths:
+            - /usr/share/doc/gnome-desktop/
+
+    - "%(name)-devel":
+        paths:
+            - /usr/share/doc/gnome-desktop-devel/
+
+    - "lib%(name)-common":
+        paths:
+            - /usr/share/locale/
+
+    - "lib%(name)-gtk3":
+        rundeps:
+            - "lib%(name)-common"
+            - bubblewrap
+        paths:
+            - /usr/lib/gnome-desktop/gnome-desktop-debug/
+            - /usr/lib/libgnome-desktop-3.so.*
+            - /usr/lib/girepository-1.0/GnomeDesktop-3.0.typelib
+
+    - "lib%(name)-gtk3-devel":
+        rundeps:
+            - "lib%(name)-gtk"
+        paths:
+            - /usr/include/gnome-desktop-3.0/
+            - /usr/lib/pkgconfig/gnome-desktop-3.0.pc
+            - /usr/share/gir-1.0/GnomeDesktop-3.0.gir
+            - /usr/lib/libgnome-desktop-3.so
+
+    - "lib%(name)-gtk4":
+        rundeps:
+            - "lib%(name)-common"
+        paths:
+            - /usr/lib/girepository-1.0/Gnome*-4.0.typelib
+            - /usr/lib/libgnome-*-4.so.*
+
+    - "lib%(name)-gtk4-devel":
+        rundeps:
+            - "lib%(name)-gtk4"
+        paths:
+            - /usr/include/gnome-desktop-4.0/
+            - /usr/lib/pkgconfig/gnome-*-4.pc
+            - /usr/share/gir-1.0/Gnome*-4.0.gir
+            - /usr/lib/libgnome-*-4.so
