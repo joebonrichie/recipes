@@ -1,0 +1,31 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : kf6-kcalendarcore
+version     : 6.16.0
+release     : 1
+upstreams   :
+    - https://download.kde.org/stable/frameworks/6.16/kcalendarcore-6.16.0.tar.xz : 521d1d2b356e3d7cd2e0bf687919c98655c626cde9ed520e42fc730e7a95bd9b
+homepage    : https://community.kde.org/Frameworks
+license     : LGPL-2.0-or-later
+summary     : Provides access to and handling of calendar data
+description : |
+    This library provides access to and handling of calendar data. It supports the standard formats iCalendar and vCalendar and the group scheduling standard iTIP.
+builddeps   :
+    # Temporary, boulder doesn't handle build ordering resolution correctly when builddeps are added by macros, so add ECM manually
+    - cmake(ECM)
+    - cmake(LibIcal)
+    - cmake(Qt6CorePrivate)
+    - cmake(Qt6Qml)
+setup       : |
+    %cmake_kf6
+build       : |
+    %cmake_build
+install     : |
+    %cmake_install
+packages    :
+    - "%(name)-devel":
+        rundeps:
+            - cmake(LibIcal)
