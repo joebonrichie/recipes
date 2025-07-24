@@ -1,0 +1,37 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : akonadi-calendar
+version     : 25.04.3
+release     : 1
+upstreams   :
+    - https://download.kde.org/stable/release-service/25.04.3/src/akonadi-calendar-25.04.3.tar.xz : 9433cec8f629f5dd1aadb7af39d4b62d6047624b1d1be5282eef5e460f486e5c
+homepage    : https://kde.org
+license     : LGPL-2.1-or-later
+summary     : Library that effectively bridges the type-agnostic API of the Akonadi client libraries and the domain-specific KCalCore library
+description : |
+    Akonadi Calendar is a library that effectively bridges the type-agnostic API of the Akonadi client libraries and the domain-specific KCalCore library. It provides jobs, models and other helpers to make working with events and calendars through Akonadi easier.
+builddeps   :
+    # Temporary, boulder doesn't handle build ordering resolution correctly when builddeps are added by macros, so add ECM manually
+    - cmake(ECM)
+    - cmake(KF6CalendarCore)
+    - cmake(KF6Crash)
+    - cmake(KF6DBusAddons)
+    - cmake(KF6I18n)
+    - cmake(KF6KIO)
+    - cmake(KF6Notifications)
+    - cmake(KF6WidgetsAddons)
+    - cmake(KF6XmlGui)
+    - cmake(KPim6CalendarUtils)
+    - cmake(KPim6IdentityManagementCore)
+    - cmake(KPim6MailTransport)
+    - cmake(KPim6MessageCore)
+    - cmake(KPim6Mime)
+setup       : |
+    %cmake_kf6
+build       : |
+    %cmake_build
+install     : |
+    %cmake_install
