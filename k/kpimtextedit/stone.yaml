@@ -5,7 +5,7 @@
 #
 name        : kpimtextedit
 version     : 25.04.3
-release     : 1
+release     : 2
 upstreams   :
     - https://download.kde.org/stable/release-service/25.04.3/src/kpimtextedit-25.04.3.tar.xz : 4a107ca02a4535fdc08f7b65886cc99cdf9da642a67363bcbab4cba338bc6c32
 homepage    : https://kde.org
@@ -23,7 +23,7 @@ builddeps   :
     - cmake(KF6KIO)
     - cmake(KF6Sonnet)
     - cmake(KF6SyntaxHighlighting)
-    - cmake(KF6TextEmoticonsWidgets)
+    - cmake(KF6TextEditTextToSpeech)
     - cmake(KF6XmlGui)
 setup       : |
     %cmake_kf6
@@ -31,3 +31,7 @@ build       : |
     %cmake_build
 install     : |
     %cmake_install
+packages    :
+    - "%(name)-devel":
+        rundeps:
+            - cmake(KF6TextEditTextToSpeech)

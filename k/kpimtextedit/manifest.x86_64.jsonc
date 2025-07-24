@@ -12,7 +12,7 @@
 				"cmake(KF6KIO)",
 				"cmake(KF6Sonnet)",
 				"cmake(KF6SyntaxHighlighting)",
-				"cmake(KF6TextEmoticonsWidgets)",
+				"cmake(KF6TextEditTextToSpeech)",
 				"cmake(KF6XmlGui)"
 			],
 			"depends": [
@@ -113,10 +113,11 @@
 				"cmake(KF6KIO)",
 				"cmake(KF6Sonnet)",
 				"cmake(KF6SyntaxHighlighting)",
-				"cmake(KF6TextEmoticonsWidgets)",
+				"cmake(KF6TextEditTextToSpeech)",
 				"cmake(KF6XmlGui)"
 			],
 			"depends": [
+				"cmake(KF6TextEditTextToSpeech)",
 				"kpimtextedit"
 			],
 			"files": [
@@ -162,6 +163,6 @@
 		}
 	},
 	"source-name": "kpimtextedit",
-	"source-release": "1",
+	"source-release": "2",
 	"source-version": "25.04.3"
 }
