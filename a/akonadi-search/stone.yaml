@@ -1,0 +1,40 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : akonadi-search
+version     : 25.04.3
+release     : 1
+upstreams   :
+    - https://download.kde.org/stable/release-service/25.04.3/src/akonadi-search-25.04.3.tar.xz : 5c4af0b6a58993900618c9e9f1291b3cd12a7097c7a700e00e578a500fcc601a
+homepage    : https://kde.org
+license     : LGPL-2.1-or-later
+summary     : Libraries and daemons to implement searching in Akonadi
+description : |
+    Libraries and daemons to implement searching in Akonadi.
+builddeps   :
+    - cmake(Corrosion)
+    # Temporary, boulder doesn't handle build ordering resolution correctly when builddeps are added by macros, so add ECM manually
+    - cmake(ECM)
+    - cmake(KF6CalendarCore)
+    - cmake(KF6Config)
+    - cmake(KF6Contacts)
+    - cmake(KF6Crash)
+    - cmake(KF6DBusAddons)
+    - cmake(KF6I18n)
+    - cmake(KF6KCMUtils)
+    - cmake(KF6KIO)
+    - cmake(KF6Runner)
+    - cmake(KF6TextUtils)
+    - cmake(KPim6Akonadi)
+    - cmake(KPim6AkonadiMime)
+    - cmake(KPim6Mime)
+    - cmake(xapian)
+networking  : true # Rust deps
+setup       : |
+    %cmake_kf6
+build       : |
+    %cmake_build
+install     : |
+    %cmake_install
