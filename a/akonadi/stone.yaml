@@ -5,7 +5,7 @@
 #
 name        : akonadi
 version     : 25.04.3
-release     : 1
+release     : 2
 upstreams   :
     - https://download.kde.org/stable/release-service/25.04.3/src/akonadi-25.04.3.tar.xz : 042cd3319eadfb82547773e52ce7d41d361d58c4e92fe75a5179c1574ed4f5df
 homepage    : https://kde.org
@@ -48,6 +48,8 @@ packages    :
             - /usr/share/xdg/akonadi/
 
     - "%(name)-devel":
+        rundeps:
+            - cmake(KF6ItemModels)
         paths:
             - /usr/share/dbus-1/interfaces/
             - /usr/lib/qt6/plugins/pim6/akonadi/akonadi_test_searchplugin.so
