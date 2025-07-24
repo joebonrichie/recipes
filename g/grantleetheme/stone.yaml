@@ -1,0 +1,30 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : grantleetheme
+version     : 25.04.3
+release     : 1
+upstreams   :
+    - https://download.kde.org/stable/release-service/25.04.3/src/grantleetheme-25.04.3.tar.xz : e25e79c71383f538814b827d7bfaf6ab3fb45c4f78c69aa4101dff6025f4a073
+homepage    : https://kde.org
+license     : LGPL-2.1-or-later
+summary     : GrantleeTheme library provides a class for loading theme packages containing sets of templates
+description : |
+    GrantleeTheme library provides a class for loading theme packages containing sets of templates.
+builddeps   :
+    # Temporary, boulder doesn't handle build ordering resolution correctly when builddeps are added by macros, so add ECM manually
+    - cmake(ECM)
+    - cmake(KF6GuiAddons)
+    - cmake(KF6I18n)
+    - cmake(KF6IconThemes)
+    - cmake(KF6NewStuff)
+    - cmake(KF6TextTemplate)
+    - cmake(KF6XmlGui)
+setup       : |
+    %cmake_kf6
+build       : |
+    %cmake_build
+install     : |
+    %cmake_install
