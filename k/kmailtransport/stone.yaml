@@ -1,0 +1,30 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : kmailtransport
+version     : 25.04.3
+release     : 1
+upstreams   :
+    - https://download.kde.org/stable/release-service/25.04.3/src/kmailtransport-25.04.3.tar.xz : 364e4e7068be53efb994539a273dcc0e17a45d60a63164307a45cdb3e2df5879
+homepage    : https://kde.org
+license     : LGPL-2.1-or-later
+summary     : Mail Transport Service
+description : |
+    Mail Transport Service.
+builddeps   :
+    # Temporary, boulder doesn't handle build ordering resolution correctly when builddeps are added by macros, so add ECM manually
+    - cmake(ECM)
+    - cmake(KF6ConfigWidgets)
+    - cmake(KF6I18n)
+    - cmake(KF6KIO)
+    - cmake(KPim6GAPI)
+    - cmake(KPim6SMTP)
+    - cmake(Qt6Keychain)
+setup       : |
+    %cmake_kf6
+build       : |
+    %cmake_build
+install     : |
+    %cmake_install
