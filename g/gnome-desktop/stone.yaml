@@ -5,7 +5,7 @@
 #
 name        : gnome-desktop
 version     : "44.3"
-release     : 9
+release     : 10
 homepage    : https://gitlab.gnome.org/GNOME/gnome-desktop
 upstreams   :
     - https://download.gnome.org/sources/gnome-desktop/44/gnome-desktop-44.3.tar.xz : 40efa9aa8d50effed9227a3d70671e32e9dc35e20f331cab3b562975978f4f8d
@@ -66,7 +66,7 @@ packages    :
 
     - "lib%(name)-gtk3-devel":
         rundeps:
-            - "lib%(name)-gtk"
+            - "lib%(name)-gtk3"
         paths:
             - /usr/include/gnome-desktop-3.0/
             - /usr/lib/pkgconfig/gnome-desktop-3.0.pc
