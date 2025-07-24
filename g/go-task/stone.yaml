@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : go-task
-version     : 3.44.0
-release     : 4
+version     : 3.44.1
+release     : 5
 homepage    : https://taskfile.dev/
 upstreams   :
-    - https://github.com/go-task/task/archive/refs/tags/v3.44.0.tar.gz : 9a4d91baf8fb3bfa018557f60f8516d8f8b9ee2012eaf5c1eb5d9484db429a06
+    - https://github.com/go-task/task/archive/refs/tags/v3.44.1.tar.gz : d395eb802cca3f3f4b90e4bf504b6bc01f676f466d0bfb9e5045457bc085f516
 summary     : A task runner / simpler Make alternative written in Go
 description : |
     A task runner / simpler Make alternative written in Go
