@@ -5,7 +5,7 @@
 #
 name        : akonadi-search
 version     : 25.04.3
-release     : 1
+release     : 2
 upstreams   :
     - https://download.kde.org/stable/release-service/25.04.3/src/akonadi-search-25.04.3.tar.xz : 5c4af0b6a58993900618c9e9f1291b3cd12a7097c7a700e00e578a500fcc601a
 homepage    : https://kde.org
@@ -38,3 +38,8 @@ build       : |
     %cmake_build
 install     : |
     %cmake_install
+packages    :
+    - "%(name)-devel":
+        rundeps:
+            - cmake(KPim6AkonadiMime)
+            - cmake(KF6CalendarCore)

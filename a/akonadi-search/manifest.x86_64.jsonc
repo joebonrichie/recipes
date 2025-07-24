@@ -159,7 +159,9 @@
 				"cmake(xapian)"
 			],
 			"depends": [
-				"akonadi-search"
+				"akonadi-search",
+				"cmake(KF6CalendarCore)",
+				"cmake(KPim6AkonadiMime)"
 			],
 			"files": [
 				"/usr/include/KPim6/AkonadiSearch/Core/Query",
@@ -209,6 +211,6 @@
 		}
 	},
 	"source-name": "akonadi-search",
-	"source-release": "1",
+	"source-release": "2",
 	"source-version": "25.04.3"
 }
