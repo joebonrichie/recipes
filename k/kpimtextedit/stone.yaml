@@ -1,0 +1,33 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : kpimtextedit
+version     : 25.04.3
+release     : 1
+upstreams   :
+    - https://download.kde.org/stable/release-service/25.04.3/src/kpimtextedit-25.04.3.tar.xz : 4a107ca02a4535fdc08f7b65886cc99cdf9da642a67363bcbab4cba338bc6c32
+homepage    : https://kde.org
+license     : LGPL-2.1-or-later
+summary     : KPIMTextedit is a library that provides an enchanced text edit class, see TextEdit
+description : |
+    KPIMTextedit is a library that provides an enchanced text edit class, see TextEdit.
+builddeps   :
+    # Temporary, boulder doesn't handle build ordering resolution correctly when builddeps are added by macros, so add ECM manually
+    - cmake(ECM)
+    - cmake(KF6Config)
+    - cmake(KF6CoreAddons)
+    - cmake(KF6I18n)
+    - cmake(KF6IconThemes)
+    - cmake(KF6KIO)
+    - cmake(KF6Sonnet)
+    - cmake(KF6SyntaxHighlighting)
+    - cmake(KF6TextEmoticonsWidgets)
+    - cmake(KF6XmlGui)
+setup       : |
+    %cmake_kf6
+build       : |
+    %cmake_build
+install     : |
+    %cmake_install
