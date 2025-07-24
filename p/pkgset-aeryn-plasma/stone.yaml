@@ -5,7 +5,7 @@
 #
 name        : pkgset-aeryn-plasma
 version     : "2025.06" # I guess let's just match the OS version for now
-release     : 10
+release     : 11
 homepage    : https://aerynos.com/
 # No upstreams!
 summary     : pkgset virtual packages - Plasma/KDE Desktop
@@ -52,13 +52,13 @@ packages    :
             - polkit-kde-agent
             - powerdevil
             - print-manager
-            - sddm-kcm
             - spectacle
 
             # Basic apps (Gear)
             - ark
             - dolphin
             - kcalc
+            - kclock
             - konsole
             - kwrite
 
@@ -80,6 +80,7 @@ packages    :
             - gwenview
             - haruna
             - kate
+            - merkuro
             - okular
             - partitionmanager
 

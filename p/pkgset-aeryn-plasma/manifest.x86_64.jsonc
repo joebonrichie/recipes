@@ -25,6 +25,7 @@
 				"flatpak-kcm",
 				"kaccounts-providers",
 				"kcalc",
+				"kclock",
 				"kde-cli-tools",
 				"kde-gtk-config",
 				"kdeplasma-addons",
@@ -50,7 +51,6 @@
 				"polkit-kde-agent",
 				"powerdevil",
 				"print-manager",
-				"sddm-kcm",
 				"spectacle"
 			],
 			"files": [
@@ -64,6 +64,7 @@
 				"gwenview",
 				"haruna",
 				"kate",
+				"merkuro",
 				"okular",
 				"partitionmanager",
 				"pkgset-aeryn-plasma-minimal"
@@ -75,6 +76,6 @@
 		}
 	},
 	"source-name": "pkgset-aeryn-plasma",
-	"source-release": "10",
+	"source-release": "11",
 	"source-version": "2025.06"
 }
