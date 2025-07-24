@@ -1,0 +1,45 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : mailcommon
+version     : 25.04.3
+release     : 1
+upstreams   :
+    - https://download.kde.org/stable/release-service/25.04.3/src/mailcommon-25.04.3.tar.xz : 2525aa778a922f6735f571a32a896fdfafa1aadfcc4aebd6619306a98f213521
+homepage    : https://kde.org
+license     :
+    - GPL-2.0-or-later
+    - LGPL-2.1-or-later
+summary     : MailCommon Library
+description : |
+    MailCommon Library.
+builddeps   :
+    # Temporary, boulder doesn't handle build ordering resolution correctly when builddeps are added by macros, so add ECM manually
+    - cmake(ECM)
+    - cmake(KF6Archive)
+    - cmake(KF6Completion)
+    - cmake(KF6Config)
+    - cmake(KF6DBusAddons)
+    - cmake(KF6I18n)
+    - cmake(KF6IconThemes)
+    - cmake(KF6ItemModels)
+    - cmake(KF6ItemViews)
+    - cmake(KF6KIO)
+    - cmake(KF6SyntaxHighlighting)
+    - cmake(KF6XmlGui)
+    - cmake(KPim6Akonadi)
+    - cmake(KPim6AkonadiMime)
+    - cmake(KPim6Libkdepim)
+    - cmake(KPim6MailImporter)
+    - cmake(KPim6MailTransport)
+    - cmake(KPim6MessageComposer)
+    - cmake(QGpgmeQt6)
+    - cmake(Qt6Multimedia)
+setup       : |
+    %cmake_kf6
+build       : |
+    %cmake_build
+install     : |
+    %cmake_install
