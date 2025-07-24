@@ -160,6 +160,7 @@
 			],
 			"depends": [
 				"cmake(KF6Contacts)",
+				"cmake(KF6TextAutoCorrectionWidgets)",
 				"cmake(KPim6Akonadi)",
 				"cmake(KPim6AkonadiContactWidgets)",
 				"cmake(KPim6IMAP)",
@@ -341,6 +342,6 @@
 		}
 	},
 	"source-name": "pimcommon",
-	"source-release": "3",
+	"source-release": "4",
 	"source-version": "25.04.3"
 }
