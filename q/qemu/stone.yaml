@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : qemu
-version     : 10.0.2
-release     : 19
+version     : 10.0.3
+release     : 20
 homepage    : http://www.qemu.org/
 upstreams   :
-    - https://download.qemu.org/qemu-10.0.2.tar.xz : ef786f2398cb5184600f69aef4d5d691efd44576a3cff4126d38d4c6fec87759
+    - https://download.qemu.org/qemu-10.0.3.tar.xz : 5c891267b1534a774465db8b1a0dfcb0c5e6d7ecb6f71345625adf4e0889945b
 summary     :  A generic and open source machine emulator and virtualizer
 description : |
      A generic and open source machine emulator and virtualizer
@@ -48,6 +48,7 @@ builddeps   :
     - pkgconfig(libtasn1)
     - pkgconfig(libudev)
     - pkgconfig(libusb-1.0)
+    - pkgconfig(libusbredirhost)
     - pkgconfig(libzstd)
     - pkgconfig(ncurses)
     - pkgconfig(pam)
@@ -298,6 +299,14 @@ packages    :
         paths:
             - /usr/lib/qemu/hw-usb-host.so
 
+    - "%(name)-hw-usb-redirect":
+        summary: QEMU USB redirect device
+        description: QEMU USB redirect device
+        rundeps:
+            - "%(name)-common"
+        paths:
+            - /usr/lib/qemu/hw-usb-redirect.so
+
     - "%(name)-ui-curses":
         summary: QEMU curses UI driver
         description: QEMU curses UI driver
@@ -526,6 +535,7 @@ packages    :
             - "%(name)-hw-display-virtio-vga-gl"
             - "%(name)-hw-uefi-vars"
             - "%(name)-hw-usb-host"
+            - "%(name)-hw-usb-redirect"
             - "%(name)-ui-curses"
             - "%(name)-ui-dbus"
             - "%(name)-ui-egl-headless"
@@ -573,4 +583,3 @@ packages    :
 # - package ipxe
 # - package openbios
 # - package SLOF
-# - Package and build against usbredir
