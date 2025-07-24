@@ -30,6 +30,7 @@
 				"cmake(KPim6Mime)"
 			],
 			"depends": [
+				"cmake(KPim6Mime)",
 				"kmbox"
 			],
 			"files": [
@@ -55,6 +56,6 @@
 		}
 	},
 	"source-name": "kmbox",
-	"source-release": "1",
+	"source-release": "2",
 	"source-version": "25.04.3"
 }
