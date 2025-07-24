@@ -1,0 +1,25 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : kmime
+version     : 25.04.3
+release     : 1
+upstreams   :
+    - https://download.kde.org/stable/release-service/25.04.3/src/kmime-25.04.3.tar.xz : 23ece71d839261024b861ca4b956ea0787ee59db883d17bea83236aaf8bda1ea
+homepage    : https://kde.org
+license     : LGPL-2.1-or-later
+summary     : KMime is a library for handling mail messages and newsgroup articles
+description : |
+    KMime is a library for handling mail messages and newsgroup articles.
+builddeps   :
+    # Temporary, boulder doesn't handle build ordering resolution correctly when builddeps are added by macros, so add ECM manually
+    - cmake(ECM)
+    - cmake(KF6Codecs)
+setup       : |
+    %cmake_kf6
+build       : |
+    %cmake_build
+install     : |
+    %cmake_install
