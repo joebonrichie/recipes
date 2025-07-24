@@ -657,8 +657,11 @@
 			],
 			"depends": [
 				"cmake(KPim6AkonadiMime)",
+				"cmake(KPim6IdentityManagementWidgets)",
 				"cmake(KPim6Libkleo)",
+				"cmake(KPim6Mime)",
 				"cmake(KPim6PimCommon)",
+				"cmake(Qt6WebEngineWidgets)",
 				"messagelib"
 			],
 			"files": [
@@ -1267,6 +1270,6 @@
 		}
 	},
 	"source-name": "messagelib",
-	"source-release": "2",
+	"source-release": "3",
 	"source-version": "25.04.3"
 }
