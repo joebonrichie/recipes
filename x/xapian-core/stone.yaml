@@ -1,0 +1,38 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : xapian-core
+version     : 1.4.29
+release     : 1
+upstreams   :
+    - https://oligarchy.co.uk/xapian/1.4.29/xapian-core-1.4.29.tar.xz : c55c9bc8613ad3ec2c218eafca088c218ab7cddcba7ef08f3af0e542f4e521bc
+homepage    : https://xapian.org/
+license     : GPL-2.0-or-later
+summary     : Open Source Search Engine Library
+description : |
+    Xapian is an Open Source Search Engine Library. It's written in C++, with bindings to allow use from Perl, Python 2, Python 3, PHP 5, PHP 7, Java, Tcl, C#, Ruby, Lua, Erlang, Node.js and R. Xapian is a highly adaptable toolkit which allows developers to easily add advanced indexing and search facilities to their own applications. It has built-in support for several families of weighting models and also supports a rich set of boolean query operators.
+builddeps   :
+    - pkgconfig(uuid)
+    - pkgconfig(zlib)
+setup       : |
+    %configure\
+        --disable-static
+build       : |
+    %make
+install     : |
+    %make_install
+packages    :
+    - "%(name)-libs":
+        paths:
+            - /usr/lib/libxapian.so.*
+
+    - "%(name)-devel":
+        paths:
+            - /usr/bin/xapian-config
+            - /usr/share/man/man1/xapian-config.1*
+
+    - "%(name)-docs":
+        paths:
+            - /usr/share/doc
