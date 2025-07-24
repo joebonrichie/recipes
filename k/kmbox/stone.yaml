@@ -1,0 +1,25 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : kmbox
+version     : 25.04.3
+release     : 1
+upstreams   :
+    - https://download.kde.org/stable/release-service/25.04.3/src/kmbox-25.04.3.tar.xz : 8f604bdc87587b3bc4d944ad82c17587c8db1930d6435fdbc4e5f8fb17f6727e
+homepage    : https://kde.org
+license     : LGPL-2.1-or-later
+summary     : KMBox provides API to access emails in storages in the MBox format
+description : |
+    KMBox provides API to access emails in storages in the MBox format.
+builddeps   :
+    # Temporary, boulder doesn't handle build ordering resolution correctly when builddeps are added by macros, so add ECM manually
+    - cmake(ECM)
+    - cmake(KPim6Mime)
+setup       : |
+    %cmake_kf6
+build       : |
+    %cmake_build
+install     : |
+    %cmake_install

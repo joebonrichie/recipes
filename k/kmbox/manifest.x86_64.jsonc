@@ -1,0 +1,60 @@
+/** Human readable report. This is not consumed by boulder */
+{
+	"manifest-version": "0.2",
+	"packages": {
+		"kmbox": {
+			"build-depends": [
+				"cmake(ECM)",
+				"cmake(KPim6Mime)"
+			],
+			"depends": [
+				"soname(libKPim6Mime.so.6(x86_64))",
+				"soname(libQt6Core.so.6(x86_64))",
+				"soname(libc++.so.1(x86_64))",
+				"soname(libc.so.6(x86_64))"
+			],
+			"files": [
+				"/usr/lib/libKPim6Mbox.so.6",
+				"/usr/lib/libKPim6Mbox.so.6.4.3",
+				"/usr/share/qlogging-categories6/kmbox.categories",
+				"/usr/share/qlogging-categories6/kmbox.renamecategories"
+			],
+			"name": "kmbox",
+			"provides": [
+				"soname(libKPim6Mbox.so.6(x86_64))"
+			]
+		},
+		"kmbox-devel": {
+			"build-depends": [
+				"cmake(ECM)",
+				"cmake(KPim6Mime)"
+			],
+			"depends": [
+				"kmbox"
+			],
+			"files": [
+				"/usr/include/KPim6/KMbox/KMbox/MBox",
+				"/usr/include/KPim6/KMbox/KMbox/MBoxEntry",
+				"/usr/include/KPim6/KMbox/kmbox/kmbox_export.h",
+				"/usr/include/KPim6/KMbox/kmbox/mbox.h",
+				"/usr/include/KPim6/KMbox/kmbox/mboxentry.h",
+				"/usr/include/KPim6/KMbox/kmbox_version.h",
+				"/usr/lib/cmake/KPim6Mbox/KPim6MBoxQchTargets.cmake",
+				"/usr/lib/cmake/KPim6Mbox/KPim6MboxConfig.cmake",
+				"/usr/lib/cmake/KPim6Mbox/KPim6MboxConfigVersion.cmake",
+				"/usr/lib/cmake/KPim6Mbox/KPim6MboxTargets-release.cmake",
+				"/usr/lib/cmake/KPim6Mbox/KPim6MboxTargets.cmake",
+				"/usr/lib/libKPim6Mbox.so",
+				"/usr/share/doc/qt6/KPim6Mbox.qch",
+				"/usr/share/doc/qt6/KPim6Mbox.tags"
+			],
+			"name": "kmbox-devel",
+			"provides": [
+				"cmake(KPim6Mbox)"
+			]
+		}
+	},
+	"source-name": "kmbox",
+	"source-release": "1",
+	"source-version": "25.04.3"
+}
