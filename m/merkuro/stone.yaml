@@ -1,0 +1,70 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : merkuro
+version     : 25.04.3
+release     : 1
+upstreams   :
+    - https://download.kde.org/stable/release-service/25.04.3/src/merkuro-25.04.3.tar.xz : c213e7f4bd746e699ec56315cd26393124283e9190a5e9c2c3adf21811cdde27
+homepage    : https://kde.org/applications/system/org.kde.merkuro
+license     :
+    - GFDL-1.2-or-later
+    - GPL-2.0-or-later
+summary     : KDE's terminal emulator
+description : |
+    Konsole is a terminal program for KDE. As well as being a standalone program, it is also used by other KDE programs such as the Kate editor and KDevelop development environment to provide easy access to a terminal window.
+builddeps   :
+    # Temporary, boulder doesn't handle build ordering resolution correctly when builddeps are added by macros, so add ECM manually
+    - cmake(ECM)
+    - cmake(Gpgmepp)
+    - cmake(KF6CalendarCore)
+    - cmake(KF6ConfigWidgets)
+    - cmake(KF6Contacts)
+    - cmake(KF6CoreAddons)
+    - cmake(KF6Crash)
+    - cmake(KF6DBusAddons)
+    - cmake(KF6Holidays)
+    - cmake(KF6I18n)
+    - cmake(KF6IconThemes)
+    - cmake(KF6ItemModels)
+    - cmake(KF6Kirigami)
+    - cmake(KF6KirigamiAddons) ##
+    - cmake(KF6KIO)
+    - cmake(KF6Notifications)
+    - cmake(KF6QQC2DesktopStyle)
+    - cmake(KF6WindowSystem)
+    - cmake(KF6XmlGui)
+    - cmake(KPim6AkonadiCalendar)
+    - cmake(KPim6AkonadiSearch)
+    - cmake(KPim6CalendarUtils)
+    - cmake(KPim6IdentityManagementCore)
+    - cmake(KPim6IdentityManagementQuick)
+    - cmake(KPim6Libkdepim)
+    - cmake(KPim6MailCommon)
+    - cmake(KPim6MailTransport)
+    - cmake(KPim6MimeTreeParserCore)
+    - cmake(KPim6Mbox)
+    - cmake(KPim6Mime)
+    - cmake(KPim6PimCommonAkonadi)
+    - cmake(KPim6Libkleo)
+    - cmake(KPim6MessageComposer)
+    - cmake(Qt6CorePrivate)
+    - cmake(Qt6Location)
+    - cmake(Qt6Qml)
+    - cmake(Qt6Svg)
+    - cmake(Plasma)
+rundeps     :
+    - qt6-wayland
+setup       : |
+    %cmake_kf6
+build       : |
+    %cmake_build
+install     : |
+    %cmake_install
+    %qml_cache_qt6
+packages    :
+    - "%(name)":
+        paths:
+            - /usr/lib/lib*.so # No need to split the package yet
