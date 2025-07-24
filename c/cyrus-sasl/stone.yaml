@@ -5,7 +5,7 @@
 #
 name        : cyrus-sasl
 version     : 2.1.28
-release     : 3
+release     : 4
 homepage    : https://github.com/cyrusimap/cyrus-sasl
 upstreams   :
     - https://github.com/cyrusimap/cyrus-sasl/releases/download/cyrus-sasl-2.1.28/cyrus-sasl-2.1.28.tar.gz : 7ccfc6abd01ed67c1a0924b353e526f1b766b21f42d4562ee635a8ebfc5bb38c
@@ -18,7 +18,8 @@ builddeps   :
     - pkgconfig(krb5)
     - pkgconfig(libxcrypt)
     - pkgconfig(openssl)
-    # db5-devel
+    - pkgconfig(pam)
+    - gdbm-devel
 setup       : |
     %patch %(pkgdir)/upstream-fix-time.patch
     %patch %(pkgdir)/openssl3.patch
@@ -27,8 +28,68 @@ setup       : |
 
     %reconfigure \
                  --disable-krb4 \
+                 --with-dblib=gdbm \
+                 --with-ldap \
+                 --with-saslauthd=/run/saslauthd \
                  CC_FOR_BUILD=${CC}
 build       : |
     %make
 install     : |
     %make_install
+packages    :
+    - "%(name)-libs":
+        paths:
+            - /usr/lib/libsasl2.so.*
+            - /usr/lib/sasl2/libanonymous.so*
+            - /usr/lib/sasl2/libsasldb.so*
+            - /usr/sbin/saslpasswd2
+            - /usr/sbin/sasldblistusers2
+
+    - "%(name)-gs2":
+        summary: GS2 support for Cyrus SASL
+        description: GS2 support for Cyrus SASL
+        rundeps:
+            - "%(name)-libs"
+        paths:
+            - /usr/lib/sasl2/libgs2.so*
+
+    - "%(name)-gssapi":
+        summary: GSSAPI authentication support for Cyrus SASL
+        description: GSSAPI authentication support for Cyrus SASL
+        rundeps:
+            - "%(name)-libs"
+        paths:
+            - /usr/lib/sasl2/libgssapiv2.so*
+
+    - "%(name)-otp":
+        summary: OTP authentication support for Cyrus SASL
+        description: OTP authentication support for Cyrus SASL
+        rundeps:
+            - "%(name)-libs"
+        paths:
+            - /usr/lib/sasl2/libotp.so*
+
+    - "%(name)-md5":
+        summary: CRAM-MD5 and DIGEST-MD5 authentication support for Cyrus SASL
+        description: CRAM-MD5 and DIGEST-MD5 authentication support for Cyrus SASL
+        rundeps:
+            - "%(name)-libs"
+        paths:
+            - /usr/lib/sasl2/libcrammd5.so*
+            - /usr/lib/sasl2/libdigestmd5.so*
+
+    - "%(name)-plain":
+        summary: PLAIN and LOGIN authentication support for Cyrus SASL
+        description: PLAIN and LOGIN authentication support for Cyrus SASL
+        rundeps:
+            - "%(name)-libs"
+        paths:
+            - /usr/lib/sasl2/libplain.so*
+
+    - "%(name)-scram":
+        summary: SCRAM auxprop support for Cyrus SASL
+        description: SCRAM auxprop support for Cyrus SASL
+        rundeps:
+            - "%(name)-libs"
+        paths:
+            - /usr/lib/sasl2/libscram.so*

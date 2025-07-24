@@ -4,62 +4,32 @@
 	"packages": {
 		"cyrus-sasl": {
 			"build-depends": [
+				"gdbm-devel",
 				"pkgconfig(krb5)",
 				"pkgconfig(libxcrypt)",
-				"pkgconfig(openssl)"
+				"pkgconfig(openssl)",
+				"pkgconfig(pam)"
 			],
 			"depends": [
 				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
 				"soname(libc.so.6(x86_64))",
 				"soname(libcrypt.so.1(x86_64))",
-				"soname(libcrypto.so.3(x86_64))",
-				"soname(libgssapi_krb5.so.2(x86_64))",
-				"soname(libkrb5.so.3(x86_64))"
+				"soname(libkrb5.so.3(x86_64))",
+				"soname(libpam.so.0(x86_64))",
+				"soname(libsasl2.so.3(x86_64))"
 			],
 			"files": [
-				"/usr/lib/libsasl2.so.3",
-				"/usr/lib/libsasl2.so.3.0.0",
-				"/usr/lib/sasl2/libanonymous.so",
-				"/usr/lib/sasl2/libanonymous.so.3",
-				"/usr/lib/sasl2/libanonymous.so.3.0.0",
-				"/usr/lib/sasl2/libcrammd5.so",
-				"/usr/lib/sasl2/libcrammd5.so.3",
-				"/usr/lib/sasl2/libcrammd5.so.3.0.0",
-				"/usr/lib/sasl2/libdigestmd5.so",
-				"/usr/lib/sasl2/libdigestmd5.so.3",
-				"/usr/lib/sasl2/libdigestmd5.so.3.0.0",
-				"/usr/lib/sasl2/libgs2.so",
-				"/usr/lib/sasl2/libgs2.so.3",
-				"/usr/lib/sasl2/libgs2.so.3.0.0",
-				"/usr/lib/sasl2/libgssapiv2.so",
-				"/usr/lib/sasl2/libgssapiv2.so.3",
-				"/usr/lib/sasl2/libgssapiv2.so.3.0.0",
-				"/usr/lib/sasl2/libotp.so",
-				"/usr/lib/sasl2/libotp.so.3",
-				"/usr/lib/sasl2/libotp.so.3.0.0",
-				"/usr/lib/sasl2/libplain.so",
-				"/usr/lib/sasl2/libplain.so.3",
-				"/usr/lib/sasl2/libplain.so.3.0.0",
-				"/usr/lib/sasl2/libscram.so",
-				"/usr/lib/sasl2/libscram.so.3",
-				"/usr/lib/sasl2/libscram.so.3.0.0",
 				"/usr/sbin/pluginviewer",
 				"/usr/sbin/saslauthd",
 				"/usr/sbin/testsaslauthd",
+				"/usr/share/man/man8/pluginviewer.8",
 				"/usr/share/man/man8/saslauthd.8",
+				"/usr/share/man/man8/sasldblistusers2.8",
+				"/usr/share/man/man8/saslpasswd2.8",
 				"/usr/share/man/man8/testsaslauthd.8"
 			],
 			"name": "cyrus-sasl",
 			"provides": [
-				"soname(libsasl2.so.3(x86_64))",
-				"soname(sasl2/libanonymous.so.3(x86_64))",
-				"soname(sasl2/libcrammd5.so.3(x86_64))",
-				"soname(sasl2/libdigestmd5.so.3(x86_64))",
-				"soname(sasl2/libgs2.so.3(x86_64))",
-				"soname(sasl2/libgssapiv2.so.3(x86_64))",
-				"soname(sasl2/libotp.so.3(x86_64))",
-				"soname(sasl2/libplain.so.3(x86_64))",
-				"soname(sasl2/libscram.so.3(x86_64))",
 				"sysbinary(pluginviewer)",
 				"sysbinary(saslauthd)",
 				"sysbinary(testsaslauthd)"
@@ -67,9 +37,11 @@
 		},
 		"cyrus-sasl-devel": {
 			"build-depends": [
+				"gdbm-devel",
 				"pkgconfig(krb5)",
 				"pkgconfig(libxcrypt)",
-				"pkgconfig(openssl)"
+				"pkgconfig(openssl)",
+				"pkgconfig(pam)"
 			],
 			"depends": [
 				"cyrus-sasl"
@@ -132,9 +104,184 @@
 			"provides": [
 				"pkgconfig(libsasl2)"
 			]
+		},
+		"cyrus-sasl-gs2": {
+			"build-depends": [
+				"gdbm-devel",
+				"pkgconfig(krb5)",
+				"pkgconfig(libxcrypt)",
+				"pkgconfig(openssl)",
+				"pkgconfig(pam)"
+			],
+			"depends": [
+				"cyrus-sasl-libs",
+				"soname(libc.so.6(x86_64))",
+				"soname(libgssapi_krb5.so.2(x86_64))"
+			],
+			"files": [
+				"/usr/lib/sasl2/libgs2.so",
+				"/usr/lib/sasl2/libgs2.so.3",
+				"/usr/lib/sasl2/libgs2.so.3.0.0"
+			],
+			"name": "cyrus-sasl-gs2",
+			"provides": [
+				"soname(sasl2/libgs2.so.3(x86_64))"
+			]
+		},
+		"cyrus-sasl-gssapi": {
+			"build-depends": [
+				"gdbm-devel",
+				"pkgconfig(krb5)",
+				"pkgconfig(libxcrypt)",
+				"pkgconfig(openssl)",
+				"pkgconfig(pam)"
+			],
+			"depends": [
+				"cyrus-sasl-libs",
+				"soname(libc.so.6(x86_64))",
+				"soname(libgssapi_krb5.so.2(x86_64))"
+			],
+			"files": [
+				"/usr/lib/sasl2/libgssapiv2.so",
+				"/usr/lib/sasl2/libgssapiv2.so.3",
+				"/usr/lib/sasl2/libgssapiv2.so.3.0.0"
+			],
+			"name": "cyrus-sasl-gssapi",
+			"provides": [
+				"soname(sasl2/libgssapiv2.so.3(x86_64))"
+			]
+		},
+		"cyrus-sasl-libs": {
+			"build-depends": [
+				"gdbm-devel",
+				"pkgconfig(krb5)",
+				"pkgconfig(libxcrypt)",
+				"pkgconfig(openssl)",
+				"pkgconfig(pam)"
+			],
+			"depends": [
+				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
+				"soname(libc.so.6(x86_64))",
+				"soname(libgdbm.so.6(x86_64))"
+			],
+			"files": [
+				"/usr/lib/libsasl2.so.3",
+				"/usr/lib/libsasl2.so.3.0.0",
+				"/usr/lib/sasl2/libanonymous.so",
+				"/usr/lib/sasl2/libanonymous.so.3",
+				"/usr/lib/sasl2/libanonymous.so.3.0.0",
+				"/usr/lib/sasl2/libsasldb.so",
+				"/usr/lib/sasl2/libsasldb.so.3",
+				"/usr/lib/sasl2/libsasldb.so.3.0.0",
+				"/usr/sbin/sasldblistusers2",
+				"/usr/sbin/saslpasswd2"
+			],
+			"name": "cyrus-sasl-libs",
+			"provides": [
+				"soname(libsasl2.so.3(x86_64))",
+				"soname(sasl2/libanonymous.so.3(x86_64))",
+				"soname(sasl2/libsasldb.so.3(x86_64))",
+				"sysbinary(sasldblistusers2)",
+				"sysbinary(saslpasswd2)"
+			]
+		},
+		"cyrus-sasl-md5": {
+			"build-depends": [
+				"gdbm-devel",
+				"pkgconfig(krb5)",
+				"pkgconfig(libxcrypt)",
+				"pkgconfig(openssl)",
+				"pkgconfig(pam)"
+			],
+			"depends": [
+				"cyrus-sasl-libs",
+				"soname(libc.so.6(x86_64))",
+				"soname(libcrypto.so.3(x86_64))"
+			],
+			"files": [
+				"/usr/lib/sasl2/libcrammd5.so",
+				"/usr/lib/sasl2/libcrammd5.so.3",
+				"/usr/lib/sasl2/libcrammd5.so.3.0.0",
+				"/usr/lib/sasl2/libdigestmd5.so",
+				"/usr/lib/sasl2/libdigestmd5.so.3",
+				"/usr/lib/sasl2/libdigestmd5.so.3.0.0"
+			],
+			"name": "cyrus-sasl-md5",
+			"provides": [
+				"soname(sasl2/libcrammd5.so.3(x86_64))",
+				"soname(sasl2/libdigestmd5.so.3(x86_64))"
+			]
+		},
+		"cyrus-sasl-otp": {
+			"build-depends": [
+				"gdbm-devel",
+				"pkgconfig(krb5)",
+				"pkgconfig(libxcrypt)",
+				"pkgconfig(openssl)",
+				"pkgconfig(pam)"
+			],
+			"depends": [
+				"cyrus-sasl-libs",
+				"soname(libc.so.6(x86_64))",
+				"soname(libcrypto.so.3(x86_64))"
+			],
+			"files": [
+				"/usr/lib/sasl2/libotp.so",
+				"/usr/lib/sasl2/libotp.so.3",
+				"/usr/lib/sasl2/libotp.so.3.0.0"
+			],
+			"name": "cyrus-sasl-otp",
+			"provides": [
+				"soname(sasl2/libotp.so.3(x86_64))"
+			]
+		},
+		"cyrus-sasl-plain": {
+			"build-depends": [
+				"gdbm-devel",
+				"pkgconfig(krb5)",
+				"pkgconfig(libxcrypt)",
+				"pkgconfig(openssl)",
+				"pkgconfig(pam)"
+			],
+			"depends": [
+				"cyrus-sasl-libs",
+				"soname(libc.so.6(x86_64))"
+			],
+			"files": [
+				"/usr/lib/sasl2/libplain.so",
+				"/usr/lib/sasl2/libplain.so.3",
+				"/usr/lib/sasl2/libplain.so.3.0.0"
+			],
+			"name": "cyrus-sasl-plain",
+			"provides": [
+				"soname(sasl2/libplain.so.3(x86_64))"
+			]
+		},
+		"cyrus-sasl-scram": {
+			"build-depends": [
+				"gdbm-devel",
+				"pkgconfig(krb5)",
+				"pkgconfig(libxcrypt)",
+				"pkgconfig(openssl)",
+				"pkgconfig(pam)"
+			],
+			"depends": [
+				"cyrus-sasl-libs",
+				"soname(libc.so.6(x86_64))",
+				"soname(libcrypto.so.3(x86_64))"
+			],
+			"files": [
+				"/usr/lib/sasl2/libscram.so",
+				"/usr/lib/sasl2/libscram.so.3",
+				"/usr/lib/sasl2/libscram.so.3.0.0"
+			],
+			"name": "cyrus-sasl-scram",
+			"provides": [
+				"soname(sasl2/libscram.so.3(x86_64))"
+			]
 		}
 	},
 	"source-name": "cyrus-sasl",
-	"source-release": "3",
+	"source-release": "4",
 	"source-version": "2.1.28"
 }
