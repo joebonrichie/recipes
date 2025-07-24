@@ -226,6 +226,7 @@
 			],
 			"depends": [
 				"cmake(KF6Attica)",
+				"cmake(KF6CoreAddons)",
 				"kf6-knewstuff",
 				"soname(libKF6NewStuffWidgets.so.6(x86_64))",
 				"soname(libQt6Core.so.6(x86_64))",
@@ -300,6 +301,6 @@
 		}
 	},
 	"source-name": "kf6-knewstuff",
-	"source-release": "7",
+	"source-release": "8",
 	"source-version": "6.16.0"
 }

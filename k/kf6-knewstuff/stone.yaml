@@ -5,7 +5,7 @@
 #
 name        : kf6-knewstuff
 version     : 6.16.0
-release     : 7
+release     : 8
 upstreams   :
     - https://download.kde.org/stable/frameworks/6.16/knewstuff-6.16.0.tar.xz : 53e409a89bd7a8c1f158e2851baee03eeb5164c9fa2a9d0c0f956d23d6e14e62
 homepage    : https://community.kde.org/Frameworks
@@ -42,3 +42,4 @@ packages    :
     - "%(name)-devel":
         rundeps:
             - cmake(KF6Attica)
+            - cmake(KF6CoreAddons)
