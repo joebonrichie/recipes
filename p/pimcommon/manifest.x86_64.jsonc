@@ -159,6 +159,8 @@
 				"cmake(PlasmaActivities)"
 			],
 			"depends": [
+				"cmake(KPim6IMAP)",
+				"cmake(KPim6Libkdepim)",
 				"pimcommon",
 				"soname(libKPim6PimCommon.so.6(x86_64))",
 				"soname(libKPim6PimCommonAkonadi.so.6(x86_64))",
@@ -336,6 +338,6 @@
 		}
 	},
 	"source-name": "pimcommon",
-	"source-release": "1",
+	"source-release": "2",
 	"source-version": "25.04.3"
 }
