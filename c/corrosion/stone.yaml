@@ -1,0 +1,30 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : corrosion
+version     : 0.5.2
+release     : 1
+upstreams   :
+    - https://github.com/corrosion-rs/corrosion/archive/refs/tags/v0.5.2.tar.gz : 6bc02411e29183a896aa60c58db6819ec6cf57c08997481d0b0da9029356b529
+homepage    : https://github.com/corrosion-rs/corrosion
+license     : MIT
+summary     : Tools for integrating Rust and CMake
+description : |
+    Tool for integrating Rust into an existing CMake project
+builddeps   :
+    - binary(rustc)
+rundeps     :
+    - binary(rustc)
+setup       : |
+    %cmake
+build       : |
+    %cmake_build
+install     : |
+    %cmake_install
+packages    :
+    - "%(name)":
+        paths:
+            # devel-only package
+            - /usr/lib/cmake/

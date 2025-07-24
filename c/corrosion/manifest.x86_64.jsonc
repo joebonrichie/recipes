@@ -1,0 +1,28 @@
+/** Human readable report. This is not consumed by boulder */
+{
+	"manifest-version": "0.2",
+	"packages": {
+		"corrosion": {
+			"build-depends": [
+				"binary(rustc)"
+			],
+			"depends": [
+				"binary(rustc)"
+			],
+			"files": [
+				"/usr/lib/cmake/Corrosion/CorrosionConfig.cmake",
+				"/usr/lib/cmake/Corrosion/CorrosionConfigVersion.cmake",
+				"/usr/share/cmake/Corrosion.cmake",
+				"/usr/share/cmake/CorrosionGenerator.cmake",
+				"/usr/share/cmake/FindRust.cmake"
+			],
+			"name": "corrosion",
+			"provides": [
+				"cmake(Corrosion)"
+			]
+		}
+	},
+	"source-name": "corrosion",
+	"source-release": "1",
+	"source-version": "0.5.2"
+}
