@@ -1,0 +1,27 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : libkdepim
+version     : 25.04.3
+release     : 1
+upstreams   :
+    - https://download.kde.org/stable/release-service/25.04.3/src/libkdepim-25.04.3.tar.xz : 6d9c78063db5234539e5f3fddbecbca61948b79e60073ec215a7ffdad62418fa
+homepage    : https://kde.org
+license     : GPL-2.0-or-later
+summary     : Libraries for KDE PIM applications
+description : |
+    Libraries for KDE PIM applications.
+builddeps   :
+    # Temporary, boulder doesn't handle build ordering resolution correctly when builddeps are added by macros, so add ECM manually
+    - cmake(ECM)
+    - cmake(KF6Completion)
+    - cmake(KF6I18n)
+    - cmake(KF6WidgetsAddons)
+setup       : |
+    %cmake_kf6
+build       : |
+    %cmake_build
+install     : |
+    %cmake_install
