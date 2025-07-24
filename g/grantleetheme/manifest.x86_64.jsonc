@@ -105,6 +105,7 @@
 				"cmake(KF6XmlGui)"
 			],
 			"depends": [
+				"cmake(KF6TextTemplate)",
 				"grantleetheme"
 			],
 			"files": [
@@ -144,6 +145,6 @@
 		}
 	},
 	"source-name": "grantleetheme",
-	"source-release": "1",
+	"source-release": "2",
 	"source-version": "25.04.3"
 }
