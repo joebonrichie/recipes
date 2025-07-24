@@ -5,7 +5,7 @@
 #
 name        : kmime
 version     : 25.04.3
-release     : 1
+release     : 2
 upstreams   :
     - https://download.kde.org/stable/release-service/25.04.3/src/kmime-25.04.3.tar.xz : 23ece71d839261024b861ca4b956ea0787ee59db883d17bea83236aaf8bda1ea
 homepage    : https://kde.org
@@ -23,3 +23,7 @@ build       : |
     %cmake_build
 install     : |
     %cmake_install
+packages    :
+    - "%(name)-devel":
+        rundeps:
+            - cmake(KF6Codecs)

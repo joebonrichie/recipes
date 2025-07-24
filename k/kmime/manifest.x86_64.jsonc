@@ -101,6 +101,7 @@
 				"cmake(KF6Codecs)"
 			],
 			"depends": [
+				"cmake(KF6Codecs)",
 				"kmime"
 			],
 			"files": [
@@ -138,6 +139,6 @@
 		}
 	},
 	"source-name": "kmime",
-	"source-release": "1",
+	"source-release": "2",
 	"source-version": "25.04.3"
 }
