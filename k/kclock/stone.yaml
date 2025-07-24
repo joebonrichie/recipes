@@ -1,0 +1,49 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : kclock
+version     : 25.04.3
+release     : 1
+upstreams   :
+    - https://download.kde.org/stable/release-service/25.04.3/src/kclock-25.04.3.tar.xz : 16d489c13942c83c2aaf268ad47b473de1325e65b13a2e3749f7e7202ebf2582
+homepage    : https://apps.kde.org/kclock/
+license     : GPL-2.0-or-later
+summary     : Clock app for KDE Plasma
+description : |
+    A convergent clock for KDE Plasma desktop and mobile
+    Features
+        - Alarms
+        - Stopwatch
+        - World Clocks
+        - Timers
+builddeps   :
+    # Temporary, boulder doesn't handle build ordering resolution correctly when builddeps are added by macros, so add ECM manually
+    - cmake(ECM)
+    - cmake(KF6Config)
+    - cmake(KF6CoreAddons)
+    - cmake(KF6Crash)
+    - cmake(KF6DBusAddons)
+    - cmake(KF6I18n)
+    - cmake(KF6Kirigami)
+    - cmake(KF6KirigamiAddons)
+    - cmake(KF6Notifications)
+    - cmake(KF6StatusNotifierItem)
+    - cmake(Plasma)
+    - cmake(Qt6Svg)
+    - cmake(Qt6QuickControls2)
+    - cmake(Qt6Multimedia)
+rundeps     :
+    - kf6-kirigami-addons
+    - qt6-wayland
+setup       : |
+    %cmake_kf6
+build       : |
+    %cmake_build
+install     : |
+    %cmake_install
+# packages    :
+#     - "%(name)-docs":
+#         paths:
+#             - /usr/share/doc
