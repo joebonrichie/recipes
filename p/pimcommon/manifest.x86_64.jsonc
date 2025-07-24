@@ -165,6 +165,7 @@
 				"cmake(KPim6AkonadiContactWidgets)",
 				"cmake(KPim6IMAP)",
 				"cmake(KPim6Libkdepim)",
+				"cmake(PlasmaActivities)",
 				"pimcommon",
 				"soname(libKPim6PimCommon.so.6(x86_64))",
 				"soname(libKPim6PimCommonAkonadi.so.6(x86_64))",
@@ -342,6 +343,6 @@
 		}
 	},
 	"source-name": "pimcommon",
-	"source-release": "4",
+	"source-release": "5",
 	"source-version": "25.04.3"
 }
