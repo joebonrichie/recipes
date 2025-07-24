@@ -5,7 +5,7 @@
 #
 name        : messagelib
 version     : 25.04.3
-release     : 1
+release     : 2
 upstreams   :
     - https://download.kde.org/stable/release-service/25.04.3/src/messagelib-25.04.3.tar.xz : 87048febcbad9827b8ec1d894aa73996d5c48d7840273a04dafb7de00991c0eb
 homepage    : https://kde.org
@@ -55,3 +55,9 @@ build       : |
     %cmake_build
 install     : |
     %cmake_install
+packages    :
+    - "%(name)-devel":
+        rundeps:
+            - cmake(KPim6AkonadiMime)
+            - cmake(KPim6Libkleo)
+            - cmake(KPim6PimCommon)

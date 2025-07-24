@@ -656,6 +656,9 @@
 				"cmake(Qt6WebEngineWidgets)"
 			],
 			"depends": [
+				"cmake(KPim6AkonadiMime)",
+				"cmake(KPim6Libkleo)",
+				"cmake(KPim6PimCommon)",
 				"messagelib"
 			],
 			"files": [
@@ -1264,6 +1267,6 @@
 		}
 	},
 	"source-name": "messagelib",
-	"source-release": "1",
+	"source-release": "2",
 	"source-version": "25.04.3"
 }
