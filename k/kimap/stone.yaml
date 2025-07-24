@@ -1,0 +1,29 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : kimap
+version     : 25.04.3
+release     : 1
+upstreams   :
+    - https://download.kde.org/stable/release-service/25.04.3/src/kimap-25.04.3.tar.xz : 2adc1a8928d0705f31afd6050dc2840690ae0b6250f55b1bc952579f440331ee
+homepage    : https://kde.org
+license     : LGPL-2.1-or-later
+summary     : This library provides a job-based API for interacting with an IMAP4rev1 server
+description : |
+    This library provides a job-based API for interacting with an IMAP4rev1 server. It manages connections, encryption and parameter quoting and encoding, but otherwise provides quite a low-level interface to the protocol.  This library does not implement an IMAP client; it merely makes it easier to do so.
+builddeps   :
+    # Temporary, boulder doesn't handle build ordering resolution correctly when builddeps are added by macros, so add ECM manually
+    - cmake(ECM)
+    - cmake(KF6CoreAddons)
+    - cmake(KF6I18n)
+    - cmake(KF6KIO)
+    - cmake(KPim6Mime)
+    - pkgconfig(libsasl2)
+setup       : |
+    %cmake_kf6
+build       : |
+    %cmake_build
+install     : |
+    %cmake_install
