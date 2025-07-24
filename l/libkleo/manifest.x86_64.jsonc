@@ -135,6 +135,7 @@
 				"cmake(QGpgmeQt6)"
 			],
 			"depends": [
+				"cmake(QGpgmeQt6)",
 				"libkleo"
 			],
 			"files": [
@@ -314,6 +315,6 @@
 		}
 	},
 	"source-name": "libkleo",
-	"source-release": "1",
+	"source-release": "2",
 	"source-version": "25.04.3"
 }
