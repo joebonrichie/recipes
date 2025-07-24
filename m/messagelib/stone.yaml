@@ -1,0 +1,57 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : messagelib
+version     : 25.04.3
+release     : 1
+upstreams   :
+    - https://download.kde.org/stable/release-service/25.04.3/src/messagelib-25.04.3.tar.xz : 87048febcbad9827b8ec1d894aa73996d5c48d7840273a04dafb7de00991c0eb
+homepage    : https://kde.org
+license     :
+    - GPL-2.0-only
+    - LGPL-2.1-or-later
+summary     : KDE PIM messaging library
+description : |
+    KDE PIM messaging library.
+builddeps   :
+    # Temporary, boulder doesn't handle build ordering resolution correctly when builddeps are added by macros, so add ECM manually
+    - cmake(ECM)
+    - cmake(KF6Archive)
+    - cmake(KF6CalendarCore)
+    - cmake(KF6Codecs)
+    - cmake(KF6Completion)
+    - cmake(KF6Config)
+    - cmake(KF6Contacts)
+    - cmake(KF6CoreAddons)
+    - cmake(KF6I18n)
+    - cmake(KF6IconThemes)
+    - cmake(KF6ItemViews)
+    - cmake(KF6JobWidgets)
+    - cmake(KF6KIO)
+    - cmake(KF6NewStuff)
+    - cmake(KF6Notifications)
+    - cmake(KF6Sonnet)
+    - cmake(KF6SyntaxHighlighting)
+    - cmake(KF6TextTemplate)
+    - cmake(KF6TextWidgets)
+    - cmake(KF6XmlGui)
+    - cmake(KPim6Akonadi)
+    - cmake(KPim6AkonadiContactWidgets)
+    - cmake(KPim6AkonadiMime)
+    - cmake(KPim6AkonadiSearch)
+    - cmake(KPim6Gravatar)
+    - cmake(KPim6IdentityManagementWidgets)
+    - cmake(KPim6Libkleo)
+    - cmake(KPim6MailTransport)
+    - cmake(KPim6Mbox)
+    - cmake(KPim6PimCommonAkonadi)
+    - cmake(QGpgmeQt6)
+    - cmake(Qt6WebEngineWidgets)
+setup       : |
+    %cmake_kf6
+build       : |
+    %cmake_build
+install     : |
+    %cmake_install
