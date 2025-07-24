@@ -5,7 +5,7 @@
 #
 name        : decibels
 version     : 48.0
-release     : 3
+release     : 4
 homepage    : https://apps.gnome.org/Decibels/
 upstreams   :
     - https://download.gnome.org/sources/decibels/48/decibels-48.0.tar.xz : 229b11a9263147bcb8c3e21ff0d4af659fb26262f8aece547adcf8c65e031f74
@@ -29,6 +29,9 @@ builddeps   :
     - pkgconfig(gtk4)
     - pkgconfig(libadwaita-1)
 rundeps     :
+    - binary(gjs-console)
+    - soname(libgtk-4.so.1(x86_64))
+    - soname(libadwaita-1.so.0(x86_64))
     - gstreamer-plugin-libav
     - gstreamer-plugins-bad
     - gstreamer-plugins-good

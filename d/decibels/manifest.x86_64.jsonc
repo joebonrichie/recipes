@@ -14,10 +14,13 @@
 				"pkgconfig(libadwaita-1)"
 			],
 			"depends": [
+				"binary(gjs-console)",
 				"gstreamer-plugin-libav",
 				"gstreamer-plugins-bad",
 				"gstreamer-plugins-good",
-				"gstreamer-plugins-ugly"
+				"gstreamer-plugins-ugly",
+				"soname(libadwaita-1.so.0(x86_64))",
+				"soname(libgtk-4.so.1(x86_64))"
 			],
 			"files": [
 				"/usr/bin/org.gnome.Decibels",
@@ -77,6 +80,6 @@
 		}
 	},
 	"source-name": "decibels",
-	"source-release": "3",
+	"source-release": "4",
 	"source-version": "48.0"
 }
