@@ -80,6 +80,7 @@
 				"/usr/lib/systemd/user/gnome-session.target",
 				"/usr/lib/systemd/user/gnome-session@.target",
 				"/usr/lib/systemd/user/gnome-session@gnome.target.d/gnome.session.conf",
+				"/usr/share/applications/gnome-mimeapps.list",
 				"/usr/share/doc/gnome-session/dbus/gnome-session.html",
 				"/usr/share/glib-2.0/schemas/org.gnome.SessionManager.gschema.xml",
 				"/usr/share/gnome-session/hardware-compatibility",
@@ -214,6 +215,6 @@
 		}
 	},
 	"source-name": "gnome-session",
-	"source-release": "20",
+	"source-release": "21",
 	"source-version": "48.0"
 }
