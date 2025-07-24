@@ -290,6 +290,7 @@
 			"depends": [
 				"akonadi",
 				"cmake(KF6ItemModels)",
+				"cmake(KF6XmlGui)",
 				"soname(libKPim6AkonadiCore.so.6(x86_64))",
 				"soname(libKPim6AkonadiWidgets.so.6(x86_64))",
 				"soname(libQt6Core.so.6(x86_64))",
@@ -671,6 +672,6 @@
 		}
 	},
 	"source-name": "akonadi",
-	"source-release": "2",
+	"source-release": "3",
 	"source-version": "25.04.3"
 }
