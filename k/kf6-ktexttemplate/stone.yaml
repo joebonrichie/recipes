@@ -1,0 +1,27 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : kf6-ktexttemplate
+version     : 6.16.0
+release     : 1
+upstreams   :
+    - https://download.kde.org/stable/frameworks/6.16/ktexttemplate-6.16.0.tar.xz : 1880cf1a890031dc6172513d3dfe78f38d5726184978220ca7142a3a6e40f9b5
+homepage    : https://community.kde.org/Frameworks
+license     :
+    - LGPL-2.0-or-later
+    - LGPL-2.1-or-later
+summary     : Separates the structure of documents from their data
+description : |
+    The goal of KTextTemplate is to make it easier for application developers to separate the structure of documents from the data they contain, opening the door for theming and advanced generation of other text such as code.
+builddeps   :
+    # Temporary, boulder doesn't handle build ordering resolution correctly when builddeps are added by macros, so add ECM manually
+    - cmake(ECM)
+    - cmake(Qt6Qml)
+setup       : |
+    %cmake_kf6
+build       : |
+    %cmake_build
+install     : |
+    %cmake_install
