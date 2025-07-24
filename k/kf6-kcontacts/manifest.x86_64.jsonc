@@ -117,6 +117,10 @@
 				"cmake(Qt6Qml)"
 			],
 			"depends": [
+				"cmake(KF6Codecs)",
+				"cmake(KF6Config)",
+				"cmake(KF6CoreAddons)",
+				"cmake(KF6I18n)",
 				"kf6-kcontacts"
 			],
 			"files": [
@@ -197,6 +201,6 @@
 		}
 	},
 	"source-name": "kf6-kcontacts",
-	"source-release": "1",
+	"source-release": "2",
 	"source-version": "6.16.0"
 }
