@@ -205,7 +205,8 @@
 				"cmake(KPim6Mime)"
 			],
 			"depends": [
-				"akonadi-contacts"
+				"akonadi-contacts",
+				"cmake(KPim6GrantleeTheme)"
 			],
 			"files": [
 				"/usr/include/KPim6/AkonadiContactCore/Akonadi/AbstractContactFormatter",
@@ -311,6 +312,6 @@
 		}
 	},
 	"source-name": "akonadi-contacts",
-	"source-release": "1",
+	"source-release": "2",
 	"source-version": "25.04.3"
 }

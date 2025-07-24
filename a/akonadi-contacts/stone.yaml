@@ -5,7 +5,7 @@
 #
 name        : akonadi-contacts
 version     : 25.04.3
-release     : 1
+release     : 2
 upstreams   :
     - https://download.kde.org/stable/release-service/25.04.3/src/akonadi-contacts-25.04.3.tar.xz : 6443bb3c86997f42d7fcda559a7a88973ff02eb0f17976d622fbb150b4d85c46
 homepage    : https://kde.org
@@ -34,3 +34,7 @@ build       : |
     %cmake_build
 install     : |
     %cmake_install
+packages    :
+    - "%(name)-devel":
+        rundeps:
+            - cmake(KPim6GrantleeTheme)
