@@ -6,6 +6,7 @@
 			"build-depends": [
 				"binary(ar)",
 				"binary(autopoint)",
+				"binary(tar)",
 				"pkgconfig(alsa)",
 				"pkgconfig(ncursesw)",
 				"pkgconfig(systemd)"
@@ -68,7 +69,6 @@
 				"/usr/share/locale/ko/LC_MESSAGES/alsa-utils.mo",
 				"/usr/share/locale/sk/LC_MESSAGES/alsa-utils.mo",
 				"/usr/share/man/man1/aconnect.1",
-				"/usr/share/man/man1/alsa-info.sh.1",
 				"/usr/share/man/man1/alsabat.1",
 				"/usr/share/man/man1/alsactl.1",
 				"/usr/share/man/man1/alsaloop.1",
@@ -91,6 +91,7 @@
 				"/usr/share/man/man1/nhlt-dmic-info.1",
 				"/usr/share/man/man1/speaker-test.1",
 				"/usr/share/man/man7",
+				"/usr/share/man/man8/alsa-info.sh.8",
 				"/usr/share/sounds/alsa/Front_Center.wav",
 				"/usr/share/sounds/alsa/Front_Left.wav",
 				"/usr/share/sounds/alsa/Front_Right.wav",
@@ -132,6 +133,6 @@
 		}
 	},
 	"source-name": "alsa-utils",
-	"source-release": "5",
-	"source-version": "1.2.13"
+	"source-release": "6",
+	"source-version": "1.2.14"
 }
