@@ -13,6 +13,8 @@
 				"/usr/include/vk_video/vulkan_video_codec_h265std.h",
 				"/usr/include/vk_video/vulkan_video_codec_h265std_decode.h",
 				"/usr/include/vk_video/vulkan_video_codec_h265std_encode.h",
+				"/usr/include/vk_video/vulkan_video_codec_vp9std.h",
+				"/usr/include/vk_video/vulkan_video_codec_vp9std_decode.h",
 				"/usr/include/vk_video/vulkan_video_codecs_common.h",
 				"/usr/include/vulkan/vk_icd.h",
 				"/usr/include/vulkan/vk_layer.h",
@@ -36,6 +38,7 @@
 				"/usr/include/vulkan/vulkan_ios.h",
 				"/usr/include/vulkan/vulkan_macos.h",
 				"/usr/include/vulkan/vulkan_metal.h",
+				"/usr/include/vulkan/vulkan_ohos.h",
 				"/usr/include/vulkan/vulkan_raii.hpp",
 				"/usr/include/vulkan/vulkan_screen.h",
 				"/usr/include/vulkan/vulkan_shared.hpp",
@@ -43,6 +46,7 @@
 				"/usr/include/vulkan/vulkan_structs.hpp",
 				"/usr/include/vulkan/vulkan_to_string.hpp",
 				"/usr/include/vulkan/vulkan_vi.h",
+				"/usr/include/vulkan/vulkan_video.cppm",
 				"/usr/include/vulkan/vulkan_video.hpp",
 				"/usr/include/vulkan/vulkan_wayland.h",
 				"/usr/include/vulkan/vulkan_win32.h",
@@ -77,6 +81,6 @@
 		}
 	},
 	"source-name": "vulkan-headers",
-	"source-release": "11",
-	"source-version": "1.4.309.0"
+	"source-release": "12",
+	"source-version": "1.4.321.0"
 }
