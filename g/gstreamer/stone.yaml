@@ -5,7 +5,7 @@
 #
 name        : gstreamer
 version     : 1.26.4
-release     : 19
+release     : 20
 homepage    : https://gstreamer.freedesktop.org/
 upstreams   :
     - https://gitlab.freedesktop.org/gstreamer/gstreamer/-/archive/1.26.4/gstreamer-1.26.4.tar.gz : c26ede6f5188f35f0d7068226ff8d77f6a5b0cca64f507b265a5eeaed8f00741

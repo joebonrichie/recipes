@@ -781,15 +781,15 @@
 				"soname(libgstreamer-1.0.so.0(x86_64))",
 				"soname(libgstvideo-1.0.so.0(x86_64))",
 				"soname(libm.so.6(x86_64))",
-				"soname(libopencv_bgsegm.so.411(x86_64))",
-				"soname(libopencv_calib3d.so.411(x86_64))",
-				"soname(libopencv_core.so.411(x86_64))",
-				"soname(libopencv_features2d.so.411(x86_64))",
-				"soname(libopencv_imgcodecs.so.411(x86_64))",
-				"soname(libopencv_imgproc.so.411(x86_64))",
-				"soname(libopencv_objdetect.so.411(x86_64))",
-				"soname(libopencv_tracking.so.411(x86_64))",
-				"soname(libopencv_video.so.411(x86_64))",
+				"soname(libopencv_bgsegm.so.412(x86_64))",
+				"soname(libopencv_calib3d.so.412(x86_64))",
+				"soname(libopencv_core.so.412(x86_64))",
+				"soname(libopencv_features2d.so.412(x86_64))",
+				"soname(libopencv_imgcodecs.so.412(x86_64))",
+				"soname(libopencv_imgproc.so.412(x86_64))",
+				"soname(libopencv_objdetect.so.412(x86_64))",
+				"soname(libopencv_tracking.so.412(x86_64))",
+				"soname(libopencv_video.so.412(x86_64))",
 				"soname(libunwind.so.1(x86_64))"
 			],
 			"files": [
@@ -3593,6 +3593,6 @@
 		}
 	},
 	"source-name": "gstreamer",
-	"source-release": "19",
+	"source-release": "20",
 	"source-version": "1.26.4"
 }
