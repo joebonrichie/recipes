@@ -6,7 +6,7 @@
 name        : mesa
 version     : 25.1.6
 # Note: keep mesa-clc in-sync with this package version-wise
-release     : 41
+release     : 42
 homepage    : https://mesa3d.org/
 upstreams   :
     - https://mesa.freedesktop.org/archive/mesa-25.1.6.tar.xz : 9f2b69eb39d2d8717d30a9868fdda3e0c0d3708ba32778bbac8ddb044538ce84
@@ -175,7 +175,6 @@ packages    :
             - "%(name)-libegl"
         paths:
             - /usr/include/EGL
-            - /usr/lib/pkgconfig/dri.pc
             - /usr/lib/libEGL_mesa.so
 
     - "%(name)-libopencl":
