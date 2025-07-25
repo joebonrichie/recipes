@@ -4,20 +4,22 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : ninja
-version     : 1.12.1
-release     : 3
+version     : 1.13.1
+release     : 4
 homepage    : https://ninja-build.org
 upstreams   :
-    - https://github.com/ninja-build/ninja/archive/refs/tags/v1.12.1.tar.gz : 821bdff48a3f683bc4bb3b6f0b5fe7b2d647cf65d52aeb63328c91a6c6df285a
+    - https://github.com/ninja-build/ninja/archive/refs/tags/v1.13.1.tar.gz : f0055ad0369bf2e372955ba55128d000cfcc21777057806015b45e4accbebf23
 summary     : Small build system with a focus on speed
 description : |
     Small build system with a focus on speed
-license     :
-    - Apache-2.0
+license     : Apache-2.0
+checkdeps   :
+    - pkgconfig(gtest)
 setup       : |
-    # need gtest for tests
-    %cmake -DBUILD_TESTING=OFF
+    %cmake
 build       : |
     %cmake_build
 install     : |
     %cmake_install
+check       : |
+    %cmake_test
