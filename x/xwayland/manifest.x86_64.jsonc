@@ -9,6 +9,7 @@
 				"pkgconfig(bigreqsproto)",
 				"pkgconfig(compositeproto)",
 				"pkgconfig(damageproto)",
+				"pkgconfig(dri)",
 				"pkgconfig(dri3proto)",
 				"pkgconfig(epoxy)",
 				"pkgconfig(fixesproto)",
@@ -26,6 +27,7 @@
 				"pkgconfig(libtirpc)",
 				"pkgconfig(libunwind)",
 				"pkgconfig(libxcvt)",
+				"pkgconfig(nettle)",
 				"pkgconfig(openssl)",
 				"pkgconfig(pixman-1)",
 				"pkgconfig(presentproto)",
@@ -65,8 +67,8 @@
 				"soname(libei.so.1(x86_64))",
 				"soname(libepoxy.so.0(x86_64))",
 				"soname(libgbm.so.1(x86_64))",
-				"soname(libgcrypt.so.20(x86_64))",
 				"soname(libm.so.6(x86_64))",
+				"soname(libnettle.so.8(x86_64))",
 				"soname(liboeffis.so.1(x86_64))",
 				"soname(libpixman-1.so.0(x86_64))",
 				"soname(libtirpc.so.3(x86_64))",
@@ -93,6 +95,7 @@
 				"pkgconfig(bigreqsproto)",
 				"pkgconfig(compositeproto)",
 				"pkgconfig(damageproto)",
+				"pkgconfig(dri)",
 				"pkgconfig(dri3proto)",
 				"pkgconfig(epoxy)",
 				"pkgconfig(fixesproto)",
@@ -110,6 +113,7 @@
 				"pkgconfig(libtirpc)",
 				"pkgconfig(libunwind)",
 				"pkgconfig(libxcvt)",
+				"pkgconfig(nettle)",
 				"pkgconfig(openssl)",
 				"pkgconfig(pixman-1)",
 				"pkgconfig(presentproto)",
@@ -148,6 +152,6 @@
 		}
 	},
 	"source-name": "xwayland",
-	"source-release": "11",
-	"source-version": "24.1.6"
+	"source-release": "12",
+	"source-version": "24.1.8"
 }
