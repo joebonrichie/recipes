@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : vulkan-volk
-version     : 1.4.309.0
-release     : 6
+version     : 1.4.321.0
+release     : 7
 homepage    : https://github.com/zeux/volk
 upstreams   :
-    - https://github.com/zeux/volk/archive/refs/tags/vulkan-sdk-1.4.309.0.tar.gz : 1724924d8e3dccf0c508887edb79d56d9dd11b0738eab5a44e2fa95b8a9ebe1c
+    - https://github.com/zeux/volk/archive/refs/tags/vulkan-sdk-1.4.321.0.tar.gz : 021ed905eea6f3e2cc8a60a21459ee7b43f98f32052ca30f27a3be390b7a4862
 summary     : Meta loader for Vulkan API
 description : |
     Meta loader for Vulkan API
