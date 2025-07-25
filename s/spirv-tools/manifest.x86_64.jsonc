@@ -204,6 +204,6 @@
 		}
 	},
 	"source-name": "spirv-tools",
-	"source-release": "10",
-	"source-version": "2025.1"
+	"source-release": "11",
+	"source-version": "2025.3"
 }
