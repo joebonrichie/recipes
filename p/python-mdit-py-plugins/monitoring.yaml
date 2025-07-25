@@ -1,6 +1,6 @@
 releases:
-  id: 303065
-  rss: https://pypi.org/rss/project/autocommand/releases.xml
+  id: 149444
+  rss: https://github.com/executablebooks/mdit-py-plugins/releases.atom
 security:
-  # No known CPE. Checked 20250523
+  # No known CPE, last checked 2024-05-15
   cpe: ~
