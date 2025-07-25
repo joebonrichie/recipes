@@ -11,11 +11,12 @@
 				"/usr/bin/bomtool",
 				"/usr/bin/pkg-config",
 				"/usr/bin/pkgconf",
-				"/usr/lib/libpkgconf.so.5",
-				"/usr/lib/libpkgconf.so.5.0.0",
+				"/usr/lib/libpkgconf.so.7",
+				"/usr/lib/libpkgconf.so.7.0.0",
 				"/usr/share/aclocal/pkg.m4",
 				"/usr/share/doc/pkgconf/AUTHORS",
 				"/usr/share/doc/pkgconf/README.md",
+				"/usr/share/man/man1/bomtool.1",
 				"/usr/share/man/man1/pkgconf.1",
 				"/usr/share/man/man5/pc.5",
 				"/usr/share/man/man5/pkgconf-personality.5",
@@ -26,7 +27,7 @@
 				"binary(bomtool)",
 				"binary(pkg-config)",
 				"binary(pkgconf)",
-				"soname(libpkgconf.so.5(x86_64))"
+				"soname(libpkgconf.so.7(x86_64))"
 			]
 		},
 		"pkgconf-devel": {
@@ -49,6 +50,6 @@
 		}
 	},
 	"source-name": "pkgconf",
-	"source-release": "11",
-	"source-version": "2.3.0"
+	"source-release": "12",
+	"source-version": "2.5.1"
 }
