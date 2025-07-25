@@ -4,6 +4,7 @@
 	"packages": {
 		"opencv": {
 			"build-depends": [
+				"binary(flang)",
 				"binary(nasm)",
 				"cmake(OpenJPEG)",
 				"cmake(Qt6Core5Compat)",
@@ -12,9 +13,15 @@
 				"cmake(libavif)",
 				"cmake(libjpeg-turbo)",
 				"cmake(protobuf)",
+				"pkgconfig(OpenCL)",
+				"pkgconfig(freetype2)",
 				"pkgconfig(gstreamer-plugins-base-1.0)",
+				"pkgconfig(harfbuzz)",
 				"pkgconfig(libavcodec)",
+				"pkgconfig(libavformat)",
+				"pkgconfig(libjxl)",
 				"pkgconfig(libpng)",
+				"pkgconfig(libswscale)",
 				"pkgconfig(libva)",
 				"pkgconfig(openblas)",
 				"pkgconfig(zlib)",
@@ -25,15 +32,15 @@
 				"soname(libc++.so.1(x86_64))",
 				"soname(libc.so.6(x86_64))",
 				"soname(libm.so.6(x86_64))",
-				"soname(libopencv_calib3d.so.411(x86_64))",
-				"soname(libopencv_core.so.411(x86_64))",
-				"soname(libopencv_dnn.so.411(x86_64))",
-				"soname(libopencv_features2d.so.411(x86_64))",
-				"soname(libopencv_highgui.so.411(x86_64))",
-				"soname(libopencv_imgcodecs.so.411(x86_64))",
-				"soname(libopencv_imgproc.so.411(x86_64))",
-				"soname(libopencv_objdetect.so.411(x86_64))",
-				"soname(libopencv_videoio.so.411(x86_64))",
+				"soname(libopencv_calib3d.so.412(x86_64))",
+				"soname(libopencv_core.so.412(x86_64))",
+				"soname(libopencv_dnn.so.412(x86_64))",
+				"soname(libopencv_features2d.so.412(x86_64))",
+				"soname(libopencv_highgui.so.412(x86_64))",
+				"soname(libopencv_imgcodecs.so.412(x86_64))",
+				"soname(libopencv_imgproc.so.412(x86_64))",
+				"soname(libopencv_objdetect.so.412(x86_64))",
+				"soname(libopencv_videoio.so.412(x86_64))",
 				"soname(libunwind.so.1(x86_64))"
 			],
 			"files": [
@@ -76,6 +83,7 @@
 		},
 		"opencv-bgsegm": {
 			"build-depends": [
+				"binary(flang)",
 				"binary(nasm)",
 				"cmake(OpenJPEG)",
 				"cmake(Qt6Core5Compat)",
@@ -84,9 +92,15 @@
 				"cmake(libavif)",
 				"cmake(libjpeg-turbo)",
 				"cmake(protobuf)",
+				"pkgconfig(OpenCL)",
+				"pkgconfig(freetype2)",
 				"pkgconfig(gstreamer-plugins-base-1.0)",
+				"pkgconfig(harfbuzz)",
 				"pkgconfig(libavcodec)",
+				"pkgconfig(libavformat)",
+				"pkgconfig(libjxl)",
 				"pkgconfig(libpng)",
+				"pkgconfig(libswscale)",
 				"pkgconfig(libva)",
 				"pkgconfig(openblas)",
 				"pkgconfig(zlib)",
@@ -96,23 +110,24 @@
 				"soname(libc++.so.1(x86_64))",
 				"soname(libc.so.6(x86_64))",
 				"soname(libm.so.6(x86_64))",
-				"soname(libopencv_calib3d.so.411(x86_64))",
-				"soname(libopencv_core.so.411(x86_64))",
-				"soname(libopencv_imgproc.so.411(x86_64))",
-				"soname(libopencv_video.so.411(x86_64))",
+				"soname(libopencv_calib3d.so.412(x86_64))",
+				"soname(libopencv_core.so.412(x86_64))",
+				"soname(libopencv_imgproc.so.412(x86_64))",
+				"soname(libopencv_video.so.412(x86_64))",
 				"soname(libunwind.so.1(x86_64))"
 			],
 			"files": [
-				"/usr/lib/libopencv_bgsegm.so.4.11.0",
-				"/usr/lib/libopencv_bgsegm.so.411"
+				"/usr/lib/libopencv_bgsegm.so.4.12.0",
+				"/usr/lib/libopencv_bgsegm.so.412"
 			],
 			"name": "opencv-bgsegm",
 			"provides": [
-				"soname(libopencv_bgsegm.so.411(x86_64))"
+				"soname(libopencv_bgsegm.so.412(x86_64))"
 			]
 		},
 		"opencv-calib3d": {
 			"build-depends": [
+				"binary(flang)",
 				"binary(nasm)",
 				"cmake(OpenJPEG)",
 				"cmake(Qt6Core5Compat)",
@@ -121,9 +136,15 @@
 				"cmake(libavif)",
 				"cmake(libjpeg-turbo)",
 				"cmake(protobuf)",
+				"pkgconfig(OpenCL)",
+				"pkgconfig(freetype2)",
 				"pkgconfig(gstreamer-plugins-base-1.0)",
+				"pkgconfig(harfbuzz)",
 				"pkgconfig(libavcodec)",
+				"pkgconfig(libavformat)",
+				"pkgconfig(libjxl)",
 				"pkgconfig(libpng)",
+				"pkgconfig(libswscale)",
 				"pkgconfig(libva)",
 				"pkgconfig(openblas)",
 				"pkgconfig(zlib)",
@@ -134,23 +155,24 @@
 				"soname(libc.so.6(x86_64))",
 				"soname(libm.so.6(x86_64))",
 				"soname(libopenblas.so.0(x86_64))",
-				"soname(libopencv_core.so.411(x86_64))",
-				"soname(libopencv_features2d.so.411(x86_64))",
-				"soname(libopencv_flann.so.411(x86_64))",
-				"soname(libopencv_imgproc.so.411(x86_64))",
+				"soname(libopencv_core.so.412(x86_64))",
+				"soname(libopencv_features2d.so.412(x86_64))",
+				"soname(libopencv_flann.so.412(x86_64))",
+				"soname(libopencv_imgproc.so.412(x86_64))",
 				"soname(libunwind.so.1(x86_64))"
 			],
 			"files": [
-				"/usr/lib/libopencv_calib3d.so.4.11.0",
-				"/usr/lib/libopencv_calib3d.so.411"
+				"/usr/lib/libopencv_calib3d.so.4.12.0",
+				"/usr/lib/libopencv_calib3d.so.412"
 			],
 			"name": "opencv-calib3d",
 			"provides": [
-				"soname(libopencv_calib3d.so.411(x86_64))"
+				"soname(libopencv_calib3d.so.412(x86_64))"
 			]
 		},
 		"opencv-core": {
 			"build-depends": [
+				"binary(flang)",
 				"binary(nasm)",
 				"cmake(OpenJPEG)",
 				"cmake(Qt6Core5Compat)",
@@ -159,9 +181,15 @@
 				"cmake(libavif)",
 				"cmake(libjpeg-turbo)",
 				"cmake(protobuf)",
+				"pkgconfig(OpenCL)",
+				"pkgconfig(freetype2)",
 				"pkgconfig(gstreamer-plugins-base-1.0)",
+				"pkgconfig(harfbuzz)",
 				"pkgconfig(libavcodec)",
+				"pkgconfig(libavformat)",
+				"pkgconfig(libjxl)",
 				"pkgconfig(libpng)",
+				"pkgconfig(libswscale)",
 				"pkgconfig(libva)",
 				"pkgconfig(openblas)",
 				"pkgconfig(zlib)",
@@ -177,11 +205,11 @@
 				"soname(libz.so.1(x86_64))"
 			],
 			"files": [
-				"/usr/lib/libopencv_core.so.4.11.0",
-				"/usr/lib/libopencv_core.so.411",
+				"/usr/lib/libopencv_core.so.4.12.0",
+				"/usr/lib/libopencv_core.so.412",
 				"/usr/share/licenses/opencv4/SoftFloat-COPYING.txt",
-				"/usr/share/licenses/opencv4/ittnotify-LICENSE.BSD",
-				"/usr/share/licenses/opencv4/ittnotify-LICENSE.GPL",
+				"/usr/share/licenses/opencv4/ittnotify-BSD-3-Clause.txt",
+				"/usr/share/licenses/opencv4/ittnotify-GPL-2.0-only.txt",
 				"/usr/share/licenses/opencv4/mscr-chi_table_LICENSE.txt",
 				"/usr/share/licenses/opencv4/opencl-headers-LICENSE.txt",
 				"/usr/share/licenses/opencv4/openexr-AUTHORS.ilmbase",
@@ -190,11 +218,12 @@
 			],
 			"name": "opencv-core",
 			"provides": [
-				"soname(libopencv_core.so.411(x86_64))"
+				"soname(libopencv_core.so.412(x86_64))"
 			]
 		},
 		"opencv-devel": {
 			"build-depends": [
+				"binary(flang)",
 				"binary(nasm)",
 				"cmake(OpenJPEG)",
 				"cmake(Qt6Core5Compat)",
@@ -203,9 +232,15 @@
 				"cmake(libavif)",
 				"cmake(libjpeg-turbo)",
 				"cmake(protobuf)",
+				"pkgconfig(OpenCL)",
+				"pkgconfig(freetype2)",
 				"pkgconfig(gstreamer-plugins-base-1.0)",
+				"pkgconfig(harfbuzz)",
 				"pkgconfig(libavcodec)",
+				"pkgconfig(libavformat)",
+				"pkgconfig(libjxl)",
 				"pkgconfig(libpng)",
+				"pkgconfig(libswscale)",
 				"pkgconfig(libva)",
 				"pkgconfig(openblas)",
 				"pkgconfig(zlib)",
@@ -301,6 +336,7 @@
 				"/usr/include/opencv4/opencv2/core/hal/intrin_cpp.hpp",
 				"/usr/include/opencv4/opencv2/core/hal/intrin_forward.hpp",
 				"/usr/include/opencv4/opencv2/core/hal/intrin_lasx.hpp",
+				"/usr/include/opencv4/opencv2/core/hal/intrin_legacy_ops.h",
 				"/usr/include/opencv4/opencv2/core/hal/intrin_lsx.hpp",
 				"/usr/include/opencv4/opencv2/core/hal/intrin_math.hpp",
 				"/usr/include/opencv4/opencv2/core/hal/intrin_msa.hpp",
@@ -527,6 +563,7 @@
 		},
 		"opencv-dnn": {
 			"build-depends": [
+				"binary(flang)",
 				"binary(nasm)",
 				"cmake(OpenJPEG)",
 				"cmake(Qt6Core5Compat)",
@@ -535,9 +572,15 @@
 				"cmake(libavif)",
 				"cmake(libjpeg-turbo)",
 				"cmake(protobuf)",
+				"pkgconfig(OpenCL)",
+				"pkgconfig(freetype2)",
 				"pkgconfig(gstreamer-plugins-base-1.0)",
+				"pkgconfig(harfbuzz)",
 				"pkgconfig(libavcodec)",
+				"pkgconfig(libavformat)",
+				"pkgconfig(libjxl)",
 				"pkgconfig(libpng)",
+				"pkgconfig(libswscale)",
 				"pkgconfig(libva)",
 				"pkgconfig(openblas)",
 				"pkgconfig(zlib)",
@@ -550,22 +593,23 @@
 				"soname(libc++.so.1(x86_64))",
 				"soname(libc.so.6(x86_64))",
 				"soname(libm.so.6(x86_64))",
-				"soname(libopencv_core.so.411(x86_64))",
-				"soname(libopencv_imgproc.so.411(x86_64))",
+				"soname(libopencv_core.so.412(x86_64))",
+				"soname(libopencv_imgproc.so.412(x86_64))",
 				"soname(libprotobuf.so.31.0.0(x86_64))",
 				"soname(libunwind.so.1(x86_64))"
 			],
 			"files": [
-				"/usr/lib/libopencv_dnn.so.4.11.0",
-				"/usr/lib/libopencv_dnn.so.411"
+				"/usr/lib/libopencv_dnn.so.4.12.0",
+				"/usr/lib/libopencv_dnn.so.412"
 			],
 			"name": "opencv-dnn",
 			"provides": [
-				"soname(libopencv_dnn.so.411(x86_64))"
+				"soname(libopencv_dnn.so.412(x86_64))"
 			]
 		},
 		"opencv-features2d": {
 			"build-depends": [
+				"binary(flang)",
 				"binary(nasm)",
 				"cmake(OpenJPEG)",
 				"cmake(Qt6Core5Compat)",
@@ -574,9 +618,15 @@
 				"cmake(libavif)",
 				"cmake(libjpeg-turbo)",
 				"cmake(protobuf)",
+				"pkgconfig(OpenCL)",
+				"pkgconfig(freetype2)",
 				"pkgconfig(gstreamer-plugins-base-1.0)",
+				"pkgconfig(harfbuzz)",
 				"pkgconfig(libavcodec)",
+				"pkgconfig(libavformat)",
+				"pkgconfig(libjxl)",
 				"pkgconfig(libpng)",
+				"pkgconfig(libswscale)",
 				"pkgconfig(libva)",
 				"pkgconfig(openblas)",
 				"pkgconfig(zlib)",
@@ -586,22 +636,23 @@
 				"soname(libc++.so.1(x86_64))",
 				"soname(libc.so.6(x86_64))",
 				"soname(libm.so.6(x86_64))",
-				"soname(libopencv_core.so.411(x86_64))",
-				"soname(libopencv_flann.so.411(x86_64))",
-				"soname(libopencv_imgproc.so.411(x86_64))",
+				"soname(libopencv_core.so.412(x86_64))",
+				"soname(libopencv_flann.so.412(x86_64))",
+				"soname(libopencv_imgproc.so.412(x86_64))",
 				"soname(libunwind.so.1(x86_64))"
 			],
 			"files": [
-				"/usr/lib/libopencv_features2d.so.4.11.0",
-				"/usr/lib/libopencv_features2d.so.411"
+				"/usr/lib/libopencv_features2d.so.4.12.0",
+				"/usr/lib/libopencv_features2d.so.412"
 			],
 			"name": "opencv-features2d",
 			"provides": [
-				"soname(libopencv_features2d.so.411(x86_64))"
+				"soname(libopencv_features2d.so.412(x86_64))"
 			]
 		},
 		"opencv-flann": {
 			"build-depends": [
+				"binary(flang)",
 				"binary(nasm)",
 				"cmake(OpenJPEG)",
 				"cmake(Qt6Core5Compat)",
@@ -610,9 +661,15 @@
 				"cmake(libavif)",
 				"cmake(libjpeg-turbo)",
 				"cmake(protobuf)",
+				"pkgconfig(OpenCL)",
+				"pkgconfig(freetype2)",
 				"pkgconfig(gstreamer-plugins-base-1.0)",
+				"pkgconfig(harfbuzz)",
 				"pkgconfig(libavcodec)",
+				"pkgconfig(libavformat)",
+				"pkgconfig(libjxl)",
 				"pkgconfig(libpng)",
+				"pkgconfig(libswscale)",
 				"pkgconfig(libva)",
 				"pkgconfig(openblas)",
 				"pkgconfig(zlib)",
@@ -622,20 +679,21 @@
 				"soname(libc++.so.1(x86_64))",
 				"soname(libc.so.6(x86_64))",
 				"soname(libm.so.6(x86_64))",
-				"soname(libopencv_core.so.411(x86_64))",
+				"soname(libopencv_core.so.412(x86_64))",
 				"soname(libunwind.so.1(x86_64))"
 			],
 			"files": [
-				"/usr/lib/libopencv_flann.so.4.11.0",
-				"/usr/lib/libopencv_flann.so.411"
+				"/usr/lib/libopencv_flann.so.4.12.0",
+				"/usr/lib/libopencv_flann.so.412"
 			],
 			"name": "opencv-flann",
 			"provides": [
-				"soname(libopencv_flann.so.411(x86_64))"
+				"soname(libopencv_flann.so.412(x86_64))"
 			]
 		},
 		"opencv-highgui": {
 			"build-depends": [
+				"binary(flang)",
 				"binary(nasm)",
 				"cmake(OpenJPEG)",
 				"cmake(Qt6Core5Compat)",
@@ -644,9 +702,15 @@
 				"cmake(libavif)",
 				"cmake(libjpeg-turbo)",
 				"cmake(protobuf)",
+				"pkgconfig(OpenCL)",
+				"pkgconfig(freetype2)",
 				"pkgconfig(gstreamer-plugins-base-1.0)",
+				"pkgconfig(harfbuzz)",
 				"pkgconfig(libavcodec)",
+				"pkgconfig(libavformat)",
+				"pkgconfig(libjxl)",
 				"pkgconfig(libpng)",
+				"pkgconfig(libswscale)",
 				"pkgconfig(libva)",
 				"pkgconfig(openblas)",
 				"pkgconfig(zlib)",
@@ -659,21 +723,22 @@
 				"soname(libQt6Widgets.so.6(x86_64))",
 				"soname(libc++.so.1(x86_64))",
 				"soname(libc.so.6(x86_64))",
-				"soname(libopencv_core.so.411(x86_64))",
-				"soname(libopencv_imgproc.so.411(x86_64))",
+				"soname(libopencv_core.so.412(x86_64))",
+				"soname(libopencv_imgproc.so.412(x86_64))",
 				"soname(libunwind.so.1(x86_64))"
 			],
 			"files": [
-				"/usr/lib/libopencv_highgui.so.4.11.0",
-				"/usr/lib/libopencv_highgui.so.411"
+				"/usr/lib/libopencv_highgui.so.4.12.0",
+				"/usr/lib/libopencv_highgui.so.412"
 			],
 			"name": "opencv-highgui",
 			"provides": [
-				"soname(libopencv_highgui.so.411(x86_64))"
+				"soname(libopencv_highgui.so.412(x86_64))"
 			]
 		},
 		"opencv-imgcodecs": {
 			"build-depends": [
+				"binary(flang)",
 				"binary(nasm)",
 				"cmake(OpenJPEG)",
 				"cmake(Qt6Core5Compat)",
@@ -682,9 +747,15 @@
 				"cmake(libavif)",
 				"cmake(libjpeg-turbo)",
 				"cmake(protobuf)",
+				"pkgconfig(OpenCL)",
+				"pkgconfig(freetype2)",
 				"pkgconfig(gstreamer-plugins-base-1.0)",
+				"pkgconfig(harfbuzz)",
 				"pkgconfig(libavcodec)",
+				"pkgconfig(libavformat)",
+				"pkgconfig(libjxl)",
 				"pkgconfig(libpng)",
+				"pkgconfig(libswscale)",
 				"pkgconfig(libva)",
 				"pkgconfig(openblas)",
 				"pkgconfig(zlib)",
@@ -695,9 +766,11 @@
 				"soname(libc++.so.1(x86_64))",
 				"soname(libc.so.6(x86_64))",
 				"soname(libjpeg.so.8(x86_64))",
+				"soname(libjxl.so.0.11(x86_64))",
+				"soname(libjxl_threads.so.0.11(x86_64))",
 				"soname(libm.so.6(x86_64))",
-				"soname(libopencv_core.so.411(x86_64))",
-				"soname(libopencv_imgproc.so.411(x86_64))",
+				"soname(libopencv_core.so.412(x86_64))",
+				"soname(libopencv_imgproc.so.412(x86_64))",
 				"soname(libopenjp2.so.7(x86_64))",
 				"soname(libpng16.so.16(x86_64))",
 				"soname(libtiff.so.6(x86_64))",
@@ -708,16 +781,17 @@
 				"soname(libz.so.1(x86_64))"
 			],
 			"files": [
-				"/usr/lib/libopencv_imgcodecs.so.4.11.0",
-				"/usr/lib/libopencv_imgcodecs.so.411"
+				"/usr/lib/libopencv_imgcodecs.so.4.12.0",
+				"/usr/lib/libopencv_imgcodecs.so.412"
 			],
 			"name": "opencv-imgcodecs",
 			"provides": [
-				"soname(libopencv_imgcodecs.so.411(x86_64))"
+				"soname(libopencv_imgcodecs.so.412(x86_64))"
 			]
 		},
 		"opencv-imgproc": {
 			"build-depends": [
+				"binary(flang)",
 				"binary(nasm)",
 				"cmake(OpenJPEG)",
 				"cmake(Qt6Core5Compat)",
@@ -726,9 +800,15 @@
 				"cmake(libavif)",
 				"cmake(libjpeg-turbo)",
 				"cmake(protobuf)",
+				"pkgconfig(OpenCL)",
+				"pkgconfig(freetype2)",
 				"pkgconfig(gstreamer-plugins-base-1.0)",
+				"pkgconfig(harfbuzz)",
 				"pkgconfig(libavcodec)",
+				"pkgconfig(libavformat)",
+				"pkgconfig(libjxl)",
 				"pkgconfig(libpng)",
+				"pkgconfig(libswscale)",
 				"pkgconfig(libva)",
 				"pkgconfig(openblas)",
 				"pkgconfig(zlib)",
@@ -738,20 +818,21 @@
 				"soname(libc++.so.1(x86_64))",
 				"soname(libc.so.6(x86_64))",
 				"soname(libm.so.6(x86_64))",
-				"soname(libopencv_core.so.411(x86_64))",
+				"soname(libopencv_core.so.412(x86_64))",
 				"soname(libunwind.so.1(x86_64))"
 			],
 			"files": [
-				"/usr/lib/libopencv_imgproc.so.4.11.0",
-				"/usr/lib/libopencv_imgproc.so.411"
+				"/usr/lib/libopencv_imgproc.so.4.12.0",
+				"/usr/lib/libopencv_imgproc.so.412"
 			],
 			"name": "opencv-imgproc",
 			"provides": [
-				"soname(libopencv_imgproc.so.411(x86_64))"
+				"soname(libopencv_imgproc.so.412(x86_64))"
 			]
 		},
 		"opencv-ml": {
 			"build-depends": [
+				"binary(flang)",
 				"binary(nasm)",
 				"cmake(OpenJPEG)",
 				"cmake(Qt6Core5Compat)",
@@ -760,9 +841,15 @@
 				"cmake(libavif)",
 				"cmake(libjpeg-turbo)",
 				"cmake(protobuf)",
+				"pkgconfig(OpenCL)",
+				"pkgconfig(freetype2)",
 				"pkgconfig(gstreamer-plugins-base-1.0)",
+				"pkgconfig(harfbuzz)",
 				"pkgconfig(libavcodec)",
+				"pkgconfig(libavformat)",
+				"pkgconfig(libjxl)",
 				"pkgconfig(libpng)",
+				"pkgconfig(libswscale)",
 				"pkgconfig(libva)",
 				"pkgconfig(openblas)",
 				"pkgconfig(zlib)",
@@ -772,20 +859,21 @@
 				"soname(libc++.so.1(x86_64))",
 				"soname(libc.so.6(x86_64))",
 				"soname(libm.so.6(x86_64))",
-				"soname(libopencv_core.so.411(x86_64))",
+				"soname(libopencv_core.so.412(x86_64))",
 				"soname(libunwind.so.1(x86_64))"
 			],
 			"files": [
-				"/usr/lib/libopencv_ml.so.4.11.0",
-				"/usr/lib/libopencv_ml.so.411"
+				"/usr/lib/libopencv_ml.so.4.12.0",
+				"/usr/lib/libopencv_ml.so.412"
 			],
 			"name": "opencv-ml",
 			"provides": [
-				"soname(libopencv_ml.so.411(x86_64))"
+				"soname(libopencv_ml.so.412(x86_64))"
 			]
 		},
 		"opencv-objdetect": {
 			"build-depends": [
+				"binary(flang)",
 				"binary(nasm)",
 				"cmake(OpenJPEG)",
 				"cmake(Qt6Core5Compat)",
@@ -794,9 +882,15 @@
 				"cmake(libavif)",
 				"cmake(libjpeg-turbo)",
 				"cmake(protobuf)",
+				"pkgconfig(OpenCL)",
+				"pkgconfig(freetype2)",
 				"pkgconfig(gstreamer-plugins-base-1.0)",
+				"pkgconfig(harfbuzz)",
 				"pkgconfig(libavcodec)",
+				"pkgconfig(libavformat)",
+				"pkgconfig(libjxl)",
 				"pkgconfig(libpng)",
+				"pkgconfig(libswscale)",
 				"pkgconfig(libva)",
 				"pkgconfig(openblas)",
 				"pkgconfig(zlib)",
@@ -806,23 +900,24 @@
 				"soname(libc++.so.1(x86_64))",
 				"soname(libc.so.6(x86_64))",
 				"soname(libm.so.6(x86_64))",
-				"soname(libopencv_calib3d.so.411(x86_64))",
-				"soname(libopencv_core.so.411(x86_64))",
-				"soname(libopencv_dnn.so.411(x86_64))",
-				"soname(libopencv_imgproc.so.411(x86_64))",
+				"soname(libopencv_calib3d.so.412(x86_64))",
+				"soname(libopencv_core.so.412(x86_64))",
+				"soname(libopencv_dnn.so.412(x86_64))",
+				"soname(libopencv_imgproc.so.412(x86_64))",
 				"soname(libunwind.so.1(x86_64))"
 			],
 			"files": [
-				"/usr/lib/libopencv_objdetect.so.4.11.0",
-				"/usr/lib/libopencv_objdetect.so.411"
+				"/usr/lib/libopencv_objdetect.so.4.12.0",
+				"/usr/lib/libopencv_objdetect.so.412"
 			],
 			"name": "opencv-objdetect",
 			"provides": [
-				"soname(libopencv_objdetect.so.411(x86_64))"
+				"soname(libopencv_objdetect.so.412(x86_64))"
 			]
 		},
 		"opencv-photo": {
 			"build-depends": [
+				"binary(flang)",
 				"binary(nasm)",
 				"cmake(OpenJPEG)",
 				"cmake(Qt6Core5Compat)",
@@ -831,9 +926,15 @@
 				"cmake(libavif)",
 				"cmake(libjpeg-turbo)",
 				"cmake(protobuf)",
+				"pkgconfig(OpenCL)",
+				"pkgconfig(freetype2)",
 				"pkgconfig(gstreamer-plugins-base-1.0)",
+				"pkgconfig(harfbuzz)",
 				"pkgconfig(libavcodec)",
+				"pkgconfig(libavformat)",
+				"pkgconfig(libjxl)",
 				"pkgconfig(libpng)",
+				"pkgconfig(libswscale)",
 				"pkgconfig(libva)",
 				"pkgconfig(openblas)",
 				"pkgconfig(zlib)",
@@ -843,21 +944,22 @@
 				"soname(libc++.so.1(x86_64))",
 				"soname(libc.so.6(x86_64))",
 				"soname(libm.so.6(x86_64))",
-				"soname(libopencv_core.so.411(x86_64))",
-				"soname(libopencv_imgproc.so.411(x86_64))",
+				"soname(libopencv_core.so.412(x86_64))",
+				"soname(libopencv_imgproc.so.412(x86_64))",
 				"soname(libunwind.so.1(x86_64))"
 			],
 			"files": [
-				"/usr/lib/libopencv_photo.so.4.11.0",
-				"/usr/lib/libopencv_photo.so.411"
+				"/usr/lib/libopencv_photo.so.4.12.0",
+				"/usr/lib/libopencv_photo.so.412"
 			],
 			"name": "opencv-photo",
 			"provides": [
-				"soname(libopencv_photo.so.411(x86_64))"
+				"soname(libopencv_photo.so.412(x86_64))"
 			]
 		},
 		"opencv-plot": {
 			"build-depends": [
+				"binary(flang)",
 				"binary(nasm)",
 				"cmake(OpenJPEG)",
 				"cmake(Qt6Core5Compat)",
@@ -866,9 +968,15 @@
 				"cmake(libavif)",
 				"cmake(libjpeg-turbo)",
 				"cmake(protobuf)",
+				"pkgconfig(OpenCL)",
+				"pkgconfig(freetype2)",
 				"pkgconfig(gstreamer-plugins-base-1.0)",
+				"pkgconfig(harfbuzz)",
 				"pkgconfig(libavcodec)",
+				"pkgconfig(libavformat)",
+				"pkgconfig(libjxl)",
 				"pkgconfig(libpng)",
+				"pkgconfig(libswscale)",
 				"pkgconfig(libva)",
 				"pkgconfig(openblas)",
 				"pkgconfig(zlib)",
@@ -877,21 +985,22 @@
 			"depends": [
 				"soname(libc++.so.1(x86_64))",
 				"soname(libc.so.6(x86_64))",
-				"soname(libopencv_core.so.411(x86_64))",
-				"soname(libopencv_imgproc.so.411(x86_64))",
+				"soname(libopencv_core.so.412(x86_64))",
+				"soname(libopencv_imgproc.so.412(x86_64))",
 				"soname(libunwind.so.1(x86_64))"
 			],
 			"files": [
-				"/usr/lib/libopencv_plot.so.4.11.0",
-				"/usr/lib/libopencv_plot.so.411"
+				"/usr/lib/libopencv_plot.so.4.12.0",
+				"/usr/lib/libopencv_plot.so.412"
 			],
 			"name": "opencv-plot",
 			"provides": [
-				"soname(libopencv_plot.so.411(x86_64))"
+				"soname(libopencv_plot.so.412(x86_64))"
 			]
 		},
 		"opencv-stitching": {
 			"build-depends": [
+				"binary(flang)",
 				"binary(nasm)",
 				"cmake(OpenJPEG)",
 				"cmake(Qt6Core5Compat)",
@@ -900,9 +1009,15 @@
 				"cmake(libavif)",
 				"cmake(libjpeg-turbo)",
 				"cmake(protobuf)",
+				"pkgconfig(OpenCL)",
+				"pkgconfig(freetype2)",
 				"pkgconfig(gstreamer-plugins-base-1.0)",
+				"pkgconfig(harfbuzz)",
 				"pkgconfig(libavcodec)",
+				"pkgconfig(libavformat)",
+				"pkgconfig(libjxl)",
 				"pkgconfig(libpng)",
+				"pkgconfig(libswscale)",
 				"pkgconfig(libva)",
 				"pkgconfig(openblas)",
 				"pkgconfig(zlib)",
@@ -912,24 +1027,25 @@
 				"soname(libc++.so.1(x86_64))",
 				"soname(libc.so.6(x86_64))",
 				"soname(libm.so.6(x86_64))",
-				"soname(libopencv_calib3d.so.411(x86_64))",
-				"soname(libopencv_core.so.411(x86_64))",
-				"soname(libopencv_features2d.so.411(x86_64))",
-				"soname(libopencv_flann.so.411(x86_64))",
-				"soname(libopencv_imgproc.so.411(x86_64))",
+				"soname(libopencv_calib3d.so.412(x86_64))",
+				"soname(libopencv_core.so.412(x86_64))",
+				"soname(libopencv_features2d.so.412(x86_64))",
+				"soname(libopencv_flann.so.412(x86_64))",
+				"soname(libopencv_imgproc.so.412(x86_64))",
 				"soname(libunwind.so.1(x86_64))"
 			],
 			"files": [
-				"/usr/lib/libopencv_stitching.so.4.11.0",
-				"/usr/lib/libopencv_stitching.so.411"
+				"/usr/lib/libopencv_stitching.so.4.12.0",
+				"/usr/lib/libopencv_stitching.so.412"
 			],
 			"name": "opencv-stitching",
 			"provides": [
-				"soname(libopencv_stitching.so.411(x86_64))"
+				"soname(libopencv_stitching.so.412(x86_64))"
 			]
 		},
 		"opencv-tracking": {
 			"build-depends": [
+				"binary(flang)",
 				"binary(nasm)",
 				"cmake(OpenJPEG)",
 				"cmake(Qt6Core5Compat)",
@@ -938,9 +1054,15 @@
 				"cmake(libavif)",
 				"cmake(libjpeg-turbo)",
 				"cmake(protobuf)",
+				"pkgconfig(OpenCL)",
+				"pkgconfig(freetype2)",
 				"pkgconfig(gstreamer-plugins-base-1.0)",
+				"pkgconfig(harfbuzz)",
 				"pkgconfig(libavcodec)",
+				"pkgconfig(libavformat)",
+				"pkgconfig(libjxl)",
 				"pkgconfig(libpng)",
+				"pkgconfig(libswscale)",
 				"pkgconfig(libva)",
 				"pkgconfig(openblas)",
 				"pkgconfig(zlib)",
@@ -950,22 +1072,23 @@
 				"soname(libc++.so.1(x86_64))",
 				"soname(libc.so.6(x86_64))",
 				"soname(libm.so.6(x86_64))",
-				"soname(libopencv_core.so.411(x86_64))",
-				"soname(libopencv_imgproc.so.411(x86_64))",
-				"soname(libopencv_video.so.411(x86_64))",
+				"soname(libopencv_core.so.412(x86_64))",
+				"soname(libopencv_imgproc.so.412(x86_64))",
+				"soname(libopencv_video.so.412(x86_64))",
 				"soname(libunwind.so.1(x86_64))"
 			],
 			"files": [
-				"/usr/lib/libopencv_tracking.so.4.11.0",
-				"/usr/lib/libopencv_tracking.so.411"
+				"/usr/lib/libopencv_tracking.so.4.12.0",
+				"/usr/lib/libopencv_tracking.so.412"
 			],
 			"name": "opencv-tracking",
 			"provides": [
-				"soname(libopencv_tracking.so.411(x86_64))"
+				"soname(libopencv_tracking.so.412(x86_64))"
 			]
 		},
 		"opencv-video": {
 			"build-depends": [
+				"binary(flang)",
 				"binary(nasm)",
 				"cmake(OpenJPEG)",
 				"cmake(Qt6Core5Compat)",
@@ -974,9 +1097,15 @@
 				"cmake(libavif)",
 				"cmake(libjpeg-turbo)",
 				"cmake(protobuf)",
+				"pkgconfig(OpenCL)",
+				"pkgconfig(freetype2)",
 				"pkgconfig(gstreamer-plugins-base-1.0)",
+				"pkgconfig(harfbuzz)",
 				"pkgconfig(libavcodec)",
+				"pkgconfig(libavformat)",
+				"pkgconfig(libjxl)",
 				"pkgconfig(libpng)",
+				"pkgconfig(libswscale)",
 				"pkgconfig(libva)",
 				"pkgconfig(openblas)",
 				"pkgconfig(zlib)",
@@ -987,23 +1116,24 @@
 				"soname(libc.so.6(x86_64))",
 				"soname(libm.so.6(x86_64))",
 				"soname(libomp.so(x86_64))",
-				"soname(libopencv_calib3d.so.411(x86_64))",
-				"soname(libopencv_core.so.411(x86_64))",
-				"soname(libopencv_dnn.so.411(x86_64))",
-				"soname(libopencv_imgproc.so.411(x86_64))",
+				"soname(libopencv_calib3d.so.412(x86_64))",
+				"soname(libopencv_core.so.412(x86_64))",
+				"soname(libopencv_dnn.so.412(x86_64))",
+				"soname(libopencv_imgproc.so.412(x86_64))",
 				"soname(libunwind.so.1(x86_64))"
 			],
 			"files": [
-				"/usr/lib/libopencv_video.so.4.11.0",
-				"/usr/lib/libopencv_video.so.411"
+				"/usr/lib/libopencv_video.so.4.12.0",
+				"/usr/lib/libopencv_video.so.412"
 			],
 			"name": "opencv-video",
 			"provides": [
-				"soname(libopencv_video.so.411(x86_64))"
+				"soname(libopencv_video.so.412(x86_64))"
 			]
 		},
 		"opencv-videoio": {
 			"build-depends": [
+				"binary(flang)",
 				"binary(nasm)",
 				"cmake(OpenJPEG)",
 				"cmake(Qt6Core5Compat)",
@@ -1012,9 +1142,15 @@
 				"cmake(libavif)",
 				"cmake(libjpeg-turbo)",
 				"cmake(protobuf)",
+				"pkgconfig(OpenCL)",
+				"pkgconfig(freetype2)",
 				"pkgconfig(gstreamer-plugins-base-1.0)",
+				"pkgconfig(harfbuzz)",
 				"pkgconfig(libavcodec)",
+				"pkgconfig(libavformat)",
+				"pkgconfig(libjxl)",
 				"pkgconfig(libpng)",
+				"pkgconfig(libswscale)",
 				"pkgconfig(libva)",
 				"pkgconfig(openblas)",
 				"pkgconfig(zlib)",
@@ -1036,23 +1172,23 @@
 				"soname(libgstriff-1.0.so.0(x86_64))",
 				"soname(libgstvideo-1.0.so.0(x86_64))",
 				"soname(libm.so.6(x86_64))",
-				"soname(libopencv_core.so.411(x86_64))",
-				"soname(libopencv_imgcodecs.so.411(x86_64))",
-				"soname(libopencv_imgproc.so.411(x86_64))",
+				"soname(libopencv_core.so.412(x86_64))",
+				"soname(libopencv_imgcodecs.so.412(x86_64))",
+				"soname(libopencv_imgproc.so.412(x86_64))",
 				"soname(libswscale.so.8(x86_64))",
 				"soname(libunwind.so.1(x86_64))"
 			],
 			"files": [
-				"/usr/lib/libopencv_videoio.so.4.11.0",
-				"/usr/lib/libopencv_videoio.so.411"
+				"/usr/lib/libopencv_videoio.so.4.12.0",
+				"/usr/lib/libopencv_videoio.so.412"
 			],
 			"name": "opencv-videoio",
 			"provides": [
-				"soname(libopencv_videoio.so.411(x86_64))"
+				"soname(libopencv_videoio.so.412(x86_64))"
 			]
 		}
 	},
 	"source-name": "opencv",
-	"source-release": "4",
-	"source-version": "4.11.0"
+	"source-release": "5",
+	"source-version": "4.12.0"
 }
