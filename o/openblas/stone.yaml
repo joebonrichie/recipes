@@ -5,7 +5,7 @@
 #
 name        : openblas
 version     : 0.3.30
-release     : 5
+release     : 6
 homepage    : https://github.com/OpenMathLib/OpenBLAS
 upstreams   :
     - https://github.com/OpenMathLib/OpenBLAS/archive/refs/tags/v0.3.30.tar.gz : 27342cff518646afb4c2b976d809102e368957974c250a25ccc965e53063c95d
