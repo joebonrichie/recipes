@@ -4,15 +4,15 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : onetbb
-version     : 2022.1.0
-release     : 3
+version     : 2022.2.0
+release     : 4
 summary     : Thread Building Blocks library
 license     : Apache-2.0 AND BSD-3-Clause
 homepage    : https://uxlfoundation.github.io/oneTBB/
 description : |
     The Threading Building Blocks library abstracts low-level threading details
 upstreams   :
-    - https://github.com/uxlfoundation/oneTBB/archive/refs/tags/v2022.1.0.tar.gz: ed067603ece0dc832d2881ba5c516625ac2522c665d95f767ef6304e34f961b5
+    - https://github.com/uxlfoundation/oneTBB/archive/refs/tags/v2022.2.0.tar.gz: f0f78001c8c8edb4bddc3d4c5ee7428d56ae313254158ad1eec49eced57f6a5b
 builddeps   :
     - pkgconfig(hwloc)
 setup       : |
