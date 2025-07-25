@@ -54,6 +54,7 @@
 				"/usr/include/spirv/unified1/NonSemanticVkspReflection.h",
 				"/usr/include/spirv/unified1/OpenCL.std.h",
 				"/usr/include/spirv/unified1/OpenCLDebugInfo100.h",
+				"/usr/include/spirv/unified1/TOSA.001000.1.h",
 				"/usr/include/spirv/unified1/extinst.debuginfo.grammar.json",
 				"/usr/include/spirv/unified1/extinst.glsl.std.450.grammar.json",
 				"/usr/include/spirv/unified1/extinst.nonsemantic.clspvreflection.grammar.json",
@@ -67,6 +68,7 @@
 				"/usr/include/spirv/unified1/extinst.spv-amd-shader-ballot.grammar.json",
 				"/usr/include/spirv/unified1/extinst.spv-amd-shader-explicit-vertex-parameter.grammar.json",
 				"/usr/include/spirv/unified1/extinst.spv-amd-shader-trinary-minmax.grammar.json",
+				"/usr/include/spirv/unified1/extinst.tosa.001000.1.grammar.json",
 				"/usr/include/spirv/unified1/spirv.bf",
 				"/usr/include/spirv/unified1/spirv.core.grammar.json",
 				"/usr/include/spirv/unified1/spirv.cs",
@@ -89,6 +91,6 @@
 		}
 	},
 	"source-name": "spirv-headers",
-	"source-release": "8",
-	"source-version": "2025.1"
+	"source-release": "9",
+	"source-version": "2025.3"
 }
