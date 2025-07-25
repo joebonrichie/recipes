@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : lcms2
-version     : '2.16'
-release     : 4
+version     : '2.17'
+release     : 5
 homepage    : https://www.littlecms.com/
 upstreams   :
-    - https://github.com/mm2/Little-CMS/releases/download/lcms2.16/lcms2-2.16.tar.gz : d873d34ad8b9b4cea010631f1a6228d2087475e4dc5e763eb81acc23d9d45a51
+    - https://github.com/mm2/Little-CMS/releases/download/lcms2.17/lcms2-2.17.tar.gz : d11af569e42a1baa1650d20ad61d12e41af4fead4aa7964a01f93b08b53ab074
 summary     : A free, open source, CMM engine. It provides fast transforms between ICC profiles.
 description : |
     Little CMS intends to be an OPEN SOURCE small-footprint color management engine, with special focus on accuracy and performance. It uses the International Color Consortium standard (ICC), which is the modern standard when re garding to color management. The ICC specification is widely used and is referred to in many International and other de-facto standards. It was approved as an International Standard, ISO 15076-1, in 2005.
@@ -16,10 +16,6 @@ license     :
     - GPL-3.0-or-later
     - IJG
     - MIT
-packages    :
-    - "%(name)":
-        paths:
-            - /usr/lib/liblcms2*.so*
 builddeps   :
     - pkgconfig(libjpeg)
     - pkgconfig(libtiff-4)
@@ -29,3 +25,8 @@ build       : |
     %meson_build
 install     : |
     %meson_install
+packages    :
+    - "%(name)-utils":
+        paths:
+            - /usr/bin/
+            - /usr/share/man/man1/
