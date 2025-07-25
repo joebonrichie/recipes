@@ -15,7 +15,7 @@
 			],
 			"files": [
 				"/usr/lib/libvulkan.so.1",
-				"/usr/lib/libvulkan.so.1.4.309"
+				"/usr/lib/libvulkan.so.1.4.321"
 			],
 			"name": "vulkan-loader",
 			"provides": [
@@ -36,7 +36,7 @@
 			],
 			"files": [
 				"/usr/lib32/libvulkan.so.1",
-				"/usr/lib32/libvulkan.so.1.4.309"
+				"/usr/lib32/libvulkan.so.1.4.321"
 			],
 			"name": "vulkan-loader-32bit",
 			"provides": [
@@ -94,6 +94,6 @@
 		}
 	},
 	"source-name": "vulkan-loader",
-	"source-release": "12",
-	"source-version": "1.4.309.0"
+	"source-release": "13",
+	"source-version": "1.4.321.0"
 }

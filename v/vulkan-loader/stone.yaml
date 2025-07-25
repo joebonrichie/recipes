@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : vulkan-loader
-version     : 1.4.309.0
-release     : 12
+version     : 1.4.321.0
+release     : 13
 homepage    : https://vulkan.lunarg.com/doc/sdk
 upstreams   :
-    - https://github.com/KhronosGroup/Vulkan-Loader/archive/refs/tags/vulkan-sdk-1.4.309.0.tar.gz : ddfeca84a868899fbb2c7f28b7c8fd1006e34b2b13ce653a63bddfb65cbc8d13
+    - https://github.com/KhronosGroup/Vulkan-Loader/archive/refs/tags/vulkan-sdk-1.4.321.0.tar.gz : 9e0315bd13d8def7d130524d0b69d0bef3e967374327ac69dd9c54cd2b716e8f
 summary     : Vulkan ICD desktop loader
 description : |
     This project provides the Khronos official Vulkan ICD desktop loader.
