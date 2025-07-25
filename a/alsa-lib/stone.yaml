@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : alsa-lib
-version     : 1.2.13
-release     : 9
+version     : 1.2.14
+release     : 10
 homepage    : https://www.alsa-project.org/wiki/Main_Page
 upstreams   :
-    - https://github.com/alsa-project/alsa-lib/archive/refs/tags/v1.2.13.tar.gz : e296a2e8fa165855e2c8f263ff6bc0b0ea21a3bece4404135f3a181d1a03e63a
+    - https://github.com/alsa-project/alsa-lib/archive/refs/tags/v1.2.14.tar.gz : a7bc6c09f0e5a622ebc8afb63a194aa1396145b5c6433d3445363201d96c23c4
 summary     : ALSA Libraries
 description : |
     Advanced Linux Sound Architecture client libraries
