@@ -30,7 +30,7 @@
 				"soname(libm.so.6(x86_64))"
 			],
 			"files": [
-				"/usr/lib/libKirigamiAddonsStatefulApp.so.1.8.1",
+				"/usr/lib/libKirigamiAddonsStatefulApp.so.1.9.0",
 				"/usr/lib/libKirigamiAddonsStatefulApp.so.6",
 				"/usr/lib/qt6/qml/org/kde/kirigamiaddons/components/Avatar.qml",
 				"/usr/lib/qt6/qml/org/kde/kirigamiaddons/components/Avatar.qmlc",
@@ -84,10 +84,14 @@
 				"/usr/lib/qt6/qml/org/kde/kirigamiaddons/dateandtime/private/DatePickerDelegate.qml",
 				"/usr/lib/qt6/qml/org/kde/kirigamiaddons/dateandtime/private/DatePickerDelegate.qmlc",
 				"/usr/lib/qt6/qml/org/kde/kirigamiaddons/dateandtime/qmldir",
+				"/usr/lib/qt6/qml/org/kde/kirigamiaddons/delegates/CheckDelegate.qml",
+				"/usr/lib/qt6/qml/org/kde/kirigamiaddons/delegates/CheckDelegate.qmlc",
 				"/usr/lib/qt6/qml/org/kde/kirigamiaddons/delegates/DefaultContentItem.qml",
 				"/usr/lib/qt6/qml/org/kde/kirigamiaddons/delegates/DefaultContentItem.qmlc",
 				"/usr/lib/qt6/qml/org/kde/kirigamiaddons/delegates/IndicatorItemDelegate.qml",
 				"/usr/lib/qt6/qml/org/kde/kirigamiaddons/delegates/IndicatorItemDelegate.qmlc",
+				"/usr/lib/qt6/qml/org/kde/kirigamiaddons/delegates/RadioDelegate.qml",
+				"/usr/lib/qt6/qml/org/kde/kirigamiaddons/delegates/RadioDelegate.qmlc",
 				"/usr/lib/qt6/qml/org/kde/kirigamiaddons/delegates/RoundedItemDelegate.qml",
 				"/usr/lib/qt6/qml/org/kde/kirigamiaddons/delegates/RoundedItemDelegate.qmlc",
 				"/usr/lib/qt6/qml/org/kde/kirigamiaddons/delegates/RoundedTreeDelegate.qml",
@@ -128,6 +132,10 @@
 				"/usr/lib/qt6/qml/org/kde/kirigamiaddons/formcard/FormDelegateBackground.qmlc",
 				"/usr/lib/qt6/qml/org/kde/kirigamiaddons/formcard/FormDelegateSeparator.qml",
 				"/usr/lib/qt6/qml/org/kde/kirigamiaddons/formcard/FormDelegateSeparator.qmlc",
+				"/usr/lib/qt6/qml/org/kde/kirigamiaddons/formcard/FormFileDelegate.qml",
+				"/usr/lib/qt6/qml/org/kde/kirigamiaddons/formcard/FormFileDelegate.qmlc",
+				"/usr/lib/qt6/qml/org/kde/kirigamiaddons/formcard/FormFolderDelegate.qml",
+				"/usr/lib/qt6/qml/org/kde/kirigamiaddons/formcard/FormFolderDelegate.qmlc",
 				"/usr/lib/qt6/qml/org/kde/kirigamiaddons/formcard/FormGridContainer.qml",
 				"/usr/lib/qt6/qml/org/kde/kirigamiaddons/formcard/FormGridContainer.qmlc",
 				"/usr/lib/qt6/qml/org/kde/kirigamiaddons/formcard/FormHeader.qml",
@@ -375,6 +383,6 @@
 		}
 	},
 	"source-name": "kf6-kirigami-addons",
-	"source-release": "1",
-	"source-version": "1.8.1"
+	"source-release": "2",
+	"source-version": "1.9.0"
 }
