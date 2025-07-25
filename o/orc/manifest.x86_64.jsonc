@@ -12,9 +12,9 @@
 				"/usr/bin/orc-bugreport",
 				"/usr/bin/orcc",
 				"/usr/lib/liborc-0.4.so.0",
-				"/usr/lib/liborc-0.4.so.0.40.0",
+				"/usr/lib/liborc-0.4.so.0.41.0",
 				"/usr/lib/liborc-test-0.4.so.0",
-				"/usr/lib/liborc-test-0.4.so.0.40.0"
+				"/usr/lib/liborc-test-0.4.so.0.41.0"
 			],
 			"name": "orc",
 			"provides": [
@@ -44,11 +44,9 @@
 				"/usr/include/orc-0.4/orc/orcconstant.h",
 				"/usr/include/orc-0.4/orc/orccpu.h",
 				"/usr/include/orc-0.4/orc/orcdebug.h",
-				"/usr/include/orc-0.4/orc/orcemulateopcodes.h",
 				"/usr/include/orc-0.4/orc/orcexecutor.h",
 				"/usr/include/orc-0.4/orc/orcfunctions.h",
 				"/usr/include/orc-0.4/orc/orcinstruction.h",
-				"/usr/include/orc-0.4/orc/orcinternal.h",
 				"/usr/include/orc-0.4/orc/orclimits.h",
 				"/usr/include/orc-0.4/orc/orcmips.h",
 				"/usr/include/orc-0.4/orc/orcmmx.h",
@@ -78,6 +76,6 @@
 		}
 	},
 	"source-name": "orc",
-	"source-release": "3",
-	"source-version": "0.4.40"
+	"source-release": "4",
+	"source-version": "0.4.41"
 }
