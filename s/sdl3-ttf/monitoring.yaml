@@ -1,0 +1,7 @@
+releases:
+  id: 4784
+  rss: https://github.com/libsdl-org/SDL_ttf/releases.atom
+security:
+  cpe:
+  - vendor: libsdl
+    product: sdl_ttf
