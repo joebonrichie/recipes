@@ -25,8 +25,10 @@
 				"soname(libcrypto.so.3(x86_64))",
 				"soname(libglib-2.0.so.0(x86_64))",
 				"soname(libgobject-2.0.so.0(x86_64))",
+				"soname(libgstallocators-1.0.so.0(x86_64))",
 				"soname(libgstapp-1.0.so.0(x86_64))",
 				"soname(libgstreamer-1.0.so.0(x86_64))",
+				"soname(libgstvideo-1.0.so.0(x86_64))",
 				"soname(libjpeg.so.8(x86_64))",
 				"soname(liblz4.so.1(x86_64))",
 				"soname(libm.so.6(x86_64))",
@@ -35,11 +37,12 @@
 				"soname(libpixman-1.so.0(x86_64))",
 				"soname(libsasl2.so.3(x86_64))",
 				"soname(libssl.so.3(x86_64))",
+				"soname(libudev.so.1(x86_64))",
 				"soname(libz.so.1(x86_64))"
 			],
 			"files": [
 				"/usr/lib/libspice-server.so.1",
-				"/usr/lib/libspice-server.so.1.14.3"
+				"/usr/lib/libspice-server.so.1.15.0"
 			],
 			"name": "spice",
 			"provides": [
@@ -66,12 +69,14 @@
 			"depends": [
 				"pkgconfig(glib-2.0)",
 				"pkgconfig(gstreamer-1.0)",
+				"pkgconfig(gstreamer-allocators-1.0)",
 				"pkgconfig(gstreamer-app-1.0)",
 				"pkgconfig(gstreamer-base-1.0)",
 				"pkgconfig(gstreamer-video-1.0)",
 				"pkgconfig(libjpeg)",
 				"pkgconfig(liblz4)",
 				"pkgconfig(libsasl2)",
+				"pkgconfig(libudev)",
 				"pkgconfig(openssl)",
 				"pkgconfig(opus)",
 				"pkgconfig(orc-0.4)",
@@ -101,6 +106,6 @@
 		}
 	},
 	"source-name": "spice",
-	"source-release": "2",
-	"source-version": "0.15.2"
+	"source-release": "3",
+	"source-version": "0.16.0"
 }
