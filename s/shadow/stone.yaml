@@ -4,38 +4,48 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : shadow
-version     : 4.12.3
-release     : 4
+version     : 4.18.0
+release     : 5
 summary     : PAM-using login and passwd utilities
 license     : BSD-3-Clause
 homepage    : https://github.com/shadow-maint/shadow
 description : |
     PAM-using login and passwd utilities
 upstreams   :
-    - https://github.com/shadow-maint/shadow/releases/download/4.12.3/shadow-4.12.3.tar.xz: 3d3ec447cfdd11ab5f0486ebc47d15718349d13fea41fc8584568bc118083ccd
+    - https://github.com/shadow-maint/shadow/releases/download/4.18.0/shadow-4.18.0.tar.xz: add4604d3bc410344433122a819ee4154b79dd8316a56298c60417e637c07608
 builddeps   :
+    - binary(xsltproc)
     - pkgconfig(libacl)
     - pkgconfig(libattr)
     - pkgconfig(libcrypt)
+    - pkgconfig(libeconf)
     - pkgconfig(pam)
-    # Needed for man pages
-    # - xsltproc
+    - docbook
+    - docbook-xsl
+environment : |
+    # Temporary, replace with boulder macro
+    export XML_CATALOG_FILES="file:///usr/share/defaults/docbook/docbook-dtd/catalog file:///usr/share/defaults/docbook/docbook-xsl/catalog"
 setup       : |
-    %patch %(pkgdir)/stateless/0001-Stateless-useradd-support.patch
+    %patch %(pkgdir)/login.defs.patch
 
-    %configure --enable-vendordir=%(vendordir) \
-               --with-yescrypt \
-               --without-su \
-               --disable-static
+    # TODO: Fix stateless skel patch
+    # TODO: Fix man pages (requires messing with configure.ac to remove the docbook check)
+
+    %configure \
+        --enable-man \
+        --enable-vendordir=%(vendordir) \
+        --with-yescrypt \
+        --without-libbsd \
+        --without-su \
+        --disable-static
 build       : |
     %make
 install     : |
     %make_install
 
-    # Stateless: Move files into the vendordir
-    # environment file can be cleaned up with gettext and running reconfigure
-
-    #rmdir %(installroot)/etc
+    # Stateless
+    %install_dir %(installroot)%(vendordir)
+    mv %(installroot)/etc/login.defs %(installroot)%(vendordir)
     
     # Stateless PAM
     %install_dir %(installroot)/%(vendordir)

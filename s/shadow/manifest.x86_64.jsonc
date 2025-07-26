@@ -4,9 +4,13 @@
 	"packages": {
 		"shadow": {
 			"build-depends": [
+				"binary(xsltproc)",
+				"docbook",
+				"docbook-xsl",
 				"pkgconfig(libacl)",
 				"pkgconfig(libattr)",
 				"pkgconfig(libcrypt)",
+				"pkgconfig(libeconf)",
 				"pkgconfig(pam)"
 			],
 			"depends": [
@@ -14,7 +18,8 @@
 				"soname(libacl.so.1(x86_64))",
 				"soname(libattr.so.1(x86_64))",
 				"soname(libc.so.6(x86_64))",
-				"soname(libcrypt.so.1(x86_64))",
+				"soname(libcrypt.so.2(x86_64))",
+				"soname(libeconf.so.0(x86_64))",
 				"soname(libpam.so.0(x86_64))",
 				"soname(libpam_misc.so.0(x86_64))"
 			],
@@ -24,15 +29,13 @@
 				"/usr/bin/faillog",
 				"/usr/bin/getsubids",
 				"/usr/bin/gpasswd",
-				"/usr/bin/groups",
-				"/usr/bin/lastlog",
 				"/usr/bin/newgidmap",
 				"/usr/bin/newgrp",
 				"/usr/bin/newuidmap",
 				"/usr/bin/passwd",
 				"/usr/bin/sg",
-				"/usr/lib/libsubid.so.4",
-				"/usr/lib/libsubid.so.4.0.0",
+				"/usr/lib/libsubid.so.5",
+				"/usr/lib/libsubid.so.5.0.0",
 				"/usr/sbin/chgpasswd",
 				"/usr/sbin/chpasswd",
 				"/usr/sbin/groupadd",
@@ -52,6 +55,7 @@
 				"/usr/sbin/usermod",
 				"/usr/sbin/vigr",
 				"/usr/sbin/vipw",
+				"/usr/share/defaults/login.defs",
 				"/usr/share/defaults/pam.d/chgpasswd",
 				"/usr/share/defaults/pam.d/chpasswd",
 				"/usr/share/defaults/pam.d/groupadd",
@@ -80,6 +84,7 @@
 				"/usr/share/locale/id/LC_MESSAGES/shadow.mo",
 				"/usr/share/locale/it/LC_MESSAGES/shadow.mo",
 				"/usr/share/locale/ja/LC_MESSAGES/shadow.mo",
+				"/usr/share/locale/ka/LC_MESSAGES/shadow.mo",
 				"/usr/share/locale/kk/LC_MESSAGES/shadow.mo",
 				"/usr/share/locale/km/LC_MESSAGES/shadow.mo",
 				"/usr/share/locale/ko/LC_MESSAGES/shadow.mo",
@@ -109,14 +114,12 @@
 				"binary(faillog)",
 				"binary(getsubids)",
 				"binary(gpasswd)",
-				"binary(groups)",
-				"binary(lastlog)",
 				"binary(newgidmap)",
 				"binary(newgrp)",
 				"binary(newuidmap)",
 				"binary(passwd)",
 				"binary(sg)",
-				"soname(libsubid.so.4(x86_64))",
+				"soname(libsubid.so.5(x86_64))",
 				"sysbinary(chgpasswd)",
 				"sysbinary(chpasswd)",
 				"sysbinary(groupadd)",
@@ -140,9 +143,13 @@
 		},
 		"shadow-devel": {
 			"build-depends": [
+				"binary(xsltproc)",
+				"docbook",
+				"docbook-xsl",
 				"pkgconfig(libacl)",
 				"pkgconfig(libattr)",
 				"pkgconfig(libcrypt)",
+				"pkgconfig(libeconf)",
 				"pkgconfig(pam)"
 			],
 			"depends": [
@@ -156,6 +163,6 @@
 		}
 	},
 	"source-name": "shadow",
-	"source-release": "4",
-	"source-version": "4.12.3"
+	"source-release": "5",
+	"source-version": "4.18.0"
 }
