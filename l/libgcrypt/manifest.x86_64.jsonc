@@ -9,6 +9,7 @@
 			],
 			"depends": [
 				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
+				"soname(ld-linux-x86-64.so.2(x86_64))",
 				"soname(libc.so.6(x86_64))",
 				"soname(libgpg-error.so.0(x86_64))"
 			],
@@ -17,7 +18,7 @@
 				"/usr/bin/hmac256",
 				"/usr/bin/mpicalc",
 				"/usr/lib/libgcrypt.so.20",
-				"/usr/lib/libgcrypt.so.20.5.0",
+				"/usr/lib/libgcrypt.so.20.5.1",
 				"/usr/share/info/gcrypt.info",
 				"/usr/share/info/gcrypt.info-1",
 				"/usr/share/info/gcrypt.info-2",
@@ -53,6 +54,6 @@
 		}
 	},
 	"source-name": "libgcrypt",
-	"source-release": "6",
-	"source-version": "1.11.0"
+	"source-release": "7",
+	"source-version": "1.11.1"
 }
