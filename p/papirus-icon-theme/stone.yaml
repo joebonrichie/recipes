@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : papirus-icon-theme
-version     : 20240501
-release     : 3
+version     : "20250501"
+release     : 4
 homepage    : https://github.com/PapirusDevelopmentTeam/papirus-icon-theme
 upstreams   :
-    - https://github.com/PapirusDevelopmentTeam/papirus-icon-theme/archive/refs/tags/20240501.tar.gz : c12a64963639afffc5c5425c4d8fd09e9d5510bbc4c408a1fec9a1d617c5089b
+    - https://github.com/PapirusDevelopmentTeam/papirus-icon-theme/archive/refs/tags/20250501.tar.gz : 3831a487f813479ad3224fdbfb0c7023f23056899bc78c93737f341aa655558e
 summary     : Papirus Icon Theme
 description : |
     Papirus Icon Theme
