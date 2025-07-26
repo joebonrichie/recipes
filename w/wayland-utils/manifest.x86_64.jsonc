@@ -1,0 +1,30 @@
+/** Human readable report. This is not consumed by boulder */
+{
+	"manifest-version": "0.2",
+	"packages": {
+		"wayland-utils": {
+			"build-depends": [
+				"pkgconfig(libdrm)",
+				"pkgconfig(wayland-client)",
+				"pkgconfig(wayland-protocols)"
+			],
+			"depends": [
+				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
+				"soname(libc.so.6(x86_64))",
+				"soname(libdrm.so.2(x86_64))",
+				"soname(libwayland-client.so.0(x86_64))"
+			],
+			"files": [
+				"/usr/bin/wayland-info",
+				"/usr/share/man/man1/wayland-info.1"
+			],
+			"name": "wayland-utils",
+			"provides": [
+				"binary(wayland-info)"
+			]
+		}
+	},
+	"source-name": "wayland-utils",
+	"source-release": "1",
+	"source-version": "1.2.0"
+}
