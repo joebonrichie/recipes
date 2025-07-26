@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : spice-protocol
-version     : 0.14.4
-release     : 2
+version     : 0.14.5
+release     : 3
 homepage    : https://spice-space.org/
 upstreams   :
-    - https://gitlab.freedesktop.org/-/project/68/uploads/95dbf8e552065e35dd3cab3f7d09b347/spice-protocol-0.14.4.tar.xz : 04ffba610d9fd441cfc47dfaa135d70096e60b1046d2119d8db2f8ea0d17d912
+    - https://gitlab.freedesktop.org/-/project/68/uploads/2d566d020a0c997035ca16389a64cd8d/spice-protocol-0.14.5.tar.xz : baf58449f6e89d19f475899ad5fb9196fdc46c03cc53233f4e39cf2978f9cff7
 summary     : SPICE Protocol
 description : |
     SPICE Protocol
