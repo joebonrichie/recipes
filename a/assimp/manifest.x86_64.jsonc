@@ -19,13 +19,13 @@
 			],
 			"files": [
 				"/usr/bin/assimp",
-				"/usr/lib/libassimp.so.5",
-				"/usr/lib/libassimp.so.5.4.3"
+				"/usr/lib/libassimp.so.6",
+				"/usr/lib/libassimp.so.6.0.2"
 			],
 			"name": "assimp",
 			"provides": [
 				"binary(assimp)",
-				"soname(libassimp.so.5(x86_64))"
+				"soname(libassimp.so.6(x86_64))"
 			]
 		},
 		"assimp-devel": {
@@ -128,10 +128,10 @@
 				"/usr/include/assimp/vector3.h",
 				"/usr/include/assimp/vector3.inl",
 				"/usr/include/assimp/version.h",
-				"/usr/lib/cmake/assimp-5.4/assimpConfig.cmake",
-				"/usr/lib/cmake/assimp-5.4/assimpConfigVersion.cmake",
-				"/usr/lib/cmake/assimp-5.4/assimpTargets-release.cmake",
-				"/usr/lib/cmake/assimp-5.4/assimpTargets.cmake",
+				"/usr/lib/cmake/assimp-6.0/assimpConfig.cmake",
+				"/usr/lib/cmake/assimp-6.0/assimpConfigVersion.cmake",
+				"/usr/lib/cmake/assimp-6.0/assimpTargets-release.cmake",
+				"/usr/lib/cmake/assimp-6.0/assimpTargets.cmake",
 				"/usr/lib/libassimp.so",
 				"/usr/lib/pkgconfig/assimp.pc"
 			],
@@ -143,6 +143,6 @@
 		}
 	},
 	"source-name": "assimp",
-	"source-release": "4",
-	"source-version": "5.4.3"
+	"source-release": "5",
+	"source-version": "6.0.2"
 }
