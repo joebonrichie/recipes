@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : shaderc
-version     : '2025.1'
-release     : 6
+version     : '2025.3'
+release     : 7
 homepage    : https://github.com/google/shaderc
 upstreams   :
-    - https://github.com/google/shaderc/archive/refs/tags/v2025.1.tar.gz : 358f9fa87b503bc7a3efe1575fbf581fca7f16dbc6d502ea2b02628d2d0d4014
+    - https://github.com/google/shaderc/archive/refs/tags/v2025.3.tar.gz : a8e4a25e5c2686fd36981e527ed05e451fcfc226bddf350f4e76181371190937
 summary     : A collection of tools, libraries, and tests for Vulkan shader compilation.
 description : |
     A collection of tools, libraries and tests for shader compilation. At the moment it includes:
@@ -18,6 +18,7 @@ license     :
     - Apache-2.0
 builddeps   :
     - binary(asciidoctor)
+    - binary(perl)
     - binary(python)
     - cmake(glslang)
     - cmake(SPIRV-Tools)

@@ -5,6 +5,7 @@
 		"shaderc": {
 			"build-depends": [
 				"binary(asciidoctor)",
+				"binary(perl)",
 				"binary(python)",
 				"cmake(SPIRV-Headers)",
 				"cmake(SPIRV-Tools)",
@@ -33,6 +34,7 @@
 		"shaderc-devel": {
 			"build-depends": [
 				"binary(asciidoctor)",
+				"binary(perl)",
 				"binary(python)",
 				"cmake(SPIRV-Headers)",
 				"cmake(SPIRV-Tools)",
@@ -61,6 +63,6 @@
 		}
 	},
 	"source-name": "shaderc",
-	"source-release": "6",
-	"source-version": "2025.1"
+	"source-release": "7",
+	"source-version": "2025.3"
 }
