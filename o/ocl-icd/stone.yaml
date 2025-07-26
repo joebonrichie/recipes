@@ -5,10 +5,10 @@
 #
 name        : ocl-icd
 version     : '2.3.3'
-release     : 1
+release     : 2
 homepage    : https://github.com/KhronosGroup/OpenCL-Headers/
 upstreams   :
-    - https://github.com/OCL-dev/ocl-icd/archive/refs/tags/v2.3.3.tar.gz : 8cd8e8e129db3081a64090fc1252bec39dc88cdb7b3f929315e014b75069bd9d # Tag: vulkan-sdk-1.4.309.0
+    - https://github.com/OCL-dev/ocl-icd/archive/refs/tags/v2.3.3.tar.gz : 8cd8e8e129db3081a64090fc1252bec39dc88cdb7b3f929315e014b75069bd9d
 summary     : Vendor Neutral OpenCL Implementation
 description : |
     Vendor Neutral OpenCL Implementation
