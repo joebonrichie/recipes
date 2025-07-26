@@ -7180,7 +7180,7 @@
 				"soname(libc++.so.1(x86_64))",
 				"soname(libc.so.6(x86_64))",
 				"soname(libcanberra.so.0(x86_64))",
-				"soname(libcrypt.so.1(x86_64))",
+				"soname(libcrypt.so.2(x86_64))",
 				"soname(libfontconfig.so.1(x86_64))",
 				"soname(libfreetype.so.6(x86_64))",
 				"soname(libkworkspace6.so.6(x86_64))",
@@ -7413,6 +7413,6 @@
 		}
 	},
 	"source-name": "plasma-workspace",
-	"source-release": "5",
+	"source-release": "6",
 	"source-version": "6.4.3"
 }
