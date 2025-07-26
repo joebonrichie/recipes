@@ -63,6 +63,7 @@
 				"/usr/include/cava/output/raw.h",
 				"/usr/include/cava/output/sdl_cava.h",
 				"/usr/include/cava/output/sdl_glsl.h",
+				"/usr/include/cava/output/terminal_bcircle.h",
 				"/usr/include/cava/output/terminal_ncurses.h",
 				"/usr/include/cava/output/terminal_noncurses.h",
 				"/usr/include/cava/util.h",
@@ -75,6 +76,6 @@
 		}
 	},
 	"source-name": "cava",
-	"source-release": "1",
-	"source-version": "0.10.3"
+	"source-release": "2",
+	"source-version": "0.10.4"
 }
