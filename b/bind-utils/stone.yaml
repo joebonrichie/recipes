@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : bind-utils
-version     : 9.18.32
-release     : 9
+version     : 9.20.11
+release     : 10
 homepage    : https://www.isc.org/bind/
 upstreams   :
-    - https://downloads.isc.org/isc/bind9/9.18.32/bind-9.18.32.tar.xz : dc840cdf9d54578d98400f2edf7008b1b33a1721be6e490eb1e42d0d11d9cff4
+    - https://downloads.isc.org/isc/bind9/9.20.11/bind-9.20.11.tar.xz : 4da2d532e668bc21e883f6e6d9d3d81794d9ec60b181530385649a56f46ee17a
 summary     : Tools to interact with DNS services
 description : |
     BIND (Berkeley Internet Name Domain) is a complete, highly portable
@@ -21,8 +21,10 @@ license     :
 builddeps   :
     - lmdb-devel
     - pkgconfig(json-c)
+    - pkgconfig(libcap)
     - pkgconfig(libidn2)
     - pkgconfig(libnghttp2)
+    - pkgconfig(liburcu)
     - pkgconfig(libuv)
     - pkgconfig(libxml-2.0)
     - pkgconfig(openssl)
@@ -35,7 +37,6 @@ setup       : |
     # TODO geoip (libmaxmind)
     %configure \
                --disable-geoip \
-               --disable-linux-caps \
                --with-json-c \
                --with-libidn2 \
                --with-libxml2 \
