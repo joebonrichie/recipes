@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : jsoncpp
-version     : '1.9.5'
-release     : 1
+version     : '1.9.6'
+release     : 2
 homepage    : https://github.com/open-source-parsers/jsoncpp/
 upstreams   :
-    - https://github.com/open-source-parsers/jsoncpp/archive/1.9.5.tar.gz : f409856e5920c18d0c2fb85276e24ee607d2a09b5e7d5f0a371368903c275da2
+    - https://github.com/open-source-parsers/jsoncpp/archive/1.9.6.tar.gz : f93b6dd7ce796b13d02c108bc9f79812245a82e577581c4c9aabe57075c90ea2
 summary     : JsonCpp is a C++ library that allows manipulating JSON values
 description : |
     JsonCpp is a C++ library that allows manipulating JSON values, including

@@ -10,11 +10,11 @@
 				"soname(libunwind.so.1(x86_64))"
 			],
 			"files": [
-				"/usr/lib/libjsoncpp.so.25"
+				"/usr/lib/libjsoncpp.so.26"
 			],
 			"name": "jsoncpp",
 			"provides": [
-				"soname(libjsoncpp.so.25(x86_64))"
+				"soname(libjsoncpp.so.26(x86_64))"
 			]
 		},
 		"jsoncpp-devel": {
@@ -32,16 +32,19 @@
 				"/usr/include/json/value.h",
 				"/usr/include/json/version.h",
 				"/usr/include/json/writer.h",
+				"/usr/lib/cmake/jsoncpp/jsoncpp-namespaced-targets.cmake",
+				"/usr/lib/cmake/jsoncpp/jsoncppConfig.cmake",
 				"/usr/lib/libjsoncpp.so",
 				"/usr/lib/pkgconfig/jsoncpp.pc"
 			],
 			"name": "jsoncpp-devel",
 			"provides": [
+				"cmake(jsoncpp)",
 				"pkgconfig(jsoncpp)"
 			]
 		}
 	},
 	"source-name": "jsoncpp",
-	"source-release": "1",
-	"source-version": "1.9.5"
+	"source-release": "2",
+	"source-version": "1.9.6"
 }
