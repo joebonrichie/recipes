@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : erofs-utils
-version     : 1.8.6
-release     : 5
+version     : 1.8.10
+release     : 6
 homepage    : https://git.kernel.org/pub/scm/linux/kernel/git/xiang/erofs-utils.git
 upstreams   :
-    - https://git.kernel.org/pub/scm/linux/kernel/git/xiang/erofs-utils.git/snapshot/erofs-utils-1.8.6.tar.gz : 5b221dc3fd6d151425b30534ede46fb7a90dc233a8659cba0372796b0a066547
+    - https://git.kernel.org/pub/scm/linux/kernel/git/xiang/erofs-utils.git/snapshot/erofs-utils-1.8.10.tar.gz : 05eb4edebe11decce6ecb34e98d2f80c8cd283c2f2967d8ba7efd58418570514
 summary     : EROFS filesystem utilities
 description : |
     EROFS filesystem utilities
