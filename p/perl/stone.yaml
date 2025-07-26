@@ -5,7 +5,7 @@
 #
 name        : perl
 version     : '5.40.2'
-release     : 12
+release     : 13
 summary     : Perl interpreter and modules
 license     :
     - Artistic-1.0
