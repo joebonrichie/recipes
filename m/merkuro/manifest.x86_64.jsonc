@@ -45,6 +45,8 @@
 			],
 			"depends": [
 				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
+				"kdepim-runtime",
+				"kf6-qqc2-desktop-style",
 				"qt6-location",
 				"qt6-wayland",
 				"soname(libKF6CalendarCore.so.6(x86_64))",
@@ -380,6 +382,6 @@
 		}
 	},
 	"source-name": "merkuro",
-	"source-release": "2",
+	"source-release": "3",
 	"source-version": "25.04.3"
 }

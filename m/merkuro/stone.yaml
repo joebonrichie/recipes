@@ -5,7 +5,7 @@
 #
 name        : merkuro
 version     : 25.04.3
-release     : 2
+release     : 3
 upstreams   :
     - https://download.kde.org/stable/release-service/25.04.3/src/merkuro-25.04.3.tar.xz : c213e7f4bd746e699ec56315cd26393124283e9190a5e9c2c3adf21811cdde27
 homepage    : https://kde.org/applications/system/org.kde.merkuro
@@ -56,6 +56,8 @@ builddeps   :
     - cmake(Qt6Svg)
     - cmake(Plasma)
 rundeps     :
+    - kf6-qqc2-desktop-style
+    - kdepim-runtime # Required for basically anything function-wise
     - qt6-location # QML dep
     - qt6-wayland
 setup       : |
