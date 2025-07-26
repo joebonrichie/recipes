@@ -80,7 +80,7 @@
 				"/usr/include/efi/efitcp.h",
 				"/usr/include/efi/efiudp.h",
 				"/usr/include/efi/efiui.h",
-				"/usr/include/efi/legacy.h",
+				"/usr/include/efi/legacy/efilib.h",
 				"/usr/include/efi/lib.h",
 				"/usr/include/efi/libsmbios.h",
 				"/usr/include/efi/pci22.h",
@@ -108,6 +108,6 @@
 		}
 	},
 	"source-name": "gnu-efi",
-	"source-release": "4",
-	"source-version": "4.0.0"
+	"source-release": "5",
+	"source-version": "4.0.2"
 }
