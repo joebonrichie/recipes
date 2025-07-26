@@ -18,7 +18,7 @@
 			"depends": [
 				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
 				"soname(libc.so.6(x86_64))",
-				"soname(libcrypt.so.1(x86_64))",
+				"soname(libcrypt.so.2(x86_64))",
 				"soname(libgio-2.0.so.0(x86_64))",
 				"soname(libglib-2.0.so.0(x86_64))",
 				"soname(libgobject-2.0.so.0(x86_64))",
@@ -157,6 +157,6 @@
 		}
 	},
 	"source-name": "accountsservice",
-	"source-release": "4",
+	"source-release": "5",
 	"source-version": "23.13.9"
 }
