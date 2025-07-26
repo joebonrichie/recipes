@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : libpng
-version     : 1.6.44
-release     : 7
+version     : 1.6.50
+release     : 8
 homepage    : http://www.libpng.org/pub/png/libpng.html
 upstreams   :
-    - https://downloads.sourceforge.net/project/libpng/libpng16/1.6.44/libpng-1.6.44.tar.xz : 60c4da1d5b7f0aa8d158da48e8f8afa9773c1c8baa5d21974df61f1886b8ce8e
+    - https://downloads.sourceforge.net/project/libpng/libpng16/1.6.50/libpng-1.6.50.tar.xz : 4df396518620a7aa3651443e87d1b2862e4e88cad135a8b93423e01706232307
 summary     : Official reference implementation of PNG
 description : |
     libpng is the official PNG reference library. It supports almost all PNG features, is extensible,
@@ -29,7 +29,9 @@ builddeps   :
 setup       : |
     # breaks libpng
     unset CPP
-    %configure --disable-static --enable-intel-sse
+    %configure \
+        --disable-static \
+        --enable-intel-sse
 build       : |
     %make
 install     : |

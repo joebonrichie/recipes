@@ -14,7 +14,7 @@
 			],
 			"files": [
 				"/usr/lib/libpng16.so.16",
-				"/usr/lib/libpng16.so.16.44.0",
+				"/usr/lib/libpng16.so.16.50.0",
 				"/usr/share/man/man5/png.5"
 			],
 			"name": "libpng",
@@ -35,12 +35,11 @@
 			],
 			"files": [
 				"/usr/lib32/libpng16.so.16",
-				"/usr/lib32/libpng16.so.16.44.0"
+				"/usr/lib32/libpng16.so.16.50.0"
 			],
 			"name": "libpng-32bit",
 			"provides": [
-				"soname(libpng16.so.16(386))",
-				"soname(libpng16.so.16(x86))"
+				"soname(libpng16.so.16(386))"
 			]
 		},
 		"libpng-32bit-devel": {
@@ -108,6 +107,6 @@
 		}
 	},
 	"source-name": "libpng",
-	"source-release": "7",
-	"source-version": "1.6.44"
+	"source-release": "8",
+	"source-version": "1.6.50"
 }
