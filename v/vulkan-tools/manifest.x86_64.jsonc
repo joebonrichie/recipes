@@ -5,7 +5,6 @@
 		"vulkan-tools": {
 			"build-depends": [
 				"cmake(VulkanHeaders)",
-				"cmake(volk)",
 				"pkgconfig(wayland-client)",
 				"pkgconfig(wayland-protocols)",
 				"pkgconfig(x11)",
@@ -36,6 +35,6 @@
 		}
 	},
 	"source-name": "vulkan-tools",
-	"source-release": "7",
-	"source-version": "1.4.309.0"
+	"source-release": "8",
+	"source-version": "1.4.321.0"
 }

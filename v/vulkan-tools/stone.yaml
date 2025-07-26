@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : vulkan-tools
-version     : 1.4.309.0
-release     : 7
+version     : 1.4.321.0
+release     : 8
 homepage    : https://www.khronos.org/vulkan/
 upstreams   :
-    - https://github.com/KhronosGroup/Vulkan-Tools/archive/refs/tags/vulkan-sdk-1.4.309.0.tar.gz : d854ff4324b519ff4a1cf5d9e9c333e5244ea7870fad6eadd73efd7b04aedcb0
+    - https://github.com/KhronosGroup/Vulkan-Tools/archive/refs/tags/vulkan-sdk-1.4.321.0.tar.gz : f897f76b1fae6b85b567ee86d7bc1ba6f5b1a13d3bfa5fe0f07fdb81609f7b75
 summary     : Vulkan Utilities and Tools
 description : |
     This package provides Khronos official Vulkan tools and utilities that can assist development by enabling developers to verify their applications correct use of the Vulkan API.
@@ -16,13 +16,13 @@ license     :
     - Apache-2.0
 builddeps   :
     - cmake(VulkanHeaders)
-    - cmake(volk)
     - pkgconfig(wayland-client)
     - pkgconfig(wayland-protocols)
     - pkgconfig(x11)
     - pkgconfig(xcb)
     - pkgconfig(xrandr)
 setup       : |
+    %patch %(pkgdir)/1134.patch
     %cmake
 build       : |
     %cmake_build
