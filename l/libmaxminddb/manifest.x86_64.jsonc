@@ -1,0 +1,59 @@
+/** Human readable report. This is not consumed by boulder */
+{
+	"manifest-version": "0.2",
+	"packages": {
+		"libmaxminddb": {
+			"depends": [
+				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
+				"soname(libc.so.6(x86_64))"
+			],
+			"files": [
+				"/usr/bin/mmdblookup",
+				"/usr/lib/libmaxminddb.so.0",
+				"/usr/lib/libmaxminddb.so.0.0.7",
+				"/usr/share/man/man1/mmdblookup.1"
+			],
+			"name": "libmaxminddb",
+			"provides": [
+				"binary(mmdblookup)",
+				"soname(libmaxminddb.so.0(x86_64))"
+			]
+		},
+		"libmaxminddb-devel": {
+			"depends": [
+				"libmaxminddb"
+			],
+			"files": [
+				"/usr/include/maxminddb.h",
+				"/usr/include/maxminddb_config.h",
+				"/usr/lib/cmake/maxminddb/maxminddb-config-release.cmake",
+				"/usr/lib/cmake/maxminddb/maxminddb-config.cmake",
+				"/usr/lib/libmaxminddb.so",
+				"/usr/lib/pkgconfig/libmaxminddb.pc",
+				"/usr/share/man/man3/MMDB_aget_value.3",
+				"/usr/share/man/man3/MMDB_close.3",
+				"/usr/share/man/man3/MMDB_dump_entry_data_list.3",
+				"/usr/share/man/man3/MMDB_free_entry_data_list.3",
+				"/usr/share/man/man3/MMDB_get_entry_data_list.3",
+				"/usr/share/man/man3/MMDB_get_metadata_as_entry_data_list.3",
+				"/usr/share/man/man3/MMDB_get_value.3",
+				"/usr/share/man/man3/MMDB_lib_version.3",
+				"/usr/share/man/man3/MMDB_lookup_sockaddr.3",
+				"/usr/share/man/man3/MMDB_lookup_string.3",
+				"/usr/share/man/man3/MMDB_open.3",
+				"/usr/share/man/man3/MMDB_read_node.3",
+				"/usr/share/man/man3/MMDB_strerror.3",
+				"/usr/share/man/man3/MMDB_vget_value.3",
+				"/usr/share/man/man3/libmaxminddb.3"
+			],
+			"name": "libmaxminddb-devel",
+			"provides": [
+				"cmake(maxminddb)",
+				"pkgconfig(libmaxminddb)"
+			]
+		}
+	},
+	"source-name": "libmaxminddb",
+	"source-release": "1",
+	"source-version": "1.12.2"
+}
