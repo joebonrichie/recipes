@@ -5,7 +5,7 @@
 #
 name        : qt6-quick3d
 version     : 6.9.1
-release     : 4
+release     : 5
 homepage    : https://www.qt.io
 upstreams   :
     - https://download.qt.io/official_releases/qt/6.9/6.9.1/submodules/qtquick3d-everywhere-src-6.9.1.tar.xz : f61600da8fbfd51b7d6b5c431cef453d7c24015c374ae25756c0faf0db2c9977
@@ -23,8 +23,10 @@ builddeps   :
     - pkgconfig(assimp)
     # TODO: System openxr
 setup       : |
+    %patch %(pkgdir)/ftbfs-assimp-6.patch
+
     %cmake_qt6 \
-               -DFEATURE_system_assimp=ON
+        -DFEATURE_system_assimp=ON
 build       : |
     %cmake_build
 install     : |

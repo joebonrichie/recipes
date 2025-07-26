@@ -18,7 +18,7 @@
 				"soname(libQt6Quick.so.6(x86_64))",
 				"soname(libQt6QuickTimeline.so.6(x86_64))",
 				"soname(libQt6ShaderTools.so.6(x86_64))",
-				"soname(libassimp.so.5(x86_64))",
+				"soname(libassimp.so.6(x86_64))",
 				"soname(libc++.so.1(x86_64))",
 				"soname(libc.so.6(x86_64))",
 				"soname(libm.so.6(x86_64))",
@@ -1754,6 +1754,6 @@
 		}
 	},
 	"source-name": "qt6-quick3d",
-	"source-release": "4",
+	"source-release": "5",
 	"source-version": "6.9.1"
 }
