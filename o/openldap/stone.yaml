@@ -5,7 +5,7 @@
 #
 name        : openldap
 version     : 2.6.10
-release     : 4
+release     : 5
 homepage    : https://www.openldap.org/
 upstreams   :
     - https://www.openldap.org/software/download/OpenLDAP/openldap-release/openldap-2.6.10.tgz : c065f04aad42737aebd60b2fe4939704ac844266bc0aeaa1609f0cad987be516

@@ -324,7 +324,7 @@
 			"depends": [
 				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
 				"soname(libc.so.6(x86_64))",
-				"soname(libcrypt.so.1(x86_64))",
+				"soname(libcrypt.so.2(x86_64))",
 				"soname(liblber.so.2(x86_64))",
 				"soname(libldap.so.2(x86_64))",
 				"soname(libltdl.so.7(x86_64))",
@@ -422,6 +422,6 @@
 		}
 	},
 	"source-name": "openldap",
-	"source-release": "4",
+	"source-release": "5",
 	"source-version": "2.6.10"
 }
