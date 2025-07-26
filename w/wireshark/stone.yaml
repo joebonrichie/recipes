@@ -1,0 +1,87 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : wireshark
+version     : 4.4.8
+release     : 1
+homepage    : https://www.wireshark.org/
+upstreams   :
+    - https://gitlab.com/wireshark/wireshark/-/archive/v4.4.8/wireshark-v4.4.8.tar.gz : bc812a2c2e28ab4962f4395c39cfeb8663d96f6b9268c9981225174eca96736e
+summary     : Wireshark is the world's foremost network protocol analyzer.
+description : |
+    Wireshark is the world's foremost network protocol analyzer. It lets you see what's happening on your network at a microscopic level.
+license     : 
+    - GPL-2.0-or-later
+    - BSD-2-Clause
+    - BSD-3-Clause
+builddeps   :
+    - binary(asciidoctor)
+    - binary(doxygen)
+    - binary(flex)
+    - binary(msgfmt)
+    - binary(msgmerge)
+    - binary(perl)
+    - binary(xsltproc)
+    - pkgconfig(Qt6Core5Compat)
+    - pkgconfig(Qt6Help)
+    - pkgconfig(Qt6Multimedia)
+    - pkgconfig(Qt6Svg)
+    - pkgconfig(gnutls)
+    - pkgconfig(krb5)
+    - pkgconfig(libbrotlicommon)
+    - pkgconfig(libcap)
+    - pkgconfig(libcares)
+    - pkgconfig(libgcrypt)
+    - pkgconfig(liblz4)
+    - pkgconfig(libmaxminddb)
+    - pkgconfig(libnghttp2)
+    - pkgconfig(libnl-3.0)
+    - pkgconfig(libpcap)
+    - pkgconfig(libssh)
+    - pkgconfig(libzstd)
+    - pkgconfig(lua)
+    - pkgconfig(minizip)
+    - pkgconfig(minizip-ng) # TODO: Figure out why this isn't detected
+    - pkgconfig(opus)
+    - pkgconfig(sbc)
+    - pkgconfig(snappy)
+    - pkgconfig(speexdsp)
+    - pkgconfig(glib-2.0)
+    - sysbinary(setcap)
+    # TODO: nghttp3, libsmi
+rundeps   :
+    - qt6-wayland
+setup       : |
+    %cmake \
+        -DBUILD_tfshark=ON
+build       : |
+    %cmake_build
+install     : |
+    %cmake_install
+
+    install -Dm00644 %(pkgdir)/wireshark.sysusers %(installroot)/%(libdir)/sysusers.d/wireshark.conf
+    chmod 750  %(installroot)/usr/bin/dumpcap
+    chown :150 %(installroot)/usr/bin/dumpcap
+
+    %tmpfiles 't %(installroot)/usr/bin/dumpcap - - - - security.capability=0sAQAAAgAwAAAAAAAAAAAAAAAAAAA='
+packages    :
+    - "%(name)-cli":
+        summary: Network traffic analyzer
+        description: This package contains command-line utilities, plugins, and documentation for Wireshark
+        paths:
+            - /usr/bin/
+            - /usr/lib/lib*.so.*
+            - /usr/lib/sysusers.d/
+            - /usr/lib/tmpfiles.d/
+            - /usr/lib/wireshark/
+            - /usr/share/doc/
+            - /usr/share/man/man1/
+            - /usr/share/man/man4/
+            - /usr/share/wireshark/
+
+    - "%(name)":
+        paths:
+            - /usr/bin/wireshark
+            - /usr/share/man/man1/wireshark.1*
