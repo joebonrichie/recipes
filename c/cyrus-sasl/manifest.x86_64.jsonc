@@ -13,7 +13,7 @@
 			"depends": [
 				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
 				"soname(libc.so.6(x86_64))",
-				"soname(libcrypt.so.1(x86_64))",
+				"soname(libcrypt.so.2(x86_64))",
 				"soname(libkrb5.so.3(x86_64))",
 				"soname(libpam.so.0(x86_64))",
 				"soname(libsasl2.so.3(x86_64))"
@@ -282,6 +282,6 @@
 		}
 	},
 	"source-name": "cyrus-sasl",
-	"source-release": "4",
+	"source-release": "5",
 	"source-version": "2.1.28"
 }
