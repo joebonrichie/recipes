@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : pciutils
-version     : 3.13.0
-release     : 5
+version     : 3.14.0
+release     : 6
 homepage    : https://mirrors.edge.kernel.org/pub/software/utils/pciutils
 upstreams   :
-    - https://mirrors.edge.kernel.org/pub/software/utils/pciutils/pciutils-3.13.0.tar.xz : 77f11f78298502634d1af50308f15a5788629f6cf45cba376f5009aea4cb4926
+    - https://mirrors.edge.kernel.org/pub/software/utils/pciutils/pciutils-3.14.0.tar.xz : e7713409882813991d2269d125e40dad1f54a019a52b78b3962941c1d4a6f86f
 summary     : Utilities to access the PCI bus configuration registers
 description : |
     The PCI Utilities package contains a library for portable access to PCI bus
@@ -40,3 +40,7 @@ install     : |
 tuning      :
     # ld: error: undefined symbol: pci_alloc ... and so on
     - lto: false
+packages    :
+    - "%(name)-libs":
+        paths:
+            - /usr/lib/libpci.so.*

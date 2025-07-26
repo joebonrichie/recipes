@@ -11,12 +11,10 @@
 				"hwdata",
 				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
 				"soname(libc.so.6(x86_64))",
-				"soname(libudev.so.1(x86_64))"
+				"soname(libpci.so.3(x86_64))"
 			],
 			"files": [
 				"/usr/bin/lspci",
-				"/usr/lib/libpci.so.3",
-				"/usr/lib/libpci.so.3.13.0",
 				"/usr/sbin/pcilmr",
 				"/usr/sbin/setpci",
 				"/usr/sbin/update-pciids",
@@ -30,7 +28,6 @@
 			"name": "pciutils",
 			"provides": [
 				"binary(lspci)",
-				"soname(libpci.so.3(x86_64))",
 				"sysbinary(pcilmr)",
 				"sysbinary(setpci)",
 				"sysbinary(update-pciids)"
@@ -56,9 +53,27 @@
 			"provides": [
 				"pkgconfig(libpci)"
 			]
+		},
+		"pciutils-libs": {
+			"build-depends": [
+				"binary(strip)",
+				"pkgconfig(libudev)"
+			],
+			"depends": [
+				"soname(libc.so.6(x86_64))",
+				"soname(libudev.so.1(x86_64))"
+			],
+			"files": [
+				"/usr/lib/libpci.so.3",
+				"/usr/lib/libpci.so.3.14.0"
+			],
+			"name": "pciutils-libs",
+			"provides": [
+				"soname(libpci.so.3(x86_64))"
+			]
 		}
 	},
 	"source-name": "pciutils",
-	"source-release": "5",
-	"source-version": "3.13.0"
+	"source-release": "6",
+	"source-version": "3.14.0"
 }
