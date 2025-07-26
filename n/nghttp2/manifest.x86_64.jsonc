@@ -8,13 +8,12 @@
 			],
 			"files": [
 				"/usr/lib/libnghttp2.so.14",
-				"/usr/lib/libnghttp2.so.14.28.3",
+				"/usr/lib/libnghttp2.so.14.28.5",
 				"/usr/share/doc/nghttp2/README.rst",
 				"/usr/share/man/man1/h2load.1",
 				"/usr/share/man/man1/nghttp.1",
 				"/usr/share/man/man1/nghttpd.1",
-				"/usr/share/man/man1/nghttpx.1",
-				"/usr/share/nghttp2/fetch-ocsp-response"
+				"/usr/share/man/man1/nghttpx.1"
 			],
 			"name": "nghttp2",
 			"provides": [
@@ -28,7 +27,7 @@
 			],
 			"files": [
 				"/usr/lib32/libnghttp2.so.14",
-				"/usr/lib32/libnghttp2.so.14.28.3"
+				"/usr/lib32/libnghttp2.so.14.28.5"
 			],
 			"name": "nghttp2-32bit",
 			"provides": [
@@ -70,6 +69,6 @@
 		}
 	},
 	"source-name": "nghttp2",
-	"source-release": "8",
-	"source-version": "1.64.0"
+	"source-release": "9",
+	"source-version": "1.66.0"
 }
