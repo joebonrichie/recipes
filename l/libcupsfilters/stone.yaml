@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : libcupsfilters
-version     : 2.1.0
-release     : 4
+version     : 2.1.1
+release     : 5
 homepage    : https://github.com/OpenPrinting/libcupsfilters
 upstreams   :
-    - https://github.com/OpenPrinting/libcupsfilters/releases/download/2.1.0/libcupsfilters-2.1.0.tar.xz : cbe900c7783e4aab0b1681629fad7322d82d082a51e8bae7e1c741d26bdcd294
+    - https://github.com/OpenPrinting/libcupsfilters/releases/download/2.1.1/libcupsfilters-2.1.1.tar.xz : 6c303e36cfde05a6c88fb940c62b6a18e7cdbfb91f077733ebc98f104925ce36
 summary     : CUPS filters library
 description : |
     libcupsfilters is a library for CUPS filters.
@@ -25,8 +25,9 @@ builddeps   :
     - pkgconfig(libtiff-4)
     - pkgconfig(poppler-cpp)
 setup       : |
-    %configure --disable-static \
-               --disable-mutool
+    %configure \
+        --disable-mutool \
+        --disable-static
 build       : |
     %make
 install     : |

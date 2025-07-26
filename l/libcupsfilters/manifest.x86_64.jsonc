@@ -24,8 +24,8 @@
 				"soname(libfontconfig.so.1(x86_64))",
 				"soname(libjpeg.so.8(x86_64))",
 				"soname(liblcms2.so.2(x86_64))",
-				"soname(liblcms2_fast_float.so(x86_64))",
-				"soname(liblcms2_threaded.so(x86_64))",
+				"soname(liblcms2_fast_float.so.2(x86_64))",
+				"soname(liblcms2_threaded.so.2(x86_64))",
 				"soname(libm.so.6(x86_64))",
 				"soname(libpng16.so.16(x86_64))",
 				"soname(libpoppler-cpp.so.2(x86_64))",
@@ -115,6 +115,6 @@
 		}
 	},
 	"source-name": "libcupsfilters",
-	"source-release": "4",
-	"source-version": "2.1.0"
+	"source-release": "5",
+	"source-version": "2.1.1"
 }
