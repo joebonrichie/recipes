@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : spirv-llvm-translator
-version     : 20.1.2
-release     : 6
+version     : 20.1.4+git.ae16e687
+release     : 7
 homepage    : https://github.com/KhronosGroup/SPIRV-LLVM-Translator
 upstreams   :
-    - git|https://github.com/KhronosGroup/SPIRV-LLVM-Translator.git: 6dd8f2a1681a27f16c53d932d2765920f312aeb2
+    - git|https://github.com/KhronosGroup/SPIRV-LLVM-Translator.git: ae16e687166062b39b986610988d4251338823c2
 summary     : Tool/library for translation between SPIR-V and LLVM IR
 description : |
     A tool and a library for bi-directional translation between SPIR-V and LLVM IR
