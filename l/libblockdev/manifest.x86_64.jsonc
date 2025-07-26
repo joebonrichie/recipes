@@ -8,6 +8,7 @@
 				"pkgconfig(bytesize)",
 				"pkgconfig(devmapper)",
 				"pkgconfig(ext2fs)",
+				"pkgconfig(fdisk)",
 				"pkgconfig(glib-2.0)",
 				"pkgconfig(gobject-introspection-1.0)",
 				"pkgconfig(json-glib-1.0)",
@@ -115,6 +116,7 @@
 				"pkgconfig(bytesize)",
 				"pkgconfig(devmapper)",
 				"pkgconfig(ext2fs)",
+				"pkgconfig(fdisk)",
 				"pkgconfig(glib-2.0)",
 				"pkgconfig(gobject-introspection-1.0)",
 				"pkgconfig(json-glib-1.0)",
@@ -195,6 +197,6 @@
 		}
 	},
 	"source-name": "libblockdev",
-	"source-release": "4",
-	"source-version": "3.3.0"
+	"source-release": "5",
+	"source-version": "3.3.1"
 }

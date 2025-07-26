@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : libblockdev
-version     : 3.3.0
-release     : 4
+version     : 3.3.1
+release     : 5
 homepage    : https://github.com/storaged-project/libblockdev
 upstreams   :
-    - https://github.com/storaged-project/libblockdev/releases/download/3.3.0/libblockdev-3.3.0.tar.gz : c4738e1abedefffe886521f9f0e7a9306c6f50f7691d88e011438c88608bdfa7
+    - https://github.com/storaged-project/libblockdev/releases/download/3.3.1/libblockdev-3.3.1.tar.gz : a2e2e448a19d420480b8cce5e0752197482a65cb62a9ed55d88b237da36600d1
 summary     : A library for manipulating block devices
 description : |
     libblockdev is a C library supporting GObject introspection for manipulation of block devices. It has a plugin-based architecture where each technology (like LVM, Btrfs, MD RAID, Swap,...) is implemented in a separate plugin, possibly with multiple implementations (e.g. using LVM CLI or the new LVM DBus API).
@@ -18,6 +18,7 @@ builddeps   :
     - pkgconfig(bytesize)
     - pkgconfig(devmapper)
     - pkgconfig(ext2fs)
+    - pkgconfig(fdisk)
     - pkgconfig(gobject-introspection-1.0)
     - pkgconfig(glib-2.0)
     - pkgconfig(json-glib-1.0)
