@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : bzip3
-version     : 1.5.1
-release     : 2
+version     : 1.5.2
+release     : 3
 homepage    : https://github.com/kspalaiologos/bzip3
 upstreams   :
-    - https://github.com/kspalaiologos/bzip3/releases/download/1.5.1/bzip3-1.5.1.tar.xz : 53b844f9d9fb1d75faa4d3a9d9026017caaf50bb200b320d1685c6506b8f3b37
+    - https://github.com/kspalaiologos/bzip3/releases/download/1.5.2/bzip3-1.5.2.tar.xz : 58e3887151ba630cefc3cf9c6604ec158ec894eccacdddced6add48b844f4d4b
 summary     : A better and stronger spiritual successor to BZip2
 description : |
     A better, faster and stronger spiritual successor to BZip2. Features higher compression ratios and better performance thanks to a order-0 context mixing entropy coder, a fast Burrows-Wheeler transform code making use of suffix arrays and a RLE with Lempel Ziv+Prediction pass based on LZ77-style string matching and PPM-style context modeling.
