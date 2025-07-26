@@ -43,6 +43,7 @@
 				"/usr/include/nlohmann/detail/output/serializer.hpp",
 				"/usr/include/nlohmann/detail/string_concat.hpp",
 				"/usr/include/nlohmann/detail/string_escape.hpp",
+				"/usr/include/nlohmann/detail/string_utils.hpp",
 				"/usr/include/nlohmann/detail/value_t.hpp",
 				"/usr/include/nlohmann/json.hpp",
 				"/usr/include/nlohmann/json_fwd.hpp",
@@ -62,6 +63,6 @@
 		}
 	},
 	"source-name": "nlohmann-json",
-	"source-release": "2",
-	"source-version": "3.11.3"
+	"source-release": "3",
+	"source-version": "3.12.0"
 }
