@@ -86,3 +86,8 @@
 
 ### No longer used apparently
 - vulkan-volk
+
+### freerdp was the last revdep of this and it uses sdl3-ttf now
+- sdl2-ttf
+- sdl2-ttf-devel
+- sdl2-ttf-dbginfo
