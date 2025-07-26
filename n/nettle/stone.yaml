@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : nettle
-version     : 3.10.1
-release     : 6
+version     : 3.10.2
+release     : 7
 homepage    : https://www.lysator.liu.se/~nisse/nettle/
 upstreams   :
-    - https://ftp.gnu.org/gnu/nettle/nettle-3.10.1.tar.gz : b0fcdd7fc0cdea6e80dcf1dd85ba794af0d5b4a57e26397eee3bc193272d9132
+    - https://ftp.gnu.org/gnu/nettle/nettle-3.10.2.tar.gz : fe9ff51cb1f2abb5e65a6b8c10a92da0ab5ab6eaf26e7fc2b675c45f1fb519b5
 summary     : Low-level cryptographic library
 description : |
    A low-level cryptographic library
