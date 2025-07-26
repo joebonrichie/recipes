@@ -60,13 +60,13 @@
 			"files": [
 				"/usr/bin/nm-online",
 				"/usr/bin/nmcli",
-				"/usr/lib/NetworkManager/1.52.0/libnm-device-plugin-adsl.so",
-				"/usr/lib/NetworkManager/1.52.0/libnm-device-plugin-bluetooth.so",
-				"/usr/lib/NetworkManager/1.52.0/libnm-device-plugin-ovs.so",
-				"/usr/lib/NetworkManager/1.52.0/libnm-device-plugin-wifi.so",
-				"/usr/lib/NetworkManager/1.52.0/libnm-device-plugin-wwan.so",
-				"/usr/lib/NetworkManager/1.52.0/libnm-ppp-plugin.so",
-				"/usr/lib/NetworkManager/1.52.0/libnm-wwan.so",
+				"/usr/lib/NetworkManager/1.52.1/libnm-device-plugin-adsl.so",
+				"/usr/lib/NetworkManager/1.52.1/libnm-device-plugin-bluetooth.so",
+				"/usr/lib/NetworkManager/1.52.1/libnm-device-plugin-ovs.so",
+				"/usr/lib/NetworkManager/1.52.1/libnm-device-plugin-wifi.so",
+				"/usr/lib/NetworkManager/1.52.1/libnm-device-plugin-wwan.so",
+				"/usr/lib/NetworkManager/1.52.1/libnm-ppp-plugin.so",
+				"/usr/lib/NetworkManager/1.52.1/libnm-wwan.so",
 				"/usr/lib/NetworkManager/VPN",
 				"/usr/lib/NetworkManager/conf.d",
 				"/usr/lib/NetworkManager/dispatcher.d/pre-down.d",
@@ -181,13 +181,13 @@
 			"provides": [
 				"binary(nm-online)",
 				"binary(nmcli)",
-				"soname(NetworkManager/1.52.0/libnm-device-plugin-adsl.so(x86_64))",
-				"soname(NetworkManager/1.52.0/libnm-device-plugin-bluetooth.so(x86_64))",
-				"soname(NetworkManager/1.52.0/libnm-device-plugin-ovs.so(x86_64))",
-				"soname(NetworkManager/1.52.0/libnm-device-plugin-wifi.so(x86_64))",
-				"soname(NetworkManager/1.52.0/libnm-device-plugin-wwan.so(x86_64))",
-				"soname(NetworkManager/1.52.0/libnm-ppp-plugin.so(x86_64))",
-				"soname(NetworkManager/1.52.0/libnm-wwan.so(x86_64))",
+				"soname(NetworkManager/1.52.1/libnm-device-plugin-adsl.so(x86_64))",
+				"soname(NetworkManager/1.52.1/libnm-device-plugin-bluetooth.so(x86_64))",
+				"soname(NetworkManager/1.52.1/libnm-device-plugin-ovs.so(x86_64))",
+				"soname(NetworkManager/1.52.1/libnm-device-plugin-wifi.so(x86_64))",
+				"soname(NetworkManager/1.52.1/libnm-device-plugin-wwan.so(x86_64))",
+				"soname(NetworkManager/1.52.1/libnm-ppp-plugin.so(x86_64))",
+				"soname(NetworkManager/1.52.1/libnm-wwan.so(x86_64))",
 				"soname(pppd/2.5.2/nm-pppd-plugin.so(x86_64))",
 				"sysbinary(NetworkManager)"
 			]
@@ -930,6 +930,6 @@
 		}
 	},
 	"source-name": "networkmanager",
-	"source-release": "8",
-	"source-version": "1.52.0"
+	"source-release": "9",
+	"source-version": "1.52.1"
 }

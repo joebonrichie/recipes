@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : networkmanager
-version     : 1.52.0
-release     : 8
+version     : 1.52.1
+release     : 9
 homepage    : https://wiki.gnome.org/Projects/NetworkManager
 upstreams   :
-    - https://gitlab.freedesktop.org/NetworkManager/NetworkManager/-/releases/1.52.0/downloads/NetworkManager-1.52.0.tar.xz : 356f21a15da51e4218fd4d0fd78cea61e067b1116a25cddee4af9df05062e92d
+    - https://gitlab.freedesktop.org/NetworkManager/NetworkManager/-/releases/1.52.1/downloads/NetworkManager-1.52.1.tar.xz : 8b122c73493a72f2bae527c125cebd87711671b90352dbe2b1788aba9575ac6f
 summary     : NetworkManager — network management daemon
 description : |
     NetworkManager attempts to keep an active network connection available at all times.  The point of NetworkManager is to make networking configuration and setup as painless and automatic as possible.  NetworkManager is intended to replace default route, replace other routes, set IP addresses, and in general configure networking as NM sees fit (with the possibility of manual override as necessary).  In effect, the goal of NetworkManager is to make networking Just Work with a minimum of user hassle, but still allow customization and a high level of manual network control.  If you have special needs, we'd like to hear about them, but understand that NetworkManager is not intended for every use-case.
@@ -60,7 +60,6 @@ setup       : |
     # - More bluez configuration
 
     %patch %(pkgdir)/2164.patch
-    %patch %(pkgdir)/2173.patch
 
     %meson \
         -Db_lto=true \
