@@ -14,34 +14,51 @@
 			],
 			"depends": [
 				"soname(libc.so.6(x86_64))",
-				"soname(libcairo.so.2(x86_64))",
 				"soname(libfreetype.so.6(x86_64))",
 				"soname(libglib-2.0.so.0(x86_64))",
 				"soname(libgobject-2.0.so.0(x86_64))",
 				"soname(libgraphite2.so.3(x86_64))",
-				"soname(libicuuc.so.77(x86_64))",
 				"soname(libm.so.6(x86_64))"
 			],
 			"files": [
 				"/usr/lib/girepository-1.0/HarfBuzz-0.0.typelib",
-				"/usr/lib/libharfbuzz-cairo.so.0",
-				"/usr/lib/libharfbuzz-cairo.so.0.61040.0",
 				"/usr/lib/libharfbuzz-gobject.so.0",
-				"/usr/lib/libharfbuzz-gobject.so.0.61040.0",
-				"/usr/lib/libharfbuzz-icu.so.0",
-				"/usr/lib/libharfbuzz-icu.so.0.61040.0",
+				"/usr/lib/libharfbuzz-gobject.so.0.61132.0",
 				"/usr/lib/libharfbuzz-subset.so.0",
-				"/usr/lib/libharfbuzz-subset.so.0.61040.0",
+				"/usr/lib/libharfbuzz-subset.so.0.61132.0",
 				"/usr/lib/libharfbuzz.so.0",
-				"/usr/lib/libharfbuzz.so.0.61040.0"
+				"/usr/lib/libharfbuzz.so.0.61132.0"
 			],
 			"name": "harfbuzz",
 			"provides": [
-				"soname(libharfbuzz-cairo.so.0(x86_64))",
 				"soname(libharfbuzz-gobject.so.0(x86_64))",
-				"soname(libharfbuzz-icu.so.0(x86_64))",
 				"soname(libharfbuzz-subset.so.0(x86_64))",
 				"soname(libharfbuzz.so.0(x86_64))"
+			]
+		},
+		"harfbuzz-cairo": {
+			"build-depends": [
+				"pkgconfig(cairo)",
+				"pkgconfig(freetype2)",
+				"pkgconfig(glib-2.0)",
+				"pkgconfig(gobject-2.0)",
+				"pkgconfig(gobject-introspection-1.0)",
+				"pkgconfig(graphite2)",
+				"pkgconfig(icu-uc)"
+			],
+			"depends": [
+				"soname(libc.so.6(x86_64))",
+				"soname(libcairo.so.2(x86_64))",
+				"soname(libharfbuzz.so.0(x86_64))",
+				"soname(libm.so.6(x86_64))"
+			],
+			"files": [
+				"/usr/lib/libharfbuzz-cairo.so.0",
+				"/usr/lib/libharfbuzz-cairo.so.0.61132.0"
+			],
+			"name": "harfbuzz-cairo",
+			"provides": [
+				"soname(libharfbuzz-cairo.so.0(x86_64))"
 			]
 		},
 		"harfbuzz-devel": {
@@ -56,6 +73,8 @@
 			],
 			"depends": [
 				"harfbuzz",
+				"harfbuzz-cairo",
+				"harfbuzz-icu",
 				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
 				"pkgconfig(cairo)",
 				"pkgconfig(freetype2)",
@@ -76,7 +95,6 @@
 			],
 			"files": [
 				"/usr/bin/hb-info",
-				"/usr/bin/hb-ot-shape-closure",
 				"/usr/bin/hb-shape",
 				"/usr/bin/hb-subset",
 				"/usr/bin/hb-view",
@@ -112,6 +130,7 @@
 				"/usr/include/harfbuzz/hb-ot-var.h",
 				"/usr/include/harfbuzz/hb-ot.h",
 				"/usr/include/harfbuzz/hb-paint.h",
+				"/usr/include/harfbuzz/hb-script-list.h",
 				"/usr/include/harfbuzz/hb-set.h",
 				"/usr/include/harfbuzz/hb-shape-plan.h",
 				"/usr/include/harfbuzz/hb-shape.h",
@@ -137,7 +156,6 @@
 			"name": "harfbuzz-devel",
 			"provides": [
 				"binary(hb-info)",
-				"binary(hb-ot-shape-closure)",
 				"binary(hb-shape)",
 				"binary(hb-subset)",
 				"binary(hb-view)",
@@ -148,9 +166,33 @@
 				"pkgconfig(harfbuzz-icu)",
 				"pkgconfig(harfbuzz-subset)"
 			]
+		},
+		"harfbuzz-icu": {
+			"build-depends": [
+				"pkgconfig(cairo)",
+				"pkgconfig(freetype2)",
+				"pkgconfig(glib-2.0)",
+				"pkgconfig(gobject-2.0)",
+				"pkgconfig(gobject-introspection-1.0)",
+				"pkgconfig(graphite2)",
+				"pkgconfig(icu-uc)"
+			],
+			"depends": [
+				"soname(libc.so.6(x86_64))",
+				"soname(libharfbuzz.so.0(x86_64))",
+				"soname(libicuuc.so.77(x86_64))"
+			],
+			"files": [
+				"/usr/lib/libharfbuzz-icu.so.0",
+				"/usr/lib/libharfbuzz-icu.so.0.61132.0"
+			],
+			"name": "harfbuzz-icu",
+			"provides": [
+				"soname(libharfbuzz-icu.so.0(x86_64))"
+			]
 		}
 	},
 	"source-name": "harfbuzz",
-	"source-release": "14",
-	"source-version": "10.4.0"
+	"source-release": "15",
+	"source-version": "11.3.2"
 }
