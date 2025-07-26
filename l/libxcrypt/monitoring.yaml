@@ -1,5 +1,5 @@
 releases:
   id: 16436
-  rss: ~
+  rss: https://github.com/besser82/libxcrypt/releases.atom
 security:
   cpe: ~ # No known CPE. Last checked 20230104

@@ -4,11 +4,14 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : libxcrypt
-version     : '4.4.36'
-release     : 7
+version     : '4.4.38'
+release     : 8
 homepage    : https://github.com/besser82/libxcrypt
 upstreams   :
-    - https://github.com/besser82/libxcrypt/releases/download/v4.4.36/libxcrypt-4.4.36.tar.xz : e5e1f4caee0a01de2aee26e3138807d6d3ca2b8e67287966d1fefd65e1fd8943
+    - https://github.com/besser82/libxcrypt/releases/download/v4.4.38/libxcrypt-4.4.38.tar.xz:
+        hash: 80304b9c306ea799327f01d9a7549bdb28317789182631f1b54f4511b4206dd6
+        unpack: false
+        rename: libxcrypt.tar.xz
 summary     : Extended crypt library
 description : |
     libxcrypt is a modern library for one-way hashing of passwords. It supports a wide variety of both modern and historical hashing methods: yescrypt, gost-yescrypt, scrypt, bcrypt, sha512crypt, sha256crypt, md5crypt, SunMD5, sha1crypt, NT, bsdicrypt, bigcrypt, and descrypt. It provides the traditional Unix crypt and crypt_r interfaces, as well as a set of extended interfaces pioneered by Openwall Linux, crypt_rn, crypt_ra, crypt_gensalt, crypt_gensalt_rn, and crypt_gensalt_ra.
@@ -19,8 +22,53 @@ builddeps   :
     - binary(perl)
 emul32      : yes
 setup       : |
-    %configure --disable-static
+    mkdir compat regular
+    bsdtar-static -xf %(sourcedir)/libxcrypt.tar.xz --strip-components=1 -C compat
+    bsdtar-static -xf %(sourcedir)/libxcrypt.tar.xz --strip-components=1 -C regular
+
+    # version script assignment of 'XCRYPT_2.0' to symbol 'crypt_gensalt_r' failed: symbol not defined
+    export LDFLAGS+=" -Wl,--undefined-version"
+
+    function xcrypt_configure() {
+        %configure \
+            --disable-failure-tokens \
+            --disable-static \
+            --enable-hashes=strong,glibc \
+            "$@"
+    }
+
+    pushd compat
+    xcrypt_configure \
+        --enable-obsolete-api=glibc
+    popd
+
+    pushd regular
+    xcrypt_configure \
+        --enable-obsolete-api=no
+    popd
 build       : |
-    %make
+    for i in compat regular; do
+        pushd ${i}
+        env CCACHE_BASEDIR="${PWD}" %make
+        popd
+    done
 install     : |
-    %make_install
+    for i in compat regular; do
+        pushd ${i}
+        %make_install
+        popd
+    done
+packages    :
+    # Note: There are no devel packages for this since this should only be needed for third-party
+    # binaries that we're not building ourselves.
+    - "%(name)-compat":
+        summary: Legacy glibc ABI for %(name)
+        description: Legacy glibc ABI for %(name)
+        paths:
+            - /usr/lib/libcrypt.so.1*
+
+    - "%(name)-compat-32bit":
+        summary: Legacy glibc ABI for %(name) - 32bit build
+        description: Legacy glibc ABI for %(name) - 32bit build
+        paths:
+            - /usr/lib32/libcrypt.so.1*
