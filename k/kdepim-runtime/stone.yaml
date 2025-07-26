@@ -1,0 +1,62 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : kdepim-runtime
+version     : 25.04.3
+release     : 1
+upstreams   :
+    - https://download.kde.org/stable/release-service/25.04.3/src/kdepim-runtime-25.04.3.tar.xz : 133dcf8c314c36ecc8b4775d9eb6d929bbbbd5355dddf29441abaf00fe9a1a89
+homepage    : https://community.kde.org/PIM
+license     : GPL-2.0-or-later
+summary     : Runtime components for Akonadi
+description : |
+    Contains the Akonadi resources from kdepim which can be used without the applications in kdepim.
+builddeps   :
+    # Temporary, boulder doesn't handle build ordering resolution correctly when builddeps are added by macros, so add ECM manually
+    - cmake(ECM)
+    - cmake(KF6CalendarCore)
+    - cmake(KF6Codecs)
+    - cmake(KF6Config)
+    - cmake(KF6ConfigWidgets)
+    - cmake(KF6Contacts)
+    - cmake(KF6DAV)
+    - cmake(KF6ItemModels)
+    - cmake(KF6KCMUtils)
+    - cmake(KF6KIO)
+    - cmake(KF6Notifications)
+    - cmake(KF6NotifyConfig)
+    - cmake(KF6TextCustomEditor)
+    - cmake(KF6Wallet)
+    - cmake(KF6WindowSystem)
+    - cmake(KPim6Akonadi)
+    - cmake(KPim6AkonadiCalendar)
+    - cmake(KPim6AkonadiContactWidgets)
+    - cmake(KPim6AkonadiMime)
+    - cmake(KPim6CalendarUtils)
+    - cmake(KPim6GAPI)
+    - cmake(KPim6IMAP)
+    - cmake(KPim6IdentityManagementWidgets)
+    - cmake(KPim6LdapWidgets)
+    - cmake(KPim6MailTransport)
+    - cmake(KPim6Mbox)
+    - cmake(KPim6Mime)
+    - cmake(KPim6PimCommonActivities)
+    - cmake(KPim6PimCommonAkonadi)
+    - cmake(PlasmaActivities)
+    - cmake(Qca-qt6)
+    - cmake(Qt6Keychain)
+    - cmake(Qt6NetworkAuth)
+    - cmake(Qt6TextToSpeech)
+    - cmake(Qt6WebEngineWidgets)
+    - pkgconfig(libsasl2)
+    # TODO:
+    # Libkolabxml
+    # Etebase
+setup       : |
+    %cmake_kf6
+build       : |
+    %cmake_build
+install     : |
+    %cmake_install
