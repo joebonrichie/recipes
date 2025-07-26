@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : freerdp
-version     : 3.15.0
-release     : 6
+version     : 3.16.0
+release     : 7
 homepage    : www.freerdp.com
 upstreams   :
-    - https://github.com/FreeRDP/FreeRDP/releases/download/3.15.0/freerdp-3.15.0.tar.gz : e8cd58decef4c970faea2fbea675970eea60e440ebe8033c54889acb83787371
+    - https://github.com/FreeRDP/FreeRDP/releases/download/3.16.0/freerdp-3.16.0.tar.gz : 385af54245560493698730b688b5e6e5d56d5c7ecf2fa7c1d7cedfde8a4ba456
 summary     : FreeRDP is a free remote desktop protocol library and clients  
 description : |
     FreeRDP is a free implementation of the Remote Desktop Protocol (RDP), released 
@@ -18,22 +18,23 @@ description : |
 license     :
     - Apache-2.0
 builddeps   :
-    - pkgconfig(SDL2_ttf)
     - pkgconfig(alsa)
     - pkgconfig(cairo)
     - pkgconfig(cups)
     - pkgconfig(fdk-aac)
     - pkgconfig(fuse3)
     - pkgconfig(json-c)
+    - pkgconfig(libavcodec)
+    - pkgconfig(libavutil)
     - pkgconfig(libcjson)
     - pkgconfig(libpulse)
+    - pkgconfig(libswscale)
     - pkgconfig(libsystemd)
     - pkgconfig(libusb-1.0)
     - pkgconfig(libxslt)
     - pkgconfig(mit-krb5)
     - pkgconfig(openssl)
-    - pkgconfig(opus)
-    - pkgconfig(sdl2-compat)
+    - pkgconfig(sdl3-ttf)
     - pkgconfig(wayland-scanner)
     - pkgconfig(x11)
     - pkgconfig(xcursor)
@@ -49,15 +50,50 @@ setup       : |
     %cmake \
       -DCMAKE_SKIP_INSTALL_RPATH=ON \
       -DWITH_CAIRO=ON \
+      -DWITH_DSP_FFMPEG=ON \
       -DWITH_FDK_AAC=ON \
-      -DWITH_FFMPEG=OFF \
+      -DWITH_FFMPEG=ON \
       -DWITH_INTERNAL_RC4=ON \
+      -DWITH_MANPAGES=ON \
       -DWITH_PCSC=OFF \
-      -DWITH_MANPAGES=OFF \
+      -DWITH_PULSE=ON \
       -DWITH_SERVER=ON \
-      -DWITH_SWSCALE=OFF \
-      -DWITH_WEBVIEW=OFF
+      -DWITH_SWSCALE=ON \
+      -DWITH_WAYLAND=ON
 build       : |
     %cmake_build
 install     : |
     %cmake_install
+packages    :
+    - "%(name)-libs":
+        summary: Core libraries implementing the RDP protocol
+        description: Core libraries implementing the RDP protocol
+        paths:
+            - /usr/lib/freerdp3/
+            - /usr/lib/libfreerdp3.so.*
+            - /usr/lib/libfreerdp-client3.so.*
+            - /usr/lib/libfreerdp-server3.so.*
+            - /usr/lib/libfreerdp-shadow3.so.*
+            - /usr/lib/libfreerdp-server-proxy3.so.*
+            - /usr/lib/libfreerdp-shadow-subsystem3.so.*
+            - /usr/lib/librdtk0.so.*
+            - /usr/lib/libuwac0.so.*
+            - /usr/share/FreeRDP/
+            - /usr/share/man/man7/wlog.7*
+
+    - "libwinpr":
+        summary: Windows Portable Runtime
+        description: Windows Portable Runtime
+        paths:
+            - /usr/lib/libwinpr3.so.*
+            - /usr/lib/libwinpr-tools3.so.*
+
+    - "libwinpr-devel":
+        rundeps:
+            - libwinpr
+        paths:
+            - /usr/include/winpr3/
+            - /usr/lib/cmake/WinPR*/
+            - /usr/lib/pkgconfig/winpr*.pc
+            - /usr/lib/libwinpr3.so
+            - /usr/lib/libwinpr-tools3.so
