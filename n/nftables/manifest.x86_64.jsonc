@@ -25,7 +25,7 @@
 				"/usr/lib/libnftables.so.1",
 				"/usr/lib/libnftables.so.1.1.0",
 				"/usr/sbin/nft",
-				"/usr/share/defaults/etc/nftables/osf/pf.os",
+				"/usr/share/defaults/nftables/osf/pf.os",
 				"/usr/share/man/man5/libnftables-json.5",
 				"/usr/share/man/man8/nft.8",
 				"/usr/share/nftables/all-in-one.nft",
@@ -126,6 +126,6 @@
 		}
 	},
 	"source-name": "nftables",
-	"source-release": "6",
-	"source-version": "1.1.1"
+	"source-release": "7",
+	"source-version": "1.1.3"
 }
