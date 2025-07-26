@@ -5,7 +5,7 @@
 #
 name        : kinfocenter
 version     : 6.4.3
-release     : 3
+release     : 4
 upstreams   :
     - https://download.kde.org/stable/plasma/6.4.3/kinfocenter-6.4.3.tar.xz : 4d5f499470772a74b4f229f676feb7aefd12ec2b2d36458b8483d8dca3a48a79
 homepage    : https://kde.org/plasma-desktop/
@@ -17,6 +17,7 @@ summary     : KDE Info Center
 description : |
     KDE Info Center
 builddeps   :
+    - binary(clinfo)
     - binary(di-edid-decode)
     - binary(eglinfo)
     - binary(glxinfo)
@@ -24,6 +25,7 @@ builddeps   :
     - binary(pactl)
     - binary(sensors)
     - binary(vulkaninfo)
+    - binary(wayland-info)
     # Temporary, boulder doesn't handle build ordering resolution correctly when builddeps are added by macros, so add ECM manually
     - cmake(ECM)
     - cmake(KF6Auth)
@@ -43,8 +45,9 @@ builddeps   :
     - pkgconfig(udev)
     - sysbinary(ip)
     - sysbinary(dmidecode)
-    # TODO: wayland-info, xdpyinfo(?), fwupdmgr, aha, clinfo
+    # TODO: xdpyinfo(?), fwupdmgr, aha
 rundeps     :
+    - binary(clinfo)
     - binary(di-edid-decode)
     - binary(eglinfo)
     - binary(glxinfo)
@@ -52,6 +55,7 @@ rundeps     :
     - binary(pactl)
     - binary(sensors)
     - binary(vulkaninfo)
+    - binary(wayland-info)
     - sysbinary(dmidecode)
     - sysbinary(ip)
     - kf6-kirigami

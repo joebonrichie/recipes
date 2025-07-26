@@ -4,6 +4,7 @@
 	"packages": {
 		"kinfocenter": {
 			"build-depends": [
+				"binary(clinfo)",
 				"binary(di-edid-decode)",
 				"binary(eglinfo)",
 				"binary(glxinfo)",
@@ -11,6 +12,7 @@
 				"binary(pactl)",
 				"binary(sensors)",
 				"binary(vulkaninfo)",
+				"binary(wayland-info)",
 				"cmake(ECM)",
 				"cmake(KF6Auth)",
 				"cmake(KF6Config)",
@@ -31,6 +33,7 @@
 				"sysbinary(ip)"
 			],
 			"depends": [
+				"binary(clinfo)",
 				"binary(di-edid-decode)",
 				"binary(eglinfo)",
 				"binary(glxinfo)",
@@ -38,6 +41,7 @@
 				"binary(pactl)",
 				"binary(sensors)",
 				"binary(vulkaninfo)",
+				"binary(wayland-info)",
 				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
 				"kf6-kirigami",
 				"soname(libKF6AuthCore.so.6(x86_64))",
@@ -477,6 +481,7 @@
 		},
 		"kinfocenter-docs": {
 			"build-depends": [
+				"binary(clinfo)",
 				"binary(di-edid-decode)",
 				"binary(eglinfo)",
 				"binary(glxinfo)",
@@ -484,6 +489,7 @@
 				"binary(pactl)",
 				"binary(sensors)",
 				"binary(vulkaninfo)",
+				"binary(wayland-info)",
 				"cmake(ECM)",
 				"cmake(KF6Auth)",
 				"cmake(KF6Config)",
@@ -546,6 +552,6 @@
 		}
 	},
 	"source-name": "kinfocenter",
-	"source-release": "3",
+	"source-release": "4",
 	"source-version": "6.4.3"
 }
