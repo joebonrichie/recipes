@@ -14,9 +14,9 @@
 			],
 			"files": [
 				"/usr/lib/libcap.so.2",
-				"/usr/lib/libcap.so.2.71",
+				"/usr/lib/libcap.so.2.76",
 				"/usr/lib/libpsx.so.2",
-				"/usr/lib/libpsx.so.2.71",
+				"/usr/lib/libpsx.so.2.76",
 				"/usr/lib/security/pam_cap.so",
 				"/usr/sbin/capsh",
 				"/usr/sbin/getcap",
@@ -24,6 +24,7 @@
 				"/usr/sbin/setcap",
 				"/usr/share/man/man1/capsh.1",
 				"/usr/share/man/man5/capability.conf.5",
+				"/usr/share/man/man7/cap_text_formats.7",
 				"/usr/share/man/man8/captree.8",
 				"/usr/share/man/man8/getcap.8",
 				"/usr/share/man/man8/getpcaps.8",
@@ -54,9 +55,9 @@
 			],
 			"files": [
 				"/usr/lib32/libcap.so.2",
-				"/usr/lib32/libcap.so.2.71",
+				"/usr/lib32/libcap.so.2.76",
 				"/usr/lib32/libpsx.so.2",
-				"/usr/lib32/libpsx.so.2.71",
+				"/usr/lib32/libpsx.so.2.76",
 				"/usr/lib32/security/pam_cap.so"
 			],
 			"name": "libcap-32bit",
@@ -184,6 +185,6 @@
 		}
 	},
 	"source-name": "libcap",
-	"source-release": "8",
-	"source-version": "2.71"
+	"source-release": "9",
+	"source-version": "2.76"
 }
