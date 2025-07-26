@@ -4,9 +4,11 @@
 	"packages": {
 		"libnvme": {
 			"build-depends": [
+				"binary(swig)",
 				"pkgconfig(json-c)",
 				"pkgconfig(libkeyutils)",
-				"pkgconfig(openssl)"
+				"pkgconfig(openssl)",
+				"pkgconfig(python3)"
 			],
 			"depends": [
 				"soname(libc.so.6(x86_64))",
@@ -16,9 +18,9 @@
 			],
 			"files": [
 				"/usr/lib/libnvme-mi.so.1",
-				"/usr/lib/libnvme-mi.so.1.11.1",
+				"/usr/lib/libnvme-mi.so.1.15.0",
 				"/usr/lib/libnvme.so.1",
-				"/usr/lib/libnvme.so.1.11.1"
+				"/usr/lib/libnvme.so.1.15.0"
 			],
 			"name": "libnvme",
 			"provides": [
@@ -28,9 +30,11 @@
 		},
 		"libnvme-devel": {
 			"build-depends": [
+				"binary(swig)",
 				"pkgconfig(json-c)",
 				"pkgconfig(libkeyutils)",
-				"pkgconfig(openssl)"
+				"pkgconfig(openssl)",
+				"pkgconfig(python3)"
 			],
 			"depends": [
 				"libnvme",
@@ -62,9 +66,34 @@
 				"pkgconfig(libnvme)",
 				"pkgconfig(libnvme-mi)"
 			]
+		},
+		"python-libnvme": {
+			"build-depends": [
+				"binary(swig)",
+				"pkgconfig(json-c)",
+				"pkgconfig(libkeyutils)",
+				"pkgconfig(openssl)",
+				"pkgconfig(python3)"
+			],
+			"depends": [
+				"libnvme",
+				"soname(libc.so.6(x86_64))",
+				"soname(libnvme.so.1(x86_64))"
+			],
+			"files": [
+				"/usr/lib/python3.11/site-packages/libnvme/__init__.py",
+				"/usr/lib/python3.11/site-packages/libnvme/__pycache__/__init__.cpython-311.pyc",
+				"/usr/lib/python3.11/site-packages/libnvme/__pycache__/nvme.cpython-311.pyc",
+				"/usr/lib/python3.11/site-packages/libnvme/_nvme.cpython-311-x86_64-linux-gnu.so",
+				"/usr/lib/python3.11/site-packages/libnvme/nvme.py"
+			],
+			"name": "python-libnvme",
+			"provides": [
+				"soname(python3.11/site-packages/libnvme/_nvme.cpython-311-x86_64-linux-gnu.so(x86_64))"
+			]
 		}
 	},
 	"source-name": "libnvme",
-	"source-release": "3",
-	"source-version": "1.11.1"
+	"source-release": "4",
+	"source-version": "1.15"
 }
