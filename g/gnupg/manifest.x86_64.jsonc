@@ -15,6 +15,7 @@
 				"pkgconfig(npth)",
 				"pkgconfig(readline)",
 				"pkgconfig(sqlite3)",
+				"pkgconfig(tss2-esys)",
 				"pkgconfig(zlib)"
 			],
 			"depends": [
@@ -32,6 +33,9 @@
 				"soname(libnpth.so.0(x86_64))",
 				"soname(libreadline.so.8(x86_64))",
 				"soname(libsqlite3.so.0(x86_64))",
+				"soname(libtss2-esys.so.0(x86_64))",
+				"soname(libtss2-mu.so.0(x86_64))",
+				"soname(libtss2-rc.so.0(x86_64))",
 				"soname(libz.so.1(x86_64))"
 			],
 			"files": [
@@ -64,6 +68,7 @@
 				"/usr/lib/gnupg/gpg-wks-client",
 				"/usr/lib/gnupg/keyboxd",
 				"/usr/lib/gnupg/scdaemon",
+				"/usr/lib/gnupg/tpm2daemon",
 				"/usr/sbin/addgnupghome",
 				"/usr/sbin/applygnupgdefaults",
 				"/usr/share/doc/gnupg/DCO",
@@ -165,8 +170,7 @@
 				"/usr/share/man/man7/gnupg.7",
 				"/usr/share/man/man8/addgnupghome.8",
 				"/usr/share/man/man8/applygnupgdefaults.8",
-				"/usr/share/man/man8/dirmngr.8",
-				"/usr/share/man/manh/gnupg.7.html"
+				"/usr/share/man/man8/dirmngr.8"
 			],
 			"name": "gnupg",
 			"provides": [
@@ -196,6 +200,6 @@
 		}
 	},
 	"source-name": "gnupg",
-	"source-release": "8",
-	"source-version": "2.4.7"
+	"source-release": "9",
+	"source-version": "2.4.8"
 }
