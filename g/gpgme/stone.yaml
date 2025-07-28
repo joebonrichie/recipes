@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : gpgme
-version     : 1.24.2
-release     : 5
+version     : 2.0.0
+release     : 6
 homepage    : https://gnupg.org/software/gpgme/index.html
 upstreams   :
-    - https://www.gnupg.org/ftp/gcrypt/gpgme/gpgme-1.24.2.tar.bz2 : e11b1a0e361777e9e55f48a03d89096e2abf08c63d84b7017cfe1dce06639581
+    - https://www.gnupg.org/ftp/gcrypt/gpgme/gpgme-2.0.0.tar.bz2 : ddf161d3c41ff6a3fcbaf4be6c6e305ca4ef1cc3f1ecdfce0c8c2a167c0cc36d
 summary     : Library to provide easy access to GnuPG
 description : |
     GnuPG Made Easy (GPGME) is a library designed to make access to GnuPG easier
@@ -18,39 +18,46 @@ license     :
     - GPL-2.0-or-later
     - LGPL-2.1-or-later
 builddeps   :
-    - binary(doxygen)
     - binary(gpg)
-    - binary(swig)
-    - pkgconfig(Qt6Core)
+    - binary(gpgconf)
     - pkgconfig(gpg-error)
     - pkgconfig(libassuan)
-    - pkgconfig(python3)
 rundeps     :
     - binary(gpg)
 setup       : |
     export LDFLAGS="${LDFLAGS} -lassuan"
 
-    # TODO: Enable python support
-    %configure --disable-static \
-               --enable-languages=cpp,qt6
+    %configure \
+        --disable-static
 build       : |
     %make
 install     : |
     %make_install
+
+    # We don't support this
+    rm -rfv %(installroot)/usr/share/common-lisp/
+
+    for i in %(name)-qt6 %(name)-qt6-devel; do
+        %install_dir %(installroot)%(docdir)/${i}
+        echo "DEPRECATED" > %(installroot)%(docdir)/${i}/README
+    done
 packages    :
+    - "%(name)-devel":
+        paths:
+            - /usr/bin/gpgme-tool
+            - /usr/share/info/gpgme.info*
+
     - "%(name)-qt6":
         summary: Library to provide easy access to GnuPG - Qt6 bindings
         description: Library to provide easy access to GnuPG - Qt6 bindings
         paths:
-            - /usr/lib/libqgpgmeqt6.so.*
+            - /usr/share/doc/gpgme-qt6/
 
     - "%(name)-qt6-devel":
         summary: Development files for %(name)-qt6
         description: Development files for %(name)-qt6
         paths:
-            - /usr/include/qgpgme-qt6
-            - /usr/lib/cmake/QGpgmeQt6
-            - /usr/lib/libqgpgmeqt6.so
+            - /usr/share/doc/gpgme-qt6-devel/
         rundeps:
             - "%(name)-qt6"
             - "%(name)-devel"
