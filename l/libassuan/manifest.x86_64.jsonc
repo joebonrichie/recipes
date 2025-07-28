@@ -12,7 +12,7 @@
 			],
 			"files": [
 				"/usr/lib/libassuan.so.9",
-				"/usr/lib/libassuan.so.9.0.1",
+				"/usr/lib/libassuan.so.9.0.2",
 				"/usr/share/info/assuan.info"
 			],
 			"name": "libassuan",
@@ -41,6 +41,6 @@
 		}
 	},
 	"source-name": "libassuan",
-	"source-release": "3",
-	"source-version": "3.0.1"
+	"source-release": "4",
+	"source-version": "3.0.2"
 }
