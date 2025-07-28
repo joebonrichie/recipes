@@ -5,7 +5,7 @@
 #
 name        : kf6-kwallet
 version     : 6.16.0
-release     : 7
+release     : 8
 upstreams   :
     - https://download.kde.org/stable/frameworks/6.16/kwallet-6.16.0.tar.xz : d8dd330d2c4643d335050c1709252294108a75ab77cdb672b56f40bca6854eed
 homepage    : https://community.kde.org/Frameworks
