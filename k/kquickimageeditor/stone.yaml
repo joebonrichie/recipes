@@ -1,0 +1,29 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : kquickimageeditor
+version     : 0.5.1
+release     : 1
+upstreams   :
+    - https://download.kde.org/stable/kquickimageeditor/kquickimageeditor-0.5.1.tar.xz : f08271f368ead077fa3ed95c32446dd873f8b371d9756aefb757bea323339b29
+homepage    : https://invent.kde.org/libraries/kquickimageeditor
+license     :
+    - BSD-2-Clause
+    - CC0-1.0
+    - LGPL-2.1-or-later
+summary     : KQuickImageEditor is a set of QtQuick components providing basic image editing capabilities.
+description : |
+    KQuickImageEditor is a set of QtQuick components providing basic image editing capabilities.
+builddeps   :
+    - cmake(ECM)
+    - cmake(Qt6CorePrivate)
+    - cmake(Qt6Qml)
+setup       : |
+    %cmake
+build       : |
+    %cmake_build
+install     : |
+    %cmake_install
+    %qml_cache_qt6
