@@ -20,10 +20,6 @@
 				"soname(libmnl.so.0(x86_64))"
 			],
 			"files": [
-				"/usr/lib/tc/experimental.dist",
-				"/usr/lib/tc/normal.dist",
-				"/usr/lib/tc/pareto.dist",
-				"/usr/lib/tc/paretonormal.dist",
 				"/usr/lib/tmpfiles.d/iproute2.conf",
 				"/usr/sbin/bridge",
 				"/usr/sbin/ctstat",
@@ -188,7 +184,11 @@
 				"/usr/share/man/man8/tipc.8",
 				"/usr/share/man/man8/vdpa-dev.8",
 				"/usr/share/man/man8/vdpa-mgmtdev.8",
-				"/usr/share/man/man8/vdpa.8"
+				"/usr/share/man/man8/vdpa.8",
+				"/usr/share/tc/experimental.dist",
+				"/usr/share/tc/normal.dist",
+				"/usr/share/tc/pareto.dist",
+				"/usr/share/tc/paretonormal.dist"
 			],
 			"name": "iproute2",
 			"provides": [
@@ -231,6 +231,6 @@
 		}
 	},
 	"source-name": "iproute2",
-	"source-release": "6",
+	"source-release": "7",
 	"source-version": "6.15.0"
 }
