@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : keepassxc
-version     : 2.7.9
-release     : 2
+version     : 2.7.10
+release     : 3
 homepage    : https://keepassxc.org/
 upstreams   :
-    - https://github.com/keepassxreboot/keepassxc/archive/refs/tags/2.7.9.tar.gz : 129dca68ef5a4744ff7fb8eb117c4b39bbaf32b9c87d18ecc494b548c5f64858
+    - https://github.com/keepassxreboot/keepassxc/archive/refs/tags/2.7.10.tar.gz : f400ac149b3770269e18d421c39f957afa4229cfff227ff7855d24952ba6739f
 summary     : Cross-platform community-driven port of Keepass password manager
 description : |
     Cross-platform community-driven port of Keepass password manager
@@ -43,4 +43,3 @@ build       : |
     %cmake_build
 install     : |
     %cmake_install
-
