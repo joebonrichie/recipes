@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : libseccomp
-version     : 2.5.5
-release     : 5
+version     : 2.6.0
+release     : 6
 homepage    : https://github.com/seccomp/libseccomp
 upstreams   :
-    - https://github.com/seccomp/libseccomp/releases/download/v2.5.5/libseccomp-2.5.5.tar.gz : 248a2c8a4d9b9858aa6baf52712c34afefcf9c9e94b76dce02c1c9aa25fb3375
+    - https://github.com/seccomp/libseccomp/releases/download/v2.6.0/libseccomp-2.6.0.tar.gz : 83b6085232d1588c379dc9b9cae47bb37407cf262e6e74993c61ba72d2a784dc
 summary     : High level interface to the Linux Kernel's seccomp filter
 description : |
     The libseccomp library provides an easy to use, platform independent, interface to the Linux Kernel's syscall filtering mechanism: seccomp. The libseccomp API is designed to abstract away the underlying BPF based syscall filter language and present a more conventional function-call based filtering interface that should be familiar to, and easily adopted by application developers.
@@ -20,7 +20,8 @@ checkdeps   :
     - pkgconfig(valgrind)
 emul32      : true
 setup       : |
-    %configure --disable-static
+    %configure \
+        --disable-static
 build       : |
     %make
 install     : |
@@ -28,3 +29,8 @@ install     : |
 check       : |
     # bpf_sim tests failing
     %make check || :
+packages    :
+    - "%(name)-devel":
+        paths:
+        - /usr/bin/scmp_sys_resolver
+        - /usr/share/man/man1/scmp_sys_resolver*
