@@ -5,7 +5,7 @@
 #
 name        : akonadi-calendar
 version     : 25.04.3
-release     : 1
+release     : 2
 upstreams   :
     - https://download.kde.org/stable/release-service/25.04.3/src/akonadi-calendar-25.04.3.tar.xz : 9433cec8f629f5dd1aadb7af39d4b62d6047624b1d1be5282eef5e460f486e5c
 homepage    : https://kde.org
