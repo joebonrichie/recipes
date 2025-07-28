@@ -1,0 +1,22 @@
+/** Human readable report. This is not consumed by boulder */
+{
+	"manifest-version": "0.2",
+	"packages": {
+		"linux-pam": {
+			"files": [
+				"/usr/share/defaults/environment.d/XDG_CONFIG_DIRS.conf",
+				"/usr/share/defaults/pam.d/other",
+				"/usr/share/defaults/pam.d/system-auth",
+				"/usr/share/defaults/pam.d/system-local-login",
+				"/usr/share/defaults/pam.d/system-login",
+				"/usr/share/defaults/pam.d/system-remote-login",
+				"/usr/share/defaults/pam.d/system-services",
+				"/usr/share/defaults/shells"
+			],
+			"name": "linux-pam"
+		}
+	},
+	"source-name": "linux-pam",
+	"source-release": "1",
+	"source-version": "20250728"
+}

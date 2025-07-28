@@ -1,0 +1,21 @@
+#
+# SPDX-FileCopyrightText: © 2020-2024 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : linux-pam
+version     : "20250728"
+release     : 1
+summary     : Base PAM configuration for services
+license     : MPL-2.0
+homepage    : http://www.linux-pam.org/
+description : |
+    Base PAM configuration for services
+# upstreams   :
+#     - https://github.com/linux-pam/linux-pam/releases/download/v1.7.1/Linux-PAM-1.7.1.tar.xz: 21dbcec6e01dd578f14789eac9024a18941e6f2702a05cf91b28c232eeb26ab0
+install     : |
+    %install_file %(pkgdir)/pam.d/* -t %(installroot)/%(vendordir)/pam.d
+    %install_file %(pkgdir)/conf/shells -t %(installroot)/%(vendordir)/.
+
+    # Ensure that this environmental variable is always set
+    %install_file %(pkgdir)/conf/XDG_CONFIG_DIRS.environment %(installroot)/usr/share/defaults/environment.d/XDG_CONFIG_DIRS.conf
