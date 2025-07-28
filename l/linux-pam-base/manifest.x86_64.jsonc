@@ -2,7 +2,7 @@
 {
 	"manifest-version": "0.2",
 	"packages": {
-		"linux-pam": {
+		"linux-pam-base": {
 			"files": [
 				"/usr/share/defaults/environment.d/XDG_CONFIG_DIRS.conf",
 				"/usr/share/defaults/pam.d/other",
@@ -13,10 +13,10 @@
 				"/usr/share/defaults/pam.d/system-services",
 				"/usr/share/defaults/shells"
 			],
-			"name": "linux-pam"
+			"name": "linux-pam-base"
 		}
 	},
-	"source-name": "linux-pam",
+	"source-name": "linux-pam-base",
 	"source-release": "1",
 	"source-version": "20250728"
 }

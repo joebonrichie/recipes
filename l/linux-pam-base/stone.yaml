@@ -3,7 +3,7 @@
 #
 # SPDX-License-Identifier: MPL-2.0
 #
-name        : linux-pam
+name        : linux-pam-base
 version     : "20250728"
 release     : 1
 summary     : Base PAM configuration for services
