@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : libostree
-version     : 2025.2
-release     : 11
+version     : "2025.4"
+release     : 12
 homepage    : https://ostreedev.github.io/ostree/
 upstreams   :
-    - https://github.com/ostreedev/ostree/releases/download/v2025.2/libostree-2025.2.tar.xz : f244a408c909998a778e127fcc22c1b502b4d013f15f26948f47cc72ffe2eef4
+    - https://github.com/ostreedev/ostree/releases/download/v2025.4/libostree-2025.4.tar.xz : 014d12d19ea664fae53fe147d3d2c0b7465a3c37e099c87d289df908adeb5669
 summary     : Operating system and container binary deployment and upgrades
 description : |
     The core OSTree model is like git in that it checksums individual files and has a content-addressed-object store. It's unlike git in that it "checks out" the files via hardlinks, and they thus need to be immutable to prevent corruption. Therefore, another way to think of OSTree is that it's just a more polished version of Linux VServer hardlinks.
@@ -47,8 +47,9 @@ environment : |
 setup       : |
     %patch %(pkgdir)/remove-gcc-override.patch
 
-    %configure --with-curl \
-               --with-crypto=openssl
+    %configure \
+        --with-curl \
+        --with-crypto=openssl
 build       : |
     %make
 install     : |
@@ -56,3 +57,13 @@ install     : |
     # we're not an ostree distribution
     rm -rf %(installroot)%(libdir)/systemd/
     rm -rf %(installroot)%(libdir)/tmpfiles.d
+
+    # We don't support grub
+    rm -rfv %(installroot)%(libdir)/libostree/libostree/grub2-15_ostree
+    rmdir -v %(installroot)%(libdir)/libostree/libostree/ \
+             %(installroot)%(libdir)/libostree/
+packages    :
+    - "%(name)-libs":
+        paths:
+            - /usr/lib/libostree-1.so.*
+            - /usr/lib/girepository-1.0/OSTree-1.0.typelib

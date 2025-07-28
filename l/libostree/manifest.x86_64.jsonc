@@ -25,26 +25,16 @@
 				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
 				"soname(libarchive.so.13(x86_64))",
 				"soname(libc.so.6(x86_64))",
-				"soname(libcrypto.so.3(x86_64))",
-				"soname(libcurl.so.4(x86_64))",
 				"soname(libfuse3.so.4(x86_64))",
 				"soname(libgio-2.0.so.0(x86_64))",
 				"soname(libglib-2.0.so.0(x86_64))",
 				"soname(libgobject-2.0.so.0(x86_64))",
-				"soname(libgpg-error.so.0(x86_64))",
-				"soname(libgpgme.so.11(x86_64))",
-				"soname(liblzma.so.5(x86_64))",
-				"soname(libmount.so.1(x86_64))",
-				"soname(libsystemd.so.0(x86_64))",
-				"soname(libz.so.1(x86_64))"
+				"soname(libostree-1.so.1(x86_64))",
+				"soname(libsystemd.so.0(x86_64))"
 			],
 			"files": [
 				"/usr/bin/ostree",
 				"/usr/bin/rofiles-fuse",
-				"/usr/lib/girepository-1.0/OSTree-1.0.typelib",
-				"/usr/lib/libostree-1.so.1",
-				"/usr/lib/libostree-1.so.1.0.0",
-				"/usr/lib/libostree/libostree/grub2-15_ostree",
 				"/usr/lib/ostree/ostree-prepare-root",
 				"/usr/lib/ostree/ostree-remount",
 				"/usr/share/bash-completion/completions/ostree",
@@ -57,6 +47,7 @@
 				"/usr/share/man/man1/ostree-admin-os-init.1",
 				"/usr/share/man/man1/ostree-admin-pin.1",
 				"/usr/share/man/man1/ostree-admin-post-copy.1",
+				"/usr/share/man/man1/ostree-admin-prepare-soft-reboot.1",
 				"/usr/share/man/man1/ostree-admin-set-default.1",
 				"/usr/share/man/man1/ostree-admin-set-origin.1",
 				"/usr/share/man/man1/ostree-admin-stateroot-init.1",
@@ -102,8 +93,7 @@
 			"name": "libostree",
 			"provides": [
 				"binary(ostree)",
-				"binary(rofiles-fuse)",
-				"soname(libostree-1.so.1(x86_64))"
+				"binary(rofiles-fuse)"
 			]
 		},
 		"libostree-devel": {
@@ -177,9 +167,53 @@
 			"provides": [
 				"pkgconfig(ostree-1)"
 			]
+		},
+		"libostree-libs": {
+			"build-depends": [
+				"binary(bison)",
+				"binary(python)",
+				"binary(xsltproc)",
+				"docbook",
+				"docbook-xsl",
+				"pkgconfig(e2p)",
+				"pkgconfig(fuse3)",
+				"pkgconfig(glib-2.0)",
+				"pkgconfig(gobject-introspection-1.0)",
+				"pkgconfig(gpgme-glib)",
+				"pkgconfig(libarchive)",
+				"pkgconfig(libcurl)",
+				"pkgconfig(liblzma)",
+				"pkgconfig(libsoup-3.0)",
+				"pkgconfig(libsystemd)",
+				"pkgconfig(openssl)"
+			],
+			"depends": [
+				"soname(libarchive.so.13(x86_64))",
+				"soname(libc.so.6(x86_64))",
+				"soname(libcrypto.so.3(x86_64))",
+				"soname(libcurl.so.4(x86_64))",
+				"soname(libgio-2.0.so.0(x86_64))",
+				"soname(libglib-2.0.so.0(x86_64))",
+				"soname(libgobject-2.0.so.0(x86_64))",
+				"soname(libgpg-error.so.0(x86_64))",
+				"soname(libgpgme.so.45(x86_64))",
+				"soname(liblzma.so.5(x86_64))",
+				"soname(libmount.so.1(x86_64))",
+				"soname(libsystemd.so.0(x86_64))",
+				"soname(libz.so.1(x86_64))"
+			],
+			"files": [
+				"/usr/lib/girepository-1.0/OSTree-1.0.typelib",
+				"/usr/lib/libostree-1.so.1",
+				"/usr/lib/libostree-1.so.1.0.0"
+			],
+			"name": "libostree-libs",
+			"provides": [
+				"soname(libostree-1.so.1(x86_64))"
+			]
 		}
 	},
 	"source-name": "libostree",
-	"source-release": "11",
-	"source-version": "2025.2"
+	"source-release": "12",
+	"source-version": "2025.4"
 }
