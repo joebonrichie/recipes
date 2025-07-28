@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : lmdb
-version     : 0.9.31
-release     : 12
+version     : 0.9.33
+release     : 13
 homepage    : https://www.symas.com/lmdb
 upstreams   :
-    - https://github.com/LMDB/lmdb/archive/refs/tags/LMDB_0.9.31.tar.gz : dd70a8c67807b3b8532b3e987b0a4e998962ecc28643e1af5ec77696b081c9b0
+    - https://git.openldap.org/openldap/openldap/-/archive/LMDB_0.9.33/openldap-LMDB_0.9.33.tar.gz : 476801f5239c88c7de61c3390502a5d13965ecedef80105b5fb0fcb8373d1e53
 summary     : Symas Lightning Memory-Mapped Database
 description : |
     Symas Lightning Memory-Mapped Database
@@ -32,3 +32,7 @@ check       : |
 tuning      :
     - lto
     - optimize: speed
+packages    :
+    - "%(name)-libs":
+        paths:
+            - /usr/lib/liblmdb.so.*
