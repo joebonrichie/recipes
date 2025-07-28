@@ -5,7 +5,7 @@
 #
 name        : messagelib
 version     : 25.04.3
-release     : 4
+release     : 5
 upstreams   :
     - https://download.kde.org/stable/release-service/25.04.3/src/messagelib-25.04.3.tar.xz : 87048febcbad9827b8ec1d894aa73996d5c48d7840273a04dafb7de00991c0eb
 homepage    : https://kde.org
