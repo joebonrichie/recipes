@@ -16,7 +16,7 @@
 			],
 			"depends": [
 				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
-				"linux-pam-libs",
+				"linux-pam-base",
 				"soname(ld-linux-x86-64.so.2(x86_64))",
 				"soname(libc.so.6(x86_64))",
 				"soname(libcrypt.so.2(x86_64))",
@@ -75,13 +75,6 @@
 				"/usr/sbin/pwhistory_helper",
 				"/usr/sbin/unix_chkpwd",
 				"/usr/share/defaults/environment",
-				"/usr/share/defaults/environment.d/XDG_CONFIG_DIRS.conf",
-				"/usr/share/defaults/pam.d/other",
-				"/usr/share/defaults/pam.d/system-auth",
-				"/usr/share/defaults/pam.d/system-local-login",
-				"/usr/share/defaults/pam.d/system-login",
-				"/usr/share/defaults/pam.d/system-remote-login",
-				"/usr/share/defaults/pam.d/system-services",
 				"/usr/share/defaults/security/access.conf",
 				"/usr/share/defaults/security/faillock.conf",
 				"/usr/share/defaults/security/group.conf",
@@ -91,7 +84,6 @@
 				"/usr/share/defaults/security/pam_env.conf",
 				"/usr/share/defaults/security/pwhistory.conf",
 				"/usr/share/defaults/security/time.conf",
-				"/usr/share/defaults/shells",
 				"/usr/share/locale/af/LC_MESSAGES/Linux-PAM.mo",
 				"/usr/share/locale/am/LC_MESSAGES/Linux-PAM.mo",
 				"/usr/share/locale/ar/LC_MESSAGES/Linux-PAM.mo",
@@ -584,6 +576,6 @@
 		}
 	},
 	"source-name": "linux-pam",
-	"source-release": "17",
+	"source-release": "18",
 	"source-version": "1.7.1"
 }

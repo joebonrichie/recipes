@@ -5,7 +5,7 @@
 #
 name        : linux-pam
 version     : 1.7.1
-release     : 17
+release     : 18
 summary     : Pluggable Authentication Modules
 license     :
     - BSD-3-Clause
@@ -47,12 +47,6 @@ build       : |
 install     : |
     %meson_install
 
-    %install_file %(pkgdir)/pam.d/* -t %(installroot)/%(vendordir)/pam.d
-    %install_file %(pkgdir)/conf/shells -t %(installroot)/%(vendordir)/.
-
-    # Ensure that this environmental variable is always set
-    %install_file %(pkgdir)/conf/XDG_CONFIG_DIRS.environment %(installroot)/usr/share/defaults/environment.d/XDG_CONFIG_DIRS.conf
-
     %tmpfiles "# Create run/faillock directory"
     %tmpfiles "d /run/faillock 0755 root root -"
 
@@ -70,7 +64,6 @@ packages    :
         paths:
             - /usr/lib/lib*.so.*
 
-    # Moss upgrade issue
     - "%(name)":
         rundeps:
-            - "%(name)-libs"
+            - linux-pam-base
