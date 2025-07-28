@@ -4,17 +4,20 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : libexif
-version     : 0.6.24
-release     : 3
+version     : 0.6.25
+release     : 4
 homepage    : https://libexif.github.io/
 upstreams   :
-    - https://github.com/libexif/libexif/releases/download/v0.6.24/libexif-0.6.24.tar.bz2 : d47564c433b733d83b6704c70477e0a4067811d184ec565258ac563d8223f6ae
+    - https://github.com/libexif/libexif/releases/download/v0.6.25/libexif-0.6.25.tar.bz2 : 7c9eba99aed3e6594d8c3e85861f1c6aaf450c218621528bc989d3b3e7a26307
 summary     : Library for parsing EXIF data
 description : |
     libexif is a library for parsing, editing, and saving EXIF data.
 license     : LGPL-2.1-or-later
+builddeps   :
+    - binary(msgfmt)
 setup       : |
-    %configure --disable-static
+    %configure \
+        --disable-static
 build       : |
     %make
 install     : |
