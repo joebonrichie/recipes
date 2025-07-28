@@ -662,6 +662,7 @@
 			"depends": [
 				"akonadi",
 				"binary(mysql_install_db)",
+				"qt6-base-mysql",
 				"sysbinary(mysqld)"
 			],
 			"files": [
@@ -672,6 +673,6 @@
 		}
 	},
 	"source-name": "akonadi",
-	"source-release": "3",
+	"source-release": "4",
 	"source-version": "25.04.3"
 }
