@@ -1,0 +1,46 @@
+#
+# SPDX-FileCopyrightText: © 2020-2024 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : qgpgme
+version     : 2.0.0
+release     : 1
+homepage    : https://gnupg.org/software/gpgme/index.html
+upstreams   :
+    - https://www.gnupg.org/ftp/gcrypt/qgpgme/qgpgme-2.0.0.tar.xz : 15645b2475cca6118eb2ed331b3a8d9442c9d4019c3846ba3f6d25321b4a61ad
+summary     : GnuPG Made Easy library (Qt bindings)
+description : |
+    GnuPG Made Easy (GPGME) is a library designed to make access to GnuPG easier
+    for applications. It provides a High-Level Crypto API for encryption,
+    decryption, signing, signature verification and key management.
+license     :
+    - GPL-2.0-or-later
+    - LGPL-2.1-or-later
+builddeps   :
+    - binary(doxygen)
+    - cmake(Gpgmepp)
+    - cmake(Qt6Core)
+setup       : |
+    %cmake
+build       : |
+    %cmake_build
+install     : |
+    %cmake_install
+packages    :
+    - "%(name)-qt6":
+        summary: GnuPG Made Easy library (Qt6 bindings)
+        description: GnuPG Made Easy library (Qt6 bindings)
+        paths:
+            - /usr/lib/libqgpgmeqt6.so.*
+
+    - "%(name)-qt6-devel":
+        summary: GnuPG Made Easy library (Qt6 bindings) - development files
+        description: GnuPG Made Easy library (Qt6 bindings) - development files
+        rundeps:
+            - "%(name)-qt6"
+            - cmake(Gpgmepp)
+        paths:
+            - /usr/include/qgpgme-qt6/
+            - /usr/lib/cmake/QGpgmeQt6/
+            - /usr/lib/libqgpgmeqt6.so
