@@ -41,7 +41,7 @@
 				"soname(libgio-2.0.so.0(x86_64))",
 				"soname(libglib-2.0.so.0(x86_64))",
 				"soname(libgobject-2.0.so.0(x86_64))",
-				"soname(libgpgmepp.so.6(x86_64))",
+				"soname(libgpgmepp.so.7(x86_64))",
 				"soname(libqca-qt6.so.2(x86_64))",
 				"soname(libsecret-1.so.0(x86_64))",
 				"soname(libunwind.so.1(x86_64))"
@@ -248,6 +248,6 @@
 		}
 	},
 	"source-name": "kf6-kwallet",
-	"source-release": "6",
+	"source-release": "7",
 	"source-version": "6.16.0"
 }
