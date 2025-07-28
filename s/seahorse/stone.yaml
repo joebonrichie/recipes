@@ -5,7 +5,7 @@
 #
 name        : seahorse
 version     : 47.0.1
-release     : 4
+release     : 5
 homepage    : https://gitlab.gnome.org/GNOME/seahorse
 upstreams   :
     - https://download.gnome.org/sources/seahorse/47/seahorse-47.0.1.tar.xz : 9c1917e4a61f7febb787849ce36ce717fce706c346880b991d056d54dadbcacc
@@ -40,8 +40,10 @@ builddeps   :
     - pkgconfig(pwquality)
 rundeps     :
     - binary(gpg2)
+    - binary(pinentry)
     - binary(ssh)
 setup       : |
+    %patch %(pkgdir)/ftbfs-gpgme-2.patch
     %meson
 build       : |
     %meson_build
