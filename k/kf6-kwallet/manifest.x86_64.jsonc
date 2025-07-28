@@ -22,6 +22,7 @@
 			],
 			"depends": [
 				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
+				"pinentry",
 				"soname(libKF6ColorScheme.so.6(x86_64))",
 				"soname(libKF6ConfigCore.so.6(x86_64))",
 				"soname(libKF6CoreAddons.so.6(x86_64))",
@@ -285,6 +286,6 @@
 		}
 	},
 	"source-name": "kf6-kwallet",
-	"source-release": "9",
+	"source-release": "10",
 	"source-version": "6.16.0"
 }
