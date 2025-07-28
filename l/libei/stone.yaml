@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : libei
-version     : 1.4.0
-release     : 4
+version     : 1.4.1
+release     : 5
 homepage    : https://gitlab.freedesktop.org/libinput/libei
 upstreams   :
-    - https://gitlab.freedesktop.org/libinput/libei/-/archive/1.4.0/libei-1.4.0.tar.gz : f09b21d014a892daf2916026b73a06988180c7c6e696bfd952583cd013d6aaed
+    - https://gitlab.freedesktop.org/libinput/libei/-/archive/1.4.1/libei-1.4.1.tar.gz : d0e8f18eb3617fbcc3d860bb54a47e17709e94e8e7cb0ae01ae221c67f000872
 summary     : Library for emulated input
 description : |
     libei is a library for Emulated Input, primarily aimed at the Wayland
@@ -25,11 +25,34 @@ builddeps   :
     - pkgconfig(libevdev)
     - pkgconfig(libsystemd)
     - pkgconfig(xkbcommon)
-    - python-attrs
-    - python-jinja
+    - python(attrs)
+    - python(jinja2)
 setup       : |
     %meson -Dtests=disabled
 build       : |
     %meson_build
 install     : |
     %meson_install
+packages    :
+    - "%(name)-utils":
+        summary: Utilities to test and/or debug emulated input devices
+        description: Utilities to test and/or debug emulated input devices
+        paths:
+            - /usr/bin/ei-debug-events
+
+    - "libeis":
+        summary: Library for Emulated Input Servers
+        description: Library for Emulated Input Servers
+        paths:
+            - /usr/lib/libeis.so.*
+
+    - "liboeffis":
+        summary: Library for XDG RemoteDesktop Portal Setup
+        description: Library for XDG RemoteDesktop Portal Setup
+        paths:
+            - /usr/lib/liboeffis.so.*
+
+    - "%(name)-devel":
+        rundeps:
+            - libeis
+            - liboeffis

@@ -9,30 +9,19 @@
 				"pkgconfig(libevdev)",
 				"pkgconfig(libsystemd)",
 				"pkgconfig(xkbcommon)",
-				"python-attrs",
-				"python-jinja"
+				"python(attrs)",
+				"python(jinja2)"
 			],
 			"depends": [
-				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
-				"soname(libc.so.6(x86_64))",
-				"soname(libevdev.so.2(x86_64))",
-				"soname(libsystemd.so.0(x86_64))"
+				"soname(libc.so.6(x86_64))"
 			],
 			"files": [
-				"/usr/bin/ei-debug-events",
 				"/usr/lib/libei.so.1",
-				"/usr/lib/libei.so.1.4.0",
-				"/usr/lib/libeis.so.1",
-				"/usr/lib/libeis.so.1.4.0",
-				"/usr/lib/liboeffis.so.1",
-				"/usr/lib/liboeffis.so.1.4.0"
+				"/usr/lib/libei.so.1.4.1"
 			],
 			"name": "libei",
 			"provides": [
-				"binary(ei-debug-events)",
-				"soname(libei.so.1(x86_64))",
-				"soname(libeis.so.1(x86_64))",
-				"soname(liboeffis.so.1(x86_64))"
+				"soname(libei.so.1(x86_64))"
 			]
 		},
 		"libei-devel": {
@@ -42,11 +31,13 @@
 				"pkgconfig(libevdev)",
 				"pkgconfig(libsystemd)",
 				"pkgconfig(xkbcommon)",
-				"python-attrs",
-				"python-jinja"
+				"python(attrs)",
+				"python(jinja2)"
 			],
 			"depends": [
 				"libei",
+				"libeis",
+				"liboeffis",
 				"pkgconfig(libsystemd)"
 			],
 			"files": [
@@ -66,9 +57,78 @@
 				"pkgconfig(libeis-1.0)",
 				"pkgconfig(liboeffis-1.0)"
 			]
+		},
+		"libei-utils": {
+			"build-depends": [
+				"binary(python3)",
+				"binary(xmllint)",
+				"pkgconfig(libevdev)",
+				"pkgconfig(libsystemd)",
+				"pkgconfig(xkbcommon)",
+				"python(attrs)",
+				"python(jinja2)"
+			],
+			"depends": [
+				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
+				"soname(libc.so.6(x86_64))",
+				"soname(libei.so.1(x86_64))",
+				"soname(libevdev.so.2(x86_64))"
+			],
+			"files": [
+				"/usr/bin/ei-debug-events"
+			],
+			"name": "libei-utils",
+			"provides": [
+				"binary(ei-debug-events)"
+			]
+		},
+		"libeis": {
+			"build-depends": [
+				"binary(python3)",
+				"binary(xmllint)",
+				"pkgconfig(libevdev)",
+				"pkgconfig(libsystemd)",
+				"pkgconfig(xkbcommon)",
+				"python(attrs)",
+				"python(jinja2)"
+			],
+			"depends": [
+				"soname(libc.so.6(x86_64))"
+			],
+			"files": [
+				"/usr/lib/libeis.so.1",
+				"/usr/lib/libeis.so.1.4.1"
+			],
+			"name": "libeis",
+			"provides": [
+				"soname(libeis.so.1(x86_64))"
+			]
+		},
+		"liboeffis": {
+			"build-depends": [
+				"binary(python3)",
+				"binary(xmllint)",
+				"pkgconfig(libevdev)",
+				"pkgconfig(libsystemd)",
+				"pkgconfig(xkbcommon)",
+				"python(attrs)",
+				"python(jinja2)"
+			],
+			"depends": [
+				"soname(libc.so.6(x86_64))",
+				"soname(libsystemd.so.0(x86_64))"
+			],
+			"files": [
+				"/usr/lib/liboeffis.so.1",
+				"/usr/lib/liboeffis.so.1.4.1"
+			],
+			"name": "liboeffis",
+			"provides": [
+				"soname(liboeffis.so.1(x86_64))"
+			]
 		}
 	},
 	"source-name": "libei",
-	"source-release": "4",
-	"source-version": "1.4.0"
+	"source-release": "5",
+	"source-version": "1.4.1"
 }
