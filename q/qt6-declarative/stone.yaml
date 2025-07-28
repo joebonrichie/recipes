@@ -5,7 +5,7 @@
 #
 name        : qt6-declarative
 version     : 6.9.1
-release     : 5
+release     : 6
 homepage    : https://www.qt.io
 upstreams   :
     - https://download.qt.io/official_releases/qt/6.9/6.9.1/submodules/qtdeclarative-everywhere-src-6.9.1.tar.xz : ccb94665df0199d7ee387b965b29677c8b89cfb1782bb6f01239b1d1524cec97
@@ -22,6 +22,8 @@ builddeps   :
     - cmake(Qt6ShaderTools)
     - cmake(Qt6Svg)
 setup       : |
+    %patch %(pkgdir)/upstream-01.patch
+
     # Note that due to our build modifications Qt6LinguistTools will be reported as missing, but it uses it just fine
     # TODO fix that
     %cmake_qt6
