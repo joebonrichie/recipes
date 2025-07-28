@@ -1,0 +1,28 @@
+#
+# SPDX-FileCopyrightText: © 2020-2024 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : gpgmepp
+version     : 2.0.0
+release     : 1
+homepage    : https://gnupg.org/software/gpgme/index.html
+upstreams   :
+    - https://www.gnupg.org/ftp/gcrypt/gpgmepp/gpgmepp-2.0.0.tar.xz : d4796049c06708a26f3096f748ef095347e1a3c1e570561701fe952c3f565382
+summary     : GnuPG Made Easy library (C++ bindings)
+description : |
+    GnuPG Made Easy (GPGME) is a library designed to make access to GnuPG easier
+    for applications. It provides a High-Level Crypto API for encryption,
+    decryption, signing, signature verification and key management.
+license     :
+    - GPL-2.0-or-later
+    - LGPL-2.1-or-later
+builddeps   :
+    - pkgconfig(gpg-error)
+    - pkgconfig(gpgme)
+setup       : |
+    %cmake
+build       : |
+    %cmake_build
+install     : |
+    %cmake_install
