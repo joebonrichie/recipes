@@ -41,7 +41,9 @@
 				"pkgconfig(libcrypto)"
 			],
 			"depends": [
-				"libquotient"
+				"cmake(Olm)",
+				"libquotient",
+				"pkgconfig(libcrypto)"
 			],
 			"files": [
 				"/usr/include/Quotient/accountregistry.h",
@@ -223,6 +225,6 @@
 		}
 	},
 	"source-name": "libquotient",
-	"source-release": "1",
+	"source-release": "2",
 	"source-version": "0.9.3"
 }
