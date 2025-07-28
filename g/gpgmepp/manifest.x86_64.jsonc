@@ -4,7 +4,6 @@
 	"packages": {
 		"gpgmepp": {
 			"build-depends": [
-				"binary(patchelf)",
 				"pkgconfig(gpg-error)",
 				"pkgconfig(gpgme)"
 			],
@@ -15,19 +14,16 @@
 				"soname(libunwind.so.1(x86_64))"
 			],
 			"files": [
-				"/usr/lib/libgpgmepp.so.6",
 				"/usr/lib/libgpgmepp.so.7",
 				"/usr/lib/libgpgmepp.so.7.0.0"
 			],
 			"name": "gpgmepp",
 			"provides": [
-				"soname(libgpgmepp.so.6(x86_64))",
 				"soname(libgpgmepp.so.7(x86_64))"
 			]
 		},
 		"gpgmepp-devel": {
 			"build-depends": [
-				"binary(patchelf)",
 				"pkgconfig(gpg-error)",
 				"pkgconfig(gpgme)"
 			],
@@ -96,6 +92,6 @@
 		}
 	},
 	"source-name": "gpgmepp",
-	"source-release": "2",
+	"source-release": "3",
 	"source-version": "2.0.0"
 }
