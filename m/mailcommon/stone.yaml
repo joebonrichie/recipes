@@ -5,7 +5,7 @@
 #
 name        : mailcommon
 version     : 25.04.3
-release     : 1
+release     : 2
 upstreams   :
     - https://download.kde.org/stable/release-service/25.04.3/src/mailcommon-25.04.3.tar.xz : 2525aa778a922f6735f571a32a896fdfafa1aadfcc4aebd6619306a98f213521
 homepage    : https://kde.org
