@@ -12,7 +12,7 @@
 			],
 			"depends": [
 				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
-				"soname(libbotan-3.so.7(x86_64))",
+				"soname(libbotan-3.so.8(x86_64))",
 				"soname(libbz2.so.1.0(x86_64))",
 				"soname(libc++.so.1(x86_64))",
 				"soname(libc.so.6(x86_64))",
@@ -24,7 +24,7 @@
 				"/usr/bin/rnp",
 				"/usr/bin/rnpkeys",
 				"/usr/lib/librnp.so.0",
-				"/usr/lib/librnp.so.0.17.1"
+				"/usr/lib/librnp.so.0.18.0"
 			],
 			"name": "rnp",
 			"provides": [
@@ -48,6 +48,7 @@
 				"/usr/include/rnp/rnp.h",
 				"/usr/include/rnp/rnp_err.h",
 				"/usr/include/rnp/rnp_export.h",
+				"/usr/include/rnp/rnp_ver.h",
 				"/usr/lib/cmake/rnp/rnp-config-version.cmake",
 				"/usr/lib/cmake/rnp/rnp-config.cmake",
 				"/usr/lib/cmake/rnp/rnp-targets-release.cmake",
@@ -63,6 +64,6 @@
 		}
 	},
 	"source-name": "rnp",
-	"source-release": "2",
-	"source-version": "0.17.1+git.f1865f24"
+	"source-release": "3",
+	"source-version": "0.18.0"
 }
