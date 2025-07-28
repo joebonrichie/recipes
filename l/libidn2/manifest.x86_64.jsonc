@@ -2,20 +2,37 @@
 {
 	"manifest-version": "0.2",
 	"packages": {
-		"libidn2": {
+		"idn2": {
 			"build-depends": [
 				"libunistring-32bit-devel"
 			],
 			"depends": [
 				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
 				"soname(libc.so.6(x86_64))",
+				"soname(libidn2.so.0(x86_64))",
 				"soname(libunistring.so.5(x86_64))"
 			],
 			"files": [
 				"/usr/bin/idn2",
+				"/usr/share/info/libidn2.info",
+				"/usr/share/man/man1/idn2.1"
+			],
+			"name": "idn2",
+			"provides": [
+				"binary(idn2)"
+			]
+		},
+		"libidn2": {
+			"build-depends": [
+				"libunistring-32bit-devel"
+			],
+			"depends": [
+				"soname(libc.so.6(x86_64))",
+				"soname(libunistring.so.5(x86_64))"
+			],
+			"files": [
 				"/usr/lib/libidn2.so.0",
 				"/usr/lib/libidn2.so.0.4.0",
-				"/usr/share/info/libidn2.info",
 				"/usr/share/locale/cs/LC_MESSAGES/libidn2.mo",
 				"/usr/share/locale/da/LC_MESSAGES/libidn2.mo",
 				"/usr/share/locale/de/LC_MESSAGES/libidn2.mo",
@@ -31,6 +48,7 @@
 				"/usr/share/locale/ja/LC_MESSAGES/libidn2.mo",
 				"/usr/share/locale/ka/LC_MESSAGES/libidn2.mo",
 				"/usr/share/locale/ko/LC_MESSAGES/libidn2.mo",
+				"/usr/share/locale/lv/LC_MESSAGES/libidn2.mo",
 				"/usr/share/locale/nl/LC_MESSAGES/libidn2.mo",
 				"/usr/share/locale/pl/LC_MESSAGES/libidn2.mo",
 				"/usr/share/locale/pt_BR/LC_MESSAGES/libidn2.mo",
@@ -40,12 +58,10 @@
 				"/usr/share/locale/sv/LC_MESSAGES/libidn2.mo",
 				"/usr/share/locale/uk/LC_MESSAGES/libidn2.mo",
 				"/usr/share/locale/vi/LC_MESSAGES/libidn2.mo",
-				"/usr/share/locale/zh_CN/LC_MESSAGES/libidn2.mo",
-				"/usr/share/man/man1/idn2.1"
+				"/usr/share/locale/zh_CN/LC_MESSAGES/libidn2.mo"
 			],
 			"name": "libidn2",
 			"provides": [
-				"binary(idn2)",
 				"soname(libidn2.so.0(x86_64))"
 			]
 		},
@@ -135,8 +151,6 @@
 				"/usr/share/gtk-doc/html/libidn2/index.html",
 				"/usr/share/gtk-doc/html/libidn2/left-insensitive.png",
 				"/usr/share/gtk-doc/html/libidn2/left.png",
-				"/usr/share/gtk-doc/html/libidn2/libidn2-idn2.h.html",
-				"/usr/share/gtk-doc/html/libidn2/libidn2.devhelp2",
 				"/usr/share/gtk-doc/html/libidn2/libidn2.html",
 				"/usr/share/gtk-doc/html/libidn2/right-insensitive.png",
 				"/usr/share/gtk-doc/html/libidn2/right.png",
@@ -148,6 +162,6 @@
 		}
 	},
 	"source-name": "libidn2",
-	"source-release": "4",
-	"source-version": "2.3.7"
+	"source-release": "5",
+	"source-version": "2.3.8"
 }
