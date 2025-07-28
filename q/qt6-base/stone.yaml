@@ -5,7 +5,7 @@
 #
 name        : qt6-base
 version     : 6.9.1
-release     : 11
+release     : 12
 homepage    : https://www.qt.io
 upstreams   :
     - https://download.qt.io/official_releases/qt/6.9/6.9.1/submodules/qtbase-everywhere-src-6.9.1.tar.xz : 40caedbf83cc9a1959610830563565889878bc95f115868bbf545d1914acf28e
@@ -36,6 +36,7 @@ builddeps   :
     - pkgconfig(libcrypto)
     - pkgconfig(libdrm)
     - pkgconfig(libinput)
+    - pkgconfig(libmariadb)
     - pkgconfig(libjpeg)
     - pkgconfig(libpcre2-16)
     - pkgconfig(libpng)
@@ -64,6 +65,7 @@ builddeps   :
 setup       : |
     %patch %(pkgdir)/0001-Adjust-build-flags.patch
     %patch %(pkgdir)/0001-Support-stateless-config-directories.patch
+    %patch %(pkgdir)/CVE-2025-5992.patch
 
     ## 2024-01-18 Note
     # Enabling -DQT_FEATURE_openssl_hash=ON with Qt 6.6.1 seems to break some applications use of TLS.
@@ -153,6 +155,12 @@ packages    :
             - /usr/lib/qt6/plugins/printsupport/*.so
             - /usr/lib/qt6/plugins/xcbglintegrations/*.so
 
+    - "%(name)-mysql":
+        summary: Qt6 MySQL driver
+        description: Qt6 MySQL driver
+        paths:
+            - /usr/lib/qt6/plugins/sqldrivers/libqsqlmysql.so
+
     - "%(name)-devel":
         paths:
             - /usr/bin
@@ -174,6 +182,7 @@ packages    :
             - /usr/lib/qt6/uic
         rundeps:
             - "%(name)-gui"
+            - "%(name)-mysql"
             - cmake(VulkanHeaders)
             - pkgconfig(gl)
             - pkgconfig(libzstd)
