@@ -5,7 +5,7 @@
 #
 name        : wget
 version     : 2.2.0
-release     : 6
+release     : 7
 homepage    : https://www.gnu.org/software/wget
 upstreams   :
     - https://ftp.gnu.org/gnu/wget/wget2-2.2.0.tar.gz : 2b3b9c85b7fb26d33ca5f41f1f8daca71838d869a19b406063aa5c655294d357
@@ -16,9 +16,11 @@ license     :
     - GPL-3.0-or-later  # wget binary.
     - LGPL-3.0-or-later # libwget.
 builddeps   :
+    - binary(tar)
     - pkgconfig(bzip2)
     - pkgconfig(gpgme)
     - pkgconfig(libbrotlidec)
+    - pkgconfig(libidn2)
     - pkgconfig(liblzma)
     - pkgconfig(libnghttp2)
     - pkgconfig(libpcre2-posix)
