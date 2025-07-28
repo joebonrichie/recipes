@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : gtk-layer-shell
-version     : '0.9.0'
-release     : 1
+version     : '0.9.2'
+release     : 2
 homepage    : https://github.com/wmww/gtk-layer-shell
 upstreams   :
-    - https://github.com/wmww/gtk-layer-shell/archive/refs/tags/v0.9.0.tar.gz : 3809e5565d9ed02e44bb73787ff218523e8760fef65830afe60ea7322e22da1c
+    - https://github.com/wmww/gtk-layer-shell/archive/refs/tags/v0.9.2.tar.gz : 526dd95c083e2a73eafd8baa1f5d676a36cb80fc8e7b304cbe3efebd62f0600c
 summary     : Layer Shell is a Wayland protocol for desktop shell components
 description : |
     A library to write GTK applications that use Layer Shell. Layer Shell
@@ -32,4 +32,7 @@ build       : |
     %meson_build
 install     : |
     %meson_install
-
+packages    :
+    - "%(name)-devel":
+        paths:
+            - /usr/share/vala/
