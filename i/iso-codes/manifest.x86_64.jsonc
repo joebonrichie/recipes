@@ -179,6 +179,7 @@
 				"/usr/share/locale/ch/LC_MESSAGES/iso_3166.mo",
 				"/usr/share/locale/chr/LC_MESSAGES/iso_3166-1.mo",
 				"/usr/share/locale/chr/LC_MESSAGES/iso_3166.mo",
+				"/usr/share/locale/ckb/LC_MESSAGES/iso_15924.mo",
 				"/usr/share/locale/ckb/LC_MESSAGES/iso_3166-1.mo",
 				"/usr/share/locale/ckb/LC_MESSAGES/iso_3166.mo",
 				"/usr/share/locale/ckb/LC_MESSAGES/iso_639-3.mo",
@@ -886,8 +887,10 @@
 				"/usr/share/locale/sk/LC_MESSAGES/iso_4217.mo",
 				"/usr/share/locale/sk/LC_MESSAGES/iso_639-2.mo",
 				"/usr/share/locale/sk/LC_MESSAGES/iso_639-3.mo",
+				"/usr/share/locale/sk/LC_MESSAGES/iso_639-5.mo",
 				"/usr/share/locale/sk/LC_MESSAGES/iso_639.mo",
 				"/usr/share/locale/sk/LC_MESSAGES/iso_639_3.mo",
+				"/usr/share/locale/sk/LC_MESSAGES/iso_639_5.mo",
 				"/usr/share/locale/sl/LC_MESSAGES/iso_15924.mo",
 				"/usr/share/locale/sl/LC_MESSAGES/iso_3166-1.mo",
 				"/usr/share/locale/sl/LC_MESSAGES/iso_3166-2.mo",
@@ -1124,8 +1127,10 @@
 				"/usr/share/locale/zh_CN/LC_MESSAGES/iso_4217.mo",
 				"/usr/share/locale/zh_CN/LC_MESSAGES/iso_639-2.mo",
 				"/usr/share/locale/zh_CN/LC_MESSAGES/iso_639-3.mo",
+				"/usr/share/locale/zh_CN/LC_MESSAGES/iso_639-5.mo",
 				"/usr/share/locale/zh_CN/LC_MESSAGES/iso_639.mo",
 				"/usr/share/locale/zh_CN/LC_MESSAGES/iso_639_3.mo",
+				"/usr/share/locale/zh_CN/LC_MESSAGES/iso_639_5.mo",
 				"/usr/share/locale/zh_HK/LC_MESSAGES/iso_15924.mo",
 				"/usr/share/locale/zh_HK/LC_MESSAGES/iso_3166-1.mo",
 				"/usr/share/locale/zh_HK/LC_MESSAGES/iso_3166-3.mo",
@@ -1133,10 +1138,6 @@
 				"/usr/share/locale/zh_HK/LC_MESSAGES/iso_4217.mo",
 				"/usr/share/locale/zh_HK/LC_MESSAGES/iso_639-2.mo",
 				"/usr/share/locale/zh_HK/LC_MESSAGES/iso_639.mo",
-				"/usr/share/locale/zh_Hans/LC_MESSAGES/iso_639-5.mo",
-				"/usr/share/locale/zh_Hans/LC_MESSAGES/iso_639_5.mo",
-				"/usr/share/locale/zh_Hant/LC_MESSAGES/iso_639-5.mo",
-				"/usr/share/locale/zh_Hant/LC_MESSAGES/iso_639_5.mo",
 				"/usr/share/locale/zh_TW/LC_MESSAGES/iso_15924.mo",
 				"/usr/share/locale/zh_TW/LC_MESSAGES/iso_3166-1.mo",
 				"/usr/share/locale/zh_TW/LC_MESSAGES/iso_3166-2.mo",
@@ -1146,8 +1147,10 @@
 				"/usr/share/locale/zh_TW/LC_MESSAGES/iso_4217.mo",
 				"/usr/share/locale/zh_TW/LC_MESSAGES/iso_639-2.mo",
 				"/usr/share/locale/zh_TW/LC_MESSAGES/iso_639-3.mo",
+				"/usr/share/locale/zh_TW/LC_MESSAGES/iso_639-5.mo",
 				"/usr/share/locale/zh_TW/LC_MESSAGES/iso_639.mo",
 				"/usr/share/locale/zh_TW/LC_MESSAGES/iso_639_3.mo",
+				"/usr/share/locale/zh_TW/LC_MESSAGES/iso_639_5.mo",
 				"/usr/share/locale/zu/LC_MESSAGES/iso_3166-1.mo",
 				"/usr/share/locale/zu/LC_MESSAGES/iso_3166-3.mo",
 				"/usr/share/locale/zu/LC_MESSAGES/iso_3166.mo",
@@ -1155,7 +1158,6 @@
 				"/usr/share/locale/zu/LC_MESSAGES/iso_639-3.mo",
 				"/usr/share/locale/zu/LC_MESSAGES/iso_639.mo",
 				"/usr/share/locale/zu/LC_MESSAGES/iso_639_3.mo",
-				"/usr/share/pkgconfig/iso-codes.pc",
 				"/usr/share/xml/iso-codes/iso_15924.xml",
 				"/usr/share/xml/iso-codes/iso_3166-1.xml",
 				"/usr/share/xml/iso-codes/iso_3166-2.xml",
@@ -1170,13 +1172,26 @@
 				"/usr/share/xml/iso-codes/iso_639_3.xml",
 				"/usr/share/xml/iso-codes/iso_639_5.xml"
 			],
-			"name": "iso-codes",
+			"name": "iso-codes"
+		},
+		"iso-codes-devel": {
+			"build-depends": [
+				"binary(msgfmt)",
+				"binary(python3)"
+			],
+			"depends": [
+				"iso-codes"
+			],
+			"files": [
+				"/usr/share/pkgconfig/iso-codes.pc"
+			],
+			"name": "iso-codes-devel",
 			"provides": [
 				"pkgconfig(iso-codes)"
 			]
 		}
 	},
 	"source-name": "iso-codes",
-	"source-release": "4",
-	"source-version": "4.17.0"
+	"source-release": "5",
+	"source-version": "4.18.0"
 }
