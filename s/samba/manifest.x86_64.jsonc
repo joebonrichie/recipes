@@ -28,6 +28,7 @@
 				"pkgconfig(libsystemd)",
 				"pkgconfig(libtirpc)",
 				"pkgconfig(libunwind)",
+				"pkgconfig(liburing)",
 				"pkgconfig(libxcrypt)",
 				"pkgconfig(libxslt)",
 				"pkgconfig(lmdb)",
@@ -70,6 +71,7 @@
 				"soname(libtasn1.so.6(x86_64))",
 				"soname(libtdb.so.1(x86_64))",
 				"soname(libtevent.so.0(x86_64))",
+				"soname(liburing.so.2(x86_64))",
 				"soname(libz.so.1(x86_64))"
 			],
 			"files": [
@@ -322,6 +324,7 @@
 				"/usr/lib/samba/vfs/full_audit.so",
 				"/usr/lib/samba/vfs/glusterfs_fuse.so",
 				"/usr/lib/samba/vfs/gpfs.so",
+				"/usr/lib/samba/vfs/io_uring.so",
 				"/usr/lib/samba/vfs/linux_xfs_sgid.so",
 				"/usr/lib/samba/vfs/media_harmony.so",
 				"/usr/lib/samba/vfs/offline.so",
@@ -570,6 +573,7 @@
 				"soname(samba/vfs/full_audit.so(x86_64))",
 				"soname(samba/vfs/glusterfs_fuse.so(x86_64))",
 				"soname(samba/vfs/gpfs.so(x86_64))",
+				"soname(samba/vfs/io_uring.so(x86_64))",
 				"soname(samba/vfs/linux_xfs_sgid.so(x86_64))",
 				"soname(samba/vfs/media_harmony.so(x86_64))",
 				"soname(samba/vfs/offline.so(x86_64))",
@@ -622,6 +626,7 @@
 				"pkgconfig(libsystemd)",
 				"pkgconfig(libtirpc)",
 				"pkgconfig(libunwind)",
+				"pkgconfig(liburing)",
 				"pkgconfig(libxcrypt)",
 				"pkgconfig(libxslt)",
 				"pkgconfig(lmdb)",
@@ -738,6 +743,6 @@
 		}
 	},
 	"source-name": "samba",
-	"source-release": "15",
+	"source-release": "16",
 	"source-version": "4.22.3"
 }
