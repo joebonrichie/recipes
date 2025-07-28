@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : php
-version     : 8.4.7
-release     : 7
+version     : 8.4.10
+release     : 8
 homepage    : https://www.php.net/distributions
 upstreams   :
-    - https://www.php.net/distributions/php-8.4.7.tar.xz : e29f4c23be2816ed005aa3f06bbb8eae0f22cc133863862e893515fc841e65e3
+    - https://www.php.net/distributions/php-8.4.10.tar.xz : 14983a9ef8800e6bc2d920739fd386054402f7976ca9cd7f711509496f0d2632
 summary     : PHP is a popular general-purpose scripting language
 description : |
     PHP is a popular general-purpose scripting language that is especially suited to web development.
@@ -26,6 +26,7 @@ builddeps   :
     - pkgconfig(libexslt)
     - pkgconfig(libffi)
     - pkgconfig(libjpeg)
+    - pkgconfig(libmariadb)
     - pkgconfig(libpcre2-8)
     - pkgconfig(libsasl2)
     - pkgconfig(libsodium)
@@ -71,9 +72,11 @@ setup       : |
                --with-jpeg \
                --with-ldap=shared \
                --with-ldap-sasl \
+               --with-mysql-sock=/var/lib/mysql/mysqld.sock \
                --with-openssl \
                --with-openssl-argon2 \
                --with-password-argon2 \
+               --with-pdo-mysql=shared \
                --with-pdo-sqlite=shared \
                --with-readline \
                --with-sodium=shared \
@@ -88,5 +91,7 @@ install     : |
 packages    :
     - "%(name)-devel":
         paths:
+            - /usr/bin/php-config
             - /usr/lib/php/build
+            - /usr/share/man/man1/php-config.1*
 # TODO eventually we'll want to split out some of the extensions to subpackages

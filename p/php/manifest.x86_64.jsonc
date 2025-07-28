@@ -17,6 +17,7 @@
 				"pkgconfig(libexslt)",
 				"pkgconfig(libffi)",
 				"pkgconfig(libjpeg)",
+				"pkgconfig(libmariadb)",
 				"pkgconfig(libpcre2-8)",
 				"pkgconfig(libsasl2)",
 				"pkgconfig(libsodium)",
@@ -71,7 +72,6 @@
 				"/usr/bin/phar.phar",
 				"/usr/bin/php",
 				"/usr/bin/php-cgi",
-				"/usr/bin/php-config",
 				"/usr/bin/phpdbg",
 				"/usr/bin/phpize",
 				"/usr/lib/php/extensions/bcmath.so",
@@ -88,6 +88,7 @@
 				"/usr/lib/php/extensions/intl.so",
 				"/usr/lib/php/extensions/ldap.so",
 				"/usr/lib/php/extensions/opcache.so",
+				"/usr/lib/php/extensions/pdo_mysql.so",
 				"/usr/lib/php/extensions/pdo_sqlite.so",
 				"/usr/lib/php/extensions/shmop.so",
 				"/usr/lib/php/extensions/sockets.so",
@@ -97,7 +98,6 @@
 				"/usr/share/man/man1/phar.1",
 				"/usr/share/man/man1/phar.phar.1",
 				"/usr/share/man/man1/php-cgi.1",
-				"/usr/share/man/man1/php-config.1",
 				"/usr/share/man/man1/php.1",
 				"/usr/share/man/man1/phpdbg.1",
 				"/usr/share/man/man1/phpize.1"
@@ -108,7 +108,6 @@
 				"binary(phar.phar)",
 				"binary(php)",
 				"binary(php-cgi)",
-				"binary(php-config)",
 				"binary(phpdbg)",
 				"binary(phpize)",
 				"soname(php/extensions/bcmath.so(x86_64))",
@@ -125,6 +124,7 @@
 				"soname(php/extensions/intl.so(x86_64))",
 				"soname(php/extensions/ldap.so(x86_64))",
 				"soname(php/extensions/opcache.so(x86_64))",
+				"soname(php/extensions/pdo_mysql.so(x86_64))",
 				"soname(php/extensions/pdo_sqlite.so(x86_64))",
 				"soname(php/extensions/shmop.so(x86_64))",
 				"soname(php/extensions/sockets.so(x86_64))",
@@ -148,6 +148,7 @@
 				"pkgconfig(libexslt)",
 				"pkgconfig(libffi)",
 				"pkgconfig(libjpeg)",
+				"pkgconfig(libmariadb)",
 				"pkgconfig(libpcre2-8)",
 				"pkgconfig(libsasl2)",
 				"pkgconfig(libsodium)",
@@ -165,6 +166,7 @@
 				"php"
 			],
 			"files": [
+				"/usr/bin/php-config",
 				"/usr/include/php/TSRM/TSRM.h",
 				"/usr/include/php/TSRM/tsrm_win32.h",
 				"/usr/include/php/Zend/Optimizer/zend_call_graph.h",
@@ -341,6 +343,33 @@
 				"/usr/include/php/ext/mbstring/mbstring.h",
 				"/usr/include/php/ext/mbstring/php_mbregex.h",
 				"/usr/include/php/ext/mbstring/php_onig_compat.h",
+				"/usr/include/php/ext/mysqlnd/config-win.h",
+				"/usr/include/php/ext/mysqlnd/mysql_float_to_double.h",
+				"/usr/include/php/ext/mysqlnd/mysqlnd.h",
+				"/usr/include/php/ext/mysqlnd/mysqlnd_alloc.h",
+				"/usr/include/php/ext/mysqlnd/mysqlnd_auth.h",
+				"/usr/include/php/ext/mysqlnd/mysqlnd_block_alloc.h",
+				"/usr/include/php/ext/mysqlnd/mysqlnd_charset.h",
+				"/usr/include/php/ext/mysqlnd/mysqlnd_commands.h",
+				"/usr/include/php/ext/mysqlnd/mysqlnd_connection.h",
+				"/usr/include/php/ext/mysqlnd/mysqlnd_debug.h",
+				"/usr/include/php/ext/mysqlnd/mysqlnd_enum_n_def.h",
+				"/usr/include/php/ext/mysqlnd/mysqlnd_ext_plugin.h",
+				"/usr/include/php/ext/mysqlnd/mysqlnd_libmysql_compat.h",
+				"/usr/include/php/ext/mysqlnd/mysqlnd_plugin.h",
+				"/usr/include/php/ext/mysqlnd/mysqlnd_portability.h",
+				"/usr/include/php/ext/mysqlnd/mysqlnd_priv.h",
+				"/usr/include/php/ext/mysqlnd/mysqlnd_protocol_frame_codec.h",
+				"/usr/include/php/ext/mysqlnd/mysqlnd_ps.h",
+				"/usr/include/php/ext/mysqlnd/mysqlnd_read_buffer.h",
+				"/usr/include/php/ext/mysqlnd/mysqlnd_result.h",
+				"/usr/include/php/ext/mysqlnd/mysqlnd_result_meta.h",
+				"/usr/include/php/ext/mysqlnd/mysqlnd_reverse_api.h",
+				"/usr/include/php/ext/mysqlnd/mysqlnd_statistics.h",
+				"/usr/include/php/ext/mysqlnd/mysqlnd_structs.h",
+				"/usr/include/php/ext/mysqlnd/mysqlnd_vio.h",
+				"/usr/include/php/ext/mysqlnd/mysqlnd_wireprotocol.h",
+				"/usr/include/php/ext/mysqlnd/php_mysqlnd.h",
 				"/usr/include/php/ext/pcre/php_pcre.h",
 				"/usr/include/php/ext/pdo/pdo_sql_parser.h",
 				"/usr/include/php/ext/pdo/php_pdo.h",
@@ -485,12 +514,16 @@
 				"/usr/lib/php/build/phpize.m4",
 				"/usr/lib/php/build/pkg.m4",
 				"/usr/lib/php/build/run-tests.php",
-				"/usr/lib/php/build/shtool"
+				"/usr/lib/php/build/shtool",
+				"/usr/share/man/man1/php-config.1"
 			],
-			"name": "php-devel"
+			"name": "php-devel",
+			"provides": [
+				"binary(php-config)"
+			]
 		}
 	},
 	"source-name": "php",
-	"source-release": "7",
-	"source-version": "8.4.7"
+	"source-release": "8",
+	"source-version": "8.4.10"
 }
