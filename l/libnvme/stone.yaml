@@ -5,7 +5,7 @@
 #
 name        : libnvme
 version     : "1.15"
-release     : 4
+release     : 5
 homepage    : https://github.com/linux-nvme/libnvme
 upstreams   :
     - https://github.com/linux-nvme/libnvme/archive/refs/tags/v1.15.tar.gz : c21cd9379390bdc52c9d9569a241274f8115fc247b76a5d922d639f48c8174a2
@@ -15,13 +15,15 @@ description : |
 license     : LGPL-2.1-or-later
 builddeps   :
     - binary(swig)
+    - pkgconfig(dbus-1)
     - pkgconfig(json-c)
     - pkgconfig(libkeyutils)
+    - pkgconfig(liburing)
     - pkgconfig(openssl)
     - pkgconfig(python3)
-    # pkgconfig(liburing)
 setup       : |
-    %meson
+    %meson \
+        -Dlibdbus=auto
 build       : |
     %meson_build
 install     : |
