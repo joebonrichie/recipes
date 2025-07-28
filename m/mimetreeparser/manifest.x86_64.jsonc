@@ -29,7 +29,7 @@
 				"soname(libQt6Widgets.so.6(x86_64))",
 				"soname(libc++.so.1(x86_64))",
 				"soname(libc.so.6(x86_64))",
-				"soname(libgpgmepp.so.6(x86_64))",
+				"soname(libgpgmepp.so.7(x86_64))",
 				"soname(libqgpgmeqt6.so.15(x86_64))"
 			],
 			"files": [
@@ -180,6 +180,6 @@
 		}
 	},
 	"source-name": "mimetreeparser",
-	"source-release": "2",
+	"source-release": "3",
 	"source-version": "25.04.3"
 }
