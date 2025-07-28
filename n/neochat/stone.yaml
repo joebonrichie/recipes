@@ -1,0 +1,71 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : neochat
+version     : 25.04.3
+release     : 1
+upstreams   :
+    - https://download.kde.org/stable/release-service/25.04.3/src/neochat-25.04.3.tar.xz : ad44385ffdd78f813443fac8702003ee16d36afeded0bdf02fd4c928c487c53c
+homepage    : https://apps.kde.org/neochat/
+license     :
+    - BSD-2-Clause
+    - GPL-2.0-or-later
+    - GPL-3.0-only
+    - GPL-3.0-or-later
+summary     : Neochat is a client for Matrix, the decentralized communication protocol for instant messaging.
+description : |
+    Neochat is a client for Matrix, the decentralized communication protocol for instant messaging.
+builddeps   :
+    # Temporary, boulder doesn't handle build ordering resolution correctly when builddeps are added by macros, so add ECM manually
+    - cmake(ECM)
+    - cmake(KF6ColorScheme)
+    - cmake(KF6Config)
+    - cmake(KF6CoreAddons)
+    - cmake(KF6Crash)
+    - cmake(KF6DBusAddons)
+    - cmake(KF6DocTools)
+    - cmake(KF6I18n)
+    - cmake(KF6IconThemes)
+    - cmake(KF6ItemModels)
+    - cmake(KF6KIO)
+    - cmake(KF6Kirigami)
+    - cmake(KF6KirigamiAddons)
+    - cmake(KF6Notifications)
+    - cmake(KF6QQC2DesktopStyle)
+    - cmake(KF6Purpose)
+    - cmake(KF6Sonnet)
+    - cmake(KF6StatusNotifierItem)
+    - cmake(KF6SyntaxHighlighting)
+    - cmake(KF6WindowSystem)
+    - cmake(KQuickImageEditor)
+    - cmake(KUnifiedPush)
+    - cmake(QCoro6)
+    - cmake(QuotientQt6)
+    - cmake(Qt6CorePrivate)
+    - cmake(Qt6Keychain)
+    - cmake(Qt6Multimedia)
+    - cmake(Qt6Quick)
+    - cmake(Qt6Svg)
+    - cmake(Qt6WebView)
+    - cmake(cmark)
+    - pkgconfig(icu-uc)
+    - kf6-kquickcharts
+    - qt6-location
+rundeps     :
+    - breeze-icons
+    - kf6-kirigami
+    - kf6-kirigami-addons
+    - kf6-kitemmodels
+    - kf6-kquickcharts
+    - kf6-prison
+    - kquickimageeditor
+    - qt6-location
+    - qt6-wayland
+setup       : |
+    %cmake_kf6
+build       : |
+    %cmake_build
+install     : |
+    %cmake_install
