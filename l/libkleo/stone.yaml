@@ -5,7 +5,7 @@
 #
 name        : libkleo
 version     : 25.04.3
-release     : 3
+release     : 4
 upstreams   :
     - https://download.kde.org/stable/release-service/25.04.3/src/libkleo-25.04.3.tar.xz : 7c9b334b226c990d5193b2e66a3ce8de1c5ea6c2afc9175280e6f44d02a7caa8
 homepage    : https://kde.org
