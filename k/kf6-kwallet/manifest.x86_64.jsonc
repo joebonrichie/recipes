@@ -29,6 +29,8 @@
 				"soname(libKF6DBusAddons.so.6(x86_64))",
 				"soname(libKF6I18n.so.6(x86_64))",
 				"soname(libKF6Notifications.so.6(x86_64))",
+				"soname(libKF6Wallet.so.6(x86_64))",
+				"soname(libKF6WalletBackend.so.6(x86_64))",
 				"soname(libKF6WidgetsAddons.so.6(x86_64))",
 				"soname(libKF6WindowSystem.so.6(x86_64))",
 				"soname(libQt6Core.so.6(x86_64))",
@@ -37,7 +39,6 @@
 				"soname(libQt6Widgets.so.6(x86_64))",
 				"soname(libc++.so.1(x86_64))",
 				"soname(libc.so.6(x86_64))",
-				"soname(libgcrypt.so.20(x86_64))",
 				"soname(libgio-2.0.so.0(x86_64))",
 				"soname(libglib-2.0.so.0(x86_64))",
 				"soname(libgobject-2.0.so.0(x86_64))",
@@ -50,10 +51,6 @@
 				"/usr/bin/ksecretd",
 				"/usr/bin/kwallet-query",
 				"/usr/bin/kwalletd6",
-				"/usr/lib/libKF6Wallet.so.6",
-				"/usr/lib/libKF6Wallet.so.6.16.0",
-				"/usr/lib/libKF6WalletBackend.so.6",
-				"/usr/lib/libKF6WalletBackend.so.6.16.0",
 				"/usr/share/applications/org.kde.ksecretd.desktop",
 				"/usr/share/dbus-1/interfaces/kf6_org.kde.KWallet.xml",
 				"/usr/share/dbus-1/services/org.kde.kwalletd5.service",
@@ -204,9 +201,7 @@
 			"provides": [
 				"binary(ksecretd)",
 				"binary(kwallet-query)",
-				"binary(kwalletd6)",
-				"soname(libKF6Wallet.so.6(x86_64))",
-				"soname(libKF6WalletBackend.so.6(x86_64))"
+				"binary(kwalletd6)"
 			]
 		},
 		"kf6-kwallet-devel": {
@@ -245,9 +240,51 @@
 			"provides": [
 				"cmake(KF6Wallet)"
 			]
+		},
+		"kf6-kwallet-libs": {
+			"build-depends": [
+				"cmake(ECM)",
+				"cmake(KF6ColorScheme)",
+				"cmake(KF6Config)",
+				"cmake(KF6CoreAddons)",
+				"cmake(KF6Crash)",
+				"cmake(KF6DBusAddons)",
+				"cmake(KF6DocTools)",
+				"cmake(KF6I18n)",
+				"cmake(KF6Notifications)",
+				"cmake(KF6WidgetsAddons)",
+				"cmake(KF6WindowSystem)",
+				"cmake(Qca-qt6)",
+				"pkgconfig(gpgmepp)",
+				"pkgconfig(libgcrypt)",
+				"pkgconfig(libsecret-1)"
+			],
+			"depends": [
+				"soname(libKF6ConfigCore.so.6(x86_64))",
+				"soname(libKF6I18n.so.6(x86_64))",
+				"soname(libKF6Notifications.so.6(x86_64))",
+				"soname(libKF6WidgetsAddons.so.6(x86_64))",
+				"soname(libQt6Core.so.6(x86_64))",
+				"soname(libQt6DBus.so.6(x86_64))",
+				"soname(libc++.so.1(x86_64))",
+				"soname(libc.so.6(x86_64))",
+				"soname(libgcrypt.so.20(x86_64))",
+				"soname(libgpgmepp.so.7(x86_64))"
+			],
+			"files": [
+				"/usr/lib/libKF6Wallet.so.6",
+				"/usr/lib/libKF6Wallet.so.6.16.0",
+				"/usr/lib/libKF6WalletBackend.so.6",
+				"/usr/lib/libKF6WalletBackend.so.6.16.0"
+			],
+			"name": "kf6-kwallet-libs",
+			"provides": [
+				"soname(libKF6Wallet.so.6(x86_64))",
+				"soname(libKF6WalletBackend.so.6(x86_64))"
+			]
 		}
 	},
 	"source-name": "kf6-kwallet",
-	"source-release": "8",
+	"source-release": "9",
 	"source-version": "6.16.0"
 }
