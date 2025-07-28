@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : libffi
-version     : 3.4.8
-release     : 6
+version     : 3.5.1
+release     : 7
 homepage    : https://sourceware.org/libffi
 upstreams   :
-    - https://github.com/libffi/libffi/releases/download/v3.4.8/libffi-3.4.8.tar.gz: bc9842a18898bfacb0ed1252c4febcc7e78fa139fd27fdc7a3e30d9d9356119b
+    - https://github.com/libffi/libffi/releases/download/v3.5.1/libffi-3.5.1.tar.gz: f99eb68a67c7d54866b7706af245e87ba060d419a062474b456d3bc8d4abdbd1
 summary     : A portable foreign function interface library
 description : |
     A portable foreign function interface library

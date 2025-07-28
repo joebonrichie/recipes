@@ -8,7 +8,7 @@
 			],
 			"files": [
 				"/usr/lib/libffi.so.8",
-				"/usr/lib/libffi.so.8.1.4",
+				"/usr/lib/libffi.so.8.2.0",
 				"/usr/share/info/libffi.info"
 			],
 			"name": "libffi",
@@ -23,7 +23,7 @@
 			],
 			"files": [
 				"/usr/lib32/libffi.so.8",
-				"/usr/lib32/libffi.so.8.1.4"
+				"/usr/lib32/libffi.so.8.2.0"
 			],
 			"name": "libffi-32bit",
 			"provides": [
@@ -65,6 +65,6 @@
 		}
 	},
 	"source-name": "libffi",
-	"source-release": "6",
-	"source-version": "3.4.8"
+	"source-release": "7",
+	"source-version": "3.5.1"
 }
