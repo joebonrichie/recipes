@@ -31,6 +31,7 @@
 				"cmake(Qt6Quick)",
 				"cmake(Qt6WebView)",
 				"pkgconfig(flatpak)",
+				"pkgconfig(libmarkdown)",
 				"pkgconfig(ostree-1)"
 			],
 			"depends": [
@@ -359,6 +360,6 @@
 		}
 	},
 	"source-name": "discover",
-	"source-release": "3",
+	"source-release": "4",
 	"source-version": "6.4.3"
 }

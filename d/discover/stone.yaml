@@ -5,7 +5,7 @@
 #
 name        : discover
 version     : 6.4.3
-release     : 3
+release     : 4
 upstreams   :
     - https://download.kde.org/stable/plasma/6.4.3/discover-6.4.3.tar.xz : c2dd8238aaa8c801a12c6f29d70f24467bad59209c5fc8fae97cbbbac45dde10
 homepage    : https://apps.kde.org/discover/
@@ -42,10 +42,10 @@ builddeps   :
     - cmake(Qt6Quick)
     - cmake(Qt6WebView)
     - pkgconfig(flatpak)
+    - pkgconfig(libmarkdown)
     - pkgconfig(ostree-1)
     # TODO:
     # - fwupd
-    # - libmarkdown
     # - packagekitqt
 rundeps    :
     - kf6-kirigami
