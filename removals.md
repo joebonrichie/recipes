@@ -91,3 +91,7 @@
 - sdl2-ttf
 - sdl2-ttf-devel
 - sdl2-ttf-dbginfo
+
+### Upstream split to new qgpgme package
+- gpgme-qt6
+- gpgme-qt6-devel
