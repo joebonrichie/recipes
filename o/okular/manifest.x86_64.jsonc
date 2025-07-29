@@ -32,6 +32,7 @@
 				"cmake(Qt6TextToSpeech)",
 				"pkgconfig(ddjvuapi)",
 				"pkgconfig(freetype2)",
+				"pkgconfig(libmarkdown)",
 				"pkgconfig(libspectre)",
 				"pkgconfig(libtiff-4)",
 				"pkgconfig(poppler-qt6)"
@@ -71,6 +72,7 @@
 				"/usr/share/applications/okularApplication_fb.desktop",
 				"/usr/share/applications/okularApplication_ghostview.desktop",
 				"/usr/share/applications/okularApplication_kimgio.desktop",
+				"/usr/share/applications/okularApplication_md.desktop",
 				"/usr/share/applications/okularApplication_pdf.desktop",
 				"/usr/share/applications/okularApplication_tiff.desktop",
 				"/usr/share/applications/okularApplication_txt.desktop",
@@ -1164,6 +1166,7 @@
 				"/usr/share/metainfo/org.kde.okular-fax.metainfo.xml",
 				"/usr/share/metainfo/org.kde.okular-fb.metainfo.xml",
 				"/usr/share/metainfo/org.kde.okular-kimgio.metainfo.xml",
+				"/usr/share/metainfo/org.kde.okular-md.metainfo.xml",
 				"/usr/share/metainfo/org.kde.okular-poppler.metainfo.xml",
 				"/usr/share/metainfo/org.kde.okular-spectre.metainfo.xml",
 				"/usr/share/metainfo/org.kde.okular-tiff.metainfo.xml",
@@ -1247,6 +1250,7 @@
 				"cmake(Qt6TextToSpeech)",
 				"pkgconfig(ddjvuapi)",
 				"pkgconfig(freetype2)",
+				"pkgconfig(libmarkdown)",
 				"pkgconfig(libspectre)",
 				"pkgconfig(libtiff-4)",
 				"pkgconfig(poppler-qt6)"
@@ -1326,6 +1330,7 @@
 				"cmake(Qt6TextToSpeech)",
 				"pkgconfig(ddjvuapi)",
 				"pkgconfig(freetype2)",
+				"pkgconfig(libmarkdown)",
 				"pkgconfig(libspectre)",
 				"pkgconfig(libtiff-4)",
 				"pkgconfig(poppler-qt6)"
@@ -1552,6 +1557,7 @@
 				"cmake(Qt6TextToSpeech)",
 				"pkgconfig(ddjvuapi)",
 				"pkgconfig(freetype2)",
+				"pkgconfig(libmarkdown)",
 				"pkgconfig(libspectre)",
 				"pkgconfig(libtiff-4)",
 				"pkgconfig(poppler-qt6)"
@@ -1622,6 +1628,7 @@
 				"cmake(Qt6TextToSpeech)",
 				"pkgconfig(ddjvuapi)",
 				"pkgconfig(freetype2)",
+				"pkgconfig(libmarkdown)",
 				"pkgconfig(libspectre)",
 				"pkgconfig(libtiff-4)",
 				"pkgconfig(poppler-qt6)"
@@ -1662,6 +1669,7 @@
 				"soname(libdjvulibre.so.21(x86_64))",
 				"soname(libfreetype.so.6(x86_64))",
 				"soname(libm.so.6(x86_64))",
+				"soname(libmarkdown.so.3(x86_64))",
 				"soname(libphonon4qt6.so.4(x86_64))",
 				"soname(libpoppler-qt6.so.3(x86_64))",
 				"soname(libspectre.so.1(x86_64))",
@@ -1676,6 +1684,7 @@
 				"/usr/lib/qt6/plugins/okular_generators/okularGenerator_fb.so",
 				"/usr/lib/qt6/plugins/okular_generators/okularGenerator_ghostview.so",
 				"/usr/lib/qt6/plugins/okular_generators/okularGenerator_kimgio.so",
+				"/usr/lib/qt6/plugins/okular_generators/okularGenerator_md.so",
 				"/usr/lib/qt6/plugins/okular_generators/okularGenerator_poppler.so",
 				"/usr/lib/qt6/plugins/okular_generators/okularGenerator_tiff.so",
 				"/usr/lib/qt6/plugins/okular_generators/okularGenerator_txt.so",
@@ -1695,6 +1704,7 @@
 				"soname(qt6/plugins/okular_generators/okularGenerator_fb.so(x86_64))",
 				"soname(qt6/plugins/okular_generators/okularGenerator_ghostview.so(x86_64))",
 				"soname(qt6/plugins/okular_generators/okularGenerator_kimgio.so(x86_64))",
+				"soname(qt6/plugins/okular_generators/okularGenerator_md.so(x86_64))",
 				"soname(qt6/plugins/okular_generators/okularGenerator_poppler.so(x86_64))",
 				"soname(qt6/plugins/okular_generators/okularGenerator_tiff.so(x86_64))",
 				"soname(qt6/plugins/okular_generators/okularGenerator_txt.so(x86_64))",
@@ -1703,6 +1713,6 @@
 		}
 	},
 	"source-name": "okular",
-	"source-release": "1",
+	"source-release": "2",
 	"source-version": "25.04.3"
 }
