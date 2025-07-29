@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : maturin
-version     : 1.8.6
-release     : 4
+version     : 1.9.2
+release     : 5
 homepage    : https://www.maturin.rs
 upstreams   :
-    - https://pypi.debian.net/maturin/maturin-1.8.6.tar.gz : 0e0dc2e0bfaa2e1bd238e0236cf8a2b7e2250ccaa29c1aa8d0e61fa664b0289d
+    - https://pypi.debian.net/maturin/maturin-1.9.2.tar.gz : 8b534d3a8acb922fc7a01ec89c12ba950dccdc11b57457c1d4c2661ae24bf96d
 summary     : Build and publish crates with pyo3, rust-cpython and cffi bindings
 description : |
     Build and publish crates with pyo3, rust-cpython and cffi bindings
@@ -24,7 +24,7 @@ builddeps   :
     - python(setuptools-rust)
 setup       : |
     %patch %(pkgdir)/revert-setuptools.patch
-    %patch %(pkgdir)/0001-Revert-Add-compression-level-option-to-build-command.patch
+    # %patch %(pkgdir)/0001-Revert-Add-compression-level-option-to-build-command.patch
 
     %cargo_fetch
 build       : |
