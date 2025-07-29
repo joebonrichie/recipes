@@ -5,7 +5,7 @@
 #
 name        : glibc
 version     : 2.41+git.6e489c17
-release     : 25
+release     : 26
 summary     : The GNU libc libraries
 license     :
     - GPL-2.0-or-later
@@ -27,21 +27,6 @@ builddeps   :
     - binary(python3)
     - binary(zstd)
     - gcc-32bit
-packages    :
-    - "%(name)-devel":
-        paths:
-            - /usr/bin/mtrace
-            - /usr/bin/pcprofiledump
-            - /usr/bin/xtrace
-            - /usr/lib/*.o
-            - /usr/lib/libc_malloc_debug.so*
-    - "%(name)-32bit":
-        paths:
-            - /usr/lib/ld-linux.so.2
-    - "%(name)-32bit-devel":
-        paths:
-            - /usr/lib32/*.o
-            - /usr/lib32/libc_malloc_debug.so*
 toolchain   : gnu
 emul32      : true
 tuning      :
@@ -158,3 +143,24 @@ profiles    :
             # Support old compiled 32bit binaries
             %install_dir %(installroot)/usr/lib
             ln -sv ../lib32/ld-linux.so.2 %(installroot)/usr/lib/ld-linux.so.2
+packages    :
+    - "%(name)":
+        rundeps:
+            - iana-etc
+
+    - "%(name)-devel":
+        paths:
+            - /usr/bin/mtrace
+            - /usr/bin/pcprofiledump
+            - /usr/bin/xtrace
+            - /usr/lib/*.o
+            - /usr/lib/libc_malloc_debug.so*
+
+    - "%(name)-32bit":
+        paths:
+            - /usr/lib/ld-linux.so.2
+
+    - "%(name)-32bit-devel":
+        paths:
+            - /usr/lib32/*.o
+            - /usr/lib32/libc_malloc_debug.so*
