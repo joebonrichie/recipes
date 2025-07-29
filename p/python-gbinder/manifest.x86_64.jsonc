@@ -1,0 +1,32 @@
+/** Human readable report. This is not consumed by boulder */
+{
+	"manifest-version": "0.2",
+	"packages": {
+		"python-gbinder": {
+			"build-depends": [
+				"binary(cython)",
+				"pkgconfig(libgbinder)"
+			],
+			"depends": [
+				"python-libs",
+				"soname(libc.so.6(x86_64))",
+				"soname(libgbinder.so.1(x86_64))"
+			],
+			"files": [
+				"/usr/lib/python3.11/site-packages/gbinder.cpython-311-x86_64-linux-gnu.so",
+				"/usr/lib/python3.11/site-packages/gbinder_python-1.1.2-py3.11.egg-info/PKG-INFO",
+				"/usr/lib/python3.11/site-packages/gbinder_python-1.1.2-py3.11.egg-info/SOURCES.txt",
+				"/usr/lib/python3.11/site-packages/gbinder_python-1.1.2-py3.11.egg-info/dependency_links.txt",
+				"/usr/lib/python3.11/site-packages/gbinder_python-1.1.2-py3.11.egg-info/top_level.txt"
+			],
+			"name": "python-gbinder",
+			"provides": [
+				"python(gbinder-python)",
+				"soname(python3.11/site-packages/gbinder.cpython-311-x86_64-linux-gnu.so(x86_64))"
+			]
+		}
+	},
+	"source-name": "python-gbinder",
+	"source-release": "1",
+	"source-version": "1.1.2"
+}
