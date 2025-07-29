@@ -16,50 +16,39 @@
 			],
 			"depends": [
 				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
-				"soname(libX11.so.6(x86_64))",
-				"soname(libatk-1.0.so.0(x86_64))",
+				"soname(libasound.so.2(x86_64))",
 				"soname(libc.so.6(x86_64))",
-				"soname(libcairo-gobject.so.2(x86_64))",
-				"soname(libcairo.so.2(x86_64))",
-				"soname(libgdk-3.so.0(x86_64))",
-				"soname(libgdk_pixbuf-2.0.so.0(x86_64))",
-				"soname(libgio-2.0.so.0(x86_64))",
 				"soname(libglib-2.0.so.0(x86_64))",
 				"soname(libgobject-2.0.so.0(x86_64))",
-				"soname(libgthread-2.0.so.0(x86_64))",
-				"soname(libgtk-3.so.0(x86_64))",
-				"soname(libharfbuzz.so.0(x86_64))",
+				"soname(libgstreamer-1.0.so.0(x86_64))",
 				"soname(libltdl.so.7(x86_64))",
 				"soname(libm.so.6(x86_64))",
-				"soname(libpango-1.0.so.0(x86_64))",
-				"soname(libpangocairo-1.0.so.0(x86_64))",
+				"soname(libpulse.so.0(x86_64))",
 				"soname(libudev.so.1(x86_64))",
 				"soname(libvorbisfile.so.3(x86_64))"
 			],
 			"files": [
 				"/usr/bin/canberra-boot",
-				"/usr/bin/canberra-gtk-play",
-				"/usr/lib/gnome-settings-daemon-3.0/gtk-modules/canberra-gtk-module.desktop",
-				"/usr/lib/gtk-3.0/modules/libcanberra-gtk-module.so",
-				"/usr/lib/gtk-3.0/modules/libcanberra-gtk3-module.so",
-				"/usr/lib/libcanberra-gtk3.so.0",
-				"/usr/lib/libcanberra-gtk3.so.0.1.9",
+				"/usr/lib/libcanberra-0.30/libcanberra-alsa.so",
+				"/usr/lib/libcanberra-0.30/libcanberra-gstreamer.so",
+				"/usr/lib/libcanberra-0.30/libcanberra-multi.so",
+				"/usr/lib/libcanberra-0.30/libcanberra-null.so",
+				"/usr/lib/libcanberra-0.30/libcanberra-pulse.so",
 				"/usr/lib/libcanberra.so.0",
 				"/usr/lib/libcanberra.so.0.2.5",
 				"/usr/lib/systemd/system/canberra-system-bootup.service",
 				"/usr/lib/systemd/system/canberra-system-shutdown-reboot.service",
 				"/usr/lib/systemd/system/canberra-system-shutdown.service",
-				"/usr/share/doc/libcanberra/README",
-				"/usr/share/gdm/autostart/LoginWindow/libcanberra-ready-sound.desktop",
-				"/usr/share/gnome/autostart/libcanberra-login-sound.desktop",
-				"/usr/share/gnome/shutdown/libcanberra-logout-sound.sh"
+				"/usr/share/doc/libcanberra/README"
 			],
 			"name": "libcanberra",
 			"provides": [
 				"binary(canberra-boot)",
-				"binary(canberra-gtk-play)",
-				"soname(gtk-3.0/modules/libcanberra-gtk3-module.so(x86_64))",
-				"soname(libcanberra-gtk3.so.0(x86_64))",
+				"soname(libcanberra-0.30/libcanberra-alsa.so(x86_64))",
+				"soname(libcanberra-0.30/libcanberra-gstreamer.so(x86_64))",
+				"soname(libcanberra-0.30/libcanberra-multi.so(x86_64))",
+				"soname(libcanberra-0.30/libcanberra-null.so(x86_64))",
+				"soname(libcanberra-0.30/libcanberra-pulse.so(x86_64))",
 				"soname(libcanberra.so.0(x86_64))"
 			]
 		},
@@ -77,27 +66,13 @@
 			],
 			"depends": [
 				"libcanberra",
+				"libcanberra-gtk3",
 				"pkgconfig(gdk-3.0)",
-				"pkgconfig(gtk+-3.0)",
-				"soname(libasound.so.2(x86_64))",
-				"soname(libc.so.6(x86_64))",
-				"soname(libcanberra.so.0(x86_64))",
-				"soname(libglib-2.0.so.0(x86_64))",
-				"soname(libgobject-2.0.so.0(x86_64))",
-				"soname(libgstreamer-1.0.so.0(x86_64))",
-				"soname(libltdl.so.7(x86_64))",
-				"soname(libm.so.6(x86_64))",
-				"soname(libpulse.so.0(x86_64))",
-				"soname(libvorbisfile.so.3(x86_64))"
+				"pkgconfig(gtk+-3.0)"
 			],
 			"files": [
 				"/usr/include/canberra-gtk.h",
 				"/usr/include/canberra.h",
-				"/usr/lib/libcanberra-0.30/libcanberra-alsa.so",
-				"/usr/lib/libcanberra-0.30/libcanberra-gstreamer.so",
-				"/usr/lib/libcanberra-0.30/libcanberra-multi.so",
-				"/usr/lib/libcanberra-0.30/libcanberra-null.so",
-				"/usr/lib/libcanberra-0.30/libcanberra-pulse.so",
 				"/usr/lib/libcanberra-gtk3.so",
 				"/usr/lib/libcanberra.so",
 				"/usr/lib/pkgconfig/libcanberra-gtk3.pc",
@@ -108,12 +83,7 @@
 			"name": "libcanberra-devel",
 			"provides": [
 				"pkgconfig(libcanberra)",
-				"pkgconfig(libcanberra-gtk3)",
-				"soname(libcanberra-0.30/libcanberra-alsa.so(x86_64))",
-				"soname(libcanberra-0.30/libcanberra-gstreamer.so(x86_64))",
-				"soname(libcanberra-0.30/libcanberra-multi.so(x86_64))",
-				"soname(libcanberra-0.30/libcanberra-null.so(x86_64))",
-				"soname(libcanberra-0.30/libcanberra-pulse.so(x86_64))"
+				"pkgconfig(libcanberra-gtk3)"
 			]
 		},
 		"libcanberra-docs": {
@@ -142,9 +112,61 @@
 				"/usr/share/gtk-doc/html/libcanberra/up.png"
 			],
 			"name": "libcanberra-docs"
+		},
+		"libcanberra-gtk3": {
+			"build-depends": [
+				"binary(file)",
+				"libtool-ltldl-devel",
+				"pkgconfig(alsa)",
+				"pkgconfig(gstreamer-1.0)",
+				"pkgconfig(gtk+-3.0)",
+				"pkgconfig(libpulse)",
+				"pkgconfig(systemd)",
+				"pkgconfig(udev)",
+				"pkgconfig(vorbisfile)"
+			],
+			"depends": [
+				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
+				"soname(libX11.so.6(x86_64))",
+				"soname(libatk-1.0.so.0(x86_64))",
+				"soname(libc.so.6(x86_64))",
+				"soname(libcairo-gobject.so.2(x86_64))",
+				"soname(libcairo.so.2(x86_64))",
+				"soname(libcanberra.so.0(x86_64))",
+				"soname(libgdk-3.so.0(x86_64))",
+				"soname(libgdk_pixbuf-2.0.so.0(x86_64))",
+				"soname(libgio-2.0.so.0(x86_64))",
+				"soname(libglib-2.0.so.0(x86_64))",
+				"soname(libgobject-2.0.so.0(x86_64))",
+				"soname(libgthread-2.0.so.0(x86_64))",
+				"soname(libgtk-3.so.0(x86_64))",
+				"soname(libharfbuzz.so.0(x86_64))",
+				"soname(libltdl.so.7(x86_64))",
+				"soname(libm.so.6(x86_64))",
+				"soname(libpango-1.0.so.0(x86_64))",
+				"soname(libpangocairo-1.0.so.0(x86_64))",
+				"soname(libvorbisfile.so.3(x86_64))"
+			],
+			"files": [
+				"/usr/bin/canberra-gtk-play",
+				"/usr/lib/gnome-settings-daemon-3.0/gtk-modules/canberra-gtk-module.desktop",
+				"/usr/lib/gtk-3.0/modules/libcanberra-gtk-module.so",
+				"/usr/lib/gtk-3.0/modules/libcanberra-gtk3-module.so",
+				"/usr/lib/libcanberra-gtk3.so.0",
+				"/usr/lib/libcanberra-gtk3.so.0.1.9",
+				"/usr/share/gdm/autostart/LoginWindow/libcanberra-ready-sound.desktop",
+				"/usr/share/gnome/autostart/libcanberra-login-sound.desktop",
+				"/usr/share/gnome/shutdown/libcanberra-logout-sound.sh"
+			],
+			"name": "libcanberra-gtk3",
+			"provides": [
+				"binary(canberra-gtk-play)",
+				"soname(gtk-3.0/modules/libcanberra-gtk3-module.so(x86_64))",
+				"soname(libcanberra-gtk3.so.0(x86_64))"
+			]
 		}
 	},
 	"source-name": "libcanberra",
-	"source-release": "5",
+	"source-release": "6",
 	"source-version": "0.30"
 }

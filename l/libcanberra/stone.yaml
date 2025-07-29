@@ -5,7 +5,7 @@
 #
 name        : libcanberra
 version     : '0.30'
-release     : 5
+release     : 6
 homepage    : http://0pointer.de/lennart/projects/libcanberra
 upstreams   :
     - http://0pointer.de/lennart/projects/libcanberra/libcanberra-0.30.tar.xz : c2b671e67e0c288a69fc33dc1b6f1b534d07882c2aceed37004bf48c601afa72
@@ -24,18 +24,38 @@ builddeps   :
     - pkgconfig(systemd)
     - pkgconfig(udev)
     - pkgconfig(vorbisfile)
-packages    :
-    - "%(name)-devel":
-        paths:
-            - /usr/share/vala/vapi
 setup       : |
     # TODO: Enable alsa/pulse/etc
-    %configure --disable-static \
-               --disable-oss \
-               --enable-alsa \
-               --enable-gtk3 \
-               --with-builtin=dso
+    %configure \
+        --disable-static \
+        --disable-oss \
+        --enable-alsa \
+        --enable-gtk3 \
+        --enable-null \
+        --enable-pulse \
+        --with-builtin=dso
 build       : |
     %make
 install     : |
     %make_install -j1
+packages    :
+    - "%(name)":
+        paths:
+            - /usr/lib/libcanberra-*/libcanberra-*.so
+
+    - "%(name)-gtk3":
+        summary: GTK3 bindings for libcanberra
+        description: GTK3 bindings for libcanberra
+        paths:
+            - /usr/bin/canberra-gtk-play
+            - /usr/lib/gnome-settings-daemon-3.0/gtk-modules/canberra-gtk-module.desktop
+            - /usr/lib/libcanberra-gtk3.so.*
+            - /usr/lib/gtk-3.0/modules/
+            - /usr/share/gdm/autostart/
+            - /usr/share/gnome/
+
+    - "%(name)-devel":
+        rundeps:
+            - "%(name)-gtk3"
+        paths:
+            - /usr/share/vala/vapi
