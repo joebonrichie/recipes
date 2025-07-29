@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : fontconfig
-version     : '2.16.2'
-release     : 12
+version     : '2.17.1'
+release     : 13
 homepage    : https://www.freedesktop.org/wiki/Software/fontconfig
 upstreams   :
-    - https://gitlab.freedesktop.org/api/v4/projects/890/packages/generic/fontconfig/2.16.2/fontconfig-2.16.2.tar.xz : 165b8fd2a119864c87464b233986c4a1bc09efb09c65de1ca40cc1e85ffb77e2
+    - https://gitlab.freedesktop.org/api/v4/projects/890/packages/generic/fontconfig/2.17.1/fontconfig-2.17.1.tar.xz : 9f5cae93f4fffc1fbc05ae99cdfc708cd60dfd6612ffc0512827025c026fa541
 summary     : Library for configuring and customizing font access
 description : |
     Fontconfig can:
@@ -21,12 +21,12 @@ description : |
 license     : MIT
 builddeps   :
     - binary(gperf)
-    - pkgconfig32(expat)
     - pkgconfig32(freetype2)
+    - pkgconfig32(libxml-2.0)
+    # TODO: docbook2man needed for man pages
 emul32      : yes
 setup       : |
     %patch %(pkgdir)/stateless/Support-user-config.patch
-    %patch %(pkgdir)/383.patch
 
     %meson \
         --sysconfdir=%(vendordir)%(sysconfdir) \
@@ -35,7 +35,8 @@ setup       : |
         -Dbaseconfig-dir=%(datadir)/fonts \
         -Dconfig-dir=%(datadir)/fonts/conf.d \
         -Ddoc=disabled \
-        -Dtests=disabled
+        -Dtests=disabled \
+        -Dxml-backend=libxml2
 build       : |
     %meson_build
 install     : |
@@ -48,3 +49,7 @@ install     : |
     # tmpfiles configuration
     %tmpfiles "# Create font compatibility link"
     %tmpfiles "L+ /etc/fonts - - - - /usr/share/fonts"
+packages    :
+    - "%(name)-devel":
+        paths:
+            - /usr/share/gettext/

@@ -5,14 +5,14 @@
 		"fontconfig": {
 			"build-depends": [
 				"binary(gperf)",
-				"pkgconfig32(expat)",
-				"pkgconfig32(freetype2)"
+				"pkgconfig32(freetype2)",
+				"pkgconfig32(libxml-2.0)"
 			],
 			"depends": [
 				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
 				"soname(libc.so.6(x86_64))",
-				"soname(libexpat.so.1(x86_64))",
-				"soname(libfreetype.so.6(x86_64))"
+				"soname(libfreetype.so.6(x86_64))",
+				"soname(libxml2.so.16(x86_64))"
 			],
 			"files": [
 				"/usr/bin/fc-cache",
@@ -25,7 +25,7 @@
 				"/usr/bin/fc-scan",
 				"/usr/bin/fc-validate",
 				"/usr/lib/libfontconfig.so.1",
-				"/usr/lib/libfontconfig.so.1.15.0",
+				"/usr/lib/libfontconfig.so.1.16.0",
 				"/usr/lib/tmpfiles.d/fontconfig.conf",
 				"/usr/share/fontconfig/conf.avail/05-reset-dirs-sample.conf",
 				"/usr/share/fontconfig/conf.avail/09-autohint-if-no-hinting.conf",
@@ -54,6 +54,7 @@
 				"/usr/share/fontconfig/conf.avail/40-nonlatin.conf",
 				"/usr/share/fontconfig/conf.avail/45-generic.conf",
 				"/usr/share/fontconfig/conf.avail/45-latin.conf",
+				"/usr/share/fontconfig/conf.avail/48-guessfamily.conf",
 				"/usr/share/fontconfig/conf.avail/48-spacing.conf",
 				"/usr/share/fontconfig/conf.avail/49-sansserif.conf",
 				"/usr/share/fontconfig/conf.avail/50-user.conf",
@@ -90,12 +91,11 @@
 				"/usr/share/fonts/conf.d/65-fonts-persian.conf",
 				"/usr/share/fonts/conf.d/65-nonlatin.conf",
 				"/usr/share/fonts/conf.d/69-unifont.conf",
+				"/usr/share/fonts/conf.d/70-no-bitmaps-except-emoji.conf",
 				"/usr/share/fonts/conf.d/80-delicious.conf",
 				"/usr/share/fonts/conf.d/90-synthetic.conf",
 				"/usr/share/fonts/conf.d/README",
 				"/usr/share/fonts/fonts.conf",
-				"/usr/share/gettext/its/fontconfig.its",
-				"/usr/share/gettext/its/fontconfig.loc",
 				"/usr/share/moss/triggers/tx.d/fonts-cache.yaml",
 				"/usr/share/xml/fontconfig/fonts.dtd"
 			],
@@ -116,36 +116,35 @@
 		"fontconfig-32bit": {
 			"build-depends": [
 				"binary(gperf)",
-				"pkgconfig32(expat)",
-				"pkgconfig32(freetype2)"
+				"pkgconfig32(freetype2)",
+				"pkgconfig32(libxml-2.0)"
 			],
 			"depends": [
 				"fontconfig",
 				"soname(libc.so.6(386))",
-				"soname(libexpat.so.1(386))",
-				"soname(libfreetype.so.6(386))"
+				"soname(libfreetype.so.6(386))",
+				"soname(libxml2.so.16(386))"
 			],
 			"files": [
 				"/usr/lib32/libfontconfig.so.1",
-				"/usr/lib32/libfontconfig.so.1.15.0"
+				"/usr/lib32/libfontconfig.so.1.16.0"
 			],
 			"name": "fontconfig-32bit",
 			"provides": [
-				"soname(libfontconfig.so.1(386))",
-				"soname(libfontconfig.so.1(x86))"
+				"soname(libfontconfig.so.1(386))"
 			]
 		},
 		"fontconfig-32bit-devel": {
 			"build-depends": [
 				"binary(gperf)",
-				"pkgconfig32(expat)",
-				"pkgconfig32(freetype2)"
+				"pkgconfig32(freetype2)",
+				"pkgconfig32(libxml-2.0)"
 			],
 			"depends": [
 				"fontconfig-32bit",
 				"fontconfig-devel",
-				"pkgconfig32(expat)",
-				"pkgconfig32(freetype2)"
+				"pkgconfig32(freetype2)",
+				"pkgconfig32(libxml-2.0)"
 			],
 			"files": [
 				"/usr/lib32/libfontconfig.so",
@@ -159,20 +158,22 @@
 		"fontconfig-devel": {
 			"build-depends": [
 				"binary(gperf)",
-				"pkgconfig32(expat)",
-				"pkgconfig32(freetype2)"
+				"pkgconfig32(freetype2)",
+				"pkgconfig32(libxml-2.0)"
 			],
 			"depends": [
 				"fontconfig",
-				"pkgconfig(expat)",
-				"pkgconfig(freetype2)"
+				"pkgconfig(freetype2)",
+				"pkgconfig(libxml-2.0)"
 			],
 			"files": [
 				"/usr/include/fontconfig/fcfreetype.h",
 				"/usr/include/fontconfig/fcprivate.h",
 				"/usr/include/fontconfig/fontconfig.h",
 				"/usr/lib/libfontconfig.so",
-				"/usr/lib/pkgconfig/fontconfig.pc"
+				"/usr/lib/pkgconfig/fontconfig.pc",
+				"/usr/share/gettext/its/fontconfig.its",
+				"/usr/share/gettext/its/fontconfig.loc"
 			],
 			"name": "fontconfig-devel",
 			"provides": [
@@ -181,6 +182,6 @@
 		}
 	},
 	"source-name": "fontconfig",
-	"source-release": "12",
-	"source-version": "2.16.2"
+	"source-release": "13",
+	"source-version": "2.17.1"
 }
