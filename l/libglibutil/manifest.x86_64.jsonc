@@ -1,0 +1,62 @@
+/** Human readable report. This is not consumed by boulder */
+{
+	"manifest-version": "0.2",
+	"packages": {
+		"libglibutil": {
+			"build-depends": [
+				"pkgconfig(glib-2.0)"
+			],
+			"depends": [
+				"soname(libc.so.6(x86_64))",
+				"soname(libglib-2.0.so.0(x86_64))",
+				"soname(libgobject-2.0.so.0(x86_64))"
+			],
+			"files": [
+				"/usr/lib/libglibutil.so.1",
+				"/usr/lib/libglibutil.so.1.0",
+				"/usr/lib/libglibutil.so.1.0.80"
+			],
+			"name": "libglibutil",
+			"provides": [
+				"soname(libglibutil.so.1(x86_64))"
+			]
+		},
+		"libglibutil-devel": {
+			"build-depends": [
+				"pkgconfig(glib-2.0)"
+			],
+			"depends": [
+				"libglibutil",
+				"pkgconfig(glib-2.0)"
+			],
+			"files": [
+				"/usr/include/gutil/gutil_datapack.h",
+				"/usr/include/gutil/gutil_history.h",
+				"/usr/include/gutil/gutil_idlepool.h",
+				"/usr/include/gutil/gutil_idlequeue.h",
+				"/usr/include/gutil/gutil_inotify.h",
+				"/usr/include/gutil/gutil_intarray.h",
+				"/usr/include/gutil/gutil_ints.h",
+				"/usr/include/gutil/gutil_log.h",
+				"/usr/include/gutil/gutil_macros.h",
+				"/usr/include/gutil/gutil_misc.h",
+				"/usr/include/gutil/gutil_objv.h",
+				"/usr/include/gutil/gutil_ring.h",
+				"/usr/include/gutil/gutil_strv.h",
+				"/usr/include/gutil/gutil_timenotify.h",
+				"/usr/include/gutil/gutil_types.h",
+				"/usr/include/gutil/gutil_version.h",
+				"/usr/include/gutil/gutil_weakref.h",
+				"/usr/lib/libglibutil.so",
+				"/usr/lib/pkgconfig/libglibutil.pc"
+			],
+			"name": "libglibutil-devel",
+			"provides": [
+				"pkgconfig(libglibutil)"
+			]
+		}
+	},
+	"source-name": "libglibutil",
+	"source-release": "1",
+	"source-version": "1.0.80"
+}
