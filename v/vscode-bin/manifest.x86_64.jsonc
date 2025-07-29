@@ -2267,7 +2267,7 @@
 				"/usr/share/applications/code-url-handler.desktop",
 				"/usr/share/applications/code.desktop",
 				"/usr/share/bash-completion/completions/code",
-				"/usr/share/icons/hicolor/1024x1024/apps/code.png",
+				"/usr/share/icons/hicolor/1024x1024/apps/visual-studio-code.png",
 				"/usr/share/mime/packages/code-workspace.xml",
 				"/usr/share/zsh/site-functions/_code"
 			],
@@ -2283,6 +2283,6 @@
 		}
 	},
 	"source-name": "vscode-bin",
-	"source-release": "1",
+	"source-release": "2",
 	"source-version": "1.102.3"
 }
