@@ -5,7 +5,7 @@
 #
 name        : vscode-bin
 version     : 1.102.3
-release     : 2
+release     : 3
 upstreams   :
     - https://vscode.download.prss.microsoft.com/dbazure/download/stable/488a1f239235055e34e673291fb8d8c810886f81/code-stable-x64-1753759483.tar.gz:
         hash: 11b80fd828d40620bed86ed3906caec5aaabdf9b1302b96ce256c33531f53e67
@@ -51,8 +51,7 @@ install     : |
     meta_info %(sourcedir)/code-workspace.xml \
         | %install_file /dev/stdin "%(installroot)/usr/share/mime/packages/code-workspace.xml"
 
-    %install_dir %(installroot)/usr/share/icons/hicolor/1024x1024/apps/
-    ln -srv %(installroot)${vsdir}/resources/app/resources/linux/code.png %(installroot)/usr/share/icons/hicolor/1024x1024/apps/visual-studio-code.png
+    %install_file %(pkgdir)/vscode.svg %(installroot)/usr/share/icons/hicolor/scalable/apps/visual-studio-code.svg
 
     %install_dir %(installroot)%(bashcompletionsdir) %(installroot)%(zshcompletionsdir)
     ln -srv %(installroot)${vsdir}/resources/completions/bash/code %(installroot)%(bashcompletionsdir)/code
