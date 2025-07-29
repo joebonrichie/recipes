@@ -5,7 +5,7 @@
 #
 name        : systemd
 version     : "254.27"
-release     : 57
+release     : 58
 summary     : A System and Service Manager
 license     :
     - GPL-2.0-or-later
@@ -97,7 +97,6 @@ profiles    :
             %patch %(pkgdir)/patches/0001-tmpfiles-Allow-nsswitch-clobber-at-non-boot-interval.patch
             %patch %(pkgdir)/patches/0001-gpt-auto-generate-Stop-automounting-xbootldr-and-esp.patch
             %patch %(pkgdir)/patches/0009-path-lookup-Include-stateless-xdg-path-by-default.patch
-            %patch %(pkgdir)/patches/protocols.patch
 
             %meson \
                     -Dbpf-framework=false \
@@ -147,7 +146,6 @@ setup       : |
     %patch %(pkgdir)/patches/0001-tmpfiles-Allow-nsswitch-clobber-at-non-boot-interval.patch
     %patch %(pkgdir)/patches/0001-gpt-auto-generate-Stop-automounting-xbootldr-and-esp.patch
     %patch %(pkgdir)/patches/0009-path-lookup-Include-stateless-xdg-path-by-default.patch
-    %patch %(pkgdir)/patches/protocols.patch
 
     %meson \
         -Dbpf-compiler=${CC} \
