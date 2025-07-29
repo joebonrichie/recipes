@@ -5,7 +5,7 @@
 #
 name        : alsa-ucm-conf
 version     : 1.2.14
-release     : 5
+release     : 6
 homepage    : https://www.alsa-project.org/wiki/Main_Page
 upstreams   :
     - https://github.com/alsa-project/alsa-ucm-conf/archive/refs/tags/v1.2.14.tar.gz : a441fcc0bf70d91c52bd208de9b1e30bab9ad336ea5ee361a2b8982133fdb7f7
@@ -13,6 +13,8 @@ summary     : ALSA UCM configuration files
 description : |
     ALSA Use Case Manager configuration (and topologies)
 license     : BSD-3-Clause
+setup       : |
+    %patch %(pkgdir)/upstream-01.patch
 install     : |
     %install_dir %(installroot)%(datadir)/alsa
     cp -rv --preserve=mode,timestamps ucm2 %(installroot)%(datadir)/alsa

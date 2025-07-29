@@ -711,6 +711,6 @@
 		}
 	},
 	"source-name": "alsa-ucm-conf",
-	"source-release": "5",
+	"source-release": "6",
 	"source-version": "1.2.14"
 }
