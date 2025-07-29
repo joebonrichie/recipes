@@ -5,7 +5,7 @@
 #
 name        : vscode-bin
 version     : 1.102.3
-release     : 3
+release     : 4
 upstreams   :
     - https://vscode.download.prss.microsoft.com/dbazure/download/stable/488a1f239235055e34e673291fb8d8c810886f81/code-stable-x64-1753759483.tar.gz:
         hash: 11b80fd828d40620bed86ed3906caec5aaabdf9b1302b96ce256c33531f53e67
@@ -27,7 +27,9 @@ summary     : Visual Studio Code (vscode) - Editor for building and debugging mo
 description : |
     Visual Studio Code (vscode) - Editor for building and debugging modern web and cloud applications (official binary version)
 rundeps     :
+    - ca-certificates
     - binary(git)
+strip : false # Causes extension signature validation to fail
 environment : |
     function meta_info() {
         sed 's/@@NAME_LONG@@/Visual Studio Code/g' "$1" |\

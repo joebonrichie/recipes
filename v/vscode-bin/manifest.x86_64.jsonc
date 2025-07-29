@@ -5,6 +5,7 @@
 		"vscode-bin": {
 			"depends": [
 				"binary(git)",
+				"ca-certificates",
 				"interpreter(/lib64/ld-linux-x86-64.so.2(x86_64))",
 				"soname(ld-linux-x86-64.so.2(x86_64))",
 				"soname(libX11.so.6(x86_64))",
@@ -2283,6 +2284,6 @@
 		}
 	},
 	"source-name": "vscode-bin",
-	"source-release": "3",
+	"source-release": "4",
 	"source-version": "1.102.3"
 }
