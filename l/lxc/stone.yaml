@@ -1,0 +1,76 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : lxc
+version     : 6.0.5
+release     : 1
+homepage    : https://linuxcontainers.org/lxc
+upstreams   :
+    - https://linuxcontainers.org/downloads/lxc/lxc-6.0.5.tar.gz : 2e540c60b9dd49e7ee1a4efa5e9c743b05df911b81b375ed5043d9dd7ee0b48a
+license     : LGPL-2.1-or-later
+summary     : Linux Containers
+description : |
+    LXC is the well known set of tools, templates, library and language bindings. It's pretty low level, very flexible and covers just about every containment feature supported by the upstream kernel.
+builddeps   :
+    - pkgconfig(dbus-1)
+    - pkgconfig(libcap)
+    - pkgconfig(libseccomp)
+    - pkgconfig(openssl)
+    - pkgconfig(pam)
+    - pkgconfig(python3)
+    - libcap-staticlib
+    # TODO: docbook2man for man pages
+    # lxcfs
+setup       : |
+    # TODO: Figure out why static libcap isn't working
+    %meson \
+        -Dapparmor=false \
+        -Ddistrosysconfdir=/etc/default \
+        -Dman=false \
+        -Dpam-cgroup=true \
+        -Dselinux=false \
+        -Dsystemd-unitdir=%(libdir)/systemd/system
+build       : |
+    %meson_build
+install     : |
+    %meson_install
+
+    rm -fv %(installroot)%(libdir)/lib*.a
+
+    # Stateless
+    %tmpfiles "d /var/cache/lxc 0755 root root -"
+    %tmpfiles "d /var/lib/lxc 0755 root root -"
+packages    :
+    - "%(name)":
+        rundeps:
+            - binary(lxcfs)
+            - binary(openssl)
+
+    - "%(name)-libs":
+        rundeps:
+            - binary(rsync)
+        paths:
+            - /usr/lib/liblxc.so.*
+            - /usr/lib/security/pam_cgfs.so
+            - /usr/lib/lxc/
+            - /usr/share/lxc/hooks/
+            - /usr/share/lxc/lxc-patch.py
+            - /usr/sbin/init.lxc
+            - /usr/bin/lxc-autostart
+            - /usr/share/bash-completion/completions/lxc-autostart
+            - /usr/lib/systemd/system/
+            - /usr/lib/tmpfiles.d/
+
+    - "%(name)-templates":
+        rundeps:
+            - "%(name)-libs"
+            - binary(wget)
+        paths:
+            - /usr/share/lxc/config/
+            - /usr/share/lxc/templates/
+
+    - "%(name)-docs":
+        paths:
+            - /usr/share/doc/
