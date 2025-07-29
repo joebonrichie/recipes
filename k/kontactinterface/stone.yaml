@@ -1,0 +1,31 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : kontactinterface
+version     : 25.04.3
+release     : 1
+upstreams   :
+    - https://download.kde.org/stable/release-service/25.04.3/src/kontactinterface-25.04.3.tar.xz : 5a7ab4c18f3c753782b5d3b9ac63213651f4268ffb698b0c6206cff323614131
+homepage    : https://kde.org
+license     : LGPL-2.1-or-later
+summary     : Kontact Plugin Interface Library
+description : |
+    Kontact Plugin Interface Library.
+builddeps   :
+    # Temporary, boulder doesn't handle build ordering resolution correctly when builddeps are added by macros, so add ECM manually
+    - cmake(ECM)
+    - cmake(KF6CoreAddons)
+    - cmake(KF6I18n)
+    - cmake(KF6Parts)
+    - cmake(KF6WindowSystem)
+    - cmake(KF6XmlGui)
+    - cmake(Qt6CorePrivate)
+    - pkgconfig(x11)
+setup       : |
+    %cmake_kf6
+build       : |
+    %cmake_build
+install     : |
+    %cmake_install
