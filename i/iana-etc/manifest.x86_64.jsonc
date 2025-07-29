@@ -1,0 +1,17 @@
+/** Human readable report. This is not consumed by boulder */
+{
+	"manifest-version": "0.2",
+	"packages": {
+		"iana-etc": {
+			"files": [
+				"/usr/lib/tmpfiles.d/iana-etc.conf",
+				"/usr/share/defaults/protocols",
+				"/usr/share/defaults/services"
+			],
+			"name": "iana-etc"
+		}
+	},
+	"source-name": "iana-etc",
+	"source-release": "1",
+	"source-version": "20250722"
+}

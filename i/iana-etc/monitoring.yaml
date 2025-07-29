@@ -1,0 +1,5 @@
+releases:
+  id: 379382
+  rss: https://github.com/Mic92/iana-etc/releases.atom
+security:
+  cpe: ~
