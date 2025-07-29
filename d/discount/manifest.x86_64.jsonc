@@ -1,0 +1,78 @@
+/** Human readable report. This is not consumed by boulder */
+{
+	"manifest-version": "0.2",
+	"packages": {
+		"discount": {
+			"depends": [
+				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
+				"soname(libc.so.6(x86_64))",
+				"soname(libmarkdown.so.3(x86_64))"
+			],
+			"files": [
+				"/usr/bin/discount-makepage",
+				"/usr/bin/discount-mkd2html",
+				"/usr/bin/discount-theme",
+				"/usr/bin/markdown",
+				"/usr/share/man/man1/discount-makepage.1",
+				"/usr/share/man/man1/discount-mkd2html.1",
+				"/usr/share/man/man1/discount-theme.1",
+				"/usr/share/man/man1/markdown.1",
+				"/usr/share/man/man7/markdown.7",
+				"/usr/share/man/man7/mkd-extensions.7"
+			],
+			"name": "discount",
+			"provides": [
+				"binary(discount-makepage)",
+				"binary(discount-mkd2html)",
+				"binary(discount-theme)",
+				"binary(markdown)"
+			]
+		},
+		"discount-devel": {
+			"depends": [
+				"discount"
+			],
+			"files": [
+				"/usr/include/mkdio.h",
+				"/usr/lib/libmarkdown.so",
+				"/usr/lib/pkgconfig/libmarkdown.pc",
+				"/usr/share/man/man3/markdown.3",
+				"/usr/share/man/man3/mkd-callbacks.3",
+				"/usr/share/man/man3/mkd-functions.3",
+				"/usr/share/man/man3/mkd-line.3",
+				"/usr/share/man/man3/mkd_cleanup.3",
+				"/usr/share/man/man3/mkd_compile.3",
+				"/usr/share/man/man3/mkd_css.3",
+				"/usr/share/man/man3/mkd_doc_author.3",
+				"/usr/share/man/man3/mkd_doc_date.3",
+				"/usr/share/man/man3/mkd_doc_title.3",
+				"/usr/share/man/man3/mkd_generatecss.3",
+				"/usr/share/man/man3/mkd_generatehtml.3",
+				"/usr/share/man/man3/mkd_generateline.3",
+				"/usr/share/man/man3/mkd_in.3",
+				"/usr/share/man/man3/mkd_line.3",
+				"/usr/share/man/man3/mkd_string.3"
+			],
+			"name": "discount-devel",
+			"provides": [
+				"pkgconfig(libmarkdown)"
+			]
+		},
+		"libmarkdown": {
+			"depends": [
+				"soname(libc.so.6(x86_64))"
+			],
+			"files": [
+				"/usr/lib/libmarkdown.so.3",
+				"/usr/lib/libmarkdown.so.3.0.0"
+			],
+			"name": "libmarkdown",
+			"provides": [
+				"soname(libmarkdown.so.3(x86_64))"
+			]
+		}
+	},
+	"source-name": "discount",
+	"source-release": "1",
+	"source-version": "3.0.0d"
+}

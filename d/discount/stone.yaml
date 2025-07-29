@@ -1,0 +1,41 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : discount
+version     : 3.0.0d
+release     : 1
+upstreams   :
+    - https://github.com/Orc/discount/archive/v3.0.0d.tar.gz : 0ed8cc27ac5d46dc6a8beedd5e5673ac8b466a6474bdb7d35f37c815f670385f
+homepage    : https://www.pell.portland.or.us/~orc/Code/discount/
+license     : BSD-3-Clause
+summary     : DISCOUNT is a implementation of John Gruber's Markdown markup language.
+description : |
+    DISCOUNT is a implementation of John Gruber's Markdown markup language.
+setup       : |
+    ./configure.sh \
+        --prefix=/usr \
+        --enable-all-features \
+        --with-fenced-code \
+        --pkg-config \
+        --shared
+build       : |
+    # fix ldconfig call
+    sed -e 's|/sbin/ldconfig|/sbin/ldconfig -n|' -i librarian.sh
+
+    %make
+install     : |
+    %make_install install.man install.samples
+
+    # Names are too generic
+    mv %(installroot)%(bindir)/makepage %(installroot)%(bindir)/discount-makepage
+    mv %(installroot)%(bindir)/mkd2html %(installroot)%(bindir)/discount-mkd2html
+    mv %(installroot)%(bindir)/theme %(installroot)%(bindir)/discount-theme
+    mv %(installroot)%(mandir)/man1/makepage.1 %(installroot)%(mandir)/man1/discount-makepage.1
+    mv %(installroot)%(mandir)/man1/mkd2html.1 %(installroot)%(mandir)/man1/discount-mkd2html.1
+    mv %(installroot)%(mandir)/man1/theme.1 %(installroot)%(mandir)/man1/discount-theme.1
+packages    :
+    - "libmarkdown":
+        paths:
+            - /usr/lib/libmarkdown.so.*
