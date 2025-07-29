@@ -1,0 +1,23 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : libgbinder
+version     : 1.1.42
+release     : 1
+homepage    : https://github.com/mer-hybris/libgbinder
+upstreams   :
+    - https://github.com/mer-hybris/libgbinder/archive/1.1.42/libgbinder-1.1.42.tar.gz : 32dcf31c5dc823af11558d180ed5fabb160fdfafe60f01d3212fd200a0842aed
+license     : BSD-3-Clause
+summary     : GLib-style interface to binder
+description : |
+    GLib-style interface to binder
+builddeps   :
+    - binary(ranlib)
+    - pkgconfig(glib-2.0)
+    - pkgconfig(libglibutil)
+build       : |
+    %make
+install     : |
+    %make_install install-dev
