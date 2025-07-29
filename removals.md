@@ -95,3 +95,6 @@
 ### Upstream split to new qgpgme package
 - gpgme-qt6
 - gpgme-qt6-devel
+
+### No longer generated
+- vscode-bin-dbginfo
