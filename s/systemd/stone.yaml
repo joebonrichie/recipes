@@ -5,7 +5,7 @@
 #
 name        : systemd
 version     : "254.27"
-release     : 58
+release     : 59
 summary     : A System and Service Manager
 license     :
     - GPL-2.0-or-later
@@ -23,18 +23,19 @@ builddeps   :
     - binary(m4)
     - binary(readelf.py)
     - binary(xsltproc)
-    - pkgconfig(gnutls)
+    - pkgconfig(blkid)
     - pkgconfig(gpg-error)
     - pkgconfig(libbpf)
     - pkgconfig(libcryptsetup)
     - pkgconfig(libdw)
     - pkgconfig(libfido2)
-    - pkgconfig(libgcrypt)
+    - pkgconfig(libidn2)
     - pkgconfig(libkmod)
+    - pkgconfig(libqrencode)
+    - pkgconfig(p11-kit-1)
     - pkgconfig(polkit-gobject-1)
     - pkgconfig(pwquality)
     - pkgconfig(tss2-esys)
-    - pkgconfig32(blkid)
     - pkgconfig32(bzip2)
     - pkgconfig32(dbus-1)
     - pkgconfig32(fdisk)
@@ -49,6 +50,7 @@ builddeps   :
     - pkgconfig32(liblzma)
     - pkgconfig32(libpcre2-8)
     - pkgconfig32(libseccomp)
+    - pkgconfig32(libssl)
     - pkgconfig32(libxcrypt)
     - pkgconfig32(libzstd)
     - pkgconfig32(mount)
@@ -60,7 +62,6 @@ builddeps   :
     - docbook-xsl
     - gcc-32bit # Only needed for libgcc_s.so, can be removed in systemd >= 255
     - gettext-devel
-    - gnu-efi-devel
     - python-jinja
 rundeps     :
     # Dash is now the default system shell (/usr/bin/sh) so we need to ensure it is always present and pulled in on existing systems
@@ -68,8 +69,144 @@ rundeps     :
     - binary(ntp-daemon)
     - binary(setfont)
     - system-accounts
+    - terminus-font
     - tzdata
 emul32      : true
+environment : |
+    # Temporary, replace with boulder macro
+    export XML_CATALOG_FILES="file:///usr/share/defaults/docbook/docbook-dtd/catalog file:///usr/share/defaults/docbook/docbook-xsl/catalog"
+setup       : |
+    %patch %(pkgdir)/patches/downstream/0016-tmpfiles-Make-var-cache-ldconfig-world-readable.patch
+    %patch %(pkgdir)/patches/downstream/systemd-245-disable-audit-by-default.patch
+    %patch %(pkgdir)/patches/downstream/0001-tmpfiles-Allow-nsswitch-clobber-at-non-boot-interval.patch
+    %patch %(pkgdir)/patches/downstream/0001-gpt-auto-generate-Stop-automounting-xbootldr-and-esp.patch
+    %patch %(pkgdir)/patches/downstream/0009-path-lookup-Include-stateless-xdg-path-by-default.patch
+    %patch %(pkgdir)/patches/downstream/0013-downstream-Allow-default-font-to-be-set.patch
+
+    %patch %(pkgdir)/patches/upstream/0001-vconsole-setup-port-to-main-func.h-boilerplate.patch
+    %patch %(pkgdir)/patches/upstream/0002-pid1-vconsole-setup-lock-dev-console-instead-of-the-.patch
+    %patch %(pkgdir)/patches/upstream/0003-vconsole-setup-use-a-consistent-log-level-when-setfo.patch
+    %patch %(pkgdir)/patches/upstream/0004-vconsole-setup-handle-the-case-where-the-vc-is-in-KD.patch
+    %patch %(pkgdir)/patches/upstream/0005-vconsole-setup-simplify-error-handling.patch
+    %patch %(pkgdir)/patches/upstream/0006-vconsole-setup-remember-the-correct-error-value-when.patch
+    %patch %(pkgdir)/patches/upstream/0007-Introduce-RET_GATHER-and-use-it-in-src-shared.patch
+
+    _IS_64BIT_BUILD="true"
+    if [[ %(target_triple) = i686* ]]; then
+        _IS_64BIT_BUILD="false"
+    fi
+
+    %meson \
+        -Dacl=true \
+        -Dadm-gid=16 \
+        -Dadm-group=true \
+        -Daudio-gid=11 \
+        -Dblkid=${_IS_64BIT_BUILD} \
+        -Dbootloader=${_IS_64BIT_BUILD} \
+        -Dbpf-compiler="clang" \
+        -Dbpf-framework=${_IS_64BIT_BUILD}  \
+        -Dcdrom-gid=15 \
+        -Dcoredump=${_IS_64BIT_BUILD}  \
+        -Dcreate-log-dirs=false \
+        -Ddefault-compression=zstd \
+        -Ddefault-dnssec=no \
+        -Ddefault-timeout-sec=5 \
+        -Ddialout-gid=10 \
+        -Ddisk-gid=8 \
+        -Ddns-over-tls="openssl" \
+        -Defi=${_IS_64BIT_BUILD} \
+        -Dfuzz-tests=false \
+        -Dhomed=${_IS_64BIT_BUILD} \
+        -Dinstall-sysconfdir=false \
+        -Dinstall-tests=false \
+        -Dkernel-install=false \
+        -Dkmem-gid=3 \
+        -Dkmod=${_IS_64BIT_BUILD} \
+        -Dkvm-gid=61 \
+        -Dlibcryptsetup=${_IS_64BIT_BUILD} \
+        -Dlibfido2=${_IS_64BIT_BUILD} \
+        -Dlogind=${_IS_64BIT_BUILD} \
+        -Dlp-gid=9 \
+        -Dmachined=${_IS_64BIT_BUILD} \
+        -Dman=${_IS_64BIT_BUILD} \
+        -Dmode=release \
+        -Dnetworkd=${_IS_64BIT_BUILD} \
+        -Dnobody-group=nobody \
+        -Dnobody-user=nobody \
+        -Dnss-systemd=true \
+        -Dok-color=highlight-blue \
+        -Dopenssl=true \
+        -Dpamconfdir="%(vendordir)/pam.d" \
+        -Dpamlibdir="%(libdir)/security" \
+        -Dpcre2=true \
+        -Dportabled=${_IS_64BIT_BUILD} \
+        -Dpstore=${_IS_64BIT_BUILD} \
+        -Dpwquality=${_IS_64BIT_BUILD} \
+        -Drender-gid=30 \
+        -Drepart=${_IS_64BIT_BUILD} \
+        -Drfkill=${_IS_64BIT_BUILD} \
+        -Drpmmacrosdir=no \
+        -Dsbat-distro="aerynos" \
+        -Dsbat-distro-summary="AerynOS" \
+        -Dsbat-distro-pkgname="%(name)" \
+        -Dsbat-distro-version="%(version)" \
+        -Dsbat-distro-url="https://aerynos.com/" \
+        -Dsgx-gid=405 \
+        -Dslow-tests=false \
+        -Dsplit-bin=true \
+        -Dsplit-usr=false \
+        -Dstatus-unit-format-default=combined \
+        -Dsysupdate=false \
+        -Dsysvinit-path="" \
+        -Dtape-gid=4 \
+        -Dtests=false \
+        -Dtpm=${_IS_64BIT_BUILD} \
+        -Dtty-gid=5 \
+        -Duser-path=/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin \
+        -Duserdb=${_IS_64BIT_BUILD}  \
+        -Dusers-gid=100 \
+        -Dutmp-gid=13 \
+        -Dvideo-gid=12 \
+        -Dwheel-gid=28 \
+        -Dwheel-group=true \
+        -Dxdg-autostart=${_IS_64BIT_BUILD}
+build       : |
+    %meson_build
+install     : |
+    %meson_install
+    if [[ %(target_triple) = i686* ]]; then
+        # Don't need these for the systemd libs
+        rm -rfv %(installroot)%(libdir)/systemd/
+
+        exit 0
+    fi
+
+    # Stateless: Clean up /var directories, they are created via tmpfiles already
+    rmdir %(installroot)/var/lib/systemd %(installroot)/var/lib %(installroot)/var
+
+    # Don't clobber pam!
+    rm -rf %(installroot)%(datadir)/factory/etc/pam.d
+
+    # config.
+    %install_file %(pkgdir)/configs/00-journald.conf %(installroot)%(libdir)/systemd/journald.conf.d/00-journald.conf
+    %install_file %(pkgdir)/configs/10-timeout-abort.conf %(installroot)%(libdir)/systemd/system/service.d/10-timeout-abort.conf
+    %install_file %(pkgdir)/configs/00-timeouts.conf %(installroot)%(libdir)/systemd/system.conf.d/00-timeouts.conf
+
+    # install necessary system triggers
+    %install_file %(pkgdir)/systemd_etcfiles.yaml %(installroot)/usr/share/moss/triggers/sys.d/systemd_etcfiles.yaml
+    %install_file %(pkgdir)/systemd_tmpfiles.yaml %(installroot)/usr/share/moss/triggers/sys.d/systemd_tmpfiles.yaml
+    %install_file %(pkgdir)/systemd_sysusers.yaml %(installroot)/usr/share/moss/triggers/sys.d/systemd_sysusers.yaml
+    %install_file %(pkgdir)/systemd_presets.yaml %(installroot)/usr/share/moss/triggers/sys.d/systemd_presets.yaml
+    %install_file %(pkgdir)/systemd_machine_id.yaml %(installroot)/usr/share/moss/triggers/sys.d/systemd_machine_id.yaml
+
+    # And transaction triggers
+    %install_file %(pkgdir)/systemd_hwdb.yaml %(installroot)/usr/share/moss/triggers/tx.d/systemd_hwdb.yaml
+
+    rm -v %(installroot)%(libdir)/systemd/boot/efi/*32.efi*
+
+    %install_exe -t %(installroot)/usr/lib/systemd/system-environment-generators %(pkgdir)/configs/50-xdg-{config,data}-dirs
+tuning      :
+    - icf: false # Can be removed in systemd >= 255
 packages    :
     - "%(name)-networkd":
         summary: systemd-networkd
@@ -89,147 +226,3 @@ packages    :
             - /usr/share/man/man8/*network*
             - /usr/share/polkit-1/actions/*network*
             - /usr/share/polkit-1/rules.d/*network*
-profiles    :
-    - emul32:
-        setup: |
-            %patch %(pkgdir)/patches/0016-tmpfiles-Make-var-cache-ldconfig-world-readable.patch
-            %patch %(pkgdir)/patches/systemd-245-disable-audit-by-default.patch
-            %patch %(pkgdir)/patches/0001-tmpfiles-Allow-nsswitch-clobber-at-non-boot-interval.patch
-            %patch %(pkgdir)/patches/0001-gpt-auto-generate-Stop-automounting-xbootldr-and-esp.patch
-            %patch %(pkgdir)/patches/0009-path-lookup-Include-stateless-xdg-path-by-default.patch
-
-            %meson \
-                    -Dbpf-framework=false \
-                    -Defi=false \
-                    -Dbootloader=false \
-                    -Dfuzz-tests=false \
-                    -Dinstall-tests=false \
-                    -Dmode=release \
-                    -Dpamlibdir="%(libdir)/security" \
-                    -Dpamconfdir="%(vendordir)/pam.d" \
-                    -Dpcre2=true \
-                    -Drpmmacrosdir=no \
-                    -Dslow-tests=false \
-                    -Dsplit-bin=true \
-                    -Dsplit-usr=false \
-                    -Dtests=false \
-                    -Drepart=false \
-                    -Dsysupdate=false \
-                    -Duserdb=false \
-                    -Dhomed=false \
-                    -Dlibfido2=false \
-                    -Dlogind=false \
-                    -Dnetworkd=false \
-                    -Drfkill=false \
-                    -Dportabled=false \
-                    -Dmachined=false \
-                    -Dpstore=false \
-                    -Dcoredump=false \
-                    -Dlibcryptsetup=false \
-                    -Dgcrypt=false \
-                    -Dtpm=false \
-                    -Dkmod=false \
-                    -Dgnutls=false \
-                    -Dkernel-install=false \
-                    -Dinstall-sysconfdir=false \
-                    -Dnss-systemd=true \
-                    -Dman=false \
-                    -Duser-path=/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin
-        install: |
-            %meson_install
-environment : |
-    # Temporary, replace with boulder macro
-    export XML_CATALOG_FILES="file:///usr/share/defaults/docbook/docbook-dtd/catalog file:///usr/share/defaults/docbook/docbook-xsl/catalog"
-setup       : |
-    %patch %(pkgdir)/patches/0016-tmpfiles-Make-var-cache-ldconfig-world-readable.patch
-    %patch %(pkgdir)/patches/systemd-245-disable-audit-by-default.patch
-    %patch %(pkgdir)/patches/0001-tmpfiles-Allow-nsswitch-clobber-at-non-boot-interval.patch
-    %patch %(pkgdir)/patches/0001-gpt-auto-generate-Stop-automounting-xbootldr-and-esp.patch
-    %patch %(pkgdir)/patches/0009-path-lookup-Include-stateless-xdg-path-by-default.patch
-
-    %meson \
-        -Dbpf-compiler=${CC} \
-        -Dbpf-framework=true \
-        -Defi=true \
-        -Dbootloader=true \
-        -Dfuzz-tests=false \
-        -Dinstall-tests=false \
-        -Dmode=release \
-        -Dpamlibdir="%(libdir)/security" \
-        -Dpamconfdir="%(vendordir)/pam.d" \
-        -Dpcre2=true \
-        -Drpmmacrosdir=no \
-        -Dslow-tests=false \
-        -Dsplit-bin=true \
-        -Dsplit-usr=false \
-        -Dtests=false \
-        -Drepart=true \
-        -Dsysupdate=false \
-        -Duser-path=/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin \
-        -Duserdb=true \
-        -Dhomed=true \
-        -Dinstall-sysconfdir=false \
-        -Dnss-systemd=true \
-        -Dman=true \
-        -Dxdg-autostart=true \
-        -Ddefault-compression=zstd \
-        -Dkmod=true \
-        -Dpwquality=true \
-        -Dacl=true \
-        -Dfdisk=true \
-        -Dblkid=true \
-        -Dkernel-install=false \
-        -Dok-color=highlight-blue \
-        -Ddefault-dnssec=no \
-        -Ddefault-timeout-sec=5 \
-        -Dadm-group=true \
-        -Dwheel-group=true \
-        -Dnobody-user=nobody \
-        -Dnobody-group=nobody \
-        -Dadm-gid=16 \
-        -Daudio-gid=11 \
-        -Dcdrom-gid=15 \
-        -Ddialout-gid=10 \
-        -Ddisk-gid=8 \
-        -Dinput-gid=97 \
-        -Dkmem-gid=3 \
-        -Dkvm-gid=61 \
-        -Dlp-gid=9 \
-        -Drender-gid=30 \
-        -Dsgx-gid=405 \
-        -Dtape-gid=4 \
-        -Dtty-gid=5 \
-        -Dusers-gid=100 \
-        -Dutmp-gid=13 \
-        -Dvideo-gid=12 \
-        -Dwheel-gid=28 # formally the "sudo" group in Solus..
-build       : |
-    %meson_build
-install     : |
-    %meson_install
-
-    # Stateless: Clean up /var directories, they are created via tmpfiles already
-    rmdir %(installroot)/var/lib/systemd %(installroot)/var/lib
-    rmdir %(installroot)/var/log/journal %(installroot)/var/log %(installroot)/var
-
-    # Don't clobber pam!
-    rm -rf %(installroot)%(datadir)/factory/etc/pam.d
-
-    # config.
-    %install_file %(pkgdir)/config/00-journald.conf %(installroot)%(libdir)/systemd/journald.conf.d/00-journald.conf
-
-    # install necessary system triggers
-    %install_file %(pkgdir)/systemd_etcfiles.yaml %(installroot)/usr/share/moss/triggers/sys.d/systemd_etcfiles.yaml
-    %install_file %(pkgdir)/systemd_tmpfiles.yaml %(installroot)/usr/share/moss/triggers/sys.d/systemd_tmpfiles.yaml
-    %install_file %(pkgdir)/systemd_sysusers.yaml %(installroot)/usr/share/moss/triggers/sys.d/systemd_sysusers.yaml
-    %install_file %(pkgdir)/systemd_presets.yaml %(installroot)/usr/share/moss/triggers/sys.d/systemd_presets.yaml
-    %install_file %(pkgdir)/systemd_machine_id.yaml %(installroot)/usr/share/moss/triggers/sys.d/systemd_machine_id.yaml
-
-    # And transaction triggers
-    %install_file %(pkgdir)/systemd_hwdb.yaml %(installroot)/usr/share/moss/triggers/tx.d/systemd_hwdb.yaml
-
-    rm -v %(installroot)%(libdir)/systemd/boot/efi/*32.efi*
-
-    %install_exe -t %(installroot)/usr/lib/systemd/system-environment-generators %(pkgdir)/config/50-xdg-{config,data}-dirs
-tuning      :
-    - icf: false # Can be removed in systemd >= 255

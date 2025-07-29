@@ -6,7 +6,7 @@
 #
 name        : linux-desktop
 version     : 6.15.8
-release     : 103
+release     : 104
 homepage    : https://kernel.org/
 upstreams   :
     - https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.15.8.tar.xz : d37e92bc16b962a3025df156647bdad90b2db4ff36c7a6137817fe81ef3f28a6
@@ -47,6 +47,7 @@ builddeps   :
     - pkgconfig(libssl)
     - pkgconfig(libzstd)
     - pkgconfig(mpfr)
+    - pkgconfig(ncursesw)
     - pkgconfig(ply-boot-client)
     - sysbinary(fsck.ext4)
     - sysbinary(fsck.f2fs)
@@ -70,14 +71,15 @@ environment : |
     export KBUILD_BUILD_USER=root
     export KBUILD_BUILD_TIMESTAMP=$(date --utc --date=@$SOURCE_DATE_EPOCH +%%F)
 setup       : |
-    for i in $(cat %(pkgdir)/series) ; do
-        %patch %(pkgdir)/$i
+    for i in $(cat %(pkgdir)/patches/series) ; do
+        %patch %(pkgdir)/patches/$i
     done
 
     extraVersion="-%(release).desktop"
     sed -e "s/EXTRAVERSION =.*/EXTRAVERSION = $extraVersion/" -i Makefile
 
     %install_file %(pkgdir)/config-x86_64 .config
+    exit 1
     %make CC=%(cc) LD=%(ld) ARCH=x86_64 LLVM=1 LLVM_IAS=1 WERROR=0 oldconfig || exit 1
 build       : |
     %ccache_zero
@@ -146,13 +148,18 @@ install     : |
     done
 
     # Include early microcode
+    # 2025-07-29: Add vfio kernel modules to initrd as they need to be loaded very early in the boot process
+    # 2025-07-29: Add modprobe configuration for Nvidia sleep options to cover early KMS module loading
+    vfio_modules="vfio_pci vfio_iommu_type1"
     PATH="/usr/bin:/usr/sbin" dracut --strip --tmpdir /tmp -N -f \
         --kmoddir %(installroot)%(libdir)/modules/${kernelVersion} --kver $kernelVersion \
         --add "bash rescue systemd virtiofs lvm dm moss zz-init-extension" \
         --strip --hardlink --nomdadmconf --nolvmconf --reproducible \
-        --add-drivers "amdgpu hyperv_drm i915 qxl radeon simpledrm virtio-gpu xe" \
+        --add-drivers "amdgpu hyperv_drm i915 qxl radeon simpledrm vboxvideo virtio-gpu vmwgfx xe $vfio_modules" \
         --zstd --early-microcode --fwdir eb-fw/ \
-        --include %(pkgdir)/depmod.conf %(libdir)/depmod.d/depmod.conf \
+        --include %(pkgdir)/initrd/depmod.conf %(libdir)/depmod.d/depmod.conf \
+        --include %(pkgdir)/initrd/timeouts.conf %(libdir)/systemd/system.conf.d/timeouts.conf \
+        --include %(pkgdir)/initrd/nvidia-sleep.modprobe %(libdir)/modprobe.d/nvidia-sleep.conf \
         %(installroot)%(libdir)/kernel/$kernelVersion/50-default.initrd
 
     # Temporary: Help with VMs
