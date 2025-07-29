@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : boost
-version     : 1.87.0
-release     : 4
+version     : 1.88.0
+release     : 5
 homepage    : https://boost.org
 upstreams   :
-    - https://archives.boost.io/release/1.87.0/source/boost_1_87_0.tar.gz: f55c340aa49763b1925ccf02b2e83f35fdcf634c9d5164a2acb87540173c741d
+    - https://archives.boost.io/release/1.88.0/source/boost_1_88_0.tar.gz: 3621533e820dcab1e8012afd583c0c73cf0f77694952b81352bf38c1488f9cb4
 summary     : Boost provides free peer-reviewed portable C++ source libraries.
 description : |
     The Boost organization and wider Boost community supports research and education into the best possible uses of C++ and libraries developed for it, particularly, but not exclusively those contained in the Boost Library.
@@ -22,13 +22,269 @@ builddeps   :
     - pkgconfig(libzstd)
     - pkgconfig(python3)
     - pkgconfig(zlib)
+environment : |
+    function run_b2() {
+        ./b2  \
+            -j%(jobs) \
+            --layout=system \
+            cflags="${CPPFLAGS} ${CFLAGS}" \
+            cxxflags="${CPPFLAGS} ${CXXFLAGS}" \
+            debug-symbols=off \
+            linkflags="${LDFLAGS}" \
+            link=shared,static \
+            runtime-link=shared \
+            threading=multi \
+            toolset=clang \
+            variant=release \
+            "$@"
+    }
 setup       : |
     ./bootstrap.sh \
       --prefix=%(installroot)/usr \
       --with-python=/usr/bin/python3
+build       : |
+    run_b2
 install     : |
-    ./b2 install \
-      variant=release \
-      threading=multi \
-      runtime-link=shared \
-      link=shared,static
+    run_b2 install
+
+    %install_dir %(installroot)%(docdir)/%(name)/
+    echo "VIRTUAL" > %(installroot)%(docdir)/%(name)/README
+packages    :
+    - "%(name)-devel":
+        paths:
+            - /usr/share/boost_predef/
+
+    - "%(name)-staticlib":
+        rundeps:
+            - "%(name)-devel"
+        paths:
+            - /usr/lib/lib*.a
+
+    - "%(name)-atomic":
+        summary: Run-time component of boost atomic library
+        description: Run-time component of boost atomic library
+        paths:
+            - /usr/lib/libboost_atomic.so.*
+
+    - "%(name)-charconv":
+        summary: Run-time component of boost charconv library
+        description: Run-time component of boost charconv library
+        paths:
+            - /usr/lib/libboost_charconv.so.*
+
+    - "%(name)-chrono":
+        summary: Run-time component of boost chrono library
+        description: Run-time component of boost chrono library
+        paths:
+            - /usr/lib/libboost_chrono.so.*
+
+    - "%(name)-container":
+        summary: Run-time component of boost container library
+        description: Run-time component of boost container library
+        paths:
+            - /usr/lib/libboost_container.so.*
+
+    - "%(name)-context":
+        summary: Run-time component of boost context library
+        description: Run-time component of boost context library
+        paths:
+            - /usr/lib/libboost_context.so.*
+
+    - "%(name)-contract":
+        summary: Run-time component of boost contract library
+        description: Run-time component of boost contract library
+        paths:
+            - /usr/lib/libboost_contract.so.*
+
+    - "%(name)-coroutine":
+        summary: Run-time component of boost coroutine library
+        description: Run-time component of boost coroutine library
+        paths:
+            - /usr/lib/libboost_coroutine.so.*
+
+    - "%(name)-date-time":
+        summary: Run-time component of boost date-time library
+        description: Run-time component of boost date-time library
+        paths:
+            - /usr/lib/libboost_date_time.so.*
+
+    - "%(name)-fiber":
+        summary: Run-time component of boost fiber library
+        description: Run-time component of boost fiber library
+        paths:
+            - /usr/lib/libboost_fiber.so.*
+
+    - "%(name)-filesystem":
+        summary: Run-time component of boost filesystem library
+        description: Run-time component of boost filesystem library
+        paths:
+            - /usr/lib/libboost_filesystem.so.*
+
+    - "%(name)-graph":
+        summary: Run-time component of boost graph library
+        description: Run-time component of boost graph library
+        paths:
+            - /usr/lib/libboost_graph.so.*
+
+    - "%(name)-iostreams":
+        summary: Run-time component of boost iostreams library
+        description: Run-time component of boost iostreams library
+        paths:
+            - /usr/lib/libboost_iostreams.so.*
+
+    - "%(name)-json":
+        summary: Run-time component of boost json library
+        description: Run-time component of boost json library
+        paths:
+            - /usr/lib/libboost_json.so.*
+
+    - "%(name)-locale":
+        summary: Run-time component of boost locale library
+        description: Run-time component of boost locale library
+        paths:
+            - /usr/lib/libboost_locale.so.*
+
+    - "%(name)-log":
+        summary: Run-time component of boost log library
+        description: Run-time component of boost log library
+        paths:
+            - /usr/lib/libboost_log.so.*
+            - /usr/lib/libboost_log_setup.so.*
+
+    - "%(name)-math":
+        summary: Run-time component of boost math library
+        description: Run-time component of boost math library
+        paths:
+            - /usr/lib/libboost_math_c99*.so.*
+            - /usr/lib/libboost_math_tr1*.so.*
+
+    - "%(name)-nowide":
+        summary: Run-time component of boost nowide library
+        description: Run-time component of boost nowide library
+        paths:
+            - /usr/lib/libboost_nowide.so.*
+
+    - "%(name)-process":
+        summary: Run-time component of boost process library
+        description: Run-time component of boost process library
+        paths:
+            - /usr/lib/libboost_process.so.*
+
+    - "%(name)-program-options":
+        summary: Run-time component of boost program-options library
+        description: Run-time component of boost program-options library
+        paths:
+            - /usr/lib/libboost_program_options.so.*
+
+    - "%(name)-python3":
+        summary: Run-time component of boost python3 library
+        description: Run-time component of boost python3 library
+        rundeps:
+            - python-libs
+        paths:
+            - /usr/lib/libboost_python3*.so.*
+
+    - "%(name)-random":
+        summary: Run-time component of boost random library
+        description: Run-time component of boost random library
+        paths:
+            - /usr/lib/libboost_random.so.*
+
+    - "%(name)-regex":
+        summary: Run-time component of boost regex library
+        description: Run-time component of boost regex library
+        paths:
+            - /usr/lib/libboost_regex.so.*
+
+    - "%(name)-serialization":
+        summary: Run-time component of boost serialization library
+        description: Run-time component of boost serialization library
+        paths:
+            - /usr/lib/libboost_serialization.so.*
+            - /usr/lib/libboost_wserialization.so.*
+
+    - "%(name)-stacktrace":
+        summary: Run-time component of boost stacktrace library
+        description: Run-time component of boost stacktrace library
+        paths:
+            - /usr/lib/libboost_stacktrace_*.so.*
+
+    - "%(name)-system":
+        summary: Run-time component of boost system library
+        description: Run-time component of boost system library
+        paths:
+            - /usr/lib/libboost_system.so.*
+
+    - "%(name)-test":
+        summary: Run-time component of boost test library
+        description: Run-time component of boost test library
+        paths:
+            - /usr/lib/libboost_prg_exec_monitor.so.*
+            - /usr/lib/libboost_unit_test_framework.so.*
+
+    - "%(name)-thread":
+        summary: Run-time component of boost thread library
+        description: Run-time component of boost thread library
+        paths:
+            - /usr/lib/libboost_thread.so.*
+
+    - "%(name)-timer":
+        summary: Run-time component of boost timer library
+        description: Run-time component of boost timer library
+        paths:
+            - /usr/lib/libboost_timer.so.*
+
+    - "%(name)-type-erasure":
+        summary: Run-time component of boost type-erasure library
+        description: Run-time component of boost type-erasure library
+        paths:
+            - /usr/lib/libboost_type_erasure.so.*
+
+    - "%(name)-url":
+        summary: Run-time component of boost url library
+        description: Run-time component of boost url library
+        paths:
+            - /usr/lib/libboost_url.so.*
+
+    - "%(name)-wave":
+        summary: Run-time component of boost wave library
+        description: Run-time component of boost wave library
+        paths:
+            - /usr/lib/libboost_wave.so.*
+
+    # Virtual package that depends on all libs
+    - "%(name)":
+        summary: Virtual package that depends on all Boost libs
+        description: Virtual package that depends on all Boost libs
+        rundeps:
+            - "%(name)-atomic"
+            - "%(name)-charconv"
+            - "%(name)-chrono"
+            - "%(name)-container"
+            - "%(name)-context"
+            - "%(name)-contract"
+            - "%(name)-coroutine"
+            - "%(name)-date-time"
+            - "%(name)-fiber"
+            - "%(name)-filesystem"
+            - "%(name)-graph"
+            - "%(name)-iostreams"
+            - "%(name)-json"
+            - "%(name)-locale"
+            - "%(name)-log"
+            - "%(name)-math"
+            - "%(name)-nowide"
+            - "%(name)-process"
+            - "%(name)-program-options"
+            - "%(name)-python3"
+            - "%(name)-random"
+            - "%(name)-regex"
+            - "%(name)-serialization"
+            - "%(name)-stacktrace"
+            - "%(name)-system"
+            - "%(name)-test"
+            - "%(name)-thread"
+            - "%(name)-timer"
+            - "%(name)-type-erasure"
+            - "%(name)-url"
+            - "%(name)-wave"
