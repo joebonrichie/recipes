@@ -111,6 +111,7 @@
 				"pkgconfig(x11)"
 			],
 			"depends": [
+				"cmake(KF6Parts)",
 				"kontactinterface"
 			],
 			"files": [
@@ -144,6 +145,6 @@
 		}
 	},
 	"source-name": "kontactinterface",
-	"source-release": "1",
+	"source-release": "2",
 	"source-version": "25.04.3"
 }
