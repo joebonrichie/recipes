@@ -1,28 +1,33 @@
-From 70ae7ec43fef4891dd477e2452943783d33cb303 Mon Sep 17 00:00:00 2001
-From: Ikey Doherty <ikey@serpentos.com>
-Date: Thu, 19 Dec 2024 11:10:05 +0000
-Subject: [PATCH] gdesktopappinfo: Support ptyxis for executing `.desktop`
- files
-
-Signed-off-by: Ikey Doherty <ikey@serpentos.com>
----
- gio/gdesktopappinfo.c | 3 ++-
- 1 file changed, 2 insertions(+), 1 deletion(-)
-
 diff --git a/gio/gdesktopappinfo.c b/gio/gdesktopappinfo.c
-index 343f309..74279e6 100644
+index 343f30949..48467d189 100644
 --- a/gio/gdesktopappinfo.c
 +++ b/gio/gdesktopappinfo.c
-@@ -2710,7 +2710,8 @@ prepend_terminal_to_vector (int          *argc,
-     { "color-xterm", "-e" },
-     { "rxvt", "-e" },
-     { "dtterm", "-e" },
--    { "xterm", "-e" }
-+    { "xterm", "-e" },
-+    { "ptyxis", "-x" }
-   };
- 
-   g_return_val_if_fail (argc != NULL, FALSE);
--- 
-2.47.1
-
+@@ -2700,6 +2700,7 @@ prepend_terminal_to_vector (int          *argc,
+     const char *exec_arg;
+   } known_terminals[] = {
+     { "xdg-terminal-exec", NULL },
++    { "ptyxis", "--" },
+     { "kgx", "-e" },
+     { "gnome-terminal", "--" },
+     { "mate-terminal", "-x" },
+diff --git a/gio/tests/desktop-app-info.c b/gio/tests/desktop-app-info.c
+index c16e15a71..e9bd06031 100644
+--- a/gio/tests/desktop-app-info.c
++++ b/gio/tests/desktop-app-info.c
+@@ -1401,6 +1401,8 @@ get_terminal_divider (const char *terminal_name)
+ {
+   if (g_str_equal (terminal_name, "xdg-terminal-exec"))
+     return NULL;
++  if (g_str_equal (terminal_name, "ptyxis"))
++    return "--";
+   if (g_str_equal (terminal_name, "kgx"))
+     return "-e";
+   if (g_str_equal (terminal_name, "gnome-terminal"))
+@@ -1923,6 +1925,7 @@ main (int   argc,
+   guint i;
+   const gchar *supported_terminals[] = {
+     "xdg-terminal-exec",
++    "ptyxis",
+     "kgx",
+     "gnome-terminal",
+     "mate-terminal",

@@ -21,7 +21,7 @@ index 362c55a..5a1fb96 100644
  #else
    if (!conf_dirs || !conf_dirs[0])
 -    conf_dirs = "/etc/xdg";
-+    conf_dirs = "/etc/xdg" G_SEARCHPATH_SEPARATOR_S "/usr/share/xdg";
++    conf_dirs = "/run/xdg" G_SEARCHPATH_SEPARATOR_S "/etc/xdg" G_SEARCHPATH_SEPARATOR_S "/usr/share/xdg";
  
    conf_dir_vector = g_strsplit (conf_dirs, G_SEARCHPATH_SEPARATOR_S, 0);
  #endif
