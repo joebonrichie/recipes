@@ -5,7 +5,7 @@
 #
 name        : kimap
 version     : 25.04.3
-release     : 1
+release     : 2
 upstreams   :
     - https://download.kde.org/stable/release-service/25.04.3/src/kimap-25.04.3.tar.xz : 2adc1a8928d0705f31afd6050dc2840690ae0b6250f55b1bc952579f440331ee
 homepage    : https://kde.org
@@ -27,3 +27,7 @@ build       : |
     %cmake_build
 install     : |
     %cmake_install
+packages    :
+    - "%(name)-devel":
+        rundeps:
+            - cmake(KPim6Mime)
