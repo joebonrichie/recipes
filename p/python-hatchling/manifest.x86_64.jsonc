@@ -11,10 +11,10 @@
 			],
 			"depends": [
 				"binary(python3)",
-				"python(packaging(3.11))",
-				"python(pathspec(3.11))",
-				"python(pluggy(3.11))",
-				"python(trove-classifiers(3.11))"
+				"python(packaging)",
+				"python(pathspec)",
+				"python(pluggy)",
+				"python(trove-classifiers)"
 			],
 			"files": [
 				"/usr/bin/hatchling",
@@ -235,6 +235,6 @@
 		}
 	},
 	"source-name": "python-hatchling",
-	"source-release": "5",
+	"source-release": "6",
 	"source-version": "1.27.0"
 }
