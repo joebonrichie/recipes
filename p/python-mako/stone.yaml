@@ -4,19 +4,20 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : python-mako
-version     : 1.3.9
-release     : 5
+version     : 1.3.10
+release     : 6
 homepage    : https://pypi.org/project/Mako/
 upstreams   :
-    - https://pypi.io/packages/source/M/Mako/mako-1.3.9.tar.gz : b5d65ff3462870feec922dbccf38f6efb44e5714d7b593a656be86663d8600ac
+    - https://pypi.debian.net/Mako/mako-1.3.10.tar.gz : 99579a6f39583fa7e5630a28c3c1f440e4e97a414b80372649c0ce338da2ea28
 summary     : A super-fast templating language that borrows the best ideas from the existing templating languages.
 description : |
     Mako is a template library written in Python. It provides a familiar, non-XML syntax which compiles into Python modules for maximum performance. Mako’s syntax and API borrows from the best ideas of many others, including Django templates, Cheetah, Myghty, and Genshi. Conceptually, Mako is an embedded Python (i.e. Python Server Page) language, which refines the familiar ideas of componentized layout and inheritance to produce one of the most straightforward and flexible models available, while also maintaining close ties to Python calling and scoping semantics.
 license     :
     - MIT
 builddeps   :
-    - binary(python3)
     - python(setuptools)
+rundeps     :
+    - binary(python3)
 build       : |
     %pyproject_build
 install     : |
