@@ -4,21 +4,19 @@
 	"packages": {
 		"python-hatch-fancy-pypi-readme": {
 			"build-depends": [
-				"binary(python3)",
 				"python(hatchling)"
 			],
 			"depends": [
 				"binary(python3)",
-				"python(hatchling(3.11))"
+				"python(hatchling)"
 			],
 			"files": [
 				"/usr/bin/hatch-fancy-pypi-readme",
-				"/usr/lib/python3.11/site-packages/hatch_fancy_pypi_readme-24.1.0.dist-info/METADATA",
-				"/usr/lib/python3.11/site-packages/hatch_fancy_pypi_readme-24.1.0.dist-info/RECORD",
-				"/usr/lib/python3.11/site-packages/hatch_fancy_pypi_readme-24.1.0.dist-info/WHEEL",
-				"/usr/lib/python3.11/site-packages/hatch_fancy_pypi_readme-24.1.0.dist-info/entry_points.txt",
-				"/usr/lib/python3.11/site-packages/hatch_fancy_pypi_readme-24.1.0.dist-info/licenses/AUTHORS.md",
-				"/usr/lib/python3.11/site-packages/hatch_fancy_pypi_readme-24.1.0.dist-info/licenses/LICENSE.txt",
+				"/usr/lib/python3.11/site-packages/hatch_fancy_pypi_readme-25.1.0.dist-info/METADATA",
+				"/usr/lib/python3.11/site-packages/hatch_fancy_pypi_readme-25.1.0.dist-info/RECORD",
+				"/usr/lib/python3.11/site-packages/hatch_fancy_pypi_readme-25.1.0.dist-info/WHEEL",
+				"/usr/lib/python3.11/site-packages/hatch_fancy_pypi_readme-25.1.0.dist-info/entry_points.txt",
+				"/usr/lib/python3.11/site-packages/hatch_fancy_pypi_readme-25.1.0.dist-info/licenses/LICENSE.txt",
 				"/usr/lib/python3.11/site-packages/hatch_fancy_pypi_readme/__init__.py",
 				"/usr/lib/python3.11/site-packages/hatch_fancy_pypi_readme/__main__.py",
 				"/usr/lib/python3.11/site-packages/hatch_fancy_pypi_readme/__pycache__/__init__.cpython-311.opt-1.pyc",
@@ -57,6 +55,6 @@
 		}
 	},
 	"source-name": "python-hatch-fancy-pypi-readme",
-	"source-release": "4",
-	"source-version": "24.1.0"
+	"source-release": "5",
+	"source-version": "25.1.0"
 }
