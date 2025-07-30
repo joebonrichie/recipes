@@ -8,22 +8,22 @@
 				"python(setuptools)"
 			],
 			"depends": [
-				"python(jinja2(3.11))",
-				"python(markdown(3.11))",
-				"python(markupsafe(3.11))",
-				"python(packaging(3.11))",
-				"python(pygments(3.11))",
-				"python(typogrify(3.11))"
+				"python(jinja2)",
+				"python(markdown)",
+				"python(markupsafe)",
+				"python(packaging)",
+				"python(pygments)",
+				"python(typogrify)"
 			],
 			"files": [
 				"/usr/bin/gi-docgen",
-				"/usr/lib/python3.11/site-packages/gi_docgen-2025.3.dist-info/METADATA",
-				"/usr/lib/python3.11/site-packages/gi_docgen-2025.3.dist-info/RECORD",
-				"/usr/lib/python3.11/site-packages/gi_docgen-2025.3.dist-info/WHEEL",
-				"/usr/lib/python3.11/site-packages/gi_docgen-2025.3.dist-info/entry_points.txt",
-				"/usr/lib/python3.11/site-packages/gi_docgen-2025.3.dist-info/licenses/LICENSES/Apache-2.0.txt",
-				"/usr/lib/python3.11/site-packages/gi_docgen-2025.3.dist-info/licenses/LICENSES/GPL-3.0-or-later.txt",
-				"/usr/lib/python3.11/site-packages/gi_docgen-2025.3.dist-info/top_level.txt",
+				"/usr/lib/python3.11/site-packages/gi_docgen-2025.4.dist-info/METADATA",
+				"/usr/lib/python3.11/site-packages/gi_docgen-2025.4.dist-info/RECORD",
+				"/usr/lib/python3.11/site-packages/gi_docgen-2025.4.dist-info/WHEEL",
+				"/usr/lib/python3.11/site-packages/gi_docgen-2025.4.dist-info/entry_points.txt",
+				"/usr/lib/python3.11/site-packages/gi_docgen-2025.4.dist-info/licenses/LICENSES/Apache-2.0.txt",
+				"/usr/lib/python3.11/site-packages/gi_docgen-2025.4.dist-info/licenses/LICENSES/GPL-3.0-or-later.txt",
+				"/usr/lib/python3.11/site-packages/gi_docgen-2025.4.dist-info/top_level.txt",
 				"/usr/lib/python3.11/site-packages/gidocgen/__init__.py",
 				"/usr/lib/python3.11/site-packages/gidocgen/__pycache__/__init__.cpython-311.opt-1.pyc",
 				"/usr/lib/python3.11/site-packages/gidocgen/__pycache__/__init__.cpython-311.pyc",
@@ -145,6 +145,6 @@
 		}
 	},
 	"source-name": "gi-docgen",
-	"source-release": "4",
-	"source-version": "2025.3"
+	"source-release": "5",
+	"source-version": "2025.4"
 }
