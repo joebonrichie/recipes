@@ -1,0 +1,17 @@
+name: ibus_components
+after: systemd_tmpfiles
+description: |
+    Generate the ibus components cache
+
+handlers:
+    ibus-components:
+        run: "/usr/bin/ibus"
+        args: [
+            "write-cache",
+            "--system"
+        ]
+
+paths:
+    "/usr/share/ibus/component/**":
+        handlers:
+            - ibus-components
