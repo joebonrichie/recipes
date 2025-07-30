@@ -5,7 +5,7 @@
 #
 name        : partitionmanager
 version     : 25.04.3
-release     : 2
+release     : 3
 upstreams   :
     - https://download.kde.org/stable/release-service/25.04.3/src/partitionmanager-25.04.3.tar.xz : 216a4574d9b63b52c74ab386c92cf8d5c2b634afecbcfbdd734b68d9fce5ebca
 homepage    : https://apps.kde.org/partitionmanager/
@@ -45,3 +45,7 @@ build       : |
     %cmake_build
 install     : |
     %cmake_install
+packages    :
+    - "%(name)-docs":
+        paths:
+            - /usr/share/doc
