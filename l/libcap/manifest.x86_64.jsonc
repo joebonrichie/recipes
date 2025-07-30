@@ -2,8 +2,24 @@
 {
 	"manifest-version": "0.2",
 	"packages": {
+		"captree": {
+			"build-depends": [
+				"binary(go)",
+				"linux-headers",
+				"pkgconfig32(pam)"
+			],
+			"files": [
+				"/usr/sbin/captree",
+				"/usr/share/man/man8/captree.8"
+			],
+			"name": "captree",
+			"provides": [
+				"sysbinary(captree)"
+			]
+		},
 		"libcap": {
 			"build-depends": [
+				"binary(go)",
 				"linux-headers",
 				"pkgconfig32(pam)"
 			],
@@ -25,7 +41,6 @@
 				"/usr/share/man/man1/capsh.1",
 				"/usr/share/man/man5/capability.conf.5",
 				"/usr/share/man/man7/cap_text_formats.7",
-				"/usr/share/man/man8/captree.8",
 				"/usr/share/man/man8/getcap.8",
 				"/usr/share/man/man8/getpcaps.8",
 				"/usr/share/man/man8/pam_cap.8",
@@ -44,6 +59,7 @@
 		},
 		"libcap-32bit": {
 			"build-depends": [
+				"binary(go)",
 				"linux-headers",
 				"pkgconfig32(pam)"
 			],
@@ -69,6 +85,7 @@
 		},
 		"libcap-32bit-devel": {
 			"build-depends": [
+				"binary(go)",
 				"linux-headers",
 				"pkgconfig32(pam)"
 			],
@@ -77,7 +94,9 @@
 				"libcap-devel"
 			],
 			"files": [
+				"/usr/lib32/libcap.a",
 				"/usr/lib32/libcap.so",
+				"/usr/lib32/libpsx.a",
 				"/usr/lib32/libpsx.so",
 				"/usr/lib32/pkgconfig/libcap.pc",
 				"/usr/lib32/pkgconfig/libpsx.pc"
@@ -90,6 +109,7 @@
 		},
 		"libcap-devel": {
 			"build-depends": [
+				"binary(go)",
 				"linux-headers",
 				"pkgconfig32(pam)"
 			],
@@ -182,9 +202,24 @@
 				"pkgconfig(libcap)",
 				"pkgconfig(libpsx)"
 			]
+		},
+		"libcap-staticlib": {
+			"build-depends": [
+				"binary(go)",
+				"linux-headers",
+				"pkgconfig32(pam)"
+			],
+			"depends": [
+				"libcap-devel"
+			],
+			"files": [
+				"/usr/lib/libcap.a",
+				"/usr/lib/libpsx.a"
+			],
+			"name": "libcap-staticlib"
 		}
 	},
 	"source-name": "libcap",
-	"source-release": "9",
+	"source-release": "10",
 	"source-version": "2.76"
 }
