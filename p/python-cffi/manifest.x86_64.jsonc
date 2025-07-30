@@ -9,7 +9,7 @@
 				"python(setuptools)"
 			],
 			"depends": [
-				"python(pycparser(3.11))",
+				"python(pycparser)",
 				"python-libs",
 				"soname(ld-linux-x86-64.so.2(x86_64))",
 				"soname(libc.so.6(x86_64))",
@@ -91,6 +91,6 @@
 		}
 	},
 	"source-name": "python-cffi",
-	"source-release": "2",
+	"source-release": "3",
 	"source-version": "1.17.1"
 }
