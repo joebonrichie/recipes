@@ -96,7 +96,7 @@
 				"/usr/share/fonts/conf.d/90-synthetic.conf",
 				"/usr/share/fonts/conf.d/README",
 				"/usr/share/fonts/fonts.conf",
-				"/usr/share/moss/triggers/tx.d/fonts-cache.yaml",
+				"/usr/share/moss/triggers/sys.d/fonts-cache.yaml",
 				"/usr/share/xml/fontconfig/fonts.dtd"
 			],
 			"name": "fontconfig",
@@ -182,6 +182,6 @@
 		}
 	},
 	"source-name": "fontconfig",
-	"source-release": "13",
+	"source-release": "14",
 	"source-version": "2.17.1"
 }
