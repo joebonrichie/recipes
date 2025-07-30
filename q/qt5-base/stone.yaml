@@ -4,12 +4,12 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : qt5-base
-version     : 5.15.17+kde.128a1d28
-release     : 10
+version     : 5.15.17+kde.c5b9db06
+release     : 11
 homepage    : https://www.qt.io
 upstreams   :
     - git|https://invent.kde.org/qt/qt/qtbase.git:
-        ref: 128a1d2861ca5693e43e8b79fbd4278dcd451fbc
+        ref: c5b9db065ca5682b0bee339197c847da8b2710c1
 summary     : Cross platform application and UI framework
 description : |
     Cross platform application and UI framework
@@ -119,9 +119,7 @@ setup       : |
                 QMAKE_LFLAGS_RELEASE="${LDFLAGS}"
 build       : |
     %ccache_zero
-
     %make
-
     %ccache_stats
 install     : |
     %make_install INSTALL_ROOT="%(installroot)"

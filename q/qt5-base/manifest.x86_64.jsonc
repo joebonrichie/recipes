@@ -5960,6 +5960,6 @@
 		}
 	},
 	"source-name": "qt5-base",
-	"source-release": "10",
-	"source-version": "5.15.17+kde.128a1d28"
+	"source-release": "11",
+	"source-version": "5.15.17+kde.c5b9db06"
 }
