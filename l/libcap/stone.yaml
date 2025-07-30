@@ -5,7 +5,7 @@
 #
 name        : libcap
 version     : "2.76"
-release     : 10
+release     : 11
 summary     : Library for getting and setting POSIX.1e capabilities
 license     : GPL-3.0-or-later
 homepage    : https://sites.google.com/site/fullycapable
@@ -42,6 +42,11 @@ build       : |
         $_extra_opts
 install     : |
     %make_install RAISE_SETFCAP=no prefix=/usr lib=lib%(libsuffix)
+
+    # Don't need 32bit static libs
+    if [[ %(target_triple) == i686* ]]; then
+        rm -fv %(installroot)%(libdir)/lib*.a
+    fi
 packages    :
     - "%(name)-staticlib":
         rundeps:

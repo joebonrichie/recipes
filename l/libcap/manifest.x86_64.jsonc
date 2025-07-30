@@ -94,9 +94,7 @@
 				"libcap-devel"
 			],
 			"files": [
-				"/usr/lib32/libcap.a",
 				"/usr/lib32/libcap.so",
-				"/usr/lib32/libpsx.a",
 				"/usr/lib32/libpsx.so",
 				"/usr/lib32/pkgconfig/libcap.pc",
 				"/usr/lib32/pkgconfig/libpsx.pc"
@@ -220,6 +218,6 @@
 		}
 	},
 	"source-name": "libcap",
-	"source-release": "10",
+	"source-release": "11",
 	"source-version": "2.76"
 }
