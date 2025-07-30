@@ -4,45 +4,132 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : ibus
-version     : "1.5.29-rc2"
-release     : 5
+version     : "1.5.32"
+release     : 6
 homepage    : https://github.com/ibus/ibus
 upstreams   :
-    - https://github.com/ibus/ibus/releases/download/1.5.29/ibus-1.5.29-rc2.tar.gz : 3a27ed120485b2077c62e36e788c302f34544ceac3b3b9cda28b7418e8051415
+    - https://github.com/ibus/ibus/releases/download/1.5.32/ibus-1.5.32.tar.gz : b24f41ae38b236b254c09f1a8f53c2354b69b0789e89cea888d0494b09d15d67
 summary     : Intelligent Input Bus for Linux/Unix
 description : |
     Intelligent Input Bus for Linux/Unix
 license     :
     - LGPL-2.1-or-later
 builddeps   :
-    - binary(python3)
+    - binary(gtkdocize)
+    - binary(msgfmt)
+    - binary(tar)
+    - binary(valac)
+    - binary(vapigen)
     - pkgconfig(dbus-1)
+    - pkgconfig(dbus-python)
+    - pkgconfig(dbusmenu-gtk3-0.4)
     - pkgconfig(dconf)
+    - pkgconfig(gdk-wayland-3.0)
     - pkgconfig(glib-2.0)
     - pkgconfig(gobject-introspection-1.0)
     - pkgconfig(gtk+-3.0)
     - pkgconfig(gtk4)
     - pkgconfig(iso-codes)
     - pkgconfig(libnotify)
-    - pkgconfig(shared-mime-info)
+    - pkgconfig(pygobject-3.0)
     - pkgconfig(systemd)
+    - pkgconfig(wayland-client)
+    - pkgconfig(wayland-protocols)
     - pkgconfig(x11)
     - pkgconfig(xfixes)
+    - pkgconfig(xkbcommon)
+    - pkgconfig(xkeyboard-config)
     - pkgconfig(xtst)
+    - unicode-cldr
+    - unicode-emoji
+    - unicode-ucd
 setup       : |
-    # NOTEL Super trashy autotools setup
-    # TODO: Enable client integrations!
-    %configure --disable-gtk2 \
-               --disable-gtk3 \
-               --disable-wayland \
-               --disable-engine \
-               --disable-appindicator \
-               --disable-emoji-dict \
-               --disable-unicode-dict \
-               --disable-xim \
-               --disable-setup \
-               CC_FOR_BUILD=${CC}
+    %patch %(pkgdir)/0001-dconf-Use-dbus-run-session-to-set-up-dconf-overrides.patch
+    %patch %(pkgdir)/0001-Stateless-dconf.patch
+    %patch %(pkgdir)/0001-use-bash-for-dconf-script.patch
+    %patch %(pkgdir)/segv-bus-proxy.patch
+
+    # NOTE Super trashy autotools setup
+    # I don't think we can disable X11 (--disable-xim) unless we package appindicator
+    %reconfigure \
+        --disable-gtk2 \
+        --disable-appindicator \
+        --disable-static \
+        CC_FOR_BUILD=${CC}
 build       : |
+    # ld.lld: error: undefined symbol: indicator_unregister_connection
+    # Can be removed if we re-enable appindicator
+    # https://github.com/ibus/ibus/issues/2767
+    make -C ui/gtk3 maintainer-clean-generic
+
     %make
 install     : |
     %make_install
+
+    # Pre-compile the dconf db
+    pushd data/dconf
+    mkdir temp
+    make 00-upstream-settings
+    mv 00-upstream-settings temp
+    dconf compile ibus-dconf-defaults temp
+    install -Dm00644 ibus-dconf-defaults %(installroot)%(datadir)/ibus
+    popd
+
+    # Stateless paths
+    %install_dir %(installroot)%(datadir)/xdg/Xwayland-session.d/
+    mv %(installroot)/etc/xdg/Xwayland-session.d/* %(installroot)%(datadir)/xdg/Xwayland-session.d/
+    rmdir -v %(installroot)/etc/xdg/Xwayland-session.d \
+             %(installroot)/etc/xdg/ \
+             %(installroot)/etc/
+packages    :
+    - "%(name)":
+        rundeps:
+            - "%(name)-gtk3"
+            # TODO: Once we have conditional deps this should only install if a DE other than gnome is installed
+            - "%(name)-panel"
+            - "%(name)-setup"
+            - iso-codes
+
+    - "%(name)-libs":
+        paths:
+            - /usr/lib/libibus-1.0.so.*
+            - /usr/lib/girepository-1.0/IBus-1.0.typelib
+
+    - "%(name)-gtk3":
+        summary: IBus IM module for GTK3
+        description: IBus IM module for GTK3
+        paths:
+            - /usr/lib/gtk-3.0/3.0.0/immodules/im-ibus.so
+
+    - "%(name)-gtk4":
+        summary: IBus IM module for GTK4
+        description: IBus IM module for GTK4
+        paths:
+            - /usr/lib/gtk-4.0/4.0.0/immodules/libim-ibus.so
+
+    - "%(name)-setup":
+        summary: IBus setup utility
+        description: IBus setup utility
+        rundeps:
+            - "%(name)"
+            - python(pygobject)
+        paths:
+            - /usr/bin/ibus-setup
+            - /usr/share/applications/org.freedesktop.IBus.Setup.desktop
+            - /usr/share/ibus/setup/
+            - /usr/share/icons/hicolor/scalable/apps/ibus-setup.svg
+            - /usr/share/man/man1/ibus-setup.1*
+
+    # Since we support Wayland only this is now part of the main package
+    # - "%(name)-wayland":
+    #     paths:
+    #         - /usr/lib/ibus/ibus-wayland
+
+    - "%(name)-panel":
+        summary: IBus Panel icon
+        description: IBus Panel icon
+        rundeps:
+            - binary(setxkbmap)
+        paths:
+            - /usr/lib/ibus/ibus-ui-gtk3
+            - /usr/share/applications/org.freedesktop.IBus.Panel.Wayland.Gtk3.desktop
