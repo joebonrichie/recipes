@@ -4,7 +4,7 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : unicode-emoji
-version     : "16.0"
+version     : "16.0" # Updating this package? ibus should be rebuilt to pick up the changes
 release     : 1
 upstreams   :
     - https://www.unicode.org/Public/emoji/16.0/emoji-sequences.txt:

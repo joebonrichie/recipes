@@ -4,7 +4,7 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : unicode-cldr
-version     : "47"
+version     : "47" # Updating this package? ibus should be rebuilt to pick up the changes
 release     : 1
 upstreams   :
     - https://unicode.org/Public/cldr/47/core.zip:
