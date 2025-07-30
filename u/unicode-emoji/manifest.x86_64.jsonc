@@ -1,0 +1,17 @@
+/** Human readable report. This is not consumed by boulder */
+{
+	"manifest-version": "0.2",
+	"packages": {
+		"unicode-emoji": {
+			"files": [
+				"/usr/share/unicode/emoji/emoji-sequences.txt",
+				"/usr/share/unicode/emoji/emoji-test.txt",
+				"/usr/share/unicode/emoji/emoji-zwj-sequences.txt"
+			],
+			"name": "unicode-emoji"
+		}
+	},
+	"source-name": "unicode-emoji",
+	"source-release": "1",
+	"source-version": "16.0"
+}
