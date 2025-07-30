@@ -5,7 +5,7 @@
 #
 name        : python-pycparser
 version     : "2.22"
-release     : 2
+release     : 3
 homepage    : https://github.com/eliben/pycparser
 upstreams   :
     - https://pypi.debian.net/pycparser/pycparser-2.22.tar.gz : 491c8be9c040f5390f5bf44a5b07752bd07f56edf992381b05c701439eec10f6
@@ -17,7 +17,6 @@ builddeps   :
     - python(ply)
     - python(setuptools)
 rundeps     :
-    - python(ply)
     - python-libs
 checkdeps   :
     - binary(clang-cpp)

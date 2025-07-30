@@ -9,7 +9,6 @@
 				"python(setuptools)"
 			],
 			"depends": [
-				"python(ply(3.11))",
 				"python(ply)",
 				"python-libs"
 			],
@@ -62,6 +61,6 @@
 		}
 	},
 	"source-name": "python-pycparser",
-	"source-release": "2",
+	"source-release": "3",
 	"source-version": "2.22"
 }
