@@ -3,9 +3,9 @@
 #
 # SPDX-License-Identifier: MPL-2.0
 #
-name        : libXaw
+name        : libxaw
 version     : 1.0.16
-release     : 2
+release     : 1
 homepage    : https://www.x.org/
 upstreams   :
     - https://www.x.org/releases/individual/lib/libXaw-1.0.16.tar.gz : 012f90adf8739f2f023d63a5fee1528949cf2aba92ef7ac1abcfc2ae9cf28798
@@ -14,12 +14,16 @@ description : |
     Xaw is the X Athena Widget Set. Xaw is a widget set based on the X Toolkit Intrinsics (Xt) Library.
 license     : MIT
 builddeps  :
+    - binary(xmlto)
+    - binary(xsltproc)
     - pkgconfig(x11)
     - pkgconfig(xext)
+    - pkgconfig(xorg-macros)
     - pkgconfig(xmu)
     - pkgconfig(xpm)
     - pkgconfig(xproto)
     - pkgconfig(xt)
+    # TODO: fop
 packages    :
     - "%(name)-docs":
         paths:
