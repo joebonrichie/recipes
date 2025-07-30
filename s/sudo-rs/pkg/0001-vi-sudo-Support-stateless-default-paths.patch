@@ -1,4 +1,4 @@
-From 4f961aeb3c264119216c0d0ee666797ea112bea7 Mon Sep 17 00:00:00 2001
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
 From: Ikey Doherty <ikey@serpentos.com>
 Date: Sun, 4 Aug 2024 00:04:52 +0000
 Subject: [PATCH] {vi,}sudo: Support stateless default paths
@@ -16,46 +16,43 @@ new customisations.
 
 Signed-off-by: Ikey Doherty <ikey@serpentos.com>
 ---
- src/sudo/mod.rs   | 4 ++--
+ src/sudo/mod.rs   | 3 +++
  src/visudo/mod.rs | 4 ++--
- 2 files changed, 4 insertions(+), 4 deletions(-)
+ 2 files changed, 5 insertions(+), 2 deletions(-)
 
 diff --git a/src/sudo/mod.rs b/src/sudo/mod.rs
-index 3b48326..3977ba7 100644
+index 7fbfddf1..4161510a 100644
 --- a/src/sudo/mod.rs
 +++ b/src/sudo/mod.rs
-@@ -29,8 +29,8 @@ fn candidate_sudoers_file() -> &'static Path {
-         dev_info!("Running with /etc/sudoers-rs file");
-         pb_rs
-     } else {
--        dev_info!("Running with /etc/sudoers file");
--        Path::new("/etc/sudoers")
-+        dev_info!("Running with /usr/share/defaults/sudo/sudoers file");
-+        Path::new("/usr/share/defaults/sudo/sudoers")
-     }
- }
-
+@@ -55,6 +55,9 @@ pub(crate) fn candidate_sudoers_file() -> PathBuf {
+     if !path.exists() {
+         path.set_file_name("sudoers");
+     };
++    if !path.exists() {
++        path = PathBuf::from("/usr/share/defaults/sudo/sudoers");
++    };
+ 
+     dev_info!("Running with {} file", path.display());
+     path
 diff --git a/src/visudo/mod.rs b/src/visudo/mod.rs
-index 4aec4ab..4f338a6 100644
+index 9a8af96c..381bd32a 100644
 --- a/src/visudo/mod.rs
 +++ b/src/visudo/mod.rs
-@@ -64,7 +64,7 @@ pub fn main() {
- }
-
+@@ -81,7 +81,7 @@ pub fn main() {
  fn check(file_arg: Option<&str>, perms: bool, owner: bool) -> io::Result<()> {
--    let sudoers_path = Path::new(file_arg.unwrap_or("/etc/sudoers"));
-+    let sudoers_path = Path::new(file_arg.unwrap_or("/etc/sudoers.d/visudo"));
-
+     let sudoers_path = &file_arg
+         .map(PathBuf::from)
+-        .unwrap_or_else(candidate_sudoers_file);
++        .unwrap_or_else(|| PathBuf::from("/etc/sudoers.d/visudo"));
+ 
      let sudoers_file = File::open(sudoers_path)
          .map_err(|err| io_msg!(err, "unable to open {}", sudoers_path.display()))?;
-@@ -121,7 +121,7 @@ fn check(file_arg: Option<&str>, perms: bool, owner: bool) -> io::Result<()> {
- }
-
+@@ -140,7 +140,7 @@ fn check(file_arg: Option<&str>, perms: bool, owner: bool) -> io::Result<()> {
  fn run(file_arg: Option<&str>, perms: bool, owner: bool) -> io::Result<()> {
--    let sudoers_path = Path::new(file_arg.unwrap_or("/etc/sudoers"));
-+    let sudoers_path = Path::new(file_arg.unwrap_or("/etc/sudoers.d/visudo"));
-
+     let sudoers_path = &file_arg
+         .map(PathBuf::from)
+-        .unwrap_or_else(candidate_sudoers_file);
++        .unwrap_or_else(|| PathBuf::from("/etc/sudoers.d/visudo"));
+ 
      let (sudoers_file, existed) = if sudoers_path.exists() {
-         let file = File::options().read(true).write(true).open(sudoers_path)?;
---
-2.46.0
+         let file = File::options()

@@ -1,4 +1,4 @@
-## Serpent OS sudo-rs configuration
+## AerynOS sudo-rs configuration
 ##
 ## Please only use `visudo` to make changes, via snippets in
 ## `/etc/sudoers.d/*`
