@@ -1,0 +1,38 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : unicode-ucd
+version     : 16.0.0
+release     : 1
+upstreams   :
+    - https://www.unicode.org/Public/zipped/16.0.0/UCD.zip:
+        hash: c86dd81f2b14a43b0cc064aa5f89aa7241386801e35c59c7984e579832634eb2
+        unpack: false
+    - https://www.unicode.org/Public/zipped/16.0.0/Unihan.zip:
+        hash: b8f000df69de7828d21326a2ffea462b04bc7560022989f7cc704f10521ef3e0
+        unpack: false
+homepage    : https://www.unicode.org/ucd/
+license     : Unicode-3.0
+summary     : Unicode Character Database
+description : |
+    The Unicode Character Database (UCD) consists of a number of data files listing
+    Unicode character properties and related data. It also includes data files
+    containing test data for conformance to several important Unicode algorithms.
+install     : |
+    _ucddir="%(datadir)/unicode/ucd"
+
+    %install_dir %(installroot)/${_ucddir}
+    bsdtar-static -xf %(sourcedir)/UCD.zip --strip-components=0 -C %(installroot)/${_ucddir}
+    bsdtar-static -xf %(sourcedir)/Unihan.zip --strip-components=0 -C %(installroot)/${_ucddir}
+
+    %install_file %(sourcedir)/UCD.zip %(sourcedir)/Unihan.zip -t %(installroot)/${_ucddir}
+packages    :
+    - "%(name)-unihan":
+        summary: Unicode Han Database
+        description: Unicode Han Database
+        rundeps:
+            - "%(name)"
+        paths:
+            - /usr/share/unicode/ucd/Unihan*
