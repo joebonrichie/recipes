@@ -116,6 +116,8 @@
 				"/usr/share/locale/nb/LC_MESSAGES/plasma_login.mo",
 				"/usr/share/locale/nl/LC_MESSAGES/kcm_plasmalogin.mo",
 				"/usr/share/locale/nl/LC_MESSAGES/plasma_login.mo",
+				"/usr/share/locale/pl/LC_MESSAGES/kcm_plasmalogin.mo",
+				"/usr/share/locale/pl/LC_MESSAGES/plasma_login.mo",
 				"/usr/share/locale/pt_BR/LC_MESSAGES/kcm_plasmalogin.mo",
 				"/usr/share/locale/pt_BR/LC_MESSAGES/plasma_login.mo",
 				"/usr/share/locale/ru/LC_MESSAGES/kcm_plasmalogin.mo",
@@ -149,6 +151,6 @@
 		}
 	},
 	"source-name": "plasma-login-manager",
-	"source-release": "3",
-	"source-version": "0.0.1+git.925ce5c9"
+	"source-release": "4",
+	"source-version": "0.0.1+git.16186712"
 }
