@@ -1,0 +1,31 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : unicode-cldr
+version     : "47"
+release     : 1
+upstreams   :
+    - https://unicode.org/Public/cldr/47/core.zip:
+        hash: d5ee2abac64158c04884a722f8ef4830ea22b6c74aac20185be2838db8eda788
+        unpack: false
+homepage    : https://unicode.org/cldr
+license     : Unicode-DFS-2016
+summary     : Emoji annotation files in CLDR
+description : |
+    Emoji annotation files in CLDR
+setup       : |
+    bsdtar-static --no-same-owner -xf %(sourcedir)/core.zip --strip-components=0
+install     : |
+    _cldrdir="%(datadir)/unicode/cldr"
+
+    %install_dir %(installroot)/${_cldrdir}/common
+    cp -ra common/annotations common/annotationsDerived common/dtd %(installroot)/${_cldrdir}/common/
+packages    :
+    - "%(name)-dtd":
+        paths:
+            - /usr/share/unicode/cldr/common/dtd/
+    - "%(name)":
+        rundeps:
+            - "%(name)-dtd"
