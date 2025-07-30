@@ -61,8 +61,10 @@
 				"/usr/share/locale/ka/LC_MESSAGES/kcm_plasmakeyboard.mo",
 				"/usr/share/locale/ko/LC_MESSAGES/kcm_plasmakeyboard.mo",
 				"/usr/share/locale/nl/LC_MESSAGES/kcm_plasmakeyboard.mo",
+				"/usr/share/locale/pt_BR/LC_MESSAGES/kcm_plasmakeyboard.mo",
 				"/usr/share/locale/ru/LC_MESSAGES/kcm_plasmakeyboard.mo",
 				"/usr/share/locale/sl/LC_MESSAGES/kcm_plasmakeyboard.mo",
+				"/usr/share/locale/sv/LC_MESSAGES/kcm_plasmakeyboard.mo",
 				"/usr/share/locale/tr/LC_MESSAGES/kcm_plasmakeyboard.mo",
 				"/usr/share/locale/uk/LC_MESSAGES/kcm_plasmakeyboard.mo",
 				"/usr/share/locale/zh_CN/LC_MESSAGES/kcm_plasmakeyboard.mo"
@@ -76,6 +78,6 @@
 		}
 	},
 	"source-name": "plasma-keyboard",
-	"source-release": "3",
-	"source-version": "0.0.1+git.e320323a"
+	"source-release": "4",
+	"source-version": "0.0.1+git.fe439245"
 }
