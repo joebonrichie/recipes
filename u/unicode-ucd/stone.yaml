@@ -5,7 +5,7 @@
 #
 name        : unicode-ucd
 version     : 16.0.0
-release     : 1
+release     : 2
 upstreams   :
     - https://www.unicode.org/Public/zipped/16.0.0/UCD.zip:
         hash: c86dd81f2b14a43b0cc064aa5f89aa7241386801e35c59c7984e579832634eb2
@@ -24,8 +24,8 @@ install     : |
     _ucddir="%(datadir)/unicode/ucd"
 
     %install_dir %(installroot)/${_ucddir}
-    bsdtar-static -xf %(sourcedir)/UCD.zip --strip-components=0 -C %(installroot)/${_ucddir}
-    bsdtar-static -xf %(sourcedir)/Unihan.zip --strip-components=0 -C %(installroot)/${_ucddir}
+    bsdtar-static --no-same-owner -xf %(sourcedir)/UCD.zip --strip-components=0 -C %(installroot)/${_ucddir}
+    bsdtar-static --no-same-owner -xf %(sourcedir)/Unihan.zip --strip-components=0 -C %(installroot)/${_ucddir}
 
     %install_file %(sourcedir)/UCD.zip %(sourcedir)/Unihan.zip -t %(installroot)/${_ucddir}
 packages    :
