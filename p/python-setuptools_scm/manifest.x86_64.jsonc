@@ -7,18 +7,17 @@
 				"python(setuptools)"
 			],
 			"depends": [
-				"python(packaging(3.11))",
 				"python(packaging)",
-				"python(setuptools(3.11))",
+				"python(setuptools)",
 				"python-libs"
 			],
 			"files": [
-				"/usr/lib/python3.11/site-packages/setuptools_scm-8.2.1.dist-info/METADATA",
-				"/usr/lib/python3.11/site-packages/setuptools_scm-8.2.1.dist-info/RECORD",
-				"/usr/lib/python3.11/site-packages/setuptools_scm-8.2.1.dist-info/WHEEL",
-				"/usr/lib/python3.11/site-packages/setuptools_scm-8.2.1.dist-info/entry_points.txt",
-				"/usr/lib/python3.11/site-packages/setuptools_scm-8.2.1.dist-info/licenses/LICENSE",
-				"/usr/lib/python3.11/site-packages/setuptools_scm-8.2.1.dist-info/top_level.txt",
+				"/usr/lib/python3.11/site-packages/setuptools_scm-8.3.1.dist-info/METADATA",
+				"/usr/lib/python3.11/site-packages/setuptools_scm-8.3.1.dist-info/RECORD",
+				"/usr/lib/python3.11/site-packages/setuptools_scm-8.3.1.dist-info/WHEEL",
+				"/usr/lib/python3.11/site-packages/setuptools_scm-8.3.1.dist-info/entry_points.txt",
+				"/usr/lib/python3.11/site-packages/setuptools_scm-8.3.1.dist-info/licenses/LICENSE",
+				"/usr/lib/python3.11/site-packages/setuptools_scm-8.3.1.dist-info/top_level.txt",
 				"/usr/lib/python3.11/site-packages/setuptools_scm/.git_archival.txt",
 				"/usr/lib/python3.11/site-packages/setuptools_scm/__init__.py",
 				"/usr/lib/python3.11/site-packages/setuptools_scm/__main__.py",
@@ -116,6 +115,6 @@
 		}
 	},
 	"source-name": "python-setuptools_scm",
-	"source-release": "5",
-	"source-version": "8.2.1"
+	"source-release": "6",
+	"source-version": "8.3.1"
 }
