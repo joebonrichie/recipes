@@ -5,7 +5,7 @@
 #
 name        : ibus
 version     : "1.5.32"
-release     : 7
+release     : 8
 homepage    : https://github.com/ibus/ibus
 upstreams   :
     - https://github.com/ibus/ibus/releases/download/1.5.32/ibus-1.5.32.tar.gz : b24f41ae38b236b254c09f1a8f53c2354b69b0789e89cea888d0494b09d15d67
@@ -75,7 +75,7 @@ install     : |
     install -Dm00644 ibus-dconf-defaults %(installroot)%(datadir)/ibus
     popd
 
-    %install_file %(pkgdir)/trigger.yaml %(installroot)/usr/share/moss/triggers/tx.d/ibus_components.yaml
+    %install_file %(pkgdir)/trigger.yaml %(installroot)/usr/share/moss/triggers/sys.d/ibus_components.yaml
 
     # Stateless paths
     %install_dir %(installroot)%(datadir)/xdg/Xwayland-session.d/

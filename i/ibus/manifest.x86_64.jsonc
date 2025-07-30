@@ -327,7 +327,7 @@
 				"/usr/share/man/man5/00-upstream-settings.5",
 				"/usr/share/man/man5/ibus.5",
 				"/usr/share/man/man7/ibus-emoji.7",
-				"/usr/share/moss/triggers/tx.d/ibus_components.yaml",
+				"/usr/share/moss/triggers/sys.d/ibus_components.yaml",
 				"/usr/share/xdg/Xwayland-session.d/10-ibus-x11"
 			],
 			"name": "ibus",
@@ -797,6 +797,6 @@
 		}
 	},
 	"source-name": "ibus",
-	"source-release": "7",
+	"source-release": "8",
 	"source-version": "1.5.32"
 }
