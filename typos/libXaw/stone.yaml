@@ -1,0 +1,43 @@
+#
+# SPDX-FileCopyrightText: © 2020-2024 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : libXaw
+version     : 1.0.16
+release     : 3
+homepage    : https://www.x.org/
+# upstreams   :
+#     - https://www.x.org/releases/individual/lib/libXaw-1.0.16.tar.gz : 012f90adf8739f2f023d63a5fee1528949cf2aba92ef7ac1abcfc2ae9cf28798
+summary     : X11 Athena Widget library
+description : |
+    Xaw is the X Athena Widget Set. Xaw is a widget set based on the X Toolkit Intrinsics (Xt) Library.
+license     : MIT
+# builddeps  :
+#     - pkgconfig(x11)
+#     - pkgconfig(xext)
+#     - pkgconfig(xmu)
+#     - pkgconfig(xpm)
+#     - pkgconfig(xproto)
+#     - pkgconfig(xt)
+# setup       : |
+#     configure --disable-static
+# build       : |
+#     make
+install     : |
+    for i in %(name) %(name)-devel %(name)-docs; do
+        %install_dir %(installroot)%(docdir)/${i}
+        echo "DEPRECATED" > %(installroot)%(docdir)/${i}/README
+    done
+packages    :
+    - "%(name)":
+        paths:
+            - /usr/share/doc/libXaw/README
+
+    - "%(name)-devel":
+        paths:
+            - /usr/share/doc/libXaw-devel/README
+
+    - "%(name)-docs":
+        paths:
+            - /usr/share/doc/libXaw-docs/README
