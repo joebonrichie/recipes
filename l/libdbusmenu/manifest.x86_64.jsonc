@@ -2,13 +2,14 @@
 {
 	"manifest-version": "0.2",
 	"packages": {
-		"libdbusmenu-gtk3": {
+		"libdbusmenu": {
 			"build-depends": [
 				"binary(intltool-update)",
 				"binary(msgfmt)",
 				"binary(msgmerge)",
+				"binary(vapigen)",
 				"binary(xgettext)",
-				"name(atk-devel)",
+				"binary(xsltproc)",
 				"pkgconfig(gio-2.0)",
 				"pkgconfig(gio-unix-2.0)",
 				"pkgconfig(glib-2.0)",
@@ -17,43 +18,29 @@
 				"pkgconfig(json-glib-1.0)"
 			],
 			"depends": [
-				"soname(libatk-1.0.so.0(x86_64))",
 				"soname(libc.so.6(x86_64))",
-				"soname(libcairo-gobject.so.2(x86_64))",
-				"soname(libcairo.so.2(x86_64))",
-				"soname(libgdk-3.so.0(x86_64))",
-				"soname(libgdk_pixbuf-2.0.so.0(x86_64))",
 				"soname(libgio-2.0.so.0(x86_64))",
 				"soname(libglib-2.0.so.0(x86_64))",
-				"soname(libgobject-2.0.so.0(x86_64))",
-				"soname(libgtk-3.so.0(x86_64))",
-				"soname(libharfbuzz.so.0(x86_64))",
-				"soname(libjson-glib-1.0.so.0(x86_64))",
-				"soname(libpango-1.0.so.0(x86_64))",
-				"soname(libpangocairo-1.0.so.0(x86_64))"
+				"soname(libgobject-2.0.so.0(x86_64))"
 			],
 			"files": [
+				"/usr/lib/girepository-1.0/Dbusmenu-0.4.typelib",
 				"/usr/lib/libdbusmenu-glib.so.4",
-				"/usr/lib/libdbusmenu-glib.so.4.0.12",
-				"/usr/lib/libdbusmenu-gtk3.so.4",
-				"/usr/lib/libdbusmenu-gtk3.so.4.0.12",
-				"/usr/lib/libdbusmenu-jsonloader.so.4",
-				"/usr/lib/libdbusmenu-jsonloader.so.4.0.12"
+				"/usr/lib/libdbusmenu-glib.so.4.0.12"
 			],
-			"name": "libdbusmenu-gtk3",
+			"name": "libdbusmenu",
 			"provides": [
-				"soname(libdbusmenu-glib.so.4(x86_64))",
-				"soname(libdbusmenu-gtk3.so.4(x86_64))",
-				"soname(libdbusmenu-jsonloader.so.4(x86_64))"
+				"soname(libdbusmenu-glib.so.4(x86_64))"
 			]
 		},
-		"libdbusmenu-gtk3-devel": {
+		"libdbusmenu-devel": {
 			"build-depends": [
 				"binary(intltool-update)",
 				"binary(msgfmt)",
 				"binary(msgmerge)",
+				"binary(vapigen)",
 				"binary(xgettext)",
-				"name(atk-devel)",
+				"binary(xsltproc)",
 				"pkgconfig(gio-2.0)",
 				"pkgconfig(gio-unix-2.0)",
 				"pkgconfig(glib-2.0)",
@@ -63,10 +50,7 @@
 			],
 			"depends": [
 				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
-				"libdbusmenu-gtk3",
-				"pkgconfig(gdk-pixbuf-2.0)",
-				"pkgconfig(gtk+-3.0)",
-				"pkgconfig(json-glib-1.0)",
+				"libdbusmenu",
 				"soname(libc.so.6(x86_64))",
 				"soname(libdbusmenu-glib.so.4(x86_64))",
 				"soname(libgio-2.0.so.0(x86_64))",
@@ -81,40 +65,26 @@
 				"/usr/include/libdbusmenu-glib-0.4/libdbusmenu-glib/menuitem.h",
 				"/usr/include/libdbusmenu-glib-0.4/libdbusmenu-glib/server.h",
 				"/usr/include/libdbusmenu-glib-0.4/libdbusmenu-glib/types.h",
-				"/usr/include/libdbusmenu-glib-0.4/libdbusmenu-jsonloader/json-loader.h",
-				"/usr/include/libdbusmenu-gtk3-0.4/libdbusmenu-gtk/client.h",
-				"/usr/include/libdbusmenu-gtk3-0.4/libdbusmenu-gtk/dbusmenu-gtk.h",
-				"/usr/include/libdbusmenu-gtk3-0.4/libdbusmenu-gtk/menu.h",
-				"/usr/include/libdbusmenu-gtk3-0.4/libdbusmenu-gtk/menuitem.h",
-				"/usr/include/libdbusmenu-gtk3-0.4/libdbusmenu-gtk/parser.h",
-				"/usr/lib/girepository-1.0/Dbusmenu-0.4.typelib",
-				"/usr/lib/girepository-1.0/DbusmenuGtk3-0.4.typelib",
 				"/usr/lib/libdbusmenu-glib.so",
-				"/usr/lib/libdbusmenu-gtk3.so",
-				"/usr/lib/libdbusmenu-gtk3/dbusmenu-bench",
-				"/usr/lib/libdbusmenu-gtk3/dbusmenu-testapp",
-				"/usr/lib/libdbusmenu-jsonloader.so",
+				"/usr/lib/libdbusmenu/dbusmenu-testapp",
 				"/usr/lib/pkgconfig/dbusmenu-glib-0.4.pc",
-				"/usr/lib/pkgconfig/dbusmenu-gtk3-0.4.pc",
-				"/usr/lib/pkgconfig/dbusmenu-jsonloader-0.4.pc",
 				"/usr/share/gir-1.0/Dbusmenu-0.4.gir",
-				"/usr/share/gir-1.0/DbusmenuGtk3-0.4.gir",
-				"/usr/share/libdbusmenu/json/test-gtk-label.json"
+				"/usr/share/libdbusmenu/json/test-gtk-label.json",
+				"/usr/share/vala/vapi/Dbusmenu-0.4.vapi"
 			],
-			"name": "libdbusmenu-gtk3-devel",
+			"name": "libdbusmenu-devel",
 			"provides": [
-				"pkgconfig(dbusmenu-glib-0.4)",
-				"pkgconfig(dbusmenu-gtk3-0.4)",
-				"pkgconfig(dbusmenu-jsonloader-0.4)"
+				"pkgconfig(dbusmenu-glib-0.4)"
 			]
 		},
-		"libdbusmenu-gtk3-docs": {
+		"libdbusmenu-docs": {
 			"build-depends": [
 				"binary(intltool-update)",
 				"binary(msgfmt)",
 				"binary(msgmerge)",
+				"binary(vapigen)",
 				"binary(xgettext)",
-				"name(atk-devel)",
+				"binary(xsltproc)",
 				"pkgconfig(gio-2.0)",
 				"pkgconfig(gio-unix-2.0)",
 				"pkgconfig(glib-2.0)",
@@ -167,10 +137,150 @@
 				"/usr/share/gtk-doc/html/libdbusmenu-gtk/up-insensitive.png",
 				"/usr/share/gtk-doc/html/libdbusmenu-gtk/up.png"
 			],
-			"name": "libdbusmenu-gtk3-docs"
+			"name": "libdbusmenu-docs"
+		},
+		"libdbusmenu-gtk3": {
+			"build-depends": [
+				"binary(intltool-update)",
+				"binary(msgfmt)",
+				"binary(msgmerge)",
+				"binary(vapigen)",
+				"binary(xgettext)",
+				"binary(xsltproc)",
+				"pkgconfig(gio-2.0)",
+				"pkgconfig(gio-unix-2.0)",
+				"pkgconfig(glib-2.0)",
+				"pkgconfig(gobject-introspection-1.0)",
+				"pkgconfig(gtk+-3.0)",
+				"pkgconfig(json-glib-1.0)"
+			],
+			"depends": [
+				"soname(libatk-1.0.so.0(x86_64))",
+				"soname(libc.so.6(x86_64))",
+				"soname(libcairo-gobject.so.2(x86_64))",
+				"soname(libcairo.so.2(x86_64))",
+				"soname(libdbusmenu-glib.so.4(x86_64))",
+				"soname(libgdk-3.so.0(x86_64))",
+				"soname(libgdk_pixbuf-2.0.so.0(x86_64))",
+				"soname(libgio-2.0.so.0(x86_64))",
+				"soname(libglib-2.0.so.0(x86_64))",
+				"soname(libgobject-2.0.so.0(x86_64))",
+				"soname(libgtk-3.so.0(x86_64))",
+				"soname(libharfbuzz.so.0(x86_64))",
+				"soname(libpango-1.0.so.0(x86_64))",
+				"soname(libpangocairo-1.0.so.0(x86_64))"
+			],
+			"files": [
+				"/usr/lib/girepository-1.0/DbusmenuGtk3-0.4.typelib",
+				"/usr/lib/libdbusmenu-gtk3.so.4",
+				"/usr/lib/libdbusmenu-gtk3.so.4.0.12"
+			],
+			"name": "libdbusmenu-gtk3",
+			"provides": [
+				"soname(libdbusmenu-gtk3.so.4(x86_64))"
+			]
+		},
+		"libdbusmenu-gtk3-devel": {
+			"build-depends": [
+				"binary(intltool-update)",
+				"binary(msgfmt)",
+				"binary(msgmerge)",
+				"binary(vapigen)",
+				"binary(xgettext)",
+				"binary(xsltproc)",
+				"pkgconfig(gio-2.0)",
+				"pkgconfig(gio-unix-2.0)",
+				"pkgconfig(glib-2.0)",
+				"pkgconfig(gobject-introspection-1.0)",
+				"pkgconfig(gtk+-3.0)",
+				"pkgconfig(json-glib-1.0)"
+			],
+			"depends": [
+				"libdbusmenu-gtk3",
+				"pkgconfig(dbusmenu-glib-0.4)",
+				"pkgconfig(gdk-pixbuf-2.0)",
+				"pkgconfig(gtk+-3.0)"
+			],
+			"files": [
+				"/usr/include/libdbusmenu-gtk3-0.4/libdbusmenu-gtk/client.h",
+				"/usr/include/libdbusmenu-gtk3-0.4/libdbusmenu-gtk/dbusmenu-gtk.h",
+				"/usr/include/libdbusmenu-gtk3-0.4/libdbusmenu-gtk/menu.h",
+				"/usr/include/libdbusmenu-gtk3-0.4/libdbusmenu-gtk/menuitem.h",
+				"/usr/include/libdbusmenu-gtk3-0.4/libdbusmenu-gtk/parser.h",
+				"/usr/lib/libdbusmenu-gtk3.so",
+				"/usr/lib/pkgconfig/dbusmenu-gtk3-0.4.pc",
+				"/usr/share/gir-1.0/DbusmenuGtk3-0.4.gir",
+				"/usr/share/vala/vapi/DbusmenuGtk3-0.4.vapi"
+			],
+			"name": "libdbusmenu-gtk3-devel",
+			"provides": [
+				"pkgconfig(dbusmenu-gtk3-0.4)"
+			]
+		},
+		"libdbusmenu-jsonloader": {
+			"build-depends": [
+				"binary(intltool-update)",
+				"binary(msgfmt)",
+				"binary(msgmerge)",
+				"binary(vapigen)",
+				"binary(xgettext)",
+				"binary(xsltproc)",
+				"pkgconfig(gio-2.0)",
+				"pkgconfig(gio-unix-2.0)",
+				"pkgconfig(glib-2.0)",
+				"pkgconfig(gobject-introspection-1.0)",
+				"pkgconfig(gtk+-3.0)",
+				"pkgconfig(json-glib-1.0)"
+			],
+			"depends": [
+				"soname(libc.so.6(x86_64))",
+				"soname(libdbusmenu-glib.so.4(x86_64))",
+				"soname(libgio-2.0.so.0(x86_64))",
+				"soname(libglib-2.0.so.0(x86_64))",
+				"soname(libgobject-2.0.so.0(x86_64))",
+				"soname(libjson-glib-1.0.so.0(x86_64))"
+			],
+			"files": [
+				"/usr/lib/libdbusmenu-jsonloader.so.4",
+				"/usr/lib/libdbusmenu-jsonloader.so.4.0.12"
+			],
+			"name": "libdbusmenu-jsonloader",
+			"provides": [
+				"soname(libdbusmenu-jsonloader.so.4(x86_64))"
+			]
+		},
+		"libdbusmenu-jsonloader-devel": {
+			"build-depends": [
+				"binary(intltool-update)",
+				"binary(msgfmt)",
+				"binary(msgmerge)",
+				"binary(vapigen)",
+				"binary(xgettext)",
+				"binary(xsltproc)",
+				"pkgconfig(gio-2.0)",
+				"pkgconfig(gio-unix-2.0)",
+				"pkgconfig(glib-2.0)",
+				"pkgconfig(gobject-introspection-1.0)",
+				"pkgconfig(gtk+-3.0)",
+				"pkgconfig(json-glib-1.0)"
+			],
+			"depends": [
+				"libdbusmenu-jsonloader",
+				"pkgconfig(dbusmenu-glib-0.4)",
+				"pkgconfig(json-glib-1.0)"
+			],
+			"files": [
+				"/usr/include/libdbusmenu-glib-0.4/libdbusmenu-jsonloader/json-loader.h",
+				"/usr/lib/libdbusmenu-jsonloader.so",
+				"/usr/lib/pkgconfig/dbusmenu-jsonloader-0.4.pc"
+			],
+			"name": "libdbusmenu-jsonloader-devel",
+			"provides": [
+				"pkgconfig(dbusmenu-jsonloader-0.4)"
+			]
 		}
 	},
-	"source-name": "libdbusmenu-gtk3",
-	"source-release": "1",
+	"source-name": "libdbusmenu",
+	"source-release": "2",
 	"source-version": "16.04.0"
 }

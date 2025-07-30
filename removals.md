@@ -98,3 +98,6 @@
 
 ### No longer generated
 - vscode-bin-dbginfo
+
+### Replaced by libdbusmenu-docs
+- libdbusmenu-gtk3-docs
