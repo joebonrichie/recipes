@@ -11,6 +11,7 @@
 				"binary(sudo)",
 				"kmod",
 				"linux-pam",
+				"lvm2",
 				"shadow",
 				"systemd",
 				"tzdata",
@@ -75,6 +76,6 @@
 		}
 	},
 	"source-name": "pkgset-aeryn",
-	"source-release": "9",
+	"source-release": "10",
 	"source-version": "2025.06"
 }

@@ -5,7 +5,7 @@
 #
 name        : pkgset-aeryn
 version     : "2025.06" # I guess let's just match the OS version for now
-release     : 9
+release     : 10
 homepage    : https://aerynos.com/
 # No upstreams!
 summary     : pkgset virtual packages
@@ -30,6 +30,7 @@ packages    :
             - binary(sudo)
             - kmod
             - linux-pam
+            - lvm2
             - shadow
             - systemd
             - tzdata
