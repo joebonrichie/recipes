@@ -1,0 +1,27 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : thin-provisioning-tools
+version     : 1.2.0
+release     : 1
+homepage    : https://github.com/jthornber/thin-provisioning-tools
+upstreams   :
+    - https://github.com/jthornber/thin-provisioning-tools/archive/refs/tags/v1.2.0.tar.gz : 730f89d82322512cee25ca555da5195a366a2322186d6dd3eee4c9d722d9deb3
+summary     : A suite of tools for manipulating the metadata of the dm-thin, dm-cache and dm-era device-mapper targets
+description : |
+    A suite of tools for manipulating the metadata of the dm-thin, dm-cache and dm-era device-mapper targets.
+networking  : yes
+license     : GPL-3.0-or-later
+builddeps   :
+    - pkgconfig(devmapper)
+    - pkgconfig(udev)
+setup       : |
+    %cargo_fetch
+build       : |
+    %cargo_build
+install     : |
+    %make_install \
+        PDATA_TOOLS="%(cargo_target_dir)/pdata_tools" \
+        STRIP=true
