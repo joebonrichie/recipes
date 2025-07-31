@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : lvm2
-version     : 2.03.21
-release     : 8
+version     : 2.03.34
+release     : 9
 homepage    : https://sourceware.org/lvm2/
 upstreams   :
-    - https://sourceware.org/pub/lvm2/LVM2.2.03.21.tgz : 1e261921d621998adc37960c615de784c6145c7f737a80b781f3108fbec67a7e
+    - https://sourceware.org/pub/lvm2/LVM2.2.03.34.tgz : 3f4e78e7d6c49228b4d173ea08ebe158873d54457fba7d31d2abebdddd0e75b9
 summary     : Linux logical volume management userspace tools
 description : |
     LVM2 is a logical volume management facility for the Linux kernel:
@@ -24,52 +24,156 @@ license     :
 builddeps   :
     - binary(bash)
     - pkgconfig(blkid)
+    - pkgconfig(libnvme)
     - pkgconfig(ncursesw)
     - pkgconfig(readline)
     - pkgconfig(systemd)
+    - sysbinary(modprobe)
+    - sysbinary(thin_check)
+    - sysbinary(thin_dump)
     - libaio-devel
+    # TODO: vdoformat for block-level deduplication
 setup       : |
     # Build system heavily reliant on bashisms so force it for configure shell
-    export CONFIG_SHELL=/usr/bin/bash
-    export RUN_DIR=/run
+    # export CONFIG_SHELL=/usr/bin/bash
+    # export RUN_DIR=/run
 
     %patch %(pkgdir)/stateless/0001-Fix-cache-dirs.patch
     %patch %(pkgdir)/add-malloc_trim-call.patch
 
-    %configure \
+    # TODO: enable dmfilemapd maybe? dbusd/lvmlockd?
+    %configure_with_bash \
         --enable-blkid_wiping \
         --enable-blkzeroout \
         --enable-cmdlib \
         --enable-dmeventd \
-        --enable-pkgconfig \
         --enable-lvmpolld \
+        --enable-pkgconfig \
         --enable-readline \
+        --enable-udev_rules \
         --enable-udev_sync \
         --disable-selinux \
         --with-default-locking-dir=/run/lock/lvm \
-        --with-default-run-dir=/run/lvm
+        --with-default-pid-dir=/run \
+        --with-default-run-dir=/run/lvm \
+        --with-libexecdir=%(libexecdir) \
+        --with-modulesdir=/usr/lib/modules
 build       : |
     %make 
 install     : |
-    %make_install install_systemd_units install_tmpfiles_configuration
+    %make_install \
+        install_systemd_generators \
+        install_systemd_units \
+        install_tmpfiles_configuration
+
+    %install_file %(pkgdir)/lvm2-etc.tmpfiles %(installroot)%(tmpfilesdir)/lvm2-etc.conf
+
+    for i in device-mapper-event lvm2; do
+        %install_file %(pkgdir)/${i}.preset -t %(installroot)%(libdir)/systemd/system-preset/
+    done
 
     # Stateless
-    # without the chmod, the build will hang because rm will ask if it's ok
-    # to remove files that aren't writable.
-    chmod -Rc u+w %(installroot)/etc/lvm/
-    rm -v %(installroot)/etc/lvm/lvm.conf
-    rm -v %(installroot)/etc/lvm/lvmlocal.conf
-    rm -v %(installroot)/etc/lvm/profile/command_profile_template.profile
-    rm -v %(installroot)/etc/lvm/profile/metadata_profile_template.profile
-    rm -v %(installroot)/etc/lvm/profile/thin-generic.profile
-    rm -v %(installroot)/etc/lvm/profile/thin-performance.profile
-    rm -v %(installroot)/etc/lvm/profile/cache-mq.profile
-    rm -v %(installroot)/etc/lvm/profile/cache-smq.profile
-    rm -v %(installroot)/etc/lvm/profile/lvmdbusd.profile
-    rm -v %(installroot)/etc/lvm/profile/vdo-small.profile
-    rmdir %(installroot)/etc/lvm/profile
-    rmdir %(installroot)/etc/lvm/
-    rmdir %(installroot)/etc/
+    rm -fv %(installroot)/etc/lvm/lvm.conf \
+           %(installroot)/etc/lvm/lvmlocal.conf \
+           %(installroot)/etc/lvm/profile/command_profile_template.profile \
+           %(installroot)/etc/lvm/profile/metadata_profile_template.profile \
+           %(installroot)/etc/lvm/profile/thin-generic.profile \
+           %(installroot)/etc/lvm/profile/thin-performance.profile \
+           %(installroot)/etc/lvm/profile/cache-mq.profile \
+           %(installroot)/etc/lvm/profile/cache-smq.profile \
+           %(installroot)/etc/lvm/profile/lvmdbusd.profile \
+           %(installroot)/etc/lvm/profile/vdo-small.profile
+    rmdir -v %(installroot)/etc/lvm/profile \
+             %(installroot)/etc/lvm/ \
+             %(installroot)/etc/
 tuning      :
-    - lto
+    - lto: full
     - optimize: speed
+packages    :
+    - "%(name)":
+        rundeps:
+            - "%(name)-libs"
+            - sysbinary(thin_check)
+            - sysbinary(thin_dump)
+
+    - "%(name)-libs":
+        summary: Shared libraries for lvm2
+        description: |
+            This package contains shared lvm2 libraries for applications.
+        rundeps:
+            - device-mapper-event
+        paths:
+            - /usr/lib/liblvm2cmd.so.*
+            - /usr/lib/libdevmapper-event-lvm2.so.*
+            - /usr/lib/device-mapper/libdevmapper-*.so
+
+    - "device-mapper":
+        summary: Device mapper utility
+        description: |
+            This package contains the supporting userspace utility, dmsetup,
+            for the kernel device-mapper.
+        rundeps:
+            - util-linux # TODO: Switch to core
+            - systemd
+        paths:
+            - /usr/lib/udev/rules.d/10-dm.rules
+            - /usr/lib/udev/rules.d/13-dm-disk.rules
+            - /usr/lib/udev/rules.d/95-dm-notify.rules
+            - /usr/sbin/blkdeactivate
+            - /usr/sbin/dmsetup
+            - /usr/sbin/dmstats
+            - /usr/share/man/man8/blkdeactivate.8*
+            - /usr/share/man/man8/dmsetup.8
+            - /usr/share/man/man8/dmstats.8
+
+    - "device-mapper-libs":
+        summary: Device mapper utility - library
+        description:
+            This package contains the device-mapper shared library, libdevmapper.
+        paths:
+            - /usr/lib/libdevmapper.so.*
+
+    - "device-mapper-devel":
+        summary: Device mapper utility - Devel files
+        description: |
+            This package contains files needed to develop applications that use
+            the device-mapper libraries.
+        rundeps:
+            - device-mapper
+        paths:
+            - /usr/lib/libdevmapper.so
+            - /usr/include/libdevmapper.h
+            - /usr/lib/pkgconfig/devmapper.pc
+
+    - "device-mapper-event":
+        summary: Device-mapper event daemon
+        description: |
+            This package contains the dmeventd daemon for monitoring the state
+            of device-mapper devices.
+        rundeps:
+            - device-mapper
+        paths:
+            - /usr/sbin/dmeventd
+            - /usr/share/man/man8/dmeventd.8*
+            - /usr/lib/systemd/system/dm-event.*
+            - /usr/lib/systemd/system-preset/device-mapper-event.preset
+
+    - "device-mapper-event-libs":
+        summary: Device-mapper event daemon - libs
+        description: |
+            This package contains the device-mapper event daemon shared library,
+            libdevmapper-event.
+        paths:
+            - /usr/lib/libdevmapper-event.so.*
+
+    - "device-mapper-event-devel":
+        summary: Device-mapper event daemon - Devel files
+        description: |
+            This package contains files needed to develop applications that use
+            the device-mapper event library.
+        rundeps:
+            - device-mapper-event
+        paths:
+            - /usr/lib/libdevmapper-event.so
+            - /usr/include/libdevmapper-event.h
+            - /usr/lib/pkgconfig/devmapper-event.pc
