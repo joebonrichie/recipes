@@ -29,6 +29,7 @@
 				"/usr/lib/libinput/libinput-analyze-touch-down-state",
 				"/usr/lib/libinput/libinput-debug-events",
 				"/usr/lib/libinput/libinput-debug-tablet",
+				"/usr/lib/libinput/libinput-debug-tablet-pad",
 				"/usr/lib/libinput/libinput-list-devices",
 				"/usr/lib/libinput/libinput-list-kernel-devices",
 				"/usr/lib/libinput/libinput-measure",
@@ -102,6 +103,7 @@
 				"/usr/share/man/man1/libinput-analyze-touch-down-state.1",
 				"/usr/share/man/man1/libinput-analyze.1",
 				"/usr/share/man/man1/libinput-debug-events.1",
+				"/usr/share/man/man1/libinput-debug-tablet-pad.1",
 				"/usr/share/man/man1/libinput-debug-tablet.1",
 				"/usr/share/man/man1/libinput-list-devices.1",
 				"/usr/share/man/man1/libinput-list-kernel-devices.1",
@@ -134,7 +136,8 @@
 				"pkgconfig(mtdev)"
 			],
 			"depends": [
-				"libinput"
+				"libinput",
+				"pkgconfig(libudev)"
 			],
 			"files": [
 				"/usr/include/libinput.h",
@@ -148,6 +151,6 @@
 		}
 	},
 	"source-name": "libinput",
-	"source-release": "8",
-	"source-version": "1.28.1"
+	"source-release": "1",
+	"source-version": "1.29.0"
 }
