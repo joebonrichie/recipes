@@ -5,7 +5,7 @@
 #
 name        : systemd
 version     : "254.27"
-release     : 59
+release     : 60
 summary     : A System and Service Manager
 license     :
     - GPL-2.0-or-later
@@ -90,6 +90,7 @@ setup       : |
     %patch %(pkgdir)/patches/upstream/0005-vconsole-setup-simplify-error-handling.patch
     %patch %(pkgdir)/patches/upstream/0006-vconsole-setup-remember-the-correct-error-value-when.patch
     %patch %(pkgdir)/patches/upstream/0007-Introduce-RET_GATHER-and-use-it-in-src-shared.patch
+    %patch %(pkgdir)/patches/upstream/31661.patch
 
     _IS_64BIT_BUILD="true"
     if [[ %(target_triple) = i686* ]]; then
