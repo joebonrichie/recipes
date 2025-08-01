@@ -1,0 +1,6 @@
+releases:
+  id: 379162
+  rss: https://pypi.org/rss/project/coherent.licensed/releases.xml
+security:
+  # No known CPE. Checked 20250801
+  cpe: ~
