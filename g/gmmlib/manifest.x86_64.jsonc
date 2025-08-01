@@ -13,7 +13,7 @@
 			],
 			"files": [
 				"/usr/lib/libigdgmm.so.12",
-				"/usr/lib/libigdgmm.so.12.7.0"
+				"/usr/lib/libigdgmm.so.12.8.0"
 			],
 			"name": "gmmlib",
 			"provides": [
@@ -106,6 +106,6 @@
 		}
 	},
 	"source-name": "gmmlib",
-	"source-release": "1",
-	"source-version": "22.7.3"
+	"source-release": "2",
+	"source-version": "22.8.1"
 }

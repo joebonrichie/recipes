@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : gmmlib
-version     : '22.7.3'
-release     : 1
+version     : '22.8.1'
+release     : 2
 homepage    : https://github.com/intel/gmmlib/
 upstreams   :
-    - https://github.com/intel/gmmlib/archive/refs/tags/intel-gmmlib-22.7.3.tar.gz : c37d3378482ef80e1eb3eb2a8e615d4343ef0c4562e694b46f4276a797fad667
+    - https://github.com/intel/gmmlib/archive/refs/tags/intel-gmmlib-22.8.1.tar.gz : 9b8eac1891650021ded26b72585e7a2c702a3ba47565c968feabd14ab38d18f7
 summary     : Intel(R) Graphics Memory Management Library
 description : |
     Intel(R) Graphics Memory Management Library
@@ -16,7 +16,7 @@ license     : MIT
 checkdeps   :
     - libgcc
 setup       : |
-    # This runds the test suite after the install for some odd reason
+    # This runs the test suite after the install for some odd reason
     %cmake \
         -DRUN_TEST_SUITE=ON
 build       : |
