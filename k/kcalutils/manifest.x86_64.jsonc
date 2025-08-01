@@ -114,6 +114,8 @@
 				"cmake(KPim6IdentityManagementCore)"
 			],
 			"depends": [
+				"cmake(KF6Config)",
+				"cmake(KF6CoreAddons)",
 				"kcalutils"
 			],
 			"files": [
@@ -147,6 +149,6 @@
 		}
 	},
 	"source-name": "kcalutils",
-	"source-release": "1",
+	"source-release": "2",
 	"source-version": "25.04.3"
 }
