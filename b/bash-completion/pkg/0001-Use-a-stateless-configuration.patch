@@ -1,26 +1,51 @@
-From cd5734b3ddc8dcbd8e40265434ab660df50c4544 Mon Sep 17 00:00:00 2001
-From: Ikey Doherty <ikey@solus-project.com>
-Date: Sat, 12 Mar 2016 14:49:00 +0000
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: Muhammad Alfi Syahrin <malfisya.dev@hotmail.com>
+Date: Fri, 3 Jan 2025 17:50:24 +0700
 Subject: [PATCH] Use a stateless configuration
 
-Signed-off-by: Ikey Doherty <ikey@solus-project.com>
 ---
- Makefile.am | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+ Makefile.am     | 4 ++--
+ bash_completion | 4 ++--
+ 2 files changed, 4 insertions(+), 4 deletions(-)
 
 diff --git a/Makefile.am b/Makefile.am
-index dbbba0c..5500a88 100644
+index 27366b7..61d864d 100644
 --- a/Makefile.am
 +++ b/Makefile.am
-@@ -5,7 +5,7 @@ pkgdata_DATA = bash_completion
+@@ -3,10 +3,10 @@ SUBDIRS = completions doc helpers test
+ pkgdata_DATA = bash_completion
+ 
  # Empty, but here just to get the compat dir created with install
- compat_DATA =
+-compatdir = $(sysconfdir)/bash_completion.d
++compatdir = $(datadir)/bash-completion/bash_completion.d
+ compat_DATA = bash_completion.d/000_bash_completion_compat.bash
  
 -profiledir = $(sysconfdir)/profile.d
 +profiledir = $(datadir)/defaults/etc/profile.d
  profile_DATA = bash_completion.sh
  
  pkgconfigdir = $(datadir)/pkgconfig
+diff --git a/bash_completion b/bash_completion
+index 2f47a59..685928d 100644
+--- a/bash_completion
++++ b/bash_completion
+@@ -3422,14 +3422,14 @@ _comp__init_collect_startup_configs()
+     if [[ ${BASH_COMPLETION_COMPAT_DIR-} ]]; then
+         compat_dirs+=("$BASH_COMPLETION_COMPAT_DIR")
+     else
+-        compat_dirs+=(/etc/bash_completion.d)
++        compat_dirs+=(/usr/share/bash-completion/bash_completion.d)
+         # Similarly as for the "completions" dir, look up from relative to
+         # bash_completion, primarily for installed-with-prefix and
+         # run-in-place-from-git-clone setups.  Notably we do it after the
+         # system location here, in order to prefer in-tree variables and
+         # functions.
+         if [[ $_comp__base_directory == */share/bash-completion ]]; then
+-            compat_dir=${_comp__base_directory%/share/bash-completion}/etc/bash_completion.d
++            compat_dir=/etc/bash_completion.d
+         else
+             compat_dir=$_comp__base_directory/bash_completion.d
+         fi
 -- 
-2.7.1
+2.47.0
 
