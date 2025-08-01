@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : liburcu
-version     : 0.14.1
-release     : 4
+version     : 0.15.3
+release     : 5
 homepage    : https://liburcu.org/
 upstreams   :
-    - https://lttng.org/files/urcu/userspace-rcu-0.14.1.tar.bz2 : 231acb13dc6ec023e836a0f0666f6aab47dc621ecb1d2cd9d9c22f922678abc0
+    - https://lttng.org/files/urcu/userspace-rcu-0.15.3.tar.bz2 : 26687ec84e3e114759454c884a08abeaf79dec09b041895ddf4c45ec150acb6d
 summary     : liburcu is a LGPLv2.1 userspace RCU (read-copy-update) library
 description : |
     liburcu is a LGPLv2.1 userspace RCU (read-copy-update) library
@@ -16,7 +16,9 @@ license     : LGPL-2.1-or-later
 builddeps   :
     - binary(grep)
 setup       : |
-    %configure --disable-static
+    %configure \
+        --disable-static \
+        --enable-compiler-atomic-builtins
 build       : |
     %make
 install     : |
@@ -29,4 +31,4 @@ tuning      :
 packages    :
     - "%(name)-docs":
         paths:
-            - /usr/share/doc/userspace-rcu/examples/*
+            - /usr/share/doc/

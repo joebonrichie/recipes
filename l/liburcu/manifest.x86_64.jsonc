@@ -23,16 +23,8 @@
 				"/usr/lib/liburcu-memb.so.8.1.0",
 				"/usr/lib/liburcu-qsbr.so.8",
 				"/usr/lib/liburcu-qsbr.so.8.1.0",
-				"/usr/lib/liburcu-signal.so.8",
-				"/usr/lib/liburcu-signal.so.8.1.0",
 				"/usr/lib/liburcu.so.8",
-				"/usr/lib/liburcu.so.8.1.0",
-				"/usr/share/doc/userspace-rcu/LICENSE",
-				"/usr/share/doc/userspace-rcu/README.md",
-				"/usr/share/doc/userspace-rcu/cds-api.md",
-				"/usr/share/doc/userspace-rcu/rcu-api.md",
-				"/usr/share/doc/userspace-rcu/solaris-build.md",
-				"/usr/share/doc/userspace-rcu/uatomic-api.md"
+				"/usr/lib/liburcu.so.8.1.0"
 			],
 			"name": "liburcu",
 			"provides": [
@@ -42,7 +34,6 @@
 				"soname(liburcu-mb.so.8(x86_64))",
 				"soname(liburcu-memb.so.8(x86_64))",
 				"soname(liburcu-qsbr.so.8(x86_64))",
-				"soname(liburcu-signal.so.8(x86_64))",
 				"soname(liburcu.so.8(x86_64))"
 			]
 		},
@@ -61,6 +52,7 @@
 				"/usr/include/urcu-pointer.h",
 				"/usr/include/urcu-qsbr.h",
 				"/usr/include/urcu.h",
+				"/usr/include/urcu/annotate.h",
 				"/usr/include/urcu/arch.h",
 				"/usr/include/urcu/arch/aarch64.h",
 				"/usr/include/urcu/arch/alpha.h",
@@ -96,7 +88,6 @@
 				"/usr/include/urcu/map/urcu-mb.h",
 				"/usr/include/urcu/map/urcu-memb.h",
 				"/usr/include/urcu/map/urcu-qsbr.h",
-				"/usr/include/urcu/map/urcu-signal.h",
 				"/usr/include/urcu/map/urcu.h",
 				"/usr/include/urcu/pointer.h",
 				"/usr/include/urcu/rcuhlist.h",
@@ -114,8 +105,6 @@
 				"/usr/include/urcu/static/urcu-mb.h",
 				"/usr/include/urcu/static/urcu-memb.h",
 				"/usr/include/urcu/static/urcu-qsbr.h",
-				"/usr/include/urcu/static/urcu-signal-nr.h",
-				"/usr/include/urcu/static/urcu-signal.h",
 				"/usr/include/urcu/static/urcu.h",
 				"/usr/include/urcu/static/wfcqueue.h",
 				"/usr/include/urcu/static/wfqueue.h",
@@ -126,7 +115,10 @@
 				"/usr/include/urcu/uatomic.h",
 				"/usr/include/urcu/uatomic/aarch64.h",
 				"/usr/include/urcu/uatomic/alpha.h",
+				"/usr/include/urcu/uatomic/api.h",
 				"/usr/include/urcu/uatomic/arm.h",
+				"/usr/include/urcu/uatomic/builtins-generic.h",
+				"/usr/include/urcu/uatomic/builtins.h",
 				"/usr/include/urcu/uatomic/gcc.h",
 				"/usr/include/urcu/uatomic/generic.h",
 				"/usr/include/urcu/uatomic/hppa.h",
@@ -140,6 +132,7 @@
 				"/usr/include/urcu/uatomic/s390.h",
 				"/usr/include/urcu/uatomic/sparc64.h",
 				"/usr/include/urcu/uatomic/tile.h",
+				"/usr/include/urcu/uatomic/uassert.h",
 				"/usr/include/urcu/uatomic/x86.h",
 				"/usr/include/urcu/uatomic_arch.h",
 				"/usr/include/urcu/urcu-bp.h",
@@ -148,7 +141,6 @@
 				"/usr/include/urcu/urcu-memb.h",
 				"/usr/include/urcu/urcu-poll.h",
 				"/usr/include/urcu/urcu-qsbr.h",
-				"/usr/include/urcu/urcu-signal.h",
 				"/usr/include/urcu/urcu.h",
 				"/usr/include/urcu/urcu_ref.h",
 				"/usr/include/urcu/wfcqueue.h",
@@ -160,14 +152,12 @@
 				"/usr/lib/liburcu-mb.so",
 				"/usr/lib/liburcu-memb.so",
 				"/usr/lib/liburcu-qsbr.so",
-				"/usr/lib/liburcu-signal.so",
 				"/usr/lib/liburcu.so",
 				"/usr/lib/pkgconfig/liburcu-bp.pc",
 				"/usr/lib/pkgconfig/liburcu-cds.pc",
 				"/usr/lib/pkgconfig/liburcu-mb.pc",
 				"/usr/lib/pkgconfig/liburcu-memb.pc",
 				"/usr/lib/pkgconfig/liburcu-qsbr.pc",
-				"/usr/lib/pkgconfig/liburcu-signal.pc",
 				"/usr/lib/pkgconfig/liburcu.pc"
 			],
 			"name": "liburcu-devel",
@@ -177,8 +167,7 @@
 				"pkgconfig(liburcu-cds)",
 				"pkgconfig(liburcu-mb)",
 				"pkgconfig(liburcu-memb)",
-				"pkgconfig(liburcu-qsbr)",
-				"pkgconfig(liburcu-signal)"
+				"pkgconfig(liburcu-qsbr)"
 			]
 		},
 		"liburcu-docs": {
@@ -186,6 +175,9 @@
 				"binary(grep)"
 			],
 			"files": [
+				"/usr/share/doc/userspace-rcu/LICENSE.md",
+				"/usr/share/doc/userspace-rcu/README.md",
+				"/usr/share/doc/userspace-rcu/cds-api.md",
 				"/usr/share/doc/userspace-rcu/examples/Makefile",
 				"/usr/share/doc/userspace-rcu/examples/Makefile.examples.template",
 				"/usr/share/doc/userspace-rcu/examples/hlist/Makefile",
@@ -243,12 +235,10 @@
 				"/usr/share/doc/userspace-rcu/examples/urcu-flavors/Makefile.mb",
 				"/usr/share/doc/userspace-rcu/examples/urcu-flavors/Makefile.membarrier",
 				"/usr/share/doc/userspace-rcu/examples/urcu-flavors/Makefile.qsbr",
-				"/usr/share/doc/userspace-rcu/examples/urcu-flavors/Makefile.signal",
 				"/usr/share/doc/userspace-rcu/examples/urcu-flavors/bp.c",
 				"/usr/share/doc/userspace-rcu/examples/urcu-flavors/mb.c",
 				"/usr/share/doc/userspace-rcu/examples/urcu-flavors/membarrier.c",
 				"/usr/share/doc/userspace-rcu/examples/urcu-flavors/qsbr.c",
-				"/usr/share/doc/userspace-rcu/examples/urcu-flavors/signal.c",
 				"/usr/share/doc/userspace-rcu/examples/wfcqueue/Makefile",
 				"/usr/share/doc/userspace-rcu/examples/wfcqueue/Makefile.cds_wfcq_dequeue",
 				"/usr/share/doc/userspace-rcu/examples/wfcqueue/Makefile.cds_wfcq_enqueue",
@@ -262,12 +252,15 @@
 				"/usr/share/doc/userspace-rcu/examples/wfstack/Makefile.cds_wfs_push",
 				"/usr/share/doc/userspace-rcu/examples/wfstack/cds_wfs_pop.c",
 				"/usr/share/doc/userspace-rcu/examples/wfstack/cds_wfs_pop_all_blocking.c",
-				"/usr/share/doc/userspace-rcu/examples/wfstack/cds_wfs_push.c"
+				"/usr/share/doc/userspace-rcu/examples/wfstack/cds_wfs_push.c",
+				"/usr/share/doc/userspace-rcu/rcu-api.md",
+				"/usr/share/doc/userspace-rcu/solaris-build.md",
+				"/usr/share/doc/userspace-rcu/uatomic-api.md"
 			],
 			"name": "liburcu-docs"
 		}
 	},
 	"source-name": "liburcu",
-	"source-release": "4",
-	"source-version": "0.14.1"
+	"source-release": "5",
+	"source-version": "0.15.3"
 }
