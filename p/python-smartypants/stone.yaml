@@ -4,18 +4,26 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : python-smartypants
-version     : 2.0.1
-release     : 2
+version     : 2.0.2
+release     : 3
 homepage    : https://github.com/leohemsted/smartypants.py
 upstreams   :
-    - https://github.com/leohemsted/smartypants.py/archive/refs/tags/v2.0.1.tar.gz : b98191911ff3b4144ef8ad53e776a2d0ad24bd508a905c6ce523597c40022773
+    - https://pypi.debian.net/smartypants/smartypants-2.0.2.tar.gz : 39d64ce1d7cc6964b698297bdf391bc12c3251b7f608e6e55d857cd7c5f800c6
 summary     : Translate plain ASCII punctuation characters into “smart” typographic punctuation HTML entities.
 description : |
     Translate plain ASCII punctuation characters into “smart” typographic punctuation HTML entities.
 license     :
     - BSD-2-Clause
     - BSD-3-Clause
+builddeps   :
+    - binary(python3)
+checkdeps   :
+    - python(docutils)
+    - python(pytest)
 build       : |
     %python_setup
 install     : |
     %python_install
+check       : |
+    # TODO replace with pytest macro
+    PYTHONPATH="$PWD"/build/lib pytest

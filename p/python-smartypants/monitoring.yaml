@@ -1,5 +1,6 @@
 releases:
   id: 20572
-  rss: ~
+  rss: https://pypi.org/rss/project/smartypants/releases.xml
 security:
+  # No known CPE, last checked 2025-08-01
   cpe: ~
