@@ -5,7 +5,7 @@
 #
 name        : xfsprogs
 version     : '6.15.0'
-release     : 8
+release     : 9
 homepage    : https://xfs.wiki.kernel.org/
 upstreams   :
     - https://mirrors.edge.kernel.org/pub/linux/utils/fs/xfs/xfsprogs/xfsprogs-6.15.0.tar.xz : 13b91f74beef8ad11137f7d9d71055573d91e961bc55bb0245956f69b84cd704
@@ -28,8 +28,8 @@ builddeps   :
     - pkgconfig(uuid)
 setup       : |
     %configure \
-               --disable-static \
-               --enable-editline=yes
+        --disable-static \
+        --enable-editline=yes
 
     # Prevent rpath from ending up in the binaries
     sed -i 's|^hardcode_libdir_flag_spec=.*|hardcode_libdir_flag_spec=""|g' libtool
