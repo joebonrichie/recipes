@@ -1,0 +1,47 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : libksieve
+version     : 25.04.3
+release     : 1
+upstreams   :
+    - https://download.kde.org/stable/release-service/25.04.3/src/libksieve-25.04.3.tar.xz : 07f6d97362e408dabcfb191b0bfd728edfd5996ee37a84074e928cb2e9c13a9d
+homepage    : https://kde.org/applications/system/org.kde.libksieve
+license     : GPL-2.0-only
+summary     : Sieve Script Library
+description : |
+    Sieve Script Library
+builddeps   :
+    # Temporary, boulder doesn't handle build ordering resolution correctly when builddeps are added by macros, so add ECM manually
+    - cmake(ECM)
+    - cmake(KF6I18n)
+    - cmake(KF6ColorScheme)
+    - cmake(KF6KIO)
+    - cmake(KF6CoreAddons)
+    - cmake(KF6IconThemes)
+    - cmake(KPim6PimCommon)
+    - cmake(KPim6Libkdepim)
+    - cmake(KF6NewStuff)
+    - cmake(KF6Archive)
+    - cmake(KF6SyntaxHighlighting)
+    - cmake(KF6Sonnet)
+    - cmake(KPim6Mime)
+    - cmake(KPim6IdentityManagementCore)
+    - cmake(KPim6MailTransport)
+    - cmake(KPim6IMAP)
+    - cmake(KF6TextEditTextToSpeech)
+    - cmake(KF6TextCustomEditor)
+    - cmake(KF6TextAddonsWidgets)
+    - cmake(KF6TextUtils)
+    - cmake(KF6DocTools)
+    - cmake(KF6TextAutoGenerateText)
+    - cmake(Qt6WebEngineWidgets)
+    - pkgconfig(libsasl2)
+setup       : |
+    %cmake_kf6
+build       : |
+    %cmake_build
+install     : |
+    %cmake_install
