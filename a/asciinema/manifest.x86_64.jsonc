@@ -11,7 +11,19 @@
 				"soname(libunwind.so.1(x86_64))"
 			],
 			"files": [
-				"/usr/bin/asciinema"
+				"/usr/bin/asciinema",
+				"/usr/share/bash-completion/completions/asciinema",
+				"/usr/share/fish/vendor_completions.d/asciinema.fish",
+				"/usr/share/man/man1/asciinema-auth.1",
+				"/usr/share/man/man1/asciinema-cat.1",
+				"/usr/share/man/man1/asciinema-convert.1",
+				"/usr/share/man/man1/asciinema-play.1",
+				"/usr/share/man/man1/asciinema-record.1",
+				"/usr/share/man/man1/asciinema-session.1",
+				"/usr/share/man/man1/asciinema-stream.1",
+				"/usr/share/man/man1/asciinema-upload.1",
+				"/usr/share/man/man1/asciinema.1",
+				"/usr/share/zsh/site-functions/_asciinema"
 			],
 			"name": "asciinema",
 			"provides": [
@@ -20,6 +32,6 @@
 		}
 	},
 	"source-name": "asciinema",
-	"source-release": "3",
-	"source-version": "3.0.0-rc.3"
+	"source-release": "4",
+	"source-version": "3.0.0-rc.5"
 }

@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : asciinema
-version     : "3.0.0-rc.3"
-release     : 3
+version     : "3.0.0-rc.5"
+release     : 4
 homepage    : https://asciinema.org/
 upstreams   :
-    - https://github.com/asciinema/asciinema/archive/refs/tags/v3.0.0-rc.3.tar.gz : 3e7402589eac1a704951e3c48d769f5d007c52630f17ec895dfad6676e4ba6b9
+    - https://github.com/asciinema/asciinema/archive/refs/tags/v3.0.0-rc.5.tar.gz : 31b56c062309316a961eb4fa86b73b7a478ac0a8c89ab44d978958e81a420dd0
 summary     : Terminal session recorder
 description : |
     asciinema (aka asciinema CLI or asciinema recorder) is a command-line tool for recording terminal sessions.
@@ -17,9 +17,21 @@ networking  : true
 setup       : |
     %cargo_fetch
 build       : |
-    %cargo_build
+    # ASCIINEMA_GEN_DIR defines where the build should generate man/completions
+    ASCIINEMA_GEN_DIR="$PWD" \
+        %cargo_build
 install     : |
     %cargo_install
+
+    # Man pages
+    %install_file man/*.1 -t %(installroot)%(mandir)/man1/
+
+    # Completions
+    %install_file completion/asciinema.bash %(installroot)%(bashcompletionsdir)/asciinema
+    %install_file completion/_asciinema -t %(installroot)%(zshcompletionsdir)
+    %install_file completion/asciinema.fish -t %(installroot)%(fishcompletionsdir)
 check       : |
-    # pty issues
-    %cargo_test || :
+    skipped=(
+        pty::tests::spawn_basic # PTY interaction
+    )
+    %cargo_test -- ${skipped[@]/#/--skip } || :
