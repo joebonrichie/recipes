@@ -1,5 +1,6 @@
 releases:
   id: 88298
-  rss: ~
+  rss: https://pypi.org/rss/project/trove_classifiers/releases.xml
 security:
+  # No known CPE, last checked 2025-08-01
   cpe: ~
