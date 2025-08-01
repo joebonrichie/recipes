@@ -4,16 +4,17 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : python-jaraco.collections
-version     : 5.1.0
-release     : 4
+version     : 5.2.1
+release     : 5
 homepage    : https://github.com/jaraco/jaraco.collections
 upstreams   :
-    - https://pypi.debian.net/jaraco.collections/jaraco_collections-5.1.0.tar.gz : 0e4829409d39ad18a40aa6754fee2767f4d9730c4ba66dc9df89f1d2756994c2
+    - https://pypi.debian.net/jaraco.collections/jaraco_collections-5.2.1.tar.gz : dab81970bad6f0ab53b20745f1b01da37926e4c0fcd425046aa45e0d8efa18ed
 summary     : Models and classes to supplement the stdlib 'collections' module
 description : |
     Models and classes to supplement the stdlib 'collections' module
 license     : MIT
 builddeps   :
+    - python(coherent-licensed)
     - python(setuptools-scm)
 rundeps     :
     - binary(python3)
