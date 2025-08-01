@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : jq
-version     : 1.8.0
-release     : 5
+version     : 1.8.1
+release     : 6
 homepage    : https://github.com/jqlang/jq
 upstreams   :
-    - https://github.com/jqlang/jq/releases/download/jq-1.8.0/jq-1.8.0.tar.gz : 91811577f91d9a6195ff50c2bffec9b72c8429dc05ec3ea022fd95c06d2b319c
+    - https://github.com/jqlang/jq/releases/download/jq-1.8.1/jq-1.8.1.tar.gz : 2be64e7129cecb11d5906290eba10af694fb9e3e7f9fc208a311dc33ca837eb0
 summary     : Command line JSON processor
 description : |
     jq is a lightweight and flexible command-line JSON processor akin to sed,awk,grep, and friends for JSON data. It's written in portable C and has zero runtime dependencies, allowing you to easily slice, filter, map, and transform structured data.
@@ -17,8 +17,19 @@ license     :
 builddeps   :
     - pkgconfig(oniguruma)
 setup       : |
-    %reconfigure --disable-static
+    # Note that autoconf (reconfigure/autoconf macros) breaks the version script (breaking `jq --version` and the version string in the pkgconfig)
+    %configure \
+        --disable-static
 build       : |
     %make
 install     : |
     %make_install
+# check       : |
+#     %make check || (cat ./test-suite.log && exit 1)
+# TODO: Figure out why locales are broken and fix them (https://github.com/jqlang/jq/commit/11c528d04d76c9b9553781aa76b073e4f40da008)
+# It's probably that uutils date command doesn't support locale or something
+# Reproducer:
+# locale=aa_DJ.utf8
+# date=$(LC_ALL="$locale" date +"%a %d %b %Y at %H:%M:%S")
+# echo $date
+# Should be similar to `Gum 01 Leq 2025 at 08:46:17`, but is `Fri 01 Aug 2025 at 13:48:32`
