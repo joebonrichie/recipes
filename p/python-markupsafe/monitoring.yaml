@@ -2,4 +2,5 @@ releases:
   id: 3918
   rss: ~
 security:
+  # No known CPE. Checked 20250801
   cpe: ~
