@@ -91,13 +91,13 @@
 				"/usr/lib/libnss_libvirt.so.2",
 				"/usr/lib/libnss_libvirt_guest.so.2",
 				"/usr/lib/libvirt-admin.so.0",
-				"/usr/lib/libvirt-admin.so.0.11005.0",
+				"/usr/lib/libvirt-admin.so.0.11006.0",
 				"/usr/lib/libvirt-lxc.so.0",
-				"/usr/lib/libvirt-lxc.so.0.11005.0",
+				"/usr/lib/libvirt-lxc.so.0.11006.0",
 				"/usr/lib/libvirt-qemu.so.0",
-				"/usr/lib/libvirt-qemu.so.0.11005.0",
+				"/usr/lib/libvirt-qemu.so.0.11006.0",
 				"/usr/lib/libvirt.so.0",
-				"/usr/lib/libvirt.so.0.11005.0",
+				"/usr/lib/libvirt.so.0.11006.0",
 				"/usr/lib/libvirt/connection-driver/libvirt_driver_ch.so",
 				"/usr/lib/libvirt/connection-driver/libvirt_driver_interface.so",
 				"/usr/lib/libvirt/connection-driver/libvirt_driver_lxc.so",
@@ -451,6 +451,8 @@
 				"/usr/share/libvirt/schemas/storagepool.rng",
 				"/usr/share/libvirt/schemas/storagepoolcaps.rng",
 				"/usr/share/libvirt/schemas/storagevol.rng",
+				"/usr/share/libvirt/schemas/sysinfo.rng",
+				"/usr/share/libvirt/schemas/sysinfocommon.rng",
 				"/usr/share/libvirt/test-screenshot.png",
 				"/usr/share/locale/as/LC_MESSAGES/libvirt.mo",
 				"/usr/share/locale/bg/LC_MESSAGES/libvirt.mo",
@@ -1002,6 +1004,6 @@
 		}
 	},
 	"source-name": "libvirt",
-	"source-release": "4",
-	"source-version": "11.5.0"
+	"source-release": "5",
+	"source-version": "11.6.0"
 }
