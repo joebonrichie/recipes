@@ -5,7 +5,7 @@
 #
 name        : tcl
 version     : 9.0.2
-release     : 1
+release     : 2
 upstreams   :
     - https://sourceforge.net/projects/tcl/files/Tcl/9.0.2/tcl9.0.2-src.tar.gz : e074c6a8d9ba2cddf914ba97b6677a552d7a52a3ca102924389a05ccb249b520
 homepage    : https://www.tcl.tk
@@ -42,7 +42,16 @@ install     : |
     # For linking with `-ltcl`
     ln -s libtcl${_version_major_minor}.so %(installroot)%(libdir)/libtcl.so
 
-    # Remove build traces
+    # Install private headers
+    mkdir -p %(installroot)/%(includedir)/tcl-private/{generic,unix}
+    find generic unix -name "*.h" -exec cp -p '{}' %(installroot)/%(includedir)/tcl-private/'{}' ';'
+    pushd %(installroot)/%(includedir)
+    for i in *.h ; do
+        [ -f %(installroot)/%(includedir)/tcl-private/generic/$i ] && ln -sf ../../$i %(installroot)/%(includedir)/tcl-private/generic ;
+    done
+    popd
+
+    # Remove build traces and switch to correct private headers dir
     sed -i -e "s|$PWD/unix|%(libdir)|; s|$PWD|%(includedir)/tcl-private|" %(installroot)/%(libdir)/tclConfig.sh
 packages    :
     - "%(name)":
