@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : qpdf
-version     : 11.9.1
-release     : 3
+version     : 12.2.0
+release     : 4
 homepage    : https://qpdf.sf.net
 upstreams   :
-    - https://github.com/qpdf/qpdf/releases/download/v11.9.1/qpdf-11.9.1.tar.gz : 2ba4d248f9567a27c146b9772ef5dc93bd9622317978455ffe91b259340d13d1
+    - https://github.com/qpdf/qpdf/releases/download/v12.2.0/qpdf-12.2.0.tar.gz : b3d1575b2218badc3549d6977524bb0f8c468c6528eebc8967bbe3078cf2cace
 summary     : Command-line tools and library for transforming PDF files
 description : |
     Command-line tools and library for transforming PDF files
@@ -17,13 +17,22 @@ builddeps   :
     - pkgconfig(libjpeg)
     - pkgconfig(libssl)
     - pkgconfig(zlib)
-packages    :
-    - "%(name)-docs":
-        paths:
-            - /usr/share/doc/qpdf
 setup       : |
-    %cmake -DBUILD_STATIC_LIBS=OFF
+    %cmake \
+        -DBUILD_STATIC_LIBS=OFF
 build       : |
     %cmake_build
 install     : |
     %cmake_install
+
+    # Completions
+    %install_file completions/bash/qpdf %(installroot)%(bashcompletionsdir)/qpdf
+    %install_file completions/zsh/_qpdf %(installroot)%(zshcompletionsdir)/_qpdf
+packages    :
+    - "%(name)-libs":
+        paths:
+            - /usr/lib/libqpdf.so.*
+
+    - "%(name)-docs":
+        paths:
+            - /usr/share/doc/qpdf
