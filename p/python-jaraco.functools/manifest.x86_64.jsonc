@@ -4,6 +4,7 @@
 	"packages": {
 		"python-jaraco.functools": {
 			"build-depends": [
+				"python(coherent-licensed)",
 				"python(setuptools-scm)"
 			],
 			"depends": [
@@ -16,11 +17,11 @@
 				"/usr/lib/python3.11/site-packages/jaraco/functools/__pycache__/__init__.cpython-311.opt-1.pyc",
 				"/usr/lib/python3.11/site-packages/jaraco/functools/__pycache__/__init__.cpython-311.pyc",
 				"/usr/lib/python3.11/site-packages/jaraco/functools/py.typed",
-				"/usr/lib/python3.11/site-packages/jaraco_functools-4.1.0.dist-info/METADATA",
-				"/usr/lib/python3.11/site-packages/jaraco_functools-4.1.0.dist-info/RECORD",
-				"/usr/lib/python3.11/site-packages/jaraco_functools-4.1.0.dist-info/WHEEL",
-				"/usr/lib/python3.11/site-packages/jaraco_functools-4.1.0.dist-info/licenses/LICENSE",
-				"/usr/lib/python3.11/site-packages/jaraco_functools-4.1.0.dist-info/top_level.txt"
+				"/usr/lib/python3.11/site-packages/jaraco_functools-4.2.1.dist-info/METADATA",
+				"/usr/lib/python3.11/site-packages/jaraco_functools-4.2.1.dist-info/RECORD",
+				"/usr/lib/python3.11/site-packages/jaraco_functools-4.2.1.dist-info/WHEEL",
+				"/usr/lib/python3.11/site-packages/jaraco_functools-4.2.1.dist-info/licenses/LICENSE",
+				"/usr/lib/python3.11/site-packages/jaraco_functools-4.2.1.dist-info/top_level.txt"
 			],
 			"name": "python-jaraco.functools",
 			"provides": [
@@ -30,6 +31,6 @@
 		}
 	},
 	"source-name": "python-jaraco.functools",
-	"source-release": "5",
-	"source-version": "4.1.0"
+	"source-release": "6",
+	"source-version": "4.2.1"
 }
