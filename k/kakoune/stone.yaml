@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : kakoune
-version     : 2023.08.05
-release     : 3
+version     : 2025.06.03
+release     : 4
 homepage    : https://kakoune.org
 upstreams   :
-    - https://github.com/mawww/kakoune/archive/refs/tags/v2023.08.05.tar.gz : 1ad7bfe9e1d861115cd418cb500990ea5fa63726e998df13702e5caa8fc84356
+    - https://github.com/mawww/kakoune/releases/download/v2025.06.03/kakoune-2025.06.03.tar.bz2 : ced5941f1bdfb8ef6b0265b00bfd7389e392fb41b2bf11990cee9d6e95316499
 summary     : mawww's experiment for a better code editor
 description : |
     mawww's experiment for a better code editor
@@ -17,8 +17,12 @@ rundeps     :
     - binary(find)
     - binary(sed)
 setup       : |
-    %patch %(pkgdir)/kakoune-2023.08.05-use-explicit-types.patch
+    %patch %(pkgdir)/libexec.patch
 build       : |
-    %make
+    %make \
+        CXX="%(cxx)" \
+        CXXFLAGS-debug-no=""
 install     : |
-    %make_install PREFIX=/usr
+    %make_install \
+        PREFIX=/usr \
+        libexecdir="%(installroot)%(libdir)/kak"
