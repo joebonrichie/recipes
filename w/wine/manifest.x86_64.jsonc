@@ -2112,8 +2112,10 @@
 				"/usr/include/wine/windows/bits5_0.idl",
 				"/usr/include/wine/windows/bitsmsg.h",
 				"/usr/include/wine/windows/bluetoothapis.h",
+				"/usr/include/wine/windows/bluetoothleapis.h",
 				"/usr/include/wine/windows/bthdef.h",
 				"/usr/include/wine/windows/bthioctl.h",
+				"/usr/include/wine/windows/bthledef.h",
 				"/usr/include/wine/windows/bthsdpdef.h",
 				"/usr/include/wine/windows/cderr.h",
 				"/usr/include/wine/windows/cdosys.h",
@@ -2291,6 +2293,7 @@
 				"/usr/include/wine/windows/dde.h",
 				"/usr/include/wine/windows/dde.rh",
 				"/usr/include/wine/windows/ddeml.h",
+				"/usr/include/wine/windows/ddk/bthguid.h",
 				"/usr/include/wine/windows/ddk/compstui.h",
 				"/usr/include/wine/windows/ddk/csq.h",
 				"/usr/include/wine/windows/ddk/d3dkmthk.h",
@@ -2326,11 +2329,14 @@
 				"/usr/include/wine/windows/ddstream.idl",
 				"/usr/include/wine/windows/delayloadhandler.h",
 				"/usr/include/wine/windows/devenum.idl",
+				"/usr/include/wine/windows/devfiltertypes.h",
 				"/usr/include/wine/windows/devguid.h",
 				"/usr/include/wine/windows/devicetopology.h",
 				"/usr/include/wine/windows/devicetopology.idl",
 				"/usr/include/wine/windows/devpkey.h",
 				"/usr/include/wine/windows/devpropdef.h",
+				"/usr/include/wine/windows/devquery.h",
+				"/usr/include/wine/windows/devquerydef.h",
 				"/usr/include/wine/windows/dhcpcsdk.h",
 				"/usr/include/wine/windows/dhtmldid.h",
 				"/usr/include/wine/windows/dhtmled.h",
@@ -3854,6 +3860,6 @@
 		}
 	},
 	"source-name": "wine",
-	"source-release": "7",
-	"source-version": "10.11"
+	"source-release": "8",
+	"source-version": "10.12"
 }

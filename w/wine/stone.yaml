@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : wine
-version     : "10.11"
-release     : 7
+version     : "10.12"
+release     : 8
 homepage    : https://www.winehq.org
 upstreams   :
-    - https://dl.winehq.org/wine/source/10.x/wine-10.11.tar.xz : 185be98699b914bc29e724430947986bb78a867e62e422f00c75341932b678ce
+    - https://dl.winehq.org/wine/source/10.x/wine-10.12.tar.xz : cd572c71a3d72e87f98490b228c7c26aaeb3fde38dd9e79fc3b56391d599d6bf
 summary     : Wine is a program which allows running Microsoft Windows programs on Unix.
 description : |
     Wine is a program which allows running Microsoft Windows programs
@@ -63,10 +63,13 @@ builddeps   :
     # libv4l2
 setup       : |
     %patch %(pkgdir)/llvm-libunwind.patch
-    %patch %(pkgdir)/0001-Prefer-wayland-over-x11.patch
 
-    %configure --enable-archs=i386,x86_64 \
-               --enable-win64
+    # Temporarily disabled until properly tested
+    # %patch %(pkgdir)/0001-Prefer-wayland-over-x11.patch
+
+    %configure \
+        --enable-archs=i386,x86_64 \
+        --enable-win64
 build       : |
     %make
 install     : |
