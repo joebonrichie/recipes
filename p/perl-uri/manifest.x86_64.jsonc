@@ -22,6 +22,7 @@
 				"/usr/share/man/man3/URI::icaps.3",
 				"/usr/share/man/man3/URI::ldap.3",
 				"/usr/share/man/man3/URI::otpauth.3",
+				"/usr/share/man/man3/URI::smb.3",
 				"/usr/share/perl5/vendor_perl/URI.pm",
 				"/usr/share/perl5/vendor_perl/URI/Escape.pm",
 				"/usr/share/perl5/vendor_perl/URI/Heuristic.pm",
@@ -78,6 +79,7 @@
 				"/usr/share/perl5/vendor_perl/URI/sftp.pm",
 				"/usr/share/perl5/vendor_perl/URI/sip.pm",
 				"/usr/share/perl5/vendor_perl/URI/sips.pm",
+				"/usr/share/perl5/vendor_perl/URI/smb.pm",
 				"/usr/share/perl5/vendor_perl/URI/snews.pm",
 				"/usr/share/perl5/vendor_perl/URI/ssh.pm",
 				"/usr/share/perl5/vendor_perl/URI/telnet.pm",
@@ -90,6 +92,6 @@
 		}
 	},
 	"source-name": "perl-uri",
-	"source-release": "3",
-	"source-version": "5.31"
+	"source-release": "4",
+	"source-version": "5.32"
 }
