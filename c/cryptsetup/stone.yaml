@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : cryptsetup
-version     : 2.7.5
-release     : 6
+version     : 2.8.0
+release     : 7
 homepage    : https://gitlab.com/cryptsetup/cryptsetup
 upstreams   :
-    - https://gitlab.com/cryptsetup/cryptsetup/-/archive/v2.7.5/cryptsetup-v2.7.5.tar.gz : da290c93b17c913540b97ca177f107e22032c56e5371076d2d30e97f1fffa4cf
+    - https://gitlab.com/cryptsetup/cryptsetup/-/archive/v2.8.0/cryptsetup-v2.8.0.tar.gz : f8b84bb48d54c44dc596f8c70c47735d03f63446aba16eb8dc76c72e9daaaf2d
 summary     : cryptsetup + LUKS
 description : |
     cryptsetup + LUKS - open source disk encryption
@@ -35,13 +35,12 @@ setup       : |
 
     %meson \
            -Dargon-implementation=internal \
-           -Dinternal-sse-argon2=true
+           -Dinternal-sse-argon2=true \
+           -Dssh-token=true
 build       : |
     %meson_build
 install     : |
     %meson_install
-
-    rm -v %(installroot)%(libdir)/tmpfiles.d -rfv
 packages    :
     - "%(name)-libs":
         summary: "Library files for %(name)"
@@ -49,8 +48,32 @@ packages    :
             Library files for %(name), typically pulled in as a dependency of another package.
         paths:
             - /usr/lib/libcryptsetup.so.*
+            - /usr/lib/tmpfiles.d/cryptsetup.conf
+            - /usr/share/locale/
 
-    # Workaround due to moss upgrade issues
-    - "%(name)":
-        rundeps:
-            - "%(name)-libs"
+    - "%(name)-ssh-token":
+        summary: Cryptsetup LUKS2 SSH token
+        description: |
+            This package contains the LUKS2 SSH token.
+        paths:
+            - /usr/bin/cryptsetup-ssh
+            - /usr/lib/libcryptsetup-token-ssh.so
+            - /usr/share/man/man8/cryptsetup-ssh.8*
+
+    - "integritysetup":
+        summary: A utility for setting up dm-integrity volumes
+        description: |
+            The integritysetup package contains a utility for setting up
+            disk integrity protection using dm-integrity kernel module.
+        paths:
+            - /usr/bin/integritysetup
+            - /usr/share/man/man8/integritysetup.8*
+
+    - "veritysetup":
+        summary: A utility for setting up dm-verity volumes
+        description: |
+            The veritysetup package contains a utility for setting up
+            disk verification using dm-verity kernel module.
+        paths:
+            - /usr/bin/veritysetup
+            - /usr/share/man/man8/veritysetup.8*

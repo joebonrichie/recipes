@@ -19,7 +19,6 @@
 				"pkgconfig(uuid)"
 			],
 			"depends": [
-				"cryptsetup-libs",
 				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
 				"soname(libblkid.so.1(x86_64))",
 				"soname(libc.so.6(x86_64))",
@@ -29,28 +28,6 @@
 			],
 			"files": [
 				"/usr/bin/cryptsetup",
-				"/usr/bin/integritysetup",
-				"/usr/bin/veritysetup",
-				"/usr/share/locale/cs/LC_MESSAGES/cryptsetup.mo",
-				"/usr/share/locale/da/LC_MESSAGES/cryptsetup.mo",
-				"/usr/share/locale/de/LC_MESSAGES/cryptsetup.mo",
-				"/usr/share/locale/es/LC_MESSAGES/cryptsetup.mo",
-				"/usr/share/locale/fi/LC_MESSAGES/cryptsetup.mo",
-				"/usr/share/locale/fr/LC_MESSAGES/cryptsetup.mo",
-				"/usr/share/locale/id/LC_MESSAGES/cryptsetup.mo",
-				"/usr/share/locale/it/LC_MESSAGES/cryptsetup.mo",
-				"/usr/share/locale/ja/LC_MESSAGES/cryptsetup.mo",
-				"/usr/share/locale/ka/LC_MESSAGES/cryptsetup.mo",
-				"/usr/share/locale/nl/LC_MESSAGES/cryptsetup.mo",
-				"/usr/share/locale/pl/LC_MESSAGES/cryptsetup.mo",
-				"/usr/share/locale/pt_BR/LC_MESSAGES/cryptsetup.mo",
-				"/usr/share/locale/ro/LC_MESSAGES/cryptsetup.mo",
-				"/usr/share/locale/ru/LC_MESSAGES/cryptsetup.mo",
-				"/usr/share/locale/sr/LC_MESSAGES/cryptsetup.mo",
-				"/usr/share/locale/sv/LC_MESSAGES/cryptsetup.mo",
-				"/usr/share/locale/uk/LC_MESSAGES/cryptsetup.mo",
-				"/usr/share/locale/vi/LC_MESSAGES/cryptsetup.mo",
-				"/usr/share/locale/zh_CN/LC_MESSAGES/cryptsetup.mo",
 				"/usr/share/man/man8/cryptsetup-benchmark.8",
 				"/usr/share/man/man8/cryptsetup-bitlkDump.8",
 				"/usr/share/man/man8/cryptsetup-bitlkOpen.8",
@@ -82,20 +59,15 @@
 				"/usr/share/man/man8/cryptsetup-refresh.8",
 				"/usr/share/man/man8/cryptsetup-repair.8",
 				"/usr/share/man/man8/cryptsetup-resize.8",
-				"/usr/share/man/man8/cryptsetup-ssh.8",
 				"/usr/share/man/man8/cryptsetup-status.8",
 				"/usr/share/man/man8/cryptsetup-tcryptDump.8",
 				"/usr/share/man/man8/cryptsetup-tcryptOpen.8",
 				"/usr/share/man/man8/cryptsetup-token.8",
-				"/usr/share/man/man8/cryptsetup.8",
-				"/usr/share/man/man8/integritysetup.8",
-				"/usr/share/man/man8/veritysetup.8"
+				"/usr/share/man/man8/cryptsetup.8"
 			],
 			"name": "cryptsetup",
 			"provides": [
-				"binary(cryptsetup)",
-				"binary(integritysetup)",
-				"binary(veritysetup)"
+				"binary(cryptsetup)"
 			]
 		},
 		"cryptsetup-devel": {
@@ -158,15 +130,135 @@
 			],
 			"files": [
 				"/usr/lib/libcryptsetup.so.12",
-				"/usr/lib/libcryptsetup.so.12.10.0"
+				"/usr/lib/libcryptsetup.so.12.11.0",
+				"/usr/lib/tmpfiles.d/cryptsetup.conf",
+				"/usr/share/locale/cs/LC_MESSAGES/cryptsetup.mo",
+				"/usr/share/locale/da/LC_MESSAGES/cryptsetup.mo",
+				"/usr/share/locale/de/LC_MESSAGES/cryptsetup.mo",
+				"/usr/share/locale/es/LC_MESSAGES/cryptsetup.mo",
+				"/usr/share/locale/fi/LC_MESSAGES/cryptsetup.mo",
+				"/usr/share/locale/fr/LC_MESSAGES/cryptsetup.mo",
+				"/usr/share/locale/id/LC_MESSAGES/cryptsetup.mo",
+				"/usr/share/locale/it/LC_MESSAGES/cryptsetup.mo",
+				"/usr/share/locale/ja/LC_MESSAGES/cryptsetup.mo",
+				"/usr/share/locale/ka/LC_MESSAGES/cryptsetup.mo",
+				"/usr/share/locale/nl/LC_MESSAGES/cryptsetup.mo",
+				"/usr/share/locale/pl/LC_MESSAGES/cryptsetup.mo",
+				"/usr/share/locale/pt_BR/LC_MESSAGES/cryptsetup.mo",
+				"/usr/share/locale/ro/LC_MESSAGES/cryptsetup.mo",
+				"/usr/share/locale/ru/LC_MESSAGES/cryptsetup.mo",
+				"/usr/share/locale/sk/LC_MESSAGES/cryptsetup.mo",
+				"/usr/share/locale/sr/LC_MESSAGES/cryptsetup.mo",
+				"/usr/share/locale/sv/LC_MESSAGES/cryptsetup.mo",
+				"/usr/share/locale/uk/LC_MESSAGES/cryptsetup.mo",
+				"/usr/share/locale/vi/LC_MESSAGES/cryptsetup.mo",
+				"/usr/share/locale/zh_CN/LC_MESSAGES/cryptsetup.mo"
 			],
 			"name": "cryptsetup-libs",
 			"provides": [
 				"soname(libcryptsetup.so.12(x86_64))"
 			]
+		},
+		"cryptsetup-ssh-token": {
+			"build-depends": [
+				"binary(asciidoctor)",
+				"binary(gettext)",
+				"pkgconfig(blkid)",
+				"pkgconfig(devmapper)",
+				"pkgconfig(json-c)",
+				"pkgconfig(libcrypto)",
+				"pkgconfig(libgcrypt)",
+				"pkgconfig(libssh)",
+				"pkgconfig(nettle)",
+				"pkgconfig(popt)",
+				"pkgconfig(pwquality)",
+				"pkgconfig(systemd)",
+				"pkgconfig(uuid)"
+			],
+			"depends": [
+				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
+				"soname(libc.so.6(x86_64))",
+				"soname(libcryptsetup.so.12(x86_64))",
+				"soname(libjson-c.so.5(x86_64))",
+				"soname(libssh.so.4(x86_64))"
+			],
+			"files": [
+				"/usr/bin/cryptsetup-ssh",
+				"/usr/lib/libcryptsetup-token-ssh.so",
+				"/usr/share/man/man8/cryptsetup-ssh.8"
+			],
+			"name": "cryptsetup-ssh-token",
+			"provides": [
+				"binary(cryptsetup-ssh)",
+				"soname(libcryptsetup-token-ssh.so(x86_64))"
+			]
+		},
+		"integritysetup": {
+			"build-depends": [
+				"binary(asciidoctor)",
+				"binary(gettext)",
+				"pkgconfig(blkid)",
+				"pkgconfig(devmapper)",
+				"pkgconfig(json-c)",
+				"pkgconfig(libcrypto)",
+				"pkgconfig(libgcrypt)",
+				"pkgconfig(libssh)",
+				"pkgconfig(nettle)",
+				"pkgconfig(popt)",
+				"pkgconfig(pwquality)",
+				"pkgconfig(systemd)",
+				"pkgconfig(uuid)"
+			],
+			"depends": [
+				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
+				"soname(libblkid.so.1(x86_64))",
+				"soname(libc.so.6(x86_64))",
+				"soname(libcryptsetup.so.12(x86_64))",
+				"soname(libpopt.so.0(x86_64))",
+				"soname(libuuid.so.1(x86_64))"
+			],
+			"files": [
+				"/usr/bin/integritysetup",
+				"/usr/share/man/man8/integritysetup.8"
+			],
+			"name": "integritysetup",
+			"provides": [
+				"binary(integritysetup)"
+			]
+		},
+		"veritysetup": {
+			"build-depends": [
+				"binary(asciidoctor)",
+				"binary(gettext)",
+				"pkgconfig(blkid)",
+				"pkgconfig(devmapper)",
+				"pkgconfig(json-c)",
+				"pkgconfig(libcrypto)",
+				"pkgconfig(libgcrypt)",
+				"pkgconfig(libssh)",
+				"pkgconfig(nettle)",
+				"pkgconfig(popt)",
+				"pkgconfig(pwquality)",
+				"pkgconfig(systemd)",
+				"pkgconfig(uuid)"
+			],
+			"depends": [
+				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
+				"soname(libc.so.6(x86_64))",
+				"soname(libcryptsetup.so.12(x86_64))",
+				"soname(libpopt.so.0(x86_64))"
+			],
+			"files": [
+				"/usr/bin/veritysetup",
+				"/usr/share/man/man8/veritysetup.8"
+			],
+			"name": "veritysetup",
+			"provides": [
+				"binary(veritysetup)"
+			]
 		}
 	},
 	"source-name": "cryptsetup",
-	"source-release": "6",
-	"source-version": "2.7.5"
+	"source-release": "7",
+	"source-version": "2.8.0"
 }
