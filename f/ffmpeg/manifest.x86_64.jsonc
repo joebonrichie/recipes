@@ -324,7 +324,7 @@
 				"soname(libm.so.6(x86_64))",
 				"soname(libmp3lame.so.0(x86_64))",
 				"soname(libopus.so.0(x86_64))",
-				"soname(librav1e.so.0.7(x86_64))",
+				"soname(librav1e.so.0.8(x86_64))",
 				"soname(librsvg-2.so.2(x86_64))",
 				"soname(libsnappy.so.1(x86_64))",
 				"soname(libswresample.so.5(x86_64))",
@@ -1458,6 +1458,6 @@
 		}
 	},
 	"source-name": "ffmpeg",
-	"source-release": "9",
+	"source-release": "10",
 	"source-version": "7.1.1"
 }
