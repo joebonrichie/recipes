@@ -24,11 +24,11 @@
 				"soname(libunwind.so.1(x86_64))"
 			],
 			"files": [
-				"/usr/lib/libmatrix_client.so.0.10.0"
+				"/usr/lib/libmatrix_client.so.0.10.1"
 			],
 			"name": "mtxclient",
 			"provides": [
-				"soname(libmatrix_client.so.0.10.0(x86_64))"
+				"soname(libmatrix_client.so.0.10.1(x86_64))"
 			]
 		},
 		"mtxclient-devel": {
@@ -80,6 +80,7 @@
 				"/usr/include/mtx/events/name.hpp",
 				"/usr/include/mtx/events/nheko_extensions/event_expiry.hpp",
 				"/usr/include/mtx/events/nheko_extensions/hidden_events.hpp",
+				"/usr/include/mtx/events/nheko_extensions/invite_permissions.hpp",
 				"/usr/include/mtx/events/pinned_events.hpp",
 				"/usr/include/mtx/events/policy_rules.hpp",
 				"/usr/include/mtx/events/power_levels.hpp",
@@ -143,6 +144,6 @@
 		}
 	},
 	"source-name": "mtxclient",
-	"source-release": "4",
-	"source-version": "0.10.0"
+	"source-release": "5",
+	"source-version": "0.10.1"
 }
