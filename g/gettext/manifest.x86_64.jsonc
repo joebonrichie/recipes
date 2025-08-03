@@ -33,8 +33,8 @@
 				"gettext-libs",
 				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
 				"soname(libc.so.6(x86_64))",
-				"soname(libgettextlib-0.25.so(x86_64))",
-				"soname(libgettextsrc-0.25.so(x86_64))",
+				"soname(libgettextlib-0.26.so(x86_64))",
+				"soname(libgettextsrc-0.26.so(x86_64))",
 				"soname(libomp.so(x86_64))",
 				"soname(libtextstyle.so.0(x86_64))",
 				"soname(libunistring.so.5(x86_64))",
@@ -58,6 +58,8 @@
 				"/usr/bin/msgunfmt",
 				"/usr/bin/msguniq",
 				"/usr/bin/ngettext",
+				"/usr/bin/printf_gettext",
+				"/usr/bin/printf_ngettext",
 				"/usr/bin/recode-sr-latin",
 				"/usr/bin/xgettext",
 				"/usr/lib/gettext/gettext/cldr-plurals",
@@ -65,17 +67,17 @@
 				"/usr/lib/gettext/gettext/project-id",
 				"/usr/lib/gettext/gettext/urlget",
 				"/usr/lib/gettext/gettext/user-email",
-				"/usr/share/gettext-0.25/its/docbook.loc",
-				"/usr/share/gettext-0.25/its/docbook4.its",
-				"/usr/share/gettext-0.25/its/docbook5.its",
-				"/usr/share/gettext-0.25/its/glade.loc",
-				"/usr/share/gettext-0.25/its/glade1.its",
-				"/usr/share/gettext-0.25/its/glade2.its",
-				"/usr/share/gettext-0.25/its/gsettings.its",
-				"/usr/share/gettext-0.25/its/gsettings.loc",
-				"/usr/share/gettext-0.25/its/gtkbuilder.its",
-				"/usr/share/gettext-0.25/its/metainfo.its",
-				"/usr/share/gettext-0.25/its/metainfo.loc",
+				"/usr/share/gettext-0.26/its/docbook.loc",
+				"/usr/share/gettext-0.26/its/docbook4.its",
+				"/usr/share/gettext-0.26/its/docbook5.its",
+				"/usr/share/gettext-0.26/its/glade.loc",
+				"/usr/share/gettext-0.26/its/glade1.its",
+				"/usr/share/gettext-0.26/its/glade2.its",
+				"/usr/share/gettext-0.26/its/gsettings.its",
+				"/usr/share/gettext-0.26/its/gsettings.loc",
+				"/usr/share/gettext-0.26/its/gtkbuilder.its",
+				"/usr/share/gettext-0.26/its/metainfo.its",
+				"/usr/share/gettext-0.26/its/metainfo.loc",
 				"/usr/share/gettext/ABOUT-NLS",
 				"/usr/share/gettext/archive.dir.tar.xz",
 				"/usr/share/gettext/disclaim-translations.txt",
@@ -197,6 +199,8 @@
 				"/usr/share/man/man1/msgunfmt.1",
 				"/usr/share/man/man1/msguniq.1",
 				"/usr/share/man/man1/ngettext.1",
+				"/usr/share/man/man1/printf_gettext.1",
+				"/usr/share/man/man1/printf_ngettext.1",
 				"/usr/share/man/man1/recode-sr-latin.1",
 				"/usr/share/man/man1/xgettext.1"
 			],
@@ -219,6 +223,8 @@
 				"binary(msgunfmt)",
 				"binary(msguniq)",
 				"binary(ngettext)",
+				"binary(printf_gettext)",
+				"binary(printf_ngettext)",
 				"binary(recode-sr-latin)",
 				"binary(xgettext)"
 			]
@@ -244,6 +250,7 @@
 				"/usr/lib/libgettextpo.so",
 				"/usr/lib/libgettextsrc.so",
 				"/usr/lib/preloadable_libintl.so",
+				"/usr/share/aclocal/nls.m4",
 				"/usr/share/gettext/config.rpath",
 				"/usr/share/gettext/gettext.h",
 				"/usr/share/gettext/javaversion.class",
@@ -338,6 +345,7 @@
 				"/usr/share/doc/gettext/gettext_29.html",
 				"/usr/share/doc/gettext/gettext_3.html",
 				"/usr/share/doc/gettext/gettext_30.html",
+				"/usr/share/doc/gettext/gettext_31.html",
 				"/usr/share/doc/gettext/gettext_4.html",
 				"/usr/share/doc/gettext/gettext_5.html",
 				"/usr/share/doc/gettext/gettext_6.html",
@@ -378,6 +386,8 @@
 				"/usr/share/doc/gettext/msguniq.1.html",
 				"/usr/share/doc/gettext/ngettext.1.html",
 				"/usr/share/doc/gettext/ngettext.3.html",
+				"/usr/share/doc/gettext/printf_gettext.1.html",
+				"/usr/share/doc/gettext/printf_ngettext.1.html",
 				"/usr/share/doc/gettext/recode-sr-latin.1.html",
 				"/usr/share/doc/gettext/textdomain.3.html",
 				"/usr/share/doc/gettext/tutorial.html",
@@ -406,17 +416,17 @@
 			"files": [
 				"/usr/lib/libasprintf.so.0",
 				"/usr/lib/libasprintf.so.0.0.0",
-				"/usr/lib/libgettextlib-0.25.so",
+				"/usr/lib/libgettextlib-0.26.so",
 				"/usr/lib/libgettextpo.so.0",
-				"/usr/lib/libgettextpo.so.0.5.14",
-				"/usr/lib/libgettextsrc-0.25.so"
+				"/usr/lib/libgettextpo.so.0.5.15",
+				"/usr/lib/libgettextsrc-0.26.so"
 			],
 			"name": "gettext-libs",
 			"provides": [
 				"soname(libasprintf.so.0(x86_64))",
-				"soname(libgettextlib-0.25.so(x86_64))",
+				"soname(libgettextlib-0.26.so(x86_64))",
 				"soname(libgettextpo.so.0(x86_64))",
-				"soname(libgettextsrc-0.25.so(x86_64))"
+				"soname(libgettextsrc-0.26.so(x86_64))"
 			]
 		},
 		"libtextstyle": {
@@ -433,7 +443,7 @@
 			],
 			"files": [
 				"/usr/lib/libtextstyle.so.0",
-				"/usr/lib/libtextstyle.so.0.2.5"
+				"/usr/lib/libtextstyle.so.0.2.6"
 			],
 			"name": "libtextstyle",
 			"provides": [
@@ -468,6 +478,6 @@
 		}
 	},
 	"source-name": "gettext",
-	"source-release": "8",
-	"source-version": "0.25"
+	"source-release": "9",
+	"source-version": "0.26"
 }

@@ -4,15 +4,15 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : gettext
-version     : '0.25'
-release     : 8
+version     : '0.26'
+release     : 9
 summary     : GNU locale utilities
 license     : GPL-3.0-or-later
 homepage    : https://www.gnu.org/software/gettext/gettext.html
 description : |
     GNU locale utilities.
 upstreams   :
-    - https://mirrors.kernel.org/gnu/gettext/gettext-0.25.tar.gz : aee02dab79d9138fdcc7226b67ec985121bce6007edebe30d0e39d42f69a340e
+    - https://mirrors.kernel.org/gnu/gettext/gettext-0.26.tar.gz : 39acf4b0371e9b110b60005562aace5b3631fed9b1bb9ecccfc7f56e58bb1d7f
 builddeps   :
     - pkgconfig(libxml-2.0)
     - pkgconfig(ncursesw)
@@ -20,7 +20,8 @@ builddeps   :
 checkdeps   :
     - binary(gzip)
 setup       : |
-    %configure --disable-static
+    %configure \
+        --disable-static
 build       : |
     %make
 install     : |
