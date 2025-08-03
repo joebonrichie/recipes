@@ -4,13 +4,13 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : rav1e
-version     : 0.7.1
-release     : 3
+version     : 0.8.1
+release     : 4
 homepage    : https://crates.io/crates/rav1e
 upstreams   :
-    - https://github.com/xiph/rav1e/archive/refs/tags/v0.7.1.tar.gz : da7ae0df2b608e539de5d443c096e109442cdfa6c5e9b4014361211cf61d030c
-    - https://github.com/xiph/rav1e/releases/download/v0.7.1/Cargo.lock :
-        hash: 4482976bfb7647d707f9a01fa1a3848366988f439924b5c8ac7ab085fba24240
+    - https://github.com/xiph/rav1e/archive/refs/tags/v0.8.1.tar.gz : 06d1523955fb6ed9cf9992eace772121067cca7e8926988a1ee16492febbe01e
+    - https://github.com/xiph/rav1e/releases/download/v0.8.1/Cargo.lock :
+        hash: 861482385bdef579e207bb371937dd49cb9ff47d9406c40660b760fa672d0589
         unpack: false
 summary     : The fastest and safest AV1 encoder
 description : |

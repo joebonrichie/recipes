@@ -16,13 +16,13 @@
 			],
 			"files": [
 				"/usr/bin/rav1e",
-				"/usr/lib/librav1e.so.0.7",
-				"/usr/lib/librav1e.so.0.7.1"
+				"/usr/lib/librav1e.so.0.8",
+				"/usr/lib/librav1e.so.0.8.1"
 			],
 			"name": "rav1e",
 			"provides": [
 				"binary(rav1e)",
-				"soname(librav1e.so.0.7(x86_64))"
+				"soname(librav1e.so.0.8(x86_64))"
 			]
 		},
 		"rav1e-devel": {
@@ -45,6 +45,6 @@
 		}
 	},
 	"source-name": "rav1e",
-	"source-release": "3",
-	"source-version": "0.7.1"
+	"source-release": "4",
+	"source-version": "0.8.1"
 }
