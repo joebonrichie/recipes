@@ -4,17 +4,20 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : graphviz
-version     : 12.2.1
-release     : 4
+version     : 13.1.1
+release     : 5
 homepage    : https://www.graphviz.org
 upstreams   :
-    - https://gitlab.com/api/v4/projects/4207231/packages/generic/graphviz-releases/12.2.1/graphviz-12.2.1.tar.gz : 242bc18942eebda6db4039f108f387ec97856fc91ba47f21e89341c34b554df8
+    - https://gitlab.com/api/v4/projects/4207231/packages/generic/graphviz-releases/13.1.1/graphviz-13.1.1.tar.xz : 6c49d7dda4329f5a35ce70035d1ec6602dadae7a7077cd7efe43cb57f4bc8f22
 summary     :  Graphviz is open source graph visualization software
 description : |
      Graphviz is open source graph visualization software
 license     : EPL-1.0
 builddeps   :
+    - binary(bison)
+    - binary(flex)
     - binary(groff)
+    - binary(swig)
     # Enable later for gvedit
     # pkgconfig(Qt5Core)
     - pkgconfig(expat)
@@ -27,18 +30,56 @@ builddeps   :
     - pkgconfig(libwebp)
     - pkgconfig(pango)
     - pkgconfig(poppler)
+    - pkgconfig(poppler-glib)
+    - pkgconfig(python3)
     - pkgconfig(xaw6)
     - ghostscript-devel
-packages    :
-    - "%(name)-devel":
-        paths:
-            - /usr/lib/graphviz/*.so
-    - "%(name)-docs":
-        paths:
-            - /usr/share/doc/*
+    - libtool-ltldl-devel
 setup       : |
     %configure
 build       : |
     %make
 install     : |
     %make_install
+packages    :
+    - "%(name)-libs":
+        paths:
+            - /usr/lib/libcdt.so.*
+            - /usr/lib/libcgraph.so.*
+            - /usr/lib/libgvc.so.*
+            - /usr/lib/libgvpr.so.*
+            - /usr/lib/libpathplan.so.*
+            - /usr/lib/libxdot.so.*
+
+    - "%(name)-devel":
+        paths:
+            - /usr/lib/graphviz/*.so
+
+    - "%(name)-docs":
+        paths:
+            - /usr/share/doc/*
+
+    - "%(name)-graphs":
+        summary: Demo graphs for graphviz
+        description: Demo graphs for graphviz
+        paths:
+            - /usr/share/graphviz/graphs/
+
+    - "%(name)-gtk3":
+        summary: Graphviz plugin for renderers based on gtk3
+        description: Graphviz plugin for renderers based on gtk3
+        rundeps:
+            - "%(name)"
+        paths:
+            - /usr/lib/graphviz/libgvplugin_gdk.so.*
+
+    - "%(name)-python":
+        summary: Python 3 extension for graphviz
+        description: Python 3 extension for graphviz
+        rundeps:
+            - "%(name)"
+        paths:
+            - /usr/lib/python3*/site-packages/
+            - /usr/lib/graphviz/python3/
+            - /usr/share/man/man3/gv.3python*
+            - /usr/share/graphviz/demo/modgraph.py
