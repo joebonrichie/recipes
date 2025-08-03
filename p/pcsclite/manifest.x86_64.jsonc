@@ -14,7 +14,9 @@
 				"pkgconfig(systemd)"
 			],
 			"depends": [
+				"binary(python3)",
 				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
+				"pcsclite-libs",
 				"soname(ld-linux-x86-64.so.2(x86_64))",
 				"soname(libc.so.6(x86_64))",
 				"soname(libglib-2.0.so.0(x86_64))",
@@ -25,9 +27,6 @@
 			],
 			"files": [
 				"/usr/bin/pcsc-spy",
-				"/usr/lib/libpcsclite.so.1",
-				"/usr/lib/libpcsclite_real.so.1",
-				"/usr/lib/libpcscspy.so.0",
 				"/usr/lib/systemd/user/pcscd.service",
 				"/usr/lib/systemd/user/pcscd.socket",
 				"/usr/sbin/pcscd",
@@ -41,9 +40,6 @@
 			"name": "pcsclite",
 			"provides": [
 				"binary(pcsc-spy)",
-				"soname(libpcsclite.so.1(x86_64))",
-				"soname(libpcsclite_real.so.1(x86_64))",
-				"soname(libpcscspy.so.0(x86_64))",
 				"sysbinary(pcscd)"
 			]
 		},
@@ -77,9 +73,36 @@
 			"provides": [
 				"pkgconfig(libpcsclite)"
 			]
+		},
+		"pcsclite-libs": {
+			"build-depends": [
+				"binary(doxygen)",
+				"binary(flex)",
+				"binary(pod2man)",
+				"pkgconfig(libsystemd)",
+				"pkgconfig(libudev)",
+				"pkgconfig(libusb-1.0)",
+				"pkgconfig(polkit-gobject-1)",
+				"pkgconfig(systemd)"
+			],
+			"depends": [
+				"soname(ld-linux-x86-64.so.2(x86_64))",
+				"soname(libc.so.6(x86_64))"
+			],
+			"files": [
+				"/usr/lib/libpcsclite.so.1",
+				"/usr/lib/libpcsclite_real.so.1",
+				"/usr/lib/libpcscspy.so.0"
+			],
+			"name": "pcsclite-libs",
+			"provides": [
+				"soname(libpcsclite.so.1(x86_64))",
+				"soname(libpcsclite_real.so.1(x86_64))",
+				"soname(libpcscspy.so.0(x86_64))"
+			]
 		}
 	},
 	"source-name": "pcsclite",
-	"source-release": "2",
-	"source-version": "2.3.1"
+	"source-release": "3",
+	"source-version": "2.3.3"
 }
