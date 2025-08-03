@@ -4,10 +4,10 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : re2
-version     : "2024-07-02"
-release     : 5
+version     : "2024-07-22"
+release     : 6
 upstreams   :
-    - https://github.com/google/re2/archive/refs/tags/2024-07-02.tar.gz : eb2df807c781601c14a260a507a5bb4509be1ee626024cb45acbd57cb9d4032b
+    - https://github.com/google/re2/releases/download/2025-07-22/re2-2025-07-22.tar.gz : f54c29f1c3e13e12693e3d6d1230554df3ab3a1066b2e1f28c5330bfbf6db1e3
 license     : BSD-3-Clause
 homepage    : https://github.com/google/re2/
 summary     : RE2 is a fast, safe, thread-friendly alternative to backtracking regular expression engines
