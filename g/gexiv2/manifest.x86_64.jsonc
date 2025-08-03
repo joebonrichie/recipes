@@ -25,11 +25,7 @@
 			"files": [
 				"/usr/lib/girepository-1.0/GExiv2-0.10.typelib",
 				"/usr/lib/libgexiv2.so.2",
-				"/usr/lib/libgexiv2.so.2.14.5",
-				"/usr/lib/python3.11/site-packages/gi/overrides/GExiv2.py",
-				"/usr/lib/python3.11/site-packages/gi/overrides/__pycache__/GExiv2.cpython-311.pyc",
-				"/usr/share/vala/vapi/gexiv2.deps",
-				"/usr/share/vala/vapi/gexiv2.vapi"
+				"/usr/lib/libgexiv2.so.2.14.6"
 			],
 			"name": "gexiv2",
 			"provides": [
@@ -65,15 +61,36 @@
 				"/usr/include/gexiv2/gexiv2.h",
 				"/usr/lib/libgexiv2.so",
 				"/usr/lib/pkgconfig/gexiv2.pc",
-				"/usr/share/gir-1.0/GExiv2-0.10.gir"
+				"/usr/share/gir-1.0/GExiv2-0.10.gir",
+				"/usr/share/vala/vapi/gexiv2.deps",
+				"/usr/share/vala/vapi/gexiv2.vapi"
 			],
 			"name": "gexiv2-devel",
 			"provides": [
 				"pkgconfig(gexiv2)"
 			]
+		},
+		"python-gexiv2": {
+			"build-depends": [
+				"binary(g-ir-scanner)",
+				"binary(valac)",
+				"pkgconfig(exiv2)",
+				"pkgconfig(gio-2.0)",
+				"pkgconfig(gobject-2.0)",
+				"pkgconfig(gobject-introspection-1.0)",
+				"python-pygobject"
+			],
+			"depends": [
+				"gexiv2"
+			],
+			"files": [
+				"/usr/lib/python3.11/site-packages/gi/overrides/GExiv2.py",
+				"/usr/lib/python3.11/site-packages/gi/overrides/__pycache__/GExiv2.cpython-311.pyc"
+			],
+			"name": "python-gexiv2"
 		}
 	},
 	"source-name": "gexiv2",
-	"source-release": "5",
-	"source-version": "0.14.5"
+	"source-release": "6",
+	"source-version": "0.14.6"
 }

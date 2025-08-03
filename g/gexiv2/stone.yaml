@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : gexiv2
-version     : 0.14.5
-release     : 5
+version     : 0.14.6
+release     : 6
 homepage    : https://wiki.gnome.org/Projects/gexiv2
 upstreams   :
-    - https://download.gnome.org/sources/gexiv2/0.14/gexiv2-0.14.5.tar.xz : 0913c53daabab1f1ab586afd55bb55370796f2b8abcc6e37640ab7704ad99ce1
+    - https://download.gnome.org/sources/gexiv2/0.14/gexiv2-0.14.6.tar.xz : 606c28aaae7b1f3ef5c8eabe5e7dffd7c5a1c866d25b7671fb847fe287a72b8b
 summary     : gexiv2 is a GObject wrapper around the Exiv2 photo metadata library
 description : |
     gexiv2 is a GObject wrapper around the Exiv2 photo metadata library. It allows for GNOME applications to easily inspect and update EXIF, IPTC, and XMP metadata in photo and video files of various formats.
@@ -28,3 +28,15 @@ build       : |
     %meson_build
 install     : |
     %meson_install
+packages    :
+    - "%(name)-devel":
+        paths:
+            - /usr/share/vala/vapi/
+
+    - "python-%(name)":
+        summary: Python bindings for %(name)
+        description: Python bindings for %(name)
+        rundeps:
+            - "%(name)"
+        paths:
+            - /usr/lib/python3*/site-packages/
