@@ -5,7 +5,7 @@
 #
 name        : libpwquality
 version     : 1.4.5
-release     : 2
+release     : 3
 homepage    : https://github.com/libpwquality/libpwquality
 upstreams   :
     - https://github.com/libpwquality/libpwquality/releases/download/libpwquality-1.4.5/libpwquality-1.4.5.tar.bz2 : 6fcf18b75d305d99d04d2e42982ed5b787a081af2842220ed63287a2d6a10988
@@ -18,11 +18,29 @@ license     :
     - BSD-3-Clause
 builddeps   :
     - binary(autopoint)
-    - cracklib-devel
+    - binary(tar)
+    - pkgconfig(pam)
     - pkgconfig(python3)
+    - python(setuptools)
+    - cracklib-devel
 setup       : |
-    %reconfigure --disable-static
+    %patch %(pkgdir)/74.patch
+
+    %reconfigure \
+        --disable-static
 build       : |
     %make
 install     : |
     %make_install
+packages    :
+    - "python-pwquality":
+        summary: Python bindings for the libpwquality library
+        description: |
+            This is pwquality Python module that provides Python bindings
+            for the libpwquality library. These bindings can be used
+            for easy password quality checking and generation of random
+            pronounceable passwords from Python applications.
+        rundeps:
+            - python-libs
+        paths:
+            - /usr/lib/python3*/site-packages/
