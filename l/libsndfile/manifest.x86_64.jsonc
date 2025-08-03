@@ -5,30 +5,57 @@
 		"libsndfile": {
 			"build-depends": [
 				"binary(python3)",
+				"lame-devel",
 				"pkgconfig(alsa)",
+				"pkgconfig(flac)",
 				"pkgconfig(ogg)",
+				"pkgconfig(opus)",
 				"pkgconfig(sqlite3)",
 				"pkgconfig(vorbis)"
 			],
 			"depends": [
-				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
-				"soname(libasound.so.2(x86_64))",
+				"soname(libFLAC.so.14(x86_64))",
 				"soname(libc.so.6(x86_64))",
-				"soname(libm.so.6(x86_64))"
+				"soname(libm.so.6(x86_64))",
+				"soname(libmp3lame.so.0(x86_64))",
+				"soname(libogg.so.0(x86_64))",
+				"soname(libopus.so.0(x86_64))",
+				"soname(libvorbis.so.0(x86_64))",
+				"soname(libvorbisenc.so.2(x86_64))"
 			],
 			"files": [
-				"/usr/bin/sndfile-cmp",
-				"/usr/bin/sndfile-concat",
-				"/usr/bin/sndfile-convert",
-				"/usr/bin/sndfile-deinterleave",
-				"/usr/bin/sndfile-info",
-				"/usr/bin/sndfile-interleave",
-				"/usr/bin/sndfile-metadata-get",
-				"/usr/bin/sndfile-metadata-set",
-				"/usr/bin/sndfile-play",
-				"/usr/bin/sndfile-salvage",
 				"/usr/lib/libsndfile.so.1",
-				"/usr/lib/libsndfile.so.1.0.37",
+				"/usr/lib/libsndfile.so.1.0.37"
+			],
+			"name": "libsndfile",
+			"provides": [
+				"soname(libsndfile.so.1(x86_64))"
+			]
+		},
+		"libsndfile-devel": {
+			"build-depends": [
+				"binary(python3)",
+				"lame-devel",
+				"pkgconfig(alsa)",
+				"pkgconfig(flac)",
+				"pkgconfig(ogg)",
+				"pkgconfig(opus)",
+				"pkgconfig(sqlite3)",
+				"pkgconfig(vorbis)"
+			],
+			"depends": [
+				"libsndfile",
+				"pkgconfig(flac)",
+				"pkgconfig(ogg)",
+				"pkgconfig(opus)",
+				"pkgconfig(vorbis)",
+				"pkgconfig(vorbisenc)"
+			],
+			"files": [
+				"/usr/include/sndfile.h",
+				"/usr/include/sndfile.hh",
+				"/usr/lib/libsndfile.so",
+				"/usr/lib/pkgconfig/sndfile.pc",
 				"/usr/share/doc/libsndfile/FAQ.md",
 				"/usr/share/doc/libsndfile/api.md",
 				"/usr/share/doc/libsndfile/bugs.md",
@@ -44,7 +71,42 @@
 				"/usr/share/doc/libsndfile/print.css",
 				"/usr/share/doc/libsndfile/sndfile_info.md",
 				"/usr/share/doc/libsndfile/tutorial.md",
-				"/usr/share/doc/libsndfile/win32.md",
+				"/usr/share/doc/libsndfile/win32.md"
+			],
+			"name": "libsndfile-devel",
+			"provides": [
+				"pkgconfig(sndfile)"
+			]
+		},
+		"libsndfile-utils": {
+			"build-depends": [
+				"binary(python3)",
+				"lame-devel",
+				"pkgconfig(alsa)",
+				"pkgconfig(flac)",
+				"pkgconfig(ogg)",
+				"pkgconfig(opus)",
+				"pkgconfig(sqlite3)",
+				"pkgconfig(vorbis)"
+			],
+			"depends": [
+				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
+				"soname(libasound.so.2(x86_64))",
+				"soname(libc.so.6(x86_64))",
+				"soname(libm.so.6(x86_64))",
+				"soname(libsndfile.so.1(x86_64))"
+			],
+			"files": [
+				"/usr/bin/sndfile-cmp",
+				"/usr/bin/sndfile-concat",
+				"/usr/bin/sndfile-convert",
+				"/usr/bin/sndfile-deinterleave",
+				"/usr/bin/sndfile-info",
+				"/usr/bin/sndfile-interleave",
+				"/usr/bin/sndfile-metadata-get",
+				"/usr/bin/sndfile-metadata-set",
+				"/usr/bin/sndfile-play",
+				"/usr/bin/sndfile-salvage",
 				"/usr/share/man/man1/sndfile-cmp.1",
 				"/usr/share/man/man1/sndfile-concat.1",
 				"/usr/share/man/man1/sndfile-convert.1",
@@ -56,7 +118,7 @@
 				"/usr/share/man/man1/sndfile-play.1",
 				"/usr/share/man/man1/sndfile-salvage.1"
 			],
-			"name": "libsndfile",
+			"name": "libsndfile-utils",
 			"provides": [
 				"binary(sndfile-cmp)",
 				"binary(sndfile-concat)",
@@ -67,34 +129,11 @@
 				"binary(sndfile-metadata-get)",
 				"binary(sndfile-metadata-set)",
 				"binary(sndfile-play)",
-				"binary(sndfile-salvage)",
-				"soname(libsndfile.so.1(x86_64))"
-			]
-		},
-		"libsndfile-devel": {
-			"build-depends": [
-				"binary(python3)",
-				"pkgconfig(alsa)",
-				"pkgconfig(ogg)",
-				"pkgconfig(sqlite3)",
-				"pkgconfig(vorbis)"
-			],
-			"depends": [
-				"libsndfile"
-			],
-			"files": [
-				"/usr/include/sndfile.h",
-				"/usr/include/sndfile.hh",
-				"/usr/lib/libsndfile.so",
-				"/usr/lib/pkgconfig/sndfile.pc"
-			],
-			"name": "libsndfile-devel",
-			"provides": [
-				"pkgconfig(sndfile)"
+				"binary(sndfile-salvage)"
 			]
 		}
 	},
 	"source-name": "libsndfile",
-	"source-release": "2",
+	"source-release": "3",
 	"source-version": "1.2.2"
 }
