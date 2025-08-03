@@ -4,15 +4,15 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : mold
-version     : 2.40.1
-release     : 9
+version     : 2.40.3
+release     : 10
 summary     : A Modern Linker
 license     : BSD-3-Clause
 homepage    : https://github.com/rui314/mold
 description : |
     mold is a faster drop-in replacement for existing Unix linkers.
 upstreams   :
-    - https://github.com/rui314/mold/archive/refs/tags/v2.40.1.tar.gz: d1ce09a69941f8158604c3edcc96c7178231e7dba2da66b20f5ef6e112c443b7
+    - https://github.com/rui314/mold/archive/refs/tags/v2.40.3.tar.gz: 308c10f480d355b9f9ef8bb414dfb5f4842bee87eb96b6a7666942f4036a0223
 builddeps   :
     - pkgconfig(libblake3)
     - pkgconfig(libzstd)
@@ -23,10 +23,13 @@ builddeps   :
 setup       : |
     %patch %(pkgdir)/0001-Set-default-settings-for-compression-and-build.patch
 
-    %cmake -DMOLD_LTO=ON \
-           -DMOLD_MOSTLY_STATIC=OFF \
-           -DMOLD_USE_SYSTEM_MIMALLOC=ON \
-           -DMOLD_USE_SYSTEM_TBB=ON
+    # CMAKE_INSTALL_LIBEXECDIR is libdir because it already installs to a mold subdir
+    %cmake \
+        -DCMAKE_INSTALL_LIBEXECDIR="%(libdir)" \
+        -DMOLD_LTO=ON \
+        -DMOLD_MOSTLY_STATIC=OFF \
+        -DMOLD_USE_SYSTEM_MIMALLOC=ON \
+        -DMOLD_USE_SYSTEM_TBB=ON
 build       : |
     %cmake_build
 install     : |

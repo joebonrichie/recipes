@@ -26,8 +26,8 @@
 			"files": [
 				"/usr/bin/ld.mold",
 				"/usr/bin/mold",
+				"/usr/lib/mold/ld",
 				"/usr/lib/mold/mold-wrapper.so",
-				"/usr/libexec/mold/ld",
 				"/usr/share/doc/mold/LICENSE",
 				"/usr/share/man/man1/ld.mold.1",
 				"/usr/share/man/man1/mold.1"
@@ -41,6 +41,6 @@
 		}
 	},
 	"source-name": "mold",
-	"source-release": "9",
-	"source-version": "2.40.1"
+	"source-release": "10",
+	"source-version": "2.40.3"
 }
