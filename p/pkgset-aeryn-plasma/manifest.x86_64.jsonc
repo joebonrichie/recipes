@@ -6,6 +6,9 @@
 			"depends": [
 				"dragon",
 				"filelight",
+				"kaddressbook",
+				"kcalc",
+				"neochat",
 				"pkgset-aeryn-plasma-recommended",
 				"yakuake"
 			],
@@ -24,7 +27,7 @@
 				"drkonqi",
 				"flatpak-kcm",
 				"kaccounts-providers",
-				"kcalc",
+				"kalk",
 				"kclock",
 				"kde-cli-tools",
 				"kde-gtk-config",
@@ -35,6 +38,7 @@
 				"kscreen",
 				"ksshaskpass",
 				"kwallet-pam",
+				"kwalletmanager",
 				"kwrite",
 				"milou",
 				"pkgset-aeryn-base-desktop",
@@ -76,6 +80,6 @@
 		}
 	},
 	"source-name": "pkgset-aeryn-plasma",
-	"source-release": "11",
+	"source-release": "12",
 	"source-version": "2025.06"
 }
