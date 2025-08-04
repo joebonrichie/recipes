@@ -109,6 +109,7 @@
 			"depends": [
 				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
 				"pipewire-libs",
+				"rtkit",
 				"soname(ld-linux-x86-64.so.2(x86_64))",
 				"soname(libX11.so.6(x86_64))",
 				"soname(libXfixes.so.3(x86_64))",
@@ -981,6 +982,6 @@
 		}
 	},
 	"source-name": "pipewire",
-	"source-release": "17",
+	"source-release": "18",
 	"source-version": "1.4.7"
 }

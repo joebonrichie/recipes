@@ -5,7 +5,7 @@
 #
 name        : pipewire
 version     : 1.4.7
-release     : 17
+release     : 18
 homepage    : https://pipewire.org/
 upstreams   :
     - https://gitlab.freedesktop.org/pipewire/pipewire/-/archive/1.4.7/pipewire-1.4.7.tar.gz : 9d54f025e1e7ae73b980a6c8be2e8e6387e24d554d58478d6495734ce1ee5a93
@@ -84,6 +84,7 @@ packages    :
     - "%(name)":
         rundeps:
             - "%(name)-libs"
+            - rtkit
 
     - "gstreamer-plugin-pipewire":
         summary: GStreamer pipewire plugin
