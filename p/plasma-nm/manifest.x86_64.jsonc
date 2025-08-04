@@ -33,6 +33,8 @@
 				"kf6-kirigami",
 				"kf6-prison",
 				"networkmanager",
+				"soname(libKF6ColorScheme.so.6(x86_64))",
+				"soname(libKF6Completion.so.6(x86_64))",
 				"soname(libKF6ConfigCore.so.6(x86_64))",
 				"soname(libKF6CoreAddons.so.6(x86_64))",
 				"soname(libKF6DBusAddons.so.6(x86_64))",
@@ -49,6 +51,7 @@
 				"soname(libKF6Wallet.so.6(x86_64))",
 				"soname(libKF6WidgetsAddons.so.6(x86_64))",
 				"soname(libKF6WindowSystem.so.6(x86_64))",
+				"soname(libQCoro6DBus.so.0(x86_64))",
 				"soname(libQt6Core.so.6(x86_64))",
 				"soname(libQt6DBus.so.6(x86_64))",
 				"soname(libQt6Gui.so.6(x86_64))",
@@ -60,11 +63,13 @@
 				"soname(libc++.so.1(x86_64))",
 				"soname(libc.so.6(x86_64))",
 				"soname(libglib-2.0.so.0(x86_64))",
+				"soname(libgobject-2.0.so.0(x86_64))",
 				"soname(libnm.so.0(x86_64))",
-				"soname(libplasmanm_editor.so(x86_64))",
-				"soname(libplasmanm_internal.so(x86_64))"
+				"soname(libqca-qt6.so.2(x86_64))"
 			],
 			"files": [
+				"/usr/lib/libplasmanm_editor.so",
+				"/usr/lib/libplasmanm_internal.so",
 				"/usr/lib/qt6/plugins/kf6/kded/networkmanagement.so",
 				"/usr/lib/qt6/plugins/plasma/kcms/systemsettings/kcm_cellular_network.so",
 				"/usr/lib/qt6/plugins/plasma/kcms/systemsettings/kcm_mobile_hotspot.so",
@@ -1095,6 +1100,8 @@
 			],
 			"name": "plasma-nm",
 			"provides": [
+				"soname(libplasmanm_editor.so(x86_64))",
+				"soname(libplasmanm_internal.so(x86_64))",
 				"soname(qt6/plugins/kf6/kded/networkmanagement.so(x86_64))",
 				"soname(qt6/plugins/plasma/kcms/systemsettings/kcm_cellular_network.so(x86_64))",
 				"soname(qt6/plugins/plasma/kcms/systemsettings/kcm_mobile_hotspot.so(x86_64))",
@@ -1141,48 +1148,15 @@
 				"cmake(Qt6Quick)"
 			],
 			"depends": [
-				"plasma-nm",
-				"soname(libKF6ColorScheme.so.6(x86_64))",
-				"soname(libKF6Completion.so.6(x86_64))",
-				"soname(libKF6ConfigCore.so.6(x86_64))",
-				"soname(libKF6CoreAddons.so.6(x86_64))",
-				"soname(libKF6I18n.so.6(x86_64))",
-				"soname(libKF6KIOGui.so.6(x86_64))",
-				"soname(libKF6KIOWidgets.so.6(x86_64))",
-				"soname(libKF6ModemManagerQt.so.6(x86_64))",
-				"soname(libKF6NetworkManagerQt.so.6(x86_64))",
-				"soname(libKF6Notifications.so.6(x86_64))",
-				"soname(libKF6Solid.so.6(x86_64))",
-				"soname(libKF6Wallet.so.6(x86_64))",
-				"soname(libKF6WidgetsAddons.so.6(x86_64))",
-				"soname(libKF6WindowSystem.so.6(x86_64))",
-				"soname(libQCoro6DBus.so.0(x86_64))",
-				"soname(libQt6Core.so.6(x86_64))",
-				"soname(libQt6DBus.so.6(x86_64))",
-				"soname(libQt6Gui.so.6(x86_64))",
-				"soname(libQt6Network.so.6(x86_64))",
-				"soname(libQt6Qml.so.6(x86_64))",
-				"soname(libQt6Widgets.so.6(x86_64))",
-				"soname(libQt6Xml.so.6(x86_64))",
-				"soname(libc++.so.1(x86_64))",
-				"soname(libc.so.6(x86_64))",
-				"soname(libglib-2.0.so.0(x86_64))",
-				"soname(libgobject-2.0.so.0(x86_64))",
-				"soname(libnm.so.0(x86_64))",
-				"soname(libqca-qt6.so.2(x86_64))"
+				"plasma-nm"
 			],
 			"files": [
-				"/usr/lib/libplasmanm_editor.so",
-				"/usr/lib/libplasmanm_internal.so"
+				"/usr/share/doc/plasma-nm-devel/README"
 			],
-			"name": "plasma-nm-devel",
-			"provides": [
-				"soname(libplasmanm_editor.so(x86_64))",
-				"soname(libplasmanm_internal.so(x86_64))"
-			]
+			"name": "plasma-nm-devel"
 		}
 	},
 	"source-name": "plasma-nm",
-	"source-release": "3",
+	"source-release": "4",
 	"source-version": "6.4.3"
 }
