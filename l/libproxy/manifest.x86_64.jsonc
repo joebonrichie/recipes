@@ -12,7 +12,6 @@
 				"pkgconfig(libcurl)"
 			],
 			"depends": [
-				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
 				"soname(libc.so.6(x86_64))",
 				"soname(libcurl.so.4(x86_64))",
 				"soname(libduktape.so.207(x86_64))",
@@ -21,21 +20,39 @@
 				"soname(libgobject-2.0.so.0(x86_64))"
 			],
 			"files": [
-				"/usr/bin/proxy",
 				"/usr/lib/girepository-1.0/Libproxy-1.0.typelib",
 				"/usr/lib/libproxy.so",
-				"/usr/lib/libproxy.so.0.5.9",
+				"/usr/lib/libproxy.so.0.5.10",
 				"/usr/lib/libproxy.so.1",
-				"/usr/lib/libproxy/libpxbackend-1.0.so",
-				"/usr/share/man/man8/proxy.8",
-				"/usr/share/vala/vapi/libproxy-1.0.deps",
-				"/usr/share/vala/vapi/libproxy-1.0.vapi"
+				"/usr/lib/libproxy/libpxbackend-1.0.so"
 			],
 			"name": "libproxy",
 			"provides": [
-				"binary(proxy)",
 				"soname(libproxy.so.1(x86_64))",
 				"soname(libproxy/libpxbackend-1.0.so(x86_64))"
+			]
+		},
+		"libproxy-bin": {
+			"build-depends": [
+				"binary(vapigen)",
+				"pkgconfig(duktape)",
+				"pkgconfig(glib-2.0)",
+				"pkgconfig(gobject-introspection-1.0)",
+				"pkgconfig(gsettings-desktop-schemas)",
+				"pkgconfig(libcurl)"
+			],
+			"depends": [
+				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
+				"soname(libc.so.6(x86_64))",
+				"soname(libproxy.so.1(x86_64))"
+			],
+			"files": [
+				"/usr/bin/proxy",
+				"/usr/share/man/man8/proxy.8"
+			],
+			"name": "libproxy-bin",
+			"provides": [
+				"binary(proxy)"
 			]
 		},
 		"libproxy-devel": {
@@ -54,7 +71,9 @@
 			"files": [
 				"/usr/include/libproxy/proxy.h",
 				"/usr/lib/pkgconfig/libproxy-1.0.pc",
-				"/usr/share/gir-1.0/Libproxy-1.0.gir"
+				"/usr/share/gir-1.0/Libproxy-1.0.gir",
+				"/usr/share/vala/vapi/libproxy-1.0.deps",
+				"/usr/share/vala/vapi/libproxy-1.0.vapi"
 			],
 			"name": "libproxy-devel",
 			"provides": [
@@ -63,6 +82,6 @@
 		}
 	},
 	"source-name": "libproxy",
-	"source-release": "6",
-	"source-version": "0.5.9"
+	"source-release": "7",
+	"source-version": "0.5.10"
 }
