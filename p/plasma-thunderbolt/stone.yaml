@@ -5,7 +5,7 @@
 #
 name        : plasma-thunderbolt
 version     : 6.4.3
-release     : 2
+release     : 3
 upstreams   :
     - https://download.kde.org/stable/plasma/6.4.3/plasma-thunderbolt-6.4.3.tar.xz : 6989f9d61aa8b4fa21da23de00b23164ed15375986d27160191a90b5ac133f52
 homepage    : https://kde.org/plasma-desktop/
@@ -27,8 +27,6 @@ builddeps   :
     - cmake(KF6Notifications)
     - cmake(Qt6Quick)
     - bolt
-rundeps     :
-    - bolt
 tuning      :
     - lto: full
     - optimize: speed
@@ -38,3 +36,16 @@ build       : |
     %cmake_build
 install     : |
     %cmake_install
+
+    %install_dir %(installroot)%(docdir)/%(name)-devel
+    echo "DEPRECATED" > %(installroot)%(docdir)/%(name)-devel/README
+packages    :
+    - "%(name)":
+        rundeps:
+            - bolt
+        paths:
+            - /usr/lib/libkbolt.so
+
+    - "%(name)-devel":
+        paths:
+            - /usr/share/doc/plasma-thunderbolt-devel/

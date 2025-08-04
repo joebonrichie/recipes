@@ -22,14 +22,15 @@
 				"soname(libKF6KCMUtilsQuick.so.6(x86_64))",
 				"soname(libKF6Notifications.so.6(x86_64))",
 				"soname(libQt6Core.so.6(x86_64))",
+				"soname(libQt6DBus.so.6(x86_64))",
 				"soname(libQt6Gui.so.6(x86_64))",
 				"soname(libQt6Qml.so.6(x86_64))",
 				"soname(libc++.so.1(x86_64))",
 				"soname(libc.so.6(x86_64))",
-				"soname(libkbolt.so(x86_64))",
 				"soname(libunwind.so.1(x86_64))"
 			],
 			"files": [
+				"/usr/lib/libkbolt.so",
 				"/usr/lib/qt6/plugins/kf6/kded/kded_bolt.so",
 				"/usr/lib/qt6/plugins/plasma/kcms/systemsettings/kcm_bolt.so",
 				"/usr/share/applications/kcm_bolt.desktop",
@@ -131,6 +132,7 @@
 			],
 			"name": "plasma-thunderbolt",
 			"provides": [
+				"soname(libkbolt.so(x86_64))",
 				"soname(qt6/plugins/kf6/kded/kded_bolt.so(x86_64))",
 				"soname(qt6/plugins/plasma/kcms/systemsettings/kcm_bolt.so(x86_64))"
 			]
@@ -147,23 +149,15 @@
 				"cmake(Qt6Quick)"
 			],
 			"depends": [
-				"plasma-thunderbolt",
-				"soname(libQt6Core.so.6(x86_64))",
-				"soname(libQt6DBus.so.6(x86_64))",
-				"soname(libc++.so.1(x86_64))",
-				"soname(libc.so.6(x86_64))",
-				"soname(libunwind.so.1(x86_64))"
+				"plasma-thunderbolt"
 			],
 			"files": [
-				"/usr/lib/libkbolt.so"
+				"/usr/share/doc/plasma-thunderbolt-devel/README"
 			],
-			"name": "plasma-thunderbolt-devel",
-			"provides": [
-				"soname(libkbolt.so(x86_64))"
-			]
+			"name": "plasma-thunderbolt-devel"
 		}
 	},
 	"source-name": "plasma-thunderbolt",
-	"source-release": "2",
+	"source-release": "3",
 	"source-version": "6.4.3"
 }
