@@ -5,7 +5,7 @@
 #
 name        : kf6-solid
 version     : 6.16.0
-release     : 8
+release     : 9
 upstreams   :
     - https://download.kde.org/stable/frameworks/6.16/solid-6.16.0.tar.xz : 00ec609d799335bafb97b6a7d4a5c061ab4a0eb10e4089e8e104942321beb8a0
 homepage    : https://community.kde.org/Frameworks
@@ -31,3 +31,10 @@ build       : |
     %cmake_build
 install     : |
     %cmake_install
+packages    :
+    - "%(name)":
+        rundeps:
+            - udisks
+            - udisks-btrfs
+            - udisks-lvm2
+            - upower

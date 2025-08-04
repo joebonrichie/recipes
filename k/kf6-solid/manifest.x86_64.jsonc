@@ -19,7 +19,11 @@
 				"soname(libc++.so.1(x86_64))",
 				"soname(libc.so.6(x86_64))",
 				"soname(libmount.so.1(x86_64))",
-				"soname(libudev.so.1(x86_64))"
+				"soname(libudev.so.1(x86_64))",
+				"udisks",
+				"udisks-btrfs",
+				"udisks-lvm2",
+				"upower"
 			],
 			"files": [
 				"/usr/bin/solid-hardware6",
@@ -161,6 +165,6 @@
 		}
 	},
 	"source-name": "kf6-solid",
-	"source-release": "8",
+	"source-release": "9",
 	"source-version": "6.16.0"
 }
