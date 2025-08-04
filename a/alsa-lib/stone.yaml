@@ -5,10 +5,10 @@
 #
 name        : alsa-lib
 version     : 1.2.14
-release     : 10
+release     : 11
 homepage    : https://www.alsa-project.org/wiki/Main_Page
 upstreams   :
-    - https://github.com/alsa-project/alsa-lib/archive/refs/tags/v1.2.14.tar.gz : a7bc6c09f0e5a622ebc8afb63a194aa1396145b5c6433d3445363201d96c23c4
+    - https://www.alsa-project.org/files/pub/lib/alsa-lib-1.2.14.tar.bz2 : be9c88a0b3604367dd74167a2b754a35e142f670292ae47a2fdef27a2ee97a32
 summary     : ALSA Libraries
 description : |
     Advanced Linux Sound Architecture client libraries
@@ -17,12 +17,12 @@ license     :
 builddeps   :
     - binary(ar)
 setup       : |
-    %reconfigure --disable-static \
-                 --with-pcm-plugins=all \
-                 --without-versioned \
-                 --enable-old-symbolis
+    %configure_with_bash \
+        --disable-old-symbols \
+        --disable-static \
+        --with-versioned=yes
 build       : |
-    %make
+    %make V=1
 install     : |
     %make_install
 packages    :
