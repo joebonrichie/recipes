@@ -5,7 +5,7 @@
 #
 name        : systemd
 version     : "254.27"
-release     : 60
+release     : 61
 summary     : A System and Service Manager
 license     :
     - GPL-2.0-or-later
@@ -192,6 +192,7 @@ install     : |
     %install_file %(pkgdir)/configs/00-journald.conf %(installroot)%(libdir)/systemd/journald.conf.d/00-journald.conf
     %install_file %(pkgdir)/configs/10-timeout-abort.conf %(installroot)%(libdir)/systemd/system/service.d/10-timeout-abort.conf
     %install_file %(pkgdir)/configs/00-timeouts.conf %(installroot)%(libdir)/systemd/system.conf.d/00-timeouts.conf
+    %install_file %(pkgdir)/configs/00-timeouts.conf %(installroot)%(libdir)/systemd/user.conf.d/00-timeouts.conf
 
     # install necessary system triggers
     %install_file %(pkgdir)/systemd_etcfiles.yaml %(installroot)/usr/share/moss/triggers/sys.d/systemd_etcfiles.yaml

@@ -524,6 +524,7 @@
 				"/usr/lib/systemd/user-environment-generators/30-systemd-environment-d-generator",
 				"/usr/lib/systemd/user-generators/systemd-xdg-autostart-generator",
 				"/usr/lib/systemd/user-preset/90-systemd.preset",
+				"/usr/lib/systemd/user.conf.d/00-timeouts.conf",
 				"/usr/lib/systemd/user/app.slice",
 				"/usr/lib/systemd/user/background.slice",
 				"/usr/lib/systemd/user/basic.target",
@@ -2352,6 +2353,6 @@
 		}
 	},
 	"source-name": "systemd",
-	"source-release": "60",
+	"source-release": "61",
 	"source-version": "254.27"
 }
