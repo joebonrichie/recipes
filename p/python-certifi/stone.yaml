@@ -4,11 +4,15 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : python-certifi
-version     : 2025.7.9
-release     : 1
+# This is frequently updated but virtually all updates are just updating the bundled cacert.pem file.
+#  We however modify this package so it uses the system certificates instead and not the bundled certs. Thus
+#  most updates are useless, you should just compare the version tags and if the only thing that have changed
+#  are the version string and cacert.pem file then you can skip the update.
+version     : 2025.08.03
+release     : 2
 homepage    : https://github.com/certifi/python-certifi
 upstreams   :
-    - https://github.com/certifi/python-certifi/archive/refs/tags/2025.07.09.tar.gz : 4450dfe6ecdadf34a4678f58dab79c82cee93570a31e330ef00c243cd1faa5f1
+    - https://github.com/certifi/python-certifi/archive/refs/tags/2025.08.03.tar.gz : fdbe80c4c92fc99449759a62e06508667eabbdb04f1ace6010b88028de8d2c97
 summary     : Python package for providing Mozilla's CA Bundle
 description : |
     Certifi is a carefully curated collection of Root Certificates for validating the trustworthiness of SSL certificates while verifying the identity of TLS hosts. It has been extracted from the Requests project.
