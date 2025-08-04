@@ -33,7 +33,9 @@
 				"mesa-vulkan-drivers",
 				"modemmanager",
 				"networkmanager",
-				"pkgset-aeryn-base"
+				"pipewire",
+				"pkgset-aeryn-base",
+				"wireplumber"
 			],
 			"files": [
 				"/usr/share/doc/pkgset-aeryn-base-desktop/README"
@@ -77,6 +79,6 @@
 		}
 	},
 	"source-name": "pkgset-aeryn",
-	"source-release": "11",
+	"source-release": "12",
 	"source-version": "2025.08"
 }
