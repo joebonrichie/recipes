@@ -5,7 +5,7 @@
 #
 name        : udisks
 version     : 2.10.1
-release     : 5
+release     : 6
 homepage    : https://github.com/storaged-project/udisks
 upstreams   :
     - https://github.com/storaged-project/udisks/releases/download/udisks-2.10.1/udisks-2.10.1.tar.bz2 : b75734ccf602540dedb4068bec206adcb508a4c003725e117ae8f994d92d8ece
@@ -31,13 +31,60 @@ environment : |
     export XML_CATALOG_FILES="file:///usr/share/defaults/docbook/docbook-xsl/catalog"
 setup       : |
     %patch %(pkgdir)/0001-Add-support-for-a-stateless-configuration-file.patch
+    %patch %(pkgdir)/upstream-01.patch
+
     %configure \
         --disable-static \
+        --enable-btrfs \
         --enable-lvm2 \
-        --enable-man \
-        --enable-btrfs
+        --enable-man
 build       : |
     %make
 install     : |
     %make_install
-    %install_file udisks/udisks2.conf %(installroot)/usr/share/defaults/etc/udisks2/udisks2.conf
+    %install_file udisks/udisks2.conf %(installroot)/usr/share/defaults/udisks2/udisks2.conf
+
+    %install_dir %(installroot)%(docdir)/%(name)-devel
+    echo "DEPRECATED" > %(installroot)%(docdir)/%(name)-devel/README
+packages    :
+    - "libudisks2":
+        summary: Dynamic library to access the udisksd daemon
+        description: |
+            This package contains the dynamic library, which provides
+            access to the udisksd daemon.
+        paths:
+            - /usr/lib/libudisks2.so.*
+            - /usr/lib/girepository-1.0/UDisks-2.0.typelib
+
+    - "libudisks2-devel":
+        summary: Dynamic library to access the udisksd daemon - devel
+        description: |
+            This package contains the dynamic library, which provides
+            access to the udisksd daemon. Devel package
+        rundeps:
+            - libudisks2
+        paths:
+            - /usr/include/udisks2/
+            - /usr/lib/pkgconfig/
+            - /usr/lib/libudisks2.so
+            - /usr/share/gir-1.0/
+
+    - "%(name)-btrfs":
+        summary: "%(name) module for BTRFS"
+        description: "%(name) module for BTRFS"
+        # TODO: Once libblockdev is split this should depend on the appropriate libblockdev subpackage
+        paths:
+            - /usr/lib/udisks2/modules/libudisks2_btrfs.so
+            - /usr/share/polkit-1/actions/org.freedesktop.UDisks2.btrfs.policy
+
+    - "%(name)-lvm2":
+        summary: "%(name) module for LVM2"
+        description: "%(name) module for LVM2"
+        # TODO: Once libblockdev is split this should depend on the appropriate libblockdev subpackage
+        paths:
+            - /usr/lib/udisks2/modules/libudisks2_lvm2.so
+            - /usr/share/polkit-1/actions/org.freedesktop.UDisks2.lvm2.policy
+
+    - "%(name)-devel":
+        paths:
+            - /usr/share/doc/udisks-devel/
