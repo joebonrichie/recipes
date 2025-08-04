@@ -5,7 +5,7 @@
 #
 name        : kf6-solid
 version     : 6.16.0
-release     : 9
+release     : 10
 upstreams   :
     - https://download.kde.org/stable/frameworks/6.16/solid-6.16.0.tar.xz : 00ec609d799335bafb97b6a7d4a5c061ab4a0eb10e4089e8e104942321beb8a0
 homepage    : https://community.kde.org/Frameworks
@@ -22,8 +22,9 @@ builddeps   :
     # Temporary, boulder doesn't handle build ordering resolution correctly when builddeps are added by macros, so add ECM manually
     - cmake(ECM)
     - cmake(Qt6CorePrivate)
+    - pkgconfig(libimobiledevice-1.0)
+    - pkgconfig(libplist-2.0)
     - pkgconfig(mount)
-    # TODO add imobiledevice and plist for IOS support
     # TODO add mediaplayerinfo
 setup       : |
     %cmake_kf6
