@@ -5,7 +5,7 @@
 #
 name        : plasma-nm
 version     : 6.4.3
-release     : 2
+release     : 3
 upstreams   :
     - https://download.kde.org/stable/plasma/6.4.3/plasma-nm-6.4.3.tar.xz : 67c38e3c0a54e90ae1237991142b9206463d43c2ead8edf5dd5bb7a16a46a13e
 homepage    : https://kde.org/plasma-desktop/
@@ -54,5 +54,6 @@ build       : |
     %cmake_build
 install     : |
     %cmake_install
+    %qml_cache_qt6
 
 # TODO: Split up the VPN support into subpackages that depend on the appropriate networkmanager plugin
