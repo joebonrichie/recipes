@@ -4,10 +4,10 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : kwrited
-version     : 6.4.3
-release     : 1
+version     : 6.4.4
+release     : 2
 upstreams   :
-    - https://download.kde.org/stable/plasma/6.4.3/kwrited-6.4.3.tar.xz : fe144b5ed4270cbd45f71187b970e4c4e3e0035c1afc40719b1c862b8adb098b
+    - https://download.kde.org/stable/plasma/6.4.4/kwrited-6.4.4.tar.xz : 0e15ad25a5d6b0856add87e463607fef209a1184fd13f865e398e8173ec3c351
 homepage    : https://kde.org/plasma-desktop/
 license     : GPL-2.0-or-later
 summary     : KDE daemon listening for wall and write messages
