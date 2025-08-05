@@ -189,7 +189,6 @@
 				"ocean-sound-theme",
 				"plasma-integration",
 				"plasma-keyboard",
-				"powerdevil",
 				"qt6-virtualkeyboard",
 				"soname(libAppStreamQt.so.3(x86_64))",
 				"soname(libICE.so.6(x86_64))",
@@ -7424,6 +7423,6 @@
 		}
 	},
 	"source-name": "plasma-workspace",
-	"source-release": "8",
+	"source-release": "9",
 	"source-version": "6.4.4"
 }
