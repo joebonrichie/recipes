@@ -5,7 +5,7 @@
 #
 name        : cryptsetup
 version     : 2.8.0
-release     : 7
+release     : 8
 homepage    : https://gitlab.com/cryptsetup/cryptsetup
 upstreams   :
     - https://gitlab.com/cryptsetup/cryptsetup/-/archive/v2.8.0/cryptsetup-v2.8.0.tar.gz : f8b84bb48d54c44dc596f8c70c47735d03f63446aba16eb8dc76c72e9daaaf2d
@@ -32,6 +32,7 @@ builddeps   :
     - pkgconfig(uuid)
 setup       : |
     %patch %(pkgdir)/0001-meson-Install-binaries.patch
+    %patch %(pkgdir)/0001-Fix-lockdir-perms.patch
 
     %meson \
            -Dargon-implementation=internal \

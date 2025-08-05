@@ -259,6 +259,6 @@
 		}
 	},
 	"source-name": "cryptsetup",
-	"source-release": "7",
+	"source-release": "8",
 	"source-version": "2.8.0"
 }
