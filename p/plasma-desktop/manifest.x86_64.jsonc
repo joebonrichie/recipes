@@ -149,7 +149,8 @@
 				"soname(libxkbcommon.so.0(x86_64))",
 				"soname(libxkbfile.so.1(x86_64))",
 				"soname(libxkbregistry.so.0(x86_64))",
-				"systemsettings"
+				"systemsettings",
+				"xdg-utils"
 			],
 			"files": [
 				"/usr/bin/kaccess",
@@ -4631,6 +4632,6 @@
 		}
 	},
 	"source-name": "plasma-desktop",
-	"source-release": "7",
+	"source-release": "8",
 	"source-version": "6.4.4"
 }
