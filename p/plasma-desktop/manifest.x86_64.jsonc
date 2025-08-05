@@ -40,6 +40,7 @@
 				"cmake(KSysGuard)",
 				"cmake(KWinDBusInterface)",
 				"cmake(LibKWorkspace)",
+				"cmake(LibNotificationManager)",
 				"cmake(Plasma)",
 				"cmake(Plasma5Support)",
 				"cmake(PlasmaActivities)",
@@ -3922,6 +3923,7 @@
 				"cmake(KSysGuard)",
 				"cmake(KWinDBusInterface)",
 				"cmake(LibKWorkspace)",
+				"cmake(LibNotificationManager)",
 				"cmake(Plasma)",
 				"cmake(Plasma5Support)",
 				"cmake(PlasmaActivities)",
@@ -4629,6 +4631,6 @@
 		}
 	},
 	"source-name": "plasma-desktop",
-	"source-release": "6",
+	"source-release": "7",
 	"source-version": "6.4.4"
 }
