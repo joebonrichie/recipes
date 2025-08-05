@@ -508,7 +508,6 @@
 				"/usr/lib/systemd/user/plasma-kcminit.service",
 				"/usr/lib/systemd/user/plasma-krunner.service",
 				"/usr/lib/systemd/user/plasma-ksmserver.service",
-				"/usr/lib/systemd/user/plasma-ksplash-ready.service",
 				"/usr/lib/systemd/user/plasma-ksplash.service",
 				"/usr/lib/systemd/user/plasma-plasmashell.service",
 				"/usr/lib/systemd/user/plasma-restoresession.service",
@@ -7413,6 +7412,6 @@
 		}
 	},
 	"source-name": "plasma-workspace",
-	"source-release": "6",
+	"source-release": "7",
 	"source-version": "6.4.3"
 }
