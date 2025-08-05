@@ -5,7 +5,7 @@
 #
 name        : plasma-workspace
 version     : 6.4.4
-release     : 10
+release     : 11
 upstreams   :
     - https://download.kde.org/stable/plasma/6.4.4/plasma-workspace-6.4.4.tar.xz : de53b4eef688b59b7c56090485d41e7f8be3d3b99f1cf1358a7d3f4da9eebcb2
 homepage    : https://kde.org/plasma-desktop/
@@ -100,6 +100,7 @@ setup       : |
     %patch %(pkgdir)/0001-Use-stateless-dir-for-menu.patch
     %patch %(pkgdir)/0001-Use-plasma-keyboard-for-SDDM-input.patch
     %patch %(pkgdir)/0001-startkde-Drop-ready-stage.patch
+    %patch %(pkgdir)/0001-shell-Set-desktop-ksplash-stage-when-all-desktop-vie.patch
 
     # Regrettably we can't set WITH_X11=OFF yet because the font KCM relies on it to build. For now we can just cleanup the session bits afterwords
     %cmake_kf6 \
