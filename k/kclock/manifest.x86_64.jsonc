@@ -21,6 +21,7 @@
 			],
 			"depends": [
 				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
+				"kf6-kirigami-addons",
 				"qt6-wayland",
 				"soname(libKF6ConfigCore.so.6(x86_64))",
 				"soname(libKF6ConfigGui.so.6(x86_64))",
@@ -140,9 +141,12 @@
 				"/usr/share/metainfo/org.kde.kclock.appdata.xml",
 				"/usr/share/metainfo/org.kde.plasma.kclock_1x2.appdata.xml",
 				"/usr/share/plasma/plasmoids/org.kde.plasma.kclock_1x2/contents/config/config.qml",
+				"/usr/share/plasma/plasmoids/org.kde.plasma.kclock_1x2/contents/config/config.qmlc",
 				"/usr/share/plasma/plasmoids/org.kde.plasma.kclock_1x2/contents/config/main.xml",
 				"/usr/share/plasma/plasmoids/org.kde.plasma.kclock_1x2/contents/ui/configGeneral.qml",
+				"/usr/share/plasma/plasmoids/org.kde.plasma.kclock_1x2/contents/ui/configGeneral.qmlc",
 				"/usr/share/plasma/plasmoids/org.kde.plasma.kclock_1x2/contents/ui/main.qml",
+				"/usr/share/plasma/plasmoids/org.kde.plasma.kclock_1x2/contents/ui/main.qmlc",
 				"/usr/share/plasma/plasmoids/org.kde.plasma.kclock_1x2/metadata.json",
 				"/usr/share/plasma/plasmoids/org.kde.plasma.kclock_1x2/metadata.json.license",
 				"/usr/share/xdg/autostart/org.kde.kclockd-autostart.desktop"
@@ -156,6 +160,6 @@
 		}
 	},
 	"source-name": "kclock",
-	"source-release": "1",
+	"source-release": "2",
 	"source-version": "25.04.3"
 }
