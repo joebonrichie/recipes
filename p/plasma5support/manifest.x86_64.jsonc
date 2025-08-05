@@ -52,9 +52,9 @@
 			],
 			"files": [
 				"/usr/lib/libPlasma5Support.so.6",
-				"/usr/lib/libPlasma5Support.so.6.4.3",
+				"/usr/lib/libPlasma5Support.so.6.4.4",
 				"/usr/lib/libplasma-geolocation-interface.so.6",
-				"/usr/lib/libplasma-geolocation-interface.so.6.4.3",
+				"/usr/lib/libplasma-geolocation-interface.so.6.4.4",
 				"/usr/lib/qt6/plugins/plasma5support/dataengine/plasma_engine_activities.so",
 				"/usr/lib/qt6/plugins/plasma5support/dataengine/plasma_engine_apps.so",
 				"/usr/lib/qt6/plugins/plasma5support/dataengine/plasma_engine_devicenotifications.so",
@@ -510,6 +510,6 @@
 		}
 	},
 	"source-name": "plasma5support",
-	"source-release": "2",
-	"source-version": "6.4.3"
+	"source-release": "3",
+	"source-version": "6.4.4"
 }
