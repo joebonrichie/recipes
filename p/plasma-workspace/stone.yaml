@@ -5,7 +5,7 @@
 #
 name        : plasma-workspace
 version     : 6.4.4
-release     : 9
+release     : 10
 upstreams   :
     - https://download.kde.org/stable/plasma/6.4.4/plasma-workspace-6.4.4.tar.xz : de53b4eef688b59b7c56090485d41e7f8be3d3b99f1cf1358a7d3f4da9eebcb2
 homepage    : https://kde.org/plasma-desktop/
@@ -141,15 +141,28 @@ packages    :
             - xwaylandvideobridge # Used for streaming Wayland windows to Xwayland clients
 
             # Power management
-            # Note: Because this depends on libkworkspace (part of this package) it will likely be necessary to comment this out
-            # if the soname of that lib changes (for example this is likely for the Plasma 6 -> Plasma 7 upgrade)
-            # - powerdevil
+            - powerdevil
 
     - "libkworkspace":
         summary: Runtime libkworkspace6 library
         description: Runtime libkworkspace6 library
         paths:
             - /usr/lib/libkworkspace6.so.*
+
+    # This is split out to resolve build ordering issues with powerdevil. This package will likely need to be checked on future updates
+    # to ensure that it doesn't depend on any other devel files in plasma-workspace-devel
+    # ALTERNATIVELY, if we could exclude plasma-workspace as a rundep of plasma-workspace-devel (which technically only needs plasma-workspace-libs)
+    # then it should be possible to fix the ordering issue as well.
+    - "libkworkspace-devel":
+        summary: Runtime libkworkspace6 library - devel files
+        description: Runtime libkworkspace6 library - devel files
+        rundeps:
+            - libkworkspace
+            - cmake(Qt6Core)
+        paths:
+            - /usr/include/kworkspace6/
+            - /usr/lib/cmake/LibKWorkspace/
+            - /usr/lib/libkworkspace6.so
 
     - "%(name)-libs":
         summary: "Library files for %(name)"
@@ -190,6 +203,7 @@ packages    :
 
     - "%(name)-devel":
         rundeps:
+            - "libkworkspace-devel"
             - cmake(KF6ItemModels)
         paths:
             - /usr/share/dbus-1/interfaces/
