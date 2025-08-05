@@ -7,6 +7,7 @@
 				"binary(coredumpctl)",
 				"binary(eu-unstrip)",
 				"binary(gdb)",
+				"binary(python3)",
 				"cmake(ECM)",
 				"cmake(KF6Config)",
 				"cmake(KF6CoreAddons)",
@@ -35,6 +36,7 @@
 				"binary(coredumpctl)",
 				"binary(eu-unstrip)",
 				"binary(gdb)",
+				"binary(python3)",
 				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
 				"kf6-kirigami",
 				"kf6-kitemmodels",
@@ -208,6 +210,6 @@
 		}
 	},
 	"source-name": "drkonqi",
-	"source-release": "1",
-	"source-version": "6.4.3"
+	"source-release": "2",
+	"source-version": "6.4.4"
 }
