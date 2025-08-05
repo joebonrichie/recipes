@@ -74,6 +74,7 @@
 				"soname(libKF6GlobalAccel.so.6(x86_64))",
 				"soname(libKF6GuiAddons.so.6(x86_64))",
 				"soname(libKF6I18n.so.6(x86_64))",
+				"soname(libKF6I18nQml.so.6(x86_64))",
 				"soname(libKF6IdleTime.so.6(x86_64))",
 				"soname(libKF6KCMUtils.so.6(x86_64))",
 				"soname(libKF6KCMUtilsCore.so.6(x86_64))",
@@ -936,6 +937,7 @@
 				"/usr/share/locale/pa/LC_MESSAGES/kcmkwinscreenedges.mo",
 				"/usr/share/locale/pa/LC_MESSAGES/kcmkwm.mo",
 				"/usr/share/locale/pa/LC_MESSAGES/kwin.mo",
+				"/usr/share/locale/pl/LC_MESSAGES/kcm_animations.mo",
 				"/usr/share/locale/pl/LC_MESSAGES/kcm_kwin_effects.mo",
 				"/usr/share/locale/pl/LC_MESSAGES/kcm_kwin_scripts.mo",
 				"/usr/share/locale/pl/LC_MESSAGES/kcm_kwin_virtualdesktops.mo",
@@ -1758,9 +1760,9 @@
 			],
 			"files": [
 				"/usr/lib/libkcmkwincommon.so.6",
-				"/usr/lib/libkcmkwincommon.so.6.4.3",
+				"/usr/lib/libkcmkwincommon.so.6.4.4",
 				"/usr/lib/libkwin.so.6",
-				"/usr/lib/libkwin.so.6.4.3",
+				"/usr/lib/libkwin.so.6.4.4",
 				"/usr/share/qlogging-categories6/org_kde_kwin.categories"
 			],
 			"name": "kwin-libs",
@@ -1771,6 +1773,6 @@
 		}
 	},
 	"source-name": "kwin",
-	"source-release": "2",
-	"source-version": "6.4.3"
+	"source-release": "3",
+	"source-version": "6.4.4"
 }
