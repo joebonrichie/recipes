@@ -5,6 +5,7 @@
 		"steam": {
 			"depends": [
 				"binary(cmp)",
+				"binary(lsb_release)",
 				"binary(tar)",
 				"binary(xdg-user-dir)",
 				"binary(zenity)",
@@ -31,7 +32,6 @@
 				"/usr/lib/steam/bin_steam.sh",
 				"/usr/lib/steam/bin_steamdeps.py",
 				"/usr/lib/steam/bootstraplinux_ubuntu12_32.tar.xz",
-				"/usr/lib/steam/steam",
 				"/usr/lib/steam/steam.desktop",
 				"/usr/lib/steam/steam_launcher/__init__.py",
 				"/usr/lib/steam/steam_launcher/launcherutils.py",
@@ -58,6 +58,6 @@
 		}
 	},
 	"source-name": "steam",
-	"source-release": "17",
+	"source-release": "18",
 	"source-version": "1.0.0.83"
 }

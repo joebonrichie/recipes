@@ -5,7 +5,7 @@
 #
 name        : steam
 version     : 1.0.0.83
-release     : 17
+release     : 18
 homepage    : https://store.steampowered.com/
 upstreams   :
     - https://repo.steampowered.com/steam/pool/steam/s/steam/steam_1.0.0.83.tar.gz : 791682b0cc7efd946c7002f917c9dd474d2619b7f9ed00891216a8a6b4ac8f82
@@ -15,6 +15,7 @@ description : |
 license     : Distributable
 rundeps     :
     - binary(cmp)
+    - binary(lsb_release)
     - binary(tar)
     - binary(xdg-user-dir)
     - binary(zenity)
@@ -36,10 +37,13 @@ rundeps     :
     - soname(libz.so.1(386))
 setup      : |
     %patch %(pkgdir)/rules.patch
+    %patch %(pkgdir)/0001-work-around-steam-crash-with-DRI_PRIME.patch
 install     : |
     %make_install
-    mv %(installroot)%(bindir)/steam %(installroot)%(libdir)/steam/steam
-    %install_exe %(pkgdir)/steam.sh %(installroot)%(bindir)/steam
+
+    # Replace steam with wrapper
+    %install_exe %(pkgdir)/steam-wrapper.sh %(installroot)%(bindir)/steam
+
     %install_dir %(installroot)%(libdir)/udev/rules.d
     %install_file subprojects/steam-devices/* %(installroot)%(libdir)/udev/rules.d/.
     rm -v %(installroot)%(libdir)/udev/rules.d/LICENSE
