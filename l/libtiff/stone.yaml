@@ -5,23 +5,31 @@
 #
 name        : libtiff
 version     : 4.7.0
-release     : 4
+release     : 5
 homepage    : https://download.osgeo.org/libtiff
 upstreams   :
     - https://download.osgeo.org/libtiff/tiff-4.7.0.tar.xz : 273a0a73b1f0bed640afee4a5df0337357ced5b53d3d5d1c405b936501f71017
-summary     : TIFF Library and Utilities
+summary     : Library for manipulation of TIFF images
 description : |
     The LibTIFF software provides support for the Tag Image File Format (TIFF), a widely used format for storing image data. The latest version of the TIFF specification is TIFF File Format Specification. Included in this software distribution are: a library, libtiff, for reading and writing TIFF images, a small collection of tools for performing simple manipulations of TIFF images, and, documentation for the library and tools.
-license     :
-    - libtiff
+license     : libtiff
 builddeps   :
+    - binary(sphinx-build)
+    - pkgconfig(glut)
     - pkgconfig(libjpeg)
+    - pkgconfig(liblzma)
     - pkgconfig(libwebp)
     - pkgconfig(libzstd)
+    - pkgconfig(opengl)
     - pkgconfig(zlib)
+    # libdeflate?
 setup       : |
+    %patch %(pkgdir)/CVE-2025-8176.patch
+    %patch %(pkgdir)/CVE-2025-8177.patch
+
     # Fix cmake FTBFS
-    %cmake -DCMAKE_POLICY_VERSION_MINIMUM=3.5
+    %cmake \
+        -DCMAKE_POLICY_VERSION_MINIMUM=3.5
 build       : |
     %cmake_build
 install     : |
@@ -31,5 +39,16 @@ check      : |
 workload   : |
     %cmake_test
 tuning     :
-    - lto : thin
+    - lto : full
     - optimize : speed
+packages   :
+    - "%(name)-docs":
+        paths:
+            - /usr/share/doc/
+
+    - "%(name)-tools":
+        summary: Command-line utility programs for manipulating TIFF files
+        description: Command-line utility programs for manipulating TIFF files
+        paths:
+            - /usr/bin/
+            - /usr/share/man/man1/
