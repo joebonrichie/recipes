@@ -1,0 +1,570 @@
+/** Human readable report. This is not consumed by boulder */
+{
+	"manifest-version": "0.2",
+	"packages": {
+		"heif-pixbuf-loader": {
+			"build-depends": [
+				"binary(doxygen)",
+				"pkgconfig(SvtAv1Enc)",
+				"pkgconfig(aom)",
+				"pkgconfig(dav1d)",
+				"pkgconfig(gdk-pixbuf-2.0)",
+				"pkgconfig(libavcodec)",
+				"pkgconfig(libavutil)",
+				"pkgconfig(libde265)",
+				"pkgconfig(libjpeg)",
+				"pkgconfig(libopenjp2)",
+				"pkgconfig(libpng)",
+				"pkgconfig(libsharpyuv)",
+				"pkgconfig(libtiff-4)",
+				"pkgconfig(openh264)",
+				"pkgconfig(rav1e)",
+				"pkgconfig(sdl2-compat)",
+				"pkgconfig(x265)",
+				"pkgconfig(zlib)"
+			],
+			"depends": [
+				"soname(libc.so.6(x86_64))",
+				"soname(libgdk_pixbuf-2.0.so.0(x86_64))",
+				"soname(libglib-2.0.so.0(x86_64))",
+				"soname(libgobject-2.0.so.0(x86_64))",
+				"soname(libheif.so.1(x86_64))"
+			],
+			"files": [
+				"/usr/lib/gdk-pixbuf-2.0/2.10.0/loaders/libpixbufloader-heif.so"
+			],
+			"name": "heif-pixbuf-loader",
+			"provides": [
+				"soname(gdk-pixbuf-2.0/2.10.0/loaders/libpixbufloader-heif.so(x86_64))"
+			]
+		},
+		"libheif": {
+			"build-depends": [
+				"binary(doxygen)",
+				"pkgconfig(SvtAv1Enc)",
+				"pkgconfig(aom)",
+				"pkgconfig(dav1d)",
+				"pkgconfig(gdk-pixbuf-2.0)",
+				"pkgconfig(libavcodec)",
+				"pkgconfig(libavutil)",
+				"pkgconfig(libde265)",
+				"pkgconfig(libjpeg)",
+				"pkgconfig(libopenjp2)",
+				"pkgconfig(libpng)",
+				"pkgconfig(libsharpyuv)",
+				"pkgconfig(libtiff-4)",
+				"pkgconfig(openh264)",
+				"pkgconfig(rav1e)",
+				"pkgconfig(sdl2-compat)",
+				"pkgconfig(x265)",
+				"pkgconfig(zlib)"
+			],
+			"depends": [
+				"libheif-plugin-dav1d",
+				"libheif-plugin-ffmpeg",
+				"libheif-plugin-jpeg",
+				"libheif-plugin-rav1e",
+				"libheif-plugin-x265",
+				"soname(libc++.so.1(x86_64))",
+				"soname(libc.so.6(x86_64))",
+				"soname(libm.so.6(x86_64))",
+				"soname(libsharpyuv.so.0(x86_64))",
+				"soname(libunwind.so.1(x86_64))"
+			],
+			"files": [
+				"/usr/lib/libheif.so.1",
+				"/usr/lib/libheif.so.1.20.2"
+			],
+			"name": "libheif",
+			"provides": [
+				"soname(libheif.so.1(x86_64))"
+			]
+		},
+		"libheif-devel": {
+			"build-depends": [
+				"binary(doxygen)",
+				"pkgconfig(SvtAv1Enc)",
+				"pkgconfig(aom)",
+				"pkgconfig(dav1d)",
+				"pkgconfig(gdk-pixbuf-2.0)",
+				"pkgconfig(libavcodec)",
+				"pkgconfig(libavutil)",
+				"pkgconfig(libde265)",
+				"pkgconfig(libjpeg)",
+				"pkgconfig(libopenjp2)",
+				"pkgconfig(libpng)",
+				"pkgconfig(libsharpyuv)",
+				"pkgconfig(libtiff-4)",
+				"pkgconfig(openh264)",
+				"pkgconfig(rav1e)",
+				"pkgconfig(sdl2-compat)",
+				"pkgconfig(x265)",
+				"pkgconfig(zlib)"
+			],
+			"depends": [
+				"libheif",
+				"pkgconfig(libsharpyuv)"
+			],
+			"files": [
+				"/usr/include/libheif/heif.h",
+				"/usr/include/libheif/heif_aux_images.h",
+				"/usr/include/libheif/heif_brands.h",
+				"/usr/include/libheif/heif_color.h",
+				"/usr/include/libheif/heif_context.h",
+				"/usr/include/libheif/heif_cxx.h",
+				"/usr/include/libheif/heif_decoding.h",
+				"/usr/include/libheif/heif_encoding.h",
+				"/usr/include/libheif/heif_entity_groups.h",
+				"/usr/include/libheif/heif_error.h",
+				"/usr/include/libheif/heif_image.h",
+				"/usr/include/libheif/heif_image_handle.h",
+				"/usr/include/libheif/heif_items.h",
+				"/usr/include/libheif/heif_library.h",
+				"/usr/include/libheif/heif_metadata.h",
+				"/usr/include/libheif/heif_plugin.h",
+				"/usr/include/libheif/heif_properties.h",
+				"/usr/include/libheif/heif_regions.h",
+				"/usr/include/libheif/heif_security.h",
+				"/usr/include/libheif/heif_sequences.h",
+				"/usr/include/libheif/heif_tai_timestamps.h",
+				"/usr/include/libheif/heif_tiling.h",
+				"/usr/include/libheif/heif_uncompressed.h",
+				"/usr/include/libheif/heif_version.h",
+				"/usr/lib/cmake/libheif/libheif-config-release.cmake",
+				"/usr/lib/cmake/libheif/libheif-config-version.cmake",
+				"/usr/lib/cmake/libheif/libheif-config.cmake",
+				"/usr/lib/libheif.so",
+				"/usr/lib/pkgconfig/libheif.pc"
+			],
+			"name": "libheif-devel",
+			"provides": [
+				"cmake(libheif)",
+				"pkgconfig(libheif)"
+			]
+		},
+		"libheif-plugin-aom": {
+			"build-depends": [
+				"binary(doxygen)",
+				"pkgconfig(SvtAv1Enc)",
+				"pkgconfig(aom)",
+				"pkgconfig(dav1d)",
+				"pkgconfig(gdk-pixbuf-2.0)",
+				"pkgconfig(libavcodec)",
+				"pkgconfig(libavutil)",
+				"pkgconfig(libde265)",
+				"pkgconfig(libjpeg)",
+				"pkgconfig(libopenjp2)",
+				"pkgconfig(libpng)",
+				"pkgconfig(libsharpyuv)",
+				"pkgconfig(libtiff-4)",
+				"pkgconfig(openh264)",
+				"pkgconfig(rav1e)",
+				"pkgconfig(sdl2-compat)",
+				"pkgconfig(x265)",
+				"pkgconfig(zlib)"
+			],
+			"depends": [
+				"soname(libaom.so.3(x86_64))",
+				"soname(libc++.so.1(x86_64))",
+				"soname(libc.so.6(x86_64))",
+				"soname(libheif.so.1(x86_64))",
+				"soname(libunwind.so.1(x86_64))"
+			],
+			"files": [
+				"/usr/lib/libheif/libheif-aomdec.so",
+				"/usr/lib/libheif/libheif-aomenc.so"
+			],
+			"name": "libheif-plugin-aom",
+			"provides": [
+				"soname(libheif/libheif-aomdec.so(x86_64))",
+				"soname(libheif/libheif-aomenc.so(x86_64))"
+			]
+		},
+		"libheif-plugin-dav1d": {
+			"build-depends": [
+				"binary(doxygen)",
+				"pkgconfig(SvtAv1Enc)",
+				"pkgconfig(aom)",
+				"pkgconfig(dav1d)",
+				"pkgconfig(gdk-pixbuf-2.0)",
+				"pkgconfig(libavcodec)",
+				"pkgconfig(libavutil)",
+				"pkgconfig(libde265)",
+				"pkgconfig(libjpeg)",
+				"pkgconfig(libopenjp2)",
+				"pkgconfig(libpng)",
+				"pkgconfig(libsharpyuv)",
+				"pkgconfig(libtiff-4)",
+				"pkgconfig(openh264)",
+				"pkgconfig(rav1e)",
+				"pkgconfig(sdl2-compat)",
+				"pkgconfig(x265)",
+				"pkgconfig(zlib)"
+			],
+			"depends": [
+				"soname(libc++.so.1(x86_64))",
+				"soname(libc.so.6(x86_64))",
+				"soname(libdav1d.so.7(x86_64))",
+				"soname(libheif.so.1(x86_64))",
+				"soname(libunwind.so.1(x86_64))"
+			],
+			"files": [
+				"/usr/lib/libheif/libheif-dav1d.so"
+			],
+			"name": "libheif-plugin-dav1d",
+			"provides": [
+				"soname(libheif/libheif-dav1d.so(x86_64))"
+			]
+		},
+		"libheif-plugin-ffmpeg": {
+			"build-depends": [
+				"binary(doxygen)",
+				"pkgconfig(SvtAv1Enc)",
+				"pkgconfig(aom)",
+				"pkgconfig(dav1d)",
+				"pkgconfig(gdk-pixbuf-2.0)",
+				"pkgconfig(libavcodec)",
+				"pkgconfig(libavutil)",
+				"pkgconfig(libde265)",
+				"pkgconfig(libjpeg)",
+				"pkgconfig(libopenjp2)",
+				"pkgconfig(libpng)",
+				"pkgconfig(libsharpyuv)",
+				"pkgconfig(libtiff-4)",
+				"pkgconfig(openh264)",
+				"pkgconfig(rav1e)",
+				"pkgconfig(sdl2-compat)",
+				"pkgconfig(x265)",
+				"pkgconfig(zlib)"
+			],
+			"depends": [
+				"soname(libavcodec.so.61(x86_64))",
+				"soname(libavutil.so.59(x86_64))",
+				"soname(libc++.so.1(x86_64))",
+				"soname(libc.so.6(x86_64))",
+				"soname(libheif.so.1(x86_64))",
+				"soname(libunwind.so.1(x86_64))"
+			],
+			"files": [
+				"/usr/lib/libheif/libheif-ffmpegdec.so"
+			],
+			"name": "libheif-plugin-ffmpeg",
+			"provides": [
+				"soname(libheif/libheif-ffmpegdec.so(x86_64))"
+			]
+		},
+		"libheif-plugin-j2k": {
+			"build-depends": [
+				"binary(doxygen)",
+				"pkgconfig(SvtAv1Enc)",
+				"pkgconfig(aom)",
+				"pkgconfig(dav1d)",
+				"pkgconfig(gdk-pixbuf-2.0)",
+				"pkgconfig(libavcodec)",
+				"pkgconfig(libavutil)",
+				"pkgconfig(libde265)",
+				"pkgconfig(libjpeg)",
+				"pkgconfig(libopenjp2)",
+				"pkgconfig(libpng)",
+				"pkgconfig(libsharpyuv)",
+				"pkgconfig(libtiff-4)",
+				"pkgconfig(openh264)",
+				"pkgconfig(rav1e)",
+				"pkgconfig(sdl2-compat)",
+				"pkgconfig(x265)",
+				"pkgconfig(zlib)"
+			],
+			"depends": [
+				"soname(libc++.so.1(x86_64))",
+				"soname(libc.so.6(x86_64))",
+				"soname(libheif.so.1(x86_64))",
+				"soname(libopenjp2.so.7(x86_64))",
+				"soname(libunwind.so.1(x86_64))"
+			],
+			"files": [
+				"/usr/lib/libheif/libheif-j2kdec.so"
+			],
+			"name": "libheif-plugin-j2k",
+			"provides": [
+				"soname(libheif/libheif-j2kdec.so(x86_64))"
+			]
+		},
+		"libheif-plugin-jpeg": {
+			"build-depends": [
+				"binary(doxygen)",
+				"pkgconfig(SvtAv1Enc)",
+				"pkgconfig(aom)",
+				"pkgconfig(dav1d)",
+				"pkgconfig(gdk-pixbuf-2.0)",
+				"pkgconfig(libavcodec)",
+				"pkgconfig(libavutil)",
+				"pkgconfig(libde265)",
+				"pkgconfig(libjpeg)",
+				"pkgconfig(libopenjp2)",
+				"pkgconfig(libpng)",
+				"pkgconfig(libsharpyuv)",
+				"pkgconfig(libtiff-4)",
+				"pkgconfig(openh264)",
+				"pkgconfig(rav1e)",
+				"pkgconfig(sdl2-compat)",
+				"pkgconfig(x265)",
+				"pkgconfig(zlib)"
+			],
+			"depends": [
+				"soname(libc++.so.1(x86_64))",
+				"soname(libc.so.6(x86_64))",
+				"soname(libheif.so.1(x86_64))",
+				"soname(libjpeg.so.8(x86_64))",
+				"soname(libunwind.so.1(x86_64))"
+			],
+			"files": [
+				"/usr/lib/libheif/libheif-jpegdec.so",
+				"/usr/lib/libheif/libheif-jpegenc.so"
+			],
+			"name": "libheif-plugin-jpeg",
+			"provides": [
+				"soname(libheif/libheif-jpegdec.so(x86_64))",
+				"soname(libheif/libheif-jpegenc.so(x86_64))"
+			]
+		},
+		"libheif-plugin-libde265": {
+			"build-depends": [
+				"binary(doxygen)",
+				"pkgconfig(SvtAv1Enc)",
+				"pkgconfig(aom)",
+				"pkgconfig(dav1d)",
+				"pkgconfig(gdk-pixbuf-2.0)",
+				"pkgconfig(libavcodec)",
+				"pkgconfig(libavutil)",
+				"pkgconfig(libde265)",
+				"pkgconfig(libjpeg)",
+				"pkgconfig(libopenjp2)",
+				"pkgconfig(libpng)",
+				"pkgconfig(libsharpyuv)",
+				"pkgconfig(libtiff-4)",
+				"pkgconfig(openh264)",
+				"pkgconfig(rav1e)",
+				"pkgconfig(sdl2-compat)",
+				"pkgconfig(x265)",
+				"pkgconfig(zlib)"
+			],
+			"depends": [
+				"soname(libc++.so.1(x86_64))",
+				"soname(libc.so.6(x86_64))",
+				"soname(libde265.so.0(x86_64))",
+				"soname(libheif.so.1(x86_64))",
+				"soname(libunwind.so.1(x86_64))"
+			],
+			"files": [
+				"/usr/lib/libheif/libheif-libde265.so"
+			],
+			"name": "libheif-plugin-libde265",
+			"provides": [
+				"soname(libheif/libheif-libde265.so(x86_64))"
+			]
+		},
+		"libheif-plugin-openh264": {
+			"build-depends": [
+				"binary(doxygen)",
+				"pkgconfig(SvtAv1Enc)",
+				"pkgconfig(aom)",
+				"pkgconfig(dav1d)",
+				"pkgconfig(gdk-pixbuf-2.0)",
+				"pkgconfig(libavcodec)",
+				"pkgconfig(libavutil)",
+				"pkgconfig(libde265)",
+				"pkgconfig(libjpeg)",
+				"pkgconfig(libopenjp2)",
+				"pkgconfig(libpng)",
+				"pkgconfig(libsharpyuv)",
+				"pkgconfig(libtiff-4)",
+				"pkgconfig(openh264)",
+				"pkgconfig(rav1e)",
+				"pkgconfig(sdl2-compat)",
+				"pkgconfig(x265)",
+				"pkgconfig(zlib)"
+			],
+			"depends": [
+				"soname(libc++.so.1(x86_64))",
+				"soname(libc.so.6(x86_64))",
+				"soname(libheif.so.1(x86_64))",
+				"soname(libopenh264.so.8(x86_64))",
+				"soname(libunwind.so.1(x86_64))"
+			],
+			"files": [
+				"/usr/lib/libheif/libheif-openh264dec.so"
+			],
+			"name": "libheif-plugin-openh264",
+			"provides": [
+				"soname(libheif/libheif-openh264dec.so(x86_64))"
+			]
+		},
+		"libheif-plugin-rav1e": {
+			"build-depends": [
+				"binary(doxygen)",
+				"pkgconfig(SvtAv1Enc)",
+				"pkgconfig(aom)",
+				"pkgconfig(dav1d)",
+				"pkgconfig(gdk-pixbuf-2.0)",
+				"pkgconfig(libavcodec)",
+				"pkgconfig(libavutil)",
+				"pkgconfig(libde265)",
+				"pkgconfig(libjpeg)",
+				"pkgconfig(libopenjp2)",
+				"pkgconfig(libpng)",
+				"pkgconfig(libsharpyuv)",
+				"pkgconfig(libtiff-4)",
+				"pkgconfig(openh264)",
+				"pkgconfig(rav1e)",
+				"pkgconfig(sdl2-compat)",
+				"pkgconfig(x265)",
+				"pkgconfig(zlib)"
+			],
+			"depends": [
+				"soname(libc++.so.1(x86_64))",
+				"soname(libc.so.6(x86_64))",
+				"soname(libheif.so.1(x86_64))",
+				"soname(librav1e.so.0.8(x86_64))",
+				"soname(libunwind.so.1(x86_64))"
+			],
+			"files": [
+				"/usr/lib/libheif/libheif-rav1e.so"
+			],
+			"name": "libheif-plugin-rav1e",
+			"provides": [
+				"soname(libheif/libheif-rav1e.so(x86_64))"
+			]
+		},
+		"libheif-plugin-svtav1": {
+			"build-depends": [
+				"binary(doxygen)",
+				"pkgconfig(SvtAv1Enc)",
+				"pkgconfig(aom)",
+				"pkgconfig(dav1d)",
+				"pkgconfig(gdk-pixbuf-2.0)",
+				"pkgconfig(libavcodec)",
+				"pkgconfig(libavutil)",
+				"pkgconfig(libde265)",
+				"pkgconfig(libjpeg)",
+				"pkgconfig(libopenjp2)",
+				"pkgconfig(libpng)",
+				"pkgconfig(libsharpyuv)",
+				"pkgconfig(libtiff-4)",
+				"pkgconfig(openh264)",
+				"pkgconfig(rav1e)",
+				"pkgconfig(sdl2-compat)",
+				"pkgconfig(x265)",
+				"pkgconfig(zlib)"
+			],
+			"depends": [
+				"soname(libSvtAv1Enc.so.3(x86_64))",
+				"soname(libc++.so.1(x86_64))",
+				"soname(libc.so.6(x86_64))",
+				"soname(libheif.so.1(x86_64))",
+				"soname(libunwind.so.1(x86_64))"
+			],
+			"files": [
+				"/usr/lib/libheif/libheif-svtenc.so"
+			],
+			"name": "libheif-plugin-svtav1",
+			"provides": [
+				"soname(libheif/libheif-svtenc.so(x86_64))"
+			]
+		},
+		"libheif-plugin-x265": {
+			"build-depends": [
+				"binary(doxygen)",
+				"pkgconfig(SvtAv1Enc)",
+				"pkgconfig(aom)",
+				"pkgconfig(dav1d)",
+				"pkgconfig(gdk-pixbuf-2.0)",
+				"pkgconfig(libavcodec)",
+				"pkgconfig(libavutil)",
+				"pkgconfig(libde265)",
+				"pkgconfig(libjpeg)",
+				"pkgconfig(libopenjp2)",
+				"pkgconfig(libpng)",
+				"pkgconfig(libsharpyuv)",
+				"pkgconfig(libtiff-4)",
+				"pkgconfig(openh264)",
+				"pkgconfig(rav1e)",
+				"pkgconfig(sdl2-compat)",
+				"pkgconfig(x265)",
+				"pkgconfig(zlib)"
+			],
+			"depends": [
+				"soname(libc++.so.1(x86_64))",
+				"soname(libc.so.6(x86_64))",
+				"soname(libheif.so.1(x86_64))",
+				"soname(libunwind.so.1(x86_64))",
+				"soname(libx265.so.215(x86_64))"
+			],
+			"files": [
+				"/usr/lib/libheif/libheif-x265.so"
+			],
+			"name": "libheif-plugin-x265",
+			"provides": [
+				"soname(libheif/libheif-x265.so(x86_64))"
+			]
+		},
+		"libheif-tools": {
+			"build-depends": [
+				"binary(doxygen)",
+				"pkgconfig(SvtAv1Enc)",
+				"pkgconfig(aom)",
+				"pkgconfig(dav1d)",
+				"pkgconfig(gdk-pixbuf-2.0)",
+				"pkgconfig(libavcodec)",
+				"pkgconfig(libavutil)",
+				"pkgconfig(libde265)",
+				"pkgconfig(libjpeg)",
+				"pkgconfig(libopenjp2)",
+				"pkgconfig(libpng)",
+				"pkgconfig(libsharpyuv)",
+				"pkgconfig(libtiff-4)",
+				"pkgconfig(openh264)",
+				"pkgconfig(rav1e)",
+				"pkgconfig(sdl2-compat)",
+				"pkgconfig(x265)",
+				"pkgconfig(zlib)"
+			],
+			"depends": [
+				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
+				"soname(libSDL2-2.0.so.0(x86_64))",
+				"soname(libc++.so.1(x86_64))",
+				"soname(libc.so.6(x86_64))",
+				"soname(libheif.so.1(x86_64))",
+				"soname(libjpeg.so.8(x86_64))",
+				"soname(libm.so.6(x86_64))",
+				"soname(libpng16.so.16(x86_64))",
+				"soname(libtiff.so.6(x86_64))",
+				"soname(libunwind.so.1(x86_64))"
+			],
+			"files": [
+				"/usr/bin/heif-convert",
+				"/usr/bin/heif-dec",
+				"/usr/bin/heif-enc",
+				"/usr/bin/heif-info",
+				"/usr/bin/heif-thumbnailer",
+				"/usr/bin/heif-view",
+				"/usr/share/man/man1/heif-dec.1",
+				"/usr/share/man/man1/heif-enc.1",
+				"/usr/share/man/man1/heif-info.1",
+				"/usr/share/man/man1/heif-thumbnailer.1",
+				"/usr/share/thumbnailers/heif.thumbnailer"
+			],
+			"name": "libheif-tools",
+			"provides": [
+				"binary(heif-convert)",
+				"binary(heif-dec)",
+				"binary(heif-enc)",
+				"binary(heif-info)",
+				"binary(heif-thumbnailer)",
+				"binary(heif-view)"
+			]
+		}
+	},
+	"source-name": "libheif",
+	"source-release": "1",
+	"source-version": "1.20.2"
+}

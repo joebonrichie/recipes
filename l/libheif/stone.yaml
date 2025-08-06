@@ -1,0 +1,155 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : libheif
+version     : 1.20.2
+release     : 1
+upstreams   :
+    - https://github.com/strukturag/libheif/releases/download/v1.20.2/libheif-1.20.2.tar.gz : 68ac9084243004e0ef3633f184eeae85d615fe7e4444373a0a21cebccae9d12a
+homepage    : https://github.com/strukturag/libheif
+license     :
+    - LGPL-3.0-or-later
+    - MIT
+summary     : libheif is an ISO/IEC 23008-12:2017 HEIF and AVIF (AV1 Image File Format) file format decoder and encoder
+description : |
+    HEIF is a new image file format employing HEVC (h.265) or AV1 image coding, respectively, for the best compression ratios currently possible.
+    libheif makes use of libde265 for the actual image decoding and x265 for encoding. For AVIF, libaom, dav1d, rav1e, or SVT-AV1 are used as codecs.
+builddeps   :
+    - binary(doxygen)
+    - pkgconfig(SvtAv1Enc)
+    - pkgconfig(aom)
+    - pkgconfig(dav1d)
+    - pkgconfig(gdk-pixbuf-2.0)
+    - pkgconfig(libavcodec)
+    - pkgconfig(libavutil)
+    - pkgconfig(libde265)
+    - pkgconfig(libjpeg)
+    - pkgconfig(libopenjp2)
+    - pkgconfig(libpng)
+    - pkgconfig(libsharpyuv)
+    - pkgconfig(libtiff-4)
+    - pkgconfig(openh264)
+    - pkgconfig(rav1e)
+    - pkgconfig(sdl2-compat)
+    - pkgconfig(x265)
+    - pkgconfig(zlib)
+    # - libvvdec/libvvenc
+setup       : |
+    # Basically, build support for everything but as plugins
+    # Then split each plugin out to a subpackage and have the main package depend on several as the "defaults"
+    %cmake \
+        -DWITH_AOM_DECODER=ON \
+        -DWITH_AOM_DECODER_PLUGIN=ON \
+        -DWITH_AOM_ENCODER=ON \
+        -DWITH_AOM_ENCODER_PLUGIN=ON \
+        -DWITH_DAV1D=ON \
+        -DWITH_DAV1D_PLUGIN=ON \
+        -DWITH_FFMPEG_DECODER=ON \
+        -DWITH_FFMPEG_DECODER_PLUGIN=ON \
+        -DWITH_JPEG_DECODER=ON \
+        -DWITH_JPEG_DECODER_PLUGIN=ON \
+        -DWITH_JPEG_ENCODER=ON \
+        -DWITH_JPEG_ENCODER_PLUGIN=ON \
+        -DWITH_LIBDE265=ON \
+        -DWITH_LIBDE265_PLUGIN=ON \
+        -DWITH_OpenH264_DECODER=ON \
+        -DWITH_OpenH264_DECODER_PLUGIN=ON \
+        -DWITH_OpenJPEG_DECODER=ON \
+        -DWITH_OpenJPEG_DECODER_PLUGIN=ON \
+        -DWITH_RAV1E=ON \
+        -DWITH_RAV1E_PLUGIN=ON \
+        -DWITH_SvtEnc=ON \
+        -DWITH_SvtEnc_PLUGIN=ON \
+        -DWITH_X265=ON \
+        -DWITH_X265_PLUGIN=ON
+build       : |
+    %cmake_build
+install     : |
+    %cmake_install
+packages    :
+    - "%(name)":
+        rundeps:
+            # Default plugins
+            - "%(name)-plugin-ffmpeg" # Default HEVC decoder (hardware-accelerated)
+            - "%(name)-plugin-x265" # Default HEVC encoder
+            - "%(name)-plugin-dav1d" # Default AV1 decoder
+            - "%(name)-plugin-rav1e" # Default AV1 encoder
+            - "%(name)-plugin-jpeg" # JPEG encoder/decoder
+
+    - "heif-pixbuf-loader":
+        summary: HEIF image loader for GTK+ applications
+        description: This package provides a plugin to load HEIF files in GTK+ applications.
+        # TODO: This should install automatically if libheif and gdk-pixbuf are both installed
+        paths:
+            - /usr/lib/gdk-pixbuf-2.0/
+
+    - "%(name)-tools":
+        summary: Tools for manipulating HEIF files
+        description: This package provides tools for manipulating HEIF files.
+        paths:
+            - /usr/bin/
+            - /usr/share/man/man1/
+            - /usr/share/thumbnailers/
+
+    ### TODO: Once we support conditional dependencies we can make these plugins install automatically if libheif and the respective package is installed
+    - "%(name)-plugin-aom":
+        summary: HEIF and AVIF file format decoder and encoder - aom plugins
+        description: HEIF and AVIF file format decoder and encoder - aom plugins
+        paths:
+            - /usr/lib/libheif/libheif-aom*.so
+
+    - "%(name)-plugin-dav1d":
+        summary: HEIF and AVIF file format decoder and encoder - dav1d plugin
+        description: HEIF and AVIF file format decoder and encoder - dav1d plugin
+        paths:
+            - /usr/lib/libheif/libheif-dav1d.so
+
+    - "%(name)-plugin-ffmpeg":
+        summary: HEIF and AVIF file format decoder and encoder - ffmpeg plugin
+        description: HEIF and AVIF file format decoder and encoder - ffmpeg plugin
+        paths:
+            - /usr/lib/libheif/libheif-ffmpegdec.so
+
+    - "%(name)-plugin-j2k":
+        summary: HEIF and AVIF file format decoder and encoder - libopenjp2 plugin
+        description: HEIF and AVIF file format decoder and encoder - libopenjp2 plugin
+        paths:
+            - /usr/lib/libheif/libheif-j2kdec.so
+
+    - "%(name)-plugin-jpeg":
+        summary: HEIF and AVIF file format decoder and encoder - jpeg plugin
+        description: HEIF and AVIF file format decoder and encoder - jpeg plugin
+        paths:
+            - /usr/lib/libheif/libheif-jpeg*.so
+
+    - "%(name)-plugin-libde265":
+        summary: HEIF and AVIF file format decoder and encoder - libde265 plugin
+        description: HEIF and AVIF file format decoder and encoder - libde265 plugin
+        paths:
+            - /usr/lib/libheif/libheif-libde265.so
+
+    - "%(name)-plugin-openh264":
+        summary: HEIF and AVIF file format decoder and encoder - openh264 plugin
+        description: HEIF and AVIF file format decoder and encoder - openh264 plugin
+        paths:
+            - /usr/lib/libheif/libheif-openh264dec.so
+
+    - "%(name)-plugin-rav1e":
+        summary: HEIF and AVIF file format decoder and encoder - rav1e plugin
+        description: HEIF and AVIF file format decoder and encoder - rav1e plugin
+        paths:
+            - /usr/lib/libheif/libheif-rav1e.so
+
+    - "%(name)-plugin-svtav1":
+        summary: HEIF and AVIF file format decoder and encoder - svtav1 plugin
+        description: HEIF and AVIF file format decoder and encoder - svtav1 plugin
+        paths:
+            - /usr/lib/libheif/libheif-svtenc.so
+
+    - "%(name)-plugin-x265":
+        summary: HEIF and AVIF file format decoder and encoder - x265 plugin
+        description: HEIF and AVIF file format decoder and encoder - x265 plugin
+        paths:
+            - /usr/lib/libheif/libheif-x265.so
