@@ -1,0 +1,19 @@
+/** Human readable report. This is not consumed by boulder */
+{
+	"manifest-version": "0.2",
+	"packages": {
+		"pkgset-aeryn-sway-minimal": {
+			"depends": [
+				"pkgset-aeryn-base-desktop",
+				"sway"
+			],
+			"files": [
+				"/usr/share/doc/pkgset-aeryn-sway-minimal/README"
+			],
+			"name": "pkgset-aeryn-sway-minimal"
+		}
+	},
+	"source-name": "pkgset-aeryn-sway",
+	"source-release": "1",
+	"source-version": "2025.06"
+}

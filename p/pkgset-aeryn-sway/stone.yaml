@@ -1,0 +1,29 @@
+#
+# SPDX-FileCopyrightText: © 2020-2024 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : pkgset-aeryn-sway
+version     : "2025.06" # I guess let's just match the OS version for now
+release     : 1
+homepage    : https://aerynos.com/
+# No upstreams!
+summary     : pkgset virtual packages - Sway WM
+description : |
+    pkgset virtual packages - Sway WM
+license     : MPL-2.0
+install     : |
+    for i in minimal; do
+        %install_dir %(installroot)%(docdir)/%(name)-${i}
+        echo "This file will disappear when virtual packages are introduced" > %(installroot)%(docdir)/%(name)-${i}/README
+    done
+packages    :
+    - "%(name)-minimal":
+        summary: Minimal packages for a Sway WM session
+        description: |
+            Minimal packages for a Sway WM session
+        rundeps:
+            - pkgset-aeryn-base-desktop
+            - sway
+        paths:
+            - /usr/share/doc/%(name)-minimal/README
