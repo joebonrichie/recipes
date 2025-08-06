@@ -1,0 +1,6 @@
+releases:
+  id: 11793
+  rss: https://gitlab.xiph.org/xiph/theora/-/releases.atom
+security:
+  # Last checked 20250806
+  cpe: ~
