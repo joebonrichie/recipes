@@ -35,6 +35,7 @@
 				"/usr/share/inputplumber/capability_maps/ayaneo_type4.yaml",
 				"/usr/share/inputplumber/capability_maps/ayaneo_type5.yaml",
 				"/usr/share/inputplumber/capability_maps/ayaneo_type6.yaml",
+				"/usr/share/inputplumber/capability_maps/ayaneo_type7.yaml",
 				"/usr/share/inputplumber/capability_maps/ayn_type1.yaml",
 				"/usr/share/inputplumber/capability_maps/dinput_generic.yaml",
 				"/usr/share/inputplumber/capability_maps/flydigi_vader_4_pro.yaml",
@@ -48,6 +49,7 @@
 				"/usr/share/inputplumber/capability_maps/onexplayer_type2.yaml",
 				"/usr/share/inputplumber/capability_maps/onexplayer_type3.yaml",
 				"/usr/share/inputplumber/capability_maps/onexplayer_type4.yaml",
+				"/usr/share/inputplumber/capability_maps/onexplayer_type6.yaml",
 				"/usr/share/inputplumber/capability_maps/orangepi_type1.yaml",
 				"/usr/share/inputplumber/capability_maps/swap_west_north.yaml",
 				"/usr/share/inputplumber/capability_maps/zone_type1.yaml",
@@ -57,6 +59,7 @@
 				"/usr/share/inputplumber/devices/50-ayaneo_2.yaml",
 				"/usr/share/inputplumber/devices/50-ayaneo_2021.yaml",
 				"/usr/share/inputplumber/devices/50-ayaneo_2s.yaml",
+				"/usr/share/inputplumber/devices/50-ayaneo_3.yaml",
 				"/usr/share/inputplumber/devices/50-ayaneo_air.yaml",
 				"/usr/share/inputplumber/devices/50-ayaneo_air_1s.yaml",
 				"/usr/share/inputplumber/devices/50-ayaneo_air_plus.yaml",
@@ -73,13 +76,14 @@
 				"/usr/share/inputplumber/devices/50-gpd_winmax2.yaml",
 				"/usr/share/inputplumber/devices/50-gpd_winmini.yaml",
 				"/usr/share/inputplumber/devices/50-legion_go.yaml",
-				"/usr/share/inputplumber/devices/50-legion_go_2.yaml",
 				"/usr/share/inputplumber/devices/50-legion_go_s.yaml",
 				"/usr/share/inputplumber/devices/50-msi_claw7_a2vm.yaml",
 				"/usr/share/inputplumber/devices/50-msi_claw8_a2vm.yaml",
 				"/usr/share/inputplumber/devices/50-msi_claw_a1m.yaml",
+				"/usr/share/inputplumber/devices/50-msi_claw_a8_bz2e.yaml",
 				"/usr/share/inputplumber/devices/50-onexplayer_2.yaml",
 				"/usr/share/inputplumber/devices/50-onexplayer_amd.yaml",
+				"/usr/share/inputplumber/devices/50-onexplayer_g1.yaml",
 				"/usr/share/inputplumber/devices/50-onexplayer_intel.yaml",
 				"/usr/share/inputplumber/devices/50-onexplayer_mini_a07.yaml",
 				"/usr/share/inputplumber/devices/50-onexplayer_mini_pro.yaml",
@@ -121,6 +125,6 @@
 		}
 	},
 	"source-name": "inputplumber",
-	"source-release": "31",
-	"source-version": "0.60.8"
+	"source-release": "32",
+	"source-version": "0.62.0"
 }
