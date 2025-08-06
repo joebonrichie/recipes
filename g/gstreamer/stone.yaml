@@ -5,7 +5,7 @@
 #
 name        : gstreamer
 version     : 1.26.4
-release     : 20
+release     : 21
 homepage    : https://gstreamer.freedesktop.org/
 upstreams   :
     - https://gitlab.freedesktop.org/gstreamer/gstreamer/-/archive/1.26.4/gstreamer-1.26.4.tar.gz : c26ede6f5188f35f0d7068226ff8d77f6a5b0cca64f507b265a5eeaed8f00741
@@ -55,6 +55,7 @@ builddeps   :
     - pkgconfig(libavfilter)
     - pkgconfig(libbs2b)
     - pkgconfig(libcurl)
+    - pkgconfig(libde265)
     - pkgconfig(libdrm)
     - pkgconfig(libdw)
     - pkgconfig(libexif)
@@ -77,6 +78,7 @@ builddeps   :
     - pkgconfig(libzstd)
     - pkgconfig(nettle)
     - pkgconfig(opencv4)
+    - pkgconfig(openh264)
     - pkgconfig(opus)
     - pkgconfig(orc-0.4)
     - pkgconfig(ogg)
@@ -86,6 +88,7 @@ builddeps   :
     - pkgconfig(sbc)
     - pkgconfig(sndfile)
     - pkgconfig(soundtouch)
+    - pkgconfig(theoradec)
     - pkgconfig(vapigen)
     - pkgconfig(vpl)
     - pkgconfig(vpx)
@@ -102,8 +105,6 @@ builddeps   :
     - lame-devel
     - ladspa-devel
 ## Missing Deps
-# base:
-# - theoradec
 # good:
 # - libv4l2
 # - aalib
@@ -127,7 +128,6 @@ builddeps   :
 # - fluidsynth
 # - gsm
 # - lrdf
-# - libde265
 # - microdns
 # - libmodplug
 # - mjpegtools
@@ -165,7 +165,6 @@ setup       : |
         -D gstreamer:ptp-helper-permissions=setuid-root \
         -D gst-editing-services:validate=disabled \
         -D gst-plugins-bad:aja=disabled \
-        -D gst-plugins-bad:openh264=disabled \
         -D gst-plugins-base:gl_winsys=wayland,x11,gbm \
         -D gst-plugins-good:soup-version=3 \
         -D package-name="AerynOS GStreamer" \
@@ -301,6 +300,7 @@ packages    :
             - /usr/lib/gstreamer-1.0/libgstrawparse.so
             - /usr/lib/gstreamer-1.0/libgstsubparse.so
             - /usr/lib/gstreamer-1.0/libgsttcp.so
+            - /usr/lib/gstreamer-1.0/libgsttheora.so
             - /usr/lib/gstreamer-1.0/libgsttypefindfunctions.so
             - /usr/lib/gstreamer-1.0/libgstvideoconvertscale.so
             - /usr/lib/gstreamer-1.0/libgstvideorate.so
@@ -433,6 +433,7 @@ packages    :
             - /usr/lib/gstreamer-1.0/libgstcoloreffects.so
             - /usr/lib/gstreamer-1.0/libgstcolormanagement.so
             - /usr/lib/gstreamer-1.0/libgstdash.so
+            - /usr/lib/gstreamer-1.0/libgstde265.so
             - /usr/lib/gstreamer-1.0/libgstdebugutilsbad.so
             - /usr/lib/gstreamer-1.0/libgstdtls.so
             - /usr/lib/gstreamer-1.0/libgstdvb.so
@@ -472,6 +473,7 @@ packages    :
             - /usr/lib/gstreamer-1.0/libgstnetsim.so
             - /usr/lib/gstreamer-1.0/libgstnvcodec.so
             - /usr/lib/gstreamer-1.0/libgstopenaptx.so
+            - /usr/lib/gstreamer-1.0/libgstopenh264.so
             - /usr/lib/gstreamer-1.0/libgstopusparse.so
             - /usr/lib/gstreamer-1.0/libgstpcapparse.so
             - /usr/lib/gstreamer-1.0/libgstpnm.so
