@@ -5,7 +5,7 @@
 #
 name        : ffmpeg
 version     : '7.1.1'
-release     : 10
+release     : 11
 homepage    : https://ffmpeg.org/releases
 upstreams   :
     - https://ffmpeg.org/releases/ffmpeg-7.1.1.tar.xz : 733984395e0dbbe5c046abda2dc49a5544e7e0e1e2366bba849222ae9e3a03b1
@@ -23,6 +23,7 @@ builddeps   :
     - binary(pod2man)
     # - cmake(glslang)
     - cmake(VulkanHeaders)
+    - pkgconfig(OpenCL)
     - pkgconfig(SvtAv1Enc)
     - pkgconfig(aom)
     - pkgconfig(dav1d)
@@ -52,6 +53,7 @@ builddeps   :
     - pkgconfig(shaderc)
     - pkgconfig(snappy)
     - pkgconfig(sndio)
+    - pkgconfig(theoradec)
     - pkgconfig(vdpau)
     - pkgconfig(vorbis)
     - pkgconfig(vpl)
@@ -125,6 +127,7 @@ setup       : |
                 --enable-libsnappy \
                 --enable-libssh \
                 --enable-libsvtav1 \
+                --enable-libtheora \
                 --enable-libvorbis \
                 --enable-libvpl \
                 --enable-libvpx \
@@ -135,6 +138,7 @@ setup       : |
                 --enable-libxml2 \
                 --enable-nvdec \
                 --enable-nvenc \
+                --enable-opencl \
                 --enable-opengl \
                 --enable-openssl \
                 --enable-vaapi \
