@@ -5,7 +5,7 @@
 #
 name        : kf6-kimageformats
 version     : 6.16.0
-release     : 4
+release     : 5
 upstreams   :
     - https://download.kde.org/stable/frameworks/6.16/kimageformats-6.16.0.tar.xz : 86dfbb05ab845f7b19a7fec88e135d14e47af14dc1713d9fb391966510c1dc4b
 homepage    : https://community.kde.org/Frameworks
@@ -23,15 +23,16 @@ builddeps   :
     - cmake(KF6Archive)
     - cmake(OpenJPEG)
     - pkgconfig(libavif)
+    - pkgconfig(libheif)
     - pkgconfig(libjxl)
     - pkgconfig(libraw)
     # TODO:
-    # - libheif
     # - OpenEXR
 rundeps    :
     - qt6-imageformats
 setup       : |
-    %cmake_kf6
+    %cmake_kf6 \
+        -DKIMAGEFORMATS_HEIF=ON
 build       : |
     %cmake_build
 install     : |
