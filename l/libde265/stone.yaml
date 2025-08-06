@@ -1,0 +1,37 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : libde265
+version     : 1.0.16
+release     : 1
+upstreams   :
+    - https://github.com/strukturag/libde265/releases/download/v1.0.16/libde265-1.0.16.tar.gz : b92beb6b53c346db9a8fae968d686ab706240099cdd5aff87777362d668b0de7
+homepage    : https://www.libde265.org/
+license     : LGPL-3.0-or-later
+summary     : Open H.265 video codec implementation
+description : |
+    libde265 is an open source implementation of the h.265 video codec. It is written from scratch and has a plain C API to enable a simple integration into other software. libde265 supports WPP and tile-based multithreading and includes SSE optimizations. The decoder includes all features of the Main profile and correctly decodes almost all conformance streams.
+builddeps   :
+    - pkgconfig(Qt5Gui)
+    - pkgconfig(libswscale)
+    - pkgconfig(sdl2-compat)
+setup       : |
+    %configure \
+        --disable-static \
+        --enable-encoder \
+        --program-prefix=de265-
+build       : |
+    %make
+install     : |
+    %make_install
+packages    :
+    - "%(name)-examples":
+        summary: Open H.265 video codec implementation - examples
+        description: |
+            libde265 is an open source implementation of the H.265 video codec. It is written from scratch in plain C for simplicity and efficiency. Its simple API makes it easy to integrate it into other software.
+
+            Sample applications using libde265 are provided by this package. 
+        paths:
+            - /usr/bin/
