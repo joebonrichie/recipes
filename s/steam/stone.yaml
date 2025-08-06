@@ -5,7 +5,7 @@
 #
 name        : steam
 version     : 1.0.0.83
-release     : 16
+release     : 17
 homepage    : https://store.steampowered.com/
 upstreams   :
     - https://repo.steampowered.com/steam/pool/steam/s/steam/steam_1.0.0.83.tar.gz : 791682b0cc7efd946c7002f917c9dd474d2619b7f9ed00891216a8a6b4ac8f82
@@ -16,6 +16,7 @@ license     : Distributable
 rundeps     :
     - binary(cmp)
     - binary(tar)
+    - binary(xdg-user-dir)
     - binary(zenity)
     - soname(libGL.so.1(386))
     - soname(libGLX_mesa.so.0(386))
