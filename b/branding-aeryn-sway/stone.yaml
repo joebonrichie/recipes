@@ -1,0 +1,17 @@
+#
+# SPDX-FileCopyrightText: © 2020-2024 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : branding-aeryn-sway
+version     : "2025.06" # I guess let's just match the OS version for now
+release     : 3
+homepage    : https://aerynos.com/
+# No upstreams!
+summary     : AerynOS sway Branding
+description : |
+    AerynOS sway Branding
+license     : MPL-2.0
+install     : |
+    %install_dir %(installroot)%(docdir)/%(name)
+    echo "TODO" > %(installroot)%(docdir)/%(name)/README
