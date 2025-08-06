@@ -4,15 +4,15 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : thunderbird
-version     : 140.1.0
-release     : 22
+version     : 140.1.1
+release     : 23
 homepage    : https://www.thunderbird.net/
 upstreams   :
-    - https://releases.mozilla.org/pub/thunderbird/releases/140.1.0esr/source/thunderbird-140.1.0esr.source.tar.xz:
-        hash: 43f0a68902a9733b8020c3db725d5fa4965044e3d3cc2830d2b054f45b7fc5cb
+    - https://releases.mozilla.org/pub/thunderbird/releases/140.1.1esr/source/thunderbird-140.1.1esr.source.tar.xz:
+        hash: 136b160954abe2426ab26e46d35d946207ab5e217ac72d3ff5cb1b87680d4fcd
         unpackdir: thunderbird
-    - https://sources.getsol.us/mozilla/thunderbird/thunderbird-140.1.0esr-langpacks.tar.zst:
-        hash: d5eb6584fe5693a42304a3f8b82f7737bddae6234efaac36c013478e68e58fea
+    - https://sources.getsol.us/mozilla/thunderbird/thunderbird-140.1.1esr-langpacks.tar.zst:
+        hash: 4017afff75e634398da97f913e8c8b6679c202a908e587459cecdd0eeb2b114c
         unpackdir: thunderbird/langpacks
 summary     : Thunderbird Email Client
 description : |
@@ -64,6 +64,11 @@ environment : |
     export PIP_NETWORK_INSTALL_RESTRICTED_VIRTUALENVS=mach
     export MACH_BUILD_PYTHON_NATIVE_PACKAGE_SOURCE="none"
     export MOZ_BUILD_DATE="$(date -u${SOURCE_DATE_EPOCH:+d @$SOURCE_DATE_EPOCH} +%%Y%%m%%d%%H%%M%%S)"
+
+    # sccache is currently broken with this build for unknown reasons. Disable it for now
+    # │B│  0:22.32 sccache: caused by: No such file or directory (os error 2)
+    # │B│  0:22.34 error: could not compile `unicode-ident` (lib)
+    unset RUSTC_WRAPPER
 setup       : |
     # %patch %(pkgdir)/patches/pgo.patch
     %patch %(pkgdir)/patches/0001-Fix-Firefox-Thunderbird-envvar-conflicts.patch
