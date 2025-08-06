@@ -5,6 +5,7 @@
 		"jasper": {
 			"build-depends": [
 				"pkgconfig(glut)",
+				"pkgconfig(libheif)",
 				"pkgconfig(libjpeg)",
 				"pkgconfig(opengl)"
 			],
@@ -39,11 +40,13 @@
 		"jasper-devel": {
 			"build-depends": [
 				"pkgconfig(glut)",
+				"pkgconfig(libheif)",
 				"pkgconfig(libjpeg)",
 				"pkgconfig(opengl)"
 			],
 			"depends": [
 				"jasper",
+				"pkgconfig(libheif)",
 				"pkgconfig(libjpeg)"
 			],
 			"files": [
@@ -81,12 +84,14 @@
 		"jasper-libs": {
 			"build-depends": [
 				"pkgconfig(glut)",
+				"pkgconfig(libheif)",
 				"pkgconfig(libjpeg)",
 				"pkgconfig(opengl)"
 			],
 			"depends": [
 				"soname(ld-linux-x86-64.so.2(x86_64))",
 				"soname(libc.so.6(x86_64))",
+				"soname(libheif.so.1(x86_64))",
 				"soname(libjpeg.so.8(x86_64))",
 				"soname(libm.so.6(x86_64))"
 			],
@@ -101,6 +106,6 @@
 		}
 	},
 	"source-name": "jasper",
-	"source-release": "2",
+	"source-release": "3",
 	"source-version": "4.2.8"
 }
