@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : inih
-version     : 58
-release     : 4
+version     : "61"
+release     : 5
 homepage    : https://github.com/benhoyt/inih
 upstreams   :
-    - https://github.com/benhoyt/inih/archive/refs/tags/r58.tar.gz : e79216260d5dffe809bda840be48ab0eec7737b2bb9f02d2275c1b46344ea7b7
+    - https://github.com/benhoyt/inih/archive/refs/tags/r61.tar.gz : 7caf26a2202a4ca689df3fe4175dfa74e0faa18fcca07331bba934fd0ecb8f12
 summary     : inih is a simple .INI file parser written in C
 description : |
     inih is a simple .INI file parser written in C
@@ -20,4 +20,14 @@ build       : |
 install     : |
     %meson_install
 tuning      :
-    - lto
+    - lto: full
+packages    :
+    - "%(name)-cpp":
+        summary: INIReader C++ library
+        description: This package contains the INIReader C++ library which provides a C++ interface for inih.
+        paths:
+            - /usr/lib/libINIReader.so.*
+
+    - "%(name)-devel":
+        rundeps:
+            - "%(name)-cpp"
