@@ -15,7 +15,7 @@
 				"pkgconfig(libseccomp)"
 			],
 			"depends": [
-				"glycin",
+				"glycin-loaders",
 				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
 				"soname(ld-linux-x86-64.so.2(x86_64))",
 				"soname(libadwaita-1.so.0(x86_64))",
@@ -442,6 +442,6 @@
 		}
 	},
 	"source-name": "loupe",
-	"source-release": "11",
+	"source-release": "12",
 	"source-version": "48.1"
 }
