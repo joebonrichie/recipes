@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : glycin
-version     : 1.2.2
-release     : 8
-homepage    : https://gitlab.gnome.org/sophie-h/glycin
+version     : 1.2.3
+release     : 9
+homepage    : https://gitlab.gnome.org/GNOME/glycin
 upstreams   :
-    - https://download.gnome.org/sources/glycin/1.2/glycin-1.2.2.tar.xz : 4ab446d58b10c76283227a65487b8bbdb74ba5009e9ed23045fcfa8ba3fb2861
+    - https://download.gnome.org/sources/glycin/1.2/glycin-1.2.3.tar.xz : 380aafe2bfb4eca0c45b42660ebff449600d00a43b609d5b1c83f795f5c8fb3c
 summary     : Sandboxed and extendable image loading
 description : |
   Glycin allows to decode images into gdk::Textures and to extract image metadata. The decoding happens in sandboxed modular image loaders.
@@ -22,14 +22,92 @@ builddeps   :
     - pkgconfig(gobject-introspection-1.0)
     - pkgconfig(gtk4)
     - pkgconfig(lcms2)
-    # pkgconfig(libheif)
+    - pkgconfig(libheif)
     - pkgconfig(libjxl)
     - pkgconfig(librsvg-2.0)
     - pkgconfig(libseccomp)
     - pkgconfig(libxml-2.0)
 setup       : |
-    %meson -Dtest_skip_install=true -Dloaders=glycin-image-rs,glycin-svg,glycin-jxl
+    %meson \
+        -Dloaders=glycin-image-rs,glycin-heif,glycin-jxl,glycin-svg \
+        -Dtest_skip_install=true
 build       : |
     %meson_build
 install     : |
     %meson_install
+
+    for i in %(name) %(name)-devel; do
+        %install_dir %(installroot)%(docdir)/${i}
+        echo "DEPRECATED" > %(installroot)%(docdir)/${i}/README
+    done
+packages    :
+    - "%(name)":
+        paths:
+            - /usr/share/doc/glycin/
+
+    - "%(name)-devel":
+        paths:
+            - /usr/share/doc/glycin-devel/
+
+    - "%(name)-loaders":
+        summary: Sandboxed image rendering (image loading backends)
+        description: |
+            Sandboxed and extendable image decoding.
+
+            This package contains the different image loading backends.
+        paths:
+            - /usr/lib/glycin/glycin-loaders/
+            - /usr/share/glycin-loaders/
+
+    - "%(name)-libs":
+        summary: Sandboxed image rendering (C library)
+        description: |
+            Sandboxed and extendable image decoding.
+
+            This package contains a shared library interface for glycin.
+        rundeps:
+            - "%(name)-loaders"
+        paths:
+            - /usr/lib/libglycin-1.so.*
+            - /usr/lib/girepository-1.0/Gly-1.typelib
+
+    - "%(name)-libs-devel":
+        summary: Sandboxed image rendering (development files)
+        description: |
+            Sandboxed and extendable image decoding.
+
+            This package contains files for developing against libglycin.
+        rundeps:
+            - "%(name)-libs"
+        paths:
+            - /usr/include/glycin-1/
+            - /usr/lib/libglycin-1.so
+            - /usr/lib/pkgconfig/glycin-1.pc
+            - /usr/share/gir-1.0/Gly-1.gir
+            - /usr/share/vala/vapi/glycin-1.*
+
+    - "%(name)-gtk4-libs":
+        summary: Sandboxed image rendering (GTK4 integrationy)
+        description: |
+            Sandboxed and extendable image decoding.
+
+            This package contains a shared library interface for glycin
+            which provides integration with GDK / GTK4.
+        paths:
+            - /usr/lib/libglycin-gtk4-1.so.*
+            - /usr/lib/girepository-1.0/GlyGtk4-1.typelib
+
+    - "%(name)-gtk4-libs-devel":
+        summary: Sandboxed image rendering (GTK4 development files)
+        description: |
+            Sandboxed and extendable image decoding.
+
+            This package contains files for developing against libglycin-gtk4.
+        rundeps:
+            - "%(name)-gtk4-libs"
+        paths:
+            - /usr/include/glycin-gtk4-1/
+            - /usr/lib/libglycin-gtk4-1.so
+            - /usr/lib/pkgconfig/glycin-gtk4-1.pc
+            - /usr/share/gir-1.0/GlyGtk4-1.gir
+            - /usr/share/vala/vapi/glycin-gtk4-1.*

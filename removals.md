@@ -101,3 +101,7 @@
 
 ### Replaced by libdbusmenu-docs
 - libdbusmenu-gtk3-docs
+
+### Split to subpackages
+- glycin
+- glycin-devel
