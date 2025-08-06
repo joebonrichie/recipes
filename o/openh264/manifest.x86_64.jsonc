@@ -1,0 +1,48 @@
+/** Human readable report. This is not consumed by boulder */
+{
+	"manifest-version": "0.2",
+	"packages": {
+		"openh264": {
+			"build-depends": [
+				"binary(nasm)"
+			],
+			"depends": [
+				"soname(libc++.so.1(x86_64))",
+				"soname(libc.so.6(x86_64))",
+				"soname(libm.so.6(x86_64))",
+				"soname(libunwind.so.1(x86_64))"
+			],
+			"files": [
+				"/usr/lib/libopenh264.so.2.6.0",
+				"/usr/lib/libopenh264.so.8"
+			],
+			"name": "openh264",
+			"provides": [
+				"soname(libopenh264.so.8(x86_64))"
+			]
+		},
+		"openh264-devel": {
+			"build-depends": [
+				"binary(nasm)"
+			],
+			"depends": [
+				"openh264"
+			],
+			"files": [
+				"/usr/include/wels/codec_api.h",
+				"/usr/include/wels/codec_app_def.h",
+				"/usr/include/wels/codec_def.h",
+				"/usr/include/wels/codec_ver.h",
+				"/usr/lib/libopenh264.so",
+				"/usr/lib/pkgconfig/openh264.pc"
+			],
+			"name": "openh264-devel",
+			"provides": [
+				"pkgconfig(openh264)"
+			]
+		}
+	},
+	"source-name": "openh264",
+	"source-release": "1",
+	"source-version": "2.6.0"
+}
