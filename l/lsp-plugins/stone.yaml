@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : lsp-plugins
-version     : 1.2.21
-release     : 3
+version     : 1.2.22
+release     : 4
 homepage    : https://lsp-plug.in
 upstreams   :
-    - https://github.com/sadko4u/lsp-plugins/releases/download/1.2.21/lsp-plugins-src-1.2.21.tar.gz : ae2da1d0557ed645371d54a779061240a0295e399c2aa441c96fa236d76e12d9
+    - https://github.com/sadko4u/lsp-plugins/releases/download/1.2.22/lsp-plugins-src-1.2.22.tar.gz : bb97270482b04c1269643a8373b554255dde287b1c5ddbc567ac94de4815a75b
 summary     : Linux Studio Plugins Project
 description : |
     Linux Studio Plugins Project
@@ -23,9 +23,9 @@ builddeps   :
 setup       : |
     # Currently we build just the lv2 and gstreamer plugins. xdg depends on jack which we don't yet have
     make config \
-                PREFIX=%(prefix) \
-                LIBDIR=%(libdir) \
-                FEATURES="gst lv2"
+        PREFIX=%(prefix) \
+        LIBDIR=%(libdir) \
+        FEATURES="gst lv2"
 build       : |
     %make
 install     : |
@@ -34,12 +34,10 @@ packages    :
     - "%(name)-gstreamer":
         summary: Linux Studio Plugins - gstreamer format
         description: Linux Studio Plugins - gstreamer format
-        rundeps     :
-            # Moss upgrade bug
-            - gstreamer-plugins-base
         paths:
             - /usr/lib/gstreamer-1.0
             - /usr/lib/lsp-plugins/liblsp-plugins-gstreamer*.so
+
     - "%(name)-lv2":
         summary: Linux Studio Plugins - LV2 format
         description: Linux Studio Plugins - LV2 format
