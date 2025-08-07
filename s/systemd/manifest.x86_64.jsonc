@@ -5,6 +5,7 @@
 		"systemd": {
 			"build-depends": [
 				"binary(bpftool)",
+				"binary(gcc)",
 				"binary(gperf)",
 				"binary(m4)",
 				"binary(readelf.py)",
@@ -1441,6 +1442,7 @@
 		"systemd-32bit": {
 			"build-depends": [
 				"binary(bpftool)",
+				"binary(gcc)",
 				"binary(gperf)",
 				"binary(m4)",
 				"binary(readelf.py)",
@@ -1515,6 +1517,7 @@
 		"systemd-32bit-devel": {
 			"build-depends": [
 				"binary(bpftool)",
+				"binary(gcc)",
 				"binary(gperf)",
 				"binary(m4)",
 				"binary(readelf.py)",
@@ -1579,6 +1582,7 @@
 		"systemd-devel": {
 			"build-depends": [
 				"binary(bpftool)",
+				"binary(gcc)",
 				"binary(gperf)",
 				"binary(m4)",
 				"binary(readelf.py)",
@@ -2455,6 +2459,7 @@
 		"systemd-networkd": {
 			"build-depends": [
 				"binary(bpftool)",
+				"binary(gcc)",
 				"binary(gperf)",
 				"binary(m4)",
 				"binary(readelf.py)",
@@ -2566,6 +2571,7 @@
 		"systemd-ukify": {
 			"build-depends": [
 				"binary(bpftool)",
+				"binary(gcc)",
 				"binary(gperf)",
 				"binary(m4)",
 				"binary(readelf.py)",
@@ -2623,6 +2629,6 @@
 		}
 	},
 	"source-name": "systemd",
-	"source-release": "62",
+	"source-release": "63",
 	"source-version": "257.8"
 }
