@@ -1,4 +1,4 @@
-From da6ba75721d2641545036793defd4669ad62ea70 Mon Sep 17 00:00:00 2001
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
 From: Ikey Doherty <ikey@serpentos.com>
 Date: Wed, 11 Sep 2024 01:48:11 +0000
 Subject: [PATCH] tmpfiles: Allow nsswitch clobber at non-boot interval
@@ -9,7 +9,7 @@ Signed-off-by: Ikey Doherty <ikey@serpentos.com>
  1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/tmpfiles.d/etc.conf.in b/tmpfiles.d/etc.conf.in
-index e54d3b1..a387948 100644
+index 9c1ed67ab7..284b6eb0ca 100644
 --- a/tmpfiles.d/etc.conf.in
 +++ b/tmpfiles.d/etc.conf.in
 @@ -13,7 +13,7 @@ L+ /etc/mtab - - - - ../proc/self/mounts
@@ -21,6 +21,3 @@ index e54d3b1..a387948 100644
  C! /etc/vconsole.conf - - - -
  {% if HAVE_PAM %}
  C! /etc/pam.d - - - -
--- 
-2.46.0
-

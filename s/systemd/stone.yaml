@@ -4,8 +4,8 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : systemd
-version     : "254.27"
-release     : 61
+version     : "257.8"
+release     : 62
 summary     : A System and Service Manager
 license     :
     - GPL-2.0-or-later
@@ -15,54 +15,54 @@ homepage    : http://www.freedesktop.org/wiki/Software/systemd
 description : |
     A System and Service Manager
 upstreams   :
-    - https://github.com/systemd/systemd-stable/archive/refs/tags/v254.27.tar.gz: a8a624f42ef800a536069a92a34c026a793485d7cf1f22b1dfda40a923d0ae4c
+    - https://github.com/systemd/systemd/archive/refs/tags/v257.8.tar.gz: f280278161446fe3838bedb970c7b3998043ad107f7627735a81483218c6f6f9
 builddeps   :
     - binary(bpftool)
     - binary(gperf)
-    - binary(ld.bfd) # Can be removed in systemd >= 255
     - binary(m4)
     - binary(readelf.py)
+    - binary(rsync)
     - binary(xsltproc)
     - pkgconfig(blkid)
+    - pkgconfig(bzip2)
+    - pkgconfig(dbus-1)
+    - pkgconfig(fdisk)
+    - pkgconfig(glib-2.0)
     - pkgconfig(gpg-error)
+    - pkgconfig(libacl)
+    - pkgconfig(libarchive)
+    - pkgconfig(libattr)
     - pkgconfig(libbpf)
     - pkgconfig(libcryptsetup)
+    - pkgconfig(libcurl)
     - pkgconfig(libdw)
+    - pkgconfig(libffi)
     - pkgconfig(libfido2)
     - pkgconfig(libidn2)
     - pkgconfig(libkmod)
+    - pkgconfig(liblz4)
+    - pkgconfig(liblzma)
+    - pkgconfig(libmicrohttpd)
+    - pkgconfig(libpcre2-8)
     - pkgconfig(libqrencode)
+    - pkgconfig(libseccomp)
+    - pkgconfig(openssl)
     - pkgconfig(p11-kit-1)
+    - pkgconfig(pam)
     - pkgconfig(polkit-gobject-1)
     - pkgconfig(pwquality)
     - pkgconfig(tss2-esys)
-    - pkgconfig32(bzip2)
-    - pkgconfig32(dbus-1)
-    - pkgconfig32(fdisk)
-    - pkgconfig32(glib-2.0)
-    - pkgconfig32(libacl)
-    - pkgconfig32(libattr)
+    - pkgconfig(xkbcommon)
+    - pkgconfig(zlib)
     - pkgconfig32(libcap)
-    - pkgconfig32(libcurl)
-    - pkgconfig32(libffi)
-    - pkgconfig32(libidn2)
-    - pkgconfig32(liblz4)
-    - pkgconfig32(liblzma)
-    - pkgconfig32(libpcre2-8)
-    - pkgconfig32(libseccomp)
-    - pkgconfig32(libssl)
     - pkgconfig32(libxcrypt)
     - pkgconfig32(libzstd)
     - pkgconfig32(mount)
-    - pkgconfig32(openssl)
-    - pkgconfig32(pam)
-    - pkgconfig32(xkbcommon)
-    - pkgconfig32(zlib)
+    - python(jinja2)
     - docbook
     - docbook-xsl
-    - gcc-32bit # Only needed for libgcc_s.so, can be removed in systemd >= 255
     - gettext-devel
-    - python-jinja
+    # libaudit (+32bit)
 rundeps     :
     # Dash is now the default system shell (/usr/bin/sh) so we need to ensure it is always present and pulled in on existing systems
     - binary(dash)
@@ -76,101 +76,147 @@ environment : |
     # Temporary, replace with boulder macro
     export XML_CATALOG_FILES="file:///usr/share/defaults/docbook/docbook-dtd/catalog file:///usr/share/defaults/docbook/docbook-xsl/catalog"
 setup       : |
-    %patch %(pkgdir)/patches/downstream/0016-tmpfiles-Make-var-cache-ldconfig-world-readable.patch
-    %patch %(pkgdir)/patches/downstream/systemd-245-disable-audit-by-default.patch
+    %patch %(pkgdir)/patches/downstream/0001-tmpfiles-Make-var-cache-ldconfig-world-readable.patch
+    %patch %(pkgdir)/patches/downstream/0001-downstream-Disable-kernel-auditing-by-default.patch
     %patch %(pkgdir)/patches/downstream/0001-tmpfiles-Allow-nsswitch-clobber-at-non-boot-interval.patch
     %patch %(pkgdir)/patches/downstream/0001-gpt-auto-generate-Stop-automounting-xbootldr-and-esp.patch
-    %patch %(pkgdir)/patches/downstream/0009-path-lookup-Include-stateless-xdg-path-by-default.patch
-    %patch %(pkgdir)/patches/downstream/0013-downstream-Allow-default-font-to-be-set.patch
+    %patch %(pkgdir)/patches/downstream/0001-path-lookup-Include-stateless-xdg-path-by-default.patch
+    %patch %(pkgdir)/patches/downstream/0001-downstream-Allow-default-font-to-be-set.patch
+    %patch %(pkgdir)/patches/downstream/0001-Don-t-build-32bit-EFI-stub.patch
 
-    %patch %(pkgdir)/patches/upstream/0001-vconsole-setup-port-to-main-func.h-boilerplate.patch
-    %patch %(pkgdir)/patches/upstream/0002-pid1-vconsole-setup-lock-dev-console-instead-of-the-.patch
-    %patch %(pkgdir)/patches/upstream/0003-vconsole-setup-use-a-consistent-log-level-when-setfo.patch
-    %patch %(pkgdir)/patches/upstream/0004-vconsole-setup-handle-the-case-where-the-vc-is-in-KD.patch
-    %patch %(pkgdir)/patches/upstream/0005-vconsole-setup-simplify-error-handling.patch
-    %patch %(pkgdir)/patches/upstream/0006-vconsole-setup-remember-the-correct-error-value-when.patch
-    %patch %(pkgdir)/patches/upstream/0007-Introduce-RET_GATHER-and-use-it-in-src-shared.patch
-    %patch %(pkgdir)/patches/upstream/31661.patch
+    # Upstream patches
+    %patch %(pkgdir)/patches/upstream/0001-boot-only-link-libgcc-when-compiler-is-gcc.patch
 
-    _IS_64BIT_BUILD="true"
+    _IS_64BIT_BOOL="true"
+    _IS_64BIT_FEAT="enabled"
     if [[ %(target_triple) = i686* ]]; then
-        _IS_64BIT_BUILD="false"
+        _IS_64BIT_BOOL="false"
+        _IS_64BIT_FEAT="disabled"
     fi
 
+    # TODO:
+    # - Figure out what to do about run0. Do we keep it? If so it should be tested and configured
+    # - Make sure that openssh works with the stateless paths that systemd installs
     %meson \
-        -Dacl=true \
+        -Dacl=${_IS_64BIT_FEAT} \
         -Dadm-gid=16 \
         -Dadm-group=true \
+        -Danalyze=${_IS_64BIT_BOOL} \
         -Daudio-gid=11 \
-        -Dblkid=${_IS_64BIT_BUILD} \
-        -Dbootloader=${_IS_64BIT_BUILD} \
+        -Dbacklight=${_IS_64BIT_BOOL} \
+        -Dbinfmt=${_IS_64BIT_BOOL} \
+        -Dblkid=${_IS_64BIT_FEAT} \
+        -Dbootloader=${_IS_64BIT_FEAT} \
         -Dbpf-compiler="clang" \
-        -Dbpf-framework=${_IS_64BIT_BUILD}  \
+        -Dbpf-framework=${_IS_64BIT_FEAT} \
+        -Dbzip2=${_IS_64BIT_FEAT} \
         -Dcdrom-gid=15 \
-        -Dcoredump=${_IS_64BIT_BUILD}  \
+        -Dcoredump=${_IS_64BIT_BOOL} \
         -Dcreate-log-dirs=false \
         -Ddefault-compression=zstd \
         -Ddefault-dnssec=no \
         -Ddefault-timeout-sec=5 \
         -Ddialout-gid=10 \
         -Ddisk-gid=8 \
-        -Ddns-over-tls="openssl" \
-        -Defi=${_IS_64BIT_BUILD} \
+        -Ddns-over-tls=${_IS_64BIT_BOOL} \
+        -Defi=${_IS_64BIT_BOOL} \
+        -Delfutils=${_IS_64BIT_FEAT} \
+        -Denvironment-d=${_IS_64BIT_BOOL} \
+        -Dfdisk=${_IS_64BIT_FEAT} \
+        -Dfirstboot=${_IS_64BIT_BOOL} \
         -Dfuzz-tests=false \
-        -Dhomed=${_IS_64BIT_BUILD} \
+        -Dgshadow=${_IS_64BIT_BOOL} \
+        -Dhibernate=${_IS_64BIT_BOOL} \
+        -Dhomed=${_IS_64BIT_FEAT} \
+        -Dhostnamed=${_IS_64BIT_BOOL} \
+        -Didn=${_IS_64BIT_BOOL} \
+        -Dima=${_IS_64BIT_BOOL} \
+        -Dinitrd=${_IS_64BIT_BOOL} \
         -Dinstall-sysconfdir=false \
         -Dinstall-tests=false \
+        -Dipe=${_IS_64BIT_BOOL} \
         -Dkernel-install=false \
         -Dkmem-gid=3 \
-        -Dkmod=${_IS_64BIT_BUILD} \
+        -Dkmod=${_IS_64BIT_FEAT} \
         -Dkvm-gid=61 \
-        -Dlibcryptsetup=${_IS_64BIT_BUILD} \
-        -Dlibfido2=${_IS_64BIT_BUILD} \
-        -Dlogind=${_IS_64BIT_BUILD} \
+        -Dldconfig=${_IS_64BIT_BOOL} \
+        -Dlibarchive=${_IS_64BIT_FEAT} \
+        -Dlibcryptsetup=${_IS_64BIT_FEAT} \
+        -Dlibcurl=${_IS_64BIT_FEAT} \
+        -Dlibfido2=${_IS_64BIT_FEAT} \
+        -Dlibidn2=${_IS_64BIT_FEAT} \
+        -Dlocaled=${_IS_64BIT_BOOL} \
+        -Dlogind=${_IS_64BIT_BOOL} \
         -Dlp-gid=9 \
-        -Dmachined=${_IS_64BIT_BUILD} \
-        -Dman=${_IS_64BIT_BUILD} \
+        -Dmachined=${_IS_64BIT_BOOL} \
+        -Dman=${_IS_64BIT_FEAT} \
+        -Dmicrohttpd=${_IS_64BIT_FEAT} \
         -Dmode=release \
-        -Dnetworkd=${_IS_64BIT_BUILD} \
+        -Dmountfsd=${_IS_64BIT_BOOL} \
+        -Dnetworkd=${_IS_64BIT_BOOL} \
         -Dnobody-group=nobody \
         -Dnobody-user=nobody \
+        -Dnsresourced=${_IS_64BIT_BOOL} \
         -Dnss-systemd=true \
         -Dok-color=highlight-blue \
-        -Dopenssl=true \
+        -Doomd=${_IS_64BIT_BOOL} \
+        -Dopenssl=${_IS_64BIT_FEAT} \
+        -Dp11kit=${_IS_64BIT_FEAT} \
+        -Dpam=${_IS_64BIT_FEAT} \
         -Dpamconfdir="%(vendordir)/pam.d" \
         -Dpamlibdir="%(libdir)/security" \
-        -Dpcre2=true \
-        -Dportabled=${_IS_64BIT_BUILD} \
-        -Dpstore=${_IS_64BIT_BUILD} \
-        -Dpwquality=${_IS_64BIT_BUILD} \
+        -Dpcre2=${_IS_64BIT_FEAT} \
+        -Dpolkit=${_IS_64BIT_FEAT} \
+        -Dportabled=${_IS_64BIT_BOOL} \
+        -Dpstore=${_IS_64BIT_BOOL} \
+        -Dpwquality=${_IS_64BIT_FEAT} \
+        -Dqrencode=${_IS_64BIT_FEAT} \
+        -Dquotacheck=${_IS_64BIT_BOOL} \
+        -Drandomseed=${_IS_64BIT_BOOL} \
         -Drender-gid=30 \
-        -Drepart=${_IS_64BIT_BUILD} \
-        -Drfkill=${_IS_64BIT_BUILD} \
+        -Drepart=${_IS_64BIT_FEAT} \
+        -Drfkill=${_IS_64BIT_BOOL} \
         -Drpmmacrosdir=no \
         -Dsbat-distro="aerynos" \
         -Dsbat-distro-summary="AerynOS" \
         -Dsbat-distro-pkgname="%(name)" \
         -Dsbat-distro-version="%(version)" \
         -Dsbat-distro-url="https://aerynos.com/" \
+        -Dseccomp=${_IS_64BIT_FEAT} \
         -Dsgx-gid=405 \
+        -Dshellprofiledir="%(vendordir)/etc/profile.d" \
         -Dslow-tests=false \
+        -Dsmack=${_IS_64BIT_BOOL} \
         -Dsplit-bin=true \
-        -Dsplit-usr=false \
+        -Dsshconfdir="%(vendordir)/ssh/ssh_config.d" \
+        -Dsshdconfdir="%(vendordir)/ssh/sshd_config.d" \
         -Dstatus-unit-format-default=combined \
-        -Dsysupdate=false \
+        -Dstoragetm=${_IS_64BIT_BOOL} \
+        -Dsysext=${_IS_64BIT_BOOL} \
+        -Dsysupdate=disabled \
+        -Dsysupdated=disabled \
+        -Dsysusers=${_IS_64BIT_BOOL} \
         -Dsysvinit-path="" \
         -Dtape-gid=4 \
         -Dtests=false \
-        -Dtpm=${_IS_64BIT_BUILD} \
+        -Dtimedated=${_IS_64BIT_BOOL} \
+        -Dtimesyncd=${_IS_64BIT_BOOL} \
+        -Dtmpfiles=${_IS_64BIT_BOOL} \
+        -Dtpm=${_IS_64BIT_BOOL} \
+        -Dtpm2=${_IS_64BIT_FEAT} \
         -Dtty-gid=5 \
         -Duser-path=/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin \
-        -Duserdb=${_IS_64BIT_BUILD}  \
+        -Duserdb=${_IS_64BIT_BOOL}  \
         -Dusers-gid=100 \
+        -Dutmp=${_IS_64BIT_BOOL} \
         -Dutmp-gid=13 \
+        -Dvconsole=${_IS_64BIT_BOOL} \
         -Dvideo-gid=12 \
         -Dwheel-gid=28 \
         -Dwheel-group=true \
-        -Dxdg-autostart=${_IS_64BIT_BUILD}
+        -Dxdg-autostart=${_IS_64BIT_BOOL} \
+        -Dxkbcommon=${_IS_64BIT_FEAT} \
+        -Dzlib=${_IS_64BIT_FEAT}
 build       : |
     %meson_build
 install     : |
@@ -204,12 +250,30 @@ install     : |
     # And transaction triggers
     %install_file %(pkgdir)/systemd_hwdb.yaml %(installroot)/usr/share/moss/triggers/tx.d/systemd_hwdb.yaml
 
-    rm -v %(installroot)%(libdir)/systemd/boot/efi/*32.efi*
-
     %install_exe -t %(installroot)/usr/lib/systemd/system-environment-generators %(pkgdir)/configs/50-xdg-{config,data}-dirs
-tuning      :
-    - icf: false # Can be removed in systemd >= 255
 packages    :
+    - "%(name)":
+        rundeps:
+            # These dependencies are all dlopen()ed
+            - soname(libbpf.so.1(x86_64))
+            - soname(libcryptsetup.so.12(x86_64))
+            - soname(libidn2.so.0(x86_64))
+            - soname(libkmod.so.2(x86_64))
+            - soname(libpcre2-8.so.0(x86_64))
+            - soname(libpwquality.so.1(x86_64))
+            - soname(libqrencode.so.4(x86_64))
+            - soname(libxkbcommon.so.0(x86_64))
+            - soname(libzstd.so.1(x86_64))
+            # systemd-coredump and systemd-analyze
+            - soname(libdw.so.1(x86_64))
+            - soname(libelf.so.1(x86_64))
+
+    - "%(name)-32bit":
+        rundeps:
+            # Somewhere between Systemd v254 and v257 compression algorithms were switched to dlopen. Our build supports xz/lz4/zstd but since
+            # zstd is the default make that the only required dependency
+            - soname(libzstd.so.1(386))
+
     - "%(name)-networkd":
         summary: systemd-networkd
         description: systemd-networkd
@@ -228,3 +292,12 @@ packages    :
             - /usr/share/man/man8/*network*
             - /usr/share/polkit-1/actions/*network*
             - /usr/share/polkit-1/rules.d/*network*
+
+    - "%(name)-ukify":
+        summary: Tool to build Unified Kernel Images (Unsupported)
+        description: Tool to build Unified Kernel Images (Unsupported)
+        # Probably needs python-pefile
+        paths:
+            - /usr/bin/ukify
+            - /usr/lib/systemd/ukify
+            - /usr/share/man/man1/ukify.1
