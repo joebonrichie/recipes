@@ -5,7 +5,7 @@
 #
 name        : gtk-4
 version     : 4.18.6
-release     : 26
+release     : 27
 homepage    : https://www.gtk.org/
 upstreams   :
     - https://download.gnome.org/sources/gtk/4.18/gtk-4.18.6.tar.xz : e1817c650ddc3261f9a8345b3b22a26a5d80af154630dedc03cc7becefffd0fa
@@ -18,6 +18,7 @@ license     :
     - LGPL-2.1-or-later
 builddeps   :
     - binary(gettext)
+    - binary(rst2man)
     - cmake(VulkanHeaders)
     - pkgconfig(cairo)
     - pkgconfig(cloudproviders)
@@ -53,32 +54,16 @@ builddeps   :
     - pkgconfig(xrandr)
     # - pkgconfig(cpdb-frontend)
     # - pkgconfig(sysprof-4)
-rundeps     :
-    - gsettings-desktop-schemas
-    # Moss upgrade bug
-    - gstreamer-plugins-base
-packages    :
-    - "%(name)-demos":
-        summary: Demonstrations of GTK4 toolkit
-        description: Demonstration of GTK4 toolkit
-        paths:
-            - /usr/bin/*
-            - /usr/share/applications
-            - /usr/share/metainfo
-    - "%(name)-devel":
-        paths:
-            - /usr/bin/gtk4-encode-symbolic-svg
-        rundeps:
-            - cmake(VulkanHeaders)
-    - "%(name)":
-        paths:
-            - /usr/bin/gtk4-update-icon-cache
-            - /usr/bin/gtk4-launch
+    # AccessKit ?
 setup       : |
+    # https://gitlab.gnome.org/GNOME/glib/-/issues/1833
+    export CFLAGS+=" -DG_DISABLE_CAST_CHECKS -DG_DISABLE_ASSERT"
+
     %meson \
             -Dcloudproviders=enabled \
             -Dcolord=enabled \
             -Dintrospection=enabled \
+            -Dman-pages=true \
             -Dmedia-gstreamer=enabled \
             -Dtracker=enabled \
             -Dvulkan=enabled
@@ -86,3 +71,49 @@ build       : |
     %meson_build
 install     : |
     %meson_install
+
+    # We don't enable broadwayd
+    rm -v %(installroot)/usr/share/man/man1/gtk4-broadwayd.1
+packages    :
+    - "%(name)":
+        rundeps     :
+            - gsettings-desktop-schemas
+        paths:
+            - /usr/bin/gtk4-update-icon-cache
+            - /usr/bin/gtk4-launch
+
+    - "%(name)-devel":
+        paths:
+            - /usr/bin/gtk4-builder-tool
+            - /usr/bin/gtk4-encode-symbolic-svg
+            - /usr/bin/gtk4-image-tool
+            - /usr/bin/gtk4-path-tool
+            - /usr/bin/gtk4-query-settings
+            - /usr/bin/gtk4-rendernode-tool
+            - /usr/share/gettext/
+            - /usr/share/gtk-4.0/valgrind/
+            - /usr/share/gtk-4.0/gtk4builder.rng
+            - /usr/share/man/man1/gtk4-builder-tool.1*
+            - /usr/share/man/man1/gtk4-encode-symbolic-svg.1*
+            - /usr/share/man/man1/gtk4-image-tool.1*
+            - /usr/share/man/man1/gtk4-path-tool.1*
+            - /usr/share/man/man1/gtk4-query-settings.1*
+            - /usr/share/man/man1/gtk4-rendernode-tool.1*
+        rundeps:
+            - cmake(VulkanHeaders)
+
+    - "%(name)-demos":
+        summary: Demonstrations of GTK4 toolkit
+        description: Demonstration of GTK4 toolkit
+        paths:
+            - /usr/bin/gtk4-demo*
+            - /usr/bin/gtk4-node-editor
+            - /usr/bin/gtk4-print-editor
+            - /usr/bin/gtk4-widget-factory
+            - /usr/share/glib-2.0/schemas/org.gtk.Demo4.gschema.xml
+            - /usr/share/applications
+            - /usr/share/icons/hicolor/
+            - /usr/share/man/man1/gtk4-demo*.1*
+            - /usr/share/man/man1/gtk4-node-editor.1*
+            - /usr/share/man/man1/gtk4-widget-factory.1*
+            - /usr/share/metainfo
