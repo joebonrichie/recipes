@@ -5,7 +5,7 @@
 #
 name        : systemd
 version     : "257.8"
-release     : 63
+release     : 64
 summary     : A System and Service Manager
 license     :
     - GPL-2.0-or-later
@@ -274,6 +274,29 @@ packages    :
             # Somewhere between Systemd v254 and v257 compression algorithms were switched to dlopen. Our build supports xz/lz4/zstd but since
             # zstd is the default make that the only required dependency
             - soname(libzstd.so.1(386))
+
+    - "%(name)-journal-remote":
+        summary: tools for sending and receiving remote journal logs
+        description: |
+            This package provides tools for sending and receiving remote journal logs:
+
+             * systemd-journal-remote
+             * systemd-journal-upload
+             * systemd-journal-gatewayd
+        rundeps:
+            - "%(name)"
+        paths:
+            - /usr/lib/systemd/systemd-journal-gatewayd
+            - /usr/lib/systemd/systemd-journal-remote
+            - /usr/lib/systemd/systemd-journal-upload
+            - /usr/lib/systemd/system/systemd-journal-gatewayd*
+            - /usr/lib/systemd/system/systemd-journal-remote*
+            - /usr/lib/systemd/system/systemd-journal-upload*
+            - /usr/lib/sysusers.d/systemd-remote.conf
+            - /usr/share/man/man5/journal-remote.conf*.5
+            - /usr/share/man/man5/journal-upload.conf*.5
+            - /usr/share/man/man8/systemd-journal-*.8
+            - /usr/share/systemd/gatewayd/
 
     - "%(name)-networkd":
         summary: systemd-networkd
