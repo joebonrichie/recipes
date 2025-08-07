@@ -1,0 +1,13 @@
+name: gtk3_query_immodules
+description: |
+    Probe GTK3 input methods
+
+handlers:
+    gtk3_query_immodules:
+        run: /usr/bin/gtk-query-immodules-3.0
+        args: ["--update-cache"]
+
+paths:
+    "/usr/lib/gtk-3.0/3.0.0/immodules/*.so" :
+        handlers:
+            - gtk3_query_immodules
