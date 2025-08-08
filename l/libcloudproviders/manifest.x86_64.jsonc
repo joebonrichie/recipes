@@ -17,9 +17,7 @@
 			"files": [
 				"/usr/lib/girepository-1.0/CloudProviders-0.3.typelib",
 				"/usr/lib/libcloudproviders.so.0",
-				"/usr/lib/libcloudproviders.so.0.3.6",
-				"/usr/share/vala/vapi/cloudproviders.deps",
-				"/usr/share/vala/vapi/cloudproviders.vapi"
+				"/usr/lib/libcloudproviders.so.0.3.6"
 			],
 			"name": "libcloudproviders",
 			"provides": [
@@ -45,7 +43,9 @@
 				"/usr/include/cloudproviders/enums.h",
 				"/usr/lib/libcloudproviders.so",
 				"/usr/lib/pkgconfig/cloudproviders.pc",
-				"/usr/share/gir-1.0/CloudProviders-0.3.gir"
+				"/usr/share/gir-1.0/CloudProviders-0.3.gir",
+				"/usr/share/vala/vapi/cloudproviders.deps",
+				"/usr/share/vala/vapi/cloudproviders.vapi"
 			],
 			"name": "libcloudproviders-devel",
 			"provides": [
@@ -54,6 +54,6 @@
 		}
 	},
 	"source-name": "libcloudproviders",
-	"source-release": "4",
+	"source-release": "5",
 	"source-version": "0.3.6"
 }
