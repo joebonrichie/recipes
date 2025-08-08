@@ -12,50 +12,23 @@
 				"pkgconfig32(wayland-client)",
 				"pkgconfig32(wayland-scanner)",
 				"pkgconfig32(xcb)",
-				"pkgconfig32(xcb-xkb)"
+				"pkgconfig32(xcb-xkb)",
+				"python(jinja2)",
+				"xkeyboard-config"
 			],
 			"depends": [
-				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
 				"soname(libc.so.6(x86_64))",
-				"soname(libwayland-client.so.0(x86_64))",
-				"soname(libxcb-xkb.so.1(x86_64))",
-				"soname(libxcb.so.1(x86_64))",
 				"soname(libxml2.so.16(x86_64))",
 				"xkeyboard-config"
 			],
 			"files": [
-				"/usr/bin/xkbcli",
-				"/usr/lib/libxkbcommon-x11.so.0",
-				"/usr/lib/libxkbcommon-x11.so.0.10.0",
 				"/usr/lib/libxkbcommon.so.0",
-				"/usr/lib/libxkbcommon.so.0.10.0",
-				"/usr/lib/libxkbcommon/xkbcommon/xkbcli-compile-compose",
-				"/usr/lib/libxkbcommon/xkbcommon/xkbcli-compile-keymap",
-				"/usr/lib/libxkbcommon/xkbcommon/xkbcli-dump-keymap-wayland",
-				"/usr/lib/libxkbcommon/xkbcommon/xkbcli-dump-keymap-x11",
-				"/usr/lib/libxkbcommon/xkbcommon/xkbcli-how-to-type",
-				"/usr/lib/libxkbcommon/xkbcommon/xkbcli-interactive-evdev",
-				"/usr/lib/libxkbcommon/xkbcommon/xkbcli-interactive-wayland",
-				"/usr/lib/libxkbcommon/xkbcommon/xkbcli-interactive-x11",
-				"/usr/lib/libxkbcommon/xkbcommon/xkbcli-list",
+				"/usr/lib/libxkbcommon.so.0.11.0",
 				"/usr/lib/libxkbregistry.so.0",
-				"/usr/lib/libxkbregistry.so.0.10.0",
-				"/usr/share/bash-completion/completions/xkbcli",
-				"/usr/share/man/man1/xkbcli-compile-compose.1",
-				"/usr/share/man/man1/xkbcli-compile-keymap.1",
-				"/usr/share/man/man1/xkbcli-dump-keymap-wayland.1",
-				"/usr/share/man/man1/xkbcli-dump-keymap-x11.1",
-				"/usr/share/man/man1/xkbcli-how-to-type.1",
-				"/usr/share/man/man1/xkbcli-interactive-evdev.1",
-				"/usr/share/man/man1/xkbcli-interactive-wayland.1",
-				"/usr/share/man/man1/xkbcli-interactive-x11.1",
-				"/usr/share/man/man1/xkbcli-list.1",
-				"/usr/share/man/man1/xkbcli.1"
+				"/usr/lib/libxkbregistry.so.0.11.0"
 			],
 			"name": "libxkbcommon",
 			"provides": [
-				"binary(xkbcli)",
-				"soname(libxkbcommon-x11.so.0(x86_64))",
 				"soname(libxkbcommon.so.0(x86_64))",
 				"soname(libxkbregistry.so.0(x86_64))"
 			]
@@ -70,7 +43,9 @@
 				"pkgconfig32(wayland-client)",
 				"pkgconfig32(wayland-scanner)",
 				"pkgconfig32(xcb)",
-				"pkgconfig32(xcb-xkb)"
+				"pkgconfig32(xcb-xkb)",
+				"python(jinja2)",
+				"xkeyboard-config"
 			],
 			"depends": [
 				"interpreter(/usr/lib32/ld-linux.so.2(386))",
@@ -83,20 +58,22 @@
 			],
 			"files": [
 				"/usr/lib32/libxkbcommon-x11.so.0",
-				"/usr/lib32/libxkbcommon-x11.so.0.10.0",
+				"/usr/lib32/libxkbcommon-x11.so.0.11.0",
 				"/usr/lib32/libxkbcommon.so.0",
-				"/usr/lib32/libxkbcommon.so.0.10.0",
+				"/usr/lib32/libxkbcommon.so.0.11.0",
 				"/usr/lib32/libxkbcommon/xkbcommon/xkbcli-compile-compose",
 				"/usr/lib32/libxkbcommon/xkbcommon/xkbcli-compile-keymap",
+				"/usr/lib32/libxkbcommon/xkbcommon/xkbcli-dump-keymap",
 				"/usr/lib32/libxkbcommon/xkbcommon/xkbcli-dump-keymap-wayland",
 				"/usr/lib32/libxkbcommon/xkbcommon/xkbcli-dump-keymap-x11",
 				"/usr/lib32/libxkbcommon/xkbcommon/xkbcli-how-to-type",
+				"/usr/lib32/libxkbcommon/xkbcommon/xkbcli-interactive",
 				"/usr/lib32/libxkbcommon/xkbcommon/xkbcli-interactive-evdev",
 				"/usr/lib32/libxkbcommon/xkbcommon/xkbcli-interactive-wayland",
 				"/usr/lib32/libxkbcommon/xkbcommon/xkbcli-interactive-x11",
 				"/usr/lib32/libxkbcommon/xkbcommon/xkbcli-list",
 				"/usr/lib32/libxkbregistry.so.0",
-				"/usr/lib32/libxkbregistry.so.0.10.0"
+				"/usr/lib32/libxkbregistry.so.0.11.0"
 			],
 			"name": "libxkbcommon-32bit",
 			"provides": [
@@ -115,7 +92,9 @@
 				"pkgconfig32(wayland-client)",
 				"pkgconfig32(wayland-scanner)",
 				"pkgconfig32(xcb)",
-				"pkgconfig32(xcb-xkb)"
+				"pkgconfig32(xcb-xkb)",
+				"python(jinja2)",
+				"xkeyboard-config"
 			],
 			"depends": [
 				"libxkbcommon-32bit",
@@ -149,38 +128,171 @@
 				"pkgconfig32(wayland-client)",
 				"pkgconfig32(wayland-scanner)",
 				"pkgconfig32(xcb)",
-				"pkgconfig32(xcb-xkb)"
+				"pkgconfig32(xcb-xkb)",
+				"python(jinja2)",
+				"xkeyboard-config"
 			],
 			"depends": [
 				"libxkbcommon",
-				"pkgconfig(libxml-2.0)",
-				"pkgconfig(xcb)",
-				"pkgconfig(xcb-xkb)"
+				"pkgconfig(libxml-2.0)"
 			],
 			"files": [
 				"/usr/include/xkbcommon/xkbcommon-compat.h",
 				"/usr/include/xkbcommon/xkbcommon-compose.h",
 				"/usr/include/xkbcommon/xkbcommon-keysyms.h",
 				"/usr/include/xkbcommon/xkbcommon-names.h",
-				"/usr/include/xkbcommon/xkbcommon-x11.h",
 				"/usr/include/xkbcommon/xkbcommon.h",
 				"/usr/include/xkbcommon/xkbregistry.h",
-				"/usr/lib/libxkbcommon-x11.so",
 				"/usr/lib/libxkbcommon.so",
 				"/usr/lib/libxkbregistry.so",
-				"/usr/lib/pkgconfig/xkbcommon-x11.pc",
 				"/usr/lib/pkgconfig/xkbcommon.pc",
 				"/usr/lib/pkgconfig/xkbregistry.pc"
 			],
 			"name": "libxkbcommon-devel",
 			"provides": [
 				"pkgconfig(xkbcommon)",
-				"pkgconfig(xkbcommon-x11)",
 				"pkgconfig(xkbregistry)"
 			]
+		},
+		"libxkbcommon-utils": {
+			"build-depends": [
+				"binary(bison)",
+				"binary(m4)",
+				"pkgconfig(wayland-protocols)",
+				"pkgconfig32(icu-uc)",
+				"pkgconfig32(libxml-2.0)",
+				"pkgconfig32(wayland-client)",
+				"pkgconfig32(wayland-scanner)",
+				"pkgconfig32(xcb)",
+				"pkgconfig32(xcb-xkb)",
+				"python(jinja2)",
+				"xkeyboard-config"
+			],
+			"depends": [
+				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
+				"soname(libc.so.6(x86_64))",
+				"soname(libwayland-client.so.0(x86_64))",
+				"soname(libxkbcommon.so.0(x86_64))",
+				"soname(libxkbregistry.so.0(x86_64))"
+			],
+			"files": [
+				"/usr/bin/xkbcli",
+				"/usr/lib/libxkbcommon/xkbcommon/xkbcli-compile-compose",
+				"/usr/lib/libxkbcommon/xkbcommon/xkbcli-compile-keymap",
+				"/usr/lib/libxkbcommon/xkbcommon/xkbcli-dump-keymap",
+				"/usr/lib/libxkbcommon/xkbcommon/xkbcli-dump-keymap-wayland",
+				"/usr/lib/libxkbcommon/xkbcommon/xkbcli-how-to-type",
+				"/usr/lib/libxkbcommon/xkbcommon/xkbcli-interactive",
+				"/usr/lib/libxkbcommon/xkbcommon/xkbcli-interactive-evdev",
+				"/usr/lib/libxkbcommon/xkbcommon/xkbcli-interactive-wayland",
+				"/usr/lib/libxkbcommon/xkbcommon/xkbcli-list",
+				"/usr/share/bash-completion/completions/xkbcli",
+				"/usr/share/man/man1/xkbcli-compile-compose.1",
+				"/usr/share/man/man1/xkbcli-compile-keymap.1",
+				"/usr/share/man/man1/xkbcli-dump-keymap-wayland.1",
+				"/usr/share/man/man1/xkbcli-how-to-type.1",
+				"/usr/share/man/man1/xkbcli-interactive-evdev.1",
+				"/usr/share/man/man1/xkbcli-interactive-wayland.1",
+				"/usr/share/man/man1/xkbcli-list.1",
+				"/usr/share/man/man1/xkbcli.1"
+			],
+			"name": "libxkbcommon-utils",
+			"provides": [
+				"binary(xkbcli)"
+			]
+		},
+		"libxkbcommon-x11": {
+			"build-depends": [
+				"binary(bison)",
+				"binary(m4)",
+				"pkgconfig(wayland-protocols)",
+				"pkgconfig32(icu-uc)",
+				"pkgconfig32(libxml-2.0)",
+				"pkgconfig32(wayland-client)",
+				"pkgconfig32(wayland-scanner)",
+				"pkgconfig32(xcb)",
+				"pkgconfig32(xcb-xkb)",
+				"python(jinja2)",
+				"xkeyboard-config"
+			],
+			"depends": [
+				"soname(libc.so.6(x86_64))",
+				"soname(libxcb-xkb.so.1(x86_64))",
+				"soname(libxcb.so.1(x86_64))",
+				"soname(libxkbcommon.so.0(x86_64))"
+			],
+			"files": [
+				"/usr/lib/libxkbcommon-x11.so.0",
+				"/usr/lib/libxkbcommon-x11.so.0.11.0"
+			],
+			"name": "libxkbcommon-x11",
+			"provides": [
+				"soname(libxkbcommon-x11.so.0(x86_64))"
+			]
+		},
+		"libxkbcommon-x11-devel": {
+			"build-depends": [
+				"binary(bison)",
+				"binary(m4)",
+				"pkgconfig(wayland-protocols)",
+				"pkgconfig32(icu-uc)",
+				"pkgconfig32(libxml-2.0)",
+				"pkgconfig32(wayland-client)",
+				"pkgconfig32(wayland-scanner)",
+				"pkgconfig32(xcb)",
+				"pkgconfig32(xcb-xkb)",
+				"python(jinja2)",
+				"xkeyboard-config"
+			],
+			"depends": [
+				"libxkbcommon-x11",
+				"pkgconfig(xcb)",
+				"pkgconfig(xcb-xkb)",
+				"pkgconfig(xkbcommon)"
+			],
+			"files": [
+				"/usr/include/xkbcommon/xkbcommon-x11.h",
+				"/usr/lib/libxkbcommon-x11.so",
+				"/usr/lib/pkgconfig/xkbcommon-x11.pc"
+			],
+			"name": "libxkbcommon-x11-devel",
+			"provides": [
+				"pkgconfig(xkbcommon-x11)"
+			]
+		},
+		"libxkbcommon-x11-utils": {
+			"build-depends": [
+				"binary(bison)",
+				"binary(m4)",
+				"pkgconfig(wayland-protocols)",
+				"pkgconfig32(icu-uc)",
+				"pkgconfig32(libxml-2.0)",
+				"pkgconfig32(wayland-client)",
+				"pkgconfig32(wayland-scanner)",
+				"pkgconfig32(xcb)",
+				"pkgconfig32(xcb-xkb)",
+				"python(jinja2)",
+				"xkeyboard-config"
+			],
+			"depends": [
+				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
+				"libxkbcommon-utils",
+				"soname(libc.so.6(x86_64))",
+				"soname(libxcb-xkb.so.1(x86_64))",
+				"soname(libxcb.so.1(x86_64))",
+				"soname(libxkbcommon-x11.so.0(x86_64))",
+				"soname(libxkbcommon.so.0(x86_64))"
+			],
+			"files": [
+				"/usr/lib/libxkbcommon/xkbcommon/xkbcli-dump-keymap-x11",
+				"/usr/lib/libxkbcommon/xkbcommon/xkbcli-interactive-x11",
+				"/usr/share/man/man1/xkbcli-dump-keymap-x11.1",
+				"/usr/share/man/man1/xkbcli-interactive-x11.1"
+			],
+			"name": "libxkbcommon-x11-utils"
 		}
 	},
 	"source-name": "libxkbcommon",
-	"source-release": "9",
-	"source-version": "1.10.0"
+	"source-release": "10",
+	"source-version": "1.11.0"
 }

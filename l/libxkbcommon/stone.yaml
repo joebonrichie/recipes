@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : libxkbcommon
-version     : 1.10.0
-release     : 9
+version     : 1.11.0
+release     : 10
 homepage    : https://xkbcommon.org
 upstreams   :
-    - https://github.com/xkbcommon/libxkbcommon/archive/refs/tags/xkbcommon-1.10.0.tar.gz : 0427585a4d6ca17c9fc1ac4b539bf303348e9080af70c5ea402503bc370a9631
+    - https://github.com/xkbcommon/libxkbcommon/archive/refs/tags/xkbcommon-1.11.0.tar.gz : 78a6b14f16e9a55025978c252e53ce9e16a02bfdb929550b9a0db5af87db7e02
 summary     : Library for handling of keyboard descriptions
 description : |
     xkbcommon is a library for handling of keyboard descriptions, including
@@ -26,6 +26,8 @@ builddeps   :
     - pkgconfig32(wayland-scanner)
     - pkgconfig32(xcb)
     - pkgconfig32(xcb-xkb)
+    - python(jinja2)
+    - xkeyboard-config
 rundeps     :
     - xkeyboard-config
 setup       : |
@@ -34,3 +36,39 @@ build       : |
     %meson_build
 install     : |
     %meson_install
+packages    :
+    - "%(name)-x11":
+        summary: X.Org X11 XKB keymap creation library
+        description: X.Org X11 XKB keymap creation library
+        paths:
+            - /usr/lib/libxkbcommon-x11.so.*
+
+    - "%(name)-x11-devel":
+        summary: X.Org X11 XKB keymap creation library - development files
+        description: X.Org X11 XKB keymap creation library - development files
+        rundeps:
+            - "%(name)-x11"
+        paths:
+            - /usr/include/xkbcommon/xkbcommon-x11.h
+            - /usr/lib/libxkbcommon-x11.so
+            - /usr/lib/pkgconfig/xkbcommon-x11.pc
+
+    - "%(name)-utils":
+        summary: X.Org XKB parsing utilities
+        description: X.Org XKB parsing utilities
+        paths:
+            - /usr/bin/xkbcli
+            - /usr/lib/libxkbcommon/xkbcommon/
+            - /usr/share/bash-completion/completions/xkbcli
+            - /usr/share/man/man1/
+
+    - "%(name)-x11-utils":
+        summary: X.Org X11 XKB parsing utilities
+        description: X.Org X11 XKB parsing utilities
+        rundeps:
+            - "%(name)-utils"
+        paths:
+            - /usr/lib/libxkbcommon/xkbcommon/xkbcli-dump-keymap-x11
+            - /usr/lib/libxkbcommon/xkbcommon/xkbcli-interactive-x11
+            - /usr/share/man/man1/xkbcli-dump-keymap-x11.1*
+            - /usr/share/man/man1/xkbcli-interactive-x11.1*
