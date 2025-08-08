@@ -8,13 +8,15 @@
 				"cmake(KF6Config)",
 				"cmake(KF6CoreAddons)",
 				"cmake(KF6I18n)",
-				"cmake(KF6ItemModels)"
+				"cmake(KF6ItemModels)",
+				"cmake(KF6WindowSystem)"
 			],
 			"depends": [
 				"soname(libKF6ConfigCore.so.6(x86_64))",
 				"soname(libKF6CoreAddons.so.6(x86_64))",
 				"soname(libKF6I18n.so.6(x86_64))",
 				"soname(libKF6ItemModels.so.6(x86_64))",
+				"soname(libKF6WindowSystem.so.6(x86_64))",
 				"soname(libQt6Core.so.6(x86_64))",
 				"soname(libQt6DBus.so.6(x86_64))",
 				"soname(libQt6Gui.so.6(x86_64))",
@@ -24,7 +26,7 @@
 			],
 			"files": [
 				"/usr/lib/libKF6Runner.so.6",
-				"/usr/lib/libKF6Runner.so.6.16.0",
+				"/usr/lib/libKF6Runner.so.6.17.0",
 				"/usr/share/qlogging-categories6/krunner.categories",
 				"/usr/share/qlogging-categories6/krunner.renamecategories"
 			],
@@ -39,7 +41,8 @@
 				"cmake(KF6Config)",
 				"cmake(KF6CoreAddons)",
 				"cmake(KF6I18n)",
-				"cmake(KF6ItemModels)"
+				"cmake(KF6ItemModels)",
+				"cmake(KF6WindowSystem)"
 			],
 			"depends": [
 				"cmake(KF6CoreAddons)",
@@ -81,6 +84,6 @@
 		}
 	},
 	"source-name": "kf6-krunner",
-	"source-release": "3",
-	"source-version": "6.16.0"
+	"source-release": "4",
+	"source-version": "6.17.0"
 }
