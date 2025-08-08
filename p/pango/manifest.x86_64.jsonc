@@ -4,6 +4,7 @@
 	"packages": {
 		"pango": {
 			"build-depends": [
+				"binary(rst2man)",
 				"pkgconfig(cairo)",
 				"pkgconfig(fontconfig)",
 				"pkgconfig(freetype2)",
@@ -18,6 +19,7 @@
 				"pkgconfig(xrender)"
 			],
 			"depends": [
+				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
 				"soname(libX11.so.6(x86_64))",
 				"soname(libXft.so.2(x86_64))",
 				"soname(libXrender.so.1(x86_64))",
@@ -34,6 +36,9 @@
 				"soname(libthai.so.0(x86_64))"
 			],
 			"files": [
+				"/usr/bin/pango-list",
+				"/usr/bin/pango-segmentation",
+				"/usr/bin/pango-view",
 				"/usr/lib/girepository-1.0/Pango-1.0.typelib",
 				"/usr/lib/girepository-1.0/PangoCairo-1.0.typelib",
 				"/usr/lib/girepository-1.0/PangoFT2-1.0.typelib",
@@ -47,10 +52,16 @@
 				"/usr/lib/libpangoft2-1.0.so.0",
 				"/usr/lib/libpangoft2-1.0.so.0.5600.4",
 				"/usr/lib/libpangoxft-1.0.so.0",
-				"/usr/lib/libpangoxft-1.0.so.0.5600.4"
+				"/usr/lib/libpangoxft-1.0.so.0.5600.4",
+				"/usr/share/man/man1/pango-list.1",
+				"/usr/share/man/man1/pango-segmentation.1",
+				"/usr/share/man/man1/pango-view.1"
 			],
 			"name": "pango",
 			"provides": [
+				"binary(pango-list)",
+				"binary(pango-segmentation)",
+				"binary(pango-view)",
 				"soname(libpango-1.0.so.0(x86_64))",
 				"soname(libpangocairo-1.0.so.0(x86_64))",
 				"soname(libpangoft2-1.0.so.0(x86_64))",
@@ -59,6 +70,7 @@
 		},
 		"pango-devel": {
 			"build-depends": [
+				"binary(rst2man)",
 				"pkgconfig(cairo)",
 				"pkgconfig(fontconfig)",
 				"pkgconfig(freetype2)",
@@ -73,7 +85,6 @@
 				"pkgconfig(xrender)"
 			],
 			"depends": [
-				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
 				"pango",
 				"pkgconfig(cairo)",
 				"pkgconfig(fontconfig)",
@@ -86,24 +97,9 @@
 				"pkgconfig(harfbuzz-gobject)",
 				"pkgconfig(libthai)",
 				"pkgconfig(xft)",
-				"pkgconfig(xrender)",
-				"soname(libX11.so.6(x86_64))",
-				"soname(libXft.so.2(x86_64))",
-				"soname(libc.so.6(x86_64))",
-				"soname(libcairo.so.2(x86_64))",
-				"soname(libfontconfig.so.1(x86_64))",
-				"soname(libglib-2.0.so.0(x86_64))",
-				"soname(libgobject-2.0.so.0(x86_64))",
-				"soname(libharfbuzz.so.0(x86_64))",
-				"soname(libpango-1.0.so.0(x86_64))",
-				"soname(libpangocairo-1.0.so.0(x86_64))",
-				"soname(libpangoft2-1.0.so.0(x86_64))",
-				"soname(libpangoxft-1.0.so.0(x86_64))"
+				"pkgconfig(xrender)"
 			],
 			"files": [
-				"/usr/bin/pango-list",
-				"/usr/bin/pango-segmentation",
-				"/usr/bin/pango-view",
 				"/usr/include/pango-1.0/pango/pango-attributes.h",
 				"/usr/include/pango-1.0/pango/pango-bidi-type.h",
 				"/usr/include/pango-1.0/pango/pango-break.h",
@@ -161,9 +157,6 @@
 			],
 			"name": "pango-devel",
 			"provides": [
-				"binary(pango-list)",
-				"binary(pango-segmentation)",
-				"binary(pango-view)",
 				"pkgconfig(pango)",
 				"pkgconfig(pangocairo)",
 				"pkgconfig(pangofc)",
@@ -174,6 +167,6 @@
 		}
 	},
 	"source-name": "pango",
-	"source-release": "10",
+	"source-release": "11",
 	"source-version": "1.56.4"
 }

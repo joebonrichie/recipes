@@ -5,7 +5,7 @@
 #
 name        : pango
 version     : 1.56.4
-release     : 10
+release     : 11
 homepage    : https://pango.gnome.org/
 upstreams   :
     - https://download.gnome.org/sources/pango/1.56/pango-1.56.4.tar.xz : 17065e2fcc5f5a5bdbffc884c956bfc7c451a96e8c4fb2f8ad837c6413cb5a01
@@ -23,6 +23,7 @@ license     :
     - MPL-1.1
     - OFL-1.1
 builddeps   :
+    - binary(rst2man)
     - pkgconfig(cairo)
     - pkgconfig(fontconfig)
     - pkgconfig(freetype2)
@@ -37,7 +38,9 @@ builddeps   :
     - pkgconfig(xft)
     - pkgconfig(xrender)
 setup       : |
-    %meson -Dintrospection=enabled
+    %meson \
+        -Dintrospection=enabled \
+        -Dman-pages=true
 build       : |
     %meson_build
 install     : |
@@ -47,8 +50,4 @@ check       : |
 workload    : |
     %meson_test || :
 tuning      :
-    - lto : thin
-packages    :
-    - "%(name)-devel":
-        paths:
-            - /usr/bin/*
+    - lto : full
