@@ -5,7 +5,7 @@
 #
 name        : konsole
 version     : 25.04.3
-release     : 7
+release     : 8
 upstreams   :
     - https://download.kde.org/stable/release-service/25.04.3/src/konsole-25.04.3.tar.xz : 2f6833e22a71f4191e7ee45f3dce37e22a3be36d0fa592fdfffce207acac3939
 homepage    : https://kde.org/applications/system/org.kde.konsole
@@ -51,6 +51,9 @@ build       : |
     %cmake_build
 install     : |
     %cmake_install
+
+    # Default settings
+    %install_file %(pkgdir)/konsolerc -t %(installroot)%(datadir)/xdg/
 
     # remove docs
     rm -rf %(installroot)/%(datadir)/doc
