@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : gnome-software
-version     : 48.3
-release     : 19
+version     : 48.4
+release     : 20
 homepage    : https://apps.gnome.org/Software/
 upstreams   :
-    - https://download.gnome.org/sources/gnome-software/48/gnome-software-48.3.tar.xz : 126971e8bc000ddc200178c8fac8f7114eed42de4a4e2012ba06b3ffe707e23a
+    - https://download.gnome.org/sources/gnome-software/48/gnome-software-48.4.tar.xz : 9cd130bc62cd08b63a222eb26661bcc717e75d58ee1b3c1880c4d1b76ccd263b
 summary     : Software allows you to find and install new apps and system extensions and remove existing installed apps.
 description : |
     Software showcases featured and popular apps with useful descriptions and multiple screenshots per app. Apps can be found either through browsing the list of categories or by searching. It also allows you to update your system using an offline update.
