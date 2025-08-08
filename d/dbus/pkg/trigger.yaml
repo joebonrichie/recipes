@@ -1,6 +1,6 @@
 name: reload_dbus
 description: |
-    Update the mime database
+    Reload dbus after making changes to dbus configuration
 
 handlers:
     reload_dbus:
