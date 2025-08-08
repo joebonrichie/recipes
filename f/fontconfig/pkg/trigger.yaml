@@ -11,3 +11,9 @@ paths:
     "/usr/share/fonts/**" :
         handlers:
             - fonts
+    "/usr/share/fontconfig/conf.avail/*.conf" :
+        handlers:
+            - fonts
+    "/usr/share/fontconfig/conf.default/*.conf" :
+        handlers:
+            - fonts

@@ -5,7 +5,7 @@
 #
 name        : fontconfig
 version     : '2.17.1'
-release     : 14
+release     : 15
 homepage    : https://www.freedesktop.org/wiki/Software/fontconfig
 upstreams   :
     - https://gitlab.freedesktop.org/api/v4/projects/890/packages/generic/fontconfig/2.17.1/fontconfig-2.17.1.tar.xz : 9f5cae93f4fffc1fbc05ae99cdfc708cd60dfd6612ffc0512827025c026fa541
@@ -21,6 +21,7 @@ description : |
 license     : MIT
 builddeps   :
     - binary(gperf)
+    - binary(xgettext)
     - pkgconfig32(freetype2)
     - pkgconfig32(libxml-2.0)
     # TODO: docbook2man needed for man pages
@@ -29,11 +30,11 @@ setup       : |
     %patch %(pkgdir)/stateless/Support-user-config.patch
 
     %meson \
-        --sysconfdir=%(vendordir)%(sysconfdir) \
+        -Dbaseconfig-dir=%(sysconfdir)/fonts \
+        -Dbitmap-conf=noinstall \
+        -Dconfig-dir=%(sysconfdir)/fonts/conf.d \
         -Ddefault-hinting=slight \
-        -Ddefault-sub-pixel-rendering=rgb \
-        -Dbaseconfig-dir=%(datadir)/fonts \
-        -Dconfig-dir=%(datadir)/fonts/conf.d \
+        -Ddefault-sub-pixel-rendering=noinstall \
         -Ddoc=disabled \
         -Dtests=disabled \
         -Dxml-backend=libxml2
@@ -41,14 +42,30 @@ build       : |
     %meson_build
 install     : |
     %meson_install
+    if [[ %(target_triple) = i686* ]]; then
+        exit 0
+    fi
+
+    # Stateless
+    mv %(installroot)%(sysconfdir)/fonts/fonts.conf %(installroot)%(datadir)/fontconfig/fonts.conf
+    %install_dir %(installroot)%(datadir)/fontconfig/conf.default
+    for _f in "%(installroot)"/etc/fonts/conf.d/*.conf; do
+        ln -srv "%(installroot)"/usr/share/fontconfig/conf.{avail,default}/"${_f##*/}"
+        rm "$_f"
+    done
 
     # Remain compatible with expected fontconfig lookup paths, ala fontdb for cosmic
-    ln -svf ../fonts/fonts.conf %(installroot)%(datadir)/fontconfig/fonts.conf
+    %install_file %(pkgdir)/fonts.conf %(installroot)/usr/share/fontconfig/fonts.conf.link
+
+    # Font triggers
     %install_file %(pkgdir)/trigger.yaml %(installroot)/usr/share/moss/triggers/sys.d/fonts-cache.yaml
 
     # tmpfiles configuration
     %tmpfiles "# Create font compatibility link"
-    %tmpfiles "L+ /etc/fonts - - - - /usr/share/fonts"
+    %tmpfiles "d /var/cache/fontconfig 0755 root root -"
+    %tmpfiles "d= /etc/fonts/ 0755 root root -"
+    %tmpfiles "d /etc/fonts/conf.d 0755 root root -"
+    %tmpfiles "L+ /etc/fonts/fonts.conf - - - - /usr/share/fontconfig/fonts.conf.link"
 packages    :
     - "%(name)-devel":
         paths:
