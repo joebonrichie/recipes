@@ -1286,6 +1286,7 @@
 				"/usr/share/man/man8/systemd-xdg-autostart-generator.8",
 				"/usr/share/man/man8/udevadm.8",
 				"/usr/share/mime/packages/io.systemd.xml",
+				"/usr/share/moss/helpers/systemd-hook.sh",
 				"/usr/share/moss/triggers/sys.d/systemd_etcfiles.yaml",
 				"/usr/share/moss/triggers/sys.d/systemd_machine_id.yaml",
 				"/usr/share/moss/triggers/sys.d/systemd_presets.yaml",
@@ -2689,6 +2690,6 @@
 		}
 	},
 	"source-name": "systemd",
-	"source-release": "64",
+	"source-release": "65",
 	"source-version": "257.8"
 }
