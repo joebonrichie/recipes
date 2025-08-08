@@ -4,10 +4,10 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : ktextaddons
-version     : 1.7.0
-release     : 2
+version     : 1.7.1
+release     : 3
 upstreams   :
-    - https://download.kde.org/stable/ktextaddons/ktextaddons-1.7.0.tar.xz : ec9b629a90b4b216606867e8034f14b33443420c2b7b26f3fd414d8c1fa3cae4
+    - https://download.kde.org/stable/ktextaddons/ktextaddons-1.7.1.tar.xz : 90cf25e298e095c40b3286a7153d04f961ef4e6598321bdeb00f2be7e998ae7e
 homepage    : https://invent.kde.org/libraries/ktextaddons
 license     :
     - GPL-2.0-or-later
