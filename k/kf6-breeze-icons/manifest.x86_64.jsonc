@@ -4,6 +4,7 @@
 	"packages": {
 		"breeze-icons": {
 			"build-depends": [
+				"binary(python3)",
 				"cmake(ECM)",
 				"python(lxml)"
 			],
@@ -39768,6 +39769,7 @@
 		},
 		"kf6-breeze-icons": {
 			"build-depends": [
+				"binary(python3)",
 				"cmake(ECM)",
 				"python(lxml)"
 			],
@@ -39779,7 +39781,7 @@
 			],
 			"files": [
 				"/usr/lib/libKF6BreezeIcons.so.6",
-				"/usr/lib/libKF6BreezeIcons.so.6.16.0"
+				"/usr/lib/libKF6BreezeIcons.so.6.17.0"
 			],
 			"name": "kf6-breeze-icons",
 			"provides": [
@@ -39788,6 +39790,7 @@
 		},
 		"kf6-breeze-icons-devel": {
 			"build-depends": [
+				"binary(python3)",
 				"cmake(ECM)",
 				"python(lxml)"
 			],
@@ -39812,6 +39815,6 @@
 		}
 	},
 	"source-name": "kf6-breeze-icons",
-	"source-release": "7",
-	"source-version": "6.16.0"
+	"source-release": "8",
+	"source-version": "6.17.0"
 }
