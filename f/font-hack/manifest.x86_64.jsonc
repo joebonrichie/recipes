@@ -4,6 +4,8 @@
 	"packages": {
 		"font-hack": {
 			"files": [
+				"/usr/share/fontconfig/conf.avail/45-Hack.conf",
+				"/usr/share/fontconfig/conf.default/45-Hack.conf",
 				"/usr/share/fonts/truetype/hack/Hack-Bold.ttf",
 				"/usr/share/fonts/truetype/hack/Hack-BoldItalic.ttf",
 				"/usr/share/fonts/truetype/hack/Hack-Italic.ttf",
@@ -13,6 +15,6 @@
 		}
 	},
 	"source-name": "font-hack",
-	"source-release": "2",
+	"source-release": "3",
 	"source-version": "3.003"
 }
