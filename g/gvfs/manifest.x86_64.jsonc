@@ -65,7 +65,10 @@
 				"soname(libusb-1.0.so.0(x86_64))",
 				"soname(libxml2.so.16(x86_64))",
 				"sysbinary(mount.fuse3)",
-				"sysbinary(usbmuxd)"
+				"sysbinary(usbmuxd)",
+				"udisks",
+				"udisks-btrfs",
+				"udisks-lvm2"
 			],
 			"files": [
 				"/usr/lib/gio/modules/libgioremote-volume-monitor.so",
@@ -245,6 +248,6 @@
 		}
 	},
 	"source-name": "gvfs",
-	"source-release": "13",
+	"source-release": "14",
 	"source-version": "1.57.2"
 }
