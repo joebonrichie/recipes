@@ -1,0 +1,16 @@
+name: reload_dbus
+description: |
+    Update the mime database
+
+handlers:
+    reload_dbus:
+        run: /usr/share/moss/helpers/systemd-hook.sh
+        args: ["reload", "dbus"]
+
+paths:
+    "/usr/share/dbus-1/system.d/*.conf" :
+        handlers:
+            - reload_dbus
+    "/usr/share/dbus-1/system-services/*.service" :
+        handlers:
+            - reload_dbus
