@@ -74,7 +74,7 @@
 			],
 			"files": [
 				"/usr/lib/libz-ng.so.2",
-				"/usr/lib/libz-ng.so.2.2.4"
+				"/usr/lib/libz-ng.so.2.2.5"
 			],
 			"name": "zlib-ng",
 			"provides": [
@@ -113,6 +113,6 @@
 		}
 	},
 	"source-name": "zlib-ng",
-	"source-release": "19",
-	"source-version": "2.2.4"
+	"source-release": "20",
+	"source-version": "2.2.5"
 }
