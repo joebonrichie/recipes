@@ -344,6 +344,6 @@
 		}
 	},
 	"source-name": "gst-plugins-rs",
-	"source-release": "8",
-	"source-version": "1.26.4"
+	"source-release": "9",
+	"source-version": "1.26.5"
 }
