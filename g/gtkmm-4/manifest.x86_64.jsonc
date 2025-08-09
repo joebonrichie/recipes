@@ -32,15 +32,6 @@
 				"soname(libunwind.so.1(x86_64))"
 			],
 			"files": [
-				"/usr/lib/gtkmm-4.0/include/gdkmmconfig.h",
-				"/usr/lib/gtkmm-4.0/include/gtkmmconfig.h",
-				"/usr/lib/gtkmm-4.0/proc/m4/class_gtkobject.m4",
-				"/usr/lib/gtkmm-4.0/proc/m4/class_shared.m4",
-				"/usr/lib/gtkmm-4.0/proc/m4/convert.m4",
-				"/usr/lib/gtkmm-4.0/proc/m4/convert_gdk.m4",
-				"/usr/lib/gtkmm-4.0/proc/m4/convert_gtk.m4",
-				"/usr/lib/gtkmm-4.0/proc/m4/convert_gtkmm.m4",
-				"/usr/lib/gtkmm-4.0/proc/m4/enum.m4",
 				"/usr/lib/libgtkmm-4.0.so.0",
 				"/usr/lib/libgtkmm-4.0.so.0.0.0"
 			],
@@ -752,6 +743,15 @@
 				"/usr/include/gtkmm-4.0/gtkmm/windowgroup.h",
 				"/usr/include/gtkmm-4.0/gtkmm/windowhandle.h",
 				"/usr/include/gtkmm-4.0/gtkmm/wrap_init.h",
+				"/usr/lib/gtkmm-4.0/include/gdkmmconfig.h",
+				"/usr/lib/gtkmm-4.0/include/gtkmmconfig.h",
+				"/usr/lib/gtkmm-4.0/proc/m4/class_gtkobject.m4",
+				"/usr/lib/gtkmm-4.0/proc/m4/class_shared.m4",
+				"/usr/lib/gtkmm-4.0/proc/m4/convert.m4",
+				"/usr/lib/gtkmm-4.0/proc/m4/convert_gdk.m4",
+				"/usr/lib/gtkmm-4.0/proc/m4/convert_gtk.m4",
+				"/usr/lib/gtkmm-4.0/proc/m4/convert_gtkmm.m4",
+				"/usr/lib/gtkmm-4.0/proc/m4/enum.m4",
 				"/usr/lib/libgtkmm-4.0.so",
 				"/usr/lib/pkgconfig/gtkmm-4.0.pc"
 			],
@@ -762,6 +762,6 @@
 		}
 	},
 	"source-name": "gtkmm-4",
-	"source-release": "5",
+	"source-release": "6",
 	"source-version": "4.18.0"
 }
