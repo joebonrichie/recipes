@@ -5,7 +5,7 @@
 #
 name        : libadwaita
 version     : 1.7.6
-release     : 15
+release     : 16
 homepage    : https://gitlab.gnome.org/GNOME/libadwaita
 upstreams   :
     - https://download.gnome.org/sources/libadwaita/1.7/libadwaita-1.7.6.tar.xz : 5eacc5550f0bdbba6a1568aebf25a3d88f5ee07d6b558becc6fd9487579c9a29
@@ -28,3 +28,14 @@ build       : |
     %meson_build
 install     : |
     %meson_install
+packages    :
+    - "%(name)-demos":
+        paths:
+            - /usr/bin/adwaita-1-demo
+            - /usr/share/applications/
+            - /usr/share/icons/hicolor/
+            - /usr/share/metainfo/
+
+    - "%(name)-devel":
+        paths:
+            - /usr/share/vala/
