@@ -4,13 +4,13 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : rust
-version     : 1.88.0
-release     : 21
+version     : 1.89.0
+release     : 22
 homepage    : https://www.rust-lang.org/
 upstreams   :
-    - https://static.rust-lang.org/dist/rustc-1.88.0-src.tar.xz : 0c1dcbb4f762513d021e1a282c0ac58c0a423642b3a6bf581cafb5414df4193e
+    - https://static.rust-lang.org/dist/rustc-1.89.0-src.tar.xz : 0b9d55610d8270e06c44f459d1e2b7918a5e673809c592abed9b9c600e33d95a
     - git|https://github.com/rust-lang/llvm-project.git :
-        ref: ed6566573eb21b00a3f87815e14ff766fd56ef42 # rustc/20.1-2025-02-13
+        ref: e8a2ffcf322f45b8dce82c65ab27a3e2430a6b51 # rustc/20.1-2025-07-13
 summary     : Rust programming language compiler + tools
 description : |
     Rust programming language compiler + tools
@@ -88,6 +88,18 @@ setup       : |
     # Fix bootstrap checking checksums for all the files we just deleted
     find vendor -name .cargo-checksum.json -print \
         -exec sed -i.uncheck -e 's/"files":{[^}]*}/"files":{ }/' '{}' '+'
+
+    # Force the libdir resolution to use lib which fixes a build failure introduced by 1.89.0
+    # │B│ error[E0463]: can't find crate for `core`
+    # │B│   |
+    # │B│   = note: the `x86_64-unknown-linux-gnu` target may not be installed
+    # │B│   = help: consider downloading the target with `rustup target add x86_64-unknown-linux-gnu`
+    # │B│   = help: consider building the standard library from source with `cargo build -Zbuild-std`
+    # Issue introduced by https://github.com/rust-lang/rust/pull/141729
+    # `rustc --print target-libdir` should be `/usr/lib/rustlib/x86_64-unknown-linux-gnu/lib`
+    %patch %(pkgdir)/0001-downstream-Hardcode-libdir-path.patch
+    # TODO: This patch can be removed in the next package build after the 1.89.0 update
+    %patch %(pkgdir)/0001-Revert-resolve-target-libdir-directly-from-rustc.patch
 build       : |
     python ./x.py build \
             --build-dir %(workdir)/build-pgo \

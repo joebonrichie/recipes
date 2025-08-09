@@ -1,0 +1,63 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: Reilly Brogan <reilly@reillybrogan.com>
+Date: Fri, 8 Aug 2025 19:39:23 -0500
+Subject: [PATCH] Revert "resolve target-libdir directly from rustc"
+
+This reverts commit 0d9f25bb4f1aada1f77649d96f72cc645c7d6754.
+---
+ src/bootstrap/src/lib.rs | 39 ++++++++++-----------------------------
+ 1 file changed, 10 insertions(+), 29 deletions(-)
+
+diff --git a/src/bootstrap/src/lib.rs b/src/bootstrap/src/lib.rs
+index f44fe4548a1..f32d165505c 100644
+--- a/src/bootstrap/src/lib.rs
++++ b/src/bootstrap/src/lib.rs
+@@ -382,38 +382,19 @@ pub fn new(mut config: Config) -> Build {
+         let in_tree_llvm_info = config.in_tree_llvm_info.clone();
+         let in_tree_gcc_info = config.in_tree_gcc_info.clone();
+ 
+-        let initial_target_libdir = command(&config.initial_rustc)
+-            .run_always()
+-            .args(["--print", "target-libdir"])
+-            .run_capture_stdout(&config)
+-            .stdout()
+-            .trim()
+-            .to_owned();
+-
+-        let initial_target_dir = Path::new(&initial_target_libdir)
+-            .parent()
+-            .unwrap_or_else(|| panic!("{initial_target_libdir} has no parent"));
++        let initial_target_libdir_str =
++            config.initial_sysroot.join("lib/rustlib").join(config.host_target).join("lib");
+ 
++        let initial_target_dir = Path::new(&initial_target_libdir_str).parent().unwrap();
+         let initial_lld = initial_target_dir.join("bin").join("rust-lld");
+ 
+-        let initial_relative_libdir = if cfg!(test) {
+-            // On tests, bootstrap uses the shim rustc, not the one from the stage0 toolchain.
+-            PathBuf::default()
+-        } else {
+-            let ancestor = initial_target_dir.ancestors().nth(2).unwrap_or_else(|| {
+-                panic!("Not enough ancestors for {}", initial_target_dir.display())
+-            });
+-
+-            ancestor
+-                .strip_prefix(&config.initial_sysroot)
+-                .unwrap_or_else(|_| {
+-                    panic!(
+-                        "Couldn’t resolve the initial relative libdir from {}",
+-                        initial_target_dir.display()
+-                    )
+-                })
+-                .to_path_buf()
+-        };
++        let initial_relative_libdir = initial_target_dir
++            .ancestors()
++            .nth(2)
++            .unwrap()
++            .strip_prefix(&config.initial_sysroot)
++            .expect("Couldn’t determine initial relative libdir.")
++            .to_path_buf();
+ 
+         let version = std::fs::read_to_string(src.join("src").join("version"))
+             .expect("failed to read src/version");
