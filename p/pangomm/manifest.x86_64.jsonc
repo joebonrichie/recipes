@@ -28,11 +28,7 @@
 			],
 			"files": [
 				"/usr/lib/libpangomm-2.48.so.1",
-				"/usr/lib/libpangomm-2.48.so.1.0.30",
-				"/usr/lib/pangomm-2.48/include/pangommconfig.h",
-				"/usr/lib/pangomm-2.48/proc/m4/convert.m4",
-				"/usr/lib/pangomm-2.48/proc/m4/convert_pango.m4",
-				"/usr/lib/pangomm-2.48/proc/m4/convert_pangomm.m4"
+				"/usr/lib/libpangomm-2.48.so.1.0.30"
 			],
 			"name": "pangomm",
 			"provides": [
@@ -113,6 +109,10 @@
 				"/usr/include/pangomm-2.48/pangomm/types.h",
 				"/usr/include/pangomm-2.48/pangomm/wrap_init.h",
 				"/usr/lib/libpangomm-2.48.so",
+				"/usr/lib/pangomm-2.48/include/pangommconfig.h",
+				"/usr/lib/pangomm-2.48/proc/m4/convert.m4",
+				"/usr/lib/pangomm-2.48/proc/m4/convert_pango.m4",
+				"/usr/lib/pangomm-2.48/proc/m4/convert_pangomm.m4",
 				"/usr/lib/pkgconfig/pangomm-2.48.pc"
 			],
 			"name": "pangomm-devel",
@@ -122,6 +122,6 @@
 		}
 	},
 	"source-name": "pangomm",
-	"source-release": "5",
+	"source-release": "6",
 	"source-version": "2.56.1"
 }
