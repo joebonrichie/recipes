@@ -6,7 +6,7 @@
 name        : mesa
 version     : 25.2.0
 # Note: keep mesa-clc in-sync with this package version-wise
-release     : 44
+release     : 45
 homepage    : https://mesa3d.org/
 upstreams   :
     - https://mesa.freedesktop.org/archive/mesa-25.2.0.tar.xz : 7c726b21c074d14d31d253d638b741422f3c0a497ce7f1b4aaaa917d10bd8d4f
@@ -166,6 +166,14 @@ packages    :
         description: Mesa libEGL runtime libraries
         rundeps:
             - libglvnd-egl
+
+            # For unknown reasons it appears that this gets dlopened sometimes during EGL init
+            # if libGLESv2.so isn't present whatever called it will fail even though it would work
+            # perfectly fine if mesa were built without GLESv2 support. Just add it as a rundep until
+            # the cause is known, or we stop supporting GLESv2
+
+            # Currently this is known to happen when clicking the tab overview in ptyxis
+            - libglvnd-gles
         paths:
             - /usr/lib/libEGL_mesa.so.*
             - /usr/share/glvnd
