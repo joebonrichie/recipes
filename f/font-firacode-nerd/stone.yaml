@@ -4,11 +4,13 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : font-firacode-nerd
-version     : 3.3.0
-release     : 2
+version     : 3.4.0
+release     : 3
 homepage    : https://github.com/tonsky/FiraCode
 upstreams   :
-    - https://github.com/ryanoasis/nerd-fonts/releases/download/v3.3.0/FiraCode.zip : 89978e6f870d044286a339161d5ed961569744b1cd2afee62337fa140cd0b397
+    - https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/FiraCode.tar.xz:
+        hash: d83fb093e0e05a531cd6f19886a6ceb884a4fa5ea3b53cf099fc1f30c5b3e47d
+        unpack: false
 summary     : Monospace nerd font with programming ligatures
 description : |
     Monospace nerd font with programming ligatures based on Fira Code
@@ -16,6 +18,6 @@ license     :
     - OFL-1.1
 install     : |
     %install_dir %(installroot)%(datadir)/fonts/truetype
-    for i in *.ttf ; do
-        %install_file $i %(installroot)%(datadir)/fonts/truetype/.
-    done
+    bsdtar-static --no-same-owner -xf %(sourcedir)/FiraCode.tar.xz --strip-components=0 -C %(installroot)%(datadir)/fonts/truetype
+    rm -v %(installroot)%(datadir)/fonts/truetype/LICENSE \
+          %(installroot)%(datadir)/fonts/truetype/README.md
