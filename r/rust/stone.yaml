@@ -5,7 +5,7 @@
 #
 name        : rust
 version     : 1.89.0
-release     : 22
+release     : 23
 homepage    : https://www.rust-lang.org/
 upstreams   :
     - https://static.rust-lang.org/dist/rustc-1.89.0-src.tar.xz : 0b9d55610d8270e06c44f459d1e2b7918a5e673809c592abed9b9c600e33d95a
@@ -98,8 +98,6 @@ setup       : |
     # Issue introduced by https://github.com/rust-lang/rust/pull/141729
     # `rustc --print target-libdir` should be `/usr/lib/rustlib/x86_64-unknown-linux-gnu/lib`
     %patch %(pkgdir)/0001-downstream-Hardcode-libdir-path.patch
-    # TODO: This patch can be removed in the next package build after the 1.89.0 update
-    %patch %(pkgdir)/0001-Revert-resolve-target-libdir-directly-from-rustc.patch
 build       : |
     python ./x.py build \
             --build-dir %(workdir)/build-pgo \
