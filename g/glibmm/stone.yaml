@@ -5,7 +5,7 @@
 #
 name        : glibmm
 version     : 2.84.0
-release     : 6
+release     : 7
 homepage    : https://gtkmm.org
 upstreams   :
     - https://download.gnome.org/sources/glibmm/2.84/glibmm-2.84.0.tar.xz : 56ee5f51c8acfc0afdf46959316e4c8554cb50ed2b6bc5ce389d979cbb642509
@@ -31,3 +31,8 @@ build       : |
     %meson_build
 install     : |
     %meson_install
+packages    :
+    - "%(name)-devel":
+        paths:
+            - /usr/lib/giomm-2.68/
+            - /usr/lib/glibmm-2.68/
