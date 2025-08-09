@@ -41,6 +41,7 @@
 				"/usr/include/catch2/catch_template_test_macros.hpp",
 				"/usr/include/catch2/catch_test_case_info.hpp",
 				"/usr/include/catch2/catch_test_macros.hpp",
+				"/usr/include/catch2/catch_test_run_info.hpp",
 				"/usr/include/catch2/catch_test_spec.hpp",
 				"/usr/include/catch2/catch_timer.hpp",
 				"/usr/include/catch2/catch_tostring.hpp",
@@ -86,6 +87,7 @@
 				"/usr/include/catch2/internal/catch_debug_console.hpp",
 				"/usr/include/catch2/internal/catch_debugger.hpp",
 				"/usr/include/catch2/internal/catch_decomposer.hpp",
+				"/usr/include/catch2/internal/catch_deprecation_macro.hpp",
 				"/usr/include/catch2/internal/catch_enforce.hpp",
 				"/usr/include/catch2/internal/catch_enum_values_registry.hpp",
 				"/usr/include/catch2/internal/catch_errno_guard.hpp",
@@ -138,15 +140,16 @@
 				"/usr/include/catch2/internal/catch_test_failure_exception.hpp",
 				"/usr/include/catch2/internal/catch_test_macro_impl.hpp",
 				"/usr/include/catch2/internal/catch_test_registry.hpp",
-				"/usr/include/catch2/internal/catch_test_run_info.hpp",
 				"/usr/include/catch2/internal/catch_test_spec_parser.hpp",
 				"/usr/include/catch2/internal/catch_textflow.hpp",
+				"/usr/include/catch2/internal/catch_thread_support.hpp",
 				"/usr/include/catch2/internal/catch_to_string.hpp",
 				"/usr/include/catch2/internal/catch_uncaught_exceptions.hpp",
 				"/usr/include/catch2/internal/catch_uniform_floating_point_distribution.hpp",
 				"/usr/include/catch2/internal/catch_uniform_integer_distribution.hpp",
 				"/usr/include/catch2/internal/catch_unique_name.hpp",
 				"/usr/include/catch2/internal/catch_unique_ptr.hpp",
+				"/usr/include/catch2/internal/catch_unreachable.hpp",
 				"/usr/include/catch2/internal/catch_void_type.hpp",
 				"/usr/include/catch2/internal/catch_wildcard_pattern.hpp",
 				"/usr/include/catch2/internal/catch_windows_h_proxy.hpp",
@@ -194,6 +197,6 @@
 		}
 	},
 	"source-name": "catch2",
-	"source-release": "2",
-	"source-version": "3.8.1"
+	"source-release": "3",
+	"source-version": "3.9.1"
 }
