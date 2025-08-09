@@ -1,0 +1,31 @@
+/** Human readable report. This is not consumed by boulder */
+{
+	"manifest-version": "0.2",
+	"packages": {
+		"cargo-flamegraph": {
+			"depends": [
+				"binary(perf)",
+				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
+				"soname(ld-linux-x86-64.so.2(x86_64))",
+				"soname(libc.so.6(x86_64))",
+				"soname(libm.so.6(x86_64))",
+				"soname(libunwind.so.1(x86_64))"
+			],
+			"files": [
+				"/usr/bin/cargo-flamegraph",
+				"/usr/bin/flamegraph",
+				"/usr/share/bash-completion/completions/flamegraph",
+				"/usr/share/fish/vendor_completions.d/flamegraph.fish",
+				"/usr/share/zsh/site-functions/_flamegraph"
+			],
+			"name": "cargo-flamegraph",
+			"provides": [
+				"binary(cargo-flamegraph)",
+				"binary(flamegraph)"
+			]
+		}
+	},
+	"source-name": "cargo-flamegraph",
+	"source-release": "1",
+	"source-version": "0.6.8"
+}

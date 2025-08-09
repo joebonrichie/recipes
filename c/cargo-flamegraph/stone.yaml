@@ -1,0 +1,35 @@
+#
+# SPDX-FileCopyrightText: © 2020-2024 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : cargo-flamegraph
+version     : 0.6.8
+release     : 1
+homepage    : https://github.com/flamegraph-rs/flamegraph
+upstreams   :
+    - https://github.com/flamegraph-rs/flamegraph/archive/refs/tags/v0.6.8.tar.gz : 2673a04bd4de142220d42706e0c25a4dea08aee52cdffbf87cca5738cec649ff
+summary     : A Rust-powered flamegraph generator
+description : |
+    A Rust-powered flamegraph generator
+license     : MIT
+networking  : yes
+rundeps     :
+    - binary(perf)
+setup       : |
+    %cargo_fetch
+build       : |
+    %cargo_build
+
+    %(cargo_target_dir)/flamegraph --completions bash > flamegraph
+    %(cargo_target_dir)/flamegraph --completions zsh > _flamegraph
+    %(cargo_target_dir)/flamegraph --completions fish > flamegraph.fish
+install     : |
+    %install_bin %(cargo_target_dir)/cargo-flamegraph
+    %install_bin %(cargo_target_dir)/flamegraph
+
+    %install_file flamegraph -t %(installroot)%(bashcompletionsdir)
+    %install_file _flamegraph -t %(installroot)%(zshcompletionsdir)
+    %install_file flamegraph.fish -t %(installroot)%(fishcompletionsdir)
+check       : |
+    %cargo_test
