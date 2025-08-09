@@ -6,7 +6,7 @@
 #
 name        : gnome-desktop-defaults
 version     : "0.1.0"
-release     : 10
+release     : 11
 license     : MPL-2.0
 homepage    : https://aerynos.com
 summary     : Default settings and dependencies for GNOME desktop
@@ -14,7 +14,6 @@ description : |
     Default settings and dependencies for GNOME desktop
 rundeps     :
     - binary(gnome-shell)
-    - adwaita-fonts
     - gnome-backgrounds
     - gnome-browser-connector
     - gnome-shell-extension-appindicator
