@@ -1,0 +1,29 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : samply
+version     : 0.13.1
+release     : 1
+homepage    : https://github.com/mstange/samply
+upstreams   :
+    - https://github.com/mstange/samply/releases/download/samply-v0.13.1/source.tar.gz : 0236cda0bf5f8f7022b16be4cc1133217090430e3e4db704292b13bbc0cd60c9
+summary     : A command-line sampling profiler
+description : |
+    A command-line sampling profiler
+networking  : yes
+license     :
+    - Apache-2.0
+    - MIT
+setup       : |
+    cd samply
+    %cargo_fetch
+build       : |
+    cd samply
+    %cargo_build
+install     : |
+    %cargo_install
+check       : |
+    cd samply
+    %cargo_test

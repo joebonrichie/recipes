@@ -1,0 +1,5 @@
+releases:
+  id: 382155
+  rss: https://github.com/mstange/samply/releases.atom
+security:
+  cpe: ~ # Last checked 2025-08-09
