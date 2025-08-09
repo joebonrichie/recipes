@@ -19,6 +19,7 @@
 				"pkgconfig(libbs2b)",
 				"pkgconfig(libebur128)",
 				"pkgconfig(libpipewire-0.3)",
+				"pkgconfig(libportal-gtk4)",
 				"pkgconfig(lilv-0)",
 				"pkgconfig(nlohmann_json)",
 				"pkgconfig(rnnoise)",
@@ -33,6 +34,7 @@
 			"depends": [
 				"binary(pipewire)",
 				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
+				"libportal-gtk4",
 				"lsp-plugins-lv2",
 				"soname(libSoundTouch.so.2(x86_64))",
 				"soname(libadwaita-1.so.0(x86_64))",
@@ -213,6 +215,6 @@
 		}
 	},
 	"source-name": "easyeffects",
-	"source-release": "4",
-	"source-version": "7.2.3"
+	"source-release": "5",
+	"source-version": "7.2.5"
 }
