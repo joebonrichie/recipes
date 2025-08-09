@@ -220,8 +220,8 @@
 				"soname(libabsl_time_zone.so.2505.0.0(x86_64))",
 				"soname(libc++.so.1(x86_64))",
 				"soname(libc.so.6(x86_64))",
-				"soname(libgmock.so.1.16.0(x86_64))",
-				"soname(libgtest.so.1.16.0(x86_64))",
+				"soname(libgmock.so.1.17.0(x86_64))",
+				"soname(libgtest.so.1.17.0(x86_64))",
 				"soname(libunwind.so.1(x86_64))"
 			],
 			"files": [
@@ -1214,6 +1214,6 @@
 		}
 	},
 	"source-name": "abseil-cpp",
-	"source-release": "8",
+	"source-release": "9",
 	"source-version": "20250512.1"
 }
