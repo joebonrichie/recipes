@@ -7,6 +7,9 @@
 				"binary(msgfmt)",
 				"pkgconfig(gobject-introspection-1.0)"
 			],
+			"depends": [
+				"adwaita-fonts"
+			],
 			"files": [
 				"/usr/lib/girepository-1.0/GDesktopEnums-3.0.typelib",
 				"/usr/share/GConf/gsettings/gsettings-desktop-schemas.convert",
@@ -127,6 +130,6 @@
 		}
 	},
 	"source-name": "gsettings-desktop-schemas",
-	"source-release": "7",
+	"source-release": "8",
 	"source-version": "48.0"
 }
