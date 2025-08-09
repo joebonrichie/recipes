@@ -5,7 +5,7 @@
 #
 name        : kf6-breeze-icons
 version     : 6.17.0
-release     : 8
+release     : 9
 upstreams   :
     - https://download.kde.org/stable/frameworks/6.17/breeze-icons-6.17.0.tar.xz : 4ffc75886e9a14a2a02da4871600b8c0b5a40756b8e99cbecfb515696d93c3b8
 homepage    : https://community.kde.org/Frameworks
@@ -14,6 +14,7 @@ summary     : Breeze icon theme
 description : |
     Breeze-icons is a freedesktop.org compatible icon theme.
 builddeps   :
+    - binary(gtk-update-icon-cache)
     - binary(python3)
     # Temporary, boulder doesn't handle build ordering resolution correctly when builddeps are added by macros, so add ECM manually
     - cmake(ECM)
@@ -24,6 +25,10 @@ build       : |
     %cmake_build
 install     : |
     %cmake_install
+
+    for i in %(installroot)%(datadir)/icons/*/; do
+        gtk-update-icon-cache -f $i
+    done
 packages    :
     # Separate out the icons because in the future KF7 could be providing the icon theme while we still build the KF6 library
     - "breeze-icons":

@@ -4,6 +4,7 @@
 	"packages": {
 		"breeze-icons": {
 			"build-depends": [
+				"binary(gtk-update-icon-cache)",
 				"binary(python3)",
 				"cmake(ECM)",
 				"python(lxml)"
@@ -13814,6 +13815,7 @@
 				"/usr/share/icons/breeze-dark/emotes/24",
 				"/usr/share/icons/breeze-dark/emotes/24@2x",
 				"/usr/share/icons/breeze-dark/emotes/24@3x",
+				"/usr/share/icons/breeze-dark/icon-theme.cache",
 				"/usr/share/icons/breeze-dark/index.theme",
 				"/usr/share/icons/breeze-dark/mimetypes/16/android-package-archive.svg",
 				"/usr/share/icons/breeze-dark/mimetypes/16/application-atom+xml.svg",
@@ -33564,6 +33566,7 @@
 				"/usr/share/icons/breeze/emotes/24",
 				"/usr/share/icons/breeze/emotes/24@2x",
 				"/usr/share/icons/breeze/emotes/24@3x",
+				"/usr/share/icons/breeze/icon-theme.cache",
 				"/usr/share/icons/breeze/index.theme",
 				"/usr/share/icons/breeze/mimetypes/16/android-package-archive.svg",
 				"/usr/share/icons/breeze/mimetypes/16/application-atom+xml.svg",
@@ -39769,6 +39772,7 @@
 		},
 		"kf6-breeze-icons": {
 			"build-depends": [
+				"binary(gtk-update-icon-cache)",
 				"binary(python3)",
 				"cmake(ECM)",
 				"python(lxml)"
@@ -39790,6 +39794,7 @@
 		},
 		"kf6-breeze-icons-devel": {
 			"build-depends": [
+				"binary(gtk-update-icon-cache)",
 				"binary(python3)",
 				"cmake(ECM)",
 				"python(lxml)"
@@ -39815,6 +39820,6 @@
 		}
 	},
 	"source-name": "kf6-breeze-icons",
-	"source-release": "8",
+	"source-release": "9",
 	"source-version": "6.17.0"
 }
