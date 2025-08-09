@@ -10,17 +10,17 @@
 				"soname(libunwind.so.1(x86_64))"
 			],
 			"files": [
-				"/usr/lib/libgmock.so.1.16.0",
-				"/usr/lib/libgmock_main.so.1.16.0",
-				"/usr/lib/libgtest.so.1.16.0",
-				"/usr/lib/libgtest_main.so.1.16.0"
+				"/usr/lib/libgmock.so.1.17.0",
+				"/usr/lib/libgmock_main.so.1.17.0",
+				"/usr/lib/libgtest.so.1.17.0",
+				"/usr/lib/libgtest_main.so.1.17.0"
 			],
 			"name": "googletest",
 			"provides": [
-				"soname(libgmock.so.1.16.0(x86_64))",
-				"soname(libgmock_main.so.1.16.0(x86_64))",
-				"soname(libgtest.so.1.16.0(x86_64))",
-				"soname(libgtest_main.so.1.16.0(x86_64))"
+				"soname(libgmock.so.1.17.0(x86_64))",
+				"soname(libgmock_main.so.1.17.0(x86_64))",
+				"soname(libgtest.so.1.17.0(x86_64))",
+				"soname(libgtest_main.so.1.17.0(x86_64))"
 			]
 		},
 		"googletest-devel": {
@@ -92,6 +92,6 @@
 		}
 	},
 	"source-name": "googletest",
-	"source-release": "2",
-	"source-version": "1.16.0"
+	"source-release": "3",
+	"source-version": "1.17.0"
 }
