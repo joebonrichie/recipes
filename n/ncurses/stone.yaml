@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : ncurses
-version     : 6.5-20250720
-release     : 14
+version     : 6.5-20250802
+release     : 15
 homepage    : https://invisible-island.net/ncurses/ncurses.html
 upstreams   :
-    - https://invisible-island.net/archives/ncurses/current/ncurses-6.5-20250720.tgz : 27ff2b105267db11573f2cc357789e6c34bd728e911ce4ee4a16ae87c7bb8a93
+    - https://invisible-island.net/archives/ncurses/current/ncurses-6.5-20250802.tgz : 1df3ab56195bf0583f4cced0999bac38e0a44cac898db75c23dd8e92adea7e8b
 summary     : Console display library
 description : |
     The ncurses (new curses) library is a free software emulation of curses in System V Release 4.0 (SVr4), and more. It uses terminfo format, supports pads and color and multiple highlights and forms characters and function-key mapping, and has all the other SVr4-curses enhancements over BSD curses. SVr4 curses became the basis of X/Open Curses.
