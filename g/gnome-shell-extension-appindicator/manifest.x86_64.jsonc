@@ -14,6 +14,8 @@
 				"/usr/share/gnome-shell/extensions/appindicatorsupport@rgcjonas.gmail.com/dbusProxy.js",
 				"/usr/share/gnome-shell/extensions/appindicatorsupport@rgcjonas.gmail.com/extension.js",
 				"/usr/share/gnome-shell/extensions/appindicatorsupport@rgcjonas.gmail.com/iconCache.js",
+				"/usr/share/gnome-shell/extensions/appindicatorsupport@rgcjonas.gmail.com/icons/hicolor/scalable/actions/custom-icons-symbolic.svg",
+				"/usr/share/gnome-shell/extensions/appindicatorsupport@rgcjonas.gmail.com/icons/hicolor/scalable/actions/general-preferences-symbolic.svg",
 				"/usr/share/gnome-shell/extensions/appindicatorsupport@rgcjonas.gmail.com/indicatorStatusIcon.js",
 				"/usr/share/gnome-shell/extensions/appindicatorsupport@rgcjonas.gmail.com/interfaces-xml/DBusMenu.xml",
 				"/usr/share/gnome-shell/extensions/appindicatorsupport@rgcjonas.gmail.com/interfaces-xml/StatusNotifierItem.xml",
@@ -21,6 +23,8 @@
 				"/usr/share/gnome-shell/extensions/appindicatorsupport@rgcjonas.gmail.com/interfaces.js",
 				"/usr/share/gnome-shell/extensions/appindicatorsupport@rgcjonas.gmail.com/metadata.json",
 				"/usr/share/gnome-shell/extensions/appindicatorsupport@rgcjonas.gmail.com/pixmapsUtils.js",
+				"/usr/share/gnome-shell/extensions/appindicatorsupport@rgcjonas.gmail.com/preferences/customIconPage.js",
+				"/usr/share/gnome-shell/extensions/appindicatorsupport@rgcjonas.gmail.com/preferences/generalPage.js",
 				"/usr/share/gnome-shell/extensions/appindicatorsupport@rgcjonas.gmail.com/prefs.js",
 				"/usr/share/gnome-shell/extensions/appindicatorsupport@rgcjonas.gmail.com/promiseUtils.js",
 				"/usr/share/gnome-shell/extensions/appindicatorsupport@rgcjonas.gmail.com/settingsManager.js",
@@ -32,6 +36,6 @@
 		}
 	},
 	"source-name": "gnome-shell-extension-appindicator",
-	"source-release": "4",
-	"source-version": "59"
+	"source-release": "5",
+	"source-version": "60"
 }
