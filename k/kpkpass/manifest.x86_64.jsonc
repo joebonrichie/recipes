@@ -31,6 +31,7 @@
 				"cmake(KF6Archive)"
 			],
 			"depends": [
+				"cmake(KF6Archive)",
 				"kpkpass"
 			],
 			"files": [
@@ -62,6 +63,6 @@
 		}
 	},
 	"source-name": "kpkpass",
-	"source-release": "1",
+	"source-release": "2",
 	"source-version": "25.04.3"
 }
