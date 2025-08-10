@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : libpaper
-version     : 2.2.5
-release     : 3
-homepage    : https://github.com/rrthomas/libpaper/releases/download/v2.2.5
+version     : 2.2.6
+release     : 4
+homepage    : https://github.com/rrthomas/libpaper
 upstreams   :
-    - https://github.com/rrthomas/libpaper/releases/download/v2.2.5/libpaper-2.2.5.tar.gz : 7be50974ce0df0c74e7587f10b04272cd53fd675cb6a1273ae1cc5c9cc9cab09
+    - https://github.com/rrthomas/libpaper/releases/download/v2.2.6/libpaper-2.2.6.tar.gz : 500d39dc58768ee09688738c8b5bfe07640ba2fd6c25a6dc78810eb69c719e93
 summary     : Library for handling paper characteristics
 description : |
     libpaper is a library for handling paper characteristics
@@ -18,8 +18,19 @@ license     :
     - MIT
 setup       : |
     %patch %(pkgdir)/0001-Enable-a-stateless-configuration.patch
-    %reconfigure --disable-static
+    %reconfigure \
+        --disable-static
 build       : |
     %make
 install     : |
     %make_install
+packages    :
+    - paper:
+        summary: Print paper size information
+        description: |
+            The paper(1) utility can be used to find the user's preferred
+            default paper size and give information about known sizes.
+        paths:
+            - /usr/bin/paper
+            - /usr/bin/paperconf
+            - /usr/share/man/

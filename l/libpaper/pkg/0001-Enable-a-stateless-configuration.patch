@@ -22,7 +22,7 @@ index 642fb58..bba72fa 100644
  
 -sysconf_DATA = paperspecs
 -EXTRA_DIST = $(sysconf_DATA)
-+vendordir = $(datadir)/defaults/etc
++vendordir = $(datadir)/defaults
 +vendor_DATA = paperspecs
 +EXTRA_DIST = $(vendor_DATA)
  
@@ -59,7 +59,7 @@ index 9294f3f..f450d90 100644
 -    sysconfdir = relocate2("@sysconfdir@", &sysconfdir_alloc);
 -    if (sysconfdir != NULL) {
 -        char *system_paperspecs = file_join(sysconfdir, PAPERSPECS_FILENAME);
-+    vendordir = relocate2("@datadir@/defaults/etc", &vendordir_alloc);
++    vendordir = relocate2("@datadir@/defaults", &vendordir_alloc);
 +    if (vendordir != NULL) {
 +        char *system_paperspecs = file_join(vendordir, PAPERSPECS_FILENAME);
          if (system_paperspecs == NULL)
@@ -85,7 +85,7 @@ index 2021c24..6f06cb0 100644
  .SH FILES
  .TP
 -.B @sysconfdir@/paperspecs
-+.B @datadir@/defaults/etc/paperspecs
++.B @datadir@/defaults/paperspecs
  System list of paper sizes.
  .TP
  .B $XDG_CONFIG_HOME/paperspecs
