@@ -120,12 +120,11 @@
 			],
 			"name": "python-html5lib",
 			"provides": [
-				"python(html5lib(3.11))",
 				"python(html5lib)"
 			]
 		}
 	},
 	"source-name": "python-html5lib",
-	"source-release": "2",
+	"source-release": "3",
 	"source-version": "1.1"
 }
