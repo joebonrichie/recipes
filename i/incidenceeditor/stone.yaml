@@ -1,0 +1,56 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : incidenceeditor
+version     : 25.04.3
+release     : 1
+upstreams   :
+    - https://download.kde.org/stable/release-service/25.04.3/src/incidenceeditor-25.04.3.tar.xz : 79624825fe0fced136d1aa7d27a340fbd54cadda7005b0268678c6e0dac6c08c
+homepage    : https://kontact.kde.org/
+license     :
+    - GPL-2.0-or-later
+    - LGPL-2.1-or-later
+summary     : KDE PIM incidence editor
+description : |
+    KDE PIM incidence editor.
+builddeps   :
+    # Temporary, boulder doesn't handle build ordering resolution correctly when builddeps are added by macros, so add ECM manually
+    - cmake(ECM)
+    - cmake(KGantt6)
+    - cmake(KF6CalendarCore)
+    - cmake(KF6Codecs)
+    - cmake(KF6GuiAddons)
+    - cmake(KF6I18n)
+    - cmake(KF6IconThemes)
+    - cmake(KF6KIO)
+    - cmake(KF6TextWidgets)
+    - cmake(KPim6Akonadi)
+    - cmake(KPim6AkonadiCalendar)
+    - cmake(KPim6AkonadiMime)
+    - cmake(KPim6CalendarSupport)
+    - cmake(KPim6CalendarUtils)
+    - cmake(KPim6EventViews)
+    - cmake(KPim6IdentityManagementCore)
+    - cmake(KPim6LdapWidgets)
+    - cmake(KPim6Libkdepim)
+    - cmake(KPim6Mime)
+    - cmake(KPim6PimCommonAkonadi)
+    - cmake(KPim6TextEdit)
+setup       : |
+    %cmake_kf6
+build       : |
+    %cmake_build
+install     : |
+    %cmake_install
+packages    :
+    - "%(name)-devel":
+        rundeps:
+            - cmake(KF6CalendarCore)
+            - cmake(KPim6AkonadiMime)
+            - cmake(KPim6CalendarSupport)
+            - cmake(KPim6CalendarUtils)
+            - cmake(KPim6EventViews)
+            - cmake(KPim6Mime)
+
