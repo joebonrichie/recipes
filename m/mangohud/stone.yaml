@@ -5,7 +5,7 @@
 #
 name        : mangohud
 version     : 0.8.1
-release     : 6
+release     : 7
 homepage    : https://github.com/flightlessmango/MangoHud
 upstreams   :
     - https://github.com/flightlessmango/MangoHud/releases/download/v0.8.1/MangoHud-v0.8.1-Source.tar.xz : 4c8d8098f5deff7737978d792eef909b7469933f456a47132dccc06804825482
@@ -20,7 +20,7 @@ builddeps   :
     - pkgconfig(glew)
     - pkgconfig(glfw3)
     - pkgconfig(nlohmann_json)
-    # - pkgconfig(spdlog) # Too old, re-enable once updated
+    - pkgconfig(spdlog)
     - pkgconfig(wayland-client)
     - pkgconfig(x11)
     - pkgconfig(xkbcommon)
@@ -31,10 +31,17 @@ setup       : |
     # version script assignment of 'global' to symbol 'dlsym' failed: symbol not defined
     export LDFLAGS="$LDFLAGS -Wl,--undefined-version"
 
-    %meson -Dmangoapp=true \
-           -Dmangohudctl=true \
-           -Dwith_xnvctrl=disabled # for now. needs nvidia-settings
+    %meson \
+        -Dmangoapp=true \
+        -Dmangohudctl=true \
+        -Duse_system_spdlog=enabled \
+        -Dwith_xnvctrl=disabled # for now. needs nvidia-settings
 build       : |
     %meson_build
 install     : |
     %meson_install
+packages    :
+    - mangoplot:
+        # This needs matplotlib and numpy
+        paths:
+            - /usr/bin/mangoplot
