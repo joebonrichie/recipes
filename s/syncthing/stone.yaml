@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : syncthing
-version     : 1.29.2
-release     : 2
+version     : 1.30.0
+release     : 3
 homepage    : https://syncthing.net
 upstreams   :
-    - https://github.com/syncthing/syncthing/archive/refs/tags/v1.29.2.tar.gz : 6446e52cb5ca6584710c3abd9250e0d9708486d2dc2264f7c869ade169876a57
+    - https://github.com/syncthing/syncthing/releases/download/v1.30.0/syncthing-source-v1.30.0.tar.gz : ef1be71c66753c04212ab1c9c548e678d468bad98dc5461e83540a4ef5c2fcba
 summary     : Continuous file synchronization program
 description : |
     It synchronizes files between two or more computers in real time,
@@ -19,39 +19,63 @@ license     : MPL-2.0
 networking  : true
 builddeps   :
     - binary(go)
+setup       : |
+    %patch %(pkgdir)/fix-tests-pie.patch -p5
+
+    go mod vendor
 build       : |
+    export CGO_ENABLED=1
+    export CGO_CPPFLAGS="${CPPFLAGS}"
+    export CGO_CFLAGS="${CFLAGS}"
+    export CGO_CXXFLAGS="${CXXFLAGS}"
+    export CGO_LDFLAGS="${LDFLAGS}"
+    export GOFLAGS="-buildmode=pie -ldflags=-linkmode=external -mod=readonly -modcacherw"
     go run build.go --no-upgrade
 install     : |
     %install_bin bin/syncthing
     %install_bin bin/stdiscosrv
     %install_bin bin/strelaysrv
 
-    %install_dir %(installroot)%(docdir)/%(name)
+    # TODO, once we support firewalld/ufw install the files for it (etc/firewall-ufw)
+
+    # User .desktop files
+    %install_file etc/linux-desktop/*.desktop -t %(installroot)%(datadir)/applications
+
+    # Systemd/sysctl
     %install_file etc/linux-systemd/system/syncthing@.service %(installroot)%(libdir)/systemd/system/syncthing@.service
     %install_file etc/linux-systemd/user/syncthing.service %(installroot)%(libdir)/systemd/user/syncthing.service
     %install_file etc/linux-sysctl/30-syncthing.conf %(installroot)%(libdir)/sysctl.d/30-syncthing.conf
+
+    # Don't enable syncthing services by default, the user might be managing them with the desktop file or with a wrapper application
+    %install_file %(pkgdir)/syncthing-system.preset %(installroot)%(libdir)/systemd/system-preset/%(name).preset
+    %install_file %(pkgdir)/syncthing-user.preset %(installroot)%(libdir)/systemd/user-preset/%(name).preset
+
+    # Icons
+    for i in 32 64 128 256 512; do
+        %install_file assets/logo-${i}.png %(installroot)%(datadir)/icons/hicolor/${i}x${i}/apps/syncthing.png
+    done
+    %install_file assets/logo-only.svg %(installroot)%(datadir)/icons/hicolor/scalable/apps/syncthing.svg
+
+    %install_dir %(installroot)%(docdir)/%(name)
     %install_file LICENSE %(installroot)%(docdir)/%(name)/.
 
-    %install_file man/syncthing.1 %(installroot)%(mandir)/man1/syncthing.1
-    %install_dir %(installroot)%(mandir)/man5
-    cp man/syncthing*.5 %(installroot)%(mandir)/man5/.
-    %install_dir %(installroot)%(mandir)/man7
-    cp man/syncthing*.7 %(installroot)%(mandir)/man7/.
-    %install_file man/stdiscosrv.1 %(installroot)%(mandir)/man1/stdiscosrv.1
-    %install_file man/strelaysrv.1 %(installroot)%(mandir)/man1/strelaysrv.1
+    %install_file man/*.1 -t %(installroot)%(mandir)/man1
+    %install_file man/*.5 -t %(installroot)%(mandir)/man5
+    %install_file man/*.7 -t %(installroot)%(mandir)/man7
+check       : |
+    go run build.go test
 packages:
+    # TODO: Merge stdiscosrv and strelaysrv into a single tools package (needs moss deprecation support)
     - "%(name)-stdiscosrv":
         summary: Discovery server
         description: Discovery server
         paths:
             - /usr/bin/stdiscosrv
             - /usr/share/man/man1/stdiscosrv.1
+
     - "%(name)-strelaysrv":
         summary: Relay server
         description: Relay server
         paths:
             - /usr/bin/strelaysrv
             - /usr/share/man/man1/strelaysrv.1
-        
-check       : |
-    go run build.go test
