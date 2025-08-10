@@ -1,0 +1,67 @@
+/** Human readable report. This is not consumed by boulder */
+{
+	"manifest-version": "0.2",
+	"packages": {
+		"kpkpass": {
+			"build-depends": [
+				"cmake(ECM)",
+				"cmake(KF6Archive)"
+			],
+			"depends": [
+				"soname(libKF6Archive.so.6(x86_64))",
+				"soname(libQt6Core.so.6(x86_64))",
+				"soname(libQt6Gui.so.6(x86_64))",
+				"soname(libc++.so.1(x86_64))",
+				"soname(libc.so.6(x86_64))",
+				"soname(libm.so.6(x86_64))"
+			],
+			"files": [
+				"/usr/lib/libKPim6PkPass.so.6",
+				"/usr/lib/libKPim6PkPass.so.6.4.3",
+				"/usr/share/qlogging-categories6/org_kde_kpkpass.categories"
+			],
+			"name": "kpkpass",
+			"provides": [
+				"soname(libKPim6PkPass.so.6(x86_64))"
+			]
+		},
+		"kpkpass-devel": {
+			"build-depends": [
+				"cmake(ECM)",
+				"cmake(KF6Archive)"
+			],
+			"depends": [
+				"kpkpass"
+			],
+			"files": [
+				"/usr/include/KPim6/KPkPass/Barcode",
+				"/usr/include/KPim6/KPkPass/BoardingPass",
+				"/usr/include/KPim6/KPkPass/Field",
+				"/usr/include/KPim6/KPkPass/Location",
+				"/usr/include/KPim6/KPkPass/Pass",
+				"/usr/include/KPim6/KPkPass/barcode.h",
+				"/usr/include/KPim6/KPkPass/boardingpass.h",
+				"/usr/include/KPim6/KPkPass/field.h",
+				"/usr/include/KPim6/KPkPass/kpkpass_export.h",
+				"/usr/include/KPim6/KPkPass/kpkpass_version.h",
+				"/usr/include/KPim6/KPkPass/location.h",
+				"/usr/include/KPim6/KPkPass/pass.h",
+				"/usr/lib/cmake/KPim6PkPass/KPim6PkPassConfig.cmake",
+				"/usr/lib/cmake/KPim6PkPass/KPim6PkPassConfigVersion.cmake",
+				"/usr/lib/cmake/KPim6PkPass/KPim6PkPassQchTargets.cmake",
+				"/usr/lib/cmake/KPim6PkPass/KPim6PkPassTargets-release.cmake",
+				"/usr/lib/cmake/KPim6PkPass/KPim6PkPassTargets.cmake",
+				"/usr/lib/libKPim6PkPass.so",
+				"/usr/share/doc/qt6/KPim6PkPass.qch",
+				"/usr/share/doc/qt6/KPim6PkPass.tags"
+			],
+			"name": "kpkpass-devel",
+			"provides": [
+				"cmake(KPim6PkPass)"
+			]
+		}
+	},
+	"source-name": "kpkpass",
+	"source-release": "1",
+	"source-version": "25.04.3"
+}
