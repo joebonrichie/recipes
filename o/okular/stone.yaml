@@ -5,7 +5,7 @@
 #
 name        : okular
 version     : 25.04.3
-release     : 2
+release     : 3
 upstreams   :
     - https://download.kde.org/stable/release-service/25.04.3/src/okular-25.04.3.tar.xz : d0b5bb0b0eeab46aa2367c8d81096185bd2261710701c84f1c6e2398e5058bfb
 homepage    : https://apps.kde.org/okular/
@@ -40,6 +40,7 @@ builddeps   :
     - cmake(KF6XmlGui)
     - cmake(Phonon4Qt6)
     - cmake(PlasmaActivities)
+    - cmake(QMobipocket6)
     - cmake(Qt6CorePrivate)
     - cmake(Qt6Svg)
     - cmake(Qt6TextToSpeech)
@@ -49,12 +50,9 @@ builddeps   :
     - pkgconfig(libspectre)
     - pkgconfig(libtiff-4)
     - pkgconfig(poppler-qt6)
-    # TODO:
-    # EPub
-    # QMobipocket6
+    - ebook-tools-devel
 setup       : |
-    %cmake_kf6 \
-        -DFORCE_NOT_REQUIRED_DEPENDENCIES="EPub;"
+    %cmake_kf6
 build       : |
     %cmake_build
 install     : |
