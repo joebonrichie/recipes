@@ -8,16 +8,14 @@
 			],
 			"depends": [
 				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
-				"soname(ld-linux-x86-64.so.2(x86_64))",
 				"soname(libc.so.6(x86_64))",
+				"soname(libgdbm.so.6(x86_64))",
 				"soname(libreadline.so.8(x86_64))"
 			],
 			"files": [
 				"/usr/bin/gdbm_dump",
 				"/usr/bin/gdbm_load",
 				"/usr/bin/gdbmtool",
-				"/usr/lib/libgdbm.so.6",
-				"/usr/lib/libgdbm.so.6.0.0",
 				"/usr/share/info/gdbm.info",
 				"/usr/share/locale/da/LC_MESSAGES/gdbm.mo",
 				"/usr/share/locale/de/LC_MESSAGES/gdbm.mo",
@@ -43,8 +41,7 @@
 			"provides": [
 				"binary(gdbm_dump)",
 				"binary(gdbm_load)",
-				"binary(gdbmtool)",
-				"soname(libgdbm.so.6(x86_64))"
+				"binary(gdbmtool)"
 			]
 		},
 		"gdbm-32bit": {
@@ -91,9 +88,26 @@
 				"/usr/share/man/man3/gdbm.3"
 			],
 			"name": "gdbm-devel"
+		},
+		"gdbm-libs": {
+			"build-depends": [
+				"pkgconfig32(readline)"
+			],
+			"depends": [
+				"soname(ld-linux-x86-64.so.2(x86_64))",
+				"soname(libc.so.6(x86_64))"
+			],
+			"files": [
+				"/usr/lib/libgdbm.so.6",
+				"/usr/lib/libgdbm.so.6.0.0"
+			],
+			"name": "gdbm-libs",
+			"provides": [
+				"soname(libgdbm.so.6(x86_64))"
+			]
 		}
 	},
 	"source-name": "gdbm",
-	"source-release": "5",
-	"source-version": "1.24"
+	"source-release": "6",
+	"source-version": "1.26"
 }
