@@ -5,7 +5,7 @@
 #
 name        : gstreamer
 version     : 1.26.5
-release     : 22
+release     : 23
 homepage    : https://gstreamer.freedesktop.org/
 upstreams   :
     - https://gitlab.freedesktop.org/gstreamer/gstreamer/-/archive/1.26.5/gstreamer-1.26.5.tar.gz : eb102bf0435d1179276e4ea4d0b951939c2e72d882446362badcd5a57ab56a31
@@ -88,6 +88,7 @@ builddeps   :
     - pkgconfig(sbc)
     - pkgconfig(sndfile)
     - pkgconfig(soundtouch)
+    - pkgconfig(taglib)
     - pkgconfig(theoradec)
     - pkgconfig(vapigen)
     - pkgconfig(vpl)
@@ -100,6 +101,7 @@ builddeps   :
     - pkgconfig(x264)
     - pkgconfig(x265)
     - pkgconfig(xkbcommon)
+    - pkgconfig(xkbcommon-x11)
     - pkgconfig(xv)
     - pkgconfig(zxing)
     - lame-devel
@@ -115,7 +117,6 @@ builddeps   :
 # - libavc1394
 # - libiec61883
 # - speex (not the same as speexdsp)
-# - taglib
 # - twolame
 # - wavpack
 # bad:
@@ -732,6 +733,7 @@ packages    :
             - /usr/lib/gstreamer-1.0/libgstsmpte.so
             - /usr/lib/gstreamer-1.0/libgstsoup.so
             - /usr/lib/gstreamer-1.0/libgstspectrum.so
+            - /usr/lib/gstreamer-1.0/libgsttaglib.so
             - /usr/lib/gstreamer-1.0/libgstudp.so
             - /usr/lib/gstreamer-1.0/libgstvideo4linux2.so
             - /usr/lib/gstreamer-1.0/libgstvideobox.so
