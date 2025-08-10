@@ -1,0 +1,44 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : calendarsupport
+version     : 25.04.3
+release     : 1
+upstreams   :
+    - https://download.kde.org/stable/release-service/25.04.3/src/calendarsupport-25.04.3.tar.xz : c3265468eecd4271d1d0276999a16d15971c8ad5de4ebe2f16a95de0d24a5b0d
+homepage    : https://kontact.kde.org/
+license     :
+    - GPL-2.0-or-later
+    - LGPL-2.1-or-later
+summary     : Calendar Support library provides helper utilities for calendaring applications
+description : |
+    Calendar Support library provides helper utilities for calendaring applications.
+builddeps   :
+    # Temporary, boulder doesn't handle build ordering resolution correctly when builddeps are added by macros, so add ECM manually
+    - cmake(ECM)
+    - cmake(KF6CalendarCore)
+    - cmake(KF6Codecs)
+    - cmake(KF6GuiAddons)
+    - cmake(KF6Holidays)
+    - cmake(KF6I18n)
+    - cmake(KF6KIO)
+    - cmake(KF6TextCustomEditor)
+    - cmake(KPim6Akonadi)
+    - cmake(KPim6AkonadiCalendar)
+    - cmake(KPim6CalendarUtils)
+    - cmake(KPim6IdentityManagementCore)
+    - cmake(KPim6Mime)
+setup       : |
+    %cmake_kf6
+build       : |
+    %cmake_build
+install     : |
+    %cmake_install
+packages    :
+    - "%(name)-devel":
+        rundeps:
+            - cmake(KPim6AkonadiCalendar)
+            - cmake(KPim6IdentityManagementCore)
+            - cmake(KPim6Mime)
