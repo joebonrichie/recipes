@@ -1,0 +1,34 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : taglib
+version     : 2.1.1
+release     : 1
+upstreams   :
+    - https://github.com/taglib/taglib/releases/download/v2.1.1/taglib-2.1.1.tar.gz : 3716d31f7c83cbf17b67c8cf44dd82b2a2f17e6780472287a16823e70305ddba
+homepage    : https://taglib.github.io/
+license     :
+    - LGPL-2.1-or-later
+    - MPL-1.1
+summary     : Library to read metadata from a variety of multimedia formats
+description : |
+    TagLib is a library for reading and editing the meta-data of several popular audio formats. Currently it supports both ID3v1 and ID3v2 for MP3 files, Ogg Vorbis comments and ID3 tags and Vorbis comments in FLAC, MPC, Speex, WavPack TrueAudio, WAV, AIFF, MP4 and ASF files.
+builddeps   :
+    - pkgconfig(zlib)
+    # utf8cpp
+    # TODO: Add cppunit and enable tests
+setup       : |
+    %cmake \
+        -DBUILD_SHARED_LIBS=ON
+build       : |
+    %cmake_build
+install     : |
+    %cmake_install
+# check       : |
+#     %cmake_test
+packages    :
+    - "%(name)-devel":
+        paths:
+            - /usr/bin/taglib-config
