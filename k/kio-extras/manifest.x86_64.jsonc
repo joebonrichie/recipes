@@ -29,6 +29,7 @@
 				"cmake(QCoro6)",
 				"cmake(Qt6Core5Compat)",
 				"cmake(Qt6Svg)",
+				"cmake(taglib)",
 				"pkgconfig(libimobiledevice-1.0)",
 				"pkgconfig(libmtp)",
 				"pkgconfig(libplist-2.0)",
@@ -81,6 +82,7 @@
 				"soname(libproxy.so.1(x86_64))",
 				"soname(libsmbclient.so.0(x86_64))",
 				"soname(libssh.so.4(x86_64))",
+				"soname(libtag.so.2(x86_64))",
 				"soname(libtirpc.so.3(x86_64))",
 				"soname(libunwind.so.1(x86_64))"
 			],
@@ -110,6 +112,7 @@
 				"/usr/lib/qt6/plugins/kf6/kio/smb.so",
 				"/usr/lib/qt6/plugins/kf6/kio/thumbnail.so",
 				"/usr/lib/qt6/plugins/kf6/kiod/kmtpd.so",
+				"/usr/lib/qt6/plugins/kf6/thumbcreator/audiothumbnail.so",
 				"/usr/lib/qt6/plugins/kf6/thumbcreator/comicbookthumbnail.so",
 				"/usr/lib/qt6/plugins/kf6/thumbcreator/directorythumbnail.so",
 				"/usr/lib/qt6/plugins/kf6/thumbcreator/djvuthumbnail.so",
@@ -1294,6 +1297,7 @@
 				"soname(qt6/plugins/kf6/kio/smb.so(x86_64))",
 				"soname(qt6/plugins/kf6/kio/thumbnail.so(x86_64))",
 				"soname(qt6/plugins/kf6/kiod/kmtpd.so(x86_64))",
+				"soname(qt6/plugins/kf6/thumbcreator/audiothumbnail.so(x86_64))",
 				"soname(qt6/plugins/kf6/thumbcreator/comicbookthumbnail.so(x86_64))",
 				"soname(qt6/plugins/kf6/thumbcreator/directorythumbnail.so(x86_64))",
 				"soname(qt6/plugins/kf6/thumbcreator/djvuthumbnail.so(x86_64))",
@@ -1339,6 +1343,7 @@
 				"cmake(QCoro6)",
 				"cmake(Qt6Core5Compat)",
 				"cmake(Qt6Svg)",
+				"cmake(taglib)",
 				"pkgconfig(libimobiledevice-1.0)",
 				"pkgconfig(libmtp)",
 				"pkgconfig(libplist-2.0)",
@@ -1391,6 +1396,7 @@
 				"cmake(QCoro6)",
 				"cmake(Qt6Core5Compat)",
 				"cmake(Qt6Svg)",
+				"cmake(taglib)",
 				"pkgconfig(libimobiledevice-1.0)",
 				"pkgconfig(libmtp)",
 				"pkgconfig(libplist-2.0)",
@@ -1979,6 +1985,6 @@
 		}
 	},
 	"source-name": "kio-extras",
-	"source-release": "1",
+	"source-release": "2",
 	"source-version": "25.04.3"
 }

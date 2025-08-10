@@ -5,7 +5,7 @@
 #
 name        : kio-extras
 version     : 25.04.3
-release     : 1
+release     : 2
 upstreams   :
     - https://download.kde.org/stable/release-service/25.04.3/src/kio-extras-25.04.3.tar.xz : f0b630639e4766ce85b9f8444b5b877fc3b40e09ec2fceb0d961eff4914d3fc8
 homepage    : https://kde.org/
@@ -40,6 +40,7 @@ builddeps   :
     - cmake(QCoro6)
     - cmake(Qt6Core5Compat)
     - cmake(Qt6Svg)
+    - cmake(taglib)
     - pkgconfig(libimobiledevice-1.0)
     - pkgconfig(libmtp)
     - pkgconfig(libplist-2.0)
@@ -50,10 +51,8 @@ builddeps   :
     # TODO:
     # - OpenEXR
     # - libappimage
-    # - Taglib
 rundeps     :
     - phonon-backend-mpv-qt6
-#     - qt6-wayland
 setup       : |
     %cmake_kf6
 build       : |
