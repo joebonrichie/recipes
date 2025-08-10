@@ -1,0 +1,39 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : kitinerary
+version     : 25.04.3
+release     : 1
+upstreams   :
+    - https://download.kde.org/stable/release-service/25.04.3/src/kitinerary-25.04.3.tar.xz : ca93a086feccf0f36d4ca56a9f5ccf51943d7e1945b392daf211e42f128139d4
+homepage    : https://invent.kde.org/pim/kitinerary
+license     : LGPL-2.1-or-later
+summary     : Data Model and Extraction System for Travel Reservation information
+description : |
+    A library containing itinerary data model and itinerary extraction code.
+builddeps   :
+    # Temporary, boulder doesn't handle build ordering resolution correctly when builddeps are added by macros, so add ECM manually
+    - cmake(ECM)
+    - cmake(KF6Contacts)
+    - cmake(KF6CalendarCore)
+    - cmake(KF6I18n)
+    - cmake(KPim6Mime)
+    - cmake(KPim6PkPass)
+    - cmake(Qt6Qml)
+    - pkgconfig(libxml-2.0)
+    - pkgconfig(openssl)
+    - pkgconfig(poppler)
+    - pkgconfig(poppler-cpp)
+    - pkgconfig(shared-mime-info)
+    - pkgconfig(zxing)
+    - pkgconfig(zlib)
+    # TODO:
+    # - libphonenumber
+setup       : |
+    %cmake_kf6
+build       : |
+    %cmake_build
+install     : |
+    %cmake_install
