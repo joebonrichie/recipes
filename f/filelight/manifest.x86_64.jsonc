@@ -48,6 +48,7 @@
 				"/usr/share/icons/hicolor/32x32/apps/filelight.png",
 				"/usr/share/icons/hicolor/48x48/apps/filelight.png",
 				"/usr/share/icons/hicolor/64x64/apps/filelight.png",
+				"/usr/share/kio/servicemenus/filelight.desktop",
 				"/usr/share/locale/ar/LC_MESSAGES/filelight.mo",
 				"/usr/share/locale/ast/LC_MESSAGES/filelight.mo",
 				"/usr/share/locale/az/LC_MESSAGES/filelight.mo",
@@ -181,6 +182,6 @@
 		}
 	},
 	"source-name": "filelight",
-	"source-release": "1",
-	"source-version": "25.04.3"
+	"source-release": "2",
+	"source-version": "25.07.90"
 }
