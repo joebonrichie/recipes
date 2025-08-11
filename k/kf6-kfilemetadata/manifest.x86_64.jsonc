@@ -25,7 +25,7 @@
 				"soname(libKF6Codecs.so.6(x86_64))",
 				"soname(libKF6CoreAddons.so.6(x86_64))",
 				"soname(libKF6I18n.so.6(x86_64))",
-				"soname(libQMobipocket6.so.2(x86_64))",
+				"soname(libQMobipocket6.so.3(x86_64))",
 				"soname(libQt6Core.so.6(x86_64))",
 				"soname(libQt6Gui.so.6(x86_64))",
 				"soname(libQt6Xml.so.6(x86_64))",
@@ -213,6 +213,6 @@
 		}
 	},
 	"source-name": "kf6-kfilemetadata",
-	"source-release": "8",
+	"source-release": "9",
 	"source-version": "6.17.0"
 }
