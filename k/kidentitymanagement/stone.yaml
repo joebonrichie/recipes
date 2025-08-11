@@ -4,10 +4,10 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : kidentitymanagement
-version     : 25.04.3
-release     : 1
+version     : 25.07.90
+release     : 2
 upstreams   :
-    - https://download.kde.org/stable/release-service/25.04.3/src/kidentitymanagement-25.04.3.tar.xz : 13a022e5ea845b4b65982c533d705888282805e0ce44517eccd6e24b8d5e3e7f
+    - https://download.kde.org/unstable/release-service/25.07.90/src/kidentitymanagement-25.07.90.tar.xz : 7b4571628406515e3db991f127ff6e6682f11c41036eca92e8bfd83841556dd4
 homepage    : https://kde.org
 license     : LGPL-2.1-or-later
 summary     : Manage PIM identity
