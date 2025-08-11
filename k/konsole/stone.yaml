@@ -4,10 +4,10 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : konsole
-version     : 25.04.3
-release     : 8
+version     : 25.07.90
+release     : 9
 upstreams   :
-    - https://download.kde.org/stable/release-service/25.04.3/src/konsole-25.04.3.tar.xz : 2f6833e22a71f4191e7ee45f3dce37e22a3be36d0fa592fdfffce207acac3939
+    - https://download.kde.org/unstable/release-service/25.07.90/src/konsole-25.07.90.tar.xz : bd605a2c34a62afe9023abd6a53d8fc2a22525b5d84340697d07adc7f241fa60
 homepage    : https://kde.org/applications/system/org.kde.konsole
 license     :
     - GFDL-1.2-or-later
@@ -45,7 +45,6 @@ builddeps   :
 rundeps     :
     - qt6-wayland
 setup       : |
-    %patch %(pkgdir)/upstream-1103.patch
     %cmake_kf6
 build       : |
     %cmake_build
