@@ -4,10 +4,10 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : kcalc
-version     : 25.04.3
-release     : 1
+version     : 25.07.90
+release     : 2
 upstreams   :
-    - https://download.kde.org/stable/release-service/25.04.3/src/kcalc-25.04.3.tar.xz : 1b6f52ff6950a5c7f6754bb41fd036af4a016939227b2f4351f3836ba705348b
+    - https://download.kde.org/unstable/release-service/25.07.90/src/kcalc-25.07.90.tar.xz : 4fcf7c2c7cc42663bb8dbaa4fa4215f7b9943bf9f4ada47fd9970c3dffd0e4d5
 homepage    : https://apps.kde.org/kcalc/
 license     : GPL-2.0-or-later
 summary     : Scientific calculator by KDE
