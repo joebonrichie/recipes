@@ -4,10 +4,10 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : neochat
-version     : 25.04.3
-release     : 1
+version     : 25.07.90
+release     : 2
 upstreams   :
-    - https://download.kde.org/stable/release-service/25.04.3/src/neochat-25.04.3.tar.xz : ad44385ffdd78f813443fac8702003ee16d36afeded0bdf02fd4c928c487c53c
+    - https://download.kde.org/unstable/release-service/25.07.90/src/neochat-25.07.90.tar.xz : 68a81a795f56080bcb6e163e783fbc3b63e0cddc10d054c4423da5f47ebd164f
 homepage    : https://apps.kde.org/neochat/
 license     :
     - BSD-2-Clause
@@ -48,6 +48,7 @@ builddeps   :
     - cmake(Qt6Multimedia)
     - cmake(Qt6Quick)
     - cmake(Qt6Svg)
+    - cmake(Qt6TextToSpeech)
     - cmake(Qt6WebView)
     - cmake(cmark)
     - pkgconfig(icu-uc)

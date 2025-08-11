@@ -32,6 +32,7 @@
 				"cmake(Qt6Multimedia)",
 				"cmake(Qt6Quick)",
 				"cmake(Qt6Svg)",
+				"cmake(Qt6TextToSpeech)",
 				"cmake(Qt6WebView)",
 				"cmake(QuotientQt6)",
 				"cmake(cmark)",
@@ -69,7 +70,6 @@
 				"soname(libKF6WindowSystem.so.6(x86_64))",
 				"soname(libKUnifiedPush.so.1(x86_64))",
 				"soname(libKirigamiPlatform.so.6(x86_64))",
-				"soname(libQCoro6Network.so.0(x86_64))",
 				"soname(libQt6Core.so.6(x86_64))",
 				"soname(libQt6DBus.so.6(x86_64))",
 				"soname(libQt6Gui.so.6(x86_64))",
@@ -78,6 +78,7 @@
 				"soname(libQt6Qml.so.6(x86_64))",
 				"soname(libQt6Quick.so.6(x86_64))",
 				"soname(libQt6QuickControls2.so.6(x86_64))",
+				"soname(libQt6TextToSpeech.so.6(x86_64))",
 				"soname(libQt6WebView.so.6(x86_64))",
 				"soname(libQt6Widgets.so.6(x86_64))",
 				"soname(libQuotientQt6.so.0.9(x86_64))",
@@ -162,6 +163,6 @@
 		}
 	},
 	"source-name": "neochat",
-	"source-release": "1",
-	"source-version": "25.04.3"
+	"source-release": "2",
+	"source-version": "25.07.90"
 }
