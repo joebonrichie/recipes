@@ -4,10 +4,10 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : dolphin
-version     : 25.04.3
-release     : 6
+version     : 25.07.90
+release     : 7
 upstreams   :
-    - https://download.kde.org/stable/release-service/25.04.3/src/dolphin-25.04.3.tar.xz : e822faf02d3d727faf14789eacd331288cb8a74bb9b9881f1e7cd1789752c3f1
+    - https://download.kde.org/unstable/release-service/25.07.90/src/dolphin-25.07.90.tar.xz : 67993b220693ce2ac2ede856c3541609f02d1f8e5432caa4cb40ea6f8887d150
 homepage    : https://kde.org/applications/system/org.kde.dolphin
 license     :
     - GFDL-1.2-or-later
@@ -42,8 +42,8 @@ builddeps   :
     - cmake(KF6UserFeedback)
     - cmake(KF6WidgetsAddons)
     - cmake(KF6WindowSystem)
-    - cmake(Phonon4Qt6)
     - cmake(Qt6CorePrivate)
+    - cmake(Qt6Multimedia)
     # Todo build with packagekit support
 rundeps     :
     # KIO features
@@ -51,8 +51,6 @@ rundeps     :
     - kio-fuse
 
     - konsole-part # Integrated terminal
-    # Phonon Backend
-    - phonon-backend-mpv-qt6
     # So it always runs correctly on Wayland
     - qt6-wayland
 
