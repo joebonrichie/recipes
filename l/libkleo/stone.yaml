@@ -4,10 +4,10 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : libkleo
-version     : 25.04.3
-release     : 4
+version     : 25.07.90
+release     : 5
 upstreams   :
-    - https://download.kde.org/stable/release-service/25.04.3/src/libkleo-25.04.3.tar.xz : 7c9b334b226c990d5193b2e66a3ce8de1c5ea6c2afc9175280e6f44d02a7caa8
+    - https://download.kde.org/unstable/release-service/25.07.90/src/libkleo-25.07.90.tar.xz : aeabb04a18cecffb34c118d70940ad42323e2564e5cb711ae6b0d6751569ca68
 homepage    : https://kde.org
 license     : GPL-2.0-or-later
 summary     : KDE PIM cryptographic library

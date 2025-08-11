@@ -38,7 +38,7 @@
 			],
 			"files": [
 				"/usr/lib/libKPim6Libkleo.so.6",
-				"/usr/lib/libKPim6Libkleo.so.6.4.3",
+				"/usr/lib/libKPim6Libkleo.so.6.4.90",
 				"/usr/share/libkleopatra/pics/smartcard.xpm",
 				"/usr/share/locale/ar/LC_MESSAGES/libkleopatra6.mo",
 				"/usr/share/locale/ast/LC_MESSAGES/libkleopatra6.mo",
@@ -64,6 +64,7 @@
 				"/usr/share/locale/fy/LC_MESSAGES/libkleopatra6.mo",
 				"/usr/share/locale/ga/LC_MESSAGES/libkleopatra6.mo",
 				"/usr/share/locale/gl/LC_MESSAGES/libkleopatra6.mo",
+				"/usr/share/locale/he/LC_MESSAGES/libkleopatra6.mo",
 				"/usr/share/locale/hi/LC_MESSAGES/libkleopatra6.mo",
 				"/usr/share/locale/hne/LC_MESSAGES/libkleopatra6.mo",
 				"/usr/share/locale/hr/LC_MESSAGES/libkleopatra6.mo",
@@ -140,6 +141,7 @@
 			],
 			"files": [
 				"/usr/include/KPim6/Libkleo/Libkleo/Algorithm",
+				"/usr/include/KPim6/Libkleo/Libkleo/ApplicationPaletteWatcher",
 				"/usr/include/KPim6/Libkleo/Libkleo/Assuan",
 				"/usr/include/KPim6/Libkleo/Libkleo/AuditLogEntry",
 				"/usr/include/KPim6/Libkleo/Libkleo/AuditLogViewer",
@@ -156,6 +158,7 @@
 				"/usr/include/KPim6/Libkleo/Libkleo/DefaultKeyGenerationJob",
 				"/usr/include/KPim6/Libkleo/Libkleo/DirectoryServicesWidget",
 				"/usr/include/KPim6/Libkleo/Libkleo/Dn",
+				"/usr/include/KPim6/Libkleo/Libkleo/DnAttributes",
 				"/usr/include/KPim6/Libkleo/Libkleo/DocAction",
 				"/usr/include/KPim6/Libkleo/Libkleo/EditDirectoryServiceDialog",
 				"/usr/include/KPim6/Libkleo/Libkleo/Enum",
@@ -210,13 +213,13 @@
 				"/usr/include/KPim6/Libkleo/Libkleo/Test",
 				"/usr/include/KPim6/Libkleo/Libkleo/TreeView",
 				"/usr/include/KPim6/Libkleo/Libkleo/TreeWidget",
-				"/usr/include/KPim6/Libkleo/Libkleo/UniqueLock",
 				"/usr/include/KPim6/Libkleo/Libkleo/UserIDListModel",
 				"/usr/include/KPim6/Libkleo/Libkleo/UserIDListProxyModel",
 				"/usr/include/KPim6/Libkleo/Libkleo/UserIDProxyModel",
 				"/usr/include/KPim6/Libkleo/Libkleo/UserIDSelectionCombo",
 				"/usr/include/KPim6/Libkleo/Libkleo/Validation",
 				"/usr/include/KPim6/Libkleo/libkleo/algorithm.h",
+				"/usr/include/KPim6/Libkleo/libkleo/applicationpalettewatcher.h",
 				"/usr/include/KPim6/Libkleo/libkleo/assuan.h",
 				"/usr/include/KPim6/Libkleo/libkleo/auditlogentry.h",
 				"/usr/include/KPim6/Libkleo/libkleo/auditlogviewer.h",
@@ -234,6 +237,7 @@
 				"/usr/include/KPim6/Libkleo/libkleo/directoryserviceswidget.h",
 				"/usr/include/KPim6/Libkleo/libkleo/dn.h",
 				"/usr/include/KPim6/Libkleo/libkleo/dnattributeorderconfigwidget.h",
+				"/usr/include/KPim6/Libkleo/libkleo/dnattributes.h",
 				"/usr/include/KPim6/Libkleo/libkleo/docaction.h",
 				"/usr/include/KPim6/Libkleo/libkleo/editdirectoryservicedialog.h",
 				"/usr/include/KPim6/Libkleo/libkleo/enum.h",
@@ -290,7 +294,6 @@
 				"/usr/include/KPim6/Libkleo/libkleo/test.h",
 				"/usr/include/KPim6/Libkleo/libkleo/treeview.h",
 				"/usr/include/KPim6/Libkleo/libkleo/treewidget.h",
-				"/usr/include/KPim6/Libkleo/libkleo/uniquelock.h",
 				"/usr/include/KPim6/Libkleo/libkleo/useridlistmodel.h",
 				"/usr/include/KPim6/Libkleo/libkleo/useridlistproxymodel.h",
 				"/usr/include/KPim6/Libkleo/libkleo/useridproxymodel.h",
@@ -315,6 +318,6 @@
 		}
 	},
 	"source-name": "libkleo",
-	"source-release": "4",
-	"source-version": "25.04.3"
+	"source-release": "5",
+	"source-version": "25.07.90"
 }
