@@ -4,10 +4,10 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : ffmpegthumbs
-version     : 25.04.3
-release     : 5
+version     : 25.07.90
+release     : 6
 upstreams   :
-    - https://download.kde.org/stable/release-service/25.04.3/src/ffmpegthumbs-25.04.3.tar.xz : 78204751a7a57716971ed194a6636d559fb114113f24c193fd1cf798dfb2a994
+    - https://download.kde.org/unstable/release-service/25.07.90/src/ffmpegthumbs-25.07.90.tar.xz : 18772f4baba9365d52033ba1d15857adce645b93bda85f6daf50819976857a28
 homepage    : https://kde.org/applications/multimedia/org.kde.ffmpegthumbs
 license     : GPL-2.0-or-later
 summary     : Video thumbnail generator
