@@ -1,0 +1,42 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : lftp
+version     : 4.9.3
+release     : 1
+upstreams   :
+    - https://lftp.yar.ru/ftp/lftp-4.9.3.tar.xz : 96e7199d7935be33cf6b1161e955b2aab40ab77ecdf2a19cea4fc1193f457edc
+homepage    : https://lftp.yar.ru
+license     : GPL-3.0-or-later
+summary     : Terminal based FTP Client
+description : |
+    LFTP is a sophisticated ftp/http client, and a file transfer program supporting a number of network protocols.
+builddeps   :
+    - binary(bison)
+    - pkgconfig(expat)
+    - pkgconfig(libidn2)
+    - pkgconfig(ncursesw)
+    - pkgconfig(openssl)
+    - pkgconfig(readline)
+    - pkgconfig(zlib)
+setup       : |
+    %patch %(pkgdir)/0001-stateless-config.patch
+
+    %configure \
+        --enable-static=no \
+        --without-gnutls \
+        --with-linux-crypto \
+        --with-openssl
+build       : |
+    %make
+install     : |
+    %make_install
+
+    # Stateless
+    %install_dir %(installroot)%(vendordir)
+    mv %(installroot)%(sysconfdir)/lftp.conf %(installroot)%(vendordir)
+    rmdir -v %(installroot)%(sysconfdir)/
+
+    rm -v %(installroot)%(libdir)/*.a
