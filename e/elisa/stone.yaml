@@ -4,10 +4,10 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : elisa
-version     : 25.04.3
-release     : 1
+version     : 25.07.90
+release     : 2
 upstreams   :
-    - https://download.kde.org/stable/release-service/25.04.3/src/elisa-25.04.3.tar.xz : 16e4e38a9e7dcf9b42441c66707d5bbb52aef5c95422d8ee04a4a21e7f157392
+    - https://download.kde.org/unstable/release-service/25.07.90/src/elisa-25.07.90.tar.xz : 788e008a48075e3f27aa75b2d2545516c339efac8dd0f7a30931081881b86ae9
 homepage    : https://apps.kde.org/elisa/
 license     : LGPL-3.0-or-later
 summary     : Music player from KDE

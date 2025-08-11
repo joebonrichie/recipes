@@ -29,8 +29,8 @@
 				"cmake(KF6UserFeedback)",
 				"cmake(KF6WidgetsAddons)",
 				"cmake(KF6WindowSystem)",
-				"cmake(Phonon4Qt6)",
-				"cmake(Qt6CorePrivate)"
+				"cmake(Qt6CorePrivate)",
+				"cmake(Qt6Multimedia)"
 			],
 			"depends": [
 				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
@@ -38,7 +38,6 @@
 				"kio-extras",
 				"kio-fuse",
 				"konsole-part",
-				"phonon-backend-mpv-qt6",
 				"qt6-imageformats",
 				"qt6-wayland",
 				"soname(libKF6Baloo.so.6(x86_64))",
@@ -53,6 +52,7 @@
 				"soname(libKF6CoreAddons.so.6(x86_64))",
 				"soname(libKF6Crash.so.6(x86_64))",
 				"soname(libKF6DBusAddons.so.6(x86_64))",
+				"soname(libKF6FileMetaData.so.3(x86_64))",
 				"soname(libKF6GuiAddons.so.6(x86_64))",
 				"soname(libKF6I18n.so.6(x86_64))",
 				"soname(libKF6IconThemes.so.6(x86_64))",
@@ -76,12 +76,13 @@
 				"soname(libQt6Core.so.6(x86_64))",
 				"soname(libQt6DBus.so.6(x86_64))",
 				"soname(libQt6Gui.so.6(x86_64))",
+				"soname(libQt6Multimedia.so.6(x86_64))",
+				"soname(libQt6MultimediaWidgets.so.6(x86_64))",
 				"soname(libQt6Widgets.so.6(x86_64))",
 				"soname(libQt6Xml.so.6(x86_64))",
 				"soname(libc++.so.1(x86_64))",
 				"soname(libc.so.6(x86_64))",
-				"soname(libdolphinprivate.so.6(x86_64))",
-				"soname(libphonon4qt6.so.4(x86_64))"
+				"soname(libdolphinprivate.so.6(x86_64))"
 			],
 			"files": [
 				"/usr/bin/dolphin",
@@ -102,8 +103,8 @@
 				"/usr/share/dolphin/dolphinpartactions.desktop",
 				"/usr/share/icons/hicolor/scalable/apps/org.kde.dolphin.svg",
 				"/usr/share/kconf_update/dolphin_detailsmodesettings.upd",
-				"/usr/share/kconf_update/dolphin_directorysizemode.py",
-				"/usr/share/kconf_update/dolphin_directorysizemode.upd",
+				"/usr/share/kconf_update/dolphin_replace_view_mode_with_view_settings_in_toolbar.py",
+				"/usr/share/kconf_update/dolphin_replace_view_mode_with_view_settings_in_toolbar.upd",
 				"/usr/share/kconf_update/dolphin_statusandlocationbarssettings.upd",
 				"/usr/share/kglobalaccel/org.kde.dolphin.desktop",
 				"/usr/share/knsrcfiles/servicemenu.knsrc",
@@ -288,8 +289,8 @@
 				"cmake(KF6UserFeedback)",
 				"cmake(KF6WidgetsAddons)",
 				"cmake(KF6WindowSystem)",
-				"cmake(Phonon4Qt6)",
-				"cmake(Qt6CorePrivate)"
+				"cmake(Qt6CorePrivate)",
+				"cmake(Qt6Multimedia)"
 			],
 			"depends": [
 				"dolphin"
@@ -338,8 +339,8 @@
 				"cmake(KF6UserFeedback)",
 				"cmake(KF6WidgetsAddons)",
 				"cmake(KF6WindowSystem)",
-				"cmake(Phonon4Qt6)",
-				"cmake(Qt6CorePrivate)"
+				"cmake(Qt6CorePrivate)",
+				"cmake(Qt6Multimedia)"
 			],
 			"files": [
 				"/usr/share/doc/HTML/ca/dolphin/default-ui.png",
@@ -549,8 +550,8 @@
 				"cmake(KF6UserFeedback)",
 				"cmake(KF6WidgetsAddons)",
 				"cmake(KF6WindowSystem)",
-				"cmake(Phonon4Qt6)",
-				"cmake(Qt6CorePrivate)"
+				"cmake(Qt6CorePrivate)",
+				"cmake(Qt6Multimedia)"
 			],
 			"depends": [
 				"soname(libKF6Baloo.so.6(x86_64))",
@@ -584,13 +585,14 @@
 				"soname(libm.so.6(x86_64))"
 			],
 			"files": [
-				"/usr/lib/libdolphinprivate.so.25.04.3",
+				"/usr/lib/libdolphinprivate.so.25.07.90",
 				"/usr/lib/libdolphinprivate.so.6",
-				"/usr/lib/libdolphinvcs.so.25.04.3",
+				"/usr/lib/libdolphinvcs.so.25.07.90",
 				"/usr/lib/libdolphinvcs.so.6",
 				"/usr/lib/qt6/plugins/dolphin/kcms/kcm_dolphingeneral.so",
 				"/usr/lib/qt6/plugins/dolphin/kcms/kcm_dolphinviewmodes.so",
 				"/usr/lib/qt6/plugins/kf6/kfileitemaction/movetonewfolderitemaction.so",
+				"/usr/lib/qt6/plugins/kf6/kfileitemaction/setfoldericonitemaction.so",
 				"/usr/lib/qt6/plugins/kf6/parts/dolphinpart.so"
 			],
 			"name": "dolphin-libs",
@@ -600,11 +602,12 @@
 				"soname(qt6/plugins/dolphin/kcms/kcm_dolphingeneral.so(x86_64))",
 				"soname(qt6/plugins/dolphin/kcms/kcm_dolphinviewmodes.so(x86_64))",
 				"soname(qt6/plugins/kf6/kfileitemaction/movetonewfolderitemaction.so(x86_64))",
+				"soname(qt6/plugins/kf6/kfileitemaction/setfoldericonitemaction.so(x86_64))",
 				"soname(qt6/plugins/kf6/parts/dolphinpart.so(x86_64))"
 			]
 		}
 	},
 	"source-name": "dolphin",
-	"source-release": "6",
-	"source-version": "25.04.3"
+	"source-release": "7",
+	"source-version": "25.07.90"
 }

@@ -17,7 +17,6 @@
 			],
 			"depends": [
 				"soname(libKF6Codecs.so.6(x86_64))",
-				"soname(libKF6ColorScheme.so.6(x86_64))",
 				"soname(libKF6ConfigCore.so.6(x86_64))",
 				"soname(libKF6ConfigGui.so.6(x86_64))",
 				"soname(libKF6CoreAddons.so.6(x86_64))",
@@ -37,7 +36,7 @@
 			],
 			"files": [
 				"/usr/lib/libKPim6TextEdit.so.6",
-				"/usr/lib/libKPim6TextEdit.so.6.4.3",
+				"/usr/lib/libKPim6TextEdit.so.6.4.90",
 				"/usr/share/locale/ar/LC_MESSAGES/libkpimtextedit6.mo",
 				"/usr/share/locale/ast/LC_MESSAGES/libkpimtextedit6.mo",
 				"/usr/share/locale/az/LC_MESSAGES/libkpimtextedit6.mo",
@@ -163,6 +162,6 @@
 		}
 	},
 	"source-name": "kpimtextedit",
-	"source-release": "2",
-	"source-version": "25.04.3"
+	"source-release": "3",
+	"source-version": "25.07.90"
 }

@@ -4,10 +4,10 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : libksieve
-version     : 25.04.3
-release     : 1
+version     : 25.07.90
+release     : 2
 upstreams   :
-    - https://download.kde.org/stable/release-service/25.04.3/src/libksieve-25.04.3.tar.xz : 07f6d97362e408dabcfb191b0bfd728edfd5996ee37a84074e928cb2e9c13a9d
+    - https://download.kde.org/unstable/release-service/25.07.90/src/libksieve-25.07.90.tar.xz : d40116f9944e40eb26c288f9b1ce84de05e59f80276174af8010a69f3bf2f132
 homepage    : https://kde.org/applications/system/org.kde.libksieve
 license     : GPL-2.0-only
 summary     : Sieve Script Library

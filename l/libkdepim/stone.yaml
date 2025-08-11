@@ -4,10 +4,10 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : libkdepim
-version     : 25.04.3
-release     : 1
+version     : 25.07.90
+release     : 2
 upstreams   :
-    - https://download.kde.org/stable/release-service/25.04.3/src/libkdepim-25.04.3.tar.xz : 6d9c78063db5234539e5f3fddbecbca61948b79e60073ec215a7ffdad62418fa
+    - https://download.kde.org/unstable/release-service/25.07.90/src/libkdepim-25.07.90.tar.xz : 192c11e268b9a097efbb42e76565882bc504d3747c3b960dca988f457f3bd60a
 homepage    : https://kde.org
 license     : GPL-2.0-or-later
 summary     : Libraries for KDE PIM applications

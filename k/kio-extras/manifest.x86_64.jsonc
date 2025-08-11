@@ -22,7 +22,6 @@
 				"cmake(KF6Notifications)",
 				"cmake(KF6Solid)",
 				"cmake(KF6SyntaxHighlighting)",
-				"cmake(KF6TextWidgets)",
 				"cmake(Phonon4Qt6)",
 				"cmake(PlasmaActivities)",
 				"cmake(PlasmaActivitiesStats)",
@@ -60,7 +59,6 @@
 				"soname(libKF6Service.so.6(x86_64))",
 				"soname(libKF6Solid.so.6(x86_64))",
 				"soname(libKF6SyntaxHighlighting.so.6(x86_64))",
-				"soname(libKF6TextWidgets.so.6(x86_64))",
 				"soname(libKF6WidgetsAddons.so.6(x86_64))",
 				"soname(libPlasmaActivities.so.6(x86_64))",
 				"soname(libPlasmaActivitiesStats.so.1(x86_64))",
@@ -1336,7 +1334,6 @@
 				"cmake(KF6Notifications)",
 				"cmake(KF6Solid)",
 				"cmake(KF6SyntaxHighlighting)",
-				"cmake(KF6TextWidgets)",
 				"cmake(Phonon4Qt6)",
 				"cmake(PlasmaActivities)",
 				"cmake(PlasmaActivitiesStats)",
@@ -1389,7 +1386,6 @@
 				"cmake(KF6Notifications)",
 				"cmake(KF6Solid)",
 				"cmake(KF6SyntaxHighlighting)",
-				"cmake(KF6TextWidgets)",
 				"cmake(Phonon4Qt6)",
 				"cmake(PlasmaActivities)",
 				"cmake(PlasmaActivitiesStats)",
@@ -1985,6 +1981,6 @@
 		}
 	},
 	"source-name": "kio-extras",
-	"source-release": "2",
-	"source-version": "25.04.3"
+	"source-release": "3",
+	"source-version": "25.07.90"
 }

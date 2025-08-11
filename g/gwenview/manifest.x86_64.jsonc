@@ -20,9 +20,9 @@
 				"cmake(KF6Purpose)",
 				"cmake(KF6WidgetsAddons)",
 				"cmake(KF6WindowSystem)",
-				"cmake(Phonon4Qt6)",
 				"cmake(PlasmaActivities)",
 				"cmake(Qt6CorePrivate)",
+				"cmake(Qt6Multimedia)",
 				"cmake(Qt6Svg)",
 				"cmake(Qt6WaylandClient)",
 				"cmake(exiv2)",
@@ -38,7 +38,6 @@
 			"depends": [
 				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
 				"kf6-kimageformats",
-				"phonon-backend-mpv-qt6",
 				"qt6-imageformats",
 				"qt6-wayland",
 				"soname(libKF6ColorScheme.so.6(x86_64))",
@@ -195,9 +194,9 @@
 				"cmake(KF6Purpose)",
 				"cmake(KF6WidgetsAddons)",
 				"cmake(KF6WindowSystem)",
-				"cmake(Phonon4Qt6)",
 				"cmake(PlasmaActivities)",
 				"cmake(Qt6CorePrivate)",
+				"cmake(Qt6Multimedia)",
 				"cmake(Qt6Svg)",
 				"cmake(Qt6WaylandClient)",
 				"cmake(exiv2)",
@@ -295,9 +294,9 @@
 				"cmake(KF6Purpose)",
 				"cmake(KF6WidgetsAddons)",
 				"cmake(KF6WindowSystem)",
-				"cmake(Phonon4Qt6)",
 				"cmake(PlasmaActivities)",
 				"cmake(Qt6CorePrivate)",
+				"cmake(Qt6Multimedia)",
 				"cmake(Qt6Svg)",
 				"cmake(Qt6WaylandClient)",
 				"cmake(exiv2)",
@@ -336,6 +335,8 @@
 				"soname(libQt6Core.so.6(x86_64))",
 				"soname(libQt6DBus.so.6(x86_64))",
 				"soname(libQt6Gui.so.6(x86_64))",
+				"soname(libQt6Multimedia.so.6(x86_64))",
+				"soname(libQt6MultimediaWidgets.so.6(x86_64))",
 				"soname(libQt6OpenGLWidgets.so.6(x86_64))",
 				"soname(libQt6PrintSupport.so.6(x86_64))",
 				"soname(libQt6Svg.so.6(x86_64))",
@@ -350,7 +351,6 @@
 				"soname(libkImageAnnotator.so.0(x86_64))",
 				"soname(liblcms2.so.2(x86_64))",
 				"soname(libm.so.6(x86_64))",
-				"soname(libphonon4qt6.so.4(x86_64))",
 				"soname(libpng16.so.16(x86_64))",
 				"soname(libunwind.so.1(x86_64))",
 				"soname(libwayland-client.so.0(x86_64))"
@@ -370,6 +370,6 @@
 		}
 	},
 	"source-name": "gwenview",
-	"source-release": "1",
-	"source-version": "25.04.3"
+	"source-release": "2",
+	"source-version": "25.07.90"
 }

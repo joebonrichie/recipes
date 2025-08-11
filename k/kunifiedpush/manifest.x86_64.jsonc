@@ -9,14 +9,18 @@
 				"cmake(KF6I18n)",
 				"cmake(KF6KCMUtils)",
 				"cmake(KF6Service)",
-				"cmake(Qt6WebSockets)"
+				"cmake(KF6Solid)",
+				"cmake(Qt6WebSockets)",
+				"pkgconfig(openssl)"
 			],
 			"depends": [
 				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
 				"soname(libKF6CoreAddons.so.6(x86_64))",
+				"soname(libKF6I18n.so.6(x86_64))",
 				"soname(libKF6KCMUtilsCore.so.6(x86_64))",
 				"soname(libKF6KCMUtilsQuick.so.6(x86_64))",
 				"soname(libKF6Service.so.6(x86_64))",
+				"soname(libKF6Solid.so.6(x86_64))",
 				"soname(libQt6Core.so.6(x86_64))",
 				"soname(libQt6DBus.so.6(x86_64))",
 				"soname(libQt6Gui.so.6(x86_64))",
@@ -24,13 +28,16 @@
 				"soname(libQt6Qml.so.6(x86_64))",
 				"soname(libQt6WebSockets.so.6(x86_64))",
 				"soname(libc++.so.1(x86_64))",
-				"soname(libc.so.6(x86_64))"
+				"soname(libc.so.6(x86_64))",
+				"soname(libcrypto.so.3(x86_64))"
 			],
 			"files": [
 				"/usr/bin/kunifiedpush-distributor",
 				"/usr/lib/libKUnifiedPush.so.1",
-				"/usr/lib/libKUnifiedPush.so.25.04.3",
+				"/usr/lib/libKUnifiedPush.so.25.07.90",
 				"/usr/lib/qt6/plugins/plasma/kcms/systemsettings/kcm_push_notifications.so",
+				"/usr/lib/systemd/user/graphical-session.target.wants/kunifiedpush-distributor.service",
+				"/usr/lib/systemd/user/kunifiedpush-distributor.service",
 				"/usr/share/applications/kcm_push_notifications.desktop",
 				"/usr/share/locale/ar/LC_MESSAGES/kcm_push_notifications.mo",
 				"/usr/share/locale/ast/LC_MESSAGES/kcm_push_notifications.mo",
@@ -48,6 +55,7 @@
 				"/usr/share/locale/gl/LC_MESSAGES/kcm_push_notifications.mo",
 				"/usr/share/locale/he/LC_MESSAGES/kcm_push_notifications.mo",
 				"/usr/share/locale/hi/LC_MESSAGES/kcm_push_notifications.mo",
+				"/usr/share/locale/hu/LC_MESSAGES/kcm_push_notifications.mo",
 				"/usr/share/locale/ia/LC_MESSAGES/kcm_push_notifications.mo",
 				"/usr/share/locale/it/LC_MESSAGES/kcm_push_notifications.mo",
 				"/usr/share/locale/ja/LC_MESSAGES/kcm_push_notifications.mo",
@@ -89,7 +97,9 @@
 				"cmake(KF6I18n)",
 				"cmake(KF6KCMUtils)",
 				"cmake(KF6Service)",
-				"cmake(Qt6WebSockets)"
+				"cmake(KF6Solid)",
+				"cmake(Qt6WebSockets)",
+				"pkgconfig(openssl)"
 			],
 			"depends": [
 				"kunifiedpush"
@@ -112,6 +122,6 @@
 		}
 	},
 	"source-name": "kunifiedpush",
-	"source-release": "1",
-	"source-version": "25.04.3"
+	"source-release": "2",
+	"source-version": "25.07.90"
 }

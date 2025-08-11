@@ -4,10 +4,10 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : akonadi
-version     : 25.04.3
-release     : 4
+version     : 25.07.90
+release     : 5
 upstreams   :
-    - https://download.kde.org/stable/release-service/25.04.3/src/akonadi-25.04.3.tar.xz : 042cd3319eadfb82547773e52ce7d41d361d58c4e92fe75a5179c1574ed4f5df
+    - https://download.kde.org/unstable/release-service/25.07.90/src/akonadi-25.07.90.tar.xz : 5c12f756eb7d6e14fac0c266483f8d8da0b96d49c92219a00787b9951906e8ef
 homepage    : https://kde.org
 license     : LGPL-2.1-or-later
 summary     : KDE centralized database to store, index and retrieve the user's personal information
@@ -24,9 +24,12 @@ builddeps   :
     - cmake(KF6I18n)
     - cmake(KF6IconThemes)
     - cmake(KF6ItemModels)
+    - cmake(KF6WindowSystem)
     - cmake(KF6XmlGui)
+    - cmake(Qt6CorePrivate)
     - pkgconfig(liblzma)
 setup       : |
+    # TODO: Build with postgresql support maybe
     %cmake_kf6 \
         -DDATABASE_BACKEND=SQLITE \
         -DINSTALL_APPARMOR=OFF \
@@ -36,6 +39,7 @@ build       : |
     %cmake_build
 install     : |
     %cmake_install
+    %qml_cache_qt6
 packages    :
     - "%(name)-mysql":
         summary: Mysql server support for %(name)
@@ -56,4 +60,3 @@ packages    :
             - /usr/share/dbus-1/interfaces/
             - /usr/lib/qt6/plugins/pim6/akonadi/akonadi_test_searchplugin.so
             - /usr/share/kdevappwizard/
-

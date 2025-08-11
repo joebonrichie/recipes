@@ -75,7 +75,7 @@
 			],
 			"files": [
 				"/usr/lib/libKPim6MailCommon.so.6",
-				"/usr/lib/libKPim6MailCommon.so.6.4.3",
+				"/usr/lib/libKPim6MailCommon.so.6.4.90",
 				"/usr/share/locale/ar/LC_MESSAGES/libmailcommon6.mo",
 				"/usr/share/locale/ast/LC_MESSAGES/libmailcommon6.mo",
 				"/usr/share/locale/bg/LC_MESSAGES/libmailcommon6.mo",
@@ -299,6 +299,6 @@
 		}
 	},
 	"source-name": "mailcommon",
-	"source-release": "3",
-	"source-version": "25.04.3"
+	"source-release": "4",
+	"source-version": "25.07.90"
 }

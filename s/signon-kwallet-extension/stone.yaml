@@ -4,10 +4,10 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : signon-kwallet-extension
-version     : 25.04.3
-release     : 2
+version     : 25.07.90
+release     : 3
 upstreams   :
-    - https://download.kde.org/stable/release-service/25.04.3/src/signon-kwallet-extension-25.04.3.tar.xz : 759188b4dc613ef775032c65380a8dfc0f35b8933ebf5365eabca77db67de5d0
+    - https://download.kde.org/unstable/release-service/25.07.90/src/signon-kwallet-extension-25.07.90.tar.xz : b674fa57e2caa37ff793692211eab10c03367d15790c9358417c9e93e7312378
 homepage    : https://kde.org/
 license     : GPL-2.0-or-later
 summary     : KWallet integration for signon framework

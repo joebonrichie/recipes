@@ -4,10 +4,10 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : mimetreeparser
-version     : 25.04.3
-release     : 4
+version     : 25.07.90
+release     : 5
 upstreams   :
-    - https://download.kde.org/stable/release-service/25.04.3/src/mimetreeparser-25.04.3.tar.xz : 26a4440d50ca62db1f154794557d5a216acc44ae96347e072200255a267c4ac4
+    - https://download.kde.org/unstable/release-service/25.07.90/src/mimetreeparser-25.07.90.tar.xz : 4ce6cd121af7b45b4b686868edac7a72daec99f8ab67746242a2cb59541d836e
 homepage    : https://kde.org
 license     :
     - BSD-2-Clause
@@ -29,6 +29,7 @@ builddeps   :
     - cmake(ECM)
     - cmake(Gpgmepp)
     - cmake(KF6CalendarCore)
+    - cmake(KF6ColorScheme)
     - cmake(KF6I18n)
     - cmake(KF6WidgetsAddons)
     - cmake(KPim6Mbox)

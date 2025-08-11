@@ -51,8 +51,6 @@
 				"/usr/share/icons/hicolor/48x48/apps/ark.png",
 				"/usr/share/icons/hicolor/64x64/apps/ark.png",
 				"/usr/share/icons/hicolor/scalable/apps/ark.svgz",
-				"/usr/share/kconf_update/ark.upd",
-				"/usr/share/kconf_update/ark_add_hamburgermenu_to_toolbar.sh",
 				"/usr/share/locale/af/LC_MESSAGES/ark.mo",
 				"/usr/share/locale/ar/LC_MESSAGES/ark.mo",
 				"/usr/share/locale/ast/LC_MESSAGES/ark.mo",
@@ -281,7 +279,7 @@
 			],
 			"files": [
 				"/usr/lib/libkerfuffle.so.25",
-				"/usr/lib/libkerfuffle.so.25.04.3",
+				"/usr/lib/libkerfuffle.so.25.07.90",
 				"/usr/lib/qt6/plugins/kerfuffle/kerfuffle_cli7z.so",
 				"/usr/lib/qt6/plugins/kerfuffle/kerfuffle_cliarj.so",
 				"/usr/lib/qt6/plugins/kerfuffle/kerfuffle_clirar.so",
@@ -314,6 +312,6 @@
 		}
 	},
 	"source-name": "ark",
-	"source-release": "9",
-	"source-version": "25.04.3"
+	"source-release": "10",
+	"source-version": "25.07.90"
 }

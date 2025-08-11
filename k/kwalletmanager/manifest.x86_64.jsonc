@@ -329,6 +329,6 @@
 		}
 	},
 	"source-name": "kwalletmanager",
-	"source-release": "1",
-	"source-version": "25.04.3"
+	"source-release": "2",
+	"source-version": "25.07.90"
 }

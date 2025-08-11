@@ -43,6 +43,7 @@
 				"soname(libKF6SonnetUi.so.6(x86_64))",
 				"soname(libKF6SyntaxHighlighting.so.6(x86_64))",
 				"soname(libKF6TextAddonsWidgets.so.1(x86_64))",
+				"soname(libKF6TextAutoGenerateText.so.1(x86_64))",
 				"soname(libKF6TextCustomEditor.so.1(x86_64))",
 				"soname(libKF6TextEditTextToSpeech.so.1(x86_64))",
 				"soname(libKF6TextUtils.so.1(x86_64))",
@@ -65,13 +66,13 @@
 			],
 			"files": [
 				"/usr/lib/libKPim6KManageSieve.so.6",
-				"/usr/lib/libKPim6KManageSieve.so.6.4.3",
+				"/usr/lib/libKPim6KManageSieve.so.6.4.90",
 				"/usr/lib/libKPim6KSieve.so.6",
-				"/usr/lib/libKPim6KSieve.so.6.4.3",
+				"/usr/lib/libKPim6KSieve.so.6.4.90",
 				"/usr/lib/libKPim6KSieveCore.so.6",
-				"/usr/lib/libKPim6KSieveCore.so.6.4.3",
+				"/usr/lib/libKPim6KSieveCore.so.6.4.90",
 				"/usr/lib/libKPim6KSieveUi.so.6",
-				"/usr/lib/libKPim6KSieveUi.so.6.4.3",
+				"/usr/lib/libKPim6KSieveUi.so.6.4.90",
 				"/usr/share/knsrcfiles/ksieve_script.knsrc",
 				"/usr/share/locale/ar/LC_MESSAGES/libksieve6.mo",
 				"/usr/share/locale/ast/LC_MESSAGES/libksieve6.mo",
@@ -291,6 +292,6 @@
 		}
 	},
 	"source-name": "libksieve",
-	"source-release": "1",
-	"source-version": "25.04.3"
+	"source-release": "2",
+	"source-version": "25.07.90"
 }

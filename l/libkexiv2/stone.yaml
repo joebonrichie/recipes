@@ -4,10 +4,10 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : libkexiv2
-version     : 25.04.3
-release     : 1
+version     : 25.07.90
+release     : 2
 upstreams   :
-    - https://download.kde.org/stable/release-service/25.04.3/src/libkexiv2-25.04.3.tar.xz : d7b8d791e9db8facf16a95447daa597efaaa6b42d300fa7cbe9d1ff5b9e7b5a8
+    - https://download.kde.org/unstable/release-service/25.07.90/src/libkexiv2-25.07.90.tar.xz : 0635e9ae6665acc21ea80446320e0d8a3927bb5371b0ca7200eb9827d2a6c9aa
 homepage    : https://kde.org/
 license     : GPL-2.0-or-later
 summary     : Exiv2 library interface for KDE

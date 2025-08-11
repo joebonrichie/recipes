@@ -62,7 +62,9 @@
 			"files": [
 				"/usr/bin/kalendarac",
 				"/usr/lib/libKPim6AkonadiCalendar.so.6",
-				"/usr/lib/libKPim6AkonadiCalendar.so.6.4.3",
+				"/usr/lib/libKPim6AkonadiCalendar.so.6.4.90",
+				"/usr/lib/libKPim6AkonadiCalendarCore.so.6",
+				"/usr/lib/libKPim6AkonadiCalendarCore.so.6.4.90",
 				"/usr/lib/qt6/plugins/akonadi_serializer_kcalcore.so",
 				"/usr/lib/qt6/plugins/kf6/org.kde.kcalendarcore.calendars/libakonadicalendarplugin.so",
 				"/usr/share/akonadi/plugins/serializer/akonadi_serializer_kcalcore.desktop",
@@ -235,6 +237,7 @@
 			"provides": [
 				"binary(kalendarac)",
 				"soname(libKPim6AkonadiCalendar.so.6(x86_64))",
+				"soname(libKPim6AkonadiCalendarCore.so.6(x86_64))",
 				"soname(qt6/plugins/akonadi_serializer_kcalcore.so(x86_64))",
 				"soname(qt6/plugins/kf6/org.kde.kcalendarcore.calendars/libakonadicalendarplugin.so(x86_64))"
 			]
@@ -270,7 +273,6 @@
 				"/usr/include/KPim6/AkonadiCalendar/Akonadi/ETMCalendar",
 				"/usr/include/KPim6/AkonadiCalendar/Akonadi/FetchJobCalendar",
 				"/usr/include/KPim6/AkonadiCalendar/Akonadi/FreeBusyManager",
-				"/usr/include/KPim6/AkonadiCalendar/Akonadi/FreeBusyProviderBase",
 				"/usr/include/KPim6/AkonadiCalendar/Akonadi/History",
 				"/usr/include/KPim6/AkonadiCalendar/Akonadi/ICalImporter",
 				"/usr/include/KPim6/AkonadiCalendar/Akonadi/ITIPHandler",
@@ -278,6 +280,7 @@
 				"/usr/include/KPim6/AkonadiCalendar/Akonadi/IncidenceTreeModel",
 				"/usr/include/KPim6/AkonadiCalendar/Akonadi/PublishDialog",
 				"/usr/include/KPim6/AkonadiCalendar/Akonadi/SearchCollectionHelper",
+				"/usr/include/KPim6/AkonadiCalendar/Akonadi/SelectCollection",
 				"/usr/include/KPim6/AkonadiCalendar/Akonadi/StandardCalendarActionManager",
 				"/usr/include/KPim6/AkonadiCalendar/Akonadi/TodoModel",
 				"/usr/include/KPim6/AkonadiCalendar/Akonadi/TodoPurger",
@@ -294,7 +297,6 @@
 				"/usr/include/KPim6/AkonadiCalendar/akonadi/etmcalendar.h",
 				"/usr/include/KPim6/AkonadiCalendar/akonadi/fetchjobcalendar.h",
 				"/usr/include/KPim6/AkonadiCalendar/akonadi/freebusymanager.h",
-				"/usr/include/KPim6/AkonadiCalendar/akonadi/freebusyproviderbase.h",
 				"/usr/include/KPim6/AkonadiCalendar/akonadi/history.h",
 				"/usr/include/KPim6/AkonadiCalendar/akonadi/icalimporter.h",
 				"/usr/include/KPim6/AkonadiCalendar/akonadi/incidencechanger.h",
@@ -302,25 +304,39 @@
 				"/usr/include/KPim6/AkonadiCalendar/akonadi/itiphandler.h",
 				"/usr/include/KPim6/AkonadiCalendar/akonadi/publishdialog.h",
 				"/usr/include/KPim6/AkonadiCalendar/akonadi/searchcollectionhelper.h",
+				"/usr/include/KPim6/AkonadiCalendar/akonadi/selectcollection.h",
 				"/usr/include/KPim6/AkonadiCalendar/akonadi/standardcalendaractionmanager.h",
 				"/usr/include/KPim6/AkonadiCalendar/akonadi/todomodel.h",
 				"/usr/include/KPim6/AkonadiCalendar/akonadi/todopurger.h",
+				"/usr/include/KPim6/AkonadiCalendarCore/Akonadi/FreeBusyProviderBase",
+				"/usr/include/KPim6/AkonadiCalendarCore/akonadi-calendar-core_version.h",
+				"/usr/include/KPim6/AkonadiCalendarCore/akonadi/akonadi-calendar-core_export.h",
+				"/usr/include/KPim6/AkonadiCalendarCore/akonadi/freebusyproviderbase.h",
 				"/usr/lib/cmake/KPim6AkonadiCalendar/KPim6AkonadiCalendarConfig.cmake",
 				"/usr/lib/cmake/KPim6AkonadiCalendar/KPim6AkonadiCalendarConfigVersion.cmake",
 				"/usr/lib/cmake/KPim6AkonadiCalendar/KPim6AkonadiCalendarQchTargets.cmake",
 				"/usr/lib/cmake/KPim6AkonadiCalendar/KPim6AkonadiCalendarTargets-release.cmake",
 				"/usr/lib/cmake/KPim6AkonadiCalendar/KPim6AkonadiCalendarTargets.cmake",
+				"/usr/lib/cmake/KPim6AkonadiCalendarCore/KPim6AkonadiCalendarCoreConfig.cmake",
+				"/usr/lib/cmake/KPim6AkonadiCalendarCore/KPim6AkonadiCalendarCoreConfigVersion.cmake",
+				"/usr/lib/cmake/KPim6AkonadiCalendarCore/KPim6AkonadiCalendarCoreQchTargets.cmake",
+				"/usr/lib/cmake/KPim6AkonadiCalendarCore/KPim6AkonadiCalendarCoreTargets-release.cmake",
+				"/usr/lib/cmake/KPim6AkonadiCalendarCore/KPim6AkonadiCalendarCoreTargets.cmake",
 				"/usr/lib/libKPim6AkonadiCalendar.so",
+				"/usr/lib/libKPim6AkonadiCalendarCore.so",
 				"/usr/share/doc/qt6/KPim6AkonadiCalendar.qch",
-				"/usr/share/doc/qt6/KPim6AkonadiCalendar.tags"
+				"/usr/share/doc/qt6/KPim6AkonadiCalendar.tags",
+				"/usr/share/doc/qt6/KPim6AkonadiCalendarCore.qch",
+				"/usr/share/doc/qt6/KPim6AkonadiCalendarCore.tags"
 			],
 			"name": "akonadi-calendar-devel",
 			"provides": [
-				"cmake(KPim6AkonadiCalendar)"
+				"cmake(KPim6AkonadiCalendar)",
+				"cmake(KPim6AkonadiCalendarCore)"
 			]
 		}
 	},
 	"source-name": "akonadi-calendar",
-	"source-release": "3",
-	"source-version": "25.04.3"
+	"source-release": "4",
+	"source-version": "25.07.90"
 }

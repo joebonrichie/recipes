@@ -1604,12 +1604,12 @@
 				"soname(libz.so.1(x86_64))"
 			],
 			"files": [
-				"/usr/lib/libOkular6Core.so.3",
-				"/usr/lib/libOkular6Core.so.3.0.0"
+				"/usr/lib/libOkular6Core.so.4",
+				"/usr/lib/libOkular6Core.so.4.0.0"
 			],
 			"name": "okular-libs",
 			"provides": [
-				"soname(libOkular6Core.so.3(x86_64))"
+				"soname(libOkular6Core.so.4(x86_64))"
 			]
 		},
 		"okular-part": {
@@ -1672,8 +1672,8 @@
 				"soname(libKF6Wallet.so.6(x86_64))",
 				"soname(libKF6WidgetsAddons.so.6(x86_64))",
 				"soname(libKF6XmlGui.so.6(x86_64))",
-				"soname(libOkular6Core.so.3(x86_64))",
-				"soname(libQMobipocket6.so.2(x86_64))",
+				"soname(libOkular6Core.so.4(x86_64))",
+				"soname(libQMobipocket6.so.3(x86_64))",
 				"soname(libQt6Core.so.6(x86_64))",
 				"soname(libQt6DBus.so.6(x86_64))",
 				"soname(libQt6Gui.so.6(x86_64))",
@@ -1735,6 +1735,6 @@
 		}
 	},
 	"source-name": "okular",
-	"source-release": "3",
-	"source-version": "25.04.3"
+	"source-release": "4",
+	"source-version": "25.07.90"
 }

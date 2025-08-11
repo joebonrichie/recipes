@@ -48,7 +48,7 @@
 			],
 			"files": [
 				"/usr/lib/libKPim6CalendarSupport.so.6",
-				"/usr/lib/libKPim6CalendarSupport.so.6.4.3",
+				"/usr/lib/libKPim6CalendarSupport.so.6.4.90",
 				"/usr/share/locale/af/LC_MESSAGES/calendarsupport6.mo",
 				"/usr/share/locale/ar/LC_MESSAGES/calendarsupport6.mo",
 				"/usr/share/locale/ast/LC_MESSAGES/calendarsupport6.mo",
@@ -225,6 +225,6 @@
 		}
 	},
 	"source-name": "calendarsupport",
-	"source-release": "1",
-	"source-version": "25.04.3"
+	"source-release": "2",
+	"source-version": "25.07.90"
 }

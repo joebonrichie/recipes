@@ -4,10 +4,10 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : gwenview
-version     : 25.04.3
-release     : 1
+version     : 25.07.90
+release     : 2
 upstreams   :
-    - https://download.kde.org/stable/release-service/25.04.3/src/gwenview-25.04.3.tar.xz : 59bf9fc4a4be87260781ccb5872212484b697caa53fa0ee7e128bdb08eaf5e87
+    - https://download.kde.org/unstable/release-service/25.07.90/src/gwenview-25.07.90.tar.xz : f2d880b8f1ed58a1c83db31993d7330995a3456c1e7358b480d526f65b9fbeac
 homepage    : https://apps.kde.org/gwenview/
 license     :
     - GFDL-1.2-or-later
@@ -33,9 +33,9 @@ builddeps   :
     - cmake(KF6Purpose)
     - cmake(KF6WidgetsAddons)
     - cmake(KF6WindowSystem)
-    - cmake(Phonon4Qt6)
     - cmake(PlasmaActivities)
     - cmake(Qt6CorePrivate)
+    - cmake(Qt6Multimedia)
     - cmake(Qt6Svg)
     - cmake(Qt6WaylandClient)
     - cmake(exiv2)
@@ -50,7 +50,6 @@ builddeps   :
     # TODO:
     # - cfitsio
 rundeps     :
-    - phonon-backend-mpv-qt6
     - qt6-wayland
 
     # More image formats
