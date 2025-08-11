@@ -4,10 +4,10 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : kmime
-version     : 25.04.3
-release     : 2
+version     : 25.07.90
+release     : 3
 upstreams   :
-    - https://download.kde.org/stable/release-service/25.04.3/src/kmime-25.04.3.tar.xz : 23ece71d839261024b861ca4b956ea0787ee59db883d17bea83236aaf8bda1ea
+    - https://download.kde.org/unstable/release-service/25.07.90/src/kmime-25.07.90.tar.xz : 094fa13eb9661ad9490e43c4ded4d17eeaf2134e2465ad586bb521ed62a7fc3a
 homepage    : https://kde.org
 license     : LGPL-2.1-or-later
 summary     : KMime is a library for handling mail messages and newsgroup articles
