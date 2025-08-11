@@ -4,10 +4,10 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : akonadi-import-wizard
-version     : 25.04.3
-release     : 1
+version     : 25.07.90
+release     : 2
 upstreams   :
-    - https://download.kde.org/stable/release-service/25.04.3/src/akonadi-import-wizard-25.04.3.tar.xz : a397fdb3739ad4cb93c0d97f796689aa78f48fb2965f0fad5d804162a8a44c1c
+    - https://download.kde.org/unstable/release-service/25.07.90/src/akonadi-import-wizard-25.07.90.tar.xz : f1749717019a942efdddd334ea9facf01b88b80e918431fa63db7df131aacda7
 homepage    : https://kde.org
 license     :
     - GFDL-1.2-or-later
