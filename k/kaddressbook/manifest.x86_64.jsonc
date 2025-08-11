@@ -525,9 +525,9 @@
 			],
 			"files": [
 				"/usr/lib/libKPim6AddressbookImportExport.so.6",
-				"/usr/lib/libKPim6AddressbookImportExport.so.6.4.3",
+				"/usr/lib/libKPim6AddressbookImportExport.so.6.4.90",
 				"/usr/lib/libkaddressbookprivate.so.6",
-				"/usr/lib/libkaddressbookprivate.so.6.4.3",
+				"/usr/lib/libkaddressbookprivate.so.6.4.90",
 				"/usr/lib/qt6/plugins/kaddressbookpart.so",
 				"/usr/lib/qt6/plugins/pim6/kcms/kaddressbook/kaddressbook_config_activities.so",
 				"/usr/lib/qt6/plugins/pim6/kcms/kaddressbook/kaddressbook_config_ldap.so",
@@ -549,6 +549,6 @@
 		}
 	},
 	"source-name": "kaddressbook",
-	"source-release": "2",
-	"source-version": "25.04.3"
+	"source-release": "3",
+	"source-version": "25.07.90"
 }
