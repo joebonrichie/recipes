@@ -4,10 +4,10 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : partitionmanager
-version     : 25.04.3
-release     : 3
+version     : 25.07.90
+release     : 4
 upstreams   :
-    - https://download.kde.org/stable/release-service/25.04.3/src/partitionmanager-25.04.3.tar.xz : 216a4574d9b63b52c74ab386c92cf8d5c2b634afecbcfbdd734b68d9fce5ebca
+    - https://download.kde.org/unstable/release-service/25.07.90/src/partitionmanager-25.07.90.tar.xz : bda5a057a2adf38377623d57e801d1a4a66e60dc730d7d38d894c27e210cf64d
 homepage    : https://apps.kde.org/partitionmanager/
 license     : GPL-3.0-or-later
 summary     : KDE utility to help you manage disk devices
