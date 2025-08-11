@@ -4,10 +4,10 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : okular
-version     : 25.04.3
-release     : 3
+version     : 25.07.90
+release     : 4
 upstreams   :
-    - https://download.kde.org/stable/release-service/25.04.3/src/okular-25.04.3.tar.xz : d0b5bb0b0eeab46aa2367c8d81096185bd2261710701c84f1c6e2398e5058bfb
+    - https://download.kde.org/unstable/release-service/25.07.90/src/okular-25.07.90.tar.xz : 34661cae9a08a5becb410189606bd882546aadd84a4b100655381e76f4216681
 homepage    : https://apps.kde.org/okular/
 license     :
     - GFDL-1.2-or-later
