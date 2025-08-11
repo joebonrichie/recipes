@@ -4,10 +4,10 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : kaccounts-integration
-version     : 25.04.3
-release     : 2
+version     : 25.07.90
+release     : 3
 upstreams   :
-    - https://download.kde.org/stable/release-service/25.04.3/src/kaccounts-integration-25.04.3.tar.xz : 71a0475a2274fa4e9f332d8903518b26b5d025614f7e79c747a35ba126e2988c
+    - https://download.kde.org/unstable/release-service/25.07.90/src/kaccounts-integration-25.07.90.tar.xz : 7045154764f097900d27589d82d1f8801ffeafd603cbf1ee127a4079482dedb5
 homepage    : https://kde.org/
 license     : GPL-2.0-or-later
 summary     : System to administer web accounts - shared library
