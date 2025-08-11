@@ -4,16 +4,13 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : firefox
-version     : "141.0.2"
-release     : 32
+version     : "141.0.3"
+release     : 33
 homepage    : https://www.mozilla.org/
 upstreams   :
-    - https://ftp.mozilla.org/pub/firefox/releases/141.0.2/source/firefox-141.0.2.source.tar.xz:
-        hash: c33937fe2f6ad29af3de8f1a128c054afbd64821f702bf98d9f4079b97d37f3a
+    - https://ftp.mozilla.org/pub/firefox/releases/141.0.3/source/firefox-141.0.3.source.tar.xz:
+        hash: fd28ecf188171376b0a77af26b3a686999ffd45cd03d4c4736a1782a60016123
         unpackdir: firefox
-    - https://sources.getsol.us/mozilla/firefox/firefox-141.0.2-langpacks.tar.zst:
-        hash: a87982af53ddad4f4bb6cf1285bf0810c560d728113fcccc14c5330ae40cd0d6
-        unpackdir: firefox/langpacks
 summary     : Firefox web browser
 description : |
     Firefox web browser
@@ -51,6 +48,7 @@ builddeps   :
     - libstdc++-devel
 rundeps     :
     - ffmpeg # dlopen()s libavcodec
+    - firefox-langpacks
     - xdg-desktop-portal
 networking  : true # PGO
 environment : |
@@ -134,15 +132,6 @@ build       : |
     fi
 install     : |
     DESTDIR=%(installroot) ./mach install
-
-    # Install locales
-    langpackdir="%(installroot)/%(libdir)/firefox/langpacks"
-    %install_dir "${langpackdir}"
-
-    for i in langpacks/*.xpi; do
-        lname="$(basename ${i})"
-        %install_file "langpacks/${lname}" "${langpackdir}/${lname}"
-    done
 
     for i in 16 32 48 64 128; do
         %install_dir %(installroot)/%(datadir)/icons/hicolor/${i}x${i}/apps
