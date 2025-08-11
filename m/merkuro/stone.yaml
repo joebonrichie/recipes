@@ -4,10 +4,10 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : merkuro
-version     : 25.04.3
-release     : 5
+version     : 25.07.90
+release     : 6
 upstreams   :
-    - https://download.kde.org/stable/release-service/25.04.3/src/merkuro-25.04.3.tar.xz : c213e7f4bd746e699ec56315cd26393124283e9190a5e9c2c3adf21811cdde27
+    - https://download.kde.org/unstable/release-service/25.07.90/src/merkuro-25.07.90.tar.xz : 500caa30520cb405a85fea4055e5065092ef608e8f451e197b7da9e6b4ceefdf
 homepage    : https://kde.org/applications/system/org.kde.merkuro
 license     :
     - GFDL-1.2-or-later

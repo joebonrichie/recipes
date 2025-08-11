@@ -104,27 +104,11 @@
 				"/usr/bin/merkuro-contact",
 				"/usr/bin/merkuro-mail",
 				"/usr/lib/libMerkuroComponents.so",
-				"/usr/lib/libMerkuroComponents.so.25.04.3",
+				"/usr/lib/libMerkuroComponents.so.25.07.90",
 				"/usr/lib/libMerkuroComponents.so.6",
 				"/usr/lib/libmerkuro_contact.so",
-				"/usr/lib/libmerkuro_contact.so.25.04.3",
+				"/usr/lib/libmerkuro_contact.so.25.07.90",
 				"/usr/lib/libmerkuro_contact.so.6",
-				"/usr/lib/qt6/qml/org/kde/akonadi/AgentConfigurationForm.qml",
-				"/usr/lib/qt6/qml/org/kde/akonadi/AgentConfigurationForm.qmlc",
-				"/usr/lib/qt6/qml/org/kde/akonadi/CollectionChooserPage.qml",
-				"/usr/lib/qt6/qml/org/kde/akonadi/CollectionChooserPage.qmlc",
-				"/usr/lib/qt6/qml/org/kde/akonadi/CollectionComboBox.qml",
-				"/usr/lib/qt6/qml/org/kde/akonadi/CollectionComboBox.qmlc",
-				"/usr/lib/qt6/qml/org/kde/akonadi/MobileCollectionComboBox.qml",
-				"/usr/lib/qt6/qml/org/kde/akonadi/MobileCollectionComboBox.qmlc",
-				"/usr/lib/qt6/qml/org/kde/akonadi/ProgressStatusBar.qml",
-				"/usr/lib/qt6/qml/org/kde/akonadi/ProgressStatusBar.qmlc",
-				"/usr/lib/qt6/qml/org/kde/akonadi/TagManagerPage.qml",
-				"/usr/lib/qt6/qml/org/kde/akonadi/TagManagerPage.qmlc",
-				"/usr/lib/qt6/qml/org/kde/akonadi/akonadi_quick_plugin.qmltypes",
-				"/usr/lib/qt6/qml/org/kde/akonadi/kde-qmlmodule.version",
-				"/usr/lib/qt6/qml/org/kde/akonadi/libakonadi_quick_plugin.so",
-				"/usr/lib/qt6/qml/org/kde/akonadi/qmldir",
 				"/usr/lib/qt6/qml/org/kde/merkuro/components/BaseApplication.qml",
 				"/usr/lib/qt6/qml/org/kde/merkuro/components/BaseApplication.qmlc",
 				"/usr/lib/qt6/qml/org/kde/merkuro/components/ColoredCheckbox.qml",
@@ -364,7 +348,6 @@
 				"/usr/share/plasma/plasmoids/org.kde.merkuro.contact.applet/contents/ui/main.qmlc",
 				"/usr/share/plasma/plasmoids/org.kde.merkuro.contact.applet/metadata.json",
 				"/usr/share/plasma/plasmoids/org.kde.merkuro.contact.applet/metadata.json.license",
-				"/usr/share/qlogging-categories6/akonadi.quick.categories",
 				"/usr/share/qlogging-categories6/merkuro.categories",
 				"/usr/share/qlogging-categories6/merkuro.contact.categories"
 			],
@@ -375,13 +358,12 @@
 				"binary(merkuro-mail)",
 				"soname(libMerkuroComponents.so.6(x86_64))",
 				"soname(libmerkuro_contact.so.6(x86_64))",
-				"soname(qt6/qml/org/kde/akonadi/libakonadi_quick_plugin.so(x86_64))",
 				"soname(qt6/qml/org/kde/merkuro/components/libMerkuroComponentsplugin.so(x86_64))",
 				"soname(qt6/qml/org/kde/merkuro/contact/libmerkuro_contactplugin.so(x86_64))"
 			]
 		}
 	},
 	"source-name": "merkuro",
-	"source-release": "5",
-	"source-version": "25.04.3"
+	"source-release": "6",
+	"source-version": "25.07.90"
 }
