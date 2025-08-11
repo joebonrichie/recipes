@@ -5,7 +5,7 @@
 #
 name        : baloo-widgets
 version     : 25.07.90
-release     : 6
+release     : 7
 upstreams   :
     - https://download.kde.org/unstable/release-service/25.07.90/src/baloo-widgets-25.07.90.tar.xz : 6e113c94a31e3114249da137abfedd4355a8d8ed3ecc19a4c9c5c2d6d7cdb4b3
 homepage    : https://community.kde.org/Baloo
