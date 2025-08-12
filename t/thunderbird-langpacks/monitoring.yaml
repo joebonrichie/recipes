@@ -1,0 +1,6 @@
+releases:
+  id: 235205
+  rss: ~
+security:
+  # This is a langpack package, and does not have the same CVEs as the main one
+  cpe: ~
