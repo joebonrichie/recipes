@@ -533,6 +533,6 @@
 		}
 	},
 	"source-name": "binutils",
-	"source-release": "23",
+	"source-release": "24",
 	"source-version": "2.45.0+git.2b2e51a3"
 }
