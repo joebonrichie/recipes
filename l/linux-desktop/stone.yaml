@@ -6,7 +6,7 @@
 #
 name        : linux-desktop
 version     : 6.15.9
-release     : 106
+release     : 107
 homepage    : https://kernel.org/
 upstreams   :
     - https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.15.9.tar.xz : e94f3af85492302f7a819441458f80bca0ad9912e5a4c83c699ff3c63c52957d
