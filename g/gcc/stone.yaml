@@ -5,7 +5,7 @@
 #
 name        : gcc
 version     : 15.2.0+git.76aeacb4
-release     : 15
+release     : 16
 summary     : GNU C++ standard library and compiler
 license     : GPL-3.0-or-later
 homepage    : https://gcc.gnu.org/
@@ -525,7 +525,7 @@ packages    :
         summary: COBOL support for GCC
         description: COBOL support for GCC
         paths:
-            - /usr/bin/gcob*
+            - /usr/bin/*gcob*
             - /usr/lib/gcc/*-linux/*/cobol1
             - /usr/lib/libgcobol.spec
             - /usr/share/gcobol

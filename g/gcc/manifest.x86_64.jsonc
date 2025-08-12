@@ -138,8 +138,6 @@
 				"/usr/bin/x86_64-aerynos-linux-gcc-ar",
 				"/usr/bin/x86_64-aerynos-linux-gcc-nm",
 				"/usr/bin/x86_64-aerynos-linux-gcc-ranlib",
-				"/usr/bin/x86_64-aerynos-linux-gcobc",
-				"/usr/bin/x86_64-aerynos-linux-gcobol",
 				"/usr/bin/x86_64-serpent-linux-gcc",
 				"/usr/bin/x86_64-serpent-linux-gcc-15",
 				"/usr/bin/x86_64-serpent-linux-gcc-ar",
@@ -994,8 +992,6 @@
 				"binary(x86_64-aerynos-linux-gcc-ar)",
 				"binary(x86_64-aerynos-linux-gcc-nm)",
 				"binary(x86_64-aerynos-linux-gcc-ranlib)",
-				"binary(x86_64-aerynos-linux-gcobc)",
-				"binary(x86_64-aerynos-linux-gcobol)",
 				"binary(x86_64-serpent-linux-gcc)",
 				"binary(x86_64-serpent-linux-gcc-15)",
 				"binary(x86_64-serpent-linux-gcc-ar)",
@@ -1215,6 +1211,8 @@
 			"files": [
 				"/usr/bin/gcobc",
 				"/usr/bin/gcobol",
+				"/usr/bin/x86_64-aerynos-linux-gcobc",
+				"/usr/bin/x86_64-aerynos-linux-gcobol",
 				"/usr/lib/gcc/x86_64-aerynos-linux/15/cobol1",
 				"/usr/lib/libgcobol.spec",
 				"/usr/share/gcobol/udf/stored-char-length.cbl",
@@ -1224,7 +1222,9 @@
 			"name": "gcobol",
 			"provides": [
 				"binary(gcobc)",
-				"binary(gcobol)"
+				"binary(gcobol)",
+				"binary(x86_64-aerynos-linux-gcobc)",
+				"binary(x86_64-aerynos-linux-gcobol)"
 			]
 		},
 		"gfortran": {
@@ -3415,6 +3415,6 @@
 		}
 	},
 	"source-name": "gcc",
-	"source-release": "15",
+	"source-release": "16",
 	"source-version": "15.2.0+git.76aeacb4"
 }
