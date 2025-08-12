@@ -9,6 +9,7 @@
 				"binary(msgfmt)",
 				"binary(register-python-argcomplete)",
 				"binary(rst2man)",
+				"mesa-libegl-devel",
 				"pkgconfig(atk)",
 				"pkgconfig(cairo)",
 				"pkgconfig(cairo-gobject)",
@@ -106,7 +107,7 @@
 				"soname(libcairo.so.2(x86_64))",
 				"soname(libcanberra.so.0(x86_64))",
 				"soname(libcolord.so.2(x86_64))",
-				"soname(libdisplay-info.so.2(x86_64))",
+				"soname(libdisplay-info.so.3(x86_64))",
 				"soname(libdrm.so.2(x86_64))",
 				"soname(libeis.so.1(x86_64))",
 				"soname(libfribidi.so.0(x86_64))",
@@ -294,6 +295,7 @@
 				"binary(msgfmt)",
 				"binary(register-python-argcomplete)",
 				"binary(rst2man)",
+				"mesa-libegl-devel",
 				"pkgconfig(atk)",
 				"pkgconfig(cairo)",
 				"pkgconfig(cairo-gobject)",
@@ -634,6 +636,6 @@
 		}
 	},
 	"source-name": "mutter",
-	"source-release": "24",
+	"source-release": "25",
 	"source-version": "48.4"
 }

@@ -5,7 +5,7 @@
 #
 name        : mutter
 version     : 48.4
-release     : 24
+release     : 25
 homepage    : https://gnome.org
 upstreams   :
     - https://download.gnome.org/sources/mutter/48/mutter-48.4.tar.xz : 1189cf7e63cc87cfdd1f3a86e8f14d97c33d6a9da254f23e81655549b6c50d93
@@ -91,6 +91,7 @@ builddeps   :
     - pkgconfig(xrender)
     - pkgconfig(xtst)
     - pkgconfig(xwayland)
+    - mesa-libegl-devel
 rundeps     :
     - binary(gnome-session)
     - binary(pipewire) # DMA-BUF
