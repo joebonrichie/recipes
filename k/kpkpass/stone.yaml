@@ -5,7 +5,7 @@
 #
 name        : kpkpass
 version     : 25.07.90
-release     : 4
+release     : 5
 upstreams   :
     - https://download.kde.org/unstable/release-service/25.07.90/src/kpkpass-25.07.90.tar.xz : 5b941353b64be9c5775082fe63e2bec6de936c4195ed02d348ed84099102572c
 homepage    : https://invent.kde.org/pim/kpkpass
@@ -23,10 +23,6 @@ build       : |
     %cmake_build
 install     : |
     %cmake_install
-
-    # Workaround as otherwise /usr/include/KPim6/KPkPass/Barcode and /usr/include/KF6/Prison/Barcode are identical files
-    # and we hit an interesting edge-case where moss causes them to share the same inode and clang considers them the same file
-    echo "#" >> %(installroot)%(includedir)/KPim6/KPkPass/Barcode
 packages    :
     - "%(name)-devel":
         rundeps:
