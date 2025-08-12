@@ -13,13 +13,13 @@
 			],
 			"files": [
 				"/usr/bin/di-edid-decode",
-				"/usr/lib/libdisplay-info.so.0.2.0",
-				"/usr/lib/libdisplay-info.so.2"
+				"/usr/lib/libdisplay-info.so.0.3.0",
+				"/usr/lib/libdisplay-info.so.3"
 			],
 			"name": "libdisplay-info",
 			"provides": [
 				"binary(di-edid-decode)",
-				"soname(libdisplay-info.so.2(x86_64))"
+				"soname(libdisplay-info.so.3(x86_64))"
 			]
 		},
 		"libdisplay-info-devel": {
@@ -33,6 +33,7 @@
 				"/usr/include/libdisplay-info/cta.h",
 				"/usr/include/libdisplay-info/cvt.h",
 				"/usr/include/libdisplay-info/displayid.h",
+				"/usr/include/libdisplay-info/displayid2.h",
 				"/usr/include/libdisplay-info/dmt.h",
 				"/usr/include/libdisplay-info/edid.h",
 				"/usr/include/libdisplay-info/gtf.h",
@@ -47,6 +48,6 @@
 		}
 	},
 	"source-name": "libdisplay-info",
-	"source-release": "2",
-	"source-version": "0.2.0"
+	"source-release": "3",
+	"source-version": "0.3.0"
 }

@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : libdisplay-info
-version     : 0.2.0
-release     : 2
+version     : 0.3.0
+release     : 3
 homepage    : https://gitlab.freedesktop.org/emersion/libdisplay-info
 upstreams   :
-    - https://gitlab.freedesktop.org/emersion/libdisplay-info/-/releases/0.2.0/downloads/libdisplay-info-0.2.0.tar.xz : 5a2f002a16f42dd3540c8846f80a90b8f4bdcd067a94b9d2087bc2feae974176
+    - https://gitlab.freedesktop.org/emersion/libdisplay-info/-/releases/0.3.0/downloads/libdisplay-info-0.3.0.tar.xz : 6ae77cd937f9cf7d1321d35c116062c4911e8447010a6a713ac4286f7a9d5987
 summary     : EDID and DisplayID library
 description : |
     EDID and DisplayID library
@@ -16,6 +16,7 @@ license     :
     - MIT
 builddeps   :
     - pkgconfig(hwdata)
+    # v4l-utils
 setup       : |
     %meson
 build       : |
