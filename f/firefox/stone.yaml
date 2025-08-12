@@ -5,7 +5,7 @@
 #
 name        : firefox
 version     : "141.0.3"
-release     : 33
+release     : 35
 homepage    : https://www.mozilla.org/
 upstreams   :
     - https://ftp.mozilla.org/pub/firefox/releases/141.0.3/source/firefox-141.0.3.source.tar.xz:
@@ -65,6 +65,7 @@ setup       : |
     # %%patch %(pkgdir)/patches/pgo.patch
     %patch %(pkgdir)/patches/0001-Fix-Firefox-Thunderbird-envvar-conflicts.patch
     %patch %(pkgdir)/patches/libcxx18.patch
+    %patch %(pkgdir)/patches/0001-Allow-installing-addons-from-user-scope.patch
 
     cp %(pkgdir)/build/mozconfig .
     sed -e 's|@@JOBCOUNT@@|%(jobs)|' -e 's|@@LIBDIR@@|%(libdir)|' -i mozconfig
