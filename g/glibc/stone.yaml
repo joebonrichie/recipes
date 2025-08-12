@@ -4,8 +4,8 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : glibc
-version     : 2.41+git.6e489c17
-release     : 26
+version     : 2.42+git.d7274d71
+release     : 27
 summary     : The GNU libc libraries
 license     :
     - GPL-2.0-or-later
@@ -15,7 +15,7 @@ homepage    : https://www.gnu.org/software/libc
 description : |
     The GNU libc libraries
 upstreams   :
-    - git|https://sourceware.org/git/glibc.git: 6e489c17f827317bcf8544efefa65f13b5a079dc
+    - git|https://sourceware.org/git/glibc.git: d7274d718e6f3655eabe311d4eb70fabb5ffa7ef
 builddeps   :
     - binary(bison)
     - binary(gperf)
@@ -40,10 +40,12 @@ tuning      :
     - optimize: speed
     - symbolic: nonweak
 environment : |
+    # TODO: Enable sframe once LLVM supports it
     export COMMON_GLIBC_OPTIONS="\
         %(options_configure) \
                 --disable-build-nscd \
                 --disable-nscd \
+                --disable-sframe \
                 --enable-bind-now \
                 --enable-kernel=5.15 \
                 --enable-multi-arch \
@@ -60,8 +62,6 @@ setup       : |
     %patch %(pkgdir)/stateless/Use-a-stateless-ld.so.conf.patch
     #%patch %(pkgdir)/stateless/make-locale-cache-stateless.patch
     %patch %(pkgdir)/stateless/ld-so-cache-in-var.patch
-
-    %patch %(pkgdir)/CVE-2025-8058.patch
 
     mkdir build && cd build
     echo "LD_SO_CACHE=/var/cache/ldconfig/ld.so.cache" >> configparms
