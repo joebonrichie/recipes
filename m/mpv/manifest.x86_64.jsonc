@@ -57,7 +57,7 @@
 				"soname(libavformat.so.61(x86_64))",
 				"soname(libavutil.so.59(x86_64))",
 				"soname(libc.so.6(x86_64))",
-				"soname(libdisplay-info.so.2(x86_64))",
+				"soname(libdisplay-info.so.3(x86_64))",
 				"soname(libdrm.so.2(x86_64))",
 				"soname(libdvdnav.so.4(x86_64))",
 				"soname(libgbm.so.1(x86_64))",
@@ -160,7 +160,7 @@
 				"soname(libavformat.so.61(x86_64))",
 				"soname(libavutil.so.59(x86_64))",
 				"soname(libc.so.6(x86_64))",
-				"soname(libdisplay-info.so.2(x86_64))",
+				"soname(libdisplay-info.so.3(x86_64))",
 				"soname(libdrm.so.2(x86_64))",
 				"soname(libdvdnav.so.4(x86_64))",
 				"soname(libgbm.so.1(x86_64))",
@@ -287,6 +287,6 @@
 		}
 	},
 	"source-name": "mpv",
-	"source-release": "7",
+	"source-release": "8",
 	"source-version": "0.40.0"
 }
