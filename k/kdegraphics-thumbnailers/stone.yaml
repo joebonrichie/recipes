@@ -1,0 +1,30 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : kdegraphics-thumbnailers
+version     : 25.07.90
+release     : 1
+upstreams   :
+    - https://download.kde.org/unstable/release-service/25.07.90/src/kdegraphics-thumbnailers-25.07.90.tar.xz : f2fb5c041bc7c5ba129304b34d19af293829f25ad50629a5d5c91b77f019bd4b
+homepage    : https://apps.kde.org/kdegraphics_thumbnailers/
+license     : GPL-2.0-or-later
+summary     : Thumbnailers for various graphics file formats
+description : |
+    Thumbnailers for various graphics file formats
+builddeps   :
+    # Temporary, boulder doesn't handle build ordering resolution correctly when builddeps are added by macros, so add ECM manually
+    - cmake(ECM)
+    - cmake(KDcrawQt6)
+    - cmake(KExiv2Qt6)
+    - cmake(KF6Archive)
+    - cmake(KF6KIO)
+    - cmake(QMobipocket6)
+setup       : |
+    %cmake_kf6 \
+        -DBUILD_WITH_QT6=ON
+build       : |
+    %cmake_build
+install     : |
+    %cmake_install
