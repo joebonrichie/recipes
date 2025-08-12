@@ -1,0 +1,92 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : kdepim-addons
+version     : 25.07.90
+release     : 1
+upstreams   :
+    - https://download.kde.org/unstable/release-service/25.07.90/src/kdepim-addons-25.07.90.tar.xz : 3b25de93faba9db54a3e3a29e788508aa908733a8933c0c50a446b90e4c27669
+homepage    : https://community.kde.org/PIM
+license     :
+    - GPL-2.0-only
+    - LGPL-2.1-or-later
+summary     : Addons for KDE PIM applications
+description : |
+    Addons for KDE PIM applications including akregator, kaddressbook, kmail and korganizer.
+builddeps   :
+    - cmake(Corrosion)
+    # Temporary, boulder doesn't handle build ordering resolution correctly when builddeps are added by macros, so add ECM manually
+    - cmake(ECM)
+    - cmake(Gpgmepp)
+    - cmake(KF6CalendarCore)
+    - cmake(KF6ColorScheme)
+    - cmake(KF6Config)
+    - cmake(KF6ConfigWidgets)
+    - cmake(KF6Contacts)
+    - cmake(KF6DBusAddons)
+    - cmake(KF6Declarative)
+    - cmake(KF6GuiAddons)
+    - cmake(KF6Holidays)
+    - cmake(KF6I18n)
+    - cmake(KF6IconThemes)
+    - cmake(KF6KCMUtils)
+    - cmake(KF6KIO)
+    - cmake(KF6Parts)
+    - cmake(KF6Prison)
+    - cmake(KF6SyntaxHighlighting)
+    - cmake(KF6TextAddonsWidgets)
+    - cmake(KF6TextAutoGenerateText)
+    - cmake(KF6TextCustomEditor)
+    - cmake(KF6TextGrammarCheck)
+    - cmake(KF6TextTemplate)
+    - cmake(KF6TextTranslator)
+    - cmake(KF6TextUtils)
+    - cmake(KF6XmlGui)
+    - cmake(KPim6AddressbookImportExport)
+    - cmake(KPim6Akonadi)
+    - cmake(KPim6AkonadiCalendar)
+    - cmake(KPim6AkonadiContactWidgets)
+    - cmake(KPim6CalendarSupport)
+    - cmake(KPim6CalendarUtils)
+    - cmake(KPim6GrantleeTheme)
+    - cmake(KPim6Gravatar)
+    - cmake(KPim6IMAP)
+    - cmake(KPim6IdentityManagementCore)
+    - cmake(KPim6ImportWizard)
+    - cmake(KPim6IncidenceEditor)
+    - cmake(KPim6Itinerary)
+    - cmake(KPim6KSieveUi)
+    - cmake(KPim6LdapWidgets)
+    - cmake(KPim6Libkdepim)
+    - cmake(KPim6Libkleo)
+    - cmake(KPim6MailCommon)
+    - cmake(KPim6MailImporterAkonadi)
+    - cmake(KPim6MailTransport)
+    - cmake(KPim6MessageComposer)
+    - cmake(KPim6MessageCore)
+    - cmake(KPim6MessageList)
+    - cmake(KPim6MessageViewer)
+    - cmake(KPim6Mime)
+    - cmake(KPim6PimCommonActivities)
+    - cmake(KPim6PimCommonAkonadi)
+    - cmake(KPim6PkPass)
+    - cmake(KPim6TemplateParser)
+    - cmake(KPim6TextEdit)
+    - cmake(KPim6Tnef)
+    - cmake(KPim6WebEngineViewer)
+    - cmake(PlasmaActivities)
+    - cmake(Qt6WebEngineWidgets)
+    - pkgconfig(libmarkdown)
+networking  : true # Cargo
+setup       : |
+    %cmake_kf6
+build       : |
+    %cmake_build
+install     : |
+    %cmake_install
+    %qml_cache_qt6
+tuning      :
+    # Causes a build failure from trying to link together "incompatible" triples built by Rust and Clang
+    - lto: false
