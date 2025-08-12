@@ -4,16 +4,13 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : thunderbird
-version     : 140.1.1
-release     : 23
+version     : 140.1.1esr
+release     : 24
 homepage    : https://www.thunderbird.net/
 upstreams   :
     - https://releases.mozilla.org/pub/thunderbird/releases/140.1.1esr/source/thunderbird-140.1.1esr.source.tar.xz:
         hash: 136b160954abe2426ab26e46d35d946207ab5e217ac72d3ff5cb1b87680d4fcd
         unpackdir: thunderbird
-    - https://sources.getsol.us/mozilla/thunderbird/thunderbird-140.1.1esr-langpacks.tar.zst:
-        hash: 4017afff75e634398da97f913e8c8b6679c202a908e587459cecdd0eeb2b114c
-        unpackdir: thunderbird/langpacks
 summary     : Thunderbird Email Client
 description : |
     Thunderbird Email Client
@@ -52,6 +49,7 @@ builddeps   :
     - libstdc++-devel
 rundeps     :
     - rnp
+    - thunderbird-langpacks
     - xdg-desktop-portal
 networking  : true # PGO
 environment : |
@@ -72,7 +70,9 @@ environment : |
 setup       : |
     # %patch %(pkgdir)/patches/pgo.patch
     %patch %(pkgdir)/patches/0001-Fix-Firefox-Thunderbird-envvar-conflicts.patch
+    %patch %(pkgdir)/patches/0001-Allow-installing-addons-from-user-scope.patch
     %patch %(pkgdir)/patches/libcxx-18.patch
+    %patch %(pkgdir)/patches/0001-ftbfs-rust-1.89.patch
 
     cp %(pkgdir)/build/mozconfig .
     sed -e 's|@@JOBCOUNT@@|%(jobs)|' -e 's|@@LIBDIR@@|%(libdir)|' -i mozconfig
@@ -140,15 +140,6 @@ build       : |
     fi
 install     : |
     DESTDIR=%(installroot) ./mach install
-
-    # Install locales
-    langpackdir="%(installroot)/%(libdir)/thunderbird/langpacks"
-    %install_dir "${langpackdir}"
-
-    for i in langpacks/*.xpi; do
-        lname="$(basename ${i})"
-        %install_file "langpacks/${lname}" "${langpackdir}/${lname}"
-    done
 
     for i in 16 22 24 32 48 128 256; do
         install -dm00755 %(installroot)/%(datadir)/icons/hicolor/${i}x${i}/apps
