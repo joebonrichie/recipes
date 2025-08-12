@@ -111,6 +111,7 @@
 				"/usr/include/drm/amdgpu_drm.h",
 				"/usr/include/drm/amdxdna_accel.h",
 				"/usr/include/drm/armada_drm.h",
+				"/usr/include/drm/asahi_drm.h",
 				"/usr/include/drm/drm.h",
 				"/usr/include/drm/drm_fourcc.h",
 				"/usr/include/drm/drm_mode.h",
@@ -123,6 +124,7 @@
 				"/usr/include/drm/lima_drm.h",
 				"/usr/include/drm/msm_drm.h",
 				"/usr/include/drm/nouveau_drm.h",
+				"/usr/include/drm/nova_drm.h",
 				"/usr/include/drm/omap_drm.h",
 				"/usr/include/drm/panfrost_drm.h",
 				"/usr/include/drm/panthor_drm.h",
@@ -447,6 +449,7 @@
 				"/usr/include/linux/mdio.h",
 				"/usr/include/linux/media-bus-format.h",
 				"/usr/include/linux/media.h",
+				"/usr/include/linux/media/amlogic/c3-isp-config.h",
 				"/usr/include/linux/media/raspberrypi/pisp_be_config.h",
 				"/usr/include/linux/media/raspberrypi/pisp_common.h",
 				"/usr/include/linux/media/raspberrypi/pisp_fe_config.h",
@@ -665,6 +668,7 @@
 				"/usr/include/linux/oom.h",
 				"/usr/include/linux/openat2.h",
 				"/usr/include/linux/openvswitch.h",
+				"/usr/include/linux/ovpn.h",
 				"/usr/include/linux/packet_diag.h",
 				"/usr/include/linux/papr_pdsm.h",
 				"/usr/include/linux/param.h",
@@ -909,6 +913,7 @@
 				"/usr/include/linux/virtio_pmem.h",
 				"/usr/include/linux/virtio_ring.h",
 				"/usr/include/linux/virtio_rng.h",
+				"/usr/include/linux/virtio_rtc.h",
 				"/usr/include/linux/virtio_scmi.h",
 				"/usr/include/linux/virtio_scsi.h",
 				"/usr/include/linux/virtio_snd.h",
@@ -935,6 +940,7 @@
 				"/usr/include/linux/xilinx-v4l2-controls.h",
 				"/usr/include/linux/zorro.h",
 				"/usr/include/linux/zorro_ids.h",
+				"/usr/include/misc/amd-apml.h",
 				"/usr/include/misc/fastrpc.h",
 				"/usr/include/misc/mrvl_cn10k_dpi.h",
 				"/usr/include/misc/ocxl.h",
@@ -1022,6 +1028,6 @@
 		}
 	},
 	"source-name": "linux-headers",
-	"source-release": "24",
-	"source-version": "6.15"
+	"source-release": "25",
+	"source-version": "6.16"
 }
