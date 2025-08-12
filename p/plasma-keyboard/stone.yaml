@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : plasma-keyboard
-version     : "0.0.1+git.fe439245"
-release     : 4
+version     : "0.0.1+git.7e8f93ac"
+release     : 5
 upstreams   :
     # TODO: Fill out the monitoring.yaml with the correct values once this is actually released
-    - git|https://invent.kde.org/plasma/plasma-keyboard : fe439245f9b095abb9f18aa208d26056f0f49712
+    - git|https://invent.kde.org/plasma/plasma-keyboard : 7e8f93ac9f4e530f053c14a740bab90b83cefb3f
 homepage    : https://kde.org/plasma-desktop/
 license     : GPL-2.0-or-later
 summary     : Virtual keyboard for Plasma
