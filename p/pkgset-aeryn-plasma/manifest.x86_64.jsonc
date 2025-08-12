@@ -33,6 +33,7 @@
 				"kde-gtk-config",
 				"kdeplasma-addons",
 				"kinfocenter",
+				"kio-gdrive",
 				"konsole",
 				"krdp",
 				"kscreen",
@@ -68,6 +69,8 @@
 				"gwenview",
 				"haruna",
 				"kate",
+				"kdegraphics-thumbnailers",
+				"kdepim-addons",
 				"merkuro",
 				"okular",
 				"partitionmanager",
@@ -80,6 +83,6 @@
 		}
 	},
 	"source-name": "pkgset-aeryn-plasma",
-	"source-release": "12",
+	"source-release": "13",
 	"source-version": "2025.06"
 }
