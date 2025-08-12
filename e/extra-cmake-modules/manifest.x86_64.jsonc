@@ -372,6 +372,6 @@
 		}
 	},
 	"source-name": "extra-cmake-modules",
-	"source-release": "10",
+	"source-release": "11",
 	"source-version": "6.17.0"
 }

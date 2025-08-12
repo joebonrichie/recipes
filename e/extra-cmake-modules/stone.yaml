@@ -5,7 +5,7 @@
 #
 name        : extra-cmake-modules
 version     : 6.17.0
-release     : 10
+release     : 11
 upstreams   :
     - https://download.kde.org/stable/frameworks/6.17/extra-cmake-modules-6.17.0.tar.xz : dfecb17d0238f4de1dd3485b92a6606137d4a9c67b9e4ce40407fe0f2aec0a40
 homepage    : https://community.kde.org/Frameworks
@@ -29,6 +29,7 @@ rundeps     :
 setup       : |
     %patch %(pkgdir)/0001-Enable-stateless-paths.patch
     %patch %(pkgdir)/0002-We-use-qmake-rather-than-qmake-qt5.patch
+    %patch %(pkgdir)/0001-Workaround-LLVM-bug-with-hardlinked-includes.patch
 
     # Construct the KF6 macro manually otherwise we'd pull in ECM, and we are ECM
     %cmake %(options_cmake_kf6)
