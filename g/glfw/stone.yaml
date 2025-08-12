@@ -4,17 +4,20 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : glfw
-version     : '3.4'
-release     : 2
+version     : '3.5.0'
+release     : 3
 homepage    : https://www.glfw.org/
 upstreams   :
-    - https://github.com/glfw/glfw/archive/3.4.tar.gz : c038d34200234d071fae9345bc455e4a8f2f544ab60150765d7704e08f3dac01
+    - https://github.com/glfw/glfw/archive/3.5.0.tar.gz : 1abba4007c81bb3c21dad0f1cfff65cf71a5f92d1421016ce7eb236c7458ba9f
 summary     : A free, open source, portable framework for graphical application development
 description : |
     GLFW is an Open Source, multi-platform library for OpenGL, OpenGL ES and Vulkan application development. It provides a simple, platform-independent API for creating windows, contexts and surfaces, reading input, handling events, etc.
 license     : Zlib
 builddeps   :
-    - binary(wayland-scanner)
+    - binary(doxygen)
+    - pkgconfig(wayland-client)
+    - pkgconfig(wayland-cursor)
+    - pkgconfig(wayland-egl)
     - pkgconfig(xkbcommon)
     - pkgconfig(x11)
     - pkgconfig(xrandr)
@@ -22,10 +25,14 @@ builddeps   :
     - pkgconfig(xcursor)
     - pkgconfig(xi)
 setup       : |
-    %cmake -DBUILD_SHARED_LIBS=ON
+    %cmake \
+        -DBUILD_SHARED_LIBS=ON
 build       : |
     %cmake_build
 install     : |
     %cmake_install
     %install_file LICENSE.md "%(installroot)/usr/share/licenses/%(name)/LICENSE.md"
-
+packages    :
+    - "%(name)-docs":
+        paths:
+            - /usr/share/doc/
