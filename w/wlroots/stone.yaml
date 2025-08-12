@@ -5,7 +5,7 @@
 #
 name        : wlroots
 version     : 0.19.0
-release     : 5
+release     : 6
 homepage    : https://gitlab.freedesktop.org/wlroots/wlroots/
 upstreams   :
     - https://gitlab.freedesktop.org/wlroots/wlroots/-/releases/0.19.0/downloads/wlroots-0.19.0.tar.gz : aefb0fe2633b0aad1d66123b2f41afab004fb625e2a7790492cdd39a805cac91
