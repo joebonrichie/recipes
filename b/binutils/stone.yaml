@@ -4,16 +4,16 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : binutils
-version     : 2.44.0+git.35db8c6d
-release     : 22
+version     : 2.45.0+git.2b2e51a3
+release     : 23
 summary     : A GNU collection of binary utilities
 license     : GPL-3.0-or-later
 homepage    : https://sourceware.org/binutils
 description : |
     A GNU collection of binary utilities
 upstreams   :
-    # binutils-2_44-branch
-    - git|https://sourceware.org/git/binutils-gdb.git : 35db8c6dd2f57b43c7a1b1cde26c2cd7b98b76f4
+    # binutils-2_45-branch
+    - git|https://sourceware.org/git/binutils-gdb.git : 2b2e51a31ec7c48ef830f7e8415b42d4b95e335a
 builddeps   :
     - binary(bison)
     - binary(flex)
@@ -22,6 +22,7 @@ builddeps   :
     - binary(makeinfo)
     - binary(msgmerge)
     - binary(perl)
+    - binary(tar)
     - binary(yacc)
     - pkgconfig(jansson)
     - pkgconfig(libblake3)
@@ -33,6 +34,9 @@ builddeps   :
 setup       : |
     %patch %(pkgdir)/0001-Proper-stateless.patch
     %patch %(pkgdir)/0001-Use-BLAKE3-for-build-id-hashing.patch
+
+    # Seems to be a bashism or automake regression, causes the literal binary `/usr/bin/gp-{archive,collect-app,display-html,display-src,display-text}` to be created
+    %patch %(pkgdir)/0001-Revert-gprofng-Fix-cross-compilation-binary-name.patch
 
     # Non release builds mess up the sonames
     sed -i '/^development=/s/true/false/' bfd/development.sh
