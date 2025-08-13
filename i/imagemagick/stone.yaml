@@ -1,0 +1,122 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : imagemagick
+version     : 7.1.2-1
+release     : 1
+upstreams   :
+    - https://github.com/ImageMagick/ImageMagick/archive/refs/tags/7.1.2-1.tar.gz : 9306407381a7bf0ac5d97074eca3ce9dfaac65ced4d44f6a47bc24fbfc693e9a
+homepage    : https://imagemagick.org/
+license     : Apache-2.0
+summary     : ImageMagick® suite to create, edit, compose, or convert bitmap images
+description : |
+    ImageMagick® is a software suite to create, edit, compose, or convert bitmap images. It can read and write images in a variety of formats (over 200) including PNG, JPEG, JPEG-2000, GIF, TIFF, DPX, EXR, WebP, Postscript, PDF, and SVG. Use ImageMagick to resize, flip, mirror, rotate, distort, shear and transform images, adjust image colors, apply various special effects, or draw text, lines, polygons, ellipses and Bézier curves.
+builddeps   :
+    - pkgconfig(OpenCL) #TODO: Enable maybe?
+    - pkgconfig(bzip2)
+    - pkgconfig(ddjvuapi)
+    - pkgconfig(fontconfig)
+    - pkgconfig(freetype2)
+    - pkgconfig(ice)
+    - pkgconfig(lcms2)
+    - pkgconfig(libgvc)
+    - pkgconfig(libheif)
+    - pkgconfig(libjpeg)
+    - pkgconfig(libjxl)
+    - pkgconfig(liblzma)
+    - pkgconfig(libopenjp2)
+    - pkgconfig(libpng)
+    - pkgconfig(libraw_r)
+    - pkgconfig(librsvg-2.0)
+    - pkgconfig(libtiff-4)
+    - pkgconfig(libwebp)
+    - pkgconfig(libxml-2.0)
+    - pkgconfig(libzip)
+    - pkgconfig(libzstd)
+    - pkgconfig(pangocairo)
+    - pkgconfig(sm)
+    - pkgconfig(zlib)
+    - libtool-ltldl-devel
+    - perl-devel
+    # TODO:
+    # - JBIG ?
+    # - lqr-1
+    # - libwmf
+    # - OpenEXR
+    # - raqm
+setup       : |
+    %patch %(pkgdir)/Stateless.patch
+    %configure \
+        --disable-static \
+        --enable-opencl \
+        --with-modules \
+        --with-perl \
+        --with-perl-options="INSTALLDIRS=vendor INSTALL_BASE= -L$PWD/magick/.libs LDDLFLAGS='-shared -L$PWD/magick/.libs'" \
+        --with-rsvg
+build       : |
+    %make
+install     : |
+    %make_install
+
+    # Stateless
+    %install_dir %(installroot)%(vendordir)
+    mv %(installroot)%(sysconfdir)/ImageMagick-7/ %(installroot)%(vendordir)/
+packages    :
+    - "%(name)-cpp":
+        summary: ImageMagick Magick++ library (C++ bindings)
+        description: ImageMagick Magick++ library (C++ bindings)
+        paths:
+            - /usr/lib/libMagick++-7.Q16HDRI.so.*
+
+    - "%(name)-cpp-devel":
+        summary: ImageMagick Magick++ library (C++ bindings) - Development files
+        description: ImageMagick Magick++ library (C++ bindings) - Development files
+        rundeps:
+            - "%(name)-cpp"
+            - "%(name)-devel"
+        paths:
+            - /usr/bin/Magick++-config
+            - /usr/share/man/man1/Magick++-config.1*
+            - /usr/include/ImageMagick-7/Magick++.h
+            - /usr/include/ImageMagick-7/Magick++/
+            - /usr/lib/pkgconfig/Magick++*.pc
+            - /usr/lib/libMagick++-7.Q16HDRI.so
+
+    - "%(name)-devel":
+        paths:
+            - /usr/bin/MagickCore-config
+            - /usr/bin/MagickWand-config
+            - /usr/share/man/man1/MagickCore-config.1*
+            - /usr/share/man/man1/MagickWand-config.1*
+
+    - "%(name)-docs":
+        paths:
+            - /usr/share/doc/ImageMagick-7/images/
+            - /usr/share/doc/ImageMagick-7/www/
+            - /usr/share/doc/ImageMagick-7/index.html
+
+    - "%(name)-libs":
+        summary: ImageMagick libraries to link with
+        description: ImageMagick libraries to link with
+        paths:
+            - /usr/lib/libMagickCore-7.Q16HDRI.so.*
+            - /usr/lib/libMagickWand-7.Q16HDRI.so.*
+            - /usr/lib/ImageMagick-*/
+            - /usr/share/ImageMagick-7/
+            - /usr/share/defaults/ImageMagick-7/
+            - /usr/share/doc/ImageMagick-7/LICENSE
+
+    - "%(name)-perl":
+        summary: ImageMagick perl bindings
+        description: |
+            Perl bindings to ImageMagick.
+
+            Install %(name)-perl if you want to use any perl scripts that use
+            ImageMagick.
+        rundeps:
+            - binary(perl)
+        paths:
+            - /usr/lib/perl5/
+            - /usr/share/man/man3/Image::Magick*
