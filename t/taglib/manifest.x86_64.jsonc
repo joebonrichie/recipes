@@ -4,6 +4,7 @@
 	"packages": {
 		"taglib": {
 			"build-depends": [
+				"pkgconfig(cppunit)",
 				"pkgconfig(zlib)"
 			],
 			"depends": [
@@ -27,6 +28,7 @@
 		},
 		"taglib-devel": {
 			"build-depends": [
+				"pkgconfig(cppunit)",
 				"pkgconfig(zlib)"
 			],
 			"depends": [
@@ -170,6 +172,6 @@
 		}
 	},
 	"source-name": "taglib",
-	"source-release": "1",
+	"source-release": "2",
 	"source-version": "2.1.1"
 }
