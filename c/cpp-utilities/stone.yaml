@@ -1,0 +1,38 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : cpp-utilities
+version     : 5.29.0
+release     : 1
+upstreams   :
+    - https://github.com/Martchus/cpp-utilities/archive/refs/tags/v5.29.0.tar.gz : 79342cc592a7a7458b1981ded1c5e83ff33003129673048fb259090b1ef719ec
+homepage    : https://github.com/Martchus/cpp-utilities 
+license     : GPL-2.0-or-later 
+summary     : Common C++ classes and routines such as argument parser, IO and conversion utilities
+description : |
+    Common C++ classes and routines such as argument parser, IO and conversion utilities
+builddeps   :
+    - binary(doxygen)
+    - cmake(Boost)
+    # - pkgconfig(libarchive)
+    - pkgconfig(openssl)
+checkdeps   :
+    - pkgconfig(cppunit)
+setup       : |
+    # Libarchive tests seem to fail, so don't build it for now
+    %cmake \
+        -DBUILD_SHARED_LIBS:BOOL=ON
+build       : |
+    %cmake_build
+install     : |
+    %cmake_install
+check       : |
+    # Odd, but whatever I guess
+    # https://github.com/Martchus/cpp-utilities/issues/26
+    %cmake_build --target check
+packages    :
+    - "%(name)-devel":
+        paths:
+            - /usr/share/c++utilities/
