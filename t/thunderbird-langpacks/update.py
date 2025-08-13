@@ -69,7 +69,7 @@ upstream_template = Template(\
         unpack: false
 """)
 
-xpi_list = langpack_dir.glob("*.xpi")
+xpi_list = sorted(list(langpack_dir.glob("*.xpi")))
 for xpi in xpi_list:
     base = os.path.basename(xpi).removesuffix(".xpi")
     eid = f"langpack-{base}@thunderbird.mozilla.org.xpi"
