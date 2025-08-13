@@ -1,0 +1,114 @@
+/** Human readable report. This is not consumed by boulder */
+{
+	"manifest-version": "0.2",
+	"packages": {
+		"qtutilities": {
+			"build-depends": [
+				"binary(doxygen)",
+				"cmake(Qt6Gui)",
+				"cmake(Qt6LinguistTools)",
+				"cmake(c++utilities)",
+				"pkgconfig(x11)"
+			],
+			"depends": [
+				"soname(libQt6Core.so.6(x86_64))",
+				"soname(libQt6DBus.so.6(x86_64))",
+				"soname(libQt6Gui.so.6(x86_64))",
+				"soname(libQt6Widgets.so.6(x86_64))",
+				"soname(libX11.so.6(x86_64))",
+				"soname(libc++.so.1(x86_64))",
+				"soname(libc++utilities.so.5(x86_64))",
+				"soname(libc.so.6(x86_64))",
+				"soname(libunwind.so.1(x86_64))"
+			],
+			"files": [
+				"/usr/lib/libqtutilities.so.6",
+				"/usr/lib/libqtutilities.so.6.17.0"
+			],
+			"name": "qtutilities",
+			"provides": [
+				"soname(libqtutilities.so.6(x86_64))"
+			]
+		},
+		"qtutilities-devel": {
+			"build-depends": [
+				"binary(doxygen)",
+				"cmake(Qt6Gui)",
+				"cmake(Qt6LinguistTools)",
+				"cmake(c++utilities)",
+				"pkgconfig(x11)"
+			],
+			"depends": [
+				"pkgconfig(Qt6Core)",
+				"pkgconfig(Qt6Gui)",
+				"pkgconfig(Qt6Widgets)",
+				"qtutilities"
+			],
+			"files": [
+				"/usr/include/qtutilities-qt6/qtutilities/aboutdialog/aboutdialog.h",
+				"/usr/include/qtutilities-qt6/qtutilities/enterpassworddialog/enterpassworddialog.h",
+				"/usr/include/qtutilities-qt6/qtutilities/global.h",
+				"/usr/include/qtutilities-qt6/qtutilities/misc/adoptlocker.h",
+				"/usr/include/qtutilities-qt6/qtutilities/misc/compat.h",
+				"/usr/include/qtutilities-qt6/qtutilities/misc/conversion.h",
+				"/usr/include/qtutilities-qt6/qtutilities/misc/dbusnotification.h",
+				"/usr/include/qtutilities-qt6/qtutilities/misc/desktoputils.h",
+				"/usr/include/qtutilities-qt6/qtutilities/misc/dialogutils.h",
+				"/usr/include/qtutilities-qt6/qtutilities/misc/recentmenumanager.h",
+				"/usr/include/qtutilities-qt6/qtutilities/misc/trylocker.h",
+				"/usr/include/qtutilities-qt6/qtutilities/misc/undefxmlparsermacros.h",
+				"/usr/include/qtutilities-qt6/qtutilities/misc/xmlparsermacros.h",
+				"/usr/include/qtutilities-qt6/qtutilities/models/checklistmodel.h",
+				"/usr/include/qtutilities-qt6/qtutilities/paletteeditor/colorbutton.h",
+				"/usr/include/qtutilities-qt6/qtutilities/paletteeditor/paletteeditor.h",
+				"/usr/include/qtutilities-qt6/qtutilities/qtutilities-definitions.h",
+				"/usr/include/qtutilities-qt6/qtutilities/resources/importplugin.h",
+				"/usr/include/qtutilities-qt6/qtutilities/resources/qtconfigarguments.h",
+				"/usr/include/qtutilities-qt6/qtutilities/resources/resources.h",
+				"/usr/include/qtutilities-qt6/qtutilities/settingsdialog/optioncategory.h",
+				"/usr/include/qtutilities-qt6/qtutilities/settingsdialog/optioncategoryfiltermodel.h",
+				"/usr/include/qtutilities-qt6/qtutilities/settingsdialog/optioncategorymodel.h",
+				"/usr/include/qtutilities-qt6/qtutilities/settingsdialog/optionpage.h",
+				"/usr/include/qtutilities-qt6/qtutilities/settingsdialog/qtsettings.h",
+				"/usr/include/qtutilities-qt6/qtutilities/settingsdialog/settingsdialog.h",
+				"/usr/include/qtutilities-qt6/qtutilities/setup/updater.h",
+				"/usr/include/qtutilities-qt6/qtutilities/version.h",
+				"/usr/include/qtutilities-qt6/qtutilities/widgets/buttonoverlay.h",
+				"/usr/include/qtutilities-qt6/qtutilities/widgets/clearcombobox.h",
+				"/usr/include/qtutilities-qt6/qtutilities/widgets/clearlineedit.h",
+				"/usr/include/qtutilities-qt6/qtutilities/widgets/clearplaintextedit.h",
+				"/usr/include/qtutilities-qt6/qtutilities/widgets/clearspinbox.h",
+				"/usr/include/qtutilities-qt6/qtutilities/widgets/iconbutton.h",
+				"/usr/include/qtutilities-qt6/qtutilities/widgets/pathselection.h",
+				"/usr/lib/libqtutilities.so",
+				"/usr/lib/pkgconfig/qtutilities-qt6.pc",
+				"/usr/share/qtutilities-qt6/cmake/modules/QtConfig.cmake",
+				"/usr/share/qtutilities-qt6/cmake/modules/QtGuiConfig.cmake",
+				"/usr/share/qtutilities-qt6/cmake/modules/QtJsProviderConfig.cmake",
+				"/usr/share/qtutilities-qt6/cmake/modules/QtLinkage.cmake",
+				"/usr/share/qtutilities-qt6/cmake/modules/QtWebViewProviderConfig.cmake",
+				"/usr/share/qtutilities-qt6/cmake/qtutilities-qt6Config.cmake",
+				"/usr/share/qtutilities-qt6/cmake/qtutilities-qt6ConfigVersion.cmake",
+				"/usr/share/qtutilities-qt6/cmake/qtutilities-qt6Targets-release.cmake",
+				"/usr/share/qtutilities-qt6/cmake/qtutilities-qt6Targets.cmake",
+				"/usr/share/qtutilities-qt6/cmake/templates/jsdefs.h.in",
+				"/usr/share/qtutilities-qt6/cmake/templates/jsincludes.h.in",
+				"/usr/share/qtutilities-qt6/cmake/templates/qtconfig.h.in",
+				"/usr/share/qtutilities-qt6/cmake/templates/webviewdefs.h.in",
+				"/usr/share/qtutilities-qt6/cmake/templates/webviewincludes.h.in"
+			],
+			"name": "qtutilities-devel",
+			"provides": [
+				"cmake(Qt)",
+				"cmake(QtGui)",
+				"cmake(QtJsProvider)",
+				"cmake(QtWebViewProvider)",
+				"cmake(qtutilities-qt6)",
+				"pkgconfig(qtutilities-qt6)"
+			]
+		}
+	},
+	"source-name": "qtutilities",
+	"source-release": "1",
+	"source-version": "6.17.0"
+}
