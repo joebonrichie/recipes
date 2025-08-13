@@ -54,6 +54,7 @@
 			],
 			"depends": [
 				"adwaita-icon-theme",
+				"gobject-introspection",
 				"gsettings-desktop-schemas",
 				"gtk-3-update-icon-cache",
 				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
@@ -1128,6 +1129,6 @@
 		}
 	},
 	"source-name": "gtk-3",
-	"source-release": "12",
+	"source-release": "13",
 	"source-version": "3.24.50"
 }
