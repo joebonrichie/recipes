@@ -22,12 +22,12 @@
 				"soname(libunwind.so.1(x86_64))"
 			],
 			"files": [
-				"/usr/lib/libqtutilities.so.6",
-				"/usr/lib/libqtutilities.so.6.17.0"
+				"/usr/lib/libqtutilities-qt6.so.6",
+				"/usr/lib/libqtutilities-qt6.so.6.17.0"
 			],
 			"name": "qtutilities",
 			"provides": [
-				"soname(libqtutilities.so.6(x86_64))"
+				"soname(libqtutilities-qt6.so.6(x86_64))"
 			]
 		},
 		"qtutilities-devel": {
@@ -80,7 +80,7 @@
 				"/usr/include/qtutilities-qt6/qtutilities/widgets/clearspinbox.h",
 				"/usr/include/qtutilities-qt6/qtutilities/widgets/iconbutton.h",
 				"/usr/include/qtutilities-qt6/qtutilities/widgets/pathselection.h",
-				"/usr/lib/libqtutilities.so",
+				"/usr/lib/libqtutilities-qt6.so",
 				"/usr/lib/pkgconfig/qtutilities-qt6.pc",
 				"/usr/share/qtutilities-qt6/cmake/modules/QtConfig.cmake",
 				"/usr/share/qtutilities-qt6/cmake/modules/QtGuiConfig.cmake",
@@ -109,6 +109,6 @@
 		}
 	},
 	"source-name": "qtutilities",
-	"source-release": "1",
+	"source-release": "2",
 	"source-version": "6.17.0"
 }
