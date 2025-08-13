@@ -5,7 +5,7 @@
 #
 name        : gobject-introspection
 version     : 1.84.0
-release     : 11
+release     : 12
 homepage    : https://gitlab.gnome.org/GNOME/gobject-introspection
 upstreams   :
     - https://download.gnome.org/sources/gobject-introspection/1.84/gobject-introspection-1.84.0.tar.xz : 945b57da7ec262e5c266b89e091d14be800cc424277d82a02872b7d794a84779
@@ -22,15 +22,17 @@ builddeps   :
     - pkgconfig(glib-2.0)
     - pkgconfig(libffi)
     - pkgconfig(python3)
-packages    :
-    - "%(name)-devel":
-        paths:
-            - /usr/bin
-            - /usr/lib/gobject-introspection/giscanner
-            - /usr/share/gobject-introspection-1.0
 setup       : |
     %meson
 build       : |
     %meson_build
 install     : |
     %meson_install
+packages    :
+    - "%(name)-devel":
+        paths:
+            - /usr/bin/
+            - /usr/lib/gobject-introspection/giscanner
+            - /usr/share/gobject-introspection-1.0/
+            - /usr/share/gir-1.0/
+            - /usr/share/man/man1/
