@@ -1,0 +1,30 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : cppunit
+version     : 1.15.1
+release     : 1
+upstreams   :
+    - http://dev-www.libreoffice.org/src/cppunit-1.15.1.tar.gz : 89c5c6665337f56fd2db36bc3805a5619709d51fb136e51937072f63fcc717a7
+homepage    : https://www.freedesktop.org/wiki/Software/cppunit
+license     : LGPL-2.1-or-later
+summary     : A C++ unit testing framework
+description : |
+    CppUnit is the C++ port of the famous JUnit framework for unit testing.
+builddeps   :
+    - binary(doxygen)
+setup       : |
+    %configure \
+        --disable-static
+build       : |
+    %make
+install     : |
+    %make_install
+check       : |
+    %make check
+packages    :
+    - "%(name)-docs":
+        paths:
+            - /usr/share/cppunit/html/
