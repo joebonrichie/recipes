@@ -1,0 +1,49 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : qtforkawesome
+version     : 0.3.1
+release     : 1
+upstreams   :
+    - https://github.com/Martchus/qtforkawesome/archive/refs/tags/v0.3.1.tar.gz:
+        hash: b797af12542c5a2c7d11025ffaf9bea2b5abc603cef57044cfc20d0f5e7c8587
+        unpackdir: qtforkawesome
+    - https://github.com/ForkAwesome/Fork-Awesome/archive/refs/tags/1.2.0.tar.gz:
+        hash: 23fba5f191f204e0414c547bf4c9b10fd7ca42c151260e8f64698449a75fbdb3
+        unpackdir: qtforkawesome/forkawesome
+homepage    : https://github.com/Martchus/qtforkawesome 
+license     : GPL-2.0-or-later 
+summary     : Library that bundles ForkAwesome for use within Qt applications
+description : |
+    Library that bundles ForkAwesome for use within Qt applications
+builddeps   :
+    - binary(doxygen)
+    - binary(perl)
+    - cmake(Qt6Quick)
+    - cmake(c++utilities)
+    - cmake(qtutilities-qt6)
+    - perl-yaml-libyaml
+setup       : |
+    %cmake \
+        -DBUILD_SHARED_LIBS:BOOL=ON \
+        -DBUILTIN_TRANSLATIONS=ON \
+        -DCONFIGURATION_NAME=qt6 \
+        -DCONFIGURATION_PACKAGE_SUFFIX_QTUTILITIES="-qt6" \
+        -DCONFIGURATION_TARGET_SUFFIX=qt6 \
+        -DQT_PACKAGE_PREFIX=Qt6 \
+        -DFORK_AWESOME_FONT_FILE="%(workdir)/forkawesome/fonts/forkawesome-webfont.woff2" \
+        -DFORK_AWESOME_ICON_DEFINITIONS="%(workdir)/forkawesome/src/icons/icons.yml"
+build       : |
+    %cmake_build
+install     : |
+    %cmake_install
+check       : |
+    # Odd, but whatever I guess
+    # https://github.com/Martchus/cpp-utilities/issues/26
+    env QT_QPA_PLATFORM=offscreen %cmake_build --target check
+packages    :
+    - "%(name)-devel":
+        paths:
+            - /usr/share/*/cmake/

@@ -1,0 +1,96 @@
+/** Human readable report. This is not consumed by boulder */
+{
+	"manifest-version": "0.2",
+	"packages": {
+		"qtforkawesome": {
+			"build-depends": [
+				"binary(doxygen)",
+				"binary(perl)",
+				"cmake(Qt6Quick)",
+				"cmake(c++utilities)",
+				"cmake(qtutilities-qt6)",
+				"perl-yaml-libyaml"
+			],
+			"depends": [
+				"soname(libQt6Core.so.6(x86_64))",
+				"soname(libQt6Gui.so.6(x86_64))",
+				"soname(libQt6Quick.so.6(x86_64))",
+				"soname(libc++.so.1(x86_64))",
+				"soname(libc.so.6(x86_64))",
+				"soname(libunwind.so.1(x86_64))"
+			],
+			"files": [
+				"/usr/lib/libqtforkawesome-qt6.so.0.3.1",
+				"/usr/lib/libqtforkawesome-qt6.so.1",
+				"/usr/lib/libqtquickforkawesome-qt6.so.0.3.1",
+				"/usr/lib/libqtquickforkawesome-qt6.so.1",
+				"/usr/lib/qt6/plugins/iconengines/libqtforkawesomeiconengine-qt6.so"
+			],
+			"name": "qtforkawesome",
+			"provides": [
+				"soname(libqtforkawesome-qt6.so.1(x86_64))",
+				"soname(libqtquickforkawesome-qt6.so.1(x86_64))",
+				"soname(qt6/plugins/iconengines/libqtforkawesomeiconengine-qt6.so(x86_64))"
+			]
+		},
+		"qtforkawesome-devel": {
+			"build-depends": [
+				"binary(doxygen)",
+				"binary(perl)",
+				"cmake(Qt6Quick)",
+				"cmake(c++utilities)",
+				"cmake(qtutilities-qt6)",
+				"perl-yaml-libyaml"
+			],
+			"depends": [
+				"pkgconfig(Qt6Core)",
+				"pkgconfig(Qt6Gui)",
+				"pkgconfig(Qt6Quick)",
+				"qtforkawesome"
+			],
+			"files": [
+				"/usr/include/qtforkawesome-qt6/qtforkawesome/global.h",
+				"/usr/include/qtforkawesome-qt6/qtforkawesome/icon.h",
+				"/usr/include/qtforkawesome-qt6/qtforkawesome/iconfwd.h",
+				"/usr/include/qtforkawesome-qt6/qtforkawesome/private/icons.h",
+				"/usr/include/qtforkawesome-qt6/qtforkawesome/qtforkawesome-definitions.h",
+				"/usr/include/qtforkawesome-qt6/qtforkawesome/renderer.h",
+				"/usr/include/qtforkawesome-qt6/qtforkawesome/utils.h",
+				"/usr/include/qtforkawesome-qt6/qtforkawesome/version.h",
+				"/usr/include/qtquickforkawesome-qt6/qtquickforkawesome/global.h",
+				"/usr/include/qtquickforkawesome-qt6/qtquickforkawesome/imageprovider.h",
+				"/usr/include/qtquickforkawesome-qt6/qtquickforkawesome/qtquickforkawesome-definitions.h",
+				"/usr/include/qtquickforkawesome-qt6/qtquickforkawesome/version.h",
+				"/usr/lib/libqtforkawesome-qt6.so",
+				"/usr/lib/libqtquickforkawesome-qt6.so",
+				"/usr/lib/pkgconfig/qtforkawesome-qt6.pc",
+				"/usr/lib/pkgconfig/qtforkawesomeiconengine-qt6.pc",
+				"/usr/lib/pkgconfig/qtquickforkawesome-qt6.pc",
+				"/usr/share/qtforkawesome-qt6/cmake/qtforkawesome-qt6Config.cmake",
+				"/usr/share/qtforkawesome-qt6/cmake/qtforkawesome-qt6ConfigVersion.cmake",
+				"/usr/share/qtforkawesome-qt6/cmake/qtforkawesome-qt6Targets-release.cmake",
+				"/usr/share/qtforkawesome-qt6/cmake/qtforkawesome-qt6Targets.cmake",
+				"/usr/share/qtforkawesomeiconengine-qt6/cmake/qtforkawesomeiconengine-qt6Config.cmake",
+				"/usr/share/qtforkawesomeiconengine-qt6/cmake/qtforkawesomeiconengine-qt6ConfigVersion.cmake",
+				"/usr/share/qtforkawesomeiconengine-qt6/cmake/qtforkawesomeiconengine-qt6Targets-release.cmake",
+				"/usr/share/qtforkawesomeiconengine-qt6/cmake/qtforkawesomeiconengine-qt6Targets.cmake",
+				"/usr/share/qtquickforkawesome-qt6/cmake/qtquickforkawesome-qt6Config.cmake",
+				"/usr/share/qtquickforkawesome-qt6/cmake/qtquickforkawesome-qt6ConfigVersion.cmake",
+				"/usr/share/qtquickforkawesome-qt6/cmake/qtquickforkawesome-qt6Targets-release.cmake",
+				"/usr/share/qtquickforkawesome-qt6/cmake/qtquickforkawesome-qt6Targets.cmake"
+			],
+			"name": "qtforkawesome-devel",
+			"provides": [
+				"cmake(qtforkawesome-qt6)",
+				"cmake(qtforkawesomeiconengine-qt6)",
+				"cmake(qtquickforkawesome-qt6)",
+				"pkgconfig(qtforkawesome-qt6)",
+				"pkgconfig(qtforkawesomeiconengine-qt6)",
+				"pkgconfig(qtquickforkawesome-qt6)"
+			]
+		}
+	},
+	"source-name": "qtforkawesome",
+	"source-release": "1",
+	"source-version": "0.3.1"
+}
