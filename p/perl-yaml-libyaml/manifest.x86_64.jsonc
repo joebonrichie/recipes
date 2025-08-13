@@ -1,0 +1,36 @@
+/** Human readable report. This is not consumed by boulder */
+{
+	"manifest-version": "0.2",
+	"packages": {
+		"perl-yaml-libyaml": {
+			"build-depends": [
+				"perl-devel",
+				"pkgconfig(yaml-0.1)"
+			],
+			"depends": [
+				"binary(perl)",
+				"soname(ld-linux-x86-64.so.2(x86_64))",
+				"soname(libc.so.6(x86_64))",
+				"soname(libyaml-0.so.2(x86_64))"
+			],
+			"files": [
+				"/usr/lib/perl5/vendor_perl/YAML/LibYAML.pm",
+				"/usr/lib/perl5/vendor_perl/YAML/LibYAML.pod",
+				"/usr/lib/perl5/vendor_perl/YAML/XS.pm",
+				"/usr/lib/perl5/vendor_perl/YAML/XS.pod",
+				"/usr/lib/perl5/vendor_perl/YAML/XS/LibYAML.pm",
+				"/usr/lib/perl5/vendor_perl/auto/YAML/XS/LibYAML/LibYAML.so",
+				"/usr/share/man/man3/YAML::LibYAML.3",
+				"/usr/share/man/man3/YAML::XS.3",
+				"/usr/share/man/man3/YAML::XS::LibYAML.3"
+			],
+			"name": "perl-yaml-libyaml",
+			"provides": [
+				"soname(perl5/vendor_perl/auto/YAML/XS/LibYAML/LibYAML.so(x86_64))"
+			]
+		}
+	},
+	"source-name": "perl-yaml-libyaml",
+	"source-release": "1",
+	"source-version": "0.904.0"
+}
