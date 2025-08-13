@@ -1,0 +1,64 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : syncthingtray
+version     : 1.7.10
+release     : 1
+upstreams   :
+    - https://github.com/Martchus/syncthingtray/archive/refs/tags/v1.7.10.tar.gz : 5cead81878fa03a981b741e2570acb13b63626a4b520f60bc2a1d8ed83b3a7c1
+homepage    : https://martchus.github.io/syncthingtray/
+license     : GPL-2.0-or-later 
+summary     : Tray application for Syncthing
+description : |
+    Syncthing Tray provides a tray icon and further platform integration for Syncthing.
+builddeps   :
+    - binary(doxygen)
+    - cmake(Boost)
+    - cmake(ECM)
+    - cmake(KF6Config)
+    - cmake(KF6KIO)
+    - cmake(Plasma)
+    - cmake(Qt6LinguistTools)
+    - cmake(Qt6Qml)
+    - cmake(Qt6Svg)
+    - cmake(Qt6WebEngineWidgets)
+    - cmake(c++utilities)
+    - cmake(qtforkawesome-qt6)
+    - cmake(qtutilities-qt6)
+checkdeps   :
+    - pkgconfig(cppunit)
+rundeps     :
+    - binary(syncthing)
+setup       : |
+    # TODO: Do we need to build with builtin Qt translations (needs qt6-translations I think).
+    # BUILTIN_TRANSLATIONS_OF_QT : https://github.com/Martchus/qtutilities/blob/0e9b6450280b2e1e623d6d40cf2c5c3337e2b065/cmake/modules/QtConfig.cmake#L425
+    %cmake \
+        -DCONFIGURATION_PACKAGE_SUFFIX_QTUTILITIES:STRING="-qt6" \
+        -DKF_PACKAGE_PREFIX:STRING='KF6' \
+        -DQT_PACKAGE_PREFIX:STRING='Qt6' \
+        -DBUILD_SHARED_LIBS:BOOL=ON \
+        -DBUILTIN_TRANSLATIONS:BOOL=ON
+build       : |
+    %cmake_build
+install     : |
+    %cmake_install
+    %qml_cache_qt6
+packages    :
+    - "%(name)-kde":
+        summary: KDE/Plasma integration for %(name)
+        description: |
+            KDE/Plasma integration for %(name).
+
+            This package contains a Plasmoid for KDE Plasma as well KIO integration (integration with Dolphin)
+        paths:
+            - /usr/lib/qt6/plugins/kf6/
+            - /usr/lib/qt6/plugins/plasma/
+            - /usr/share/metainfo/io.github.martchus.syncthingfileitemaction.metainfo.xml
+            - /usr/share/metainfo/io.github.martchus.syncthingplasmoid.metainfo.xml
+            - /usr/share/plasma/plasmoids/
+
+    - "%(name)-devel":
+        paths:
+            - /usr/share/*/cmake/
