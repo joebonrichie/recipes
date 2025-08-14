@@ -1,0 +1,45 @@
+/** Human readable report. This is not consumed by boulder */
+{
+	"manifest-version": "0.2",
+	"packages": {
+		"qpwgraph": {
+			"build-depends": [
+				"cmake(Qt6Svg)",
+				"pkgconfig(alsa)",
+				"pkgconfig(libpipewire-0.3)"
+			],
+			"depends": [
+				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
+				"soname(libQt6Core.so.6(x86_64))",
+				"soname(libQt6Gui.so.6(x86_64))",
+				"soname(libQt6Network.so.6(x86_64))",
+				"soname(libQt6Widgets.so.6(x86_64))",
+				"soname(libQt6Xml.so.6(x86_64))",
+				"soname(libasound.so.2(x86_64))",
+				"soname(libc++.so.1(x86_64))",
+				"soname(libc.so.6(x86_64))",
+				"soname(libm.so.6(x86_64))",
+				"soname(libpipewire-0.3.so.0(x86_64))",
+				"soname(libunwind.so.1(x86_64))"
+			],
+			"files": [
+				"/usr/bin/qpwgraph",
+				"/usr/share/applications/org.rncbc.qpwgraph.desktop",
+				"/usr/share/icons/hicolor/32x32/apps/org.rncbc.qpwgraph.png",
+				"/usr/share/icons/hicolor/32x32/mimetypes/org.rncbc.qpwgraph.application-x-qpwgraph-patchbay.png",
+				"/usr/share/icons/hicolor/scalable/apps/org.rncbc.qpwgraph.svg",
+				"/usr/share/icons/hicolor/scalable/mimetypes/org.rncbc.qpwgraph.application-x-qpwgraph-patchbay.svg",
+				"/usr/share/man/man1/qpwgraph.1",
+				"/usr/share/metainfo/org.rncbc.qpwgraph.metainfo.xml",
+				"/usr/share/mime/packages/org.rncbc.qpwgraph.xml"
+			],
+			"name": "qpwgraph",
+			"provides": [
+				"binary(qpwgraph)"
+			]
+		}
+	},
+	"source-name": "qpwgraph",
+	"source-release": "1",
+	"source-version": "0.9.5"
+}
