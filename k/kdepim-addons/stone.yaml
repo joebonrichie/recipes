@@ -4,10 +4,10 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : kdepim-addons
-version     : 25.07.90
-release     : 1
+version     : 25.08.0
+release     : 2
 upstreams   :
-    - https://download.kde.org/unstable/release-service/25.07.90/src/kdepim-addons-25.07.90.tar.xz : 3b25de93faba9db54a3e3a29e788508aa908733a8933c0c50a446b90e4c27669
+    - https://download.kde.org/stable/release-service/25.08.0/src/kdepim-addons-25.08.0.tar.xz : c6a2fc95e1a43eb5dcba60531f13caf774cfe29c46dc3313745b988e4ce7543a
 homepage    : https://community.kde.org/PIM
 license     :
     - GPL-2.0-only
