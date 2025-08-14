@@ -5,7 +5,7 @@
 #
 name        : libvirt
 version     : '11.6.0'
-release     : 5
+release     : 6
 homepage    : https://gitlab.com/libvirt/libvirt
 upstreams   :
     - https://libvirt.org/sources/libvirt-11.6.0.tar.xz : cc0e8c226559b479833c8bc9c77a8ec301482ab0305fcd98d27f11cc6877fd23
@@ -72,6 +72,10 @@ build       : |
 install     : |
     %meson_install
 
+    # Custom polkit rules (basically allowing users in the wheel group to connect)
+    rm -fv %(installroot)%(datadir)/polkit-1/rules.d/50-libvirt.rules
+    %install_file %(pkgdir)/org.libvirt.rules %(installroot)%(datadir)/polkit-1/rules.d/org.libvirt.rules
+
     # Roll our own
     rm -v %(installroot)%(libdir)/sysusers.d/libvirt-qemu.conf
 
@@ -80,7 +84,7 @@ install     : |
     %sysusers "u qemu libvirt:qemu "qemu user" - -"
     %sysusers "m qemu kvm"
 
-    %install_file %(pkgdir)/libvirt.preset %(installroot)%(libdir)/systemd/user-preset/50-libvirt.preset
+    %install_file %(pkgdir)/libvirt.preset %(installroot)%(libdir)/systemd/system-preset/50-libvirt.preset
     %install_file %(pkgdir)/libvirt.tmpfiles %(installroot)%(libdir)/tmpfiles.d/libvirt.conf
 packages    :
     - "%(name)":

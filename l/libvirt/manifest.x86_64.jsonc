@@ -127,6 +127,7 @@
 				"/usr/lib/libvirt/virt-login-shell-helper",
 				"/usr/lib/sysctl.d/60-libvirtd.conf",
 				"/usr/lib/sysctl.d/60-qemu-postcopy-migration.conf",
+				"/usr/lib/systemd/system-preset/50-libvirt.preset",
 				"/usr/lib/systemd/system/libvirt-guests.service",
 				"/usr/lib/systemd/system/libvirtd-admin.socket",
 				"/usr/lib/systemd/system/libvirtd-ro.socket",
@@ -187,7 +188,6 @@
 				"/usr/lib/systemd/system/virtvboxd-ro.socket",
 				"/usr/lib/systemd/system/virtvboxd.service",
 				"/usr/lib/systemd/system/virtvboxd.socket",
-				"/usr/lib/systemd/user-preset/50-libvirt.preset",
 				"/usr/lib/sysusers.d/libvirt-login-shell.conf",
 				"/usr/lib/sysusers.d/libvirt.conf",
 				"/usr/lib/tmpfiles.d/libvirt.conf",
@@ -540,7 +540,7 @@
 				"/usr/share/man/man8/virtvboxd.8",
 				"/usr/share/polkit-1/actions/org.libvirt.api.policy",
 				"/usr/share/polkit-1/actions/org.libvirt.unix.policy",
-				"/usr/share/polkit-1/rules.d/50-libvirt.rules"
+				"/usr/share/polkit-1/rules.d/org.libvirt.rules"
 			],
 			"name": "libvirt",
 			"provides": [
@@ -1004,6 +1004,6 @@
 		}
 	},
 	"source-name": "libvirt",
-	"source-release": "5",
+	"source-release": "6",
 	"source-version": "11.6.0"
 }
