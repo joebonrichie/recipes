@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : harfbuzz
-version     : 11.3.3
-release     : 16
+version     : 11.4.1
+release     : 17
 homepage    : https://harfbuzz.github.io/
 upstreams   :
-    - https://github.com/harfbuzz/harfbuzz/releases/download/11.3.3/harfbuzz-11.3.3.tar.xz : e1fbca6b32a91ae91ecd9eb2ca8d47a5bfe2b1cb2e54855ab7a0b464919ef358
+    - https://github.com/harfbuzz/harfbuzz/releases/download/11.4.1/harfbuzz-11.4.1.tar.xz : 7aafab93115eb56cdc9a931ab7d19ff60d7f2937b599d140f17236f374e32698
 summary     : HarfBuzz text shaping engine
 description : |
     HarfBuzz is a text shaping library. Using the HarfBuzz library allows programs to convert a sequence of Unicode input into properly formatted and positioned glyph output—for any writing system and language.
@@ -23,9 +23,10 @@ builddeps   :
     - pkgconfig(gobject-introspection-1.0)
     - pkgconfig(graphite2)
     - pkgconfig(icu-uc)
+    # help2man
 setup       : |
     %meson \
-        -Dgraphite=enabled \
+        -Dgraphite2=enabled \
         -Dintrospection=enabled
 build       : |
     %meson_build
