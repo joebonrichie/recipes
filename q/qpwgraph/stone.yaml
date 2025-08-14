@@ -5,7 +5,7 @@
 #
 name        : qpwgraph
 version     : 0.9.5
-release     : 1
+release     : 2
 upstreams   :
     - https://gitlab.freedesktop.org/rncbc/qpwgraph/-/archive/v0.9.5/qpwgraph-v0.9.5.tar.gz : dd51dc4373bc86a31d8a3583b792a2b9f18d90c86c8d98cc2d67d93b41c3978c
 homepage    : https://gitlab.freedesktop.org/rncbc/qpwgraph 
@@ -18,7 +18,9 @@ builddeps   :
     - pkgconfig(alsa)
     - pkgconfig(libpipewire-0.3)
 setup       : |
-    %cmake
+    # Why in tarnation do they even override the QPA variable
+    %cmake \
+        -DCONFIG_WAYLAND=ON
 build       : |
     %cmake_build
 install     : |
