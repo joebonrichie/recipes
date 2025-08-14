@@ -4,10 +4,10 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : kdepim-runtime
-version     : 25.07.90
-release     : 2
+version     : 25.08.0
+release     : 3
 upstreams   :
-    - https://download.kde.org/unstable/release-service/25.07.90/src/kdepim-runtime-25.07.90.tar.xz : b8cf53660c79928fde9c366056fd85ad9bc0f63589a791e162366a811408ef39
+    - https://download.kde.org/stable/release-service/25.08.0/src/kdepim-runtime-25.08.0.tar.xz : 42ba99c3ec9f4be19abe66b2c1933cda4afba7e2643248b2f741565df7bf5706
 homepage    : https://community.kde.org/PIM
 license     : GPL-2.0-or-later
 summary     : Runtime components for Akonadi
