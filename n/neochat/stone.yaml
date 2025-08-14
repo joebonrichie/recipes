@@ -4,10 +4,10 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : neochat
-version     : 25.07.90
-release     : 2
+version     : 25.08.0
+release     : 3
 upstreams   :
-    - https://download.kde.org/unstable/release-service/25.07.90/src/neochat-25.07.90.tar.xz : 68a81a795f56080bcb6e163e783fbc3b63e0cddc10d054c4423da5f47ebd164f
+    - https://download.kde.org/stable/release-service/25.08.0/src/neochat-25.08.0.tar.xz : 960f05a676cbed9a063bf9cdf53f63f4d817f07a0acf52edd40185320d3248e6
 homepage    : https://apps.kde.org/neochat/
 license     :
     - BSD-2-Clause

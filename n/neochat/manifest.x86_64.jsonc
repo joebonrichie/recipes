@@ -148,6 +148,7 @@
 				"/usr/share/man/it/man1/neochat.1",
 				"/usr/share/man/man1/neochat.1",
 				"/usr/share/man/nl/man1/neochat.1",
+				"/usr/share/man/ru/man1/neochat.1",
 				"/usr/share/man/sl/man1/neochat.1",
 				"/usr/share/man/sv/man1/neochat.1",
 				"/usr/share/man/tr/man1/neochat.1",
@@ -163,6 +164,6 @@
 		}
 	},
 	"source-name": "neochat",
-	"source-release": "2",
-	"source-version": "25.07.90"
+	"source-release": "3",
+	"source-version": "25.08.0"
 }
