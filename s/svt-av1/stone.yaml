@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : svt-av1
-version     : 3.0.2
-release     : 3
+version     : 3.1.0
+release     : 4
 homepage    : https://gitlab.com/AOMediaCodec/SVT-AV1
 upstreams   :
-    - https://gitlab.com/AOMediaCodec/SVT-AV1/-/archive/v3.0.2/SVT-AV1-v3.0.2.tar.bz2 : 7548a380cd58a46998ab4f1a02901ef72c37a7c6317c930cde5df2e6349e437b
+    - https://gitlab.com/AOMediaCodec/SVT-AV1/-/archive/v3.1.0/SVT-AV1-v3.1.0.tar.bz2 : 8231b63ea6c50bae46a019908786ebfa2696e5743487270538f3c25fddfa215a
 summary     : Scalable Video Technology for AV1 (SVT-AV1 Encoder)
 description : |
     The Scalable Video Technology for AV1 (SVT-AV1 Encoder) is an AV1-compliant encoder library core.

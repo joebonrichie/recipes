@@ -12,7 +12,7 @@
 			],
 			"files": [
 				"/usr/lib/libSvtAv1Enc.so.3",
-				"/usr/lib/libSvtAv1Enc.so.3.0.2"
+				"/usr/lib/libSvtAv1Enc.so.3.1.0"
 			],
 			"name": "svt-av1",
 			"provides": [
@@ -27,6 +27,7 @@
 				"svt-av1"
 			],
 			"files": [
+				"/usr/include/svt-av1/EbConfigMacros.h",
 				"/usr/include/svt-av1/EbDebugMacros.h",
 				"/usr/include/svt-av1/EbSvtAv1.h",
 				"/usr/include/svt-av1/EbSvtAv1Enc.h",
@@ -43,6 +44,6 @@
 		}
 	},
 	"source-name": "svt-av1",
-	"source-release": "3",
-	"source-version": "3.0.2"
+	"source-release": "4",
+	"source-version": "3.1.0"
 }
