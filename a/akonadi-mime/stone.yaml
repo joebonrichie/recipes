@@ -4,10 +4,10 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : akonadi-mime
-version     : 25.07.90
-release     : 2
+version     : 25.08.0
+release     : 3
 upstreams   :
-    - https://download.kde.org/unstable/release-service/25.07.90/src/akonadi-mime-25.07.90.tar.xz : b4b74e4ac3708599731d962b2899cc2a453ee3d3e6eb13267f19857ddfde99c9
+    - https://download.kde.org/stable/release-service/25.08.0/src/akonadi-mime-25.08.0.tar.xz : f6806cadac6e6a3269b9c31e5ee7aa6b8631af0b9edd48f23d6b2909e5cb25f1
 homepage    : https://kde.org
 license     : LGPL-2.1-or-later
 summary    : Akonadi Mime is a library that effectively bridges the type-agnostic API of the Akonadi client libraries and the domain-specific KMime library
