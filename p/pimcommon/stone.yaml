@@ -4,10 +4,10 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : pimcommon
-version     : 25.07.90
-release     : 6
+version     : 25.08.0
+release     : 7
 upstreams   :
-    - https://download.kde.org/unstable/release-service/25.07.90/src/pimcommon-25.07.90.tar.xz : dc8f801a5ae0ae5f093418b02ebd861cbc77c3d9a373b4ba69eb0f70947b2ed8
+    - https://download.kde.org/stable/release-service/25.08.0/src/pimcommon-25.08.0.tar.xz : a959fbdf63ec035ddc023fc1de5b9b63cc90bf0574cd8936242cb04f2e953f14
 homepage    : https://kde.org
 license     :
     - GPL-2.0-or-later

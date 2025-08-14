@@ -4,10 +4,10 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : akonadi-calendar
-version     : 25.07.90
-release     : 4
+version     : 25.08.0
+release     : 5
 upstreams   :
-    - https://download.kde.org/unstable/release-service/25.07.90/src/akonadi-calendar-25.07.90.tar.xz : 3729285df441d47c652ccaf1c269f1bfaa5661c4c0be6ff3a83a88632555d36c
+    - https://download.kde.org/stable/release-service/25.08.0/src/akonadi-calendar-25.08.0.tar.xz : 551d70a0528a1d651a87b61ec288825b1340d527f9d721dd95f8ca8b03f495db
 homepage    : https://kde.org
 license     : LGPL-2.1-or-later
 summary     : Library that effectively bridges the type-agnostic API of the Akonadi client libraries and the domain-specific KCalCore library

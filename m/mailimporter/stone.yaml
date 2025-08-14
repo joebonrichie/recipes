@@ -4,10 +4,10 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : mailimporter
-version     : 25.07.90
-release     : 2
+version     : 25.08.0
+release     : 3
 upstreams   :
-    - https://download.kde.org/unstable/release-service/25.07.90/src/mailimporter-25.07.90.tar.xz : 6d8108aa09bb77337bc4c2f958bdc50d9f3b810f89a8ca97b6fca49cafbacf0c
+    - https://download.kde.org/stable/release-service/25.08.0/src/mailimporter-25.08.0.tar.xz : 5c5d2fbbe2942f2a7b1b660db55bc6cdac49db4d1dd7ee0062ec0bb59ffc2552
 homepage    : https://kde.org
 license     : GPL-2.0-or-later
 summary     : Mail importer library

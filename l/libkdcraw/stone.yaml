@@ -4,10 +4,10 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : libkdcraw
-version     : 25.07.90
-release     : 2
+version     : 25.08.0
+release     : 3
 upstreams   :
-    - https://download.kde.org/unstable/release-service/25.07.90/src/libkdcraw-25.07.90.tar.xz : 5864d3c37af97e54dcbe94524ee95e61482b18ca811dd474c17e6248c481f282
+    - https://download.kde.org/stable/release-service/25.08.0/src/libkdcraw-25.08.0.tar.xz : 4640d1740dbb85487e57a5f07a65aca90093ec107cdc32430fea88fbea0797be
 homepage    : https://kde.org/
 license     :
     - GFDL-1.2-or-later

@@ -4,10 +4,10 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : kaddressbook
-version     : 25.07.90
-release     : 3
+version     : 25.08.0
+release     : 4
 upstreams   :
-    - https://download.kde.org/unstable/release-service/25.07.90/src/kaddressbook-25.07.90.tar.xz : 27fd7699de973d981db5ac030e2d638caccf05c67c73fd03244f84ee4ca9f399
+    - https://download.kde.org/stable/release-service/25.08.0/src/kaddressbook-25.08.0.tar.xz : bd05ffbec679b701b2bdc5da2b97c83bd81437a3398771fc4b03efbb7ac1a647
 homepage    : https://apps.kde.org/kaddressbook/
 license     :
     - GFDL-1.2-or-later

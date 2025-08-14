@@ -4,10 +4,10 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : kdegraphics-mobipocket
-version     : 25.07.90
-release     : 2
+version     : 25.08.0
+release     : 3
 upstreams   :
-    - https://download.kde.org/unstable/release-service/25.07.90/src/kdegraphics-mobipocket-25.07.90.tar.xz : 1ed5d25b9d830976987769584a921a771bb02153b5d33e6955b504394954e96a
+    - https://download.kde.org/stable/release-service/25.08.0/src/kdegraphics-mobipocket-25.08.0.tar.xz : d60c4eb4387d63036a8d734f77c5cbb75aea4c9dc8ecdfece46b227c007416fe
 homepage    : https://invent.kde.org/graphics/kdegraphics-mobipocket
 license     : GPL-2.0-or-later
 summary     : Plugins for mobipocket

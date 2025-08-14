@@ -4,10 +4,10 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : kio-extras
-version     : 25.07.90
-release     : 3
+version     : 25.08.0
+release     : 4
 upstreams   :
-    - https://download.kde.org/unstable/release-service/25.07.90/src/kio-extras-25.07.90.tar.xz : a10db11c67674ce408c7d2b6510a35516c3fd71c17023dce7f5656df96a0ffb5
+    - https://download.kde.org/stable/release-service/25.08.0/src/kio-extras-25.08.0.tar.xz : 0a5dc865c5810b7a0cd280d34d4cbf8860433b78a657417b245cc71e33652405
 homepage    : https://kde.org/
 license     : GPL-2.0-or-later
 summary     : Additional components to increase the functionality of KIO

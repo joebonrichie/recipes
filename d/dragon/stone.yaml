@@ -4,10 +4,10 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : dragon
-version     : 25.07.90
-release     : 6
+version     : 25.08.0
+release     : 7
 upstreams   :
-    - https://download.kde.org/unstable/release-service/25.07.90/src/dragon-25.07.90.tar.xz : 1ece4f06e45320017151277efc60e822686606ee553373cea7a9ff408c6c6207
+    - https://download.kde.org/stable/release-service/25.08.0/src/dragon-25.08.0.tar.xz : b72c06f1ce465dd3d7be47d69ec3a3588ddd464cc0f5d351a8d7ed47c85846a9
 homepage    : https://apps.kde.org/dragonplayer/
 license     : GPL-2.0-or-later
 summary     : Video player from KDE

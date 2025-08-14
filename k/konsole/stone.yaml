@@ -4,10 +4,10 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : konsole
-version     : 25.07.90
-release     : 9
+version     : 25.08.0
+release     : 10
 upstreams   :
-    - https://download.kde.org/unstable/release-service/25.07.90/src/konsole-25.07.90.tar.xz : bd605a2c34a62afe9023abd6a53d8fc2a22525b5d84340697d07adc7f241fa60
+    - https://download.kde.org/stable/release-service/25.08.0/src/konsole-25.08.0.tar.xz : c880bd2c829437a142abaf4f97ebc384c9f2c19f31cc23918c49100727927450
 homepage    : https://kde.org/applications/system/org.kde.konsole
 license     :
     - GFDL-1.2-or-later

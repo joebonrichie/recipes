@@ -4,10 +4,10 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : kaccounts-providers
-version     : 25.07.90
-release     : 3
+version     : 25.08.0
+release     : 4
 upstreams   :
-    - https://download.kde.org/unstable/release-service/25.07.90/src/kaccounts-providers-25.07.90.tar.xz : e6b5272259af11948f4414e7f7d1a2528b7d03da413299d2bb79290c8b43059b
+    - https://download.kde.org/stable/release-service/25.08.0/src/kaccounts-providers-25.08.0.tar.xz : 3f1434e7381635f2d0e31b7d81099fcd326aebb90fc9e01e513c865c05ed1c47
 homepage    : https://kde.org/
 license     : GPL-2.0-or-later
 summary     : KDE Providers

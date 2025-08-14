@@ -4,10 +4,10 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : calendarsupport
-version     : 25.07.90
-release     : 2
+version     : 25.08.0
+release     : 3
 upstreams   :
-    - https://download.kde.org/unstable/release-service/25.07.90/src/calendarsupport-25.07.90.tar.xz : a0481725c47c76ef11b5ed032ce132e78f1dd32f7041ee00b788ae51b5cada56
+    - https://download.kde.org/stable/release-service/25.08.0/src/calendarsupport-25.08.0.tar.xz : 386ca71663f41e13139e53847cbaf47d2280fe8d29907e8d9989dfec2baab397
 homepage    : https://kontact.kde.org/
 license     :
     - GPL-2.0-or-later
