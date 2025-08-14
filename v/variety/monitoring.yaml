@@ -1,0 +1,5 @@
+releases:
+  id: 16322
+  rss: https://github.com/varietywalls/variety/releases.xml
+security:
+  cpe: ~ # Last checked 2025-08-14
