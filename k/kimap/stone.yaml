@@ -4,10 +4,10 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : kimap
-version     : 25.07.90
-release     : 3
+version     : 25.08.0
+release     : 4
 upstreams   :
-    - https://download.kde.org/unstable/release-service/25.07.90/src/kimap-25.07.90.tar.xz : 4dbba65d003e6d2f42a0164a9421ff18483a52cc226f4167d716ba22bec3cc40
+    - https://download.kde.org/stable/release-service/25.08.0/src/kimap-25.08.0.tar.xz : 480e8aabfc11d65ca3be8abd714b848a847f99b7805e7b6ab21dd56a2f0a2379
 homepage    : https://kde.org
 license     : LGPL-2.1-or-later
 summary     : This library provides a job-based API for interacting with an IMAP4rev1 server
