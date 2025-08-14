@@ -1,0 +1,45 @@
+From 55ca0456ec98735322e71e08a5bcfe12c6079286 Mon Sep 17 00:00:00 2001
+From: Oliver Eftevaag <oliver.eftevaag@qt.io>
+Date: Wed, 21 May 2025 16:37:24 +0200
+Subject: [PATCH] Popup window: disable window "fitting" on Wayland
+
+Wayland surfaces don't know where they are on the screen, which means
+that we can't rely on QWindow::mapToGlobal({0,0}) to get their position.
+
+It looks like we're supposed to use the wayland api to position popups.
+More specifically a xdg_positioner.
+
+Disable the part that doesn't work, until we figure out a proper
+solution. QTBUG-99618 tracks necessary changes that neeeds to be made to
+qtbase and the wayland platform window, before we can fix it in
+qtdeclarative.
+
+Fixes: QTBUG-135158
+Pick-to: 6.9.1 6.8
+Change-Id: I9af0250f77bddc0c4f09bb028cd5105d4548a061
+Reviewed-by: Liang Qi <liang.qi@qt.io>
+(cherry picked from commit 41ded46cb9912dd4652d92807417a7ed826217c6)
+Reviewed-by: Qt Cherry-pick Bot <cherrypick_bot@qt-project.org>
+---
+ src/quicktemplates/qquickpopuppositioner.cpp | 5 ++++-
+ 1 file changed, 4 insertions(+), 1 deletion(-)
+
+diff --git a/src/quicktemplates/qquickpopuppositioner.cpp b/src/quicktemplates/qquickpopuppositioner.cpp
+index 8e5c2d4d3a..ae35c59ee1 100644
+--- a/src/quicktemplates/qquickpopuppositioner.cpp
++++ b/src/quicktemplates/qquickpopuppositioner.cpp
+@@ -320,7 +320,10 @@ void QQuickPopupPositioner::repositionPopupWindow()
+     const QPointF globalCoords = centerInOverlay ? centerInOverlay->mapToGlobal(windowPos.x(), windowPos.y())
+                                                  : p->parentItem->mapToGlobal(windowPos.x(), windowPos.y());
+     QRectF rect = { globalCoords.x(), globalCoords.y(), popupItem->width(), popupItem->height() };
+-    if (!skipFittingStep) {
++
++    // QTBUG-99618: On wayland, we can't use QWindow::mapToGlobal(), and should use a xdg_positioner instead.
++    static bool isWayland = QGuiApplication::platformName().startsWith(QLatin1String("wayland"));
++    if (!skipFittingStep && !isWayland) {
+         const QScreen *screenAtPopupPosition = QGuiApplication::screenAt(globalCoords.toPoint());
+         const QScreen *screen = screenAtPopupPosition ? screenAtPopupPosition : QGuiApplication::primaryScreen();
+         const QRectF bounds = screen->availableGeometry().toRectF();
+-- 
+GitLab
+
