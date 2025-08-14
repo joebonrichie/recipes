@@ -4,10 +4,10 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : libgravatar
-version     : 25.07.90
-release     : 2
+version     : 25.08.0
+release     : 3
 upstreams   :
-    - https://download.kde.org/unstable/release-service/25.07.90/src/libgravatar-25.07.90.tar.xz : 45ecff924617350c2c64a53e29b6aba872e556cad788df7af54387b0f4b999a4
+    - https://download.kde.org/stable/release-service/25.08.0/src/libgravatar-25.08.0.tar.xz : d061023c8b320d6e82b5e61aee06ee7ac10fe12437a70ebde05c752b7ab9b710
 homepage    : https://kde.org
 license     :
     - GPL-2.0-only
