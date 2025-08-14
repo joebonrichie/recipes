@@ -4,10 +4,10 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : eventviews
-version     : 25.07.90
-release     : 2
+version     : 25.08.0
+release     : 3
 upstreams   :
-    - https://download.kde.org/unstable/release-service/25.07.90/src/eventviews-25.07.90.tar.xz : 756c1878fd24553dbab0d0b2e7c22413e69267a89ea06e6fd7e86082f9501703
+    - https://download.kde.org/stable/release-service/25.08.0/src/eventviews-25.08.0.tar.xz : 6681dd967b278bb4a930d69f26a042ef97a03dcf98dcec3722f6887df5916fc1
 homepage    : https://kontact.kde.org/
 license     :
     - GPL-2.0-or-later
