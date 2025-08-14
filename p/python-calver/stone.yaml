@@ -4,21 +4,20 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : python-calver
-version     : 2022.6.26
-release     : 3
+version     : 2025.4.17
+release     : 4
 homepage    : https://pypi.org/project/calver
 upstreams   :
-    - https://files.pythonhosted.org/packages/source/c/calver/calver-2022.6.26.tar.gz : e05493a3b17517ef1748fbe610da11f10485faa7c416b9d33fd4a52d74894f8b
+    - https://pypi.debian.net/calver/calver-2025.4.17.tar.gz : 460702737d620f5c3d4175450485180a1b7f7a422c5db0e6af3e655c7395ec7e
 summary     : Calendar-based versionining for Python packages
 description : |
     The calver package is a setuptools extension for automatically defining your Python package version as a calendar version.
 license     :
     - Apache-2.0
 builddeps   :
-    - binary(python3)
     - python(setuptools)
 rundeps     :
-    - binary(python3)
+    - python-libs
 build       : |
     %pyproject_build
 install     : |

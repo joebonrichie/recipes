@@ -4,19 +4,18 @@
 	"packages": {
 		"python-calver": {
 			"build-depends": [
-				"binary(python3)",
 				"python(setuptools)"
 			],
 			"depends": [
-				"binary(python3)"
+				"python-libs"
 			],
 			"files": [
-				"/usr/lib/python3.11/site-packages/calver-2022.6.26.dist-info/METADATA",
-				"/usr/lib/python3.11/site-packages/calver-2022.6.26.dist-info/RECORD",
-				"/usr/lib/python3.11/site-packages/calver-2022.6.26.dist-info/WHEEL",
-				"/usr/lib/python3.11/site-packages/calver-2022.6.26.dist-info/entry_points.txt",
-				"/usr/lib/python3.11/site-packages/calver-2022.6.26.dist-info/licenses/LICENSE",
-				"/usr/lib/python3.11/site-packages/calver-2022.6.26.dist-info/top_level.txt",
+				"/usr/lib/python3.11/site-packages/calver-2025.4.17.dist-info/METADATA",
+				"/usr/lib/python3.11/site-packages/calver-2025.4.17.dist-info/RECORD",
+				"/usr/lib/python3.11/site-packages/calver-2025.4.17.dist-info/WHEEL",
+				"/usr/lib/python3.11/site-packages/calver-2025.4.17.dist-info/entry_points.txt",
+				"/usr/lib/python3.11/site-packages/calver-2025.4.17.dist-info/licenses/LICENSE",
+				"/usr/lib/python3.11/site-packages/calver-2025.4.17.dist-info/top_level.txt",
 				"/usr/lib/python3.11/site-packages/calver/__init__.py",
 				"/usr/lib/python3.11/site-packages/calver/__pycache__/__init__.cpython-311.opt-1.pyc",
 				"/usr/lib/python3.11/site-packages/calver/__pycache__/__init__.cpython-311.pyc",
@@ -26,12 +25,11 @@
 			],
 			"name": "python-calver",
 			"provides": [
-				"python(calver(3.11))",
 				"python(calver)"
 			]
 		}
 	},
 	"source-name": "python-calver",
-	"source-release": "3",
-	"source-version": "2022.6.26"
+	"source-release": "4",
+	"source-version": "2025.4.17"
 }
