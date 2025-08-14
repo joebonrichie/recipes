@@ -11,10 +11,10 @@
 				"python-libs"
 			],
 			"files": [
-				"/usr/lib/python3.11/site-packages/filelock-3.18.0.dist-info/METADATA",
-				"/usr/lib/python3.11/site-packages/filelock-3.18.0.dist-info/RECORD",
-				"/usr/lib/python3.11/site-packages/filelock-3.18.0.dist-info/WHEEL",
-				"/usr/lib/python3.11/site-packages/filelock-3.18.0.dist-info/licenses/LICENSE",
+				"/usr/lib/python3.11/site-packages/filelock-3.19.1.dist-info/METADATA",
+				"/usr/lib/python3.11/site-packages/filelock-3.19.1.dist-info/RECORD",
+				"/usr/lib/python3.11/site-packages/filelock-3.19.1.dist-info/WHEEL",
+				"/usr/lib/python3.11/site-packages/filelock-3.19.1.dist-info/licenses/LICENSE",
 				"/usr/lib/python3.11/site-packages/filelock/__init__.py",
 				"/usr/lib/python3.11/site-packages/filelock/__pycache__/__init__.cpython-311.opt-1.pyc",
 				"/usr/lib/python3.11/site-packages/filelock/__pycache__/__init__.cpython-311.pyc",
@@ -46,12 +46,11 @@
 			],
 			"name": "python-filelock",
 			"provides": [
-				"python(filelock(3.11))",
 				"python(filelock)"
 			]
 		}
 	},
 	"source-name": "python-filelock",
-	"source-release": "2",
-	"source-version": "3.18.0"
+	"source-release": "3",
+	"source-version": "3.19.1"
 }
