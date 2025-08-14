@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : scx-scheds
-version     : 1.0.14
-release     : 1
+version     : 1.0.15
+release     : 2
 homepage    : https://github.com/sched-ext/scx
 upstreams   :
-    - https://github.com/sched-ext/scx/archive/refs/tags/v1.0.14.tar.gz : 8d3fec0c79e27c17a0152e65bd87371ad7dc08b6e892db001f325cb3018f2ed4
+    - https://github.com/sched-ext/scx/archive/refs/tags/v1.0.15.tar.gz : 1c2c4248747ea5556f536185a8dde5920dfab8a5961a30791dfe0878ad3d98a0
 summary     : sched_ext schedulers and tools
 description : |
     sched_ext schedulers and tools
@@ -29,10 +29,6 @@ environment : |
     # sccache is currently broken with this build for unknown reasons. Disable it for now
     unset RUSTC_WRAPPER
 setup       : |
-    %patch %(pkgdir)/0001-Backport-build-fix.patch
-    %patch %(pkgdir)/0001-scx_loader-add-config-search-path-for-distributions.patch
-    %patch %(pkgdir)/0002-scx_loader-Support-build-time-configuration-of-vendo.patch
-
     %meson \
         -Dbpftool=disabled \
         -Dlibbpf_a=disabled \

@@ -29,6 +29,7 @@
 				"/usr/bin/scx_bpfland",
 				"/usr/bin/scx_central",
 				"/usr/bin/scx_chaos",
+				"/usr/bin/scx_cosmos",
 				"/usr/bin/scx_flash",
 				"/usr/bin/scx_flatcg",
 				"/usr/bin/scx_lavd",
@@ -51,13 +52,15 @@
 				"/usr/bin/scxtop",
 				"/usr/lib/systemd/system/scx_loader.service",
 				"/usr/share/dbus-1/system-services/org.scx.Loader.service",
-				"/usr/share/dbus-1/system.d/org.scx.Loader.conf"
+				"/usr/share/dbus-1/system.d/org.scx.Loader.conf",
+				"/usr/share/defaults/scx_loader/config.toml"
 			],
 			"name": "scx-scheds",
 			"provides": [
 				"binary(scx_bpfland)",
 				"binary(scx_central)",
 				"binary(scx_chaos)",
+				"binary(scx_cosmos)",
 				"binary(scx_flash)",
 				"binary(scx_flatcg)",
 				"binary(scx_lavd)",
@@ -117,6 +120,7 @@
 				"/usr/include/scx/enums.h",
 				"/usr/include/scx/namespace.bpf.h",
 				"/usr/include/scx/namespace_impl.bpf.h",
+				"/usr/include/scx/percpu.bpf.h",
 				"/usr/include/scx/ravg.bpf.h",
 				"/usr/include/scx/ravg_impl.bpf.h",
 				"/usr/include/scx/user_exit_info.bpf.h",
@@ -130,6 +134,6 @@
 		}
 	},
 	"source-name": "scx-scheds",
-	"source-release": "1",
-	"source-version": "1.0.14"
+	"source-release": "2",
+	"source-version": "1.0.15"
 }
