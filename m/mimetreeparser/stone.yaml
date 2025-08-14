@@ -4,10 +4,10 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : mimetreeparser
-version     : 25.07.90
-release     : 5
+version     : 25.08.0
+release     : 6
 upstreams   :
-    - https://download.kde.org/unstable/release-service/25.07.90/src/mimetreeparser-25.07.90.tar.xz : 4ce6cd121af7b45b4b686868edac7a72daec99f8ab67746242a2cb59541d836e
+    - https://download.kde.org/stable/release-service/25.08.0/src/mimetreeparser-25.08.0.tar.xz : 606333eccf752e6ee47260e427596649695425d85ed7e5e12d332c75882f96ca
 homepage    : https://kde.org
 license     :
     - BSD-2-Clause

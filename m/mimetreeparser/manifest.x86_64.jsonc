@@ -36,9 +36,9 @@
 			],
 			"files": [
 				"/usr/lib/libKPim6MimeTreeParserCore.so.6",
-				"/usr/lib/libKPim6MimeTreeParserCore.so.6.4.90",
+				"/usr/lib/libKPim6MimeTreeParserCore.so.6.5.0",
 				"/usr/lib/libKPim6MimeTreeParserWidgets.so.6",
-				"/usr/lib/libKPim6MimeTreeParserWidgets.so.6.4.90",
+				"/usr/lib/libKPim6MimeTreeParserWidgets.so.6.5.0",
 				"/usr/lib/qt6/qml/org/kde/pim/mimetreeparser/MailViewer.qml",
 				"/usr/lib/qt6/qml/org/kde/pim/mimetreeparser/MailViewer.qmlc",
 				"/usr/lib/qt6/qml/org/kde/pim/mimetreeparser/kde-qmlmodule.version",
@@ -183,6 +183,6 @@
 		}
 	},
 	"source-name": "mimetreeparser",
-	"source-release": "5",
-	"source-version": "25.07.90"
+	"source-release": "6",
+	"source-version": "25.08.0"
 }
