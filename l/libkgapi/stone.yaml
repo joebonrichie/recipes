@@ -4,10 +4,10 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : libkgapi
-version     : 25.07.90
-release     : 3
+version     : 25.08.0
+release     : 4
 upstreams   :
-    - https://download.kde.org/unstable/release-service/25.07.90/src/libkgapi-25.07.90.tar.xz : d4ca4f91e4c5a7817b60e8852bc383da457a7c00fc4944d0962bd8519a97c1c5
+    - https://download.kde.org/stable/release-service/25.08.0/src/libkgapi-25.08.0.tar.xz : 52bf23215ebfcb92efa95633cd6e38da8c65387771b427e893b51727256039b1
 homepage    : https://kde.org
 license     : LGPL-2.1-or-later
 summary     : Libkgapi is a KDE-based library for accessing various Google services via their public API
