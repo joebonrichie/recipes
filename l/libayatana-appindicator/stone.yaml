@@ -1,0 +1,45 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : libayatana-appindicator
+version     : 0.5.94
+release     : 1
+upstreams   :
+    - https://github.com/AyatanaIndicators/libayatana-appindicator/archive/refs/tags/0.5.94.tar.gz : 884a6bc77994c0b58c961613ca4c4b974dc91aa0f804e70e92f38a542d0d0f90
+homepage    : https://github.com/AyatanaIndicators/libayatana-appindicator
+license     :
+    - LGPL-2.1-or-later
+    - LGPL-3.0-or-later
+summary     : Application Indicator Library. Spiritual successor of libappindicator
+description : |
+    A library to allow applications to export a menu into the an Application Indicators aware menu bar. Based on KSNI it also works in KDE and will fallback to generic Systray support if none of those are available.
+    This code project was originally started by Canonical Ltd. and has been adapted by various authors with the purpose of making this Application Indicators available on Ubuntu and non-Ubuntu systems alike.
+builddeps   :
+    - binary(valac)
+    - pkgconfig(ayatana-indicator3-0.4)
+    - pkgconfig(dbusmenu-gtk3-0.4)
+    - pkgconfig(glib-2.0)
+    - pkgconfig(gobject-introspection-1.0)
+    - pkgconfig(gtk+-3.0)
+setup       : |
+    %cmake \
+        -DENABLE_BINDINGS_MONO=OFF
+build       : |
+    %cmake_build
+install     : |
+    %cmake_install
+
+    # libayatana provides ABI compatibility with libappindicator.
+    # Create symlinks with libappindicator's sonames so that closed-source
+    # applications built for libappindicator can continue to work.
+    pushd %(installroot)%(libdir)
+        for f in *.so*; do
+            ln -s $f $(sed 's|ayatana-||' <<< $f)
+        done
+    popd
+packages    :
+    - "%(name)-devel":
+        paths:
+            - /usr/share/vala/
