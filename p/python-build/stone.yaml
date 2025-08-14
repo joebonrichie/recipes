@@ -4,12 +4,12 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : python-build
-version     : 1.2.2
-release     : 6
+version     : 1.3.0
+release     : 7
 homepage    : https://github.com/pypa/build
 upstreams   :
-    - https://pypi.debian.net/build/build-1.2.2.tar.gz:
-        hash: 119b2fb462adef986483438377a13b2f42064a2a3a4161f24a0cca698a07ac8c
+    - https://pypi.debian.net/build/build-1.3.0.tar.gz:
+        hash: 698edd0ea270bde950f53aed21f3a0135672206f3911e0176261a31e0e07b397
         unpackdir: pythonbuild
 
     # # Comment both of these out if not bootstrapping
