@@ -19,14 +19,17 @@
 				"pkgconfig(systemd)"
 			],
 			"depends": [
+				"binary(gpg2)",
+				"binary(ssh-add)",
+				"binary(ssh-agent)",
 				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
 				"soname(libc.so.6(x86_64))",
-				"soname(libgcrypt.so.20(x86_64))",
+				"soname(libgck-2.so.2(x86_64))",
+				"soname(libgcr-4.so.4(x86_64))",
 				"soname(libgio-2.0.so.0(x86_64))",
 				"soname(libglib-2.0.so.0(x86_64))",
 				"soname(libgobject-2.0.so.0(x86_64))",
 				"soname(libgtk-4.so.1(x86_64))",
-				"soname(libp11-kit.so.0(x86_64))",
 				"soname(libpango-1.0.so.0(x86_64))",
 				"soname(libsecret-1.so.0(x86_64))",
 				"soname(libsystemd.so.0(x86_64))"
@@ -35,12 +38,7 @@
 				"/usr/bin/gcr-viewer-gtk4",
 				"/usr/lib/gcr/gcr-ssh-agent",
 				"/usr/lib/gcr/gcr4-ssh-askpass",
-				"/usr/lib/girepository-1.0/Gck-2.typelib",
-				"/usr/lib/girepository-1.0/Gcr-4.typelib",
-				"/usr/lib/libgck-2.so.2",
-				"/usr/lib/libgck-2.so.2.4.0",
-				"/usr/lib/libgcr-4.so.4",
-				"/usr/lib/libgcr-4.so.4.4.0",
+				"/usr/lib/systemd/user-preset/gcr.preset",
 				"/usr/lib/systemd/user/gcr-ssh-agent.service",
 				"/usr/lib/systemd/user/gcr-ssh-agent.socket",
 				"/usr/share/locale/ab/LC_MESSAGES/gcr-4.mo",
@@ -132,17 +130,11 @@
 				"/usr/share/locale/xh/LC_MESSAGES/gcr-4.mo",
 				"/usr/share/locale/zh_CN/LC_MESSAGES/gcr-4.mo",
 				"/usr/share/locale/zh_HK/LC_MESSAGES/gcr-4.mo",
-				"/usr/share/locale/zh_TW/LC_MESSAGES/gcr-4.mo",
-				"/usr/share/vala/vapi/gck-2.deps",
-				"/usr/share/vala/vapi/gck-2.vapi",
-				"/usr/share/vala/vapi/gcr-4.deps",
-				"/usr/share/vala/vapi/gcr-4.vapi"
+				"/usr/share/locale/zh_TW/LC_MESSAGES/gcr-4.mo"
 			],
 			"name": "gcr",
 			"provides": [
-				"binary(gcr-viewer-gtk4)",
-				"soname(libgck-2.so.2(x86_64))",
-				"soname(libgcr-4.so.4(x86_64))"
+				"binary(gcr-viewer-gtk4)"
 			]
 		},
 		"gcr-devel": {
@@ -208,16 +200,58 @@
 				"/usr/lib/pkgconfig/gck-2.pc",
 				"/usr/lib/pkgconfig/gcr-4.pc",
 				"/usr/share/gir-1.0/Gck-2.gir",
-				"/usr/share/gir-1.0/Gcr-4.gir"
+				"/usr/share/gir-1.0/Gcr-4.gir",
+				"/usr/share/vala/vapi/gck-2.deps",
+				"/usr/share/vala/vapi/gck-2.vapi",
+				"/usr/share/vala/vapi/gcr-4.deps",
+				"/usr/share/vala/vapi/gcr-4.vapi"
 			],
 			"name": "gcr-devel",
 			"provides": [
 				"pkgconfig(gck-2)",
 				"pkgconfig(gcr-4)"
 			]
+		},
+		"gcr-libs": {
+			"build-depends": [
+				"binary(gpg)",
+				"binary(msgfmt)",
+				"binary(ssh-add)",
+				"binary(ssh-agent)",
+				"binary(vapigen)",
+				"pkgconfig(glib-2.0)",
+				"pkgconfig(gobject-introspection-1.0)",
+				"pkgconfig(gtk4)",
+				"pkgconfig(libgcrypt)",
+				"pkgconfig(libsecret-1)",
+				"pkgconfig(libsystemd)",
+				"pkgconfig(p11-kit-1)",
+				"pkgconfig(systemd)"
+			],
+			"depends": [
+				"soname(libc.so.6(x86_64))",
+				"soname(libgcrypt.so.20(x86_64))",
+				"soname(libgio-2.0.so.0(x86_64))",
+				"soname(libglib-2.0.so.0(x86_64))",
+				"soname(libgobject-2.0.so.0(x86_64))",
+				"soname(libp11-kit.so.0(x86_64))"
+			],
+			"files": [
+				"/usr/lib/girepository-1.0/Gck-2.typelib",
+				"/usr/lib/girepository-1.0/Gcr-4.typelib",
+				"/usr/lib/libgck-2.so.2",
+				"/usr/lib/libgck-2.so.2.4.0",
+				"/usr/lib/libgcr-4.so.4",
+				"/usr/lib/libgcr-4.so.4.4.0"
+			],
+			"name": "gcr-libs",
+			"provides": [
+				"soname(libgck-2.so.2(x86_64))",
+				"soname(libgcr-4.so.4(x86_64))"
+			]
 		}
 	},
 	"source-name": "gcr",
-	"source-release": "6",
+	"source-release": "7",
 	"source-version": "4.4.0.1"
 }
