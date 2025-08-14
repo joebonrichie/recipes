@@ -47,6 +47,7 @@
 				"pkgconfig(xcb-randr)",
 				"pkgconfig(xcb-renderutil)",
 				"pkgconfig(xkbcommon)",
+				"pkgconfig(xkbcommon-x11)",
 				"pkgconfig(zlib)"
 			],
 			"depends": [
@@ -158,6 +159,7 @@
 				"pkgconfig(xcb-randr)",
 				"pkgconfig(xcb-renderutil)",
 				"pkgconfig(xkbcommon)",
+				"pkgconfig(xkbcommon-x11)",
 				"pkgconfig(zlib)"
 			],
 			"depends": [
@@ -373,6 +375,7 @@
 				"pkgconfig(xcb-randr)",
 				"pkgconfig(xcb-renderutil)",
 				"pkgconfig(xkbcommon)",
+				"pkgconfig(xkbcommon-x11)",
 				"pkgconfig(zlib)"
 			],
 			"depends": [
@@ -3587,6 +3590,7 @@
 				"pkgconfig(xcb-randr)",
 				"pkgconfig(xcb-renderutil)",
 				"pkgconfig(xkbcommon)",
+				"pkgconfig(xkbcommon-x11)",
 				"pkgconfig(zlib)"
 			],
 			"depends": [
@@ -3773,6 +3777,7 @@
 				"pkgconfig(xcb-randr)",
 				"pkgconfig(xcb-renderutil)",
 				"pkgconfig(xkbcommon)",
+				"pkgconfig(xkbcommon-x11)",
 				"pkgconfig(zlib)"
 			],
 			"depends": [
@@ -3835,6 +3840,7 @@
 				"pkgconfig(xcb-randr)",
 				"pkgconfig(xcb-renderutil)",
 				"pkgconfig(xkbcommon)",
+				"pkgconfig(xkbcommon-x11)",
 				"pkgconfig(zlib)"
 			],
 			"depends": [
@@ -4793,6 +4799,7 @@
 				"pkgconfig(xcb-randr)",
 				"pkgconfig(xcb-renderutil)",
 				"pkgconfig(xkbcommon)",
+				"pkgconfig(xkbcommon-x11)",
 				"pkgconfig(zlib)"
 			],
 			"depends": [
@@ -4921,6 +4928,6 @@
 		}
 	},
 	"source-name": "qt6-base",
-	"source-release": "12",
+	"source-release": "13",
 	"source-version": "6.9.1"
 }
