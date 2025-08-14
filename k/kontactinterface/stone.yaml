@@ -4,10 +4,10 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : kontactinterface
-version     : 25.07.90
-release     : 3
+version     : 25.08.0
+release     : 4
 upstreams   :
-    - https://download.kde.org/unstable/release-service/25.07.90/src/kontactinterface-25.07.90.tar.xz : 0b0e22ac071bca2013242fa241854b67d92e075ec34ba7df4c2c611f4896ddd6
+    - https://download.kde.org/stable/release-service/25.08.0/src/kontactinterface-25.08.0.tar.xz : bee3a6e38a36190d494581bddc9fff9441e43c31e3c99a9bb9b9bcad6ffbca47
 homepage    : https://kde.org
 license     : LGPL-2.1-or-later
 summary     : Kontact Plugin Interface Library
