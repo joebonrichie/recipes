@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : python-lxml
-version     : 5.4.0
-release     : 4
+version     : 6.0.0
+release     : 5
 homepage    : https://lxml.de/
 upstreams   :
-    - https://pypi.debian.net/lxml/lxml-5.4.0.tar.gz : d12832e1dbea4be280b22fd0ea7c9b87f0d8fc51ba06e92dc62d52f804f78ebd
+    - https://pypi.debian.net/lxml/lxml-6.0.0.tar.gz : 032e65120339d44cdc3efc326c9f660f5f7205f3a535c1fdbf898b29ea01fb72
 summary     : XML and HTML with Python
 description : |
     lxml is the most feature-rich and easy-to-use library for processing XML and HTML in the Python language. It's also very fast and memory friendly, just so you know.
@@ -25,12 +25,6 @@ builddeps   :
 rundeps     :
     - python-libs
 build       : |
-    %patch %(pkgdir)/ftbfs-libxml2-2.14.patch
-
-    # Remove limit for version of Cython
-    sed -i "s/Cython.*/Cython/" requirements.txt
-    sed -i 's/"Cython.*",/"Cython",/' pyproject.toml
-
     export WITH_CYTHON=true
     %pyproject_build
 install     : |

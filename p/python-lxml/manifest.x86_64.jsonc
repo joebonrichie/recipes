@@ -17,12 +17,12 @@
 				"soname(libxslt.so.1(x86_64))"
 			],
 			"files": [
-				"/usr/lib/python3.11/site-packages/lxml-5.4.0.dist-info/METADATA",
-				"/usr/lib/python3.11/site-packages/lxml-5.4.0.dist-info/RECORD",
-				"/usr/lib/python3.11/site-packages/lxml-5.4.0.dist-info/WHEEL",
-				"/usr/lib/python3.11/site-packages/lxml-5.4.0.dist-info/licenses/LICENSE.txt",
-				"/usr/lib/python3.11/site-packages/lxml-5.4.0.dist-info/licenses/LICENSES.txt",
-				"/usr/lib/python3.11/site-packages/lxml-5.4.0.dist-info/top_level.txt",
+				"/usr/lib/python3.11/site-packages/lxml-6.0.0.dist-info/METADATA",
+				"/usr/lib/python3.11/site-packages/lxml-6.0.0.dist-info/RECORD",
+				"/usr/lib/python3.11/site-packages/lxml-6.0.0.dist-info/WHEEL",
+				"/usr/lib/python3.11/site-packages/lxml-6.0.0.dist-info/licenses/LICENSE.txt",
+				"/usr/lib/python3.11/site-packages/lxml-6.0.0.dist-info/licenses/LICENSES.txt",
+				"/usr/lib/python3.11/site-packages/lxml-6.0.0.dist-info/top_level.txt",
 				"/usr/lib/python3.11/site-packages/lxml/ElementInclude.py",
 				"/usr/lib/python3.11/site-packages/lxml/__init__.py",
 				"/usr/lib/python3.11/site-packages/lxml/__pycache__/ElementInclude.cpython-311.opt-1.pyc",
@@ -68,6 +68,8 @@
 				"/usr/lib/python3.11/site-packages/lxml/html/__pycache__/__init__.cpython-311.pyc",
 				"/usr/lib/python3.11/site-packages/lxml/html/__pycache__/_diffcommand.cpython-311.opt-1.pyc",
 				"/usr/lib/python3.11/site-packages/lxml/html/__pycache__/_diffcommand.cpython-311.pyc",
+				"/usr/lib/python3.11/site-packages/lxml/html/__pycache__/_difflib.cpython-311.opt-1.pyc",
+				"/usr/lib/python3.11/site-packages/lxml/html/__pycache__/_difflib.cpython-311.pyc",
 				"/usr/lib/python3.11/site-packages/lxml/html/__pycache__/_html5builder.cpython-311.opt-1.pyc",
 				"/usr/lib/python3.11/site-packages/lxml/html/__pycache__/_html5builder.cpython-311.pyc",
 				"/usr/lib/python3.11/site-packages/lxml/html/__pycache__/_setmixin.cpython-311.opt-1.pyc",
@@ -89,6 +91,8 @@
 				"/usr/lib/python3.11/site-packages/lxml/html/__pycache__/usedoctest.cpython-311.opt-1.pyc",
 				"/usr/lib/python3.11/site-packages/lxml/html/__pycache__/usedoctest.cpython-311.pyc",
 				"/usr/lib/python3.11/site-packages/lxml/html/_diffcommand.py",
+				"/usr/lib/python3.11/site-packages/lxml/html/_difflib.cpython-311-x86_64-linux-gnu.so",
+				"/usr/lib/python3.11/site-packages/lxml/html/_difflib.py",
 				"/usr/lib/python3.11/site-packages/lxml/html/_html5builder.py",
 				"/usr/lib/python3.11/site-packages/lxml/html/_setmixin.py",
 				"/usr/lib/python3.11/site-packages/lxml/html/builder.py",
@@ -163,11 +167,11 @@
 			],
 			"name": "python-lxml",
 			"provides": [
-				"python(lxml(3.11))",
 				"python(lxml)",
 				"soname(python3.11/site-packages/lxml/_elementpath.cpython-311-x86_64-linux-gnu.so(x86_64))",
 				"soname(python3.11/site-packages/lxml/builder.cpython-311-x86_64-linux-gnu.so(x86_64))",
 				"soname(python3.11/site-packages/lxml/etree.cpython-311-x86_64-linux-gnu.so(x86_64))",
+				"soname(python3.11/site-packages/lxml/html/_difflib.cpython-311-x86_64-linux-gnu.so(x86_64))",
 				"soname(python3.11/site-packages/lxml/html/diff.cpython-311-x86_64-linux-gnu.so(x86_64))",
 				"soname(python3.11/site-packages/lxml/objectify.cpython-311-x86_64-linux-gnu.so(x86_64))",
 				"soname(python3.11/site-packages/lxml/sax.cpython-311-x86_64-linux-gnu.so(x86_64))"
@@ -175,6 +179,6 @@
 		}
 	},
 	"source-name": "python-lxml",
-	"source-release": "4",
-	"source-version": "5.4.0"
+	"source-release": "5",
+	"source-version": "6.0.0"
 }
