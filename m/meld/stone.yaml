@@ -1,0 +1,34 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : meld
+version     : 3.23.0
+release     : 1
+upstreams   :
+    - https://download.gnome.org/sources/meld/3.23/meld-3.23.0.tar.xz : 983c2a4240e025a2109c7738198710e9d6b063c910b048332d14690cf538c2a6
+homepage    : https://meldmerge.org/
+license     : GPL-2.0-or-later
+summary     : Meld is a visual diff and merge tool targeted at developers.
+description : |
+    Meld is a visual diff and merge tool targeted at developers.
+builddeps   :
+    - binary(itstool)
+    - binary(msgfmt)
+    - binary(update-desktop-database)
+    - pkgconfig(gtk+-3.0)
+    - pkgconfig(gtksourceview-4)
+    - pkgconfig(py3cairo)
+    - pkgconfig(pygobject-3.0)
+    - pkgconfig(python3)
+rundeps     :
+    - python(dbus-python)
+    - python(pygobject)
+    - gtksourceview4
+setup       : |
+    %meson
+build       : |
+    %meson_build
+install     : |
+    %meson_install
