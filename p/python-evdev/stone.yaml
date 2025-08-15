@@ -5,7 +5,7 @@
 #
 name        : python-evdev
 version     : 1.9.2
-release     : 1
+release     : 2
 upstreams   :
     - https://github.com/gvalkov/python-evdev/archive/refs/tags/v1.9.2.tar.gz : 1cfb65765b8c63e587110d9b42fa26806bd6dd76565c55c3618afd4c4c48c5a5
 homepage    : https://github.com/gvalkov/python-evdev
@@ -27,4 +27,5 @@ install     : |
 check       : |
     # TODO replace with pytest macro
     _lib=$(ls $PWD/build/ | grep lib)
-    PYTHONPATH="$PWD"/build/${_lib} pytest
+    # Uinput tests fail on build server
+    PYTHONPATH="$PWD"/build/${_lib} pytest -v -k "not test_uinput"
