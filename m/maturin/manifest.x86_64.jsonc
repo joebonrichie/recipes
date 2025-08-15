@@ -43,12 +43,12 @@
 				"python-libs"
 			],
 			"files": [
-				"/usr/lib/python3.11/site-packages/maturin-1.9.2.dist-info/METADATA",
-				"/usr/lib/python3.11/site-packages/maturin-1.9.2.dist-info/RECORD",
-				"/usr/lib/python3.11/site-packages/maturin-1.9.2.dist-info/WHEEL",
-				"/usr/lib/python3.11/site-packages/maturin-1.9.2.dist-info/licenses/license-apache",
-				"/usr/lib/python3.11/site-packages/maturin-1.9.2.dist-info/licenses/license-mit",
-				"/usr/lib/python3.11/site-packages/maturin-1.9.2.dist-info/top_level.txt",
+				"/usr/lib/python3.11/site-packages/maturin-1.9.3.dist-info/METADATA",
+				"/usr/lib/python3.11/site-packages/maturin-1.9.3.dist-info/RECORD",
+				"/usr/lib/python3.11/site-packages/maturin-1.9.3.dist-info/WHEEL",
+				"/usr/lib/python3.11/site-packages/maturin-1.9.3.dist-info/licenses/license-apache",
+				"/usr/lib/python3.11/site-packages/maturin-1.9.3.dist-info/licenses/license-mit",
+				"/usr/lib/python3.11/site-packages/maturin-1.9.3.dist-info/top_level.txt",
 				"/usr/lib/python3.11/site-packages/maturin/__init__.py",
 				"/usr/lib/python3.11/site-packages/maturin/__main__.py",
 				"/usr/lib/python3.11/site-packages/maturin/__pycache__/__init__.cpython-311.opt-1.pyc",
@@ -61,12 +61,11 @@
 			],
 			"name": "python-maturin",
 			"provides": [
-				"python(maturin(3.11))",
 				"python(maturin)"
 			]
 		}
 	},
 	"source-name": "maturin",
-	"source-release": "5",
-	"source-version": "1.9.2"
+	"source-release": "6",
+	"source-version": "1.9.3"
 }
