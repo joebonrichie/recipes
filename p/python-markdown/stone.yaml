@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : python-markdown
-version     : 3.7
-release     : 3
+version     : "3.8.2"
+release     : 4
 homepage    : https://python-markdown.github.io/
 upstreams   :
-    - https://github.com/Python-Markdown/markdown/archive/refs/tags/3.7.tar.gz : c736153e1c93246ec566d960d614abe308c6f5b80e89697105076af507bc47b3
+    - https://github.com/Python-Markdown/markdown/archive/refs/tags/3.8.2.tar.gz : c9573a1ebcbb678c2b1c8b7706380f6dbecc00a97b8324c2ab6037d1ae6b825b
 summary     : A Python implementation of John Gruber’s Markdown with Extension support.
 description : |
     This is a Python implementation of John Gruber's Markdown. It is almost completely compliant with the reference implementation, though there are a few known issues. See Features for information on what exactly is supported and what is not. Additional features are supported by the Available Extensions.
