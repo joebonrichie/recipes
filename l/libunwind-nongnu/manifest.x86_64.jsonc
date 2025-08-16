@@ -1,0 +1,139 @@
+/** Human readable report. This is not consumed by boulder */
+{
+	"manifest-version": "0.2",
+	"packages": {
+		"libunwind-nongnu": {
+			"build-depends": [
+				"pkgconfig(liblzma)",
+				"pkgconfig(zlib)"
+			],
+			"depends": [
+				"soname(ld-linux-x86-64.so.2(x86_64))",
+				"soname(libc.so.6(x86_64))",
+				"soname(liblzma.so.5(x86_64))"
+			],
+			"files": [
+				"/usr/lib/libunwind-coredump.so.0",
+				"/usr/lib/libunwind-coredump.so.0.0.0",
+				"/usr/lib/libunwind-nongnu.so.8",
+				"/usr/lib/libunwind-nongnu.so.8.2.0",
+				"/usr/lib/libunwind-ptrace.so.0",
+				"/usr/lib/libunwind-ptrace.so.0.0.0",
+				"/usr/lib/libunwind-x86_64.so.8",
+				"/usr/lib/libunwind-x86_64.so.8.2.0"
+			],
+			"name": "libunwind-nongnu",
+			"provides": [
+				"soname(libunwind-coredump.so.0(x86_64))",
+				"soname(libunwind-nongnu.so.8(x86_64))",
+				"soname(libunwind-ptrace.so.0(x86_64))",
+				"soname(libunwind-x86_64.so.8(x86_64))"
+			]
+		},
+		"libunwind-nongnu-devel": {
+			"build-depends": [
+				"pkgconfig(liblzma)",
+				"pkgconfig(zlib)"
+			],
+			"depends": [
+				"libunwind-nongnu"
+			],
+			"files": [
+				"/usr/include/libunwind-nongnu/libunwind-common.h",
+				"/usr/include/libunwind-nongnu/libunwind-coredump.h",
+				"/usr/include/libunwind-nongnu/libunwind-dynamic.h",
+				"/usr/include/libunwind-nongnu/libunwind-ptrace.h",
+				"/usr/include/libunwind-nongnu/libunwind-x86_64.h",
+				"/usr/include/libunwind-nongnu/libunwind.h",
+				"/usr/include/libunwind-nongnu/unwind.h",
+				"/usr/lib/libunwind-coredump.so",
+				"/usr/lib/libunwind-generic.so",
+				"/usr/lib/libunwind-nongnu.so",
+				"/usr/lib/libunwind-ptrace.so",
+				"/usr/lib/libunwind-x86_64.so",
+				"/usr/lib/pkgconfig/libunwind-coredump.pc",
+				"/usr/lib/pkgconfig/libunwind-generic.pc",
+				"/usr/lib/pkgconfig/libunwind-nongnu.pc",
+				"/usr/lib/pkgconfig/libunwind-ptrace.pc"
+			],
+			"name": "libunwind-nongnu-devel",
+			"provides": [
+				"pkgconfig(libunwind-coredump)",
+				"pkgconfig(libunwind-generic)",
+				"pkgconfig(libunwind-nongnu)",
+				"pkgconfig(libunwind-ptrace)"
+			]
+		},
+		"libunwind-nongnu-tests": {
+			"build-depends": [
+				"pkgconfig(liblzma)",
+				"pkgconfig(zlib)"
+			],
+			"depends": [
+				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
+				"soname(libc++.so.1(x86_64))",
+				"soname(libc.so.6(x86_64))",
+				"soname(libunwind-coredump.so.0(x86_64))",
+				"soname(libunwind-nongnu.so.8(x86_64))",
+				"soname(libunwind-ptrace.so.0(x86_64))",
+				"soname(libunwind-x86_64.so.8(x86_64))"
+			],
+			"files": [
+				"/usr/lib/libunwind-nongnu/libunwind/Gperf-simple",
+				"/usr/lib/libunwind-nongnu/libunwind/Gperf-trace",
+				"/usr/lib/libunwind-nongnu/libunwind/Gtest-bt",
+				"/usr/lib/libunwind-nongnu/libunwind/Gtest-concurrent",
+				"/usr/lib/libunwind-nongnu/libunwind/Gtest-exc",
+				"/usr/lib/libunwind-nongnu/libunwind/Gtest-init",
+				"/usr/lib/libunwind-nongnu/libunwind/Gtest-resume-sig",
+				"/usr/lib/libunwind-nongnu/libunwind/Gtest-resume-sig-rt",
+				"/usr/lib/libunwind-nongnu/libunwind/Gtest-sig-context",
+				"/usr/lib/libunwind-nongnu/libunwind/Gtest-trace",
+				"/usr/lib/libunwind-nongnu/libunwind/Gx64-test-dwarf-expressions",
+				"/usr/lib/libunwind-nongnu/libunwind/Lperf-simple",
+				"/usr/lib/libunwind-nongnu/libunwind/Lperf-trace",
+				"/usr/lib/libunwind-nongnu/libunwind/Lrs-race",
+				"/usr/lib/libunwind-nongnu/libunwind/Ltest-bt",
+				"/usr/lib/libunwind-nongnu/libunwind/Ltest-concurrent",
+				"/usr/lib/libunwind-nongnu/libunwind/Ltest-cxx-exceptions",
+				"/usr/lib/libunwind-nongnu/libunwind/Ltest-exc",
+				"/usr/lib/libunwind-nongnu/libunwind/Ltest-init",
+				"/usr/lib/libunwind-nongnu/libunwind/Ltest-init-local-signal",
+				"/usr/lib/libunwind-nongnu/libunwind/Ltest-mem-validate",
+				"/usr/lib/libunwind-nongnu/libunwind/Ltest-nocalloc",
+				"/usr/lib/libunwind-nongnu/libunwind/Ltest-nomalloc",
+				"/usr/lib/libunwind-nongnu/libunwind/Ltest-resume-sig",
+				"/usr/lib/libunwind-nongnu/libunwind/Ltest-resume-sig-rt",
+				"/usr/lib/libunwind-nongnu/libunwind/Ltest-sig-context",
+				"/usr/lib/libunwind-nongnu/libunwind/Ltest-trace",
+				"/usr/lib/libunwind-nongnu/libunwind/Ltest-varargs",
+				"/usr/lib/libunwind-nongnu/libunwind/Lx64-test-dwarf-expressions",
+				"/usr/lib/libunwind-nongnu/libunwind/check-namespace.sh",
+				"/usr/lib/libunwind-nongnu/libunwind/crasher",
+				"/usr/lib/libunwind-nongnu/libunwind/forker",
+				"/usr/lib/libunwind-nongnu/libunwind/mapper",
+				"/usr/lib/libunwind-nongnu/libunwind/run-coredump-unwind",
+				"/usr/lib/libunwind-nongnu/libunwind/run-coredump-unwind-mdi",
+				"/usr/lib/libunwind-nongnu/libunwind/run-ptrace-mapper",
+				"/usr/lib/libunwind-nongnu/libunwind/run-ptrace-misc",
+				"/usr/lib/libunwind-nongnu/libunwind/test-async-sig",
+				"/usr/lib/libunwind-nongnu/libunwind/test-coredump-unwind",
+				"/usr/lib/libunwind-nongnu/libunwind/test-flush-cache",
+				"/usr/lib/libunwind-nongnu/libunwind/test-init-remote",
+				"/usr/lib/libunwind-nongnu/libunwind/test-mem",
+				"/usr/lib/libunwind-nongnu/libunwind/test-proc-info",
+				"/usr/lib/libunwind-nongnu/libunwind/test-ptrace",
+				"/usr/lib/libunwind-nongnu/libunwind/test-ptrace-misc",
+				"/usr/lib/libunwind-nongnu/libunwind/test-reg-state",
+				"/usr/lib/libunwind-nongnu/libunwind/test-runner",
+				"/usr/lib/libunwind-nongnu/libunwind/test-static-link",
+				"/usr/lib/libunwind-nongnu/libunwind/test-strerror",
+				"/usr/lib/libunwind-nongnu/libunwind/x64-unwind-badjmp-signal-frame"
+			],
+			"name": "libunwind-nongnu-tests"
+		}
+	},
+	"source-name": "libunwind-nongnu",
+	"source-release": "1",
+	"source-version": "1.8.2"
+}
