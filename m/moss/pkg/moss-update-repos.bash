@@ -1,13 +1,14 @@
 #!/usr/bin/env bash
 #
-# SPDX-license: MPL-2.0
-# SPDX-copyright: © AerynOS Developers 2025
-#
+# SPDX-FileCopyrightText: © 2025- AerynOS Developers
+# SPDX-License-Identifier: MPL-2.0
+# 
 # Remove outdated repos from installed systems
 # Intended to be used as a trigger or systemd one-shot service script
 # Depends on the 'moss' and 'yq' packages
 #
 
+_ARG="$1"
 _SEEN_UNSTABLE=0
 
 add-unstable-repo () {
@@ -17,11 +18,13 @@ add-unstable-repo () {
     moss repo enable unstable
 }
 
+
 add-disabled-volatile-repo () {
     echo adding disabled volatile repo ...
     moss repo add volatile https://build.aerynos.dev/volatile/x86_64/stone.index -p 10 -c "volatile package stream (for packagers and testing only)"
     moss repo disable volatile
 }
+
 
 delete-repo () {
     [[ -z "$1" ]] && return 0
@@ -29,6 +32,7 @@ delete-repo () {
 
     moss repo remove "${repo}"
 }
+
 
 handle-repo () {
     [[ -z "$1" ]] && return 0
@@ -61,31 +65,25 @@ handle-repo () {
         fi
     elif [[ "${repo_uri}" == "https://cdn.aerynos.dev/unstable/x86_64/stone.index" ]]
     then
-        echo "Note: The unstable repo was found under another name ('${repo_name}')."
+        echo "The new repository URI is already used in the '${repo_name}' repository."
         _SEEN_UNSTABLE=1
     fi
 }
 
 
+run () {
+    for repo in /etc/moss/repo.d/*.yaml
+    do
+        handle-repo "${repo}" || : # don't die on errors
+    done
 
-main () {
-    local arg="$1"
-    # if these dirs exist, there's a high probability that this
-    # system is one controlled by moss
-    if [[ -d /.moss/ && -d /etc/moss/repo.d && -x /usr/bin/moss ]]
+    # We need to ensure that a default unstable repo is configured
+    if [[ "${_SEEN_UNSTABLE}" == "0" ]]
     then
-        for repo in /etc/moss/repo.d/*.yaml
-        do
-            handle-repo "${repo}" || : # don't die on errors
-        done
-
-        # We need to ensure that a default unstable repo is configured
-        if [[ "${_SEEN_UNSTABLE}" == "0" ]]
-        then
-            add-unstable-repo
-        fi
+        add-unstable-repo
     fi
 }
+
 
 test () {
     echo -e "\nTest 1:\n"
@@ -116,22 +114,41 @@ test () {
     echo -e "\nTest 3 done.\n"
 }
 
-echo before:
-moss repo list
 
-_ARG="$1"
-if [[ -n "${_ARG}" && "${_ARG}" == "test" ]]
-then
-   test
-elif [[ -n "${_ARG}" ]]
-then
-    echo "valid args are 'test' (to run tests) or no args (execute normally)"
-else
-    main
-fi
+main() {
+    # if these invariants hold, there's a high probability that this
+    # system is one controlled by moss
+    if [[ -d /.moss/ && -d /etc/moss/repo.d && -x /usr/bin/moss ]]
+    then
+        if [[ ! -x /usr/bin/yq ]]
+        then
+            sudo moss install yq
+        fi
 
-echo after:
-moss repo list
+        if [[ -n "${_ARG}" && "${_ARG}" == "test" ]]
+        then
+            test
+        elif [[ -n "${_ARG}" ]]
+        then
+            echo "valid args are 'test' (to run tests) or no args (execute normally)"
+        else
+            echo -e "\nCurrently known moss repositories:\n"
+            moss repo list
+            echo ""
+
+            run
+
+            echo -e "\nUpdated list of known moss repositories:\n"
+            moss repo list
+            echo ""
+            
+        fi
+    else
+        echo -e "\n... this system does not appear to be controlled by moss?\n"
+    fi
+}
+
+main
 
 unset _ARG
 unset _SEEN_UNSTABLE
