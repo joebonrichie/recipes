@@ -103,7 +103,6 @@ test () {
     moss repo list
     echo -e "\nTest 1 done.\n"
 
-    
     echo -e "\nTest 2:\n"
     moss repo add volatile2 https://dev.serpentos.com/volatile/x86_64/stone.index -p0
     moss repo add unstable2 https://packages.aerynos.com/volatile/x86_64/stone.index -p10
@@ -130,7 +129,7 @@ main() {
     then
         if [[ ! -x /usr/bin/yq ]]
         then
-            sudo moss install yq
+            sudo moss install -y yq
         fi
 
         if [[ -n "${_ARG}" && "${_ARG}" == "test" ]]
