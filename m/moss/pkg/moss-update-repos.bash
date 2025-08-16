@@ -9,27 +9,28 @@
 #
 
 _ARG="$1"
-_SEEN_UNSTABLE=0
+_SEEN_UNSTABLE_URI=0
 
 add-unstable-repo () {
-    [[ "${_SEEN_UNSTABLE}" == "1" ]] && return 0
-    echo adding current unstable repo ...
+    [[ "${_SEEN_UNSTABLE_URI}" == "1" ]] && return 0
+    echo "Adding current unstable repository (enabling by default) ..."
     moss repo add unstable https://cdn.aerynos.dev/unstable/x86_64/stone.index -p 0 -c "unstable package stream"
     moss repo enable unstable
 }
 
 
 add-disabled-volatile-repo () {
-    echo adding disabled volatile repo ...
+    echo "Adding current volatile repository (disabling by default) ..."
     moss repo add volatile https://build.aerynos.dev/volatile/x86_64/stone.index -p 10 -c "volatile package stream (for packagers and testing only)"
     moss repo disable volatile
 }
 
 
-delete-repo () {
+remove-repo () {
     [[ -z "$1" ]] && return 0
     local repo="$1"
 
+    echo "Removing outdated ${repo} repository ..."
     moss repo remove "${repo}"
 }
 
@@ -40,22 +41,23 @@ handle-repo () {
 
     local repo_name="$(yq '. | keys[0]' < "${repo}")"
     local repo_uri="$(yq '.*.uri' < "${repo}")"
-    echo ${repo}: ${repo_name} = ${repo_uri}
+    local repo_description="$(yq '.*.description' < "${repo}")"
+    local repo_priority="$(yq '.*.priority' < "${repo}")"
+    echo -e "Found ${repo}:\n - ${repo_name} = ${repo_uri} [${repo_priority}]"
 
     # We want to get rid of outdated repos
     if [[ ${repo_uri} =~ dev.serpentos.com  ]] || \
        [[ ${repo_uri} =~ packages.aerynos.com ]] || \
        [[ "${repo_uri}" == "https://aerynos.dev/volatile/x86_64/stone.index" ]]
     then
-        echo deleting ${repo_name} ...
-        delete-repo "${repo_name}"
+        remove-repo "${repo_name}"
         # If the repo was outdated, we need to add the corresponding current repo
         if [[ "${repo_name}" == "unstable" ]]
         then
             # This can be added multiple times with no issue
             # -- it will simply override the existing repo definition
             add-unstable-repo
-            _SEEN_UNSTABLE=1
+            _SEEN_UNSTABLE_URI=1
         elif [[ "${repo_name}" == "volatile" ]]
         then
             # Tame as above, but note that this repo will be disabled by default
@@ -65,8 +67,14 @@ handle-repo () {
         fi
     elif [[ "${repo_uri}" == "https://cdn.aerynos.dev/unstable/x86_64/stone.index" ]]
     then
-        echo "The new repository URI is already used in the '${repo_name}' repository."
-        _SEEN_UNSTABLE=1
+        if [[ "${repo_name}" == "unstable" && "${repo_description}" = "..." ]]
+        then
+            echo "Updating description for already enabled current unstable repository ..."
+            add-unstable-repo
+        else
+            echo "The new repository URI is already used in the '${repo_name}' repository."
+        fi
+        _SEEN_UNSTABLE_URI=1
     fi
 }
 
@@ -74,11 +82,11 @@ handle-repo () {
 run () {
     for repo in /etc/moss/repo.d/*.yaml
     do
-        handle-repo "${repo}" || : # don't die on errors
+        [[ -f "${repo}" ]] && handle-repo "${repo}" || : # don't die on errors
     done
 
     # We need to ensure that a default unstable repo is configured
-    if [[ "${_SEEN_UNSTABLE}" == "0" ]]
+    if [[ "${_SEEN_UNSTABLE_URI}" == "0" ]]
     then
         add-unstable-repo
     fi
@@ -141,7 +149,6 @@ main() {
             echo -e "\nUpdated list of known moss repositories:\n"
             moss repo list
             echo ""
-            
         fi
     else
         echo -e "\n... this system does not appear to be controlled by moss?\n"
