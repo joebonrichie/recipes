@@ -8,12 +8,17 @@
 # Depends on the 'moss' and 'yq' packages
 #
 
+_SEEN_UNSTABLE=0
+
 add-unstable-repo () {
+    [[ "${_SEEN_UNSTABLE}" == "1" ]] && return 0
+    echo adding current unstable repo ...
     moss repo add unstable https://cdn.aerynos.dev/unstable/x86_64/stone.index -p 0 -c "unstable package stream"
     moss repo enable unstable
 }
 
 add-disabled-volatile-repo () {
+    echo adding disabled volatile repo ...
     moss repo add volatile https://build.aerynos.dev/volatile/x86_64/stone.index -p 10 -c "volatile package stream (for packagers and testing only)"
     moss repo disable volatile
 }
@@ -45,19 +50,22 @@ handle-repo () {
         then
             # This can be added multiple times with no issue
             # -- it will simply override the existing repo definition
-            echo adding current unstable repo ...
             add-unstable-repo
-        fi
-        if [[ "${repo_name}" == "volatile" ]]
+            _SEEN_UNSTABLE=1
+        elif [[ "${repo_name}" == "volatile" ]]
         then
             # Tame as above, but note that this repo will be disabled by default
             # because we don't want users to inadvertently end up on the package
             # stream where the infra lands packages for testing etc.
-            echo adding disabled volatile repo ...
             add-disabled-volatile-repo
         fi
+    elif [[ "${repo_uri}" == "https://cdn.aerynos.dev/unstable/x86_64/stone.index" ]]
+    then
+        echo "Note: The unstable repo was found under another name ('${repo_name}')."
+        _SEEN_UNSTABLE=1
     fi
 }
+
 
 
 main () {
@@ -70,6 +78,12 @@ main () {
         do
             handle-repo "${repo}" || : # don't die on errors
         done
+
+        # We need to ensure that a default unstable repo is configured
+        if [[ "${_SEEN_UNSTABLE}" == "0" ]]
+        then
+            add-unstable-repo
+        fi
     fi
 }
 
@@ -85,8 +99,8 @@ test () {
 
     
     echo -e "\nTest 2:\n"
-    moss repo add volatile https://dev.serpentos.com/volatile/x86_64/stone.index -p0
-    moss repo add unstable https://packages.aerynos.com/volatile/x86_64/stone.index -p10
+    moss repo add volatile2 https://dev.serpentos.com/volatile/x86_64/stone.index -p0
+    moss repo add unstable2 https://packages.aerynos.com/volatile/x86_64/stone.index -p10
     moss repo list
 
     main
@@ -94,8 +108,7 @@ test () {
     echo -e "\nTest 2 done.\n"
 
     echo -e "\nTest 3:\n"
-    moss repo add volatile https://dev.serpentos.com/volatile/x86_64/stone.index -p0
-    moss repo add unstable https://aerynos.dev/volatile/x86_64/stone.index -p10
+    moss repo add unreachable https://aerynos.dev/volatile/x86_64/stone.index -p10
     moss repo list
 
     main
@@ -106,11 +119,11 @@ test () {
 echo before:
 moss repo list
 
-ARG="$1"
-if [[ -n "${ARG}" && "${ARG}" == "test" ]]
+_ARG="$1"
+if [[ -n "${_ARG}" && "${_ARG}" == "test" ]]
 then
    test
-elif [[ -n "${ARG}" ]]
+elif [[ -n "${_ARG}" ]]
 then
     echo "valid args are 'test' (to run tests) or no args (execute normally)"
 else
@@ -120,4 +133,5 @@ fi
 echo after:
 moss repo list
 
-unset ARG
+unset _ARG
+unset _SEEN_UNSTABLE
