@@ -1,0 +1,35 @@
+/** Human readable report. This is not consumed by boulder */
+{
+	"manifest-version": "0.2",
+	"packages": {
+		"python-vdf": {
+			"build-depends": [
+				"python(setuptools)"
+			],
+			"depends": [
+				"python-libs"
+			],
+			"files": [
+				"/usr/lib/python3.11/site-packages/vdf-4.0.dist-info/METADATA",
+				"/usr/lib/python3.11/site-packages/vdf-4.0.dist-info/RECORD",
+				"/usr/lib/python3.11/site-packages/vdf-4.0.dist-info/WHEEL",
+				"/usr/lib/python3.11/site-packages/vdf-4.0.dist-info/licenses/LICENSE",
+				"/usr/lib/python3.11/site-packages/vdf-4.0.dist-info/top_level.txt",
+				"/usr/lib/python3.11/site-packages/vdf-4.0.dist-info/zip-safe",
+				"/usr/lib/python3.11/site-packages/vdf/__init__.py",
+				"/usr/lib/python3.11/site-packages/vdf/__pycache__/__init__.cpython-311.opt-1.pyc",
+				"/usr/lib/python3.11/site-packages/vdf/__pycache__/__init__.cpython-311.pyc",
+				"/usr/lib/python3.11/site-packages/vdf/__pycache__/vdict.cpython-311.opt-1.pyc",
+				"/usr/lib/python3.11/site-packages/vdf/__pycache__/vdict.cpython-311.pyc",
+				"/usr/lib/python3.11/site-packages/vdf/vdict.py"
+			],
+			"name": "python-vdf",
+			"provides": [
+				"python(vdf)"
+			]
+		}
+	},
+	"source-name": "python-vdf",
+	"source-release": "1",
+	"source-version": "4.0"
+}
