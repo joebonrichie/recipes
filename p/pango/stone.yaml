@@ -5,7 +5,7 @@
 #
 name        : pango
 version     : 1.56.4
-release     : 11
+release     : 12
 homepage    : https://pango.gnome.org/
 upstreams   :
     - https://download.gnome.org/sources/pango/1.56/pango-1.56.4.tar.xz : 17065e2fcc5f5a5bdbffc884c956bfc7c451a96e8c4fb2f8ad837c6413cb5a01
@@ -34,13 +34,14 @@ builddeps   :
     - pkgconfig(gobject-introspection-1.0)
     - pkgconfig(harfbuzz)
     - pkgconfig(libthai)
-    # pkgconfig(sysprof-capture-4)
+    - pkgconfig(sysprof-capture-4)
     - pkgconfig(xft)
     - pkgconfig(xrender)
 setup       : |
     %meson \
         -Dintrospection=enabled \
-        -Dman-pages=true
+        -Dman-pages=true \
+        -Dsysprof=enabled
 build       : |
     %meson_build
 install     : |

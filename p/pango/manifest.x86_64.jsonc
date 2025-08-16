@@ -15,6 +15,7 @@
 				"pkgconfig(gobject-introspection-1.0)",
 				"pkgconfig(harfbuzz)",
 				"pkgconfig(libthai)",
+				"pkgconfig(sysprof-capture-4)",
 				"pkgconfig(xft)",
 				"pkgconfig(xrender)"
 			],
@@ -81,6 +82,7 @@
 				"pkgconfig(gobject-introspection-1.0)",
 				"pkgconfig(harfbuzz)",
 				"pkgconfig(libthai)",
+				"pkgconfig(sysprof-capture-4)",
 				"pkgconfig(xft)",
 				"pkgconfig(xrender)"
 			],
@@ -96,6 +98,7 @@
 				"pkgconfig(harfbuzz)",
 				"pkgconfig(harfbuzz-gobject)",
 				"pkgconfig(libthai)",
+				"pkgconfig(sysprof-capture-4)",
 				"pkgconfig(xft)",
 				"pkgconfig(xrender)"
 			],
@@ -167,6 +170,6 @@
 		}
 	},
 	"source-name": "pango",
-	"source-release": "11",
+	"source-release": "12",
 	"source-version": "1.56.4"
 }
