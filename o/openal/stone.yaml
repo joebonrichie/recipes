@@ -1,0 +1,55 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : openal
+version     : 1.24.3
+release     : 1
+upstreams   :
+    - https://github.com/kcat/openal-soft/archive/refs/tags/1.24.3.tar.gz : 7e1fecdeb45e7f78722b776c5cf30bd33934b961d7fd2a11e0494e064cc631ce
+homepage    : https://openal-soft.org/
+license     : LGPL-2.1-or-later
+summary     : Open Source OpenAL implementation
+description : |
+    OpenAL Soft is an LGPL-licensed, cross-platform, software implementation of the OpenAL 3D audio API. It's forked from the open-sourced Windows version available originally from openal.org's SVN repository (now defunct).
+builddeps   :
+    - pkgconfig(alsa)
+    - pkgconfig(dbus-1)
+    - pkgconfig(fmt)
+    - pkgconfig(libavcodec)
+    - pkgconfig(libavdevice)
+    - pkgconfig(libavformat)
+    - pkgconfig(libavutil)
+    - pkgconfig(libpipewire-0.3)
+    - pkgconfig(libpostproc)
+    - pkgconfig(libpulse)
+    - pkgconfig(libswresample)
+    - pkgconfig(libswscale)
+    - pkgconfig(sdl3)
+    - pkgconfig(sndfile)
+    - pkgconfig(zlib)
+    # JACK
+setup       : |
+    %patch %(pkgdir)/unbundle-fmt.patch
+
+    %cmake
+build       : |
+    %cmake_build
+install     : |
+    %cmake_install
+
+    # Not used?
+    rm -v %(installroot)%(datadir)/openal/alsoftrc.sample \
+          %(installroot)%(datadir)/openal/presets/presets.txt
+packages    :
+    - "%(name)":
+        rundeps:
+            # Uses dlopen(), but since pipewire is the default on Aeryn make sure it's available
+            - "soname(libpipewire-0.3.so.0(x86_64))"
+
+    - "%(name)-examples":
+        summary: Sample applications for OpenAl
+        description: Sample applications for OpenAl
+        paths:
+            - /usr/bin/al*

@@ -1,0 +1,162 @@
+/** Human readable report. This is not consumed by boulder */
+{
+	"manifest-version": "0.2",
+	"packages": {
+		"openal": {
+			"build-depends": [
+				"pkgconfig(alsa)",
+				"pkgconfig(dbus-1)",
+				"pkgconfig(fmt)",
+				"pkgconfig(libavcodec)",
+				"pkgconfig(libavdevice)",
+				"pkgconfig(libavformat)",
+				"pkgconfig(libavutil)",
+				"pkgconfig(libpipewire-0.3)",
+				"pkgconfig(libpostproc)",
+				"pkgconfig(libpulse)",
+				"pkgconfig(libswresample)",
+				"pkgconfig(libswscale)",
+				"pkgconfig(sdl3)",
+				"pkgconfig(sndfile)",
+				"pkgconfig(zlib)"
+			],
+			"depends": [
+				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
+				"soname(ld-linux-x86-64.so.2(x86_64))",
+				"soname(libc++.so.1(x86_64))",
+				"soname(libc.so.6(x86_64))",
+				"soname(libfmt.so.11(x86_64))",
+				"soname(libm.so.6(x86_64))",
+				"soname(libpipewire-0.3.so.0(x86_64))",
+				"soname(libunwind.so.1(x86_64))"
+			],
+			"files": [
+				"/usr/bin/openal-info",
+				"/usr/lib/libopenal.so.1",
+				"/usr/lib/libopenal.so.1.24.3",
+				"/usr/share/openal/hrtf/Default HRTF.mhr",
+				"/usr/share/openal/presets/3D7.1.ambdec",
+				"/usr/share/openal/presets/hex-quad.ambdec",
+				"/usr/share/openal/presets/hexagon.ambdec",
+				"/usr/share/openal/presets/itu5.1-nocenter.ambdec",
+				"/usr/share/openal/presets/itu5.1.ambdec",
+				"/usr/share/openal/presets/rectangle.ambdec",
+				"/usr/share/openal/presets/square.ambdec"
+			],
+			"name": "openal",
+			"provides": [
+				"binary(openal-info)",
+				"soname(libopenal.so.1(x86_64))"
+			]
+		},
+		"openal-devel": {
+			"build-depends": [
+				"pkgconfig(alsa)",
+				"pkgconfig(dbus-1)",
+				"pkgconfig(fmt)",
+				"pkgconfig(libavcodec)",
+				"pkgconfig(libavdevice)",
+				"pkgconfig(libavformat)",
+				"pkgconfig(libavutil)",
+				"pkgconfig(libpipewire-0.3)",
+				"pkgconfig(libpostproc)",
+				"pkgconfig(libpulse)",
+				"pkgconfig(libswresample)",
+				"pkgconfig(libswscale)",
+				"pkgconfig(sdl3)",
+				"pkgconfig(sndfile)",
+				"pkgconfig(zlib)"
+			],
+			"depends": [
+				"openal"
+			],
+			"files": [
+				"/usr/include/AL/al.h",
+				"/usr/include/AL/alc.h",
+				"/usr/include/AL/alext.h",
+				"/usr/include/AL/efx-creative.h",
+				"/usr/include/AL/efx-presets.h",
+				"/usr/include/AL/efx.h",
+				"/usr/lib/cmake/OpenAL/OpenALConfig.cmake",
+				"/usr/lib/cmake/OpenAL/OpenALTargets-release.cmake",
+				"/usr/lib/cmake/OpenAL/OpenALTargets.cmake",
+				"/usr/lib/libopenal.so",
+				"/usr/lib/pkgconfig/openal.pc"
+			],
+			"name": "openal-devel",
+			"provides": [
+				"cmake(OpenAL)",
+				"pkgconfig(openal)"
+			]
+		},
+		"openal-examples": {
+			"build-depends": [
+				"pkgconfig(alsa)",
+				"pkgconfig(dbus-1)",
+				"pkgconfig(fmt)",
+				"pkgconfig(libavcodec)",
+				"pkgconfig(libavdevice)",
+				"pkgconfig(libavformat)",
+				"pkgconfig(libavutil)",
+				"pkgconfig(libpipewire-0.3)",
+				"pkgconfig(libpostproc)",
+				"pkgconfig(libpulse)",
+				"pkgconfig(libswresample)",
+				"pkgconfig(libswscale)",
+				"pkgconfig(sdl3)",
+				"pkgconfig(sndfile)",
+				"pkgconfig(zlib)"
+			],
+			"depends": [
+				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
+				"soname(libSDL3.so.0(x86_64))",
+				"soname(libavcodec.so.61(x86_64))",
+				"soname(libavformat.so.61(x86_64))",
+				"soname(libavutil.so.59(x86_64))",
+				"soname(libc++.so.1(x86_64))",
+				"soname(libc.so.6(x86_64))",
+				"soname(libfmt.so.11(x86_64))",
+				"soname(libm.so.6(x86_64))",
+				"soname(libopenal.so.1(x86_64))",
+				"soname(libsndfile.so.1(x86_64))",
+				"soname(libswresample.so.5(x86_64))",
+				"soname(libswscale.so.8(x86_64))",
+				"soname(libunwind.so.1(x86_64))"
+			],
+			"files": [
+				"/usr/bin/aldebug",
+				"/usr/bin/aldirect",
+				"/usr/bin/alffplay",
+				"/usr/bin/alhrtf",
+				"/usr/bin/allafplay",
+				"/usr/bin/allatency",
+				"/usr/bin/alloopback",
+				"/usr/bin/almultireverb",
+				"/usr/bin/alplay",
+				"/usr/bin/alrecord",
+				"/usr/bin/alreverb",
+				"/usr/bin/alstream",
+				"/usr/bin/altonegen"
+			],
+			"name": "openal-examples",
+			"provides": [
+				"binary(aldebug)",
+				"binary(aldirect)",
+				"binary(alffplay)",
+				"binary(alhrtf)",
+				"binary(allafplay)",
+				"binary(allatency)",
+				"binary(alloopback)",
+				"binary(almultireverb)",
+				"binary(alplay)",
+				"binary(alrecord)",
+				"binary(alreverb)",
+				"binary(alstream)",
+				"binary(altonegen)"
+			]
+		}
+	},
+	"source-name": "openal",
+	"source-release": "1",
+	"source-version": "1.24.3"
+}
