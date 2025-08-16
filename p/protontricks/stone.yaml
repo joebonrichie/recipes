@@ -1,0 +1,30 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : protontricks
+version     : 1.13.0
+release     : 1
+upstreams   :
+    - https://pypi.debian.net/protontricks/protontricks-1.13.0.tar.gz : c1351e9ebeb7a640147eaf53051137491a8a0a5bd6d5fdd0b962f78d11e7420c
+homepage    : https://github.com/Matoking/protontricks
+license     : GPL-3.0-or-later
+summary     : A simple wrapper that does winetricks things for Proton enabled games
+description : |
+    A simple wrapper that does winetricks things for Proton enabled games
+builddeps   :
+    - python(setuptools)
+    - python(setuptools-scm)
+rundeps     :
+    - binary(winetricks)
+    - binary(zenity)
+    # TODO: Use YAD instead of zenity
+setup       : |
+    # Remove vendored vdf
+    %patch %(pkgdir)/drop-vendored-vdf.patch -R
+    rm -rf ./src/protontricks/_vdf
+build       : |
+    %pyproject_build
+install     : |
+    %pyproject_install
