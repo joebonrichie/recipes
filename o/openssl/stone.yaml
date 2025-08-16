@@ -5,7 +5,7 @@
 #
 name        : openssl
 version     : 3.5.2
-release     : 28
+release     : 29
 summary     : OpenSSL cryptography library
 license     :
     - OpenSSL
@@ -46,8 +46,8 @@ setup       : |
     # We may want to add brotli support for compressed certificates, but as far as I know that's not common yet
     ./Configure $OSSL_TARGET \
         --prefix=/usr \
+        --libdir=lib%(libsuffix) \
         --openssldir=/etc/ssl \
-        --libdir=%(libdir) \
         enable-ktls \
         enable-zstd-dynamic \
         no-rc4 \
