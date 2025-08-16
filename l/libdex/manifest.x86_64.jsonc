@@ -1,0 +1,87 @@
+/** Human readable report. This is not consumed by boulder */
+{
+	"manifest-version": "0.2",
+	"packages": {
+		"libdex": {
+			"build-depends": [
+				"binary(vapigen)",
+				"libatomic",
+				"pkgconfig(gio-2.0)",
+				"pkgconfig(gobject-introspection-1.0)",
+				"pkgconfig(libsoup-3.0)",
+				"pkgconfig(liburing)"
+			],
+			"depends": [
+				"soname(libc.so.6(x86_64))",
+				"soname(libgio-2.0.so.0(x86_64))",
+				"soname(libglib-2.0.so.0(x86_64))",
+				"soname(libgobject-2.0.so.0(x86_64))",
+				"soname(liburing.so.2(x86_64))"
+			],
+			"files": [
+				"/usr/lib/girepository-1.0/Dex-1.typelib",
+				"/usr/lib/libdex-1.so.1",
+				"/usr/lib/libdex-1.so.1.0.0"
+			],
+			"name": "libdex",
+			"provides": [
+				"soname(libdex-1.so.1(x86_64))"
+			]
+		},
+		"libdex-devel": {
+			"build-depends": [
+				"binary(vapigen)",
+				"libatomic",
+				"pkgconfig(gio-2.0)",
+				"pkgconfig(gobject-introspection-1.0)",
+				"pkgconfig(libsoup-3.0)",
+				"pkgconfig(liburing)"
+			],
+			"depends": [
+				"libdex",
+				"pkgconfig(gio-2.0)",
+				"pkgconfig(liburing)"
+			],
+			"files": [
+				"/usr/include/libdex-1/dex-aio.h",
+				"/usr/include/libdex-1/dex-async-pair.h",
+				"/usr/include/libdex-1/dex-async-result.h",
+				"/usr/include/libdex-1/dex-block.h",
+				"/usr/include/libdex-1/dex-cancellable.h",
+				"/usr/include/libdex-1/dex-channel.h",
+				"/usr/include/libdex-1/dex-delayed.h",
+				"/usr/include/libdex-1/dex-enums.h",
+				"/usr/include/libdex-1/dex-error.h",
+				"/usr/include/libdex-1/dex-fiber.h",
+				"/usr/include/libdex-1/dex-future-set.h",
+				"/usr/include/libdex-1/dex-future.h",
+				"/usr/include/libdex-1/dex-gio.h",
+				"/usr/include/libdex-1/dex-init.h",
+				"/usr/include/libdex-1/dex-main-scheduler.h",
+				"/usr/include/libdex-1/dex-object.h",
+				"/usr/include/libdex-1/dex-platform.h",
+				"/usr/include/libdex-1/dex-promise.h",
+				"/usr/include/libdex-1/dex-scheduler.h",
+				"/usr/include/libdex-1/dex-static-future.h",
+				"/usr/include/libdex-1/dex-thread-pool-scheduler.h",
+				"/usr/include/libdex-1/dex-timeout.h",
+				"/usr/include/libdex-1/dex-unix-signal.h",
+				"/usr/include/libdex-1/dex-version-macros.h",
+				"/usr/include/libdex-1/dex-version.h",
+				"/usr/include/libdex-1/libdex.h",
+				"/usr/lib/libdex-1.so",
+				"/usr/lib/pkgconfig/libdex-1.pc",
+				"/usr/share/gir-1.0/Dex-1.gir",
+				"/usr/share/vala/vapi/libdex-1.deps",
+				"/usr/share/vala/vapi/libdex-1.vapi"
+			],
+			"name": "libdex-devel",
+			"provides": [
+				"pkgconfig(libdex-1)"
+			]
+		}
+	},
+	"source-name": "libdex",
+	"source-release": "1",
+	"source-version": "0.10.1"
+}
