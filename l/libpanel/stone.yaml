@@ -1,0 +1,38 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : libpanel
+version     : 1.10.0
+release     : 1
+upstreams   :
+    - https://download.gnome.org/sources/libpanel/1.10/libpanel-1.10.0.tar.xz : 578ce512278ff2bb5eeebb55099392c52537a5abd9bd0629567f102532b38b25
+homepage    : https://gitlab.gnome.org/GNOME/libpanel
+license     : LGPL-2.1-or-later
+summary     : A dock/panel library for GTK 4
+description : |
+    Libpanel helps you create IDE-like applications using GTK 4 and libadwaita. It has widgets for panels, docks, columns and grids of pages. Primarily, it's design and implementation focus around GNOME Builder and Drafting projects.
+builddeps   :
+    - binary(g-ir-scanner)
+    - binary(gi-docgen)
+    - binary(msgfmt)
+    - binary(vapigen)
+    - pkgconfig(gio-2.0)
+    - pkgconfig(gtk4)
+    - pkgconfig(gtksourceview-5)
+    - pkgconfig(libadwaita-1)
+setup       : |
+    %meson
+build       : |
+    %meson_build
+install     : |
+    %meson_install
+packages    :
+    - "%(name)-devel":
+        paths:
+            - /usr/share/vala/
+
+    - "%(name)-docs":
+        paths:
+            - /usr/share/doc

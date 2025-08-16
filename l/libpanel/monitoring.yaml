@@ -1,0 +1,6 @@
+releases:
+    id: 311624
+    rss: https://gitlab.gnome.org/GNOME/libpanel/-/tags?format=atom
+security:
+    # Last checked 2025-08-16
+    cpe: ~
