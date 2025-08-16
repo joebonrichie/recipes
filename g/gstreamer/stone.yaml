@@ -5,7 +5,7 @@
 #
 name        : gstreamer
 version     : 1.26.5
-release     : 23
+release     : 24
 homepage    : https://gstreamer.freedesktop.org/
 upstreams   :
     - https://gitlab.freedesktop.org/gstreamer/gstreamer/-/archive/1.26.5/gstreamer-1.26.5.tar.gz : eb102bf0435d1179276e4ea4d0b951939c2e72d882446362badcd5a57ab56a31
@@ -77,6 +77,7 @@ builddeps   :
     - pkgconfig(libxml-2.0)
     - pkgconfig(libzstd)
     - pkgconfig(nettle)
+    - pkgconfig(openal)
     - pkgconfig(opencv4)
     - pkgconfig(openh264)
     - pkgconfig(opus)
@@ -133,7 +134,6 @@ builddeps   :
 # - libmodplug
 # - mjpegtools
 # - mpeg2encpp
-# - openal
 # - openexr
 # - libopenmpt
 # - librtmp
@@ -473,6 +473,7 @@ packages    :
             - /usr/lib/gstreamer-1.0/libgstmxf.so
             - /usr/lib/gstreamer-1.0/libgstnetsim.so
             - /usr/lib/gstreamer-1.0/libgstnvcodec.so
+            - /usr/lib/gstreamer-1.0/libgstopenal.so
             - /usr/lib/gstreamer-1.0/libgstopenaptx.so
             - /usr/lib/gstreamer-1.0/libgstopenh264.so
             - /usr/lib/gstreamer-1.0/libgstopusparse.so
