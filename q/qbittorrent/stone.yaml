@@ -1,0 +1,62 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : qbittorrent
+version     : 5.1.2
+release     : 1
+upstreams   :
+    - https://github.com/qbittorrent/qBittorrent/archive/refs/tags/release-5.1.2.tar.gz : a35448f3c8cb57d033bd3c4bd66c63417b0ca793ae7e9c5c5053960e2229ad9e
+homepage    : https://www.qbittorrent.org/
+license     : GPL-2.0-or-later
+summary     : qBittorrent project aims to provide a Free Software alternative to µTorrent
+description : |
+    qBittorrent project aims to provide a Free Software alternative to µTorrent
+builddeps   :
+    - cmake(Boost)
+    - cmake(LibtorrentRasterbar)
+    - cmake(Qt6CorePrivate)
+    - cmake(Qt6LinguistTools)
+    - cmake(Qt6Svg)
+    - pkgconfig(openssl)
+    - pkgconfig(zlib)
+    - zlib-static
+setup       : |
+    %cmake -B nox \
+        -DGUI=OFF \
+        -DSYSTEMD=ON
+
+    %cmake -B gui
+build       : |
+    for b in nox gui; do
+        %ccache_zero
+        BUILDDIR=${b}
+        env CCACHE_BASEDIR="${PWD}/${b}" %cmake_build
+        %ccache_stats
+    done
+install     : |
+    for b in nox gui; do
+        BUILDDIR=${b}
+        %cmake_install
+    done
+
+    %install_file %(pkgdir)/qbittorrent-nox.service -t %(installroot)%(libdir)/systemd/system/
+    %install_file %(pkgdir)/qbittorrent-nox.sysusers %(installroot)%(sysusersdir)/qbittorrent-nox.conf
+    %install_file %(pkgdir)/qbittorrent-nox.tmpfiles %(installroot)%(tmpfilesdir)/qbittorrent-nox.conf
+packages    :
+    - "%(name)":
+        rundeps:
+            - qt6-svg
+            - qt6-wayland
+
+    - "%(name)-nox":
+        summary: qBittorrent project aims to provide a Free Software alternative to µTorrent, w/o gui
+        description: qBittorrent project aims to provide a Free Software alternative to µTorrent, w/o gui
+        paths:
+            - /usr/bin/qbittorrent-nox
+            - /usr/lib/systemd/system/qbittorrent-nox@.service
+            - /usr/lib/systemd/system/qbittorrent-nox.service
+            - /usr/lib/sysusers.d/qbittorrent-nox.conf
+            - /usr/lib/tmpfiles.d/qbittorrent-nox.conf
+            - /usr/share/man/**/man1/qbittorrent-nox.1*
