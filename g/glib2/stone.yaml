@@ -5,7 +5,7 @@
 #
 name        : glib2
 version     : 2.84.4
-release     : 29
+release     : 30
 homepage    : https://gitlab.gnome.org/GNOME/glib
 upstreams   :
     - https://download.gnome.org/sources/glib/2.84/glib-2.84.4.tar.xz : 8a9ea10943c36fc117e253f80c91e477b673525ae45762942858aef57631bb90
@@ -28,14 +28,13 @@ builddeps   :
     # - binary(xsltproc)
     - pkgconfig(bash-completion)
     - pkgconfig(gobject-introspection-1.0)
+    - pkgconfig(sysprof-capture-4)
     - pkgconfig32(libelf)
     - pkgconfig32(libffi)
     - pkgconfig32(libpcre2-8)
     - pkgconfig32(mount)
     - pkgconfig32(zlib)
     - python-packaging
-    # TODO:
-    # sysprof
 emul32      : true
 environment : |
     export CFLAGS="${CFLAGS} -Wno-error=missing-include-dirs"
@@ -44,7 +43,11 @@ profiles    :
         setup: |
             %patch %(pkgdir)/0001-glib-gutils-Support-stateless-fallback-XDG_CONFIG_DI.patch
             %patch %(pkgdir)/0001-gdesktopappinfo-Support-ptyxis-for-executing-.deskto.patch
-            %meson -Dtests=false -Dinstalled_tests=false -Dintrospection=disabled
+            %meson \
+                -Dinstalled_tests=false \
+                -Dintrospection=disabled \
+                -Dsysprof=disabled \
+                -Dtests=false
         build: |
             %meson_build
         install: |
@@ -54,8 +57,8 @@ setup       : |
     %patch %(pkgdir)/0001-gdesktopappinfo-Support-ptyxis-for-executing-.deskto.patch
 
     %meson \
-        -Dman-pages=true \
         -Dinstalled_tests=false \
+        -Dman-pages=true \
         -Dtests=false
 build       : |
     %meson_build

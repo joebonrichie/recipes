@@ -8,6 +8,7 @@
 				"binary(xgettext)",
 				"pkgconfig(bash-completion)",
 				"pkgconfig(gobject-introspection-1.0)",
+				"pkgconfig(sysprof-capture-4)",
 				"pkgconfig32(libelf)",
 				"pkgconfig32(libffi)",
 				"pkgconfig32(libpcre2-8)",
@@ -188,6 +189,7 @@
 				"binary(xgettext)",
 				"pkgconfig(bash-completion)",
 				"pkgconfig(gobject-introspection-1.0)",
+				"pkgconfig(sysprof-capture-4)",
 				"pkgconfig32(libelf)",
 				"pkgconfig32(libffi)",
 				"pkgconfig32(libpcre2-8)",
@@ -238,6 +240,7 @@
 				"binary(xgettext)",
 				"pkgconfig(bash-completion)",
 				"pkgconfig(gobject-introspection-1.0)",
+				"pkgconfig(sysprof-capture-4)",
 				"pkgconfig32(libelf)",
 				"pkgconfig32(libffi)",
 				"pkgconfig32(libpcre2-8)",
@@ -294,6 +297,7 @@
 				"binary(xgettext)",
 				"pkgconfig(bash-completion)",
 				"pkgconfig(gobject-introspection-1.0)",
+				"pkgconfig(sysprof-capture-4)",
 				"pkgconfig32(libelf)",
 				"pkgconfig32(libffi)",
 				"pkgconfig32(libpcre2-8)",
@@ -308,6 +312,7 @@
 				"pkgconfig(libffi)",
 				"pkgconfig(libpcre2-8)",
 				"pkgconfig(mount)",
+				"pkgconfig(sysprof-capture-4)",
 				"pkgconfig(zlib)",
 				"python(packaging)",
 				"soname(libc.so.6(x86_64))",
@@ -739,6 +744,6 @@
 		}
 	},
 	"source-name": "glib2",
-	"source-release": "29",
+	"source-release": "30",
 	"source-version": "2.84.4"
 }
