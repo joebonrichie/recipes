@@ -4,12 +4,14 @@
 	"packages": {
 		"libspelling": {
 			"build-depends": [
+				"binary(msgfmt)",
 				"binary(vapigen)",
 				"pkgconfig(enchant-2)",
 				"pkgconfig(gio-2.0)",
 				"pkgconfig(gobject-introspection-1.0)",
 				"pkgconfig(gtk4)",
-				"pkgconfig(gtksourceview-5)"
+				"pkgconfig(gtksourceview-5)",
+				"pkgconfig(sysprof-capture-4)"
 			],
 			"depends": [
 				"soname(libc.so.6(x86_64))",
@@ -26,8 +28,60 @@
 				"/usr/lib/girepository-1.0/Spelling-1.typelib",
 				"/usr/lib/libspelling-1.so.2",
 				"/usr/lib/libspelling-1.so.2.0.0",
-				"/usr/share/vala/vapi/libspelling-1.deps",
-				"/usr/share/vala/vapi/libspelling-1.vapi"
+				"/usr/share/locale/ab/LC_MESSAGES/libspelling.mo",
+				"/usr/share/locale/be/LC_MESSAGES/libspelling.mo",
+				"/usr/share/locale/bg/LC_MESSAGES/libspelling.mo",
+				"/usr/share/locale/ca/LC_MESSAGES/libspelling.mo",
+				"/usr/share/locale/cs/LC_MESSAGES/libspelling.mo",
+				"/usr/share/locale/da/LC_MESSAGES/libspelling.mo",
+				"/usr/share/locale/de/LC_MESSAGES/libspelling.mo",
+				"/usr/share/locale/el/LC_MESSAGES/libspelling.mo",
+				"/usr/share/locale/en_GB/LC_MESSAGES/libspelling.mo",
+				"/usr/share/locale/eo/LC_MESSAGES/libspelling.mo",
+				"/usr/share/locale/es/LC_MESSAGES/libspelling.mo",
+				"/usr/share/locale/eu/LC_MESSAGES/libspelling.mo",
+				"/usr/share/locale/fa/LC_MESSAGES/libspelling.mo",
+				"/usr/share/locale/fi/LC_MESSAGES/libspelling.mo",
+				"/usr/share/locale/fr/LC_MESSAGES/libspelling.mo",
+				"/usr/share/locale/fur/LC_MESSAGES/libspelling.mo",
+				"/usr/share/locale/gl/LC_MESSAGES/libspelling.mo",
+				"/usr/share/locale/he/LC_MESSAGES/libspelling.mo",
+				"/usr/share/locale/hi/LC_MESSAGES/libspelling.mo",
+				"/usr/share/locale/hr/LC_MESSAGES/libspelling.mo",
+				"/usr/share/locale/hu/LC_MESSAGES/libspelling.mo",
+				"/usr/share/locale/ia/LC_MESSAGES/libspelling.mo",
+				"/usr/share/locale/id/LC_MESSAGES/libspelling.mo",
+				"/usr/share/locale/ie/LC_MESSAGES/libspelling.mo",
+				"/usr/share/locale/is/LC_MESSAGES/libspelling.mo",
+				"/usr/share/locale/it/LC_MESSAGES/libspelling.mo",
+				"/usr/share/locale/ja/LC_MESSAGES/libspelling.mo",
+				"/usr/share/locale/ka/LC_MESSAGES/libspelling.mo",
+				"/usr/share/locale/kab/LC_MESSAGES/libspelling.mo",
+				"/usr/share/locale/kk/LC_MESSAGES/libspelling.mo",
+				"/usr/share/locale/ko/LC_MESSAGES/libspelling.mo",
+				"/usr/share/locale/lt/LC_MESSAGES/libspelling.mo",
+				"/usr/share/locale/lv/LC_MESSAGES/libspelling.mo",
+				"/usr/share/locale/nb/LC_MESSAGES/libspelling.mo",
+				"/usr/share/locale/ne/LC_MESSAGES/libspelling.mo",
+				"/usr/share/locale/nl/LC_MESSAGES/libspelling.mo",
+				"/usr/share/locale/oc/LC_MESSAGES/libspelling.mo",
+				"/usr/share/locale/pa/LC_MESSAGES/libspelling.mo",
+				"/usr/share/locale/pl/LC_MESSAGES/libspelling.mo",
+				"/usr/share/locale/pt/LC_MESSAGES/libspelling.mo",
+				"/usr/share/locale/pt_BR/LC_MESSAGES/libspelling.mo",
+				"/usr/share/locale/ro/LC_MESSAGES/libspelling.mo",
+				"/usr/share/locale/ru/LC_MESSAGES/libspelling.mo",
+				"/usr/share/locale/sk/LC_MESSAGES/libspelling.mo",
+				"/usr/share/locale/sl/LC_MESSAGES/libspelling.mo",
+				"/usr/share/locale/sr/LC_MESSAGES/libspelling.mo",
+				"/usr/share/locale/sv/LC_MESSAGES/libspelling.mo",
+				"/usr/share/locale/th/LC_MESSAGES/libspelling.mo",
+				"/usr/share/locale/tr/LC_MESSAGES/libspelling.mo",
+				"/usr/share/locale/uk/LC_MESSAGES/libspelling.mo",
+				"/usr/share/locale/uz/LC_MESSAGES/libspelling.mo",
+				"/usr/share/locale/vi/LC_MESSAGES/libspelling.mo",
+				"/usr/share/locale/zh_CN/LC_MESSAGES/libspelling.mo",
+				"/usr/share/locale/zh_TW/LC_MESSAGES/libspelling.mo"
 			],
 			"name": "libspelling",
 			"provides": [
@@ -36,12 +90,14 @@
 		},
 		"libspelling-devel": {
 			"build-depends": [
+				"binary(msgfmt)",
 				"binary(vapigen)",
 				"pkgconfig(enchant-2)",
 				"pkgconfig(gio-2.0)",
 				"pkgconfig(gobject-introspection-1.0)",
 				"pkgconfig(gtk4)",
-				"pkgconfig(gtksourceview-5)"
+				"pkgconfig(gtksourceview-5)",
+				"pkgconfig(sysprof-capture-4)"
 			],
 			"depends": [
 				"libspelling",
@@ -62,7 +118,9 @@
 				"/usr/include/libspelling-1/spelling-version.h",
 				"/usr/lib/libspelling-1.so",
 				"/usr/lib/pkgconfig/libspelling-1.pc",
-				"/usr/share/gir-1.0/Spelling-1.gir"
+				"/usr/share/gir-1.0/Spelling-1.gir",
+				"/usr/share/vala/vapi/libspelling-1.deps",
+				"/usr/share/vala/vapi/libspelling-1.vapi"
 			],
 			"name": "libspelling-devel",
 			"provides": [
@@ -71,6 +129,6 @@
 		}
 	},
 	"source-name": "libspelling",
-	"source-release": "4",
-	"source-version": "0.4.7"
+	"source-release": "5",
+	"source-version": "0.4.8"
 }
