@@ -129,7 +129,7 @@ main() {
     then
         if [[ ! -x /usr/bin/yq ]]
         then
-            sudo moss install -y yq
+            moss install -y yq
         fi
 
         if [[ -n "${_ARG}" && "${_ARG}" == "test" ]]
