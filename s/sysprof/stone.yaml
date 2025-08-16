@@ -1,0 +1,101 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : sysprof
+version     : "48.0"
+release     : 1
+upstreams   :
+    - https://download.gnome.org/sources/sysprof/48/sysprof-48.0.tar.xz : 1b0f0380f2f30708ba87829321a06fee1db36dfa87797bbf07f0a7acf4498d18
+homepage    : https://apps.gnome.org/Sysprof/
+license     : GPL-3.0-or-later
+summary     : Sysprof is a statistical, system-wide profiler for Linux
+description : |
+    Sysprof is a sampling profiler that uses a kernel module to generate stacktraces which are then interpreted by the userspace program "sysprof". It can be used to profile almost any function in any program in terms of call percentage, battery usage, disk accesses, network usage, etc. It has special profiling support for the GTK stack. By default, Sysprof includes a CLI frontend and a GTK frontend.
+builddeps   :
+    - binary(itstool)
+    - binary(msgfmt)
+    - binary(update-desktop-database)
+    - pkgconfig(glib-2.0)
+    - pkgconfig(gtk4)
+    - pkgconfig(json-glib-1.0)
+    - pkgconfig(libadwaita-1)
+    - pkgconfig(libdex-1)
+    - pkgconfig(libdw)
+    - pkgconfig(libpanel-1)
+    - pkgconfig(libunwind-generic)
+    - pkgconfig(polkit-agent-1)
+    - pkgconfig(polkit-gobject-1)
+setup       : |
+    %patch %(pkgdir)/ftbfs-glibc-2.42.patch
+
+    %meson
+build       : |
+    %meson_build
+install     : |
+    %meson_install
+packages    :
+    - "lib%(name)":
+        summary: Sysprof libraries
+        description: The libsysprof package contains the Sysprof libraries.
+        paths:
+            - /usr/lib/libsysprof-6.so.*
+            - /usr/lib/libsysprof-*-6.so
+
+    - "%(name)-agent":
+        summary: Sysprof agent utility
+        description: |
+            The %(name)-agent package contains the sysprof-agent program. It provides a P2P
+            D-Bus API to the process which can control subprocesses. It's used by IDE
+            tooling to have more control across container boundaries.
+        rundeps:
+            - "lib%(name)"
+            - binary(turbostat)
+        paths:
+            - /usr/bin/sysprof-agent
+
+    - "%(name)-cli":
+        summary: Sysprof command line utility
+        description: The %(name)-cli package contains the sysprof-cli command line utility.
+        paths:
+            - /usr/bin/sysprof-cat
+            - /usr/bin/sysprof-cli
+            - /usr/lib/sysprof/sysprofd
+            - /usr/lib/sysprof/sysprof-live-unwinder
+            - /usr/share/dbus-1/system.d/org.gnome.Sysprof3.conf
+            - /usr/share/dbus-1/system-services/org.gnome.Sysprof3.service
+            - /usr/share/help/
+            - /usr/share/polkit-1/actions/org.gnome.sysprof3.policy
+            - /usr/lib/systemd/system/sysprof3.service
+
+    - "%(name)-capture-devel":
+        summary: Development files for sysprof-capture static library
+        description: Development files for sysprof-capture static library
+        paths:
+            - /usr/include/sysprof-6/sysprof-address.h
+            - /usr/include/sysprof-6/sysprof-capture-condition.h
+            - /usr/include/sysprof-6/sysprof-capture-cursor.h
+            - /usr/include/sysprof-6/sysprof-capture.h
+            - /usr/include/sysprof-6/sysprof-capture-reader.h
+            - /usr/include/sysprof-6/sysprof-capture-types.h
+            - /usr/include/sysprof-6/sysprof-capture-writer.h
+            - /usr/include/sysprof-6/sysprof-clock.h
+            - /usr/include/sysprof-6/sysprof-collector.h
+            - /usr/include/sysprof-6/sysprof-macros.h
+            - /usr/include/sysprof-6/sysprof-platform.h
+            - /usr/include/sysprof-6/sysprof-version.h
+            - /usr/include/sysprof-6/sysprof-version-macros.h
+            - /usr/lib/libsysprof-capture-4.a
+            - /usr/lib/pkgconfig/sysprof-capture-4.pc
+
+    - "%(name)":
+        rundeps:
+            - "%(name)-cli"
+
+    - "%(name)-devel":
+        rundeps:
+            - "lib%(name)"
+            - "%(name)-capture-devel"
+        paths:
+            - /usr/share/dbus-1/interfaces/
