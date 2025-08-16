@@ -5,7 +5,7 @@
 #
 name        : gtk-3
 version     : 3.24.50
-release     : 13
+release     : 14
 homepage    : https://gtk.org
 upstreams   :
     - https://download.gnome.org/sources/gtk/3.24/gtk-3.24.50.tar.xz : 399118a5699314622165a11b769ea9b6ed68e037b6d46d57cfcf4851dec07529
@@ -45,6 +45,7 @@ builddeps   :
     - pkgconfig(pangocairo)
     - pkgconfig(pangoft2)
     - pkgconfig(shared-mime-info)
+    - pkgconfig(sysprof-capture-4)
     - pkgconfig(tracker-sparql-3.0)
     - pkgconfig(wayland-client)
     - pkgconfig(wayland-cursor)
@@ -73,13 +74,12 @@ setup       : |
     export CFLAGS+=" -DG_DISABLE_CAST_CHECKS"
 
     # TODO:
-    # - Enable profiler once we have sysprof
-    # - Should we set Adwaita as the default font like
+    # - Should we set Adwaita as the default font like Arch?
     %meson \
         -Dbuiltin_immodules=wayland,waylandgtk \
         -Dcloudproviders=true \
         -Dman=true \
-        -Dprofiler=false \
+        -Dprofiler=true \
         -Dtracker=false \
         -Dtracker3=true
 build       : |
