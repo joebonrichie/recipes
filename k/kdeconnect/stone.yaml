@@ -1,0 +1,95 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : kdeconnect
+version     : 25.08.0
+release     : 1
+upstreams   :
+    - https://download.kde.org/stable/release-service/25.08.0/src/kdeconnect-kde-25.08.0.tar.xz : edc6d8d5bb3aab53208a229528ef36a5bc959bfaec17512b5621502d1d37d260
+homepage    : https://kdeconnect.kde.org/
+license     : GPL-2.0-only
+summary     : KDE Connect adds communication between KDE and your smartphone.
+description : |
+    KDE Connect is a multi-platform app that allows your devices to communicate (eg: your phone and your computer).
+builddeps   :
+    # Temporary, boulder doesn't handle build ordering resolution correctly when builddeps are added by macros, so add ECM manually
+    - cmake(ECM)
+    - cmake(KF6ColorScheme)
+    - cmake(KF6Crash)
+    - cmake(KF6DBusAddons)
+    - cmake(KF6GuiAddons)
+    - cmake(KF6I18n)
+    - cmake(KF6IconThemes)
+    - cmake(KF6ItemModels)
+    - cmake(KF6KIO)
+    - cmake(KF6Kirigami)
+    - cmake(KF6KirigamiAddons)
+    - cmake(KF6ModemManagerQt)
+    - cmake(KF6Notifications)
+    - cmake(KF6Package)
+    - cmake(KF6People)
+    - cmake(KF6PulseAudioQt)
+    - cmake(KF6QQC2DesktopStyle)
+    - cmake(KF6Service)
+    - cmake(KF6Solid)
+    - cmake(KF6StatusNotifierItem)
+    - cmake(KF6WindowSystem)
+    - cmake(Qt6Bluetooth)
+    - cmake(Qt6CorePrivate)
+    - cmake(Qt6Multimedia)
+    - cmake(Qt6WaylandClient)
+    - pkgconfig(dbus-1)
+    - pkgconfig(openssl)
+    - pkgconfig(xkbcommon)
+    - pkgconfig(wayland-client)
+    - pkgconfig(wayland-protocols)
+setup       : |
+    # We may need WITH_X11=ON for xwayland, but for now we're trying without it so as to avoid packaging libfakekey
+    %cmake_kf6 \
+        -DWITH_X11=OFF
+build       : |
+    %cmake_build
+install     : |
+    %cmake_install
+    %qml_cache_qt6
+
+    # Unused
+    rm -v %(installroot)%(libdir)/*.a
+packages    :
+    - "%(name)":
+        rundeps:
+            - "%(name)d"
+            - binary(sshfs)
+            - kde-cli-tools
+            - kf6-kirigami
+            - kf6-kirigami-addons
+            - kf6-qqc2-desktop-style
+            - qca-qt6
+
+    - "%(name)-libs":
+        paths:
+            - /usr/lib/lib*.so.*
+            - /usr/lib/qt6/plugins/kdeconnect/
+
+    - "%(name)d":
+        summary: KDE Connect service
+        description: KDE Connect service
+        rundeps:
+            - "%(name)-libs"
+        paths:
+            - /usr/bin/kdeconnectd
+            - /usr/share/applications/org.kde.kdeconnect.daemon.desktop
+            - /usr/share/dbus-1/services/org.kde.kdeconnect.service
+            - /usr/share/xdg/autostart/org.kde.kdeconnect.daemon.desktop
+
+    - "%(name)-nautilus":
+        summary: KDEConnect extension for nautilus
+        description: KDEConnect extention for nautilus
+        rundeps:
+            - "%(name)d"
+            # TODO: Make this get pulled in if nautilus and kdeconnectd are both installed
+            # TODO: Needs nautilus-python
+        paths:
+            - /usr/share/nautilus-python/
