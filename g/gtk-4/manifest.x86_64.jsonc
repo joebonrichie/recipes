@@ -27,6 +27,7 @@
 				"pkgconfig(libtiff-4)",
 				"pkgconfig(pango)",
 				"pkgconfig(shaderc)",
+				"pkgconfig(sysprof-capture-4)",
 				"pkgconfig(tinysparql-3.0)",
 				"pkgconfig(vulkan)",
 				"pkgconfig(wayland-client)",
@@ -285,6 +286,7 @@
 				"pkgconfig(libtiff-4)",
 				"pkgconfig(pango)",
 				"pkgconfig(shaderc)",
+				"pkgconfig(sysprof-capture-4)",
 				"pkgconfig(tinysparql-3.0)",
 				"pkgconfig(vulkan)",
 				"pkgconfig(wayland-client)",
@@ -379,6 +381,7 @@
 				"pkgconfig(libtiff-4)",
 				"pkgconfig(pango)",
 				"pkgconfig(shaderc)",
+				"pkgconfig(sysprof-capture-4)",
 				"pkgconfig(tinysparql-3.0)",
 				"pkgconfig(vulkan)",
 				"pkgconfig(wayland-client)",
@@ -883,6 +886,6 @@
 		}
 	},
 	"source-name": "gtk-4",
-	"source-release": "27",
+	"source-release": "28",
 	"source-version": "4.18.6"
 }
