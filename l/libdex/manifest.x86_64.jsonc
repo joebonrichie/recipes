@@ -9,7 +9,8 @@
 				"pkgconfig(gio-2.0)",
 				"pkgconfig(gobject-introspection-1.0)",
 				"pkgconfig(libsoup-3.0)",
-				"pkgconfig(liburing)"
+				"pkgconfig(liburing)",
+				"pkgconfig(sysprof-capture-4)"
 			],
 			"depends": [
 				"soname(libc.so.6(x86_64))",
@@ -35,7 +36,8 @@
 				"pkgconfig(gio-2.0)",
 				"pkgconfig(gobject-introspection-1.0)",
 				"pkgconfig(libsoup-3.0)",
-				"pkgconfig(liburing)"
+				"pkgconfig(liburing)",
+				"pkgconfig(sysprof-capture-4)"
 			],
 			"depends": [
 				"libdex",
@@ -82,6 +84,6 @@
 		}
 	},
 	"source-name": "libdex",
-	"source-release": "1",
+	"source-release": "2",
 	"source-version": "0.10.1"
 }
