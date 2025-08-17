@@ -22,7 +22,8 @@
 				"pkgconfig(libspectre)",
 				"pkgconfig(libspelling-1)",
 				"pkgconfig(libtiff-4)",
-				"pkgconfig(poppler-glib)"
+				"pkgconfig(poppler-glib)",
+				"pkgconfig(sysprof-capture-4)"
 			],
 			"depends": [
 				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
@@ -2627,7 +2628,8 @@
 				"pkgconfig(libspectre)",
 				"pkgconfig(libspelling-1)",
 				"pkgconfig(libtiff-4)",
-				"pkgconfig(poppler-glib)"
+				"pkgconfig(poppler-glib)",
+				"pkgconfig(sysprof-capture-4)"
 			],
 			"depends": [
 				"papers",
@@ -2708,6 +2710,6 @@
 		}
 	},
 	"source-name": "papers",
-	"source-release": "7",
+	"source-release": "8",
 	"source-version": "48.5"
 }
