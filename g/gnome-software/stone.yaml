@@ -4,8 +4,8 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : gnome-software
-version     : 48.4
-release     : 20
+version     : "48.4"
+release     : 21
 homepage    : https://apps.gnome.org/Software/
 upstreams   :
     - https://download.gnome.org/sources/gnome-software/48/gnome-software-48.4.tar.xz : 9cd130bc62cd08b63a222eb26661bcc717e75d58ee1b3c1880c4d1b76ccd263b
@@ -33,6 +33,7 @@ builddeps   :
     - pkgconfig(ostree-1)
     # pkgconfig(packagekit-glib2)
     - pkgconfig(polkit-gobject-1)
+    - pkgconfig(sysprof-capture-4)
     - pkgconfig(xmlb)
     - docbook
     - docbook-xsl

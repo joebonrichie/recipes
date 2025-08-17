@@ -21,6 +21,7 @@
 				"pkgconfig(libsoup-3.0)",
 				"pkgconfig(ostree-1)",
 				"pkgconfig(polkit-gobject-1)",
+				"pkgconfig(sysprof-capture-4)",
 				"pkgconfig(xmlb)"
 			],
 			"depends": [
@@ -436,6 +437,7 @@
 				"pkgconfig(libsoup-3.0)",
 				"pkgconfig(ostree-1)",
 				"pkgconfig(polkit-gobject-1)",
+				"pkgconfig(sysprof-capture-4)",
 				"pkgconfig(xmlb)"
 			],
 			"depends": [
@@ -448,6 +450,7 @@
 				"pkgconfig(json-glib-1.0)",
 				"pkgconfig(libsoup-3.0)",
 				"pkgconfig(polkit-gobject-1)",
+				"pkgconfig(sysprof-capture-4)",
 				"pkgconfig(xmlb)"
 			],
 			"files": [
@@ -509,6 +512,6 @@
 		}
 	},
 	"source-name": "gnome-software",
-	"source-release": "20",
+	"source-release": "21",
 	"source-version": "48.4"
 }
