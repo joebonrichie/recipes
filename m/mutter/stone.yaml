@@ -4,8 +4,8 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : mutter
-version     : 48.4
-release     : 25
+version     : "48.4"
+release     : 26
 homepage    : https://gnome.org
 upstreams   :
     - https://download.gnome.org/sources/mutter/48/mutter-48.4.tar.xz : 1189cf7e63cc87cfdd1f3a86e8f14d97c33d6a9da254f23e81655549b6c50d93
@@ -64,6 +64,8 @@ builddeps   :
     - pkgconfig(pangocairo)
     - pkgconfig(pangoft2)
     - pkgconfig(sm)
+    - pkgconfig(sysprof-6)
+    - pkgconfig(sysprof-capture-4)
     - pkgconfig(udev)
     - pkgconfig(wayland-client)
     - pkgconfig(wayland-cursor)
@@ -96,10 +98,11 @@ rundeps     :
     - binary(gnome-session)
     - binary(pipewire) # DMA-BUF
 setup       : |
-    %meson -Dtests=disabled \
-           -Dprofiler=false \
-           -Dwayland_eglstream=true \
-           -Degl_device=true
+    %meson \
+        -Degl_device=true \
+        -Dtests=disabled \
+        -Dprofiler=true \
+        -Dwayland_eglstream=true
 build       : |
     %meson_build
 install     : |

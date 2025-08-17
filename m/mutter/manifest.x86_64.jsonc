@@ -54,6 +54,8 @@
 				"pkgconfig(pangocairo)",
 				"pkgconfig(pangoft2)",
 				"pkgconfig(sm)",
+				"pkgconfig(sysprof-6)",
+				"pkgconfig(sysprof-capture-4)",
 				"pkgconfig(udev)",
 				"pkgconfig(wayland-client)",
 				"pkgconfig(wayland-cursor)",
@@ -340,6 +342,8 @@
 				"pkgconfig(pangocairo)",
 				"pkgconfig(pangoft2)",
 				"pkgconfig(sm)",
+				"pkgconfig(sysprof-6)",
+				"pkgconfig(sysprof-capture-4)",
 				"pkgconfig(udev)",
 				"pkgconfig(wayland-client)",
 				"pkgconfig(wayland-cursor)",
@@ -406,6 +410,7 @@
 				"pkgconfig(pangocairo)",
 				"pkgconfig(pixman-1)",
 				"pkgconfig(sm)",
+				"pkgconfig(sysprof-capture-4)",
 				"pkgconfig(wayland-eglstream-protocols)",
 				"pkgconfig(wayland-server)",
 				"pkgconfig(x11)",
@@ -636,6 +641,6 @@
 		}
 	},
 	"source-name": "mutter",
-	"source-release": "25",
+	"source-release": "26",
 	"source-version": "48.4"
 }
