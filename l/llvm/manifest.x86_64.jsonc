@@ -1523,12 +1523,12 @@
 				"/usr/lib/libscanbuild/resources/selectable.js",
 				"/usr/lib/libscanbuild/resources/sorttable.js",
 				"/usr/lib/libscanbuild/shell.py",
-				"/usr/libexec/analyze-c++",
-				"/usr/libexec/analyze-cc",
-				"/usr/libexec/c++-analyzer",
-				"/usr/libexec/ccc-analyzer",
-				"/usr/libexec/intercept-c++",
-				"/usr/libexec/intercept-cc",
+				"/usr/lib/llvm/analyze-c++",
+				"/usr/lib/llvm/analyze-cc",
+				"/usr/lib/llvm/c++-analyzer",
+				"/usr/lib/llvm/ccc-analyzer",
+				"/usr/lib/llvm/intercept-c++",
+				"/usr/lib/llvm/intercept-cc",
 				"/usr/share/clang-doc/clang-doc-default-stylesheet.css",
 				"/usr/share/clang-doc/index.js",
 				"/usr/share/clang/clang-format-bbedit.applescript",
@@ -9125,6 +9125,6 @@
 		}
 	},
 	"source-name": "llvm",
-	"source-release": "32",
+	"source-release": "33",
 	"source-version": "20.1.8"
 }

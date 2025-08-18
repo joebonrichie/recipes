@@ -5,7 +5,7 @@
 #
 name        : llvm
 version     : 20.1.8
-release     : 32
+release     : 33
 summary     : Low Level Virtual Machine
 license     :
     - Apache-2.0 WITH LLVM-exception
@@ -113,6 +113,8 @@ environment : |
         # Fixes for Flang man page generation
         %patch %(pkgdir)/patches/upstream/0001-flang-NFC-Create-required-Source-dir-for-flang-doc.-.patch
         %patch %(pkgdir)/patches/upstream/0002-Flang-Add-Sphinx-man-page-and-html-support-for-Flang.patch
+        # Fixes a build failure with Firefox 142.0
+        %patch %(pkgdir)/patches/upstream/0001-libc-Fix-padding-calculation-for-function-reference-.patch
     }
 
     # 2025-03-25: Add LIBCXX_TYPEINFO_COMPARISON_IMPLEMENTATION=2 for https://bugs.kde.org/show_bug.cgi?id=479679
@@ -625,7 +627,7 @@ packages    :
             - /usr/bin/scan-*
             - /usr/lib/libear
             - /usr/lib/libscanbuild
-            - /usr/libexec
+            - /usr/lib/llvm/
             - /usr/share/clang/clang-format*
             - /usr/share/clang/clang-include-fixer*
             - /usr/share/clang/clang-tidy-diff*
