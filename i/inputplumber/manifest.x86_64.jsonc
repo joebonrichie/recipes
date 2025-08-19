@@ -28,6 +28,7 @@
 				"/usr/lib/udev/rules.d/90-inputplumber-autostart.rules",
 				"/usr/share/dbus-1/system.d/org.shadowblip.InputPlumber.conf",
 				"/usr/share/inputplumber/capability_maps/ally_type1.yaml",
+				"/usr/share/inputplumber/capability_maps/ally_type2.yaml",
 				"/usr/share/inputplumber/capability_maps/anbernic_type1.yaml",
 				"/usr/share/inputplumber/capability_maps/ayaneo_type1.yaml",
 				"/usr/share/inputplumber/capability_maps/ayaneo_type2.yaml",
@@ -125,6 +126,6 @@
 		}
 	},
 	"source-name": "inputplumber",
-	"source-release": "33",
-	"source-version": "0.62.1"
+	"source-release": "34",
+	"source-version": "0.62.2"
 }
