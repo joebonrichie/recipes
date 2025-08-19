@@ -52,6 +52,7 @@
 				"soname(libfontconfig.so.1(x86_64))",
 				"soname(libfreetype.so.6(x86_64))",
 				"soname(libgbm.so.1(x86_64))",
+				"soname(libgcc_s.so.1(x86_64))",
 				"soname(libgdk-3.so.0(x86_64))",
 				"soname(libgdk_pixbuf-2.0.so.0(x86_64))",
 				"soname(libgio-2.0.so.0(x86_64))",
@@ -141,6 +142,6 @@
 		}
 	},
 	"source-name": "firefox",
-	"source-release": "36",
+	"source-release": "37",
 	"source-version": "142.0"
 }
