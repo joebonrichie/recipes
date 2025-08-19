@@ -2443,8 +2443,8 @@
 				"pkgconfig(zlib)"
 			],
 			"depends": [
-				"soname(libabsl_log_internal_check_op.so.2505.0.0(x86_64))",
-				"soname(libabsl_log_internal_message.so.2505.0.0(x86_64))",
+				"soname(libabsl_log_internal_check_op.so.2508.0.0(x86_64))",
+				"soname(libabsl_log_internal_message.so.2508.0.0(x86_64))",
 				"soname(libaom.so.3(x86_64))",
 				"soname(libarchive.so.13(x86_64))",
 				"soname(libasound.so.2(x86_64))",
@@ -2758,6 +2758,6 @@
 		}
 	},
 	"source-name": "vlc",
-	"source-release": "5",
-	"source-version": "3.0.21+git.c495a9a1"
+	"source-release": "6",
+	"source-version": "3.0.21+git.49307128"
 }

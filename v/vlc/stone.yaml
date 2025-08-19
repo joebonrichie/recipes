@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : vlc
-version     : 3.0.21+git.c495a9a1
-release     : 5
+version     : 3.0.21+git.49307128
+release     : 6
 upstreams   :
     # Use the latest from the 3.0.x series branch which has fixed VAAPI support for FFMPEG 7.x
-    - git|https://code.videolan.org/videolan/vlc.git : c495a9a12249943823a44a2494ff0981c8d39b5a
+    - git|https://code.videolan.org/videolan/vlc.git : 49307128534c4bb3a554734ac40e32bd2d04a80d
     # - https://download.videolan.org/pub/videolan/vlc/3.0.21/vlc-3.0.21.tar.xz : 24dbbe1d7dfaeea0994d5def0bbde200177347136dbfe573f5b6a4cee25afbb0
 homepage    : https://www.videolan.org/
 license     :
