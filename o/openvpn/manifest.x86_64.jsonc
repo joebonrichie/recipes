@@ -1,0 +1,87 @@
+/** Human readable report. This is not consumed by boulder */
+{
+	"manifest-version": "0.2",
+	"packages": {
+		"openvpn": {
+			"build-depends": [
+				"binary(rst2man)",
+				"pkgconfig(libcap-ng)",
+				"pkgconfig(liblz4)",
+				"pkgconfig(libnl-genl-3.0)",
+				"pkgconfig(libpkcs11-helper-1)",
+				"pkgconfig(libsystemd)",
+				"pkgconfig(lzo2)",
+				"pkgconfig(openssl)",
+				"pkgconfig(p11-kit-1)",
+				"pkgconfig(pam)"
+			],
+			"depends": [
+				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
+				"soname(libc.so.6(x86_64))",
+				"soname(libcap-ng.so.0(x86_64))",
+				"soname(libcrypto.so.3(x86_64))",
+				"soname(liblz4.so.1(x86_64))",
+				"soname(liblzo2.so.2(x86_64))",
+				"soname(libnl-3.so.200(x86_64))",
+				"soname(libnl-genl-3.so.200(x86_64))",
+				"soname(libpam.so.0(x86_64))",
+				"soname(libpkcs11-helper.so.1(x86_64))",
+				"soname(libssl.so.3(x86_64))",
+				"soname(libsystemd.so.0(x86_64))"
+			],
+			"files": [
+				"/usr/lib/openvpn/plugins/openvpn-plugin-auth-pam.so",
+				"/usr/lib/openvpn/plugins/openvpn-plugin-down-root.so",
+				"/usr/lib/systemd/system/openvpn-client@.service",
+				"/usr/lib/systemd/system/openvpn-server@.service",
+				"/usr/lib/tmpfiles.d/openvpn.conf",
+				"/usr/sbin/openvpn",
+				"/usr/share/doc/openvpn/COPYING",
+				"/usr/share/doc/openvpn/COPYRIGHT.GPL",
+				"/usr/share/doc/openvpn/Changes.rst",
+				"/usr/share/doc/openvpn/README",
+				"/usr/share/doc/openvpn/README.auth-pam",
+				"/usr/share/doc/openvpn/README.down-root",
+				"/usr/share/doc/openvpn/README.mbedtls",
+				"/usr/share/doc/openvpn/README.systemd",
+				"/usr/share/doc/openvpn/gui-notes.txt",
+				"/usr/share/doc/openvpn/management-notes.txt",
+				"/usr/share/doc/openvpn/openvpn-examples.5.html",
+				"/usr/share/doc/openvpn/openvpn.8.html",
+				"/usr/share/man/man5/openvpn-examples.5",
+				"/usr/share/man/man8/openvpn.8"
+			],
+			"name": "openvpn",
+			"provides": [
+				"soname(openvpn/plugins/openvpn-plugin-auth-pam.so(x86_64))",
+				"soname(openvpn/plugins/openvpn-plugin-down-root.so(x86_64))",
+				"sysbinary(openvpn)"
+			]
+		},
+		"openvpn-devel": {
+			"build-depends": [
+				"binary(rst2man)",
+				"pkgconfig(libcap-ng)",
+				"pkgconfig(liblz4)",
+				"pkgconfig(libnl-genl-3.0)",
+				"pkgconfig(libpkcs11-helper-1)",
+				"pkgconfig(libsystemd)",
+				"pkgconfig(lzo2)",
+				"pkgconfig(openssl)",
+				"pkgconfig(p11-kit-1)",
+				"pkgconfig(pam)"
+			],
+			"depends": [
+				"openvpn"
+			],
+			"files": [
+				"/usr/include/openvpn-msg.h",
+				"/usr/include/openvpn-plugin.h"
+			],
+			"name": "openvpn-devel"
+		}
+	},
+	"source-name": "openvpn",
+	"source-release": "1",
+	"source-version": "2.6.14"
+}
