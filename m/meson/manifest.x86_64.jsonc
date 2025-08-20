@@ -14,12 +14,12 @@
 			],
 			"files": [
 				"/usr/bin/meson",
-				"/usr/lib/python3.11/site-packages/meson-1.8.3.dist-info/METADATA",
-				"/usr/lib/python3.11/site-packages/meson-1.8.3.dist-info/RECORD",
-				"/usr/lib/python3.11/site-packages/meson-1.8.3.dist-info/WHEEL",
-				"/usr/lib/python3.11/site-packages/meson-1.8.3.dist-info/entry_points.txt",
-				"/usr/lib/python3.11/site-packages/meson-1.8.3.dist-info/licenses/COPYING",
-				"/usr/lib/python3.11/site-packages/meson-1.8.3.dist-info/top_level.txt",
+				"/usr/lib/python3.11/site-packages/meson-1.8.4.dist-info/METADATA",
+				"/usr/lib/python3.11/site-packages/meson-1.8.4.dist-info/RECORD",
+				"/usr/lib/python3.11/site-packages/meson-1.8.4.dist-info/WHEEL",
+				"/usr/lib/python3.11/site-packages/meson-1.8.4.dist-info/entry_points.txt",
+				"/usr/lib/python3.11/site-packages/meson-1.8.4.dist-info/licenses/COPYING",
+				"/usr/lib/python3.11/site-packages/meson-1.8.4.dist-info/top_level.txt",
 				"/usr/lib/python3.11/site-packages/mesonbuild/__init__.py",
 				"/usr/lib/python3.11/site-packages/mesonbuild/__pycache__/__init__.cpython-311.opt-1.pyc",
 				"/usr/lib/python3.11/site-packages/mesonbuild/__pycache__/__init__.cpython-311.pyc",
@@ -736,12 +736,11 @@
 			"name": "meson",
 			"provides": [
 				"binary(meson)",
-				"python(meson(3.11))",
 				"python(meson)"
 			]
 		}
 	},
 	"source-name": "meson",
-	"source-release": "15",
-	"source-version": "1.8.3"
+	"source-release": "16",
+	"source-version": "1.8.4"
 }

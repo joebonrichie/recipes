@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : meson
-version     : 1.8.3
-release     : 15
+version     : 1.8.4
+release     : 16
 homepage    : https://github.com/mesonbuild/meson
 upstreams   :
-    - https://github.com/mesonbuild/meson/releases/download/1.8.3/meson-1.8.3.tar.gz : f118aa910fc0a137cc2dd0122232dbf82153d9a12fb5b0f5bb64896f6a157abf
+    - https://github.com/mesonbuild/meson/releases/download/1.8.4/meson-1.8.4.tar.gz : 5fabf143f58e6636c8ff41ae489bbd5d5d86f881f0a1ef1726cfaf703116e071
 summary     : The Meson Build System
 description : |
     Meson® is a project to create the best possible next-generation build system.
