@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : cryptsetup
-version     : 2.8.0
-release     : 8
+version     : 2.8.1
+release     : 9
 homepage    : https://gitlab.com/cryptsetup/cryptsetup
 upstreams   :
-    - https://gitlab.com/cryptsetup/cryptsetup/-/archive/v2.8.0/cryptsetup-v2.8.0.tar.gz : f8b84bb48d54c44dc596f8c70c47735d03f63446aba16eb8dc76c72e9daaaf2d
+    - https://gitlab.com/cryptsetup/cryptsetup/-/archive/v2.8.1/cryptsetup-v2.8.1.tar.gz : f422d3a0efbdd5792c88e9e10b6c495edcc60fce74fe2f340febb98590560c9e
 summary     : cryptsetup + LUKS
 description : |
     cryptsetup + LUKS - open source disk encryption
@@ -35,9 +35,9 @@ setup       : |
     %patch %(pkgdir)/0001-Fix-lockdir-perms.patch
 
     %meson \
-           -Dargon-implementation=internal \
-           -Dinternal-sse-argon2=true \
-           -Dssh-token=true
+        -Dargon-implementation=internal \
+        -Dinternal-sse-argon2=true \
+        -Dssh-token=true
 build       : |
     %meson_build
 install     : |
@@ -57,8 +57,8 @@ packages    :
         description: |
             This package contains the LUKS2 SSH token.
         paths:
-            - /usr/bin/cryptsetup-ssh
-            - /usr/lib/libcryptsetup-token-ssh.so
+            - /usr/sbin/cryptsetup-ssh
+            - /usr/lib/cryptsetup/libcryptsetup-token-ssh.so
             - /usr/share/man/man8/cryptsetup-ssh.8*
 
     - "integritysetup":
@@ -67,7 +67,7 @@ packages    :
             The integritysetup package contains a utility for setting up
             disk integrity protection using dm-integrity kernel module.
         paths:
-            - /usr/bin/integritysetup
+            - /usr/sbin/integritysetup
             - /usr/share/man/man8/integritysetup.8*
 
     - "veritysetup":
@@ -76,5 +76,5 @@ packages    :
             The veritysetup package contains a utility for setting up
             disk verification using dm-verity kernel module.
         paths:
-            - /usr/bin/veritysetup
+            - /usr/sbin/veritysetup
             - /usr/share/man/man8/veritysetup.8*

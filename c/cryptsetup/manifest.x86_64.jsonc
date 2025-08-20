@@ -27,7 +27,7 @@
 				"soname(libuuid.so.1(x86_64))"
 			],
 			"files": [
-				"/usr/bin/cryptsetup",
+				"/usr/sbin/cryptsetup",
 				"/usr/share/man/man8/cryptsetup-benchmark.8",
 				"/usr/share/man/man8/cryptsetup-bitlkDump.8",
 				"/usr/share/man/man8/cryptsetup-bitlkOpen.8",
@@ -37,6 +37,7 @@
 				"/usr/share/man/man8/cryptsetup-create.8",
 				"/usr/share/man/man8/cryptsetup-erase.8",
 				"/usr/share/man/man8/cryptsetup-fvault2Dump.8",
+				"/usr/share/man/man8/cryptsetup-fvault2Open.8",
 				"/usr/share/man/man8/cryptsetup-isLuks.8",
 				"/usr/share/man/man8/cryptsetup-loopaesOpen.8",
 				"/usr/share/man/man8/cryptsetup-luksAddKey.8",
@@ -67,7 +68,7 @@
 			],
 			"name": "cryptsetup",
 			"provides": [
-				"binary(cryptsetup)"
+				"sysbinary(cryptsetup)"
 			]
 		},
 		"cryptsetup-devel": {
@@ -183,14 +184,14 @@
 				"soname(libssh.so.4(x86_64))"
 			],
 			"files": [
-				"/usr/bin/cryptsetup-ssh",
-				"/usr/lib/libcryptsetup-token-ssh.so",
+				"/usr/lib/cryptsetup/libcryptsetup-token-ssh.so",
+				"/usr/sbin/cryptsetup-ssh",
 				"/usr/share/man/man8/cryptsetup-ssh.8"
 			],
 			"name": "cryptsetup-ssh-token",
 			"provides": [
-				"binary(cryptsetup-ssh)",
-				"soname(libcryptsetup-token-ssh.so(x86_64))"
+				"soname(cryptsetup/libcryptsetup-token-ssh.so(x86_64))",
+				"sysbinary(cryptsetup-ssh)"
 			]
 		},
 		"integritysetup": {
@@ -218,12 +219,12 @@
 				"soname(libuuid.so.1(x86_64))"
 			],
 			"files": [
-				"/usr/bin/integritysetup",
+				"/usr/sbin/integritysetup",
 				"/usr/share/man/man8/integritysetup.8"
 			],
 			"name": "integritysetup",
 			"provides": [
-				"binary(integritysetup)"
+				"sysbinary(integritysetup)"
 			]
 		},
 		"veritysetup": {
@@ -249,16 +250,16 @@
 				"soname(libpopt.so.0(x86_64))"
 			],
 			"files": [
-				"/usr/bin/veritysetup",
+				"/usr/sbin/veritysetup",
 				"/usr/share/man/man8/veritysetup.8"
 			],
 			"name": "veritysetup",
 			"provides": [
-				"binary(veritysetup)"
+				"sysbinary(veritysetup)"
 			]
 		}
 	},
 	"source-name": "cryptsetup",
-	"source-release": "8",
-	"source-version": "2.8.0"
+	"source-release": "9",
+	"source-version": "2.8.1"
 }
