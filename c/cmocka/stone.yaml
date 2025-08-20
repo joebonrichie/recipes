@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : cmocka
-version     : 1.1.7
-release     : 2
+version     : 1.1.8
+release     : 3
 homepage    : https://cmocka.org
 upstreams   :
-    - https://cmocka.org/files/1.1/cmocka-1.1.7.tar.xz : 810570eb0b8d64804331f82b29ff47c790ce9cd6b163e98d47a4807047ecad82
+    - https://cmocka.org/files/1.1/cmocka-1.1.8.tar.xz : 58435b558766d7f4c729ba163bdf3aec38bed3bc766dab684e3526ed0aa7c780
 summary     : An elegant unit testing framework for C
 description : |
     An elegant unit testing framework for C with support for mock objects. It only requires the standard C library, works on a range of computing platforms (including embedded) and with different compilers.
@@ -16,6 +16,8 @@ license     :
     - Apache-2.0
     - BSD-3-Clause
     - MIT
+builddeps   :
+    - binary(doxygen)
 setup       : |
     %cmake
 build       : |
