@@ -608,6 +608,6 @@
 		}
 	},
 	"source-name": "mozjs-128",
-	"source-release": "9",
-	"source-version": "128.13.0"
+	"source-release": "10",
+	"source-version": "128.14.0"
 }
