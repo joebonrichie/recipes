@@ -27,7 +27,7 @@
 			],
 			"files": [
 				"/usr/lib/libWPEBackend-fdo-1.0.so.1",
-				"/usr/lib/libWPEBackend-fdo-1.0.so.1.9.4"
+				"/usr/lib/libWPEBackend-fdo-1.0.so.1.10.1"
 			],
 			"name": "wpebackend-fdo",
 			"provides": [
@@ -80,6 +80,6 @@
 		}
 	},
 	"source-name": "wpebackend-fdo",
-	"source-release": "2",
-	"source-version": "1.14.2"
+	"source-release": "3",
+	"source-version": "1.16.0"
 }
