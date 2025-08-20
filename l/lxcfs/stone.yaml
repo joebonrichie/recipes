@@ -1,0 +1,31 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : lxcfs
+version     : 6.0.5
+release     : 1
+upstreams   :
+    - https://linuxcontainers.org/downloads/lxcfs/lxcfs-6.0.5.tar.gz : 91ce19087147791361115f3c8d3c647d5b0a36d386cd050ee0175bb75cc5d918
+homepage    : https://www.hadrons.org/software/libmd
+license     : BSD-3-Clause AND BSD-2-Clause
+summary     : FUSE filesystem for LXC
+description : |
+    LXCFS is a small FUSE filesystem written with the intention of making Linux containers feel more like a virtual machine
+builddeps   :
+    # - binary(help2man)
+    - pkgconfig(fuse3)
+    - pkgconfig(systemd)
+    - python(jinja2)
+setup       : |
+    # Needs help2man for docs
+    %meson \
+        -Ddocs=false
+build       : |
+    %meson_build
+install     : |
+    %meson_install
+    %install_file %(pkgdir)/lxcfs.preset -t %(installroot)/%(libdir)/systemd/system-preset
+    %install_file %(pkgdir)/lxcfs.tmpfiles %(installroot)%(tmpfilesdir)/lxcfs.conf
+    %install_file %(pkgdir)/lxcfs.service %(installroot)%(libdir)/systemd/system/lxcfs.service
