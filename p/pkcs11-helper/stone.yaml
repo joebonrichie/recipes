@@ -1,0 +1,26 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : pkcs11-helper
+version     : 1.30.0
+release     : 1
+upstreams   :
+    - https://github.com/OpenSC/pkcs11-helper/releases/download/pkcs11-helper-1.30.0/pkcs11-helper-1.30.0.tar.bz2 : 4c5815ba910cabf26df08d449ca2909daf4538c9899aa7f7fadc61229d3488a9
+homepage    : https://github.com/OpenSC/pkcs11-helper
+license     : GPL-2.0-only
+summary     : Library for interacting with PKCS#11 providers
+description : |
+    Library that simplifies the interaction with PKCS#11 providers for end-user applications using a simple API and optional OpenSSL engine
+builddeps   :
+    # This supports nss/gnutls as well but let's just use openssl to match openvpn
+    # - pkgconfig(nss)
+    - pkgconfig(openssl)
+setup       : |
+    %configure \
+        --disable-static
+build       : |
+    %make
+install     : |
+    %make_install

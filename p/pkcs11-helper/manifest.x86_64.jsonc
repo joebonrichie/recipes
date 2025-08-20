@@ -1,0 +1,57 @@
+/** Human readable report. This is not consumed by boulder */
+{
+	"manifest-version": "0.2",
+	"packages": {
+		"pkcs11-helper": {
+			"build-depends": [
+				"pkgconfig(openssl)"
+			],
+			"depends": [
+				"soname(libc.so.6(x86_64))",
+				"soname(libcrypto.so.3(x86_64))"
+			],
+			"files": [
+				"/usr/lib/libpkcs11-helper.so.1",
+				"/usr/lib/libpkcs11-helper.so.1.0.0",
+				"/usr/share/doc/pkcs11-helper/COPYING",
+				"/usr/share/doc/pkcs11-helper/COPYING.BSD",
+				"/usr/share/doc/pkcs11-helper/COPYING.GPL",
+				"/usr/share/doc/pkcs11-helper/README",
+				"/usr/share/man/man8/pkcs11-helper-1.8"
+			],
+			"name": "pkcs11-helper",
+			"provides": [
+				"soname(libpkcs11-helper.so.1(x86_64))"
+			]
+		},
+		"pkcs11-helper-devel": {
+			"build-depends": [
+				"pkgconfig(openssl)"
+			],
+			"depends": [
+				"pkcs11-helper"
+			],
+			"files": [
+				"/usr/include/pkcs11-helper-1.0/pkcs11.h",
+				"/usr/include/pkcs11-helper-1.0/pkcs11h-certificate.h",
+				"/usr/include/pkcs11-helper-1.0/pkcs11h-core.h",
+				"/usr/include/pkcs11-helper-1.0/pkcs11h-data.h",
+				"/usr/include/pkcs11-helper-1.0/pkcs11h-def.h",
+				"/usr/include/pkcs11-helper-1.0/pkcs11h-engines.h",
+				"/usr/include/pkcs11-helper-1.0/pkcs11h-openssl.h",
+				"/usr/include/pkcs11-helper-1.0/pkcs11h-token.h",
+				"/usr/include/pkcs11-helper-1.0/pkcs11h-version.h",
+				"/usr/lib/libpkcs11-helper.so",
+				"/usr/lib/pkgconfig/libpkcs11-helper-1.pc",
+				"/usr/share/aclocal/pkcs11-helper-1.m4"
+			],
+			"name": "pkcs11-helper-devel",
+			"provides": [
+				"pkgconfig(libpkcs11-helper-1)"
+			]
+		}
+	},
+	"source-name": "pkcs11-helper",
+	"source-release": "1",
+	"source-version": "1.30.0"
+}
