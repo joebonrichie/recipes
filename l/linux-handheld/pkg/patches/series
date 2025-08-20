@@ -58,4 +58,3 @@ zotac/0002-xpad-gate-the-zotac-zone-PID-behind-if-IS_REACHABLE-.patch
 zotac/0003-tmp-apply-zotac-screen-quirk.patch
 zotac/0004-TEMPORARY-terrible-hack-for-zotac-screen-while-debug.patch
 zotac/0005-zone-fix-6.15-rename-del_timer-to-timer_delete.patch
-CVE-2024-36331.patch
