@@ -5,10 +5,20 @@
 #
 name        : qt6-webengine
 version     : 6.9.1
-release     : 1
+release     : 2
 homepage    : https://www.qt.io
 upstreams   :
-    - https://download.qt.io/official_releases/qt/6.9/6.9.1/submodules/qtwebengine-everywhere-src-6.9.1.tar.xz : 787dfde22b348f6d620f2207ed7e32ad0a5389373182614272de28ff3f91c26c
+    - https://download.qt.io/official_releases/qt/6.9/6.9.1/submodules/qtwebengine-everywhere-src-6.9.1.tar.xz:
+        hash: 787dfde22b348f6d620f2207ed7e32ad0a5389373182614272de28ff3f91c26c
+        unpackdir: qtwebengine
+
+### Manage the chromium source separately so it can be updated separately from the Qt version
+### To update this run the ./update-chromium.py script
+# Don't edit anything between the BEGIN_UPSTREAMS and END_UPSTREAMS tags
+##@@BEGIN_UPSTREAMS
+    - git|https://invent.kde.org/qt/qt/qtwebengine-chromium.git:
+        ref: df66106703001b5e2d9c133fc1ca6ef611dacacc
+##@@END_UPSTREAMS
 summary     : Qt6 Webengine Module
 description : |
     The Qt WebEngine module provides a web browser engine that makes it easy to embed content from the World Wide Web into your Qt application on platforms that do not have a native web engine.
@@ -34,6 +44,7 @@ builddeps   :
     - cmake(Qt6WebSockets)
     - pkgconfig(alsa)
     - pkgconfig(epoxy)
+    - pkgconfig(expat)
     - pkgconfig(fontconfig)
     - pkgconfig(gbm)
     - pkgconfig(harfbuzz)
@@ -41,6 +52,7 @@ builddeps   :
     - pkgconfig(krb5)
     - pkgconfig(lcms2)
     - pkgconfig(libavcodec)
+    - pkgconfig(libavformat)
     - pkgconfig(libdrm)
     - pkgconfig(libjpeg)
     - pkgconfig(libopenjp2)
@@ -70,8 +82,12 @@ builddeps   :
     - python(html5lib)
     - libatomic # It builds NASM which requires this, not expressed in final ABI at least
 setup       : |
+    # Use the version of Chromium we downloaded
+    rm -rf src/3rdparty/{chromium,gn}
+    cp -ra %(sourcedir)/qtwebengine-chromium.git/chromium src/3rdparty/
+    cp -ra %(sourcedir)/qtwebengine-chromium.git/gn src/3rdparty/
+
     %patch %(pkgdir)/disable-spellchecker-demo.patch
-    %patch %(pkgdir)/ftbfs-gperf-3.2.patch
 
     # 3rdparty patches
     %patch %(pkgdir)/qtwebengine-link-pipewire.patch -d src/3rdparty
