@@ -1,6 +1,6 @@
 name        : libclc
-version     : 20.1.5
-release     : 4
+version     : 20.1.8
+release     : 5
 summary     : libclc is an open source implementation of the OpenCL 1.1 Specification
 license     :
     - Apache-2.0 WITH LLVM-exception
@@ -8,7 +8,7 @@ homepage    : https://libclc.llvm.org
 description : |
     libclc is an open source implementation of the OpenCL 1.1 Specification
 upstreams   :
-    - https://github.com/llvm/llvm-project/releases/download/llvmorg-20.1.5/libclc-20.1.5.src.tar.xz: 7aabcc31eff12bc54778c38752192939df8d983002c961cb1ac97f57e50ccff1
+    - https://github.com/llvm/llvm-project/releases/download/llvmorg-20.1.8/libclc-20.1.8.src.tar.xz: ecd83a52859742f71f4c332538f8bee54a6743374a233b5a85017de22d75c227
 builddeps   :
     - binary(python3)
     - cmake(LLVM)
