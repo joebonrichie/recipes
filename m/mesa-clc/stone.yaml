@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : mesa-clc
-version     : 25.2.0
-release     : 9
+version     : 25.2.1
+release     : 10
 homepage    : https://mesa3d.org/
 upstreams   :
-    - https://mesa.freedesktop.org/archive/mesa-25.2.0.tar.xz : 7c726b21c074d14d31d253d638b741422f3c0a497ce7f1b4aaaa917d10bd8d4f
+    - https://mesa.freedesktop.org/archive/mesa-25.2.1.tar.xz : c124372189d35f48e049ee503029171c68962c580971cb86d968a6771c965ba4
 summary     : Tool used for building OpenCL C to SPIR-V
 description : |
     %(name) tool used for building OpenCL C to SPIR-V
