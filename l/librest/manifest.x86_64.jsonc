@@ -57,6 +57,7 @@
 				"/usr/include/rest-1.0/rest-extras/flickr-proxy.h",
 				"/usr/include/rest-1.0/rest-extras/lastfm-proxy-call.h",
 				"/usr/include/rest-1.0/rest-extras/lastfm-proxy.h",
+				"/usr/include/rest-1.0/rest-extras/rest-extras.h",
 				"/usr/include/rest-1.0/rest-extras/youtube-proxy.h",
 				"/usr/include/rest-1.0/rest/rest-enum-types.h",
 				"/usr/include/rest-1.0/rest/rest-oauth2-proxy-call.h",
@@ -90,6 +91,6 @@
 		}
 	},
 	"source-name": "librest",
-	"source-release": "3",
-	"source-version": "0.9.1"
+	"source-release": "4",
+	"source-version": "0.10.2"
 }
