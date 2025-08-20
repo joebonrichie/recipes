@@ -1,0 +1,40 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : waydroid
+version     : 1.5.4
+release     : 1
+homepage    : https://waydro.id/
+upstreams   :
+    - https://github.com/waydroid/waydroid/archive/1.5.4/waydroid-1.5.4.tar.gz : b97b91673b3cc7e7f001395c08e2d2d569305216a1dd9b3c9a65f03ebc296e18
+license     : Apache-2.0
+summary     : Run Android apps on GNU/Linux
+description : |
+    Container-based approach to boot a full Android system on GNU/Linux
+rundeps     :
+    - python(dbus-python)
+    - python(gbinder-python)
+    - python(pyclip)
+    - sysbinary(nft)
+    - lxc
+setup       : |
+    %patch %(pkgdir)/0001-Service-tweaks.patch
+install     : |
+    %make_install \
+                  USE_NFTABLES=1 \
+                  APPS_MENU_DIR=/usr/share/xdg/menus/applications-merged
+    %python_compile
+
+    # Change absolute symlink to a relative one
+    link=$(readlink "%(installroot)/usr/bin/waydroid")
+    ln -srvf "%(installroot)${link}" "%(installroot)/usr/bin/waydroid"
+
+    # The service is dbus-activated, so preset it as disabled so it only starts upon request
+    %install_file %(pkgdir)/waydroid.preset -t %(installroot)/%(libdir)/systemd/system-preset
+    %install_file %(pkgdir)/waydroid-pre.service -t %(installroot)/%(libdir)/systemd/system
+    %install_file %(pkgdir)/dev-binderfs.mount -t %(installroot)/%(libdir)/systemd/system
+
+    # Fix directory permissions
+    find %(installroot) -type d -exec chmod 755 {} +

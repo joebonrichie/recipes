@@ -1,0 +1,68 @@
+/** Human readable report. This is not consumed by boulder */
+{
+	"manifest-version": "0.2",
+	"packages": {
+		"libgbinder": {
+			"build-depends": [
+				"binary(ranlib)",
+				"pkgconfig(glib-2.0)",
+				"pkgconfig(libglibutil)"
+			],
+			"depends": [
+				"soname(libc.so.6(x86_64))",
+				"soname(libglib-2.0.so.0(x86_64))",
+				"soname(libglibutil.so.1(x86_64))",
+				"soname(libgobject-2.0.so.0(x86_64))"
+			],
+			"files": [
+				"/usr/lib/libgbinder.so.1",
+				"/usr/lib/libgbinder.so.1.1",
+				"/usr/lib/libgbinder.so.1.1.42"
+			],
+			"name": "libgbinder",
+			"provides": [
+				"soname(libgbinder.so.1(x86_64))"
+			]
+		},
+		"libgbinder-devel": {
+			"build-depends": [
+				"binary(ranlib)",
+				"pkgconfig(glib-2.0)",
+				"pkgconfig(libglibutil)"
+			],
+			"depends": [
+				"libgbinder",
+				"pkgconfig(glib-2.0)",
+				"pkgconfig(libglibutil)"
+			],
+			"files": [
+				"/usr/include/gbinder/gbinder.h",
+				"/usr/include/gbinder/gbinder_bridge.h",
+				"/usr/include/gbinder/gbinder_buffer.h",
+				"/usr/include/gbinder/gbinder_client.h",
+				"/usr/include/gbinder/gbinder_eventloop.h",
+				"/usr/include/gbinder/gbinder_fmq.h",
+				"/usr/include/gbinder/gbinder_local_object.h",
+				"/usr/include/gbinder/gbinder_local_reply.h",
+				"/usr/include/gbinder/gbinder_local_request.h",
+				"/usr/include/gbinder/gbinder_reader.h",
+				"/usr/include/gbinder/gbinder_remote_object.h",
+				"/usr/include/gbinder/gbinder_remote_reply.h",
+				"/usr/include/gbinder/gbinder_remote_request.h",
+				"/usr/include/gbinder/gbinder_servicemanager.h",
+				"/usr/include/gbinder/gbinder_servicename.h",
+				"/usr/include/gbinder/gbinder_types.h",
+				"/usr/include/gbinder/gbinder_writer.h",
+				"/usr/lib/libgbinder.so",
+				"/usr/lib/pkgconfig/libgbinder.pc"
+			],
+			"name": "libgbinder-devel",
+			"provides": [
+				"pkgconfig(libgbinder)"
+			]
+		}
+	},
+	"source-name": "libgbinder",
+	"source-release": "1",
+	"source-version": "1.1.42"
+}

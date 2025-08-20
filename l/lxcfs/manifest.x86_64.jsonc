@@ -1,0 +1,37 @@
+/** Human readable report. This is not consumed by boulder */
+{
+	"manifest-version": "0.2",
+	"packages": {
+		"lxcfs": {
+			"build-depends": [
+				"pkgconfig(fuse3)",
+				"pkgconfig(systemd)",
+				"python(jinja2)"
+			],
+			"depends": [
+				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
+				"soname(libc.so.6(x86_64))",
+				"soname(libfuse3.so.4(x86_64))",
+				"soname(libunwind.so.1(x86_64))"
+			],
+			"files": [
+				"/usr/bin/lxcfs",
+				"/usr/lib/lxcfs/liblxcfs.so",
+				"/usr/lib/systemd/system-preset/lxcfs.preset",
+				"/usr/lib/systemd/system/lxcfs.service",
+				"/usr/lib/tmpfiles.d/lxcfs.conf",
+				"/usr/share/lxc/config/common.conf.d/00-lxcfs.conf",
+				"/usr/share/lxcfs/lxc.mount.hook",
+				"/usr/share/lxcfs/lxc.reboot.hook"
+			],
+			"name": "lxcfs",
+			"provides": [
+				"binary(lxcfs)",
+				"soname(lxcfs/liblxcfs.so(x86_64))"
+			]
+		}
+	},
+	"source-name": "lxcfs",
+	"source-release": "1",
+	"source-version": "6.0.5"
+}

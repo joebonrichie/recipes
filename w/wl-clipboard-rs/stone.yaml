@@ -1,0 +1,46 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Aeryn OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : wl-clipboard-rs
+version     : 0.9.2
+release     : 1
+homepage    : https://github.com/YaLTeR/wl-clipboard-rs
+upstreams   :
+    - https://github.com/YaLTeR/wl-clipboard-rs/archive/v0.9.2.tar.gz: bf85492a40008913eb6e76be9952c8ca959b20dd418e2086904b5fedceb4bac7
+summary     : Rust-based command-line copy/paste utilities for Wayland
+description : |
+    A Rust reimplementation of wl-clipboard tools for Wayland compositors.
+license     :
+    - MIT
+    - Apache-2.0
+networking  : yes
+environment : |
+    mkdir -p .runtime
+    export XDG_RUNTIME_DIR=%(workdir)/.runtime
+setup       : |
+    %cargo_fetch
+build       : |
+    cd wl-clipboard-rs-tools
+    %cargo_build
+install     : |
+    # Binaries
+    %install_exe %(cargo_target_dir)/wl-clip        %(installroot)%(bindir)/wl-clip
+    %install_exe %(cargo_target_dir)/wl-copy        %(installroot)%(bindir)/wl-copy
+    %install_exe %(cargo_target_dir)/wl-paste       %(installroot)%(bindir)/wl-paste
+
+    # Completions
+    %install_file target/completions/_wl-copy       %(installroot)%(zshcompletionsdir)/_wl-copy
+    %install_file target/completions/_wl-paste      %(installroot)%(zshcompletionsdir)/_wl-paste
+    %install_file target/completions/wl-copy.bash   %(installroot)%(bashcompletionsdir)/wl-copy
+    %install_file target/completions/wl-paste.bash  %(installroot)%(bashcompletionsdir)/wl-paste
+    %install_file target/completions/wl-copy.fish   %(installroot)%(fishcompletionsdir)/wl-copy.fish
+    %install_file target/completions/wl-paste.fish  %(installroot)%(fishcompletionsdir)/wl-paste.fish
+
+    # Man pages
+    %install_file target/man/wl-copy.1              %(installroot)%(mandir)/wl-copy.1
+    %install_file target/man/wl-paste.1             %(installroot)%(mandir)/wl-paste.1
+check       : |
+    cd wl-clipboard-rs-tools
+    %cargo_test
