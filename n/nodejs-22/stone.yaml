@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : nodejs-22
-version     : 22.16.0
-release     : 2
+version     : 22.18.0
+release     : 3
 homepage    : https://nodejs.org/
 upstreams   :
-    - https://nodejs.org/dist/v22.16.0/node-v22.16.0.tar.gz : 108f250ff79cc103b464b3ef41fa60f4866e4e6c962117171adaac7325ebdab2
+    - https://nodejs.org/dist/v22.18.0/node-v22.18.0.tar.gz : 26247ff9a75ac13f6dac7e07dca6172314554dcf20761675c5435f1e84e6c4b2
 summary     : A JavaScript runtime environment.
 description : |
     Node.js is an open-source, cross-platform JavaScript runtime environment.
@@ -20,12 +20,13 @@ builddeps   :
     - pkgconfig(bzip2)
     - pkgconfig(icu-i18n)
     - pkgconfig(libbrotlicommon)
+    - pkgconfig(libcares)
     - pkgconfig(libnghttp2)
     - pkgconfig(libuv)
     - pkgconfig(openssl)
     - pkgconfig(sqlite3)
     - pkgconfig(zlib)
-    # TODO: c-ares, nghttp3
+    # TODO: nghttp3
 environment : |
     NODEJS_MAJOR=22
     NODEJS_SONAME=127
@@ -34,18 +35,19 @@ setup       : |
     %patch %(pkgdir)/0001-Don-t-try-to-link-libatomic.patch
 
     python configure.py \
-           --ninja \
-           --enable-lto \
-           --prefix=%(prefix) \
-           --libdir=lib \
-           --shared \
-           --shared-brotli \
-           --shared-libuv \
-           --shared-nghttp2 \
-           --shared-openssl \
-           --shared-sqlite \
-           --shared-zlib \
-           --with-intl=system-icu
+        --ninja \
+        --enable-lto \
+        --prefix=%(prefix) \
+        --libdir=lib \
+        --shared \
+        --shared-brotli \
+        --shared-cares \
+        --shared-libuv \
+        --shared-nghttp2 \
+        --shared-openssl \
+        --shared-sqlite \
+        --shared-zlib \
+        --with-intl=system-icu
 build       : |
     ninja -j %(jobs) -C out/Release
 install     : |
