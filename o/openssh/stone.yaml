@@ -5,7 +5,7 @@
 #
 name        : openssh
 version     : "10.0p2"
-release     : 12
+release     : 13
 summary     : OpenSSH (OpenBSD Secure Shell)
 license     :
     - BSD-2-Clause
@@ -53,10 +53,14 @@ build       : |
 install     : |
     %make_install
 
-    # TODO ssh-copy-id, split out ssh-agent
+    # TODO ssh-copy-id, pass COLORTERM variable
 
     # systemd unit files (enabled by default)
     %install_file %(pkgdir)/sshd*.service -t %(installroot)/%(libdir)/systemd/system/
+
+    # ssh-agent service. Socket-activated, so enable the socket but not the service
+    %install_file %(pkgdir)/ssh-agent.{service,socket} -t %(installroot)/%(libdir)/systemd/user/
+    %install_file %(pkgdir)/ssh-agent.preset -t %(installroot)/%(libdir)/systemd/user-preset/
 
     # PAM configuration
     %install_file %(pkgdir)/sshd.pam %(installroot)/%(vendordir)/pam.d/sshd
@@ -88,7 +92,7 @@ packages    :
             - /usr/sbin/
             - /usr/lib/openssh/sshd-*
             - /usr/lib/openssh/sftp-server
-            - /usr/lib/systemd/
+            - /usr/lib/systemd/system/
             - /usr/lib/sysusers.d/openssh-server.conf
             - /usr/lib/tmpfiles.d/openssh-server.conf
             - /usr/share/defaults/pam.d/

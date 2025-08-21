@@ -33,6 +33,9 @@
 				"/usr/lib/openssh/ssh-keysign",
 				"/usr/lib/openssh/ssh-pkcs11-helper",
 				"/usr/lib/openssh/ssh-sk-helper",
+				"/usr/lib/systemd/user-preset/ssh-agent.preset",
+				"/usr/lib/systemd/user/ssh-agent.service",
+				"/usr/lib/systemd/user/ssh-agent.socket",
 				"/usr/share/defaults/ssh/ssh_config",
 				"/usr/share/man/cat1/scp.1",
 				"/usr/share/man/cat1/sftp.1",
@@ -100,6 +103,6 @@
 		}
 	},
 	"source-name": "openssh",
-	"source-release": "12",
+	"source-release": "13",
 	"source-version": "10.0p2"
 }
