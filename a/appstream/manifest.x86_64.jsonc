@@ -39,12 +39,9 @@
 			"files": [
 				"/usr/bin/appstreamcli",
 				"/usr/lib/girepository-1.0/AppStream-1.0.typelib",
-				"/usr/lib/libappstream.so.1.0.5",
+				"/usr/lib/libappstream.so.1.0.6",
 				"/usr/lib/libappstream.so.5",
 				"/usr/share/appstream/appstream.conf",
-				"/usr/share/gettext/its/metainfo.its",
-				"/usr/share/gettext/its/metainfo.loc",
-				"/usr/share/installed-tests/appstream/metainfo-validate.test",
 				"/usr/share/locale/ain/LC_MESSAGES/appstream.mo",
 				"/usr/share/locale/ar/LC_MESSAGES/appstream.mo",
 				"/usr/share/locale/bn/LC_MESSAGES/appstream.mo",
@@ -89,14 +86,13 @@
 				"/usr/share/locale/sr@latin/LC_MESSAGES/appstream.mo",
 				"/usr/share/locale/sv/LC_MESSAGES/appstream.mo",
 				"/usr/share/locale/ta/LC_MESSAGES/appstream.mo",
+				"/usr/share/locale/th/LC_MESSAGES/appstream.mo",
 				"/usr/share/locale/tr/LC_MESSAGES/appstream.mo",
 				"/usr/share/locale/uk/LC_MESSAGES/appstream.mo",
 				"/usr/share/locale/zh_CN/LC_MESSAGES/appstream.mo",
 				"/usr/share/locale/zh_TW/LC_MESSAGES/appstream.mo",
 				"/usr/share/man/man1/appstreamcli.1",
-				"/usr/share/metainfo/org.freedesktop.appstream.cli.metainfo.xml",
-				"/usr/share/vala/vapi/appstream.deps",
-				"/usr/share/vala/vapi/appstream.vapi"
+				"/usr/share/metainfo/org.freedesktop.appstream.cli.metainfo.xml"
 			],
 			"name": "appstream",
 			"provides": [
@@ -174,7 +170,12 @@
 				"/usr/include/appstream/as-video.h",
 				"/usr/lib/libappstream.so",
 				"/usr/lib/pkgconfig/appstream.pc",
-				"/usr/share/gir-1.0/AppStream-1.0.gir"
+				"/usr/share/gettext/its/metainfo.its",
+				"/usr/share/gettext/its/metainfo.loc",
+				"/usr/share/gir-1.0/AppStream-1.0.gir",
+				"/usr/share/installed-tests/appstream/metainfo-validate.test",
+				"/usr/share/vala/vapi/appstream.deps",
+				"/usr/share/vala/vapi/appstream.vapi"
 			],
 			"name": "appstream-devel",
 			"provides": [
@@ -213,7 +214,7 @@
 				"soname(libunwind.so.1(x86_64))"
 			],
 			"files": [
-				"/usr/lib/libAppStreamQt.so.1.0.5",
+				"/usr/lib/libAppStreamQt.so.1.0.6",
 				"/usr/lib/libAppStreamQt.so.3"
 			],
 			"name": "appstream-qt6",
@@ -284,6 +285,6 @@
 		}
 	},
 	"source-name": "appstream",
-	"source-release": "9",
-	"source-version": "1.0.5"
+	"source-release": "10",
+	"source-version": "1.0.6"
 }

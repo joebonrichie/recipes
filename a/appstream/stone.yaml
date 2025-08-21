@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : appstream
-version     : 1.0.5
-release     : 9
+version     : 1.0.6
+release     : 10
 homepage    : https://www.freedesktop.org/wiki/Distributions/AppStream/
 upstreams   :
-    - https://www.freedesktop.org/software/appstream/releases/AppStream-1.0.5.tar.xz : ce0ed29e89abd5f0cf790ea87d792f1967c3413060beb30e63a979578d975121
+    - https://www.freedesktop.org/software/appstream/releases/AppStream-1.0.6.tar.xz : db4439db6a33de3ca1041473501610844ddf1b72ae23016c05242c681c380b4d
 summary     : Tools and libraries to work with AppStream metadata
 description : |
     AppStream is a cross-distribution effort for enhancing the way we interact with the software repositories provided by (Linux) distributions by standardizing software component metadata.
@@ -53,12 +53,19 @@ build       : |
 install     : |
     %meson_install
 packages    :
+    - "%(name)-devel":
+        paths:
+            - /usr/share/gettext/its/
+            - /usr/share/installed-tests/
+            - /usr/share/vala/
+
     - "%(name)-qt6":
         summary: "Tools and libraries to work with AppStream metadata - Qt6 bindings"
         description: |
             Tools and libraries to work with AppStream metadata - Qt6 bindings
         paths:
             - /usr/lib/libAppStreamQt.so.*
+
     - "%(name)-qt6-devel":
         summary: "Tools and libraries to work with AppStream metadata - Qt6 bindings (development files)"
         description: |
