@@ -12,6 +12,8 @@
 				"cmake(KF6WidgetsAddons)"
 			],
 			"depends": [
+				"binary(ssh-add)",
+				"binary(ssh-agent)",
 				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
 				"soname(libKF6CoreAddons.so.6(x86_64))",
 				"soname(libKF6I18n.so.6(x86_64))",
@@ -78,7 +80,8 @@
 				"/usr/share/locale/vi/LC_MESSAGES/ksshaskpass.mo",
 				"/usr/share/locale/zh_CN/LC_MESSAGES/ksshaskpass.mo",
 				"/usr/share/locale/zh_TW/LC_MESSAGES/ksshaskpass.mo",
-				"/usr/share/man/man1/ksshaskpass.1"
+				"/usr/share/man/man1/ksshaskpass.1",
+				"/usr/share/xdg/plasma-workspace/env/ksshaskpass.sh"
 			],
 			"name": "ksshaskpass",
 			"provides": [
@@ -87,6 +90,6 @@
 		}
 	},
 	"source-name": "ksshaskpass",
-	"source-release": "2",
+	"source-release": "3",
 	"source-version": "6.4.4"
 }

@@ -5,7 +5,7 @@
 #
 name        : ksshaskpass
 version     : 6.4.4
-release     : 2
+release     : 3
 upstreams   :
     - https://download.kde.org/stable/plasma/6.4.4/ksshaskpass-6.4.4.tar.xz : ab47b94b6024fab148c9a7a8f8c4403a81edea96eabbb0d5f805a120fc5df230
 homepage    : https://kde.org/plasma-desktop/
@@ -21,6 +21,9 @@ builddeps   :
     - cmake(KF6I18n)
     - cmake(KF6Wallet)
     - cmake(KF6WidgetsAddons)
+rundeps     :
+    - binary(ssh-add)
+    - binary(ssh-agent)
 tuning      :
     - lto: full
     - optimize: speed
@@ -30,5 +33,7 @@ build       : |
     %cmake_build
 install     : |
     %cmake_install
+
+    %install_file %(pkgdir)/ksshaskpass.env %(installroot)%(datadir)/xdg/plasma-workspace/env/ksshaskpass.sh
 
     # TODO: Needs to be rebuilt once we support capabilities
