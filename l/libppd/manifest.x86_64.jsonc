@@ -5,11 +5,15 @@
 		"libppd": {
 			"build-depends": [
 				"binary(gs)",
+				"binary(msgfmt)",
+				"binary(pdftops)",
 				"pkgconfig(cups)",
 				"pkgconfig(libcupsfilters)",
 				"pkgconfig(zlib)"
 			],
 			"depends": [
+				"binary(gs)",
+				"binary(pdftops)",
 				"soname(libc++.so.1(x86_64))",
 				"soname(libc.so.6(x86_64))",
 				"soname(libcups.so.2(x86_64))",
@@ -47,6 +51,8 @@
 		"libppd-devel": {
 			"build-depends": [
 				"binary(gs)",
+				"binary(msgfmt)",
+				"binary(pdftops)",
 				"pkgconfig(cups)",
 				"pkgconfig(libcupsfilters)",
 				"pkgconfig(zlib)"
@@ -68,6 +74,6 @@
 		}
 	},
 	"source-name": "libppd",
-	"source-release": "3",
-	"source-version": "2.1.0"
+	"source-release": "4",
+	"source-version": "2.1.1"
 }
