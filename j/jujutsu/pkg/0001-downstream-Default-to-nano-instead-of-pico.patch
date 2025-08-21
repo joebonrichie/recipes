@@ -1,0 +1,17 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: Reilly Brogan <reilly@reillybrogan.com>
+Date: Thu, 21 Aug 2025 10:12:21 -0500
+Subject: [PATCH] downstream: Default to nano instead of pico
+
+---
+ cli/src/config/unix.toml | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/cli/src/config/unix.toml b/cli/src/config/unix.toml
+index 2022aa8ae..07b1760b2 100644
+--- a/cli/src/config/unix.toml
++++ b/cli/src/config/unix.toml
+@@ -1,2 +1,2 @@
+ [ui]
+-editor = "pico"
++editor = "nano"
