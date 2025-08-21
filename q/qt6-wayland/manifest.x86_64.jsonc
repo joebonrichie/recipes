@@ -218,6 +218,7 @@
 				"/usr/include/qt6/QtWaylandClient/6.9.1/QtWaylandClient/private/qwayland-fractional-scale-v1.h",
 				"/usr/include/qt6/QtWaylandClient/6.9.1/QtWaylandClient/private/qwayland-hardware-integration.h",
 				"/usr/include/qt6/QtWaylandClient/6.9.1/QtWaylandClient/private/qwayland-pointer-gestures-unstable-v1.h",
+				"/usr/include/qt6/QtWaylandClient/6.9.1/QtWaylandClient/private/qwayland-pointer-warp-v1.h",
 				"/usr/include/qt6/QtWaylandClient/6.9.1/QtWaylandClient/private/qwayland-qt-key-unstable-v1.h",
 				"/usr/include/qt6/QtWaylandClient/6.9.1/QtWaylandClient/private/qwayland-qt-text-input-method-unstable-v1.h",
 				"/usr/include/qt6/QtWaylandClient/6.9.1/QtWaylandClient/private/qwayland-qt-windowmanager.h",
@@ -297,6 +298,7 @@
 				"/usr/include/qt6/QtWaylandClient/6.9.1/QtWaylandClient/private/wayland-fractional-scale-v1-client-protocol.h",
 				"/usr/include/qt6/QtWaylandClient/6.9.1/QtWaylandClient/private/wayland-hardware-integration-client-protocol.h",
 				"/usr/include/qt6/QtWaylandClient/6.9.1/QtWaylandClient/private/wayland-pointer-gestures-unstable-v1-client-protocol.h",
+				"/usr/include/qt6/QtWaylandClient/6.9.1/QtWaylandClient/private/wayland-pointer-warp-v1-client-protocol.h",
 				"/usr/include/qt6/QtWaylandClient/6.9.1/QtWaylandClient/private/wayland-qt-key-unstable-v1-client-protocol.h",
 				"/usr/include/qt6/QtWaylandClient/6.9.1/QtWaylandClient/private/wayland-qt-text-input-method-unstable-v1-client-protocol.h",
 				"/usr/include/qt6/QtWaylandClient/6.9.1/QtWaylandClient/private/wayland-qt-windowmanager-client-protocol.h",
@@ -1025,6 +1027,6 @@
 		}
 	},
 	"source-name": "qt6-wayland",
-	"source-release": "7",
+	"source-release": "8",
 	"source-version": "6.9.1"
 }
