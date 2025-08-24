@@ -1,0 +1,82 @@
+#
+# SPDX-FileCopyrightText: © 2020-2024 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : gamescope
+version     : 3.16.17
+release     : 1
+homepage    : https://github.com/ValveSoftware/gamescope
+upstreams   :
+    - git|https://github.com/ValveSoftware/gamescope.git : cf288b95fa376a15f30fe8d1a9f750cad54742df
+    - git|https://github.com/misyltoad/GamescopeShaders.git : 64d7a0570e15dc5c9aeef084278b9eb4cc1abb25
+summary     : SteamOS session compositing window manager
+description : |
+    In an embedded session usecase, gamescope does the same thing as steamcompmgr, but with less extra copies and latency.
+license     :
+    - BSD-2-Clause
+    - GPL-3.0-only
+networking  : yes
+builddeps   :
+    - binary(glslangValidator)
+    - pkgconfig(egl)
+    - pkgconfig(gbm)
+    - pkgconfig(glesv2)
+    - pkgconfig(hwdata)
+    - pkgconfig(jsoncpp)
+    - pkgconfig(lcms2)
+    - pkgconfig(libcap)
+    - pkgconfig(libdisplay-info)
+    - pkgconfig(libdrm)
+    - pkgconfig(libdecor-0)
+    - pkgconfig(libeis-1.0)
+    - pkgconfig(libinput)
+    - pkgconfig(libpipewire-0.3)
+    - pkgconfig(libseat)
+    - pkgconfig(libudev)
+    - pkgconfig(luajit)
+    - pkgconfig(pixman-1)
+    - pkgconfig(sdl2)
+    - pkgconfig(vulkan)
+    - pkgconfig(wayland-client)
+    - pkgconfig(wayland-protocols)
+    - pkgconfig(x11)
+    - pkgconfig(xcb-ewmh)
+    - pkgconfig(xcomposite)
+    - pkgconfig(xcursor)
+    - pkgconfig(xdamage)
+    - pkgconfig(xkbcommon)
+    - pkgconfig(xmu)
+    - pkgconfig(xres)
+    - pkgconfig(xtst)
+    - pkgconfig(xwayland)
+    - pkgconfig(xxf86vm)
+    # TODO: Use system glm
+    # TODO: xcb-errors
+rundeps     :
+    - binary(Xwayland)
+setup       : |
+    # Build fixes
+    %patch %(pkgdir)/ftbfs-libc++.patch
+    %patch %(pkgdir)/ftbfs-libdisplay-info-0.3.patch
+    %patch %(pkgdir)/openvr-system-cpp.patch -d subprojects/openvr
+
+    # Upstream backports
+    %patch %(pkgdir)/1828.patch
+    %patch %(pkgdir)/1867.patch
+
+    %meson \
+        --wrap-mode=default \
+        -Dforce_fallback_for="libliftoff,stb,vkroots,wlroots"
+build       : |
+    %meson_build
+install     : |
+    %install_dir %(installroot)/usr/share/gamescope/reshade
+    cp -rv %(workdir)/../GamescopeShaders.git/* %(installroot)/usr/share/gamescope/reshade/
+    %meson_install --skip-subprojects
+
+    # TODO: Add capabilities
+packages    :
+    - "%(name)":
+        paths:
+            - /usr/lib/*.so
