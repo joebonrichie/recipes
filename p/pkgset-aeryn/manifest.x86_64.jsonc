@@ -45,6 +45,7 @@
 		"pkgset-aeryn-utilities": {
 			"depends": [
 				"bash-completion",
+				"binary(clear)",
 				"binary(file)",
 				"binary(find)",
 				"binary(gawk)",
@@ -79,6 +80,6 @@
 		}
 	},
 	"source-name": "pkgset-aeryn",
-	"source-release": "12",
+	"source-release": "13",
 	"source-version": "2025.08"
 }

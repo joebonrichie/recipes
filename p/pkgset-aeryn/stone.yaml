@@ -5,7 +5,7 @@
 #
 name        : pkgset-aeryn
 version     : "2025.08" # I guess let's just match the OS version for now
-release     : 12
+release     : 13
 homepage    : https://aerynos.com/
 # No upstreams!
 summary     : pkgset virtual packages
@@ -47,6 +47,7 @@ packages    :
             Useful utilities that are commonly installed on Linux systems. It is not recommended to uninstall this package.
         rundeps:
             - bash-completion
+            - binary(clear)
             - binary(file)
             - binary(find)
             - binary(gawk)
