@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : sudo-rs
-version     : "0.2.7"
-release     : 13
+version     : "0.2.8"
+release     : 14
 homepage    : https://github.com/trifectatechfoundation/sudo-rs
 upstreams   :
-    - https://github.com/trifectatechfoundation/sudo-rs/archive/refs/tags/v0.2.7.tar.gz : d4e7b49634bf9c8a897a26afe85118ef941ff0914765b8720798821d2fe8c402
+    - https://github.com/trifectatechfoundation/sudo-rs/archive/refs/tags/v0.2.8.tar.gz : 5b3823cc60abc5d90dbf0ae3a37d92445215e2697e6997c56148f5d0ac371ece
 summary     : A memory safe implementation of sudo and su
 description : |
     A safety oriented and memory safe implementation of sudo and su written in Rust.
@@ -18,30 +18,12 @@ license     :
 builddeps   :
     - pkgconfig(pam)
     - binary(go-md2man)
-packages    :
-    - sudo:
-        summary: Transitional package for sudo-rs
-        paths:
-            - /usr/share/doc/sudo-rs/TRANSITION
-        rundeps:
-            - sudo-rs
-    - sudo-dbginfo:
-        summary: Transitional package for sudo-rs-dbginfo
-        paths:
-            - /usr/share/doc/sudo-rs/TRANSITION.dbginfo
-        rundeps:
-            - sudo-rs-dbginfo
-    - sudo-devel:
-        summary: Transitional package for sudo-rs-devel
-        paths:
-            - /usr/share/doc/sudo-rs/TRANSITION.devel
-        rundeps:
-            - sudo-rs
 networking  : true
 tuning      :
     - lto: thin
 setup       : |
     %patch %(pkgdir)/0001-vi-sudo-Support-stateless-default-paths.patch
+    %patch %(pkgdir)/0001-downstream-Update-default-PATH.patch
     %cargo_fetch
 build       : |
     %cargo_build --features pam-login
@@ -79,3 +61,24 @@ install     : |
 check       : |
     # Currently stateless will break some tests involving /etc/hosts
     %cargo_test --all-features || true
+packages    :
+    - sudo:
+        summary: Transitional package for sudo-rs
+        paths:
+            - /usr/share/doc/sudo-rs/TRANSITION
+        rundeps:
+            - sudo-rs
+
+    - sudo-dbginfo:
+        summary: Transitional package for sudo-rs-dbginfo
+        paths:
+            - /usr/share/doc/sudo-rs/TRANSITION.dbginfo
+        rundeps:
+            - sudo-rs-dbginfo
+
+    - sudo-devel:
+        summary: Transitional package for sudo-rs-devel
+        paths:
+            - /usr/share/doc/sudo-rs/TRANSITION.devel
+        rundeps:
+            - sudo-rs
