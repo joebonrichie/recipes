@@ -5,7 +5,7 @@
 #
 name        : util-linux
 version     : 2.41.1
-release     : 13
+release     : 14
 summary     : Random collection of Linux utilities
 license     :
     - BSD-3-Clause
@@ -47,6 +47,7 @@ profiles    :
     - emul32:
         setup: |
             %patch %(pkgdir)/0001-fix-build-with-econf.patch
+            %patch %(pkgdir)/0001-downstream-Update-default-PATH.patch
 
             # Just disable everything that's not a library
             %meson \
@@ -82,12 +83,14 @@ profiles    :
                 -Dcryptsetup=disabled \
                 -Dmagic=disabled \
                 -Dpython=disabled \
+                -Dusrdir-path=enabled \
                 -Dvendordir=%(vendordir)
         install     : |
             %meson_install
             rm -fv %(installroot)%(libdir)/*.a
 setup       : |
     %patch %(pkgdir)/0001-fix-build-with-econf.patch
+    %patch %(pkgdir)/0001-downstream-Update-default-PATH.patch
 
     # TODO:
     # - figure out what we want to do with uuidd, if anything
@@ -100,6 +103,7 @@ setup       : |
         -Dbuild-sulogin=disabled \
         -Dbuild-uuidd=disabled \
         -Dbuild-vipw=disabled \
+        -Dusrdir-path=enabled \
         -Dvendordir=%(vendordir)
 build       : |
     %meson_build

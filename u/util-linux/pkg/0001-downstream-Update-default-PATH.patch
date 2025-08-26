@@ -1,0 +1,48 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: Reilly Brogan <reilly@reillybrogan.com>
+Date: Tue, 26 Aug 2025 16:14:02 -0500
+Subject: [PATCH] downstream: Update default PATH
+
+---
+ include/pathnames.h | 2 +-
+ meson.build         | 1 +
+ meson_options.txt   | 1 +
+ 3 files changed, 3 insertions(+), 1 deletion(-)
+
+diff --git a/include/pathnames.h b/include/pathnames.h
+index 34ba11c..deb4f3d 100644
+--- a/include/pathnames.h
++++ b/include/pathnames.h
+@@ -20,7 +20,7 @@
+ #undef _PATH_DEFPATH
+ 
+ #ifdef USE_USRDIR_PATHS_ONLY
+-# define _PATH_DEFPATH	        "/usr/local/bin:/usr/bin"
++# define _PATH_DEFPATH	        "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin"
+ #else
+ # define _PATH_DEFPATH	        "/usr/local/bin:/bin:/usr/bin"
+ #endif
+diff --git a/meson.build b/meson.build
+index 84fa4c8..330f297 100644
+--- a/meson.build
++++ b/meson.build
+@@ -469,6 +469,7 @@ conf.set('HAVE_LIBAUDIT', lib_audit.found() ? 1 : false)
+ 
+ conf.set('HAVE_SMACK', not get_option('smack').disabled())
+ 
++conf.set('USE_USRDIR_PATHS_ONLY', not get_option('usrdir-path').disabled())
+ 
+ foreach header : headers
+   have = cc.has_header(header)
+diff --git a/meson_options.txt b/meson_options.txt
+index 1ec9046..ca955ed 100644
+--- a/meson_options.txt
++++ b/meson_options.txt
+@@ -27,6 +27,7 @@ option('widechar',    type : 'feature',
+        description : 'compile with wide character support')
+ option('translate-docs', type : 'feature',
+        description : 'translate documentation')
++option('usrdir-path',       type : 'feature', value : 'disabled')
+ 
+ # enable building of various programs and features ("build-" prefix)
+ 
