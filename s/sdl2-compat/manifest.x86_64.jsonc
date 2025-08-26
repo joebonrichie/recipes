@@ -138,6 +138,7 @@
 				"/usr/lib/libSDL2_test.a",
 				"/usr/lib/libSDL2main.a",
 				"/usr/lib/pkgconfig/sdl2-compat.pc",
+				"/usr/lib/pkgconfig/sdl2.pc",
 				"/usr/share/aclocal/sdl2.m4"
 			],
 			"name": "sdl2-compat-devel",
@@ -145,11 +146,12 @@
 				"binary(sdl2-config)",
 				"cmake(SDL2)",
 				"cmake(sdl2)",
+				"pkgconfig(sdl2)",
 				"pkgconfig(sdl2-compat)"
 			]
 		}
 	},
 	"source-name": "sdl2-compat",
-	"source-release": "4",
+	"source-release": "5",
 	"source-version": "2.32.56"
 }
