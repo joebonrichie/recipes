@@ -5,7 +5,7 @@
 #
 name        : kontactinterface
 version     : 25.08.0
-release     : 4
+release     : 5
 upstreams   :
     - https://download.kde.org/stable/release-service/25.08.0/src/kontactinterface-25.08.0.tar.xz : bee3a6e38a36190d494581bddc9fff9441e43c31e3c99a9bb9b9bcad6ffbca47
 homepage    : https://kde.org

@@ -5,7 +5,7 @@
 #
 name        : kf6-kholidays
 version     : 6.17.0
-release     : 3
+release     : 4
 upstreams   :
     - https://download.kde.org/stable/frameworks/6.17/kholidays-6.17.0.tar.xz : 5b8e7df887bf790eddd6533910eefa9b00a77f2675260da71f36b95cb764fab2
 homepage    : https://community.kde.org/Frameworks

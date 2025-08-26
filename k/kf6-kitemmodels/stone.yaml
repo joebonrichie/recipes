@@ -5,7 +5,7 @@
 #
 name        : kf6-kitemmodels
 version     : 6.17.0
-release     : 3
+release     : 4
 upstreams   :
     - https://download.kde.org/stable/frameworks/6.17/kitemmodels-6.17.0.tar.xz : b9004417b5e9bb3309434ab90819889590f6bfa32d4a65388d052df432c0b166
 homepage    : https://community.kde.org/Frameworks

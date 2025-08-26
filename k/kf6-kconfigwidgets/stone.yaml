@@ -5,7 +5,7 @@
 #
 name        : kf6-kconfigwidgets
 version     : 6.17.0
-release     : 9
+release     : 10
 upstreams   :
     - https://download.kde.org/stable/frameworks/6.17/kconfigwidgets-6.17.0.tar.xz : 0bc5366d38dcbe12aea32aa84e77e9c278d3c63aeed6f509af52848a30a41e21
 homepage    : https://community.kde.org/Frameworks

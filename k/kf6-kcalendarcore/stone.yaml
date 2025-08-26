@@ -5,7 +5,7 @@
 #
 name        : kf6-kcalendarcore
 version     : 6.17.0
-release     : 2
+release     : 3
 upstreams   :
     - https://download.kde.org/stable/frameworks/6.17/kcalendarcore-6.17.0.tar.xz : 4a0675c6211caf183a067194b24093dc63015a1a59be07b864cf45f7acd18e13
 homepage    : https://community.kde.org/Frameworks

@@ -5,7 +5,7 @@
 #
 name        : spectacle
 version     : 6.4.4
-release     : 4
+release     : 5
 upstreams   :
     - https://download.kde.org/stable/plasma/6.4.4/spectacle-6.4.4.tar.xz : 9108a739c1acc43b23e0a6aa17ba4194a564ab1548c6887328c76a073bf3d373
 homepage    : https://kde.org/plasma-desktop/
