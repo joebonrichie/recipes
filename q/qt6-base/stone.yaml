@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : qt6-base
-version     : 6.9.1
-release     : 13
+version     : 6.9.2
+release     : 14
 homepage    : https://www.qt.io
 upstreams   :
-    - https://download.qt.io/official_releases/qt/6.9/6.9.1/submodules/qtbase-everywhere-src-6.9.1.tar.xz : 40caedbf83cc9a1959610830563565889878bc95f115868bbf545d1914acf28e
+    - https://download.qt.io/official_releases/qt/6.9/6.9.2/submodules/qtbase-everywhere-src-6.9.2.tar.xz : 44be9c9ecfe04129c4dea0a7e1b36ad476c9cc07c292016ac98e7b41514f2440
 summary     : Cross platform application and UI framework
 description : |
     Cross platform application and UI framework
@@ -66,17 +66,9 @@ builddeps   :
 setup       : |
     %patch %(pkgdir)/0001-Adjust-build-flags.patch
     %patch %(pkgdir)/0001-Support-stateless-config-directories.patch
-    %patch %(pkgdir)/CVE-2025-5992.patch
 
     # Upstream backports
     %patch %(pkgdir)/0001-Drop-CMAKE_SYSTEM_VERSION-from-modules-json-if-Linux.patch
-    %patch %(pkgdir)/0002-Http2-fix-handling-incoming-frames-on-locally-reset-.patch
-    %patch %(pkgdir)/0003-Http2-Explicitly-send-RST_STREAM-on-cancelled-reques.patch
-    %patch %(pkgdir)/0004-Http2ProtocolHandler-fix-logic-error-with-potential-.patch
-    %patch %(pkgdir)/0005-QMainWindowTabBar-Use-QPointer-for-mainWindow-member.patch
-    %patch %(pkgdir)/0006-QMainWindowTabBar-dockAt-avoid-nullptr-access.patch
-    %patch %(pkgdir)/0007-Centralise-usage-of-unused-tab-bars-in-QMainWindowLa.patch
-    %patch %(pkgdir)/0008-Remove-handling-of-unused-tab-bars-in-QMainWindowLay.patch
 
     ## 2024-01-18 Note
     # Enabling -DQT_FEATURE_openssl_hash=ON with Qt 6.6.1 seems to break some applications use of TLS.
