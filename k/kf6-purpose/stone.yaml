@@ -5,7 +5,7 @@
 #
 name        : kf6-purpose
 version     : 6.17.0
-release     : 4
+release     : 5
 upstreams   :
     - https://download.kde.org/stable/frameworks/6.17/purpose-6.17.0.tar.xz : 689565d5eb0999e1ccd92e8f841fc8241ab02489ca6c339f48d541b5ba93764a
 homepage    : https://community.kde.org/Frameworks
