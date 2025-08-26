@@ -1,0 +1,16 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: Reilly Brogan <reilly@reillybrogan.com>
+Date: Tue, 26 Aug 2025 13:35:25 -0500
+Subject: [PATCH] downstream: Update default PATH
+
+---
+ sysdeps/unix/confstr.h | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/sysdeps/unix/confstr.h b/sysdeps/unix/confstr.h
+index 15859c3b27..ce1c5609ed 100644
+--- a/sysdeps/unix/confstr.h
++++ b/sysdeps/unix/confstr.h
+@@ -1 +1 @@
+-#define	CS_PATH	"/bin:/usr/bin"
++#define	CS_PATH	"/usr/bin:/usr/sbin"
