@@ -4,13 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : qt6-webengine
-version     : 6.9.1
-release     : 2
+version     : 6.9.2
+release     : 3
 homepage    : https://www.qt.io
 upstreams   :
-    - https://download.qt.io/official_releases/qt/6.9/6.9.1/submodules/qtwebengine-everywhere-src-6.9.1.tar.xz:
-        hash: 787dfde22b348f6d620f2207ed7e32ad0a5389373182614272de28ff3f91c26c
-        unpackdir: qtwebengine
+    - https://download.qt.io/official_releases/qt/6.9/6.9.2/submodules/qtwebengine-everywhere-src-6.9.2.tar.xz: 99cb0792abc2e39b299d73d8e2aa076b9ebcd55c3f4a4b5fd514eef5a62d03ab
 
 ### Manage the chromium source separately so it can be updated separately from the Qt version
 ### To update this run the ./update-chromium.py script
@@ -88,6 +86,8 @@ setup       : |
     cp -ra %(sourcedir)/qtwebengine-chromium.git/gn src/3rdparty/
 
     %patch %(pkgdir)/disable-spellchecker-demo.patch
+
+    %patch %(pkgdir)/upstream-01.patch
 
     # 3rdparty patches
     %patch %(pkgdir)/qtwebengine-link-pipewire.patch -d src/3rdparty

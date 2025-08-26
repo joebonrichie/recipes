@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : qt6-charts
-version     : 6.9.1
-release     : 1
+version     : 6.9.2
+release     : 2
 homepage    : https://www.qt.io
 upstreams   :
-    - https://download.qt.io/official_releases/qt/6.9/6.9.1/submodules/qtcharts-everywhere-src-6.9.1.tar.xz : b8871beb7ac816e9241db9cbdc4803a53313f84a1e4b951f108bd00709aec3d3
+    - https://download.qt.io/official_releases/qt/6.9/6.9.2/submodules/qtcharts-everywhere-src-6.9.2.tar.xz : 9f01f15f64e73f18ee8b17b490c1b0ca02e969bc58919cf46bd1152c01a4ff4b
 summary     : Qt6 Charts Library
 description : |
     Qt Charts module provides a set of easy to use chart components. It uses the Qt Graphics View Framework, therefore charts can be easily integrated to modern user interfaces. Qt Charts can be used as QWidgets, QGraphicsWidget, or QML types. Users can easily create impressive graphs by selecting one of the charts themes.
