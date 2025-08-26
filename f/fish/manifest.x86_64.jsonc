@@ -20,10 +20,6 @@
 				"/usr/bin/fish",
 				"/usr/bin/fish_indent",
 				"/usr/bin/fish_key_reader",
-				"/usr/etc/fish/completions",
-				"/usr/etc/fish/conf.d",
-				"/usr/etc/fish/config.fish",
-				"/usr/etc/fish/functions",
 				"/usr/lib/tmpfiles.d/fish.conf",
 				"/usr/share/applications/fish.desktop",
 				"/usr/share/defaults/etc/profile.d/99-exec-fish-as-interactive-shell.conf",
@@ -1676,6 +1672,6 @@
 		}
 	},
 	"source-name": "fish",
-	"source-release": "7",
+	"source-release": "8",
 	"source-version": "4.0.2"
 }
