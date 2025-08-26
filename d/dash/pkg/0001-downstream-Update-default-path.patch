@@ -1,0 +1,23 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: Reilly Brogan <reilly@reillybrogan.com>
+Date: Tue, 26 Aug 2025 12:05:09 -0500
+Subject: [PATCH] downstream: Update default path
+
+Signed-off-by: Reilly Brogan <reilly@reillybrogan.com>
+---
+ src/var.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/src/var.c b/src/var.c
+index ef9c2bd..5a6cbd7 100644
+--- a/src/var.c
++++ b/src/var.c
+@@ -74,7 +74,7 @@ struct localvar_list {
+ MKINIT struct localvar_list *localvar_stack;
+ 
+ const char defpathvar[] =
+-	"PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin";
++	"PATH=/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin";
+ char defifsvar[] = "IFS= \t\n";
+ MKINIT char defoptindvar[] = "OPTIND=1";
+ 
