@@ -5,7 +5,7 @@
 #
 name        : kf6-networkmanager-qt
 version     : 6.17.0
-release     : 3
+release     : 4
 upstreams   :
     - https://download.kde.org/stable/frameworks/6.17/networkmanager-qt-6.17.0.tar.xz : d83beae867fb7d669886f513893f8eec58b5d7a24b429d89dc5c6c08b7a3f4e0
 homepage    : https://community.kde.org/Frameworks
