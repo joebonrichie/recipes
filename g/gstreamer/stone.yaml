@@ -5,7 +5,7 @@
 #
 name        : gstreamer
 version     : 1.26.5
-release     : 24
+release     : 25
 homepage    : https://gstreamer.freedesktop.org/
 upstreams   :
     - https://gitlab.freedesktop.org/gstreamer/gstreamer/-/archive/1.26.5/gstreamer-1.26.5.tar.gz : eb102bf0435d1179276e4ea4d0b951939c2e72d882446362badcd5a57ab56a31
@@ -43,7 +43,9 @@ builddeps   :
     - pkgconfig(gbm)
     - pkgconfig(gl)
     - pkgconfig(glib-2.0)
+    - pkgconfig(gmp)
     - pkgconfig(graphene-1.0)
+    - pkgconfig(gsl)
     - pkgconfig(gtk+-3.0)
     - pkgconfig(gudev-1.0)
     - pkgconfig(iso-codes)
@@ -54,6 +56,7 @@ builddeps   :
     - pkgconfig(libass)
     - pkgconfig(libavfilter)
     - pkgconfig(libbs2b)
+    # - pkgconfig(libcap) # Re-enable when we support capabilities
     - pkgconfig(libcurl)
     - pkgconfig(libde265)
     - pkgconfig(libdrm)
@@ -159,12 +162,12 @@ setup       : |
     # NOTE: When updating this package (major version) if you want to find out what subpackage a given file should go in
     #  disable `base` through `python` below and then re-enable them one by one and build the package each time. The unpatterned
     #  files that appear each time are the ones that should go in the subpackage you just enabled.
+    # Note: if gst-editing-services is enabled the gst-editing-services:validate=disabled option should be re-added
     %meson \
         --wrap-mode=nodownload \
         -D examples=disabled \
         -D gpl=enabled \
         -D gstreamer:ptp-helper-permissions=setuid-root \
-        -D gst-editing-services:validate=disabled \
         -D gst-plugins-bad:aja=disabled \
         -D gst-plugins-base:gl_winsys=wayland,x11,gbm \
         -D gst-plugins-good:soup-version=3 \
