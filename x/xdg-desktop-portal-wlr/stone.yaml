@@ -1,0 +1,39 @@
+#
+# SPDX-FileCopyrightText: © 2020-2024 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : xdg-desktop-portal-wlr
+version     : 0.7.1
+release     : 1
+homepage    : https://github.com/emersion/xdg-desktop-portal-wlr
+upstreams   :
+    - https://github.com/emersion/xdg-desktop-portal-wlr/releases/download/v0.7.1/xdg-desktop-portal-wlr-0.7.1.tar.gz : eec6e4be808e1a445e677dba1e20e5acb2f091825f5ff4c6ac49d5843b2185f9
+summary     : xdg-desktop-portal backend for wlroots
+description : |
+    xdg-desktop-portal backend for wlroots
+license     : MIT
+builddeps   :
+    - binary(scdoc)
+    - pkgconfig(gbm)
+    - pkgconfig(inih)
+    - pkgconfig(libdrm)
+    - pkgconfig(libpipewire-0.3)
+    - pkgconfig(libsystemd)
+    - pkgconfig(wayland-client)
+    - pkgconfig(wayland-protocols)
+rundeps     :
+    - pipewire # service
+    - xdg-desktop-portal
+setup       : |
+    %patch %(pkgdir)/upstream-01.patch
+
+    %meson \
+        -Dsd-bus-provider=libsystemd
+build       : |
+    %meson_build
+install     : |
+    %meson_install
+
+    # Hopefully this can be removed in a future release
+    %install_file contrib/wlroots-portals.conf -t %(installroot)%(datadir)/xdg-desktop-portal
