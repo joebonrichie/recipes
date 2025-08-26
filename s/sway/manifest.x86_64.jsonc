@@ -48,7 +48,9 @@
 				"soname(libwlroots-0.19.so(x86_64))",
 				"soname(libxcb-icccm.so.4(x86_64))",
 				"soname(libxcb.so.1(x86_64))",
-				"soname(libxkbcommon.so.0(x86_64))"
+				"soname(libxkbcommon.so.0(x86_64))",
+				"xdg-desktop-portal-gtk",
+				"xdg-desktop-portal-wlr"
 			],
 			"files": [
 				"/usr/bin/sway",
@@ -67,6 +69,7 @@
 				"/usr/share/bash-completion/completions/swaybar",
 				"/usr/share/bash-completion/completions/swaymsg",
 				"/usr/share/defaults/sway/config",
+				"/usr/share/defaults/sway/config.d/50-systemd-user.conf",
 				"/usr/share/fish/vendor_completions.d/sway.fish",
 				"/usr/share/fish/vendor_completions.d/swaymsg.fish",
 				"/usr/share/fish/vendor_completions.d/swaynag.fish",
@@ -81,6 +84,7 @@
 				"/usr/share/man/man7/sway-ipc.7",
 				"/usr/share/man/man7/swaybar-protocol.7",
 				"/usr/share/wayland-sessions/sway.desktop",
+				"/usr/share/xdg-desktop-portal/sway-portals.conf",
 				"/usr/share/zsh/site-functions/_sway",
 				"/usr/share/zsh/site-functions/_swaymsg"
 			],
@@ -94,6 +98,6 @@
 		}
 	},
 	"source-name": "sway",
-	"source-release": "7",
+	"source-release": "8",
 	"source-version": "1.11"
 }
