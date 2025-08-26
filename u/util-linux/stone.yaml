@@ -5,7 +5,7 @@
 #
 name        : util-linux
 version     : 2.41.1
-release     : 14
+release     : 15
 summary     : Random collection of Linux utilities
 license     :
     - BSD-3-Clause
@@ -49,6 +49,11 @@ profiles    :
             %patch %(pkgdir)/0001-fix-build-with-econf.patch
             %patch %(pkgdir)/0001-downstream-Update-default-PATH.patch
 
+            # Because we're checking out the git source we need to create this file so the version string won't contain "-dirty"
+            if [ ! -f ".tarball-version" ]; then
+                echo "%(version)" > .tarball-version
+            fi
+
             # Just disable everything that's not a library
             %meson \
                 -Dbuild-bits=disabled \
@@ -91,6 +96,11 @@ profiles    :
 setup       : |
     %patch %(pkgdir)/0001-fix-build-with-econf.patch
     %patch %(pkgdir)/0001-downstream-Update-default-PATH.patch
+
+    # Because we're checking out the git source we need to create this file so the version string won't contain "-dirty"
+    if [ ! -f ".tarball-version" ]; then
+        echo "%(version)" > .tarball-version
+    fi
 
     # TODO:
     # - figure out what we want to do with uuidd, if anything
