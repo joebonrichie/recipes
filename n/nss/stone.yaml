@@ -4,15 +4,15 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : nss
-version     : "3.115"
-release     : 32
+version     : "3.115.1"
+release     : 33
 summary     : Network Security Services
 license     : MPL-2.0
 homepage    : https://wiki.mozilla.org/NSS
 description : |
     Network Security Services (NSS) is a set of libraries designed to support cross-platform development of security-enabled client and server applications.
 upstreams   :
-    - https://ftp.mozilla.org/pub/security/nss/releases/NSS_3_115_RTM/src/nss-3.115.tar.gz : ac2a47fb33bd79320159144e01c0d4af9a937a2d928c7c77ff06f5d9507861ab
+    - https://ftp.mozilla.org/pub/security/nss/releases/NSS_3_115_1_RTM/src/nss-3.115.1.tar.gz : b8189c030b528e57dc5290023c07eea429ce242912a51a0388c184c75a257bcf
 builddeps   :
     - binary(openssl)
     - binary(perl)
