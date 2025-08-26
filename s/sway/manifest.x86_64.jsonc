@@ -21,6 +21,7 @@
 				"pkgconfig(xkbcommon)"
 			],
 			"depends": [
+				"binary(Xwayland)",
 				"binary(alacritty)",
 				"binary(swaybg)",
 				"binary(wmenu)",
@@ -98,6 +99,6 @@
 		}
 	},
 	"source-name": "sway",
-	"source-release": "8",
+	"source-release": "9",
 	"source-version": "1.11"
 }
