@@ -5,7 +5,7 @@
 #
 name        : plasma5support
 version     : 6.4.4
-release     : 3
+release     : 4
 upstreams   :
     - https://download.kde.org/stable/plasma/6.4.4/plasma5support-6.4.4.tar.xz : 066c0456149bacad6dfd99eb36783fb61f1918df91b9d70ff4aeac56e3d43bf5
 homepage    : https://kde.org/plasma-desktop/
