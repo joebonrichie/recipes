@@ -4,14 +4,14 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : discord
-version     : 0.0.106
-release     : 25
+version     : 0.0.107
+release     : 26
 summary     : Group chat, video, and voice calling app
 license     : Distributable
 homepage    : https://discord.com/
 upstreams   :
-    - https://stable.dl2.discordapp.net/apps/linux/0.0.106/discord-0.0.106.deb:
-        hash: b88dfcb1a8780683047d12feb7fd7d429dade62122d3f92880f41056c8887085
+    - https://stable.dl2.discordapp.net/apps/linux/0.0.107/discord-0.0.107.deb:
+        hash: 9d2d148a5c6359ca6501ece758a1ab1c508e8dc3c4108dc38016fa2420a68d89
         unpack: false
         rename: discord.deb
 description : |
