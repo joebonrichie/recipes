@@ -5,7 +5,7 @@
 #
 name        : kf6-kquickcharts
 version     : 6.17.0
-release     : 4
+release     : 5
 upstreams   :
     - https://download.kde.org/stable/frameworks/6.17/kquickcharts-6.17.0.tar.xz : 1e206a9684d882ce2c147e436392dc3ef6cda79e4bc2ddf5aa0398d2e2ddc5a4
 homepage    : https://community.kde.org/Frameworks
@@ -27,4 +27,3 @@ build       : |
     %cmake_build
 install     : |
     %cmake_install
-    %qml_cache_qt6

@@ -25,18 +25,12 @@
 				"/usr/lib/libQuickChartsControls.so.6.17.0",
 				"/usr/lib/qt6/qml/org/kde/quickcharts/QuickCharts.qmltypes",
 				"/usr/lib/qt6/qml/org/kde/quickcharts/controls/KirigamiTheme.qml",
-				"/usr/lib/qt6/qml/org/kde/quickcharts/controls/KirigamiTheme.qmlc",
 				"/usr/lib/qt6/qml/org/kde/quickcharts/controls/Legend.qml",
-				"/usr/lib/qt6/qml/org/kde/quickcharts/controls/Legend.qmlc",
 				"/usr/lib/qt6/qml/org/kde/quickcharts/controls/LegendDelegate.qml",
-				"/usr/lib/qt6/qml/org/kde/quickcharts/controls/LegendDelegate.qmlc",
 				"/usr/lib/qt6/qml/org/kde/quickcharts/controls/LineChartControl.qml",
-				"/usr/lib/qt6/qml/org/kde/quickcharts/controls/LineChartControl.qmlc",
 				"/usr/lib/qt6/qml/org/kde/quickcharts/controls/PieChartControl.qml",
-				"/usr/lib/qt6/qml/org/kde/quickcharts/controls/PieChartControl.qmlc",
 				"/usr/lib/qt6/qml/org/kde/quickcharts/controls/QuickChartsControls.qmltypes",
 				"/usr/lib/qt6/qml/org/kde/quickcharts/controls/Theme.qml",
-				"/usr/lib/qt6/qml/org/kde/quickcharts/controls/Theme.qmlc",
 				"/usr/lib/qt6/qml/org/kde/quickcharts/controls/kde-qmlmodule.version",
 				"/usr/lib/qt6/qml/org/kde/quickcharts/controls/libQuickChartsControlsplugin.so",
 				"/usr/lib/qt6/qml/org/kde/quickcharts/controls/qmldir",
@@ -78,6 +72,6 @@
 		}
 	},
 	"source-name": "kf6-kquickcharts",
-	"source-release": "4",
+	"source-release": "5",
 	"source-version": "6.17.0"
 }
