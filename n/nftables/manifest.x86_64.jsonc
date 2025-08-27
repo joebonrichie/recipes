@@ -28,6 +28,7 @@
 				"/usr/share/defaults/nftables/osf/pf.os",
 				"/usr/share/man/man5/libnftables-json.5",
 				"/usr/share/man/man8/nft.8",
+				"/usr/share/man/man8/nftables.service.8",
 				"/usr/share/nftables/all-in-one.nft",
 				"/usr/share/nftables/arp-filter.nft",
 				"/usr/share/nftables/bridge-filter.nft",
@@ -87,7 +88,8 @@
 				"/usr/share/doc/nftables/examples/ct_helpers.nft",
 				"/usr/share/doc/nftables/examples/load_balancing.nft",
 				"/usr/share/doc/nftables/examples/secmark.nft",
-				"/usr/share/doc/nftables/examples/sets_and_maps.nft"
+				"/usr/share/doc/nftables/examples/sets_and_maps.nft",
+				"/usr/share/doc/nftables/main.nft"
 			],
 			"name": "nftables-docs"
 		},
@@ -120,12 +122,11 @@
 			],
 			"name": "python-nftables",
 			"provides": [
-				"python(nftables(3.11))",
 				"python(nftables)"
 			]
 		}
 	},
 	"source-name": "nftables",
-	"source-release": "8",
-	"source-version": "1.1.4"
+	"source-release": "9",
+	"source-version": "1.1.5"
 }
