@@ -5,7 +5,7 @@
 #
 name        : merkuro
 version     : 25.08.0
-release     : 8
+release     : 9
 upstreams   :
     - https://download.kde.org/stable/release-service/25.08.0/src/merkuro-25.08.0.tar.xz : 0a6b2a7b54b647604955b23df98da32f7799c6c599f8fd7f403f5c582e909218
 homepage    : https://kde.org/applications/system/org.kde.merkuro
@@ -66,7 +66,6 @@ build       : |
     %cmake_build
 install     : |
     %cmake_install
-    %qml_cache_qt6
 packages    :
     - "%(name)":
         paths:
