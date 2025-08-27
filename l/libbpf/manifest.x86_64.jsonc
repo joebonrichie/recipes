@@ -14,7 +14,7 @@
 			],
 			"files": [
 				"/usr/lib/libbpf.so.1",
-				"/usr/lib/libbpf.so.1.6.1"
+				"/usr/lib/libbpf.so.1.6.2"
 			],
 			"name": "libbpf",
 			"provides": [
@@ -66,6 +66,6 @@
 		}
 	},
 	"source-name": "libbpf",
-	"source-release": "5",
-	"source-version": "1.6.1"
+	"source-release": "6",
+	"source-version": "1.6.2"
 }
