@@ -37,17 +37,13 @@
 				"/usr/lib/qt6/qml/org/kde/draganddrop/libdraganddropplugin.so",
 				"/usr/lib/qt6/qml/org/kde/draganddrop/qmldir",
 				"/usr/lib/qt6/qml/org/kde/graphicaleffects/BadgeEffect.qml",
-				"/usr/lib/qt6/qml/org/kde/graphicaleffects/BadgeEffect.qmlc",
 				"/usr/lib/qt6/qml/org/kde/graphicaleffects/Lanczos.qml",
-				"/usr/lib/qt6/qml/org/kde/graphicaleffects/Lanczos.qmlc",
 				"/usr/lib/qt6/qml/org/kde/graphicaleffects/graphicaleffects.qmltypes",
 				"/usr/lib/qt6/qml/org/kde/graphicaleffects/kde-qmlmodule.version",
 				"/usr/lib/qt6/qml/org/kde/graphicaleffects/libgraphicaleffects.so",
 				"/usr/lib/qt6/qml/org/kde/graphicaleffects/qmldir",
 				"/usr/lib/qt6/qml/org/kde/kquickcontrols/ColorButton.qml",
-				"/usr/lib/qt6/qml/org/kde/kquickcontrols/ColorButton.qmlc",
 				"/usr/lib/qt6/qml/org/kde/kquickcontrols/KeySequenceItem.qml",
-				"/usr/lib/qt6/qml/org/kde/kquickcontrols/KeySequenceItem.qmlc",
 				"/usr/lib/qt6/qml/org/kde/kquickcontrols/kde-qmlmodule.version",
 				"/usr/lib/qt6/qml/org/kde/kquickcontrols/kquickcontrols.qmltypes",
 				"/usr/lib/qt6/qml/org/kde/kquickcontrols/libkquickcontrols.so",
@@ -206,6 +202,6 @@
 		}
 	},
 	"source-name": "kf6-kdeclarative",
-	"source-release": "10",
+	"source-release": "11",
 	"source-version": "6.17.0"
 }
