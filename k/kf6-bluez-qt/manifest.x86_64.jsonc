@@ -20,7 +20,6 @@
 				"/usr/lib/libKF6BluezQt.so.6",
 				"/usr/lib/libKF6BluezQt.so.6.17.0",
 				"/usr/lib/qt6/qml/org/kde/bluezqt/DevicesModel.qml",
-				"/usr/lib/qt6/qml/org/kde/bluezqt/DevicesModel.qmlc",
 				"/usr/lib/qt6/qml/org/kde/bluezqt/bluezqtextensionplugin.qmltypes",
 				"/usr/lib/qt6/qml/org/kde/bluezqt/kde-qmlmodule.version",
 				"/usr/lib/qt6/qml/org/kde/bluezqt/libbluezqtextensionplugin.so",
@@ -142,6 +141,6 @@
 		}
 	},
 	"source-name": "kf6-bluez-qt",
-	"source-release": "4",
+	"source-release": "5",
 	"source-version": "6.17.0"
 }
