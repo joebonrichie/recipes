@@ -5,7 +5,7 @@
 #
 name        : aurorae
 version     : 6.4.4
-release     : 3
+release     : 4
 upstreams   :
     - https://download.kde.org/stable/plasma/6.4.4/aurorae-6.4.4.tar.xz : b358a775772052e46b4978c63ad765996ca4600af0db1189260129fd91de6589
 homepage    : https://kde.org/plasma-desktop/
@@ -38,7 +38,6 @@ build       : |
     %cmake_build
 install     : |
     %cmake_install
-    %qml_cache_qt6
 packages    :
     - "%(name)":
         rundeps:
