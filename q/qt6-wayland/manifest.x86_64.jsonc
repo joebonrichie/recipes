@@ -93,9 +93,7 @@
 				"/usr/lib/qt6/qml/QtWayland/Compositor/libqwaylandcompositorplugin.so",
 				"/usr/lib/qt6/qml/QtWayland/Compositor/qmldir",
 				"/usr/lib/qt6/qml/QtWayland/Compositor/qmlfiles/WaylandCursorItem.qml",
-				"/usr/lib/qt6/qml/QtWayland/Compositor/qmlfiles/WaylandCursorItem.qmlc",
-				"/usr/lib/qt6/qml/QtWayland/Compositor/qmlfiles/WaylandOutputWindow.qml",
-				"/usr/lib/qt6/qml/QtWayland/Compositor/qmlfiles/WaylandOutputWindow.qmlc"
+				"/usr/lib/qt6/qml/QtWayland/Compositor/qmlfiles/WaylandOutputWindow.qml"
 			],
 			"name": "qt6-wayland",
 			"provides": [
@@ -1027,6 +1025,6 @@
 		}
 	},
 	"source-name": "qt6-wayland",
-	"source-release": "9",
+	"source-release": "10",
 	"source-version": "6.9.2"
 }
