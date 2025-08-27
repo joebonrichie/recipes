@@ -5,7 +5,7 @@
 #
 name        : qt6-quick3d
 version     : 6.9.2
-release     : 6
+release     : 7
 homepage    : https://www.qt.io
 upstreams   :
     - https://download.qt.io/official_releases/qt/6.9/6.9.2/submodules/qtquick3d-everywhere-src-6.9.2.tar.xz : 2f0e97b0d29ecabb976d7f3dc23873a2d6415ba4d48d4090ddb54feb3a424800
@@ -31,7 +31,6 @@ build       : |
     %cmake_build
 install     : |
     %cmake_install
-    %qml_cache_qt6
 packages    :
     - "%(name)-devel":
         paths:
