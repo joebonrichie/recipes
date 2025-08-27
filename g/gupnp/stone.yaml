@@ -1,0 +1,39 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : gupnp
+version     : 1.6.9
+release     : 1
+upstreams   :
+    - https://download.gnome.org/sources/gupnp/1.6/gupnp-1.6.9.tar.xz : 2edb6ee3613558e62f538735368aee27151b7e09d4e2e2c51606833da801869b
+homepage    : https://gitlab.gnome.org/GNOME/gupnp
+license     : LGPL-2.1-or-later
+summary     : GUPnP is an object-oriented open source framework for creating UPnP devices and control points.
+description : |
+    GUPnP is an object-oriented open source framework for creating UPnP devices and control points, written in C using GObject and libsoup. The GUPnP API is intended to be easy to use, efficient and flexible. It provides the same set of features as libupnp, but shields the developer from most of UPnP's internals.
+builddeps   :
+    - binary(gi-docgen)
+    - binary(vapigen)
+    - binary(xsltproc)
+    - pkgconfig(gio-unix-2.0)
+    - pkgconfig(gobject-introspection-1.0)
+    - pkgconfig(gssdp-1.6)
+    - pkgconfig(libxml-2.0)
+    - docbook-xsl
+environment : |
+    # Temporary, replace with boulder macro
+    export XML_CATALOG_FILES="file:///usr/share/defaults/docbook/docbook-xsl/catalog"
+setup       : |
+    %meson
+build       : |
+    %meson_build
+install     : |
+    %meson_install
+packages    :
+    - "%(name)-devel":
+        paths:
+            - /usr/bin/gupnp-binding-tool*
+            - /usr/share/man/man1/gupnp-binding-tool-1*
+            - /usr/share/vala/
