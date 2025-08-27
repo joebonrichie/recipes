@@ -1,0 +1,43 @@
+From 25a73630ee1494cb0e20b318a7f63084b1882a92 Mon Sep 17 00:00:00 2001
+From: Marco Martin <notmart@gmail.com>
+Date: Mon, 25 Aug 2025 17:32:26 +0200
+Subject: [PATCH] Don't relayout during item destruction
+
+a reason forgetItem is called is when the item is being destroyed.
+in that case is really important layoutITems doesn't get called until
+the item is actually removed from the list of known items.
+
+header::visiblechanged is connected to layoutitems to we need
+to disconnect it before hiding the header
+
+BUG:507483
+---
+ src/layouts/columnview.cpp | 5 +++++
+ 1 file changed, 5 insertions(+)
+
+diff --git a/src/layouts/columnview.cpp b/src/layouts/columnview.cpp
+index 187354c639..f1b30a941d 100644
+--- a/src/layouts/columnview.cpp
++++ b/src/layouts/columnview.cpp
+@@ -837,6 +837,10 @@ void ContentItem::forgetItem(QQuickItem *item)
+     }
+ 
+     if (QQuickItem *header = attached->globalHeader()) {
++        // disconnecting before hiding avoids one extra layoutItems,
++        // which would try to recreate separatorItem.
++        // Which might crash if we are doing this during item destruction
++        disconnect(header, nullptr, this, nullptr);
+         header->setVisible(false);
+         header->setParentItem(item);
+         separatorItem = m_separators.take(header);
+@@ -845,6 +849,7 @@ void ContentItem::forgetItem(QQuickItem *item)
+         }
+     }
+     if (QQuickItem *footer = attached->globalFooter()) {
++        connect(footer, nullptr, this, nullptr);
+         footer->setVisible(false);
+         footer->setParentItem(item);
+         separatorItem = m_separators.take(footer);
+-- 
+GitLab
+
