@@ -1,0 +1,37 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : libnice
+version     : 0.1.22
+release     : 1
+upstreams   :
+    - https://gitlab.freedesktop.org/libnice/libnice/-/archive/0.1.22/libnice-0.1.22.tar.gz : 3048b847fd89f43474c1a77257c875a85e4d85c879d12743f3ce2947125eb8de
+homepage    : https://nice.freedesktop.org
+license     :
+    - MPL-1.1
+    - LGPL-2.1-or-later
+summary     : The GLib ICE implementation
+description : |
+    Libnice is an implementation of the IETF's Interactive Connectivity Establishment (ICE) standard (RFC 5245) and the Session Traversal Utilities for NAT (STUN) standard (RFC 5389).
+builddeps   :
+    - binary(g-ir-scanner)
+    - pkgconfig(gio-2.0)
+    - pkgconfig(gstreamer-base-1.0)
+    - pkgconfig(gupnp-igd-1.6)
+setup       : |
+    %patch %(pkgdir)/255.patch
+
+    %meson \
+        -Dcrypto-library=openssl
+build       : |
+    %meson_build
+install     : |
+    %meson_install
+packages    :
+    - "gstreamer-plugin-%(name)":
+        summary: gstreamer plugin for %(name)
+        description: gstreamer plugin for %(name)
+        paths:
+            - /usr/lib/gstreamer-1.0/libgstnice.so

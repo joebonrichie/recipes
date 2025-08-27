@@ -1,0 +1,103 @@
+/** Human readable report. This is not consumed by boulder */
+{
+	"manifest-version": "0.2",
+	"packages": {
+		"gstreamer-plugin-libnice": {
+			"build-depends": [
+				"binary(g-ir-scanner)",
+				"pkgconfig(gio-2.0)",
+				"pkgconfig(gstreamer-base-1.0)",
+				"pkgconfig(gupnp-igd-1.6)"
+			],
+			"depends": [
+				"soname(libc.so.6(x86_64))",
+				"soname(libglib-2.0.so.0(x86_64))",
+				"soname(libgobject-2.0.so.0(x86_64))",
+				"soname(libgstbase-1.0.so.0(x86_64))",
+				"soname(libgstreamer-1.0.so.0(x86_64))",
+				"soname(libnice.so.10(x86_64))"
+			],
+			"files": [
+				"/usr/lib/gstreamer-1.0/libgstnice.so"
+			],
+			"name": "gstreamer-plugin-libnice",
+			"provides": [
+				"soname(gstreamer-1.0/libgstnice.so(x86_64))"
+			]
+		},
+		"libnice": {
+			"build-depends": [
+				"binary(g-ir-scanner)",
+				"pkgconfig(gio-2.0)",
+				"pkgconfig(gstreamer-base-1.0)",
+				"pkgconfig(gupnp-igd-1.6)"
+			],
+			"depends": [
+				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
+				"soname(libc.so.6(x86_64))",
+				"soname(libcrypto.so.3(x86_64))",
+				"soname(libgio-2.0.so.0(x86_64))",
+				"soname(libglib-2.0.so.0(x86_64))",
+				"soname(libgobject-2.0.so.0(x86_64))",
+				"soname(libgupnp-igd-1.6.so.0(x86_64))"
+			],
+			"files": [
+				"/usr/bin/stunbdc",
+				"/usr/bin/stund",
+				"/usr/lib/girepository-1.0/Nice-0.1.typelib",
+				"/usr/lib/libnice.so.10",
+				"/usr/lib/libnice.so.10.14.0"
+			],
+			"name": "libnice",
+			"provides": [
+				"binary(stunbdc)",
+				"binary(stund)",
+				"soname(libnice.so.10(x86_64))"
+			]
+		},
+		"libnice-devel": {
+			"build-depends": [
+				"binary(g-ir-scanner)",
+				"pkgconfig(gio-2.0)",
+				"pkgconfig(gstreamer-base-1.0)",
+				"pkgconfig(gupnp-igd-1.6)"
+			],
+			"depends": [
+				"libnice",
+				"pkgconfig(gio-2.0)",
+				"pkgconfig(gthread-2.0)",
+				"pkgconfig(gupnp-igd-1.6)",
+				"pkgconfig(openssl)"
+			],
+			"files": [
+				"/usr/include/nice/address.h",
+				"/usr/include/nice/agent.h",
+				"/usr/include/nice/candidate.h",
+				"/usr/include/nice/debug.h",
+				"/usr/include/nice/interfaces.h",
+				"/usr/include/nice/nice-version.h",
+				"/usr/include/nice/nice.h",
+				"/usr/include/nice/pseudotcp.h",
+				"/usr/include/stun/constants.h",
+				"/usr/include/stun/debug.h",
+				"/usr/include/stun/stunagent.h",
+				"/usr/include/stun/stunmessage.h",
+				"/usr/include/stun/usages/bind.h",
+				"/usr/include/stun/usages/ice.h",
+				"/usr/include/stun/usages/timer.h",
+				"/usr/include/stun/usages/turn.h",
+				"/usr/include/stun/win32_common.h",
+				"/usr/lib/libnice.so",
+				"/usr/lib/pkgconfig/nice.pc",
+				"/usr/share/gir-1.0/Nice-0.1.gir"
+			],
+			"name": "libnice-devel",
+			"provides": [
+				"pkgconfig(nice)"
+			]
+		}
+	},
+	"source-name": "libnice",
+	"source-release": "1",
+	"source-version": "0.1.22"
+}
