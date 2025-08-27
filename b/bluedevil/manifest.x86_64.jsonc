@@ -59,7 +59,6 @@
 				"/usr/lib/qt6/plugins/kf6/kio/kio_obexftp.so",
 				"/usr/lib/qt6/plugins/plasma/kcms/systemsettings/kcm_bluetooth.so",
 				"/usr/lib/qt6/qml/org/kde/plasma/private/bluetooth/SharedDevicesStateProxyModel.qml",
-				"/usr/lib/qt6/qml/org/kde/plasma/private/bluetooth/SharedDevicesStateProxyModel.qmlc",
 				"/usr/lib/qt6/qml/org/kde/plasma/private/bluetooth/bluetoothplugin.qmltypes",
 				"/usr/lib/qt6/qml/org/kde/plasma/private/bluetooth/kde-qmlmodule.version",
 				"/usr/lib/qt6/qml/org/kde/plasma/private/bluetooth/libbluetoothplugin.so",
@@ -236,15 +235,10 @@
 				"/usr/share/mime/packages/bluedevil-mime.xml",
 				"/usr/share/plasma/plasmoids/org.kde.plasma.bluetooth/contents/config/main.xml",
 				"/usr/share/plasma/plasmoids/org.kde.plasma.bluetooth/contents/ui/DeviceItem.qml",
-				"/usr/share/plasma/plasmoids/org.kde.plasma.bluetooth/contents/ui/DeviceItem.qmlc",
 				"/usr/share/plasma/plasmoids/org.kde.plasma.bluetooth/contents/ui/FullRepresentation.qml",
-				"/usr/share/plasma/plasmoids/org.kde.plasma.bluetooth/contents/ui/FullRepresentation.qmlc",
 				"/usr/share/plasma/plasmoids/org.kde.plasma.bluetooth/contents/ui/MediaPlayerItem.qml",
-				"/usr/share/plasma/plasmoids/org.kde.plasma.bluetooth/contents/ui/MediaPlayerItem.qmlc",
 				"/usr/share/plasma/plasmoids/org.kde.plasma.bluetooth/contents/ui/Toolbar.qml",
-				"/usr/share/plasma/plasmoids/org.kde.plasma.bluetooth/contents/ui/Toolbar.qmlc",
 				"/usr/share/plasma/plasmoids/org.kde.plasma.bluetooth/contents/ui/main.qml",
-				"/usr/share/plasma/plasmoids/org.kde.plasma.bluetooth/contents/ui/main.qmlc",
 				"/usr/share/plasma/plasmoids/org.kde.plasma.bluetooth/metadata.json",
 				"/usr/share/qlogging-categories6/bluedevil.categories",
 				"/usr/share/remoteview/bluetooth-network.desktop"
@@ -319,6 +313,6 @@
 		}
 	},
 	"source-name": "bluedevil",
-	"source-release": "4",
+	"source-release": "5",
 	"source-version": "6.4.4"
 }
