@@ -5,7 +5,7 @@
 #
 name        : kclock
 version     : 25.08.0
-release     : 5
+release     : 6
 upstreams   :
     - https://download.kde.org/stable/release-service/25.08.0/src/kclock-25.08.0.tar.xz : b0fe8c3a4c423c5ca40d9daef287f1d84498ea6b2acf66af55bdbd77e077f896
 homepage    : https://apps.kde.org/kclock/
@@ -47,4 +47,3 @@ build       : |
     %cmake_build
 install     : |
     %cmake_install
-    %qml_cache_qt6

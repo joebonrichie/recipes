@@ -5,7 +5,7 @@
 #
 name        : kio-gdrive
 version     : 25.08.0
-release     : 3
+release     : 4
 upstreams   :
     - https://download.kde.org/stable/release-service/25.08.0/src/kio-gdrive-25.08.0.tar.xz : 8ddc32d39f79bbb607a6d134ac5aa1e08627fee7523339d2dc9eee2b81e5a7d4
 homepage    : https://apps.kde.org/kio_gdrive/
@@ -32,4 +32,3 @@ build       : |
     %cmake_build
 install     : |
     %cmake_install
-    %qml_cache_qt6

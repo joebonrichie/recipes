@@ -5,7 +5,7 @@
 #
 name        : dragon
 version     : 25.08.0
-release     : 8
+release     : 9
 upstreams   :
     - https://download.kde.org/stable/release-service/25.08.0/src/dragon-25.08.0.tar.xz : b72c06f1ce465dd3d7be47d69ec3a3588ddd464cc0f5d351a8d7ed47c85846a9
 homepage    : https://apps.kde.org/dragonplayer/
@@ -35,7 +35,6 @@ build       : |
     %cmake_build
 install     : |
     %cmake_install
-    %qml_cache_qt6
 
     # remove doc
     rm -rfv %(installroot)/usr/share/doc

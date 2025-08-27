@@ -45,13 +45,9 @@
 				"/usr/lib/libKPim6IdentityManagementWidgets.so.6",
 				"/usr/lib/libKPim6IdentityManagementWidgets.so.6.5.0",
 				"/usr/lib/qt6/qml/org/kde/kidentitymanagement/BasicIdentityEditorCard.qml",
-				"/usr/lib/qt6/qml/org/kde/kidentitymanagement/BasicIdentityEditorCard.qmlc",
 				"/usr/lib/qt6/qml/org/kde/kidentitymanagement/CryptographyEditorCard.qml",
-				"/usr/lib/qt6/qml/org/kde/kidentitymanagement/CryptographyEditorCard.qmlc",
 				"/usr/lib/qt6/qml/org/kde/kidentitymanagement/IdentityConfigurationForm.qml",
-				"/usr/lib/qt6/qml/org/kde/kidentitymanagement/IdentityConfigurationForm.qmlc",
 				"/usr/lib/qt6/qml/org/kde/kidentitymanagement/IdentityEditorPage.qml",
-				"/usr/lib/qt6/qml/org/kde/kidentitymanagement/IdentityEditorPage.qmlc",
 				"/usr/lib/qt6/qml/org/kde/kidentitymanagement/kde-qmlmodule.version",
 				"/usr/lib/qt6/qml/org/kde/kidentitymanagement/kidentitymanagement_quick_plugin.qmltypes",
 				"/usr/lib/qt6/qml/org/kde/kidentitymanagement/libkidentitymanagement_quick_plugin.so",
@@ -216,6 +212,6 @@
 		}
 	},
 	"source-name": "kidentitymanagement",
-	"source-release": "4",
+	"source-release": "5",
 	"source-version": "25.08.0"
 }

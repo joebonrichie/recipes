@@ -5,7 +5,7 @@
 #
 name        : akonadi
 version     : 25.08.0
-release     : 8
+release     : 9
 upstreams   :
     - https://download.kde.org/stable/release-service/25.08.0/src/akonadi-25.08.0.tar.xz : d7b79d8ad021f3bbe1410bbd2c1755d3fa54a727c70eb9008dccf94e642a664e
 homepage    : https://kde.org
@@ -40,7 +40,6 @@ build       : |
     %cmake_build
 install     : |
     %cmake_install
-    %qml_cache_qt6
 packages    :
     - "%(name)-mysql":
         summary: Mysql server support for %(name)
