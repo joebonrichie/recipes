@@ -5,7 +5,7 @@
 #
 name        : plasma-keyboard
 version     : "0.0.1+git.7e8f93ac"
-release     : 6
+release     : 7
 upstreams   :
     # TODO: Fill out the monitoring.yaml with the correct values once this is actually released
     - git|https://invent.kde.org/plasma/plasma-keyboard : 7e8f93ac9f4e530f053c14a740bab90b83cefb3f
@@ -35,4 +35,3 @@ build       : |
     %cmake_build
 install     : |
     %cmake_install
-    %qml_cache_qt6
