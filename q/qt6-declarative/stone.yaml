@@ -5,7 +5,7 @@
 #
 name        : qt6-declarative
 version     : 6.9.2
-release     : 10
+release     : 11
 homepage    : https://www.qt.io
 upstreams   :
     - https://download.qt.io/official_releases/qt/6.9/6.9.2/submodules/qtdeclarative-everywhere-src-6.9.2.tar.xz : 477f2d2c0bd98916107818725e6d498206e033dfb2859c52121e01a06ac42664
@@ -33,15 +33,6 @@ install     : |
     # Setup user-facing binaries
     %qt_user_facing_links
     ln -srv %(installroot)/%(libdir)/qt6/qmlcachegen %(installroot)/%(bindir)/qmlcachegen6
-
-    # We can't use the macro to generate pre-compiled qml since this package provides the binary for that
-    export LD_LIBRARY_PATH="%(installroot)/%(libdir)"
-    cd %(installroot)
-    find . -type f -name "*.qml" -print0 | while IFS= read -r -d '' i; do
-        if ! [ -a "${i}"c ]; then
-            %(installroot)/%(libdir)/qt6/qmlcachegen -o "${i}"c "${i}" $*
-        fi
-    done
 packages    :
     - "%(name)-devel":
         paths:
