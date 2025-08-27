@@ -5,7 +5,7 @@
 #
 name        : gstreamer
 version     : 1.26.5
-release     : 25
+release     : 26
 homepage    : https://gstreamer.freedesktop.org/
 upstreams   :
     - https://gitlab.freedesktop.org/gstreamer/gstreamer/-/archive/1.26.5/gstreamer-1.26.5.tar.gz : eb102bf0435d1179276e4ea4d0b951939c2e72d882446362badcd5a57ab56a31
@@ -70,6 +70,7 @@ builddeps   :
     - pkgconfig(libpulse)
     - pkgconfig(libqrencode)
     - pkgconfig(librsvg-2.0)
+    - pkgconfig(libsrtp2)
     - pkgconfig(libsoup-3.0)
     - pkgconfig(libssh2)
     - pkgconfig(libssl)
@@ -80,6 +81,7 @@ builddeps   :
     - pkgconfig(libxml-2.0)
     - pkgconfig(libzstd)
     - pkgconfig(nettle)
+    - pkgconfig(nice)
     - pkgconfig(openal)
     - pkgconfig(opencv4)
     - pkgconfig(openh264)
@@ -124,7 +126,6 @@ builddeps   :
 # - twolame
 # - wavpack
 # bad:
-# - libnice
 # - libltc
 # - libchromaprint
 # - libdc1394-2
@@ -141,7 +142,6 @@ builddeps   :
 # - libopenmpt
 # - librtmp
 # - srt
-# - libsrtp2
 # - vo-aacenc
 # - wildmidi
 # - zbar
@@ -503,6 +503,7 @@ packages    :
             - /usr/lib/gstreamer-1.0/libgstsndfile.so
             - /usr/lib/gstreamer-1.0/libgstsoundtouch.so
             - /usr/lib/gstreamer-1.0/libgstspeed.so
+            - /usr/lib/gstreamer-1.0/libgstsrtp.so
             - /usr/lib/gstreamer-1.0/libgstsubenc.so
             - /usr/lib/gstreamer-1.0/libgstsvtav1.so
             - /usr/lib/gstreamer-1.0/libgstswitchbin.so
@@ -523,6 +524,7 @@ packages    :
             - /usr/lib/gstreamer-1.0/libgstvulkan.so
             - /usr/lib/gstreamer-1.0/libgstwaylandsink.so
             - /usr/lib/gstreamer-1.0/libgstwebp.so
+            - /usr/lib/gstreamer-1.0/libgstwebrtc.so
             - /usr/lib/gstreamer-1.0/libgstwebrtcdsp.so
             - /usr/lib/gstreamer-1.0/libgstx265.so
             - /usr/lib/gstreamer-1.0/libgsty4mdec.so
@@ -576,6 +578,7 @@ packages    :
             - /usr/lib/libgstvulkan-1.0.so.*
             - /usr/lib/libgstwayland-1.0.so.*
             - /usr/lib/libgstwebrtc-1.0.so.*
+            - /usr/lib/libgstwebrtcnice-1.0.so.*
 
     - "%(name)-plugins-bad-extras":
         summary: GStreamer streaming media framework "bad" plugins
@@ -645,6 +648,7 @@ packages    :
             - /usr/lib/libgstvulkan-1.0.so
             - /usr/lib/libgstwayland-1.0.so
             - /usr/lib/libgstwebrtc-1.0.so
+            - /usr/lib/libgstwebrtcnice-1.0.so
             - /usr/lib/pkgconfig/gstreamer-analytics-1.0.pc
             - /usr/lib/pkgconfig/gstreamer-bad-audio-1.0.pc
             - /usr/lib/pkgconfig/gstreamer-codecparsers-1.0.pc
@@ -662,6 +666,7 @@ packages    :
             - /usr/lib/pkgconfig/gstreamer-vulkan*-1.0.pc
             - /usr/lib/pkgconfig/gstreamer-wayland-1.0.pc
             - /usr/lib/pkgconfig/gstreamer-webrtc-1.0.pc
+            - /usr/lib/pkgconfig/gstreamer-webrtc-nice-1.0.pc
             - /usr/share/gir-1.0/CudaGst-1.0.gir
             - /usr/share/gir-1.0/GstAnalytics-1.0.gir
             - /usr/share/gir-1.0/GstBadAudio-1.0.gir
