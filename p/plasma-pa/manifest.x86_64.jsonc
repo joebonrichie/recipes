@@ -64,7 +64,6 @@
 				"/usr/lib/qt6/plugins/plasma/applets/org.kde.plasma.volume.so",
 				"/usr/lib/qt6/plugins/plasma/kcms/systemsettings/kcm_pulseaudio.so",
 				"/usr/lib/qt6/qml/org/kde/plasma/private/volume/PulseObjectFilterModel.qml",
-				"/usr/lib/qt6/qml/org/kde/plasma/private/volume/PulseObjectFilterModel.qmlc",
 				"/usr/lib/qt6/qml/org/kde/plasma/private/volume/kde-qmlmodule.version",
 				"/usr/lib/qt6/qml/org/kde/plasma/private/volume/libplasma-volume-declarative.so",
 				"/usr/lib/qt6/qml/org/kde/plasma/private/volume/plasma-volume-declarative.qmltypes",
@@ -247,6 +246,6 @@
 		}
 	},
 	"source-name": "plasma-pa",
-	"source-release": "4",
+	"source-release": "6",
 	"source-version": "6.4.4"
 }

@@ -4,8 +4,8 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : glibc
-version     : 2.42+git.d7274d71
-release     : 28
+version     : 2.42+git.e87844ec
+release     : 29
 summary     : The GNU libc libraries
 license     :
     - GPL-2.0-or-later
@@ -15,7 +15,7 @@ homepage    : https://www.gnu.org/software/libc
 description : |
     The GNU libc libraries
 upstreams   :
-    - git|https://sourceware.org/git/glibc.git: d7274d718e6f3655eabe311d4eb70fabb5ffa7ef
+    - git|https://sourceware.org/git/glibc.git: e87844ec42b77363a499ea4da6c4a6ab85eba310
 builddeps   :
     - binary(bison)
     - binary(gperf)
@@ -57,6 +57,7 @@ setup       : |
     %patch %(pkgdir)/aerynos/0001-sysdeps-Add-support-for-default-directories.patch
     %patch %(pkgdir)/aerynos/0001-Force-correct-RTLDLIST-for-ldd.patch
     %patch %(pkgdir)/aerynos/0001-Compress-charmaps-with-zstd.patch
+    %patch %(pkgdir)/aerynos/0001-downstream-Update-default-PATH.patch
     %patch %(pkgdir)/stateless/make-hosts-file-stateless.patch
     %patch %(pkgdir)/stateless/Support-fallback-stateless-shells-path.patch
     %patch %(pkgdir)/stateless/Use-a-stateless-ld.so.conf.patch
@@ -111,6 +112,7 @@ profiles    :
             %patch %(pkgdir)/aerynos/0001-sysdeps-Add-support-for-default-directories.patch
             %patch %(pkgdir)/aerynos/0001-Force-correct-RTLDLIST-for-ldd.patch
             %patch %(pkgdir)/aerynos/0001-Compress-charmaps-with-zstd.patch
+            %patch %(pkgdir)/aerynos/0001-downstream-Update-default-PATH.patch
             %patch %(pkgdir)/stateless/make-hosts-file-stateless.patch
             %patch %(pkgdir)/stateless/Support-fallback-stateless-shells-path.patch
             %patch %(pkgdir)/stateless/Use-a-stateless-ld.so.conf.patch

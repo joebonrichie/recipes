@@ -5,7 +5,7 @@
 #
 name        : kf6-ksvg
 version     : 6.17.0
-release     : 3
+release     : 4
 upstreams   :
     - https://download.kde.org/stable/frameworks/6.17/ksvg-6.17.0.tar.xz : 3728da966932f20f190a545a7f42edea2f9bdbe6d727a5bc1b557ef5155b7f94
 homepage    : https://community.kde.org/Frameworks

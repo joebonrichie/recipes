@@ -5,7 +5,7 @@
 #
 name        : kdeconnect
 version     : 25.08.0
-release     : 1
+release     : 3
 upstreams   :
     - https://download.kde.org/stable/release-service/25.08.0/src/kdeconnect-kde-25.08.0.tar.xz : edc6d8d5bb3aab53208a229528ef36a5bc959bfaec17512b5621502d1d37d260
 homepage    : https://kdeconnect.kde.org/
@@ -53,7 +53,6 @@ build       : |
     %cmake_build
 install     : |
     %cmake_install
-    %qml_cache_qt6
 
     # Unused
     rm -v %(installroot)%(libdir)/*.a

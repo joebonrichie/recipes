@@ -5,7 +5,7 @@
 #
 name        : sdl2-compat
 version     : 2.32.56
-release     : 4
+release     : 5
 homepage    : https://github.com/libsdl-org/sdl2-compat
 upstreams   :
     - https://github.com/libsdl-org/sdl2-compat/releases/download/release-2.32.56/sdl2-compat-2.32.56.tar.gz : 27e845b1b7dc0a91a85f1a1f18892ed205adb38caf767741eb258008d8264de0
@@ -27,6 +27,9 @@ build       : |
     %cmake_build
 install     : |
     %cmake_install
+
+    # Compat symlink so we don't need to keep patching shit to use sdl2-compat
+    ln -s sdl2-compat.pc %(installroot)%(libdir)/pkgconfig/sdl2.pc
 packages    :
     - "%(name)-devel":
         paths:

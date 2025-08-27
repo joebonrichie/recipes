@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : qt6-declarative
-version     : 6.9.1
-release     : 8
+version     : 6.9.2
+release     : 11
 homepage    : https://www.qt.io
 upstreams   :
-    - https://download.qt.io/official_releases/qt/6.9/6.9.1/submodules/qtdeclarative-everywhere-src-6.9.1.tar.xz : ccb94665df0199d7ee387b965b29677c8b89cfb1782bb6f01239b1d1524cec97
+    - https://download.qt.io/official_releases/qt/6.9/6.9.2/submodules/qtdeclarative-everywhere-src-6.9.2.tar.xz : 477f2d2c0bd98916107818725e6d498206e033dfb2859c52121e01a06ac42664
 summary     : Classes for QML and JavaScript languages
 description : |
     The Qt Quick module is the standard library for writing QML applications. While the Qt QML module provides the QML engine and language infrastructure, the Qt Quick module provides all the basic types necessary for creating user interfaces with QML.
@@ -22,10 +22,6 @@ builddeps   :
     - cmake(Qt6ShaderTools)
     - cmake(Qt6Svg)
 setup       : |
-    %patch %(pkgdir)/upstream-01.patch
-    %patch %(pkgdir)/upstream-02.patch
-    %patch %(pkgdir)/upstream-03.patch
-
     # Note that due to our build modifications Qt6LinguistTools will be reported as missing, but it uses it just fine
     # TODO fix that
     %cmake_qt6
@@ -37,15 +33,6 @@ install     : |
     # Setup user-facing binaries
     %qt_user_facing_links
     ln -srv %(installroot)/%(libdir)/qt6/qmlcachegen %(installroot)/%(bindir)/qmlcachegen6
-
-    # We can't use the macro to generate pre-compiled qml since this package provides the binary for that
-    export LD_LIBRARY_PATH="%(installroot)/%(libdir)"
-    cd %(installroot)
-    find . -type f -name "*.qml" -print0 | while IFS= read -r -d '' i; do
-        if ! [ -a "${i}"c ]; then
-            %(installroot)/%(libdir)/qt6/qmlcachegen -o "${i}"c "${i}" $*
-        fi
-    done
 packages    :
     - "%(name)-devel":
         paths:
@@ -53,6 +40,9 @@ packages    :
           - /usr/lib/objects-*
           - /usr/lib/qt6/bin/qml*
           - /usr/lib/qt6/bin/svgtoqml
+          - /usr/lib/qt6/plugins/qmllint/
+          - /usr/lib/qt6/plugins/qmlls/
+          - /usr/lib/qt6/plugins/qmltooling/
           - /usr/lib/qt6/qmlaotstats
           - /usr/lib/qt6/qmlcachegen
           - /usr/lib/qt6/qmlimportscanner

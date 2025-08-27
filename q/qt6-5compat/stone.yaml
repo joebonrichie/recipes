@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : qt6-5compat
-version     : 6.9.1
-release     : 5
+version     : 6.9.2
+release     : 7
 homepage    : https://www.qt.io
 upstreams   :
-    - https://download.qt.io/official_releases/qt/6.9/6.9.1/submodules/qt5compat-everywhere-src-6.9.1.tar.xz : 96c726ac3f0d5c40570e75196e4ab5c95d3de7c85d15604fe97ac2a6573d917a
+    - https://download.qt.io/official_releases/qt/6.9/6.9.2/submodules/qt5compat-everywhere-src-6.9.2.tar.xz : cb289905c689fc271ce783f8b67844040aa73d78f4f0cf8421fa713390a75b60
 summary     : Qt 5 compatibility library for Qt 6
 description : |
     The Qt 5 Core Compat module contains the Qt Core APIs which will be no longer supported in Qt 6 and therefore were removed from Qt 6. The module is provided to facilitate the transition to Qt 6.
@@ -27,4 +27,3 @@ build       : |
     %cmake_build
 install     : |
     %cmake_install
-    %qml_cache_qt6

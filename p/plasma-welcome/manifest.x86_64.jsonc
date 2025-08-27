@@ -55,15 +55,10 @@
 				"/usr/bin/plasma-welcome",
 				"/usr/lib/qt6/plugins/kf6/kded/kded_plasma-welcome.so",
 				"/usr/lib/qt6/qml/org/kde/plasma/welcome/ApplicationIcon.qml",
-				"/usr/lib/qt6/qml/org/kde/plasma/welcome/ApplicationIcon.qmlc",
 				"/usr/lib/qt6/qml/org/kde/plasma/welcome/GenericPage.qml",
-				"/usr/lib/qt6/qml/org/kde/plasma/welcome/GenericPage.qmlc",
 				"/usr/lib/qt6/qml/org/kde/plasma/welcome/KCMPage.qml",
-				"/usr/lib/qt6/qml/org/kde/plasma/welcome/KCMPage.qmlc",
 				"/usr/lib/qt6/qml/org/kde/plasma/welcome/Page.qml",
-				"/usr/lib/qt6/qml/org/kde/plasma/welcome/Page.qmlc",
 				"/usr/lib/qt6/qml/org/kde/plasma/welcome/ScrollablePage.qml",
-				"/usr/lib/qt6/qml/org/kde/plasma/welcome/ScrollablePage.qmlc",
 				"/usr/lib/qt6/qml/org/kde/plasma/welcome/kde-qmlmodule.version",
 				"/usr/lib/qt6/qml/org/kde/plasma/welcome/plasma-welcome-public.qmltypes",
 				"/usr/lib/qt6/qml/org/kde/plasma/welcome/qmldir",
@@ -125,6 +120,6 @@
 		}
 	},
 	"source-name": "plasma-welcome",
-	"source-release": "3",
+	"source-release": "5",
 	"source-version": "6.4.4"
 }

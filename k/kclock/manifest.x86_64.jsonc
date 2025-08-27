@@ -153,12 +153,9 @@
 				"/usr/share/metainfo/org.kde.kclock.appdata.xml",
 				"/usr/share/metainfo/org.kde.plasma.kclock_1x2.appdata.xml",
 				"/usr/share/plasma/plasmoids/org.kde.plasma.kclock_1x2/contents/config/config.qml",
-				"/usr/share/plasma/plasmoids/org.kde.plasma.kclock_1x2/contents/config/config.qmlc",
 				"/usr/share/plasma/plasmoids/org.kde.plasma.kclock_1x2/contents/config/main.xml",
 				"/usr/share/plasma/plasmoids/org.kde.plasma.kclock_1x2/contents/ui/configGeneral.qml",
-				"/usr/share/plasma/plasmoids/org.kde.plasma.kclock_1x2/contents/ui/configGeneral.qmlc",
 				"/usr/share/plasma/plasmoids/org.kde.plasma.kclock_1x2/contents/ui/main.qml",
-				"/usr/share/plasma/plasmoids/org.kde.plasma.kclock_1x2/contents/ui/main.qmlc",
 				"/usr/share/plasma/plasmoids/org.kde.plasma.kclock_1x2/metadata.json",
 				"/usr/share/plasma/plasmoids/org.kde.plasma.kclock_1x2/metadata.json.license",
 				"/usr/share/xdg/autostart/org.kde.kclockd-autostart.desktop"
@@ -172,6 +169,6 @@
 		}
 	},
 	"source-name": "kclock",
-	"source-release": "4",
+	"source-release": "6",
 	"source-version": "25.08.0"
 }

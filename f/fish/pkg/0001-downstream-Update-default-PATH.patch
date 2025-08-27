@@ -1,0 +1,29 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: Reilly Brogan <reilly@reillybrogan.com>
+Date: Tue, 26 Aug 2025 12:53:54 -0500
+Subject: [PATCH] downstream: Update default PATH
+
+---
+ src/path.rs | 7 ++++---
+ 1 file changed, 4 insertions(+), 3 deletions(-)
+
+diff --git a/src/path.rs b/src/path.rs
+index a08c1248b..adca2f88d 100644
+--- a/src/path.rs
++++ b/src/path.rs
+@@ -198,11 +198,12 @@ pub fn path_get_path(cmd: &wstr, vars: &dyn Environment) -> Option<WString> {
+ }
+ 
+ // PREFIX is defined at build time.
+-pub static DEFAULT_PATH: Lazy<[WString; 3]> = Lazy::new(|| {
++pub static DEFAULT_PATH: Lazy<[WString; 4]> = Lazy::new(|| {
+     [
+-        WString::from_str(env!("PREFIX")) + L!("/bin"),
++        L!("/usr/local/bin").to_owned(),
++        L!("/usr/local/sbin").to_owned(),
+         L!("/usr/bin").to_owned(),
+-        L!("/bin").to_owned(),
++        L!("/usr/sbin").to_owned(),
+     ]
+ });
+ 

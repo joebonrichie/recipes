@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : qt6-quicktimeline
-version     : 6.9.1
-release     : 5
+version     : 6.9.2
+release     : 6
 homepage    : https://www.qt.io
 upstreams   :
-    - https://download.qt.io/official_releases/qt/6.9/6.9.1/submodules/qtquicktimeline-everywhere-src-6.9.1.tar.xz : 78bfdbe7ca8178e4e0931372e07a3076dec503b6a55ff07e41b594d781897294
+    - https://download.qt.io/official_releases/qt/6.9/6.9.2/submodules/qtquicktimeline-everywhere-src-6.9.2.tar.xz : bc65688d8cb588ff67d32a63a821163211452ae7cb07dd07c261230f380ec526
 summary     : Enables keyframe-based animations and parameterization for Qt6
 description : |
     Enables keyframe-based animations and parameterization for Qt6

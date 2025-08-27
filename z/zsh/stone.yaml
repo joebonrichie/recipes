@@ -5,10 +5,10 @@
 #
 name        : zsh
 version     : 5.9
-release     : 5
+release     : 6
 homepage    : https://zsh.sourceforge.io
 upstreams   :
-    - https://sourceforge.net/projects/zsh/files/zsh/5.9/zsh-5.9.tar.xz/download : 9b8d1ecedd5b5e81fbf1918e876752a7dd948e05c1a0dba10ab863842d45acd5
+    - https://sourceforge.net/projects/zsh/files/zsh/5.9/zsh-5.9.tar.xz : 9b8d1ecedd5b5e81fbf1918e876752a7dd948e05c1a0dba10ab863842d45acd5
 summary     : Extensible shell designed for interactive use
 description : |
     Zsh is a shell designed for interactive use, although it is also a powerful scripting language. Many of the useful features of bash, ksh, and tcsh were incorporated into zsh; many original features were added.
@@ -36,6 +36,9 @@ setup       : |
     %patch %(pkgdir)/patches/0013-51889-fix-module-loading-problem-with-full-RELRO.patch
     %patch %(pkgdir)/patches/006-52383-Avoid-incompatible-pointer-types-in-terminfo-g.patch
     %patch %(pkgdir)/patches/010-gcc14.patch
+
+    # Use the default Aeryn path as fallback
+    %patch %(pkgdir)/patches/0001-downstream-Update-default-PATH.patch
 
     %reconfigure \
         --enable-cap \

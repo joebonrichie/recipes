@@ -5,7 +5,7 @@
 #
 name        : kf6-kdeclarative
 version     : 6.17.0
-release     : 9
+release     : 11
 upstreams   :
     - https://download.kde.org/stable/frameworks/6.17/kdeclarative-6.17.0.tar.xz : b5363dfc7354d1fa1ed49d7175a0334a8ef66e82bb389ba4baffe6f778f2e2ba
 homepage    : https://community.kde.org/Frameworks
@@ -35,4 +35,3 @@ build       : |
     %cmake_build
 install     : |
     %cmake_install
-    %qml_cache_qt6

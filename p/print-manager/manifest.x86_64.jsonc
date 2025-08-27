@@ -230,11 +230,8 @@
 				"/usr/share/metainfo/org.kde.print-manager.metainfo.xml",
 				"/usr/share/plasma/plasmoids/org.kde.plasma.printmanager/contents/config/main.xml",
 				"/usr/share/plasma/plasmoids/org.kde.plasma.printmanager/contents/ui/FullRepresentation.qml",
-				"/usr/share/plasma/plasmoids/org.kde.plasma.printmanager/contents/ui/FullRepresentation.qmlc",
 				"/usr/share/plasma/plasmoids/org.kde.plasma.printmanager/contents/ui/PrinterDelegate.qml",
-				"/usr/share/plasma/plasmoids/org.kde.plasma.printmanager/contents/ui/PrinterDelegate.qmlc",
 				"/usr/share/plasma/plasmoids/org.kde.plasma.printmanager/contents/ui/main.qml",
-				"/usr/share/plasma/plasmoids/org.kde.plasma.printmanager/contents/ui/main.qmlc",
 				"/usr/share/plasma/plasmoids/org.kde.plasma.printmanager/metadata.json",
 				"/usr/share/qlogging-categories6/pmlogs.categories"
 			],
@@ -250,6 +247,6 @@
 		}
 	},
 	"source-name": "print-manager",
-	"source-release": "3",
+	"source-release": "5",
 	"source-version": "6.4.4"
 }

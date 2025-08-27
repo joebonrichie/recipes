@@ -4,8 +4,8 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : gdm
-version     : 48.0
-release     : 21
+version     : "48.0"
+release     : 22
 homepage    : https://gitlab.gnome.org/GNOME/gdm
 upstreams   :
     - https://download.gnome.org/sources/gdm/48/gdm-48.0.tar.xz : 1bc06daff093ec7b5e37ecb4f92e5da3474a1b1ba076edb9151ee967d1c30adf
@@ -37,26 +37,26 @@ builddeps   :
 rundeps     :
     - binary(gnome-session)
     - binary(gnome-shell)
-    - binary(Xwayland)
     - gnome-settings-daemon
-    # Temporary workaround until we have some kind of virtual package that defines the base system
-    - linux-pam
 setup       : |
     %patch %(pkgdir)/0001-rules-Disable-nvidia-wayland-checks.patch
-    %meson -Ddbus-sys=%(datadir)/dbus-1/system.d \
-           -Ddefault-pam-config=lfs \
-           -Dgdm-xsession=true \
-           -Dpam-mod-dir=%(libdir)/security \
-           -Dwayland-support=true \
-           -Dudev-dir=%(libdir)/udev/rules.d \
-           -Dpam-prefix=%(vendordir) \
-           -Duser-display-server=true \
-           -Dx11-support=false \
-           -Dplymouth=enabled
+    %meson \
+        -Ddbus-sys=%(datadir)/dbus-1/system.d \
+        -Ddefault-pam-config=lfs \
+        -Ddefault-path="/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin" \
+        -Dgdm-xsession=true \
+        -Dpam-mod-dir=%(libdir)/security \
+        -Dpam-prefix=%(vendordir) \
+        -Dplymouth=enabled \
+        -Dudev-dir=%(libdir)/udev/rules.d \
+        -Duser-display-server=true \
+        -Dwayland-support=true \
+        -Dx11-support=false
 build       : |
     %meson_build
 install     : |
     %meson_install
+
     # TODO: Finish stateless + dependencies
     %install_file %(pkgdir)/gdm.group %(installroot)%(libdir)/userdb/gdm.group
     ln -s gdm.group %(installroot)%(libdir)/userdb/21.group

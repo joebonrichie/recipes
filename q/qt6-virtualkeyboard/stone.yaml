@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : qt6-virtualkeyboard
-version     : 6.9.1
-release     : 1
+version     : 6.9.2
+release     : 3
 homepage    : https://www.qt.io
 upstreams   :
-    - https://download.qt.io/official_releases/qt/6.9/6.9.1/submodules/qtvirtualkeyboard-everywhere-src-6.9.1.tar.xz : 80059a38bdb836f0785292396970edc108f477a68d9a35bed8393750de3d281f
+    - https://download.qt.io/official_releases/qt/6.9/6.9.2/submodules/qtvirtualkeyboard-everywhere-src-6.9.2.tar.xz : 7b4100da01bafa72e20ab4e1459dcda1e6048e70b4d650b3c578613f0ffc11e3
 summary     : Qt Virtual Keyboard
 description : |
     Qt Virtual Keyboard is a virtual keyboard framework that consists of a C++ backend supporting custom input methods as well as a UI frontend implemented in QML.
@@ -19,6 +19,7 @@ license     :
 builddeps   :
     - cmake(Qt6CorePrivate)
     - cmake(Qt6Multimedia)
+    - cmake(Qt6Quick)
     - cmake(Qt6Svg)
     - pkgconfig(hunspell)
 setup       : |
@@ -27,4 +28,3 @@ build       : |
     %cmake_build
 install     : |
     %cmake_install
-    %qml_cache_qt6

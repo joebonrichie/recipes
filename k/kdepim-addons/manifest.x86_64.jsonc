@@ -262,7 +262,6 @@
 				"/usr/lib/qt6/plugins/pim6/webengineviewer/urlinterceptor/webengineviewer_donottrackplugin.so",
 				"/usr/lib/qt6/plugins/plasmacalendarplugins/pimevents.so",
 				"/usr/lib/qt6/plugins/plasmacalendarplugins/pimevents/PimEventsConfig.qml",
-				"/usr/lib/qt6/plugins/plasmacalendarplugins/pimevents/PimEventsConfig.qmlc",
 				"/usr/lib/qt6/qml/org/kde/plasma/PimCalendars/libpimcalendarsplugin.so",
 				"/usr/lib/qt6/qml/org/kde/plasma/PimCalendars/qmldir",
 				"/usr/share/locale/af/LC_MESSAGES/kaddressbook_importexportplugins.mo",
@@ -1608,6 +1607,6 @@
 		}
 	},
 	"source-name": "kdepim-addons",
-	"source-release": "2",
+	"source-release": "3",
 	"source-version": "25.08.0"
 }

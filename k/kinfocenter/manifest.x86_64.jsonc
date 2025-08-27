@@ -100,7 +100,6 @@
 				"/usr/lib/qt6/qml/org/kde/kinfocenter/private/kde-qmlmodule.version",
 				"/usr/lib/qt6/qml/org/kde/kinfocenter/private/libKInfoCenterInternalplugin.so",
 				"/usr/lib/qt6/qml/org/kde/kinfocenter/private/qml/CommandOutputKCM.qml",
-				"/usr/lib/qt6/qml/org/kde/kinfocenter/private/qml/CommandOutputKCM.qmlc",
 				"/usr/lib/qt6/qml/org/kde/kinfocenter/private/qmldir",
 				"/usr/share/applications/kcm_about-distro.desktop",
 				"/usr/share/applications/kcm_energyinfo.desktop",
@@ -552,6 +551,6 @@
 		}
 	},
 	"source-name": "kinfocenter",
-	"source-release": "5",
+	"source-release": "7",
 	"source-version": "6.4.4"
 }

@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : qt6-websockets
-version     : 6.9.1
-release     : 1
+version     : 6.9.2
+release     : 2
 homepage    : https://www.qt.io
 upstreams   :
-    - https://download.qt.io/official_releases/qt/6.9/6.9.1/submodules/qtwebsockets-everywhere-src-6.9.1.tar.xz : 98be8c863b7f02cc98eedc0b6eac07544c10a9d2fa11c685fd61f6b243f748f5
+    - https://download.qt.io/official_releases/qt/6.9/6.9.2/submodules/qtwebsockets-everywhere-src-6.9.2.tar.xz : be833f667ed8d6c2f41c0b9d1f8addf20b8d2b11c3a9466ec6d70c62121708ee
 summary     : Qt6 Websockets Module
 description : |
     WebSocket is a web-based protocol designed to enable two-way communication between a client application and a remote host. It enables the two entities to send data back and forth if the initial handshake succeeds. WebSocket is the solution for applications that struggle to get real-time data feeds with less network latency and minimum data exchange.

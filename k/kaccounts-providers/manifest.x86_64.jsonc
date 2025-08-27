@@ -44,20 +44,13 @@
 				"/usr/share/icons/hicolor/256x256/apps/kaccounts-owncloud.png",
 				"/usr/share/icons/hicolor/scalable/apps/kaccounts-nextcloud.svg",
 				"/usr/share/kpackage/genericqml/org.kde.kaccounts.nextcloud/contents/ui/Server.qml",
-				"/usr/share/kpackage/genericqml/org.kde.kaccounts.nextcloud/contents/ui/Server.qmlc",
 				"/usr/share/kpackage/genericqml/org.kde.kaccounts.nextcloud/contents/ui/Services.qml",
-				"/usr/share/kpackage/genericqml/org.kde.kaccounts.nextcloud/contents/ui/Services.qmlc",
 				"/usr/share/kpackage/genericqml/org.kde.kaccounts.nextcloud/contents/ui/WebLogin.qml",
-				"/usr/share/kpackage/genericqml/org.kde.kaccounts.nextcloud/contents/ui/WebLogin.qmlc",
 				"/usr/share/kpackage/genericqml/org.kde.kaccounts.nextcloud/contents/ui/main.qml",
-				"/usr/share/kpackage/genericqml/org.kde.kaccounts.nextcloud/contents/ui/main.qmlc",
 				"/usr/share/kpackage/genericqml/org.kde.kaccounts.nextcloud/metadata.desktop",
 				"/usr/share/kpackage/genericqml/org.kde.kaccounts.owncloud/contents/ui/Server.qml",
-				"/usr/share/kpackage/genericqml/org.kde.kaccounts.owncloud/contents/ui/Server.qmlc",
 				"/usr/share/kpackage/genericqml/org.kde.kaccounts.owncloud/contents/ui/Services.qml",
-				"/usr/share/kpackage/genericqml/org.kde.kaccounts.owncloud/contents/ui/Services.qmlc",
 				"/usr/share/kpackage/genericqml/org.kde.kaccounts.owncloud/contents/ui/main.qml",
-				"/usr/share/kpackage/genericqml/org.kde.kaccounts.owncloud/contents/ui/main.qmlc",
 				"/usr/share/kpackage/genericqml/org.kde.kaccounts.owncloud/metadata.desktop",
 				"/usr/share/locale/ar/LC_MESSAGES/kaccounts-providers.mo",
 				"/usr/share/locale/ast/LC_MESSAGES/kaccounts-providers.mo",
@@ -119,6 +112,6 @@
 		}
 	},
 	"source-name": "kaccounts-providers",
-	"source-release": "4",
+	"source-release": "5",
 	"source-version": "25.08.0"
 }

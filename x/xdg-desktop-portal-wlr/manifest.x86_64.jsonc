@@ -1,0 +1,42 @@
+/** Human readable report. This is not consumed by boulder */
+{
+	"manifest-version": "0.2",
+	"packages": {
+		"xdg-desktop-portal-wlr": {
+			"build-depends": [
+				"binary(scdoc)",
+				"pkgconfig(gbm)",
+				"pkgconfig(inih)",
+				"pkgconfig(libdrm)",
+				"pkgconfig(libpipewire-0.3)",
+				"pkgconfig(libsystemd)",
+				"pkgconfig(wayland-client)",
+				"pkgconfig(wayland-protocols)"
+			],
+			"depends": [
+				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
+				"pipewire",
+				"soname(libc.so.6(x86_64))",
+				"soname(libdrm.so.2(x86_64))",
+				"soname(libgbm.so.1(x86_64))",
+				"soname(libinih.so.0(x86_64))",
+				"soname(libpipewire-0.3.so.0(x86_64))",
+				"soname(libsystemd.so.0(x86_64))",
+				"soname(libwayland-client.so.0(x86_64))",
+				"xdg-desktop-portal"
+			],
+			"files": [
+				"/usr/lib/systemd/user/xdg-desktop-portal-wlr.service",
+				"/usr/lib/xdg-desktop-portal-wlr/xdg-desktop-portal-wlr",
+				"/usr/share/dbus-1/services/org.freedesktop.impl.portal.desktop.wlr.service",
+				"/usr/share/man/man5/xdg-desktop-portal-wlr.5",
+				"/usr/share/xdg-desktop-portal/portals/wlr.portal",
+				"/usr/share/xdg-desktop-portal/wlroots-portals.conf"
+			],
+			"name": "xdg-desktop-portal-wlr"
+		}
+	},
+	"source-name": "xdg-desktop-portal-wlr",
+	"source-release": "1",
+	"source-version": "0.7.1"
+}

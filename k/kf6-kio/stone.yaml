@@ -5,7 +5,7 @@
 #
 name        : kf6-kio
 version     : 6.17.0
-release     : 12
+release     : 13
 upstreams   :
     - https://download.kde.org/stable/frameworks/6.17/kio-6.17.0.tar.xz : d00d4952198f8e9ff44335b340714615e0124857edbd67c4964b50e0c913d62d
 homepage    : https://community.kde.org/Frameworks

@@ -5,7 +5,7 @@
 #
 name        : neochat
 version     : 25.08.0
-release     : 3
+release     : 4
 upstreams   :
     - https://download.kde.org/stable/release-service/25.08.0/src/neochat-25.08.0.tar.xz : 960f05a676cbed9a063bf9cdf53f63f4d817f07a0acf52edd40185320d3248e6
 homepage    : https://apps.kde.org/neochat/
