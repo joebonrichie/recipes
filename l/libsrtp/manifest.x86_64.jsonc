@@ -1,0 +1,49 @@
+/** Human readable report. This is not consumed by boulder */
+{
+	"manifest-version": "0.2",
+	"packages": {
+		"libsrtp": {
+			"build-depends": [
+				"binary(doxygen)",
+				"pkgconfig(libcrypto)",
+				"pkgconfig(libpcap)"
+			],
+			"depends": [
+				"soname(libc.so.6(x86_64))",
+				"soname(libcrypto.so.3(x86_64))"
+			],
+			"files": [
+				"/usr/lib/libsrtp2.so.1"
+			],
+			"name": "libsrtp",
+			"provides": [
+				"soname(libsrtp2.so.1(x86_64))"
+			]
+		},
+		"libsrtp-devel": {
+			"build-depends": [
+				"binary(doxygen)",
+				"pkgconfig(libcrypto)",
+				"pkgconfig(libpcap)"
+			],
+			"depends": [
+				"libsrtp"
+			],
+			"files": [
+				"/usr/include/srtp2/auth.h",
+				"/usr/include/srtp2/cipher.h",
+				"/usr/include/srtp2/crypto_types.h",
+				"/usr/include/srtp2/srtp.h",
+				"/usr/lib/libsrtp2.so",
+				"/usr/lib/pkgconfig/libsrtp2.pc"
+			],
+			"name": "libsrtp-devel",
+			"provides": [
+				"pkgconfig(libsrtp2)"
+			]
+		}
+	},
+	"source-name": "libsrtp",
+	"source-release": "1",
+	"source-version": "2.7.0"
+}
