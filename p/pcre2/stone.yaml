@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : pcre2
-version     : '10.45'
-release     : 6
+version     : '10.46'
+release     : 7
 homepage    : https://github.com/PCRE2Project/pcre2
 upstreams   :
-    - https://github.com/PCRE2Project/pcre2/releases/download/pcre2-10.45/pcre2-10.45.tar.gz : 0e138387df7835d7403b8351e2226c1377da804e0737db0e071b48f07c9d12ee
+    - https://github.com/PCRE2Project/pcre2/releases/download/pcre2-10.46/pcre2-10.46.tar.gz : 8d28d7f2c3b970c3a4bf3776bcbb5adfc923183ce74bc8df1ebaad8c1985bd07
 summary     : Perl-Compatible Regular Expressions Library
 description : |
     The PCRE2 library is a set of C functions that implement regular expression pattern
