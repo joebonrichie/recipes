@@ -29,7 +29,6 @@
 				"/usr/lib/qt6/plugins/geoservices/libqtgeoservices_itemsoverlay.so",
 				"/usr/lib/qt6/plugins/geoservices/libqtgeoservices_osm.so",
 				"/usr/lib/qt6/qml/QtLocation/MapView.qml",
-				"/usr/lib/qt6/qml/QtLocation/MapView.qmlc",
 				"/usr/lib/qt6/qml/QtLocation/libdeclarative_locationplugin.so",
 				"/usr/lib/qt6/qml/QtLocation/plugins.qmltypes",
 				"/usr/lib/qt6/qml/QtLocation/qmldir"
@@ -319,6 +318,6 @@
 		}
 	},
 	"source-name": "qt6-location",
-	"source-release": "8",
+	"source-release": "9",
 	"source-version": "6.9.2"
 }
