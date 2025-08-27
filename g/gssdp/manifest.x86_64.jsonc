@@ -1,0 +1,96 @@
+/** Human readable report. This is not consumed by boulder */
+{
+	"manifest-version": "0.2",
+	"packages": {
+		"gssdp": {
+			"build-depends": [
+				"binary(gi-docgen)",
+				"binary(vapigen)",
+				"pkgconfig(glib-2.0)",
+				"pkgconfig(gobject-introspection-1.0)",
+				"pkgconfig(gtk4)",
+				"pkgconfig(libsoup-3.0)"
+			],
+			"depends": [
+				"soname(libc.so.6(x86_64))",
+				"soname(libgio-2.0.so.0(x86_64))",
+				"soname(libglib-2.0.so.0(x86_64))",
+				"soname(libgobject-2.0.so.0(x86_64))",
+				"soname(libsoup-3.0.so.0(x86_64))"
+			],
+			"files": [
+				"/usr/lib/girepository-1.0/GSSDP-1.6.typelib",
+				"/usr/lib/libgssdp-1.6.so.0",
+				"/usr/lib/libgssdp-1.6.so.0.106.4"
+			],
+			"name": "gssdp",
+			"provides": [
+				"soname(libgssdp-1.6.so.0(x86_64))"
+			]
+		},
+		"gssdp-devel": {
+			"build-depends": [
+				"binary(gi-docgen)",
+				"binary(vapigen)",
+				"pkgconfig(glib-2.0)",
+				"pkgconfig(gobject-introspection-1.0)",
+				"pkgconfig(gtk4)",
+				"pkgconfig(libsoup-3.0)"
+			],
+			"depends": [
+				"gssdp",
+				"pkgconfig(gio-2.0)",
+				"pkgconfig(glib-2.0)",
+				"pkgconfig(gobject-2.0)",
+				"pkgconfig(libsoup-3.0)"
+			],
+			"files": [
+				"/usr/include/gssdp-1.6/libgssdp/gssdp-client.h",
+				"/usr/include/gssdp-1.6/libgssdp/gssdp-enums.h",
+				"/usr/include/gssdp-1.6/libgssdp/gssdp-error.h",
+				"/usr/include/gssdp-1.6/libgssdp/gssdp-resource-browser.h",
+				"/usr/include/gssdp-1.6/libgssdp/gssdp-resource-group.h",
+				"/usr/include/gssdp-1.6/libgssdp/gssdp.h",
+				"/usr/lib/libgssdp-1.6.so",
+				"/usr/lib/pkgconfig/gssdp-1.6.pc",
+				"/usr/share/gir-1.0/GSSDP-1.6.gir",
+				"/usr/share/vala/vapi/gssdp-1.6.deps",
+				"/usr/share/vala/vapi/gssdp-1.6.vapi"
+			],
+			"name": "gssdp-devel",
+			"provides": [
+				"pkgconfig(gssdp-1.6)"
+			]
+		},
+		"gssdp-utils": {
+			"build-depends": [
+				"binary(gi-docgen)",
+				"binary(vapigen)",
+				"pkgconfig(glib-2.0)",
+				"pkgconfig(gobject-introspection-1.0)",
+				"pkgconfig(gtk4)",
+				"pkgconfig(libsoup-3.0)"
+			],
+			"depends": [
+				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
+				"soname(libc.so.6(x86_64))",
+				"soname(libgio-2.0.so.0(x86_64))",
+				"soname(libglib-2.0.so.0(x86_64))",
+				"soname(libgobject-2.0.so.0(x86_64))",
+				"soname(libgssdp-1.6.so.0(x86_64))",
+				"soname(libgtk-4.so.1(x86_64))",
+				"soname(libsoup-3.0.so.0(x86_64))"
+			],
+			"files": [
+				"/usr/bin/gssdp-device-sniffer"
+			],
+			"name": "gssdp-utils",
+			"provides": [
+				"binary(gssdp-device-sniffer)"
+			]
+		}
+	},
+	"source-name": "gssdp",
+	"source-release": "1",
+	"source-version": "1.6.4"
+}

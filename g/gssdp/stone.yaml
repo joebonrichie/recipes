@@ -1,0 +1,41 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : gssdp
+version     : 1.6.4
+release     : 1
+upstreams   :
+    - https://download.gnome.org/sources/gssdp/1.6/gssdp-1.6.4.tar.xz : ff97fdfb7f561d3e6813b4f6a2145259e7c2eff43cc0e63f3fd031d0b6266032
+homepage    : https://gitlab.gnome.org/GNOME/gssdp
+license     : LGPL-2.0-only
+summary     : A GObject-based API for handling resource discovery and announcement over SSDP.
+description : |
+    A GObject-based API for handling resource discovery and announcement over SSDP.
+builddeps   :
+    - binary(gi-docgen)
+    # - binary(pandoc) # TODO: man pages
+    - binary(vapigen)
+    - pkgconfig(glib-2.0)
+    - pkgconfig(gobject-introspection-1.0)
+    - pkgconfig(gtk4)
+    - pkgconfig(libsoup-3.0)
+setup       : |
+    %meson \
+        -Dmanpages=false
+build       : |
+    %meson_build
+install     : |
+    %meson_install
+packages    :
+    - "%(name)-utils":
+        summary: Various GUI utils for %(name)
+        description: Various GUI utils for %(name)
+        paths:
+            - /usr/bin/gssdp-device-sniffer
+            # - /usr/man/
+
+    - "%(name)-devel":
+        paths:
+            - /usr/share/vala/
