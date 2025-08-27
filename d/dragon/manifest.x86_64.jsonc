@@ -40,21 +40,13 @@
 			"files": [
 				"/usr/bin/dragon",
 				"/usr/lib/qt6/qml/org/kde/dragon/AboutPage.qml",
-				"/usr/lib/qt6/qml/org/kde/dragon/AboutPage.qmlc",
 				"/usr/lib/qt6/qml/org/kde/dragon/ControlsBar.qml",
-				"/usr/lib/qt6/qml/org/kde/dragon/ControlsBar.qmlc",
 				"/usr/lib/qt6/qml/org/kde/dragon/IconToolButton.qml",
-				"/usr/lib/qt6/qml/org/kde/dragon/IconToolButton.qmlc",
 				"/usr/lib/qt6/qml/org/kde/dragon/Main.qml",
-				"/usr/lib/qt6/qml/org/kde/dragon/Main.qmlc",
 				"/usr/lib/qt6/qml/org/kde/dragon/OverlayPopup.qml",
-				"/usr/lib/qt6/qml/org/kde/dragon/OverlayPopup.qmlc",
 				"/usr/lib/qt6/qml/org/kde/dragon/PlayerPage.qml",
-				"/usr/lib/qt6/qml/org/kde/dragon/PlayerPage.qmlc",
 				"/usr/lib/qt6/qml/org/kde/dragon/VolumeButton.qml",
-				"/usr/lib/qt6/qml/org/kde/dragon/VolumeButton.qmlc",
 				"/usr/lib/qt6/qml/org/kde/dragon/WelcomeView.qml",
-				"/usr/lib/qt6/qml/org/kde/dragon/WelcomeView.qmlc",
 				"/usr/lib/qt6/qml/org/kde/dragon/dragonmodule.qmltypes",
 				"/usr/lib/qt6/qml/org/kde/dragon/kde-qmlmodule.version",
 				"/usr/lib/qt6/qml/org/kde/dragon/libdragonmodule.so",
@@ -141,6 +133,6 @@
 		}
 	},
 	"source-name": "dragon",
-	"source-release": "8",
+	"source-release": "9",
 	"source-version": "25.08.0"
 }
