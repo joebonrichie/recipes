@@ -5,7 +5,7 @@
 #
 name        : gupnp
 version     : 1.6.9
-release     : 1
+release     : 2
 upstreams   :
     - https://download.gnome.org/sources/gupnp/1.6/gupnp-1.6.9.tar.xz : 2edb6ee3613558e62f538735368aee27151b7e09d4e2e2c51606833da801869b
 homepage    : https://gitlab.gnome.org/GNOME/gupnp
@@ -26,7 +26,8 @@ environment : |
     # Temporary, replace with boulder macro
     export XML_CATALOG_FILES="file:///usr/share/defaults/docbook/docbook-xsl/catalog"
 setup       : |
-    %meson
+    %meson \
+        -Dcontext_manager=network-manager
 build       : |
     %meson_build
 install     : |
