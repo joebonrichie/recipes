@@ -25,7 +25,11 @@
 				"pkgconfig(spdlog)"
 			],
 			"depends": [
+				"gstreamer-plugin-libnice",
+				"gstreamer-plugin-pipewire",
 				"gstreamer-plugin-qt6",
+				"gstreamer-plugins-bad",
+				"gstreamer-plugins-good",
 				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
 				"kf6-kirigami",
 				"qt6-wayland",
@@ -81,6 +85,6 @@
 		}
 	},
 	"source-name": "nheko",
-	"source-release": "9",
+	"source-release": "10",
 	"source-version": "0.12.1"
 }
