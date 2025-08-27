@@ -5,7 +5,7 @@
 #
 name        : qt6-virtualkeyboard
 version     : 6.9.2
-release     : 2
+release     : 3
 homepage    : https://www.qt.io
 upstreams   :
     - https://download.qt.io/official_releases/qt/6.9/6.9.2/submodules/qtvirtualkeyboard-everywhere-src-6.9.2.tar.xz : 7b4100da01bafa72e20ab4e1459dcda1e6048e70b4d650b3c578613f0ffc11e3
@@ -19,6 +19,7 @@ license     :
 builddeps   :
     - cmake(Qt6CorePrivate)
     - cmake(Qt6Multimedia)
+    - cmake(Qt6Quick)
     - cmake(Qt6Svg)
     - pkgconfig(hunspell)
 setup       : |
@@ -27,4 +28,3 @@ build       : |
     %cmake_build
 install     : |
     %cmake_install
-    %qml_cache_qt6
