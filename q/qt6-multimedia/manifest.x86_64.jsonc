@@ -70,7 +70,6 @@
 				"/usr/lib/qt6/plugins/multimedia/libffmpegmediaplugin.so",
 				"/usr/lib/qt6/plugins/multimedia/libgstreamermediaplugin.so",
 				"/usr/lib/qt6/qml/QtMultimedia/Video.qml",
-				"/usr/lib/qt6/qml/QtMultimedia/Video.qmlc",
 				"/usr/lib/qt6/qml/QtMultimedia/libquickmultimediaplugin.so",
 				"/usr/lib/qt6/qml/QtMultimedia/plugins.qmltypes",
 				"/usr/lib/qt6/qml/QtMultimedia/qmldir",
@@ -735,6 +734,6 @@
 		}
 	},
 	"source-name": "qt6-multimedia",
-	"source-release": "5",
+	"source-release": "6",
 	"source-version": "6.9.2"
 }
