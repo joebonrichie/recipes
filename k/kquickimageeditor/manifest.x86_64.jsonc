@@ -18,17 +18,11 @@
 			],
 			"files": [
 				"/usr/lib/qt6/qml/org/kde/kquickimageeditor/BasicResizeHandle.qml",
-				"/usr/lib/qt6/qml/org/kde/kquickimageeditor/BasicResizeHandle.qmlc",
 				"/usr/lib/qt6/qml/org/kde/kquickimageeditor/CropBackground.qml",
-				"/usr/lib/qt6/qml/org/kde/kquickimageeditor/CropBackground.qmlc",
 				"/usr/lib/qt6/qml/org/kde/kquickimageeditor/RectangleCutout.qml",
-				"/usr/lib/qt6/qml/org/kde/kquickimageeditor/RectangleCutout.qmlc",
 				"/usr/lib/qt6/qml/org/kde/kquickimageeditor/SelectionBackground.qml",
-				"/usr/lib/qt6/qml/org/kde/kquickimageeditor/SelectionBackground.qmlc",
 				"/usr/lib/qt6/qml/org/kde/kquickimageeditor/SelectionHandle.qml",
-				"/usr/lib/qt6/qml/org/kde/kquickimageeditor/SelectionHandle.qmlc",
 				"/usr/lib/qt6/qml/org/kde/kquickimageeditor/SelectionTool.qml",
-				"/usr/lib/qt6/qml/org/kde/kquickimageeditor/SelectionTool.qmlc",
 				"/usr/lib/qt6/qml/org/kde/kquickimageeditor/kde-qmlmodule.version",
 				"/usr/lib/qt6/qml/org/kde/kquickimageeditor/kquickimageeditorplugin.qmltypes",
 				"/usr/lib/qt6/qml/org/kde/kquickimageeditor/libkquickimageeditorplugin.so",
@@ -60,6 +54,6 @@
 		}
 	},
 	"source-name": "kquickimageeditor",
-	"source-release": "2",
+	"source-release": "3",
 	"source-version": "0.5.1"
 }
