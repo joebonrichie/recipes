@@ -137,6 +137,7 @@
 				"/usr/share/locale/sv/LC_MESSAGES/sysprof.mo",
 				"/usr/share/locale/tr/LC_MESSAGES/sysprof.mo",
 				"/usr/share/locale/uk/LC_MESSAGES/sysprof.mo",
+				"/usr/share/locale/uz/LC_MESSAGES/sysprof.mo",
 				"/usr/share/locale/zh_CN/LC_MESSAGES/sysprof.mo",
 				"/usr/share/metainfo/org.gnome.Sysprof.appdata.xml",
 				"/usr/share/mime/packages/sysprof-mime.xml"
@@ -479,6 +480,6 @@
 		}
 	},
 	"source-name": "sysprof",
-	"source-release": "1",
-	"source-version": "48.0"
+	"source-release": "2",
+	"source-version": "48.1"
 }

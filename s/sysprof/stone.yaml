@@ -4,10 +4,10 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : sysprof
-version     : "48.0"
-release     : 1
+version     : "48.1"
+release     : 2
 upstreams   :
-    - https://download.gnome.org/sources/sysprof/48/sysprof-48.0.tar.xz : 1b0f0380f2f30708ba87829321a06fee1db36dfa87797bbf07f0a7acf4498d18
+    - https://download.gnome.org/sources/sysprof/48/sysprof-48.1.tar.xz : 54f157fdfef1edf1e2f22e542c462d90e1c21fca8c30eba4127cee739039bbe2
 homepage    : https://apps.gnome.org/Sysprof/
 license     : GPL-3.0-or-later
 summary     : Sysprof is a statistical, system-wide profiler for Linux
@@ -29,6 +29,7 @@ builddeps   :
     - pkgconfig(polkit-gobject-1)
 setup       : |
     %patch %(pkgdir)/ftbfs-glibc-2.42.patch
+    %patch %(pkgdir)/152.patch
 
     %meson
 build       : |
