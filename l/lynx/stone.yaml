@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : lynx
-version     : 2.8.9rel.1
-release     : 3
+version     : 2.9.2
+release     : 4
 homepage    : https://lynx.browser.org/
 upstreams   :
-    - https://invisible-mirror.net/archives/lynx/tarballs/lynx2.8.9rel.1.tar.gz : a46e4167b8f02c066d2fe2eafcc5603367be0e3fe2e59e9fc4eb016f306afc8e
+    - https://invisible-mirror.net/archives/lynx/tarballs/lynx2.9.2.tar.gz : 99f8f28f860094c533100d1cedf058c27fb242ce25e991e2d5f30ece4457a3bf
 summary     : Lynx is a text browser for the World Wide Web
 description : |
     Lynx is the oldest text web browser still actively developed.
@@ -16,19 +16,28 @@ license     :
     - GPL-2.0-or-later
     - LGPL-2.0-or-later
 builddeps    :
+    - binary(bison)
     - binary(msginit)
+    - pkgconfig(bzip2)
+    - pkgconfig(libbrotlidec)
+    - pkgconfig(libidn2)
+    - pkgconfig(ncursesw)
     - pkgconfig(openssl)
-    - pkgconfig(slang)
-tuning      :
-    - lto: false
+    - pkgconfig(zlib)
 setup       : |
     %patch %(pkgdir)/0001-Try-to-load-stateless-path-for-lynx-configs.patch
-    %patch %(pkgdir)/security/CVE-2021-38165.diff
-    %configure --enable-ipv6 --enable-nls --with-ssl=/usr --with-screen=slang
+    %configure \
+        --enable-default-colors \
+        --enable-externs \
+        --enable-ipv6 \
+        --enable-nls \
+        --with-ssl=/usr \
+        --with-screen=ncursesw
 build       : |
     %make
 install     : |
     %make_install
+
     # Stateless config
-    install -Dm00644 lynx.cfg %(installroot)/usr/share/defaults/lynx/lynx.cfg
-    install -m00644 samples/lynx.lss %(installroot)/usr/share/defaults/lynx/lynx.lss
+    %install_file lynx.cfg %(installroot)%(vendordir)/lynx/lynx.cfg
+    %install_file samples/lynx.lss %(installroot)%(vendordir)/lynx/lynx.lss

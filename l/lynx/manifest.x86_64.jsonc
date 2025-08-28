@@ -4,16 +4,25 @@
 	"packages": {
 		"lynx": {
 			"build-depends": [
+				"binary(bison)",
 				"binary(msginit)",
+				"pkgconfig(bzip2)",
+				"pkgconfig(libbrotlidec)",
+				"pkgconfig(libidn2)",
+				"pkgconfig(ncursesw)",
 				"pkgconfig(openssl)",
-				"pkgconfig(slang)"
+				"pkgconfig(zlib)"
 			],
 			"depends": [
 				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
+				"soname(libbrotlidec.so.1(x86_64))",
+				"soname(libbz2.so.1.0(x86_64))",
 				"soname(libc.so.6(x86_64))",
 				"soname(libcrypto.so.3(x86_64))",
-				"soname(libslang.so.2(x86_64))",
-				"soname(libssl.so.3(x86_64))"
+				"soname(libidn2.so.0(x86_64))",
+				"soname(libncursesw.so.6(x86_64))",
+				"soname(libssl.so.3(x86_64))",
+				"soname(libz.so.1(x86_64))"
 			],
 			"files": [
 				"/usr/bin/lynx",
@@ -34,6 +43,7 @@
 				"/usr/share/locale/ja/LC_MESSAGES/lynx.mo",
 				"/usr/share/locale/nl/LC_MESSAGES/lynx.mo",
 				"/usr/share/locale/pt_BR/LC_MESSAGES/lynx.mo",
+				"/usr/share/locale/ro/LC_MESSAGES/lynx.mo",
 				"/usr/share/locale/ru/LC_MESSAGES/lynx.mo",
 				"/usr/share/locale/sl/LC_MESSAGES/lynx.mo",
 				"/usr/share/locale/sv/LC_MESSAGES/lynx.mo",
@@ -51,6 +61,6 @@
 		}
 	},
 	"source-name": "lynx",
-	"source-release": "3",
-	"source-version": "2.8.9rel.1"
+	"source-release": "4",
+	"source-version": "2.9.2"
 }
