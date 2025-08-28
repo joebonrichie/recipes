@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : lua
-version     : 5.4.7
-release     : 7
+version     : 5.4.8
+release     : 8
 homepage    : https://www.lua.org
 upstreams   :
-    - https://www.lua.org/ftp/lua-5.4.7.tar.gz : 9fbf5e28ef86c69858f6d3d34eccc32e911c1a28b4120ff3e84aaa70cfbf1e30
+    - https://www.lua.org/ftp/lua-5.4.8.tar.gz : 4f18ddae154e793e46eeab727c59ef1c0c0c2b744e7b94219710d76f530629ae
 summary     : Lightweight and embeddable language
 description : |
     Lua is a powerful, efficient, lightweight, embeddable scripting language. It supports procedural programming, object-oriented programming, functional programming, data-driven programming, and data description.
