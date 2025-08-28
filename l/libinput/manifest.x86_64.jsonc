@@ -95,6 +95,7 @@
 				"/usr/share/libinput/50-system-sony.quirks",
 				"/usr/share/libinput/50-system-starlabs.quirks",
 				"/usr/share/libinput/50-system-system76.quirks",
+				"/usr/share/libinput/50-system-tongfang.quirks",
 				"/usr/share/libinput/50-system-toshiba.quirks",
 				"/usr/share/libinput/50-system-vaio.quirks",
 				"/usr/share/man/man1/libinput-analyze-buttons.1",
@@ -151,6 +152,6 @@
 		}
 	},
 	"source-name": "libinput",
-	"source-release": "1",
-	"source-version": "1.29.0"
+	"source-release": "9",
+	"source-version": "1.29.1"
 }
