@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : udisks
-version     : 2.10.1
-release     : 6
+version     : 2.10.2
+release     : 7
 homepage    : https://github.com/storaged-project/udisks
 upstreams   :
-    - https://github.com/storaged-project/udisks/releases/download/udisks-2.10.1/udisks-2.10.1.tar.bz2 : b75734ccf602540dedb4068bec206adcb508a4c003725e117ae8f994d92d8ece
+    - https://github.com/storaged-project/udisks/releases/download/udisks-2.10.2/udisks-2.10.2.tar.bz2 : 6401c715d287ec84fe605e0cb90579e8da6c395bce5f42e419f205dd297e261f
 summary     : Disk and storage device abstraction
 description : |
     The UDisks project provides a daemon, tools and libraries to access and manipulate disks, storage devices and technologies.
@@ -31,7 +31,6 @@ environment : |
     export XML_CATALOG_FILES="file:///usr/share/defaults/docbook/docbook-xsl/catalog"
 setup       : |
     %patch %(pkgdir)/0001-Add-support-for-a-stateless-configuration-file.patch
-    %patch %(pkgdir)/upstream-01.patch
 
     %configure \
         --disable-static \
