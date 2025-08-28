@@ -524,6 +524,6 @@
 		}
 	},
 	"source-name": "php",
-	"source-release": "9",
-	"source-version": "8.4.11"
+	"source-release": "10",
+	"source-version": "8.4.12"
 }
