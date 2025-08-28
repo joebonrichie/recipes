@@ -210,6 +210,6 @@
 		}
 	},
 	"source-name": "xfsprogs",
-	"source-release": "9",
-	"source-version": "6.15.0"
+	"source-release": "10",
+	"source-version": "6.16.0"
 }
