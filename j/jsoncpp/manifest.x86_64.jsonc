@@ -32,19 +32,16 @@
 				"/usr/include/json/value.h",
 				"/usr/include/json/version.h",
 				"/usr/include/json/writer.h",
-				"/usr/lib/cmake/jsoncpp/jsoncpp-namespaced-targets.cmake",
-				"/usr/lib/cmake/jsoncpp/jsoncppConfig.cmake",
 				"/usr/lib/libjsoncpp.so",
 				"/usr/lib/pkgconfig/jsoncpp.pc"
 			],
 			"name": "jsoncpp-devel",
 			"provides": [
-				"cmake(jsoncpp)",
 				"pkgconfig(jsoncpp)"
 			]
 		}
 	},
 	"source-name": "jsoncpp",
-	"source-release": "2",
+	"source-release": "3",
 	"source-version": "1.9.6"
 }
