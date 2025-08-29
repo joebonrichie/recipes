@@ -1,0 +1,45 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : openxr
+version     : 1.1.51
+release     : 1
+upstreams   :
+    - https://github.com/KhronosGroup/OpenXR-SDK-Source/releases/download/release-1.1.51/OpenXR-SDK-Source-release-1.1.51.tar.gz : 0efacfbaada35f877d6be1d283d381717536b2743c24697c1145409377a6da2c
+homepage    : https://www.khronos.org/openxr/
+license     : Apache-2.0
+summary     : An open standard for virtual reality and augmented reality platforms and devices
+description : |
+    An open standard for virtual reality and augmented reality platforms and devices
+builddeps   :
+    - binary(glslangValidator)
+    - binary(glslc)
+    - binary(python3)
+    - pkgconfig(jsoncpp)
+    - pkgconfig(opengl)
+    - pkgconfig(vulkan)
+    - pkgconfig(wayland-client)
+    - pkgconfig(x11)
+    - pkgconfig(xrandr)
+    - pkgconfig(xxf86vm)
+setup       : |
+    %cmake \
+        -DBUILD_ALL_EXTENSIONS=ON
+build       : |
+    %cmake_build
+install     : |
+    %cmake_install
+check      : |
+    %cmake_test
+packages   :
+    - "%(name)":
+        paths:
+            - /usr/lib/libXrApiLayer_*.so
+
+    - "%(name)-libs":
+        summary: OpenXR runtime loader library
+        description: OpenXR runtime loader library
+        paths:
+            - /usr/lib/libopenxr_loader.so.*
