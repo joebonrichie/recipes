@@ -5,7 +5,7 @@
 #
 name        : polkit
 version     : "126"
-release     : 7
+release     : 8
 summary     : Application-level authorization toolkit
 license     : GPL-2.0-or-later
 homepage    : https://github.com/polkit-org/polkit
@@ -29,24 +29,29 @@ environment : |
     export XML_CATALOG_FILES="file:///usr/share/defaults/docbook/docbook-xsl/catalog"
 setup       : |
     %patch %(pkgdir)/stateless/0001-pkexec-Support-a-stateless-configuration.patch
+    %patch %(pkgdir)/upstream-01.patch
 
-    %meson -Dos_type=redhat \
-           -Dsession_tracking=logind \
-           -Dexamples=false \
-           -Dman=true \
-           -Dgtk_doc=false \
-           -Dtests=false
+    %meson \
+        -Dos_type=redhat \
+        -Dsession_tracking=logind \
+        -Dexamples=false \
+        -Dman=true \
+        -Dgtk_doc=false \
+        -Dtests=false
     # TODO build gtk_docs
 build       : |
     %meson_build
 install     : |
     %meson_install
 
+    # Trigger to reload dbus whenever necessary
+    %install_file %(pkgdir)/trigger.yaml %(installroot)/usr/share/moss/triggers/sys.d/reload_polkit.yaml
+
     # tmpfiles
     # Delete the upstream version
     rm -v %(installroot)%(tmpfilesdir)/polkit-tmpfiles.conf
     %tmpfiles "d /var/empty 0755 - - -"
-    %tmpfiles "d /etc/polkit-1/rules.d 0755 - - -"
+    %tmpfiles "d /etc/polkit-1/rules.d 0750 root polkitd -"
 
     # Statelessness
     %install_dir %(installroot)/%(vendordir)
@@ -59,4 +64,17 @@ install     : |
     ln -s polkitd.user %(installroot)%(libdir)/userdb/27.user
     rm -fr %(installroot)%(libdir)/sysusers.d
 
+    # TODO: Capabilities
+
 # TODO checks (needs python-dbusmock)
+packages    :
+    - "%(name)-libs":
+        summary: Libraries for %(name)
+        description: Libraries for %(name)
+        paths:
+            - /usr/lib/lib*.so.*
+            - /usr/lib/girepository-1.0/*.typelib
+
+    - "%(name)-devel":
+        paths:
+            - /usr/share/gettext/its/

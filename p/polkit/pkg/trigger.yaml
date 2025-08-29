@@ -1,0 +1,16 @@
+name: reload_polkit
+description: |
+    Reload polkit after making changes to polkit policies/rules
+
+handlers:
+    reload_polkit:
+        run: /usr/share/moss/helpers/systemd-hook.sh
+        args: ["reload", "polkit"]
+
+paths:
+    "/usr/share/polkit-1/actions/*.policy" :
+        handlers:
+            - reload_polkit
+    "/usr/share/polkit-1/rules.d/*.rules" :
+        handlers:
+            - reload_polkit
