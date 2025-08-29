@@ -77,6 +77,7 @@
 				"pkgconfig32(xrandr)"
 			],
 			"depends": [
+				"cmake(VulkanHeaders)",
 				"vulkan-loader"
 			],
 			"files": [
@@ -94,6 +95,6 @@
 		}
 	},
 	"source-name": "vulkan-loader",
-	"source-release": "13",
+	"source-release": "14",
 	"source-version": "1.4.321.0"
 }
