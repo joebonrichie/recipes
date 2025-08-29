@@ -5,7 +5,7 @@
 #
 name        : pkgset-aeryn
 version     : "2025.08" # I guess let's just match the OS version for now
-release     : 13
+release     : 14
 homepage    : https://aerynos.com/
 # No upstreams!
 summary     : pkgset virtual packages
@@ -89,6 +89,9 @@ packages    :
             - mesa-libegl
             - mesa-libgl
             - mesa-vulkan-drivers
+
+            # Intel (for now) audio firmware and topologies
+            - sof-firmware
 
             # Audio
             - pipewire
