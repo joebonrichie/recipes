@@ -4,6 +4,7 @@
 	"packages": {
 		"qt6-quick3d": {
 			"build-depends": [
+				"cmake(OpenXR)",
 				"cmake(Qt6CorePrivate)",
 				"cmake(Qt6QuickTimeline)",
 				"cmake(Qt6ShaderTools)",
@@ -22,6 +23,7 @@
 				"soname(libc++.so.1(x86_64))",
 				"soname(libc.so.6(x86_64))",
 				"soname(libm.so.6(x86_64))",
+				"soname(libopenxr_loader.so.1(x86_64))",
 				"soname(libunwind.so.1(x86_64))",
 				"soname(libz.so.1(x86_64))"
 			],
@@ -613,6 +615,7 @@
 		},
 		"qt6-quick3d-demos": {
 			"build-depends": [
+				"cmake(OpenXR)",
 				"cmake(Qt6CorePrivate)",
 				"cmake(Qt6QuickTimeline)",
 				"cmake(Qt6ShaderTools)",
@@ -681,6 +684,7 @@
 		},
 		"qt6-quick3d-devel": {
 			"build-depends": [
+				"cmake(OpenXR)",
 				"cmake(Qt6CorePrivate)",
 				"cmake(Qt6QuickTimeline)",
 				"cmake(Qt6ShaderTools)",
@@ -1039,14 +1043,6 @@
 				"/usr/lib/cmake/Qt6BundledEmbree/Qt6BundledEmbreeTargets.cmake",
 				"/usr/lib/cmake/Qt6BundledEmbree/Qt6BundledEmbreeVersionlessAliasTargets.cmake",
 				"/usr/lib/cmake/Qt6BundledEmbree/Qt6BundledEmbreeVersionlessTargets.cmake",
-				"/usr/lib/cmake/Qt6BundledOpenXR/Qt6BundledOpenXRAdditionalTargetInfo.cmake",
-				"/usr/lib/cmake/Qt6BundledOpenXR/Qt6BundledOpenXRConfig.cmake",
-				"/usr/lib/cmake/Qt6BundledOpenXR/Qt6BundledOpenXRConfigVersion.cmake",
-				"/usr/lib/cmake/Qt6BundledOpenXR/Qt6BundledOpenXRConfigVersionImpl.cmake",
-				"/usr/lib/cmake/Qt6BundledOpenXR/Qt6BundledOpenXRTargets-release.cmake",
-				"/usr/lib/cmake/Qt6BundledOpenXR/Qt6BundledOpenXRTargets.cmake",
-				"/usr/lib/cmake/Qt6BundledOpenXR/Qt6BundledOpenXRVersionlessAliasTargets.cmake",
-				"/usr/lib/cmake/Qt6BundledOpenXR/Qt6BundledOpenXRVersionlessTargets.cmake",
 				"/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6Quick3DXrpluginAdditionalTargetInfo.cmake",
 				"/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6Quick3DXrpluginConfig.cmake",
 				"/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6Quick3DXrpluginConfigVersion.cmake",
@@ -1331,7 +1327,6 @@
 				"/usr/lib/cmake/Qt6Quick3DXrPrivate/Qt6Quick3DXrPrivateVersionlessAliasTargets.cmake",
 				"/usr/lib/cmake/Qt6Quick3DXrPrivate/Qt6Quick3DXrPrivateVersionlessTargets.cmake",
 				"/usr/lib/libQt6BundledEmbree.a",
-				"/usr/lib/libQt6BundledOpenXR.a",
 				"/usr/lib/libQt6Quick3D.prl",
 				"/usr/lib/libQt6Quick3D.so",
 				"/usr/lib/libQt6Quick3DAssetImport.prl",
@@ -1390,7 +1385,6 @@
 				"/usr/lib/qt6/metatypes/qt6quick3druntimerender_release_metatypes.json",
 				"/usr/lib/qt6/metatypes/qt6quick3dutils_release_metatypes.json",
 				"/usr/lib/qt6/metatypes/qt6quick3dxr_release_metatypes.json",
-				"/usr/lib/qt6/mkspecs/modules/qt_ext_openxr_loader.pri",
 				"/usr/lib/qt6/mkspecs/modules/qt_lib_quick3d.pri",
 				"/usr/lib/qt6/mkspecs/modules/qt_lib_quick3d_private.pri",
 				"/usr/lib/qt6/mkspecs/modules/qt_lib_quick3dassetimport.pri",
@@ -1436,7 +1430,6 @@
 			"provides": [
 				"cmake(Qt6AssimpImporterPlugin)",
 				"cmake(Qt6BundledEmbree)",
-				"cmake(Qt6BundledOpenXR)",
 				"cmake(Qt6QQuick3DProfilerAdapterFactoryPlugin)",
 				"cmake(Qt6Quick3D)",
 				"cmake(Qt6Quick3DAssetImport)",
@@ -1490,6 +1483,6 @@
 		}
 	},
 	"source-name": "qt6-quick3d",
-	"source-release": "7",
+	"source-release": "8",
 	"source-version": "6.9.2"
 }
