@@ -5,7 +5,7 @@
 #
 name        : pkgset-aeryn
 version     : "2025.08" # I guess let's just match the OS version for now
-release     : 15
+release     : 16
 homepage    : https://aerynos.com/
 # No upstreams!
 summary     : pkgset virtual packages
@@ -97,6 +97,9 @@ packages    :
             # Networking
             - modemmanager
             - networkmanager
+
+            # Used by many graphical daemons
+            - polkit
 
             - "%(name)-base"
         paths:
