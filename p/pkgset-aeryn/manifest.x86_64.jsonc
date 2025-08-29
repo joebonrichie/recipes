@@ -35,7 +35,6 @@
 				"networkmanager",
 				"pipewire",
 				"pkgset-aeryn-base",
-				"sof-firmware",
 				"wireplumber"
 			],
 			"files": [
@@ -81,6 +80,6 @@
 		}
 	},
 	"source-name": "pkgset-aeryn",
-	"source-release": "14",
+	"source-release": "15",
 	"source-version": "2025.08"
 }
