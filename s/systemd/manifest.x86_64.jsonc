@@ -177,6 +177,7 @@
 				"/usr/lib/security/pam_systemd.so",
 				"/usr/lib/security/pam_systemd_home.so",
 				"/usr/lib/security/pam_systemd_loadkey.so",
+				"/usr/lib/sysctl.d/10-map-count.conf",
 				"/usr/lib/sysctl.d/50-coredump.conf",
 				"/usr/lib/sysctl.d/50-default.conf",
 				"/usr/lib/sysctl.d/50-pid-max.conf",
@@ -716,6 +717,7 @@
 				"/usr/lib/udev/mtd_probe",
 				"/usr/lib/udev/rules.d/50-udev-default.rules",
 				"/usr/lib/udev/rules.d/60-autosuspend.rules",
+				"/usr/lib/udev/rules.d/60-block-scheduler.rules",
 				"/usr/lib/udev/rules.d/60-block.rules",
 				"/usr/lib/udev/rules.d/60-cdrom_id.rules",
 				"/usr/lib/udev/rules.d/60-dmi-id.rules",
@@ -2690,6 +2692,6 @@
 		}
 	},
 	"source-name": "systemd",
-	"source-release": "65",
+	"source-release": "66",
 	"source-version": "257.8"
 }

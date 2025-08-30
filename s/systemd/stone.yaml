@@ -5,7 +5,7 @@
 #
 name        : systemd
 version     : "257.8"
-release     : 65
+release     : 66
 summary     : A System and Service Manager
 license     :
     - GPL-2.0-or-later
@@ -240,6 +240,10 @@ install     : |
     %install_file %(pkgdir)/configs/10-timeout-abort.conf %(installroot)%(libdir)/systemd/system/service.d/10-timeout-abort.conf
     %install_file %(pkgdir)/configs/00-timeouts.conf %(installroot)%(libdir)/systemd/system.conf.d/00-timeouts.conf
     %install_file %(pkgdir)/configs/00-timeouts.conf %(installroot)%(libdir)/systemd/user.conf.d/00-timeouts.conf
+    %install_file %(pkgdir)/configs/10-map-count.conf %(installroot)%(libdir)/sysctl.d/10-map-count.conf
+
+    # Default to BFQ scheduler for rotational drives, and kyber for sata/nvme SSDs
+    %install_file %(pkgdir)/configs/60-block-scheduler.rules -t %(installroot)%(udevrulesdir)
 
     # Helper script for use by other triggers
     %install_exe %(pkgdir)/systemd-hook.sh %(installroot)/usr/share/moss/helpers/systemd-hook.sh
