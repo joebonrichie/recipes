@@ -7,12 +7,15 @@
 				"pkgconfig(gio-2.0)",
 				"pkgconfig(glib-2.0)",
 				"pkgconfig(gudev-1.0)",
+				"pkgconfig(libdrm)",
 				"pkgconfig(systemd)",
 				"pkgconfig(udev)"
 			],
 			"depends": [
 				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
 				"soname(libc.so.6(x86_64))",
+				"soname(libdrm.so.2(x86_64))",
+				"soname(libdrm_amdgpu.so.1(x86_64))",
 				"soname(libgio-2.0.so.0(x86_64))",
 				"soname(libglib-2.0.so.0(x86_64))",
 				"soname(libgobject-2.0.so.0(x86_64))",
@@ -21,8 +24,12 @@
 			"files": [
 				"/usr/bin/switcherooctl",
 				"/usr/lib/switcheroo-control/switcheroo-control",
+				"/usr/lib/switcheroo-control/switcheroo-control-check-discrete-amdgpu",
+				"/usr/lib/switcheroo-control/switcheroo-control-check-discrete-nouveau",
+				"/usr/lib/switcheroo-control/switcheroo-control-check-discrete-xe",
 				"/usr/lib/systemd/system/switcheroo-control.service",
 				"/usr/lib/udev/hwdb.d/30-pci-intel-gpu.hwdb",
+				"/usr/lib/udev/rules.d/30-discrete-gpu.rules",
 				"/usr/share/dbus-1/system.d/net.hadess.SwitcherooControl.conf"
 			],
 			"name": "switcheroo-control",
@@ -32,6 +39,6 @@
 		}
 	},
 	"source-name": "switcheroo-control",
-	"source-release": "2",
-	"source-version": "2.6"
+	"source-release": "3",
+	"source-version": "3.0"
 }
