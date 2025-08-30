@@ -5,7 +5,7 @@
 		"fastfetch": {
 			"build-depends": [
 				"cmake(VulkanHeaders)",
-				"imagemagick",
+				"pkgconfig(ImageMagick)",
 				"pkgconfig(OpenCL)",
 				"pkgconfig(dbus-1)",
 				"pkgconfig(dconf)",
@@ -79,6 +79,6 @@
 		}
 	},
 	"source-name": "fastfetch",
-	"source-release": "10",
-	"source-version": "2.51.1+git.1242fda"
+	"source-release": "11",
+	"source-version": "2.51.1"
 }
