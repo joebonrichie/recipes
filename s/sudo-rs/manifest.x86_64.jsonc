@@ -46,7 +46,7 @@
 				"/usr/lib/tmpfiles.d/sudo.conf",
 				"/usr/sbin/visudo",
 				"/usr/share/defaults/pam.d/su",
-				"/usr/share/defaults/pam.d/su-i",
+				"/usr/share/defaults/pam.d/su-l",
 				"/usr/share/defaults/pam.d/sudo",
 				"/usr/share/defaults/pam.d/sudo-i",
 				"/usr/share/defaults/sudo/sudoers",
@@ -64,6 +64,6 @@
 		}
 	},
 	"source-name": "sudo-rs",
-	"source-release": "14",
+	"source-release": "15",
 	"source-version": "0.2.8"
 }

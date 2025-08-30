@@ -5,7 +5,7 @@
 #
 name        : sudo-rs
 version     : "0.2.8"
-release     : 14
+release     : 15
 homepage    : https://github.com/trifectatechfoundation/sudo-rs
 upstreams   :
     - https://github.com/trifectatechfoundation/sudo-rs/archive/refs/tags/v0.2.8.tar.gz : 5b3823cc60abc5d90dbf0ae3a37d92445215e2697e6997c56148f5d0ac371ece
@@ -41,7 +41,7 @@ install     : |
     %install_file %(pkgdir)/sudo.pam %(installroot)%(vendordir)/pam.d/sudo
     %install_file %(pkgdir)/sudo.pam %(installroot)%(vendordir)/pam.d/sudo-i
     %install_file %(pkgdir)/su.pam %(installroot)/%(vendordir)/pam.d/su
-    %install_file %(pkgdir)/su.pam %(installroot)/%(vendordir)/pam.d/su-i
+    %install_file %(pkgdir)/su.pam %(installroot)/%(vendordir)/pam.d/su-l
 
     %install_file %(pkgdir)/sudoers %(installroot)%(vendordir)/sudo/sudoers
 
