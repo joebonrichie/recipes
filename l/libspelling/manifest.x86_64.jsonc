@@ -29,6 +29,7 @@
 				"/usr/lib/libspelling-1.so.2",
 				"/usr/lib/libspelling-1.so.2.0.0",
 				"/usr/share/locale/ab/LC_MESSAGES/libspelling.mo",
+				"/usr/share/locale/ar/LC_MESSAGES/libspelling.mo",
 				"/usr/share/locale/be/LC_MESSAGES/libspelling.mo",
 				"/usr/share/locale/bg/LC_MESSAGES/libspelling.mo",
 				"/usr/share/locale/ca/LC_MESSAGES/libspelling.mo",
@@ -129,6 +130,6 @@
 		}
 	},
 	"source-name": "libspelling",
-	"source-release": "5",
-	"source-version": "0.4.8"
+	"source-release": "6",
+	"source-version": "0.4.9"
 }

@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : libspelling
-version     : 0.4.8
-release     : 5
+version     : 0.4.9
+release     : 6
 homepage    : https://gitlab.gnome.org/GNOME/libspelling
 upstreams   :
-    - https://download.gnome.org/sources/libspelling/0.4/libspelling-0.4.8.tar.xz : 277646285818da7b295ef007b2c5ebd815d0930b3ad097505b3ced96965af517
+    - https://download.gnome.org/sources/libspelling/0.4/libspelling-0.4.9.tar.xz : d093fd35ae0f1c98fb58876505287fc0a885e47da9d2411d6d7cd595f34d4ebf
 summary     : A spellcheck library for GTK 4
 description : |
     A spellcheck library for GTK 4.
