@@ -9,6 +9,7 @@
 			],
 			"depends": [
 				"binary(python3)",
+				"binary(xmllint)",
 				"docbook-xsl",
 				"libxslt"
 			],
@@ -165,6 +166,6 @@
 		}
 	},
 	"source-name": "asciidoc",
-	"source-release": "1",
+	"source-release": "2",
 	"source-version": "10.2.1"
 }
