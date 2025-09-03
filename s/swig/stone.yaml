@@ -4,15 +4,15 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : swig
-version     : 4.2.1
-release     : 4
+version     : 4.3.1
+release     : 5
 homepage    : https://www.swig.org
 summary     : Generate scripting interfaces to C/C++ code
 description : |
     Generate scripting interfaces to C/C++ code
 license     : GPL-3.0-or-later
 upstreams   :
-    - https://downloads.sourceforge.net/swig/swig-4.2.1.tar.gz : fa045354e2d048b2cddc69579e4256245d4676894858fcf0bab2290ecf59b7d8
+    - https://downloads.sourceforge.net/swig/swig-4.3.1.tar.gz : 44fc829f70f1e17d635a2b4d69acab38896699ecc24aa023e516e0eabbec61b8
 builddeps   :
     - pkgconfig(libpcre2-8)
 #checkdeps   :
