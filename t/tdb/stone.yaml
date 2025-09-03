@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : tdb
-version     : 1.4.13
-release     : 3
+version     : 1.4.14
+release     : 4
 homepage    : https://tdb.samba.org
 upstreams   :
-    - https://www.samba.org/ftp/tdb/tdb-1.4.13.tar.gz : 5ee276e7644d713e19e4b6adc00b440afb5851ff21e65821ffaed89e15a5e167
+    - https://www.samba.org/ftp/tdb/tdb-1.4.14.tar.gz : 144f407d42ed7a0ec1470a40ef17ad41133fe910bce865dd9fe084d49c907526
 summary     : Simple database API for Samba.
 description : |
     This is a simple database API. It was inspired by the realisation that in Samba we have several ad-hoc bits of code that essentially implement small databases for sharing structures between parts of Samba. The interface is based on gdbm. gdbm couldn't be use as we needed to be able to have multiple writers to the databases at one time.
@@ -22,6 +22,7 @@ environment : |
     # ld.bfd is required here, but we can still build with clang.
     export LDFLAGS="${LDFLAGS} -fuse-ld=bfd"
 setup       : |
+    # TODO: Figure out man pages
     %configure \
         --bundled-libraries=NONE \
         --builtin-libraries=replace \
@@ -34,3 +35,9 @@ install     : |
 # icf unsupported with bfd
 tuning      :
     - icf: false
+packages    :
+    - "%(name)-tools":
+        summary: Developer tools for the Tdb library
+        description: Developer tools for the Tdb library
+        paths:
+            - /usr/bin/

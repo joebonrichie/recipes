@@ -9,23 +9,14 @@
 				"binary(which)"
 			],
 			"depends": [
-				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
 				"soname(libc.so.6(x86_64))"
 			],
 			"files": [
-				"/usr/bin/tdbbackup",
-				"/usr/bin/tdbdump",
-				"/usr/bin/tdbrestore",
-				"/usr/bin/tdbtool",
 				"/usr/lib/libtdb.so.1",
-				"/usr/lib/libtdb.so.1.4.13"
+				"/usr/lib/libtdb.so.1.4.14"
 			],
 			"name": "tdb",
 			"provides": [
-				"binary(tdbbackup)",
-				"binary(tdbdump)",
-				"binary(tdbrestore)",
-				"binary(tdbtool)",
 				"soname(libtdb.so.1(x86_64))"
 			]
 		},
@@ -47,9 +38,34 @@
 			"provides": [
 				"pkgconfig(tdb)"
 			]
+		},
+		"tdb-tools": {
+			"build-depends": [
+				"binary(ld.bfd)",
+				"binary(python)",
+				"binary(which)"
+			],
+			"depends": [
+				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
+				"soname(libc.so.6(x86_64))",
+				"soname(libtdb.so.1(x86_64))"
+			],
+			"files": [
+				"/usr/bin/tdbbackup",
+				"/usr/bin/tdbdump",
+				"/usr/bin/tdbrestore",
+				"/usr/bin/tdbtool"
+			],
+			"name": "tdb-tools",
+			"provides": [
+				"binary(tdbbackup)",
+				"binary(tdbdump)",
+				"binary(tdbrestore)",
+				"binary(tdbtool)"
+			]
 		}
 	},
 	"source-name": "tdb",
-	"source-release": "3",
-	"source-version": "1.4.13"
+	"source-release": "4",
+	"source-version": "1.4.14"
 }
