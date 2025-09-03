@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : libass
-version     : 0.17.3
-release     : 3
+version     : 0.17.4
+release     : 4
 homepage    : https://github.com/libass/libass
 upstreams   :
-    - https://github.com/libass/libass/releases/download/0.17.3/libass-0.17.3.tar.xz : eae425da50f0015c21f7b3a9c7262a910f0218af469e22e2931462fed3c50959
+    - https://github.com/libass/libass/releases/download/0.17.4/libass-0.17.4.tar.xz : 78f1179b838d025e9c26e8fef33f8092f65611444ffa1bfc0cfac6a33511a05a
 summary     : libass is a portable subtitle renderer for the ASS/SSA (Advanced Substation Alpha/Substation Alpha) subtitle format.
 description : |
     libass is a portable subtitle renderer for the ASS/SSA (Advanced Substation Alpha/Substation Alpha) subtitle format. It is mostly compatible with VSFilter.
@@ -18,9 +18,11 @@ builddeps   :
     - pkgconfig(freetype2)
     - pkgconfig(fribidi)
     - pkgconfig(libpng)
+    # libunibreak
 setup       : |
-    %configure --disable-static
+    %meson \
+        -Ddefault_library=shared
 build       : |
-    %make
+    %meson_build
 install     : |
-    %make_install
+    %meson_install

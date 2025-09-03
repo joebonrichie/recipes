@@ -19,7 +19,7 @@
 			],
 			"files": [
 				"/usr/lib/libass.so.9",
-				"/usr/lib/libass.so.9.3.1"
+				"/usr/lib/libass.so.9.4.1"
 			],
 			"name": "libass",
 			"provides": [
@@ -53,6 +53,6 @@
 		}
 	},
 	"source-name": "libass",
-	"source-release": "3",
-	"source-version": "0.17.3"
+	"source-release": "4",
+	"source-version": "0.17.4"
 }
