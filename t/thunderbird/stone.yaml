@@ -4,12 +4,12 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : thunderbird
-version     : 140.2.0esr
-release     : 26
+version     : 140.2.1esr
+release     : 27
 homepage    : https://www.thunderbird.net/
 upstreams   :
-    - https://releases.mozilla.org/pub/thunderbird/releases/140.2.0esr/source/thunderbird-140.2.0esr.source.tar.xz:
-        hash: 4a71b613941184cfbc696daba075bb3592ef8a7c0c5c35bf2244be1d67ea4443
+    - https://releases.mozilla.org/pub/thunderbird/releases/140.2.1esr/source/thunderbird-140.2.1esr.source.tar.xz:
+        hash: c9e4b98f72db3e9084dc7abe5f0ccf09bfc3e2f327706371dba4c2ee0a14c29b
         unpackdir: thunderbird
 summary     : Thunderbird Email Client
 description : |
