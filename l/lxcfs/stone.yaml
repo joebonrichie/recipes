@@ -5,7 +5,7 @@
 #
 name        : lxcfs
 version     : 6.0.5
-release     : 1
+release     : 2
 upstreams   :
     - https://linuxcontainers.org/downloads/lxcfs/lxcfs-6.0.5.tar.gz : 91ce19087147791361115f3c8d3c647d5b0a36d386cd050ee0175bb75cc5d918
 homepage    : https://www.hadrons.org/software/libmd
@@ -14,14 +14,12 @@ summary     : FUSE filesystem for LXC
 description : |
     LXCFS is a small FUSE filesystem written with the intention of making Linux containers feel more like a virtual machine
 builddeps   :
-    # - binary(help2man)
+    - binary(help2man)
     - pkgconfig(fuse3)
     - pkgconfig(systemd)
     - python(jinja2)
 setup       : |
-    # Needs help2man for docs
-    %meson \
-        -Ddocs=false
+    %meson
 build       : |
     %meson_build
 install     : |

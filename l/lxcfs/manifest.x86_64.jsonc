@@ -4,6 +4,7 @@
 	"packages": {
 		"lxcfs": {
 			"build-depends": [
+				"binary(help2man)",
 				"pkgconfig(fuse3)",
 				"pkgconfig(systemd)",
 				"python(jinja2)"
@@ -22,7 +23,8 @@
 				"/usr/lib/tmpfiles.d/lxcfs.conf",
 				"/usr/share/lxc/config/common.conf.d/00-lxcfs.conf",
 				"/usr/share/lxcfs/lxc.mount.hook",
-				"/usr/share/lxcfs/lxc.reboot.hook"
+				"/usr/share/lxcfs/lxc.reboot.hook",
+				"/usr/share/man/man1/lxcfs.1"
 			],
 			"name": "lxcfs",
 			"provides": [
@@ -32,6 +34,6 @@
 		}
 	},
 	"source-name": "lxcfs",
-	"source-release": "1",
+	"source-release": "2",
 	"source-version": "6.0.5"
 }
