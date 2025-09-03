@@ -1,0 +1,20 @@
+/** Human readable report. This is not consumed by boulder */
+{
+	"manifest-version": "0.2",
+	"packages": {
+		"help2man": {
+			"files": [
+				"/usr/bin/help2man",
+				"/usr/share/info/help2man.info",
+				"/usr/share/man/man1/help2man.1"
+			],
+			"name": "help2man",
+			"provides": [
+				"binary(help2man)"
+			]
+		}
+	},
+	"source-name": "help2man",
+	"source-release": "1",
+	"source-version": "1.49.3"
+}
