@@ -4,23 +4,37 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : squashfs-tools
-version     : 4.6.1
-release     : 3
+version     : 4.7.2
+release     : 4
 homepage    : https://github.com/plougher/squashfs-tools
 upstreams   :
-    - https://github.com/plougher/squashfs-tools/archive/refs/tags/4.6.1.tar.gz : 94201754b36121a9f022a190c75f718441df15402df32c2b520ca331a107511c
+    - https://github.com/plougher/squashfs-tools/archive/refs/tags/4.7.2.tar.gz : 4672b5c47d9418d3a5ae5b243defc6d9eae8275b9771022247c6a6082c815914
 summary     : Manipulate SquashFS images
 description : |
     Manipulate SquashFS images
 license     :
     - GPL-2.0-or-later
 builddeps   :
+    - binary(help2man)
+    - binary(which)
     - pkgconfig(liblzma)
     - pkgconfig(libzstd)
     - pkgconfig(liblz4)
+    - pkgconfig(lzo2)
     - pkgconfig(zlib)
 build       : |
-    %make -C squashfs-tools LZMA_XZ_SUPPORT=1 XZ_SUPPORT=1 LZ4_SUPPORT=1 ZSTD_SUPPORT=1
+    %make \
+        -C squashfs-tools \
+        GZIP_SUPPORT=1 \
+        LZ4_SUPPORT=1 \
+        LZMA_XZ_SUPPORT=1 \
+        LZO_SUPPORT=1 \
+        XATTR_SUPPORT=1 \
+        XZ_SUPPORT=1 \
+        ZSTD_SUPPORT=1
 install     : |
-    %install_bin squashfs-tools/mksquashfs
-    %install_bin squashfs-tools/unsquashfs
+    %make \
+        -C squashfs-tools \
+        INSTALL_PREFIX="%(installroot)%(prefix)" \
+        INSTALL_MANPAGES_DIR="%(installroot)%(mandir)/man1" \
+        install

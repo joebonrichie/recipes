@@ -4,9 +4,12 @@
 	"packages": {
 		"squashfs-tools": {
 			"build-depends": [
+				"binary(help2man)",
+				"binary(which)",
 				"pkgconfig(liblz4)",
 				"pkgconfig(liblzma)",
 				"pkgconfig(libzstd)",
+				"pkgconfig(lzo2)",
 				"pkgconfig(zlib)"
 			],
 			"depends": [
@@ -14,22 +17,31 @@
 				"soname(libc.so.6(x86_64))",
 				"soname(liblz4.so.1(x86_64))",
 				"soname(liblzma.so.5(x86_64))",
+				"soname(liblzo2.so.2(x86_64))",
 				"soname(libm.so.6(x86_64))",
 				"soname(libz.so.1(x86_64))",
 				"soname(libzstd.so.1(x86_64))"
 			],
 			"files": [
 				"/usr/bin/mksquashfs",
-				"/usr/bin/unsquashfs"
+				"/usr/bin/sqfscat",
+				"/usr/bin/sqfstar",
+				"/usr/bin/unsquashfs",
+				"/usr/share/man/man1/mksquashfs.1.gz",
+				"/usr/share/man/man1/sqfscat.1.gz",
+				"/usr/share/man/man1/sqfstar.1.gz",
+				"/usr/share/man/man1/unsquashfs.1.gz"
 			],
 			"name": "squashfs-tools",
 			"provides": [
 				"binary(mksquashfs)",
+				"binary(sqfscat)",
+				"binary(sqfstar)",
 				"binary(unsquashfs)"
 			]
 		}
 	},
 	"source-name": "squashfs-tools",
-	"source-release": "3",
-	"source-version": "4.6.1"
+	"source-release": "4",
+	"source-version": "4.7.2"
 }
