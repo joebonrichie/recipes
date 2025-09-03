@@ -19,6 +19,7 @@
 				"pkgconfig(xtst)"
 			],
 			"depends": [
+				"binary(xprop)",
 				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
 				"soname(libX11.so.6(x86_64))",
 				"soname(libXi.so.6(x86_64))",
@@ -277,6 +278,6 @@
 		}
 	},
 	"source-name": "at-spi2-core",
-	"source-release": "12",
+	"source-release": "13",
 	"source-version": "2.56.4"
 }
