@@ -15,7 +15,7 @@
 			],
 			"files": [
 				"/usr/lib/libtatsu.so.0",
-				"/usr/lib/libtatsu.so.0.0.2"
+				"/usr/lib/libtatsu.so.0.0.3"
 			],
 			"name": "libtatsu",
 			"provides": [
@@ -45,6 +45,6 @@
 		}
 	},
 	"source-name": "libtatsu",
-	"source-release": "2",
-	"source-version": "1.0.4"
+	"source-release": "3",
+	"source-version": "1.0.5"
 }
