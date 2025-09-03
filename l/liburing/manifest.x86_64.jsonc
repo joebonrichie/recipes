@@ -8,9 +8,9 @@
 			],
 			"files": [
 				"/usr/lib/liburing-ffi.so.2",
-				"/usr/lib/liburing-ffi.so.2.11",
+				"/usr/lib/liburing-ffi.so.2.12",
 				"/usr/lib/liburing.so.2",
-				"/usr/lib/liburing.so.2.11"
+				"/usr/lib/liburing.so.2.12"
 			],
 			"name": "liburing",
 			"provides": [
@@ -115,6 +115,7 @@
 				"/usr/share/man/man3/io_uring_prep_openat2.3",
 				"/usr/share/man/man3/io_uring_prep_openat2_direct.3",
 				"/usr/share/man/man3/io_uring_prep_openat_direct.3",
+				"/usr/share/man/man3/io_uring_prep_pipe.3",
 				"/usr/share/man/man3/io_uring_prep_poll_add.3",
 				"/usr/share/man/man3/io_uring_prep_poll_multishot.3",
 				"/usr/share/man/man3/io_uring_prep_poll_remove.3",
@@ -192,7 +193,9 @@
 				"/usr/share/man/man3/io_uring_register_reg_wait.3",
 				"/usr/share/man/man3/io_uring_register_ring_fd.3",
 				"/usr/share/man/man3/io_uring_register_sync_cancel.3",
+				"/usr/share/man/man3/io_uring_register_sync_msg.3",
 				"/usr/share/man/man3/io_uring_resize_rings.3",
+				"/usr/share/man/man3/io_uring_set_iowait.3",
 				"/usr/share/man/man3/io_uring_setup_buf_ring.3",
 				"/usr/share/man/man3/io_uring_setup_reg_wait.3",
 				"/usr/share/man/man3/io_uring_sq_ready.3",
@@ -240,6 +243,6 @@
 		}
 	},
 	"source-name": "liburing",
-	"source-release": "1",
-	"source-version": "2.11"
+	"source-release": "2",
+	"source-version": "2.12"
 }
