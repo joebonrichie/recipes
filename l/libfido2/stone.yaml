@@ -5,7 +5,7 @@
 #
 name        : libfido2
 version     : 1.16.0
-release     : 2
+release     : 3
 homepage    : https://developers.yubico.com/libfido2/
 upstreams   :
     - https://github.com/Yubico/libfido2/archive/refs/tags/1.16.0.tar.gz : 7d86088ef4a48f9faad4ff6f41343328157849153a8dc94d88f4b5461cb29474
@@ -15,18 +15,19 @@ description : |
     NFC, and to verify attestation and assertion signatures.
 license     : BSD-2-Clause
 builddeps   :
+    - pkgconfig(hidapi-hidraw)
     - pkgconfig(libcbor)
+    - pkgconfig(libpcsclite)
+    - pkgconfig(libudev)
     - pkgconfig(openssl)
     - pkgconfig(zlib)
-    - pkgconfig(libudev)
-    - pkgconfig(hidapi-hidraw)
-    - pkgconfig(libpcsclite)
 setup       : |
-    %cmake -DBUILD_EXAMPLES=OFF \
-           -DBUILD_STATIC_LIBS=OFF \
-           -DUSE_HIDAPI=ON \
-           -DUSE_PCSC=ON \
-           -DUDEV_RULES_DIR=/usr/lib/udev/rules.d
+    %cmake \
+        -DBUILD_EXAMPLES=OFF \
+        -DBUILD_STATIC_LIBS=OFF \
+        -DUSE_HIDAPI=ON \
+        -DUSE_PCSC=ON \
+        -DUDEV_RULES_DIR=/usr/lib/udev/rules.d
 build       : |
     %cmake_build
 install     : |
