@@ -17,7 +17,7 @@
 			],
 			"files": [
 				"/usr/lib/libtevent.so.0",
-				"/usr/lib/libtevent.so.0.16.2"
+				"/usr/lib/libtevent.so.0.17.1"
 			],
 			"name": "tevent",
 			"provides": [
@@ -48,6 +48,6 @@
 		}
 	},
 	"source-name": "tevent",
-	"source-release": "3",
-	"source-version": "0.16.2"
+	"source-release": "4",
+	"source-version": "0.17.1"
 }
