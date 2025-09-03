@@ -4,12 +4,12 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : libjpeg-turbo
-version     : 3.1.1
-release     : 8
+version     : 3.1.2
+release     : 9
 homepage    : https://libjpeg-turbo.org/
 upstreams   :
-    - https://github.com/libjpeg-turbo/libjpeg-turbo/archive/refs/tags/3.1.1.tar.gz : 304165ae11e64ab752e9cfc07c37bfdc87abd0bfe4bc699e59f34036d9c84f72
-summary     : libjpeg-turbo is a JPEG image codec that uses SIMD instructions to accelerate baseline JPEG compression and decompression
+    - https://github.com/libjpeg-turbo/libjpeg-turbo/archive/refs/tags/3.1.2.tar.gz : 560f6338b547544c4f9721b18d8b87685d433ec78b3c644c70d77adad22c55e6
+summary     : A MMX/SSE2/SIMD accelerated library for manipulating JPEG image files
 description : |
     libjpeg-turbo implements both the traditional libjpeg API as well as the less powerful but more straightforward TurboJPEG API. libjpeg-turbo also features colorspace extensions that allow it to compress from/decompress to 32-bit and big-endian pixel buffers (RGBX, XBGR, etc.), as well as a full-featured Java interface.
 license     :
@@ -28,11 +28,29 @@ build       : |
 install     : |
     %cmake_install
     rm -fr %(installroot)/usr/share/doc/
+    rm -v %(installroot)%(bindir)/tjbench
 check       : |
     %cmake_test
-tuning      :
-    - lto : thin
 packages    :
-    - "%(name)-devel":
+    - "%(name)-utils":
+        summary: Utilities for manipulating JPEG images
+        description: Utilities for manipulating JPEG images
         paths:
-            - "/usr/bin/"
+            - /usr/bin/
+            - /usr/share/man/man1/
+
+    - "turbojpeg":
+        summary: TurboJPEG library
+        description: TurboJPEG library
+        paths:
+            - /usr/lib/libturbojpeg.so.*
+
+    - "turbojpeg-devel":
+        summary: TurboJPEG library - development files
+        description: TurboJPEG library - development files
+        rundeps:
+            - "turbojpeg"
+        paths:
+            - /usr/include/turbojpeg.h
+            - /usr/lib/libturbojpeg.so
+            - /usr/lib/pkgconfig/libturbojpeg.pc
