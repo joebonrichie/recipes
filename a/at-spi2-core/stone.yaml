@@ -5,7 +5,7 @@
 #
 name        : at-spi2-core
 version     : 2.56.4
-release     : 12
+release     : 13
 homepage    : https://wiki.gnome.org/Accessibility
 upstreams   :
     - https://download.gnome.org/sources/at-spi2-core/2.56/at-spi2-core-2.56.4.tar.xz : dbe35b951499e1d6f1fb552c2e0a09cea7cba2adf6c2eba0b2c85b6c094a3a02
@@ -28,6 +28,8 @@ builddeps   :
     - pkgconfig(x11)
     - pkgconfig(xi)
     - pkgconfig(xtst)
+rundeps     :
+    - binary(xprop) # /usr/share/xdg/Xwayland-session.d/00-at-spi
 setup       : |
     %patch %(pkgdir)/0001-at-spi2-core-Stateless-XDG-autostart-directories.patch
     %meson -Ddefault_bus=dbus-broker
