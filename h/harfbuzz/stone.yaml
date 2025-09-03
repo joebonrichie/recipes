@@ -5,7 +5,7 @@
 #
 name        : harfbuzz
 version     : 11.4.5
-release     : 19
+release     : 20
 homepage    : https://harfbuzz.github.io/
 upstreams   :
     - https://github.com/harfbuzz/harfbuzz/releases/download/11.4.5/harfbuzz-11.4.5.tar.xz : 0f052eb4ab01d8bae98ba971c954becb32be57d7250f18af343b1d27892e03fa
@@ -16,6 +16,7 @@ license     :
     - MIT
     - HPND
 builddeps   :
+    - binary(help2man)
     - pkgconfig(cairo)
     - pkgconfig(freetype2)
     - pkgconfig(glib-2.0)
@@ -23,7 +24,6 @@ builddeps   :
     - pkgconfig(gobject-introspection-1.0)
     - pkgconfig(graphite2)
     - pkgconfig(icu-uc)
-    # help2man
 setup       : |
     %meson \
         -Dgraphite2=enabled \
@@ -50,4 +50,5 @@ packages    :
             - "%(name)-cairo"
             - "%(name)-icu"
         paths:
-            - /usr/bin
+            - /usr/bin/
+            - /usr/share/man/

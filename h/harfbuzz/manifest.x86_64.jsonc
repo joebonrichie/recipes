@@ -4,6 +4,7 @@
 	"packages": {
 		"harfbuzz": {
 			"build-depends": [
+				"binary(help2man)",
 				"pkgconfig(cairo)",
 				"pkgconfig(freetype2)",
 				"pkgconfig(glib-2.0)",
@@ -38,6 +39,7 @@
 		},
 		"harfbuzz-cairo": {
 			"build-depends": [
+				"binary(help2man)",
 				"pkgconfig(cairo)",
 				"pkgconfig(freetype2)",
 				"pkgconfig(glib-2.0)",
@@ -63,6 +65,7 @@
 		},
 		"harfbuzz-devel": {
 			"build-depends": [
+				"binary(help2man)",
 				"pkgconfig(cairo)",
 				"pkgconfig(freetype2)",
 				"pkgconfig(glib-2.0)",
@@ -151,7 +154,11 @@
 				"/usr/lib/pkgconfig/harfbuzz-icu.pc",
 				"/usr/lib/pkgconfig/harfbuzz-subset.pc",
 				"/usr/lib/pkgconfig/harfbuzz.pc",
-				"/usr/share/gir-1.0/HarfBuzz-0.0.gir"
+				"/usr/share/gir-1.0/HarfBuzz-0.0.gir",
+				"/usr/share/man/man1/hb-info.1",
+				"/usr/share/man/man1/hb-shape.1",
+				"/usr/share/man/man1/hb-subset.1",
+				"/usr/share/man/man1/hb-view.1"
 			],
 			"name": "harfbuzz-devel",
 			"provides": [
@@ -169,6 +176,7 @@
 		},
 		"harfbuzz-icu": {
 			"build-depends": [
+				"binary(help2man)",
 				"pkgconfig(cairo)",
 				"pkgconfig(freetype2)",
 				"pkgconfig(glib-2.0)",
@@ -193,6 +201,6 @@
 		}
 	},
 	"source-name": "harfbuzz",
-	"source-release": "19",
+	"source-release": "20",
 	"source-version": "11.4.5"
 }
