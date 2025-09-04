@@ -5,11 +5,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : linux-desktop
-version     : 6.15.11
-release     : 109
+version     : 6.16.5
+release     : 110
 homepage    : https://kernel.org/
 upstreams   :
-    - https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.15.11.tar.xz : 89ab469fc35bd9cbc6c5bf4e5cb802581806d5cbc14fb47e5c9edcc477e65d93
+    - https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.16.5.tar.xz : 76bffbae7eab2a1de1ed05692bef709f43b02a52fe95ae655cacf0fa252213f3
 summary     : The Linux Kernel for desktop systems
 description : |
     The Linux Kernel for desktop systems
@@ -77,6 +77,15 @@ setup       : |
 
     extraVersion="-%(release).desktop"
     sed -e "s/EXTRAVERSION =.*/EXTRAVERSION = $extraVersion/" -i Makefile
+
+    # Make sure the kernel version is consistent with the package version, even if we are using a different source
+    # We might do this if we're bisecting and don't want to mess with creating many different module dirs.
+    major="$( cut -d '.' -f 1 <<< "%(version)" )"
+    patch="$( cut -d '.' -f 2 <<< "%(version)" )"
+    sub="$( cut -d '.' -f 3 <<< "%(version)" )"
+    sed -e "s/^VERSION =.*/VERSION = $major/" -i Makefile
+    sed -e "s/^PATCHLEVEL =.*/PATCHLEVEL = $patch/" -i Makefile
+    sed -e "s/^SUBLEVEL =.*/SUBLEVEL = $sub/" -i Makefile
 
     %install_file %(pkgdir)/config-x86_64 .config
     %make CC=%(cc) LD=%(ld) ARCH=x86_64 LLVM=1 LLVM_IAS=1 WERROR=0 oldconfig || exit 1

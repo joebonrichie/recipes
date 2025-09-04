@@ -25,7 +25,7 @@ index b5c79f43359b..a1bbedd989e4 100644
  	.long	0				# CheckSum
  	.word	IMAGE_SUBSYSTEM_EFI_APPLICATION	# Subsystem (EFI application)
 +#ifdef CONFIG_EFI_DXE_MEM_ATTRIBUTES
- 	.word	IMAGE_DLL_CHARACTERISTICS_NX_COMPAT	# DllCharacteristics
+ 	.word	IMAGE_DLLCHARACTERISTICS_NX_COMPAT	# DllCharacteristics
 +#else
 +	.word	0				# DllCharacteristics
 +#endif

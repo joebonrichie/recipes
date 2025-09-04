@@ -4,16 +4,16 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : nvidia-graphics-driver
-version     : "570.169"
-release     : 28
+version     : "570.181"
+release     : 29
 homepage    : https://www.nvidia.com/
 upstreams   :
-    - https://us.download.nvidia.com/XFree86/Linux-x86_64/570.169/NVIDIA-Linux-x86_64-570.169.run:
-        hash: 5f32a847795cc5c3f980f79189abac070d91481d7bd3601c02c2829dd3873765
+    - https://us.download.nvidia.com/XFree86/Linux-x86_64/570.181/NVIDIA-Linux-x86_64-570.181.run:
+        hash: f06d25ce3f1802ea507ada4b5dc46b3c2c8b38503db6f68f3ef016bab8e3dcf9
         unpack: false
         rename: NVIDIA.run
-    - https://download.nvidia.com/XFree86/nvidia-persistenced/nvidia-persistenced-570.169.tar.bz2:
-        hash: e90bbe2316f6dd17969cb5440746476c2a6e27e8f94235e43ac91fecc770704c
+    - https://download.nvidia.com/XFree86/nvidia-persistenced/nvidia-persistenced-570.181.tar.bz2:
+        hash: fb194c0024fd1aad5f0702282798392b04eac53caa4c2f6d419d2be6e070477a
         rename: nvidia-persistenced.tar.bz2
         extract: false
 summary     : The proprietary NVIDIA graphics driver
@@ -94,13 +94,20 @@ install     : |
     %tmpfiles "D /run/nvidia-persistenced 0755 nvidia-persistenced nvidia-persistenced -"
     popd
 
-    # conflicts by egl-wayland/egl-gbm
+    # conflicts by egl-wayland/egl-gbm/egl-x11
     rm -v %(installroot)%(libdir){,32}/libnvidia-egl-wayland*
     rm -v %(installroot)%(libdir){,32}/libnvidia-egl-gbm*
-    rm -v %(installroot)%(datadir)/egl/egl_external_platform.d/15_nvidia_gbm.json
+    rm -v %(installroot)%(libdir){,32}/libnvidia-egl-xcb*
+    rm -v %(installroot)%(libdir){,32}/libnvidia-egl-xlib*
     rm -v %(installroot)%(datadir)/egl/egl_external_platform.d/10_nvidia_wayland.json
+    rm -v %(installroot)%(datadir)/egl/egl_external_platform.d/15_nvidia_gbm.json
+    rm -v %(installroot)%(datadir)/egl/egl_external_platform.d/20_nvidia_xcb.json
+    rm -v %(installroot)%(datadir)/egl/egl_external_platform.d/20_nvidia_xlib.json
+    rmdir -v %(installroot)%(datadir)/egl/egl_external_platform.d \
+             %(installroot)%(datadir)/egl/
 
     # Conflicts with ocl-icd
+    # TODO: Make sure this works with opencl
     rm -v %(installroot)%(libdir){,32}/libOpenCL*
 
     # We don't support GLESv1 on Aeryn
@@ -119,11 +126,14 @@ packages    :
         rundeps     :
             - egl-gbm
             - egl-wayland
+            - egl-x11
             - eglexternalplatform
             - nvidia-open-gpu-kernel-modules
+
     - "%(name)-32bit":
         paths:
             - /usr/lib32/lib*.so*
         rundeps:
             - egl-gbm-32bit
             - egl-wayland-32bit
+            - egl-x11-32bit

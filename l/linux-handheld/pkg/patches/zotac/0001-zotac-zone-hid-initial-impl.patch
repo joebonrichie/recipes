@@ -4432,12 +4432,13 @@ diff --git a/drivers/platform/x86/Makefile b/drivers/platform/x86/Makefile
 index 3a0085f941d9..2428b79ff295 100644
 --- a/drivers/platform/x86/Makefile
 +++ b/drivers/platform/x86/Makefile
-@@ -155,3 +155,5 @@ obj-$(CONFIG_WINMATE_FM07_KEYS)		+= winmate-fm07-keys.o
+@@ -168,3 +168,6 @@ obj-$(CONFIG_SEL3350_PLATFORM)		+= sel33
  
- # SEL
- obj-$(CONFIG_SEL3350_PLATFORM)		+= sel3350-platform.o
+ # OneXPlayer
+ obj-$(CONFIG_OXP_EC)			+= oxpec.o
 +
-+obj-$(CONFIG_ZOTAC_ZONE_PLATFORM)		+= zotac-zone-platform.o
++# Zotac ZONE
++obj-$(CONFIG_ZOTAC_ZONE_PLATFORM)	+= zotac-zone-platform.o
 diff --git a/drivers/platform/x86/zotac-zone-platform.c b/drivers/platform/x86/zotac-zone-platform.c
 new file mode 100644
 index 000000000000..5f1123de4fb4
