@@ -1,8 +1,89 @@
-From 0541a0530ea70ded166972dd30a3ecfca98975e9 Mon Sep 17 00:00:00 2001
+From mboxrd@z Thu Jan  1 00:00:00 1970
+Received: from mail-wr1-f53.google.com (mail-wr1-f53.google.com [209.85.221.53])
+	(using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+	(No client certificate requested)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 94F70299924;
+	Wed, 13 Aug 2025 16:56:34 +0000 (UTC)
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.client-ip=209.85.221.53
+ARC-Seal:i=1; a=rsa-sha256; d=subspace.kernel.org; s=arc-20240116;
+	t=1755104200; cv=none; b=tK7LcQFD7In7LhDqVghFQngUzWM8LCIuZ8DzxiyhSdYsutgJCdOSmyO3MdnSgnYmzFXCUjALOgQIHVwNMgWiOK14tojC6kkW/bsVs+PLdtZdKW3EO7/BbSayz6reA0fRVd+U002y7WT5p3FJxB7533MZiitf+nd8ekJ4JHuBX28=
+ARC-Message-Signature:i=1; a=rsa-sha256; d=subspace.kernel.org;
+	s=arc-20240116; t=1755104200; c=relaxed/simple;
+	bh=iNC416CJByw4Er2xOk4MxmyytzSDOyDUuhLWABxTRQU=;
+	h=From:To:Cc:Subject:Date:Message-ID:In-Reply-To:References:
+	 MIME-Version; b=WSup/Axmrsg7Ofi0LW+h8H5UOXOO3odw7/Px4R6B4L8N1tRJBD8j2YUKdzmUk7JE32vPWwLKMjvF7gof+ix9zn4vfiYDWICn45DXJAFExB1gtXvXyC6Iwuuto1nWF4xB2eK8PPxayrBthsOHeoN4dCq0JAffD1cvjxIa+sers98=
+ARC-Authentication-Results:i=1; smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=gmail.com; spf=pass smtp.mailfrom=gmail.com; dkim=pass (2048-bit key) header.d=gmail.com header.i=@gmail.com header.b=VQqOTZCN; arc=none smtp.client-ip=209.85.221.53
+Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=gmail.com
+Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=gmail.com
+Authentication-Results: smtp.subspace.kernel.org;
+	dkim=pass (2048-bit key) header.d=gmail.com header.i=@gmail.com header.b="VQqOTZCN"
+Received: by mail-wr1-f53.google.com with SMTP id ffacd0b85a97d-3b9d41d2a5cso37417f8f.0;
+        Wed, 13 Aug 2025 09:56:34 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20230601; t=1755104193; x=1755708993; darn=vger.kernel.org;
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=EbZQU6rMpOkoeeZNBDBtsOsJ6QUO3gl7OsxSjNfqa7c=;
+        b=VQqOTZCNdtCgCUbhPpALIc87K4nz9ijy/f4NXpW44uxj8uvxvvG8piCBPomen3CCqz
+         fN3ZHkANJhIz52kG+etVE7CIsOkt9gqolIqI10v74bAT2e3NxZF9ENVY3b63LQazVdS+
+         Hsnsnv5Jp80q2bzDI4vIQIduIjTF3w7JELcd8G/VaNUVGzF255bGBdpoSsCa3f5qHblM
+         +jrBDCryObeVIgq/UQr5oZu6rbRHjE5g7D31bd0gHlgj6BvVAs+QosPYI3PIuqnSXNhs
+         VNuMIDiZXN/b2Tk52s1Fuo/KUvMlzpnPkZG1OlLpPqkIWwVNCGmlPbLyLRWq8eyOMTA8
+         2H0Q==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1755104193; x=1755708993;
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
+         :subject:date:message-id:reply-to;
+        bh=EbZQU6rMpOkoeeZNBDBtsOsJ6QUO3gl7OsxSjNfqa7c=;
+        b=GuY5neh+bq5cDByWVwFE7i3CR4TBvNJST9tG6kl8mgbTlRLJstrD4glGFlTCXlhake
+         pyp4WNTorI3/C26EMD65y427t7RMnW3PyUXeiINH3AdFeV2HfvL5gZwC9lMUSDUroCf+
+         VQf3oNsPCpI01mJTLyI4kMFlmCz4Cnn4rKSGhReyxea4t6QuCtWRzS1uR1CrlNbqZsYk
+         55a72gCnNsqL8ObSTRlzgnOq3NNKK7Hijd9bFFP+U1sV0U9F9SoeQ2UKduDD5uLCyFXC
+         YPu4yd624ixNVJzO95zhb9hUWEa6c9Gww008h0doFoCOWNHTRat0EepGmqrIP8OmFOqo
+         RB1A==
+X-Forwarded-Encrypted: i=1; AJvYcCUyxItlPxesVS31fuQm4rdJPir4Wy0Li+tfBhB2Vgz/+D3FPIJsWDsTFMdrDDH+fJhRIHnuLHj2XPJHC8dvp7aniepu@vger.kernel.org
+X-Gm-Message-State: AOJu0YwURkK6N7xTLJV11Jogn4kjPC9WOvQcJ/b4KBALhdFwCwTw5E0S
+	20S8atyfGw8GRxPU4X8j1aJkBgW3MvvGTL2PeeIPE/0t1U4ve3ipC3/0CQh6Yw==
+X-Gm-Gg: ASbGnctd1vNxo/hdEkJs5VRm/peToZZyB+3opUKyN/F5SWEVIfXieZSa7LST66xm56L
+	8ffWLGiEEypFPKCxEpEA1Ib/neDLxx90V4huXxNLXRbIF1bnCC7kWmEGrQu3s6k258PSbIkKfhi
+	UrNIzNCAtlFwwgcsbTF+FVAI1/KNmc8qkPU2auTkTc21JXVC1Cjf7HB0QAHyRlKRwYBZbbQexvN
+	4frGhg0DGFM7CkJ8qYuQ2KzlWZHbre88bl3gyzxvuDM38+dTOzAI+xjEwQeLg54QYQRzvUI4U/r
+	g3oBvUBik+RiZs3XKQRwRJaNKieTBXVkPSXsd78Bo4CAxhy/YymLH0lLkVcqlH7lovIRXmxYgoY
+	1OzWDak1L2gbiUm81JZGGhsY=
+X-Google-Smtp-Source: AGHT+IETc8mEKaaLPJCD/+nihsu4Wpc45t2wLlznnN2DifZeQbF4d/b3yJ/pBvAKGQIiRBqGCVaCAw==
+X-Received: by 2002:a05:6000:1888:b0:3b9:13e4:9693 with SMTP id ffacd0b85a97d-3b9fc2f83b7mr17556f8f.52.1755104192449;
+        Wed, 13 Aug 2025 09:56:32 -0700 (PDT)
+Received: from denis-pc ([176.206.95.68])
+        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-3b79c48de68sm48600399f8f.67.2025.08.13.09.56.31
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Wed, 13 Aug 2025 09:56:32 -0700 (PDT)
+From: Denis Benato <benato.denis96@gmail.com>
+To: linux-kernel@vger.kernel.org
+Cc: Hans de Goede <hdegoede@redhat.com>,
+	=?UTF-8?q?Ilpo=20J=C3=A4rvinen?= <ilpo.jarvinen@linux.intel.com>,
+	platform-driver-x86@vger.kernel.org,
+	"Limonciello, Mario" <mario.limonciello@amd.com>,
+	"Luke D . Jones" <luke@ljones.dev>,
+	Alok Tiwari <alok.a.tiwari@oracle.com>,
+	Derek John Clark <derekjohn.clark@gmail.com>,
+	Denis Benato <benato.denis96@gmail.com>
+Subject: [PATCH v11 8/8] platform/x86: asus-armoury: add ppt_* and nv_* tuning knobs
+Date: Wed, 13 Aug 2025 18:56:20 +0200
+Message-ID: <20250813165620.1131127-9-benato.denis96@gmail.com>
+X-Mailer: git-send-email 2.50.1
+In-Reply-To: <20250813165620.1131127-1-benato.denis96@gmail.com>
+References: <20250813165620.1131127-1-benato.denis96@gmail.com>
+Precedence: bulk
+X-Mailing-List: platform-driver-x86@vger.kernel.org
+List-Id: <platform-driver-x86.vger.kernel.org>
+List-Subscribe: <mailto:platform-driver-x86+subscribe@vger.kernel.org>
+List-Unsubscribe: <mailto:platform-driver-x86+unsubscribe@vger.kernel.org>
+MIME-Version: 1.0
+Content-Transfer-Encoding: 8bit
+
 From: "Luke D. Jones" <luke@ljones.dev>
-Date: Thu, 20 Mar 2025 16:45:54 -0500
-Subject: [PATCH v9 8/8] platform/x86: asus-armoury: add ppt_* and nv_* tuning
- knobs
 
 Adds the ppt_* and nv_* tuning knobs that are available via WMI methods
 and adds proper min/max levels plus defaults.
@@ -30,12 +111,12 @@ Signed-off-by: Luke D. Jones <luke@ljones.dev>
 Reviewed-by: Mario Limonciello <mario.limonciello@amd.com>
 ---
  drivers/platform/x86/asus-armoury.c        |  296 +++++-
- drivers/platform/x86/asus-armoury.h        | 1086 ++++++++++++++++++++
+ drivers/platform/x86/asus-armoury.h        | 1085 ++++++++++++++++++++
  include/linux/platform_data/x86/asus-wmi.h |    3 +
- 3 files changed, 1379 insertions(+), 6 deletions(-)
+ 3 files changed, 1378 insertions(+), 6 deletions(-)
 
 diff --git a/drivers/platform/x86/asus-armoury.c b/drivers/platform/x86/asus-armoury.c
-index 33d71bf64468..261a1b182cac 100644
+index 36571290fc40..a461be936294 100644
 --- a/drivers/platform/x86/asus-armoury.c
 +++ b/drivers/platform/x86/asus-armoury.c
 @@ -27,6 +27,7 @@
@@ -91,7 +172,7 @@ index 33d71bf64468..261a1b182cac 100644
  	u32 mini_led_dev_id;
  	u32 gpu_mux_dev_id;
  	/*
-@@ -721,7 +748,34 @@ static ssize_t cores_efficiency_current_value_store(struct kobject *kobj,
+@@ -719,7 +746,34 @@ static ssize_t cores_efficiency_current_value_store(struct kobject *kobj,
  ATTR_GROUP_CORES_RW(cores_efficiency, "cores_efficiency",
  		    "Set the max available efficiency cores");
  
@@ -126,7 +207,7 @@ index 33d71bf64468..261a1b182cac 100644
  ATTR_GROUP_ENUM_INT_RO(charge_mode, "charge_mode", ASUS_WMI_DEVID_CHARGE_MODE, "0;1;2",
  		       "Show the current mode of charging");
  
-@@ -748,6 +802,16 @@ static const struct asus_attr_group armoury_attr_groups[] = {
+@@ -746,6 +800,16 @@ static const struct asus_attr_group armoury_attr_groups[] = {
  	{ &cores_efficiency_attr_group, ASUS_WMI_DEVID_CORES_MAX },
  	{ &cores_performance_attr_group, ASUS_WMI_DEVID_CORES_MAX },
  
@@ -143,8 +224,8 @@ index 33d71bf64468..261a1b182cac 100644
  	{ &charge_mode_attr_group, ASUS_WMI_DEVID_CHARGE_MODE },
  	{ &boot_sound_attr_group, ASUS_WMI_DEVID_BOOT_SOUND },
  	{ &mcu_powersave_attr_group, ASUS_WMI_DEVID_MCU_POWERSAVE },
-@@ -755,8 +819,75 @@ static const struct asus_attr_group armoury_attr_groups[] = {
- 	{ &panel_hd_mode_attr_group, ASUS_WMI_DEVID_PANEL_HD },
+@@ -754,8 +818,75 @@ static const struct asus_attr_group armoury_attr_groups[] = {
+ 	{ &screen_auto_brightness_attr_group, ASUS_WMI_DEVID_SCREEN_AUTO_BRIGHTNESS },
  };
  
 +/**
@@ -219,7 +300,7 @@ index 33d71bf64468..261a1b182cac 100644
  	int err, i;
  
  	asus_armoury.fw_attr_dev = device_create(&firmware_attributes_class, NULL, MKDEV(0, 0),
-@@ -813,12 +944,30 @@ static int asus_fw_attr_add(void)
+@@ -812,12 +943,30 @@ static int asus_fw_attr_add(void)
  		if (!asus_wmi_is_present(armoury_attr_groups[i].wmi_devid))
  			continue;
  
@@ -256,7 +337,7 @@ index 33d71bf64468..261a1b182cac 100644
  		}
  	}
  
-@@ -847,6 +996,135 @@ static int asus_fw_attr_add(void)
+@@ -846,6 +995,135 @@ static int asus_fw_attr_add(void)
  
  /* Init / exit ****************************************************************/
  
@@ -392,7 +473,7 @@ index 33d71bf64468..261a1b182cac 100644
  static int __init asus_fw_init(void)
  {
  	char *wmi_uid;
-@@ -871,6 +1149,9 @@ static int __init asus_fw_init(void)
+@@ -870,6 +1148,9 @@ static int __init asus_fw_init(void)
  		}
  	}
  
@@ -402,7 +483,7 @@ index 33d71bf64468..261a1b182cac 100644
  	return asus_fw_attr_add();
  }
  
-@@ -879,6 +1160,9 @@ static void __exit asus_fw_exit(void)
+@@ -878,6 +1159,9 @@ static void __exit asus_fw_exit(void)
  	sysfs_remove_file(&asus_armoury.fw_attr_kset->kobj, &pending_reboot.attr);
  	kset_unregister(asus_armoury.fw_attr_kset);
  	device_destroy(&firmware_attributes_class, MKDEV(0, 0));
@@ -413,7 +494,7 @@ index 33d71bf64468..261a1b182cac 100644
  
  module_init(asus_fw_init);
 diff --git a/drivers/platform/x86/asus-armoury.h b/drivers/platform/x86/asus-armoury.h
-index a6c4caefdef9..438768ea14cc 100644
+index a6c4caefdef9..4b8daafbb5cb 100644
 --- a/drivers/platform/x86/asus-armoury.h
 +++ b/drivers/platform/x86/asus-armoury.h
 @@ -8,6 +8,7 @@
@@ -424,7 +505,7 @@ index a6c4caefdef9..438768ea14cc 100644
  #include <linux/types.h>
  #include <linux/platform_device.h>
  
-@@ -189,4 +190,1089 @@
+@@ -189,4 +190,1088 @@
  		.name = _fsname, .attrs = _attrname##_attrs		\
  	}
  
@@ -1134,7 +1215,6 @@ index a6c4caefdef9..438768ea14cc 100644
 +				.ppt_pl1_spl_max = 65,
 +				.ppt_pl2_sppt_min = 35,
 +				.ppt_pl2_sppt_def = 54,
-+				.ppt_pl2_sppt_def = 40,
 +				.ppt_pl2_sppt_max = 60,
 +				.ppt_pl3_fppt_min = 35,
 +				.ppt_pl3_fppt_def = 80,
@@ -1515,7 +1595,7 @@ index a6c4caefdef9..438768ea14cc 100644
 +
  #endif /* _ASUS_ARMOURY_H_ */
 diff --git a/include/linux/platform_data/x86/asus-wmi.h b/include/linux/platform_data/x86/asus-wmi.h
-index 72fd2fc88bb1..78261ea49995 100644
+index 260796fee301..480596317c7a 100644
 --- a/include/linux/platform_data/x86/asus-wmi.h
 +++ b/include/linux/platform_data/x86/asus-wmi.h
 @@ -145,6 +145,9 @@
@@ -1529,5 +1609,6 @@ index 72fd2fc88bb1..78261ea49995 100644
  #define ASUS_WMI_DEVID_GPU_MUX		0x00090016
  #define ASUS_WMI_DEVID_GPU_MUX_VIVO	0x00090026
 -- 
-2.50.0
+2.39.5
+
 
