@@ -1,7 +1,7 @@
-From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From b429e3b2cd7eb113458eba07cda51df9aca3abfe Mon Sep 17 00:00:00 2001
 From: Luke Jones <luke@ljones.dev>
 Date: Mon, 31 Mar 2025 20:45:52 +1300
-Subject: [PATCH 26/28] asus-ally-hid: test gamepad mode
+Subject: [PATCH 28/33] asus-ally-hid: test gamepad mode
 
 Signed-off-by: Luke Jones <luke@ljones.dev>
 ---
@@ -192,3 +192,6 @@ index 8771c1490cae..b26438731e99 100644
  /* Button identifiers for the attribute system */
  enum ally_button_id {
  	ALLY_BTN_A,
+-- 
+2.49.0
+

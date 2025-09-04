@@ -1,7 +1,7 @@
-From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From fda64dacf0e3774f8a0ce00317d9e198c05a5c6a Mon Sep 17 00:00:00 2001
 From: Luke Jones <luke@ljones.dev>
 Date: Wed, 26 Mar 2025 16:40:51 +1300
-Subject: [PATCH 17/28] asus-ally-hid: handle screenside QAM buttons
+Subject: [PATCH 19/33] asus-ally-hid: handle screenside QAM buttons
 
 The buttons to the lower left and right of the screen
 which are on separate interface to the gamepad emit
@@ -303,3 +303,6 @@ index 94fcdd2ae727..b78aec8f443c 100644
  };
  
  int ally_gamepad_send_packet(struct ally_handheld *ally,
+-- 
+2.49.0
+

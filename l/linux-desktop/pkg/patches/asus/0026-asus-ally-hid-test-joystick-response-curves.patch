@@ -1,7 +1,7 @@
-From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From c100f9c003dd6e2fcd2c206ad0948374eeb69496 Mon Sep 17 00:00:00 2001
 From: Luke Jones <luke@ljones.dev>
 Date: Mon, 31 Mar 2025 15:43:53 +1300
-Subject: [PATCH 24/28] asus-ally-hid: test joystick response curves
+Subject: [PATCH 26/33] asus-ally-hid: test joystick response curves
 
 Signed-off-by: Luke Jones <luke@ljones.dev>
 ---
@@ -438,3 +438,6 @@ index f2002ae2420a..417750a750c3 100644
  #define ALLY_DEVICE_CONST_ATTR_RO(fname, sysfs_name, value)			\
  	static ssize_t fname##_show(struct device *dev,				\
  				   struct device_attribute *attr, char *buf)	\
+-- 
+2.49.0
+

@@ -1,7 +1,7 @@
-From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From bfdab6dbc89b87e80dfbd712c4da182bf410b118 Mon Sep 17 00:00:00 2001
 From: Luke Jones <luke@ljones.dev>
 Date: Mon, 31 Mar 2025 16:23:27 +1300
-Subject: [PATCH 25/28] asus-ally-hid: test btn turbo
+Subject: [PATCH 27/33] asus-ally-hid: test btn turbo
 
 Signed-off-by: Luke Jones <luke@ljones.dev>
 ---
@@ -446,3 +446,6 @@ index 417750a750c3..8771c1490cae 100644
  	struct joystick_resp_curve left_curve;
  	struct joystick_resp_curve right_curve;
  };
+-- 
+2.49.0
+

@@ -1,7 +1,7 @@
-From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From c5a2953b7500725f3e1f69e45a0186d255915868 Mon Sep 17 00:00:00 2001
 From: Luke Jones <luke@ljones.dev>
 Date: Sun, 30 Mar 2025 14:25:18 +1300
-Subject: [PATCH 20/28] asus-ally-hid: test vibe
+Subject: [PATCH 22/33] asus-ally-hid: test vibe
 
 Signed-off-by: Luke Jones <luke@ljones.dev>
 ---
@@ -213,3 +213,6 @@ index 8174f78c5263..5147e155d65e 100644
  };
  
  struct ally_handheld {
+-- 
+2.49.0
+

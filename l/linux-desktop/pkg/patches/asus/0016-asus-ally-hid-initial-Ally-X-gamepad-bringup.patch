@@ -1,7 +1,7 @@
-From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From ff4e62fe4376ede1c953802760b588c22302e985 Mon Sep 17 00:00:00 2001
 From: Luke Jones <luke@ljones.dev>
 Date: Tue, 25 Mar 2025 15:20:06 +1300
-Subject: [PATCH 14/28] asus-ally-hid: initial Ally-X gamepad bringup
+Subject: [PATCH 16/33] asus-ally-hid: initial Ally-X gamepad bringup
 
 Enable use of the new gamepad device created by the MCU:
 - Triggers
@@ -329,3 +329,6 @@ index e6678003755f..448f994cc9ee 100644
 +			    int size);
 +
  #endif /* __ASUS_ALLY_H */
+-- 
+2.49.0
+

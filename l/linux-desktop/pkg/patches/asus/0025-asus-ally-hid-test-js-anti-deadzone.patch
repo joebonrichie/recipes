@@ -1,7 +1,7 @@
-From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From 951267e35bf9bf6c476c982a8b18c7aa998f0ac4 Mon Sep 17 00:00:00 2001
 From: Luke Jones <luke@ljones.dev>
 Date: Mon, 31 Mar 2025 14:29:08 +1300
-Subject: [PATCH 23/28] asus-ally-hid: test js anti-deadzone
+Subject: [PATCH 25/33] asus-ally-hid: test js anti-deadzone
 
 Signed-off-by: Luke Jones <luke@ljones.dev>
 ---
@@ -168,3 +168,6 @@ index e5903352cfec..9fc46359c609 100644
  	NULL
  };
  
+-- 
+2.49.0
+

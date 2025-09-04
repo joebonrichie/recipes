@@ -1,7 +1,7 @@
-From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From 7e68242f4f1ec1788de4d5574f3bcce67a27223f Mon Sep 17 00:00:00 2001
 From: Luke Jones <luke@ljones.dev>
 Date: Mon, 31 Mar 2025 14:01:05 +1300
-Subject: [PATCH 22/28] asus-ally-hid: test trigger dzot
+Subject: [PATCH 24/33] asus-ally-hid: test trigger dzot
 
 Signed-off-by: Luke Jones <luke@ljones.dev>
 ---
@@ -170,3 +170,6 @@ index 12610fd24c65..e5903352cfec 100644
  };
  
  /**
+-- 
+2.49.0
+

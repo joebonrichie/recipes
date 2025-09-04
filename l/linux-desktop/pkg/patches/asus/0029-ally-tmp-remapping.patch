@@ -1,7 +1,7 @@
-From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From d854a04541f664af936a04a9af33c633ec8dad7c Mon Sep 17 00:00:00 2001
 From: Luke Jones <luke@ljones.dev>
 Date: Wed, 23 Apr 2025 14:27:33 +1200
-Subject: [PATCH 27/28] ally: tmp: remapping
+Subject: [PATCH 29/33] ally: tmp: remapping
 
 Signed-off-by: Luke Jones <luke@ljones.dev>
 ---
@@ -845,3 +845,6 @@ index b26438731e99..fd9c788a4a42 100644
  
  	struct joystick_resp_curve left_curve;
  	struct joystick_resp_curve right_curve;
+-- 
+2.49.0
+

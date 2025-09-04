@@ -1,7 +1,7 @@
-From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From 224d00fdbe6e3bcb2b1ad2c817154d22ffedf130 Mon Sep 17 00:00:00 2001
 From: Luke Jones <luke@ljones.dev>
 Date: Thu, 27 Mar 2025 11:35:14 +1300
-Subject: [PATCH 18/28] asus-ally-hid: rename input devices
+Subject: [PATCH 20/33] asus-ally-hid: rename input devices
 
 Signed-off-by: Luke Jones <luke@ljones.dev>
 ---
@@ -65,3 +65,6 @@ index b78aec8f443c..dbfcb001e2d2 100644
  #define HID_ALLY_INTF_CFG_IN 0x83
  #define HID_ALLY_X_INTF_IN 0x87
  
+-- 
+2.49.0
+

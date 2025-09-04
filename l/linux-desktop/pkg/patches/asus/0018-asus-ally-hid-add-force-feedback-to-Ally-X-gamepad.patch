@@ -1,7 +1,7 @@
-From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From 93ba071afe85a06cf63e92166c981baa88304e08 Mon Sep 17 00:00:00 2001
 From: Luke Jones <luke@ljones.dev>
 Date: Tue, 25 Mar 2025 21:36:36 +1300
-Subject: [PATCH 16/28] asus-ally-hid: add force feedback to Ally X gamepad
+Subject: [PATCH 18/33] asus-ally-hid: add force feedback to Ally X gamepad
 
 Implement force feedback effects for the Ally X gamepad interface.
 
@@ -161,3 +161,6 @@ index cd74bc65234b..94fcdd2ae727 100644
  };
  
  struct ally_handheld {
+-- 
+2.49.0
+

@@ -1,13 +1,7 @@
-From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From 435dc543be38f2278d2be36f9033696f08a484af Mon Sep 17 00:00:00 2001
 From: Luke Jones <luke@ljones.dev>
 Date: Thu, 3 Apr 2025 21:29:35 +1300
-Subject: [PATCH 28/28] asus-wmi: fixup screenpad brightness
-
-Fix up some inconsistent behaviour involving the screenpad on some
-ASUS laptops. This fixes:
-- illogical screen off control (0/1 flipped depending on WMI state)
-- bad brightness depending on the last screenpad power state
-- incorrect brightness scaling
+Subject: [PATCH 30/33] asus-wmi: fixup screenpad brightness
 
 Signed-off-by: Luke Jones <luke@ljones.dev>
 ---
@@ -15,7 +9,7 @@ Signed-off-by: Luke Jones <luke@ljones.dev>
  1 file changed, 21 insertions(+), 31 deletions(-)
 
 diff --git a/drivers/platform/x86/asus-wmi.c b/drivers/platform/x86/asus-wmi.c
-index ef1e9eed78a2..942f1013d6cb 100644
+index 83fe67816329..95ab5728238f 100644
 --- a/drivers/platform/x86/asus-wmi.c
 +++ b/drivers/platform/x86/asus-wmi.c
 @@ -123,7 +123,6 @@ module_param(fnlock_default, bool, 0444);
@@ -26,7 +20,7 @@ index ef1e9eed78a2..942f1013d6cb 100644
  #define ASUS_SCREENPAD_BRIGHT_MAX 255
  #define ASUS_SCREENPAD_BRIGHT_DEFAULT 60
  
-@@ -4240,43 +4239,37 @@ static int read_screenpad_brightness(struct backlight_device *bd)
+@@ -4239,43 +4238,37 @@ static int read_screenpad_brightness(struct backlight_device *bd)
  		return err;
  	/* The device brightness can only be read if powered, so return stored */
  	if (err == BACKLIGHT_POWER_OFF)
@@ -87,7 +81,7 @@ index ef1e9eed78a2..942f1013d6cb 100644
  
  	return err;
  }
-@@ -4294,22 +4287,19 @@ static int asus_screenpad_init(struct asus_wmi *asus)
+@@ -4293,22 +4286,19 @@ static int asus_screenpad_init(struct asus_wmi *asus)
  	int err, power;
  	int brightness = 0;
  
@@ -113,7 +107,7 @@ index ef1e9eed78a2..942f1013d6cb 100644
  	bd = backlight_device_register("asus_screenpad",
  				       &asus->platform_device->dev, asus,
  				       &asus_screenpad_bl_ops, &props);
-@@ -4320,7 +4310,7 @@ static int asus_screenpad_init(struct asus_wmi *asus)
+@@ -4319,7 +4309,7 @@ static int asus_screenpad_init(struct asus_wmi *asus)
  
  	asus->screenpad_backlight_device = bd;
  	asus->driver->screenpad_brightness = brightness;
@@ -122,3 +116,6 @@ index ef1e9eed78a2..942f1013d6cb 100644
  	bd->props.power = power;
  	backlight_update_status(bd);
  
+-- 
+2.49.0
+

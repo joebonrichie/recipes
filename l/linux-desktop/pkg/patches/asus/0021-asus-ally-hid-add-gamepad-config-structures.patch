@@ -1,7 +1,7 @@
-From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From 686bd0da99783ccc2cc1dd58af3d119bde2954bc Mon Sep 17 00:00:00 2001
 From: Luke Jones <luke@ljones.dev>
 Date: Thu, 27 Mar 2025 18:13:37 +1300
-Subject: [PATCH 19/28] asus-ally-hid: add gamepad config structures
+Subject: [PATCH 21/33] asus-ally-hid: add gamepad config structures
 
 Add the base configuration structures and mutexes, initialize and
 fetch support values.
@@ -421,3 +421,6 @@ index dbfcb001e2d2..8174f78c5263 100644
  #define ALLY_DEVICE_ATTR_RW(_name, _sysfs_name)    \
  	struct device_attribute dev_attr_##_name = \
  		__ATTR(_sysfs_name, 0644, _name##_show, _name##_store)
+-- 
+2.49.0
+

@@ -1,7 +1,7 @@
-From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From 01800611177f058a39219c59b908ee20ba8b3f62 Mon Sep 17 00:00:00 2001
 From: Luke Jones <luke@ljones.dev>
 Date: Tue, 25 Mar 2025 21:09:54 +1300
-Subject: [PATCH 15/28] asus-ally-hid: add QAM steam action + attribute to
+Subject: [PATCH 17/33] asus-ally-hid: add QAM steam action + attribute to
  disable it
 
 Enable the screenface QAM butons to output a Steam chord that allows
@@ -214,3 +214,6 @@ index 448f994cc9ee..cd74bc65234b 100644
 +		__ATTR(_sysfs_name, 0644, _name##_show, _name##_store)
 +
  #endif /* __ASUS_ALLY_H */
+-- 
+2.49.0
+
