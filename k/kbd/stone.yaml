@@ -4,24 +4,34 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : kbd
-version     : '2.8.0'
-release     : 8
+version     : '2.9.0'
+release     : 9
 homepage    : https://kbd-project.org/
 upstreams   :
-    - https://mirrors.edge.kernel.org/pub/linux/utils/kbd/kbd-2.8.0.tar.xz : 01f5806da7d1d34f594b7b2a6ae1ab23215344cf1064e8edcd3a90fef9776a11
+    - https://mirrors.edge.kernel.org/pub/linux/utils/kbd/kbd-2.9.0.tar.xz : fb3197f17a99eb44d22a3a1a71f755f9622dd963e66acfdea1a45120951b02ed
 summary     : Linux keyboard tools
 description : |
     The kbd project contains utilities for managing Linux console (Linux console, virtual terminals, keyboard, etc.)
 license     : GPL-2.0-or-later
 builddeps   :
+    - binary(bison)
+    - binary(doxygen)
     - binary(flex)
     - binary(gzip)
+    - binary(msgfmt)
+    - binary(xgettext)
+    - pkgconfig(bzip2)
+    - pkgconfig(liblzma)
+    - pkgconfig(libzstd)
     - pkgconfig(pam)
+    - pkgconfig(zlib)
 rundeps     :
     - binary(gzip)
     - terminus-font
 setup       : |
-    %configure --datadir=%(datadir)/kbd
+    # TODO: This now supports zstd compression (dlopening the shared lib). Switch to that (requires changes to the kernel recipes)
+    %configure \
+        --datadir=%(datadir)/kbd
 build       : |
     %make
 install     : |
