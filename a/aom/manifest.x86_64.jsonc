@@ -19,7 +19,7 @@
 				"/usr/bin/aomdec",
 				"/usr/bin/aomenc",
 				"/usr/lib/libaom.so.3",
-				"/usr/lib/libaom.so.3.12.1"
+				"/usr/lib/libaom.so.3.13.0"
 			],
 			"name": "aom",
 			"provides": [
@@ -48,16 +48,21 @@
 				"/usr/include/aom/aom_integer.h",
 				"/usr/include/aom/aomcx.h",
 				"/usr/include/aom/aomdx.h",
+				"/usr/lib/cmake/AOM/AOMConfig.cmake",
+				"/usr/lib/cmake/AOM/AOMConfigVersion.cmake",
+				"/usr/lib/cmake/AOM/AOMTargets-release.cmake",
+				"/usr/lib/cmake/AOM/AOMTargets.cmake",
 				"/usr/lib/libaom.so",
 				"/usr/lib/pkgconfig/aom.pc"
 			],
 			"name": "aom-devel",
 			"provides": [
+				"cmake(AOM)",
 				"pkgconfig(aom)"
 			]
 		}
 	},
 	"source-name": "aom",
-	"source-release": "3",
-	"source-version": "3.12.1"
+	"source-release": "4",
+	"source-version": "3.13.0"
 }
