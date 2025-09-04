@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : poppler
-version     : 25.09.0
-release     : 9
+version     : 25.09.1
+release     : 10
 homepage    : https://poppler.freedesktop.org
 upstreams   :
-    - https://poppler.freedesktop.org/poppler-25.09.0.tar.xz : 758abfe0c77108c72d654b291dfbce54964b5315a53028e3875f07ef55ff20a3
+    - https://poppler.freedesktop.org/poppler-25.09.1.tar.xz : 0c1091d01d3dd1664a13816861e812d02b29201e96665454b81b52d261fad658
     - git|https://gitlab.freedesktop.org/poppler/test.git : c79c6839e859dbee6b73ac260788fa2de8618ba4
 summary     : A PDF rendering library
 description : |
