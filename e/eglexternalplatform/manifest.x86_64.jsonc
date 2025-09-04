@@ -6,7 +6,7 @@
 			"files": [
 				"/usr/include/eglexternalplatform.h",
 				"/usr/include/eglexternalplatformversion.h",
-				"/usr/lib/pkgconfig/eglexternalplatform.pc"
+				"/usr/share/pkgconfig/eglexternalplatform.pc"
 			],
 			"name": "eglexternalplatform",
 			"provides": [
@@ -15,6 +15,6 @@
 		}
 	},
 	"source-name": "eglexternalplatform",
-	"source-release": "3",
-	"source-version": "1.2"
+	"source-release": "4",
+	"source-version": "1.2.1"
 }
