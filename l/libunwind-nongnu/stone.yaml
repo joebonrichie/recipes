@@ -4,10 +4,10 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : libunwind-nongnu
-version     : 1.8.2
-release     : 1
+version     : 1.8.3
+release     : 2
 upstreams   :
-    - https://github.com/libunwind/libunwind/releases/download/v1.8.2/libunwind-1.8.2.tar.gz : 7f262f1a1224f437ede0f96a6932b582c8f5421ff207c04e3d9504dfa04c8b82
+    - https://github.com/libunwind/libunwind/releases/download/v1.8.3/libunwind-1.8.3.tar.gz : be30d910e67f58d82e753231f1357f326a1a088acf126b21ff77e60aab19b90b
 homepage    : https://www.nongnu.org/libunwind
 license     : MIT
 summary     : Open-source implementation of the libunwind API

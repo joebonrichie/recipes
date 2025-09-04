@@ -1,4 +1,4 @@
-From 17c8aac2158accf99b26d70fed3069d2532aa2b6 Mon Sep 17 00:00:00 2001
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
 From: psykose <alice@ayaya.dev>
 Date: Wed, 15 May 2024 20:43:46 +0000
 Subject: [PATCH] rename to libunwind-nongnu
@@ -6,21 +6,21 @@ Subject: [PATCH] rename to libunwind-nongnu
 to fix conflict with llvm libunwind which owns the same basic name
 ---
  configure.ac                                  |   2 +-
- src/Makefile.am                               | 200 +++++++++---------
+ src/Makefile.am                               | 212 +++++++++---------
  src/coredump/libunwind-coredump.pc.in         |   2 +-
  src/libunwind-generic.pc.in                   |   2 +-
  src/ptrace/libunwind-ptrace.pc.in             |   2 +-
  src/setjmp/libunwind-setjmp.pc.in             |   2 +-
  ...libunwind.pc.in => libunwind-nongnu.pc.in} |   2 +-
  tests/Makefile.am                             |   2 +-
- 8 files changed, 107 insertions(+), 107 deletions(-)
- rename src/unwind/{libunwind.pc.in => libunwind-nongnu.pc.in} (84%)
+ 8 files changed, 113 insertions(+), 113 deletions(-)
+ rename src/unwind/{libunwind.pc.in => libunwind-nongnu.pc.in} (86%)
 
 diff --git a/configure.ac b/configure.ac
-index 82caaa7..be8f498 100644
+index 14762b84..446ef875 100644
 --- a/configure.ac
 +++ b/configure.ac
-@@ -571,7 +571,7 @@ AC_SUBST(enable_debug_frame)
+@@ -570,7 +570,7 @@ AC_SUBST(enable_debug_frame)
  AC_CONFIG_FILES(Makefile src/Makefile
                  include/libunwind-common.h
                  include/libunwind.h include/tdep/libunwind_i.h)
@@ -30,7 +30,7 @@ index 82caaa7..be8f498 100644
                  src/libunwind-generic.pc)
  AC_OUTPUT
 diff --git a/src/Makefile.am b/src/Makefile.am
-index 63041fd..23a92d2 100644
+index 641cf448..ebcb24d0 100644
 --- a/src/Makefile.am
 +++ b/src/Makefile.am
 @@ -38,7 +38,7 @@ COMMON_SO_LDFLAGS = $(LDFLAGS_NOSTARTFILES)
@@ -46,8 +46,8 @@ index 63041fd..23a92d2 100644
  # If local unwinding is being built, link in the local unwinding functions
  libunwind_libadd =
  if !REMOTE_ONLY
--  libunwind_libadd += libunwind.la -lc
-+  libunwind_libadd += libunwind-nongnu.la -lc
+-  libunwind_libadd += libunwind.la
++  libunwind_libadd += libunwind-nongnu.la
  endif
  
  ### pkg-config:
@@ -60,7 +60,7 @@ index 63041fd..23a92d2 100644
  endif
  if BUILD_COREDUMP
  pkgconfig_DATA += coredump/libunwind-coredump.pc
-@@ -216,19 +216,19 @@ libunwind_setjmp_la_LIBADD =                   \
+@@ -217,19 +217,19 @@ libunwind_setjmp_la_LIBADD =                   \
  	$(libunwind_libadd)
  
  ### libunwind:
@@ -84,7 +84,7 @@ index 63041fd..23a92d2 100644
  	mi/Gaddress_validator.c                \
  	mi/Gdestroy_addr_space.c               \
  	mi/Gdyn-extract.c                      \
-@@ -248,7 +248,7 @@ libunwind_la_SOURCES_generic =                 \
+@@ -250,7 +250,7 @@ libunwind_la_SOURCES_generic =                 \
  	mi/Gget_elf_filename.c
  
  if SUPPORT_CXX_EXCEPTIONS
@@ -93,7 +93,7 @@ index 63041fd..23a92d2 100644
  	unwind/Backtrace.c                     \
  	unwind/DeleteException.c               \
  	unwind/FindEnclosingFunction.c         \
-@@ -269,14 +269,14 @@ libunwind_la_SOURCES_local_unwind =            \
+@@ -271,14 +271,14 @@ libunwind_la_SOURCES_local_unwind =            \
  	unwind/SetIP.c
  
  #  _ReadULEB()/_ReadSLEB() are needed for Intel C++ 8.0 compatibility
@@ -111,7 +111,7 @@ index 63041fd..23a92d2 100644
  	mi/backtrace.c                         \
  	mi/dyn-cancel.c                        \
  	mi/dyn-info-list.c                     \
-@@ -297,9 +297,9 @@ libunwind_la_SOURCES_local_nounwind =          \
+@@ -300,9 +300,9 @@ libunwind_la_SOURCES_local_nounwind =          \
  	mi/Lset_reg.c                          \
  	mi/Lget_elf_filename.c
  
@@ -124,7 +124,7 @@ index 63041fd..23a92d2 100644
  
  noinst_HEADERS += os-linux.h
  
-@@ -330,7 +330,7 @@ if USE_DWARF
+@@ -333,7 +333,7 @@ if USE_DWARF
  if !REMOTE_ONLY
   noinst_LTLIBRARIES += libunwind-dwarf-local.la
  endif
@@ -133,7 +133,7 @@ index 63041fd..23a92d2 100644
  endif
  
  noinst_HEADERS += elf32.h elf64.h elfxx.h
-@@ -343,19 +343,19 @@ libunwind_elf64_la_LIBADD  = $(LIBLZMA) $(LIBZ)
+@@ -346,19 +346,19 @@ libunwind_elf64_la_LIBADD  = $(LIBLZMA) $(LIBZ)
  libunwind_elfxx_la_LIBADD  = $(LIBLZMA) $(LIBZ)
  
  noinst_LTLIBRARIES += $(libunwind_elf_libs)
@@ -164,7 +164,7 @@ index 63041fd..23a92d2 100644
   libunwind_coredump_la_SOURCES += coredump/_UCD_access_reg_linux.c
   libunwind_coredump_la_SOURCES += coredump/_UCD_get_threadinfo_prstatus.c
   libunwind_coredump_la_SOURCES += coredump/_UCD_get_mapinfo_linux.c
-@@ -403,17 +403,17 @@ endif
+@@ -406,17 +406,17 @@ endif
  ### target AArch64:
  # The list of files that go into libunwind and libunwind-aarch64:
  noinst_HEADERS += aarch64/init.h aarch64/ucontext_i.h aarch64/unwind_i.h
@@ -188,7 +188,7 @@ index 63041fd..23a92d2 100644
  	aarch64/getcontext.S                   \
  	aarch64/Lapply_reg_state.c             \
  	aarch64/Lcreate_addr_space.c           \
-@@ -437,9 +437,9 @@ libunwind_setjmp_la_SOURCES +=                 \
+@@ -441,9 +441,9 @@ libunwind_setjmp_la_SOURCES +=                 \
  endif ARCH_AARCH64
  
  libunwind_aarch64_la_SOURCES =                 \
@@ -201,7 +201,7 @@ index 63041fd..23a92d2 100644
  	aarch64/Gapply_reg_state.c             \
  	aarch64/Gcreate_addr_space.c           \
  	aarch64/Gget_proc_info.c               \
-@@ -469,16 +469,16 @@ noinst_HEADERS +=                              \
+@@ -474,16 +474,16 @@ noinst_HEADERS +=                              \
  	arm/init.h                             \
  	arm/offsets.h                          \
  	arm/unwind_i.h
@@ -224,7 +224,7 @@ index 63041fd..23a92d2 100644
  	arm/getcontext.S                       \
  	arm/Lapply_reg_state.c                 \
  	arm/Lcreate_addr_space.c               \
-@@ -500,9 +500,9 @@ endif # ARCH_ARM
+@@ -505,9 +505,9 @@ endif # ARCH_ARM
  
  # The list of files that go into libunwind-arm:
  libunwind_arm_la_SOURCES =                     \
@@ -237,7 +237,7 @@ index 63041fd..23a92d2 100644
  	arm/Gapply_reg_state.c                 \
  	arm/Gcreate_addr_space.c               \
  	arm/Gex_tables.c                       \
-@@ -532,15 +532,15 @@ noinst_HEADERS +=                              \
+@@ -537,15 +537,15 @@ noinst_HEADERS +=                              \
  	hppa/init.h                            \
  	hppa/offsets.h                         \
  	hppa/unwind_i.h
@@ -258,7 +258,7 @@ index 63041fd..23a92d2 100644
  	hppa/getcontext.S                      \
  	hppa/Lapply_reg_state.c                \
  	hppa/Lcreate_addr_space.c              \
-@@ -682,16 +682,16 @@ noinst_HEADERS +=                              \
+@@ -687,16 +687,16 @@ noinst_HEADERS +=                              \
  	loongarch64/init.h                     \
  	loongarch64/offsets.h                  \
  	loongarch64/unwind_i.h
@@ -280,7 +280,7 @@ index 63041fd..23a92d2 100644
  	loongarch64/getcontext.S               \
  	loongarch64/Lapply_reg_state.c         \
  	loongarch64/Lcreate_addr_space.c       \
-@@ -712,8 +712,8 @@ libunwind_setjmp_la_SOURCES +=                 \
+@@ -717,8 +717,8 @@ libunwind_setjmp_la_SOURCES +=                 \
  endif # ARCH_LOONGARCH64
  
  libunwind_loongarch64_la_SOURCES =             \
@@ -291,7 +291,7 @@ index 63041fd..23a92d2 100644
  	loongarch64/Gapply_reg_state.c         \
  	loongarch64/Gcreate_addr_space.c       \
  	loongarch64/Gget_proc_info.c           \
-@@ -795,7 +795,7 @@ libunwind_mips_la_LIBADD =                     \
+@@ -800,7 +800,7 @@ libunwind_mips_la_LIBADD =                     \
  
  ### target PowerPC:
  # The list of local files that go to Power 64 and 32:
@@ -300,7 +300,7 @@ index 63041fd..23a92d2 100644
  	ppc/Lget_proc_info.c                   \
  	ppc/Lget_save_loc.c                    \
  	ppc/Linit_local.c                      \
-@@ -816,18 +816,18 @@ noinst_HEADERS +=                              \
+@@ -821,18 +821,18 @@ noinst_HEADERS +=                              \
  	ppc32/init.h                           \
  	ppc32/unwind_i.h                       \
  	ppc32/ucontext_i.h
@@ -325,7 +325,7 @@ index 63041fd..23a92d2 100644
  	ppc32/Lapply_reg_state.c               \
  	ppc32/Lcreate_addr_space.c             \
  	ppc32/Lglobal.c                        \
-@@ -844,8 +844,8 @@ endif # ARCH_PPC32
+@@ -849,8 +849,8 @@ endif # ARCH_PPC32
  
  # The list of files that go into libunwind-ppc32:
  libunwind_ppc32_la_SOURCES =                   \
@@ -336,7 +336,7 @@ index 63041fd..23a92d2 100644
  	$(libunwind_ppc_la_SOURCES_ppc_generic)\
  	ppc32/Gapply_reg_state.c               \
  	ppc32/Gcreate_addr_space.c             \
-@@ -868,18 +868,18 @@ noinst_HEADERS +=                              \
+@@ -873,18 +873,18 @@ noinst_HEADERS +=                              \
  	ppc64/init.h                           \
  	ppc64/unwind_i.h                       \
  	ppc64/ucontext_i.h
@@ -361,7 +361,7 @@ index 63041fd..23a92d2 100644
  	ppc64/Lapply_reg_state.c               \
  	ppc64/Lcreate_addr_space.c             \
  	ppc64/Lglobal.c                        \
-@@ -895,8 +895,8 @@ endif # ARCH_PPC64
+@@ -900,8 +900,8 @@ endif # ARCH_PPC64
  
  # The list of files that go into libunwind-ppc64:
  libunwind_ppc64_la_SOURCES =                   \
@@ -372,7 +372,7 @@ index 63041fd..23a92d2 100644
  	$(libunwind_ppc_la_SOURCES_ppc_generic)\
  	ppc64/Gapply_reg_state.c               \
  	ppc64/Gcreate_addr_space.c             \
-@@ -921,16 +921,16 @@ noinst_HEADERS +=                              \
+@@ -926,16 +926,16 @@ noinst_HEADERS +=                              \
  	riscv/init.h                           \
  	riscv/offsets.h                        \
  	riscv/unwind_i.h 
@@ -394,7 +394,7 @@ index 63041fd..23a92d2 100644
  	riscv/getcontext.S                     \
  	riscv/Lapply_reg_state.c               \
  	riscv/Lcreate_addr_space.c             \
-@@ -952,8 +952,8 @@ libunwind_setjmp_la_SOURCES +=                 \
+@@ -957,8 +957,8 @@ libunwind_setjmp_la_SOURCES +=                 \
  endif # ARCH_RISCV
  
  libunwind_riscv_la_SOURCES =                   \
@@ -405,7 +405,7 @@ index 63041fd..23a92d2 100644
  	riscv/Gapply_reg_state.c               \
  	riscv/Gcreate_addr_space.c             \
  	riscv/Gget_proc_info.c                 \
-@@ -981,16 +981,16 @@ libunwind_riscv_la_LIBADD =                    \
+@@ -986,16 +986,16 @@ libunwind_riscv_la_LIBADD =                    \
  noinst_HEADERS +=                              \
  	s390x/init.h                           \
  	s390x/unwind_i.h
@@ -427,7 +427,7 @@ index 63041fd..23a92d2 100644
  	s390x/getcontext.S                     \
  	s390x/Lapply_reg_state.c               \
  	s390x/Lcreate_addr_space.c             \
-@@ -1010,8 +1010,8 @@ endif # ARCH_S390X
+@@ -1015,8 +1015,8 @@ endif # ARCH_S390X
  
  # The list of files that go into libunwind-s390x:
  libunwind_s390x_la_SOURCES =                   \
@@ -438,7 +438,7 @@ index 63041fd..23a92d2 100644
  	s390x/Gapply_reg_state.c               \
  	s390x/Gcreate_addr_space.c             \
  	s390x/Gget_proc_info.c                 \
-@@ -1102,10 +1102,10 @@ libunwind_la_SOURCES_x86_common =              \
+@@ -1107,10 +1107,10 @@ libunwind_la_SOURCES_x86_common =              \
  
  if ARCH_X86
  # The list of files that go into libunwind:
@@ -453,7 +453,7 @@ index 63041fd..23a92d2 100644
  	x86/Lapply_reg_state.c                 \
  	x86/Lcreate_addr_space.c               \
  	x86/Lget_proc_info.c                   \
-@@ -1126,9 +1126,9 @@ endif # ARCH_X86
+@@ -1131,9 +1131,9 @@ endif # ARCH_X86
  
  # The list of files that go into libunwind-x86:
  libunwind_x86_la_SOURCES =                     \
@@ -466,7 +466,7 @@ index 63041fd..23a92d2 100644
  	x86/Gapply_reg_state.c                 \
  	x86/Gcreate_addr_space.c               \
  	x86/Gget_proc_info.c                   \
-@@ -1155,17 +1155,17 @@ noinst_HEADERS +=                              \
+@@ -1160,17 +1160,17 @@ noinst_HEADERS +=                              \
  	x86_64/init.h                          \
  	x86_64/ucontext_i.h                    \
  	x86_64/unwind_i.h
@@ -490,7 +490,7 @@ index 63041fd..23a92d2 100644
  	x86_64/getcontext.S                    \
  	x86_64/Lapply_reg_state.c              \
  	x86_64/Lcreate_addr_space.c            \
-@@ -1190,9 +1190,9 @@ endif # ARCH_X86_64
+@@ -1195,9 +1195,9 @@ endif # ARCH_X86_64
  
  # The list of files that go into libunwind-x86_64:
  libunwind_x86_64_la_SOURCES =                  \
@@ -503,19 +503,21 @@ index 63041fd..23a92d2 100644
  	x86_64/Gapply_reg_state.c              \
  	x86_64/Gcreate_addr_space.c            \
  	x86_64/Gget_proc_info.c                \
-@@ -1239,16 +1239,16 @@ endif
+@@ -1244,11 +1244,11 @@ endif
  # Don't link with standard libraries, because those may mention
  # libunwind already.
  #
--libunwind_la_LDFLAGS =	$(COMMON_SO_LDFLAGS) -XCClinker -nostdlib \
-+libunwind_nongnu_la_LDFLAGS =	$(COMMON_SO_LDFLAGS) -XCClinker -nostdlib \
- 			$(LDFLAGS_STATIC_LIBCXA) -version-info $(SOVERSION)
--libunwind_la_LIBADD  += -lc $(LIBCRTS)
--libunwind_la_LIBADD += $(LIBLZMA) $(LIBZ)
-+libunwind_nongnu_la_LIBADD  += -lc $(LIBCRTS)
-+libunwind_nongnu_la_LIBADD += $(LIBLZMA) $(LIBZ)
+-libunwind_la_LDFLAGS = $(COMMON_SO_LDFLAGS) \
++libunwind_nongnu_la_LDFLAGS = $(COMMON_SO_LDFLAGS) \
+                        $(UNW_CRT_LDFLAGS) \
+                        $(LDFLAGS_STATIC_LIBCXA) \
+                        -version-info $(SOVERSION)
+-libunwind_la_LIBADD += $(UNW_CRT_LIBADD) \
++libunwind_nongnu_la_LIBADD += $(UNW_CRT_LIBADD) \
+                        $(LIBLZMA) \
+                        $(LIBZ)
  
- AM_CPPFLAGS = -I$(top_srcdir)/include -I$(top_srcdir)/include/tdep-$(arch) -I.
+@@ -1256,7 +1256,7 @@ AM_CPPFLAGS = -I$(top_srcdir)/include -I$(top_srcdir)/include/tdep-$(arch) -I.
  AM_CCASFLAGS = $(AM_CPPFLAGS)
  noinst_HEADERS += unwind/unwind-internal.h
  
@@ -525,7 +527,7 @@ index 63041fd..23a92d2 100644
  MAINTAINERCLEANFILES = Makefile.in
  
 diff --git a/src/coredump/libunwind-coredump.pc.in b/src/coredump/libunwind-coredump.pc.in
-index 9cb62c0..75d1e4e 100644
+index 9cb62c08..75d1e4e2 100644
 --- a/src/coredump/libunwind-coredump.pc.in
 +++ b/src/coredump/libunwind-coredump.pc.in
 @@ -6,6 +6,6 @@ includedir=@includedir@
@@ -537,7 +539,7 @@ index 9cb62c0..75d1e4e 100644
  Libs: -L${libdir} -lunwind-coredump
  Cflags: -I${includedir}
 diff --git a/src/libunwind-generic.pc.in b/src/libunwind-generic.pc.in
-index 1f3baff..eccf8e4 100644
+index 1f3baffe..eccf8e43 100644
 --- a/src/libunwind-generic.pc.in
 +++ b/src/libunwind-generic.pc.in
 @@ -6,6 +6,6 @@ includedir=@includedir@
@@ -549,7 +551,7 @@ index 1f3baff..eccf8e4 100644
  Libs: -L${libdir} -lunwind-generic
  Cflags: -I${includedir}
 diff --git a/src/ptrace/libunwind-ptrace.pc.in b/src/ptrace/libunwind-ptrace.pc.in
-index 673004b..544b9dd 100644
+index 673004b6..544b9ddf 100644
 --- a/src/ptrace/libunwind-ptrace.pc.in
 +++ b/src/ptrace/libunwind-ptrace.pc.in
 @@ -6,6 +6,6 @@ includedir=@includedir@
@@ -561,7 +563,7 @@ index 673004b..544b9dd 100644
  Libs: -L${libdir} -lunwind-ptrace
  Cflags: -I${includedir}
 diff --git a/src/setjmp/libunwind-setjmp.pc.in b/src/setjmp/libunwind-setjmp.pc.in
-index 7b71126..2dec733 100644
+index 7b711265..2dec7332 100644
 --- a/src/setjmp/libunwind-setjmp.pc.in
 +++ b/src/setjmp/libunwind-setjmp.pc.in
 @@ -6,6 +6,6 @@ includedir=@includedir@
@@ -573,10 +575,10 @@ index 7b71126..2dec733 100644
  Libs: -L${libdir} -lunwind-setjmp
  Cflags: -I${includedir}
 diff --git a/src/unwind/libunwind.pc.in b/src/unwind/libunwind-nongnu.pc.in
-similarity index 84%
+similarity index 86%
 rename from src/unwind/libunwind.pc.in
 rename to src/unwind/libunwind-nongnu.pc.in
-index 9a65faf..fc1b9ae 100644
+index 9a65faf3..91494082 100644
 --- a/src/unwind/libunwind.pc.in
 +++ b/src/unwind/libunwind-nongnu.pc.in
 @@ -6,6 +6,6 @@ includedir=@includedir@
@@ -588,7 +590,7 @@ index 9a65faf..fc1b9ae 100644
  Libs.private: @LIBLZMA@ @LIBZ@
  Cflags: -I${includedir}
 diff --git a/tests/Makefile.am b/tests/Makefile.am
-index 37aef18..1c2528f 100644
+index e2b07bc3..41f4b496 100644
 --- a/tests/Makefile.am
 +++ b/tests/Makefile.am
 @@ -61,7 +61,7 @@ if REMOTE_ONLY
@@ -600,6 +602,3 @@ index 37aef18..1c2528f 100644
  if ARCH_IA64
   noinst_PROGRAMS_arch += ia64-test-dyn1
   check_SCRIPTS_arch +=	run-ia64-test-dyn1
--- 
-2.45.1
-
