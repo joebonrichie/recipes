@@ -67,18 +67,20 @@
 				"/usr/share/man/man1/jj-help.1",
 				"/usr/share/man/man1/jj-interdiff.1",
 				"/usr/share/man/man1/jj-log.1",
+				"/usr/share/man/man1/jj-metaedit.1",
 				"/usr/share/man/man1/jj-new.1",
 				"/usr/share/man/man1/jj-next.1",
 				"/usr/share/man/man1/jj-operation-abandon.1",
 				"/usr/share/man/man1/jj-operation-diff.1",
 				"/usr/share/man/man1/jj-operation-log.1",
 				"/usr/share/man/man1/jj-operation-restore.1",
+				"/usr/share/man/man1/jj-operation-revert.1",
 				"/usr/share/man/man1/jj-operation-show.1",
-				"/usr/share/man/man1/jj-operation-undo.1",
 				"/usr/share/man/man1/jj-operation.1",
 				"/usr/share/man/man1/jj-parallelize.1",
 				"/usr/share/man/man1/jj-prev.1",
 				"/usr/share/man/man1/jj-rebase.1",
+				"/usr/share/man/man1/jj-redo.1",
 				"/usr/share/man/man1/jj-resolve.1",
 				"/usr/share/man/man1/jj-restore.1",
 				"/usr/share/man/man1/jj-revert.1",
@@ -123,6 +125,6 @@
 		}
 	},
 	"source-name": "jujutsu",
-	"source-release": "2",
-	"source-version": "0.32.0"
+	"source-release": "3",
+	"source-version": "0.33.0"
 }
