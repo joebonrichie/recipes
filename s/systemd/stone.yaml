@@ -4,8 +4,8 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : systemd
-version     : "257.8"
-release     : 66
+version     : "257.9"
+release     : 67
 summary     : A System and Service Manager
 license     :
     - GPL-2.0-or-later
@@ -15,7 +15,7 @@ homepage    : http://www.freedesktop.org/wiki/Software/systemd
 description : |
     A System and Service Manager
 upstreams   :
-    - https://github.com/systemd/systemd/archive/refs/tags/v257.8.tar.gz: f280278161446fe3838bedb970c7b3998043ad107f7627735a81483218c6f6f9
+    - https://github.com/systemd/systemd/archive/refs/tags/v257.9.tar.gz: b27dcc100a738b4b5b81f7c5174c1239a6495f5bdf3d3caa94a17b8373e6a1ca
 builddeps   :
     - binary(bpftool)
     - binary(gcc) # Used in meson.build to query the multiarch triplet. TODO: patch that out

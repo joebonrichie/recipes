@@ -1753,6 +1753,7 @@
 				"/usr/share/man/man3/sd-journal.3",
 				"/usr/share/man/man3/sd-json.3",
 				"/usr/share/man/man3/sd-login.3",
+				"/usr/share/man/man3/sd-path.3",
 				"/usr/share/man/man3/sd-varlink.3",
 				"/usr/share/man/man3/sd_booted.3",
 				"/usr/share/man/man3/sd_bus_add_fallback.3",
@@ -2692,6 +2693,6 @@
 		}
 	},
 	"source-name": "systemd",
-	"source-release": "66",
-	"source-version": "257.8"
+	"source-release": "67",
+	"source-version": "257.9"
 }
