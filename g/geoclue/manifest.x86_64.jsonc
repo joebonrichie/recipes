@@ -33,30 +33,42 @@
 			"files": [
 				"/usr/lib/geoclue/geoclue",
 				"/usr/lib/geoclue/geoclue-2.0/demos/agent",
-				"/usr/lib/geoclue/geoclue-2.0/demos/where-am-i",
-				"/usr/lib/girepository-1.0/Geoclue-2.0.typelib",
-				"/usr/lib/libgeoclue-2.so.0",
-				"/usr/lib/libgeoclue-2.so.0.0.0",
 				"/usr/lib/systemd/system/geoclue.service",
 				"/usr/share/applications/geoclue-demo-agent.desktop",
-				"/usr/share/applications/geoclue-where-am-i.desktop",
-				"/usr/share/dbus-1/interfaces/org.freedesktop.GeoClue2.Agent.xml",
-				"/usr/share/dbus-1/interfaces/org.freedesktop.GeoClue2.Client.xml",
-				"/usr/share/dbus-1/interfaces/org.freedesktop.GeoClue2.Location.xml",
-				"/usr/share/dbus-1/interfaces/org.freedesktop.GeoClue2.Manager.xml",
-				"/usr/share/dbus-1/interfaces/org.freedesktop.GeoClue2.xml",
 				"/usr/share/dbus-1/system-services/org.freedesktop.GeoClue2.service",
 				"/usr/share/dbus-1/system.d/org.freedesktop.GeoClue2.Agent.conf",
 				"/usr/share/dbus-1/system.d/org.freedesktop.GeoClue2.conf",
 				"/usr/share/man/man5/geoclue.5",
-				"/usr/share/polkit-1/rules.d/org.freedesktop.GeoClue2.rules",
-				"/usr/share/vala/vapi/libgeoclue-2.0.deps",
-				"/usr/share/vala/vapi/libgeoclue-2.0.vapi"
+				"/usr/share/polkit-1/rules.d/org.freedesktop.GeoClue2.rules"
 			],
-			"name": "geoclue",
-			"provides": [
-				"soname(libgeoclue-2.so.0(x86_64))"
-			]
+			"name": "geoclue"
+		},
+		"geoclue-demos": {
+			"build-depends": [
+				"binary(g-ir-scanner)",
+				"binary(msgfmt)",
+				"binary(vapigen)",
+				"pkgconfig(avahi-client)",
+				"pkgconfig(glib-2.0)",
+				"pkgconfig(json-glib-1.0)",
+				"pkgconfig(libnotify)",
+				"pkgconfig(libsoup-3.0)",
+				"pkgconfig(libsystemd)",
+				"pkgconfig(mm-glib)"
+			],
+			"depends": [
+				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
+				"soname(libc.so.6(x86_64))",
+				"soname(libgeoclue-2.so.0(x86_64))",
+				"soname(libgio-2.0.so.0(x86_64))",
+				"soname(libglib-2.0.so.0(x86_64))",
+				"soname(libgobject-2.0.so.0(x86_64))"
+			],
+			"files": [
+				"/usr/lib/geoclue/geoclue-2.0/demos/where-am-i",
+				"/usr/share/applications/geoclue-where-am-i.desktop"
+			],
+			"name": "geoclue-demos"
 		},
 		"geoclue-devel": {
 			"build-depends": [
@@ -89,16 +101,52 @@
 				"/usr/lib/libgeoclue-2.so",
 				"/usr/lib/pkgconfig/geoclue-2.0.pc",
 				"/usr/lib/pkgconfig/libgeoclue-2.0.pc",
-				"/usr/share/gir-1.0/Geoclue-2.0.gir"
+				"/usr/share/dbus-1/interfaces/org.freedesktop.GeoClue2.Agent.xml",
+				"/usr/share/dbus-1/interfaces/org.freedesktop.GeoClue2.Client.xml",
+				"/usr/share/dbus-1/interfaces/org.freedesktop.GeoClue2.Location.xml",
+				"/usr/share/dbus-1/interfaces/org.freedesktop.GeoClue2.Manager.xml",
+				"/usr/share/dbus-1/interfaces/org.freedesktop.GeoClue2.xml",
+				"/usr/share/gir-1.0/Geoclue-2.0.gir",
+				"/usr/share/vala/vapi/libgeoclue-2.0.deps",
+				"/usr/share/vala/vapi/libgeoclue-2.0.vapi"
 			],
 			"name": "geoclue-devel",
 			"provides": [
 				"pkgconfig(geoclue-2.0)",
 				"pkgconfig(libgeoclue-2.0)"
 			]
+		},
+		"geoclue-libs": {
+			"build-depends": [
+				"binary(g-ir-scanner)",
+				"binary(msgfmt)",
+				"binary(vapigen)",
+				"pkgconfig(avahi-client)",
+				"pkgconfig(glib-2.0)",
+				"pkgconfig(json-glib-1.0)",
+				"pkgconfig(libnotify)",
+				"pkgconfig(libsoup-3.0)",
+				"pkgconfig(libsystemd)",
+				"pkgconfig(mm-glib)"
+			],
+			"depends": [
+				"soname(libc.so.6(x86_64))",
+				"soname(libgio-2.0.so.0(x86_64))",
+				"soname(libglib-2.0.so.0(x86_64))",
+				"soname(libgobject-2.0.so.0(x86_64))"
+			],
+			"files": [
+				"/usr/lib/girepository-1.0/Geoclue-2.0.typelib",
+				"/usr/lib/libgeoclue-2.so.0",
+				"/usr/lib/libgeoclue-2.so.0.0.0"
+			],
+			"name": "geoclue-libs",
+			"provides": [
+				"soname(libgeoclue-2.so.0(x86_64))"
+			]
 		}
 	},
 	"source-name": "geoclue",
-	"source-release": "4",
-	"source-version": "2.7.2"
+	"source-release": "5",
+	"source-version": "2.8.0"
 }

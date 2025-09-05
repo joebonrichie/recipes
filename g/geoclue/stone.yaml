@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : geoclue
-version     : 2.7.2
-release     : 4
+version     : 2.8.0
+release     : 5
 homepage    : https://gitlab.freedesktop.org/geoclue/geoclue/-/wikis/home
 upstreams   :
-    - https://gitlab.freedesktop.org/geoclue/geoclue/-/archive/2.7.2/geoclue-2.7.2.tar.gz : 9c2f3626e3131abc037955cb38a8c0f28a29b4d6cc9992a067fe04be46e37fbe
+    - https://gitlab.freedesktop.org/geoclue/geoclue/-/archive/2.8.0/geoclue-2.8.0.tar.gz : 8d1804b3d9d51c2a17af67c882ff5f9169724e248d39ccc3cfa8dba5d9323be7
 summary     : Geolocation service library
 description : |
     Geoclue is a D-Bus service that provides location information. The goal of the Geoclue project is to make creating location-aware applications as simple as possible.
@@ -27,8 +27,30 @@ builddeps   :
     - pkgconfig(libsystemd)
     - pkgconfig(mm-glib)
 setup       : |
-    %meson -Dgtk-doc=false
+    %meson \
+        -Dgtk-doc=false
 build       : |
     %meson_build
 install     : |
     %meson_install
+
+    # TODO: Stateless up the config file and move the autostart file
+packages    :
+    - "%(name)-libs":
+        summary: Geoclue client library
+        description: Geoclue client library
+        paths:
+            - /usr/lib/libgeoclue-2.so.*
+            - /usr/lib/girepository-1.0/Geoclue-2.0.typelib
+
+    - "%(name)-demos":
+        summary: Demo applications for %(name)
+        description: Demo applications for %(name)
+        paths:
+            - /usr/lib/geoclue/geoclue-2.0/demos/where-am-i
+            - /usr/share/applications/geoclue-where-am-i.desktop
+
+    - "%(name)-devel":
+        paths:
+            - /usr/share/dbus-1/interfaces/
+            - /usr/share/vala/
