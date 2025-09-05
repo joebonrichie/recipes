@@ -49,6 +49,6 @@
 		}
 	},
 	"source-name": "cosmic-greeter",
-	"source-release": "21",
-	"source-version": "1.0.0-alpha.7"
+	"source-release": "22",
+	"source-version": "1.0.0-alpha.7+git.0db5b79"
 }

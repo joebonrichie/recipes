@@ -4,13 +4,13 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : cosmic-bg
-version     : 1.0.0-alpha.7
-release     : 15
+version     : 1.0.0-alpha.7+git.6841c5a
+release     : 16
 summary     : Cosmic Desktop Background Service
 license     : GPL-3.0
 homepage    : https://github.com/pop-os/cosmic-bg
 upstreams   :
-    - git|https://github.com/pop-os/cosmic-bg.git : d46d05e159a22a30713f5f49f1a79ec9a2630d96
+    - git|https://github.com/pop-os/cosmic-bg.git : 6841c5aeea24422b9ab2b1ea8925c8a9153de149
 description : |
     Cosmic Desktop Background Service
 builddeps   :
