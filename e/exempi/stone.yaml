@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : exempi
-version     : 2.6.5
-release     : 2
+version     : 2.6.6
+release     : 3
 homepage    : https://libopenraw.freedesktop.org/exempi/
 upstreams   :
-    - https://libopenraw.freedesktop.org/download/exempi-2.6.5.tar.xz : ff538114e82c51e5287064dfbec7d9790ac91479bf2390bcc6408fad4d77fb12
+    - https://libopenraw.freedesktop.org/download/exempi-2.6.6.tar.xz : 900fb9957be2095c78e5111b99c49378adac58161a358f52f93c55126f34eb8f
 summary     : Exempi is an implementation of XMP
 description : |
   exempi is a port of Adobe XMP SDK to work on UNIX. It includes XMPCore and XMPFiles, libexempi, a C-based API and exempi a command line tool.

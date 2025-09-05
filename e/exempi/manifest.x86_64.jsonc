@@ -21,7 +21,7 @@
 			"files": [
 				"/usr/bin/exempi",
 				"/usr/lib/libexempi.so.8",
-				"/usr/lib/libexempi.so.8.1.5",
+				"/usr/lib/libexempi.so.8.1.6",
 				"/usr/share/man/man1/exempi.1"
 			],
 			"name": "exempi",
@@ -55,6 +55,6 @@
 		}
 	},
 	"source-name": "exempi",
-	"source-release": "2",
-	"source-version": "2.6.5"
+	"source-release": "3",
+	"source-version": "2.6.6"
 }
