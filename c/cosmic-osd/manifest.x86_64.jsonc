@@ -5,6 +5,7 @@
 		"cosmic-osd": {
 			"build-depends": [
 				"binary(just)",
+				"pkgconfig(libpipewire-0.3)",
 				"pkgconfig(libpulse)",
 				"pkgconfig(xkbcommon)"
 			],
@@ -28,6 +29,6 @@
 		}
 	},
 	"source-name": "cosmic-osd",
-	"source-release": "13",
-	"source-version": "1.0.0-alpha.7"
+	"source-release": "14",
+	"source-version": "1.0.0-alpha.7+git.30b3b5f"
 }
