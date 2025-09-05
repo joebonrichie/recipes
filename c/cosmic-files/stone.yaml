@@ -4,8 +4,8 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : cosmic-files
-version     : 1.0.0-alpha.7
-release     : 17
+version     : 1.0.0-alpha.7+git.f06029f
+release     : 18
 homepage    : https://github.com/pop-os/cosmic-files
 upstreams   :
     - git|https://github.com/pop-os/cosmic-files : f06029facec3f2dfe510663e4014074cbb85af94
