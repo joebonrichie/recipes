@@ -4,13 +4,13 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : cosmic-settings-daemon
-version     : 1.0.0-alpha.7
-release     : 16
+version     : 1.0.0-alpha.7+git.ff15f32
+release     : 17
 summary     : Cosmic Settings Daemon
 license     : GPL-3.0
 homepage    : https://github.com/pop-os/cosmic-settings-daemon
 upstreams   :
-    - git|https://github.com/pop-os/cosmic-settings-daemon.git : 3f72461e99ed9acaccd3199d8888cf619dc5f511
+    - git|https://github.com/pop-os/cosmic-settings-daemon.git : ff15f3240f6cf36ea74eacbf55ad805377e88a41
 description : |
     Cosmic Settings Daemon
 builddeps   :
