@@ -64,7 +64,7 @@
 			],
 			"files": [
 				"/usr/lib/libmarkdown.so.3",
-				"/usr/lib/libmarkdown.so.3.0.0"
+				"/usr/lib/libmarkdown.so.3.0.1"
 			],
 			"name": "libmarkdown",
 			"provides": [
@@ -73,6 +73,6 @@
 		}
 	},
 	"source-name": "discount",
-	"source-release": "1",
-	"source-version": "3.0.0d"
+	"source-release": "2",
+	"source-version": "3.0.1"
 }
