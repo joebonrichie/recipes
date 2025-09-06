@@ -5,7 +5,7 @@
 #
 name        : dragon
 version     : 25.08.0
-release     : 9
+release     : 10
 upstreams   :
     - https://download.kde.org/stable/release-service/25.08.0/src/dragon-25.08.0.tar.xz : b72c06f1ce465dd3d7be47d69ec3a3588ddd464cc0f5d351a8d7ed47c85846a9
 homepage    : https://apps.kde.org/dragonplayer/
@@ -30,6 +30,7 @@ rundeps     :
     - kf6-kirigami
     - qt6-wayland
 setup       : |
+    %patch %(pkgdir)/0001-ffmpeg-7.1.patch
     %cmake_kf6
 build       : |
     %cmake_build
