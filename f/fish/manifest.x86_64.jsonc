@@ -22,7 +22,7 @@
 				"/usr/bin/fish_key_reader",
 				"/usr/lib/tmpfiles.d/fish.conf",
 				"/usr/share/applications/fish.desktop",
-				"/usr/share/defaults/etc/profile.d/99-exec-fish-as-interactive-shell.conf",
+				"/usr/share/defaults/profile.d/99-exec-fish-as-interactive-shell.conf",
 				"/usr/share/fish/__fish_build_paths.fish",
 				"/usr/share/fish/completions/..fish",
 				"/usr/share/fish/completions/7z.fish",
@@ -1672,6 +1672,6 @@
 		}
 	},
 	"source-name": "fish",
-	"source-release": "8",
+	"source-release": "9",
 	"source-version": "4.0.2"
 }

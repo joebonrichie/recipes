@@ -5,7 +5,7 @@
 #
 name        : fish
 version     : 4.0.2
-release     : 8
+release     : 9
 homepage    : https://fishshell.com/
 upstreams   :
     - https://github.com/fish-shell/fish-shell/releases/download/4.0.2/fish-4.0.2.tar.xz : 6e1ecdb164285fc057b2f35acbdc20815c1623099e7bb47bbfc011120adf7e83
@@ -30,10 +30,10 @@ build       : |
 install     : |
     %cmake_install
 
-    # preconfigured to work with serpent so bash can stay as login shell
+    # preconfigured to work with aeryn so bash can stay as login shell
     # (less work in terms of having env-var dropins and what not)
-    %install_dir %(installroot)%(vendordir)/etc/profile.d/
-    %install_file %(pkgdir)/99-exec-fish-as-interactive-shell.conf %(installroot)%(vendordir)/etc/profile.d/
+    %install_dir %(installroot)%(vendordir)/profile.d/
+    %install_file %(pkgdir)/99-exec-fish-as-interactive-shell.conf %(installroot)%(vendordir)/profile.d/
     
     %tmpfiles "# Fish shell directories"
     %tmpfiles "d /etc/fish/completions 0755 root root -"
