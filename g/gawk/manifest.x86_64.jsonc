@@ -64,8 +64,8 @@
 				"/usr/share/awk/tocsv.awk",
 				"/usr/share/awk/walkarray.awk",
 				"/usr/share/awk/zerofile.awk",
-				"/usr/share/defaults/etc/profile.d/gawk.csh",
-				"/usr/share/defaults/etc/profile.d/gawk.sh",
+				"/usr/share/defaults/profile.d/gawk.csh",
+				"/usr/share/defaults/profile.d/gawk.sh",
 				"/usr/share/info/gawk.info",
 				"/usr/share/info/gawk_api-figure1.png",
 				"/usr/share/info/gawk_api-figure2.png",
@@ -152,6 +152,6 @@
 		}
 	},
 	"source-name": "gawk",
-	"source-release": "7",
+	"source-release": "8",
 	"source-version": "5.3.2"
 }

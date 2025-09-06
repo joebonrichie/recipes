@@ -5,14 +5,16 @@
 #
 name        : gawk
 version     : 5.3.2
-release     : 7
+release     : 8
 summary     : GNU awk pattern-matching language
 license     : GPL-3.0-or-later
 homepage    : https://www.gnu.org/software/gawk/gawk.html
 description : |
     GNU awk pattern-matching language
 upstreams   :
-    - https://ftp.gnu.org/gnu/gawk/gawk-5.3.2.tar.xz: f8c3486509de705192138b00ef2c00bbbdd0e84c30d5c07d23fc73a9dc4cc9cc
+    # - https://ftp.gnu.org/gnu/gawk/gawk-5.3.2.tar.xz: f8c3486509de705192138b00ef2c00bbbdd0e84c30d5c07d23fc73a9dc4cc9cc
+    # Use a mirror because the GNU servers are terrible
+    - https://mirror.kumi.systems/gnu/gawk/gawk-5.3.2.tar.xz: f8c3486509de705192138b00ef2c00bbbdd0e84c30d5c07d23fc73a9dc4cc9cc
 builddeps   :
     - pkgconfig(gmp)
     - pkgconfig(mpfr)
@@ -25,7 +27,7 @@ install     : |
     %make_install
 
     # Stateless: Move profile.d dir to stateless default path
-    %install_file %(installroot)/etc/profile.d/* -t %(installroot)/%(vendordir)/etc/profile.d/
+    %install_file %(installroot)/etc/profile.d/* -t %(installroot)/%(vendordir)/profile.d/
     rm %(installroot)/etc/profile.d/*
     rmdir %(installroot)/etc/profile.d %(installroot)/etc
 workload    : |
