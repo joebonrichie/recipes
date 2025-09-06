@@ -5,7 +5,7 @@
 #
 name        : ffmpeg
 version     : '7.1.1'
-release     : 13
+release     : 14
 homepage    : https://ffmpeg.org/releases
 upstreams   :
     - https://ffmpeg.org/releases/ffmpeg-7.1.1.tar.xz:
@@ -33,28 +33,35 @@ builddeps   :
     - cmake(VulkanHeaders)
     - pkgconfig(OpenCL)
     - pkgconfig(SvtAv1Enc)
+    - pkgconfig(alsa)
     - pkgconfig(aom)
     - pkgconfig(dav1d)
+    - pkgconfig(dvdnav)
     - pkgconfig(ffnvcodec)
     - pkgconfig(fontconfig)
     - pkgconfig(freetype2)
+    - pkgconfig(fribidi)
+    - pkgconfig(lc3)
+    - pkgconfig(lcms2)
     - pkgconfig(libass)
     - pkgconfig(libbs2b)
     - pkgconfig(libdrm)
-    - pkgconfig(dvdnav)
-    - pkgconfig(fribidi)
     - pkgconfig(libjpeg)
     - pkgconfig(libjxl)
     - pkgconfig(liblzma)
+    - pkgconfig(openh264)
     - pkgconfig(libplacebo)
     - pkgconfig(libpng)
     - pkgconfig(libpulse)
+    - pkgconfig(libqrencode)
     - pkgconfig(librsvg-2.0)
     - pkgconfig(libssh)
     - pkgconfig(libssl)
     - pkgconfig(libva)
     - pkgconfig(libwebp)
     - pkgconfig(libxml-2.0)
+    - pkgconfig(lilv-0)
+    - pkgconfig(lv2)
     - pkgconfig(opengl)
     - pkgconfig(opus)
     - pkgconfig(rav1e)
@@ -71,6 +78,7 @@ builddeps   :
     - pkgconfig(x264)
     - pkgconfig(x265)
     - pkgconfig(xcb)
+    - pkgconfig(xv)
     - ladspa-devel
     - lame-devel
 # TODO
@@ -96,12 +104,35 @@ builddeps   :
 # - libzimg
 # - libzmq
 # - vapoursynth
+# - frei0r
+# - lcevc_dec
+# - libtesseract
+# - libmysofa
+# - avisynth
+# - libgme
+# - libcodec2
+# - libilbc
+# - libtwolame
+# - libvvenc
+# - libxeve
+# - libaribb24
+# - libaribcaption
+# - libxevd
+# - libzvbi
+# outdev/indev
+# - caca
+# - libiec61883
+# - libcdio
+
+# Intentionally not enabled for now
+# - openal
 setup       : |
     mkdir compat current
     bsdtar-static xf %(sourcedir)/current.tar.xz --strip-components=1 -C compat
     bsdtar-static xf %(sourcedir)/current.tar.xz --strip-components=1 -C current
 
     pushd compat
+    %patch %(pkgdir)/0001-Don-t-print-in-columns.patch
     %patch %(pkgdir)/ftbfs-svt-av1-3.patch
     %patch %(pkgdir)/0001-configure-explicitly-disable-spirv_compiler.patch
     %patch %(pkgdir)/CVE-2025-22921.patch
@@ -120,6 +151,7 @@ setup       : |
         --enable-lto \
         --enable-shared \
         --enable-gpl \
+        --enable-lcms2 \
         --enable-ladspa \
         --enable-libaom \
         --enable-libass \
@@ -133,10 +165,12 @@ setup       : |
         --enable-libfribidi \
         --enable-libharfbuzz \
         --enable-libjxl \
+        --enable-liblc3 \
         --enable-libmp3lame \
         --enable-libopus \
         --enable-libplacebo \
         --enable-libpulse \
+        --enable-libqrencode \
         --enable-librav1e \
         --enable-librsvg \
         --enable-libshaderc \
@@ -152,6 +186,7 @@ setup       : |
         --enable-libx265 \
         --enable-libxcb \
         --enable-libxml2 \
+        --enable-lv2 \
         --enable-nvdec \
         --enable-nvenc \
         --enable-opencl \
@@ -163,6 +198,7 @@ setup       : |
     popd
 
     pushd current
+    %patch %(pkgdir)/0001-Don-t-print-in-columns.patch
     %patch %(pkgdir)/ftbfs-svt-av1-3.patch
     %patch %(pkgdir)/0001-configure-explicitly-disable-spirv_compiler.patch
     %patch %(pkgdir)/CVE-2025-22921.patch
@@ -180,6 +216,7 @@ setup       : |
         --enable-shared \
         --enable-gpl \
         --enable-ladspa \
+        --enable-lcms2 \
         --enable-libaom \
         --enable-libass \
         --enable-libbs2b \
@@ -192,10 +229,13 @@ setup       : |
         --enable-libfribidi \
         --enable-libharfbuzz \
         --enable-libjxl \
+        --enable-liblc3 \
         --enable-libmp3lame \
+        --enable-libopenh264 \
         --enable-libopus \
         --enable-libplacebo \
         --enable-libpulse \
+        --enable-libqrencode \
         --enable-librav1e \
         --enable-librsvg \
         --enable-libshaderc \
@@ -211,6 +251,7 @@ setup       : |
         --enable-libx265 \
         --enable-libxcb \
         --enable-libxml2 \
+        --enable-lv2 \
         --enable-nvdec \
         --enable-nvenc \
         --enable-opencl \
