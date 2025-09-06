@@ -5,7 +5,7 @@
 #
 name        : bash-completion
 version     : 2.16.0
-release     : 9
+release     : 10
 homepage    : https://github.com/scop/bash-completion
 upstreams   :
     - https://github.com/scop/bash-completion/releases/download/2.16.0/bash-completion-2.16.0.tar.xz : 3369bd5e418a75fb990863925aed5b420398acebb320ec4c0306b3eae23f107a

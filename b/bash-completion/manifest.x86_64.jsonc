@@ -1033,7 +1033,7 @@
 				"/usr/share/bash-completion/helpers/make-extract-targets.awk",
 				"/usr/share/bash-completion/helpers/perl",
 				"/usr/share/bash-completion/helpers/python",
-				"/usr/share/defaults/etc/profile.d/bash_completion.sh"
+				"/usr/share/defaults/profile.d/bash_completion.sh"
 			],
 			"name": "bash-completion"
 		},
@@ -1057,6 +1057,6 @@
 		}
 	},
 	"source-name": "bash-completion",
-	"source-release": "9",
+	"source-release": "10",
 	"source-version": "2.16.0"
 }
