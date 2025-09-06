@@ -5,7 +5,7 @@
 #
 name        : ffmpeg
 version     : '7.1.1'
-release     : 12
+release     : 13
 homepage    : https://ffmpeg.org/releases
 upstreams   :
     - https://ffmpeg.org/releases/ffmpeg-7.1.1.tar.xz:
@@ -110,7 +110,7 @@ setup       : |
     ./configure \
         --prefix=%(prefix) \
         --incdir=%(includedir)/ffmpeg-7.1 \
-        --build_suffix="-7.1" \
+        --libdir=%(libdir)/ffmpeg-7.1 \
         --cc=%(cc) \
         --cxx=%(cxx) \
         --ld=%(cxx) \
@@ -234,6 +234,32 @@ install     : |
     pushd compat
     %make_install
 
+    # Version libs
+    pushd %(installroot)
+    f=""
+    for f in usr/lib/ffmpeg-7.1/*; do
+        if [[ $f == *.so ]]; then
+            ln -srf -- usr/lib/"$(readlink "$f")" "$f"
+            mv "$f" "${f%%.so}-7.1.so"
+        elif [[ ! -d $f ]]; then
+            mv "$f" usr/lib
+        fi
+    done
+
+    # Rename pkgconfigs so they don't conflict
+    mv %(installroot)%(libdir)/ffmpeg-7.1/pkgconfig %(installroot)%(libdir)/pkgconfig
+    cd %(installroot)%(libdir)/pkgconfig
+    for i in *.pc; do
+        mv $i ${i%.pc}-7.1.pc
+    done
+
+    # Fixup pkgconfig dependencies
+    for b in avcodec avdevice avfilter avformat avutil postproc swresample swscale; do
+        sed -i "s|lib$b|lib$b-7.1|g" *.pc
+        sed -i "s|-l$b|-l$b-7.1|g" *.pc
+    done
+    popd
+
     # Delete everything unversioned
     rm -rfv %(installroot)%(bindir)/ \
             %(installroot)%(datadir)/ffmpeg \
@@ -255,7 +281,6 @@ packages    :
         summary: FFmpeg codec library
         paths:
             - /usr/lib/libavcodec.so.*
-            - /usr/lib/libavcodec-*.so.*
 
     - "libavcodec-devel":
         summary: FFmpeg codec library - Devel files
@@ -265,7 +290,7 @@ packages    :
             - /usr/include/libavcodec/
             - /usr/include/ffmpeg-*/libavcodec/
             - /usr/lib/libavcodec.so
-            - /usr/lib/libavcodec-*.so
+            - /usr/lib/ffmpeg-*/libavcodec-*.so
             - /usr/lib/pkgconfig/libavcodec.pc
             - /usr/lib/pkgconfig/libavcodec-*.pc
             - /usr/share/man/man3/libavcodec.*
@@ -274,7 +299,6 @@ packages    :
         summary: FFmpeg device library
         paths:
             - /usr/lib/libavdevice.so.*
-            - /usr/lib/libavdevice-*.so.*
 
     - "libavdevice-devel":
         summary: FFmpeg device library - Devel files
@@ -284,7 +308,7 @@ packages    :
             - /usr/include/libavdevice/
             - /usr/include/ffmpeg-*/libavdevice/
             - /usr/lib/libavdevice.so
-            - /usr/lib/libavdevice-*.so
+            - /usr/lib/ffmpeg-*/libavdevice-*.so
             - /usr/lib/pkgconfig/libavdevice.pc
             - /usr/lib/pkgconfig/libavdevice-*.pc
             - /usr/share/man/man3/libavdevice.*
@@ -293,7 +317,6 @@ packages    :
         summary: FFmpeg audio and video filtering library
         paths:
             - /usr/lib/libavfilter.so.*
-            - /usr/lib/libavfilter-*.so.*
 
     - "libavfilter-devel":
         summary: FFmpeg audio and video filtering library - Devel files
@@ -303,7 +326,7 @@ packages    :
             - /usr/include/libavfilter/
             - /usr/include/ffmpeg-*/libavfilter/
             - /usr/lib/libavfilter.so
-            - /usr/lib/libavfilter-*.so
+            - /usr/lib/ffmpeg-*/libavfilter-*.so
             - /usr/lib/pkgconfig/libavfilter.pc
             - /usr/lib/pkgconfig/libavfilter-*.pc
             - /usr/share/man/man3/libavfilter.*
@@ -312,7 +335,6 @@ packages    :
         summary: FFmpeg's stream format library
         paths:
             - /usr/lib/libavformat.so.*
-            - /usr/lib/libavformat-*.so.*
 
     - "libavformat-devel":
         summary: FFmpeg's stream format library - Devel files
@@ -322,7 +344,7 @@ packages    :
             - /usr/include/libavformat/
             - /usr/include/ffmpeg-*/libavformat/
             - /usr/lib/libavformat.so
-            - /usr/lib/libavformat-*.so
+            - /usr/lib/ffmpeg-*/libavformat-*.so
             - /usr/lib/pkgconfig/libavformat.pc
             - /usr/lib/pkgconfig/libavformat-*.pc
             - /usr/share/man/man3/libavformat.*
@@ -331,7 +353,6 @@ packages    :
         summary: FFmpeg's utility library
         paths:
             - /usr/lib/libavutil.so.*
-            - /usr/lib/libavutil-*.so.*
 
     - "libavutil-devel":
         summary: FFmpeg's utility library - Devel files
@@ -341,7 +362,7 @@ packages    :
             - /usr/include/libavutil/
             - /usr/include/ffmpeg-*/libavutil/
             - /usr/lib/libavutil.so
-            - /usr/lib/libavutil-*.so
+            - /usr/lib/ffmpeg-*/libavutil-*.so
             - /usr/lib/pkgconfig/libavutil.pc
             - /usr/lib/pkgconfig/libavutil-*.pc
             - /usr/share/man/man3/libavutil.*
@@ -350,7 +371,6 @@ packages    :
         summary: FFmpeg post-processing library
         paths:
             - /usr/lib/libpostproc.so.*
-            - /usr/lib/libpostproc-*.so.*
 
     - "libpostproc-devel":
         summary: FFmpeg post-processing library - Devel files
@@ -360,7 +380,7 @@ packages    :
             - /usr/include/libpostproc/
             - /usr/include/ffmpeg-*/libpostproc/
             - /usr/lib/libpostproc.so
-            - /usr/lib/libpostproc-*.so
+            - /usr/lib/ffmpeg-*/libpostproc-*.so
             - /usr/lib/pkgconfig/libpostproc.pc
             - /usr/lib/pkgconfig/libpostproc-*.pc
             - /usr/share/man/man3/libpostproc.*
@@ -369,7 +389,6 @@ packages    :
         summary: FFmpeg image scaling and colorspace/pixel conversion library
         paths:
             - /usr/lib/libswscale.so.*
-            - /usr/lib/libswscale-*.so.*
 
     - "libswscale-devel":
         summary: FFmpeg image scaling and colorspace/pixel conversion library - Devel files
@@ -379,7 +398,7 @@ packages    :
             - /usr/include/libswscale/
             - /usr/include/ffmpeg-*/libswscale/
             - /usr/lib/libswscale.so
-            - /usr/lib/libswscale-*.so
+            - /usr/lib/ffmpeg-*/libswscale-*.so
             - /usr/lib/pkgconfig/libswscale.pc
             - /usr/lib/pkgconfig/libswscale-*.pc
             - /usr/share/man/man3/libswscale.*
@@ -388,7 +407,6 @@ packages    :
         summary: FFmpeg software resampling library
         paths:
             - /usr/lib/libswresample.so.*
-            - /usr/lib/libswresample-*.so.*
 
     - "libswresample-devel":
         summary: FFmpeg software resampling library - Devel files
@@ -398,7 +416,7 @@ packages    :
             - /usr/include/libswresample/
             - /usr/include/ffmpeg-*/libswresample/
             - /usr/lib/libswresample.so
-            - /usr/lib/libswresample-*.so
+            - /usr/lib/ffmpeg-*/libswresample-*.so
             - /usr/lib/pkgconfig/libswresample.pc
             - /usr/lib/pkgconfig/libswresample-*.pc
             - /usr/share/man/man3/libswresample.*
