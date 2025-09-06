@@ -5,7 +5,7 @@
 #
 name        : less
 version     : "679"
-release     : 11
+release     : 12
 homepage    : https://www.greenwoodsoftware.com/less
 upstreams   :
     - https://github.com/gwsw/less/archive/refs/tags/v679.tar.gz : 39d3f4f716d2889a7118f23e5ab561b50c8122ef51042dd114a40eda235716e1
@@ -30,5 +30,5 @@ install     : |
     # Make it clear that the default pager configuration is owned by the less package itself
     %install_dir %(installroot)%(vendordir)/%(name)
     %install_file %(pkgdir)/10_default_PAGER_less.sh %(installroot)%(vendordir)/%(name)/
-    %install_dir %(installroot)%(vendordir)/etc/profile.d
-    ln -srv %(installroot)%(vendordir)/%(name)/10_default_PAGER_less.sh %(installroot)%(vendordir)/etc/profile.d/
+    %install_dir %(installroot)%(vendordir)/profile.d
+    ln -srv %(installroot)%(vendordir)/%(name)/10_default_PAGER_less.sh %(installroot)%(vendordir)/profile.d/
