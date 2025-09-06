@@ -1395,6 +1395,7 @@
 				"/usr/share/vim/vim91/keymap/README.txt",
 				"/usr/share/vim/vim91/keymap/accents.vim",
 				"/usr/share/vim/vim91/keymap/arabic.vim",
+				"/usr/share/vim/vim91/keymap/arabic_buckwalter.vim",
 				"/usr/share/vim/vim91/keymap/arabic_utf-8.vim",
 				"/usr/share/vim/vim91/keymap/armenian-eastern_utf-8.vim",
 				"/usr/share/vim/vim91/keymap/armenian-western_utf-8.vim",
@@ -2725,6 +2726,6 @@
 		}
 	},
 	"source-name": "vim",
-	"source-release": "12",
-	"source-version": "9.1.1713"
+	"source-release": "13",
+	"source-version": "9.1.1734"
 }
