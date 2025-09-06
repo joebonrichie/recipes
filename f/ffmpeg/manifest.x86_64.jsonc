@@ -61,16 +61,16 @@
 			],
 			"depends": [
 				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
-				"soname(libavcodec.so.61(x86_64))",
-				"soname(libavdevice.so.61(x86_64))",
-				"soname(libavfilter.so.10(x86_64))",
-				"soname(libavformat.so.61(x86_64))",
-				"soname(libavutil.so.59(x86_64))",
+				"soname(libavcodec.so.62(x86_64))",
+				"soname(libavdevice.so.62(x86_64))",
+				"soname(libavfilter.so.11(x86_64))",
+				"soname(libavformat.so.62(x86_64))",
+				"soname(libavutil.so.60(x86_64))",
 				"soname(libc.so.6(x86_64))",
 				"soname(libm.so.6(x86_64))",
-				"soname(libpostproc.so.58(x86_64))",
-				"soname(libswresample.so.5(x86_64))",
-				"soname(libswscale.so.8(x86_64))"
+				"soname(libswresample.so.6(x86_64))",
+				"soname(libswscale.so.9(x86_64))",
+				"soname(libz.so.1(x86_64))"
 			],
 			"files": [
 				"/usr/bin/ffmpeg",
@@ -353,6 +353,7 @@
 				"soname(libSvtAv1Enc.so.3(x86_64))",
 				"soname(libaom.so.3(x86_64))",
 				"soname(libavutil.so.59(x86_64))",
+				"soname(libavutil.so.60(x86_64))",
 				"soname(libc.so.6(x86_64))",
 				"soname(libcairo.so.2(x86_64))",
 				"soname(libdav1d.so.7(x86_64))",
@@ -369,8 +370,10 @@
 				"soname(libopus.so.0(x86_64))",
 				"soname(librav1e.so.0.8(x86_64))",
 				"soname(librsvg-2.so.2(x86_64))",
+				"soname(libshaderc_shared.so.1(x86_64))",
 				"soname(libsnappy.so.1(x86_64))",
 				"soname(libswresample.so.5(x86_64))",
+				"soname(libswresample.so.6(x86_64))",
 				"soname(libtheoradec.so.2(x86_64))",
 				"soname(libtheoraenc.so.2(x86_64))",
 				"soname(libva.so.2(x86_64))",
@@ -386,11 +389,14 @@
 			],
 			"files": [
 				"/usr/lib/libavcodec.so.61",
-				"/usr/lib/libavcodec.so.61.19.101"
+				"/usr/lib/libavcodec.so.61.19.101",
+				"/usr/lib/libavcodec.so.62",
+				"/usr/lib/libavcodec.so.62.11.100"
 			],
 			"name": "libavcodec",
 			"provides": [
-				"soname(libavcodec.so.61(x86_64))"
+				"soname(libavcodec.so.61(x86_64))",
+				"soname(libavcodec.so.62(x86_64))"
 			]
 		},
 		"libavcodec-devel": {
@@ -486,7 +492,6 @@
 				"/usr/include/libavcodec/adts_parser.h",
 				"/usr/include/libavcodec/avcodec.h",
 				"/usr/include/libavcodec/avdct.h",
-				"/usr/include/libavcodec/avfft.h",
 				"/usr/include/libavcodec/bsf.h",
 				"/usr/include/libavcodec/codec.h",
 				"/usr/include/libavcodec/codec_desc.h",
@@ -501,6 +506,7 @@
 				"/usr/include/libavcodec/mediacodec.h",
 				"/usr/include/libavcodec/packet.h",
 				"/usr/include/libavcodec/qsv.h",
+				"/usr/include/libavcodec/smpte_436m.h",
 				"/usr/include/libavcodec/vdpau.h",
 				"/usr/include/libavcodec/version.h",
 				"/usr/include/libavcodec/version_major.h",
@@ -582,9 +588,13 @@
 				"soname(libXv.so.1(x86_64))",
 				"soname(libasound.so.2(x86_64))",
 				"soname(libavcodec.so.61(x86_64))",
+				"soname(libavcodec.so.62(x86_64))",
 				"soname(libavfilter.so.10(x86_64))",
+				"soname(libavfilter.so.11(x86_64))",
 				"soname(libavformat.so.61(x86_64))",
+				"soname(libavformat.so.62(x86_64))",
 				"soname(libavutil.so.59(x86_64))",
+				"soname(libavutil.so.60(x86_64))",
 				"soname(libc.so.6(x86_64))",
 				"soname(libdrm.so.2(x86_64))",
 				"soname(libpulse.so.0(x86_64))",
@@ -596,11 +606,14 @@
 			],
 			"files": [
 				"/usr/lib/libavdevice.so.61",
-				"/usr/lib/libavdevice.so.61.3.100"
+				"/usr/lib/libavdevice.so.61.3.100",
+				"/usr/lib/libavdevice.so.62",
+				"/usr/lib/libavdevice.so.62.1.100"
 			],
 			"name": "libavdevice",
 			"provides": [
-				"soname(libavdevice.so.61(x86_64))"
+				"soname(libavdevice.so.61(x86_64))",
+				"soname(libavdevice.so.62(x86_64))"
 			]
 		},
 		"libavdevice-devel": {
@@ -670,7 +683,6 @@
 				"pkgconfig(libavformat-7.1)",
 				"pkgconfig(libavutil)",
 				"pkgconfig(libavutil-7.1)",
-				"pkgconfig(libpostproc)",
 				"pkgconfig(libpostproc-7.1)",
 				"pkgconfig(libswresample)",
 				"pkgconfig(libswresample-7.1)",
@@ -757,8 +769,11 @@
 				"soname(libOpenCL.so.1(x86_64))",
 				"soname(libass.so.9(x86_64))",
 				"soname(libavcodec.so.61(x86_64))",
+				"soname(libavcodec.so.62(x86_64))",
 				"soname(libavformat.so.61(x86_64))",
+				"soname(libavformat.so.62(x86_64))",
 				"soname(libavutil.so.59(x86_64))",
+				"soname(libavutil.so.60(x86_64))",
 				"soname(libbs2b.so.0(x86_64))",
 				"soname(libc.so.6(x86_64))",
 				"soname(libfontconfig.so.1(x86_64))",
@@ -773,17 +788,22 @@
 				"soname(libqrencode.so.4(x86_64))",
 				"soname(libshaderc_shared.so.1(x86_64))",
 				"soname(libswresample.so.5(x86_64))",
+				"soname(libswresample.so.6(x86_64))",
 				"soname(libswscale.so.8(x86_64))",
+				"soname(libswscale.so.9(x86_64))",
 				"soname(libva.so.2(x86_64))",
 				"soname(libvpl.so.2(x86_64))"
 			],
 			"files": [
 				"/usr/lib/libavfilter.so.10",
-				"/usr/lib/libavfilter.so.10.4.100"
+				"/usr/lib/libavfilter.so.10.4.100",
+				"/usr/lib/libavfilter.so.11",
+				"/usr/lib/libavfilter.so.11.4.100"
 			],
 			"name": "libavfilter",
 			"provides": [
-				"soname(libavfilter.so.10(x86_64))"
+				"soname(libavfilter.so.10(x86_64))",
+				"soname(libavfilter.so.11(x86_64))"
 			]
 		},
 		"libavfilter-devel": {
@@ -851,7 +871,6 @@
 				"pkgconfig(libavformat-7.1)",
 				"pkgconfig(libavutil)",
 				"pkgconfig(libavutil-7.1)",
-				"pkgconfig(libpostproc)",
 				"pkgconfig(libpostproc-7.1)",
 				"pkgconfig(libswresample)",
 				"pkgconfig(libswresample-7.1)",
@@ -940,7 +959,9 @@
 			],
 			"depends": [
 				"soname(libavcodec.so.61(x86_64))",
+				"soname(libavcodec.so.62(x86_64))",
 				"soname(libavutil.so.59(x86_64))",
+				"soname(libavutil.so.60(x86_64))",
 				"soname(libbz2.so.1.0(x86_64))",
 				"soname(libc.so.6(x86_64))",
 				"soname(libcrypto.so.3(x86_64))",
@@ -954,11 +975,14 @@
 			],
 			"files": [
 				"/usr/lib/libavformat.so.61",
-				"/usr/lib/libavformat.so.61.7.100"
+				"/usr/lib/libavformat.so.61.7.100",
+				"/usr/lib/libavformat.so.62",
+				"/usr/lib/libavformat.so.62.3.100"
 			],
 			"name": "libavformat",
 			"provides": [
-				"soname(libavformat.so.61(x86_64))"
+				"soname(libavformat.so.61(x86_64))",
+				"soname(libavformat.so.62(x86_64))"
 			]
 		},
 		"libavformat-devel": {
@@ -1120,11 +1144,14 @@
 			],
 			"files": [
 				"/usr/lib/libavutil.so.59",
-				"/usr/lib/libavutil.so.59.39.100"
+				"/usr/lib/libavutil.so.59.39.100",
+				"/usr/lib/libavutil.so.60",
+				"/usr/lib/libavutil.so.60.8.100"
 			],
 			"name": "libavutil",
 			"provides": [
-				"soname(libavutil.so.59(x86_64))"
+				"soname(libavutil.so.59(x86_64))",
+				"soname(libavutil.so.60(x86_64))"
 			]
 		},
 		"libavutil-devel": {
@@ -1303,6 +1330,7 @@
 				"/usr/include/libavutil/cast5.h",
 				"/usr/include/libavutil/channel_layout.h",
 				"/usr/include/libavutil/common.h",
+				"/usr/include/libavutil/container_fifo.h",
 				"/usr/include/libavutil/cpu.h",
 				"/usr/include/libavutil/crc.h",
 				"/usr/include/libavutil/csp.h",
@@ -1326,12 +1354,14 @@
 				"/usr/include/libavutil/hdr_dynamic_vivid_metadata.h",
 				"/usr/include/libavutil/hmac.h",
 				"/usr/include/libavutil/hwcontext.h",
+				"/usr/include/libavutil/hwcontext_amf.h",
 				"/usr/include/libavutil/hwcontext_cuda.h",
 				"/usr/include/libavutil/hwcontext_d3d11va.h",
 				"/usr/include/libavutil/hwcontext_d3d12va.h",
 				"/usr/include/libavutil/hwcontext_drm.h",
 				"/usr/include/libavutil/hwcontext_dxva2.h",
 				"/usr/include/libavutil/hwcontext_mediacodec.h",
+				"/usr/include/libavutil/hwcontext_oh.h",
 				"/usr/include/libavutil/hwcontext_opencl.h",
 				"/usr/include/libavutil/hwcontext_qsv.h",
 				"/usr/include/libavutil/hwcontext_vaapi.h",
@@ -1360,6 +1390,7 @@
 				"/usr/include/libavutil/random_seed.h",
 				"/usr/include/libavutil/rational.h",
 				"/usr/include/libavutil/rc4.h",
+				"/usr/include/libavutil/refstruct.h",
 				"/usr/include/libavutil/replaygain.h",
 				"/usr/include/libavutil/ripemd.h",
 				"/usr/include/libavutil/samplefmt.h",
@@ -1367,6 +1398,7 @@
 				"/usr/include/libavutil/sha512.h",
 				"/usr/include/libavutil/spherical.h",
 				"/usr/include/libavutil/stereo3d.h",
+				"/usr/include/libavutil/tdrdi.h",
 				"/usr/include/libavutil/tea.h",
 				"/usr/include/libavutil/threadmessage.h",
 				"/usr/include/libavutil/time.h",
@@ -1521,24 +1553,17 @@
 			],
 			"depends": [
 				"libpostproc",
-				"pkgconfig(libavutil)",
 				"pkgconfig(libavutil-7.1)"
 			],
 			"files": [
 				"/usr/include/ffmpeg-7.1/libpostproc/postprocess.h",
 				"/usr/include/ffmpeg-7.1/libpostproc/version.h",
 				"/usr/include/ffmpeg-7.1/libpostproc/version_major.h",
-				"/usr/include/libpostproc/postprocess.h",
-				"/usr/include/libpostproc/version.h",
-				"/usr/include/libpostproc/version_major.h",
 				"/usr/lib/ffmpeg-7.1/libpostproc-7.1.so",
-				"/usr/lib/libpostproc.so",
-				"/usr/lib/pkgconfig/libpostproc-7.1.pc",
-				"/usr/lib/pkgconfig/libpostproc.pc"
+				"/usr/lib/pkgconfig/libpostproc-7.1.pc"
 			],
 			"name": "libpostproc-devel",
 			"provides": [
-				"pkgconfig(libpostproc)",
 				"pkgconfig(libpostproc-7.1)"
 			]
 		},
@@ -1601,16 +1626,20 @@
 			],
 			"depends": [
 				"soname(libavutil.so.59(x86_64))",
+				"soname(libavutil.so.60(x86_64))",
 				"soname(libc.so.6(x86_64))",
 				"soname(libm.so.6(x86_64))"
 			],
 			"files": [
 				"/usr/lib/libswresample.so.5",
-				"/usr/lib/libswresample.so.5.3.100"
+				"/usr/lib/libswresample.so.5.3.100",
+				"/usr/lib/libswresample.so.6",
+				"/usr/lib/libswresample.so.6.1.100"
 			],
 			"name": "libswresample",
 			"provides": [
-				"soname(libswresample.so.5(x86_64))"
+				"soname(libswresample.so.5(x86_64))",
+				"soname(libswresample.so.6(x86_64))"
 			]
 		},
 		"libswresample-devel": {
@@ -1753,16 +1782,20 @@
 			],
 			"depends": [
 				"soname(libavutil.so.59(x86_64))",
+				"soname(libavutil.so.60(x86_64))",
 				"soname(libc.so.6(x86_64))",
 				"soname(libm.so.6(x86_64))"
 			],
 			"files": [
 				"/usr/lib/libswscale.so.8",
-				"/usr/lib/libswscale.so.8.3.100"
+				"/usr/lib/libswscale.so.8.3.100",
+				"/usr/lib/libswscale.so.9",
+				"/usr/lib/libswscale.so.9.1.100"
 			],
 			"name": "libswscale",
 			"provides": [
-				"soname(libswscale.so.8(x86_64))"
+				"soname(libswscale.so.8(x86_64))",
+				"soname(libswscale.so.9(x86_64))"
 			]
 		},
 		"libswscale-devel": {
@@ -1848,6 +1881,6 @@
 		}
 	},
 	"source-name": "ffmpeg",
-	"source-release": "14",
-	"source-version": "7.1.1"
+	"source-release": "15",
+	"source-version": "8.0"
 }
