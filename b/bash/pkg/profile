@@ -1,5 +1,5 @@
-# Begin /usr/share/defaults/etc/profile
+# Begin /usr/share/defaults/profile
 
-source /usr/share/defaults/etc/serpent-stateless-shell-conf.sh
+source /usr/share/defaults/serpent-stateless-shell-conf.sh
 
-# End /usr/share/defaults/etc/profile
+# End /usr/share/defaults/profile

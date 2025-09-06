@@ -1,13 +1,13 @@
 #!/usr/bin/sh
 #
-# Begin /usr/share/defaults/etc/serpent-stateless-shell-conf.sh
+# Begin /usr/share/defaults/aeryn-stateless-shell-conf.sh
 
 # The idea is that all shells are built/patched to have their startup
 # scripts look inside /usr/share/defaults/(...) for their preferred
 # system-level default initialization files.
 
 # For bash, this implies a fan-in configuation where both
-# /usr/share/defaults/etc/profile and /usr/share/defaults/etc/bashrc
+# /usr/share/defaults/profile and /usr/share/defaults/bashrc
 # source the present file, so as to ensure that there is no difference
 # in the experience whether a user logs in via getty, via sshd or opens
 # a new virtual terminal in a desktop environment.
@@ -22,8 +22,8 @@
 # which match their shell and are automagically sourced from this file.
 
 # Files in the below dir MUST be in portable .sh format!
-if [ -d /usr/share/defaults/etc/profile.d ] ; then
-    for script in /usr/share/defaults/etc/profile.d/*.sh
+if [ -d /usr/share/defaults/profile.d ] ; then
+    for script in /usr/share/defaults/profile.d/*.sh
     do
       source $script
     done
@@ -81,4 +81,4 @@ if [ -n "$_shprefix" ] ; then
 fi
 
 unset _shprefix
-# End /usr/share/defaults/etc/serpent-stateless-shell-conf.sh
+# End /usr/share/defaults/aeryn-stateless-shell-conf.sh

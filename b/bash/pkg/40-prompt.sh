@@ -1,4 +1,4 @@
-# Begin /usr/share/defaults/etc/profile.d/prompt.sh
+# Begin /usr/share/defaults/profile.d/prompt.sh
 
 # only set interactive prompt
 [ -t 0 ] || return 0
@@ -19,4 +19,4 @@ elif [ -n "$ZSH_VERSION" ] ; then
     unset NEWLINE
 fi
 
-# End /usr/share/defaults/etc/profile.d/prompt.sh
+# End /usr/share/defaults/profile.d/prompt.sh
