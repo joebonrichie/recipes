@@ -5,7 +5,7 @@
 #
 name        : ffmpegthumbs
 version     : 25.08.0
-release     : 8
+release     : 9
 upstreams   :
     - https://download.kde.org/stable/release-service/25.08.0/src/ffmpegthumbs-25.08.0.tar.xz : e9350f4599b060115c29416b5c71e23623e4dced544b0fa4fe657b612195621b
 homepage    : https://kde.org/applications/multimedia/org.kde.ffmpegthumbs
@@ -26,7 +26,6 @@ builddeps   :
     - pkgconfig(libpostproc)
     - pkgconfig(libswscale)
 setup       : |
-    %patch %(pkgdir)/0001-ffmpeg-7.1.patch
     %cmake_kf6 \
         -DBUILD_WITH_QT6=ON
 build       : |

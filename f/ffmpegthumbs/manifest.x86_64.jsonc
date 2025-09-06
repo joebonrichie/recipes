@@ -22,14 +22,14 @@
 				"soname(libKF6KIOGui.so.6(x86_64))",
 				"soname(libQt6Core.so.6(x86_64))",
 				"soname(libQt6Gui.so.6(x86_64))",
-				"soname(libavcodec-7.1.so.61(x86_64))",
-				"soname(libavfilter-7.1.so.10(x86_64))",
-				"soname(libavformat-7.1.so.61(x86_64))",
-				"soname(libavutil-7.1.so.59(x86_64))",
+				"soname(libavcodec.so.61(x86_64))",
+				"soname(libavfilter.so.10(x86_64))",
+				"soname(libavformat.so.61(x86_64))",
+				"soname(libavutil.so.59(x86_64))",
 				"soname(libc++.so.1(x86_64))",
 				"soname(libc.so.6(x86_64))",
 				"soname(libm.so.6(x86_64))",
-				"soname(libswscale-7.1.so.8(x86_64))"
+				"soname(libswscale.so.8(x86_64))"
 			],
 			"files": [
 				"/usr/lib/qt6/plugins/kf6/thumbcreator/ffmpegthumbs.so",
@@ -44,6 +44,6 @@
 		}
 	},
 	"source-name": "ffmpegthumbs",
-	"source-release": "8",
+	"source-release": "9",
 	"source-version": "25.08.0"
 }
