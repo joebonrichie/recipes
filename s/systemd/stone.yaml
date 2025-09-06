@@ -5,7 +5,7 @@
 #
 name        : systemd
 version     : "257.9"
-release     : 67
+release     : 68
 summary     : A System and Service Manager
 license     :
     - GPL-2.0-or-later
@@ -185,7 +185,7 @@ setup       : |
         -Dsbat-distro-url="https://aerynos.com/" \
         -Dseccomp=${_IS_64BIT_FEAT} \
         -Dsgx-gid=405 \
-        -Dshellprofiledir="%(vendordir)/etc/profile.d" \
+        -Dshellprofiledir="%(vendordir)/profile.d" \
         -Dslow-tests=false \
         -Dsmack=${_IS_64BIT_BOOL} \
         -Dsplit-bin=true \

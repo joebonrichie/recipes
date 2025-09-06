@@ -858,9 +858,9 @@
 				"/usr/share/dbus-1/system.d/org.freedesktop.systemd1.conf",
 				"/usr/share/dbus-1/system.d/org.freedesktop.timedate1.conf",
 				"/usr/share/dbus-1/system.d/org.freedesktop.timesync1.conf",
-				"/usr/share/defaults/etc/profile.d/70-systemd-shell-extra.sh",
 				"/usr/share/defaults/pam.d/systemd-run0",
 				"/usr/share/defaults/pam.d/systemd-user",
+				"/usr/share/defaults/profile.d/70-systemd-shell-extra.sh",
 				"/usr/share/defaults/ssh/ssh_config.d/20-systemd-ssh-proxy.conf",
 				"/usr/share/defaults/ssh/sshd_config.d/20-systemd-userdb.conf",
 				"/usr/share/doc/systemd/CODING_STYLE.md",
@@ -2693,6 +2693,6 @@
 		}
 	},
 	"source-name": "systemd",
-	"source-release": "67",
+	"source-release": "68",
 	"source-version": "257.9"
 }
