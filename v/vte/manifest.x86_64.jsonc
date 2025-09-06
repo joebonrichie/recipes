@@ -59,7 +59,7 @@
 			"files": [
 				"/usr/lib/systemd/user/vte-spawn-.scope.d/defaults.conf",
 				"/usr/lib/vte/vte-urlencode-cwd",
-				"/usr/share/defaults/etc/profile.d/10-vte.sh"
+				"/usr/share/defaults/profile.d/10-vte.sh"
 			],
 			"name": "vte-common"
 		},
@@ -313,6 +313,6 @@
 		}
 	},
 	"source-name": "vte",
-	"source-release": "18",
+	"source-release": "19",
 	"source-version": "0.80.3"
 }
