@@ -23,7 +23,7 @@
 				"/usr/lib/moss/moss-fstx.sh",
 				"/usr/lib/systemd/system/moss-fstx.service",
 				"/usr/share/bash-completion/completions/moss",
-				"/usr/share/defaults/etc/profile.d/80-command-not-found.sh",
+				"/usr/share/defaults/profile.d/80-command-not-found.sh",
 				"/usr/share/fish/completions/moss.fish",
 				"/usr/share/man/man1/moss-boot-status.1",
 				"/usr/share/man/man1/moss-boot.1",
@@ -68,6 +68,6 @@
 		}
 	},
 	"source-name": "moss",
-	"source-release": "92",
+	"source-release": "93",
 	"source-version": "0.25.6+git.91197e1"
 }

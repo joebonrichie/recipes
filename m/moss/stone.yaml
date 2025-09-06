@@ -6,7 +6,7 @@
 #
 name        : moss
 version     : '0.25.6+git.91197e1'
-release     : 92
+release     : 93
 summary     : AerynOS package & system state manager
 license     : MPL-2.0
 homepage    : https://github.com/AerynOS/os-tools
@@ -56,7 +56,7 @@ install     : |
     %install_file stone.xml %(installroot)%(datadir)/mime/packages/stone.xml
 
     # Install command-not-found helper
-    %install_file %(pkgdir)/80-command-not-found.sh %(installroot)%(vendordir)%(sysconfdir)/profile.d/80-command-not-found.sh
+    %install_file %(pkgdir)/80-command-not-found.sh %(installroot)%(vendordir)/profile.d/80-command-not-found.sh
 
     %install_dir %(installroot)%(libdir)/dracut/modules.d/90moss
     %install_file boot/module/module-setup.sh %(installroot)%(libdir)/dracut/modules.d/90moss/module-setup.sh
