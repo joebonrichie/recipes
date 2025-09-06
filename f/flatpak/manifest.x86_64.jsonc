@@ -92,7 +92,7 @@
 				"/usr/share/dbus-1/services/org.freedesktop.portal.Flatpak.service",
 				"/usr/share/dbus-1/system-services/org.freedesktop.Flatpak.SystemHelper.service",
 				"/usr/share/dbus-1/system.d/org.freedesktop.Flatpak.SystemHelper.conf",
-				"/usr/share/defaults/etc/profile.d/70-flatpak.sh",
+				"/usr/share/defaults/profile.d/70-flatpak.sh",
 				"/usr/share/fish/vendor_completions.d/flatpak.fish",
 				"/usr/share/fish/vendor_conf.d/flatpak.fish",
 				"/usr/share/flatpak/remotes.d/flathub.flatpakrepo",
@@ -269,6 +269,6 @@
 		}
 	},
 	"source-name": "flatpak",
-	"source-release": "13",
+	"source-release": "14",
 	"source-version": "1.16.1"
 }
