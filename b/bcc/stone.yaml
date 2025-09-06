@@ -1,0 +1,90 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : bcc
+version     : 0.35.0
+release     : 1
+upstreams   :
+    - https://github.com/iovisor/bcc/releases/download/v0.35.0/bcc-src-with-submodule.tar.gz : a77c8dda4d0c0d93b5cad7b9c8539a7a180005b49ecfb0fbc3d902b5adb03ca2
+homepage    : https://github.com/iovisor/bcc
+license     : Apache-2.0
+summary     : BPF Compiler Collection
+description : |
+    BPF Compiler Collection
+builddeps   :
+    - binary(bpftool)
+    - binary(python3)
+    - cmake(Clang)
+    - pkgconfig(libbpf)
+    - python(setuptools)
+setup       : |
+    %cmake \
+        -DCMAKE_USE_LIBBPF_PACKAGE=ON \
+        -DENABLE_LLVM_SHARED=1 \
+        -DENABLE_TESTS=OFF \
+        -DREVISION=%(version) \
+        -DRUN_LUA_TESTS=OFF
+build       : |
+    %cmake_build
+    cd libbpf-tools
+    %make BPFTOOL=bpftool LIBBPF_OBJ=%(libdir)/libbpf.so CFLAGS="$CFLAGS" LDFLAGS="$LDFLAGS"
+install     : |
+    %cmake_install
+
+    %install_dir %(installroot)%(sbindir)
+
+    pushd %(installroot)/usr/share/bcc/tools
+    for f in *; do
+        if [ ! -d "$f" ]; then
+            ln -srv %(installroot)/usr/share/bcc/tools/$f %(installroot)/usr/sbin/bcc-$f
+        fi
+    done
+    popd
+
+    pushd libbpf-tools
+    %make_install APP_PREFIX="bpf-" prefix="/usr" bindir="/usr/sbin"
+    popd
+
+    # Fix manpages
+    mv %(installroot)/usr/share/bcc/man %(installroot)/usr/share/man
+    pushd %(installroot)/usr/share/man/man8
+    for i in *; do
+        mv $i bcc-$i
+    done
+    popd
+
+    # Nuke static
+    rm -v %(installroot)%(libdir)/*.a
+packages    :
+    - "libbpf-tools":
+        summary: Command line libbpf tools for BPF Compiler Collection (BCC)
+        description: Command line libbpf tools for BPF Compiler Collection (BCC)
+        paths:
+            - /usr/sbin/bpf-*
+
+    - "%(name)-tools":
+        summary: Command line tools for BPF Compiler Collection (BCC)
+        description: Command line tools for BPF Compiler Collection (BCC)
+        rundeps:
+            - "%(name)"
+            - "python-%(name)"
+            # python-netaddr
+        paths:
+            - /usr/sbin/bcc-*
+            - /usr/share/bcc/introspection/
+            - /usr/share/bcc/tools/
+            - /usr/share/man/man8/bcc-*
+
+    - "%(name)-docs":
+        paths:
+            - /usr/share/bcc/examples/
+
+    - "python-%(name)":
+        summary: Python bindings for BPF Compiler Collection (BCC)
+        description: Python bindings for BPF Compiler Collection (BCC)
+        rundeps:
+            - "%(name)"
+        paths:
+            - /usr/lib/python3*/site-packages/
