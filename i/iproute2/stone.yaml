@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : iproute2
-version     : 6.15.0
-release     : 7
+version     : 6.16.0
+release     : 8
 homepage    : https://wiki.linuxfoundation.org/networking/iproute2
 upstreams   :
-    - https://mirrors.edge.kernel.org/pub/linux/utils/net/iproute2/iproute2-6.15.0.tar.xz : 8041854a882583ad5263466736c9c8c68c74b1a35754ab770d23343f947528fb
+    - https://mirrors.edge.kernel.org/pub/linux/utils/net/iproute2/iproute2-6.16.0.tar.xz : 5900ccc15f9ac3bf7b7eae81deb5937123df35e99347a7f11a22818482f0a8d0
 summary     : Utility collection to control networking and traffic
 description : |
     Iproute2 is a collection of utilities for controlling TCP/IP networking and traffic control in Linux. It supersedes ifconfig and route commands.
@@ -22,10 +22,6 @@ builddeps   :
     - pkgconfig(libmnl)
 setup       : |
     %patch %(pkgdir)/fhs.patch
-
-    %patch %(pkgdir)/0001-ss-output-TCP-BBRv3-diag-information.patch
-    %patch %(pkgdir)/0002-ip-introduce-the-ecn_low-per-route-feature.patch
-    %patch %(pkgdir)/0003-ss-display-ecn_low-if-tcp_info-tcpi_options-TCPI_OPT.patch
 
     %configure \
         --color=auto
