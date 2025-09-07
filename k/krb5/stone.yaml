@@ -4,25 +4,37 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : krb5
-version     : 1.21.3
-release     : 3
+version     : 1.22.1
+release     : 4
 homepage    : https://web.mit.edu/kerberos/
 upstreams   :
-    - https://web.mit.edu/kerberos/dist/krb5/1.21/krb5-1.21.3.tar.gz : b7a4cd5ead67fb08b980b21abd150ff7217e85ea320c9ed0c6dadd304840ad35
+    - https://web.mit.edu/kerberos/dist/krb5/1.22/krb5-1.22.1.tar.gz : 1a8832b8cad923ebbf1394f67e2efcf41e3a49f460285a66e35adec8fa0053af
 summary     : network authentication protocol (kerberos)
 description : |
     Kerberos is a network authentication protocol. It is designed to provide strong authentication for client/server applications by using secret-key cryptography
 license     : MIT
 builddeps   :
+    - binary(groff)
+    - binary(msgfmt)
+    - binary(python3)
     - binary(yacc)
+    - pkgconfig(cmocka)
     - pkgconfig(com_err)
+    - pkgconfig(libkeyutils)
+    - pkgconfig(lmdb)
+    - pkgconfig(ldap)
     - pkgconfig(openssl)
+    - pkgconfig(readline)
+    - pkgconfig(ss)
+    # TODO: system verto
 environment : |
     cd src
 setup       : |
     %configure \
         --disable-rpath \
         --enable-dns-for-realm \
+        --with-ldap \
+        --with-readline \
         --with-system-et \
         --with-system-ss
 build       : |
@@ -34,8 +46,31 @@ install     : |
     %install_file %(pkgdir)/krb5.tmpfiles %(installroot)/%(libdir)/tmpfiles.d/krb5.conf
     rm -frv %(installroot)/run/ %(installroot)/var/
 packages:
-    # add missing -devel rundep
+    # TODO: Further split into server and client packages
+    - "%(name)-libs":
+        summary: Non-admin shared libraries used by Kerberos 5
+        description: The non-admin shared libraries used by Kerberos 5
+        paths:
+            - /usr/lib/libgssapi_krb5.so.*
+            - /usr/lib/libgssrpc.so.*
+            - /usr/lib/libk5crypto.so.*
+            - /usr/lib/libkdb5.so.*
+            - /usr/lib/libkrad.so.*
+            - /usr/lib/libkrb5.so.*
+            - /usr/lib/libkrb5support.so.*
+            - /usr/lib/libverto.so.* # Remove once libverto is a system package
+            - /usr/lib/krb5/plugins/tls/k5tls.so
+            - /usr/lib/krb5/plugins/preauth/spake.so
+            - /usr/share/locale/
+            - /usr/share/man/man5/*k5identity.5*
+            - /usr/share/man/man5/*k5login.5*
+            - /usr/share/man/man5/krb5.conf.5*
+            - /usr/share/man/man7/kerberos.7*
+
     - "%(name)-devel":
         rundeps:
             - pkgconfig(com_err)
-
+            - pkgconfig(ss)
+        paths:
+            - /usr/bin/krb5-config
+            - /usr/share/man/man1/krb5-config.1*
