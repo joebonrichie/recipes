@@ -59,7 +59,7 @@
 				"soname(libc.so.6(x86_64))",
 				"soname(libde265.so.0(x86_64))",
 				"soname(libm.so.6(x86_64))",
-				"soname(libswscale.so.8(x86_64))",
+				"soname(libswscale.so.9(x86_64))",
 				"soname(libunwind.so.1(x86_64))"
 			],
 			"files": [
@@ -88,6 +88,6 @@
 		}
 	},
 	"source-name": "libde265",
-	"source-release": "1",
+	"source-release": "2",
 	"source-version": "1.0.16"
 }

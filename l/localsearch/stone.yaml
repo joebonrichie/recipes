@@ -5,7 +5,7 @@
 #
 name        : localsearch
 version     : 3.9.0
-release     : 9
+release     : 10
 homepage    : https://tracker.gnome.org/
 upstreams   :
     - https://download.gnome.org/sources/localsearch/3.9/localsearch-3.9.0.tar.xz : d42f408dc3fb28fe54f5a9abbf5f1decf5818db9c2e9ec51c09464bdfd0c14b9

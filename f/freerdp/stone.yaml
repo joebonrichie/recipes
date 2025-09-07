@@ -5,7 +5,7 @@
 #
 name        : freerdp
 version     : 3.17.1
-release     : 9
+release     : 10
 homepage    : www.freerdp.com
 upstreams   :
     - https://github.com/FreeRDP/FreeRDP/releases/download/3.17.1/freerdp-3.17.1.tar.gz : c672040daef43661e5d5f30763dec165b2662965f50202f94584a38d56a9b024
