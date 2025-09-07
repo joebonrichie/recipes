@@ -4,10 +4,10 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : rssguard
-version     : 4.8.5
-release     : 1
+version     : 4.8.6
+release     : 2
 upstreams   :
-    - https://github.com/martinrotter/rssguard/archive/refs/tags/4.8.5.tar.gz : e3d5cd31d24c92cd4b85eae6e961b19093fb965b6b34bff39dd030089f314598
+    - https://github.com/martinrotter/rssguard/archive/refs/tags/4.8.6.tar.gz : c29bdda08ece8de113dbdb87e8e23491221ba9ddbacd26141d6a00e04888972e
 homepage    : https://github.com/martinrotter/rssguard
 license     : GPL-3.0-or-later
 summary     : Simple (yet powerful) Qt feed reader
