@@ -1,0 +1,9 @@
+diff -Npur gamescope-session.orig/usr/bin/gamescope-session-plus gamescope-session/usr/bin/gamescope-session-plus
+--- gamescope-session.orig/usr/bin/gamescope-session-plus	2025-09-07 12:02:46.903650106 +0200
++++ gamescope-session/usr/bin/gamescope-session-plus	2025-09-07 12:03:15.020011657 +0200
+@@ -1,4 +1,4 @@
+-#!/bin/sh
++#!/bin/bash
+ 
+ declare -r CLIENT=$1
+ 
