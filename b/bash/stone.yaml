@@ -5,7 +5,7 @@
 #
 name        : bash
 version     : 5.3.3
-release     : 25
+release     : 26
 homepage    : http://www.gnu.org/software/bash/bash.html
 upstreams   :
     # Use a mirror because the GNU http server is flaky AF
