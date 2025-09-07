@@ -1157,9 +1157,9 @@
 				"protobuf-staticlib"
 			],
 			"depends": [
-				"soname(libavcodec.so.61(x86_64))",
-				"soname(libavformat.so.61(x86_64))",
-				"soname(libavutil.so.59(x86_64))",
+				"soname(libavcodec.so.62(x86_64))",
+				"soname(libavformat.so.62(x86_64))",
+				"soname(libavutil.so.60(x86_64))",
 				"soname(libc++.so.1(x86_64))",
 				"soname(libc.so.6(x86_64))",
 				"soname(libglib-2.0.so.0(x86_64))",
@@ -1175,7 +1175,7 @@
 				"soname(libopencv_core.so.412(x86_64))",
 				"soname(libopencv_imgcodecs.so.412(x86_64))",
 				"soname(libopencv_imgproc.so.412(x86_64))",
-				"soname(libswscale.so.8(x86_64))",
+				"soname(libswscale.so.9(x86_64))",
 				"soname(libunwind.so.1(x86_64))"
 			],
 			"files": [
@@ -1189,6 +1189,6 @@
 		}
 	},
 	"source-name": "opencv",
-	"source-release": "6",
+	"source-release": "7",
 	"source-version": "4.12.0"
 }
