@@ -29,9 +29,9 @@
 				"soname(libQt6Core.so.6(x86_64))",
 				"soname(libQt6Gui.so.6(x86_64))",
 				"soname(libQt6Xml.so.6(x86_64))",
-				"soname(libavcodec.so.61(x86_64))",
-				"soname(libavformat.so.61(x86_64))",
-				"soname(libavutil.so.59(x86_64))",
+				"soname(libavcodec.so.62(x86_64))",
+				"soname(libavformat.so.62(x86_64))",
+				"soname(libavutil.so.60(x86_64))",
 				"soname(libc++.so.1(x86_64))",
 				"soname(libc.so.6(x86_64))",
 				"soname(libepub.so.0(x86_64))",
@@ -213,6 +213,6 @@
 		}
 	},
 	"source-name": "kf6-kfilemetadata",
-	"source-release": "9",
+	"source-release": "10",
 	"source-version": "6.17.0"
 }
