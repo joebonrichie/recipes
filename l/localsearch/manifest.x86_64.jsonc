@@ -36,7 +36,7 @@
 			"depends": [
 				"gstreamer-plugins-base",
 				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
-				"soname(libavformat.so.61(x86_64))",
+				"soname(libavformat.so.62(x86_64))",
 				"soname(libc.so.6(x86_64))",
 				"soname(libexif.so.12(x86_64))",
 				"soname(libgexiv2.so.2(x86_64))",
@@ -236,6 +236,6 @@
 		}
 	},
 	"source-name": "localsearch",
-	"source-release": "9",
+	"source-release": "10",
 	"source-version": "3.9.0"
 }
