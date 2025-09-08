@@ -1,0 +1,36 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : libdovi
+version     : 3.3.2
+release     : 1
+upstreams   :
+    - https://github.com/quietvoid/dovi_tool/archive/refs/tags/libdovi-3.3.2.tar.gz : 8ccb1922d7dbb57bc4f2c15c10b90c462f7a5f292efe317c116db923728dd3f1
+homepage    : https://github.com/quietvoid/dovi_tool
+license     : MIT
+summary     : Library to read & write Dolby Vision metadata
+description : |
+    Library to read & write Dolby Vision metadata.
+builddeps   :
+    - cargo-c
+networking  : true
+setup       : |
+    pushd dolby_vision
+    %cargo_fetch
+build       : |
+    pushd dolby_vision
+    cargo cbuild \
+        --frozen \
+        --library-type=cdylib \
+        --prefix=%(prefix) \
+        --release
+install     : |
+    pushd dolby_vision
+    cargo cinstall \
+        --destdir=%(installroot) \
+        --frozen \
+        --libdir=%(libdir) \
+        --library-type=cdylib \
+        --prefix=%(prefix)

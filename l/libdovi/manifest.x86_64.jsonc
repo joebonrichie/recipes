@@ -1,0 +1,44 @@
+/** Human readable report. This is not consumed by boulder */
+{
+	"manifest-version": "0.2",
+	"packages": {
+		"libdovi": {
+			"build-depends": [
+				"cargo-c"
+			],
+			"depends": [
+				"soname(ld-linux-x86-64.so.2(x86_64))",
+				"soname(libc.so.6(x86_64))",
+				"soname(libunwind.so.1(x86_64))"
+			],
+			"files": [
+				"/usr/lib/libdovi.so.3",
+				"/usr/lib/libdovi.so.3.3.2"
+			],
+			"name": "libdovi",
+			"provides": [
+				"soname(libdovi.so.3(x86_64))"
+			]
+		},
+		"libdovi-devel": {
+			"build-depends": [
+				"cargo-c"
+			],
+			"depends": [
+				"libdovi"
+			],
+			"files": [
+				"/usr/include/libdovi/rpu_parser.h",
+				"/usr/lib/libdovi.so",
+				"/usr/lib/pkgconfig/dovi.pc"
+			],
+			"name": "libdovi-devel",
+			"provides": [
+				"pkgconfig(dovi)"
+			]
+		}
+	},
+	"source-name": "libdovi",
+	"source-release": "1",
+	"source-version": "3.3.2"
+}
