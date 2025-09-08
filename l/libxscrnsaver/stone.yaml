@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : libxscrnsaver
-version     : 1.2.4
-release     : 2
+version     : 1.2.5
+release     : 3
 homepage    : https://xorg.freedesktop.org/releases/individual/lib
 upstreams   :
-    - https://xorg.freedesktop.org/releases/individual/lib/libXScrnSaver-1.2.4.tar.xz : 75cd2859f38e207a090cac980d76bc71e9da99d48d09703584e00585abc920fe
+    - https://xorg.freedesktop.org/releases/individual/lib/libXScrnSaver-1.2.5.tar.xz : 5057365f847253e0e275871441e10ff7846c8322a5d88e1e187d326de1cd8d00
 summary     : X11 Screen Saver extension library
 description : |
     X11 Screen Saver extension library
@@ -20,8 +20,8 @@ builddeps   :
     - pkgconfig(scrnsaverproto)
 emul32      : true
 setup       : |
-    %configure --disable-static
+    %meson
 build       : |
-    %make
+    %meson_build
 install     : |
-    %make_install
+    %meson_install
