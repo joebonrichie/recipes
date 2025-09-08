@@ -328,6 +328,7 @@
 				"/usr/share/virt-manager/virtinst/devices/__pycache__/memballoon.cpython-311.pyc",
 				"/usr/share/virt-manager/virtinst/devices/__pycache__/memory.cpython-311.pyc",
 				"/usr/share/virt-manager/virtinst/devices/__pycache__/panic.cpython-311.pyc",
+				"/usr/share/virt-manager/virtinst/devices/__pycache__/pstore.cpython-311.pyc",
 				"/usr/share/virt-manager/virtinst/devices/__pycache__/redirdev.cpython-311.pyc",
 				"/usr/share/virt-manager/virtinst/devices/__pycache__/rng.cpython-311.pyc",
 				"/usr/share/virt-manager/virtinst/devices/__pycache__/shmem.cpython-311.pyc",
@@ -351,6 +352,7 @@
 				"/usr/share/virt-manager/virtinst/devices/memballoon.py",
 				"/usr/share/virt-manager/virtinst/devices/memory.py",
 				"/usr/share/virt-manager/virtinst/devices/panic.py",
+				"/usr/share/virt-manager/virtinst/devices/pstore.py",
 				"/usr/share/virt-manager/virtinst/devices/redirdev.py",
 				"/usr/share/virt-manager/virtinst/devices/rng.py",
 				"/usr/share/virt-manager/virtinst/devices/shmem.py",
@@ -449,6 +451,6 @@
 		}
 	},
 	"source-name": "virt-manager",
-	"source-release": "5",
-	"source-version": "5.0.0"
+	"source-release": "6",
+	"source-version": "5.1.0"
 }
