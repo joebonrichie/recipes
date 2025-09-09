@@ -20,8 +20,7 @@
 				"binary(cosmic-edit)",
 				"binary(cosmic-files)",
 				"binary(cosmic-greeter)",
-				"binary(cosmic-icons)",
-				"binary(cosmic-idle_",
+				"binary(cosmic-idle)",
 				"binary(cosmic-launcher)",
 				"binary(cosmic-notifications)",
 				"binary(cosmic-osd)",
@@ -34,6 +33,7 @@
 				"binary(cosmic-store)",
 				"binary(cosmic-term)",
 				"binary(cosmic-workspaces)",
+				"cosmic-icons",
 				"pkgset-aeryn-base-desktop",
 				"xdg-desktop-portal-cosmic"
 			],
@@ -54,6 +54,6 @@
 		}
 	},
 	"source-name": "pkgset-aeryn-cosmic",
-	"source-release": "4",
+	"source-release": "5",
 	"source-version": "2025.08"
 }
