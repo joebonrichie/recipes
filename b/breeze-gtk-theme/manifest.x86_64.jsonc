@@ -4,6 +4,7 @@
 	"packages": {
 		"breeze-gtk-theme": {
 			"build-depends": [
+				"binary(python3)",
 				"binary(sassc)",
 				"cmake(Breeze)",
 				"cmake(ECM)",
@@ -580,6 +581,6 @@
 		}
 	},
 	"source-name": "breeze-gtk-theme",
-	"source-release": "2",
-	"source-version": "6.4.4"
+	"source-release": "3",
+	"source-version": "6.4.5"
 }

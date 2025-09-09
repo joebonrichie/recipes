@@ -4,10 +4,10 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : breeze-gtk-theme
-version     : 6.4.4
-release     : 2
+version     : 6.4.5
+release     : 3
 upstreams   :
-    - https://download.kde.org/stable/plasma/6.4.4/breeze-gtk-6.4.4.tar.xz : b353cb1c5c36cc7493cb2d018b7cc5068fa4772345781f81d5f8108cf54b4e3f
+    - https://download.kde.org/stable/plasma/6.4.5/breeze-gtk-6.4.5.tar.xz : 771e88ca19421a472f5f4235fb27ba2588b7ea267e8f2647e5e231c351f03a98
 homepage    : https://kde.org/plasma-desktop/
 license     :
     - BSD-3-Clause
@@ -16,6 +16,7 @@ summary     : GTK Theme Built to Match KDE's Breeze
 description : |
     A GTK Theme Built to Match KDE's Breeze
 builddeps   :
+    - binary(python3)
     - binary(sassc)
     - cmake(Breeze)
     # Temporary, boulder doesn't handle build ordering resolution correctly when builddeps are added by macros, so add ECM manually
