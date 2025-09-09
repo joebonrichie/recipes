@@ -108,3 +108,8 @@
 
 ### Renamed to jpegxl-dbginfo
 - libjxl-dbginfo
+
+### Replaced by gamescope
+- gamescope-plus
+- gamescope-plus-devel
+- gamescope-plus-dbginfo
