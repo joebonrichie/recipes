@@ -4,15 +4,15 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : curl
-version     : 8.15.0
-release     : 24
+version     : 8.16.0
+release     : 25
 summary     : A utility for fetching files from remote servers
 license     : MIT
 homepage    : https://curl.se/
 description : |
     A utility for fetching files from remote servers.
 upstreams   :
-    - https://curl.se/download/curl-8.15.0.tar.gz: d85cfc79dc505ff800cb1d321a320183035011fa08cb301356425d86be8fc53c
+    - https://curl.se/download/curl-8.16.0.tar.gz: a21e20476e39eca5a4fc5cfb00acf84bbc1f5d8443ec3853ad14c26b3c85b970
 builddeps:
     - pkgconfig32(jansson)
     - pkgconfig32(libbrotlidec)
@@ -22,15 +22,26 @@ builddeps:
     - pkgconfig32(libzstd)
     # - pkgconfig32(rustls)
     - pkgconfig32(zlib)
-rundeps     :
-    - ca-certificates
+    - pkgconfig(krb5-gssapi)
+    - pkgconfig(ldap)
+    - pkgconfig(libssh2)
+    # TODO: nghttp3
 emul32      : true
+profiles    :
+    - emul32:
+        environment: |
+            _extra_args="--disable-libssh2 --disable-ldap"
+    - x86_64:
+        environment: |
+            _extra_args="--with-ldap --with-libssh2 --with-gssapi"
 setup       : |
     # rustls temporarily disabled due to build failures
     %configure \
         --disable-static \
         --with-ca-bundle="/etc/ssl/certs/ca-certificates.crt" \
-        --with-openssl
+        --with-openssl \
+        --with-openssl-quic \
+        $_extra_args
 build       : |
     %make
 install     : |
@@ -40,6 +51,12 @@ tune        :
     - nosemantic
     - optimize: size
 packages    :
+    - "%(name)-libs":
+        rundeps:
+            - ca-certificates
+        paths:
+            - /usr/lib/libcurl.so.*
+
     - "%(name)-devel":
         paths:
             - /usr/bin/curl-config
