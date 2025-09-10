@@ -26,7 +26,6 @@ builddeps:
     - pkgconfig(ldap)
     - pkgconfig(libnghttp3)
     - pkgconfig(libssh2)
-    # TODO: nghttp3
 emul32      : true
 profiles    :
     - emul32:
