@@ -5,7 +5,7 @@
 #
 name        : curl
 version     : 8.16.0
-release     : 25
+release     : 26
 summary     : A utility for fetching files from remote servers
 license     : MIT
 homepage    : https://curl.se/
@@ -24,6 +24,7 @@ builddeps:
     - pkgconfig32(zlib)
     - pkgconfig(krb5-gssapi)
     - pkgconfig(ldap)
+    - pkgconfig(libnghttp3)
     - pkgconfig(libssh2)
     # TODO: nghttp3
 emul32      : true
