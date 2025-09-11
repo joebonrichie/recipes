@@ -8,7 +8,7 @@
 			],
 			"files": [
 				"/usr/lib/libcjson.so.1",
-				"/usr/lib/libcjson.so.1.7.18"
+				"/usr/lib/libcjson.so.1.7.19"
 			],
 			"name": "cjson",
 			"provides": [
@@ -36,6 +36,6 @@
 		}
 	},
 	"source-name": "cjson",
-	"source-release": "3",
-	"source-version": "1.7.18"
+	"source-release": "4",
+	"source-version": "1.7.19"
 }

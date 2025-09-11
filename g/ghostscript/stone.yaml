@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : ghostscript
-version     : 10.05.1
-release     : 7
+version     : 10.06.0
+release     : 8
 homepage    : https://www.ghostscript.com/
 upstreams   :
-    - https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs10051/ghostpdl-10.05.1.tar.gz : c0be073366d19471320dce13e210b4c47e14b01070d6cf3d2d6d6e8415344615
+    - https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs10060/ghostscript-10.06.0.tar.gz : 5bd6da34794928cc7e616f288e32bd0be7f9a5ca2d3c206a0af2c19a4e3a318f
 summary     : PostScript and PDF interpreter
 description : |
     Ghostscript is a suite of software based on an interpreter for Adobe Systems' PostScript and Portable Document Format (PDF) page description languages. Its main purposes are the rasterization or rendering of such page description language files, for the display or printing of document pages, and the conversion between PostScript and PDF files.
@@ -22,6 +22,8 @@ builddeps   :
     - pkgconfig(gl)
     - pkgconfig(glu)
     - pkgconfig(glut)
+    - pkgconfig(jbig2dec)
+    - pkgconfig(lcms2)
     - pkgconfig(libidn2)
     - pkgconfig(libjpeg)
     - pkgconfig(libjxl)
@@ -34,24 +36,67 @@ builddeps   :
     - pkgconfig(xt)
     - pkgconfig(zlib)
     - libpaper-devel
-rundeps     :
-    - poppler-data
-    - urw-base35-fonts
 setup       : |
-    rm -rf cups/libs expat freetype lcmsmt libpng jpeg zlib tiff expat openjpeg
+    # Remove built-in versions of these so we can use the system versions
+    rm -rf cups/libs expat freetype lcms2* libpng jpeg zlib tiff expat openjpeg jbig2dec windows
+
+    # These are used for OCR and bloat the libs by a fair bit. Eventually we want to link against system libs instead
+    rm -r tesseract leptonica
+
+    # Remove internal CMaps (CMaps from poppler-data are used instead)
     rm -rf Resource/CMap
-    %configure --disable-static \
-               --with-system-libtiff \
-               --without-local-zlib \
-               --with-fontpath=/usr/share/fonts/urw-base35 \
-               --enable-fontconfig \
-               --enable-freetype \
-               --disable-compile-inits \
-               --without-versioned-path
+
+    %configure \
+        --with-system-libtiff \
+        --without-local-zlib \
+        --with-fontpath=/usr/share/fonts/urw-base35 \
+        --enable-fontconfig \
+        --enable-freetype \
+        --disable-compile-inits \
+        --without-versioned-path
 build       : |
-    %make
     %make so
 install     : |
-    %make_install
     %make soinstall DESTDIR=%(installroot)
-    ln -s ../../../poppler/cMap %(installroot)%(datadir)/ghostscript/Resource/CMap
+
+    mv %(installroot)%(bindir)/{gsc,gs}
+    ln -srv %(installroot)%(bindir)/gs %(installroot)%(bindir)/ghostscript
+    ln -srv %(installroot)%(mandir)/man1/gs.1.gz %(installroot)%(mandir)/man1/ghostscript.1
+
+    # remove obsolete lpr bsd/Unix related files
+    rm -rv %(installroot)%(bindir)/{lprsetup.sh,unix-lpr.sh}
+
+    # Use the cMaps from poppler-data
+    ln -srv %(installroot)%(datadir)/poppler/cMap %(installroot)%(datadir)/ghostscript/Resource/CMap
+
+    %install_dir %(installroot)%(docdir)/%(name)-devel
+    echo "DEPRECATED" > %(installroot)%(docdir)/%(name)-devel/README
+packages    :
+    # TODO: Maybe break up the ghostscript package a bit more, ala Fedora. We definitely want to do that if we build the gtk client
+
+    - "libgs":
+        summary: Library providing Ghostcript's core functionality
+        description: Library providing Ghostcript's core functionality
+        rundeps:
+            - poppler-data
+            - urw-base35-fonts
+        paths:
+            - /usr/lib/libgs.so.*
+            - /usr/share/ghostscript/Resource/
+            - /usr/share/ghostscript/iccprofiles/
+            - /usr/share/ghostscript/lib/
+
+    - "libgs-devel":
+        summary: Library providing Ghostcript's core functionality - Devel
+        description: Library providing Ghostcript's core functionality - Devel
+        rundeps:
+            - libgs
+        paths:
+            - /usr/lib/libgs.so
+            - /usr/include/ghostscript/
+
+    - "%(name)-devel":
+        rundeps:
+            - "libgs-devel"
+        paths:
+            - /usr/share/doc/ghostscript-devel/

@@ -1,0 +1,30 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : nghttp3
+version     : 1.11.0
+release     : 1
+upstreams   :
+    - https://github.com/ngtcp2/nghttp3/releases/download/v1.11.0/nghttp3-1.11.0.tar.gz : 3cd20bda2a2de87b3715724a0c1633156b9926e93935a7f24a5daa7b0504ba11
+homepage    : https://nghttp2.org/nghttp3/
+license     : MIT
+summary     : HTTP/3 C Library
+description : |
+    This is an implementation of the Hypertext Transfer Protocol version 3 in C.
+setup       : |
+    # We can't run the test suite if we disable static libs during the build, but we can just delete them after
+    # Also, we can't run testing with ninja for some reason so leave this with make for now
+    %cmake \
+        -DENABLE_STATIC_LIB=ON \
+        -DBUILD_TESTING=ON
+build       : |
+    %cmake_build
+install     : |
+    %cmake_install
+
+    rm -fv %(installroot)%(libdir)/lib*.a
+# TODO: Get these working
+# check       : |
+#     %cmake_test

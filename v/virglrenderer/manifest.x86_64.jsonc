@@ -27,7 +27,7 @@
 			],
 			"files": [
 				"/usr/lib/libvirglrenderer.so.1",
-				"/usr/lib/libvirglrenderer.so.1.9.1",
+				"/usr/lib/libvirglrenderer.so.1.10.0",
 				"/usr/lib/virglrenderer/virgl_render_server"
 			],
 			"name": "virglrenderer",
@@ -69,6 +69,6 @@
 		}
 	},
 	"source-name": "virglrenderer",
-	"source-release": "4",
-	"source-version": "1.1.1"
+	"source-release": "5",
+	"source-version": "1.2.0"
 }

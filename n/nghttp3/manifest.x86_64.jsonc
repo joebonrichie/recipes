@@ -1,0 +1,43 @@
+/** Human readable report. This is not consumed by boulder */
+{
+	"manifest-version": "0.2",
+	"packages": {
+		"nghttp3": {
+			"depends": [
+				"soname(libc.so.6(x86_64))"
+			],
+			"files": [
+				"/usr/lib/libnghttp3.so.9",
+				"/usr/lib/libnghttp3.so.9.3.0",
+				"/usr/share/doc/nghttp3/README.rst"
+			],
+			"name": "nghttp3",
+			"provides": [
+				"soname(libnghttp3.so.9(x86_64))"
+			]
+		},
+		"nghttp3-devel": {
+			"depends": [
+				"nghttp3"
+			],
+			"files": [
+				"/usr/include/nghttp3/nghttp3.h",
+				"/usr/include/nghttp3/version.h",
+				"/usr/lib/cmake/nghttp3/nghttp3Config.cmake",
+				"/usr/lib/cmake/nghttp3/nghttp3ConfigVersion.cmake",
+				"/usr/lib/cmake/nghttp3/nghttp3Targets-release.cmake",
+				"/usr/lib/cmake/nghttp3/nghttp3Targets.cmake",
+				"/usr/lib/libnghttp3.so",
+				"/usr/lib/pkgconfig/libnghttp3.pc"
+			],
+			"name": "nghttp3-devel",
+			"provides": [
+				"cmake(nghttp3)",
+				"pkgconfig(libnghttp3)"
+			]
+		}
+	},
+	"source-name": "nghttp3",
+	"source-release": "1",
+	"source-version": "1.11.0"
+}

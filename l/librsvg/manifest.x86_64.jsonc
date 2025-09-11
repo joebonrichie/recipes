@@ -39,7 +39,7 @@
 				"/usr/lib/gdk-pixbuf-2.0/2.10.0/loaders/libpixbufloader_svg.so",
 				"/usr/lib/girepository-1.0/Rsvg-2.0.typelib",
 				"/usr/lib/librsvg-2.so.2",
-				"/usr/lib/librsvg-2.so.2.61.0",
+				"/usr/lib/librsvg-2.so.2.61.1",
 				"/usr/share/thumbnailers/librsvg.thumbnailer"
 			],
 			"name": "librsvg",
@@ -98,6 +98,6 @@
 		}
 	},
 	"source-name": "librsvg",
-	"source-release": "11",
-	"source-version": "2.61.0"
+	"source-release": "12",
+	"source-version": "2.61.1"
 }

@@ -17,7 +17,7 @@
 			],
 			"files": [
 				"/usr/lib/libssh.so.4",
-				"/usr/lib/libssh.so.4.10.2"
+				"/usr/lib/libssh.so.4.10.3"
 			],
 			"name": "libssh",
 			"provides": [
@@ -58,6 +58,6 @@
 		}
 	},
 	"source-name": "libssh",
-	"source-release": "4",
-	"source-version": "0.11.2"
+	"source-release": "5",
+	"source-version": "0.11.3"
 }

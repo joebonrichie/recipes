@@ -1,19 +1,19 @@
-From 9ed0efb0793a14402a0fceca04432100ac443520 Mon Sep 17 00:00:00 2001
+From 513c8dd65f86e884940b3164c270a20d5b59af4c Mon Sep 17 00:00:00 2001
 From: Luke Jones <luke@ljones.dev>
 Date: Sun, 27 Apr 2025 14:55:35 +1200
 Subject: [PATCH] Add display script for Zotac Zone
 
 Signed-off-by: Luke Jones <luke@ljones.dev>
 ---
- .../displays/zotac.zone.olded.lua             | 56 +++++++++++++++++++
+ .../00-gamescope/displays/zotac.zone.oled.lua | 56 +++++++++++++++++++
  1 file changed, 56 insertions(+)
- create mode 100644 scripts/00-gamescope/displays/zotac.zone.olded.lua
+ create mode 100644 scripts/00-gamescope/displays/zotac.zone.oled.lua
 
-diff --git a/scripts/00-gamescope/displays/zotac.zone.olded.lua b/scripts/00-gamescope/displays/zotac.zone.olded.lua
+diff --git a/scripts/00-gamescope/displays/zotac.zone.oled.lua b/scripts/00-gamescope/displays/zotac.zone.oled.lua
 new file mode 100644
 index 000000000..8ea1392c1
 --- /dev/null
-+++ b/scripts/00-gamescope/displays/zotac.zone.olded.lua
++++ b/scripts/00-gamescope/displays/zotac.zone.oled.lua
 @@ -0,0 +1,56 @@
 +-- colorimetry from DXQ7D0023 PDF specification
 +local zotac_amoled_colorimetry = {
