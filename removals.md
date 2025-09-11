@@ -113,3 +113,6 @@
 - gamescope-plus
 - gamescope-plus-devel
 - gamescope-plus-dbginfo
+
+### Renamed to libgs-devel
+- ghostscript-devel
