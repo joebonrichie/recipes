@@ -155,6 +155,6 @@
 		}
 	},
 	"source-name": "btrfs-progs",
-	"source-release": "12",
-	"source-version": "6.16"
+	"source-release": "13",
+	"source-version": "6.16.1"
 }
