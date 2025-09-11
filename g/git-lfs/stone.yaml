@@ -1,0 +1,48 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : git-lfs
+version     : 3.7.0
+release     : 1
+homepage    : https://git-lfs.github.com
+upstreams   :
+    - https://github.com/git-lfs/git-lfs/releases/download/v3.7.0/git-lfs-v3.7.0.tar.gz : d078b8393514c65c485d1628e610449ba048af746749912bd082d818b2454348
+summary     : A command line extension and specification for managing large files with Git.
+description : |
+    A command line extension and specification for managing large files with Git.
+license     : MIT
+builddeps   :
+    - binary(asciidoctor)
+    - binary(git)
+    - binary(go)
+rundeps     :
+    - binary(git)
+networking     : yes
+setup       : |
+    go mod vendor
+build       : |
+    export CGO_CPPFLAGS="${CPPFLAGS}"
+    export CGO_CFLAGS="${CFLAGS}"
+    export CGO_CXXFLAGS="${CXXFLAGS}"
+    export CGO_LDFLAGS="${LDFLAGS}"
+    export GOFLAGS="-buildmode=pie -trimpath -modcacherw -ldflags=-linkmode=external"
+
+    go generate ./commands
+    go build .
+    %make man
+install     : |
+    %install_exe git-lfs %(installroot)%(bindir)/git-lfs
+
+    # Man pages
+    %install_file -t %(installroot)%(mandir)/man1 man/man1/*.1
+    %install_file -t %(installroot)%(mandir)/man5 man/man5/*.5
+
+    # Completions
+    ./git-lfs completion bash | %install_file /dev/stdin \
+        %(installroot)%(bashcompletionsdir)/git-lfs
+    ./git-lfs completion zsh | %install_file /dev/stdin \
+        %(installroot)%(zshcompletionsdir)/_git-lfs
+    ./git-lfs completion fish | %install_file /dev/stdin \
+        %(installroot)%(fishcompletionsdir)/git-lfs.fish
