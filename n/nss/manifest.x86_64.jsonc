@@ -146,6 +146,7 @@
 				"/usr/include/nss/lgglue.h",
 				"/usr/include/nss/lowkeyi.h",
 				"/usr/include/nss/lowkeyti.h",
+				"/usr/include/nss/ml_dsat.h",
 				"/usr/include/nss/nss.h",
 				"/usr/include/nss/nssb64.h",
 				"/usr/include/nss/nssb64t.h",
@@ -349,6 +350,6 @@
 		}
 	},
 	"source-name": "nss",
-	"source-release": "33",
-	"source-version": "3.115.1"
+	"source-release": "34",
+	"source-version": "3.116"
 }
