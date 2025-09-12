@@ -1,0 +1,64 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : uv
+version     : 0.8.17
+release     : 1
+homepage    : https://docs.astral.sh/uv/
+upstreams   :
+    - https://github.com/astral-sh/uv/releases/download/0.8.17/source.tar.gz : 5ee0cec08b37ff6e8709cf777a2ae39580097120589bd75136f7d2b4bd119671
+summary     : An extremely fast Python package and project manager, written in Rust.
+description : |
+    An extremely fast Python package and project manager, written in Rust.
+license     : Apache-2.0
+builddeps   :
+    - binary(make)
+    - binary(maturin)
+    - binary(python3)
+    - python(installer)
+networking  : yes
+setup       : |
+    %patch %(pkgdir)/downstream-bin.patch
+
+    %cargo_fetch
+build       : |
+    maturin build --locked --release --target "%(target_triple)" --compatibility linux
+    maturin build --locked --release --target "%(target_triple)" --compatibility linux -m crates/uv-build/Cargo.toml
+
+    mkdir completions
+    _uv="target/%(target_triple)/release/uv"
+
+    $_uv --generate-shell-completion bash > completions/uv
+    $_uv --generate-shell-completion zsh > completions/_uv
+    $_uv --generate-shell-completion fish > completions/uv.fish
+install     : |
+    # Install python libs
+    python3 -m installer --destdir="%(installroot)" target/wheels/uv-*.whl
+    python3 -m installer --destdir="%(installroot)" target/wheels/uv_build-*.whl
+
+    # Completions
+    %install_file completions/uv -t %(installroot)%(bashcompletionsdir)
+    %install_file completions/_uv -t %(installroot)%(zshcompletionsdir)
+    %install_file completions/uv.fish -t %(installroot)%(fishcompletionsdir)
+
+    # Ensure the correct binaries are installed
+    %install_bin target/%(target_triple)/release/uv
+    %install_bin target/%(target_triple)/release/uvx
+packages    :
+    - "python-%(name)":
+        rundeps:
+            - "%(name)"
+            - python-libs
+        paths:
+            - /usr/lib/python3*/site-packages/uv-*
+            - /usr/lib/python3*/site-packages/uv/
+
+    - "python-%(name)-build":
+        rundeps:
+            - python-libs
+        paths:
+            - /usr/bin/uv-build
+            - /usr/lib/python3*/site-packages/uv_build-*
+            - /usr/lib/python3*/site-packages/uv_build/
