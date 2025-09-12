@@ -4,10 +4,10 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : gwenview
-version     : 25.08.0
-release     : 5
+version     : 25.08.1
+release     : 6
 upstreams   :
-    - https://download.kde.org/stable/release-service/25.08.0/src/gwenview-25.08.0.tar.xz : 5bf1bfccedef659f4df913adddd64a2c964d39b84cf1427104bb15dbaa86f08e
+    - https://download.kde.org/stable/release-service/25.08.1/src/gwenview-25.08.1.tar.xz : 4d92eef8fd543930cff6810062bc1d9ff103394247516bfef1edcd1bd67ad67c
 homepage    : https://apps.kde.org/gwenview/
 license     :
     - GFDL-1.2-or-later

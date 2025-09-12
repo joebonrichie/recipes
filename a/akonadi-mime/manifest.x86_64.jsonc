@@ -11,6 +11,7 @@
 				"cmake(KF6XmlGui)",
 				"cmake(KPim6Akonadi)",
 				"cmake(KPim6Mime)",
+				"cmake(Qt6CorePrivate)",
 				"pkgconfig(libxslt)"
 			],
 			"depends": [
@@ -29,14 +30,19 @@
 				"soname(libQt6Core.so.6(x86_64))",
 				"soname(libQt6DBus.so.6(x86_64))",
 				"soname(libQt6Gui.so.6(x86_64))",
+				"soname(libQt6Qml.so.6(x86_64))",
 				"soname(libc++.so.1(x86_64))",
 				"soname(libc.so.6(x86_64))",
 				"soname(libunwind.so.1(x86_64))"
 			],
 			"files": [
 				"/usr/lib/libKPim6AkonadiMime.so.6",
-				"/usr/lib/libKPim6AkonadiMime.so.6.5.0",
+				"/usr/lib/libKPim6AkonadiMime.so.6.5.1",
 				"/usr/lib/qt6/plugins/akonadi_serializer_mail.so",
+				"/usr/lib/qt6/qml/org/kde/akonadi/mime/akonadi_mime_quick_plugin.qmltypes",
+				"/usr/lib/qt6/qml/org/kde/akonadi/mime/kde-qmlmodule.version",
+				"/usr/lib/qt6/qml/org/kde/akonadi/mime/libakonadi_mime_quick_plugin.so",
+				"/usr/lib/qt6/qml/org/kde/akonadi/mime/qmldir",
 				"/usr/share/akonadi/plugins/serializer/akonadi_serializer_mail.desktop",
 				"/usr/share/config.kcfg/specialmailcollections.kcfg",
 				"/usr/share/locale/ar/LC_MESSAGES/libakonadi-kmime6.mo",
@@ -104,7 +110,8 @@
 			"name": "akonadi-mime",
 			"provides": [
 				"soname(libKPim6AkonadiMime.so.6(x86_64))",
-				"soname(qt6/plugins/akonadi_serializer_mail.so(x86_64))"
+				"soname(qt6/plugins/akonadi_serializer_mail.so(x86_64))",
+				"soname(qt6/qml/org/kde/akonadi/mime/libakonadi_mime_quick_plugin.so(x86_64))"
 			]
 		},
 		"akonadi-mime-devel": {
@@ -116,6 +123,7 @@
 				"cmake(KF6XmlGui)",
 				"cmake(KPim6Akonadi)",
 				"cmake(KPim6Mime)",
+				"cmake(Qt6CorePrivate)",
 				"pkgconfig(libxslt)"
 			],
 			"depends": [
@@ -188,6 +196,6 @@
 		}
 	},
 	"source-name": "akonadi-mime",
-	"source-release": "3",
-	"source-version": "25.08.0"
+	"source-release": "4",
+	"source-version": "25.08.1"
 }

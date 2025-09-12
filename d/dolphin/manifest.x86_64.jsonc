@@ -585,9 +585,9 @@
 				"soname(libm.so.6(x86_64))"
 			],
 			"files": [
-				"/usr/lib/libdolphinprivate.so.25.08.0",
+				"/usr/lib/libdolphinprivate.so.25.08.1",
 				"/usr/lib/libdolphinprivate.so.6",
-				"/usr/lib/libdolphinvcs.so.25.08.0",
+				"/usr/lib/libdolphinvcs.so.25.08.1",
 				"/usr/lib/libdolphinvcs.so.6",
 				"/usr/lib/qt6/plugins/dolphin/kcms/kcm_dolphingeneral.so",
 				"/usr/lib/qt6/plugins/dolphin/kcms/kcm_dolphinviewmodes.so",
@@ -608,6 +608,6 @@
 		}
 	},
 	"source-name": "dolphin",
-	"source-release": "9",
-	"source-version": "25.08.0"
+	"source-release": "10",
+	"source-version": "25.08.1"
 }
