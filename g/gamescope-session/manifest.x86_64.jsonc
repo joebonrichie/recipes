@@ -11,7 +11,8 @@
 				"/usr/bin/gamescope-session-plus",
 				"/usr/lib/systemd/user/gamescope-session-plus@.service",
 				"/usr/share/gamescope-session-plus/device-quirks",
-				"/usr/share/gamescope-session-plus/gamescope-session-plus"
+				"/usr/share/gamescope-session-plus/gamescope-session-plus",
+				"/usr/share/gamescope/scripts/50-custom/50-disable-explicit-sync.lua"
 			],
 			"name": "gamescope-session",
 			"provides": [
@@ -21,6 +22,6 @@
 		}
 	},
 	"source-name": "gamescope-session",
-	"source-release": "2",
-	"source-version": "r310.533e51f"
+	"source-release": "1",
+	"source-version": "r319.1c14e09"
 }

@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : gamescope-session
-version     : r310.533e51f
-release     : 2
+version     : r319.1c14e09
+release     : 1
 homepage    : https://github.com/ChimeraOS/gamescope-session
 upstreams   :
-    - git|https://github.com/ChimeraOS/gamescope-session.git : 533e51f2f50aebc4457d04372ab9b05a9c56ac10
+    - git|https://github.com/ChimeraOS/gamescope-session.git : 1c14e09d2cf75c9716fb8ca808d243ea9f5e9154
 summary     : Common gamescope session files
 description : |
     This project is not affiliated with Valve (wide inspiration was taken from their work on the SteamDeck).
@@ -19,6 +19,7 @@ rundeps     :
     - binary(gamescope)
 setup       : |
     %patch %(pkgdir)/disable-plymouth.patch
+    %patch %(pkgdir)/bash.patch
 install     : |
     %install_dir %(installroot)
     cp -rv %(workdir)/usr %(installroot)
