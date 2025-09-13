@@ -4,14 +4,14 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : unicode-ucd
-version     : 16.0.0 # Updating this package? ibus should be rebuilt to pick up the changes
-release     : 2
+version     : 17.0.0 # Updating this package? ibus should be rebuilt to pick up the changes
+release     : 3
 upstreams   :
-    - https://www.unicode.org/Public/zipped/16.0.0/UCD.zip:
-        hash: c86dd81f2b14a43b0cc064aa5f89aa7241386801e35c59c7984e579832634eb2
+    - https://www.unicode.org/Public/17.0.0/ucd/UCD.zip:
+        hash: 2066d1909b2ea93916ce092da1c0ee4808ea3ef8407c94b4f14f5b7eb263d28e
         unpack: false
-    - https://www.unicode.org/Public/zipped/16.0.0/Unihan.zip:
-        hash: b8f000df69de7828d21326a2ffea462b04bc7560022989f7cc704f10521ef3e0
+    - https://www.unicode.org/Public/17.0.0/ucd/Unihan.zip:
+        hash: f7a48b2b545acfaa77b2d607ae28747404ce02baefee16396c5d2d7a8ef34b5e
         unpack: false
 homepage    : https://www.unicode.org/ucd/
 license     : Unicode-3.0
