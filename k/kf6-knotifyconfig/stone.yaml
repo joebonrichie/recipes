@@ -4,10 +4,10 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : kf6-knotifyconfig
-version     : 6.17.0
-release     : 7
+version     : 6.18.0
+release     : 8
 upstreams   :
-    - https://download.kde.org/stable/frameworks/6.17/knotifyconfig-6.17.0.tar.xz : e5a08f7872ffb836fbfe9726eb86c104e30afc55996138d965731f5794981263
+    - https://download.kde.org/stable/frameworks/6.18/knotifyconfig-6.18.0.tar.xz : 9a817fb4e1833be014370badc6bdbf464f1aa04e054016fc3bcafd053a19ada8
 homepage    : https://community.kde.org/Frameworks
 license     : LGPL-2.0-only
 summary     : Configuration dialog for desktop notifications.
