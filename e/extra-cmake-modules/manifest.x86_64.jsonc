@@ -100,6 +100,7 @@
 				"/usr/share/ECM/modules/ECMGenerateDBusServiceFile.cmake",
 				"/usr/share/ECM/modules/ECMGenerateExportHeader.cmake",
 				"/usr/share/ECM/modules/ECMGenerateHeaders.cmake",
+				"/usr/share/ECM/modules/ECMGenerateHeaders.cmake.orig",
 				"/usr/share/ECM/modules/ECMGeneratePkgConfigFile.cmake",
 				"/usr/share/ECM/modules/ECMGeneratePriFile.cmake",
 				"/usr/share/ECM/modules/ECMGeneratePythonBindings.cmake",
@@ -234,6 +235,7 @@
 				"/usr/share/doc/ECM/html/_sources/module/ECMCreateQmFromPoFiles.rst.txt",
 				"/usr/share/doc/ECM/html/_sources/module/ECMDeprecationSettings.rst.txt",
 				"/usr/share/doc/ECM/html/_sources/module/ECMEnableSanitizers.rst.txt",
+				"/usr/share/doc/ECM/html/_sources/module/ECMFeatureSummary.rst.txt",
 				"/usr/share/doc/ECM/html/_sources/module/ECMFindModuleHelpers.rst.txt",
 				"/usr/share/doc/ECM/html/_sources/module/ECMFindQmlModule.rst.txt",
 				"/usr/share/doc/ECM/html/_sources/module/ECMGenerateDBusServiceFile.rst.txt",
@@ -338,6 +340,7 @@
 				"/usr/share/doc/ECM/html/module/ECMCreateQmFromPoFiles.html",
 				"/usr/share/doc/ECM/html/module/ECMDeprecationSettings.html",
 				"/usr/share/doc/ECM/html/module/ECMEnableSanitizers.html",
+				"/usr/share/doc/ECM/html/module/ECMFeatureSummary.html",
 				"/usr/share/doc/ECM/html/module/ECMFindModuleHelpers.html",
 				"/usr/share/doc/ECM/html/module/ECMFindQmlModule.html",
 				"/usr/share/doc/ECM/html/module/ECMGenerateDBusServiceFile.html",
@@ -372,6 +375,6 @@
 		}
 	},
 	"source-name": "extra-cmake-modules",
-	"source-release": "11",
-	"source-version": "6.17.0"
+	"source-release": "12",
+	"source-version": "6.18.0"
 }
