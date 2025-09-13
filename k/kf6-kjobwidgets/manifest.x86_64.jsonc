@@ -23,7 +23,7 @@
 			],
 			"files": [
 				"/usr/lib/libKF6JobWidgets.so.6",
-				"/usr/lib/libKF6JobWidgets.so.6.17.0",
+				"/usr/lib/libKF6JobWidgets.so.6.18.0",
 				"/usr/share/dbus-1/interfaces/kf6_org.kde.JobView.xml",
 				"/usr/share/dbus-1/interfaces/kf6_org.kde.JobViewServer.xml",
 				"/usr/share/dbus-1/interfaces/kf6_org.kde.JobViewV2.xml",
@@ -152,6 +152,7 @@
 			"files": [
 				"/usr/include/KF6/KJobWidgets/KAbstractWidgetJobTracker",
 				"/usr/include/KF6/KJobWidgets/KDialogJobUiDelegate",
+				"/usr/include/KF6/KJobWidgets/KInhibitionJobTracker",
 				"/usr/include/KF6/KJobWidgets/KNotificationJobUiDelegate",
 				"/usr/include/KF6/KJobWidgets/KStatusBarJobTracker",
 				"/usr/include/KF6/KJobWidgets/KUiServerJobTracker",
@@ -159,6 +160,7 @@
 				"/usr/include/KF6/KJobWidgets/KWidgetJobTracker",
 				"/usr/include/KF6/KJobWidgets/kabstractwidgetjobtracker.h",
 				"/usr/include/KF6/KJobWidgets/kdialogjobuidelegate.h",
+				"/usr/include/KF6/KJobWidgets/kinhibitionjobtracker.h",
 				"/usr/include/KF6/KJobWidgets/kjobwidgets_export.h",
 				"/usr/include/KF6/KJobWidgets/kjobwidgets_version.h",
 				"/usr/include/KF6/KJobWidgets/knotificationjobuidelegate.h",
@@ -179,6 +181,6 @@
 		}
 	},
 	"source-name": "kf6-kjobwidgets",
-	"source-release": "9",
-	"source-version": "6.17.0"
+	"source-release": "10",
+	"source-version": "6.18.0"
 }

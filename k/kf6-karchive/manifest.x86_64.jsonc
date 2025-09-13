@@ -21,7 +21,7 @@
 			],
 			"files": [
 				"/usr/lib/libKF6Archive.so.6",
-				"/usr/lib/libKF6Archive.so.6.17.0",
+				"/usr/lib/libKF6Archive.so.6.18.0",
 				"/usr/share/locale/ar/LC_MESSAGES/karchive6_qt.qm",
 				"/usr/share/locale/ast/LC_MESSAGES/karchive6_qt.qm",
 				"/usr/share/locale/bg/LC_MESSAGES/karchive6_qt.qm",
@@ -52,6 +52,7 @@
 				"/usr/share/locale/pa/LC_MESSAGES/karchive6_qt.qm",
 				"/usr/share/locale/pl/LC_MESSAGES/karchive6_qt.qm",
 				"/usr/share/locale/pt/LC_MESSAGES/karchive6_qt.qm",
+				"/usr/share/locale/pt_BR/LC_MESSAGES/karchive6_qt.qm",
 				"/usr/share/locale/ro/LC_MESSAGES/karchive6_qt.qm",
 				"/usr/share/locale/ru/LC_MESSAGES/karchive6_qt.qm",
 				"/usr/share/locale/sa/LC_MESSAGES/karchive6_qt.qm",
@@ -121,6 +122,6 @@
 		}
 	},
 	"source-name": "kf6-karchive",
-	"source-release": "10",
-	"source-version": "6.17.0"
+	"source-release": "11",
+	"source-version": "6.18.0"
 }
