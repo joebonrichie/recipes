@@ -140,7 +140,7 @@
 			"files": [
 				"/usr/lib/girepository-1.0/Vte-2.91.typelib",
 				"/usr/lib/libvte-2.91.so.0",
-				"/usr/lib/libvte-2.91.so.0.8000.3"
+				"/usr/lib/libvte-2.91.so.0.8000.4"
 			],
 			"name": "vte-gtk3",
 			"provides": [
@@ -313,6 +313,6 @@
 		}
 	},
 	"source-name": "vte",
-	"source-release": "19",
-	"source-version": "0.80.3"
+	"source-release": "20",
+	"source-version": "0.80.4"
 }

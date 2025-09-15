@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : gnome-desktop
-version     : "44.3"
-release     : 10
+version     : 44.4
+release     : 11
 homepage    : https://gitlab.gnome.org/GNOME/gnome-desktop
 upstreams   :
-    - https://download.gnome.org/sources/gnome-desktop/44/gnome-desktop-44.3.tar.xz : 40efa9aa8d50effed9227a3d70671e32e9dc35e20f331cab3b562975978f4f8d
+    - https://download.gnome.org/sources/gnome-desktop/44/gnome-desktop-44.4.tar.xz : 1d8cb9c6a328eb689b0c1269cf53834cc84d851d7e71970cdabba82706b44984
 summary     : libgnome-desktop is an unstable backend library for sharing code between GNOME desktop components.
 description : |
     gnome-desktop contains the libgnome-desktop library as well as a data file that exports the "GNOME" version to the Settings Details panel. The libgnome-desktop library provides API shared by several applications on the desktop, but that cannot live in the platform for various reasons. There is no API or ABI guarantee, although we are doing our best to provide stability. Documentation for the API is available with gtk-doc.
@@ -21,8 +21,8 @@ builddeps   :
     - pkgconfig(gsettings-desktop-schemas)
     - pkgconfig(gtk+-3.0)
     - pkgconfig(gtk4)
-    - pkgconfig(libseccomp)
     - pkgconfig(iso-codes)
+    - pkgconfig(libseccomp)
     - pkgconfig(udev)
     - pkgconfig(xkbfile)
     - pkgconfig(xkeyboard-config)

@@ -58,6 +58,7 @@
 				"librsvg",
 				"shared-mime-info",
 				"soname(libX11.so.6(x86_64))",
+				"soname(libXext.so.6(x86_64))",
 				"soname(libXfixes.so.3(x86_64))",
 				"soname(libatk-1.0.so.0(x86_64))",
 				"soname(libatk-bridge-2.0.so.0(x86_64))",
@@ -284,6 +285,6 @@
 		}
 	},
 	"source-name": "gnome-shell",
-	"source-release": "37",
-	"source-version": "48.4"
+	"source-release": "38",
+	"source-version": "48.5"
 }
