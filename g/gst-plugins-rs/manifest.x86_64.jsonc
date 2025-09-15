@@ -6,6 +6,7 @@
 			"build-depends": [
 				"binary(cargo)",
 				"binary(cargo-cbuild)",
+				"binary(curl)",
 				"binary(nasm)",
 				"libstdc++-devel",
 				"pkgconfig(dav1d)",
@@ -22,7 +23,6 @@
 				"soname(ld-linux-x86-64.so.2(x86_64))",
 				"soname(libc.so.6(x86_64))",
 				"soname(libcairo.so.2(x86_64))",
-				"soname(libcrypto.so.3(x86_64))",
 				"soname(libdav1d.so.7(x86_64))",
 				"soname(libgio-2.0.so.0(x86_64))",
 				"soname(libglib-2.0.so.0(x86_64))",
@@ -43,7 +43,6 @@
 				"soname(libpango-1.0.so.0(x86_64))",
 				"soname(libpangocairo-1.0.so.0(x86_64))",
 				"soname(libsodium.so.26(x86_64))",
-				"soname(libssl.so.3(x86_64))",
 				"soname(libstdc++.so.6(x86_64))",
 				"soname(libunwind.so.1(x86_64))",
 				"soname(libwebpdemux.so.2(x86_64))"
@@ -160,6 +159,7 @@
 			"build-depends": [
 				"binary(cargo)",
 				"binary(cargo-cbuild)",
+				"binary(curl)",
 				"binary(nasm)",
 				"libstdc++-devel",
 				"pkgconfig(dav1d)",
@@ -309,6 +309,7 @@
 			"build-depends": [
 				"binary(cargo)",
 				"binary(cargo-cbuild)",
+				"binary(curl)",
 				"binary(nasm)",
 				"libstdc++-devel",
 				"pkgconfig(dav1d)",
@@ -344,6 +345,6 @@
 		}
 	},
 	"source-name": "gst-plugins-rs",
-	"source-release": "9",
-	"source-version": "1.26.5"
+	"source-release": "10",
+	"source-version": "1.26.6"
 }
