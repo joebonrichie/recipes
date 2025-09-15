@@ -58,7 +58,7 @@
 			],
 			"files": [
 				"/usr/lib32/libnghttp2.so.14",
-				"/usr/lib32/libnghttp2.so.14.29.0"
+				"/usr/lib32/libnghttp2.so.14.29.1"
 			],
 			"name": "nghttp2-32bit",
 			"provides": [
@@ -141,7 +141,7 @@
 			],
 			"files": [
 				"/usr/lib/libnghttp2.so.14",
-				"/usr/lib/libnghttp2.so.14.29.0"
+				"/usr/lib/libnghttp2.so.14.29.1"
 			],
 			"name": "nghttp2-libs",
 			"provides": [
@@ -150,6 +150,6 @@
 		}
 	},
 	"source-name": "nghttp2",
-	"source-release": "10",
-	"source-version": "1.67.0"
+	"source-release": "11",
+	"source-version": "1.67.1"
 }
