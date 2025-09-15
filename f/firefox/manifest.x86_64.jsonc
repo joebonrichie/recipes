@@ -35,12 +35,12 @@
 				"pkgconfig(xkbcommon)"
 			],
 			"depends": [
-				"ffmpeg",
 				"firefox-langpacks",
 				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
 				"soname(ld-linux-x86-64.so.2(x86_64))",
 				"soname(libasound.so.2(x86_64))",
 				"soname(libatk-1.0.so.0(x86_64))",
+				"soname(libavcodec.so.61(x86_64))",
 				"soname(libc++.so.1(x86_64))",
 				"soname(libc.so.6(x86_64))",
 				"soname(libcairo-gobject.so.2(x86_64))",
@@ -142,6 +142,6 @@
 		}
 	},
 	"source-name": "firefox",
-	"source-release": "38",
-	"source-version": "142.0.1"
+	"source-release": "39",
+	"source-version": "143.0"
 }

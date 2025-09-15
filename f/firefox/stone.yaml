@@ -4,12 +4,12 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : firefox
-version     : "142.0.1"
-release     : 38
+version     : "143.0"
+release     : 39
 homepage    : https://www.mozilla.org/
 upstreams   :
-    - https://ftp.mozilla.org/pub/firefox/releases/142.0.1/source/firefox-142.0.1.source.tar.xz:
-        hash: b0adb44ed4c3383e752a5947adbfb0d03f24172cb468831bd49978de25e810c0
+    - https://ftp.mozilla.org/pub/firefox/releases/143.0/source/firefox-143.0.source.tar.xz:
+        hash: 6c45ca38091820c2c9925a85c80c04120de0ced98589065358c34d257e1edf83
         unpackdir: firefox
 summary     : Firefox web browser
 description : |
@@ -48,7 +48,7 @@ builddeps   :
     - libstdc++-devel
 rundeps     :
     - soname(libgcc_s.so.1(x86_64)) # dlopened for widevine
-    - ffmpeg # dlopen()s libavcodec
+    - soname(libavcodec.so.61(x86_64)) # dlopened, check dom/media/platforms/ffmpeg/FFmpegRuntimeLinker.cpp for latest supported
     - firefox-langpacks
     - xdg-desktop-portal
 networking  : true # PGO
