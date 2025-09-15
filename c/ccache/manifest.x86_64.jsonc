@@ -15,6 +15,7 @@
 			],
 			"depends": [
 				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
+				"soname(ld-linux-x86-64.so.2(x86_64))",
 				"soname(libblake3.so.0(x86_64))",
 				"soname(libc++.so.1(x86_64))",
 				"soname(libc.so.6(x86_64))",
@@ -31,10 +32,21 @@
 				"/usr/lib/ccache/bin/clang++",
 				"/usr/lib/ccache/bin/g++",
 				"/usr/lib/ccache/bin/gcc",
+				"/usr/lib/ccache/bin/x86_64-aerynos-linux-c++",
+				"/usr/lib/ccache/bin/x86_64-aerynos-linux-g++",
+				"/usr/lib/ccache/bin/x86_64-aerynos-linux-gcc",
 				"/usr/lib/ccache/bin/x86_64-serpent-linux-c++",
 				"/usr/lib/ccache/bin/x86_64-serpent-linux-g++",
 				"/usr/lib/ccache/bin/x86_64-serpent-linux-gcc",
 				"/usr/share/defaults/ccache/ccache.conf",
+				"/usr/share/doc/ccache/AUTHORS.adoc",
+				"/usr/share/doc/ccache/AUTHORS.html",
+				"/usr/share/doc/ccache/LICENSE.adoc",
+				"/usr/share/doc/ccache/LICENSE.html",
+				"/usr/share/doc/ccache/MANUAL.adoc",
+				"/usr/share/doc/ccache/MANUAL.html",
+				"/usr/share/doc/ccache/NEWS.adoc",
+				"/usr/share/doc/ccache/NEWS.html",
 				"/usr/share/man/man1/ccache.1"
 			],
 			"name": "ccache",
@@ -44,6 +56,6 @@
 		}
 	},
 	"source-name": "ccache",
-	"source-release": "11",
-	"source-version": "4.11.3"
+	"source-release": "12",
+	"source-version": "4.12"
 }

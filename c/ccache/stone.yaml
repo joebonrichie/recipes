@@ -4,15 +4,15 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : ccache
-version     : 4.11.3
-release     : 11
+version     : "4.12"
+release     : 12
 summary     : ccache - a fast C/C++ compiler cache
 license     : GPL-3.0-or-later
 homepage    : https://ccache.dev/
 description : |
     Ccache is a compiler cache. It speeds up recompilation by caching previous compilations and detecting when the same compilation is being done again. Supported languages are C, C++, Objective-C and Objective-C++.
 upstreams   :
-    - https://github.com/ccache/ccache/releases/download/v4.11.3/ccache-4.11.3.tar.xz: d5a340e199977b7b1e89c0add794132c977fdc2ecc7ca5451e03d43627a1b1be
+    - https://github.com/ccache/ccache/releases/download/v4.12/ccache-4.12.tar.xz: da44675cbf093956da60863dad1f7879964d6193fdbc443f8c0e90a3c79ac1b1
 builddeps   :
     - binary(asciidoctor)
     - pkgconfig(fmt)
@@ -41,7 +41,17 @@ install     : |
     # Setup ccache symlinks for gnu and clang compilers
     %install_dir %(installroot)/%(libdir)/ccache/bin
     TGT="%(installroot)/%(libdir)/ccache/bin"
-    for compiler in gcc x86_64-serpent-linux-gcc g++ x86_64-serpent-linux-g++ c++ x86_64-serpent-linux-c++ clang clang++ ; do
+    for compiler in gcc \
+                    g++ \
+                    c++ \
+                    x86_64-aerynos-linux-gcc \
+                    x86_64-aerynos-linux-g++ \
+                    x86_64-aerynos-linux-c++ \
+                    x86_64-serpent-linux-gcc \
+                    x86_64-serpent-linux-g++ \
+                    x86_64-serpent-linux-c++ \
+                    clang \
+                    clang++ ; do
         ln -sv /usr/bin/ccache "${TGT}/${compiler}"
     done
 
