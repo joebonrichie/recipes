@@ -5,7 +5,7 @@
 #
 name        : ffmpeg
 version     : '8.0'
-release     : 15
+release     : 16
 homepage    : https://ffmpeg.org/releases
 upstreams   :
     - https://ffmpeg.org/releases/ffmpeg-8.0.tar.xz:
@@ -68,6 +68,8 @@ builddeps   :
     - pkgconfig(shaderc)
     - pkgconfig(snappy)
     - pkgconfig(sndio)
+    - pkgconfig(soxr)
+    - pkgconfig(speex)
     - pkgconfig(theoradec)
     - pkgconfig(vdpau)
     - pkgconfig(vorbis)
@@ -79,6 +81,7 @@ builddeps   :
     - pkgconfig(x265)
     - pkgconfig(xcb)
     - pkgconfig(xv)
+    - gsm-devel
     - ladspa-devel
     - lame-devel
 # TODO
@@ -87,15 +90,12 @@ builddeps   :
 # - nvdec/nvenc (llvm-cuda?)
 # Codecs:
 # - libbluray
-# - libgsm
 # - libiec61883
 # - libjack
 # - libmodplug
 # - libopenjpeg
 # - libopenmpt
 # - librubberband
-# - libsoxr
-# - libspeex
 # - libsrt
 # - libv4l2
 # - libvidstab
@@ -163,6 +163,7 @@ setup       : |
         --enable-libfontconfig \
         --enable-libfreetype \
         --enable-libfribidi \
+        --enable-libgsm \
         --enable-libharfbuzz \
         --enable-libjxl \
         --enable-liblc3 \
@@ -175,6 +176,8 @@ setup       : |
         --enable-librsvg \
         --enable-libshaderc \
         --enable-libsnappy \
+        --enable-libsoxr \
+        --enable-libspeex \
         --enable-libssh \
         --enable-libsvtav1 \
         --enable-libtheora \
@@ -224,6 +227,7 @@ setup       : |
         --enable-libfontconfig \
         --enable-libfreetype \
         --enable-libfribidi \
+        --enable-libgsm \
         --enable-libharfbuzz \
         --enable-libjxl \
         --enable-liblc3 \
@@ -237,6 +241,8 @@ setup       : |
         --enable-librsvg \
         --enable-libshaderc \
         --enable-libsnappy \
+        --enable-libsoxr \
+        --enable-libspeex \
         --enable-libssh \
         --enable-libsvtav1 \
         --enable-libtheora \
