@@ -5,7 +5,7 @@
 #
 name        : gstreamer
 version     : 1.26.6
-release     : 28
+release     : 29
 homepage    : https://gstreamer.freedesktop.org/
 upstreams   :
     - https://gitlab.freedesktop.org/gstreamer/gstreamer/-/archive/1.26.6/gstreamer-1.26.6.tar.gz : 528842eeb64e181712feebe72318f4c986f481d72d16c84ad9bb0895df106338
@@ -94,6 +94,7 @@ builddeps   :
     - pkgconfig(sbc)
     - pkgconfig(sndfile)
     - pkgconfig(soundtouch)
+    - pkgconfig(speex)
     - pkgconfig(taglib)
     - pkgconfig(theoradec)
     - pkgconfig(vapigen)
@@ -110,6 +111,7 @@ builddeps   :
     - pkgconfig(xkbcommon-x11)
     - pkgconfig(xv)
     - pkgconfig(zxing)
+    - gsm-devel
     - lame-devel
     - ladspa-devel
 ## Missing Deps
@@ -122,7 +124,6 @@ builddeps   :
 # - libraw1394
 # - libavc1394
 # - libiec61883
-# - speex (not the same as speexdsp)
 # - twolame
 # - wavpack
 # bad:
@@ -132,7 +133,6 @@ builddeps   :
 # - libfaad
 # - flite
 # - fluidsynth
-# - gsm
 # - lrdf
 # - microdns
 # - libmodplug
@@ -454,6 +454,7 @@ packages    :
             - /usr/lib/gstreamer-1.0/libgstgaudieffects.so
             - /usr/lib/gstreamer-1.0/libgstgdp.so
             - /usr/lib/gstreamer-1.0/libgstgeometrictransform.so
+            - /usr/lib/gstreamer-1.0/libgstgsm.so
             - /usr/lib/gstreamer-1.0/libgsthls.so
             - /usr/lib/gstreamer-1.0/libgstid3tag.so
             - /usr/lib/gstreamer-1.0/libgstinsertbin.so
@@ -742,6 +743,7 @@ packages    :
             - /usr/lib/gstreamer-1.0/libgstsmpte.so
             - /usr/lib/gstreamer-1.0/libgstsoup.so
             - /usr/lib/gstreamer-1.0/libgstspectrum.so
+            - /usr/lib/gstreamer-1.0/libgstspeex.so
             - /usr/lib/gstreamer-1.0/libgsttaglib.so
             - /usr/lib/gstreamer-1.0/libgstudp.so
             - /usr/lib/gstreamer-1.0/libgstvideo4linux2.so
