@@ -39,6 +39,7 @@
 				"/usr/share/inputplumber/capability_maps/ayaneo_type7.yaml",
 				"/usr/share/inputplumber/capability_maps/ayn_type1.yaml",
 				"/usr/share/inputplumber/capability_maps/dinput_generic.yaml",
+				"/usr/share/inputplumber/capability_maps/flow_type1.yaml",
 				"/usr/share/inputplumber/capability_maps/flydigi_vader_4_pro.yaml",
 				"/usr/share/inputplumber/capability_maps/gpd_type1.yaml",
 				"/usr/share/inputplumber/capability_maps/gpd_type2.yaml",
@@ -93,6 +94,7 @@
 				"/usr/share/inputplumber/devices/50-orangepi_neo.yaml",
 				"/usr/share/inputplumber/devices/50-rog_ally.yaml",
 				"/usr/share/inputplumber/devices/50-rog_ally_x.yaml",
+				"/usr/share/inputplumber/devices/50-rog_flow_z13.yaml",
 				"/usr/share/inputplumber/devices/50-steam_deck.yaml",
 				"/usr/share/inputplumber/devices/50-zotac-zone.yaml",
 				"/usr/share/inputplumber/devices/60-8bit_do_pro_2.yaml",
@@ -117,7 +119,8 @@
 				"/usr/share/inputplumber/schema/capability_map_v1.json",
 				"/usr/share/inputplumber/schema/capability_map_v2.json",
 				"/usr/share/inputplumber/schema/composite_device_v1.json",
-				"/usr/share/inputplumber/schema/device_profile_v1.json"
+				"/usr/share/inputplumber/schema/device_profile_v1.json",
+				"/usr/share/polkit-1/actions/org.shadowblip.InputPlumber.policy"
 			],
 			"name": "inputplumber",
 			"provides": [
@@ -126,6 +129,6 @@
 		}
 	},
 	"source-name": "inputplumber",
-	"source-release": "34",
-	"source-version": "0.62.2"
+	"source-release": "35",
+	"source-version": "0.63.1"
 }
