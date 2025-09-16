@@ -5,7 +5,7 @@
 #
 name        : vlc
 version     : 3.0.21+git.49307128
-release     : 7
+release     : 8
 upstreams   :
     # Use the latest from the 3.0.x series branch which has fixed VAAPI support for FFMPEG 7.x
     - git|https://code.videolan.org/videolan/vlc.git : 49307128534c4bb3a554734ac40e32bd2d04a80d
@@ -76,6 +76,8 @@ builddeps   :
     - pkgconfig(samplerate)
     - pkgconfig(sm)
     - pkgconfig(smbclient)
+    - pkgconfig(soxr)
+    - pkgconfig(speex)
     - pkgconfig(taglib)
     - pkgconfig(theoradec)
     - pkgconfig(vdpau)
@@ -109,7 +111,6 @@ builddeps   :
     # shine
     # libmpg123
     # twolame
-    # speex
     # spatialaudio
     # schroedinger-1.0
     # fluidsynth
@@ -121,7 +122,6 @@ builddeps   :
     # caca
     # mmal ?
     # jack
-    # soxr
     # libchromaprint
     # srt
     # libgoom2
