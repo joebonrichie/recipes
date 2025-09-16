@@ -1,0 +1,40 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : gsm
+version     : 1.0.22
+release     : 1
+upstreams   :
+    - http://www.quut.com/gsm/gsm-1.0.22.tar.gz : f0072e91f6bb85a878b2f6dbf4a0b7c850c4deb8049d554c65340b3bf69df0ac
+homepage    : https://www.quut.com/gsm/
+license     : MIT
+summary     : GSM lossy speech compression library
+description : |
+    GSM lossy speech compression library
+setup       : |
+    %patch %(pkgdir)/gsm-shared.patch -p0
+    %patch %(pkgdir)/fix-toast.patch -p0
+build       : |
+    %make \
+        CC="%(cc)" \
+        CCFLAGS="-c ${CFLAGS} -fPIC"
+install     : |
+    %install_dir %(installroot)/usr/{bin,lib,include/gsm,share/man/man{1,3}}
+
+    make -j1 \
+        CC="%(cc)" \
+        CCFLAGS="-c ${CFLAGS} -fPIC" \
+        INSTALL_ROOT="%(installroot)%(prefix)" \
+        GSM_INSTALL_INC="%(installroot)%(includedir)/gsm" \
+        GSM_INSTALL_MAN="%(installroot)%(mandir)/man3" \
+        TOAST_INSTALL_MAN="%(installroot)%(mandir)/man1" \
+        install
+packages    :
+    - "%(name)-tools":
+        summary: GSM speech compressor tools
+        description: GSM speech compressor tools
+        paths:
+            - /usr/bin/
+            - /usr/share/man/man1/

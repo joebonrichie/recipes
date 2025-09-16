@@ -1,0 +1,55 @@
+/** Human readable report. This is not consumed by boulder */
+{
+	"manifest-version": "0.2",
+	"packages": {
+		"gsm": {
+			"depends": [
+				"soname(libc.so.6(x86_64))"
+			],
+			"files": [
+				"/usr/lib/libgsm.so.1",
+				"/usr/lib/libgsm.so.1.0.22"
+			],
+			"name": "gsm",
+			"provides": [
+				"soname(libgsm.so.1(x86_64))"
+			]
+		},
+		"gsm-devel": {
+			"depends": [
+				"gsm"
+			],
+			"files": [
+				"/usr/include/gsm/gsm.h",
+				"/usr/lib/libgsm.so",
+				"/usr/share/man/man3/gsm.3",
+				"/usr/share/man/man3/gsm_explode.3",
+				"/usr/share/man/man3/gsm_option.3",
+				"/usr/share/man/man3/gsm_print.3"
+			],
+			"name": "gsm-devel"
+		},
+		"gsm-tools": {
+			"depends": [
+				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
+				"soname(libc.so.6(x86_64))",
+				"soname(libgsm.so.1(x86_64))"
+			],
+			"files": [
+				"/usr/bin/tcat",
+				"/usr/bin/toast",
+				"/usr/bin/untoast",
+				"/usr/share/man/man1/toast.1"
+			],
+			"name": "gsm-tools",
+			"provides": [
+				"binary(tcat)",
+				"binary(toast)",
+				"binary(untoast)"
+			]
+		}
+	},
+	"source-name": "gsm",
+	"source-release": "1",
+	"source-version": "1.0.22"
+}
