@@ -12,7 +12,7 @@
 				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
 				"soname(libc.so.6(x86_64))",
 				"soname(libm.so.6(x86_64))",
-				"soname(libx264.so.164(x86_64))"
+				"soname(libx264.so.165(x86_64))"
 			],
 			"files": [
 				"/usr/bin/x264",
@@ -55,15 +55,15 @@
 				"soname(libm.so.6(x86_64))"
 			],
 			"files": [
-				"/usr/lib/libx264.so.164"
+				"/usr/lib/libx264.so.165"
 			],
 			"name": "x264-libs",
 			"provides": [
-				"soname(libx264.so.164(x86_64))"
+				"soname(libx264.so.165(x86_64))"
 			]
 		}
 	},
 	"source-name": "x264",
-	"source-release": "1",
-	"source-version": "0.164.3108+git.31e19f9"
+	"source-release": "2",
+	"source-version": "0.165.3222+git.b35605ace"
 }
