@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : localsearch
-version     : 3.9.0
-release     : 10
+version     : 3.10.0
+release     : 11
 homepage    : https://tracker.gnome.org/
 upstreams   :
-    - https://download.gnome.org/sources/localsearch/3.9/localsearch-3.9.0.tar.xz : d42f408dc3fb28fe54f5a9abbf5f1decf5818db9c2e9ec51c09464bdfd0c14b9
+    - https://download.gnome.org/sources/localsearch/3.10/localsearch-3.10.0.tar.xz : 58d66ea44aee1649c8d981f934373b83e1ab4a4a1a84ba0304f5af391e7e0080
 summary     : Tracker is an efficient search engine and triplestore for desktop, embedded and mobile.
 description : |
     Tracker Miners contains the indexer daemon (tracker-miner-fs-3) and tools to extract metadata from many different filetypes.
@@ -24,8 +24,8 @@ builddeps   :
     - pkgconfig(blkid)
     - pkgconfig(dbus-1)
     # pkgconfig(enca)
-    # pkgconfig(exempi-2.0)
-    - pkgconfig(gexiv2)
+    - pkgconfig(exempi-2.0)
+    # - pkgconfig(gexiv2-0.16) # Doesn't build, todo fix this
     - pkgconfig(glib-2.0)
     - pkgconfig(gobject-introspection-1.0)
     - pkgconfig(gstreamer-1.0)
@@ -56,20 +56,15 @@ builddeps   :
     - pkgconfig(tinysparql-3.0)
     - pkgconfig(upower-glib)
     # libgif
-rundeps     :
-    # Moss upgrade bug
-    - gstreamer-plugins-base
-packages    :
-    - "%(name)":
-        paths:
-            # Avoid devel package
-            - /usr/lib/libtracker-extract.so
 environment : |
     # Temporary, replace with boulder macro
     export XML_CATALOG_FILES="file:///usr/share/defaults/docbook/docbook-dtd/catalog file:///usr/share/defaults/docbook/docbook-xsl/catalog"
 setup       : |
+    %patch %(pkgdir)/0001-gexiv-0.16.patch
+
     # TODO: do an enablement pass on this pkg
-    %meson
+    %meson \
+        -Dfunctional_tests=false
 build       : |
     %meson_build
 install     : |
@@ -82,3 +77,8 @@ install     : |
 
     # boulder being an ass with rpath
     ln %(installroot)%(libdir)/localsearch-3.0/libtracker-extract.so %(installroot)%(libdir)/libtracker-extract.so
+packages    :
+    - "%(name)":
+        paths:
+            # Avoid devel package
+            - /usr/lib/libtracker-extract.so

@@ -1,0 +1,22 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: Reilly Brogan <reilly@reillybrogan.com>
+Date: Wed, 17 Sep 2025 18:41:56 -0500
+Subject: [PATCH] gexiv-0.16
+
+---
+ meson.build | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/meson.build b/meson.build
+index e5f3d1b66..301368d9c 100644
+--- a/meson.build
++++ b/meson.build
+@@ -20,7 +20,7 @@ glib_required = '2.76.0'
+ tracker_sparql = dependency('tinysparql-3.0', version: '>=3.8')
+ dbus = dependency('dbus-1', version: '>= 1.3.1')
+ exempi = dependency('exempi-2.0', version: '>= 2.1.0', required: get_option('xmp'))
+-gexiv2 = dependency('gexiv2', required: get_option('raw'))
++gexiv2 = dependency('gexiv2-0.16', required: get_option('raw'))
+ gio = dependency('gio-2.0', version: '>=' + glib_required)
+ gio_unix = dependency('gio-unix-2.0', version: '>=' + glib_required)
+ glib = dependency('glib-2.0', version: '>=' + glib_required)
