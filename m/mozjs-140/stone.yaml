@@ -1,0 +1,51 @@
+#
+# SPDX-FileCopyrightText: © 2020-2024 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : mozjs-140
+version     : 140.3.0
+release     : 1
+homepage    : https://mozilla.org
+upstreams   :
+    - https://archive.mozilla.org/pub/firefox/releases/140.3.0esr/source/firefox-140.3.0esr.source.tar.xz : efc6eb3c93756311bd2f9db3796c0bbee6e3f182975d857284168b3dec672316
+summary     : Mozilla's Spidermonkey JS Engine
+description : |
+    SpiderMonkey is the code-name for the Mozilla's C++ implementation of JavaScript.
+    It is used in various Mozilla products, including Firefox, and is available under MPL-2.0.
+    Notably, it is used in the GNOME Shell for its JavaScript extensions and core functionality.
+license     : MPL-2.0
+packages    :
+    - "%(name)":
+        paths:
+            # No actual soname, force it back into main package
+            - /usr/lib/lib*.so
+    - "%(name)-devel":
+        paths:
+            - /usr/bin/js140-config
+builddeps   :
+    - binary(cargo)
+    - binary(cbindgen)
+    - binary(m4)
+    - binary(objdump)
+    - binary(python3)
+    - binary(which)
+    - pkgconfig(zlib)
+environment : |
+    unset RUSTFLAGS
+setup       : |
+    mkdir obj && cd obj
+    ../js/src/configure --prefix=%(prefix) \
+        --libdir=%(libdir) \
+        --disable-jemalloc \
+        --with-intl-api \
+        --without-system-icu \
+        --with-system-zlib
+build       : |
+    cd obj
+    %make
+install     : |
+    cd obj
+    %make_install
+    # Remove honkin great big library nobody asked for
+    rm -v %(installroot)%(libdir)/*static.ajs
