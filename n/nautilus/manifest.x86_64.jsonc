@@ -4,6 +4,7 @@
 	"packages": {
 		"nautilus": {
 			"build-depends": [
+				"binary(gi-docgen)",
 				"binary(localsearch)",
 				"binary(msgfmt)",
 				"binary(update-desktop-database)",
@@ -44,6 +45,8 @@
 				"soname(libgstpbutils-1.0.so.0(x86_64))",
 				"soname(libgstreamer-1.0.so.0(x86_64))",
 				"soname(libgtk-4.so.1(x86_64))",
+				"soname(libicui18n.so.77(x86_64))",
+				"soname(libicuuc.so.77(x86_64))",
 				"soname(libpango-1.0.so.0(x86_64))",
 				"soname(libportal-gtk4.so.1(x86_64))",
 				"soname(libportal.so.1(x86_64))",
@@ -53,8 +56,9 @@
 			"files": [
 				"/usr/bin/nautilus",
 				"/usr/bin/nautilus-autorun-software",
-				"/usr/lib/girepository-1.0/Nautilus-4.0.typelib",
+				"/usr/lib/girepository-1.0/Nautilus-4.1.typelib",
 				"/usr/lib/libnautilus-extension.so.4",
+				"/usr/lib/libnautilus-extension.so.4.1",
 				"/usr/lib/nautilus/extensions-4/libnautilus-image-properties.so",
 				"/usr/lib/nautilus/extensions-4/libtotem-properties-page.so",
 				"/usr/share/applications/nautilus-autorun-software.desktop",
@@ -115,6 +119,7 @@
 				"/usr/share/locale/hr/LC_MESSAGES/nautilus.mo",
 				"/usr/share/locale/hu/LC_MESSAGES/nautilus.mo",
 				"/usr/share/locale/hy/LC_MESSAGES/nautilus.mo",
+				"/usr/share/locale/ia/LC_MESSAGES/nautilus.mo",
 				"/usr/share/locale/id/LC_MESSAGES/nautilus.mo",
 				"/usr/share/locale/ie/LC_MESSAGES/nautilus.mo",
 				"/usr/share/locale/ig/LC_MESSAGES/nautilus.mo",
@@ -202,6 +207,7 @@
 		},
 		"nautilus-devel": {
 			"build-depends": [
+				"binary(gi-docgen)",
 				"binary(localsearch)",
 				"binary(msgfmt)",
 				"binary(update-desktop-database)",
@@ -240,7 +246,7 @@
 				"/usr/include/nautilus/nautilus-extension.h",
 				"/usr/lib/libnautilus-extension.so",
 				"/usr/lib/pkgconfig/libnautilus-extension-4.pc",
-				"/usr/share/gir-1.0/Nautilus-4.0.gir"
+				"/usr/share/gir-1.0/Nautilus-4.1.gir"
 			],
 			"name": "nautilus-devel",
 			"provides": [
@@ -249,6 +255,6 @@
 		}
 	},
 	"source-name": "nautilus",
-	"source-release": "12",
-	"source-version": "48.4.1"
+	"source-release": "13",
+	"source-version": "49.0"
 }
