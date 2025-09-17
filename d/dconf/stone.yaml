@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : dconf
-version     : 0.40.0
-release     : 3
+version     : 0.49.0
+release     : 4
 homepage    : https://wiki.gnome.org/Projects/dconf
 upstreams   :
-    - https://download.gnome.org/sources/dconf/0.40/dconf-0.40.0.tar.xz : cf7f22a4c9200421d8d3325c5c1b8b93a36843650c9f95d6451e20f0bcb24533
+    - https://download.gnome.org/sources/dconf/0.49/dconf-0.49.0.tar.xz : 16a47e49a58156dbb96578e1708325299e4c19eea9be128d5bd12fd0963d6c36
 summary     : Configuration settings backend for GNOME
 description : |
     dconf is a low-level configuration system. Its main purpose is to provide a backend to GSettings on platforms that don't already have configuration storage systems.
@@ -24,10 +24,6 @@ builddeps   :
     - pkgconfig(systemd)
     - pkgconfig(vapigen)
     - docbook-xsl
-packages    :
-    - "%(name)-devel":
-        paths:
-            - /usr/share/vala/vapi
 environment : |
     # Temporary, replace with boulder macro
     export XML_CATALOG_FILES="file:///usr/share/defaults/docbook/docbook-xsl/catalog"
@@ -37,3 +33,7 @@ build       : |
     %meson_build
 install     : |
     %meson_install
+packages    :
+    - "%(name)-devel":
+        paths:
+            - /usr/share/vala/vapi
