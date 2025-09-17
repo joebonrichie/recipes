@@ -63,17 +63,19 @@
 			"depends": [
 				"soname(ld-linux-x86-64.so.2(x86_64))",
 				"soname(libc.so.6(x86_64))",
-				"soname(libglycin-1.so.0(x86_64))",
+				"soname(libglib-2.0.so.0(x86_64))",
+				"soname(libglycin-2.so.0(x86_64))",
+				"soname(libgobject-2.0.so.0(x86_64))",
 				"soname(libgtk-4.so.1(x86_64))",
 				"soname(libunwind.so.1(x86_64))"
 			],
 			"files": [
-				"/usr/lib/girepository-1.0/GlyGtk4-1.typelib",
-				"/usr/lib/libglycin-gtk4-1.so.0"
+				"/usr/lib/girepository-1.0/GlyGtk4-2.typelib",
+				"/usr/lib/libglycin-gtk4-2.so.0"
 			],
 			"name": "glycin-gtk4-libs",
 			"provides": [
-				"soname(libglycin-gtk4-1.so.0(x86_64))"
+				"soname(libglycin-gtk4-2.so.0(x86_64))"
 			]
 		},
 		"glycin-gtk4-libs-devel": {
@@ -93,23 +95,24 @@
 			],
 			"depends": [
 				"glycin-gtk4-libs",
+				"pkgconfig(fontconfig)",
 				"pkgconfig(gio-2.0)",
-				"pkgconfig(glycin-1)",
+				"pkgconfig(glycin-2)",
 				"pkgconfig(gtk4)",
 				"pkgconfig(lcms2)",
 				"pkgconfig(libseccomp)"
 			],
 			"files": [
-				"/usr/include/glycin-gtk4-1/glycin-gtk4.h",
-				"/usr/lib/libglycin-gtk4-1.so",
-				"/usr/lib/pkgconfig/glycin-gtk4-1.pc",
-				"/usr/share/gir-1.0/GlyGtk4-1.gir",
-				"/usr/share/vala/vapi/glycin-gtk4-1.deps",
-				"/usr/share/vala/vapi/glycin-gtk4-1.vapi"
+				"/usr/include/glycin-gtk4-2/glycin-gtk4.h",
+				"/usr/lib/libglycin-gtk4-2.so",
+				"/usr/lib/pkgconfig/glycin-gtk4-2.pc",
+				"/usr/share/gir-1.0/GlyGtk4-2.gir",
+				"/usr/share/vala/vapi/glycin-gtk4-2.deps",
+				"/usr/share/vala/vapi/glycin-gtk4-2.vapi"
 			],
 			"name": "glycin-gtk4-libs-devel",
 			"provides": [
-				"pkgconfig(glycin-gtk4-1)"
+				"pkgconfig(glycin-gtk4-2)"
 			]
 		},
 		"glycin-libs": {
@@ -140,12 +143,12 @@
 				"soname(libunwind.so.1(x86_64))"
 			],
 			"files": [
-				"/usr/lib/girepository-1.0/Gly-1.typelib",
-				"/usr/lib/libglycin-1.so.0"
+				"/usr/lib/girepository-1.0/Gly-2.typelib",
+				"/usr/lib/libglycin-2.so.0"
 			],
 			"name": "glycin-libs",
 			"provides": [
-				"soname(libglycin-1.so.0(x86_64))"
+				"soname(libglycin-2.so.0(x86_64))"
 			]
 		},
 		"glycin-libs-devel": {
@@ -165,21 +168,22 @@
 			],
 			"depends": [
 				"glycin-libs",
+				"pkgconfig(fontconfig)",
 				"pkgconfig(gio-2.0)",
 				"pkgconfig(lcms2)",
 				"pkgconfig(libseccomp)"
 			],
 			"files": [
-				"/usr/include/glycin-1/glycin.h",
-				"/usr/lib/libglycin-1.so",
-				"/usr/lib/pkgconfig/glycin-1.pc",
-				"/usr/share/gir-1.0/Gly-1.gir",
-				"/usr/share/vala/vapi/glycin-1.deps",
-				"/usr/share/vala/vapi/glycin-1.vapi"
+				"/usr/include/glycin-2/glycin.h",
+				"/usr/lib/libglycin-2.so",
+				"/usr/lib/pkgconfig/glycin-2.pc",
+				"/usr/share/gir-1.0/Gly-2.gir",
+				"/usr/share/vala/vapi/glycin-2.deps",
+				"/usr/share/vala/vapi/glycin-2.vapi"
 			],
 			"name": "glycin-libs-devel",
 			"provides": [
-				"pkgconfig(glycin-1)"
+				"pkgconfig(glycin-2)"
 			]
 		},
 		"glycin-loaders": {
@@ -207,24 +211,66 @@
 				"soname(libgobject-2.0.so.0(x86_64))",
 				"soname(libheif.so.1(x86_64))",
 				"soname(libjxl.so.0.11(x86_64))",
+				"soname(libjxl_threads.so.0.11(x86_64))",
 				"soname(libm.so.6(x86_64))",
 				"soname(librsvg-2.so.2(x86_64))",
 				"soname(libunwind.so.1(x86_64))"
 			],
 			"files": [
-				"/usr/lib/glycin/glycin-loaders/1+/glycin-heif",
-				"/usr/lib/glycin/glycin-loaders/1+/glycin-image-rs",
-				"/usr/lib/glycin/glycin-loaders/1+/glycin-jxl",
-				"/usr/lib/glycin/glycin-loaders/1+/glycin-svg",
-				"/usr/share/glycin-loaders/1+/conf.d/glycin-heif.conf",
-				"/usr/share/glycin-loaders/1+/conf.d/glycin-image-rs.conf",
-				"/usr/share/glycin-loaders/1+/conf.d/glycin-jxl.conf",
-				"/usr/share/glycin-loaders/1+/conf.d/glycin-svg.conf"
+				"/usr/lib/glycin/glycin-loaders/2+/glycin-heif",
+				"/usr/lib/glycin/glycin-loaders/2+/glycin-image-rs",
+				"/usr/lib/glycin/glycin-loaders/2+/glycin-jxl",
+				"/usr/lib/glycin/glycin-loaders/2+/glycin-svg",
+				"/usr/share/glycin-loaders/2+/conf.d/glycin-heif.conf",
+				"/usr/share/glycin-loaders/2+/conf.d/glycin-image-rs.conf",
+				"/usr/share/glycin-loaders/2+/conf.d/glycin-jxl.conf",
+				"/usr/share/glycin-loaders/2+/conf.d/glycin-svg.conf"
 			],
 			"name": "glycin-loaders"
+		},
+		"glycin-thumbnailer": {
+			"build-depends": [
+				"binary(cargo)",
+				"binary(msgfmt)",
+				"binary(vapigen)",
+				"pkgconfig(cairo)",
+				"pkgconfig(gobject-introspection-1.0)",
+				"pkgconfig(gtk4)",
+				"pkgconfig(lcms2)",
+				"pkgconfig(libheif)",
+				"pkgconfig(libjxl)",
+				"pkgconfig(librsvg-2.0)",
+				"pkgconfig(libseccomp)",
+				"pkgconfig(libxml-2.0)"
+			],
+			"depends": [
+				"glycin-loaders",
+				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
+				"soname(ld-linux-x86-64.so.2(x86_64))",
+				"soname(libc.so.6(x86_64))",
+				"soname(libfontconfig.so.1(x86_64))",
+				"soname(libgio-2.0.so.0(x86_64))",
+				"soname(libglib-2.0.so.0(x86_64))",
+				"soname(libgobject-2.0.so.0(x86_64))",
+				"soname(liblcms2.so.2(x86_64))",
+				"soname(libm.so.6(x86_64))",
+				"soname(libseccomp.so.2(x86_64))",
+				"soname(libunwind.so.1(x86_64))"
+			],
+			"files": [
+				"/usr/bin/glycin-thumbnailer",
+				"/usr/share/thumbnailers/glycin-heif.thumbnailer",
+				"/usr/share/thumbnailers/glycin-image-rs.thumbnailer",
+				"/usr/share/thumbnailers/glycin-jxl.thumbnailer",
+				"/usr/share/thumbnailers/glycin-svg.thumbnailer"
+			],
+			"name": "glycin-thumbnailer",
+			"provides": [
+				"binary(glycin-thumbnailer)"
+			]
 		}
 	},
 	"source-name": "glycin",
-	"source-release": "9",
-	"source-version": "1.2.3"
+	"source-release": "10",
+	"source-version": "2.0.0"
 }
