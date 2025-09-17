@@ -6,6 +6,8 @@
 			"build-depends": [
 				"binary(bison)",
 				"binary(flex)",
+				"pkgconfig(cairo)",
+				"pkgconfig(cairo-gobject)",
 				"pkgconfig(glib-2.0)",
 				"pkgconfig(libffi)",
 				"pkgconfig(python3)"
@@ -19,20 +21,6 @@
 				"soname(libm.so.6(x86_64))"
 			],
 			"files": [
-				"/usr/lib/girepository-1.0/DBus-1.0.typelib",
-				"/usr/lib/girepository-1.0/DBusGLib-1.0.typelib",
-				"/usr/lib/girepository-1.0/GIRepository-2.0.typelib",
-				"/usr/lib/girepository-1.0/GL-1.0.typelib",
-				"/usr/lib/girepository-1.0/Vulkan-1.0.typelib",
-				"/usr/lib/girepository-1.0/cairo-1.0.typelib",
-				"/usr/lib/girepository-1.0/fontconfig-2.0.typelib",
-				"/usr/lib/girepository-1.0/freetype2-2.0.typelib",
-				"/usr/lib/girepository-1.0/libxml2-2.0.typelib",
-				"/usr/lib/girepository-1.0/win32-1.0.typelib",
-				"/usr/lib/girepository-1.0/xfixes-4.0.typelib",
-				"/usr/lib/girepository-1.0/xft-2.0.typelib",
-				"/usr/lib/girepository-1.0/xlib-2.0.typelib",
-				"/usr/lib/girepository-1.0/xrandr-1.3.typelib",
 				"/usr/lib/libgirepository-1.0.so.1",
 				"/usr/lib/libgirepository-1.0.so.1.0.0"
 			],
@@ -45,12 +33,15 @@
 			"build-depends": [
 				"binary(bison)",
 				"binary(flex)",
+				"pkgconfig(cairo)",
+				"pkgconfig(cairo-gobject)",
 				"pkgconfig(glib-2.0)",
 				"pkgconfig(libffi)",
 				"pkgconfig(python3)"
 			],
 			"depends": [
 				"gobject-introspection",
+				"gobject-introspection-runtime",
 				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
 				"pkgconfig(glib-2.0)",
 				"pkgconfig(gobject-2.0)",
@@ -239,9 +230,40 @@
 				"pkgconfig(gobject-introspection-no-export-1.0)",
 				"soname(gobject-introspection/giscanner/_giscanner.cpython-311-x86_64-linux-gnu.so(x86_64))"
 			]
+		},
+		"gobject-introspection-runtime": {
+			"build-depends": [
+				"binary(bison)",
+				"binary(flex)",
+				"pkgconfig(cairo)",
+				"pkgconfig(cairo-gobject)",
+				"pkgconfig(glib-2.0)",
+				"pkgconfig(libffi)",
+				"pkgconfig(python3)"
+			],
+			"depends": [
+				"gobject-introspection"
+			],
+			"files": [
+				"/usr/lib/girepository-1.0/DBus-1.0.typelib",
+				"/usr/lib/girepository-1.0/DBusGLib-1.0.typelib",
+				"/usr/lib/girepository-1.0/GIRepository-2.0.typelib",
+				"/usr/lib/girepository-1.0/GL-1.0.typelib",
+				"/usr/lib/girepository-1.0/Vulkan-1.0.typelib",
+				"/usr/lib/girepository-1.0/cairo-1.0.typelib",
+				"/usr/lib/girepository-1.0/fontconfig-2.0.typelib",
+				"/usr/lib/girepository-1.0/freetype2-2.0.typelib",
+				"/usr/lib/girepository-1.0/libxml2-2.0.typelib",
+				"/usr/lib/girepository-1.0/win32-1.0.typelib",
+				"/usr/lib/girepository-1.0/xfixes-4.0.typelib",
+				"/usr/lib/girepository-1.0/xft-2.0.typelib",
+				"/usr/lib/girepository-1.0/xlib-2.0.typelib",
+				"/usr/lib/girepository-1.0/xrandr-1.3.typelib"
+			],
+			"name": "gobject-introspection-runtime"
 		}
 	},
 	"source-name": "gobject-introspection",
-	"source-release": "12",
-	"source-version": "1.84.0"
+	"source-release": "13",
+	"source-version": "1.86.0"
 }
