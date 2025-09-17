@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : gjs
-version     : 1.84.2
-release     : 10
+version     : 1.86.0
+release     : 11
 homepage    : https://gitlab.gnome.org/GNOME/gjs
 upstreams   :
-    - https://download.gnome.org/sources/gjs/1.84/gjs-1.84.2.tar.xz : 35142edf345705636300291ec3a7d583f14969ff3fae0ff30f4a95b1e6740166
+    - https://download.gnome.org/sources/gjs/1.86/gjs-1.86.0.tar.xz : 63448f7a57804d4c2a8d0c7f5e90e224d04d4eb2d560142c076c65a8eda00799
 summary     : GNOME Javascript Bindings
 description : |
     GNOME JavaScript bindings and `gjs` interpreter
@@ -35,7 +35,7 @@ builddeps   :
     - pkgconfig(gthread-2.0)
     - pkgconfig(gtk4)
     - pkgconfig(libffi)
-    - pkgconfig(mozjs-128)
+    - pkgconfig(mozjs-140)
     - pkgconfig(readline)
     - pkgconfig(sysprof-capture-4)
     # Dtrace
@@ -44,7 +44,8 @@ checkdeps   :
 tuning      :
     - symbolic: false
 setup       : |
-    %meson -Dinstalled_tests=false
+    %meson \
+        -Dinstalled_tests=false
 build       : |
     %meson_build
 install     : |
@@ -52,6 +53,10 @@ install     : |
 check       : |
     %meson_test || :
 packages    :
+    - "%(name)":
+        rundeps:
+            - gobject-introspection-runtime
+
     - "%(name)-devel":
         paths:
             - /usr/share/gjs-1.0/lsan/

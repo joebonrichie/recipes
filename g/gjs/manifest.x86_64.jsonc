@@ -17,11 +17,12 @@
 				"pkgconfig(gtk+-3.0)",
 				"pkgconfig(gtk4)",
 				"pkgconfig(libffi)",
-				"pkgconfig(mozjs-128)",
+				"pkgconfig(mozjs-140)",
 				"pkgconfig(readline)",
 				"pkgconfig(sysprof-capture-4)"
 			],
 			"depends": [
+				"gobject-introspection-runtime",
 				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
 				"soname(libX11.so.6(x86_64))",
 				"soname(libc++.so.1(x86_64))",
@@ -30,10 +31,10 @@
 				"soname(libcairo.so.2(x86_64))",
 				"soname(libffi.so.8(x86_64))",
 				"soname(libgio-2.0.so.0(x86_64))",
-				"soname(libgirepository-1.0.so.1(x86_64))",
+				"soname(libgirepository-2.0.so.0(x86_64))",
 				"soname(libglib-2.0.so.0(x86_64))",
 				"soname(libgobject-2.0.so.0(x86_64))",
-				"soname(libmozjs-128.so(x86_64))",
+				"soname(libmozjs-140.so(x86_64))",
 				"soname(libreadline.so.8(x86_64))"
 			],
 			"files": [
@@ -65,7 +66,7 @@
 				"pkgconfig(gtk+-3.0)",
 				"pkgconfig(gtk4)",
 				"pkgconfig(libffi)",
-				"pkgconfig(mozjs-128)",
+				"pkgconfig(mozjs-140)",
 				"pkgconfig(readline)",
 				"pkgconfig(sysprof-capture-4)"
 			],
@@ -75,12 +76,12 @@
 				"pkgconfig(cairo-gobject)",
 				"pkgconfig(cairo-xlib)",
 				"pkgconfig(gio-2.0)",
+				"pkgconfig(girepository-2.0)",
 				"pkgconfig(glib-2.0)",
 				"pkgconfig(gobject-2.0)",
-				"pkgconfig(gobject-introspection-1.0)",
 				"pkgconfig(gthread-2.0)",
 				"pkgconfig(libffi)",
-				"pkgconfig(mozjs-128)"
+				"pkgconfig(mozjs-140)"
 			],
 			"files": [
 				"/usr/include/gjs-1.0/gjs/context.h",
@@ -115,7 +116,7 @@
 				"pkgconfig(gtk+-3.0)",
 				"pkgconfig(gtk4)",
 				"pkgconfig(libffi)",
-				"pkgconfig(mozjs-128)",
+				"pkgconfig(mozjs-140)",
 				"pkgconfig(readline)",
 				"pkgconfig(sysprof-capture-4)"
 			],
@@ -148,6 +149,6 @@
 		}
 	},
 	"source-name": "gjs",
-	"source-release": "10",
-	"source-version": "1.84.2"
+	"source-release": "11",
+	"source-version": "1.86.0"
 }
