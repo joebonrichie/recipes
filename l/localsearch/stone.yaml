@@ -5,7 +5,7 @@
 #
 name        : localsearch
 version     : 3.10.0
-release     : 11
+release     : 12
 homepage    : https://tracker.gnome.org/
 upstreams   :
     - https://download.gnome.org/sources/localsearch/3.10/localsearch-3.10.0.tar.xz : 58d66ea44aee1649c8d981f934373b83e1ab4a4a1a84ba0304f5af391e7e0080
@@ -25,7 +25,7 @@ builddeps   :
     - pkgconfig(dbus-1)
     # pkgconfig(enca)
     - pkgconfig(exempi-2.0)
-    # - pkgconfig(gexiv2-0.16) # Doesn't build, todo fix this
+    - pkgconfig(gexiv2)
     - pkgconfig(glib-2.0)
     - pkgconfig(gobject-introspection-1.0)
     - pkgconfig(gstreamer-1.0)
@@ -60,8 +60,6 @@ environment : |
     # Temporary, replace with boulder macro
     export XML_CATALOG_FILES="file:///usr/share/defaults/docbook/docbook-dtd/catalog file:///usr/share/defaults/docbook/docbook-xsl/catalog"
 setup       : |
-    %patch %(pkgdir)/0001-gexiv-0.16.patch
-
     # TODO: do an enablement pass on this pkg
     %meson \
         -Dfunctional_tests=false
