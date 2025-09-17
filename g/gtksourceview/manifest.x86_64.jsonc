@@ -6,6 +6,7 @@
 			"build-depends": [
 				"binary(cmake)",
 				"binary(g-ir-scanner)",
+				"binary(gi-docgen)",
 				"binary(msgfmt)",
 				"pkgconfig(fontconfig)",
 				"pkgconfig(fribidi)",
@@ -27,6 +28,7 @@
 				"soname(libgio-2.0.so.0(x86_64))",
 				"soname(libglib-2.0.so.0(x86_64))",
 				"soname(libgobject-2.0.so.0(x86_64))",
+				"soname(libgraphene-1.0.so.0(x86_64))",
 				"soname(libgtk-4.so.1(x86_64))",
 				"soname(libpango-1.0.so.0(x86_64))",
 				"soname(libpangocairo-1.0.so.0(x86_64))",
@@ -145,9 +147,7 @@
 				"/usr/share/locale/xh/LC_MESSAGES/gtksourceview-5.mo",
 				"/usr/share/locale/zh_CN/LC_MESSAGES/gtksourceview-5.mo",
 				"/usr/share/locale/zh_HK/LC_MESSAGES/gtksourceview-5.mo",
-				"/usr/share/locale/zh_TW/LC_MESSAGES/gtksourceview-5.mo",
-				"/usr/share/vala/vapi/gtksourceview-5.deps",
-				"/usr/share/vala/vapi/gtksourceview-5.vapi"
+				"/usr/share/locale/zh_TW/LC_MESSAGES/gtksourceview-5.mo"
 			],
 			"name": "gtksourceview",
 			"provides": [
@@ -158,6 +158,7 @@
 			"build-depends": [
 				"binary(cmake)",
 				"binary(g-ir-scanner)",
+				"binary(gi-docgen)",
 				"binary(msgfmt)",
 				"pkgconfig(fontconfig)",
 				"pkgconfig(fribidi)",
@@ -187,6 +188,9 @@
 				"/usr/include/gtksourceview-5/gtksourceview/completion-providers/words/gtksourcecompletionwords.h",
 				"/usr/include/gtksourceview-5/gtksourceview/gtksource-enumtypes.h",
 				"/usr/include/gtksourceview-5/gtksourceview/gtksource.h",
+				"/usr/include/gtksourceview-5/gtksourceview/gtksourceannotation.h",
+				"/usr/include/gtksourceview-5/gtksourceview/gtksourceannotationprovider.h",
+				"/usr/include/gtksourceview-5/gtksourceview/gtksourceannotations.h",
 				"/usr/include/gtksourceview-5/gtksourceview/gtksourcebuffer.h",
 				"/usr/include/gtksourceview-5/gtksourceview/gtksourcecompletion.h",
 				"/usr/include/gtksourceview-5/gtksourceview/gtksourcecompletioncell.h",
@@ -238,7 +242,9 @@
 				"/usr/include/gtksourceview-5/gtksourceview/gtksourcevimimcontext.h",
 				"/usr/lib/libgtksourceview-5.so",
 				"/usr/lib/pkgconfig/gtksourceview-5.pc",
-				"/usr/share/gir-1.0/GtkSource-5.gir"
+				"/usr/share/gir-1.0/GtkSource-5.gir",
+				"/usr/share/vala/vapi/gtksourceview-5.deps",
+				"/usr/share/vala/vapi/gtksourceview-5.vapi"
 			],
 			"name": "gtksourceview-devel",
 			"provides": [
@@ -247,6 +253,6 @@
 		}
 	},
 	"source-name": "gtksourceview",
-	"source-release": "9",
-	"source-version": "5.16.0"
+	"source-release": "10",
+	"source-version": "5.18.0"
 }
