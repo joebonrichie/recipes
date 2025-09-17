@@ -49,6 +49,7 @@
 				"/usr/share/locale/hi/LC_MESSAGES/libadwaita.mo",
 				"/usr/share/locale/hr/LC_MESSAGES/libadwaita.mo",
 				"/usr/share/locale/hu/LC_MESSAGES/libadwaita.mo",
+				"/usr/share/locale/ia/LC_MESSAGES/libadwaita.mo",
 				"/usr/share/locale/id/LC_MESSAGES/libadwaita.mo",
 				"/usr/share/locale/it/LC_MESSAGES/libadwaita.mo",
 				"/usr/share/locale/ja/LC_MESSAGES/libadwaita.mo",
@@ -186,6 +187,10 @@
 				"/usr/include/libadwaita-1/adw-preferences-page.h",
 				"/usr/include/libadwaita-1/adw-preferences-row.h",
 				"/usr/include/libadwaita-1/adw-preferences-window.h",
+				"/usr/include/libadwaita-1/adw-shortcut-label.h",
+				"/usr/include/libadwaita-1/adw-shortcuts-dialog.h",
+				"/usr/include/libadwaita-1/adw-shortcuts-item.h",
+				"/usr/include/libadwaita-1/adw-shortcuts-section.h",
 				"/usr/include/libadwaita-1/adw-spin-row.h",
 				"/usr/include/libadwaita-1/adw-spinner-paintable.h",
 				"/usr/include/libadwaita-1/adw-spinner.h",
@@ -230,6 +235,6 @@
 		}
 	},
 	"source-name": "libadwaita",
-	"source-release": "17",
-	"source-version": "1.7.7"
+	"source-release": "18",
+	"source-version": "1.8.0"
 }
