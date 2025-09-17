@@ -6,6 +6,7 @@
 			"build-depends": [
 				"binary(patchelf)",
 				"pkgconfig(cairo)",
+				"pkgconfig(cairo-gobject)",
 				"pkgconfig(gio-2.0)",
 				"pkgconfig(glib-2.0)",
 				"pkgconfig(gmodule-2.0)",
@@ -14,10 +15,10 @@
 				"pkgconfig(libffi)",
 				"pkgconfig(py3cairo)",
 				"pkgconfig(python3)",
-				"python-build",
-				"python-installer",
-				"python-packaging",
-				"python-wheel"
+				"python(build)",
+				"python(installer)",
+				"python(packaging)",
+				"python(wheel)"
 			],
 			"depends": [
 				"soname(libc.so.6(x86_64))",
@@ -29,7 +30,7 @@
 				"soname(libgobject-2.0.so.0(x86_64))"
 			],
 			"files": [
-				"/usr/lib/python3.11/site-packages/PyGObject-3.52.3.dist-info/METADATA",
+				"/usr/lib/python3.11/site-packages/PyGObject-3.54.2.dist-info/METADATA",
 				"/usr/lib/python3.11/site-packages/gi/__init__.py",
 				"/usr/lib/python3.11/site-packages/gi/__pycache__/__init__.cpython-311.pyc",
 				"/usr/lib/python3.11/site-packages/gi/__pycache__/_constants.cpython-311.pyc",
@@ -91,7 +92,6 @@
 			],
 			"name": "python-pygobject",
 			"provides": [
-				"python(pygobject(3.11))",
 				"python(pygobject)",
 				"soname(python3.11/site-packages/gi/_gi.cpython-311-x86_64-linux-gnu.so(x86_64))",
 				"soname(python3.11/site-packages/gi/_gi_cairo.cpython-311-x86_64-linux-gnu.so(x86_64))"
@@ -101,6 +101,7 @@
 			"build-depends": [
 				"binary(patchelf)",
 				"pkgconfig(cairo)",
+				"pkgconfig(cairo-gobject)",
 				"pkgconfig(gio-2.0)",
 				"pkgconfig(glib-2.0)",
 				"pkgconfig(gmodule-2.0)",
@@ -109,10 +110,10 @@
 				"pkgconfig(libffi)",
 				"pkgconfig(py3cairo)",
 				"pkgconfig(python3)",
-				"python-build",
-				"python-installer",
-				"python-packaging",
-				"python-wheel"
+				"python(build)",
+				"python(installer)",
+				"python(packaging)",
+				"python(wheel)"
 			],
 			"depends": [
 				"pkgconfig(gobject-2.0)",
@@ -130,6 +131,6 @@
 		}
 	},
 	"source-name": "python-pygobject",
-	"source-release": "7",
-	"source-version": "3.52.3"
+	"source-release": "8",
+	"source-version": "3.54.2"
 }

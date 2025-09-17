@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : python-pygobject
-version     : 3.52.3
-release     : 7
+version     : 3.54.2
+release     : 8
 homepage    : https://wiki.gnome.org/Projects/PyGObject
 upstreams   :
-    - https://download.gnome.org/sources/pygobject/3.52/pygobject-3.52.3.tar.gz : 00e427d291e957462a8fad659a9f9c8be776ff82a8b76bdf402f1eaeec086d82
+    - https://download.gnome.org/sources/pygobject/3.54/pygobject-3.54.2.tar.gz : 03cffeb49d8a1879b621d8f606ac904218019a0ae699b1cd3780a8ee611e696b
 summary     : PyGObject is a Python package which provides bindings for GObject based libraries
 description : |
     PyGObject is a Python package which provides bindings for GObject based libraries such as GTK, GStreamer, WebKitGTK, GLib, GIO and many more.
@@ -17,6 +17,7 @@ license     :
 builddeps   :
     - binary(patchelf)
     - pkgconfig(cairo)
+    - pkgconfig(cairo-gobject)
     - pkgconfig(gio-2.0)
     - pkgconfig(glib-2.0)
     - pkgconfig(gmodule-2.0)
@@ -25,10 +26,10 @@ builddeps   :
     - pkgconfig(libffi)
     - pkgconfig(py3cairo)
     - pkgconfig(python3)
-    - python-build
-    - python-installer
-    - python-packaging
-    - python-wheel
+    - python(build)
+    - python(installer)
+    - python(packaging)
+    - python(wheel)
 setup       : |
     %meson
 build       : |
