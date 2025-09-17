@@ -116,3 +116,6 @@
 
 ### Renamed to libgs-devel
 - ghostscript-devel
+
+### Now built in at-spi2-core
+- at-spi2-atk-dbginfo
