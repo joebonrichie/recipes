@@ -5,7 +5,7 @@
 #
 name        : mozjs-140
 version     : 140.3.0
-release     : 1
+release     : 2
 homepage    : https://mozilla.org
 upstreams   :
     - https://archive.mozilla.org/pub/firefox/releases/140.3.0esr/source/firefox-140.3.0esr.source.tar.xz : efc6eb3c93756311bd2f9db3796c0bbee6e3f182975d857284168b3dec672316
@@ -34,6 +34,9 @@ builddeps   :
 environment : |
     unset RUSTFLAGS
 setup       : |
+    %patch %(pkgdir)/upstream-01.patch
+    %patch %(pkgdir)/upstream-02.patch
+
     mkdir obj && cd obj
     ../js/src/configure --prefix=%(prefix) \
         --libdir=%(libdir) \
