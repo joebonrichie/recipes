@@ -5,7 +5,7 @@
 #
 name        : geoclue
 version     : 2.8.0
-release     : 5
+release     : 6
 homepage    : https://gitlab.freedesktop.org/geoclue/geoclue/-/wikis/home
 upstreams   :
     - https://gitlab.freedesktop.org/geoclue/geoclue/-/archive/2.8.0/geoclue-2.8.0.tar.gz : 8d1804b3d9d51c2a17af67c882ff5f9169724e248d39ccc3cfa8dba5d9323be7
@@ -51,6 +51,8 @@ packages    :
             - /usr/share/applications/geoclue-where-am-i.desktop
 
     - "%(name)-devel":
+        rundeps:
+            - "%(name)-libs"
         paths:
             - /usr/share/dbus-1/interfaces/
             - /usr/share/vala/

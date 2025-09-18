@@ -85,6 +85,7 @@
 			],
 			"depends": [
 				"geoclue",
+				"geoclue-libs",
 				"pkgconfig(gio-2.0)",
 				"pkgconfig(gio-unix-2.0)",
 				"pkgconfig(glib-2.0)"
@@ -147,6 +148,6 @@
 		}
 	},
 	"source-name": "geoclue",
-	"source-release": "5",
+	"source-release": "6",
 	"source-version": "2.8.0"
 }
