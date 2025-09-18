@@ -40,8 +40,7 @@
 				"pkgconfig(vulkan)",
 				"pkgconfig(winpr3)",
 				"pkgconfig(wireplumber-0.5)",
-				"pkgconfig(xkbcommon)",
-				"vulkan-headers"
+				"pkgconfig(xkbcommon)"
 			],
 			"depends": [
 				"binary(pipewire)",
@@ -114,10 +113,12 @@
 				"/usr/share/locale/hi/LC_MESSAGES/gnome-remote-desktop.mo",
 				"/usr/share/locale/hr/LC_MESSAGES/gnome-remote-desktop.mo",
 				"/usr/share/locale/hu/LC_MESSAGES/gnome-remote-desktop.mo",
+				"/usr/share/locale/ia/LC_MESSAGES/gnome-remote-desktop.mo",
 				"/usr/share/locale/id/LC_MESSAGES/gnome-remote-desktop.mo",
 				"/usr/share/locale/ie/LC_MESSAGES/gnome-remote-desktop.mo",
 				"/usr/share/locale/is/LC_MESSAGES/gnome-remote-desktop.mo",
 				"/usr/share/locale/it/LC_MESSAGES/gnome-remote-desktop.mo",
+				"/usr/share/locale/ja/LC_MESSAGES/gnome-remote-desktop.mo",
 				"/usr/share/locale/ka/LC_MESSAGES/gnome-remote-desktop.mo",
 				"/usr/share/locale/kab/LC_MESSAGES/gnome-remote-desktop.mo",
 				"/usr/share/locale/kk/LC_MESSAGES/gnome-remote-desktop.mo",
@@ -138,6 +139,7 @@
 				"/usr/share/locale/sl/LC_MESSAGES/gnome-remote-desktop.mo",
 				"/usr/share/locale/sr/LC_MESSAGES/gnome-remote-desktop.mo",
 				"/usr/share/locale/sv/LC_MESSAGES/gnome-remote-desktop.mo",
+				"/usr/share/locale/th/LC_MESSAGES/gnome-remote-desktop.mo",
 				"/usr/share/locale/tr/LC_MESSAGES/gnome-remote-desktop.mo",
 				"/usr/share/locale/uk/LC_MESSAGES/gnome-remote-desktop.mo",
 				"/usr/share/locale/uz/LC_MESSAGES/gnome-remote-desktop.mo",
@@ -156,6 +158,6 @@
 		}
 	},
 	"source-name": "gnome-remote-desktop",
-	"source-release": "13",
-	"source-version": "48.1"
+	"source-release": "14",
+	"source-version": "49.0"
 }
