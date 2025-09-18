@@ -24,7 +24,6 @@
 				"soname(libgio-2.0.so.0(x86_64))",
 				"soname(libglib-2.0.so.0(x86_64))",
 				"soname(libgobject-2.0.so.0(x86_64))",
-				"soname(libgraphene-1.0.so.0(x86_64))",
 				"soname(libgtk-4.so.1(x86_64))",
 				"soname(libharfbuzz.so.0(x86_64))",
 				"soname(libpango-1.0.so.0(x86_64))",
@@ -131,6 +130,7 @@
 				"/usr/share/locale/tr/LC_MESSAGES/gnome-font-viewer.mo",
 				"/usr/share/locale/ug/LC_MESSAGES/gnome-font-viewer.mo",
 				"/usr/share/locale/uk/LC_MESSAGES/gnome-font-viewer.mo",
+				"/usr/share/locale/uz/LC_MESSAGES/gnome-font-viewer.mo",
 				"/usr/share/locale/uz@cyrillic/LC_MESSAGES/gnome-font-viewer.mo",
 				"/usr/share/locale/vi/LC_MESSAGES/gnome-font-viewer.mo",
 				"/usr/share/locale/wa/LC_MESSAGES/gnome-font-viewer.mo",
@@ -149,6 +149,6 @@
 		}
 	},
 	"source-name": "gnome-font-viewer",
-	"source-release": "3",
-	"source-version": "48.0"
+	"source-release": "4",
+	"source-version": "49.0"
 }
