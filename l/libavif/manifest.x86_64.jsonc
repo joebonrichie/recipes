@@ -8,7 +8,6 @@
 				"pkgconfig(SvtAv1Enc)",
 				"pkgconfig(aom)",
 				"pkgconfig(dav1d)",
-				"pkgconfig(gdk-pixbuf-2.0)",
 				"pkgconfig(gtest)",
 				"pkgconfig(libjpeg)",
 				"pkgconfig(libpng)",
@@ -21,22 +20,16 @@
 				"soname(libaom.so.3(x86_64))",
 				"soname(libc.so.6(x86_64))",
 				"soname(libdav1d.so.7(x86_64))",
-				"soname(libgdk_pixbuf-2.0.so.0(x86_64))",
-				"soname(libglib-2.0.so.0(x86_64))",
-				"soname(libgobject-2.0.so.0(x86_64))",
 				"soname(libm.so.6(x86_64))",
 				"soname(librav1e.so.0.8(x86_64))",
 				"soname(libyuv.so.0(x86_64))"
 			],
 			"files": [
-				"/usr/lib/gdk-pixbuf-2.0/2.10.0/loaders/libpixbufloader-avif.so",
 				"/usr/lib/libavif.so.16",
-				"/usr/lib/libavif.so.16.3.0",
-				"/usr/share/thumbnailers/avif.thumbnailer"
+				"/usr/lib/libavif.so.16.3.0"
 			],
 			"name": "libavif",
 			"provides": [
-				"soname(gdk-pixbuf-2.0/2.10.0/loaders/libpixbufloader-avif.so(x86_64))",
 				"soname(libavif.so.16(x86_64))"
 			]
 		},
@@ -46,7 +39,6 @@
 				"pkgconfig(SvtAv1Enc)",
 				"pkgconfig(aom)",
 				"pkgconfig(dav1d)",
-				"pkgconfig(gdk-pixbuf-2.0)",
 				"pkgconfig(gtest)",
 				"pkgconfig(libjpeg)",
 				"pkgconfig(libpng)",
@@ -82,7 +74,6 @@
 				"pkgconfig(SvtAv1Enc)",
 				"pkgconfig(aom)",
 				"pkgconfig(dav1d)",
-				"pkgconfig(gdk-pixbuf-2.0)",
 				"pkgconfig(gtest)",
 				"pkgconfig(libjpeg)",
 				"pkgconfig(libpng)",
@@ -114,6 +105,6 @@
 		}
 	},
 	"source-name": "libavif",
-	"source-release": "3",
+	"source-release": "4",
 	"source-version": "1.3.0"
 }
