@@ -5,7 +5,7 @@
 #
 name        : python-pygobject
 version     : 3.54.2
-release     : 8
+release     : 9
 homepage    : https://wiki.gnome.org/Projects/PyGObject
 upstreams   :
     - https://download.gnome.org/sources/pygobject/3.54/pygobject-3.54.2.tar.gz : 03cffeb49d8a1879b621d8f606ac904218019a0ae699b1cd3780a8ee611e696b
@@ -30,6 +30,8 @@ builddeps   :
     - python(installer)
     - python(packaging)
     - python(wheel)
+rundeps     :
+    - gobject-introspection-runtime
 setup       : |
     %meson
 build       : |

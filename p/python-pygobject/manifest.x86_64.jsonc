@@ -21,6 +21,7 @@
 				"python(wheel)"
 			],
 			"depends": [
+				"gobject-introspection-runtime",
 				"soname(libc.so.6(x86_64))",
 				"soname(libcairo-gobject.so.2(x86_64))",
 				"soname(libcairo.so.2(x86_64))",
@@ -131,6 +132,6 @@
 		}
 	},
 	"source-name": "python-pygobject",
-	"source-release": "8",
+	"source-release": "9",
 	"source-version": "3.54.2"
 }
