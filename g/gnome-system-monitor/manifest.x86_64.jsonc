@@ -5,7 +5,6 @@
 		"gnome-system-monitor": {
 			"build-depends": [
 				"binary(itstool)",
-				"binary(lld)",
 				"binary(msgfmt)",
 				"binary(python3)",
 				"pkgconfig(catch2-with-main)",
@@ -813,6 +812,6 @@
 		}
 	},
 	"source-name": "gnome-system-monitor",
-	"source-release": "5",
-	"source-version": "48.1"
+	"source-release": "6",
+	"source-version": "49.0"
 }

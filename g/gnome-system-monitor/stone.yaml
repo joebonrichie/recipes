@@ -4,18 +4,17 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : gnome-system-monitor
-version     : 48.1
-release     : 5
+version     : 49.0
+release     : 6
 homepage    : https://apps.gnome.org/SystemMonitor/
 upstreams   :
-    - https://download.gnome.org/sources/gnome-system-monitor/48/gnome-system-monitor-48.1.tar.xz : 133c3a6e286366e659fd2d80582409a7bd5edae456e63c4f69ccf66ed6fc6638
+    - https://download.gnome.org/sources/gnome-system-monitor/49/gnome-system-monitor-49.0.tar.xz : dcc844dd70e4a077f066524dbd14f9cfe04b09831d70b7d69a51816723cd4aa0
 summary     : View and manage system resources
 description : |
   System Monitor is a process viewer and system monitor with an attractive, easy-to-use interface. System Monitor can help you find out what applications are using the processor or the memory of your computer, can manage the running applications, force stop processes not responding, and change the state or priority of existing processes. The resource graphs feature shows you a quick overview of what is going on with your computer displaying recent network, memory and processor usage.
 license     : GPL-2.0-or-later
 builddeps   :
     - binary(itstool)
-    - binary(lld)
     - binary(msgfmt)
     - binary(python3)
     - pkgconfig(catch2-with-main)
@@ -30,8 +29,6 @@ builddeps   :
     - pkgconfig(librsvg-2.0)
     - pkgconfig(libsystemd)
     - pkgconfig(libxml-2.0)
-environment : |
-    export CXXFLAGS="${CXXFLAGS} -Wno-c++11-narrowing"
 setup       : |
     %meson
 build       : |
