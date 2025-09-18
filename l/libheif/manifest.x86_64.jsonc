@@ -8,7 +8,6 @@
 				"pkgconfig(SvtAv1Enc)",
 				"pkgconfig(aom)",
 				"pkgconfig(dav1d)",
-				"pkgconfig(gdk-pixbuf-2.0)",
 				"pkgconfig(libavcodec)",
 				"pkgconfig(libavutil)",
 				"pkgconfig(libde265)",
@@ -23,20 +22,10 @@
 				"pkgconfig(x265)",
 				"pkgconfig(zlib)"
 			],
-			"depends": [
-				"soname(libc.so.6(x86_64))",
-				"soname(libgdk_pixbuf-2.0.so.0(x86_64))",
-				"soname(libglib-2.0.so.0(x86_64))",
-				"soname(libgobject-2.0.so.0(x86_64))",
-				"soname(libheif.so.1(x86_64))"
-			],
 			"files": [
-				"/usr/lib/gdk-pixbuf-2.0/2.10.0/loaders/libpixbufloader-heif.so"
+				"/usr/share/doc/heif-pixbuf-loader/README"
 			],
-			"name": "heif-pixbuf-loader",
-			"provides": [
-				"soname(gdk-pixbuf-2.0/2.10.0/loaders/libpixbufloader-heif.so(x86_64))"
-			]
+			"name": "heif-pixbuf-loader"
 		},
 		"libheif": {
 			"build-depends": [
@@ -44,7 +33,6 @@
 				"pkgconfig(SvtAv1Enc)",
 				"pkgconfig(aom)",
 				"pkgconfig(dav1d)",
-				"pkgconfig(gdk-pixbuf-2.0)",
 				"pkgconfig(libavcodec)",
 				"pkgconfig(libavutil)",
 				"pkgconfig(libde265)",
@@ -86,7 +74,6 @@
 				"pkgconfig(SvtAv1Enc)",
 				"pkgconfig(aom)",
 				"pkgconfig(dav1d)",
-				"pkgconfig(gdk-pixbuf-2.0)",
 				"pkgconfig(libavcodec)",
 				"pkgconfig(libavutil)",
 				"pkgconfig(libde265)",
@@ -148,7 +135,6 @@
 				"pkgconfig(SvtAv1Enc)",
 				"pkgconfig(aom)",
 				"pkgconfig(dav1d)",
-				"pkgconfig(gdk-pixbuf-2.0)",
 				"pkgconfig(libavcodec)",
 				"pkgconfig(libavutil)",
 				"pkgconfig(libde265)",
@@ -186,7 +172,6 @@
 				"pkgconfig(SvtAv1Enc)",
 				"pkgconfig(aom)",
 				"pkgconfig(dav1d)",
-				"pkgconfig(gdk-pixbuf-2.0)",
 				"pkgconfig(libavcodec)",
 				"pkgconfig(libavutil)",
 				"pkgconfig(libde265)",
@@ -222,7 +207,6 @@
 				"pkgconfig(SvtAv1Enc)",
 				"pkgconfig(aom)",
 				"pkgconfig(dav1d)",
-				"pkgconfig(gdk-pixbuf-2.0)",
 				"pkgconfig(libavcodec)",
 				"pkgconfig(libavutil)",
 				"pkgconfig(libde265)",
@@ -259,7 +243,6 @@
 				"pkgconfig(SvtAv1Enc)",
 				"pkgconfig(aom)",
 				"pkgconfig(dav1d)",
-				"pkgconfig(gdk-pixbuf-2.0)",
 				"pkgconfig(libavcodec)",
 				"pkgconfig(libavutil)",
 				"pkgconfig(libde265)",
@@ -295,7 +278,6 @@
 				"pkgconfig(SvtAv1Enc)",
 				"pkgconfig(aom)",
 				"pkgconfig(dav1d)",
-				"pkgconfig(gdk-pixbuf-2.0)",
 				"pkgconfig(libavcodec)",
 				"pkgconfig(libavutil)",
 				"pkgconfig(libde265)",
@@ -333,7 +315,6 @@
 				"pkgconfig(SvtAv1Enc)",
 				"pkgconfig(aom)",
 				"pkgconfig(dav1d)",
-				"pkgconfig(gdk-pixbuf-2.0)",
 				"pkgconfig(libavcodec)",
 				"pkgconfig(libavutil)",
 				"pkgconfig(libde265)",
@@ -369,7 +350,6 @@
 				"pkgconfig(SvtAv1Enc)",
 				"pkgconfig(aom)",
 				"pkgconfig(dav1d)",
-				"pkgconfig(gdk-pixbuf-2.0)",
 				"pkgconfig(libavcodec)",
 				"pkgconfig(libavutil)",
 				"pkgconfig(libde265)",
@@ -405,7 +385,6 @@
 				"pkgconfig(SvtAv1Enc)",
 				"pkgconfig(aom)",
 				"pkgconfig(dav1d)",
-				"pkgconfig(gdk-pixbuf-2.0)",
 				"pkgconfig(libavcodec)",
 				"pkgconfig(libavutil)",
 				"pkgconfig(libde265)",
@@ -441,7 +420,6 @@
 				"pkgconfig(SvtAv1Enc)",
 				"pkgconfig(aom)",
 				"pkgconfig(dav1d)",
-				"pkgconfig(gdk-pixbuf-2.0)",
 				"pkgconfig(libavcodec)",
 				"pkgconfig(libavutil)",
 				"pkgconfig(libde265)",
@@ -477,7 +455,6 @@
 				"pkgconfig(SvtAv1Enc)",
 				"pkgconfig(aom)",
 				"pkgconfig(dav1d)",
-				"pkgconfig(gdk-pixbuf-2.0)",
 				"pkgconfig(libavcodec)",
 				"pkgconfig(libavutil)",
 				"pkgconfig(libde265)",
@@ -513,7 +490,6 @@
 				"pkgconfig(SvtAv1Enc)",
 				"pkgconfig(aom)",
 				"pkgconfig(dav1d)",
-				"pkgconfig(gdk-pixbuf-2.0)",
 				"pkgconfig(libavcodec)",
 				"pkgconfig(libavutil)",
 				"pkgconfig(libde265)",
@@ -565,6 +541,6 @@
 		}
 	},
 	"source-name": "libheif",
-	"source-release": "2",
+	"source-release": "3",
 	"source-version": "1.20.2"
 }

@@ -119,3 +119,11 @@
 
 ### Now built in at-spi2-core
 - at-spi2-atk-dbginfo
+
+### Replaced by mozjs-140
+- mozjs-128
+- mozjs-128-devel
+- mozjs-128-dbginfo
+
+### Obsoleted by glycin
+- heif-pixbuf-loader
