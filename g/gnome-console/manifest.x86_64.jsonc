@@ -37,6 +37,7 @@
 				"/usr/share/icons/hicolor/symbolic/apps/org.gnome.Console-symbolic.svg",
 				"/usr/share/locale/ab/LC_MESSAGES/kgx.mo",
 				"/usr/share/locale/ar/LC_MESSAGES/kgx.mo",
+				"/usr/share/locale/az/LC_MESSAGES/kgx.mo",
 				"/usr/share/locale/be/LC_MESSAGES/kgx.mo",
 				"/usr/share/locale/bg/LC_MESSAGES/kgx.mo",
 				"/usr/share/locale/ca/LC_MESSAGES/kgx.mo",
@@ -57,6 +58,7 @@
 				"/usr/share/locale/hi/LC_MESSAGES/kgx.mo",
 				"/usr/share/locale/hr/LC_MESSAGES/kgx.mo",
 				"/usr/share/locale/hu/LC_MESSAGES/kgx.mo",
+				"/usr/share/locale/ia/LC_MESSAGES/kgx.mo",
 				"/usr/share/locale/id/LC_MESSAGES/kgx.mo",
 				"/usr/share/locale/ie/LC_MESSAGES/kgx.mo",
 				"/usr/share/locale/it/LC_MESSAGES/kgx.mo",
@@ -85,6 +87,7 @@
 				"/usr/share/locale/th/LC_MESSAGES/kgx.mo",
 				"/usr/share/locale/tr/LC_MESSAGES/kgx.mo",
 				"/usr/share/locale/uk/LC_MESSAGES/kgx.mo",
+				"/usr/share/locale/uz/LC_MESSAGES/kgx.mo",
 				"/usr/share/locale/vi/LC_MESSAGES/kgx.mo",
 				"/usr/share/locale/zh_CN/LC_MESSAGES/kgx.mo",
 				"/usr/share/locale/zh_TW/LC_MESSAGES/kgx.mo",
@@ -97,6 +100,6 @@
 		}
 	},
 	"source-name": "gnome-console",
-	"source-release": "6",
-	"source-version": "48.0.1"
+	"source-release": "7",
+	"source-version": "49.0"
 }
