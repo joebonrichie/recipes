@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : adwaita-colors-icon-theme
-version     : 2.4.2
-release     : 4
+version     : "2.5"
+release     : 5
 homepage    : https://github.com/dpejoh/Adwaita-colors/
 upstreams   :
-    - https://github.com/dpejoh/Adwaita-colors/archive/refs/tags/v2.4.2.tar.gz : e31aac4c280d6500ab3a69b2ca2b33402970c445cca81ed6e4a9ee6353dadbc2
+    - https://github.com/dpejoh/Adwaita-colors/archive/refs/tags/v2.5.tar.gz : 2272d472275b32a54b0fac6dd308276ba48c0bb31452073a73c1c27edeec9790
 summary     : Customizes Adwaita icons to match your GNOME theme's accent color
 description : |
     Adwaita Colors customizes Adwaita icons to match your GNOME theme's accent color, providing a cohesive, personalized look.
