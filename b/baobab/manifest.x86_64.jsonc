@@ -416,6 +416,7 @@
 				"/usr/share/locale/hi/LC_MESSAGES/baobab.mo",
 				"/usr/share/locale/hr/LC_MESSAGES/baobab.mo",
 				"/usr/share/locale/hu/LC_MESSAGES/baobab.mo",
+				"/usr/share/locale/ia/LC_MESSAGES/baobab.mo",
 				"/usr/share/locale/id/LC_MESSAGES/baobab.mo",
 				"/usr/share/locale/ie/LC_MESSAGES/baobab.mo",
 				"/usr/share/locale/is/LC_MESSAGES/baobab.mo",
@@ -467,6 +468,7 @@
 				"/usr/share/locale/tr/LC_MESSAGES/baobab.mo",
 				"/usr/share/locale/ug/LC_MESSAGES/baobab.mo",
 				"/usr/share/locale/uk/LC_MESSAGES/baobab.mo",
+				"/usr/share/locale/uz/LC_MESSAGES/baobab.mo",
 				"/usr/share/locale/vi/LC_MESSAGES/baobab.mo",
 				"/usr/share/locale/wa/LC_MESSAGES/baobab.mo",
 				"/usr/share/locale/xh/LC_MESSAGES/baobab.mo",
@@ -483,6 +485,6 @@
 		}
 	},
 	"source-name": "baobab",
-	"source-release": "4",
-	"source-version": "48.0"
+	"source-release": "5",
+	"source-version": "49.0"
 }
