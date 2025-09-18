@@ -5,6 +5,7 @@
 		"gnome-weather": {
 			"build-depends": [
 				"binary(msgfmt)",
+				"binary(tsc)",
 				"binary(update-desktop-database)",
 				"pkgconfig(gjs-1.0)",
 				"pkgconfig(glib-2.0)",
@@ -57,6 +58,7 @@
 				"/usr/share/locale/an/LC_MESSAGES/org.gnome.Weather.mo",
 				"/usr/share/locale/ar/LC_MESSAGES/org.gnome.Weather.mo",
 				"/usr/share/locale/as/LC_MESSAGES/org.gnome.Weather.mo",
+				"/usr/share/locale/az/LC_MESSAGES/org.gnome.Weather.mo",
 				"/usr/share/locale/be/LC_MESSAGES/org.gnome.Weather.mo",
 				"/usr/share/locale/be@latin/LC_MESSAGES/org.gnome.Weather.mo",
 				"/usr/share/locale/bg/LC_MESSAGES/org.gnome.Weather.mo",
@@ -88,6 +90,7 @@
 				"/usr/share/locale/hi/LC_MESSAGES/org.gnome.Weather.mo",
 				"/usr/share/locale/hr/LC_MESSAGES/org.gnome.Weather.mo",
 				"/usr/share/locale/hu/LC_MESSAGES/org.gnome.Weather.mo",
+				"/usr/share/locale/ia/LC_MESSAGES/org.gnome.Weather.mo",
 				"/usr/share/locale/id/LC_MESSAGES/org.gnome.Weather.mo",
 				"/usr/share/locale/is/LC_MESSAGES/org.gnome.Weather.mo",
 				"/usr/share/locale/it/LC_MESSAGES/org.gnome.Weather.mo",
@@ -97,6 +100,7 @@
 				"/usr/share/locale/kk/LC_MESSAGES/org.gnome.Weather.mo",
 				"/usr/share/locale/kn/LC_MESSAGES/org.gnome.Weather.mo",
 				"/usr/share/locale/ko/LC_MESSAGES/org.gnome.Weather.mo",
+				"/usr/share/locale/lo/LC_MESSAGES/org.gnome.Weather.mo",
 				"/usr/share/locale/lt/LC_MESSAGES/org.gnome.Weather.mo",
 				"/usr/share/locale/lv/LC_MESSAGES/org.gnome.Weather.mo",
 				"/usr/share/locale/mjw/LC_MESSAGES/org.gnome.Weather.mo",
@@ -105,6 +109,7 @@
 				"/usr/share/locale/nb/LC_MESSAGES/org.gnome.Weather.mo",
 				"/usr/share/locale/ne/LC_MESSAGES/org.gnome.Weather.mo",
 				"/usr/share/locale/nl/LC_MESSAGES/org.gnome.Weather.mo",
+				"/usr/share/locale/nn/LC_MESSAGES/org.gnome.Weather.mo",
 				"/usr/share/locale/oc/LC_MESSAGES/org.gnome.Weather.mo",
 				"/usr/share/locale/pa/LC_MESSAGES/org.gnome.Weather.mo",
 				"/usr/share/locale/pl/LC_MESSAGES/org.gnome.Weather.mo",
@@ -123,12 +128,14 @@
 				"/usr/share/locale/tg/LC_MESSAGES/org.gnome.Weather.mo",
 				"/usr/share/locale/th/LC_MESSAGES/org.gnome.Weather.mo",
 				"/usr/share/locale/tr/LC_MESSAGES/org.gnome.Weather.mo",
+				"/usr/share/locale/ug/LC_MESSAGES/org.gnome.Weather.mo",
 				"/usr/share/locale/uk/LC_MESSAGES/org.gnome.Weather.mo",
+				"/usr/share/locale/uz/LC_MESSAGES/org.gnome.Weather.mo",
 				"/usr/share/locale/vi/LC_MESSAGES/org.gnome.Weather.mo",
 				"/usr/share/locale/zh_CN/LC_MESSAGES/org.gnome.Weather.mo",
 				"/usr/share/locale/zh_HK/LC_MESSAGES/org.gnome.Weather.mo",
 				"/usr/share/locale/zh_TW/LC_MESSAGES/org.gnome.Weather.mo",
-				"/usr/share/metainfo/org.gnome.Weather.appdata.xml",
+				"/usr/share/metainfo/org.gnome.Weather.metainfo.xml",
 				"/usr/share/org.gnome.Weather/org.gnome.Weather",
 				"/usr/share/org.gnome.Weather/org.gnome.Weather.BackgroundService",
 				"/usr/share/org.gnome.Weather/org.gnome.Weather.BackgroundService.data.gresource",
@@ -143,6 +150,6 @@
 		}
 	},
 	"source-name": "gnome-weather",
-	"source-release": "3",
-	"source-version": "48.0"
+	"source-release": "4",
+	"source-version": "49.0"
 }
