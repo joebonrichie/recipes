@@ -84,6 +84,7 @@
 			"files": [
 				"/usr/bin/sysprof",
 				"/usr/share/applications/org.gnome.Sysprof.desktop",
+				"/usr/share/dbus-1/services/org.gnome.Sysprof.service",
 				"/usr/share/icons/hicolor/scalable/actions/sysprof-allocations.svg",
 				"/usr/share/icons/hicolor/scalable/actions/sysprof-battery.svg",
 				"/usr/share/icons/hicolor/scalable/actions/sysprof-calgraph.svg",
@@ -139,7 +140,7 @@
 				"/usr/share/locale/uk/LC_MESSAGES/sysprof.mo",
 				"/usr/share/locale/uz/LC_MESSAGES/sysprof.mo",
 				"/usr/share/locale/zh_CN/LC_MESSAGES/sysprof.mo",
-				"/usr/share/metainfo/org.gnome.Sysprof.appdata.xml",
+				"/usr/share/metainfo/org.gnome.Sysprof.metainfo.xml",
 				"/usr/share/mime/packages/sysprof-mime.xml"
 			],
 			"name": "sysprof",
@@ -480,6 +481,6 @@
 		}
 	},
 	"source-name": "sysprof",
-	"source-release": "2",
-	"source-version": "48.1"
+	"source-release": "3",
+	"source-version": "49.0"
 }
