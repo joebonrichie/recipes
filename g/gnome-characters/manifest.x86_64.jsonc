@@ -8,6 +8,7 @@
 				"binary(update-desktop-database)",
 				"pkgconfig(gio-2.0)",
 				"pkgconfig(gjs-1.0)",
+				"pkgconfig(gobject-introspection-1.0)",
 				"pkgconfig(gtk4)",
 				"pkgconfig(libadwaita-1)",
 				"pkgconfig(pango)",
@@ -32,6 +33,7 @@
 				"/usr/share/locale/ab/LC_MESSAGES/org.gnome.Characters.mo",
 				"/usr/share/locale/af/LC_MESSAGES/org.gnome.Characters.mo",
 				"/usr/share/locale/ar/LC_MESSAGES/org.gnome.Characters.mo",
+				"/usr/share/locale/az/LC_MESSAGES/org.gnome.Characters.mo",
 				"/usr/share/locale/be/LC_MESSAGES/org.gnome.Characters.mo",
 				"/usr/share/locale/bg/LC_MESSAGES/org.gnome.Characters.mo",
 				"/usr/share/locale/bn/LC_MESSAGES/org.gnome.Characters.mo",
@@ -94,7 +96,9 @@
 				"/usr/share/locale/tg/LC_MESSAGES/org.gnome.Characters.mo",
 				"/usr/share/locale/th/LC_MESSAGES/org.gnome.Characters.mo",
 				"/usr/share/locale/tr/LC_MESSAGES/org.gnome.Characters.mo",
+				"/usr/share/locale/ug/LC_MESSAGES/org.gnome.Characters.mo",
 				"/usr/share/locale/uk/LC_MESSAGES/org.gnome.Characters.mo",
+				"/usr/share/locale/uz/LC_MESSAGES/org.gnome.Characters.mo",
 				"/usr/share/locale/zh_CN/LC_MESSAGES/org.gnome.Characters.mo",
 				"/usr/share/locale/zh_TW/LC_MESSAGES/org.gnome.Characters.mo",
 				"/usr/share/metainfo/org.gnome.Characters.appdata.xml",
@@ -111,6 +115,6 @@
 		}
 	},
 	"source-name": "gnome-characters",
-	"source-release": "3",
-	"source-version": "48.0"
+	"source-release": "4",
+	"source-version": "49.0"
 }
