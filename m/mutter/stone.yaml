@@ -4,14 +4,14 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : mutter
-version     : 48.5
-release     : 27
+version     : "49.0"
+release     : 28
 homepage    : https://gnome.org
 upstreams   :
-    - https://download.gnome.org/sources/mutter/48/mutter-48.5.tar.xz : 02ed0ab4194fc537540f9ee92acbf5af8209971a404df319c1cb7763294ae58b
-summary     : A Wayland display server and X11 window manager and compositor library.
+    - https://download.gnome.org/sources/mutter/49/mutter-49.0.tar.xz : f10ef6ed2036673730461433e11e0be3abc7460d323b3e87093b6c3972c16335
+summary     : A Wayland display server and compositor library.
 description : |
-    A Wayland display server and X11 window manager and compositor library.
+    A Wayland display server and compositor library.
 license     :
     - GPL-2.0-or-later
 builddeps   :
@@ -21,6 +21,7 @@ builddeps   :
     - binary(register-python-argcomplete)
     - binary(rst2man)
     - pkgconfig(atk)
+    # - pkgconfig(bash-completion) # Bash completion installation is broken, TODO fix that
     - pkgconfig(cairo)
     - pkgconfig(cairo-gobject)
     - pkgconfig(colord)
@@ -29,11 +30,11 @@ builddeps   :
     - pkgconfig(egl)
     - pkgconfig(fribidi)
     - pkgconfig(gbm)
-    - pkgconfig(gdk-pixbuf-2.0)
     - pkgconfig(gio-unix-2.0)
     - pkgconfig(gl)
     - pkgconfig(glesv2)
     - pkgconfig(glib-2.0)
+    - pkgconfig(glycin-2)
     - pkgconfig(gmodule-no-export-2.0)
     - pkgconfig(gnome-desktop-4)
     - pkgconfig(gnome-settings-daemon)
@@ -41,14 +42,13 @@ builddeps   :
     - pkgconfig(gobject-introspection-1.0)
     - pkgconfig(graphene-gobject-1.0)
     - pkgconfig(gsettings-desktop-schemas)
-    - pkgconfig(gtk+-3.0)
     - pkgconfig(gtk4)
     - pkgconfig(gtk4-x11)
     - pkgconfig(gudev-1.0)
     - pkgconfig(harfbuzz)
-    - pkgconfig(ice)
     - pkgconfig(json-glib-1.0)
     - pkgconfig(lcms2)
+    - pkgconfig(libadwaita-1)
     - pkgconfig(libcanberra)
     - pkgconfig(libdisplay-info)
     - pkgconfig(libdrm)
@@ -63,7 +63,6 @@ builddeps   :
     - pkgconfig(pango)
     - pkgconfig(pangocairo)
     - pkgconfig(pangoft2)
-    - pkgconfig(sm)
     - pkgconfig(sysprof-6)
     - pkgconfig(sysprof-capture-4)
     - pkgconfig(udev)
@@ -86,17 +85,16 @@ builddeps   :
     - pkgconfig(xi)
     - pkgconfig(xinerama)
     - pkgconfig(xkbcommon)
-    - pkgconfig(xkbcommon-x11)
     - pkgconfig(xkbfile)
     - pkgconfig(xkeyboard-config)
     - pkgconfig(xrandr)
     - pkgconfig(xrender)
-    - pkgconfig(xtst)
     - pkgconfig(xwayland)
     - mesa-libegl-devel
 rundeps     :
     - binary(gnome-session)
     - binary(pipewire) # DMA-BUF
+    - binary(Xwayland)
 setup       : |
     %meson \
         -Degl_device=true \
@@ -108,3 +106,10 @@ build       : |
 install     : |
     %meson_install
     %install_file %(installroot)/etc/bash_completion.d/gdctl %(installroot)/%(completionsdir)/gdctl
+packages    :
+    - "%(name)-devel":
+        paths:
+            - /usr/share/applications/org.gnome.Mutter.Mdk.desktop
+            - /usr/share/glib-2.0/schemas/org.gnome.mutter.devkit.gschema.xml
+            - /usr/share/icons/hicolor/*/apps/org.gnome.Mutter.Mdk*
+            - /usr/lib/mutter/mutter-devkit
