@@ -127,3 +127,4 @@
 
 ### Obsoleted by glycin
 - heif-pixbuf-loader
+- jxl-pixbuf-loader

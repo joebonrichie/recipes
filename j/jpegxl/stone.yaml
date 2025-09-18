@@ -5,7 +5,7 @@
 #
 name        : jpegxl
 version     : 0.11.1
-release     : 4
+release     : 5
 homepage    : https://github.com/libjxl/libjxl
 upstreams   :
     - https://github.com/libjxl/libjxl/archive/refs/tags/v0.11.1.tar.gz : 1492dfef8dd6c3036446ac3b340005d92ab92f7d48ee3271b5dac1d36945d3d9
@@ -19,7 +19,7 @@ builddeps   :
     - binary(asciidoc)
     - binary(doxygen)
     - binary(sphinx-build)
-    - pkgconfig(gdk-pixbuf-2.0)
+    # - pkgconfig(gdk-pixbuf-2.0)
     - pkgconfig(gl)
     - pkgconfig(glut)
     - pkgconfig(lcms2)
@@ -47,23 +47,23 @@ setup       : |
         -DJPEGXL_ENABLE_BENCHMARK=OFF \
         -DJPEGXL_ENABLE_PLUGINS=ON \
         -DJPEGXL_ENABLE_PLUGIN_MIME=ON \
-        -DJPEGXL_ENABLE_PLUGIN_GDKPIXBUF=ON
+        -DJPEGXL_ENABLE_PLUGIN_GDKPIXBUF=OFF
 build       : |
     %cmake_build
 install     : |
     %cmake_install
+
+    %install_dir %(installroot)%(docdir)/jxl-pixbuf-loader
+    echo "DEPRECATED" > %(installroot)%(docdir)/jxl-pixbuf-loader/README
 tuning      :
     - optimize: speed
 packages    :
     - "libjxl":
         summary: Library files for JPEG-XL
         description: Library files for JPEG-XL
-        rundeps:
-            - jxl-pixbuf-loader # Temporary, once moss supports dynamic dependencies this should only get pulled in if both libjxl and gdk-pixbuf are installed
         paths:
             - /usr/lib/libjxl*.so.*
             - /usr/share/mime/packages/image-jxl.xml
-            - /usr/share/thumbnailers/jxl.thumbnailer
 
     - "libjxl-devel":
         summary: Library files for JPEG-XL - Development headers
@@ -80,7 +80,7 @@ packages    :
         summary: JPEG-XL image loader for GTK+ applications
         description: JPEG-XL image loader for GTK+ applications
         paths:
-            - /usr/lib/gdk-pixbuf-2.0/*/loaders/libpixbufloader-jxl.so
+            - /usr/share/doc/jxl-pixbuf-loader/README
     
     - "libjxl-utils":
         summary: Utilities for manipulating JPEG XL images

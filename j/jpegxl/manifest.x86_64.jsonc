@@ -8,7 +8,6 @@
 				"binary(doxygen)",
 				"binary(sphinx-build)",
 				"docbook",
-				"pkgconfig(gdk-pixbuf-2.0)",
 				"pkgconfig(gl)",
 				"pkgconfig(glut)",
 				"pkgconfig(lcms2)",
@@ -18,21 +17,10 @@
 				"pkgconfig(libpng)",
 				"pkgconfig(zlib)"
 			],
-			"depends": [
-				"soname(libc.so.6(x86_64))",
-				"soname(libgdk_pixbuf-2.0.so.0(x86_64))",
-				"soname(libglib-2.0.so.0(x86_64))",
-				"soname(libgobject-2.0.so.0(x86_64))",
-				"soname(libjxl.so.0.11(x86_64))",
-				"soname(libjxl_threads.so.0.11(x86_64))"
-			],
 			"files": [
-				"/usr/lib/gdk-pixbuf-2.0/2.10.0/loaders/libpixbufloader-jxl.so"
+				"/usr/share/doc/jxl-pixbuf-loader/README"
 			],
-			"name": "jxl-pixbuf-loader",
-			"provides": [
-				"soname(gdk-pixbuf-2.0/2.10.0/loaders/libpixbufloader-jxl.so(x86_64))"
-			]
+			"name": "jxl-pixbuf-loader"
 		},
 		"libjxl": {
 			"build-depends": [
@@ -40,7 +28,6 @@
 				"binary(doxygen)",
 				"binary(sphinx-build)",
 				"docbook",
-				"pkgconfig(gdk-pixbuf-2.0)",
 				"pkgconfig(gl)",
 				"pkgconfig(glut)",
 				"pkgconfig(lcms2)",
@@ -51,7 +38,6 @@
 				"pkgconfig(zlib)"
 			],
 			"depends": [
-				"jxl-pixbuf-loader",
 				"soname(libbrotlidec.so.1(x86_64))",
 				"soname(libbrotlienc.so.1(x86_64))",
 				"soname(libc++.so.1(x86_64))",
@@ -66,8 +52,7 @@
 				"/usr/lib/libjxl_cms.so.0.11.1",
 				"/usr/lib/libjxl_threads.so.0.11",
 				"/usr/lib/libjxl_threads.so.0.11.1",
-				"/usr/share/mime/packages/image-jxl.xml",
-				"/usr/share/thumbnailers/jxl.thumbnailer"
+				"/usr/share/mime/packages/image-jxl.xml"
 			],
 			"name": "libjxl",
 			"provides": [
@@ -82,7 +67,6 @@
 				"binary(doxygen)",
 				"binary(sphinx-build)",
 				"docbook",
-				"pkgconfig(gdk-pixbuf-2.0)",
 				"pkgconfig(gl)",
 				"pkgconfig(glut)",
 				"pkgconfig(lcms2)",
@@ -142,7 +126,6 @@
 				"binary(doxygen)",
 				"binary(sphinx-build)",
 				"docbook",
-				"pkgconfig(gdk-pixbuf-2.0)",
 				"pkgconfig(gl)",
 				"pkgconfig(glut)",
 				"pkgconfig(lcms2)",
@@ -181,6 +164,6 @@
 		}
 	},
 	"source-name": "jpegxl",
-	"source-release": "4",
+	"source-release": "5",
 	"source-version": "0.11.1"
 }
