@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : decibels
-version     : 48.0
-release     : 4
+version     : 49.0
+release     : 5
 homepage    : https://apps.gnome.org/Decibels/
 upstreams   :
-    - https://download.gnome.org/sources/decibels/48/decibels-48.0.tar.xz : 229b11a9263147bcb8c3e21ff0d4af659fb26262f8aece547adcf8c65e031f74
+    - https://download.gnome.org/sources/decibels/49/decibels-49.0.tar.xz : 29b79ba2e2967e69141e39f0ad2c677e38fe3ffb9fba0fa5c7531f94d3f673ca
 summary     : Play audio files
 description : |
     An audio player that just plays audio files. It doesn't require an organized music library and won't overload you with tons of functionality.
