@@ -5,7 +5,7 @@
 #
 name        : openssl
 version     : 3.5.3
-release     : 30
+release     : 31
 summary     : OpenSSL cryptography library
 license     :
     - OpenSSL
@@ -34,6 +34,7 @@ setup       : |
     %patch %(pkgdir)/stateless/0001-Use-OS-provided-copy-of-openssl.cnf-as-fallback.patch
     %patch %(pkgdir)/config.patch
     %patch %(pkgdir)/0001-Fix-soname-dynamic-loading.patch
+    %patch %(pkgdir)/28603.patch
 
     if [[ %(target_triple) = i686* ]]; then
         export OSSL_TARGET="linux-x86-clang"
