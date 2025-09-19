@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : ocl-icd
-version     : '2.3.3'
-release     : 3
+version     : '2.3.4'
+release     : 4
 homepage    : https://github.com/KhronosGroup/OpenCL-Headers/
 upstreams   :
-    - https://github.com/OCL-dev/ocl-icd/archive/refs/tags/v2.3.3.tar.gz : 8cd8e8e129db3081a64090fc1252bec39dc88cdb7b3f929315e014b75069bd9d
+    - https://github.com/OCL-dev/ocl-icd/archive/refs/tags/v2.3.4.tar.gz : 1a302b71b7304cca5a36f69d017b1af2b762cc4c2dd1c0c0e2fc1933db25c9cc
 summary     : Vendor Neutral OpenCL Implementation
 description : |
     Vendor Neutral OpenCL Implementation
