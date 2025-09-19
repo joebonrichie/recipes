@@ -22,6 +22,7 @@
 				"pkgconfig(libcurl)",
 				"pkgconfig(libndp)",
 				"pkgconfig(libnewt)",
+				"pkgconfig(libnvme)",
 				"pkgconfig(libpsl)",
 				"pkgconfig(libsystemd)",
 				"pkgconfig(libudev)",
@@ -36,7 +37,6 @@
 				"python(pygobject)"
 			],
 			"depends": [
-				"binary(iwmon)",
 				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
 				"soname(ld-linux-x86-64.so.2(x86_64))",
 				"soname(libc.so.6(x86_64))",
@@ -45,8 +45,6 @@
 				"soname(libglib-2.0.so.0(x86_64))",
 				"soname(libgmodule-2.0.so.0(x86_64))",
 				"soname(libgobject-2.0.so.0(x86_64))",
-				"soname(libjansson.so.4(x86_64))",
-				"soname(libmm-glib.so.0(x86_64))",
 				"soname(libndp.so.0(x86_64))",
 				"soname(libnm.so.0(x86_64))",
 				"soname(libnspr4.so(x86_64))",
@@ -60,13 +58,6 @@
 			"files": [
 				"/usr/bin/nm-online",
 				"/usr/bin/nmcli",
-				"/usr/lib/NetworkManager/1.52.1/libnm-device-plugin-adsl.so",
-				"/usr/lib/NetworkManager/1.52.1/libnm-device-plugin-bluetooth.so",
-				"/usr/lib/NetworkManager/1.52.1/libnm-device-plugin-ovs.so",
-				"/usr/lib/NetworkManager/1.52.1/libnm-device-plugin-wifi.so",
-				"/usr/lib/NetworkManager/1.52.1/libnm-device-plugin-wwan.so",
-				"/usr/lib/NetworkManager/1.52.1/libnm-ppp-plugin.so",
-				"/usr/lib/NetworkManager/1.52.1/libnm-wwan.so",
 				"/usr/lib/NetworkManager/VPN",
 				"/usr/lib/NetworkManager/conf.d",
 				"/usr/lib/NetworkManager/dispatcher.d/pre-down.d",
@@ -77,8 +68,10 @@
 				"/usr/lib/networkmanager/nm-dispatcher",
 				"/usr/lib/networkmanager/nm-initrd-generator",
 				"/usr/lib/networkmanager/nm-priv-helper",
-				"/usr/lib/pppd/2.5.2/nm-pppd-plugin.so",
+				"/usr/lib/systemd/system/NetworkManager-config-initrd.service",
 				"/usr/lib/systemd/system/NetworkManager-dispatcher.service",
+				"/usr/lib/systemd/system/NetworkManager-initrd.service",
+				"/usr/lib/systemd/system/NetworkManager-wait-online-initrd.service",
 				"/usr/lib/systemd/system/NetworkManager-wait-online.service",
 				"/usr/lib/systemd/system/NetworkManager.service",
 				"/usr/lib/systemd/system/NetworkManager.service.d/NetworkManager-ovs.conf",
@@ -181,15 +174,108 @@
 			"provides": [
 				"binary(nm-online)",
 				"binary(nmcli)",
-				"soname(NetworkManager/1.52.1/libnm-device-plugin-adsl.so(x86_64))",
-				"soname(NetworkManager/1.52.1/libnm-device-plugin-bluetooth.so(x86_64))",
-				"soname(NetworkManager/1.52.1/libnm-device-plugin-ovs.so(x86_64))",
-				"soname(NetworkManager/1.52.1/libnm-device-plugin-wifi.so(x86_64))",
-				"soname(NetworkManager/1.52.1/libnm-device-plugin-wwan.so(x86_64))",
-				"soname(NetworkManager/1.52.1/libnm-ppp-plugin.so(x86_64))",
-				"soname(NetworkManager/1.52.1/libnm-wwan.so(x86_64))",
-				"soname(pppd/2.5.2/nm-pppd-plugin.so(x86_64))",
 				"sysbinary(NetworkManager)"
+			]
+		},
+		"networkmanager-adsl": {
+			"build-depends": [
+				"binary(eu-readelf)",
+				"binary(gtkdoc-scan)",
+				"binary(msgfmt)",
+				"binary(perl)",
+				"binary(vapigen)",
+				"binary(xsltproc)",
+				"docbook",
+				"docbook-xsl",
+				"pkgconfig(bluez)",
+				"pkgconfig(dbus-1)",
+				"pkgconfig(gio-unix-2.0)",
+				"pkgconfig(gmodule-2.0)",
+				"pkgconfig(gnutls)",
+				"pkgconfig(gobject-introspection-1.0)",
+				"pkgconfig(jansson)",
+				"pkgconfig(libcurl)",
+				"pkgconfig(libndp)",
+				"pkgconfig(libnewt)",
+				"pkgconfig(libnvme)",
+				"pkgconfig(libpsl)",
+				"pkgconfig(libsystemd)",
+				"pkgconfig(libudev)",
+				"pkgconfig(mm-glib)",
+				"pkgconfig(mobile-broadband-provider-info)",
+				"pkgconfig(nss)",
+				"pkgconfig(polkit-gobject-1)",
+				"pkgconfig(readline)",
+				"pkgconfig(systemd)",
+				"pkgconfig(uuid)",
+				"ppp-devel",
+				"python(pygobject)"
+			],
+			"depends": [
+				"networkmanager",
+				"soname(libc.so.6(x86_64))",
+				"soname(libglib-2.0.so.0(x86_64))",
+				"soname(libgobject-2.0.so.0(x86_64))"
+			],
+			"files": [
+				"/usr/lib/NetworkManager/1.54.1/libnm-device-plugin-adsl.so"
+			],
+			"name": "networkmanager-adsl",
+			"provides": [
+				"soname(NetworkManager/1.54.1/libnm-device-plugin-adsl.so(x86_64))"
+			]
+		},
+		"networkmanager-bluetooth": {
+			"build-depends": [
+				"binary(eu-readelf)",
+				"binary(gtkdoc-scan)",
+				"binary(msgfmt)",
+				"binary(perl)",
+				"binary(vapigen)",
+				"binary(xsltproc)",
+				"docbook",
+				"docbook-xsl",
+				"pkgconfig(bluez)",
+				"pkgconfig(dbus-1)",
+				"pkgconfig(gio-unix-2.0)",
+				"pkgconfig(gmodule-2.0)",
+				"pkgconfig(gnutls)",
+				"pkgconfig(gobject-introspection-1.0)",
+				"pkgconfig(jansson)",
+				"pkgconfig(libcurl)",
+				"pkgconfig(libndp)",
+				"pkgconfig(libnewt)",
+				"pkgconfig(libnvme)",
+				"pkgconfig(libpsl)",
+				"pkgconfig(libsystemd)",
+				"pkgconfig(libudev)",
+				"pkgconfig(mm-glib)",
+				"pkgconfig(mobile-broadband-provider-info)",
+				"pkgconfig(nss)",
+				"pkgconfig(polkit-gobject-1)",
+				"pkgconfig(readline)",
+				"pkgconfig(systemd)",
+				"pkgconfig(uuid)",
+				"ppp-devel",
+				"python(pygobject)"
+			],
+			"depends": [
+				"bluez",
+				"networkmanager",
+				"networkmanager-wwan",
+				"soname(NetworkManager/1.54.1/libnm-wwan.so(x86_64))",
+				"soname(libbluetooth.so.3(x86_64))",
+				"soname(libc.so.6(x86_64))",
+				"soname(libgio-2.0.so.0(x86_64))",
+				"soname(libglib-2.0.so.0(x86_64))",
+				"soname(libgobject-2.0.so.0(x86_64))"
+			],
+			"files": [
+				"/usr/lib/NetworkManager/1.54.1/libnm-device-plugin-bluetooth.so"
+			],
+			"name": "networkmanager-bluetooth",
+			"provides": [
+				"soname(NetworkManager/1.54.1/libnm-device-plugin-bluetooth.so(x86_64))"
 			]
 		},
 		"networkmanager-cloud-setup": {
@@ -212,6 +298,7 @@
 				"pkgconfig(libcurl)",
 				"pkgconfig(libndp)",
 				"pkgconfig(libnewt)",
+				"pkgconfig(libnvme)",
 				"pkgconfig(libpsl)",
 				"pkgconfig(libsystemd)",
 				"pkgconfig(libudev)",
@@ -267,6 +354,7 @@
 				"pkgconfig(libcurl)",
 				"pkgconfig(libndp)",
 				"pkgconfig(libnewt)",
+				"pkgconfig(libnvme)",
 				"pkgconfig(libpsl)",
 				"pkgconfig(libsystemd)",
 				"pkgconfig(libudev)",
@@ -419,6 +507,7 @@
 				"/usr/share/gtk-doc/html/NetworkManager/settings-ovs-port.html",
 				"/usr/share/gtk-doc/html/NetworkManager/settings-ppp.html",
 				"/usr/share/gtk-doc/html/NetworkManager/settings-pppoe.html",
+				"/usr/share/gtk-doc/html/NetworkManager/settings-prefix-delegation.html",
 				"/usr/share/gtk-doc/html/NetworkManager/settings-proxy.html",
 				"/usr/share/gtk-doc/html/NetworkManager/settings-serial.html",
 				"/usr/share/gtk-doc/html/NetworkManager/settings-sriov.html",
@@ -523,6 +612,7 @@
 				"/usr/share/gtk-doc/html/libnm/NMSettingOvsPort.html",
 				"/usr/share/gtk-doc/html/libnm/NMSettingPpp.html",
 				"/usr/share/gtk-doc/html/libnm/NMSettingPppoe.html",
+				"/usr/share/gtk-doc/html/libnm/NMSettingPrefixDelegation.html",
 				"/usr/share/gtk-doc/html/libnm/NMSettingProxy.html",
 				"/usr/share/gtk-doc/html/libnm/NMSettingSerial.html",
 				"/usr/share/gtk-doc/html/libnm/NMSettingSriov.html",
@@ -606,6 +696,7 @@
 				"pkgconfig(libcurl)",
 				"pkgconfig(libndp)",
 				"pkgconfig(libnewt)",
+				"pkgconfig(libnvme)",
 				"pkgconfig(libpsl)",
 				"pkgconfig(libsystemd)",
 				"pkgconfig(libudev)",
@@ -661,6 +752,7 @@
 				"pkgconfig(libcurl)",
 				"pkgconfig(libndp)",
 				"pkgconfig(libnewt)",
+				"pkgconfig(libnvme)",
 				"pkgconfig(libpsl)",
 				"pkgconfig(libsystemd)",
 				"pkgconfig(libudev)",
@@ -770,6 +862,7 @@
 				"/usr/include/libnm/nm-setting-ovs-port.h",
 				"/usr/include/libnm/nm-setting-ppp.h",
 				"/usr/include/libnm/nm-setting-pppoe.h",
+				"/usr/include/libnm/nm-setting-prefix-delegation.h",
 				"/usr/include/libnm/nm-setting-proxy.h",
 				"/usr/include/libnm/nm-setting-serial.h",
 				"/usr/include/libnm/nm-setting-sriov.h",
@@ -867,6 +960,108 @@
 				"pkgconfig(libnm)"
 			]
 		},
+		"networkmanager-ovs": {
+			"build-depends": [
+				"binary(eu-readelf)",
+				"binary(gtkdoc-scan)",
+				"binary(msgfmt)",
+				"binary(perl)",
+				"binary(vapigen)",
+				"binary(xsltproc)",
+				"docbook",
+				"docbook-xsl",
+				"pkgconfig(bluez)",
+				"pkgconfig(dbus-1)",
+				"pkgconfig(gio-unix-2.0)",
+				"pkgconfig(gmodule-2.0)",
+				"pkgconfig(gnutls)",
+				"pkgconfig(gobject-introspection-1.0)",
+				"pkgconfig(jansson)",
+				"pkgconfig(libcurl)",
+				"pkgconfig(libndp)",
+				"pkgconfig(libnewt)",
+				"pkgconfig(libnvme)",
+				"pkgconfig(libpsl)",
+				"pkgconfig(libsystemd)",
+				"pkgconfig(libudev)",
+				"pkgconfig(mm-glib)",
+				"pkgconfig(mobile-broadband-provider-info)",
+				"pkgconfig(nss)",
+				"pkgconfig(polkit-gobject-1)",
+				"pkgconfig(readline)",
+				"pkgconfig(systemd)",
+				"pkgconfig(uuid)",
+				"ppp-devel",
+				"python(pygobject)"
+			],
+			"depends": [
+				"networkmanager",
+				"soname(libc.so.6(x86_64))",
+				"soname(libgio-2.0.so.0(x86_64))",
+				"soname(libglib-2.0.so.0(x86_64))",
+				"soname(libgobject-2.0.so.0(x86_64))",
+				"soname(libjansson.so.4(x86_64))"
+			],
+			"files": [
+				"/usr/lib/NetworkManager/1.54.1/libnm-device-plugin-ovs.so"
+			],
+			"name": "networkmanager-ovs",
+			"provides": [
+				"soname(NetworkManager/1.54.1/libnm-device-plugin-ovs.so(x86_64))"
+			]
+		},
+		"networkmanager-ppp": {
+			"build-depends": [
+				"binary(eu-readelf)",
+				"binary(gtkdoc-scan)",
+				"binary(msgfmt)",
+				"binary(perl)",
+				"binary(vapigen)",
+				"binary(xsltproc)",
+				"docbook",
+				"docbook-xsl",
+				"pkgconfig(bluez)",
+				"pkgconfig(dbus-1)",
+				"pkgconfig(gio-unix-2.0)",
+				"pkgconfig(gmodule-2.0)",
+				"pkgconfig(gnutls)",
+				"pkgconfig(gobject-introspection-1.0)",
+				"pkgconfig(jansson)",
+				"pkgconfig(libcurl)",
+				"pkgconfig(libndp)",
+				"pkgconfig(libnewt)",
+				"pkgconfig(libnvme)",
+				"pkgconfig(libpsl)",
+				"pkgconfig(libsystemd)",
+				"pkgconfig(libudev)",
+				"pkgconfig(mm-glib)",
+				"pkgconfig(mobile-broadband-provider-info)",
+				"pkgconfig(nss)",
+				"pkgconfig(polkit-gobject-1)",
+				"pkgconfig(readline)",
+				"pkgconfig(systemd)",
+				"pkgconfig(uuid)",
+				"ppp-devel",
+				"python(pygobject)"
+			],
+			"depends": [
+				"networkmanager",
+				"ppp",
+				"soname(libc.so.6(x86_64))",
+				"soname(libgio-2.0.so.0(x86_64))",
+				"soname(libglib-2.0.so.0(x86_64))",
+				"soname(libgobject-2.0.so.0(x86_64))"
+			],
+			"files": [
+				"/usr/lib/NetworkManager/1.54.1/libnm-ppp-plugin.so",
+				"/usr/lib/pppd/2.5.2/nm-pppd-plugin.so"
+			],
+			"name": "networkmanager-ppp",
+			"provides": [
+				"soname(NetworkManager/1.54.1/libnm-ppp-plugin.so(x86_64))",
+				"soname(pppd/2.5.2/nm-pppd-plugin.so(x86_64))"
+			]
+		},
 		"networkmanager-tui": {
 			"build-depends": [
 				"binary(eu-readelf)",
@@ -887,6 +1082,7 @@
 				"pkgconfig(libcurl)",
 				"pkgconfig(libndp)",
 				"pkgconfig(libnewt)",
+				"pkgconfig(libnvme)",
 				"pkgconfig(libpsl)",
 				"pkgconfig(libsystemd)",
 				"pkgconfig(libudev)",
@@ -927,9 +1123,114 @@
 				"binary(nmtui-edit)",
 				"binary(nmtui-hostname)"
 			]
+		},
+		"networkmanager-wifi": {
+			"build-depends": [
+				"binary(eu-readelf)",
+				"binary(gtkdoc-scan)",
+				"binary(msgfmt)",
+				"binary(perl)",
+				"binary(vapigen)",
+				"binary(xsltproc)",
+				"docbook",
+				"docbook-xsl",
+				"pkgconfig(bluez)",
+				"pkgconfig(dbus-1)",
+				"pkgconfig(gio-unix-2.0)",
+				"pkgconfig(gmodule-2.0)",
+				"pkgconfig(gnutls)",
+				"pkgconfig(gobject-introspection-1.0)",
+				"pkgconfig(jansson)",
+				"pkgconfig(libcurl)",
+				"pkgconfig(libndp)",
+				"pkgconfig(libnewt)",
+				"pkgconfig(libnvme)",
+				"pkgconfig(libpsl)",
+				"pkgconfig(libsystemd)",
+				"pkgconfig(libudev)",
+				"pkgconfig(mm-glib)",
+				"pkgconfig(mobile-broadband-provider-info)",
+				"pkgconfig(nss)",
+				"pkgconfig(polkit-gobject-1)",
+				"pkgconfig(readline)",
+				"pkgconfig(systemd)",
+				"pkgconfig(uuid)",
+				"ppp-devel",
+				"python(pygobject)"
+			],
+			"depends": [
+				"binary(iwmon)",
+				"networkmanager",
+				"soname(libc.so.6(x86_64))",
+				"soname(libgio-2.0.so.0(x86_64))",
+				"soname(libglib-2.0.so.0(x86_64))",
+				"soname(libgobject-2.0.so.0(x86_64))",
+				"sysbinary(set-wireless-regdom)"
+			],
+			"files": [
+				"/usr/lib/NetworkManager/1.54.1/libnm-device-plugin-wifi.so"
+			],
+			"name": "networkmanager-wifi",
+			"provides": [
+				"soname(NetworkManager/1.54.1/libnm-device-plugin-wifi.so(x86_64))"
+			]
+		},
+		"networkmanager-wwan": {
+			"build-depends": [
+				"binary(eu-readelf)",
+				"binary(gtkdoc-scan)",
+				"binary(msgfmt)",
+				"binary(perl)",
+				"binary(vapigen)",
+				"binary(xsltproc)",
+				"docbook",
+				"docbook-xsl",
+				"pkgconfig(bluez)",
+				"pkgconfig(dbus-1)",
+				"pkgconfig(gio-unix-2.0)",
+				"pkgconfig(gmodule-2.0)",
+				"pkgconfig(gnutls)",
+				"pkgconfig(gobject-introspection-1.0)",
+				"pkgconfig(jansson)",
+				"pkgconfig(libcurl)",
+				"pkgconfig(libndp)",
+				"pkgconfig(libnewt)",
+				"pkgconfig(libnvme)",
+				"pkgconfig(libpsl)",
+				"pkgconfig(libsystemd)",
+				"pkgconfig(libudev)",
+				"pkgconfig(mm-glib)",
+				"pkgconfig(mobile-broadband-provider-info)",
+				"pkgconfig(nss)",
+				"pkgconfig(polkit-gobject-1)",
+				"pkgconfig(readline)",
+				"pkgconfig(systemd)",
+				"pkgconfig(uuid)",
+				"ppp-devel",
+				"python(pygobject)"
+			],
+			"depends": [
+				"binary(mmcli)",
+				"networkmanager",
+				"soname(libc.so.6(x86_64))",
+				"soname(libgio-2.0.so.0(x86_64))",
+				"soname(libglib-2.0.so.0(x86_64))",
+				"soname(libgobject-2.0.so.0(x86_64))",
+				"soname(libmm-glib.so.0(x86_64))",
+				"soname(libsystemd.so.0(x86_64))"
+			],
+			"files": [
+				"/usr/lib/NetworkManager/1.54.1/libnm-device-plugin-wwan.so",
+				"/usr/lib/NetworkManager/1.54.1/libnm-wwan.so"
+			],
+			"name": "networkmanager-wwan",
+			"provides": [
+				"soname(NetworkManager/1.54.1/libnm-device-plugin-wwan.so(x86_64))",
+				"soname(NetworkManager/1.54.1/libnm-wwan.so(x86_64))"
+			]
 		}
 	},
 	"source-name": "networkmanager",
-	"source-release": "9",
-	"source-version": "1.52.1"
+	"source-release": "10",
+	"source-version": "1.54.1"
 }

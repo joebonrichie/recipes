@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : networkmanager
-version     : 1.52.1
-release     : 9
+version     : 1.54.1
+release     : 10
 homepage    : https://wiki.gnome.org/Projects/NetworkManager
 upstreams   :
-    - https://gitlab.freedesktop.org/NetworkManager/NetworkManager/-/releases/1.52.1/downloads/NetworkManager-1.52.1.tar.xz : 8b122c73493a72f2bae527c125cebd87711671b90352dbe2b1788aba9575ac6f
+    - https://gitlab.freedesktop.org/NetworkManager/NetworkManager/-/releases/1.54.1/downloads/NetworkManager-1.54.1.tar.xz : 00f3f0be12ac4d4858ebf152430b92def1574803ff6107f7efc764a056d4c4c7
 summary     : NetworkManager — network management daemon
 description : |
     NetworkManager attempts to keep an active network connection available at all times.  The point of NetworkManager is to make networking configuration and setup as painless and automatic as possible.  NetworkManager is intended to replace default route, replace other routes, set IP addresses, and in general configure networking as NM sees fit (with the possibility of manual override as necessary).  In effect, the goal of NetworkManager is to make networking Just Work with a minimum of user hassle, but still allow customization and a high level of manual network control.  If you have special needs, we'd like to hear about them, but understand that NetworkManager is not intended for every use-case.
@@ -33,6 +33,7 @@ builddeps   :
     - pkgconfig(libnewt)
     - pkgconfig(libcurl)
     - pkgconfig(libndp)
+    - pkgconfig(libnvme)
     - pkgconfig(libpsl)
     - pkgconfig(libsystemd)
     - pkgconfig(libudev)
@@ -47,8 +48,7 @@ builddeps   :
     - docbook
     - docbook-xsl
     - ppp-devel
-rundeps     :
-    - binary(iwmon)
+    # libaudit
 tuning      :
     - lto: false # Handled by meson flag
 environment : |
@@ -57,12 +57,10 @@ environment : |
 setup       : |
     # TODO:
     # - Setup online check
-    # - More bluez configuration
-
-    %patch %(pkgdir)/2164.patch
 
     %meson \
         -Db_lto=true \
+        -Dbluez5_dun=true \
         -Dconfig_dhcp_default=internal \
         -Dconfig_dns_rc_manager_default=auto \
         -Dconfig_logging_backend_default=journal \
@@ -70,9 +68,12 @@ setup       : |
         -Dconfig_wifi_backend_default=iwd \
         -Ddhcpcd=no \
         -Ddocs=true \
+        -Diptables=%(sbindir)/iptables \
+        -Dip6tables=%(sbindir)/ip6tables \
         -Diwd=true \
         -Dlibaudit=no \
         -Dmodify_system=true \
+        -Dnft=%(sbindir)/nft \
         -Dnmtui=true \
         -Dpppd_plugin_dir="$(pkgconf --variable=plugindir pppd)" \
         -Dqt=false \
@@ -86,8 +87,6 @@ install     : |
 
     %install_file %(pkgdir)/NetworkManager.tmpfiles %(installroot)%(tmpfilesdir)/%(name).conf
 packages    :
-    # TODO: More splitting
-
     - "%(name)-libnm":
         paths:
             - /usr/lib/libnm.so.*
@@ -121,3 +120,59 @@ packages    :
         paths:
             - /usr/bin/nmtui*
             - /usr/share/man/man1/nmtui*
+
+    - "%(name)-adsl":
+        summary: ADSL device plugin for NetworkManager
+        description: ADSL device plugin for NetworkManager
+        rundeps:
+            - "%(name)"
+        paths:
+            - /usr/lib/NetworkManager/*/libnm-device-plugin-adsl.so
+
+    - "%(name)-bluetooth":
+        summary: Bluetooth device plugin for NetworkManager
+        description: Bluetooth device plugin for NetworkManager
+        rundeps:
+            - "%(name)"
+            - "%(name)-wwan"
+            - bluez
+        paths:
+            - /usr/lib/NetworkManager/*/libnm-device-plugin-bluetooth.so
+
+    - "%(name)-wifi":
+        summary: Wifi device plugin for NetworkManager
+        description: Wifi device plugin for NetworkManager
+        rundeps:
+            - "%(name)"
+            - binary(iwmon)
+            - sysbinary(set-wireless-regdom)
+        paths:
+            - /usr/lib/NetworkManager/*/libnm-device-plugin-wifi.so
+
+    - "%(name)-wwan":
+        summary: Mobile broadband device plugin for NetworkManager
+        description: Mobile broadband device plugin for NetworkManager
+        rundeps:
+            - "%(name)"
+            - binary(mmcli)
+        paths:
+            - /usr/lib/NetworkManager/*/libnm-device-plugin-wwan.so
+            - /usr/lib/NetworkManager/*/libnm-wwan.so
+
+    - "%(name)-ovs":
+        summary: Open vSwitch device plugin for NetworkManager
+        description: Open vSwitch device plugin for NetworkManager
+        rundeps:
+            - "%(name)"
+        paths:
+            - /usr/lib/NetworkManager/*/libnm-device-plugin-ovs.so
+
+    - "%(name)-ppp":
+        summary: PPP device plugin for NetworkManager
+        description: PPP device plugin for NetworkManager
+        rundeps:
+            - "%(name)"
+            - ppp
+        paths:
+            - /usr/lib/NetworkManager/*/libnm-ppp-plugin.so
+            - /usr/lib/pppd/*/nm-pppd-plugin.so
