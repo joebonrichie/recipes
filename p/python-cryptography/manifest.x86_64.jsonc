@@ -20,12 +20,12 @@
 				"soname(libunwind.so.1(x86_64))"
 			],
 			"files": [
-				"/usr/lib/python3.11/site-packages/cryptography-45.0.6.dist-info/METADATA",
-				"/usr/lib/python3.11/site-packages/cryptography-45.0.6.dist-info/RECORD",
-				"/usr/lib/python3.11/site-packages/cryptography-45.0.6.dist-info/WHEEL",
-				"/usr/lib/python3.11/site-packages/cryptography-45.0.6.dist-info/licenses/LICENSE",
-				"/usr/lib/python3.11/site-packages/cryptography-45.0.6.dist-info/licenses/LICENSE.APACHE",
-				"/usr/lib/python3.11/site-packages/cryptography-45.0.6.dist-info/licenses/LICENSE.BSD",
+				"/usr/lib/python3.11/site-packages/cryptography-46.0.1.dist-info/METADATA",
+				"/usr/lib/python3.11/site-packages/cryptography-46.0.1.dist-info/RECORD",
+				"/usr/lib/python3.11/site-packages/cryptography-46.0.1.dist-info/WHEEL",
+				"/usr/lib/python3.11/site-packages/cryptography-46.0.1.dist-info/licenses/LICENSE",
+				"/usr/lib/python3.11/site-packages/cryptography-46.0.1.dist-info/licenses/LICENSE.APACHE",
+				"/usr/lib/python3.11/site-packages/cryptography-46.0.1.dist-info/licenses/LICENSE.BSD",
 				"/usr/lib/python3.11/site-packages/cryptography/__about__.py",
 				"/usr/lib/python3.11/site-packages/cryptography/__init__.py",
 				"/usr/lib/python3.11/site-packages/cryptography/__pycache__/__about__.cpython-311.opt-1.pyc",
@@ -46,6 +46,12 @@
 				"/usr/lib/python3.11/site-packages/cryptography/hazmat/__pycache__/_oid.cpython-311.opt-1.pyc",
 				"/usr/lib/python3.11/site-packages/cryptography/hazmat/__pycache__/_oid.cpython-311.pyc",
 				"/usr/lib/python3.11/site-packages/cryptography/hazmat/_oid.py",
+				"/usr/lib/python3.11/site-packages/cryptography/hazmat/asn1/__init__.py",
+				"/usr/lib/python3.11/site-packages/cryptography/hazmat/asn1/__pycache__/__init__.cpython-311.opt-1.pyc",
+				"/usr/lib/python3.11/site-packages/cryptography/hazmat/asn1/__pycache__/__init__.cpython-311.pyc",
+				"/usr/lib/python3.11/site-packages/cryptography/hazmat/asn1/__pycache__/asn1.cpython-311.opt-1.pyc",
+				"/usr/lib/python3.11/site-packages/cryptography/hazmat/asn1/__pycache__/asn1.cpython-311.pyc",
+				"/usr/lib/python3.11/site-packages/cryptography/hazmat/asn1/asn1.py",
 				"/usr/lib/python3.11/site-packages/cryptography/hazmat/backends/__init__.py",
 				"/usr/lib/python3.11/site-packages/cryptography/hazmat/backends/__pycache__/__init__.cpython-311.opt-1.pyc",
 				"/usr/lib/python3.11/site-packages/cryptography/hazmat/backends/__pycache__/__init__.cpython-311.pyc",
@@ -62,6 +68,7 @@
 				"/usr/lib/python3.11/site-packages/cryptography/hazmat/bindings/_rust/__init__.pyi",
 				"/usr/lib/python3.11/site-packages/cryptography/hazmat/bindings/_rust/_openssl.pyi",
 				"/usr/lib/python3.11/site-packages/cryptography/hazmat/bindings/_rust/asn1.pyi",
+				"/usr/lib/python3.11/site-packages/cryptography/hazmat/bindings/_rust/declarative_asn1.pyi",
 				"/usr/lib/python3.11/site-packages/cryptography/hazmat/bindings/_rust/exceptions.pyi",
 				"/usr/lib/python3.11/site-packages/cryptography/hazmat/bindings/_rust/ocsp.pyi",
 				"/usr/lib/python3.11/site-packages/cryptography/hazmat/bindings/_rust/openssl/__init__.pyi",
@@ -273,6 +280,6 @@
 		}
 	},
 	"source-name": "python-cryptography",
-	"source-release": "4",
-	"source-version": "45.0.6"
+	"source-release": "5",
+	"source-version": "46.0.1"
 }
