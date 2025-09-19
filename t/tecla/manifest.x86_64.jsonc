@@ -73,6 +73,7 @@
 				"/usr/share/locale/sv/LC_MESSAGES/tecla.mo",
 				"/usr/share/locale/tr/LC_MESSAGES/tecla.mo",
 				"/usr/share/locale/uk/LC_MESSAGES/tecla.mo",
+				"/usr/share/locale/uz/LC_MESSAGES/tecla.mo",
 				"/usr/share/locale/zh_CN/LC_MESSAGES/tecla.mo",
 				"/usr/share/locale/zh_TW/LC_MESSAGES/tecla.mo"
 			],
@@ -103,6 +104,6 @@
 		}
 	},
 	"source-name": "tecla",
-	"source-release": "6",
-	"source-version": "48.0.2"
+	"source-release": "7",
+	"source-version": "49.0"
 }
