@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : libtiff
-version     : 4.7.0
-release     : 5
+version     : 4.7.1
+release     : 6
 homepage    : https://download.osgeo.org/libtiff
 upstreams   :
-    - https://download.osgeo.org/libtiff/tiff-4.7.0.tar.xz : 273a0a73b1f0bed640afee4a5df0337357ced5b53d3d5d1c405b936501f71017
+    - https://download.osgeo.org/libtiff/tiff-4.7.1.tar.xz : b92017489bdc1db3a4c97191aa4b75366673cb746de0dce5d7a749d5954681ba
 summary     : Library for manipulation of TIFF images
 description : |
     The LibTIFF software provides support for the Tag Image File Format (TIFF), a widely used format for storing image data. The latest version of the TIFF specification is TIFF File Format Specification. Included in this software distribution are: a library, libtiff, for reading and writing TIFF images, a small collection of tools for performing simple manipulations of TIFF images, and, documentation for the library and tools.
@@ -24,12 +24,7 @@ builddeps   :
     - pkgconfig(zlib)
     # libdeflate?
 setup       : |
-    %patch %(pkgdir)/CVE-2025-8176.patch
-    %patch %(pkgdir)/CVE-2025-8177.patch
-
-    # Fix cmake FTBFS
-    %cmake \
-        -DCMAKE_POLICY_VERSION_MINIMUM=3.5
+    %cmake
 build       : |
     %cmake_build
 install     : |
