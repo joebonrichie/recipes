@@ -128,3 +128,6 @@
 ### Obsoleted by glycin
 - heif-pixbuf-loader
 - jxl-pixbuf-loader
+
+### Not built since switching to meson build
+- usbutils-devel

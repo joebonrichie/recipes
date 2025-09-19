@@ -19,6 +19,7 @@
 				"/usr/bin/lsusb.py",
 				"/usr/bin/usb-devices",
 				"/usr/bin/usbhid-dump",
+				"/usr/share/man/man1/lsusb.py.1",
 				"/usr/share/man/man1/usb-devices.1",
 				"/usr/share/man/man8/lsusb.8",
 				"/usr/share/man/man8/usbhid-dump.8"
@@ -30,27 +31,9 @@
 				"binary(usb-devices)",
 				"binary(usbhid-dump)"
 			]
-		},
-		"usbutils-devel": {
-			"build-depends": [
-				"pkgconfig(libudev)",
-				"pkgconfig(libusb-1.0)"
-			],
-			"depends": [
-				"pkgconfig(libudev)",
-				"pkgconfig(libusb-1.0)",
-				"usbutils"
-			],
-			"files": [
-				"/usr/lib/pkgconfig/usbutils.pc"
-			],
-			"name": "usbutils-devel",
-			"provides": [
-				"pkgconfig(usbutils)"
-			]
 		}
 	},
 	"source-name": "usbutils",
-	"source-release": "3",
-	"source-version": "017"
+	"source-release": "4",
+	"source-version": "018"
 }
