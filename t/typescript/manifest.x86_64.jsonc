@@ -117,11 +117,13 @@
 				"/usr/lib/node_modules_22/typescript/lib/lib.esnext.d.ts",
 				"/usr/lib/node_modules_22/typescript/lib/lib.esnext.decorators.d.ts",
 				"/usr/lib/node_modules_22/typescript/lib/lib.esnext.disposable.d.ts",
+				"/usr/lib/node_modules_22/typescript/lib/lib.esnext.error.d.ts",
 				"/usr/lib/node_modules_22/typescript/lib/lib.esnext.float16.d.ts",
 				"/usr/lib/node_modules_22/typescript/lib/lib.esnext.full.d.ts",
 				"/usr/lib/node_modules_22/typescript/lib/lib.esnext.intl.d.ts",
 				"/usr/lib/node_modules_22/typescript/lib/lib.esnext.iterator.d.ts",
 				"/usr/lib/node_modules_22/typescript/lib/lib.esnext.promise.d.ts",
+				"/usr/lib/node_modules_22/typescript/lib/lib.esnext.sharedmemory.d.ts",
 				"/usr/lib/node_modules_22/typescript/lib/lib.scripthost.d.ts",
 				"/usr/lib/node_modules_22/typescript/lib/lib.webworker.asynciterable.d.ts",
 				"/usr/lib/node_modules_22/typescript/lib/lib.webworker.d.ts",
@@ -152,6 +154,6 @@
 		}
 	},
 	"source-name": "typescript",
-	"source-release": "3",
-	"source-version": "5.8.2"
+	"source-release": "4",
+	"source-version": "5.9.2"
 }
