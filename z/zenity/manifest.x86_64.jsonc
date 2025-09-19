@@ -4,6 +4,7 @@
 	"packages": {
 		"zenity": {
 			"build-depends": [
+				"binary(help2man)",
 				"binary(itstool)",
 				"binary(msgfmt)",
 				"pkgconfig(libadwaita-1)"
@@ -936,11 +937,13 @@
 				"/usr/share/locale/tr/LC_MESSAGES/zenity.mo",
 				"/usr/share/locale/ug/LC_MESSAGES/zenity.mo",
 				"/usr/share/locale/uk/LC_MESSAGES/zenity.mo",
+				"/usr/share/locale/uz/LC_MESSAGES/zenity.mo",
 				"/usr/share/locale/vi/LC_MESSAGES/zenity.mo",
 				"/usr/share/locale/xh/LC_MESSAGES/zenity.mo",
 				"/usr/share/locale/zh_CN/LC_MESSAGES/zenity.mo",
 				"/usr/share/locale/zh_HK/LC_MESSAGES/zenity.mo",
-				"/usr/share/locale/zh_TW/LC_MESSAGES/zenity.mo"
+				"/usr/share/locale/zh_TW/LC_MESSAGES/zenity.mo",
+				"/usr/share/man/man1/zenity.1"
 			],
 			"name": "zenity",
 			"provides": [
@@ -949,6 +952,6 @@
 		}
 	},
 	"source-name": "zenity",
-	"source-release": "3",
-	"source-version": "4.0.5"
+	"source-release": "4",
+	"source-version": "4.2.0"
 }
