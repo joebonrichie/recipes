@@ -1,0 +1,28 @@
+/** Human readable report. This is not consumed by boulder */
+{
+	"manifest-version": "0.2",
+	"packages": {
+		"iw": {
+			"build-depends": [
+				"pkgconfig(libnl-3.0)"
+			],
+			"depends": [
+				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
+				"soname(libc.so.6(x86_64))",
+				"soname(libnl-3.so.200(x86_64))",
+				"soname(libnl-genl-3.so.200(x86_64))"
+			],
+			"files": [
+				"/usr/sbin/iw",
+				"/usr/share/man/man8/iw.8.gz"
+			],
+			"name": "iw",
+			"provides": [
+				"sysbinary(iw)"
+			]
+		}
+	},
+	"source-name": "iw",
+	"source-release": "1",
+	"source-version": "6.17"
+}
