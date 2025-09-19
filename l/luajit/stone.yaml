@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : luajit
-version     : 2.1-20250529
-release     : 3
+version     : 2.1-20250826
+release     : 4
 homepage    : https://luajit.org/
 upstreams   :
-    - https://github.com/openresty/luajit2/archive/refs/tags/v2.1-20250529.tar.gz : a3f6f5ead9fc69603e51c66877614e6b5e93332d552f35d08f932447357ed593
+    - https://github.com/openresty/luajit2/archive/refs/tags/v2.1-20250826.tar.gz : 5a49743ad6ce4b7f19aac71b55a08052c1feb62750f051982082c12bf62f39c0
 summary     : Just-in-time compiler and drop-in replacement for Lua 5.1
 description : |
     LuaJIT is a Just-In-Time (JIT) compiler for the Lua programming language.
@@ -18,13 +18,13 @@ tuning      :
 build       : |
     # Stupid build system
     %make amalg \
-                CC="${CC}" \
-                TARGET_CFLAGS="${CFLAGS}" \
-                TARGET_LDFLAGS="${CFLAGS} ${LDFLAGS}" \
-                TARGET_SHLDFLAGS="${CFLAGS} ${LDFLAGS}" \
-                PREFIX=/usr \
-                BUILDMODE=dynamic \
-                TARGET_STRIP=: \
-                Q= E=@:
+        CC="${CC}" \
+        TARGET_CFLAGS="${CFLAGS}" \
+        TARGET_LDFLAGS="${CFLAGS} ${LDFLAGS}" \
+        TARGET_SHLDFLAGS="${CFLAGS} ${LDFLAGS}" \
+        PREFIX=/usr \
+        BUILDMODE=dynamic \
+        TARGET_STRIP=: \
+        Q= E=@:
 install     : |
     %make_install PREFIX=/usr

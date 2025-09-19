@@ -12,9 +12,9 @@
 			],
 			"files": [
 				"/usr/bin/luajit",
-				"/usr/bin/luajit-2.1.1748495995",
+				"/usr/bin/luajit-2.1.1756211046",
 				"/usr/lib/libluajit-5.1.so.2",
-				"/usr/lib/libluajit-5.1.so.2.1.1748495995",
+				"/usr/lib/libluajit-5.1.so.2.1.1756211046",
 				"/usr/lib/lua/5.1",
 				"/usr/share/lua/5.1",
 				"/usr/share/luajit-2.1/jit/bc.lua",
@@ -41,7 +41,7 @@
 			"name": "luajit",
 			"provides": [
 				"binary(luajit)",
-				"binary(luajit-2.1.1748495995)",
+				"binary(luajit-2.1.1756211046)",
 				"soname(libluajit-5.1.so.2(x86_64))"
 			]
 		},
@@ -66,6 +66,6 @@
 		}
 	},
 	"source-name": "luajit",
-	"source-release": "3",
-	"source-version": "2.1-20250529"
+	"source-release": "4",
+	"source-version": "2.1-20250826"
 }
