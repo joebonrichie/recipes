@@ -4,8 +4,8 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : openssl
-version     : 3.5.2
-release     : 29
+version     : 3.5.3
+release     : 30
 summary     : OpenSSL cryptography library
 license     :
     - OpenSSL
@@ -14,7 +14,7 @@ homepage    : https://www.openssl.org
 description : |
     OpenSSL cryptography library.
 upstreams   :
-    - https://www.openssl.org/source/openssl-3.5.2.tar.gz: c53a47e5e441c930c3928cf7bf6fb00e5d129b630e0aa873b08258656e7345ec
+    - https://www.openssl.org/source/openssl-3.5.3.tar.gz: c9489d2abcf943cdc8329a57092331c598a402938054dc3a22218aea8a8ec3bf
 builddeps   :
     - binary(perl)
     - pkgconfig32(libzstd)
@@ -66,6 +66,8 @@ install     : |
     rmdir %(installroot)/etc
     rmdir %(installroot)/%(vendordir)/ssl/certs
     rmdir %(installroot)/%(vendordir)/ssl/private
+
+    # TODO: Can we just delete c_rehash now that we manage certificates properly in ca-certificates?
 tuning      :
     - lto: false # https://github.com/openssl/openssl/issues/18663
 packages    :
@@ -74,25 +76,19 @@ packages    :
         description: |
             Library files for %(name), typically pulled in as a dependency of another package.
         rundeps:
-            - zlib
-            - zstd-libs
+            # These are dlopened()
+            - soname(libz.so.1(x86_64))
+            - soname(libzstd.so.1(x86_64))
         paths:
             - /usr/lib/libcrypto.so.*
             - /usr/lib/libssl.so.*
             - /usr/lib/engines-*
             - /usr/lib/ossl-modules
 
-    # Moss upgrade issue
-    - "%(name)":
-        rundeps:
-            - "%(name)-libs"
-        # TODO: Can we just delete c_rehash now that we manage certificates properly in ca-certificates?
-
     - "%(name)-32bit":
         rundeps:
-            - zlib-32bit
-            - zstd-32bit
-
+            - soname(libz.so.1(386))
+            - soname(libzstd.so.1(386))
     - "%(name)-docs":
         paths:
             - /usr/share/doc/*
