@@ -5,11 +5,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : linux-desktop
-version     : 6.16.5
-release     : 110
+version     : 6.16.8
+release     : 111
 homepage    : https://kernel.org/
 upstreams   :
-    - https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.16.5.tar.xz : 76bffbae7eab2a1de1ed05692bef709f43b02a52fe95ae655cacf0fa252213f3
+    - https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.16.8.tar.xz : 231311bd7084dc3129944d26bb43be6ff837da82fb2104a67704aebca8bfa69f
 summary     : The Linux Kernel for desktop systems
 description : |
     The Linux Kernel for desktop systems
