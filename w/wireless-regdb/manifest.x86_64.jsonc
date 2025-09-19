@@ -1,0 +1,29 @@
+/** Human readable report. This is not consumed by boulder */
+{
+	"manifest-version": "0.2",
+	"packages": {
+		"wireless-regdb": {
+			"depends": [
+				"sysbinary(iw)"
+			],
+			"files": [
+				"/usr/lib/crda/pubkeys/wens.key.pub.pem",
+				"/usr/lib/crda/regulatory.bin",
+				"/usr/lib/firmware/regulatory.db",
+				"/usr/lib/firmware/regulatory.db.p7s",
+				"/usr/lib/udev/rules.d/85-regulatory.rules",
+				"/usr/sbin/set-wireless-regdom",
+				"/usr/share/defaults/wireless-regdom",
+				"/usr/share/man/man5/regulatory.bin.5.gz",
+				"/usr/share/man/man5/regulatory.db.5.gz"
+			],
+			"name": "wireless-regdb",
+			"provides": [
+				"sysbinary(set-wireless-regdom)"
+			]
+		}
+	},
+	"source-name": "wireless-regdb",
+	"source-release": "1",
+	"source-version": "2025.07.10"
+}
