@@ -1,0 +1,33 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : showtime
+version     : 49.0
+release     : 1
+homepage    : https://apps.gnome.org/Showtime/
+upstreams   :
+    - https://download.gnome.org/sources/showtime/49/showtime-49.0.tar.xz : 5abcaf97ab5e9530038282848588e8ce6c26173b7303ef6756bebdb0b20ed398
+summary     : Watch without distraction
+description : |
+    Play your favorite movies and video files without hassle. Showtime features simple playback controls that fade out of your way when you're watching, fullscreen, adjustable playback speed, multiple language and subtitle tracks, and screenshots — everything you need for a straightforward viewing experience.
+license     : GPL-3.0-or-later
+builddeps   :
+    - binary(msgfmt)
+    - binary(update-desktop-database)
+    - pkgconfig(blueprint-compiler)
+    - pkgconfig(gtk4)
+    - pkgconfig(libadwaita-1)
+rundeps:
+  - binary(python3)
+  - gstreamer-plugin-gtk4
+  - gtk-4
+  - libadwaita
+setup       : |
+    %meson
+build       : |
+    %meson_build
+install     : |
+    %meson_install
+

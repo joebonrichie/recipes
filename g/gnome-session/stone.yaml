@@ -5,7 +5,7 @@
 #
 name        : gnome-session
 version     : 49.0
-release     : 24
+release     : 25
 homepage    : https://gitlab.gnome.org/GNOME/gnome-session
 upstreams   :
     - https://download.gnome.org/sources/gnome-session/49/gnome-session-49.0.tar.xz : 5a75622e63d1b75145c9ebe67e828367a75f5ace4b6237f64e54661e6a545ef3
