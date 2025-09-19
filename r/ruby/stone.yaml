@@ -4,15 +4,15 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : ruby
-version     : '3.4.5'
-release     : 9
+version     : '3.4.6'
+release     : 10
 summary     : An object-oriented language for quick and easy programming
 license     : Ruby
 homepage    : https://www.ruby-lang.org/en/
 description : |
     An object-oriented language for quick and easy programming
 upstreams   :
-    - https://cache.ruby-lang.org/pub/ruby/3.4/ruby-3.4.5.tar.gz: 1d88d8a27b442fdde4aa06dc99e86b0bbf0b288963d8433112dd5fac798fd5ee
+    - https://cache.ruby-lang.org/pub/ruby/3.4/ruby-3.4.6.tar.gz: e3c19ab9e8f41b3723124fbc0114cde7cbf55e65aa9c58c12acd89ec9c0dd1b9
 builddeps   :
     - binary(rustc) # for yjit compiler
     - pkgconfig(gmp)
@@ -27,11 +27,12 @@ environment : |
 setup       : |
     export LDFLAGS="$(echo ${LDFLAGS} | sed --expression='s/-Wl,--icf=safe //')"
 
-    %configure --disable-rpath \
-               --enable-shared \
-               --with-sitedir=%(libdir)/ruby/site_ruby \
-               --disable-install-doc \
-               --with-ruby-version="${major_version}.${minor_version}"
+    %configure \
+        --disable-rpath \
+        --enable-shared \
+        --with-sitedir=%(libdir)/ruby/site_ruby \
+        --disable-install-doc \
+        --with-ruby-version="${major_version}.${minor_version}"
     ## TODO: Figure out why docs won't build (the --disable-install-doc flag above)
 build       : |
     %make
