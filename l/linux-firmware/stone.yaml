@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : linux-firmware
-version     : "20250808"
-release     : 28
+version     : "20250917"
+release     : 29
 homepage    : https://kernel.org
 upstreams   :
-    - git|https://gitlab.com/kernel-firmware/linux-firmware.git : 1ce2da4d7b91140cc3ac8698747fddb677cdf91a
+    - git|https://gitlab.com/kernel-firmware/linux-firmware.git : add225168d0d1ba4c174d5eb15272b53de01ad5a
 summary     : Firmware to allow devices to function correctly
 description : |
     Firmware to allow devices to function correctly
@@ -125,6 +125,7 @@ packages    :
             - /usr/lib/firmware/intel/ice
             - /usr/lib/firmware/intel/ish
             - /usr/lib/firmware/intel/vpu
+            - /usr/lib/firmware/LENOVO/ish/
 
     - "%(name)-intel-sound":
         summary: Support for Intel sound DSPs
@@ -159,6 +160,7 @@ packages    :
         paths:
             - /usr/lib/firmware/iwlwifi-*
             - /usr/lib/firmware/intel/ibt-*
+            - /usr/lib/firmware/intel/iwlwifi/
 
     - "%(name)-libertas":
         summary: Support for Marvell Wireless cards
@@ -336,6 +338,7 @@ packages    :
             - /usr/lib/firmware/go7007/
             - /usr/lib/firmware/imx/
             - /usr/lib/firmware/inside-secure/
+            - /usr/lib/firmware/intel/qat/
             - /usr/lib/firmware/isci/
             - /usr/lib/firmware/ixp4xx/
             - /usr/lib/firmware/kaweth/
