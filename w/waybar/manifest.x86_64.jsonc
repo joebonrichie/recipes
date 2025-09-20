@@ -24,6 +24,7 @@
 				"pkgconfig(libudev)",
 				"pkgconfig(scdoc)",
 				"pkgconfig(sigc++-2.0)",
+				"pkgconfig(sndio)",
 				"pkgconfig(spdlog)",
 				"pkgconfig(systemd)",
 				"pkgconfig(upower-glib)",
@@ -42,7 +43,7 @@
 				"soname(libcava.so(x86_64))",
 				"soname(libdbusmenu-gtk3.so.4(x86_64))",
 				"soname(libevdev.so.2(x86_64))",
-				"soname(libfmt.so.11(x86_64))",
+				"soname(libfmt.so.12(x86_64))",
 				"soname(libgdk-3.so.0(x86_64))",
 				"soname(libgdkmm-3.0.so.1(x86_64))",
 				"soname(libgio-2.0.so.0(x86_64))",
@@ -61,6 +62,7 @@
 				"soname(libpipewire-0.3.so.0(x86_64))",
 				"soname(libpulse.so.0(x86_64))",
 				"soname(libsigc-2.0.so.0(x86_64))",
+				"soname(libsndio.so.7(x86_64))",
 				"soname(libspdlog.so.1.15(x86_64))",
 				"soname(libudev.so.1(x86_64))",
 				"soname(libunwind.so.1(x86_64))",
@@ -84,6 +86,7 @@
 				"/usr/share/man/man5/waybar-disk.5",
 				"/usr/share/man/man5/waybar-dwl-tags.5",
 				"/usr/share/man/man5/waybar-dwl-window.5",
+				"/usr/share/man/man5/waybar-ext-workspaces.5",
 				"/usr/share/man/man5/waybar-gamemode.5",
 				"/usr/share/man/man5/waybar-hyprland-language.5",
 				"/usr/share/man/man5/waybar-hyprland-submap.5",
@@ -107,6 +110,7 @@
 				"/usr/share/man/man5/waybar-river-mode.5",
 				"/usr/share/man/man5/waybar-river-tags.5",
 				"/usr/share/man/man5/waybar-river-window.5",
+				"/usr/share/man/man5/waybar-sndio.5",
 				"/usr/share/man/man5/waybar-states.5",
 				"/usr/share/man/man5/waybar-styles.5",
 				"/usr/share/man/man5/waybar-sway-language.5",
@@ -129,6 +133,6 @@
 		}
 	},
 	"source-name": "waybar",
-	"source-release": "2",
-	"source-version": "0.13.0"
+	"source-release": "3",
+	"source-version": "0.14.0"
 }

@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : waybar
-version     : '0.13.0'
-release     : 2
+version     : '0.14.0'
+release     : 3
 homepage    : https://github.com/Alexays/Waybar
 upstreams   :
-    - https://github.com/Alexays/Waybar/archive/refs/tags/0.13.0.tar.gz : 5148c802ecdcb459f0dbcb20b43a30f5751e9c1b2c9ed7bb893aa87f37212307
+    - https://github.com/Alexays/Waybar/archive/refs/tags/0.14.0.tar.gz : 7f3859779bb3a5028a7215b2000c2e476c03453a52289164ba60a4bf1bb3772f
 summary     : Highly customizable Wayland bar for Sway and Wlroots based compositors
 description : |
     Highly customizable Wayland bar for Sway and Wlroots based compositors.
@@ -40,6 +40,7 @@ builddeps   :
     # - pkgconfig(playerctl)
     - pkgconfig(scdoc)
     - pkgconfig(sigc++-2.0)
+    - pkgconfig(sndio)
     - pkgconfig(spdlog)
     - pkgconfig(systemd)
     # - pkgconfig(threads)
@@ -51,6 +52,7 @@ builddeps   :
     - pkgconfig(xkbregistry)
     # libgps
 setup       : |
+    %patch %(pkgdir)/0001-Fix-fmt-12.0-build.patch
     %meson
 build       : |
     %meson_build
