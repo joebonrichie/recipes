@@ -25,7 +25,7 @@
 				"soname(libGLEW.so.2.2(x86_64))",
 				"soname(libX11.so.6(x86_64))",
 				"soname(libc.so.6(x86_64))",
-				"soname(libfmt.so.11(x86_64))",
+				"soname(libfmt.so.12(x86_64))",
 				"soname(libglfw.so.3(x86_64))",
 				"soname(libm.so.6(x86_64))",
 				"soname(libspdlog.so.1.15(x86_64))",
@@ -84,6 +84,6 @@
 		}
 	},
 	"source-name": "mangohud",
-	"source-release": "7",
+	"source-release": "8",
 	"source-version": "0.8.1"
 }
