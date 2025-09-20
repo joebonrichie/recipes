@@ -4,18 +4,55 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : fmt
-version     : 11.2.0
-release     : 5
+version     : 12.0.0
+release     : 6
 homepage    : https://fmt.dev/
 upstreams   :
-    - https://github.com/fmtlib/fmt/archive/refs/tags/11.2.0.tar.gz : bc23066d87ab3168f27cef3e97d545fa63314f5c79df5ea444d41d56f962c6af
+    - https://github.com/fmtlib/fmt/archive/refs/tags/12.0.0.tar.gz:
+        hash: aa3e8fbb6a0066c03454434add1f1fc23299e85758ceec0d7d2d974431481e40
+        unpackdir: current
+
+    # Don't delete this section, just comment it out if it's not needed. The build recipe accounts for it possibly not existing
+    - https://github.com/fmtlib/fmt/archive/refs/tags/11.2.0.tar.gz:
+        hash: bc23066d87ab3168f27cef3e97d545fa63314f5c79df5ea444d41d56f962c6af
+        unpackdir: compat
 summary     : Small, safe and fast formatting C++ library
 description : |
     {fmt} is an open-source formatting library for C++. It can be used as a safe and fast alternative to (s)printf and IOStreams.
 license     : BSD-2-Clause
 setup       : |
-    %cmake -DBUILD_SHARED_LIBS=ON
+    if [ -d ../compat ]; then
+        pushd ../compat
+
+        %cmake \
+            -DBUILD_SHARED_LIBS=ON
+        popd
+    fi
+
+    %cmake \
+        -DBUILD_SHARED_LIBS=ON
 build       : |
-    %cmake_build
+    if [ -d ../compat ]; then
+        pushd ../compat
+            %ccache_zero
+            env CCACHE_BASEDIR="${pwd}" %cmake_build
+            %ccache_stats
+        popd
+    fi
+
+    %ccache_zero
+    env CCACHE_BASEDIR="${pwd}" %cmake_build
+    %ccache_stats
 install     : |
+    if [ -d ../compat ]; then
+        pushd ../compat
+            mkdir tmp
+            DESTDIR="${pwd}/tmp" cmake --install "%(builddir)" --verbose
+
+            # Only copy the sonames
+            %install_dir %(installroot)/%(libdir)
+            find ${pwd}/tmp/%(libdir) -name "libfmt.so.*" -print -exec mv {} %(installroot)/%(libdir) \;
+        popd
+    fi
+
     %cmake_install

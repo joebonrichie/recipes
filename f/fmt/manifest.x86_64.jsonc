@@ -10,11 +10,14 @@
 			],
 			"files": [
 				"/usr/lib/libfmt.so.11",
-				"/usr/lib/libfmt.so.11.2.0"
+				"/usr/lib/libfmt.so.11.2.0",
+				"/usr/lib/libfmt.so.12",
+				"/usr/lib/libfmt.so.12.0.0"
 			],
 			"name": "fmt",
 			"provides": [
-				"soname(libfmt.so.11(x86_64))"
+				"soname(libfmt.so.11(x86_64))",
+				"soname(libfmt.so.12(x86_64))"
 			]
 		},
 		"fmt-devel": {
@@ -51,6 +54,6 @@
 		}
 	},
 	"source-name": "fmt",
-	"source-release": "5",
-	"source-version": "11.2.0"
+	"source-release": "6",
+	"source-version": "12.0.0"
 }
