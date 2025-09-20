@@ -10,7 +10,7 @@
 				"soname(ld-linux-x86-64.so.2(x86_64))",
 				"soname(libc++.so.1(x86_64))",
 				"soname(libc.so.6(x86_64))",
-				"soname(libfmt.so.11(x86_64))",
+				"soname(libfmt.so.12(x86_64))",
 				"soname(libunwind.so.1(x86_64))"
 			],
 			"files": [
@@ -40,7 +40,6 @@
 				"/usr/include/spdlog/cfg/helpers.h",
 				"/usr/include/spdlog/common-inl.h",
 				"/usr/include/spdlog/common.h",
-				"/usr/include/spdlog/common.h.orig",
 				"/usr/include/spdlog/details/backtracer-inl.h",
 				"/usr/include/spdlog/details/backtracer.h",
 				"/usr/include/spdlog/details/circular_q.h",
@@ -137,6 +136,6 @@
 		}
 	},
 	"source-name": "spdlog",
-	"source-release": "3",
+	"source-release": "4",
 	"source-version": "1.15.3"
 }
