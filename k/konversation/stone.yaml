@@ -1,0 +1,60 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : konversation
+version     : 25.08.1
+release     : 1
+upstreams   :
+    - https://download.kde.org/stable/release-service/25.08.1/src/konversation-25.08.1.tar.xz : 5cd19f8c4cff3f14af5de3bd658d6f9941c6899e33a04ffc0267eb34a14d953a
+homepage    : https://konversation.kde.org/
+license     :
+    - GFDL-1.2-or-later
+    - GPL-2.0-or-later
+summary     : User-friendly IRC client built on the KDE Platform
+description : |
+    Konversation is a user-friendly Internet Relay Chat (IRC) client built on the KDE Platform.
+builddeps   :
+    # Temporary, boulder doesn't handle build ordering resolution correctly when builddeps are added by macros, so add ECM manually
+    - cmake(ECM)
+    - cmake(KF6Archive)
+    - cmake(KF6Bookmarks)
+    - cmake(KF6Codecs)
+    - cmake(KF6Config)
+    - cmake(KF6ConfigWidgets)
+    - cmake(KF6CoreAddons)
+    - cmake(KF6Crash)
+    - cmake(KF6DBusAddons)
+    - cmake(KF6DocTools)
+    - cmake(KF6GlobalAccel)
+    - cmake(KF6I18n)
+    - cmake(KF6IdleTime)
+    - cmake(KF6ItemViews)
+    - cmake(KF6KIO)
+    - cmake(KF6NewStuff)
+    - cmake(KF6Notifications)
+    - cmake(KF6NotifyConfig)
+    - cmake(KF6Parts)
+    - cmake(KF6StatusNotifierItem)
+    - cmake(KF6TextWidgets)
+    - cmake(KF6Wallet)
+    - cmake(KF6WidgetsAddons)
+    - cmake(KF6WindowSystem)
+    - cmake(Qca-qt6)
+    - cmake(Qt6Core5Compat)
+    - cmake(Qt6Multimedia)
+setup       : |
+    %cmake_kf6
+build       : |
+    %cmake_build
+install     : |
+    %cmake_install
+packages    :
+    - "%(name)":
+        rundeps:
+            - qt6-wayland
+
+    - "%(name)-docs":
+        paths:
+            - /usr/share/doc
