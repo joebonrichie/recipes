@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : libquotient
-version     : 0.9.4
-release     : 4
+version     : 0.9.5
+release     : 5
 homepage    : https://quotient-im.github.io/libQuotient/
 upstreams   :
-    - https://github.com/quotient-im/libQuotient/archive/refs/tags/0.9.4.tar.gz : f5dfd8dd7652161e6699baef6cd7e8ded5c91bd2ceb691b7ba4379e9fe319502
+    - https://github.com/quotient-im/libQuotient/archive/refs/tags/0.9.5.tar.gz : 24366dd59aca7b991756e45c3c8823c43fc6a8fdb161ea6dcce5b666c6300766
 summary     : GnuPG Made Easy library (C++ bindings)
 description : |
     GnuPG Made Easy library (C++ bindings)

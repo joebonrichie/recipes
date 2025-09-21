@@ -25,7 +25,7 @@
 			],
 			"files": [
 				"/usr/lib/libQuotientQt6.so.0.9",
-				"/usr/lib/libQuotientQt6.so.0.9.4"
+				"/usr/lib/libQuotientQt6.so.0.9.5"
 			],
 			"name": "libquotient",
 			"provides": [
@@ -225,6 +225,6 @@
 		}
 	},
 	"source-name": "libquotient",
-	"source-release": "4",
-	"source-version": "0.9.4"
+	"source-release": "5",
+	"source-version": "0.9.5"
 }
