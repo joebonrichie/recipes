@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : bluez
-version     : "5.83"
-release     : 7
+version     : "5.84"
+release     : 8
 homepage    : https://www.bluez.org/
 upstreams   :
-    - https://www.kernel.org/pub/linux/bluetooth/bluez-5.83.tar.xz : 108522d909d220581399bfec93daab62035539ceef3dda3e79970785c63bd24c
+    - https://www.kernel.org/pub/linux/bluetooth/bluez-5.84.tar.xz : 5ba73d030f7b00087d67800b0e321601aec0f892827c72e5a2c8390d8c886b11
 summary     : Bluetooth protocol stack for Linux
 description : |
     BlueZ provides support for the core Bluetooth layers and protocols. It is flexible, efficient and uses a modular implementation. It has many interesting features:

@@ -72,6 +72,8 @@
 				"/usr/share/man/man5/org.bluez.Battery.5",
 				"/usr/share/man/man5/org.bluez.BatteryProvider.5",
 				"/usr/share/man/man5/org.bluez.BatteryProviderManager.5",
+				"/usr/share/man/man5/org.bluez.Bearer.BREDR.5",
+				"/usr/share/man/man5/org.bluez.Bearer.LE.5",
 				"/usr/share/man/man5/org.bluez.Device.5",
 				"/usr/share/man/man5/org.bluez.DeviceSet.5",
 				"/usr/share/man/man5/org.bluez.GattCharacteristic.5",
@@ -95,6 +97,7 @@
 				"/usr/share/man/man5/org.bluez.Profile.5",
 				"/usr/share/man/man5/org.bluez.ProfileManager.5",
 				"/usr/share/man/man7/hci.7",
+				"/usr/share/man/man7/iso.7",
 				"/usr/share/man/man7/l2cap.7",
 				"/usr/share/man/man7/mgmt.7",
 				"/usr/share/man/man7/rfcomm.7",
@@ -347,6 +350,6 @@
 		}
 	},
 	"source-name": "bluez",
-	"source-release": "7",
-	"source-version": "5.83"
+	"source-release": "8",
+	"source-version": "5.84"
 }
