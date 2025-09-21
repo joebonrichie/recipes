@@ -4,18 +4,37 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : openjpeg
-version     : 2.5.3
-release     : 2
+version     : 2.5.4
+release     : 3
 homepage    : https://github.com/uclouvain/openjpeg
 upstreams   :
-    - https://github.com/uclouvain/openjpeg/archive/refs/tags/v2.5.3.tar.gz : 368fe0468228e767433c9ebdea82ad9d801a3ad1e4234421f352c8b06e7aa707
+    - https://github.com/uclouvain/openjpeg/archive/refs/tags/v2.5.4.tar.gz : a695fbe19c0165f295a8531b1e4e855cd94d0875d2f88ec4b61080677e27188a
 summary     : OpenJPEG is an open-source JPEG 2000 codec written in C language
 description : |
     OpenJPEG is an open-source JPEG 2000 codec written in C language. It has been developed in order to promote the use of JPEG 2000, a still-image compression standard from the Joint Photographic Experts Group (JPEG). Since April 2015, it is officially recognized by ISO/IEC and ITU-T as a JPEG 2000 Reference Software.
 license     : MIT
+builddeps   :
+    - binary(doxygen)
+    - pkgconfig(lcms2)
+    - pkgconfig(libpng)
+    - pkgconfig(libtiff-4)
+    - pkgconfig(zlib)
 setup       : |
-    %cmake
+    %cmake \
+        -DBUILD_DOC=ON \
+        -DBUILD_STATIC_LIBS=OFF
 build       : |
     %cmake_build
 install     : |
     %cmake_install
+packages    :
+    - "%(name)-tools":
+        summary: OpenJPEG 2 command line tools
+        description: OpenJPEG 2 command line tools
+        paths:
+            - /usr/bin/
+            - /usr/share/man/man1/
+
+    - "%(name)-docs":
+        paths:
+            - /usr/share/doc/
