@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : p11-kit
-version     : 0.25.9
-release     : 8
+version     : 0.25.10
+release     : 9
 homepage    : https://p11-glue.freedesktop.org
 upstreams   :
-    - https://github.com/p11-glue/p11-kit/releases/download/0.25.9/p11-kit-0.25.9.tar.xz: 98a96f6602a70206f8073deb5e894b1c8efd76ef53c629ab88815d58273f2561
+    - https://github.com/p11-glue/p11-kit/releases/download/0.25.10/p11-kit-0.25.10.tar.xz: a62a137a966fb3a9bbfa670b4422161e369ddea216be51425e3be0ab2096e408
 summary     : Loads and enumerates PKCS#11 modules
 description : |
    Loads and enumerates PKCS#11 modules
