@@ -4,9 +4,10 @@
 	"packages": {
 		"xdg-user-dirs": {
 			"build-depends": [
+				"binary(msgfmt)",
 				"binary(xsltproc)",
 				"docbook-xsl",
-				"gettext-devel"
+				"pkgconfig(systemd)"
 			],
 			"depends": [
 				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
@@ -16,7 +17,8 @@
 				"/usr/bin/xdg-user-dir",
 				"/usr/bin/xdg-user-dirs-update",
 				"/usr/lib/systemd/user-preset/60-xdg-user-dirs.preset",
-				"/usr/lib/systemd/user/xdg-user-dirs-update.service",
+				"/usr/lib/systemd/user/xdg-user-dirs.service",
+				"/usr/share/locale/ab/LC_MESSAGES/xdg-user-dirs.mo",
 				"/usr/share/locale/af/LC_MESSAGES/xdg-user-dirs.mo",
 				"/usr/share/locale/an/LC_MESSAGES/xdg-user-dirs.mo",
 				"/usr/share/locale/ar/LC_MESSAGES/xdg-user-dirs.mo",
@@ -28,6 +30,7 @@
 				"/usr/share/locale/bn_IN/LC_MESSAGES/xdg-user-dirs.mo",
 				"/usr/share/locale/br/LC_MESSAGES/xdg-user-dirs.mo",
 				"/usr/share/locale/ca/LC_MESSAGES/xdg-user-dirs.mo",
+				"/usr/share/locale/ckb/LC_MESSAGES/xdg-user-dirs.mo",
 				"/usr/share/locale/crh/LC_MESSAGES/xdg-user-dirs.mo",
 				"/usr/share/locale/cs/LC_MESSAGES/xdg-user-dirs.mo",
 				"/usr/share/locale/da/LC_MESSAGES/xdg-user-dirs.mo",
@@ -54,11 +57,14 @@
 				"/usr/share/locale/is/LC_MESSAGES/xdg-user-dirs.mo",
 				"/usr/share/locale/it/LC_MESSAGES/xdg-user-dirs.mo",
 				"/usr/share/locale/ja/LC_MESSAGES/xdg-user-dirs.mo",
+				"/usr/share/locale/ka/LC_MESSAGES/xdg-user-dirs.mo",
+				"/usr/share/locale/kab/LC_MESSAGES/xdg-user-dirs.mo",
 				"/usr/share/locale/kk/LC_MESSAGES/xdg-user-dirs.mo",
 				"/usr/share/locale/kn/LC_MESSAGES/xdg-user-dirs.mo",
 				"/usr/share/locale/ko/LC_MESSAGES/xdg-user-dirs.mo",
 				"/usr/share/locale/ku/LC_MESSAGES/xdg-user-dirs.mo",
 				"/usr/share/locale/ky/LC_MESSAGES/xdg-user-dirs.mo",
+				"/usr/share/locale/lg/LC_MESSAGES/xdg-user-dirs.mo",
 				"/usr/share/locale/lt/LC_MESSAGES/xdg-user-dirs.mo",
 				"/usr/share/locale/lv/LC_MESSAGES/xdg-user-dirs.mo",
 				"/usr/share/locale/mk/LC_MESSAGES/xdg-user-dirs.mo",
@@ -80,7 +86,7 @@
 				"/usr/share/locale/sl/LC_MESSAGES/xdg-user-dirs.mo",
 				"/usr/share/locale/sq/LC_MESSAGES/xdg-user-dirs.mo",
 				"/usr/share/locale/sr/LC_MESSAGES/xdg-user-dirs.mo",
-				"/usr/share/locale/sr@Latn/LC_MESSAGES/xdg-user-dirs.mo",
+				"/usr/share/locale/sr@latin/LC_MESSAGES/xdg-user-dirs.mo",
 				"/usr/share/locale/sv/LC_MESSAGES/xdg-user-dirs.mo",
 				"/usr/share/locale/ta/LC_MESSAGES/xdg-user-dirs.mo",
 				"/usr/share/locale/te/LC_MESSAGES/xdg-user-dirs.mo",
@@ -88,6 +94,7 @@
 				"/usr/share/locale/tr/LC_MESSAGES/xdg-user-dirs.mo",
 				"/usr/share/locale/uk/LC_MESSAGES/xdg-user-dirs.mo",
 				"/usr/share/locale/vi/LC_MESSAGES/xdg-user-dirs.mo",
+				"/usr/share/locale/wa/LC_MESSAGES/xdg-user-dirs.mo",
 				"/usr/share/locale/zh_CN/LC_MESSAGES/xdg-user-dirs.mo",
 				"/usr/share/locale/zh_HK/LC_MESSAGES/xdg-user-dirs.mo",
 				"/usr/share/locale/zh_TW/LC_MESSAGES/xdg-user-dirs.mo",
@@ -107,6 +114,6 @@
 		}
 	},
 	"source-name": "xdg-user-dirs",
-	"source-release": "5",
-	"source-version": "0.18"
+	"source-release": "6",
+	"source-version": "0.19"
 }

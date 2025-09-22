@@ -4,34 +4,31 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : xdg-user-dirs
-version     : "0.18"
-release     : 5
+version     : "0.19"
+release     : 6
 homepage    : http://user-dirs.freedesktop.org/releases
 upstreams   :
-    - git|https://gitlab.freedesktop.org/xdg/xdg-user-dirs.git : 97ff189affdbf0d33c0f8e91d3fd5608f425ef96
+    - git|https://gitlab.freedesktop.org/xdg/xdg-user-dirs.git : 0577968675b9d7d660b3715cf6b2e00c6d491d67
 summary     : freedesktop.org compliant user directories
 description : |
     xdg-user-dirs is a tool to help manage "well known" user directories like the desktop folder and the music folder. It also handles localization (i.e. translation) of the filenames.
 license     : GPL-2.0
 builddeps   :
+    - binary(msgfmt)
     - binary(xsltproc)
+    - pkgconfig(systemd)
     - docbook-xsl
-    - gettext-devel
 environment : |
     # Temporary, replace with boulder macro
     export XML_CATALOG_FILES="file:///usr/share/defaults/docbook/docbook-xsl/catalog"
 setup       : |
     %patch %(pkgdir)/0001-Fallback-to-stateless-directories-ship-files-in-data.patch
-    %patch %(pkgdir)/ftbfs-gettext.patch
 
-    # Gettext macros have moved (Gettext 0.25)
-    autoreconf -fvi -I /usr/share/gettext/m4
-    %configure
+    %meson
 build       : |
-    %make
+    %meson_build
 install     : |
-    %make_install
+    %meson_install
 
     rm -frv %(installroot)%(datadir)/xdg/autostart
-    %install_file %(pkgdir)/xdg-user-dirs-update.service %(installroot)%(libdir)/systemd/user/xdg-user-dirs-update.service
     %install_file %(pkgdir)/60-xdg-user-dirs.preset %(installroot)%(libdir)/systemd/user-preset/60-xdg-user-dirs.preset
