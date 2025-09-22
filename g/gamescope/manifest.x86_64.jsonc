@@ -27,6 +27,7 @@
 				"pkgconfig(wayland-client)",
 				"pkgconfig(wayland-protocols)",
 				"pkgconfig(x11)",
+				"pkgconfig(xcb-errors)",
 				"pkgconfig(xcb-ewmh)",
 				"pkgconfig(xcomposite)",
 				"pkgconfig(xcursor)",
@@ -143,6 +144,6 @@
 		}
 	},
 	"source-name": "gamescope",
-	"source-release": "1",
+	"source-release": "2",
 	"source-version": "3.16.17"
 }

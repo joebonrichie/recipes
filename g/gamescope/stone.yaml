@@ -5,7 +5,7 @@
 #
 name        : gamescope
 version     : 3.16.17
-release     : 1
+release     : 2
 homepage    : https://github.com/ValveSoftware/gamescope
 upstreams   :
     - git|https://github.com/ValveSoftware/gamescope.git : cf288b95fa376a15f30fe8d1a9f750cad54742df
@@ -41,6 +41,7 @@ builddeps   :
     - pkgconfig(wayland-client)
     - pkgconfig(wayland-protocols)
     - pkgconfig(x11)
+    - pkgconfig(xcb-errors)
     - pkgconfig(xcb-ewmh)
     - pkgconfig(xcomposite)
     - pkgconfig(xcursor)
@@ -52,7 +53,6 @@ builddeps   :
     - pkgconfig(xwayland)
     - pkgconfig(xxf86vm)
     # TODO: Use system glm
-    # TODO: xcb-errors
 rundeps     :
     - binary(Xwayland)
 setup       : |
