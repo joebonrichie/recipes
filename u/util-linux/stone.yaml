@@ -4,8 +4,8 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : util-linux
-version     : 2.41.1
-release     : 16
+version     : 2.41.2
+release     : 17
 summary     : Random collection of Linux utilities
 license     :
     - BSD-3-Clause
@@ -20,8 +20,8 @@ description : |
     Random collection of Linux utilities
 upstreams   :
     # Missing some bash completion files, so use the git archive for now
-    # - https://mirrors.edge.kernel.org/pub/linux/utils/util-linux/v2.41/util-linux-2.41.1.tar.xz : be9ad9a276f4305ab7dd2f5225c8be1ff54352f565ff4dede9628c1aaa7dec57
-    - git|https://github.com/util-linux/util-linux.git : 67b6f19adad289cc4ff4071ae8eceda41bdce9e8
+    # - https://mirrors.edge.kernel.org/pub/linux/utils/util-linux/v2.41/util-linux-2.41.2.tar.xz : be9ad9a276f4305ab7dd2f5225c8be1ff54352f565ff4dede9628c1aaa7dec57
+    - git|https://github.com/util-linux/util-linux.git : 3410c4bf80207ceea017a0062c0298c767dcc0e2
 builddeps   :
     - binary(asciidoctor)
     - binary(bison)
@@ -40,6 +40,7 @@ builddeps   :
     - pkgconfig(libmagic)
     - pkgconfig(python3)
     - libutempter-devel
+    # po4a
 rundeps     :
     - binary(su)
 emul32      : true
