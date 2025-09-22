@@ -4,10 +4,10 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : openvpn
-version     : 2.6.14
-release     : 1
+version     : 2.6.15
+release     : 2
 upstreams   :
-    - https://swupdate.openvpn.net/community/releases/openvpn-2.6.14.tar.gz : 9eb6a6618352f9e7b771a9d38ae1631b5edfeed6d40233e243e602ddf2195e7a
+    - https://swupdate.openvpn.net/community/releases/openvpn-2.6.15.tar.gz : e35513ee15995e3c71adfd8891b9f33522896c70b3baa2ed9a23c7a42c4d7bde
 homepage    : https://openvpn.net/community/
 license     :
     - GPL-2.0-only
@@ -29,9 +29,7 @@ builddeps   :
     - pkgconfig(p11-kit-1)
     - pkgconfig(pam)
 setup       : |
-    %patch %(pkgdir)/ftbfs-kernel-6.16.patch
-
-    %configure \
+    %reconfigure \
         --enable-async-push \
         --enable-pkcs11 \
         --enable-systemd \
