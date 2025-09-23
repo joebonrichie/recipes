@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : spice-vdagent
-version     : 0.22.1
-release     : 2
+version     : 0.23.0
+release     : 3
 homepage    : https://www.spice-space.org
 upstreams   :
-    - https://www.spice-space.org/download/releases/spice-vdagent-0.22.1.tar.bz2 : 93b0d15aca4762cc7d379b179a7101149dbaed62b72112fffb2b3e90b11687a0
+    - https://www.spice-space.org/download/releases/spice-vdagent-0.23.0.tar.bz2 : 63e0f9bd5597c4638acfd6f10d7a2354f599bd9df5b31e443270cacf07e16a40
 summary     : Spice agent for Linux guests
 description : |
     Spice agent for Linux guests offering the following features:
@@ -33,8 +33,6 @@ builddeps   :
     - pkgconfig(xrandr)
     - pkgconfig(xinerama)
 setup       : |
-    %patch %(pkgdir)/0002-vdagent-Remove-watch-event-on-vdagent_display_destro.patch
-    %patch %(pkgdir)/0003-Switch-to-spice-vdagent.service-by-default.patch
     %patch %(pkgdir)/0001-Only-start-vdagent-under-virtualisation.patch
 
     %configure\
