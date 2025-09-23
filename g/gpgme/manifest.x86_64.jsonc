@@ -19,13 +19,15 @@
 				"soname(libm.so.6(x86_64))"
 			],
 			"files": [
+				"/usr/bin/gnupg-key-manage",
 				"/usr/bin/gpgme-json",
 				"/usr/lib/libgpgme.so.45",
-				"/usr/lib/libgpgme.so.45.0.0",
+				"/usr/lib/libgpgme.so.45.0.1",
 				"/usr/share/man/man1/gpgme-json.1"
 			],
 			"name": "gpgme",
 			"provides": [
+				"binary(gnupg-key-manage)",
 				"binary(gpgme-json)",
 				"soname(libgpgme.so.45(x86_64))"
 			]
@@ -96,6 +98,6 @@
 		}
 	},
 	"source-name": "gpgme",
-	"source-release": "6",
-	"source-version": "2.0.0"
+	"source-release": "7",
+	"source-version": "2.0.1"
 }
