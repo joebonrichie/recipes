@@ -4,23 +4,23 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : amdgpu_top
-version     : 0.10.5
-release     : 3
+version     : 0.11.0
+release     : 4
 homepage    : https://github.com/Umio-Yasuno/amdgpu_top
 upstreams   :
-    - https://github.com/Umio-Yasuno/amdgpu_top/archive/refs/tags/v0.10.5.tar.gz : 6b02b26ed35c2a87629a4141108293c1755782ba607dff824e04f27e161ece13
+    - https://github.com/Umio-Yasuno/amdgpu_top/archive/refs/tags/v0.11.0.tar.gz : a56152d738a0bfc3757d9587aaed409ecb05ccc3ec81861cbc9e4af84aa9fd46
 summary     : A tool that displays AMD GPU utilization
 description : |
     The tool displays information gathered from performance counters (GRBM, GRBM2), sensors, fdinfo, and AMDGPU driver.
-networking  : yes
-license     :
-    - MIT
+license     : MIT
+networking  : true
 builddeps   :
-    - binary(cargo)
-    - libdrm-devel
+    - pkgconfig(libdrm)
 setup       : |
     %cargo_fetch
 build       : |
     %cargo_build
 install     : |
     %cargo_install
+
+    %install_file assets/amdgpu_top.desktop -t %(installroot)%(datadir)/applications
