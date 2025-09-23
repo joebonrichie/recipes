@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : appstream
-version     : 1.0.6
-release     : 10
+version     : 1.1.0
+release     : 11
 homepage    : https://www.freedesktop.org/wiki/Distributions/AppStream/
 upstreams   :
-    - https://www.freedesktop.org/software/appstream/releases/AppStream-1.0.6.tar.xz : db4439db6a33de3ca1041473501610844ddf1b72ae23016c05242c681c380b4d
+    - https://www.freedesktop.org/software/appstream/releases/AppStream-1.1.0.tar.xz : 298b4732a2670503328e022d68d6ebbb253c716dad0b6ba127a4065262dd2f2c
 summary     : Tools and libraries to work with AppStream metadata
 description : |
     AppStream is a cross-distribution effort for enhancing the way we interact with the software repositories provided by (Linux) distributions by standardizing software component metadata.
@@ -20,18 +20,19 @@ builddeps   :
     - binary(gperf)
     - binary(itstool)
     - binary(msgfmt)
+    - binary(qmlcachegen6)
     - binary(vapigen)
     - binary(xsltproc)
     - pkgconfig(Qt6UiTools)
     - pkgconfig(glib-2.0)
     - pkgconfig(gobject-introspection-1.0)
     - pkgconfig(libcurl)
+    - pkgconfig(libfyaml)
     - pkgconfig(librsvg-2.0)
     - pkgconfig(libsystemd)
     - pkgconfig(libxml-2.0)
     - pkgconfig(libzstd)
     - pkgconfig(xmlb)
-    - pkgconfig(yaml-0.1)
     - docbook
     - docbook-xsl
 environment : |
@@ -42,12 +43,12 @@ environment : |
     export XML_CATALOG_FILES="file:///usr/share/defaults/docbook/docbook-dtd/catalog file:///usr/share/defaults/docbook/docbook-xsl/catalog"
 setup       : |
     %meson \
-           --sysconfdir=%(datadir)/appstream \
-           -Dapidocs=false \
-           -Dinstall-docs=false \
-           -Dqt=true \
-           -Dstemming=false \
-           -Dvapi=true
+        --sysconfdir=%(datadir)/appstream \
+        -Dapidocs=false \
+        -Dinstall-docs=false \
+        -Dqt=true \
+        -Dstemming=false \
+        -Dvapi=true
 build       : |
     %meson_build
 install     : |
