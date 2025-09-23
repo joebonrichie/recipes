@@ -4,6 +4,7 @@
 	"packages": {
 		"gnu-coreutils-compat": {
 			"build-depends": [
+				"binary(msgfmt)",
 				"pkgconfig(gmp)",
 				"pkgconfig(libacl)",
 				"pkgconfig(libattr)",
@@ -119,6 +120,6 @@
 		}
 	},
 	"source-name": "gnu-coreutils-compat",
-	"source-release": "1",
-	"source-version": "9.7"
+	"source-release": "2",
+	"source-version": "9.8"
 }
