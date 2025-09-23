@@ -33,7 +33,7 @@
 				"soname(libc.so.6(x86_64))",
 				"soname(libcairo.so.2(x86_64))",
 				"soname(libcdt.so.6(x86_64))",
-				"soname(libcgraph.so.7(x86_64))",
+				"soname(libcgraph.so.8(x86_64))",
 				"soname(libexpat.so.1(x86_64))",
 				"soname(libfontconfig.so.1(x86_64))",
 				"soname(libfreetype.so.6(x86_64))",
@@ -606,8 +606,8 @@
 			"files": [
 				"/usr/lib/libcdt.so.6",
 				"/usr/lib/libcdt.so.6.0.0",
-				"/usr/lib/libcgraph.so.7",
-				"/usr/lib/libcgraph.so.7.0.0",
+				"/usr/lib/libcgraph.so.8",
+				"/usr/lib/libcgraph.so.8.0.0",
 				"/usr/lib/libgvc.so.7",
 				"/usr/lib/libgvc.so.7.0.0",
 				"/usr/lib/libgvpr.so.2",
@@ -620,7 +620,7 @@
 			"name": "graphviz-libs",
 			"provides": [
 				"soname(libcdt.so.6(x86_64))",
-				"soname(libcgraph.so.7(x86_64))",
+				"soname(libcgraph.so.8(x86_64))",
 				"soname(libgvc.so.7(x86_64))",
 				"soname(libgvpr.so.2(x86_64))",
 				"soname(libpathplan.so.4(x86_64))",
@@ -654,7 +654,7 @@
 				"soname(libc++.so.1(x86_64))",
 				"soname(libc.so.6(x86_64))",
 				"soname(libcdt.so.6(x86_64))",
-				"soname(libcgraph.so.7(x86_64))",
+				"soname(libcgraph.so.8(x86_64))",
 				"soname(libgvc.so.7(x86_64))",
 				"soname(libm.so.6(x86_64))",
 				"soname(libunwind.so.1(x86_64))"
@@ -676,6 +676,6 @@
 		}
 	},
 	"source-name": "graphviz",
-	"source-release": "6",
-	"source-version": "13.1.2"
+	"source-release": "7",
+	"source-version": "14.0.0"
 }
