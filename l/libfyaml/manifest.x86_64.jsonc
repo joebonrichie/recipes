@@ -1,0 +1,84 @@
+/** Human readable report. This is not consumed by boulder */
+{
+	"manifest-version": "0.2",
+	"packages": {
+		"libfyaml": {
+			"build-depends": [
+				"binary(jq)",
+				"binary(sphinx-build)",
+				"pkgconfig(yaml-0.1)"
+			],
+			"depends": [
+				"soname(libc.so.6(x86_64))"
+			],
+			"files": [
+				"/usr/lib/libfyaml.so.0",
+				"/usr/lib/libfyaml.so.0.0.0"
+			],
+			"name": "libfyaml",
+			"provides": [
+				"soname(libfyaml.so.0(x86_64))"
+			]
+		},
+		"libfyaml-devel": {
+			"build-depends": [
+				"binary(jq)",
+				"binary(sphinx-build)",
+				"pkgconfig(yaml-0.1)"
+			],
+			"depends": [
+				"libfyaml"
+			],
+			"files": [
+				"/usr/include/libfyaml.h",
+				"/usr/lib/libfyaml.so",
+				"/usr/lib/pkgconfig/libfyaml.pc"
+			],
+			"name": "libfyaml-devel",
+			"provides": [
+				"pkgconfig(libfyaml)"
+			]
+		},
+		"libfyaml-tools": {
+			"build-depends": [
+				"binary(jq)",
+				"binary(sphinx-build)",
+				"pkgconfig(yaml-0.1)"
+			],
+			"depends": [
+				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
+				"soname(libc.so.6(x86_64))",
+				"soname(libfyaml.so.0(x86_64))"
+			],
+			"files": [
+				"/usr/bin/fy-compose",
+				"/usr/bin/fy-dump",
+				"/usr/bin/fy-filter",
+				"/usr/bin/fy-join",
+				"/usr/bin/fy-testsuite",
+				"/usr/bin/fy-tool",
+				"/usr/bin/fy-ypath",
+				"/usr/share/man/man1/fy-compose.1",
+				"/usr/share/man/man1/fy-dump.1",
+				"/usr/share/man/man1/fy-filter.1",
+				"/usr/share/man/man1/fy-join.1",
+				"/usr/share/man/man1/fy-testsuite.1",
+				"/usr/share/man/man1/fy-tool.1",
+				"/usr/share/man/man1/fy-ypath.1"
+			],
+			"name": "libfyaml-tools",
+			"provides": [
+				"binary(fy-compose)",
+				"binary(fy-dump)",
+				"binary(fy-filter)",
+				"binary(fy-join)",
+				"binary(fy-testsuite)",
+				"binary(fy-tool)",
+				"binary(fy-ypath)"
+			]
+		}
+	},
+	"source-name": "libfyaml",
+	"source-release": "1",
+	"source-version": "0.9"
+}
