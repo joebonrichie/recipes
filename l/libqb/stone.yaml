@@ -4,26 +4,39 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : libqb
-version     : 2.0.8
-release     : 3
+version     : 2.0.9
+release     : 4
 homepage    : https://github.com/ClusterLabs/libqb
 upstreams   :
-    - https://github.com/ClusterLabs/libqb/releases/download/v2.0.8/libqb-2.0.8.tar.xz : b42531fc20b8ac02f4c6d0a4dc49f7c4a1eef09bdb13af5f6927b7fc49522ee6
+    - https://github.com/ClusterLabs/libqb/releases/download/v2.0.9/libqb-2.0.9.tar.xz : 61a83753199c86a47a69f615778e81b56ac0a58d07751230444e76500b6b210b
 summary     : A library for high performance inter-process communication
 description : |
     A library for high performance inter-process communication
 license     : LGPL-2.1-or-later
 builddeps   :
     - binary(date)
+    - binary(doxygen)
+    - binary(python3)
+    - binary(readelf)
+    - pkgconfig(check)
+    - pkgconfig(glib-2.0)
     - pkgconfig(libsystemd)
     - pkgconfig(libxml-2.0)
 setup       : |
     # Doesn't like `date` from uutils-coreutils
     %configure --disable-static \
-                 ax_cv_prog_date_type=gnu \
-                 ax_cv_prog_date_gnu_utc=yes \
-                 ax_cv_prog_date_gnu_date=yes
+        ax_cv_prog_date_type=gnu \
+        ax_cv_prog_date_gnu_utc=yes \
+        ax_cv_prog_date_gnu_date=yes \
+        --enable-systemd-journal
 build       : |
     %make
 install     : |
     %make_install
+packages    :
+    - "doxygen2man":
+        summary: Program to create nicely-formatted man pages from Doxygen XML files
+        description: Program to create nicely-formatted man pages from Doxygen XML files
+        paths:
+            - /usr/bin/doxygen2man
+            - /usr/share/man/man1/doxygen2man.1*
