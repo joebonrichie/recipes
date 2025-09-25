@@ -451,11 +451,11 @@
 				"/usr/lib/python3.11/site-packages/hgext3rd/__init__.py",
 				"/usr/lib/python3.11/site-packages/hgext3rd/__pycache__/__init__.cpython-311.opt-1.pyc",
 				"/usr/lib/python3.11/site-packages/hgext3rd/__pycache__/__init__.cpython-311.pyc",
-				"/usr/lib/python3.11/site-packages/mercurial-7.1.dist-info/METADATA",
-				"/usr/lib/python3.11/site-packages/mercurial-7.1.dist-info/RECORD",
-				"/usr/lib/python3.11/site-packages/mercurial-7.1.dist-info/WHEEL",
-				"/usr/lib/python3.11/site-packages/mercurial-7.1.dist-info/licenses/COPYING",
-				"/usr/lib/python3.11/site-packages/mercurial-7.1.dist-info/top_level.txt",
+				"/usr/lib/python3.11/site-packages/mercurial-7.1.1.dist-info/METADATA",
+				"/usr/lib/python3.11/site-packages/mercurial-7.1.1.dist-info/RECORD",
+				"/usr/lib/python3.11/site-packages/mercurial-7.1.1.dist-info/WHEEL",
+				"/usr/lib/python3.11/site-packages/mercurial-7.1.1.dist-info/licenses/COPYING",
+				"/usr/lib/python3.11/site-packages/mercurial-7.1.1.dist-info/top_level.txt",
 				"/usr/lib/python3.11/site-packages/mercurial/__init__.py",
 				"/usr/lib/python3.11/site-packages/mercurial/__main__.py",
 				"/usr/lib/python3.11/site-packages/mercurial/__modulepolicy__.py",
@@ -1518,6 +1518,6 @@
 		}
 	},
 	"source-name": "mercurial",
-	"source-release": "5",
-	"source-version": "7.1"
+	"source-release": "6",
+	"source-version": "7.1.1"
 }

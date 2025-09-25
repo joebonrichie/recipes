@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : mercurial
-version     : "7.1"
-release     : 5
+version     : "7.1.1"
+release     : 6
 homepage    : https://www.mercurial-scm.org
 upstreams   :
-    - https://www.mercurial-scm.org/release/mercurial-7.1.tar.gz : e8d920c83c38c475d8e973be60760a49dc35c3795d64bd6876e56adba622e5cb
+    - https://www.mercurial-scm.org/release/mercurial-7.1.1.tar.gz : 47cf66ba89c175536faf844c9b4cd962eb432afb516c073e51f436bf3f0bc148
 summary     : Mercurial Source Code Management
 description : |
     Mercurial Source Code Management
