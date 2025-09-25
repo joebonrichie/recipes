@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : libblockdev
-version     : 3.3.1
-release     : 5
+version     : 3.4.0
+release     : 6
 homepage    : https://github.com/storaged-project/libblockdev
 upstreams   :
-    - https://github.com/storaged-project/libblockdev/releases/download/3.3.1/libblockdev-3.3.1.tar.gz : a2e2e448a19d420480b8cce5e0752197482a65cb62a9ed55d88b237da36600d1
+    - https://github.com/storaged-project/libblockdev/releases/download/3.4.0/libblockdev-3.4.0.tar.gz : 65ef9a37babd44b85b8ff9b273f90f9f7d5f8ff7b0c76a8edb69240325fd83f4
 summary     : A library for manipulating block devices
 description : |
     libblockdev is a C library supporting GObject introspection for manipulation of block devices. It has a plugin-based architecture where each technology (like LVM, Btrfs, MD RAID, Swap,...) is implemented in a separate plugin, possibly with multiple implementations (e.g. using LVM CLI or the new LVM DBus API).
@@ -33,6 +33,7 @@ builddeps   :
     - pkgconfig(nss)
     - pkgconfig(uuid)
     - pkgconfig(yaml-0.1)
+    - smartmontools # drivedb.h
 setup       : |
     # escrow requires volume_key which is crusty af
     # nvdimm requries ndctl which isn't yet packaged but relatively unimportant
