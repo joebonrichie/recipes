@@ -14,7 +14,7 @@
 			],
 			"files": [
 				"/usr/lib/libwpe-1.0.so.1",
-				"/usr/lib/libwpe-1.0.so.1.9.5"
+				"/usr/lib/libwpe-1.0.so.1.9.6"
 			],
 			"name": "libwpe",
 			"provides": [
@@ -58,6 +58,6 @@
 		}
 	},
 	"source-name": "libwpe",
-	"source-release": "3",
-	"source-version": "1.16.2"
+	"source-release": "4",
+	"source-version": "1.16.3"
 }
