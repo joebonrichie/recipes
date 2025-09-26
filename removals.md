@@ -135,3 +135,6 @@
 ### No longer used
 - autocc
 - autocc-dbginfo
+
+### Not built as of Boost 1.89
+- boost-system
