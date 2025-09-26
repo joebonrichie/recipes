@@ -5,12 +5,14 @@
 		"libnotify": {
 			"build-depends": [
 				"binary(g-ir-scanner)",
+				"binary(xmlto)",
 				"binary(xsltproc)",
+				"docbook",
 				"docbook-xsl",
 				"pkgconfig(gdk-pixbuf-2.0)",
 				"pkgconfig(gio-2.0)",
 				"pkgconfig(glib-2.0)",
-				"pkgconfig(gtk+-3.0)"
+				"pkgconfig(gtk4)"
 			],
 			"depends": [
 				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
@@ -36,17 +38,20 @@
 		"libnotify-devel": {
 			"build-depends": [
 				"binary(g-ir-scanner)",
+				"binary(xmlto)",
 				"binary(xsltproc)",
+				"docbook",
 				"docbook-xsl",
 				"pkgconfig(gdk-pixbuf-2.0)",
 				"pkgconfig(gio-2.0)",
 				"pkgconfig(glib-2.0)",
-				"pkgconfig(gtk+-3.0)"
+				"pkgconfig(gtk4)"
 			],
 			"depends": [
 				"libnotify",
 				"pkgconfig(gdk-pixbuf-2.0)",
 				"pkgconfig(gio-2.0)",
+				"pkgconfig(gio-unix-2.0)",
 				"pkgconfig(glib-2.0)"
 			],
 			"files": [
@@ -56,6 +61,7 @@
 				"/usr/include/libnotify/notify.h",
 				"/usr/lib/libnotify.so",
 				"/usr/lib/pkgconfig/libnotify.pc",
+				"/usr/share/doc/libnotify/spec/notification-spec.html",
 				"/usr/share/gir-1.0/Notify-0.7.gir"
 			],
 			"name": "libnotify-devel",
@@ -65,6 +71,6 @@
 		}
 	},
 	"source-name": "libnotify",
-	"source-release": "5",
-	"source-version": "0.8.6"
+	"source-release": "6",
+	"source-version": "0.8.7"
 }

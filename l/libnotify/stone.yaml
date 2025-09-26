@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : libnotify
-version     : 0.8.6
-release     : 5
+version     : 0.8.7
+release     : 6
 homepage    : https://gitlab.gnome.org/GNOME/libnotify
 upstreams   :
-    - https://download.gnome.org/sources/libnotify/0.8/libnotify-0.8.6.tar.xz : c5540aaefb60e1d63b1c587c05f2284ebe72ece7d0c0e5e4a778cfd5844b6b58
+    - https://download.gnome.org/sources/libnotify/0.8/libnotify-0.8.7.tar.xz : 4be15202ec4184fce1ac15997ece5530d2be32fe9573875aeb10e3b573858748
 summary     : Send desktop notifications.
 description : |
     Library to send desktop notifications.
@@ -16,18 +16,24 @@ license     :
     - LGPL-2.1-or-later
 builddeps   :
     - binary(g-ir-scanner)
+    - binary(xmlto)
     - binary(xsltproc)
     - pkgconfig(gdk-pixbuf-2.0)
     - pkgconfig(gio-2.0)
     - pkgconfig(glib-2.0)
-    - pkgconfig(gtk+-3.0)
+    - pkgconfig(gtk4)
+    - docbook
     - docbook-xsl
 environment : |
     # Temporary, replace with boulder macro
-    export XML_CATALOG_FILES="file:///usr/share/defaults/docbook/docbook-xsl/catalog"
+    export XML_CATALOG_FILES="file:///usr/share/defaults/docbook/docbook-dtd/catalog file:///usr/share/defaults/docbook/docbook-xsl/catalog"
 setup       : |
     %meson -Dgtk_doc=false
 build       : |
     %meson_build
 install     : |
     %meson_install
+packages    :
+    - "%(name)-devel":
+        paths:
+            - /usr/share/doc/libnotify/
