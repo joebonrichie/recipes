@@ -38,11 +38,8 @@
 				"soname(libzstd.so.1(x86_64))"
 			],
 			"files": [
-				"/usr/bin/c++",
 				"/usr/bin/g++",
-				"/usr/bin/x86_64-aerynos-linux-c++",
 				"/usr/bin/x86_64-aerynos-linux-g++",
-				"/usr/bin/x86_64-serpent-linux-c++",
 				"/usr/bin/x86_64-serpent-linux-g++",
 				"/usr/lib/gcc/x86_64-aerynos-linux/15/cc1plus",
 				"/usr/lib/gcc/x86_64-aerynos-linux/15/g++-mapper-server",
@@ -50,11 +47,8 @@
 			],
 			"name": "g++",
 			"provides": [
-				"binary(c++)",
 				"binary(g++)",
-				"binary(x86_64-aerynos-linux-c++)",
 				"binary(x86_64-aerynos-linux-g++)",
-				"binary(x86_64-serpent-linux-c++)",
 				"binary(x86_64-serpent-linux-g++)"
 			]
 		},
@@ -3415,6 +3409,6 @@
 		}
 	},
 	"source-name": "gcc",
-	"source-release": "16",
-	"source-version": "15.2.0+git.76aeacb4"
+	"source-release": "17",
+	"source-version": "15.2.0+git.8ef56e12"
 }
