@@ -5,7 +5,7 @@
 		"gnome-menus": {
 			"build-depends": [
 				"binary(autopoint)",
-				"binary(python3)",
+				"binary(tar)",
 				"pkgconfig(gio-unix-2.0)",
 				"pkgconfig(gobject-introspection-1.0)"
 			],
@@ -35,6 +35,7 @@
 				"/usr/share/desktop-directories/X-GNOME-SystemSettings.directory",
 				"/usr/share/desktop-directories/X-GNOME-Utilities.directory",
 				"/usr/share/desktop-directories/X-GNOME-WebApplications.directory",
+				"/usr/share/locale/ab/LC_MESSAGES/gnome-menus.mo",
 				"/usr/share/locale/af/LC_MESSAGES/gnome-menus.mo",
 				"/usr/share/locale/ak/LC_MESSAGES/gnome-menus.mo",
 				"/usr/share/locale/an/LC_MESSAGES/gnome-menus.mo",
@@ -86,6 +87,7 @@
 				"/usr/share/locale/hy/LC_MESSAGES/gnome-menus.mo",
 				"/usr/share/locale/ia/LC_MESSAGES/gnome-menus.mo",
 				"/usr/share/locale/id/LC_MESSAGES/gnome-menus.mo",
+				"/usr/share/locale/ie/LC_MESSAGES/gnome-menus.mo",
 				"/usr/share/locale/ig/LC_MESSAGES/gnome-menus.mo",
 				"/usr/share/locale/io/LC_MESSAGES/gnome-menus.mo",
 				"/usr/share/locale/is/LC_MESSAGES/gnome-menus.mo",
@@ -111,6 +113,7 @@
 				"/usr/share/locale/mn/LC_MESSAGES/gnome-menus.mo",
 				"/usr/share/locale/mr/LC_MESSAGES/gnome-menus.mo",
 				"/usr/share/locale/ms/LC_MESSAGES/gnome-menus.mo",
+				"/usr/share/locale/my/LC_MESSAGES/gnome-menus.mo",
 				"/usr/share/locale/nb/LC_MESSAGES/gnome-menus.mo",
 				"/usr/share/locale/nds/LC_MESSAGES/gnome-menus.mo",
 				"/usr/share/locale/ne/LC_MESSAGES/gnome-menus.mo",
@@ -141,6 +144,7 @@
 				"/usr/share/locale/tr/LC_MESSAGES/gnome-menus.mo",
 				"/usr/share/locale/ug/LC_MESSAGES/gnome-menus.mo",
 				"/usr/share/locale/uk/LC_MESSAGES/gnome-menus.mo",
+				"/usr/share/locale/uz/LC_MESSAGES/gnome-menus.mo",
 				"/usr/share/locale/uz@cyrillic/LC_MESSAGES/gnome-menus.mo",
 				"/usr/share/locale/vi/LC_MESSAGES/gnome-menus.mo",
 				"/usr/share/locale/xh/LC_MESSAGES/gnome-menus.mo",
@@ -160,7 +164,7 @@
 		"gnome-menus-devel": {
 			"build-depends": [
 				"binary(autopoint)",
-				"binary(python3)",
+				"binary(tar)",
 				"pkgconfig(gio-unix-2.0)",
 				"pkgconfig(gobject-introspection-1.0)"
 			],
@@ -181,6 +185,6 @@
 		}
 	},
 	"source-name": "gnome-menus",
-	"source-release": "3",
-	"source-version": "3.36.0"
+	"source-release": "4",
+	"source-version": "3.38.1"
 }
