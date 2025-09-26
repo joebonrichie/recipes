@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : boost
-version     : 1.88.0
-release     : 5
+version     : 1.89.0
+release     : 6
 homepage    : https://boost.org
 upstreams   :
-    - https://archives.boost.io/release/1.88.0/source/boost_1_88_0.tar.gz: 3621533e820dcab1e8012afd583c0c73cf0f77694952b81352bf38c1488f9cb4
+    - https://archives.boost.io/release/1.89.0/source/boost_1_89_0.tar.gz: 9de758db755e8330a01d995b0a24d09798048400ac25c03fc5ea9be364b13c93
 summary     : Boost provides free peer-reviewed portable C++ source libraries.
 description : |
     The Boost organization and wider Boost community supports research and education into the best possible uses of C++ and libraries developed for it, particularly, but not exclusively those contained in the Boost Library.
@@ -49,6 +49,12 @@ install     : |
 
     %install_dir %(installroot)%(docdir)/%(name)/
     echo "VIRTUAL" > %(installroot)%(docdir)/%(name)/README
+
+    # Deprecated lib(s)
+    for i in %(name)-system; do
+        %install_dir %(installroot)%(docdir)/${i}
+        echo "DEPRECATED" > %(installroot)%(docdir)/${i}/README
+    done
 packages    :
     - "%(name)-devel":
         paths:
@@ -209,11 +215,12 @@ packages    :
         paths:
             - /usr/lib/libboost_stacktrace_*.so.*
 
+    # DEPRECATED
     - "%(name)-system":
-        summary: Run-time component of boost system library
-        description: Run-time component of boost system library
+        summary: Run-time component of boost system library (deprecated)
+        description: Run-time component of boost system library (deprecated)
         paths:
-            - /usr/lib/libboost_system.so.*
+            - /usr/share/doc/boost-system/
 
     - "%(name)-test":
         summary: Run-time component of boost test library
@@ -281,7 +288,6 @@ packages    :
             - "%(name)-regex"
             - "%(name)-serialization"
             - "%(name)-stacktrace"
-            - "%(name)-system"
             - "%(name)-test"
             - "%(name)-thread"
             - "%(name)-timer"
