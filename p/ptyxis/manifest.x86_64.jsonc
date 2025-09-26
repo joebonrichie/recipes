@@ -52,6 +52,7 @@
 				"/usr/share/locale/it/LC_MESSAGES/ptyxis.mo",
 				"/usr/share/locale/ja/LC_MESSAGES/ptyxis.mo",
 				"/usr/share/locale/ka/LC_MESSAGES/ptyxis.mo",
+				"/usr/share/locale/kab/LC_MESSAGES/ptyxis.mo",
 				"/usr/share/locale/ko/LC_MESSAGES/ptyxis.mo",
 				"/usr/share/locale/nb/LC_MESSAGES/ptyxis.mo",
 				"/usr/share/locale/nl/LC_MESSAGES/ptyxis.mo",
@@ -76,6 +77,6 @@
 		}
 	},
 	"source-name": "ptyxis",
-	"source-release": "9",
-	"source-version": "49.0"
+	"source-release": "10",
+	"source-version": "49.1"
 }
