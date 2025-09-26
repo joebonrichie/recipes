@@ -37,7 +37,6 @@
 				"/usr/bin/as",
 				"/usr/bin/c++filt",
 				"/usr/bin/elfedit",
-				"/usr/bin/ld",
 				"/usr/bin/ld.bfd",
 				"/usr/bin/nm",
 				"/usr/bin/objcopy",
@@ -324,7 +323,6 @@
 				"binary(as)",
 				"binary(c++filt)",
 				"binary(elfedit)",
-				"binary(ld)",
 				"binary(ld.bfd)",
 				"binary(nm)",
 				"binary(objcopy)",
@@ -533,6 +531,6 @@
 		}
 	},
 	"source-name": "binutils",
-	"source-release": "24",
-	"source-version": "2.45.0+git.2b2e51a3"
+	"source-release": "25",
+	"source-version": "2.45+git.d5945a22"
 }

@@ -4,8 +4,8 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : binutils
-version     : 2.45.0+git.2b2e51a3
-release     : 24
+version     : 2.45+git.d5945a22
+release     : 25
 summary     : A GNU collection of binary utilities
 license     : GPL-3.0-or-later
 homepage    : https://sourceware.org/binutils
@@ -13,7 +13,7 @@ description : |
     A GNU collection of binary utilities
 upstreams   :
     # binutils-2_45-branch
-    - git|https://sourceware.org/git/binutils-gdb.git : 2b2e51a31ec7c48ef830f7e8415b42d4b95e335a
+    - git|https://sourceware.org/git/binutils-gdb.git : d5945a221ff70ca60e78d0e8a7e3b0671414ec58
 builddeps   :
     - binary(bison)
     - binary(flex)
@@ -77,6 +77,9 @@ build       : |
 install     : |
     %make_install tooldir=/usr -C %(builddir)
     rm -f %(installroot)/usr/share/info/dir
+
+    # Default ld is provided by lld
+    rm -v %(installroot)%(bindir)/ld
 
     # Stateless
     %install_dir %(installroot)/usr/share/defaults/gprofng
