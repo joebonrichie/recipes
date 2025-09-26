@@ -11,14 +11,14 @@
 			],
 			"depends": [
 				"soname(ld-linux-x86-64.so.2(x86_64))",
-				"soname(libboost_iostreams.so.1.88.0(x86_64))",
+				"soname(libboost_iostreams.so.1.89.0(x86_64))",
 				"soname(libc++.so.1(x86_64))",
 				"soname(libc.so.6(x86_64))",
 				"soname(libunwind.so.1(x86_64))"
 			],
 			"files": [
 				"/usr/lib/libc++utilities.so.5",
-				"/usr/lib/libc++utilities.so.5.29.0"
+				"/usr/lib/libc++utilities.so.5.30.0"
 			],
 			"name": "cpp-utilities",
 			"provides": [
@@ -66,6 +66,7 @@
 				"/usr/include/c++utilities/misc/math.h",
 				"/usr/include/c++utilities/misc/multiarray.h",
 				"/usr/include/c++utilities/misc/parseerror.h",
+				"/usr/include/c++utilities/misc/signingkeys.h",
 				"/usr/include/c++utilities/misc/traits.h",
 				"/usr/include/c++utilities/misc/verification.h",
 				"/usr/include/c++utilities/tests/cppunit.h",
@@ -89,6 +90,7 @@
 				"/usr/share/c++utilities/cmake/modules/LibraryTarget.cmake",
 				"/usr/share/c++utilities/cmake/modules/ListToString.cmake",
 				"/usr/share/c++utilities/cmake/modules/ShellCompletion.cmake",
+				"/usr/share/c++utilities/cmake/modules/Sphinx.cmake",
 				"/usr/share/c++utilities/cmake/modules/TemplateFinder.cmake",
 				"/usr/share/c++utilities/cmake/modules/TestTarget.cmake",
 				"/usr/share/c++utilities/cmake/modules/TestUtilities.cmake",
@@ -100,6 +102,7 @@
 				"/usr/share/c++utilities/cmake/templates/desktop.in",
 				"/usr/share/c++utilities/cmake/templates/doxygen.in",
 				"/usr/share/c++utilities/cmake/templates/global.h.in",
+				"/usr/share/c++utilities/cmake/templates/sphinx-conf.py.in",
 				"/usr/share/c++utilities/cmake/templates/template.pc.in",
 				"/usr/share/c++utilities/cmake/templates/version.h.in",
 				"/usr/share/c++utilities/coding-style.clang-format",
@@ -114,6 +117,6 @@
 		}
 	},
 	"source-name": "cpp-utilities",
-	"source-release": "1",
-	"source-version": "5.29.0"
+	"source-release": "2",
+	"source-version": "5.30.0"
 }
