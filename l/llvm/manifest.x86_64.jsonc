@@ -41,12 +41,18 @@
 				"soname(libmimalloc.so.2(x86_64))"
 			],
 			"files": [
+				"/usr/bin/c++",
+				"/usr/bin/cc",
 				"/usr/bin/clang",
 				"/usr/bin/clang++",
 				"/usr/bin/clang-20",
 				"/usr/bin/clang-cl",
 				"/usr/bin/clang-cpp",
 				"/usr/bin/clang-scan-deps",
+				"/usr/bin/x86_64-aerynos-linux-c++",
+				"/usr/bin/x86_64-aerynos-linux-cc",
+				"/usr/bin/x86_64-serpent-linux-c++",
+				"/usr/bin/x86_64-serpent-linux-cc",
 				"/usr/lib/clang/20/bin/hwasan_symbolize",
 				"/usr/lib/clang/20/lib/linux/clang_rt.crtbegin-x86_64.o",
 				"/usr/lib/clang/20/lib/linux/clang_rt.crtend-x86_64.o",
@@ -127,16 +133,28 @@
 				"/usr/lib/clang/20/share/hwasan_ignorelist.txt",
 				"/usr/lib/clang/20/share/msan_ignorelist.txt",
 				"/usr/share/bash-completion/completions/clang",
-				"/usr/share/man/man1/clang.1"
+				"/usr/share/man/man1/c++.1",
+				"/usr/share/man/man1/cc.1",
+				"/usr/share/man/man1/clang.1",
+				"/usr/share/man/man1/x86_64-aerynos-linux-c++.1",
+				"/usr/share/man/man1/x86_64-aerynos-linux-cc.1",
+				"/usr/share/man/man1/x86_64-serpent-linux-c++.1",
+				"/usr/share/man/man1/x86_64-serpent-linux-cc.1"
 			],
 			"name": "clang",
 			"provides": [
+				"binary(c++)",
+				"binary(cc)",
 				"binary(clang)",
 				"binary(clang++)",
 				"binary(clang-20)",
 				"binary(clang-cl)",
 				"binary(clang-cpp)",
 				"binary(clang-scan-deps)",
+				"binary(x86_64-aerynos-linux-c++)",
+				"binary(x86_64-aerynos-linux-cc)",
+				"binary(x86_64-serpent-linux-c++)",
+				"binary(x86_64-serpent-linux-cc)",
 				"soname(clang/20/lib/linux/libclang_rt.asan-x86_64.so(x86_64))",
 				"soname(clang/20/lib/linux/libclang_rt.dyndd-x86_64.so(x86_64))",
 				"soname(clang/20/lib/linux/libclang_rt.hwasan-x86_64.so(x86_64))",
@@ -4140,6 +4158,7 @@
 				"soname(libmimalloc.so.2(x86_64))"
 			],
 			"files": [
+				"/usr/bin/ld",
 				"/usr/bin/ld.lld",
 				"/usr/bin/ld64.lld",
 				"/usr/bin/lld",
@@ -4148,6 +4167,7 @@
 			],
 			"name": "lld",
 			"provides": [
+				"binary(ld)",
 				"binary(ld.lld)",
 				"binary(ld64.lld)",
 				"binary(lld)",
@@ -9125,6 +9145,6 @@
 		}
 	},
 	"source-name": "llvm",
-	"source-release": "33",
+	"source-release": "34",
 	"source-version": "20.1.8"
 }

@@ -5,7 +5,7 @@
 #
 name        : llvm
 version     : 20.1.8
-release     : 33
+release     : 34
 summary     : Low Level Virtual Machine
 license     :
     - Apache-2.0 WITH LLVM-exception
@@ -451,7 +451,22 @@ profiles    :
             # Fix bash completion dir
             %install_dir %(installroot)%(bashcompletionsdir)
             mv %(installroot)/usr/share/clang/bash-autocomplete.sh %(installroot)%(bashcompletionsdir)/clang
+
+            # Provides cc/c++ on Aeryn
+            for i in cc %(host_platform)-cc x86_64-serpent-linux-cc; do
+                ln -srv %(installroot)%(bindir)/clang %(installroot)%(bindir)/${i}
+                ln -srv %(installroot)%(mandir)/man1/clang.1 %(installroot)%(mandir)/man1/${i}.1
+            done
+            for i in c++ %(host_platform)-c++ x86_64-serpent-linux-c++; do
+                ln -srv %(installroot)%(bindir)/clang++ %(installroot)%(bindir)/${i}
+                ln -srv %(installroot)%(mandir)/man1/clang.1 %(installroot)%(mandir)/man1/${i}.1
+            done
             ### Clang (end)
+
+            ### lld (begin)
+            # Provides ld on Aeryn
+            ln -srv %(installroot)%(bindir)/lld %(installroot)%(bindir)/ld
+            ### lld (end)
 
             ### libcxx/libunwind (begin)
             # Origin: https://raw.githubusercontent.com/kraj/meta-clang/master/recipes-devtools/clang/clang/libunwind.pc.in
@@ -580,11 +595,15 @@ packages    :
             - polly
         paths:
             - /usr/bin/*clang*
+            - /usr/bin/*cc
+            - /usr/bin/*c++
             - /usr/lib/clang/*/bin/*
             - /usr/lib/clang/*/lib/linux/*x86_64*
             - /usr/lib/clang/*/share/*
             - /usr/share/bash-completion/completions/clang
             - /usr/share/man/man1/clang*
+            - /usr/share/man/man1/*cc*
+            - /usr/share/man/man1/*c++*
 
     - "clang-tools":
         summary: "Additional Clang tools"
@@ -768,6 +787,7 @@ packages    :
         description: |
             A high-performance linker
         paths:
+            - /usr/bin/ld
             - /usr/bin/*lld*
             - /usr/bin/wasm-ld
 
