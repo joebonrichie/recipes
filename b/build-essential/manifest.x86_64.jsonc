@@ -7,7 +7,6 @@
 				"binary(bc)",
 				"binary(bison)",
 				"binary(bunzip2)",
-				"binary(cc)",
 				"binary(clang)",
 				"binary(clang++)",
 				"binary(cpio)",
@@ -16,7 +15,7 @@
 				"binary(g++)",
 				"binary(gcc)",
 				"binary(just)",
-				"binary(ld)",
+				"binary(ld.bfd)",
 				"binary(ld.lld)",
 				"binary(make)",
 				"binary(patch)",
@@ -42,6 +41,6 @@
 		}
 	},
 	"source-name": "build-essential",
-	"source-release": "6",
+	"source-release": "7",
 	"source-version": "0"
 }
