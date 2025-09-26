@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : plasma-login-manager
-version     : 0.0.1+git.16186712
-release     : 5
+version     : 0.0.1+git.91db523e
+release     : 6
 homepage    : https://github.com/sddm/sddm
 upstreams   :
-    - git|https://invent.kde.org/plasma/plasma-login-manager.git : 161867121cbe24a5a9dc2b3129d10340105ca265
+    - git|https://invent.kde.org/plasma/plasma-login-manager.git : 91db523e69943a6766f796da09f0ffd3cf452dfd
 summary     : Display manager for KDE Plasam
 description : |
     Plasma Login provides a display manager for KDE Plasma, forked from SDDM and with a new frontend providing a greeter, wallpaper plugin integration and System Settings module (KCM).
