@@ -5,7 +5,7 @@
 #
 name        : ccache
 version     : "4.12"
-release     : 13
+release     : 14
 summary     : ccache - a fast C/C++ compiler cache
 license     : GPL-3.0-or-later
 homepage    : https://ccache.dev/
@@ -44,12 +44,15 @@ install     : |
     for compiler in gcc \
                     g++ \
                     c++ \
+                    cc \
                     x86_64-aerynos-linux-gcc \
                     x86_64-aerynos-linux-g++ \
                     x86_64-aerynos-linux-c++ \
+                    x86_64-aerynos-linux-cc \
                     x86_64-serpent-linux-gcc \
                     x86_64-serpent-linux-g++ \
                     x86_64-serpent-linux-c++ \
+                    x86_64-serpent-linux-cc \
                     clang \
                     clang++ ; do
         ln -sv /usr/bin/ccache "${TGT}/${compiler}"
