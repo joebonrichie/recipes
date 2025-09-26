@@ -5,7 +5,7 @@
 #
 name        : syncthingtray
 version     : 1.7.10
-release     : 2
+release     : 3
 upstreams   :
     - https://github.com/Martchus/syncthingtray/archive/refs/tags/v1.7.10.tar.gz : 5cead81878fa03a981b741e2570acb13b63626a4b520f60bc2a1d8ed83b3a7c1
 homepage    : https://martchus.github.io/syncthingtray/
