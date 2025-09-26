@@ -131,3 +131,7 @@
 
 ### Not built since switching to meson build
 - usbutils-devel
+
+### No longer used
+- autocc
+- autocc-dbginfo
