@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : asciinema
-version     : "3.0.0-rc.5"
-release     : 4
+version     : "3.0.0"
+release     : 5
 homepage    : https://asciinema.org/
 upstreams   :
-    - https://github.com/asciinema/asciinema/archive/refs/tags/v3.0.0-rc.5.tar.gz : 31b56c062309316a961eb4fa86b73b7a478ac0a8c89ab44d978958e81a420dd0
+    - https://github.com/asciinema/asciinema/archive/refs/tags/v3.0.0.tar.gz : f44feaa1bc150e7964635dc4714fd86089a968587fed81dccf860ee7b64617ca
 summary     : Terminal session recorder
 description : |
     asciinema (aka asciinema CLI or asciinema recorder) is a command-line tool for recording terminal sessions.
