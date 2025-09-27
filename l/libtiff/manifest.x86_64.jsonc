@@ -6,6 +6,7 @@
 			"build-depends": [
 				"binary(sphinx-build)",
 				"pkgconfig(glut)",
+				"pkgconfig(libdeflate)",
 				"pkgconfig(libjpeg)",
 				"pkgconfig(liblzma)",
 				"pkgconfig(libwebp)",
@@ -16,6 +17,7 @@
 			"depends": [
 				"soname(libc++.so.1(x86_64))",
 				"soname(libc.so.6(x86_64))",
+				"soname(libdeflate.so.0(x86_64))",
 				"soname(libjpeg.so.8(x86_64))",
 				"soname(liblzma.so.5(x86_64))",
 				"soname(libm.so.6(x86_64))",
@@ -40,6 +42,7 @@
 			"build-depends": [
 				"binary(sphinx-build)",
 				"pkgconfig(glut)",
+				"pkgconfig(libdeflate)",
 				"pkgconfig(libjpeg)",
 				"pkgconfig(liblzma)",
 				"pkgconfig(libwebp)",
@@ -49,6 +52,7 @@
 			],
 			"depends": [
 				"libtiff",
+				"pkgconfig(libdeflate)",
 				"pkgconfig(libjpeg)",
 				"pkgconfig(liblzma)",
 				"pkgconfig(libwebp)",
@@ -137,6 +141,7 @@
 			"build-depends": [
 				"binary(sphinx-build)",
 				"pkgconfig(glut)",
+				"pkgconfig(libdeflate)",
 				"pkgconfig(libjpeg)",
 				"pkgconfig(liblzma)",
 				"pkgconfig(libwebp)",
@@ -518,6 +523,7 @@
 			"build-depends": [
 				"binary(sphinx-build)",
 				"pkgconfig(glut)",
+				"pkgconfig(libdeflate)",
 				"pkgconfig(libjpeg)",
 				"pkgconfig(liblzma)",
 				"pkgconfig(libwebp)",
@@ -600,6 +606,6 @@
 		}
 	},
 	"source-name": "libtiff",
-	"source-release": "6",
+	"source-release": "7",
 	"source-version": "4.7.1"
 }
