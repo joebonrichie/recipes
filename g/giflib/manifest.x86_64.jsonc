@@ -1,0 +1,72 @@
+/** Human readable report. This is not consumed by boulder */
+{
+	"manifest-version": "0.2",
+	"packages": {
+		"giflib": {
+			"build-depends": [
+				"binary(convert)"
+			],
+			"depends": [
+				"soname(libc.so.6(x86_64))"
+			],
+			"files": [
+				"/usr/lib/libgif.so.7",
+				"/usr/lib/libgif.so.7.2.0"
+			],
+			"name": "giflib",
+			"provides": [
+				"soname(libgif.so.7(x86_64))"
+			]
+		},
+		"giflib-devel": {
+			"build-depends": [
+				"binary(convert)"
+			],
+			"depends": [
+				"giflib"
+			],
+			"files": [
+				"/usr/include/gif_lib.h",
+				"/usr/lib/libgif.so"
+			],
+			"name": "giflib-devel"
+		},
+		"giflib-utils": {
+			"build-depends": [
+				"binary(convert)"
+			],
+			"depends": [
+				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
+				"soname(libc.so.6(x86_64))",
+				"soname(libm.so.6(x86_64))"
+			],
+			"files": [
+				"/usr/bin/gif2rgb",
+				"/usr/bin/gifbuild",
+				"/usr/bin/gifclrmp",
+				"/usr/bin/giffix",
+				"/usr/bin/giftext",
+				"/usr/bin/giftool",
+				"/usr/share/man/man1/gif2rgb.1",
+				"/usr/share/man/man1/gifbuild.1",
+				"/usr/share/man/man1/gifclrmp.1",
+				"/usr/share/man/man1/giffix.1",
+				"/usr/share/man/man1/giflib.7",
+				"/usr/share/man/man1/giftext.1",
+				"/usr/share/man/man1/giftool.1"
+			],
+			"name": "giflib-utils",
+			"provides": [
+				"binary(gif2rgb)",
+				"binary(gifbuild)",
+				"binary(gifclrmp)",
+				"binary(giffix)",
+				"binary(giftext)",
+				"binary(giftool)"
+			]
+		}
+	},
+	"source-name": "giflib",
+	"source-release": "1",
+	"source-version": "5.2.2"
+}
