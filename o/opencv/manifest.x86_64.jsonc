@@ -6,6 +6,7 @@
 			"build-depends": [
 				"binary(flang)",
 				"binary(nasm)",
+				"cmake(OpenEXR)",
 				"cmake(OpenJPEG)",
 				"cmake(Qt6Core5Compat)",
 				"cmake(Tiff)",
@@ -85,6 +86,7 @@
 			"build-depends": [
 				"binary(flang)",
 				"binary(nasm)",
+				"cmake(OpenEXR)",
 				"cmake(OpenJPEG)",
 				"cmake(Qt6Core5Compat)",
 				"cmake(Tiff)",
@@ -129,6 +131,7 @@
 			"build-depends": [
 				"binary(flang)",
 				"binary(nasm)",
+				"cmake(OpenEXR)",
 				"cmake(OpenJPEG)",
 				"cmake(Qt6Core5Compat)",
 				"cmake(Tiff)",
@@ -174,6 +177,7 @@
 			"build-depends": [
 				"binary(flang)",
 				"binary(nasm)",
+				"cmake(OpenEXR)",
 				"cmake(OpenJPEG)",
 				"cmake(Qt6Core5Compat)",
 				"cmake(Tiff)",
@@ -211,10 +215,7 @@
 				"/usr/share/licenses/opencv4/ittnotify-BSD-3-Clause.txt",
 				"/usr/share/licenses/opencv4/ittnotify-GPL-2.0-only.txt",
 				"/usr/share/licenses/opencv4/mscr-chi_table_LICENSE.txt",
-				"/usr/share/licenses/opencv4/opencl-headers-LICENSE.txt",
-				"/usr/share/licenses/opencv4/openexr-AUTHORS.ilmbase",
-				"/usr/share/licenses/opencv4/openexr-AUTHORS.openexr",
-				"/usr/share/licenses/opencv4/openexr-LICENSE"
+				"/usr/share/licenses/opencv4/opencl-headers-LICENSE.txt"
 			],
 			"name": "opencv-core",
 			"provides": [
@@ -225,6 +226,7 @@
 			"build-depends": [
 				"binary(flang)",
 				"binary(nasm)",
+				"cmake(OpenEXR)",
 				"cmake(OpenJPEG)",
 				"cmake(Qt6Core5Compat)",
 				"cmake(Tiff)",
@@ -565,6 +567,7 @@
 			"build-depends": [
 				"binary(flang)",
 				"binary(nasm)",
+				"cmake(OpenEXR)",
 				"cmake(OpenJPEG)",
 				"cmake(Qt6Core5Compat)",
 				"cmake(Tiff)",
@@ -611,6 +614,7 @@
 			"build-depends": [
 				"binary(flang)",
 				"binary(nasm)",
+				"cmake(OpenEXR)",
 				"cmake(OpenJPEG)",
 				"cmake(Qt6Core5Compat)",
 				"cmake(Tiff)",
@@ -654,6 +658,7 @@
 			"build-depends": [
 				"binary(flang)",
 				"binary(nasm)",
+				"cmake(OpenEXR)",
 				"cmake(OpenJPEG)",
 				"cmake(Qt6Core5Compat)",
 				"cmake(Tiff)",
@@ -695,6 +700,7 @@
 			"build-depends": [
 				"binary(flang)",
 				"binary(nasm)",
+				"cmake(OpenEXR)",
 				"cmake(OpenJPEG)",
 				"cmake(Qt6Core5Compat)",
 				"cmake(Tiff)",
@@ -740,6 +746,7 @@
 			"build-depends": [
 				"binary(flang)",
 				"binary(nasm)",
+				"cmake(OpenEXR)",
 				"cmake(OpenJPEG)",
 				"cmake(Qt6Core5Compat)",
 				"cmake(Tiff)",
@@ -762,6 +769,7 @@
 				"protobuf-staticlib"
 			],
 			"depends": [
+				"soname(libOpenEXR-3_4.so.33(x86_64))",
 				"soname(libavif.so.16(x86_64))",
 				"soname(libc++.so.1(x86_64))",
 				"soname(libc.so.6(x86_64))",
@@ -793,6 +801,7 @@
 			"build-depends": [
 				"binary(flang)",
 				"binary(nasm)",
+				"cmake(OpenEXR)",
 				"cmake(OpenJPEG)",
 				"cmake(Qt6Core5Compat)",
 				"cmake(Tiff)",
@@ -834,6 +843,7 @@
 			"build-depends": [
 				"binary(flang)",
 				"binary(nasm)",
+				"cmake(OpenEXR)",
 				"cmake(OpenJPEG)",
 				"cmake(Qt6Core5Compat)",
 				"cmake(Tiff)",
@@ -875,6 +885,7 @@
 			"build-depends": [
 				"binary(flang)",
 				"binary(nasm)",
+				"cmake(OpenEXR)",
 				"cmake(OpenJPEG)",
 				"cmake(Qt6Core5Compat)",
 				"cmake(Tiff)",
@@ -919,6 +930,7 @@
 			"build-depends": [
 				"binary(flang)",
 				"binary(nasm)",
+				"cmake(OpenEXR)",
 				"cmake(OpenJPEG)",
 				"cmake(Qt6Core5Compat)",
 				"cmake(Tiff)",
@@ -961,6 +973,7 @@
 			"build-depends": [
 				"binary(flang)",
 				"binary(nasm)",
+				"cmake(OpenEXR)",
 				"cmake(OpenJPEG)",
 				"cmake(Qt6Core5Compat)",
 				"cmake(Tiff)",
@@ -1002,6 +1015,7 @@
 			"build-depends": [
 				"binary(flang)",
 				"binary(nasm)",
+				"cmake(OpenEXR)",
 				"cmake(OpenJPEG)",
 				"cmake(Qt6Core5Compat)",
 				"cmake(Tiff)",
@@ -1047,6 +1061,7 @@
 			"build-depends": [
 				"binary(flang)",
 				"binary(nasm)",
+				"cmake(OpenEXR)",
 				"cmake(OpenJPEG)",
 				"cmake(Qt6Core5Compat)",
 				"cmake(Tiff)",
@@ -1090,6 +1105,7 @@
 			"build-depends": [
 				"binary(flang)",
 				"binary(nasm)",
+				"cmake(OpenEXR)",
 				"cmake(OpenJPEG)",
 				"cmake(Qt6Core5Compat)",
 				"cmake(Tiff)",
@@ -1135,6 +1151,7 @@
 			"build-depends": [
 				"binary(flang)",
 				"binary(nasm)",
+				"cmake(OpenEXR)",
 				"cmake(OpenJPEG)",
 				"cmake(Qt6Core5Compat)",
 				"cmake(Tiff)",
@@ -1189,6 +1206,6 @@
 		}
 	},
 	"source-name": "opencv",
-	"source-release": "7",
+	"source-release": "8",
 	"source-version": "4.12.0"
 }
