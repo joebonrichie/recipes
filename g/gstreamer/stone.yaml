@@ -5,7 +5,7 @@
 #
 name        : gstreamer
 version     : 1.26.6
-release     : 29
+release     : 30
 homepage    : https://gstreamer.freedesktop.org/
 upstreams   :
     - https://gitlab.freedesktop.org/gstreamer/gstreamer/-/archive/1.26.6/gstreamer-1.26.6.tar.gz : 528842eeb64e181712feebe72318f4c986f481d72d16c84ad9bb0895df106338
@@ -30,6 +30,7 @@ builddeps   :
     - binary(qsb)
     - binary(xgettext)
     - binary(valac)
+    - pkgconfig(OpenEXR)
     - pkgconfig(SvtAv1Enc)
     - pkgconfig(alsa)
     - pkgconfig(aom)
@@ -138,7 +139,6 @@ builddeps   :
 # - libmodplug
 # - mjpegtools
 # - mpeg2encpp
-# - openexr
 # - libopenmpt
 # - librtmp
 # - srt
@@ -469,7 +469,6 @@ packages    :
             - /usr/lib/gstreamer-1.0/libgstlc3.so
             - /usr/lib/gstreamer-1.0/libgstldac.so
             - /usr/lib/gstreamer-1.0/libgstlegacyrawparse.so
-            - /usr/lib/gstreamer-1.0/libgstlv2.so
             - /usr/lib/gstreamer-1.0/libgstmidi.so
             - /usr/lib/gstreamer-1.0/libgstmpeg*mux.so
             - /usr/lib/gstreamer-1.0/libgstmsdk.so
@@ -595,6 +594,7 @@ packages    :
             - /usr/lib/gstreamer-1.0/libgstcurl.so
             - /usr/lib/gstreamer-1.0/libgstdecklink.so
             - /usr/lib/gstreamer-1.0/libgstladspa.so
+            - /usr/lib/gstreamer-1.0/libgstopenexr.so
             - /usr/lib/gstreamer-1.0/libgstopenjpeg.so
             - /usr/lib/gstreamer-1.0/libgstqroverlay.so
             - /usr/lib/gstreamer-1.0/libgstzxing.so
@@ -798,6 +798,15 @@ packages    :
             - "%(name)-plugins-base"
         paths:
             - /usr/lib/gstreamer-1.0/libgstlibav.so
+
+    - "%(name)-plugin-lv2":
+        summary: GStreamer LV2 plugin
+        description: GStreamer LV2 plugin
+        rundeps:
+            - "%(name)"
+            - "%(name)-plugins-base"
+        paths:
+            - /usr/lib/gstreamer-1.0/libgstlv2.so
 
     - "%(name)-plugin-opencv":
         summary: GStreamer "bad" plugins OpenCV plugin
