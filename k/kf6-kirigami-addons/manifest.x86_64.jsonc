@@ -5,21 +5,26 @@
 		"kf6-kirigami-addons": {
 			"build-depends": [
 				"cmake(ECM)",
+				"cmake(KF6ColorScheme)",
 				"cmake(KF6Config)",
 				"cmake(KF6CoreAddons)",
+				"cmake(KF6Crash)",
 				"cmake(KF6GlobalAccel)",
 				"cmake(KF6GuiAddons)",
 				"cmake(KF6I18n)",
+				"cmake(KF6IconThemes)",
 				"cmake(KF6Kirigami)",
 				"cmake(Qt6CorePrivate)"
 			],
 			"depends": [
+				"soname(libKF6ColorScheme.so.6(x86_64))",
 				"soname(libKF6ConfigCore.so.6(x86_64))",
 				"soname(libKF6ConfigGui.so.6(x86_64))",
 				"soname(libKF6CoreAddons.so.6(x86_64))",
 				"soname(libKF6GlobalAccel.so.6(x86_64))",
 				"soname(libKF6GuiAddons.so.6(x86_64))",
 				"soname(libKF6I18n.so.6(x86_64))",
+				"soname(libKF6IconThemes.so.6(x86_64))",
 				"soname(libQt6Core.so.6(x86_64))",
 				"soname(libQt6Gui.so.6(x86_64))",
 				"soname(libQt6Qml.so.6(x86_64))",
@@ -30,8 +35,10 @@
 				"soname(libm.so.6(x86_64))"
 			],
 			"files": [
-				"/usr/lib/libKirigamiAddonsStatefulApp.so.1.9.0",
+				"/usr/lib/libKirigamiAddonsStatefulApp.so.1.10.0",
 				"/usr/lib/libKirigamiAddonsStatefulApp.so.6",
+				"/usr/lib/libKirigamiApp.so.1.10.0",
+				"/usr/lib/libKirigamiApp.so.6",
 				"/usr/lib/qt6/qml/org/kde/kirigamiaddons/components/Avatar.qml",
 				"/usr/lib/qt6/qml/org/kde/kirigamiaddons/components/AvatarButton.qml",
 				"/usr/lib/qt6/qml/org/kde/kirigamiaddons/components/Banner.qml",
@@ -232,6 +239,7 @@
 			"name": "kf6-kirigami-addons",
 			"provides": [
 				"soname(libKirigamiAddonsStatefulApp.so.6(x86_64))",
+				"soname(libKirigamiApp.so.6(x86_64))",
 				"soname(qt6/qml/org/kde/kirigamiaddons/components/libcomponentsplugin.so(x86_64))",
 				"soname(qt6/qml/org/kde/kirigamiaddons/dateandtime/libdateandtimeplugin.so(x86_64))",
 				"soname(qt6/qml/org/kde/kirigamiaddons/delegates/libdelegatesplugin.so(x86_64))",
@@ -250,11 +258,14 @@
 		"kf6-kirigami-addons-devel": {
 			"build-depends": [
 				"cmake(ECM)",
+				"cmake(KF6ColorScheme)",
 				"cmake(KF6Config)",
 				"cmake(KF6CoreAddons)",
+				"cmake(KF6Crash)",
 				"cmake(KF6GlobalAccel)",
 				"cmake(KF6GuiAddons)",
 				"cmake(KF6I18n)",
+				"cmake(KF6IconThemes)",
 				"cmake(KF6Kirigami)",
 				"cmake(Qt6CorePrivate)"
 			],
@@ -262,6 +273,10 @@
 				"kf6-kirigami-addons"
 			],
 			"files": [
+				"/usr/include/KirigamiAddons/App/KirigamiApp",
+				"/usr/include/KirigamiAddons/App/kirigamiapp.h",
+				"/usr/include/KirigamiAddons/App/kirigamiapp_export.h",
+				"/usr/include/KirigamiAddons/App/kirigamiapp_version.h",
 				"/usr/include/KirigamiAddonsStatefulApp/AbstractKirigamiApplication",
 				"/usr/include/KirigamiAddonsStatefulApp/KirigamiActionCollection",
 				"/usr/include/KirigamiAddonsStatefulApp/abstractkirigamiapplication.h",
@@ -273,6 +288,7 @@
 				"/usr/lib/cmake/KF6KirigamiAddons/KirigamiAddonsTargets-release.cmake",
 				"/usr/lib/cmake/KF6KirigamiAddons/KirigamiAddonsTargets.cmake",
 				"/usr/lib/libKirigamiAddonsStatefulApp.so",
+				"/usr/lib/libKirigamiApp.so",
 				"/usr/share/kdevappwizard/templates/kirigamiaddons6.tar.bz2",
 				"/usr/share/kdevappwizard/templates/librarymanager6.tar.bz2"
 			],
@@ -283,6 +299,6 @@
 		}
 	},
 	"source-name": "kf6-kirigami-addons",
-	"source-release": "4",
-	"source-version": "1.9.0"
+	"source-release": "5",
+	"source-version": "1.10.0"
 }

@@ -4,10 +4,10 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : kf6-kirigami-addons
-version     : 1.9.0
-release     : 4
+version     : 1.10.0
+release     : 5
 upstreams   :
-    - https://download.kde.org/stable/kirigami-addons/kirigami-addons-1.9.0.tar.xz : 21314a91f26b1c962def3fd7ff2e762d3358b075f63f4d7e0144fb2c63b7ebc7
+    - https://download.kde.org/stable/kirigami-addons/kirigami-addons-1.10.0.tar.xz : c98f92bf7c452e12f6dc403404215413db3959fe904ad830ead0db6bb09b3d11
 homepage    : https://invent.kde.org/libraries/kirigami-addons
 license     : GPL-2.0-or-later
 summary     : Convergent visual components ("widgets") for Kirigami-based applications
@@ -16,11 +16,14 @@ description : |
 builddeps   :
     # Temporary, boulder doesn't handle build ordering resolution correctly when builddeps are added by macros, so add ECM manually
     - cmake(ECM)
+    - cmake(KF6ColorScheme)
     - cmake(KF6Config)
     - cmake(KF6CoreAddons)
+    - cmake(KF6Crash)
     - cmake(KF6GlobalAccel)
     - cmake(KF6GuiAddons)
     - cmake(KF6I18n)
+    - cmake(KF6IconThemes)
     - cmake(KF6Kirigami)
     - cmake(Qt6CorePrivate)
 tuning      :
