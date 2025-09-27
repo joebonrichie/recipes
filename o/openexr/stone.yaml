@@ -1,0 +1,39 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : openexr
+version     : 3.4.0
+release     : 1
+upstreams   :
+    - https://github.com/AcademySoftwareFoundation/openexr/releases/download/v3.4.0/openexr-3.4.0.tar.gz : 1d4bddda2d22571f63db5f067c5741b50c8d41231f360ab17063176eb710a670
+homepage    : https://www.openexr.com/
+license     : BSD-3-Clause
+summary     : A high dynamic-range image file format library
+description : |
+    OpenEXR provides the specification and reference implementation of the EXR file format, the professional-grade image storage format of the motion picture industry.
+
+    The purpose of EXR format is to accurately and efficiently represent high-dynamic-range scene-linear image data and associated metadata, with strong support for multi-part, multi-channel use cases.
+
+    OpenEXR is widely used in host application software where accuracy is critical, such as photorealistic rendering, texture access, image compositing, deep compositing, and DI.
+builddeps   :
+    - binary(python3)
+    - cmake(Imath)
+    - cmake(libdeflate)
+    - cmake(openjph)
+setup       : |
+    %patch %(pkgdir)/0001-ftbfs-openjph-system.patch
+    %cmake
+build       : |
+    %cmake_build
+install     : |
+    %cmake_install
+packages    :
+    - "%(name)-libs":
+        paths:
+            - /usr/lib/lib*.so.*
+
+    - "%(name)-examples":
+        paths:
+            - /usr/share/doc/OpenEXR/examples/
