@@ -4,9 +4,12 @@
 	"packages": {
 		"libwebp": {
 			"build-depends": [
+				"giflib-devel",
+				"pkgconfig(glut)",
 				"pkgconfig(libjpeg)",
 				"pkgconfig(libpng)",
-				"pkgconfig(libtiff-4)"
+				"pkgconfig(libtiff-4)",
+				"pkgconfig(sdl2)"
 			],
 			"depends": [
 				"soname(libc.so.6(x86_64))",
@@ -32,9 +35,12 @@
 		},
 		"libwebp-devel": {
 			"build-depends": [
+				"giflib-devel",
+				"pkgconfig(glut)",
 				"pkgconfig(libjpeg)",
 				"pkgconfig(libpng)",
-				"pkgconfig(libtiff-4)"
+				"pkgconfig(libtiff-4)",
+				"pkgconfig(sdl2)"
 			],
 			"depends": [
 				"libwebp"
@@ -67,13 +73,19 @@
 		},
 		"libwebp-tools": {
 			"build-depends": [
+				"giflib-devel",
+				"pkgconfig(glut)",
 				"pkgconfig(libjpeg)",
 				"pkgconfig(libpng)",
-				"pkgconfig(libtiff-4)"
+				"pkgconfig(libtiff-4)",
+				"pkgconfig(sdl2)"
 			],
 			"depends": [
 				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
+				"soname(libGL.so.1(x86_64))",
 				"soname(libc.so.6(x86_64))",
+				"soname(libgif.so.7(x86_64))",
+				"soname(libglut.so.3(x86_64))",
 				"soname(libjpeg.so.8(x86_64))",
 				"soname(libpng16.so.16(x86_64))",
 				"soname(libsharpyuv.so.0(x86_64))",
@@ -85,12 +97,16 @@
 			"files": [
 				"/usr/bin/cwebp",
 				"/usr/bin/dwebp",
+				"/usr/bin/gif2webp",
 				"/usr/bin/img2webp",
+				"/usr/bin/vwebp",
 				"/usr/bin/webpinfo",
 				"/usr/bin/webpmux",
 				"/usr/share/man/man1/cwebp.1",
 				"/usr/share/man/man1/dwebp.1",
+				"/usr/share/man/man1/gif2webp.1",
 				"/usr/share/man/man1/img2webp.1",
+				"/usr/share/man/man1/vwebp.1",
 				"/usr/share/man/man1/webpinfo.1",
 				"/usr/share/man/man1/webpmux.1"
 			],
@@ -98,13 +114,15 @@
 			"provides": [
 				"binary(cwebp)",
 				"binary(dwebp)",
+				"binary(gif2webp)",
 				"binary(img2webp)",
+				"binary(vwebp)",
 				"binary(webpinfo)",
 				"binary(webpmux)"
 			]
 		}
 	},
 	"source-name": "libwebp",
-	"source-release": "6",
+	"source-release": "7",
 	"source-version": "1.6.0"
 }
