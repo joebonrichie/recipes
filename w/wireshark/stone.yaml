@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : wireshark
-version     : 4.4.8
-release     : 1
+version     : 4.4.9
+release     : 2
 homepage    : https://www.wireshark.org/
 upstreams   :
-    - https://gitlab.com/wireshark/wireshark/-/archive/v4.4.8/wireshark-v4.4.8.tar.gz : bc812a2c2e28ab4962f4395c39cfeb8663d96f6b9268c9981225174eca96736e
+    - https://gitlab.com/wireshark/wireshark/-/archive/v4.4.9/wireshark-v4.4.9.tar.gz : 914f2b1555c53ad63f430b97ff2ec80ac52b9f2609e16bcb09b5d1859d491942
 summary     : Wireshark is the world's foremost network protocol analyzer.
 description : |
     Wireshark is the world's foremost network protocol analyzer. It lets you see what's happening on your network at a microscopic level.
@@ -37,6 +37,7 @@ builddeps   :
     - pkgconfig(liblz4)
     - pkgconfig(libmaxminddb)
     - pkgconfig(libnghttp2)
+    - pkgconfig(libnghttp3)
     - pkgconfig(libnl-3.0)
     - pkgconfig(libpcap)
     - pkgconfig(libssh)
@@ -50,7 +51,7 @@ builddeps   :
     - pkgconfig(speexdsp)
     - pkgconfig(glib-2.0)
     - sysbinary(setcap)
-    # TODO: nghttp3, libsmi
+    # TODO: libsmi
 rundeps   :
     - qt6-wayland
 setup       : |
@@ -61,6 +62,7 @@ build       : |
 install     : |
     %cmake_install
 
+    # TODO fix this when we support caps
     install -Dm00644 %(pkgdir)/wireshark.sysusers %(installroot)/%(libdir)/sysusers.d/wireshark.conf
     chmod 750  %(installroot)/usr/bin/dumpcap
     chown :150 %(installroot)/usr/bin/dumpcap

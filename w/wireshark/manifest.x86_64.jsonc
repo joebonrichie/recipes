@@ -25,6 +25,7 @@
 				"pkgconfig(liblz4)",
 				"pkgconfig(libmaxminddb)",
 				"pkgconfig(libnghttp2)",
+				"pkgconfig(libnghttp3)",
 				"pkgconfig(libnl-3.0)",
 				"pkgconfig(libpcap)",
 				"pkgconfig(libssh)",
@@ -113,6 +114,7 @@
 				"pkgconfig(liblz4)",
 				"pkgconfig(libmaxminddb)",
 				"pkgconfig(libnghttp2)",
+				"pkgconfig(libnghttp3)",
 				"pkgconfig(libnl-3.0)",
 				"pkgconfig(libpcap)",
 				"pkgconfig(libssh)",
@@ -144,6 +146,7 @@
 				"soname(libm.so.6(x86_64))",
 				"soname(libmaxminddb.so.0(x86_64))",
 				"soname(libnghttp2.so.14(x86_64))",
+				"soname(libnghttp3.so.9(x86_64))",
 				"soname(libnl-3.so.200(x86_64))",
 				"soname(libnl-genl-3.so.200(x86_64))",
 				"soname(libopus.so.0(x86_64))",
@@ -175,9 +178,9 @@
 				"/usr/bin/tfshark",
 				"/usr/bin/tshark",
 				"/usr/lib/libwireshark.so.18",
-				"/usr/lib/libwireshark.so.18.0.8",
+				"/usr/lib/libwireshark.so.18.0.9",
 				"/usr/lib/libwiretap.so.15",
-				"/usr/lib/libwiretap.so.15.0.8",
+				"/usr/lib/libwiretap.so.15.0.9",
 				"/usr/lib/libwsutil.so.16",
 				"/usr/lib/libwsutil.so.16.0.0",
 				"/usr/lib/sysusers.d/wireshark.conf",
@@ -631,6 +634,7 @@
 				"pkgconfig(liblz4)",
 				"pkgconfig(libmaxminddb)",
 				"pkgconfig(libnghttp2)",
+				"pkgconfig(libnghttp3)",
 				"pkgconfig(libnl-3.0)",
 				"pkgconfig(libpcap)",
 				"pkgconfig(libssh)",
@@ -656,6 +660,6 @@
 		}
 	},
 	"source-name": "wireshark",
-	"source-release": "1",
-	"source-version": "4.4.8"
+	"source-release": "2",
+	"source-version": "4.4.9"
 }
