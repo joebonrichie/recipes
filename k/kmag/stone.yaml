@@ -1,0 +1,36 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : kmag
+version     : 25.08.1
+release     : 1
+upstreams   :
+    - https://download.kde.org/stable/release-service/25.08.1/src/kmag-25.08.1.tar.xz : 281b1dd5ec1fbb2a1ea1c9d61ab706d277016209d906dda47f22beb679e77c4e
+homepage    : https://apps.kde.org/kmag/
+license     :
+    - GFDL-1.2-or-later
+    - GPL-2.0-or-later
+summary     : KMag is a screen magnifier
+description : |
+    KMag is a screen magnifier
+builddeps   :
+    # Temporary, boulder doesn't handle build ordering resolution correctly when builddeps are added by macros, so add ECM manually
+    - cmake(ECM)
+    - cmake(KF6Crash)
+    - cmake(KF6DocTools)
+    - cmake(KF6I18n)
+    - cmake(KF6KIO)
+    - cmake(KF6XmlGui)
+    - cmake(QAccessibilityClient6)
+setup       : |
+    %cmake_kf6
+build       : |
+    %cmake_build
+install     : |
+    %cmake_install
+packages    :
+    - "%(name)-docs":
+        paths:
+            - /usr/share/doc
