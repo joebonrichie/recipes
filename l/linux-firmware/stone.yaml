@@ -5,7 +5,7 @@
 #
 name        : linux-firmware
 version     : "20250917"
-release     : 29
+release     : 30
 homepage    : https://kernel.org
 upstreams   :
     - git|https://gitlab.com/kernel-firmware/linux-firmware.git : add225168d0d1ba4c174d5eb15272b53de01ad5a
@@ -21,6 +21,17 @@ builddeps   :
     - binary(rdfind)
     - binary(unzstd)
     - binary(which)
+setup       : |
+    _reverts=(
+      # https://gitlab.com/kernel-firmware/linux-firmware/-/merge_requests/684#note_2764930444
+      # https://lore.kernel.org/linux-firmware/87bjn6fgr6.fsf@gentoo.org/
+      ac27fb92503427641a4a827ab98ad05163e62cfd
+      ba41835c21ebbbba92fce71d30f747490313eaf6
+    )
+    for c in "${_reverts[@]}"; do
+        echo Reverting $(git log --oneline -1 "${c}")
+        git revert -n "${c}"
+    done  
 install     : |
     make install-zst FIRMWAREDIR=/usr/lib/firmware DESTDIR=%(installroot)
 
