@@ -1,0 +1,21 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : imath
+version     : 3.2.1
+release     : 1
+upstreams   :
+    - https://github.com/AcademySoftwareFoundation/Imath/releases/download/v3.2.1/Imath-3.2.1.tar.gz : 8e016fd33f240acacd457fcf9a2a0473e68aed57897fa4e27bc02a278aab23f8
+homepage    : https://imath.readthedocs.io/
+license     : BSD-3-Clause
+summary     : Imath is a library of 2D and 3D vector, matrix, and math operations for computer graphics
+description : |
+    Imath is a basic, light-weight, and efficient C++ representation of 2D and 3D vectors and matrices and other simple but useful mathematical objects, functions, and data types common in computer graphics applications, including the "half" 16-bit floating-point type.
+setup       : |
+    %cmake
+build       : |
+    %cmake_build
+install     : |
+    %cmake_install
