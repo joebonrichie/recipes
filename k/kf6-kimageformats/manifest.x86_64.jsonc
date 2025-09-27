@@ -6,6 +6,7 @@
 			"build-depends": [
 				"cmake(ECM)",
 				"cmake(KF6Archive)",
+				"cmake(OpenEXR)",
 				"cmake(OpenJPEG)",
 				"pkgconfig(libavif)",
 				"pkgconfig(libheif)",
@@ -14,7 +15,10 @@
 			],
 			"depends": [
 				"qt6-imageformats",
+				"soname(libIex-3_4.so.33(x86_64))",
+				"soname(libImath-3_2.so.30(x86_64))",
 				"soname(libKF6Archive.so.6(x86_64))",
+				"soname(libOpenEXR-3_4.so.33(x86_64))",
 				"soname(libQt6Core.so.6(x86_64))",
 				"soname(libQt6Gui.so.6(x86_64))",
 				"soname(libQt6PrintSupport.so.6(x86_64))",
@@ -35,6 +39,7 @@
 				"/usr/lib/qt6/plugins/imageformats/kimg_avif.so",
 				"/usr/lib/qt6/plugins/imageformats/kimg_dds.so",
 				"/usr/lib/qt6/plugins/imageformats/kimg_eps.so",
+				"/usr/lib/qt6/plugins/imageformats/kimg_exr.so",
 				"/usr/lib/qt6/plugins/imageformats/kimg_hdr.so",
 				"/usr/lib/qt6/plugins/imageformats/kimg_heif.so",
 				"/usr/lib/qt6/plugins/imageformats/kimg_iff.so",
@@ -61,6 +66,7 @@
 				"soname(qt6/plugins/imageformats/kimg_avif.so(x86_64))",
 				"soname(qt6/plugins/imageformats/kimg_dds.so(x86_64))",
 				"soname(qt6/plugins/imageformats/kimg_eps.so(x86_64))",
+				"soname(qt6/plugins/imageformats/kimg_exr.so(x86_64))",
 				"soname(qt6/plugins/imageformats/kimg_hdr.so(x86_64))",
 				"soname(qt6/plugins/imageformats/kimg_heif.so(x86_64))",
 				"soname(qt6/plugins/imageformats/kimg_iff.so(x86_64))",
@@ -86,6 +92,7 @@
 			"build-depends": [
 				"cmake(ECM)",
 				"cmake(KF6Archive)",
+				"cmake(OpenEXR)",
 				"cmake(OpenJPEG)",
 				"pkgconfig(libavif)",
 				"pkgconfig(libheif)",
@@ -106,6 +113,6 @@
 		}
 	},
 	"source-name": "kf6-kimageformats",
-	"source-release": "7",
+	"source-release": "8",
 	"source-version": "6.18.0"
 }

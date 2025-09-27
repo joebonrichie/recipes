@@ -5,7 +5,7 @@
 #
 name        : kf6-kimageformats
 version     : 6.18.0
-release     : 7
+release     : 8
 upstreams   :
     - https://download.kde.org/stable/frameworks/6.18/kimageformats-6.18.0.tar.xz : 9d373ef5362aa8d71541cec2895415c95ca914626dcb0dd6b0ceef491dcbae46
 homepage    : https://community.kde.org/Frameworks
@@ -21,13 +21,12 @@ builddeps   :
     # Temporary, boulder doesn't handle build ordering resolution correctly when builddeps are added by macros, so add ECM manually
     - cmake(ECM)
     - cmake(KF6Archive)
+    - cmake(OpenEXR)
     - cmake(OpenJPEG)
     - pkgconfig(libavif)
     - pkgconfig(libheif)
     - pkgconfig(libjxl)
     - pkgconfig(libraw)
-    # TODO:
-    # - OpenEXR
 rundeps    :
     - qt6-imageformats
 setup       : |
