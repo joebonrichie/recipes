@@ -1,0 +1,59 @@
+/** Human readable report. This is not consumed by boulder */
+{
+	"manifest-version": "0.2",
+	"packages": {
+		"jbigkit": {
+			"depends": [
+				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
+				"soname(libc.so.6(x86_64))",
+				"soname(libjbig.so.2.1(x86_64))",
+				"soname(libjbig85.so.2.1(x86_64))"
+			],
+			"files": [
+				"/usr/bin/jbgtopbm",
+				"/usr/bin/jbgtopbm85",
+				"/usr/bin/pbmtojbg",
+				"/usr/bin/pbmtojbg85",
+				"/usr/share/man/man1/jbgtopbm.1",
+				"/usr/share/man/man1/pbmtojbg.1"
+			],
+			"name": "jbigkit",
+			"provides": [
+				"binary(jbgtopbm)",
+				"binary(jbgtopbm85)",
+				"binary(pbmtojbg)",
+				"binary(pbmtojbg85)"
+			]
+		},
+		"jbigkit-devel": {
+			"depends": [
+				"jbigkit"
+			],
+			"files": [
+				"/usr/include/jbig.h",
+				"/usr/include/jbig85.h",
+				"/usr/include/jbig_ar.h",
+				"/usr/lib/libjbig.so",
+				"/usr/lib/libjbig85.so"
+			],
+			"name": "jbigkit-devel"
+		},
+		"jbigkit-libs": {
+			"depends": [
+				"soname(libc.so.6(x86_64))"
+			],
+			"files": [
+				"/usr/lib/libjbig.so.2.1",
+				"/usr/lib/libjbig85.so.2.1"
+			],
+			"name": "jbigkit-libs",
+			"provides": [
+				"soname(libjbig.so.2.1(x86_64))",
+				"soname(libjbig85.so.2.1(x86_64))"
+			]
+		}
+	},
+	"source-name": "jbigkit",
+	"source-release": "1",
+	"source-version": "2.1"
+}

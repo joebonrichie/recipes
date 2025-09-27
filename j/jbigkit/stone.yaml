@@ -1,0 +1,44 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : jbigkit
+version     : 2.1
+release     : 1
+upstreams   :
+    - https://www.cl.cam.ac.uk/~mgk25/jbigkit/download/jbigkit-2.1.tar.gz : de7106b6bfaf495d6865c7dd7ac6ca1381bd12e0d81405ea81e7f2167263d932
+homepage    : https://www.cl.cam.ac.uk/~mgk25/jbigkit
+license     : GPL-2.0-or-later
+summary     : JBIG1 lossless image compression tools
+description : |
+    JBIG1 lossless image compression tools
+setup       : |
+    %patch %(pkgdir)/jbigkit-2.1-shared_lib.patch
+    %patch %(pkgdir)/jbigkit-2.1-build_warnings.patch
+    %patch %(pkgdir)/jbigkit-2.1-coverity.patch
+    %patch %(pkgdir)/jbigkit-2.1-ldflags.patch
+
+    # Security fixes
+    %patch %(pkgdir)/0013-new-jbig.c-limit-s-maxmem-maximum-decoded-image-size.patch
+    %patch %(pkgdir)/0015-jbg_newlen-check-for-end-of-file-within-MARKER_NEWLE.patch
+build       : |
+    %make \
+        CC=%(cc) \
+        EXTRA_CFLAGS="$CFLAGS"
+install     : |
+    %install_file libjbig/*.h -t %(installroot)%(includedir)
+    %install_exe libjbig/*.so.* -t %(installroot)%(libdir)
+
+    for lib in libjbig.so libjbig85.so; do
+        ln -sv "$lib.%(version)" %(installroot)%(libdir)/$lib
+    done
+
+    %install_exe pbmtools/{jbgtopbm{,85},pbmtojbg{,85}} -t %(installroot)%(bindir)
+    %install_file pbmtools/*.1* -t %(installroot)%(mandir)/man1/
+packages    :
+    - "%(name)-libs":
+        summary: JBIG1 lossless image compression library
+        description: JBIG1 lossless image compression library
+        paths:
+            - /usr/lib/lib*.so.*
