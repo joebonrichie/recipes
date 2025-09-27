@@ -1,0 +1,40 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : kjournald
+version     : 25.08.1
+release     : 1
+upstreams   :
+    - https://download.kde.org/stable/release-service/25.08.1/src/kjournald-25.08.1.tar.xz : 5ac38d09af174e51941b149081988bc189c28672453aaf19f4e3aa7a48246bde
+homepage    : https://apps.kde.org/kjournaldbrowser/
+license     : GPL-2.0-or-later
+summary     : Framework for interacting with systemd-journald
+description : |
+    Framework for interacting with systemd-journald
+builddeps   :
+    # Temporary, boulder doesn't handle build ordering resolution correctly when builddeps are added by macros, so add ECM manually
+    - cmake(ECM)
+    - cmake(KF6Config)
+    - cmake(KF6CoreAddons)
+    - cmake(KF6Crash)
+    - cmake(KF6I18n)
+    - cmake(KF6Kirigami)
+    - cmake(KF6KirigamiAddons)
+    - cmake(Qt6CorePrivate)
+    - cmake(Qt6Qml)
+    - pkgconfig(libsystemd)
+rundeps     :
+    - kf6-qqc2-desktop-style
+    - qt6-wayland
+setup       : |
+    %cmake_kf6
+build       : |
+    %cmake_build
+install     : |
+    %cmake_install
+packages    :
+    - "%(name)":
+        paths:
+            - /usr/lib/libkjournald.so
