@@ -5,7 +5,7 @@
 #
 name        : openjpeg
 version     : 2.5.4
-release     : 3
+release     : 4
 homepage    : https://github.com/uclouvain/openjpeg
 upstreams   :
     - https://github.com/uclouvain/openjpeg/archive/refs/tags/v2.5.4.tar.gz : a695fbe19c0165f295a8531b1e4e855cd94d0875d2f88ec4b61080677e27188a
@@ -34,6 +34,11 @@ packages    :
         paths:
             - /usr/bin/
             - /usr/share/man/man1/
+
+    - "%(name)-devel":
+        rundeps:
+            # Cmake checks for these
+            - "%(name)-tools"
 
     - "%(name)-docs":
         paths:

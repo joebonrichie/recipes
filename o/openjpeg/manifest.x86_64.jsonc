@@ -32,7 +32,8 @@
 				"pkgconfig(zlib)"
 			],
 			"depends": [
-				"openjpeg"
+				"openjpeg",
+				"openjpeg-tools"
 			],
 			"files": [
 				"/usr/include/openjpeg-2.5/openjpeg.h",
@@ -583,6 +584,6 @@
 		}
 	},
 	"source-name": "openjpeg",
-	"source-release": "3",
+	"source-release": "4",
 	"source-version": "2.5.4"
 }
