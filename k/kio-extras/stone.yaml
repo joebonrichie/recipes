@@ -5,7 +5,7 @@
 #
 name        : kio-extras
 version     : 25.08.1
-release     : 5
+release     : 6
 upstreams   :
     - https://download.kde.org/stable/release-service/25.08.1/src/kio-extras-25.08.1.tar.xz : aac4752f2b7c978fb6e6ae0e688a63a10ca4831b97d9f6947ce7b49c648b6cd8
 homepage    : https://kde.org/
@@ -33,6 +33,7 @@ builddeps   :
     - cmake(KF6Notifications)
     - cmake(KF6Solid)
     - cmake(KF6SyntaxHighlighting)
+    - cmake(OpenEXR)
     - cmake(Phonon4Qt6)
     - cmake(PlasmaActivities)
     - cmake(PlasmaActivitiesStats)
@@ -48,11 +49,13 @@ builddeps   :
     - pkgconfig(libtirpc)
     - pkgconfig(smbclient)
     # TODO:
-    # - OpenEXR
     # - libappimage
 rundeps     :
     - phonon-backend-mpv-qt6
 setup       : |
+    # Fix build with libxml2 2.15
+    sed -e 's|"extension "|"extension"|' -i po/it/docs/kioworker6/bzip2/index.docbook
+
     %cmake_kf6
 build       : |
     %cmake_build
