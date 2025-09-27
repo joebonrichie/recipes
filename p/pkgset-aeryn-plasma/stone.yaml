@@ -64,6 +64,7 @@ packages    :
 
             # Other gear
             - kaccounts-providers # Used for logging into various providers
+            - kio-admin
             - kio-gdrive
             - kwalletmanager # UI for configuring KDE wallet
 
@@ -82,6 +83,8 @@ packages    :
             - gwenview
             - haruna
             - kate
+            - kjournald
+            - kmag
             - merkuro
             - okular
             - partitionmanager
@@ -104,6 +107,7 @@ packages    :
             - filelight
             - kaddressbook
             - kcalc
+            - konversation
             - neochat
             - yakuake
 
