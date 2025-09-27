@@ -1,0 +1,6 @@
+releases:
+  id: 375199
+  rss: https://github.com/aous72/OpenJPH/releases.atom
+security:
+  # Last checked 20250927
+  cpe: ~

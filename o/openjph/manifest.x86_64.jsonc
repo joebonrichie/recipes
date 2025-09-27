@@ -1,0 +1,81 @@
+/** Human readable report. This is not consumed by boulder */
+{
+	"manifest-version": "0.2",
+	"packages": {
+		"libopenjph": {
+			"build-depends": [
+				"pkgconfig(libtiff-4)"
+			],
+			"depends": [
+				"soname(libc++.so.1(x86_64))",
+				"soname(libc.so.6(x86_64))",
+				"soname(libm.so.6(x86_64))",
+				"soname(libunwind.so.1(x86_64))"
+			],
+			"files": [
+				"/usr/lib/libopenjph.so.0.24",
+				"/usr/lib/libopenjph.so.0.24.1"
+			],
+			"name": "libopenjph",
+			"provides": [
+				"soname(libopenjph.so.0.24(x86_64))"
+			]
+		},
+		"openjph": {
+			"build-depends": [
+				"pkgconfig(libtiff-4)"
+			],
+			"depends": [
+				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
+				"soname(libc++.so.1(x86_64))",
+				"soname(libc.so.6(x86_64))",
+				"soname(libopenjph.so.0.24(x86_64))",
+				"soname(libtiff.so.6(x86_64))",
+				"soname(libunwind.so.1(x86_64))"
+			],
+			"files": [
+				"/usr/bin/ojph_compress",
+				"/usr/bin/ojph_expand"
+			],
+			"name": "openjph",
+			"provides": [
+				"binary(ojph_compress)",
+				"binary(ojph_expand)"
+			]
+		},
+		"openjph-devel": {
+			"build-depends": [
+				"pkgconfig(libtiff-4)"
+			],
+			"depends": [
+				"openjph"
+			],
+			"files": [
+				"/usr/include/openjph/ojph_arch.h",
+				"/usr/include/openjph/ojph_arg.h",
+				"/usr/include/openjph/ojph_base.h",
+				"/usr/include/openjph/ojph_codestream.h",
+				"/usr/include/openjph/ojph_defs.h",
+				"/usr/include/openjph/ojph_file.h",
+				"/usr/include/openjph/ojph_mem.h",
+				"/usr/include/openjph/ojph_message.h",
+				"/usr/include/openjph/ojph_params.h",
+				"/usr/include/openjph/ojph_version.h",
+				"/usr/lib/cmake/openjph/openjph-config-version.cmake",
+				"/usr/lib/cmake/openjph/openjph-config.cmake",
+				"/usr/lib/cmake/openjph/openjph-targets-release.cmake",
+				"/usr/lib/cmake/openjph/openjph-targets.cmake",
+				"/usr/lib/libopenjph.so",
+				"/usr/lib/pkgconfig/openjph.pc"
+			],
+			"name": "openjph-devel",
+			"provides": [
+				"cmake(openjph)",
+				"pkgconfig(openjph)"
+			]
+		}
+	},
+	"source-name": "openjph",
+	"source-release": "1",
+	"source-version": "0.24.1"
+}
