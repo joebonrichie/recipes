@@ -1,0 +1,56 @@
+/** Human readable report. This is not consumed by boulder */
+{
+	"manifest-version": "0.2",
+	"packages": {
+		"libdeflate": {
+			"depends": [
+				"soname(libc.so.6(x86_64))"
+			],
+			"files": [
+				"/usr/lib/libdeflate.so.0"
+			],
+			"name": "libdeflate",
+			"provides": [
+				"soname(libdeflate.so.0(x86_64))"
+			]
+		},
+		"libdeflate-devel": {
+			"depends": [
+				"libdeflate"
+			],
+			"files": [
+				"/usr/include/libdeflate.h",
+				"/usr/lib/cmake/libdeflate/libdeflate-config-version.cmake",
+				"/usr/lib/cmake/libdeflate/libdeflate-config.cmake",
+				"/usr/lib/cmake/libdeflate/libdeflate-targets-release.cmake",
+				"/usr/lib/cmake/libdeflate/libdeflate-targets.cmake",
+				"/usr/lib/libdeflate.so",
+				"/usr/lib/pkgconfig/libdeflate.pc"
+			],
+			"name": "libdeflate-devel",
+			"provides": [
+				"cmake(libdeflate)",
+				"pkgconfig(libdeflate)"
+			]
+		},
+		"libdeflate-utils": {
+			"depends": [
+				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
+				"soname(libc.so.6(x86_64))",
+				"soname(libdeflate.so.0(x86_64))"
+			],
+			"files": [
+				"/usr/bin/libdeflate-gunzip",
+				"/usr/bin/libdeflate-gzip"
+			],
+			"name": "libdeflate-utils",
+			"provides": [
+				"binary(libdeflate-gunzip)",
+				"binary(libdeflate-gzip)"
+			]
+		}
+	},
+	"source-name": "libdeflate",
+	"source-release": "1",
+	"source-version": "1.24"
+}

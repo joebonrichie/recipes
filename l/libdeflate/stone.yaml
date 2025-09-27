@@ -1,0 +1,28 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : libdeflate
+version     : "1.24"
+release     : 1
+upstreams   :
+    - https://github.com/ebiggers/libdeflate/releases/download/v1.24/libdeflate-1.24.tar.gz : a0dda1c4b804742066db07b9510876edd09cc0ca06cdc32c5dfe1b2016a26463
+homepage    : https://github.com/ebiggers/libdeflate
+license     : MIT
+summary     : Heavily optimized library for DEFLATE/zlib/gzip compression and decompression
+description : |
+    Heavily optimized library for DEFLATE/zlib/gzip compression and decompression
+setup       : |
+    %cmake \
+        -DLIBDEFLATE_BUILD_STATIC_LIB=OFF
+build       : |
+    %cmake_build
+install     : |
+    %cmake_install
+packages    :
+    - "%(name)-utils":
+        summary: Binaries from %(name)
+        description: Binaries from %(name)
+        paths:
+            - /usr/bin/
