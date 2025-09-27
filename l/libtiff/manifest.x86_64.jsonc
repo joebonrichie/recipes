@@ -5,6 +5,7 @@
 		"libtiff": {
 			"build-depends": [
 				"binary(sphinx-build)",
+				"jbigkit-devel",
 				"pkgconfig(glut)",
 				"pkgconfig(libdeflate)",
 				"pkgconfig(libjpeg)",
@@ -18,6 +19,7 @@
 				"soname(libc++.so.1(x86_64))",
 				"soname(libc.so.6(x86_64))",
 				"soname(libdeflate.so.0(x86_64))",
+				"soname(libjbig.so.2.1(x86_64))",
 				"soname(libjpeg.so.8(x86_64))",
 				"soname(liblzma.so.5(x86_64))",
 				"soname(libm.so.6(x86_64))",
@@ -41,6 +43,7 @@
 		"libtiff-devel": {
 			"build-depends": [
 				"binary(sphinx-build)",
+				"jbigkit-devel",
 				"pkgconfig(glut)",
 				"pkgconfig(libdeflate)",
 				"pkgconfig(libjpeg)",
@@ -140,6 +143,7 @@
 		"libtiff-docs": {
 			"build-depends": [
 				"binary(sphinx-build)",
+				"jbigkit-devel",
 				"pkgconfig(glut)",
 				"pkgconfig(libdeflate)",
 				"pkgconfig(libjpeg)",
@@ -522,6 +526,7 @@
 		"libtiff-tools": {
 			"build-depends": [
 				"binary(sphinx-build)",
+				"jbigkit-devel",
 				"pkgconfig(glut)",
 				"pkgconfig(libdeflate)",
 				"pkgconfig(libjpeg)",
@@ -606,6 +611,6 @@
 		}
 	},
 	"source-name": "libtiff",
-	"source-release": "7",
+	"source-release": "8",
 	"source-version": "4.7.1"
 }
