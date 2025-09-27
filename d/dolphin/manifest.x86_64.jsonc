@@ -35,6 +35,7 @@
 			"depends": [
 				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
 				"kf6-kimageformats",
+				"kio-admin",
 				"kio-extras",
 				"kio-fuse",
 				"konsole-part",
@@ -608,6 +609,6 @@
 		}
 	},
 	"source-name": "dolphin",
-	"source-release": "10",
+	"source-release": "11",
 	"source-version": "25.08.1"
 }
