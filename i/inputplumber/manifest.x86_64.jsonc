@@ -26,6 +26,7 @@
 				"/usr/lib/udev/hwdb.d/59-inputplumber.hwdb",
 				"/usr/lib/udev/hwdb.d/60-inputplumber-autostart.hwdb",
 				"/usr/lib/udev/rules.d/90-inputplumber-autostart.rules",
+				"/usr/lib/udev/rules.d/99-inputplumber-device-setup.rules",
 				"/usr/share/dbus-1/system.d/org.shadowblip.InputPlumber.conf",
 				"/usr/share/inputplumber/capability_maps/ally_type1.yaml",
 				"/usr/share/inputplumber/capability_maps/ally_type2.yaml",
@@ -129,6 +130,6 @@
 		}
 	},
 	"source-name": "inputplumber",
-	"source-release": "36",
-	"source-version": "0.64.0"
+	"source-release": "37",
+	"source-version": "0.65.0"
 }
