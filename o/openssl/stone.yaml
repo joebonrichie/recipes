@@ -4,8 +4,8 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : openssl
-version     : 3.5.3
-release     : 31
+version     : 3.5.4
+release     : 32
 summary     : OpenSSL cryptography library
 license     :
     - OpenSSL
@@ -14,7 +14,7 @@ homepage    : https://www.openssl.org
 description : |
     OpenSSL cryptography library.
 upstreams   :
-    - https://www.openssl.org/source/openssl-3.5.3.tar.gz: c9489d2abcf943cdc8329a57092331c598a402938054dc3a22218aea8a8ec3bf
+    - https://www.openssl.org/source/openssl-3.5.4.tar.gz: 967311f84955316969bdb1d8d4b983718ef42338639c621ec4c34fddef355e99
 builddeps   :
     - binary(perl)
     - pkgconfig32(libzstd)
@@ -34,7 +34,6 @@ setup       : |
     %patch %(pkgdir)/stateless/0001-Use-OS-provided-copy-of-openssl.cnf-as-fallback.patch
     %patch %(pkgdir)/config.patch
     %patch %(pkgdir)/0001-Fix-soname-dynamic-loading.patch
-    %patch %(pkgdir)/28603.patch
 
     if [[ %(target_triple) = i686* ]]; then
         export OSSL_TARGET="linux-x86-clang"
