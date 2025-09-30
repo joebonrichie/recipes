@@ -1,0 +1,23 @@
+From ad80bf39ce6b2bc39a9b286d3f3fc6b67142e7e7 Mon Sep 17 00:00:00 2001
+From: Michal Ruprich <mruprich@redhat.com>
+Date: Tue, 26 Nov 2024 13:26:06 +0100
+Subject: [PATCH] Prevent file truncation with --no-clobber
+
+* src/options.c (init): Check config.clobber.
+---
+ src/options.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/src/options.c b/src/options.c
+index 36cd3bb4..2132bfd1 100644
+--- a/src/options.c
++++ b/src/options.c
+@@ -3492,7 +3492,7 @@ int init(int argc, const char **argv)
+ 	if (config.output_document && strcmp(config.output_document, "-") && !config.dont_write) {
+ 		if (config.unlink) {
+ 			unlink(config.output_document);
+-		} else if (!config.continue_download) {
++		} else if (!config.continue_download && config.clobber) {
+ 			int fd = open(config.output_document, O_WRONLY | O_TRUNC | O_BINARY);
+ 
+ 			if (fd != -1)

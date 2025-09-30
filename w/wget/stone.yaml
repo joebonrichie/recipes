@@ -5,7 +5,7 @@
 #
 name        : wget
 version     : 2.2.0
-release     : 7
+release     : 8
 homepage    : https://www.gnu.org/software/wget
 upstreams   :
     - https://ftp.gnu.org/gnu/wget/wget2-2.2.0.tar.gz : 2b3b9c85b7fb26d33ca5f41f1f8daca71838d869a19b406063aa5c655294d357
@@ -16,6 +16,8 @@ license     :
     - GPL-3.0-or-later  # wget binary.
     - LGPL-3.0-or-later # libwget.
 builddeps   :
+    - binary(doxygen)
+    - binary(flex)
     - binary(tar)
     - pkgconfig(bzip2)
     - pkgconfig(gpgme)
@@ -24,6 +26,7 @@ builddeps   :
     - pkgconfig(liblzma)
     - pkgconfig(libnghttp2)
     - pkgconfig(libpcre2-posix)
+    - pkgconfig(libproxy-1.0)
     - pkgconfig(libpsl)
     - pkgconfig(libzstd)
     - pkgconfig(openssl)
@@ -33,13 +36,33 @@ builddeps   :
 setup       : |
     # we need to reconfigure, which means mangling the gettext version
     # otherwise libwget soname is garbage
-    %patch %(pkgdir)/soname.patch
-    %reconfigure  --disable-static \
-                  --with-lzma
+    %patch %(pkgdir)/0002-dont-truncate-no-clobber.patch
+    %patch %(pkgdir)/0003-Add-show-progress.patch
+    %patch %(pkgdir)/0004-Fix-redirect-regression.patch
+
+    %configure  \
+        --disable-static \
+        --enable-libproxy \
+        --with-bzip2 \
+        --with-lzma
 build       : |
     %make
 install     : |
     %make_install
+
+    # Included in the tar
+    %install_file docs/man/man1/wget2.1 -t %(installroot)%(mandir)/man1/
+
+    # Use as wget binary
     ln -s wget2 %(installroot)/%(bindir)/wget
-check       : |
-    %make check
+    ln -s wget2.1 %(installroot)%(mandir)/man1/wget.1
+
+    # Not useful
+    rm -v %(installroot)%(bindir)/wget2_noinstall
+# check       : |
+# TODO: Fix this
+#     %make check
+packages    :
+    - "%(name)-libs":
+        paths:
+            - /usr/lib/lib*.so.*

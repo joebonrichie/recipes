@@ -1,0 +1,32 @@
+From bc77fe1c8a3ebefa07eff7ec1088fb58876a03d3 Mon Sep 17 00:00:00 2001
+From: CaitCatDev <caitlynrosestewart@gmail.com>
+Date: Mon, 27 Jan 2025 23:38:32 +0000
+Subject: [PATCH] Add --show-progress
+
+* src/options.c (struct optionw options): Add show-progress item.
+
+Copyright-paperwork-exempt: Yes
+---
+ src/options.c | 6 ++++++
+ 1 file changed, 6 insertions(+)
+
+diff --git a/src/options.c b/src/options.c
+index 2132bfd1..83fab8f7 100644
+--- a/src/options.c
++++ b/src/options.c
+@@ -2265,6 +2265,12 @@ static const struct optionw options[] = {
+ 		{ "Print the server response headers. (default: off)\n"
+ 		}
+ 	},
++	{ "show-progress", &config.force_progress, parse_bool, -1, 0,
++		SECTION_DOWNLOAD,
++		{ "Show Progress Bar (Deprecated alias for --force-progress)\n",
++		  "(default: off)\n"
++		}
++	},
+ #ifdef WITH_GPGME
+ 	{ "signature-extensions", &config.sig_ext, parse_stringlist, 1, 0,
+ 		SECTION_GPG,
+-- 
+2.48.1
+
