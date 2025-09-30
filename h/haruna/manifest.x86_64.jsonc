@@ -53,6 +53,7 @@
 				"soname(libQt6Qml.so.6(x86_64))",
 				"soname(libQt6Quick.so.6(x86_64))",
 				"soname(libQt6QuickControls2.so.6(x86_64))",
+				"soname(libQt6Sql.so.6(x86_64))",
 				"soname(libQt6Widgets.so.6(x86_64))",
 				"soname(libavcodec.so.62(x86_64))",
 				"soname(libavfilter.so.11(x86_64))",
@@ -122,6 +123,6 @@
 		}
 	},
 	"source-name": "haruna",
-	"source-release": "3",
-	"source-version": "1.4.0"
+	"source-release": "4",
+	"source-version": "1.5.0"
 }
