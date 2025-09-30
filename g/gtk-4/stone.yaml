@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : gtk-4
-version     : 4.20.1
-release     : 29
+version     : 4.20.2
+release     : 30
 homepage    : https://www.gtk.org/
 upstreams   :
-    - https://download.gnome.org/sources/gtk/4.20/gtk-4.20.1.tar.xz : bf32fac019171c45681b2c45d05658ee8598c6341572e32a6a6bcb0b5673998d
+    - https://download.gnome.org/sources/gtk/4.20/gtk-4.20.2.tar.xz : 5e8240edecafaff2b8baf4663bdceaa668ef10a207bee4d7f90e010e10bddc5c
 summary     : The GTK 4 libraries for developing user interfaces
 description : |
     The GTK 4 libraries are used for developing user interfaces
