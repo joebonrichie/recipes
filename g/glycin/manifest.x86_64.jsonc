@@ -202,6 +202,7 @@
 				"pkgconfig(libxml-2.0)"
 			],
 			"depends": [
+				"binary(bwrap)",
 				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
 				"soname(ld-linux-x86-64.so.2(x86_64))",
 				"soname(libc.so.6(x86_64))",
@@ -271,6 +272,6 @@
 		}
 	},
 	"source-name": "glycin",
-	"source-release": "11",
+	"source-release": "12",
 	"source-version": "2.0.2"
 }
