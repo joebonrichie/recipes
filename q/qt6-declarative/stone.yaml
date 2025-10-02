@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : qt6-declarative
-version     : 6.9.2
-release     : 12
+version     : 6.9.3
+release     : 13
 homepage    : https://www.qt.io
 upstreams   :
-    - https://download.qt.io/official_releases/qt/6.9/6.9.2/submodules/qtdeclarative-everywhere-src-6.9.2.tar.xz : 477f2d2c0bd98916107818725e6d498206e033dfb2859c52121e01a06ac42664
+    - https://download.qt.io/official_releases/qt/6.9/6.9.3/submodules/qtdeclarative-everywhere-src-6.9.3.tar.xz : 5a071b227229afbf5c976b7b59a0d850818d06ae861fcdf6d690351ca3f8a260
 summary     : Classes for QML and JavaScript languages
 description : |
     The Qt Quick module is the standard library for writing QML applications. While the Qt QML module provides the QML engine and language infrastructure, the Qt Quick module provides all the basic types necessary for creating user interfaces with QML.
