@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : catch2
-version     : 3.10.0
-release     : 4
+version     : 3.11.0
+release     : 5
 homepage    : https://github.com/catchorg/Catch2
 upstreams   :
-    - https://github.com/catchorg/Catch2/archive/refs/tags/v3.10.0.tar.gz : fc4303a5c2738beaa727066e126b5a28837a812230a3c5826caa38e7ab99ca48
+    - https://github.com/catchorg/Catch2/archive/refs/tags/v3.11.0.tar.gz : 82fa1cb59dc28bab220935923f7469b997b259eb192fb9355db62da03c2a3137
 summary     : A modern, C++-native, test framework for unit-tests, TDD and BDD
 description : |
     Catch2 is mainly a unit testing framework for C++, but it also provides basic micro-benchmarking features, and simple BDD macros.
