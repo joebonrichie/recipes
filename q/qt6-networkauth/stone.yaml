@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : qt6-networkauth
-version     : 6.9.2
-release     : 2
+version     : 6.9.3
+release     : 3
 homepage    : https://www.qt.io
 upstreams   :
-    - https://download.qt.io/official_releases/qt/6.9/6.9.2/submodules/qtnetworkauth-everywhere-src-6.9.2.tar.xz : 2165d9568eb8ab9f3cb91abdb0e72c17fe7a70707150ef1738db94e75f318c84
+    - https://download.qt.io/official_releases/qt/6.9/6.9.3/submodules/qtnetworkauth-everywhere-src-6.9.3.tar.xz : 67d9dc47ed133e22aa78bedef53963bee3761318e5e74dc98f82ad9814cc7ec7
 summary     : Qt6 NetworkAuth components
 description : |
     Qt Network Authorization provides a set of APIs that enable Qt applications to obtain limited access to online accounts and HTTP services without exposing users' passwords.
