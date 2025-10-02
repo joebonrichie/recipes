@@ -1,21 +1,20 @@
-From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
-From: Reilly Brogan <reilly@reillybrogan.com>
-Date: Wed, 27 Aug 2025 13:12:14 -0500
-Subject: [PATCH] Revert "Create EGLImage with eglCreateDRMImageMESA() for
- exporting dma_buf"
-
-This reverts commit ddcd30454aa6338d898c9d20c8feb48f36632e16.
----
- src/core/ozone/egl_helper.cpp | 105 +++++++++++++++++++++++++++++-----
- src/core/ozone/egl_helper.h   |   2 -
- 2 files changed, 91 insertions(+), 16 deletions(-)
-
-diff --git a/src/core/ozone/egl_helper.cpp b/src/core/ozone/egl_helper.cpp
-index 1ed679d23..d12280f2b 100644
+Revert of [1]+[2] from [3] for [4][5]
+[1] https://github.com/qt/qtwebengine/commit/ddcd30454a
+[2] https://github.com/qt/qtwebengine/commit/9168bc6f53
+[3] https://bugreports.qt.io/browse/QTBUG-136257
+[4] https://bugreports.qt.io/browse/QTBUG-139424
+[5] https://bugs.gentoo.org/962055
 --- a/src/core/ozone/egl_helper.cpp
 +++ b/src/core/ozone/egl_helper.cpp
-@@ -58,14 +58,90 @@ static const char *getEGLErrorString(uint32_t error)
+@@ -7,5 +7,7 @@
+ #include "web_engine_context.h"
  
++#include <QtCore/qthread.h>
+ #include <QtGui/qguiapplication.h>
++#include <QtGui/qoffscreensurface.h>
+ #include <QtGui/qopenglcontext.h>
+ #include <QtGui/qopenglfunctions.h>
+@@ -58,4 +60,82 @@
  QT_BEGIN_NAMESPACE
  
 +class ScopedGLContext
@@ -98,25 +97,34 @@ index 1ed679d23..d12280f2b 100644
 +
  EGLHelper::EGLFunctions::EGLFunctions()
  {
-     QOpenGLContext *context = OzoneUtilQt::getQOpenGLContext();
- 
+@@ -64,6 +144,4 @@
      eglCreateImage =
              reinterpret_cast<PFNEGLCREATEIMAGEPROC>(context->getProcAddress("eglCreateImage"));
 -    eglCreateDRMImageMESA = reinterpret_cast<PFNEGLCREATEDRMIMAGEMESAPROC>(
 -            context->getProcAddress("eglCreateDRMImageMESA"));
      eglDestroyImage =
              reinterpret_cast<PFNEGLDESTROYIMAGEPROC>(context->getProcAddress("eglDestroyImage"));
-     eglExportDMABUFImageMESA = reinterpret_cast<PFNEGLEXPORTDMABUFIMAGEMESAPROC>(
-@@ -122,7 +198,6 @@ EGLHelper::EGLHelper()
-         const char *displayExtensions = m_functions->eglQueryString(m_eglDisplay, EGL_EXTENSIONS);
+@@ -94,4 +172,5 @@
+     : m_eglDisplay(qApp->platformNativeInterface()->nativeResourceForIntegration("egldisplay"))
+     , m_functions(new EGLHelper::EGLFunctions())
++    , m_offscreenSurface(new QOffscreenSurface())
+ {
+     const char *extensions = m_functions->eglQueryString(EGL_NO_DISPLAY, EGL_EXTENSIONS);
+@@ -111,4 +190,7 @@
+     }
+ 
++    Q_ASSERT(QThread::currentThread() == qApp->thread());
++    m_offscreenSurface->create();
++
+     m_isDmaBufSupported = QtWebEngineCore::WebEngineContext::isGbmSupported();
+ 
+@@ -118,5 +200,4 @@
          m_isDmaBufSupported = strstr(displayExtensions, "EGL_EXT_image_dma_buf_import")
                  && strstr(displayExtensions, "EGL_EXT_image_dma_buf_import_modifiers")
 -                && strstr(displayExtensions, "EGL_MESA_drm_image")
                  && strstr(displayExtensions, "EGL_MESA_image_dma_buf_export");
      }
- 
-@@ -143,17 +218,19 @@ void EGLHelper::queryDmaBuf(const int width, const int height, int *fd, int *str
-     if (!m_isDmaBufSupported)
+@@ -139,15 +220,17 @@
          return;
  
 -    // clang-format off
@@ -128,8 +136,6 @@ index 1ed679d23..d12280f2b 100644
 -        EGL_NONE
 -    };
 -    // clang-format on
--
--    EGLImage eglImage = m_functions->eglCreateDRMImageMESA(m_eglDisplay, attribs);
 +    ScopedGLContext context(m_offscreenSurface.get(), m_functions.get());
 +    if (!context.isValid())
 +        return;
@@ -139,30 +145,37 @@ index 1ed679d23..d12280f2b 100644
 +        qWarning("EGL: No EGLContext.");
 +        return;
 +    }
-+
+ 
+-    EGLImage eglImage = m_functions->eglCreateDRMImageMESA(m_eglDisplay, attribs);
 +    uint64_t textureId = context.createTexture(width, height);
 +    EGLImage eglImage = m_functions->eglCreateImage(m_eglDisplay, eglContext, EGL_GL_TEXTURE_2D,
 +                                                    (EGLClientBuffer)textureId, NULL);
      if (eglImage == EGL_NO_IMAGE) {
          qWarning("EGL: Failed to create EGLImage: %s", getLastEGLErrorString());
-         return;
-diff --git a/src/core/ozone/egl_helper.h b/src/core/ozone/egl_helper.h
-index 7594e1f84..a1a1aa0d6 100644
 --- a/src/core/ozone/egl_helper.h
 +++ b/src/core/ozone/egl_helper.h
-@@ -11,7 +11,6 @@
- #include <EGL/eglext.h>
+@@ -13,5 +13,4 @@
  
  #undef eglCreateImage
 -#undef eglCreateDRMImageMESA
  #undef eglDestroyImage
  #undef eglExportDMABUFImageMESA
- #undef eglExportDMABUFImageQueryMESA
-@@ -34,7 +33,6 @@ public:
-         EGLFunctions();
+@@ -26,4 +25,6 @@
+ QT_BEGIN_NAMESPACE
+ 
++class QOffscreenSurface;
++
+ class EGLHelper
+ {
+@@ -34,5 +35,4 @@
  
          PFNEGLCREATEIMAGEPROC eglCreateImage;
 -        PFNEGLCREATEDRMIMAGEMESAPROC eglCreateDRMImageMESA;
          PFNEGLDESTROYIMAGEPROC eglDestroyImage;
          PFNEGLEXPORTDMABUFIMAGEMESAPROC eglExportDMABUFImageMESA;
-         PFNEGLEXPORTDMABUFIMAGEQUERYMESAPROC eglExportDMABUFImageQueryMESA;
+@@ -60,4 +60,5 @@
+     EGLDisplay m_eglDisplay = EGL_NO_DISPLAY;
+     QScopedPointer<EGLFunctions> m_functions;
++    QScopedPointer<QOffscreenSurface> m_offscreenSurface;
+     bool m_isDmaBufSupported = false;
+ };
