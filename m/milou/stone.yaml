@@ -5,7 +5,7 @@
 #
 name        : milou
 version     : 6.4.5
-release     : 6
+release     : 7
 upstreams   :
     - https://download.kde.org/stable/plasma/6.4.5/milou-6.4.5.tar.xz : 0eaeec8a05afc3a96f6a0eefc9a045f49ace8be201bc8f57e1ed8133cdaa100d
 homepage    : https://kde.org/plasma-desktop/
