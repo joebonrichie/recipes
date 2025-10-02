@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : qt6-speech
-version     : 6.9.2
-release     : 5
+version     : 6.9.3
+release     : 6
 homepage    : https://www.qt.io
 upstreams   :
-    - https://download.qt.io/official_releases/qt/6.9/6.9.2/submodules/qtspeech-everywhere-src-6.9.2.tar.xz : b2b667375111637e45517a6e63475987691b922a19900abc52996617a0a088b1
+    - https://download.qt.io/official_releases/qt/6.9/6.9.3/submodules/qtspeech-everywhere-src-6.9.3.tar.xz : f86f5a4c742fb86ccc6e90ee72a9213150986575c3d238829a4b48a28bc9ab3e
 summary     : Qt6 Speech Components
 description : |
     The module enables a Qt application to support accessibility features such as text-to-speech, which is useful for end-users who are visually challenged or cannot access the application for whatever reason. The most common use case where text-to-speech comes in handy is when the end-user is driving and cannot attend the incoming messages on the phone. In such a scenario, the messaging application can read out the incoming message.

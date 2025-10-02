@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : qt6-location
-version     : 6.9.2
-release     : 9
+version     : 6.9.3
+release     : 10
 homepage    : https://www.qt.io
 upstreams   :
-    - https://download.qt.io/official_releases/qt/6.9/6.9.2/submodules/qtlocation-everywhere-src-6.9.2.tar.xz : 5a45ed1967958982899b79891afc0b4530cf2e59d3b1a57af6dfdc645e1c73f9
+    - https://download.qt.io/official_releases/qt/6.9/6.9.3/submodules/qtlocation-everywhere-src-6.9.3.tar.xz : 141227d1fdaf4e1574c99127b2eb91ab171107bf067121aecb03b618b2e71605
 summary     : Qt6 Location and Mapping Components
 description : |
     The Qt Location API helps you create viable mapping solutions using the data available from some of the popular location services.

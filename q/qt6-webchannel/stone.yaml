@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : qt6-webchannel
-version     : 6.9.2
-release     : 2
+version     : 6.9.3
+release     : 3
 homepage    : https://www.qt.io
 upstreams   :
-    - https://download.qt.io/official_releases/qt/6.9/6.9.2/submodules/qtwebchannel-everywhere-src-6.9.2.tar.xz : 878a6337ad4d2c2a1de5bedb28c36b05b2733242d10f6c3d0eae55c5433c8e65
+    - https://download.qt.io/official_releases/qt/6.9/6.9.3/submodules/qtwebchannel-everywhere-src-6.9.3.tar.xz : 9457bbc1e5a13d9cf277c1fc121cdeb0a21546abf7fba091779b7ce9806fa305
 summary     : Qt6 Webchannel Module
 description : |
     The Qt WebChannel module offers Qt applications a seamless way to publish QObjects for interaction with HTML/JavaScript clients. These clients can either be inside local Qt WebViews or any other, potentially remote, client which supports JavaScript, as long as a communication channel such as WebSocket is available.
