@@ -5,7 +5,7 @@
 #
 name        : freerdp
 version     : 3.17.2
-release     : 11
+release     : 12
 homepage    : www.freerdp.com
 upstreams   :
     - https://github.com/FreeRDP/FreeRDP/releases/download/3.17.2/freerdp-3.17.2.tar.gz : c42c712ad879bf06607b78b8c3fad98e08c82f73f4e0bc1693552900041e692a
@@ -81,6 +81,11 @@ packages    :
             - /usr/lib/libuwac0.so.*
             - /usr/share/FreeRDP/
             - /usr/share/man/man7/wlog.7*
+
+    - "%(name)-devel":
+        rundeps:
+            # Referenced by FreeRDPConfig.cmake
+            - "libwinpr-devel"
 
     - "libwinpr":
         summary: Windows Portable Runtime

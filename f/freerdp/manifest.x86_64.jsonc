@@ -122,7 +122,8 @@
 				"pkgconfig(xv)"
 			],
 			"depends": [
-				"freerdp"
+				"freerdp",
+				"libwinpr-devel"
 			],
 			"files": [
 				"/usr/include/freerdp3/freerdp/addin.h",
@@ -669,6 +670,6 @@
 		}
 	},
 	"source-name": "freerdp",
-	"source-release": "11",
+	"source-release": "12",
 	"source-version": "3.17.2"
 }
