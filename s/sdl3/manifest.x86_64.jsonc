@@ -13,6 +13,7 @@
 				"pkgconfig(libdrm)",
 				"pkgconfig(libpipewire-0.3)",
 				"pkgconfig(libpulse)",
+				"pkgconfig(liburing-ffi)",
 				"pkgconfig(libusb-1.0)",
 				"pkgconfig(sndio)",
 				"pkgconfig(wayland-client)",
@@ -38,7 +39,7 @@
 			],
 			"files": [
 				"/usr/lib/libSDL3.so.0",
-				"/usr/lib/libSDL3.so.0.2.22",
+				"/usr/lib/libSDL3.so.0.2.24",
 				"/usr/share/licenses/SDL3/LICENSE.txt"
 			],
 			"name": "sdl3",
@@ -57,6 +58,7 @@
 				"pkgconfig(libdrm)",
 				"pkgconfig(libpipewire-0.3)",
 				"pkgconfig(libpulse)",
+				"pkgconfig(liburing-ffi)",
 				"pkgconfig(libusb-1.0)",
 				"pkgconfig(sndio)",
 				"pkgconfig(wayland-client)",
@@ -187,6 +189,6 @@
 		}
 	},
 	"source-name": "sdl3",
-	"source-release": "6",
-	"source-version": "3.2.22"
+	"source-release": "7",
+	"source-version": "3.2.24"
 }

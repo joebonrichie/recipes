@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : sdl3
-version     : 3.2.22
-release     : 6
+version     : 3.2.24
+release     : 7
 homepage    : https://libsdl.org
 upstreams   :
-    - https://github.com/libsdl-org/SDL/releases/download/release-3.2.22/SDL3-3.2.22.tar.gz : f29d00cbcee273c0a54f3f32f86bf5c595e8823a96b1d92a145aac40571ebfcc
+    - https://github.com/libsdl-org/SDL/releases/download/release-3.2.24/SDL3-3.2.24.tar.gz : 81cc0fc17e5bf2c1754eeca9af9c47a76789ac5efdd165b3b91cbbe4b90bfb76
 summary     : Simple DirectMedia Library
 description : |
     Simple DirectMedia Library
@@ -24,6 +24,7 @@ builddeps   :
     - pkgconfig(libdrm)
     - pkgconfig(libpipewire-0.3)
     - pkgconfig(libpulse)
+    - pkgconfig(liburing-ffi)
     - pkgconfig(libusb-1.0)
     - pkgconfig(sndio)
     - pkgconfig(wayland-client)
@@ -33,18 +34,19 @@ builddeps   :
     - pkgconfig(xfixes)
     - pkgconfig(xkbcommon)
     - pkgconfig(xrandr)
+    # jack
 tuning      :
     - lto: full
 setup       : |
     %cmake \
-           -DSDL_HIDAPI_LIBUSB=ON \
-           -DSDL_HIDAPI_LIBUSB_SHARED=OFF \
-           -DSDL_KMSDRM_SHARED=OFF \
-           -DSDL_RPATH=OFF \
-           -DSDL_PIPEWIRE_SHARED=OFF \
-           -DSDL_STATIC=OFF \
-           -DSDL_WAYLAND_LIBDECOR_SHARED=OFF \
-           -DSDL_WAYLAND_SHARED=OFF
+        -DSDL_HIDAPI_LIBUSB=ON \
+        -DSDL_HIDAPI_LIBUSB_SHARED=OFF \
+        -DSDL_KMSDRM_SHARED=OFF \
+        -DSDL_RPATH=OFF \
+        -DSDL_PIPEWIRE_SHARED=OFF \
+        -DSDL_STATIC=OFF \
+        -DSDL_WAYLAND_LIBDECOR_SHARED=OFF \
+        -DSDL_WAYLAND_SHARED=OFF
 build       : |
     %cmake_build
 install     : |
