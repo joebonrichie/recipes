@@ -5,7 +5,7 @@
 #
 name        : kaccounts-providers
 version     : 25.08.1
-release     : 6
+release     : 7
 upstreams   :
     - https://download.kde.org/stable/release-service/25.08.1/src/kaccounts-providers-25.08.1.tar.xz : 91cb4fa6d1227f1bc1a5188b9c0893c6327b634c2aeefdf3a516292b9f6d6318
 homepage    : https://kde.org/
