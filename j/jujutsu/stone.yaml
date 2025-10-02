@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : jujutsu
-version     : 0.33.0
-release     : 3
+version     : 0.34.0
+release     : 4
 homepage    : https://jj-vcs.github.io/jj/ 
 upstreams   :
-    - https://github.com/jj-vcs/jj/archive/refs/tags/v0.33.0.tar.gz : 1b8f6bdbcf8e53d6d873c8677154fe8e3f491e67b07b408c0c7418cc37ab39ee
+    - https://github.com/jj-vcs/jj/archive/refs/tags/v0.34.0.tar.gz : 9e8da8ec2951ec026a2afe956ad904bb691c050040f53c3e47cfe346ead2907e
 summary     : Git-compatible VCS that is both simple and powerful
 description : |
     Git-compatible VCS that is both simple and powerful
@@ -17,8 +17,6 @@ license     : Apache-2.0
 builddeps   :
     - binary(cargo)
 setup       : |
-    %patch %(pkgdir)/0001-downstream-Default-to-nano-instead-of-pico.patch
-
     %cargo_fetch
 build       : |
     %cargo_build --all-features
