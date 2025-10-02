@@ -4,24 +4,30 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : libunistring
-version     : 1.3
-release     : 4
+version     : 1.4
+release     : 5
 homepage    : https://www.gnu.org/software/libunistring/
 upstreams   :
-    - https://ftp.gnu.org/gnu/libunistring/libunistring-1.3.tar.gz: 8ea8ccf86c09dd801c8cac19878e804e54f707cf69884371130d20bde68386b7
+    # The upstream gnu source is terrible, use a mirror
+    - https://mirror.kumi.systems/gnu/libunistring/libunistring-1.4.tar.gz: f7e39ddeca18858ecdd02c60d1d5374fcdcbbcdb6b68a391f8497cb1cb2cf3f7
 summary     : Library for manipulating Unicode strings and C strings
 description : |
     Library for manipulating Unicode strings and C strings
 license     : LGPL-3.0-or-later
 emul32      : true
 setup       : |
-    %configure --disable-static
+    # This reconfigure and the sed below are a workaround for an issue with dash 0.5.13
+    %reconfigure \
+        --disable-static
 build       : |
     %make
 install     : |
     %make_install
 check       : |
-    %make check
+    # Workaround for dash 0.5.13 bug
+    sed -i "s|#!/bin/sh|#!/bin/bash|g" tests/test-error.sh
+
+    %make check || (cat tests/test-suite.log && exit 1)
 packages    :
     - "%(name)-docs":
         paths:
