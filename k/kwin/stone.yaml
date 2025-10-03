@@ -5,7 +5,7 @@
 #
 name        : kwin
 version     : 6.4.5
-release     : 9
+release     : 10
 upstreams   :
     - https://download.kde.org/stable/plasma/6.4.5/kwin-6.4.5.tar.xz : decf1cb79127c285c7eda768e7ff4f97c72f314735c82685758f0b956ac151f7
 homepage    : https://kde.org/plasma-desktop/
@@ -72,6 +72,10 @@ tuning      :
     - lto: full
     - optimize: speed
 setup       : |
+    # Fix doc build with libxml2 2.15
+    # Remove with Plasma 6.5
+    find -name index.docbook | xargs sed -e 's|url=" |url="|g' -i
+
     %cmake_kf6
 build       : |
     %cmake_build

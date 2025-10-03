@@ -1069,7 +1069,6 @@
 				"/usr/share/locale/zh_TW/LC_MESSAGES/plasmanetworkmanagement_sstpui.mo",
 				"/usr/share/locale/zh_TW/LC_MESSAGES/plasmanetworkmanagement_strongswanui.mo",
 				"/usr/share/locale/zh_TW/LC_MESSAGES/plasmanetworkmanagement_vpncui.mo",
-				"/usr/share/metainfo/org.kde.plasma.networkmanagement.appdata.xml",
 				"/usr/share/plasma/plasmoids/org.kde.plasma.networkmanagement/contents/config/main.xml",
 				"/usr/share/plasma/plasmoids/org.kde.plasma.networkmanagement/contents/ui/ConnectionItem.qml",
 				"/usr/share/plasma/plasmoids/org.kde.plasma.networkmanagement/contents/ui/ConnectionListPage.qml",
@@ -1143,6 +1142,6 @@
 		}
 	},
 	"source-name": "plasma-nm",
-	"source-release": "8",
+	"source-release": "9",
 	"source-version": "6.4.5"
 }

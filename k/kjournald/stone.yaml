@@ -5,7 +5,7 @@
 #
 name        : kjournald
 version     : 25.08.1
-release     : 1
+release     : 2
 upstreams   :
     - https://download.kde.org/stable/release-service/25.08.1/src/kjournald-25.08.1.tar.xz : 5ac38d09af174e51941b149081988bc189c28672453aaf19f4e3aa7a48246bde
 homepage    : https://apps.kde.org/kjournaldbrowser/

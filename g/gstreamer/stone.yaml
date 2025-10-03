@@ -5,7 +5,7 @@
 #
 name        : gstreamer
 version     : 1.26.6
-release     : 30
+release     : 31
 homepage    : https://gstreamer.freedesktop.org/
 upstreams   :
     - https://gitlab.freedesktop.org/gstreamer/gstreamer/-/archive/1.26.6/gstreamer-1.26.6.tar.gz : 528842eeb64e181712feebe72318f4c986f481d72d16c84ad9bb0895df106338

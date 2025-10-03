@@ -5,7 +5,7 @@
 #
 name        : okular
 version     : 25.08.1
-release     : 7
+release     : 8
 upstreams   :
     - https://download.kde.org/stable/release-service/25.08.1/src/okular-25.08.1.tar.xz : 67be42a1c3cfd8879c371fbe82f501b1a2709ee74dd08cbd2253d48c2763ed08
 homepage    : https://apps.kde.org/okular/
@@ -52,6 +52,10 @@ builddeps   :
     - pkgconfig(poppler-qt6)
     - ebook-tools-devel
 setup       : |
+    # Make sure this is removed in a future version
+    # Fix build with libxml2 2.15
+    find -name index.docbook | xargs sed -e 's|anti-aliasing "|anti-aliasing"|g' -i
+
     %cmake_kf6
 build       : |
     %cmake_build

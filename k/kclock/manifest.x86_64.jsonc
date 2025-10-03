@@ -151,7 +151,6 @@
 				"/usr/share/locale/zh_TW/LC_MESSAGES/kclock.mo",
 				"/usr/share/locale/zh_TW/LC_MESSAGES/kclockd.mo",
 				"/usr/share/metainfo/org.kde.kclock.appdata.xml",
-				"/usr/share/metainfo/org.kde.plasma.kclock_1x2.appdata.xml",
 				"/usr/share/plasma/plasmoids/org.kde.plasma.kclock_1x2/contents/config/config.qml",
 				"/usr/share/plasma/plasmoids/org.kde.plasma.kclock_1x2/contents/config/main.xml",
 				"/usr/share/plasma/plasmoids/org.kde.plasma.kclock_1x2/contents/ui/configGeneral.qml",
@@ -169,6 +168,6 @@
 		}
 	},
 	"source-name": "kclock",
-	"source-release": "7",
+	"source-release": "8",
 	"source-version": "25.08.1"
 }
