@@ -40,11 +40,12 @@
 			"files": [
 				"/usr/bin/appstreamcli",
 				"/usr/lib/girepository-1.0/AppStream-1.0.typelib",
-				"/usr/lib/libappstream.so.1.1.0",
+				"/usr/lib/libappstream.so.1.1.1",
 				"/usr/lib/libappstream.so.5",
 				"/usr/share/appstream/appstream.conf",
 				"/usr/share/locale/ain/LC_MESSAGES/appstream.mo",
 				"/usr/share/locale/ar/LC_MESSAGES/appstream.mo",
+				"/usr/share/locale/bg/LC_MESSAGES/appstream.mo",
 				"/usr/share/locale/bn/LC_MESSAGES/appstream.mo",
 				"/usr/share/locale/bn_BD/LC_MESSAGES/appstream.mo",
 				"/usr/share/locale/ca/LC_MESSAGES/appstream.mo",
@@ -217,7 +218,7 @@
 				"soname(libunwind.so.1(x86_64))"
 			],
 			"files": [
-				"/usr/lib/libAppStreamQt.so.1.1.0",
+				"/usr/lib/libAppStreamQt.so.1.1.1",
 				"/usr/lib/libAppStreamQt.so.3"
 			],
 			"name": "appstream-qt6",
@@ -289,6 +290,6 @@
 		}
 	},
 	"source-name": "appstream",
-	"source-release": "11",
-	"source-version": "1.1.0"
+	"source-release": "12",
+	"source-version": "1.1.1"
 }
