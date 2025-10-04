@@ -613,6 +613,7 @@
 				"/usr/lib/wine/i386-windows/rstrtmgr.dll",
 				"/usr/lib/wine/i386-windows/rtutils.dll",
 				"/usr/lib/wine/i386-windows/rtworkq.dll",
+				"/usr/lib/wine/i386-windows/runas.exe",
 				"/usr/lib/wine/i386-windows/rundll.exe16",
 				"/usr/lib/wine/i386-windows/rundll32.exe",
 				"/usr/lib/wine/i386-windows/samlib.dll",
@@ -1436,6 +1437,7 @@
 				"/usr/lib/wine/x86_64-windows/rstrtmgr.dll",
 				"/usr/lib/wine/x86_64-windows/rtutils.dll",
 				"/usr/lib/wine/x86_64-windows/rtworkq.dll",
+				"/usr/lib/wine/x86_64-windows/runas.exe",
 				"/usr/lib/wine/x86_64-windows/rundll32.exe",
 				"/usr/lib/wine/x86_64-windows/samlib.dll",
 				"/usr/lib/wine/x86_64-windows/sane.ds",
@@ -1859,7 +1861,17 @@
 				"/usr/share/wine/nls/normnfkc.nls",
 				"/usr/share/wine/nls/normnfkd.nls",
 				"/usr/share/wine/nls/sortdefault.nls",
-				"/usr/share/wine/wine.inf"
+				"/usr/share/wine/wine.inf",
+				"/usr/share/wine/winmd/windows.applicationmodel.winmd",
+				"/usr/share/wine/winmd/windows.globalization.winmd",
+				"/usr/share/wine/winmd/windows.graphics.winmd",
+				"/usr/share/wine/winmd/windows.media.winmd",
+				"/usr/share/wine/winmd/windows.networking.winmd",
+				"/usr/share/wine/winmd/windows.perception.winmd",
+				"/usr/share/wine/winmd/windows.storage.winmd",
+				"/usr/share/wine/winmd/windows.system.winmd",
+				"/usr/share/wine/winmd/windows.ui.winmd",
+				"/usr/share/wine/winmd/windows.ui.xaml.winmd"
 			],
 			"name": "wine",
 			"provides": [
@@ -3900,6 +3912,6 @@
 		}
 	},
 	"source-name": "wine",
-	"source-release": "12",
-	"source-version": "10.15"
+	"source-release": "13",
+	"source-version": "10.16"
 }
