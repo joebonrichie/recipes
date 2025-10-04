@@ -5,7 +5,7 @@
 #
 name        : kitinerary
 version     : 25.08.1
-release     : 6
+release     : 7
 upstreams   :
     - https://download.kde.org/stable/release-service/25.08.1/src/kitinerary-25.08.1.tar.xz : 92c0d496069dbc0de7ef8c360650f3350d2e0a6d13ee02814633cba7fc7003e3
 homepage    : https://invent.kde.org/pim/kitinerary
