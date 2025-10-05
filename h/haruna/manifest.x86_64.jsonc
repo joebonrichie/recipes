@@ -33,6 +33,7 @@
 				"breeze-icons",
 				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
 				"kf6-kirigami",
+				"kf6-kitemmodels",
 				"kf6-qqc2-desktop-style",
 				"qt6-wayland",
 				"soname(libKF6ColorScheme.so.6(x86_64))",
@@ -123,6 +124,6 @@
 		}
 	},
 	"source-name": "haruna",
-	"source-release": "5",
+	"source-release": "6",
 	"source-version": "1.5.0"
 }
