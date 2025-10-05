@@ -5,6 +5,7 @@
 		"bcachefs-tools": {
 			"build-depends": [
 				"binary(cargo)",
+				"binary(jq)",
 				"libaio-devel",
 				"pkgconfig(blkid)",
 				"pkgconfig(libkeyutils)",
@@ -33,14 +34,6 @@
 				"soname(libzstd.so.1(x86_64))"
 			],
 			"files": [
-				"/usr/lib/bcachefs-tools/bcachefsck_all",
-				"/usr/lib/bcachefs-tools/bcachefsck_fail",
-				"/usr/lib/systemd/system/bcachefsck@.service",
-				"/usr/lib/systemd/system/bcachefsck_all.service",
-				"/usr/lib/systemd/system/bcachefsck_all.timer",
-				"/usr/lib/systemd/system/bcachefsck_all_fail.service",
-				"/usr/lib/systemd/system/bcachefsck_fail@.service",
-				"/usr/lib/systemd/system/system-bcachefsck.slice",
 				"/usr/lib/udev/rules.d/64-bcachefs.rules",
 				"/usr/sbin/bcachefs",
 				"/usr/sbin/fsck.bcachefs",
@@ -61,6 +54,6 @@
 		}
 	},
 	"source-name": "bcachefs-tools",
-	"source-release": "4",
-	"source-version": "1.25.3"
+	"source-release": "5",
+	"source-version": "1.31.7"
 }

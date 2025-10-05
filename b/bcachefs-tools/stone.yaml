@@ -4,17 +4,18 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : bcachefs-tools
-version     : 1.25.3
-release     : 4
+version     : 1.31.7
+release     : 5
 homepage    : https://bcachefs.org
 upstreams   :
-    - https://evilpiepirate.org/bcachefs-tools/bcachefs-tools-vendored-1.25.3.tar.zst : 88117a9f1878ef476e54416e8b6581b914a6918ca95c49407ece5c0201d9f4c7
+    - https://evilpiepirate.org/bcachefs-tools/bcachefs-tools-vendored-1.31.7.tar.zst : 97004282dc141e4010f7e975b2b3e66da29241472e596bccd7f7568ebc2c9965
 summary     : BCacheFS filesystem utilities
 description : |
     BCacheFS filesystem utilities
 license     : GPL-2.0-only
 builddeps   :
     - binary(cargo)
+    - binary(jq)
     - pkgconfig(blkid)
     - pkgconfig(libkeyutils)
     - pkgconfig(liblz4)
@@ -37,6 +38,9 @@ install     : |
 
     # FUSE support is still experimental
     rm -v %(installroot)/%(sbindir)/*fuse*
+
+    # We don't want DKMS
+    rm -rfv %(installroot)/usr/src
 
     # Shell completions
     %install_dir %(installroot)/usr/share/{bash-completion/completions,fish/vendor_completions.d,zsh/site-functions}
