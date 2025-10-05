@@ -242,6 +242,7 @@
 				"/usr/include/linux/comedi.h",
 				"/usr/include/linux/connector.h",
 				"/usr/include/linux/const.h",
+				"/usr/include/linux/coredump.h",
 				"/usr/include/linux/coresight-stm.h",
 				"/usr/include/linux/counter.h",
 				"/usr/include/linux/counter/microchip-tcb-capture.h",
@@ -387,6 +388,7 @@
 				"/usr/include/linux/input-event-codes.h",
 				"/usr/include/linux/input.h",
 				"/usr/include/linux/io_uring.h",
+				"/usr/include/linux/io_uring/mock_file.h",
 				"/usr/include/linux/ioam6.h",
 				"/usr/include/linux/ioam6_genl.h",
 				"/usr/include/linux/ioam6_iptunnel.h",
@@ -707,6 +709,7 @@
 				"/usr/include/linux/psp-sev.h",
 				"/usr/include/linux/ptp_clock.h",
 				"/usr/include/linux/ptrace.h",
+				"/usr/include/linux/pwm.h",
 				"/usr/include/linux/qemu_fw_cfg.h",
 				"/usr/include/linux/qnx4_fs.h",
 				"/usr/include/linux/qnxtypes.h",
@@ -1028,6 +1031,6 @@
 		}
 	},
 	"source-name": "linux-headers",
-	"source-release": "25",
-	"source-version": "6.16"
+	"source-release": "26",
+	"source-version": "6.17"
 }
