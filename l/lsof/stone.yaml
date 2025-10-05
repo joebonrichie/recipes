@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : lsof
-version     : 4.99.4
-release     : 2
+version     : 4.99.5
+release     : 3
 homepage    : https://github.com/lsof-org/lsof
 upstreams   :
-    - https://github.com/lsof-org/lsof/archive/refs/tags/4.99.4.tar.gz : 90d02ae35cd14341bfb04ce80e0030767476b0fc414a0acb115d49e79b13d56c
+    - https://github.com/lsof-org/lsof/archive/refs/tags/4.99.5.tar.gz : 3c591556c665196e0aada5982ff43c75e248187bad78bb1368d8fb9c1c527e6e
 summary     : LiSt Open Files
 description : |
     LiSt Open Files
