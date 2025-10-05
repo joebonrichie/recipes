@@ -1,6 +1,6 @@
 releases:
-  id: 15525
-  rss: ~
+  id: 13289
+  rss: https://github.com/AcademySoftwareFoundation/openexr/releases.atom
 security:
   # Last checked 20250525
   cpe: ~
