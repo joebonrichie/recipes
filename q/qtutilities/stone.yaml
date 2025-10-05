@@ -4,10 +4,10 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : qtutilities
-version     : 6.17.0
-release     : 2
+version     : 6.18.2
+release     : 3
 upstreams   :
-    - https://github.com/Martchus/qtutilities/archive/refs/tags/v6.17.0.tar.gz : 4c3a7de099d092dda99497270cb36f13411df20ccea4e9821770b095c722da36
+    - https://github.com/Martchus/qtutilities/archive/refs/tags/v6.18.2.tar.gz : 5abe8f71bcca527dc499ee94c2e28c01fa0ecaeb67b571da8bec62701d089dda
 homepage    : https://github.com/Martchus/qtutilities 
 license     : GPL-2.0-or-later 
 summary     : Common Qt related C++ classes and routines used by Martchus applications such as dialogs, widgets and models
