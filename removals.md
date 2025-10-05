@@ -138,3 +138,7 @@
 
 ### Not built as of Boost 1.89
 - boost-system
+
+### Deprecated upstream
+- docker-scan
+- docker-scan-dbginfo
