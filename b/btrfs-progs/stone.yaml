@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : btrfs-progs
-version     : '6.16.1'
-release     : 13
+version     : '6.17'
+release     : 14
 homepage    : https://github.com/kdave/btrfs-progs
 upstreams   :
-    - https://mirrors.edge.kernel.org/pub/linux/kernel/people/kdave/btrfs-progs/btrfs-progs-v6.16.1.tar.xz : 70aa3f954017ca743529828deb2a10dceab2d41321583ad157e967847ddb24fc
+    - https://mirrors.edge.kernel.org/pub/linux/kernel/people/kdave/btrfs-progs/btrfs-progs-v6.17.tar.xz : 277d696c9d79713ff5afb53c7efebdcead2e6a6007789b1742ec411f4e4ca229
 summary     : Filesystem utilities for btrfs filesystems
 description : |
     Filesystem utilities for btrfs filesystems
