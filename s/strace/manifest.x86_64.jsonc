@@ -26,6 +26,6 @@
 		}
 	},
 	"source-name": "strace",
-	"source-release": "13",
-	"source-version": "6.16"
+	"source-release": "14",
+	"source-version": "6.17"
 }
