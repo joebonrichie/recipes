@@ -132,6 +132,7 @@
 				"/usr/share/man/man8/tc-ct.8",
 				"/usr/share/man/man8/tc-ctinfo.8",
 				"/usr/share/man/man8/tc-drr.8",
+				"/usr/share/man/man8/tc-dualpi2.8",
 				"/usr/share/man/man8/tc-ematch.8",
 				"/usr/share/man/man8/tc-etf.8",
 				"/usr/share/man/man8/tc-ets.8",
@@ -231,6 +232,6 @@
 		}
 	},
 	"source-name": "iproute2",
-	"source-release": "8",
-	"source-version": "6.16.0"
+	"source-release": "9",
+	"source-version": "6.17.0"
 }
