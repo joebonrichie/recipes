@@ -43,12 +43,12 @@
 			"files": [
 				"/usr/bin/syncthingctl",
 				"/usr/bin/syncthingtray",
-				"/usr/lib/libsyncthingconnector.so.1.7.10",
-				"/usr/lib/libsyncthingconnector.so.27",
-				"/usr/lib/libsyncthingmodel.so.1.7.10",
-				"/usr/lib/libsyncthingmodel.so.27",
-				"/usr/lib/libsyncthingwidgets.so.1.7.10",
-				"/usr/lib/libsyncthingwidgets.so.27",
+				"/usr/lib/libsyncthingconnector.so.2.0.2",
+				"/usr/lib/libsyncthingconnector.so.30",
+				"/usr/lib/libsyncthingmodel.so.2.0.2",
+				"/usr/lib/libsyncthingmodel.so.30",
+				"/usr/lib/libsyncthingwidgets.so.2.0.2",
+				"/usr/lib/libsyncthingwidgets.so.30",
 				"/usr/share/applications/syncthingtray.desktop",
 				"/usr/share/bash-completion/completions/syncthingctl",
 				"/usr/share/bash-completion/completions/syncthingtray",
@@ -59,9 +59,9 @@
 			"provides": [
 				"binary(syncthingctl)",
 				"binary(syncthingtray)",
-				"soname(libsyncthingconnector.so.27(x86_64))",
-				"soname(libsyncthingmodel.so.27(x86_64))",
-				"soname(libsyncthingwidgets.so.27(x86_64))"
+				"soname(libsyncthingconnector.so.30(x86_64))",
+				"soname(libsyncthingmodel.so.30(x86_64))",
+				"soname(libsyncthingwidgets.so.30(x86_64))"
 			]
 		},
 		"syncthingtray-devel": {
@@ -85,6 +85,8 @@
 				"pkgconfig(Qt6Core)",
 				"pkgconfig(Qt6Gui)",
 				"pkgconfig(Qt6Network)",
+				"pkgconfig(Qt6WebEngineCore)",
+				"pkgconfig(Qt6WebEngineWidgets)",
 				"pkgconfig(Qt6Widgets)",
 				"pkgconfig(c++utilities)",
 				"pkgconfig(qtforkawesome-qt6)",
@@ -220,9 +222,9 @@
 				"soname(libqtforkawesome-qt6.so.1(x86_64))",
 				"soname(libqtquickforkawesome-qt6.so.1(x86_64))",
 				"soname(libqtutilities-qt6.so.6(x86_64))",
-				"soname(libsyncthingconnector.so.27(x86_64))",
-				"soname(libsyncthingmodel.so.27(x86_64))",
-				"soname(libsyncthingwidgets.so.27(x86_64))",
+				"soname(libsyncthingconnector.so.30(x86_64))",
+				"soname(libsyncthingmodel.so.30(x86_64))",
+				"soname(libsyncthingwidgets.so.30(x86_64))",
 				"soname(libunwind.so.1(x86_64))"
 			],
 			"files": [
@@ -259,6 +261,6 @@
 		}
 	},
 	"source-name": "syncthingtray",
-	"source-release": "4",
-	"source-version": "1.7.10"
+	"source-release": "5",
+	"source-version": "2.0.2"
 }
