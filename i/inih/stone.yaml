@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : inih
-version     : "61"
-release     : 5
+version     : "62"
+release     : 6
 homepage    : https://github.com/benhoyt/inih
 upstreams   :
-    - https://github.com/benhoyt/inih/archive/refs/tags/r61.tar.gz : 7caf26a2202a4ca689df3fe4175dfa74e0faa18fcca07331bba934fd0ecb8f12
+    - https://github.com/benhoyt/inih/archive/refs/tags/r62.tar.gz : 9c15fa751bb8093d042dae1b9f125eb45198c32c6704cd5481ccde460d4f8151
 summary     : inih is a simple .INI file parser written in C
 description : |
     inih is a simple .INI file parser written in C
