@@ -4,8 +4,8 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : perl
-version     : '5.40.2'
-release     : 13
+version     : '5.42.0'
+release     : 14
 summary     : Perl interpreter and modules
 license     :
     - Artistic-1.0
@@ -14,7 +14,7 @@ homepage    : https://www.perl.org/
 description : |
     Perl interpreter and modules
 upstreams   :
-    - https://www.cpan.org/src/5.0/perl-5.40.2.tar.xz: 0551c717458e703ef7972307ab19385edfa231198d88998df74e12226abf563b
+    - https://www.cpan.org/src/5.0/perl-5.42.0.tar.xz: 73cf6cc1ea2b2b1c110a18c14bbbc73a362073003893ffcedc26d22ebdbdd0c3
 builddeps   :
     - pkgconfig(bzip2)
     - pkgconfig(libcrypt)
