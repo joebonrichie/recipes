@@ -5,7 +5,7 @@
 #
 name        : vlc
 version     : 3.0.21+git.49307128
-release     : 8
+release     : 9
 upstreams   :
     # Use the latest from the 3.0.x series branch which has fixed VAAPI support for FFMPEG 7.x
     - git|https://code.videolan.org/videolan/vlc.git : 49307128534c4bb3a554734ac40e32bd2d04a80d
@@ -64,6 +64,7 @@ builddeps   :
     - pkgconfig(libva)
     - pkgconfig(libva-drm)
     - pkgconfig(libva-wayland)
+    - pkgconfig(libvncclient)
     - pkgconfig(lua)
     - pkgconfig(minizip)
     - pkgconfig(ncursesw)
@@ -641,6 +642,14 @@ packages    :
         paths:
             - /usr/lib/vlc/plugins/visualization/*.so
 
+    - "%(name)-plugin-vnc":
+        summary: VLC media player VNC plugins
+        description: VLC media player VNC plugins
+        rundeps:
+            - "%(name)-plugins-base"
+        paths:
+            - /usr/lib/vlc/plugins/access/libvnc_plugin.so
+
     - "%(name)-plugins-all":
         summary: VLC media player all plugins
         description: VLC media player all plugins
@@ -658,6 +667,7 @@ packages    :
             - "%(name)-plugin-samba"
             - "%(name)-plugin-svg"
             - "%(name)-plugin-visualization"
+            - "%(name)-plugin-vnc"
         paths:
             - /usr/share/doc/vlc-plugins-all/VIRTUAL
 
