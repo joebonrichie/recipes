@@ -1,0 +1,37 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : libvncserver
+version     : 0.9.15
+release     : 1
+upstreams   :
+    - https://github.com/LibVNC/libvncserver/archive/LibVNCServer-0.9.15.tar.gz : 62352c7795e231dfce044beb96156065a05a05c974e5de9e023d688d8ff675d7
+homepage    : GPL-2.0-or-later
+license     : GPL-2.0-or-later
+summary     : VNC Server Library
+description : |
+    A library for easy implementation of a VNC server.
+builddeps   :
+    - pkgconfig(gnutls)
+    - pkgconfig(libavcodec)
+    - pkgconfig(libavformat)
+    - pkgconfig(libavutil)
+    - pkgconfig(libjpeg)
+    - pkgconfig(libpng)
+    - pkgconfig(libswscale)
+    - pkgconfig(libsystemd)
+    - pkgconfig(lzo2)
+    - pkgconfig(openssl)
+    - pkgconfig(sdl2)
+    - pkgconfig(x11)
+    - pkgconfig(zlib)
+setup       : |
+    # TODO: Nuke minilzo
+    %cmake \
+        -DCMAKE_POLICY_VERSION_MINIMUM=3.5
+build       : |
+    %cmake_build
+install     : |
+    %cmake_install
