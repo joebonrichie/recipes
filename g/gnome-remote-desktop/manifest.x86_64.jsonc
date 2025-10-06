@@ -30,6 +30,7 @@
 				"pkgconfig(libpipewire-0.3)",
 				"pkgconfig(libsecret-1)",
 				"pkgconfig(libva)",
+				"pkgconfig(libvncclient)",
 				"pkgconfig(opus)",
 				"pkgconfig(polkit-gobject-1)",
 				"pkgconfig(systemd)",
@@ -67,6 +68,7 @@
 				"soname(libtss2-rc.so.0(x86_64))",
 				"soname(libva-drm.so.2(x86_64))",
 				"soname(libva.so.2(x86_64))",
+				"soname(libvncserver.so.1(x86_64))",
 				"soname(libvulkan.so.1(x86_64))",
 				"soname(libwinpr3.so.3(x86_64))",
 				"soname(libxkbcommon.so.0(x86_64))"
@@ -158,6 +160,6 @@
 		}
 	},
 	"source-name": "gnome-remote-desktop",
-	"source-release": "14",
+	"source-release": "15",
 	"source-version": "49.0"
 }

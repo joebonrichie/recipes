@@ -5,7 +5,7 @@
 #
 name        : gnome-remote-desktop
 version     : "49.0"
-release     : 14
+release     : 15
 homepage    : https://gitlab.gnome.org/GNOME/gnome-remote-desktop
 upstreams   :
     - https://download.gnome.org/sources/gnome-remote-desktop/49/gnome-remote-desktop-49.0.tar.xz : d47add9d970f224acc77efe5a216486d40451e2bc21b85bfec5397d420fda18a
@@ -40,6 +40,7 @@ builddeps   :
     - pkgconfig(libpipewire-0.3)
     - pkgconfig(libsecret-1)
     - pkgconfig(libva)
+    - pkgconfig(libvncclient)
     - pkgconfig(opus)
     - pkgconfig(polkit-gobject-1)
     - pkgconfig(systemd)
@@ -52,17 +53,22 @@ builddeps   :
     - pkgconfig(wireplumber-0.5)
     - pkgconfig(xkbcommon)
     - docbook
-    # TODO: libvncclient required for VNC support
 rundeps     :
     - binary(pipewire)
 environment : |
     # Temporary, replace with boulder macro
     export XML_CATALOG_FILES="file:///usr/share/defaults/docbook/docbook-dtd/catalog file:///usr/share/defaults/docbook/docbook-xsl/catalog"
 setup       : |
+    # In file included from ../src/grd-settings.c:28:
+    # /usr/lib/pkgconfig/../../include/freerdp3/freerdp/freerdp.h:25:10: fatal error: 'winpr/stream.h' file not found
+    #    25 | #include <winpr/stream.h>
+    export CFLAGS+=" -I/usr/include/winpr3"
+    export CXXFLAGS+=" -I/usr/include/winpr3"
+
     %meson \
         -Drdp=true \
         -Dsystemd=true \
-        -Dvnc=false
+        -Dvnc=true
 build       : |
     %meson_build
 install     : |
