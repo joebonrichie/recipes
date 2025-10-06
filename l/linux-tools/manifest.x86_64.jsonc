@@ -227,7 +227,7 @@
 				"soname(libelf.so.1(x86_64))",
 				"soname(liblzma.so.5(x86_64))",
 				"soname(libm.so.6(x86_64))",
-				"soname(libperl.so.5.40(x86_64))",
+				"soname(libperl.so.5.42(x86_64))",
 				"soname(libpython3.11.so.1.0(x86_64))",
 				"soname(libslang.so.2(x86_64))",
 				"soname(libtraceevent.so.1(x86_64))",
@@ -598,6 +598,6 @@
 		}
 	},
 	"source-name": "linux-tools",
-	"source-release": "18",
-	"source-version": "6.16.4"
+	"source-release": "19",
+	"source-version": "6.16.11"
 }
