@@ -91,6 +91,6 @@
 		}
 	},
 	"source-name": "thin-provisioning-tools",
-	"source-release": "2",
-	"source-version": "1.2.1"
+	"source-release": "3",
+	"source-version": "1.2.2"
 }

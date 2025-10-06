@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : thin-provisioning-tools
-version     : 1.2.1
-release     : 2
+version     : 1.2.2
+release     : 3
 homepage    : https://github.com/jthornber/thin-provisioning-tools
 upstreams   :
-    - https://github.com/jthornber/thin-provisioning-tools/archive/refs/tags/v1.2.1.tar.gz : 3db29ec462b85fa0acd98e02a8a7eb8b791c35faf79a0d5542daca14ad37e160
+    - https://github.com/jthornber/thin-provisioning-tools/archive/refs/tags/v1.2.2.tar.gz : 8ac15a068e6a6aec0cf0343d3d76f88c397d5fb2d6bd6202e9f13a490a9f3e22
 summary     : A suite of tools for manipulating the metadata of the dm-thin, dm-cache and dm-era device-mapper targets
 description : |
     A suite of tools for manipulating the metadata of the dm-thin, dm-cache and dm-era device-mapper targets.
