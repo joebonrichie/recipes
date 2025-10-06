@@ -4,8 +4,8 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : openssh
-version     : "10.0p2"
-release     : 15
+version     : "10.1p1"
+release     : 16
 summary     : OpenSSH (OpenBSD Secure Shell)
 license     :
     - BSD-2-Clause
@@ -16,8 +16,10 @@ homepage    : https://www.openssh.com/
 description : |
     OpenSSH is a free version of secure shell tools developed by the OpenBSD project to help facilitate secure connections and communications.
 upstreams   :
-    - https://cdn.openbsd.org/pub/OpenBSD/OpenSSH/portable/openssh-10.0p2.tar.gz: 021a2e709a0edf4250b1256bd5a9e500411a90dddabea830ed59cef90eb9d85c
+    - https://cdn.openbsd.org/pub/OpenBSD/OpenSSH/portable/openssh-10.1p1.tar.gz: b9fc7a2b82579467a6f2f43e4a81c8e1dfda614ddb4f9b255aafd7020bbf0758
 builddeps   :
+    - binary(groff)
+    - pkgconfig(krb5-gssapi)
     - pkgconfig(libcrypt)
     - pkgconfig(libcrypto)
     - pkgconfig(libedit)
@@ -26,7 +28,6 @@ builddeps   :
     - pkgconfig(libsystemd)
     - pkgconfig(pam)
     - pkgconfig(zlib)
-# TODO Kerberos support (krb5)
 setup       : |
     %patch %(pkgdir)/stateless/0001-Make-SSH-stateless.patch
     %patch %(pkgdir)/stateless/0002-Stateless-moduli.patch
@@ -39,15 +40,17 @@ setup       : |
     %patch %(pkgdir)/stateless/0001-stateless-config.patch
 
     # --disable-strip is specified because we want the build toolchain to do it instead
-    %reconfigure --sysconfdir=/etc/ssh \
-                 --with-pid-dir=/run \
-                 --with-ldns \
-                 --with-libedit \
-                 --with-pam \
-                 --with-ssl-engine \
-                 --with-security-key-builtin \
-                 --disable-lastlog \
-                 --disable-strip
+    %reconfigure \
+        --sysconfdir=/etc/ssh \
+        --with-pid-dir=/run \
+        --with-kerberos5=/usr \
+        --with-ldns \
+        --with-libedit \
+        --with-pam \
+        --with-ssl-engine \
+        --with-security-key-builtin \
+        --disable-lastlog \
+        --disable-strip
 build       : |
     %make
 install     : |

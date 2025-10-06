@@ -4,6 +4,8 @@
 	"packages": {
 		"openssh": {
 			"build-depends": [
+				"binary(groff)",
+				"pkgconfig(krb5-gssapi)",
 				"pkgconfig(libcrypt)",
 				"pkgconfig(libcrypto)",
 				"pkgconfig(libedit)",
@@ -19,6 +21,7 @@
 				"soname(libcrypto.so.3(x86_64))",
 				"soname(libedit.so.0(x86_64))",
 				"soname(libfido2.so.1(x86_64))",
+				"soname(libgssapi_krb5.so.2(x86_64))",
 				"soname(libldns.so.3(x86_64))",
 				"soname(libz.so.1(x86_64))"
 			],
@@ -37,17 +40,17 @@
 				"/usr/lib/systemd/user/ssh-agent.service",
 				"/usr/lib/systemd/user/ssh-agent.socket",
 				"/usr/share/defaults/ssh/ssh_config",
-				"/usr/share/man/cat1/scp.1",
-				"/usr/share/man/cat1/sftp.1",
-				"/usr/share/man/cat1/ssh-add.1",
-				"/usr/share/man/cat1/ssh-agent.1",
-				"/usr/share/man/cat1/ssh-keygen.1",
-				"/usr/share/man/cat1/ssh-keyscan.1",
-				"/usr/share/man/cat1/ssh.1",
-				"/usr/share/man/cat5/ssh_config.5",
-				"/usr/share/man/cat8/ssh-keysign.8",
-				"/usr/share/man/cat8/ssh-pkcs11-helper.8",
-				"/usr/share/man/cat8/ssh-sk-helper.8"
+				"/usr/share/man/man1/scp.1",
+				"/usr/share/man/man1/sftp.1",
+				"/usr/share/man/man1/ssh-add.1",
+				"/usr/share/man/man1/ssh-agent.1",
+				"/usr/share/man/man1/ssh-keygen.1",
+				"/usr/share/man/man1/ssh-keyscan.1",
+				"/usr/share/man/man1/ssh.1",
+				"/usr/share/man/man5/ssh_config.5",
+				"/usr/share/man/man8/ssh-keysign.8",
+				"/usr/share/man/man8/ssh-pkcs11-helper.8",
+				"/usr/share/man/man8/ssh-sk-helper.8"
 			],
 			"name": "openssh",
 			"provides": [
@@ -62,6 +65,8 @@
 		},
 		"openssh-server": {
 			"build-depends": [
+				"binary(groff)",
+				"pkgconfig(krb5-gssapi)",
 				"pkgconfig(libcrypt)",
 				"pkgconfig(libcrypto)",
 				"pkgconfig(libedit)",
@@ -76,6 +81,8 @@
 				"soname(libc.so.6(x86_64))",
 				"soname(libcrypt.so.2(x86_64))",
 				"soname(libcrypto.so.3(x86_64))",
+				"soname(libgssapi_krb5.so.2(x86_64))",
+				"soname(libkrb5.so.3(x86_64))",
 				"soname(libpam.so.0(x86_64))",
 				"soname(libz.so.1(x86_64))"
 			],
@@ -91,10 +98,10 @@
 				"/usr/share/defaults/pam.d/sshd",
 				"/usr/share/defaults/ssh/moduli",
 				"/usr/share/defaults/ssh/sshd_config",
-				"/usr/share/man/cat5/moduli.5",
-				"/usr/share/man/cat5/sshd_config.5",
-				"/usr/share/man/cat8/sftp-server.8",
-				"/usr/share/man/cat8/sshd.8"
+				"/usr/share/man/man5/moduli.5",
+				"/usr/share/man/man5/sshd_config.5",
+				"/usr/share/man/man8/sftp-server.8",
+				"/usr/share/man/man8/sshd.8"
 			],
 			"name": "openssh-server",
 			"provides": [
@@ -103,6 +110,6 @@
 		}
 	},
 	"source-name": "openssh",
-	"source-release": "15",
-	"source-version": "10.0p2"
+	"source-release": "16",
+	"source-version": "10.1p1"
 }
