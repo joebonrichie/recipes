@@ -23,6 +23,8 @@
 				"/usr/share/man/man3/URI::ldap.3",
 				"/usr/share/man/man3/URI::otpauth.3",
 				"/usr/share/man/man3/URI::smb.3",
+				"/usr/share/man/man3/URI::ws.3",
+				"/usr/share/man/man3/URI::wss.3",
 				"/usr/share/perl5/vendor_perl/URI.pm",
 				"/usr/share/perl5/vendor_perl/URI/Escape.pm",
 				"/usr/share/perl5/vendor_perl/URI/Heuristic.pm",
@@ -31,6 +33,7 @@
 				"/usr/share/perl5/vendor_perl/URI/Split.pm",
 				"/usr/share/perl5/vendor_perl/URI/URL.pm",
 				"/usr/share/perl5/vendor_perl/URI/WithBase.pm",
+				"/usr/share/perl5/vendor_perl/URI/_emailauth.pm",
 				"/usr/share/perl5/vendor_perl/URI/_foreign.pm",
 				"/usr/share/perl5/vendor_perl/URI/_generic.pm",
 				"/usr/share/perl5/vendor_perl/URI/_idna.pm",
@@ -80,18 +83,21 @@
 				"/usr/share/perl5/vendor_perl/URI/sip.pm",
 				"/usr/share/perl5/vendor_perl/URI/sips.pm",
 				"/usr/share/perl5/vendor_perl/URI/smb.pm",
+				"/usr/share/perl5/vendor_perl/URI/smtp.pm",
 				"/usr/share/perl5/vendor_perl/URI/snews.pm",
 				"/usr/share/perl5/vendor_perl/URI/ssh.pm",
 				"/usr/share/perl5/vendor_perl/URI/telnet.pm",
 				"/usr/share/perl5/vendor_perl/URI/tn3270.pm",
 				"/usr/share/perl5/vendor_perl/URI/urn.pm",
 				"/usr/share/perl5/vendor_perl/URI/urn/isbn.pm",
-				"/usr/share/perl5/vendor_perl/URI/urn/oid.pm"
+				"/usr/share/perl5/vendor_perl/URI/urn/oid.pm",
+				"/usr/share/perl5/vendor_perl/URI/ws.pm",
+				"/usr/share/perl5/vendor_perl/URI/wss.pm"
 			],
 			"name": "perl-uri"
 		}
 	},
 	"source-name": "perl-uri",
-	"source-release": "4",
-	"source-version": "5.32"
+	"source-release": "5",
+	"source-version": "5.34"
 }
