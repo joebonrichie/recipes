@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : iana-etc
-version     : "20250722"
-release     : 1
+version     : "20250929"
+release     : 2
 homepage    : https://github.com/Mic92/iana-etc
 upstreams   :
-    - https://github.com/Mic92/iana-etc/releases/download/20250722/iana-etc-20250722.tar.gz : 0f9cfacc8096347f329abae09950f85fdc8a199afcb8f2cf85af7b3e7a7c9029
+    - https://github.com/Mic92/iana-etc/releases/download/20250929/iana-etc-20250929.tar.gz : d14ade2780bda8296ce70859a36d1dfc20c6f6d1cf3e97a513becceaf228559d
 summary     : /etc/protocols and /etc/services
 description : |
     Build /etc/protocols and /etc/services files from IANA's Assigned Internet Protocol Numbers
