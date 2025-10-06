@@ -12,12 +12,12 @@
 				"python-libs"
 			],
 			"files": [
-				"/usr/lib/python3.11/site-packages/sentry_sdk-2.34.1.dist-info/METADATA",
-				"/usr/lib/python3.11/site-packages/sentry_sdk-2.34.1.dist-info/RECORD",
-				"/usr/lib/python3.11/site-packages/sentry_sdk-2.34.1.dist-info/WHEEL",
-				"/usr/lib/python3.11/site-packages/sentry_sdk-2.34.1.dist-info/entry_points.txt",
-				"/usr/lib/python3.11/site-packages/sentry_sdk-2.34.1.dist-info/licenses/LICENSE",
-				"/usr/lib/python3.11/site-packages/sentry_sdk-2.34.1.dist-info/top_level.txt",
+				"/usr/lib/python3.11/site-packages/sentry_sdk-2.40.0.dist-info/METADATA",
+				"/usr/lib/python3.11/site-packages/sentry_sdk-2.40.0.dist-info/RECORD",
+				"/usr/lib/python3.11/site-packages/sentry_sdk-2.40.0.dist-info/WHEEL",
+				"/usr/lib/python3.11/site-packages/sentry_sdk-2.40.0.dist-info/entry_points.txt",
+				"/usr/lib/python3.11/site-packages/sentry_sdk-2.40.0.dist-info/licenses/LICENSE",
+				"/usr/lib/python3.11/site-packages/sentry_sdk-2.40.0.dist-info/top_level.txt",
 				"/usr/lib/python3.11/site-packages/sentry_sdk/__init__.py",
 				"/usr/lib/python3.11/site-packages/sentry_sdk/__pycache__/__init__.cpython-311.opt-1.pyc",
 				"/usr/lib/python3.11/site-packages/sentry_sdk/__pycache__/__init__.cpython-311.pyc",
@@ -188,8 +188,12 @@
 				"/usr/lib/python3.11/site-packages/sentry_sdk/integrations/__pycache__/huggingface_hub.cpython-311.pyc",
 				"/usr/lib/python3.11/site-packages/sentry_sdk/integrations/__pycache__/langchain.cpython-311.opt-1.pyc",
 				"/usr/lib/python3.11/site-packages/sentry_sdk/integrations/__pycache__/langchain.cpython-311.pyc",
+				"/usr/lib/python3.11/site-packages/sentry_sdk/integrations/__pycache__/langgraph.cpython-311.opt-1.pyc",
+				"/usr/lib/python3.11/site-packages/sentry_sdk/integrations/__pycache__/langgraph.cpython-311.pyc",
 				"/usr/lib/python3.11/site-packages/sentry_sdk/integrations/__pycache__/launchdarkly.cpython-311.opt-1.pyc",
 				"/usr/lib/python3.11/site-packages/sentry_sdk/integrations/__pycache__/launchdarkly.cpython-311.pyc",
+				"/usr/lib/python3.11/site-packages/sentry_sdk/integrations/__pycache__/litellm.cpython-311.opt-1.pyc",
+				"/usr/lib/python3.11/site-packages/sentry_sdk/integrations/__pycache__/litellm.cpython-311.pyc",
 				"/usr/lib/python3.11/site-packages/sentry_sdk/integrations/__pycache__/litestar.cpython-311.opt-1.pyc",
 				"/usr/lib/python3.11/site-packages/sentry_sdk/integrations/__pycache__/litestar.cpython-311.pyc",
 				"/usr/lib/python3.11/site-packages/sentry_sdk/integrations/__pycache__/logging.cpython-311.opt-1.pyc",
@@ -246,6 +250,8 @@
 				"/usr/lib/python3.11/site-packages/sentry_sdk/integrations/__pycache__/typer.cpython-311.pyc",
 				"/usr/lib/python3.11/site-packages/sentry_sdk/integrations/__pycache__/unleash.cpython-311.opt-1.pyc",
 				"/usr/lib/python3.11/site-packages/sentry_sdk/integrations/__pycache__/unleash.cpython-311.pyc",
+				"/usr/lib/python3.11/site-packages/sentry_sdk/integrations/__pycache__/unraisablehook.cpython-311.opt-1.pyc",
+				"/usr/lib/python3.11/site-packages/sentry_sdk/integrations/__pycache__/unraisablehook.cpython-311.pyc",
 				"/usr/lib/python3.11/site-packages/sentry_sdk/integrations/__pycache__/wsgi.cpython-311.opt-1.pyc",
 				"/usr/lib/python3.11/site-packages/sentry_sdk/integrations/__pycache__/wsgi.cpython-311.pyc",
 				"/usr/lib/python3.11/site-packages/sentry_sdk/integrations/_asgi_common.py",
@@ -336,7 +342,9 @@
 				"/usr/lib/python3.11/site-packages/sentry_sdk/integrations/huey.py",
 				"/usr/lib/python3.11/site-packages/sentry_sdk/integrations/huggingface_hub.py",
 				"/usr/lib/python3.11/site-packages/sentry_sdk/integrations/langchain.py",
+				"/usr/lib/python3.11/site-packages/sentry_sdk/integrations/langgraph.py",
 				"/usr/lib/python3.11/site-packages/sentry_sdk/integrations/launchdarkly.py",
+				"/usr/lib/python3.11/site-packages/sentry_sdk/integrations/litellm.py",
 				"/usr/lib/python3.11/site-packages/sentry_sdk/integrations/litestar.py",
 				"/usr/lib/python3.11/site-packages/sentry_sdk/integrations/logging.py",
 				"/usr/lib/python3.11/site-packages/sentry_sdk/integrations/loguru.py",
@@ -467,6 +475,7 @@
 				"/usr/lib/python3.11/site-packages/sentry_sdk/integrations/trytond.py",
 				"/usr/lib/python3.11/site-packages/sentry_sdk/integrations/typer.py",
 				"/usr/lib/python3.11/site-packages/sentry_sdk/integrations/unleash.py",
+				"/usr/lib/python3.11/site-packages/sentry_sdk/integrations/unraisablehook.py",
 				"/usr/lib/python3.11/site-packages/sentry_sdk/integrations/wsgi.py",
 				"/usr/lib/python3.11/site-packages/sentry_sdk/logger.py",
 				"/usr/lib/python3.11/site-packages/sentry_sdk/metrics.py",
@@ -499,12 +508,11 @@
 			],
 			"name": "python-sentry-sdk",
 			"provides": [
-				"python(sentry-sdk(3.11))",
 				"python(sentry-sdk)"
 			]
 		}
 	},
 	"source-name": "python-sentry-sdk",
-	"source-release": "2",
-	"source-version": "2.34.1"
+	"source-release": "3",
+	"source-version": "2.40.0"
 }
