@@ -1,0 +1,65 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : krdc
+version     : 25.08.1
+release     : 1
+upstreams   :
+    - https://download.kde.org/stable/release-service/25.08.1/src/krdc-25.08.1.tar.xz : 134d1b0186b611883ad7db34ebcae54500c674050e786f57889042845582769b
+homepage    : https://apps.kde.org/krdc/
+license     :
+    - GFDL-1.2-or-later
+    - GPL-2.0-or-later
+    - LGPL-2.1-or-later
+summary     : KDE's remote desktop client
+description : |
+    KRDC is a client application that allows you to view or even control the desktop session on another machine that is running a compatible server. VNC and RDP are supported.
+builddeps   :
+    # Temporary, boulder doesn't handle build ordering resolution correctly when builddeps are added by macros, so add ECM manually
+    - cmake(ECM)
+    - cmake(FreeRDP)
+    - cmake(KF6Bookmarks)
+    - cmake(KF6Completion)
+    - cmake(KF6Config)
+    - cmake(KF6Crash)
+    - cmake(KF6DNSSD)
+    - cmake(KF6DocTools)
+    - cmake(KF6I18n)
+    - cmake(KF6IconThemes)
+    - cmake(KF6KCMUtils)
+    - cmake(KF6KIO)
+    - cmake(KF6Notifications)
+    - cmake(KF6NotifyConfig)
+    - cmake(KF6StatusNotifierItem)
+    - cmake(KF6Wallet)
+    - cmake(KF6WidgetsAddons)
+    - cmake(KF6WindowSystem)
+    - cmake(KF6XmlGui)
+    - cmake(PlasmaActivities)
+    - cmake(Qt6CorePrivate)
+    - cmake(Qt6WaylandClient)
+    - pkgconfig(libssh)
+    - pkgconfig(libvncclient)
+setup       : |
+    %cmake_kf6
+build       : |
+    %cmake_build
+install     : |
+    %cmake_install
+packages    :
+    - "%(name)":
+        rundeps:
+            - qt6-wayland
+
+    - "%(name)-libs":
+        summary: Runtime libraries for %(name)
+        description: Runtime libraries for %(name)
+        paths:
+            - /usr/lib/libkrdccore.so.*
+            - /usr/lib/qt6/plugins/krdc/
+
+    - "%(name)-docs":
+        paths:
+            - /usr/share/doc
