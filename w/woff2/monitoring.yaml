@@ -1,0 +1,6 @@
+releases:
+  id: 17587
+  rss: https://github.com/google/woff2/tags.atom
+security:
+  # Last checked 20251010
+  cpe: ~

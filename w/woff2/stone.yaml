@@ -1,0 +1,37 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : woff2
+version     : 1.0.2
+release     : 1
+upstreams   :
+    - https://github.com/google/woff2/archive/v1.0.2.tar.gz : add272bb09e6384a4833ffca4896350fdb16e0ca22df68c0384773c67a175594
+homepage    : https://github.com/google/woff2
+license     : MIT
+summary     : Web Open Font Format 2.0 library
+description : |
+    Web Open Font Format (WOFF) 2.0 is an update to the existing WOFF 1.0 with
+    improved compression that is achieved by using the Brotli algorithm. The primary
+    purpose of the WOFF2 format is to efficiently package fonts linked to Web
+    documents by means of CSS @font-face rules.
+builddeps   :
+    - pkgconfig(libbrotlidec)
+setup       : |
+    %patch %(pkgdir)/0001-Install-binaries-always.patch
+
+    %cmake \
+        -DCMAKE_POLICY_VERSION_MINIMUM=3.5
+build       : |
+    %cmake_build
+install     : |
+    %cmake_install
+packages    :
+    - "%(name)-tools":
+        summary: Web Open Font Format 2.0 tools
+        description: |
+            Tools for compressing TTF files to WOFF2 format, decompressing WOFF2
+            files back to TTF files and dumping WOFF2 file information.
+        paths:
+            - /usr/bin/
