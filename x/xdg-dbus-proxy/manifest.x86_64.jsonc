@@ -1,0 +1,31 @@
+/** Human readable report. This is not consumed by boulder */
+{
+	"manifest-version": "0.2",
+	"packages": {
+		"xdg-dbus-proxy": {
+			"build-depends": [
+				"binary(xsltproc)",
+				"docbook-xsl",
+				"pkgconfig(glib-2.0)"
+			],
+			"depends": [
+				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
+				"soname(libc.so.6(x86_64))",
+				"soname(libgio-2.0.so.0(x86_64))",
+				"soname(libglib-2.0.so.0(x86_64))",
+				"soname(libgobject-2.0.so.0(x86_64))"
+			],
+			"files": [
+				"/usr/bin/xdg-dbus-proxy",
+				"/usr/share/man/man1/xdg-dbus-proxy.1"
+			],
+			"name": "xdg-dbus-proxy",
+			"provides": [
+				"binary(xdg-dbus-proxy)"
+			]
+		}
+	},
+	"source-name": "xdg-dbus-proxy",
+	"source-release": "1",
+	"source-version": "0.1.6"
+}
