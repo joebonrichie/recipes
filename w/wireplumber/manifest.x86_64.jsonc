@@ -17,7 +17,9 @@
 				"pkgconfig(libsystemd)",
 				"pkgconfig(lua)",
 				"pkgconfig(systemd)",
-				"python(lxml)"
+				"python(lxml)",
+				"python(sphinx)",
+				"python(sphinx-rtd-theme)"
 			],
 			"depends": [
 				"binary(pipewire)",
@@ -112,6 +114,7 @@
 				"/usr/share/wireplumber/scripts/default-nodes/state-default-nodes.lua",
 				"/usr/share/wireplumber/scripts/device/apply-profile.lua",
 				"/usr/share/wireplumber/scripts/device/apply-routes.lua",
+				"/usr/share/wireplumber/scripts/device/automute-alsa-routes.lua",
 				"/usr/share/wireplumber/scripts/device/autoswitch-bluetooth-profile.lua",
 				"/usr/share/wireplumber/scripts/device/find-best-profile.lua",
 				"/usr/share/wireplumber/scripts/device/find-best-routes.lua",
@@ -191,7 +194,9 @@
 				"pkgconfig(libsystemd)",
 				"pkgconfig(lua)",
 				"pkgconfig(systemd)",
-				"python(lxml)"
+				"python(lxml)",
+				"python(sphinx)",
+				"python(sphinx-rtd-theme)"
 			],
 			"depends": [
 				"pkgconfig(gio-2.0)",
@@ -266,7 +271,9 @@
 				"pkgconfig(libsystemd)",
 				"pkgconfig(lua)",
 				"pkgconfig(systemd)",
-				"python(lxml)"
+				"python(lxml)",
+				"python(sphinx)",
+				"python(sphinx-rtd-theme)"
 			],
 			"depends": [
 				"soname(libc.so.6(x86_64))",
@@ -282,7 +289,7 @@
 			"files": [
 				"/usr/lib/girepository-1.0/Wp-0.5.typelib",
 				"/usr/lib/libwireplumber-0.5.so.0",
-				"/usr/lib/libwireplumber-0.5.so.0.511.0",
+				"/usr/lib/libwireplumber-0.5.so.0.512.0",
 				"/usr/lib/wireplumber-0.5/libwireplumber-module-dbus-connection.so",
 				"/usr/lib/wireplumber-0.5/libwireplumber-module-default-nodes-api.so",
 				"/usr/lib/wireplumber-0.5/libwireplumber-module-file-monitor-api.so",
@@ -292,6 +299,7 @@
 				"/usr/lib/wireplumber-0.5/libwireplumber-module-mixer-api.so",
 				"/usr/lib/wireplumber-0.5/libwireplumber-module-modem-manager.so",
 				"/usr/lib/wireplumber-0.5/libwireplumber-module-mpris.so",
+				"/usr/lib/wireplumber-0.5/libwireplumber-module-notifications-api.so",
 				"/usr/lib/wireplumber-0.5/libwireplumber-module-portal-permissionstore.so",
 				"/usr/lib/wireplumber-0.5/libwireplumber-module-reserve-device.so",
 				"/usr/lib/wireplumber-0.5/libwireplumber-module-settings.so",
@@ -312,6 +320,7 @@
 				"soname(wireplumber-0.5/libwireplumber-module-mixer-api.so(x86_64))",
 				"soname(wireplumber-0.5/libwireplumber-module-modem-manager.so(x86_64))",
 				"soname(wireplumber-0.5/libwireplumber-module-mpris.so(x86_64))",
+				"soname(wireplumber-0.5/libwireplumber-module-notifications-api.so(x86_64))",
 				"soname(wireplumber-0.5/libwireplumber-module-portal-permissionstore.so(x86_64))",
 				"soname(wireplumber-0.5/libwireplumber-module-reserve-device.so(x86_64))",
 				"soname(wireplumber-0.5/libwireplumber-module-settings.so(x86_64))",
@@ -323,6 +332,6 @@
 		}
 	},
 	"source-name": "wireplumber",
-	"source-release": "10",
-	"source-version": "0.5.11"
+	"source-release": "11",
+	"source-version": "0.5.12"
 }
