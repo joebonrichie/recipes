@@ -1,0 +1,6 @@
+releases:
+  id: 229630
+  rss: https://gitlab.gnome.org/GNOME/libmanette/-/tags?format=atom
+security:
+  # Last checked 20251010
+  cpe: ~

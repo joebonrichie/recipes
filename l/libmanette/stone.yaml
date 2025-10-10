@@ -1,0 +1,45 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : libmanette
+version     : 0.2.13
+release     : 1
+upstreams   :
+    - https://download.gnome.org/sources/libmanette/0.2/libmanette-0.2.13.tar.xz : 287cc2fde0de092919366af757d85e7b3a0248eb1b395344726e97955a77d8ae
+homepage    : hthttps://gnome.pages.gitlab.gnome.org/libmanette
+license     : LGPL-2.1-or-later
+summary     : Simple GObject game controller library
+description : |
+    libmanette is a small GObject library giving you simple access to game	
+    controllers.
+
+    This library is intended for software needing a painless access to game
+    controllers from any programming language and with little dependencies.
+
+    It supports the de-facto standard gamepads as defined by the W3C standard
+    Gamepad specification or as implemented by the SDL GameController. More game
+    controller kinds could be supported in the future if needed. Mapping of the
+    devices is handled transparently and internally by the library using the
+    popular SDL mapping string format.
+builddeps   :
+    - binary(vapigen)
+    - pkgconfig(gio-2.0)
+    - pkgconfig(glib-2.0)
+    - pkgconfig(gobject-2.0)
+    - pkgconfig(gobject-introspection-1.0)
+    - pkgconfig(gudev-1.0)
+    - pkgconfig(hidapi-hidraw)
+    - pkgconfig(libevdev)
+setup       : |
+    %meson
+build       : |
+    %meson_build
+install     : |
+    %meson_install
+packages    :
+    - "%(name)-devel":
+        paths:
+            - /usr/bin/manette-test
+            - /usr/share/vala/
