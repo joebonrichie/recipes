@@ -5,7 +5,7 @@
 #
 name        : gnome-shell
 version     : "49.0"
-release     : 39
+release     : 40
 homepage    : https://gitlab.gnome.org/GNOME/gnome-shell
 upstreams   :
     - https://download.gnome.org/sources/gnome-shell/49/gnome-shell-49.0.tar.xz : ff086b9c3218099430d9185243b6776a36a2cb7bcb705a98c612f2cf4742708a
@@ -71,6 +71,7 @@ rundeps     :
     - libnma
     - librsvg
     - shared-mime-info
+    - webkitgtk60 # For captive portals
     - xdg-desktop-portal-gnome
 setup       : |
     # Redonkulous logo sizes are redonkulous
