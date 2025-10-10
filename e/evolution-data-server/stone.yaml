@@ -5,7 +5,7 @@
 #
 name        : evolution-data-server
 version     : 3.58.1
-release     : 18
+release     : 19
 homepage    : https://gitlab.gnome.org/GNOME/evolution-data-server
 upstreams   :
     - https://download.gnome.org/sources/evolution-data-server/3.58/evolution-data-server-3.58.1.tar.xz : a914928814ef887f0979ba78ea8d7bcc98f96cf07cbb70b0051980bd90ec35f0
@@ -40,8 +40,9 @@ builddeps   :
     - pkgconfig(libsoup-3.0)
     - pkgconfig(libxml-2.0)
     - pkgconfig(nss)
-    # - pkgconfig(webkit2gtk-4.1)
-    # - pkgconfig(webkitgtk-6.0)
+    - pkgconfig(webkit2gtk-4.1)
+    - pkgconfig(webkitgtk-6.0)
+    # libphonenumber
 packages    :
     - "%(name)-devel":
         paths:
@@ -49,8 +50,6 @@ packages    :
 setup       : |
     %cmake \
         -DENABLE_INTROSPECTION=ON \
-        -DENABLE_OAUTH2_WEBKITGTK=OFF \
-        -DENABLE_OAUTH2_WEBKITGTK4=OFF \
         -DENABLE_VALA_BINDINGS=ON \
         -DWITH_LIBDB=OFF \
         -DSYSCONF_INSTALL_DIR="%(datadir)"
