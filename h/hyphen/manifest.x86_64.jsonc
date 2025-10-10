@@ -1,0 +1,76 @@
+/** Human readable report. This is not consumed by boulder */
+{
+	"manifest-version": "0.2",
+	"packages": {
+		"hyphen": {
+			"build-depends": [
+				"binary(patch)"
+			],
+			"depends": [
+				"soname(libc.so.6(x86_64))"
+			],
+			"files": [
+				"/usr/lib/libhyphen.so.0",
+				"/usr/lib/libhyphen.so.0.3.0"
+			],
+			"name": "hyphen",
+			"provides": [
+				"soname(libhyphen.so.0(x86_64))"
+			]
+		},
+		"hyphen-devel": {
+			"build-depends": [
+				"binary(patch)"
+			],
+			"depends": [
+				"hyphen"
+			],
+			"files": [
+				"/usr/bin/substrings.pl",
+				"/usr/include/hyphen.h",
+				"/usr/lib/libhyphen.so"
+			],
+			"name": "hyphen-devel",
+			"provides": [
+				"binary(substrings.pl)"
+			]
+		},
+		"hyphen-en": {
+			"build-depends": [
+				"binary(patch)"
+			],
+			"depends": [
+				"hyphen"
+			],
+			"files": [
+				"/usr/share/hyphen/hyph_en_AG.dic",
+				"/usr/share/hyphen/hyph_en_AU.dic",
+				"/usr/share/hyphen/hyph_en_BS.dic",
+				"/usr/share/hyphen/hyph_en_BW.dic",
+				"/usr/share/hyphen/hyph_en_BZ.dic",
+				"/usr/share/hyphen/hyph_en_CA.dic",
+				"/usr/share/hyphen/hyph_en_DK.dic",
+				"/usr/share/hyphen/hyph_en_GB.dic",
+				"/usr/share/hyphen/hyph_en_GH.dic",
+				"/usr/share/hyphen/hyph_en_HK.dic",
+				"/usr/share/hyphen/hyph_en_IE.dic",
+				"/usr/share/hyphen/hyph_en_IN.dic",
+				"/usr/share/hyphen/hyph_en_JM.dic",
+				"/usr/share/hyphen/hyph_en_MW.dic",
+				"/usr/share/hyphen/hyph_en_NA.dic",
+				"/usr/share/hyphen/hyph_en_NZ.dic",
+				"/usr/share/hyphen/hyph_en_PH.dic",
+				"/usr/share/hyphen/hyph_en_SG.dic",
+				"/usr/share/hyphen/hyph_en_TT.dic",
+				"/usr/share/hyphen/hyph_en_US.dic",
+				"/usr/share/hyphen/hyph_en_ZA.dic",
+				"/usr/share/hyphen/hyph_en_ZM.dic",
+				"/usr/share/hyphen/hyph_en_ZW.dic"
+			],
+			"name": "hyphen-en"
+		}
+	},
+	"source-name": "hyphen",
+	"source-release": "1",
+	"source-version": "2.8.8"
+}
