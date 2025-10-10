@@ -5,7 +5,7 @@
 #
 name        : zenity
 version     : 4.2.0
-release     : 4
+release     : 5
 homepage    : https://wiki.gnome.org/Projects/Zenity
 upstreams   :
     - https://download.gnome.org/sources/zenity/4.2/zenity-4.2.0.tar.xz : 5f983340c6fa55f4fab5a9769d0771b2cdf1365e2c158ac11cc16ffd892f6bcd
@@ -18,10 +18,10 @@ builddeps   :
     - binary(itstool)
     - binary(msgfmt)
     - pkgconfig(libadwaita-1)
-    # webkitgtk-6.0
+    - pkgconfig(webkitgtk-6.0)
 setup       : |
     %meson \
-        -Dwebkitgtk=false
+        -Dwebkitgtk=true
 build       : |
     %meson_build
 install     : |

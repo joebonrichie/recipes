@@ -7,7 +7,8 @@
 				"binary(help2man)",
 				"binary(itstool)",
 				"binary(msgfmt)",
-				"pkgconfig(libadwaita-1)"
+				"pkgconfig(libadwaita-1)",
+				"pkgconfig(webkitgtk-6.0)"
 			],
 			"depends": [
 				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
@@ -17,7 +18,8 @@
 				"soname(libglib-2.0.so.0(x86_64))",
 				"soname(libgobject-2.0.so.0(x86_64))",
 				"soname(libgtk-4.so.1(x86_64))",
-				"soname(libpango-1.0.so.0(x86_64))"
+				"soname(libpango-1.0.so.0(x86_64))",
+				"soname(libwebkitgtk-6.0.so.4(x86_64))"
 			],
 			"files": [
 				"/usr/bin/zenity",
@@ -952,6 +954,6 @@
 		}
 	},
 	"source-name": "zenity",
-	"source-release": "4",
+	"source-release": "5",
 	"source-version": "4.2.0"
 }
