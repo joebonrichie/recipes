@@ -10,6 +10,7 @@
 				"binary(msgfmt)",
 				"binary(python)",
 				"binary(wayland-scanner)",
+				"binary(xdg-dbus-proxy)",
 				"binary(xmlto)",
 				"binary(xsltproc)",
 				"binary(yacc)",
@@ -34,11 +35,12 @@
 				"pkgconfig(polkit-agent-1)",
 				"pkgconfig(wayland-protocols)",
 				"pkgconfig(xau)",
-				"python-pyparsing"
+				"python(pyparsing)"
 			],
 			"depends": [
 				"binary(bwrap)",
 				"binary(fusermount3)",
+				"binary(xdg-dbus-proxy)",
 				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
 				"soname(libXau.so.6(x86_64))",
 				"soname(libappstream.so.5(x86_64))",
@@ -65,7 +67,6 @@
 				"/usr/bin/flatpak",
 				"/usr/bin/flatpak-bisect",
 				"/usr/bin/flatpak-coredumpctl",
-				"/usr/lib/flatpak/flatpak-dbus-proxy",
 				"/usr/lib/flatpak/flatpak-oci-authenticator",
 				"/usr/lib/flatpak/flatpak-portal",
 				"/usr/lib/flatpak/flatpak-session-helper",
@@ -198,6 +199,7 @@
 				"binary(msgfmt)",
 				"binary(python)",
 				"binary(wayland-scanner)",
+				"binary(xdg-dbus-proxy)",
 				"binary(xmlto)",
 				"binary(xsltproc)",
 				"binary(yacc)",
@@ -222,7 +224,7 @@
 				"pkgconfig(polkit-agent-1)",
 				"pkgconfig(wayland-protocols)",
 				"pkgconfig(xau)",
-				"python-pyparsing"
+				"python(pyparsing)"
 			],
 			"depends": [
 				"flatpak",
@@ -269,6 +271,6 @@
 		}
 	},
 	"source-name": "flatpak",
-	"source-release": "14",
+	"source-release": "15",
 	"source-version": "1.16.1"
 }

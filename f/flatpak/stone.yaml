@@ -5,7 +5,7 @@
 #
 name        : flatpak
 version     : 1.16.1
-release     : 14
+release     : 15
 homepage    : https://www.flatpak.org/
 upstreams   :
     - https://github.com/flatpak/flatpak/releases/download/1.16.1/flatpak-1.16.1.tar.xz : 2b47e8f2d90d35d29339ed78e1a6eabb36eefa9cfa5a5ca3b0d1f27502c43675
@@ -21,6 +21,7 @@ license     :
 builddeps   :
     - binary(bison)
     - binary(bwrap)
+    - binary(xdg-dbus-proxy)
     - binary(m4)
     - binary(msgfmt)
     - binary(python)
@@ -28,8 +29,6 @@ builddeps   :
     - binary(xmlto)
     - binary(xsltproc)
     - binary(yacc)
-    - docbook
-    - docbook-xsl
     - pkgconfig(appstream)
     - pkgconfig(dconf)
     - pkgconfig(fuse3)
@@ -49,16 +48,18 @@ builddeps   :
     - pkgconfig(polkit-agent-1)
     - pkgconfig(wayland-protocols)
     - pkgconfig(xau)
-    - python-pyparsing
+    - python(pyparsing)
+    - docbook
+    - docbook-xsl
 networking  : true
 rundeps     :
     - binary(bwrap)
     - binary(fusermount3)
+    - binary(xdg-dbus-proxy)
 environment : |
     # Temporary, replace with boulder macro
     export XML_CATALOG_FILES="file:///usr/share/defaults/docbook/docbook-dtd/catalog file:///usr/share/defaults/docbook/docbook-xsl/catalog"
 setup       : |
-    # TODO: package dbus-proxy and use the system package instead
     %meson \
         -Ddbus_config_dir=/usr/share/dbus-1/system.d \
         -Ddocbook_docs=disabled \
@@ -67,8 +68,8 @@ setup       : |
         -Dlibzstd=enabled \
         -Dsystem_fusermount=fusermount3 \
         -Dsystem_bubblewrap=%(bindir)/bwrap \
-        -Dtests=false \
-        --wrap-mode=default
+        -Dsystem_dbus_proxy=%(bindir)/xdg-dbus-proxy \
+        -Dtests=false
 build       : |
     %meson_build
 install     : |
