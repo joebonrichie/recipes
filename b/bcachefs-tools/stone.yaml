@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : bcachefs-tools
-version     : 1.31.7
-release     : 5
+version     : 1.31.8
+release     : 6
 homepage    : https://bcachefs.org
 upstreams   :
-    - https://evilpiepirate.org/bcachefs-tools/bcachefs-tools-vendored-1.31.7.tar.zst : 97004282dc141e4010f7e975b2b3e66da29241472e596bccd7f7568ebc2c9965
+    - https://evilpiepirate.org/bcachefs-tools/bcachefs-tools-vendored-1.31.8.tar.zst : b2eb29ad6405d6ec0051a9be94f9957afad605ea8664dd11429f2792d58b8a76
 summary     : BCacheFS filesystem utilities
 description : |
     BCacheFS filesystem utilities
