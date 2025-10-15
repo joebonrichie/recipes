@@ -142,3 +142,6 @@
 ### Deprecated upstream
 - docker-scan
 - docker-scan-dbginfo
+
+### No longer built
+- gst-plugins-rs-devel
