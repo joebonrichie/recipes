@@ -5,7 +5,7 @@
 #
 name        : llvm
 version     : 21.1.3
-release     : 35
+release     : 36
 summary     : Low Level Virtual Machine
 license     :
     - Apache-2.0 WITH LLVM-exception
@@ -39,6 +39,7 @@ builddeps   :
     - libatomic
     - libatomic-32bit
     - libcxx-devel-static
+    - libunwind-devel-static
     - libquadmath-devel
     - mimalloc-static # TODO: Figure out if we can actually split mimalloc-static, or if it needs to go back in.
 tuning      :
@@ -69,8 +70,8 @@ environment : |
 
         # Full-fat (in the milk sense) build suitable for cross-compilation
         _BUILD_TARGETS="AArch64;AMDGPU;ARM;BPF;RISCV;SPIRV;WebAssembly;X86"
-        _PROJECTS="bolt;clang;clang-tools-extra;lld;lldb;llvm;mlir;polly"
-        _RUNTIMES="compiler-rt;libcxx;libcxxabi;libunwind"
+        _PROJECTS="bolt;clang;clang-tools-extra;flang;lld;lldb;llvm;mlir;polly"
+        _RUNTIMES="compiler-rt;flang-rt;libclc;libcxx;libcxxabi;libunwind;offload;openmp"
     fi
 
     if [[ " ${PATH[*]} " =~ "ccache" ]]; then
@@ -111,11 +112,13 @@ environment : |
         ## Upstream backports
         # Can be dropped once we switch to libstdc++
         %patch %(pkgdir)/patches/upstream/149326.patch
+        %patch %(pkgdir)/patches/upstream/155422.patch
     }
 
     # 2025-03-25: Add LIBCXX_TYPEINFO_COMPARISON_IMPLEMENTATION=2 for https://bugs.kde.org/show_bug.cgi?id=479679
     #  See also https://github.com/llvm/llvm-project/issues/36746
     # TODO is it worth adding Lua support to lldb?
+    # 2025-10-16: Using FLANG_RT_ENABLE_SHARED=ON causes the flang-rt build to fail with linker errors. TODO fix that.
     function cmake_llvm_configure() {
         %cmake \
             -DCMAKE_SKIP_INSTALL_RPATH=ON \
@@ -132,6 +135,7 @@ environment : |
             -DCOMPILER_RT_USE_BUILTINS_LIBRARY=ON \
             -DCOMPILER_RT_USE_LIBCXX=ON \
             -DENABLE_LINKER_BUILD_ID=ON \
+            -DFLANG_RT_ENABLE_SHARED=OFF \
             -DLIBCXX_ENABLE_ASSERTIONS=OFF \
             -DLIBCXX_ENABLE_SHARED=ON \
             -DLIBCXX_ENABLE_STATIC=ON \
@@ -324,11 +328,8 @@ environment : |
                 # Supporting tools
                 bbc|tco|f18-parse-demo|fir-*)
                     ;;
-                # Flang-rt libraries
-                FortranRuntime|FortranDecimal)
-                    ;;
                 # Fortran build files
-                flang-binding|flang-mod)
+                flang-binding|flang-module-interfaces|flang-fortran-binding)
                     ;;
 
                 ### built-ins, Runtimes
@@ -403,13 +404,13 @@ profiles    :
             %cmake_build --target distribution
 
             # Generate man pages (this list will need to be updated on every major LLVM update)
-            %cmake_build --target docs-clang-man docs-clang-tools-man docs-dsymutil-man docs-llvm-dwarfdump-man docs-llvm-man docs-polly-man
+            %cmake_build --target docs-clang-man docs-clang-tools-man docs-dsymutil-man docs-flang-man docs-llvm-dwarfdump-man docs-llvm-man docs-polly-man
             %ccache_stats
         install: |
             DESTDIR="%(installroot)" cmake --build "%(builddir)" --verbose --target install-distribution
 
             # Install man pages
-            DESTDIR="%(installroot)" cmake --build "%(builddir)" --verbose --target install-docs-clang-man install-docs-clang-tools-man install-docs-dsymutil-man install-docs-llvm-dwarfdump-man install-docs-llvm-man install-docs-polly-man
+            DESTDIR="%(installroot)" cmake --build "%(builddir)" --verbose --target install-docs-clang-man install-docs-clang-tools-man install-docs-dsymutil-man install-docs-flang-man install-docs-llvm-dwarfdump-man install-docs-llvm-man install-docs-polly-man
 
             # Unused man pages (or used elsewhere like the lldb-tblgen one)
             rm -fv %(installroot)%(mandir)/man1/lit* \
@@ -617,7 +618,7 @@ packages    :
             - libunwind-devel
             - lld
             - llvm
-            # - openmp-devel
+            - openmp-devel
             - polly
         paths:
             - /usr/bin/*clang*
@@ -767,9 +768,26 @@ packages    :
             - /usr/bin/flang*
             - /usr/bin/tco
             - /usr/lib/clang/*/include/ISO_Fortran_binding.h
+            - /usr/lib/clang/*/lib/*/libflang_rt.runtime.a
             - /usr/lib/libFortran*.a
             - /usr/include/flang
             - /usr/share/man/man1/flang*
+
+    - "libclc":
+        summary: libclc is an open source implementation of the OpenCL 1.1 Specification
+        description: |
+            libclc is an open source implementation of the OpenCL 1.1 Specification
+        paths:
+            - /usr/share/clc/*.bc
+
+    - "libclc-devel":
+        summary: libclc is an open source implementation of the OpenCL 1.1 Specification
+        description: |
+            libclc is an open source implementation of the OpenCL 1.1 Specification
+        rundeps:
+            - libclc
+        paths:
+            - /usr/share/pkgconfig/libclc.pc
 
     - "libcxx":
         summary: "Modern C++ standard library"
@@ -992,6 +1010,8 @@ packages    :
             - /usr/bin/llvm-omp-kernel-replay
             - /usr/include/offload
             - /usr/lib/libLLVMOffload.so
+            - /usr/lib/amdgcn-amd-amdhsa/libomptarget-amdgpu.bc
+            - /usr/lib/amdgcn-amd-amdhsa/libompdevice.a
             - /usr/lib/libomptarget*.bc
             - /usr/lib/libomptarget*.a
             - /usr/lib/libomptarget.so
@@ -1014,6 +1034,7 @@ packages    :
         paths:
             - /usr/lib/cmake/openmp
             - /usr/lib/clang/*/include/omp*.h
+            - /usr/share/gdb/python/ompd/
 
     - "polly":
         summary: "LLVM Framework for High-Level Loop and Data-Locality Optimizations"
