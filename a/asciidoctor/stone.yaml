@@ -4,10 +4,10 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : asciidoctor
-version     : 2.0.24
-release     : 4
+version     : 2.0.25
+release     : 5
 upstreams   :
-    - https://github.com/asciidoctor/asciidoctor/archive/refs/tags/v2.0.24.tar.gz : e9e4f1a5c8f20b672e4221dce8b5954e9d690862e3fa1c5fa0d82c559d6e3d20
+    - https://github.com/asciidoctor/asciidoctor/archive/refs/tags/v2.0.25.tar.gz : 41e2a086718cf719ae5ca89995e1feaf67f027ad6263c9fb242425ffb809bd8c
 homepage    : https://asciidoctor.org/
 summary     : A fast text processor and publishing toolchain for converting AsciiDoc content to HTML 5, DocBook 5, and other formats.
 description : |
