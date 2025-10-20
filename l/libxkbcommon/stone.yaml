@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : libxkbcommon
-version     : 1.12.1
-release     : 12
+version     : 1.12.2
+release     : 13
 homepage    : https://xkbcommon.org
 upstreams   :
-    - https://github.com/xkbcommon/libxkbcommon/archive/refs/tags/xkbcommon-1.12.1.tar.gz : bb1543d956a5b962ee414174e9882c5d6fac3af9f95ebf48defb105151780ed1
+    - https://github.com/xkbcommon/libxkbcommon/archive/refs/tags/xkbcommon-1.12.2.tar.gz : 40a333433d850c308f6fe8b15b57c54c769aad655e9c6563cc288bc650111ecf
 summary     : Library for handling of keyboard descriptions
 description : |
     xkbcommon is a library for handling of keyboard descriptions, including
