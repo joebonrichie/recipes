@@ -26,8 +26,8 @@
 				"/usr/lib/qt6/qml/org/kde/milou/ResultsListViewDelegate.qml",
 				"/usr/lib/qt6/qml/org/kde/milou/ResultsView.qml",
 				"/usr/lib/qt6/qml/org/kde/milou/kde-qmlmodule.version",
-				"/usr/lib/qt6/qml/org/kde/milou/libmilouqmlplugin.so",
-				"/usr/lib/qt6/qml/org/kde/milou/milouqmlplugin.qmltypes",
+				"/usr/lib/qt6/qml/org/kde/milou/libmilou.so",
+				"/usr/lib/qt6/qml/org/kde/milou/milou.qmltypes",
 				"/usr/lib/qt6/qml/org/kde/milou/qmldir",
 				"/usr/share/locale/ar/LC_MESSAGES/milou.mo",
 				"/usr/share/locale/ar/LC_MESSAGES/plasma_applet_org.kde.milou.mo",
@@ -143,11 +143,11 @@
 			],
 			"name": "milou",
 			"provides": [
-				"soname(qt6/qml/org/kde/milou/libmilouqmlplugin.so(x86_64))"
+				"soname(qt6/qml/org/kde/milou/libmilou.so(x86_64))"
 			]
 		}
 	},
 	"source-name": "milou",
-	"source-release": "7",
-	"source-version": "6.4.5"
+	"source-release": "8",
+	"source-version": "6.5.0"
 }
