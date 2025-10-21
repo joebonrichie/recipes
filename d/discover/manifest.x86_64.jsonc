@@ -92,8 +92,8 @@
 				"/usr/lib/qt6/plugins/discover/kns-backend.so",
 				"/usr/lib/qt6/plugins/plasma/kcms/systemsettings/kcm_updates.so",
 				"/usr/share/applications/kcm_updates.desktop",
-				"/usr/share/applications/org.kde.discover-flatpak.desktop",
 				"/usr/share/applications/org.kde.discover.desktop",
+				"/usr/share/applications/org.kde.discover.flatpak.desktop",
 				"/usr/share/applications/org.kde.discover.notifier.desktop",
 				"/usr/share/applications/org.kde.discover.snap.desktop",
 				"/usr/share/applications/org.kde.discover.urlhandler.desktop",
@@ -361,6 +361,6 @@
 		}
 	},
 	"source-name": "discover",
-	"source-release": "6",
-	"source-version": "6.4.5"
+	"source-release": "7",
+	"source-version": "6.5.0"
 }
