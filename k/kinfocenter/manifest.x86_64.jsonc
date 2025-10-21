@@ -254,8 +254,11 @@
 				"/usr/share/locale/id/LC_MESSAGES/kcm_energyinfo.mo",
 				"/usr/share/locale/id/LC_MESSAGES/kcm_samba.mo",
 				"/usr/share/locale/id/LC_MESSAGES/kcmusb.mo",
+				"/usr/share/locale/is/LC_MESSAGES/kcm_about-distro.mo",
+				"/usr/share/locale/is/LC_MESSAGES/kcm_energyinfo.mo",
 				"/usr/share/locale/is/LC_MESSAGES/kcm_samba.mo",
 				"/usr/share/locale/is/LC_MESSAGES/kcmusb.mo",
+				"/usr/share/locale/is/LC_MESSAGES/kinfocenter.mo",
 				"/usr/share/locale/it/LC_MESSAGES/kcm_about-distro.mo",
 				"/usr/share/locale/it/LC_MESSAGES/kcm_energyinfo.mo",
 				"/usr/share/locale/it/LC_MESSAGES/kcm_samba.mo",
@@ -551,6 +554,6 @@
 		}
 	},
 	"source-name": "kinfocenter",
-	"source-release": "9",
-	"source-version": "6.4.5"
+	"source-release": "10",
+	"source-version": "6.5.0"
 }
