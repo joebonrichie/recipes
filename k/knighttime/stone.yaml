@@ -3,28 +3,25 @@
 #
 # SPDX-License-Identifier: MPL-2.0
 #
-name        : kactivitymanagerd
+name        : knighttime
 version     : 6.5.0
-release     : 5
+release     : 1
 upstreams   :
-    - https://download.kde.org/stable/plasma/6.5.0/kactivitymanagerd-6.5.0.tar.xz : a30b230cbde8ed21b0b494235515ebbfeec916f7fe4f15bbb927546846783e98
+    - https://download.kde.org/stable/plasma/6.5.0/knighttime-6.5.0.tar.xz : ac7af168a01ca19bfc71c849d758723dd81c1f1cfe4c7b3c8a36021ad5d1baaf
 homepage    : https://kde.org/plasma-desktop/
-license     :
-    - GPL-2.0-or-later
-    - GPL-3.0-or-later
-summary     : Core components for the KDE Activity concept
+license     : LGPL-2.0-or-later
+summary     : Helpers for scheduling the dark-light cycle
 description : |
-    Core components for the KDE Activity concept
+    Helpers for scheduling the dark-light cycle
 builddeps   :
-    - cmake(Boost)
     # Temporary, boulder doesn't handle build ordering resolution correctly when builddeps are added by macros, so add ECM manually
     - cmake(ECM)
-    - cmake(KF6Crash)
+    - cmake(KF6Config)
+    - cmake(KF6CoreAddons)
     - cmake(KF6DBusAddons)
-    - cmake(KF6GlobalAccel)
+    - cmake(KF6Holidays)
     - cmake(KF6I18n)
-    - cmake(KF6KIO)
-    - cmake(KF6XmlGui)
+    - cmake(Qt6Positioning)
 tuning      :
     - lto: full
     - optimize: speed
@@ -35,6 +32,6 @@ build       : |
 install     : |
     %cmake_install
 packages    :
-    - "%(name)":
+    - "%(name)-devel":
         paths:
-            - /usr/lib/libkactivitymanagerd_plugin.so
+            - /usr/share/dbus-1/interfaces/
