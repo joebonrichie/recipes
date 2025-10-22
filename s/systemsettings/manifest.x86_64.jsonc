@@ -53,7 +53,7 @@
 				"soname(libKF6WidgetsAddons.so.6(x86_64))",
 				"soname(libKF6WindowSystem.so.6(x86_64))",
 				"soname(libKF6XmlGui.so.6(x86_64))",
-				"soname(libPlasmaActivities.so.6(x86_64))",
+				"soname(libPlasmaActivities.so.7(x86_64))",
 				"soname(libQt6Core.so.6(x86_64))",
 				"soname(libQt6Gui.so.6(x86_64))",
 				"soname(libQt6Qml.so.6(x86_64))",
@@ -255,6 +255,6 @@
 		}
 	},
 	"source-name": "systemsettings",
-	"source-release": "6",
-	"source-version": "6.4.5"
+	"source-release": "7",
+	"source-version": "6.5.0"
 }
