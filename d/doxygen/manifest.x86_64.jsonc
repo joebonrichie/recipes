@@ -9,6 +9,7 @@
 				"binary(python3)",
 				"clang-devel",
 				"pkgconfig(Qt6Core)",
+				"pkgconfig(Qt6Svg)",
 				"pkgconfig(spdlog)",
 				"pkgconfig(sqlite3)"
 			],
@@ -42,6 +43,7 @@
 				"binary(python3)",
 				"clang-devel",
 				"pkgconfig(Qt6Core)",
+				"pkgconfig(Qt6Svg)",
 				"pkgconfig(spdlog)",
 				"pkgconfig(sqlite3)"
 			],
@@ -69,6 +71,6 @@
 		}
 	},
 	"source-name": "doxygen",
-	"source-release": "7",
-	"source-version": "1.14.0"
+	"source-release": "8",
+	"source-version": "1.15.0"
 }
