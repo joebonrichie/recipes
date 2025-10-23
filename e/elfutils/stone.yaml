@@ -5,7 +5,7 @@
 #
 name        : elfutils
 version     : "0.193"
-release     : 8
+release     : 9
 homepage    : https://sourceware.org/elfutils
 upstreams   :
     - https://sourceware.org/elfutils/ftp/0.193/elfutils-0.193.tar.bz2 : 7857f44b624f4d8d421df851aaae7b1402cfe6bcdd2d8049f15fc07d3dde7635
