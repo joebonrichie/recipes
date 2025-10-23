@@ -5,7 +5,7 @@
 #
 name        : llvm
 version     : 21.1.4
-release     : 38
+release     : 39
 summary     : Low Level Virtual Machine
 license     :
     - Apache-2.0 WITH LLVM-exception
@@ -71,10 +71,6 @@ environment : |
     if [[ " ${PATH[*]} " =~ "ccache" ]]; then
         EXTRA_LLVM_FLAGS="-DLLVM_CCACHE_BUILD=ON"
     fi
-
-    # Temporary
-    export CFLAGS+=" -rtlib=libgcc -unwindlib=libgcc"
-    export CXXFLAGS+=" -stdlib=libstdc++ -rtlib=libgcc -unwindlib=libgcc"
 
     function apply_llvm_patches() {
         # Build-related patches, achieving adjustments/fixes to the build that cannot be done via cmake flags
