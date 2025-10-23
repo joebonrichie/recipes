@@ -5,7 +5,7 @@
 #
 name        : rust
 version     : 1.90.0
-release     : 26
+release     : 27
 homepage    : https://www.rust-lang.org/
 upstreams   :
     - https://static.rust-lang.org/dist/rustc-1.90.0-src.tar.xz : 6bfeaddd90ffda2f063492b092bfed925c4b8c701579baf4b1316e021470daac
@@ -26,7 +26,7 @@ license     :
     - MIT
     - Zlib
 # Enable this when bootstrapping
-# networking  : true
+networking  : true
 builddeps   :
     - binary(FileCheck)
     - binary(cargo)
@@ -37,7 +37,6 @@ builddeps   :
     - binary(python)
     - binary(strip)
     - binary(which)
-    - pkgconfig32(libunwind)
     - pkgconfig(jemalloc)
     - pkgconfig(libcurl)
     - pkgconfig(libffi)
@@ -46,8 +45,7 @@ builddeps   :
     - pkgconfig(openssl)
     - pkgconfig(sqlite3)
     - pkgconfig(zlib)
-    - gcc-32bit-devel
-    - glibc-32bit-devel
+    - clang-32bit
 environment : |
     # Don't set these here, all configuration should come from config.toml or the package.yml
     unset RUSTFLAGS
@@ -99,11 +97,13 @@ setup       : |
     # `rustc --print target-libdir` should be `/usr/lib/rustlib/x86_64-unknown-linux-gnu/lib`
     %patch %(pkgdir)/0001-downstream-Hardcode-libdir-path.patch
 
+    %patch %(pkgdir)/ldd-default.patch
+
     # │B│ Caused by:
     # │B│   process didn't exit successfully: `/mason/build/x86_64/rustc-1.90.0-src.tar.xz/build-pgo/bootstrap/debug/rustc /mason/build/x86_64/rustc-1.90.0-src.tar.xz/build-pgo/bootstrap/debug/rustc - --crate-name ___ --print=file-names --crate-type bin --crate-type rlib --crate-type dylib --crate-type cdylib --crate-type staticlib --crate-type proc-macro --print=sysroot --print=split-debuginfo --print=crate-name --print=cfg -Wwarnings` (exit status: 1)
     # │B│   --- stderr
     # │B│   error: unknown unstable option: `linker-features`
-    %patch %(pkgdir)/ftbfs-1.90.patch
+    # %patch %(pkgdir)/ftbfs-1.90.patch
 build       : |
     python ./x.py build \
             --build-dir %(workdir)/build-pgo \
