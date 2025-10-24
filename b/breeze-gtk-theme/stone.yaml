@@ -5,7 +5,7 @@
 #
 name        : breeze-gtk-theme
 version     : 6.5.0
-release     : 4
+release     : 5
 upstreams   :
     - https://download.kde.org/stable/plasma/6.5.0/breeze-gtk-6.5.0.tar.xz : ba5f057b08e382d9e0790ab51d7aa1cc5017c952ebc46765400815527dc81470
 homepage    : https://kde.org/plasma-desktop/
