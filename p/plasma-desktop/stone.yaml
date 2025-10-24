@@ -5,7 +5,7 @@
 #
 name        : plasma-desktop
 version     : 6.5.0
-release     : 14
+release     : 15
 upstreams   :
     - https://download.kde.org/stable/plasma/6.5.0/plasma-desktop-6.5.0.tar.xz : c27dc2c12795483a77a21bcc70029b9834474ed423dcdb93dc0e8857d4dede42
 homepage    : https://kde.org/plasma-desktop/
