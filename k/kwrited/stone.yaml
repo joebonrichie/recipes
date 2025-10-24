@@ -5,7 +5,7 @@
 #
 name        : kwrited
 version     : 6.5.0
-release     : 4
+release     : 5
 upstreams   :
     - https://download.kde.org/stable/plasma/6.5.0/kwrited-6.5.0.tar.xz : 20f320ce3b430f6452a6916a429290b3cc451d9a2ba06ae087c3cfd193d631eb
 homepage    : https://kde.org/plasma-desktop/
