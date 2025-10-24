@@ -5,7 +5,7 @@
 #
 name        : doxygen
 version     : 1.15.0
-release     : 9
+release     : 10
 homepage    :  https://www.doxygen.org/
 upstreams   :
     - https://github.com/doxygen/doxygen/archive/refs/tags/Release_1_15_0.tar.gz : b2a79d92a934d4dcda2bb0006e65adbabfcfe83343e024d5f598ff3a62c23dda
@@ -26,7 +26,7 @@ rundeps    :
     - graphviz
 setup      : |
     %cmake \
-        -Dbuild_wizard=OFF \
+        -Dbuild_wizard=ON \
         -Duse_libc++:BOOL=OFF \
         -Duse_libclang:BOOL=ON \
         -Duse_sys_fmt:BOOL=ON \
