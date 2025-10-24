@@ -42,8 +42,8 @@
 				"soname(libQt6DBus.so.6(x86_64))",
 				"soname(libQt6Gui.so.6(x86_64))",
 				"soname(libQt6Widgets.so.6(x86_64))",
-				"soname(libc++.so.1(x86_64))",
 				"soname(libc.so.6(x86_64))",
+				"soname(libstdc++.so.6(x86_64))",
 				"soname(libtaskmanager.so.6(x86_64))"
 			],
 			"files": [
@@ -168,6 +168,6 @@
 		}
 	},
 	"source-name": "plasma-browser-integration",
-	"source-release": "6",
+	"source-release": "7",
 	"source-version": "6.5.0"
 }
