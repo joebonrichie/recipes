@@ -5,7 +5,7 @@
 #
 name        : krdp
 version     : 6.5.0
-release     : 7
+release     : 8
 upstreams   :
     - https://download.kde.org/stable/plasma/6.5.0/krdp-6.5.0.tar.xz : 71065cb742aeadd36ae24e29c5bf1e883cd084d30fb2394215c589274012b58b
 homepage    : https://kde.org/plasma-desktop/

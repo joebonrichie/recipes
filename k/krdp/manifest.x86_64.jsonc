@@ -25,6 +25,7 @@
 			"depends": [
 				"binary(openssl)",
 				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
+				"soname(ld-linux-x86-64.so.2(x86_64))",
 				"soname(libKF6ConfigCore.so.6(x86_64))",
 				"soname(libKF6ConfigGui.so.6(x86_64))",
 				"soname(libKF6CoreAddons.so.6(x86_64))",
@@ -41,12 +42,12 @@
 				"soname(libQt6Network.so.6(x86_64))",
 				"soname(libQt6WaylandClient.so.6(x86_64))",
 				"soname(libQt6Widgets.so.6(x86_64))",
-				"soname(libc++.so.1(x86_64))",
 				"soname(libc.so.6(x86_64))",
 				"soname(libfreerdp-server3.so.3(x86_64))",
 				"soname(libfreerdp3.so.3(x86_64))",
 				"soname(libpam.so.0(x86_64))",
 				"soname(libqt6keychain.so.1(x86_64))",
+				"soname(libstdc++.so.6(x86_64))",
 				"soname(libwayland-client.so.0(x86_64))",
 				"soname(libwinpr3.so.3(x86_64))",
 				"soname(libxkbcommon.so.0(x86_64))"
@@ -179,6 +180,6 @@
 		}
 	},
 	"source-name": "krdp",
-	"source-release": "7",
+	"source-release": "8",
 	"source-version": "6.5.0"
 }
