@@ -48,13 +48,13 @@
 				"soname(libQt6Qml.so.6(x86_64))",
 				"soname(libQt6Quick.so.6(x86_64))",
 				"soname(libQt6Widgets.so.6(x86_64))",
-				"soname(libc++.so.1(x86_64))",
 				"soname(libc.so.6(x86_64))",
 				"soname(libcanberra.so.0(x86_64))",
 				"soname(libgio-2.0.so.0(x86_64))",
 				"soname(libglib-2.0.so.0(x86_64))",
 				"soname(libgobject-2.0.so.0(x86_64))",
 				"soname(libpulse.so.0(x86_64))",
+				"soname(libstdc++.so.6(x86_64))",
 				"sound-theme-freedesktop"
 			],
 			"files": [
@@ -246,6 +246,6 @@
 		}
 	},
 	"source-name": "plasma-pa",
-	"source-release": "9",
+	"source-release": "10",
 	"source-version": "6.5.0"
 }
