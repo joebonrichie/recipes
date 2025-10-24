@@ -5,7 +5,7 @@
 #
 name        : ocean-sound-theme
 version     : 6.5.0
-release     : 5
+release     : 6
 upstreams   :
     - https://download.kde.org/stable/plasma/6.5.0/ocean-sound-theme-6.5.0.tar.xz : c912e53930826442e9842a263679f1920b9a3dc3b63d9b02209fcfb769d75a0e
 homepage    : https://kde.org/plasma-desktop/
