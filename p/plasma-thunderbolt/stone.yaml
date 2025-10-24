@@ -5,7 +5,7 @@
 #
 name        : plasma-thunderbolt
 version     : 6.5.0
-release     : 6
+release     : 7
 upstreams   :
     - https://download.kde.org/stable/plasma/6.5.0/plasma-thunderbolt-6.5.0.tar.xz : d645e1d93ae2f641ced6ee5f76cffabe04c7aa3ea2df18db885ca8c934c72322
 homepage    : https://kde.org/plasma-desktop/
