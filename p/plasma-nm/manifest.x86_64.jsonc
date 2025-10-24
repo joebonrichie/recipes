@@ -61,13 +61,13 @@
 				"soname(libQt6QuickWidgets.so.6(x86_64))",
 				"soname(libQt6Widgets.so.6(x86_64))",
 				"soname(libQt6Xml.so.6(x86_64))",
-				"soname(libc++.so.1(x86_64))",
 				"soname(libc.so.6(x86_64))",
 				"soname(libglib-2.0.so.0(x86_64))",
 				"soname(libgobject-2.0.so.0(x86_64))",
 				"soname(libm.so.6(x86_64))",
 				"soname(libnm.so.0(x86_64))",
-				"soname(libqca-qt6.so.2(x86_64))"
+				"soname(libqca-qt6.so.2(x86_64))",
+				"soname(libstdc++.so.6(x86_64))"
 			],
 			"files": [
 				"/usr/lib/libplasmanm_editor.so",
@@ -1134,6 +1134,6 @@
 		}
 	},
 	"source-name": "plasma-nm",
-	"source-release": "10",
+	"source-release": "11",
 	"source-version": "6.5.0"
 }
