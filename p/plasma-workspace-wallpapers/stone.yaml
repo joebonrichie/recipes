@@ -5,7 +5,7 @@
 #
 name        : plasma-workspace-wallpapers
 version     : 6.5.0
-release     : 4
+release     : 5
 upstreams   :
     - https://download.kde.org/stable/plasma/6.5.0/plasma-workspace-wallpapers-6.5.0.tar.xz : 32c1c1a0155895f4db53433fa492811f4545b61d237c77b3d05cd83fb6f4c97d
 homepage    : https://kde.org/plasma-desktop/
