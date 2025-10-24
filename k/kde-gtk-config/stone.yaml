@@ -5,7 +5,7 @@
 #
 name        : kde-gtk-config
 version     : 6.5.0
-release     : 5
+release     : 6
 upstreams   :
     - https://download.kde.org/stable/plasma/6.5.0/kde-gtk-config-6.5.0.tar.xz : edf758bac07737dfe5dfde0b797b8646a8669c8369f0f9d4a2ba1a02fe462e0e
 homepage    : https://kde.org/plasma-desktop/
