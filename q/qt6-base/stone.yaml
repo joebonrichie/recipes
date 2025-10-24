@@ -5,7 +5,7 @@
 #
 name        : qt6-base
 version     : 6.9.3
-release     : 15
+release     : 16
 homepage    : https://www.qt.io
 upstreams   :
     - https://download.qt.io/official_releases/qt/6.9/6.9.3/submodules/qtbase-everywhere-src-6.9.3.tar.xz : c5a1a2f660356ec081febfa782998ae5ddbc5925117e64f50e4be9cd45b8dc6e
@@ -77,25 +77,24 @@ setup       : |
     ## 2024-12-03 update: Still fucked
 
     %cmake_qt6 \
-               -DQT_QMAKE_TARGET_MKSPEC=linux-clang-libc++ \
-               -DFEATURE_stdlib_libcpp=ON \
-               -DQT_FEATURE_accessibility=ON \
-               -DQT_FEATURE_brotli=ON \
-               -DQT_FEATURE_dbus_linked=ON \
-               -DQT_FEATURE_emojisegmenter=ON \
-               -DQT_FEATURE_gssapi=ON \
-               -DQT_FEATURE_harfbuzz=ON \
-               -DQT_FEATURE_journald=ON \
-               -DQT_FEATURE_libproxy=ON \
-               -DQT_FEATURE_mimetype_database=OFF \
-               -DQT_FEATURE_mtdev=ON \
-               -DQT_FEATURE_openssl_linked=ON \
-               -DQT_FEATURE_optimize_full=ON \
-               -DQT_FEATURE_pcre2=ON \
-               -DQT_FEATURE_system_harfbuzz=ON \
-               -DQT_FEATURE_system_sqlite=ON \
-               -DQT_FEATURE_system_xcb_xinput=ON \
-               -DQT_FEATURE_zstd=ON
+        -DQT_QMAKE_TARGET_MKSPEC=linux-clang \
+        -DQT_FEATURE_accessibility=ON \
+        -DQT_FEATURE_brotli=ON \
+        -DQT_FEATURE_dbus_linked=ON \
+        -DQT_FEATURE_emojisegmenter=ON \
+        -DQT_FEATURE_gssapi=ON \
+        -DQT_FEATURE_harfbuzz=ON \
+        -DQT_FEATURE_journald=ON \
+        -DQT_FEATURE_libproxy=ON \
+        -DQT_FEATURE_mimetype_database=OFF \
+        -DQT_FEATURE_mtdev=ON \
+        -DQT_FEATURE_openssl_linked=ON \
+        -DQT_FEATURE_optimize_full=ON \
+        -DQT_FEATURE_pcre2=ON \
+        -DQT_FEATURE_system_harfbuzz=ON \
+        -DQT_FEATURE_system_sqlite=ON \
+        -DQT_FEATURE_system_xcb_xinput=ON \
+        -DQT_FEATURE_zstd=ON
 build       : |
     %ccache_zero
 
