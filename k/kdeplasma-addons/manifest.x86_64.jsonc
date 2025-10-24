@@ -74,11 +74,11 @@
 				"soname(libQt6WebEngineCore.so.6(x86_64))",
 				"soname(libQt6WebEngineQuick.so.6(x86_64))",
 				"soname(libQt6Widgets.so.6(x86_64))",
-				"soname(libc++.so.1(x86_64))",
 				"soname(libc.so.6(x86_64))",
 				"soname(libicui18n.so.77(x86_64))",
 				"soname(libicuuc.so.77(x86_64))",
-				"soname(libm.so.6(x86_64))"
+				"soname(libm.so.6(x86_64))",
+				"soname(libstdc++.so.6(x86_64))"
 			],
 			"files": [
 				"/usr/lib/kf6/kauth/kameleonhelper",
@@ -2285,6 +2285,6 @@
 		}
 	},
 	"source-name": "kdeplasma-addons",
-	"source-release": "7",
+	"source-release": "8",
 	"source-version": "6.5.0"
 }
