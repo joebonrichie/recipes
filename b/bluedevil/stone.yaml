@@ -5,7 +5,7 @@
 #
 name        : bluedevil
 version     : 6.5.0
-release     : 8
+release     : 9
 upstreams   :
     - https://download.kde.org/stable/plasma/6.5.0/bluedevil-6.5.0.tar.xz : 3765bd12f10f54284547be743fc99c1022cbbf38e0ee56d863163b8969bb8d98
 homepage    : https://kde.org/plasma-desktop/
