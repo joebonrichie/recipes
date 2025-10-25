@@ -4173,6 +4173,7 @@
 				"/usr/lib/llvm-20/lib/cmake/llvm/llvm-driver-template.cpp.in",
 				"/usr/lib/llvm-20/lib/libLLVM-20.so",
 				"/usr/lib/llvm-20/lib/libLLVM.so",
+				"/usr/lib/llvm-20/lib/libLLVMDebuginfod.a",
 				"/usr/lib/llvm-20/lib/libLLVMDemangle.a",
 				"/usr/lib/llvm-20/lib/libLLVMSupport.a",
 				"/usr/lib/llvm-20/lib/libLLVMTableGen.a",
@@ -4240,6 +4241,6 @@
 		}
 	},
 	"source-name": "llvm-20",
-	"source-release": "3",
+	"source-release": "4",
 	"source-version": "20.1.8"
 }

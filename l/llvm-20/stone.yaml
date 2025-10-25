@@ -5,7 +5,7 @@
 #
 name        : llvm-20
 version     : 20.1.8
-release     : 3
+release     : 4
 summary     : Low Level Virtual Machine
 license     :
     - Apache-2.0 WITH LLVM-exception
@@ -183,7 +183,7 @@ environment : |
                 LLVM|LLVMgold|LTO|Remarks)
                     ;;
                 # Used by LDC
-                LLVMTableGen|LLVMSupport|LLVMDemangle)
+                LLVMTableGen|LLVMSupport|LLVMDemangle|LLVMDebuginfod)
                     ;;
                 # Devel
                 llvm-headers|cmake-exports)
