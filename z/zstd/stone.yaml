@@ -5,7 +5,7 @@
 #
 name        : zstd
 version     : 1.5.7
-release     : 11
+release     : 12
 summary     : Fast real-time compression algorithm
 license     :
     - BSD-3-Clause
@@ -65,12 +65,12 @@ profiles    :
             # bolt_opt %(builddir)/lib/libzstd.so
 
             %cmake_install
-        # workload: |
-        #     export LD_LIBRARY_PATH=%(builddir)/lib
-        #     for i in $(seq 1 22); do
-        #         cat $(find %(builddir)/lib -type f) | %(builddir)/programs/zstd --ultra -${i} | %(builddir)/programs/zstd -d > /dev/null
-        #         cat $(find %(builddir)/lib -type f) | %(builddir)/programs/zstd --ultra --long -${i} | %(builddir)/programs/zstd -d > /dev/null
-        #     done
+        workload: |
+            export LD_LIBRARY_PATH=%(builddir)/lib
+            for i in $(seq 1 22); do
+                cat $(find %(builddir)/lib -type f) | %(builddir)/programs/zstd --ultra -${i} | %(builddir)/programs/zstd -d > /dev/null
+                cat $(find %(builddir)/lib -type f) | %(builddir)/programs/zstd --ultra --long -${i} | %(builddir)/programs/zstd -d > /dev/null
+            done
 packages    :
     - "%(name)-libs":
             summary: "Library files for %(name)"
