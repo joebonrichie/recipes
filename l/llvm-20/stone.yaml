@@ -5,7 +5,7 @@
 #
 name        : llvm-20
 version     : 20.1.8
-release     : 2
+release     : 3
 summary     : Low Level Virtual Machine
 license     :
     - Apache-2.0 WITH LLVM-exception
@@ -398,7 +398,8 @@ packages    :
             - libstdc++-devel
             - glibc-devel
 
-            # LLVM toolchain
+            # LLVM toolchain bits
+            - compiler-rt-20 # This is generally not used since we default to GCC built-ins but it is used for PGO
             - lld-20
             - llvm-20
             - openmp-devel
