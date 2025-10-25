@@ -5,7 +5,7 @@
 #
 name        : firefox
 version     : "144.0"
-release     : 42
+release     : 43
 homepage    : https://www.mozilla.org/
 upstreams   :
     - https://ftp.mozilla.org/pub/firefox/releases/144.0/source/firefox-144.0.source.tar.xz:
@@ -53,7 +53,7 @@ networking  : true # PGO
 environment : |
     # Set this to 1 if you want to create a release build, 0 if you're just doing builds locally for testing purposes
     # Note that you still need to do a full release build locally and test it before pushing it
-    FULL_BUILD=0
+    FULL_BUILD=1
 
     export MOZ_NOSPAM=1
     export PIP_NETWORK_INSTALL_RESTRICTED_VIRTUALENVS=mach
