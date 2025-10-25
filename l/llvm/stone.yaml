@@ -5,7 +5,7 @@
 #
 name        : llvm
 version     : 21.1.4
-release     : 39
+release     : 40
 summary     : Low Level Virtual Machine
 license     :
     - Apache-2.0 WITH LLVM-exception
@@ -587,6 +587,7 @@ packages    :
             - glibc-devel
 
             # LLVM toolchain bits
+            - compiler-rt # This is generally not used since we default to GCC built-ins but it is used for PGO
             - lld
             - llvm
             - openmp-devel
@@ -686,6 +687,9 @@ packages    :
             - libgcc-32bit-static
             - libstdc++-32bit-devel
             - glibc-32bit-devel
+
+            # LLVM toolchain bits
+            - compiler-rt-32bit # This is generally not used since we default to GCC built-ins but it is used for PGO
         paths:
             - /usr/share/doc/clang-32bit/README
 

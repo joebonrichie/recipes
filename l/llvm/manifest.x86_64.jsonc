@@ -27,6 +27,7 @@
 			],
 			"depends": [
 				"binary(gcc)",
+				"compiler-rt",
 				"glibc-devel",
 				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
 				"libatomic",
@@ -105,6 +106,7 @@
 				"python(sphinx)"
 			],
 			"depends": [
+				"compiler-rt-32bit",
 				"gcc-32bit",
 				"glibc-32bit-devel",
 				"libatomic-32bit",
@@ -10266,6 +10268,6 @@
 		}
 	},
 	"source-name": "llvm",
-	"source-release": "39",
+	"source-release": "40",
 	"source-version": "21.1.4"
 }
