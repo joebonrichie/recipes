@@ -5,7 +5,7 @@
 #
 name        : font-monaspace
 version     : "1.301"
-release     : 0
+release     : 1
 homepage    : https://monaspace.githubnext.com/
 upstreams   :
     - https://github.com/githubnext/monaspace/releases/download/v1.301/monaspace-static-v1.301.zip   :
