@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : valgrind
-version     : 3.25.1
-release     : 9
+version     : 3.26.0
+release     : 10
 homepage    : https://valgrind.org/
 upstreams   :
-    - https://sourceware.org/pub/valgrind/valgrind-3.25.1.tar.bz2 : 61deb8d0727b45c268efdc1b3b6c9e679cd97cbf5ee4b28d1dead7c8b7a271af
+    - https://sourceware.org/pub/valgrind/valgrind-3.26.0.tar.bz2 : 8d54c717029106f1644aadaf802ab9692e53d93dd015cbd19e74190eba616bd7
 summary     : Instrumentation framework for testing & debugging
 description : |
     Valgrind is an instrumentation framework for building dynamic analysis tools.
@@ -25,7 +25,6 @@ rundeps     :
 setup       : |
     # Undo a Makefile.am hack related to making non GCC compatible compilers behave w/mpi
     %patch %(pkgdir)/mpi-respect-flags.patch
-    %patch %(pkgdir)/rtlib.patch
 
     # We disable lto tuning above and instead enable Valgrind's own LTO -- otherwise we
     # get undefined symbol linker errors after running coregrind checks
