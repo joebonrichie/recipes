@@ -1,0 +1,48 @@
+/** Human readable report. This is not consumed by boulder */
+{
+	"manifest-version": "0.2",
+	"packages": {
+		"libcddb": {
+			"depends": [
+				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
+				"soname(libc.so.6(x86_64))"
+			],
+			"files": [
+				"/usr/bin/cddb_query",
+				"/usr/lib/libcddb.so.2",
+				"/usr/lib/libcddb.so.2.2.3"
+			],
+			"name": "libcddb",
+			"provides": [
+				"binary(cddb_query)",
+				"soname(libcddb.so.2(x86_64))"
+			]
+		},
+		"libcddb-devel": {
+			"depends": [
+				"libcddb"
+			],
+			"files": [
+				"/usr/include/cddb/cddb.h",
+				"/usr/include/cddb/cddb_cmd.h",
+				"/usr/include/cddb/cddb_config.h",
+				"/usr/include/cddb/cddb_conn.h",
+				"/usr/include/cddb/cddb_disc.h",
+				"/usr/include/cddb/cddb_error.h",
+				"/usr/include/cddb/cddb_log.h",
+				"/usr/include/cddb/cddb_site.h",
+				"/usr/include/cddb/cddb_track.h",
+				"/usr/include/cddb/version.h",
+				"/usr/lib/libcddb.so",
+				"/usr/lib/pkgconfig/libcddb.pc"
+			],
+			"name": "libcddb-devel",
+			"provides": [
+				"pkgconfig(libcddb)"
+			]
+		}
+	},
+	"source-name": "libcddb",
+	"source-release": "1",
+	"source-version": "1.3.2"
+}
