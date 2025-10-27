@@ -1,0 +1,7 @@
+releases:
+  id: 1573
+  rss: ~
+security:
+  cpe:
+  - vendor: gnu
+    product: libcdio
