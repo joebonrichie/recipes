@@ -4,10 +4,10 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : plasma-systemmonitor
-version     : 6.5.0
-release     : 7
+version     : 6.5.1
+release     : 8
 upstreams   :
-    - https://download.kde.org/stable/plasma/6.5.0/plasma-systemmonitor-6.5.0.tar.xz : 0055d7e82b3ee157187fb0c797f2867c3da62d56490c9d36fd576f026b9345b4
+    - https://download.kde.org/stable/plasma/6.5.1/plasma-systemmonitor-6.5.1.tar.xz : 670897f40f0dc6470be87c9adf36e714fa536af332dbc466cdac7df9c7b4629f
 homepage    : https://kde.org/plasma-desktop/
 license     : GPL-3.0-only
 summary     : New version of KSysGuard built on top of the new KStats daemon and using QML for its UI

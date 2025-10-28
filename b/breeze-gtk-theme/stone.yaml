@@ -4,10 +4,10 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : breeze-gtk-theme
-version     : 6.5.0
-release     : 5
+version     : 6.5.1
+release     : 6
 upstreams   :
-    - https://download.kde.org/stable/plasma/6.5.0/breeze-gtk-6.5.0.tar.xz : ba5f057b08e382d9e0790ab51d7aa1cc5017c952ebc46765400815527dc81470
+    - https://download.kde.org/stable/plasma/6.5.1/breeze-gtk-6.5.1.tar.xz : 1b1de893eb92e1c9c0ff1dd6169d55c3c062a49bd2cbab2936c16fe8fa060096
 homepage    : https://kde.org/plasma-desktop/
 license     :
     - BSD-3-Clause
