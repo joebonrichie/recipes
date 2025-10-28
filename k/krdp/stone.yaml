@@ -4,10 +4,10 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : krdp
-version     : 6.5.0
-release     : 8
+version     : 6.5.1
+release     : 9
 upstreams   :
-    - https://download.kde.org/stable/plasma/6.5.0/krdp-6.5.0.tar.xz : 71065cb742aeadd36ae24e29c5bf1e883cd084d30fb2394215c589274012b58b
+    - https://download.kde.org/stable/plasma/6.5.1/krdp-6.5.1.tar.xz : 98efc61ca4fc1807af22ca9c5251047743c27be8470c43c96513ac5e2f0bb43c
 homepage    : https://kde.org/plasma-desktop/
 license     : LGPL-2.1-or-later
 summary     : Library and examples for creating an RDP server
