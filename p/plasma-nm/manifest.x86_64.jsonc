@@ -814,6 +814,7 @@
 				"/usr/share/locale/pt_BR/LC_MESSAGES/plasmanetworkmanagement_sstpui.mo",
 				"/usr/share/locale/pt_BR/LC_MESSAGES/plasmanetworkmanagement_strongswanui.mo",
 				"/usr/share/locale/pt_BR/LC_MESSAGES/plasmanetworkmanagement_vpncui.mo",
+				"/usr/share/locale/ro/LC_MESSAGES/kcm_cellular_network.mo",
 				"/usr/share/locale/ro/LC_MESSAGES/kcm_mobile_hotspot.mo",
 				"/usr/share/locale/ro/LC_MESSAGES/kcm_mobile_wifi.mo",
 				"/usr/share/locale/ro/LC_MESSAGES/plasma_applet_org.kde.plasma.networkmanagement.mo",
@@ -1134,6 +1135,6 @@
 		}
 	},
 	"source-name": "plasma-nm",
-	"source-release": "11",
-	"source-version": "6.5.0"
+	"source-release": "12",
+	"source-version": "6.5.1"
 }
