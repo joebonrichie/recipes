@@ -4,10 +4,10 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : plasma-activities
-version     : 6.5.0
-release     : 8
+version     : 6.5.1
+release     : 9
 upstreams   :
-    - https://download.kde.org/stable/plasma/6.5.0/plasma-activities-6.5.0.tar.xz : 0db872bc56aa84d22fe65b19c5b364cc14f44a40401eaaafbf8da27a04b8883f
+    - https://download.kde.org/stable/plasma/6.5.1/plasma-activities-6.5.1.tar.xz : 1f3e3a781af45100154c84fb8c8baff05568e40a4c146bf20d2c00a16fe241d1
 homepage    : https://kde.org/plasma-desktop/
 license     : GPL-2.0-or-later
 summary     : Core components for the KDE Activity concept
