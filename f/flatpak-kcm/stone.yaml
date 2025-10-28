@@ -4,10 +4,10 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : flatpak-kcm
-version     : 6.5.0
-release     : 5
+version     : 6.5.1
+release     : 6
 upstreams   :
-    - https://download.kde.org/stable/plasma/6.5.0/flatpak-kcm-6.5.0.tar.xz : d33aab51cf5ba6fdfb12f638bc7e8b8525b9e6730d14eee144848de176a51845
+    - https://download.kde.org/stable/plasma/6.5.1/flatpak-kcm-6.5.1.tar.xz : a3acb7915573c9425bfaa75c10daeba0dc4c814d9e718ed756ad43d7666d95b6
 homepage    : https://kde.org/plasma-desktop/
 license     : GPL-2.0-or-later
 summary     : Flatpak Permissions Management KCM
