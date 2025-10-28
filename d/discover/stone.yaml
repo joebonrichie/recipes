@@ -4,10 +4,10 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : discover
-version     : 6.5.0
-release     : 8
+version     : 6.5.1
+release     : 9
 upstreams   :
-    - https://download.kde.org/stable/plasma/6.5.0/discover-6.5.0.tar.xz : 93e43bf36ddc4713cb4ecc6d0f00a44fdae6426a7da5270f726457e63a0f283d
+    - https://download.kde.org/stable/plasma/6.5.1/discover-6.5.1.tar.xz : 7ae515a9ad35dd6db568ec23dc5ec6c24c1c555ddf412f041ede4be9dcf3f3cc
 homepage    : https://apps.kde.org/discover/
 license     : GPL-2.0-or-later
 summary     : Discover helps you find and install applications, games, and tools.
