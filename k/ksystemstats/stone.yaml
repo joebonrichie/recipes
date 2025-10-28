@@ -4,10 +4,10 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : ksystemstats
-version     : 6.5.0
-release     : 6
+version     : 6.5.1
+release     : 7
 upstreams   :
-    - https://download.kde.org/stable/plasma/6.5.0/ksystemstats-6.5.0.tar.xz : c0d6d8902f1a4507dc955d28c21bd0847250c1bfa4a1f030adee60b2496360ea
+    - https://download.kde.org/stable/plasma/6.5.1/ksystemstats-6.5.1.tar.xz : 2895fa797fe64c1ae586fa1efd1f6e2ee110206e4a73a6ddade69d1cbd013234
 homepage    : https://kde.org/plasma-desktop/
 license     :
     - GPL-2.0-only

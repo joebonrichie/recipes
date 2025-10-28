@@ -4,10 +4,10 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : knighttime
-version     : 6.5.0
-release     : 2
+version     : 6.5.1
+release     : 3
 upstreams   :
-    - https://download.kde.org/stable/plasma/6.5.0/knighttime-6.5.0.tar.xz : ac7af168a01ca19bfc71c849d758723dd81c1f1cfe4c7b3c8a36021ad5d1baaf
+    - https://download.kde.org/stable/plasma/6.5.1/knighttime-6.5.1.tar.xz : 5e5ce3e525994520e6f079e2da6df004d9e4d72bb519c600313505efe438420c
 homepage    : https://kde.org/plasma-desktop/
 license     : LGPL-2.0-or-later
 summary     : Helpers for scheduling the dark-light cycle
