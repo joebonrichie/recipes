@@ -4,10 +4,10 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : kscreenlocker
-version     : 6.5.0
-release     : 7
+version     : 6.5.1
+release     : 8
 upstreams   :
-    - https://download.kde.org/stable/plasma/6.5.0/kscreenlocker-6.5.0.tar.xz : 0ec47d4a33e47c86e09e9b08ae76915df65afa80d28c89b54e2bfb97ad2ec32b
+    - https://download.kde.org/stable/plasma/6.5.1/kscreenlocker-6.5.1.tar.xz : 37df886a76d6ff094a424e58275fe89314038d6ec21c68a5ba73daaf57ccf2c7
 homepage    : https://kde.org/plasma-desktop/
 license     : GPL-2.0-or-later
 summary     : Library and components for secure lock screen architecture
