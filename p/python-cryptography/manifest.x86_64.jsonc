@@ -16,16 +16,16 @@
 				"soname(ld-linux-x86-64.so.2(x86_64))",
 				"soname(libc.so.6(x86_64))",
 				"soname(libcrypto.so.3(x86_64))",
-				"soname(libssl.so.3(x86_64))",
-				"soname(libunwind.so.1(x86_64))"
+				"soname(libgcc_s.so.1(x86_64))",
+				"soname(libssl.so.3(x86_64))"
 			],
 			"files": [
-				"/usr/lib/python3.11/site-packages/cryptography-46.0.2.dist-info/METADATA",
-				"/usr/lib/python3.11/site-packages/cryptography-46.0.2.dist-info/RECORD",
-				"/usr/lib/python3.11/site-packages/cryptography-46.0.2.dist-info/WHEEL",
-				"/usr/lib/python3.11/site-packages/cryptography-46.0.2.dist-info/licenses/LICENSE",
-				"/usr/lib/python3.11/site-packages/cryptography-46.0.2.dist-info/licenses/LICENSE.APACHE",
-				"/usr/lib/python3.11/site-packages/cryptography-46.0.2.dist-info/licenses/LICENSE.BSD",
+				"/usr/lib/python3.11/site-packages/cryptography-46.0.3.dist-info/METADATA",
+				"/usr/lib/python3.11/site-packages/cryptography-46.0.3.dist-info/RECORD",
+				"/usr/lib/python3.11/site-packages/cryptography-46.0.3.dist-info/WHEEL",
+				"/usr/lib/python3.11/site-packages/cryptography-46.0.3.dist-info/licenses/LICENSE",
+				"/usr/lib/python3.11/site-packages/cryptography-46.0.3.dist-info/licenses/LICENSE.APACHE",
+				"/usr/lib/python3.11/site-packages/cryptography-46.0.3.dist-info/licenses/LICENSE.BSD",
 				"/usr/lib/python3.11/site-packages/cryptography/__about__.py",
 				"/usr/lib/python3.11/site-packages/cryptography/__init__.py",
 				"/usr/lib/python3.11/site-packages/cryptography/__pycache__/__about__.cpython-311.opt-1.pyc",
@@ -280,6 +280,6 @@
 		}
 	},
 	"source-name": "python-cryptography",
-	"source-release": "6",
-	"source-version": "46.0.2"
+	"source-release": "7",
+	"source-version": "46.0.3"
 }
