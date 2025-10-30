@@ -63,11 +63,11 @@
 			"depends": [
 				"soname(ld-linux-x86-64.so.2(x86_64))",
 				"soname(libc.so.6(x86_64))",
+				"soname(libgcc_s.so.1(x86_64))",
 				"soname(libglib-2.0.so.0(x86_64))",
 				"soname(libglycin-2.so.0(x86_64))",
 				"soname(libgobject-2.0.so.0(x86_64))",
-				"soname(libgtk-4.so.1(x86_64))",
-				"soname(libunwind.so.1(x86_64))"
+				"soname(libgtk-4.so.1(x86_64))"
 			],
 			"files": [
 				"/usr/lib/girepository-1.0/GlyGtk4-2.typelib",
@@ -135,12 +135,12 @@
 				"soname(ld-linux-x86-64.so.2(x86_64))",
 				"soname(libc.so.6(x86_64))",
 				"soname(libfontconfig.so.1(x86_64))",
+				"soname(libgcc_s.so.1(x86_64))",
 				"soname(libgio-2.0.so.0(x86_64))",
 				"soname(libglib-2.0.so.0(x86_64))",
 				"soname(libgobject-2.0.so.0(x86_64))",
 				"soname(liblcms2.so.2(x86_64))",
-				"soname(libseccomp.so.2(x86_64))",
-				"soname(libunwind.so.1(x86_64))"
+				"soname(libseccomp.so.2(x86_64))"
 			],
 			"files": [
 				"/usr/lib/girepository-1.0/Gly-2.typelib",
@@ -207,6 +207,7 @@
 				"soname(ld-linux-x86-64.so.2(x86_64))",
 				"soname(libc.so.6(x86_64))",
 				"soname(libcairo.so.2(x86_64))",
+				"soname(libgcc_s.so.1(x86_64))",
 				"soname(libgio-2.0.so.0(x86_64))",
 				"soname(libglib-2.0.so.0(x86_64))",
 				"soname(libgobject-2.0.so.0(x86_64))",
@@ -214,8 +215,7 @@
 				"soname(libjxl.so.0.11(x86_64))",
 				"soname(libjxl_threads.so.0.11(x86_64))",
 				"soname(libm.so.6(x86_64))",
-				"soname(librsvg-2.so.2(x86_64))",
-				"soname(libunwind.so.1(x86_64))"
+				"soname(librsvg-2.so.2(x86_64))"
 			],
 			"files": [
 				"/usr/lib/glycin/glycin-loaders/2+/glycin-heif",
@@ -250,12 +250,12 @@
 				"soname(ld-linux-x86-64.so.2(x86_64))",
 				"soname(libc.so.6(x86_64))",
 				"soname(libfontconfig.so.1(x86_64))",
+				"soname(libgcc_s.so.1(x86_64))",
 				"soname(libgio-2.0.so.0(x86_64))",
 				"soname(libglib-2.0.so.0(x86_64))",
 				"soname(libgobject-2.0.so.0(x86_64))",
 				"soname(liblcms2.so.2(x86_64))",
-				"soname(libseccomp.so.2(x86_64))",
-				"soname(libunwind.so.1(x86_64))"
+				"soname(libseccomp.so.2(x86_64))"
 			],
 			"files": [
 				"/usr/bin/glycin-thumbnailer",
@@ -271,6 +271,6 @@
 		}
 	},
 	"source-name": "glycin",
-	"source-release": "14",
+	"source-release": "15",
 	"source-version": "2.0.4"
 }
