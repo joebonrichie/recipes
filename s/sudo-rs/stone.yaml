@@ -4,8 +4,8 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : sudo-rs
-version     : "0.2.8"
-release     : 15
+version     : 0.2.9
+release     : 16
 homepage    : https://github.com/trifectatechfoundation/sudo-rs
 upstreams   :
     - https://github.com/trifectatechfoundation/sudo-rs/archive/refs/tags/v0.2.8.tar.gz : 5b3823cc60abc5d90dbf0ae3a37d92445215e2697e6997c56148f5d0ac371ece
@@ -16,8 +16,8 @@ license     :
     - Apache-2.0
     - MIT
 builddeps   :
-    - pkgconfig(pam)
     - binary(go-md2man)
+    - pkgconfig(pam)
 networking  : true
 tuning      :
     - lto: thin
@@ -29,8 +29,11 @@ build       : |
     %cargo_build --features pam-login
 install     : |
     %cargo_install sudo su visudo
+
+    # su and sudo setuid permissions
     chmod 4755 %(installroot)%(bindir)/su
     chmod 4755 %(installroot)%(bindir)/sudo
+
     %install_dir %(installroot)%(sbindir)
     mv %(installroot)%(bindir)/visudo %(installroot)%(sbindir)/visudo
 
