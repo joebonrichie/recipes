@@ -5,7 +5,7 @@
 #
 name        : python-pygobject
 version     : 3.54.5
-release     : 11
+release     : 12
 homepage    : https://wiki.gnome.org/Projects/PyGObject
 upstreams   :
     - https://download.gnome.org/sources/pygobject/3.54/pygobject-3.54.5.tar.gz : b6656f6348f5245606cf15ea48c384c7f05156c75ead206c1b246c80a22fb585

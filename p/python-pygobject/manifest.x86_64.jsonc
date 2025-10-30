@@ -134,6 +134,6 @@
 		}
 	},
 	"source-name": "python-pygobject",
-	"source-release": "11",
+	"source-release": "12",
 	"source-version": "3.54.5"
 }
