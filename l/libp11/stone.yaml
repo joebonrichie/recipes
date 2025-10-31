@@ -1,18 +1,31 @@
-name : libp11
-version : "0.4.16"
-release : 1
-homepage : https://github.com/OpenSC/libp11
-upstreams :
-- https://github.com/OpenSC/libp11/releases/download/libp11-0.4.16/libp11-0.4.16.tar.gz : 97777640492fa9e5831497e5892e291dfbf39a7b119d9cb6abb3ec8c56d17553
-summary : PKCS#11 wrapper library
-license :
-- LGPL-2.1-or-later
-builddeps :
-- pkgconfig(libssl)
-- pkgconfig(p11-kit-1)
-setup : |
- %configure --enable-static=no
-build : |
- %make
-install : |
- %make_install
+#
+# SPDX-FileCopyrightText: © 2020-2026 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : libp11
+version     : "0.4.16"
+release     : 2
+homepage    : https://github.com/OpenSC/libp11
+upstreams   :
+    - https://github.com/OpenSC/libp11/releases/download/libp11-0.4.16/libp11-0.4.16.tar.gz : 97777640492fa9e5831497e5892e291dfbf39a7b119d9cb6abb3ec8c56d17553
+summary     : A PKCS#11 engine for use with OpenSSL
+description : |
+    libp11 enables hardware security module (HSM), and smart card support in
+    OpenSSL applications. More precisely, it is an OpenSSL engine which makes
+    registered PKCS#11 modules available for OpenSSL applications. The engine is
+    optional and can be loaded by configuration file, command line or through the
+    OpenSSL ENGINE API.
+license     : LGPL-2.1-or-later
+builddeps   :
+    - binary(doxygen)
+    - pkgconfig(libssl)
+    - pkgconfig(p11-kit-1)
+setup       : |
+    %configure \
+        --disable-static \
+        --with-enginesdir=%(libdir)/engines-3
+build       : |
+    %make
+install     : |
+    %make_install
