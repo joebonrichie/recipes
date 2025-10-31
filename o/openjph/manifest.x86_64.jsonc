@@ -14,7 +14,7 @@
 			],
 			"files": [
 				"/usr/lib/libopenjph.so.0.24",
-				"/usr/lib/libopenjph.so.0.24.2"
+				"/usr/lib/libopenjph.so.0.24.5"
 			],
 			"name": "libopenjph",
 			"provides": [
@@ -76,6 +76,6 @@
 		}
 	},
 	"source-name": "openjph",
-	"source-release": "3",
-	"source-version": "0.24.2"
+	"source-release": "4",
+	"source-version": "0.24.5"
 }
