@@ -5,7 +5,7 @@
 #
 name        : libqalculate
 version     : 5.8.1
-release     : 5
+release     : 6
 upstreams   :
     - https://github.com/Qalculate/libqalculate/releases/download/v5.8.1/libqalculate-5.8.1.tar.gz : 59588d69475cbb374b0b90ddef731802edd5b2da696ef706d0ca5fff4dbcfdfa
 homepage    : https://qalculate.github.io/
