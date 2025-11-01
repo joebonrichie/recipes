@@ -5,7 +5,7 @@
 #
 name        : thunderbird
 version     : 140.4.0esr
-release     : 29
+release     : 30
 homepage    : https://www.thunderbird.net/
 upstreams   :
     - https://releases.mozilla.org/pub/thunderbird/releases/140.4.0esr/source/thunderbird-140.4.0esr.source.tar.xz:
@@ -70,6 +70,7 @@ setup       : |
     # %patch %(pkgdir)/patches/pgo.patch
     %patch %(pkgdir)/patches/0001-Fix-Firefox-Thunderbird-envvar-conflicts.patch
     %patch %(pkgdir)/patches/0001-Allow-installing-addons-from-user-scope.patch
+    %patch %(pkgdir)/patches/0001-icu-78-build-fix.patch
 
     cp %(pkgdir)/build/mozconfig .
     sed -e 's|@@JOBCOUNT@@|%(jobs)|' -e 's|@@LIBDIR@@|%(libdir)|' -i mozconfig
