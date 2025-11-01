@@ -17,8 +17,8 @@
 				"soname(libgcc_s.so.1(x86_64))",
 				"soname(libglib-2.0.so.0(x86_64))",
 				"soname(libgobject-2.0.so.0(x86_64))",
-				"soname(libicui18n.so.77(x86_64))",
-				"soname(libicuuc.so.77(x86_64))",
+				"soname(libicui18n.so.78(x86_64))",
+				"soname(libicuuc.so.78(x86_64))",
 				"soname(libstdc++.so.6(x86_64))",
 				"soname(libxml2.so.16(x86_64))"
 			],
@@ -177,6 +177,6 @@
 		}
 	},
 	"source-name": "libical",
-	"source-release": "7",
+	"source-release": "8",
 	"source-version": "3.0.20"
 }
