@@ -45,8 +45,8 @@
 				"soname(libgstpbutils-1.0.so.0(x86_64))",
 				"soname(libgstreamer-1.0.so.0(x86_64))",
 				"soname(libgtk-4.so.1(x86_64))",
-				"soname(libicui18n.so.77(x86_64))",
-				"soname(libicuuc.so.77(x86_64))",
+				"soname(libicui18n.so.78(x86_64))",
+				"soname(libicuuc.so.78(x86_64))",
 				"soname(libpango-1.0.so.0(x86_64))",
 				"soname(libportal-gtk4.so.1(x86_64))",
 				"soname(libportal.so.1(x86_64))",
@@ -255,6 +255,6 @@
 		}
 	},
 	"source-name": "nautilus",
-	"source-release": "14",
+	"source-release": "15",
 	"source-version": "49.1"
 }
