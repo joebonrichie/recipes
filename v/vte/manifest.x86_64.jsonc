@@ -232,7 +232,7 @@
 				"soname(libgnutls.so.30(x86_64))",
 				"soname(libgobject-2.0.so.0(x86_64))",
 				"soname(libgtk-3.so.0(x86_64))",
-				"soname(libicuuc.so.77(x86_64))",
+				"soname(libicuuc.so.78(x86_64))",
 				"soname(liblz4.so.1(x86_64))",
 				"soname(libm.so.6(x86_64))",
 				"soname(libpango-1.0.so.0(x86_64))",
@@ -345,7 +345,7 @@
 				"soname(libgobject-2.0.so.0(x86_64))",
 				"soname(libgraphene-1.0.so.0(x86_64))",
 				"soname(libgtk-4.so.1(x86_64))",
-				"soname(libicuuc.so.77(x86_64))",
+				"soname(libicuuc.so.78(x86_64))",
 				"soname(liblz4.so.1(x86_64))",
 				"soname(libm.so.6(x86_64))",
 				"soname(libpango-1.0.so.0(x86_64))",
@@ -421,6 +421,6 @@
 		}
 	},
 	"source-name": "vte",
-	"source-release": "23",
+	"source-release": "24",
 	"source-version": "0.82.1"
 }
