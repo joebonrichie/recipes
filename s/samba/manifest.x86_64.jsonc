@@ -56,8 +56,8 @@
 				"soname(libdbus-1.so.3(x86_64))",
 				"soname(libgnutls.so.30(x86_64))",
 				"soname(libgssapi_krb5.so.2(x86_64))",
-				"soname(libicui18n.so.77(x86_64))",
-				"soname(libicuuc.so.77(x86_64))",
+				"soname(libicui18n.so.78(x86_64))",
+				"soname(libicuuc.so.78(x86_64))",
 				"soname(libjansson.so.4(x86_64))",
 				"soname(libk5crypto.so.3(x86_64))",
 				"soname(libkrb5.so.3(x86_64))",
@@ -860,6 +860,6 @@
 		}
 	},
 	"source-name": "samba",
-	"source-release": "18",
+	"source-release": "19",
 	"source-version": "4.22.6"
 }

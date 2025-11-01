@@ -5,7 +5,7 @@
 #
 name        : samba
 version     : 4.22.6
-release     : 18
+release     : 19
 homepage    : https://www.samba.org/
 upstreams   :
     - https://download.samba.org/pub/samba/stable/samba-4.22.6.tar.gz : 8e6beb0cce87fb3c763af94c2dc21fd47b8fd02d46b3cb1deb2a72df9259c425
