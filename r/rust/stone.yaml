@@ -9,8 +9,6 @@ release     : 29
 homepage    : https://www.rust-lang.org/
 upstreams   :
     - https://static.rust-lang.org/dist/rustc-1.91.0-src.tar.xz : 9b94161dba3aa32192e0e75f7891912d98095ffb86087b07a05af35a0265a938
-    # - git|https://github.com/rust-lang/llvm-project.git :
-    #     ref: 8c30b9c5098bdff1d3d9a2d460ee091cd1171e60 # rustc/21.1-2025-08-01
 summary     : Rust programming language compiler + tools
 description : |
     Rust programming language compiler + tools
