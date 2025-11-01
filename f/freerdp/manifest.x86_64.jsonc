@@ -523,7 +523,7 @@
 				"soname(libc.so.6(x86_64))",
 				"soname(libcrypto.so.3(x86_64))",
 				"soname(libgcc_s.so.1(x86_64))",
-				"soname(libicuuc.so.77(x86_64))",
+				"soname(libicuuc.so.78(x86_64))",
 				"soname(libjson-c.so.5(x86_64))",
 				"soname(libk5crypto.so.3(x86_64))",
 				"soname(libkrb5.so.3(x86_64))",
@@ -671,6 +671,6 @@
 		}
 	},
 	"source-name": "freerdp",
-	"source-release": "14",
+	"source-release": "15",
 	"source-version": "3.17.2"
 }
