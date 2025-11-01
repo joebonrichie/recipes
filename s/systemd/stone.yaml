@@ -5,7 +5,7 @@
 #
 name        : systemd
 version     : "257.10"
-release     : 69
+release     : 70
 summary     : A System and Service Manager
 license     :
     - GPL-2.0-or-later
@@ -18,7 +18,7 @@ upstreams   :
     - https://github.com/systemd/systemd/archive/refs/tags/v257.10.tar.gz: 5a2f477e6268630f6e2829c7bb3e442017549798a4122635817934eaa0c6ac10
 builddeps   :
     - binary(bpftool)
-    - binary(gcc) # Used in meson.build to query the multiarch triplet. TODO: patch that out
+    - binary(gcc)
     - binary(gperf)
     - binary(m4)
     - binary(readelf.py)
@@ -85,7 +85,7 @@ setup       : |
     %patch %(pkgdir)/patches/downstream/0001-Don-t-build-32bit-EFI-stub.patch
 
     # Upstream patches
-    %patch %(pkgdir)/patches/upstream/0001-boot-only-link-libgcc-when-compiler-is-gcc.patch
+    # None for now
 
     # ERROR: File fuzz-unit-file/dm-back-slash.swap does not exist.
     mv "test/fuzz/fuzz-unit-file/dm-back\x2dslash.swap" "test/fuzz/fuzz-unit-file/dm-back-slash.swap"

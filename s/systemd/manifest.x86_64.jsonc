@@ -1471,6 +1471,7 @@
 				"soname(ld-linux.so.2(386))",
 				"soname(libc.so.6(386))",
 				"soname(libcap.so.2(386))",
+				"soname(libgcc_s.so.1(386))",
 				"soname(libm.so.6(386))",
 				"soname(libzstd.so.1(386))",
 				"systemd"
@@ -2693,6 +2694,6 @@
 		}
 	},
 	"source-name": "systemd",
-	"source-release": "69",
+	"source-release": "70",
 	"source-version": "257.10"
 }
