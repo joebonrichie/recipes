@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : linux-firmware
-version     : "20251011"
-release     : 31
+version     : "20251021"
+release     : 32
 homepage    : https://kernel.org
 upstreams   :
-    - git|https://gitlab.com/kernel-firmware/linux-firmware.git : 49fafa182b23577825976524a3aef8e1bc8878bf
+    - git|https://gitlab.com/kernel-firmware/linux-firmware.git : 6a0152a5d1a9d7699e13ca7ed81df2caa1262a77
 summary     : Firmware to allow devices to function correctly
 description : |
     Firmware to allow devices to function correctly
@@ -23,10 +23,6 @@ builddeps   :
     - binary(which)
 setup       : |
     _reverts=(
-      # https://gitlab.com/kernel-firmware/linux-firmware/-/merge_requests/684#note_2764930444
-      # https://lore.kernel.org/linux-firmware/87bjn6fgr6.fsf@gentoo.org/
-      ac27fb92503427641a4a827ab98ad05163e62cfd
-      ba41835c21ebbbba92fce71d30f747490313eaf6
     )
     for c in "${_reverts[@]}"; do
         echo Reverting $(git log --oneline -1 "${c}")
