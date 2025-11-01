@@ -5,7 +5,7 @@
 #
 name        : firefox
 version     : 144.0.2
-release     : 44
+release     : 45
 homepage    : https://www.mozilla.org/
 upstreams   :
     - https://ftp.mozilla.org/pub/firefox/releases/144.0.2/source/firefox-144.0.2.source.tar.xz:
@@ -64,6 +64,7 @@ setup       : |
     # %%patch %(pkgdir)/patches/pgo.patch
     %patch %(pkgdir)/patches/0001-Fix-Firefox-Thunderbird-envvar-conflicts.patch
     %patch %(pkgdir)/patches/0001-Allow-installing-addons-from-user-scope.patch
+    %patch %(pkgdir)/patches/0001-icu-78-build-fix.patch
 
     # TODO: Figure out if we still need to enable unsigned addon loading considering we switched back to unmodified langpacks
 
