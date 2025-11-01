@@ -45,9 +45,9 @@
 				"soname(libgcc_s.so.1(x86_64))",
 				"soname(libgdbm.so.6(x86_64))",
 				"soname(libgmp.so.10(x86_64))",
-				"soname(libicui18n.so.77(x86_64))",
-				"soname(libicuio.so.77(x86_64))",
-				"soname(libicuuc.so.77(x86_64))",
+				"soname(libicui18n.so.78(x86_64))",
+				"soname(libicuio.so.78(x86_64))",
+				"soname(libicuuc.so.78(x86_64))",
 				"soname(libjpeg.so.8(x86_64))",
 				"soname(liblber.so.2(x86_64))",
 				"soname(libldap.so.2(x86_64))",
@@ -524,6 +524,6 @@
 		}
 	},
 	"source-name": "php",
-	"source-release": "12",
+	"source-release": "13",
 	"source-version": "8.4.14"
 }
