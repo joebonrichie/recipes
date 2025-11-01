@@ -5,7 +5,7 @@
 #
 name        : plasma-workspace
 version     : 6.5.1
-release     : 21
+release     : 22
 upstreams   :
     - https://download.kde.org/stable/plasma/6.5.1/plasma-workspace-6.5.1.tar.xz : 7beda270b4a9b5d9a8016bf0e373229af0fee024242318ae2f945cc32b807ca2
 homepage    : https://kde.org/plasma-desktop/
