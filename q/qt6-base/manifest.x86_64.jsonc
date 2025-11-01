@@ -67,8 +67,8 @@
 				"soname(libglib-2.0.so.0(x86_64))",
 				"soname(libgobject-2.0.so.0(x86_64))",
 				"soname(libgssapi_krb5.so.2(x86_64))",
-				"soname(libicui18n.so.77(x86_64))",
-				"soname(libicuuc.so.77(x86_64))",
+				"soname(libicui18n.so.78(x86_64))",
+				"soname(libicuuc.so.78(x86_64))",
 				"soname(libm.so.6(x86_64))",
 				"soname(libpcre2-16.so.0(x86_64))",
 				"soname(libproxy.so.1(x86_64))",
@@ -4835,6 +4835,6 @@
 		}
 	},
 	"source-name": "qt6-base",
-	"source-release": "17",
+	"source-release": "18",
 	"source-version": "6.9.3"
 }
