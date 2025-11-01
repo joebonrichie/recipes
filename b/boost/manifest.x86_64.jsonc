@@ -16588,9 +16588,9 @@
 				"soname(libbz2.so.1.0(x86_64))",
 				"soname(libc.so.6(x86_64))",
 				"soname(libgcc_s.so.1(x86_64))",
-				"soname(libicudata.so.77(x86_64))",
-				"soname(libicui18n.so.77(x86_64))",
-				"soname(libicuuc.so.77(x86_64))",
+				"soname(libicudata.so.78(x86_64))",
+				"soname(libicui18n.so.78(x86_64))",
+				"soname(libicuuc.so.78(x86_64))",
 				"soname(liblzma.so.5(x86_64))",
 				"soname(libstdc++.so.6(x86_64))",
 				"soname(libz.so.1(x86_64))",
@@ -16649,9 +16649,9 @@
 				"soname(libboost_thread.so.1.89.0(x86_64))",
 				"soname(libc.so.6(x86_64))",
 				"soname(libgcc_s.so.1(x86_64))",
-				"soname(libicudata.so.77(x86_64))",
-				"soname(libicui18n.so.77(x86_64))",
-				"soname(libicuuc.so.77(x86_64))",
+				"soname(libicudata.so.78(x86_64))",
+				"soname(libicui18n.so.78(x86_64))",
+				"soname(libicuuc.so.78(x86_64))",
 				"soname(libm.so.6(x86_64))",
 				"soname(libstdc++.so.6(x86_64))"
 			],
@@ -16686,9 +16686,9 @@
 				"soname(libboost_thread.so.1.89.0(x86_64))",
 				"soname(libc.so.6(x86_64))",
 				"soname(libgcc_s.so.1(x86_64))",
-				"soname(libicudata.so.77(x86_64))",
-				"soname(libicui18n.so.77(x86_64))",
-				"soname(libicuuc.so.77(x86_64))",
+				"soname(libicudata.so.78(x86_64))",
+				"soname(libicui18n.so.78(x86_64))",
+				"soname(libicuuc.so.78(x86_64))",
 				"soname(libstdc++.so.6(x86_64))"
 			],
 			"files": [
@@ -16878,9 +16878,9 @@
 			"depends": [
 				"soname(libc.so.6(x86_64))",
 				"soname(libgcc_s.so.1(x86_64))",
-				"soname(libicudata.so.77(x86_64))",
-				"soname(libicui18n.so.77(x86_64))",
-				"soname(libicuuc.so.77(x86_64))",
+				"soname(libicudata.so.78(x86_64))",
+				"soname(libicui18n.so.78(x86_64))",
+				"soname(libicuuc.so.78(x86_64))",
 				"soname(libstdc++.so.6(x86_64))"
 			],
 			"files": [
@@ -17178,9 +17178,9 @@
 				"soname(libboost_thread.so.1.89.0(x86_64))",
 				"soname(libc.so.6(x86_64))",
 				"soname(libgcc_s.so.1(x86_64))",
-				"soname(libicudata.so.77(x86_64))",
-				"soname(libicui18n.so.77(x86_64))",
-				"soname(libicuuc.so.77(x86_64))",
+				"soname(libicudata.so.78(x86_64))",
+				"soname(libicui18n.so.78(x86_64))",
+				"soname(libicuuc.so.78(x86_64))",
 				"soname(libstdc++.so.6(x86_64))"
 			],
 			"files": [
@@ -17193,6 +17193,6 @@
 		}
 	},
 	"source-name": "boost",
-	"source-release": "7",
+	"source-release": "8",
 	"source-version": "1.89.0"
 }
