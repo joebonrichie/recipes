@@ -93,6 +93,7 @@
 				"/usr/share/ibus/dicts/emoji-as.dict",
 				"/usr/share/ibus/dicts/emoji-ast.dict",
 				"/usr/share/ibus/dicts/emoji-az.dict",
+				"/usr/share/ibus/dicts/emoji-ba.dict",
 				"/usr/share/ibus/dicts/emoji-be.dict",
 				"/usr/share/ibus/dicts/emoji-bew.dict",
 				"/usr/share/ibus/dicts/emoji-bg.dict",
@@ -129,6 +130,7 @@
 				"/usr/share/ibus/dicts/emoji-et.dict",
 				"/usr/share/ibus/dicts/emoji-eu.dict",
 				"/usr/share/ibus/dicts/emoji-fa.dict",
+				"/usr/share/ibus/dicts/emoji-ff.dict",
 				"/usr/share/ibus/dicts/emoji-ff_Adlm.dict",
 				"/usr/share/ibus/dicts/emoji-fi.dict",
 				"/usr/share/ibus/dicts/emoji-fil.dict",
@@ -209,6 +211,7 @@
 				"/usr/share/ibus/dicts/emoji-sat.dict",
 				"/usr/share/ibus/dicts/emoji-sc.dict",
 				"/usr/share/ibus/dicts/emoji-sd.dict",
+				"/usr/share/ibus/dicts/emoji-shn.dict",
 				"/usr/share/ibus/dicts/emoji-si.dict",
 				"/usr/share/ibus/dicts/emoji-sk.dict",
 				"/usr/share/ibus/dicts/emoji-sl.dict",
@@ -220,8 +223,10 @@
 				"/usr/share/ibus/dicts/emoji-sr_Latn_BA.dict",
 				"/usr/share/ibus/dicts/emoji-su.dict",
 				"/usr/share/ibus/dicts/emoji-sv.dict",
+				"/usr/share/ibus/dicts/emoji-sv_FI.dict",
 				"/usr/share/ibus/dicts/emoji-sw.dict",
 				"/usr/share/ibus/dicts/emoji-sw_KE.dict",
+				"/usr/share/ibus/dicts/emoji-syr.dict",
 				"/usr/share/ibus/dicts/emoji-ta.dict",
 				"/usr/share/ibus/dicts/emoji-te.dict",
 				"/usr/share/ibus/dicts/emoji-tg.dict",
@@ -797,6 +802,6 @@
 		}
 	},
 	"source-name": "ibus",
-	"source-release": "8",
+	"source-release": "9",
 	"source-version": "1.5.32"
 }
