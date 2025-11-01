@@ -22,8 +22,8 @@
 				"soname(libc.so.6(x86_64))",
 				"soname(libdevmapper.so.1.02(x86_64))",
 				"soname(libedit.so.0(x86_64))",
-				"soname(libicui18n.so.77(x86_64))",
-				"soname(libicuuc.so.77(x86_64))",
+				"soname(libicui18n.so.78(x86_64))",
+				"soname(libicuuc.so.78(x86_64))",
 				"soname(libinih.so.0(x86_64))",
 				"soname(liburcu.so.8(x86_64))",
 				"soname(libuuid.so.1(x86_64))"
@@ -210,6 +210,6 @@
 		}
 	},
 	"source-name": "xfsprogs",
-	"source-release": "11",
+	"source-release": "12",
 	"source-version": "6.17.0"
 }
