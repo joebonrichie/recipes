@@ -1,7 +1,7 @@
-From c100f9c003dd6e2fcd2c206ad0948374eeb69496 Mon Sep 17 00:00:00 2001
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
 From: Luke Jones <luke@ljones.dev>
 Date: Mon, 31 Mar 2025 15:43:53 +1300
-Subject: [PATCH 26/33] asus-ally-hid: test joystick response curves
+Subject: [PATCH 23/26] asus-ally-hid: test joystick response curves
 
 Signed-off-by: Luke Jones <luke@ljones.dev>
 ---
@@ -395,7 +395,7 @@ index 9fc46359c609..e1bb12c753aa 100644
  	if (cfg->xbox_controller_support) {
  		ret = ally_set_xbox_controller(hdev, cfg, true);
 diff --git a/drivers/hid/asus-ally-hid/asus-ally.h b/drivers/hid/asus-ally-hid/asus-ally.h
-index f2002ae2420a..417750a750c3 100644
+index c584cc7df725..2d283bb8c593 100644
 --- a/drivers/hid/asus-ally-hid/asus-ally.h
 +++ b/drivers/hid/asus-ally-hid/asus-ally.h
 @@ -108,6 +108,18 @@ struct ally_x_input {
@@ -438,6 +438,3 @@ index f2002ae2420a..417750a750c3 100644
  #define ALLY_DEVICE_CONST_ATTR_RO(fname, sysfs_name, value)			\
  	static ssize_t fname##_show(struct device *dev,				\
  				   struct device_attribute *attr, char *buf)	\
--- 
-2.49.0
-

@@ -1,7 +1,7 @@
-From df298078198d8d2d1428e9b7758e2fc74aa5c17d Mon Sep 17 00:00:00 2001
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
 From: Luke Jones <luke@ljones.dev>
 Date: Sun, 30 Mar 2025 19:29:17 +1300
-Subject: [PATCH 23/33] asus-ally-hid: add deadzone and outer-threshold to JS
+Subject: [PATCH 20/26] asus-ally-hid: add deadzone and outer-threshold to JS
 
 Add attributes to set the joystick deadzones and outer thresholds.
 Includes _index, _min, and _max
@@ -229,7 +229,7 @@ index 71519ad9cb96..12610fd24c65 100644
  
  /**
 diff --git a/drivers/hid/asus-ally-hid/asus-ally.h b/drivers/hid/asus-ally-hid/asus-ally.h
-index 5147e155d65e..f2002ae2420a 100644
+index 95f0012aea27..c584cc7df725 100644
 --- a/drivers/hid/asus-ally-hid/asus-ally.h
 +++ b/drivers/hid/asus-ally-hid/asus-ally.h
 @@ -193,4 +193,17 @@ void ally_config_remove(struct hid_device *hdev, struct ally_handheld *ally);
@@ -250,6 +250,3 @@ index 5147e155d65e..f2002ae2420a 100644
 +		__ATTR(sysfs_name, 0444, fname##_show, NULL)
 +
  #endif /* __ASUS_ALLY_H */
--- 
-2.49.0
-

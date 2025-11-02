@@ -1,7 +1,7 @@
-From c5a2953b7500725f3e1f69e45a0186d255915868 Mon Sep 17 00:00:00 2001
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
 From: Luke Jones <luke@ljones.dev>
 Date: Sun, 30 Mar 2025 14:25:18 +1300
-Subject: [PATCH 22/33] asus-ally-hid: test vibe
+Subject: [PATCH 19/26] asus-ally-hid: test vibe
 
 Signed-off-by: Luke Jones <luke@ljones.dev>
 ---
@@ -198,7 +198,7 @@ index 89b352b4174c..71519ad9cb96 100644
  	if (cfg->xbox_controller_support) {
  		ret = ally_set_xbox_controller(hdev, cfg, true);
 diff --git a/drivers/hid/asus-ally-hid/asus-ally.h b/drivers/hid/asus-ally-hid/asus-ally.h
-index 8174f78c5263..5147e155d65e 100644
+index e32bc686aede..95f0012aea27 100644
 --- a/drivers/hid/asus-ally-hid/asus-ally.h
 +++ b/drivers/hid/asus-ally-hid/asus-ally.h
 @@ -137,6 +137,11 @@ struct ally_config {
@@ -213,6 +213,3 @@ index 8174f78c5263..5147e155d65e 100644
  };
  
  struct ally_handheld {
--- 
-2.49.0
-
