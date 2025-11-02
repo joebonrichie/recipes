@@ -4,22 +4,18 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : cosmic-wallpapers
-version     : 1.0.0-beta.4.git+6383f4b
+version     : 1.0.0-beta.4
 release     : 17
 summary     : Cosmic Desktop Wallpapers
 license     : CC-BY-4.0
 homepage    : https://github.com/pop-os/cosmic-wallpapers
 upstreams   :
-    - git|https://github.com/pop-os/cosmic-wallpapers.git : 6383f4b4887d9086b28cbb393ce55712b51c223e
+    - https://github.com/pop-os/cosmic-wallpapers/archive/refs/tags/epoch-1.0.0-beta.4.zip : 2f8cd7ce543b152ecf6e607948596037c440ab672f43acbf227c419e1c73a9d1
 description : |
     Cosmic Desktop Wallpaper
-builddeps   :
-    - binary(git-lfs)
 networking  : true
-setup       : |
-    git lfs install
-    git remote set-url origin https://github.com/pop-os/cosmic-wallpapers.git
-    git lfs pull
-    git lfs fetch --refetch --all
+    # Removed setup step as it's not needed when using the beta.4.zip
+    # Fails to download git repository reason why is unknown;
+    # changed it to beta.4.zip
 install     : |
     %make_install PREFIX=%(prefix)
