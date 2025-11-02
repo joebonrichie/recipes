@@ -16,12 +16,12 @@
 				"soname(ld-linux-x86-64.so.2(x86_64))",
 				"soname(libc.so.6(x86_64))",
 				"soname(libgbm.so.1(x86_64))",
+				"soname(libgcc_s.so.1(x86_64))",
 				"soname(libgio-2.0.so.0(x86_64))",
 				"soname(libglib-2.0.so.0(x86_64))",
 				"soname(libgobject-2.0.so.0(x86_64))",
 				"soname(libm.so.6(x86_64))",
 				"soname(libpipewire-0.3.so.0(x86_64))",
-				"soname(libunwind.so.1(x86_64))",
 				"soname(libxkbcommon.so.0(x86_64))",
 				"xdg-desktop-portal"
 			],
@@ -39,6 +39,6 @@
 		}
 	},
 	"source-name": "xdg-desktop-portal-cosmic",
-	"source-release": "18",
-	"source-version": "1.0.0-beta3+git.100ed29"
+	"source-release": "19",
+	"source-version": "1.0.0-beta.4.git+463d1a7"
 }
