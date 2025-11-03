@@ -14,14 +14,14 @@
 				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
 				"soname(ld-linux-x86-64.so.2(x86_64))",
 				"soname(libc.so.6(x86_64))",
+				"soname(libgcc_s.so.1(x86_64))",
 				"soname(libglib-2.0.so.0(x86_64))",
 				"soname(libgobject-2.0.so.0(x86_64))",
 				"soname(libgstapp-1.0.so.0(x86_64))",
 				"soname(libgstpbutils-1.0.so.0(x86_64))",
 				"soname(libgstreamer-1.0.so.0(x86_64))",
 				"soname(libgsttag-1.0.so.0(x86_64))",
-				"soname(libm.so.6(x86_64))",
-				"soname(libunwind.so.1(x86_64))"
+				"soname(libm.so.6(x86_64))"
 			],
 			"files": [
 				"/usr/bin/cosmic-player",
@@ -43,6 +43,6 @@
 		}
 	},
 	"source-name": "cosmic-player",
-	"source-release": "10",
-	"source-version": "1.0.0-beta3+git.e9beecc"
+	"source-release": "11",
+	"source-version": "1.0.0-beta.4.git+e9beecc"
 }
