@@ -5,7 +5,7 @@
 #
 name        : jujutsu
 version     : 0.34.0
-release     : 4
+release     : 5
 homepage    : https://jj-vcs.github.io/jj/ 
 upstreams   :
     - https://github.com/jj-vcs/jj/archive/refs/tags/v0.34.0.tar.gz : 9e8da8ec2951ec026a2afe956ad904bb691c050040f53c3e47cfe346ead2907e
