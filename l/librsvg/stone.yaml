@@ -5,7 +5,7 @@
 #
 name        : librsvg
 version     : 2.61.2
-release     : 13
+release     : 14
 homepage    : https://gitlab.gnome.org/GNOME/librsvg
 upstreams   :
     - https://download.gnome.org/sources/librsvg/2.61/librsvg-2.61.2.tar.xz : 4644d83623dd61cc4479c2b3c372e1da2b281552ebc90035c8d1ac502eb1dc00
