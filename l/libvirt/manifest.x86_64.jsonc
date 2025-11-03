@@ -51,6 +51,7 @@
 				"soname(libcurl.so.4(x86_64))",
 				"soname(libdevmapper.so.1.02(x86_64))",
 				"soname(libfuse3.so.4(x86_64))",
+				"soname(libgcc_s.so.1(x86_64))",
 				"soname(libgio-2.0.so.0(x86_64))",
 				"soname(libglib-2.0.so.0(x86_64))",
 				"soname(libgnutls.so.30(x86_64))",
@@ -67,7 +68,6 @@
 				"soname(libssh2.so.1(x86_64))",
 				"soname(libtirpc.so.3(x86_64))",
 				"soname(libudev.so.1(x86_64))",
-				"soname(libunwind.so.1(x86_64))",
 				"soname(libxml2.so.16(x86_64))",
 				"sysbinary(iptables)"
 			],
@@ -91,13 +91,13 @@
 				"/usr/lib/libnss_libvirt.so.2",
 				"/usr/lib/libnss_libvirt_guest.so.2",
 				"/usr/lib/libvirt-admin.so.0",
-				"/usr/lib/libvirt-admin.so.0.11008.0",
+				"/usr/lib/libvirt-admin.so.0.11009.0",
 				"/usr/lib/libvirt-lxc.so.0",
-				"/usr/lib/libvirt-lxc.so.0.11008.0",
+				"/usr/lib/libvirt-lxc.so.0.11009.0",
 				"/usr/lib/libvirt-qemu.so.0",
-				"/usr/lib/libvirt-qemu.so.0.11008.0",
+				"/usr/lib/libvirt-qemu.so.0.11009.0",
 				"/usr/lib/libvirt.so.0",
-				"/usr/lib/libvirt.so.0.11008.0",
+				"/usr/lib/libvirt.so.0.11009.0",
 				"/usr/lib/libvirt/connection-driver/libvirt_driver_ch.so",
 				"/usr/lib/libvirt/connection-driver/libvirt_driver_interface.so",
 				"/usr/lib/libvirt/connection-driver/libvirt_driver_lxc.so",
@@ -1008,6 +1008,6 @@
 		}
 	},
 	"source-name": "libvirt",
-	"source-release": "8",
-	"source-version": "11.8.0"
+	"source-release": "9",
+	"source-version": "11.9.0"
 }
