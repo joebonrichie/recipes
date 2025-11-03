@@ -11,6 +11,7 @@
 				"pkgconfig(libjpeg)",
 				"pkgconfig(libtiff-4)",
 				"pkgconfig(libusb-1.0)",
+				"pkgconfig(libv4l2)",
 				"pkgconfig(libxml-2.0)",
 				"pkgconfig(poppler-glib)"
 			],
@@ -108,6 +109,7 @@
 				"/usr/share/defaults/sane/umax.conf",
 				"/usr/share/defaults/sane/umax1220u.conf",
 				"/usr/share/defaults/sane/umax_pp.conf",
+				"/usr/share/defaults/sane/v4l.conf",
 				"/usr/share/defaults/sane/xerox_mfp.conf",
 				"/usr/share/locale/bg/LC_MESSAGES/sane-backends.mo",
 				"/usr/share/locale/ca/LC_MESSAGES/sane-backends.mo",
@@ -228,6 +230,7 @@
 				"/usr/share/man/man5/sane-umax1220u.5",
 				"/usr/share/man/man5/sane-umax_pp.5",
 				"/usr/share/man/man5/sane-usb.5",
+				"/usr/share/man/man5/sane-v4l.5",
 				"/usr/share/man/man5/sane-xerox_mfp.5",
 				"/usr/share/man/man7/sane.7",
 				"/usr/share/sane/artec_eplus48u",
@@ -252,6 +255,7 @@
 				"pkgconfig(libjpeg)",
 				"pkgconfig(libtiff-4)",
 				"pkgconfig(libusb-1.0)",
+				"pkgconfig(libv4l2)",
 				"pkgconfig(libxml-2.0)",
 				"pkgconfig(poppler-glib)"
 			],
@@ -288,6 +292,7 @@
 				"pkgconfig(libjpeg)",
 				"pkgconfig(libtiff-4)",
 				"pkgconfig(libusb-1.0)",
+				"pkgconfig(libv4l2)",
 				"pkgconfig(libxml-2.0)",
 				"pkgconfig(poppler-glib)"
 			],
@@ -317,6 +322,7 @@
 				"pkgconfig(libjpeg)",
 				"pkgconfig(libtiff-4)",
 				"pkgconfig(libusb-1.0)",
+				"pkgconfig(libv4l2)",
 				"pkgconfig(libxml-2.0)",
 				"pkgconfig(poppler-glib)"
 			],
@@ -442,6 +448,7 @@
 				"pkgconfig(libjpeg)",
 				"pkgconfig(libtiff-4)",
 				"pkgconfig(libusb-1.0)",
+				"pkgconfig(libv4l2)",
 				"pkgconfig(libxml-2.0)",
 				"pkgconfig(poppler-glib)"
 			],
@@ -492,6 +499,7 @@
 				"pkgconfig(libjpeg)",
 				"pkgconfig(libtiff-4)",
 				"pkgconfig(libusb-1.0)",
+				"pkgconfig(libv4l2)",
 				"pkgconfig(libxml-2.0)",
 				"pkgconfig(poppler-glib)"
 			],
@@ -512,6 +520,7 @@
 				"soname(libstdc++.so.6(x86_64))",
 				"soname(libtiff.so.6(x86_64))",
 				"soname(libusb-1.0.so.0(x86_64))",
+				"soname(libv4l1.so.0(x86_64))",
 				"soname(libxml2.so.16(x86_64))"
 			],
 			"files": [
@@ -755,6 +764,9 @@
 				"/usr/lib/sane/libsane-umax_pp.so",
 				"/usr/lib/sane/libsane-umax_pp.so.1",
 				"/usr/lib/sane/libsane-umax_pp.so.1.4.0",
+				"/usr/lib/sane/libsane-v4l.so",
+				"/usr/lib/sane/libsane-v4l.so.1",
+				"/usr/lib/sane/libsane-v4l.so.1.4.0",
 				"/usr/lib/sane/libsane-xerox_mfp.so",
 				"/usr/lib/sane/libsane-xerox_mfp.so.1",
 				"/usr/lib/sane/libsane-xerox_mfp.so.1.4.0"
@@ -773,6 +785,7 @@
 				"pkgconfig(libjpeg)",
 				"pkgconfig(libtiff-4)",
 				"pkgconfig(libusb-1.0)",
+				"pkgconfig(libv4l2)",
 				"pkgconfig(libxml-2.0)",
 				"pkgconfig(poppler-glib)"
 			],
@@ -792,6 +805,6 @@
 		}
 	},
 	"source-name": "sane",
-	"source-release": "2",
+	"source-release": "3",
 	"source-version": "1.4.0"
 }
