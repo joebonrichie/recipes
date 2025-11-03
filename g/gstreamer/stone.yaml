@@ -5,7 +5,7 @@
 #
 name        : gstreamer
 version     : 1.26.7
-release     : 33
+release     : 34
 homepage    : https://gstreamer.freedesktop.org/
 upstreams   :
     - https://gitlab.freedesktop.org/gstreamer/gstreamer/-/archive/1.26.7/gstreamer-1.26.7.tar.gz : e3cdfcf076d5be5384c06e6710adc7980912679ea57df29fbd0383dd43cb5c03
@@ -58,6 +58,7 @@ builddeps   :
     - pkgconfig(libavfilter)
     - pkgconfig(libbs2b)
     # - pkgconfig(libcap) # Re-enable when we support capabilities
+    - pkgconfig(libcdio)
     - pkgconfig(libcurl)
     - pkgconfig(libde265)
     - pkgconfig(libdrm)
@@ -77,6 +78,7 @@ builddeps   :
     - pkgconfig(libssl)
     - pkgconfig(libunwind)
     - pkgconfig(libusb-1.0)
+    - pkgconfig(libv4l2)
     - pkgconfig(libva)
     - pkgconfig(libwebp)
     - pkgconfig(libxml-2.0)
@@ -117,7 +119,6 @@ builddeps   :
     - ladspa-devel
 ## Missing Deps
 # good:
-# - libv4l2
 # - aalib
 # - caca
 # - libdv
@@ -147,7 +148,6 @@ builddeps   :
 # - zbar
 # ugly:
 # - liba52
-# - libcdio
 # - libmpeg2
 networking  : yes # cargo deps
 environment : |
@@ -771,6 +771,7 @@ packages    :
             - "%(name)-plugins-base"
         paths:
             - /usr/lib/gstreamer-1.0/libgstasf.so
+            - /usr/lib/gstreamer-1.0/libgstcdio.so
             - /usr/lib/gstreamer-1.0/libgstdvdlpcmdec.so
             - /usr/lib/gstreamer-1.0/libgstdvdread.so
             - /usr/lib/gstreamer-1.0/libgstdvdsub.so
