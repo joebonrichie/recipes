@@ -16,14 +16,13 @@
 				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
 				"soname(ld-linux-x86-64.so.2(x86_64))",
 				"soname(libc.so.6(x86_64))",
-				"soname(libcrypto.so.3(x86_64))",
 				"soname(libcurl.so.4(x86_64))",
+				"soname(libgcc_s.so.1(x86_64))",
 				"soname(libgit2.so.1.9(x86_64))",
 				"soname(libm.so.6(x86_64))",
 				"soname(libsqlite3.so.0(x86_64))",
 				"soname(libssh2.so.1(x86_64))",
 				"soname(libssl.so.3(x86_64))",
-				"soname(libunwind.so.1(x86_64))",
 				"soname(libzstd.so.1(x86_64))"
 			],
 			"files": [
@@ -46,6 +45,6 @@
 		}
 	},
 	"source-name": "nushell",
-	"source-release": "5",
-	"source-version": "0.104.1"
+	"source-release": "6",
+	"source-version": "0.108.0"
 }
