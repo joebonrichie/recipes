@@ -155,3 +155,8 @@
 - hyper-ffi-32bit
 - hyper-ffi-32bit-devel
 - hyper-ffi-dbginfo
+- rustls-ffi
+- rustls-ffi-devel
+- rustls-ffi-32bit
+- rustls-ffi-32bit-devel
+- rustls-ffi-dbginfo
