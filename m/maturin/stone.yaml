@@ -5,7 +5,7 @@
 #
 name        : maturin
 version     : 1.9.6
-release     : 9
+release     : 10
 homepage    : https://www.maturin.rs
 upstreams   :
     - https://pypi.debian.net/maturin/maturin-1.9.6.tar.gz : 2c2ae37144811d365509889ed7220b0598487f1278c2441829c3abf56cc6324a
