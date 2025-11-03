@@ -16,12 +16,12 @@
 				"soname(libc.so.6(x86_64))",
 				"soname(libfontconfig.so.1(x86_64))",
 				"soname(libfreetype.so.6(x86_64))",
-				"soname(libm.so.6(x86_64))",
-				"soname(libunwind.so.1(x86_64))"
+				"soname(libgcc_s.so.1(x86_64))",
+				"soname(libm.so.6(x86_64))"
 			],
 			"files": [
 				"/usr/bin/alacritty",
-				"/usr/share/applications/alacritty.desktop",
+				"/usr/share/applications/Alacritty.desktop",
 				"/usr/share/bash-completion/completions/alacritty",
 				"/usr/share/fish/vendor_completions.d/alacritty.fish",
 				"/usr/share/icons/hicolor/scalable/apps/Alacritty.svg",
@@ -38,6 +38,6 @@
 		}
 	},
 	"source-name": "alacritty",
-	"source-release": "6",
-	"source-version": "0.15.1"
+	"source-release": "7",
+	"source-version": "0.16.1"
 }
