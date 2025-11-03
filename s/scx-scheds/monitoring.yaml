@@ -1,5 +1,5 @@
 releases:
-  id: 371004
+  id: 371005
   rss: https://github.com/sched-ext/scx/releases.atom
 security:
   # No known CPE, last checked 2025-06-11

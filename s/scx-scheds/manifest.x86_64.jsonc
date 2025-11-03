@@ -20,9 +20,9 @@
 				"soname(libbpf.so.1(x86_64))",
 				"soname(libc.so.6(x86_64))",
 				"soname(libelf.so.1(x86_64))",
+				"soname(libgcc_s.so.1(x86_64))",
 				"soname(libm.so.6(x86_64))",
 				"soname(libseccomp.so.2(x86_64))",
-				"soname(libunwind.so.1(x86_64))",
 				"soname(libz.so.1(x86_64))"
 			],
 			"files": [
@@ -34,7 +34,6 @@
 				"/usr/bin/scx_flatcg",
 				"/usr/bin/scx_lavd",
 				"/usr/bin/scx_layered",
-				"/usr/bin/scx_lib_selftests",
 				"/usr/bin/scx_loader",
 				"/usr/bin/scx_nest",
 				"/usr/bin/scx_p2dq",
@@ -51,6 +50,7 @@
 				"/usr/bin/scxcash",
 				"/usr/bin/scxctl",
 				"/usr/bin/scxtop",
+				"/usr/bin/xtask",
 				"/usr/lib/systemd/system/scx_loader.service",
 				"/usr/share/dbus-1/system-services/org.scx.Loader.service",
 				"/usr/share/dbus-1/system.d/org.scx.Loader.conf",
@@ -66,7 +66,6 @@
 				"binary(scx_flatcg)",
 				"binary(scx_lavd)",
 				"binary(scx_layered)",
-				"binary(scx_lib_selftests)",
 				"binary(scx_loader)",
 				"binary(scx_nest)",
 				"binary(scx_p2dq)",
@@ -82,7 +81,8 @@
 				"binary(scx_userland)",
 				"binary(scxcash)",
 				"binary(scxctl)",
-				"binary(scxtop)"
+				"binary(scxtop)",
+				"binary(xtask)"
 			]
 		},
 		"scx-scheds-devel": {
@@ -102,7 +102,7 @@
 				"scx-scheds",
 				"soname(ld-linux-x86-64.so.2(x86_64))",
 				"soname(libc.so.6(x86_64))",
-				"soname(libunwind.so.1(x86_64))"
+				"soname(libgcc_s.so.1(x86_64))"
 			],
 			"files": [
 				"/usr/bin/vmlinux_docify",
@@ -136,6 +136,6 @@
 		}
 	},
 	"source-name": "scx-scheds",
-	"source-release": "4",
-	"source-version": "1.0.16"
+	"source-release": "5",
+	"source-version": "1.0.17"
 }

@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : scx-scheds
-version     : 1.0.16
-release     : 4
+version     : 1.0.17
+release     : 5
 homepage    : https://github.com/sched-ext/scx
 upstreams   :
-    - https://github.com/sched-ext/scx/archive/refs/tags/v1.0.16.tar.gz : f788d95aa66dbd30744c062e23ac71e55209016f951f74de9a3b214b583d82ff
+    - https://github.com/sched-ext/scx/archive/refs/tags/v1.0.17.tar.gz : 2f9dbce619f6fd547fabcd4ef1220fe125f1277218e9d8bfbabdb4063c8417b9
 summary     : sched_ext schedulers and tools
 description : |
     sched_ext schedulers and tools
@@ -25,9 +25,6 @@ builddeps   :
     - pkgconfig(libelf)
     - pkgconfig(libseccomp)
     - pkgconfig(libsystemd)
-environment : |
-    # sccache is currently broken with this build for unknown reasons. Disable it for now
-    unset RUSTC_WRAPPER
 setup       : |
     %meson \
         -Dbpftool=disabled \
@@ -40,7 +37,7 @@ install     : |
     %meson_install
 
     # Unsupported, use scx_loader
-    rm -v %(installroot)%(libdir)/systemd/system/scx.service
+    # rm -v %(installroot)%(libdir)/systemd/system/scx.service
 
     # Overwrite shipped default config with our own
     %install_file %(pkgdir)/config.toml %(installroot)%(vendordir)/scx_loader/config.toml
