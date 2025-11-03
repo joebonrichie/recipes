@@ -5,7 +5,7 @@
 #
 name        : virtiofsd
 version     : 1.13.2
-release     : 1
+release     : 2
 homepage    : https://gitlab.com/virtio-fs/virtiofsd
 upstreams   :
     - https://gitlab.com/virtio-fs/virtiofsd/-/archive/v1.13.2/virtiofsd-v1.13.2.tar.gz : 3d611cc8c0ed9d028cd472fa6f31a491dc5623485e469af1a99f02ac6549c7c7
