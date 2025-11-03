@@ -5,7 +5,7 @@
 #
 name        : ffmpeg
 version     : '8.0'
-release     : 16
+release     : 17
 homepage    : https://ffmpeg.org/releases
 upstreams   :
     - https://ffmpeg.org/releases/ffmpeg-8.0.tar.xz:
@@ -45,6 +45,8 @@ builddeps   :
     - pkgconfig(lcms2)
     - pkgconfig(libass)
     - pkgconfig(libbs2b)
+    - pkgconfig(libcdio)
+    - pkgconfig(libcdio_paranoia)
     - pkgconfig(libdrm)
     - pkgconfig(libjpeg)
     - pkgconfig(libjxl)
@@ -57,6 +59,7 @@ builddeps   :
     - pkgconfig(librsvg-2.0)
     - pkgconfig(libssh)
     - pkgconfig(libssl)
+    - pkgconfig(libv4l2)
     - pkgconfig(libva)
     - pkgconfig(libwebp)
     - pkgconfig(libxml-2.0)
@@ -97,7 +100,6 @@ builddeps   :
 # - libopenmpt
 # - librubberband
 # - libsrt
-# - libv4l2
 # - libvidstab
 # - libvmaf
 # - libxvid
@@ -122,7 +124,6 @@ builddeps   :
 # outdev/indev
 # - caca
 # - libiec61883
-# - libcdio
 
 # Intentionally not enabled for now
 # - openal
@@ -156,6 +157,7 @@ setup       : |
         --enable-libaom \
         --enable-libass \
         --enable-libbs2b \
+        --enable-libcdio \
         --enable-libdav1d \
         --enable-libdrm \
         --enable-libdvdnav \
@@ -181,6 +183,7 @@ setup       : |
         --enable-libssh \
         --enable-libsvtav1 \
         --enable-libtheora \
+        --enable-libv4l2 \
         --enable-libvorbis \
         --enable-libvpl \
         --enable-libvpx \
@@ -220,6 +223,7 @@ setup       : |
         --enable-libaom \
         --enable-libass \
         --enable-libbs2b \
+        --enable-libcdio \
         --enable-libdav1d \
         --enable-libdrm \
         --enable-libdvdnav \
@@ -246,6 +250,7 @@ setup       : |
         --enable-libssh \
         --enable-libsvtav1 \
         --enable-libtheora \
+        --enable-libv4l2 \
         --enable-libvorbis \
         --enable-libvpl \
         --enable-libvpx \
