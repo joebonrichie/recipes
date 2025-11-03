@@ -5,7 +5,7 @@
 #
 name        : rav1e
 version     : 0.8.1
-release     : 4
+release     : 5
 homepage    : https://crates.io/crates/rav1e
 upstreams   :
     - https://github.com/xiph/rav1e/archive/refs/tags/v0.8.1.tar.gz : 06d1523955fb6ed9cf9992eace772121067cca7e8926988a1ee16492febbe01e
