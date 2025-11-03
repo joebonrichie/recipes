@@ -5,7 +5,7 @@
 #
 name        : vlc
 version     : 3.0.21+git.fe60420c
-release     : 10
+release     : 11
 upstreams   :
     # Use the latest from the 3.0.x series branch which has fixed VAAPI support for FFMPEG 7.x
     - git|https://code.videolan.org/videolan/vlc.git : fe60420c4060e22c1660668f124b14da875f36be
@@ -46,6 +46,7 @@ builddeps   :
     - pkgconfig(libavcodec-7.1)
     - pkgconfig(libavformat-7.1)
     - pkgconfig(libavutil-7.1)
+    - pkgconfig(libcddb)
     - pkgconfig(libgcrypt)
     - pkgconfig(libidn2)
     - pkgconfig(libjpeg)
@@ -99,7 +100,6 @@ builddeps   :
     # libbluray
     # libdsm
     # libnfs
-    # libcddb
     # libvncclient
     # asdcplib
     # libdvbpsi
