@@ -4,13 +4,13 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : dav1d
-version     : 1.5.1
-release     : 3
+version     : 1.5.2
+release     : 4
 homepage    : https://code.videolan.org/videolan/dav1d
 upstreams   :
-    - https://code.videolan.org/videolan/dav1d/-/archive/1.5.1/dav1d-1.5.1.tar.bz2 : 4eddffd108f098e307b93c9da57b6125224dc5877b1b3d157b31be6ae8f1f093
-    - https://code.videolan.org/videolan/dav1d-test-data/-/archive/1.5.1/dav1d-test-data-1.5.1.tar.gz :
-        hash: e99c6309de09862a452f7926d00dc7b2baec33890b1b3b61b6907767e888ff12
+    - https://code.videolan.org/videolan/dav1d/-/archive/1.5.2/dav1d-1.5.2.tar.bz2 : c748a3214cf02a6d23bc179a0e8caea9d6ece1e46314ef21f5508ca6b5de6262
+    - https://code.videolan.org/videolan/dav1d-test-data/-/archive/1.5.2/dav1d-test-data-1.5.2.tar.gz :
+        hash: f422da0d78d8e059ca55726952bb9a1a5e0c3310d4bfb3adec29d137ddf6b5d5
         rename: dav1d-test-data.tar.gz
         unpack: false
 summary     : AV1 decoder targeted to be small and fast
@@ -25,7 +25,8 @@ tuning      :
 setup       : |
     mkdir tests/dav1d-test-data
     bsdtar-static -xf %(sourcedir)/dav1d-test-data.tar.gz --strip-components=1 -C tests/dav1d-test-data
-    %meson -Dtestdata_tests=true
+    %meson \
+        -Dtestdata_tests=true
 build       : |
     %meson_build
 install     : |
