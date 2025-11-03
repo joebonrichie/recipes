@@ -4,12 +4,12 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : zellij
-version     : 0.41.2
-release     : 3
+version     : 0.43.1
+release     : 4
 license     : MIT
 homepage    : https://zellij.dev/
 upstreams   :
-    - https://github.com/zellij-org/zellij/archive/refs/tags/v0.41.2.tar.gz : 12e7f0f80c1e39deed5638c4662fc070855cee0250a7eb1d76cefbeef8c2f376
+    - https://github.com/zellij-org/zellij/archive/refs/tags/v0.43.1.tar.gz : e9fd24190869be6e9e8d731df2ccd0b3b1dd368ae9dbb9d620ec905b83e325ec
 summary     : A terminal workspace with batteries included
 description : |
     Zellij is a workspace aimed at developers, ops-oriented people and anyone who loves the terminal. Similar programs are sometimes called "Terminal Multiplexers".
