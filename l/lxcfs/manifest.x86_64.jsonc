@@ -13,7 +13,7 @@
 				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
 				"soname(libc.so.6(x86_64))",
 				"soname(libfuse3.so.4(x86_64))",
-				"soname(libunwind.so.1(x86_64))"
+				"soname(libgcc_s.so.1(x86_64))"
 			],
 			"files": [
 				"/usr/bin/lxcfs",
@@ -34,6 +34,6 @@
 		}
 	},
 	"source-name": "lxcfs",
-	"source-release": "2",
+	"source-release": "3",
 	"source-version": "6.0.5"
 }
