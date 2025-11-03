@@ -16,7 +16,6 @@ license     :
     - MIT
 builddeps   :
     - pkgconfig(hwdata)
-    # v4l-utils
 setup       : |
     %meson
 build       : |
