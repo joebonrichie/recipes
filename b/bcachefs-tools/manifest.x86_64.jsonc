@@ -23,11 +23,11 @@
 				"soname(libaio.so.1(x86_64))",
 				"soname(libblkid.so.1(x86_64))",
 				"soname(libc.so.6(x86_64))",
+				"soname(libgcc_s.so.1(x86_64))",
 				"soname(libkeyutils.so.1(x86_64))",
 				"soname(liblz4.so.1(x86_64))",
 				"soname(libsodium.so.26(x86_64))",
 				"soname(libudev.so.1(x86_64))",
-				"soname(libunwind.so.1(x86_64))",
 				"soname(liburcu.so.8(x86_64))",
 				"soname(libuuid.so.1(x86_64))",
 				"soname(libz.so.1(x86_64))",
@@ -54,6 +54,6 @@
 		}
 	},
 	"source-name": "bcachefs-tools",
-	"source-release": "7",
-	"source-version": "1.31.11"
+	"source-release": "8",
+	"source-version": "1.31.12"
 }
