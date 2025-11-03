@@ -5,7 +5,7 @@
 #
 name        : niri
 version     : "25.05.1"
-release     : 10
+release     : 11
 summary     : Niri Desktop Compositor
 license     : GPL-3.0
 homepage    : https://github.com/YaLTeR/niri

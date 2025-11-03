@@ -26,6 +26,7 @@
 				"soname(libcairo.so.2(x86_64))",
 				"soname(libdisplay-info.so.3(x86_64))",
 				"soname(libgbm.so.1(x86_64))",
+				"soname(libgcc_s.so.1(x86_64))",
 				"soname(libglib-2.0.so.0(x86_64))",
 				"soname(libgobject-2.0.so.0(x86_64))",
 				"soname(libinput.so.10(x86_64))",
@@ -36,7 +37,6 @@
 				"soname(libpixman-1.so.0(x86_64))",
 				"soname(libseat.so.1(x86_64))",
 				"soname(libudev.so.1(x86_64))",
-				"soname(libunwind.so.1(x86_64))",
 				"soname(libxkbcommon.so.0(x86_64))"
 			],
 			"files": [
@@ -60,6 +60,6 @@
 		}
 	},
 	"source-name": "niri",
-	"source-release": "10",
+	"source-release": "11",
 	"source-version": "25.05.1"
 }
