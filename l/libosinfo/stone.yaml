@@ -5,7 +5,7 @@
 #
 name        : libosinfo
 version     : 1.12.0
-release     : 1
+release     : 2
 homepage    : https://libosinfo.org/
 upstreams   :
     - https://gitlab.com/libosinfo/libosinfo/-/archive/v1.12.0/libosinfo-v1.12.0.tar.gz : 3c52fb542d65d1ec5a10f87126d7513c2bd115eaa2f87fb91b15ba588708fc7b
