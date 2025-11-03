@@ -5,7 +5,7 @@
 #
 name        : samply
 version     : 0.13.1
-release     : 1
+release     : 2
 homepage    : https://github.com/mstange/samply
 upstreams   :
     - https://github.com/mstange/samply/releases/download/samply-v0.13.1/source.tar.gz : 0236cda0bf5f8f7022b16be4cc1133217090430e3e4db704292b13bbc0cd60c9
