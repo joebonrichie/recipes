@@ -4,13 +4,13 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : asusd
-version     : 6.1.12
-release     : 3
+version     : 6.1.16
+release     : 4
 summary     : Control ASUS laptop features easily
 license     : MPL-2.0
 homepage    : https://asus-linux.org/
 upstreams   :
-    - https://gitlab.com/asus-linux/asusctl/-/archive/6.1.12/asusctl-6.1.12.tar.gz : 8b0f2851a48c64aa827dc4a771326f89478f443ef23e6208429d77b5871d04bf
+    - https://gitlab.com/asus-linux/asusctl/-/archive/6.1.16/asusctl-6.1.16.tar.gz : e42e97efd4de62ec90e0f36dd2572528391ecc1cef806a33aec1e875d507fa21
 description : |
     Control ASUS platform features such as LEDs, AniMe, fans and more.
 builddeps   :
