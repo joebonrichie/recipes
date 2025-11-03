@@ -1,0 +1,58 @@
+/** Human readable report. This is not consumed by boulder */
+{
+	"manifest-version": "0.2",
+	"packages": {
+		"libcdio-paranoia": {
+			"build-depends": [
+				"pkgconfig(libcdio)"
+			],
+			"depends": [
+				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
+				"soname(libc.so.6(x86_64))",
+				"soname(libcdio.so.19(x86_64))",
+				"soname(libm.so.6(x86_64))"
+			],
+			"files": [
+				"/usr/bin/cd-paranoia",
+				"/usr/lib/libcdio_cdda.so.2",
+				"/usr/lib/libcdio_cdda.so.2.0.0",
+				"/usr/lib/libcdio_paranoia.so.2",
+				"/usr/lib/libcdio_paranoia.so.2.0.0",
+				"/usr/share/man/ja/man1/cd-paranoia.1",
+				"/usr/share/man/man1/cd-paranoia.1"
+			],
+			"name": "libcdio-paranoia",
+			"provides": [
+				"binary(cd-paranoia)",
+				"soname(libcdio_cdda.so.2(x86_64))",
+				"soname(libcdio_paranoia.so.2(x86_64))"
+			]
+		},
+		"libcdio-paranoia-devel": {
+			"build-depends": [
+				"pkgconfig(libcdio)"
+			],
+			"depends": [
+				"libcdio-paranoia",
+				"pkgconfig(libcdio)"
+			],
+			"files": [
+				"/usr/include/cdio/paranoia/cdda.h",
+				"/usr/include/cdio/paranoia/paranoia.h",
+				"/usr/include/cdio/paranoia/toc.h",
+				"/usr/lib/libcdio_cdda.so",
+				"/usr/lib/libcdio_paranoia.so",
+				"/usr/lib/pkgconfig/libcdio_cdda.pc",
+				"/usr/lib/pkgconfig/libcdio_paranoia.pc"
+			],
+			"name": "libcdio-paranoia-devel",
+			"provides": [
+				"pkgconfig(libcdio_cdda)",
+				"pkgconfig(libcdio_paranoia)"
+			]
+		}
+	},
+	"source-name": "libcdio-paranoia",
+	"source-release": "1",
+	"source-version": "10.2+2.0.2"
+}
