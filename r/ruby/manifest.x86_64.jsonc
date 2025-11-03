@@ -19,10 +19,10 @@
 				"soname(libcrypt.so.2(x86_64))",
 				"soname(libcrypto.so.3(x86_64))",
 				"soname(libffi.so.8(x86_64))",
+				"soname(libgcc_s.so.1(x86_64))",
 				"soname(libgmp.so.10(x86_64))",
 				"soname(libm.so.6(x86_64))",
 				"soname(libssl.so.3(x86_64))",
-				"soname(libunwind.so.1(x86_64))",
 				"soname(libyaml-0.so.2(x86_64))",
 				"soname(libz.so.1(x86_64))"
 			],
@@ -2898,6 +2898,6 @@
 		}
 	},
 	"source-name": "ruby",
-	"source-release": "11",
+	"source-release": "12",
 	"source-version": "3.4.7"
 }
