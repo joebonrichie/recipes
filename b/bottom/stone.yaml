@@ -5,7 +5,7 @@
 #
 name        : bottom
 version     : 0.11.2
-release     : 5
+release     : 6
 homepage    : https://github.com/ClementTsang/bottom
 upstreams   :
     - https://github.com/ClementTsang/bottom/archive/refs/tags/0.11.2.tar.gz : 213fbea68a315e012a0ab37e3382a287f0424675a47de04801aef4758458e64b
