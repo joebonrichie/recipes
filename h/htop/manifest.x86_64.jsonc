@@ -16,8 +16,7 @@
 				"soname(libcap.so.2(x86_64))",
 				"soname(libhwloc.so.15(x86_64))",
 				"soname(libm.so.6(x86_64))",
-				"soname(libncursesw.so.6(x86_64))",
-				"soname(libunwind.so.1(x86_64))"
+				"soname(libncursesw.so.6(x86_64))"
 			],
 			"files": [
 				"/usr/bin/htop",
@@ -33,6 +32,6 @@
 		}
 	},
 	"source-name": "htop",
-	"source-release": "6",
+	"source-release": "7",
 	"source-version": "3.4.1"
 }
