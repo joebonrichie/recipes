@@ -1,0 +1,14 @@
+name: wine_binfmt
+description: |
+    Ensure that Wine is registered for Windows binary formats
+after: systemd_sysusers
+
+handlers:
+    wine_binfmt:
+        run: /usr/share/moss/helpers/systemd-hook.sh
+        args: ["binfmt"]
+
+paths:
+    "/usr/lib/binfmt.d/wine.conf" :
+        handlers:
+            - wine_binfmt
