@@ -148,3 +148,10 @@
 
 ### Merged into the mighty llvm omni-package
 - lldb-dbginfo
+
+### No longer used
+- hyper-ffi
+- hyper-ffi-devel
+- hyper-ffi-32bit
+- hyper-ffi-32bit-devel
+- hyper-ffi-dbginfo
