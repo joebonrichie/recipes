@@ -5,7 +5,7 @@
 #
 name        : gvfs
 version     : 1.58.0
-release     : 15
+release     : 16
 homepage    : https://wiki.gnome.org/Projects/gvfs
 upstreams   :
     - https://download.gnome.org/sources/gvfs/1.58/gvfs-1.58.0.tar.xz : dd9be36873d0fcb309eb89a8d274770ce576287628a2cf111bd387e1c34f182f
@@ -32,7 +32,7 @@ builddeps   :
     - pkgconfig(libarchive)
     # - pkgconfig(libbluray)
     - pkgconfig(libcap)
-    # - pkgconfig(libcdio_paranoia)
+    - pkgconfig(libcdio_paranoia)
     - pkgconfig(libgcrypt)
     # - pkgconfig(libgdata)
     - pkgconfig(libgphoto2)
@@ -61,7 +61,6 @@ environment : |
 setup       : |
     %meson \
         -Dbluray=false \
-        -Dcdda=false \
         -Dgoogle=false \
         -Dnfs=false
 build       : |
