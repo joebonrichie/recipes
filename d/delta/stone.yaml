@@ -5,7 +5,7 @@
 #
 name        : delta
 version     : '0.18.2'
-release     : 1
+release     : 2
 homepage    : https://github.com/dandavison/delta
 upstreams   :
     - https://github.com/dandavison/delta/archive/refs/tags/0.18.2.tar.gz :
