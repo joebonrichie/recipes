@@ -78,6 +78,7 @@
 				"/usr/share/locale/sr/LC_MESSAGES/libpanel.mo",
 				"/usr/share/locale/sv/LC_MESSAGES/libpanel.mo",
 				"/usr/share/locale/tr/LC_MESSAGES/libpanel.mo",
+				"/usr/share/locale/ug/LC_MESSAGES/libpanel.mo",
 				"/usr/share/locale/uk/LC_MESSAGES/libpanel.mo",
 				"/usr/share/locale/zh_CN/LC_MESSAGES/libpanel.mo",
 				"/usr/share/locale/zh_TW/LC_MESSAGES/libpanel.mo"
@@ -706,6 +707,6 @@
 		}
 	},
 	"source-name": "libpanel",
-	"source-release": "3",
-	"source-version": "1.10.2"
+	"source-release": "4",
+	"source-version": "1.10.3"
 }
