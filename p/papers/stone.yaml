@@ -5,7 +5,7 @@
 #
 name        : papers
 version     : "49.1"
-release     : 10
+release     : 11
 homepage    : https://apps.gnome.org/Papers/
 upstreams   :
     - https://download.gnome.org/sources/papers/49/papers-49.1.tar.xz : 4ab23a67897bddd6be2d6298210fff602cfec0f35688bc5bff270360b0784c29
