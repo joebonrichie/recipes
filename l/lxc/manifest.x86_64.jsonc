@@ -19,8 +19,8 @@
 				"soname(ld-linux-x86-64.so.2(x86_64))",
 				"soname(libc.so.6(x86_64))",
 				"soname(libcap.so.2(x86_64))",
-				"soname(liblxc.so.1(x86_64))",
-				"soname(libunwind.so.1(x86_64))"
+				"soname(libgcc_s.so.1(x86_64))",
+				"soname(liblxc.so.1(x86_64))"
 			],
 			"files": [
 				"/usr/bin/lxc-attach",
@@ -47,6 +47,7 @@
 				"/usr/bin/lxc-update-config",
 				"/usr/bin/lxc-usernsexec",
 				"/usr/bin/lxc-wait",
+				"/usr/sbin/init.lxc.static",
 				"/usr/share/bash-completion/completions/_lxc",
 				"/usr/share/bash-completion/completions/lxc-attach",
 				"/usr/share/bash-completion/completions/lxc-cgroup",
@@ -97,7 +98,8 @@
 				"binary(lxc-unshare)",
 				"binary(lxc-update-config)",
 				"binary(lxc-usernsexec)",
-				"binary(lxc-wait)"
+				"binary(lxc-wait)",
+				"sysbinary(init.lxc.static)"
 			]
 		},
 		"lxc-devel": {
@@ -171,9 +173,9 @@
 				"soname(libcap.so.2(x86_64))",
 				"soname(libcrypto.so.3(x86_64))",
 				"soname(libdbus-1.so.3(x86_64))",
+				"soname(libgcc_s.so.1(x86_64))",
 				"soname(libpam.so.0(x86_64))",
-				"soname(libseccomp.so.2(x86_64))",
-				"soname(libunwind.so.1(x86_64))"
+				"soname(libseccomp.so.2(x86_64))"
 			],
 			"files": [
 				"/usr/bin/lxc-autostart",
@@ -241,6 +243,6 @@
 		}
 	},
 	"source-name": "lxc",
-	"source-release": "1",
+	"source-release": "2",
 	"source-version": "6.0.5"
 }
