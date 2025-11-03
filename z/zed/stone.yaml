@@ -5,7 +5,7 @@
 #
 name        : zed
 version     : 0.206.6
-release     : 34
+release     : 35
 summary     : High performance, graphical code editor
 license     :
     - AGPL-3.0
