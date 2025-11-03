@@ -5,7 +5,7 @@
 #
 name        : wl-clipboard-rs
 version     : 0.9.2
-release     : 1
+release     : 2
 homepage    : https://github.com/YaLTeR/wl-clipboard-rs
 upstreams   :
     - https://github.com/YaLTeR/wl-clipboard-rs/archive/v0.9.2.tar.gz: bf85492a40008913eb6e76be9952c8ca959b20dd418e2086904b5fedceb4bac7
