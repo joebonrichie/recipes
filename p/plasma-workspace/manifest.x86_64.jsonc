@@ -97,7 +97,7 @@
 			],
 			"files": [
 				"/usr/lib/libkworkspace6.so.6",
-				"/usr/lib/libkworkspace6.so.6.5.1"
+				"/usr/lib/libkworkspace6.so.6.5.2"
 			],
 			"name": "libkworkspace",
 			"provides": [
@@ -706,8 +706,8 @@
 				"/usr/share/kstyle/themes/qtmotif.themerc",
 				"/usr/share/kstyle/themes/qtplastique.themerc",
 				"/usr/share/kstyle/themes/qtwindows.themerc",
-				"/usr/share/kxmlgui5/kfontview/kfontviewpart.rc",
 				"/usr/share/kxmlgui5/kfontview/kfontviewui.rc",
+				"/usr/share/kxmlgui5/kfontviewpart/kfontviewpart.rc",
 				"/usr/share/locale/af/LC_MESSAGES/kcm_colors.mo",
 				"/usr/share/locale/af/LC_MESSAGES/kcm_componentchooser.mo",
 				"/usr/share/locale/af/LC_MESSAGES/kcm_cursortheme.mo",
@@ -4487,6 +4487,7 @@
 				"/usr/share/locale/ru/LC_MESSAGES/kcm_soundtheme.mo",
 				"/usr/share/locale/ru/LC_MESSAGES/kcm_style.mo",
 				"/usr/share/locale/ru/LC_MESSAGES/kcm_users.mo",
+				"/usr/share/locale/ru/LC_MESSAGES/kcm_wallpaper.mo",
 				"/usr/share/locale/ru/LC_MESSAGES/kcminit.mo",
 				"/usr/share/locale/ru/LC_MESSAGES/kded_devicenotifications.mo",
 				"/usr/share/locale/ru/LC_MESSAGES/kded_donationmessage.mo",
@@ -7071,22 +7072,22 @@
 				"/usr/lib/kconf_update_bin/plasmashell-6.5-remove-stop-activity-shortcut",
 				"/usr/lib/kf6/plasma-sourceenv.sh",
 				"/usr/lib/libbatterycontrol.so.6",
-				"/usr/lib/libbatterycontrol.so.6.5.1",
+				"/usr/lib/libbatterycontrol.so.6.5.2",
 				"/usr/lib/libkfontinst.so.6",
-				"/usr/lib/libkfontinst.so.6.5.1",
+				"/usr/lib/libkfontinst.so.6.5.2",
 				"/usr/lib/libkfontinstui.so.6",
-				"/usr/lib/libkfontinstui.so.6.5.1",
+				"/usr/lib/libkfontinstui.so.6.5.2",
 				"/usr/lib/libklipper.so.6",
-				"/usr/lib/libklipper.so.6.5.1",
+				"/usr/lib/libklipper.so.6.5.2",
 				"/usr/lib/libklookandfeel.so.6",
-				"/usr/lib/libklookandfeel.so.6.5.1",
+				"/usr/lib/libklookandfeel.so.6.5.2",
 				"/usr/lib/libkmpris.so.6",
-				"/usr/lib/libkmpris.so.6.5.1",
+				"/usr/lib/libkmpris.so.6.5.2",
 				"/usr/lib/libkrdb.so",
 				"/usr/lib/libnotificationmanager.so.1",
-				"/usr/lib/libnotificationmanager.so.6.5.1",
+				"/usr/lib/libnotificationmanager.so.6.5.2",
 				"/usr/lib/libtaskmanager.so.6",
-				"/usr/lib/libtaskmanager.so.6.5.1",
+				"/usr/lib/libtaskmanager.so.6.5.2",
 				"/usr/lib/qt6/plugins/kf6/kded/appmenu.so",
 				"/usr/lib/qt6/plugins/kf6/kded/desktopnotifier.so",
 				"/usr/lib/qt6/plugins/kf6/kded/devicenotifications.so",
@@ -7272,6 +7273,6 @@
 		}
 	},
 	"source-name": "plasma-workspace",
-	"source-release": "22",
-	"source-version": "6.5.1"
+	"source-release": "23",
+	"source-version": "6.5.2"
 }
