@@ -19,6 +19,7 @@
 				"pkgconfig(libcurl)",
 				"pkgconfig(libtiff-4)",
 				"pkgconfig(nss)",
+				"pkgconfig(zlib)",
 				"poppler-data"
 			],
 			"depends": [
@@ -69,6 +70,7 @@
 				"pkgconfig(libcurl)",
 				"pkgconfig(libtiff-4)",
 				"pkgconfig(nss)",
+				"pkgconfig(zlib)",
 				"poppler-data"
 			],
 			"depends": [
@@ -102,6 +104,7 @@
 				"pkgconfig(libcurl)",
 				"pkgconfig(libtiff-4)",
 				"pkgconfig(nss)",
+				"pkgconfig(zlib)",
 				"poppler-data"
 			],
 			"depends": [
@@ -148,6 +151,7 @@
 				"pkgconfig(libcurl)",
 				"pkgconfig(libtiff-4)",
 				"pkgconfig(nss)",
+				"pkgconfig(zlib)",
 				"poppler-data"
 			],
 			"depends": [
@@ -288,6 +292,7 @@
 				"pkgconfig(libcurl)",
 				"pkgconfig(libtiff-4)",
 				"pkgconfig(nss)",
+				"pkgconfig(zlib)",
 				"poppler-data"
 			],
 			"depends": [
@@ -329,6 +334,7 @@
 				"pkgconfig(libcurl)",
 				"pkgconfig(libtiff-4)",
 				"pkgconfig(nss)",
+				"pkgconfig(zlib)",
 				"poppler-data"
 			],
 			"depends": [
@@ -382,6 +388,7 @@
 				"pkgconfig(libcurl)",
 				"pkgconfig(libtiff-4)",
 				"pkgconfig(nss)",
+				"pkgconfig(zlib)",
 				"poppler-data"
 			],
 			"depends": [
@@ -419,6 +426,7 @@
 				"pkgconfig(libcurl)",
 				"pkgconfig(libtiff-4)",
 				"pkgconfig(nss)",
+				"pkgconfig(zlib)",
 				"poppler-data"
 			],
 			"depends": [
@@ -463,6 +471,7 @@
 				"pkgconfig(libcurl)",
 				"pkgconfig(libtiff-4)",
 				"pkgconfig(nss)",
+				"pkgconfig(zlib)",
 				"poppler-data"
 			],
 			"depends": [
@@ -523,6 +532,6 @@
 		}
 	},
 	"source-name": "poppler",
-	"source-release": "13",
-	"source-version": "25.10.0"
+	"source-release": "14",
+	"source-version": "25.11.0"
 }
