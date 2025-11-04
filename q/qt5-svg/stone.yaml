@@ -4,12 +4,12 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : qt5-svg
-version     : 5.15.17+kde.9c149213
-release     : 7
+version     : 5.15.18+kde.b74f7291
+release     : 8
 homepage    : https://www.qt.io
 upstreams   :
     - git|https://invent.kde.org/qt/qt/qtsvg.git:
-        ref: 9c149213f46b844607cf7db8f800d906db3a682f
+        ref: b74f7291f343dcbcb487b020868f042d8fe83098
         # Relative submodules
         staging: no
 summary     : Qt5 SVG Module
