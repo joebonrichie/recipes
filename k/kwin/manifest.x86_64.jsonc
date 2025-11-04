@@ -1755,9 +1755,9 @@
 			],
 			"files": [
 				"/usr/lib/libkcmkwincommon.so.6",
-				"/usr/lib/libkcmkwincommon.so.6.5.1",
+				"/usr/lib/libkcmkwincommon.so.6.5.2",
 				"/usr/lib/libkwin.so.6",
-				"/usr/lib/libkwin.so.6.5.1",
+				"/usr/lib/libkwin.so.6.5.2",
 				"/usr/share/qlogging-categories6/org_kde_kwin.categories"
 			],
 			"name": "kwin-libs",
@@ -1768,6 +1768,6 @@
 		}
 	},
 	"source-name": "kwin",
-	"source-release": "13",
-	"source-version": "6.5.1"
+	"source-release": "14",
+	"source-version": "6.5.2"
 }
