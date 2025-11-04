@@ -110,7 +110,8 @@
 				"/usr/share/locale/uk/LC_MESSAGES/plasma-welcome.mo",
 				"/usr/share/locale/zh_CN/LC_MESSAGES/plasma-welcome.mo",
 				"/usr/share/locale/zh_TW/LC_MESSAGES/plasma-welcome.mo",
-				"/usr/share/metainfo/org.kde.plasma-welcome.appdata.xml"
+				"/usr/share/metainfo/org.kde.plasma-welcome.appdata.xml",
+				"/usr/share/qlogging-categories6/welcome.categories"
 			],
 			"name": "plasma-welcome",
 			"provides": [
@@ -120,6 +121,6 @@
 		}
 	},
 	"source-name": "plasma-welcome",
-	"source-release": "10",
-	"source-version": "6.5.1"
+	"source-release": "11",
+	"source-version": "6.5.2"
 }

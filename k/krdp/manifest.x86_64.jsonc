@@ -55,7 +55,7 @@
 			"files": [
 				"/usr/bin/krdpserver",
 				"/usr/lib/libKRdp.so.6",
-				"/usr/lib/libKRdp.so.6.5.1",
+				"/usr/lib/libKRdp.so.6.5.2",
 				"/usr/lib/qt6/plugins/plasma/kcms/systemsettings/kcm_krdpserver.so",
 				"/usr/lib/systemd/user-preset/00-krdp.preset",
 				"/usr/lib/systemd/user/app-org.kde.krdpserver.service",
@@ -180,6 +180,6 @@
 		}
 	},
 	"source-name": "krdp",
-	"source-release": "9",
-	"source-version": "6.5.1"
+	"source-release": "10",
+	"source-version": "6.5.2"
 }
