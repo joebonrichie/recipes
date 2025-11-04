@@ -80,6 +80,10 @@ setup       : |
         echo "ac_add_options --enable-lto=cross,full" >> mozconfig
     fi
 
+    # Set up google safe browsing API key for AerynOS
+    cp %(pkgdir)/build/aerynos-google-safebrowsing-api-key .
+    echo "ac_add_options --with-google-safebrowsing-api-keyfile=%(workdir)/aerynos-google-safebrowsing-api-key" >> mozconfig
+
     ./mach configure
 build       : |
     ./mach build
