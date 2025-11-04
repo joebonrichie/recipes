@@ -4,12 +4,12 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : vim
-version     : 9.1.1829
-release     : 14
+version     : 9.1.1896
+release     : 15
 homepage    : https://github.com/vim/vim
 upstreams   :
-    - https://github.com/vim/vim/archive/refs/tags/v9.1.1829.tar.gz:
-        hash: a18eb6cbb481b53d257c83408b5c58be78083370cfbc704fcf99efa18c2154db
+    - https://github.com/vim/vim/archive/refs/tags/v9.1.1896.tar.gz:
+        hash: 3ebcb1350bc7e22d1730e10ee0061f8f6d015f8c0f912cdcc0bb16a0735e09cd
         unpack: false
         rename: vim.tar.gz
 summary     : Vi IMproved, an advanced text editor
@@ -39,20 +39,20 @@ environment : |
         %patch %(pkgdir)/0001-Read-vimrc-from-etc-vim.patch
 
         %configure \
-                    --disable-netbeans \
-                    --disable-perlinterp \
-                    --enable-fail-if-missing \
-                    --enable-luainterp=dynamic \
-                    --enable-multibyte \
-                    --enable-python3interp=dynamic \
-                    --enable-rubyinterp=dynamic \
-                    --with-compiledby="AerynOS" \
-                    --with-features=huge \
-                    --with-luajit \
-                    --with-modified-by="AerynOS" \
-                    --with-python3-stable-abi \
-                    --with-tlib=ncurses \
-                    "$@"
+            --disable-netbeans \
+            --disable-perlinterp \
+            --enable-fail-if-missing \
+            --enable-luainterp=dynamic \
+            --enable-multibyte \
+            --enable-python3interp=dynamic \
+            --enable-rubyinterp=dynamic \
+            --with-compiledby="AerynOS" \
+            --with-features=huge \
+            --with-luajit \
+            --with-modified-by="AerynOS" \
+            --with-python3-stable-abi \
+            --with-tlib=ncurses \
+            "$@"
     }
 setup       : |
     mkdir vim gvim
@@ -61,19 +61,19 @@ setup       : |
 
     pushd gvim
     vim_configure \
-                  --enable-canberra \
-                  --enable-gtk3-check \
-                  --enable-gui=gtk3 \
-                  --enable-xim \
-                  --with-x=yes
+        --enable-canberra \
+        --enable-gtk3-check \
+        --enable-gui=gtk3 \
+        --enable-xim \
+        --with-x=yes
     popd
 
     pushd vim
     # 2025-10-05: Enable wayland support for vim so that clipboard sharing works
     vim_configure \
-                  --disable-canberra \
-                  --enable-gui=no \
-                  --with-x=no
+        --disable-canberra \
+        --enable-gui=no \
+        --with-x=no
     popd
 build       : |
     # The gvim build is a superset of the vim build so we can hit a 100% ccache hit rate with the latter by using CCACHE_BASEDIR

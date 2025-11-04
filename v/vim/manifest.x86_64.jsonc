@@ -615,6 +615,7 @@
 				"/usr/share/vim/vim91/compiler/tcl.vim",
 				"/usr/share/vim/vim91/compiler/tex.vim",
 				"/usr/share/vim/vim91/compiler/tidy.vim",
+				"/usr/share/vim/vim91/compiler/tombi.vim",
 				"/usr/share/vim/vim91/compiler/ts-node.vim",
 				"/usr/share/vim/vim91/compiler/tsc.vim",
 				"/usr/share/vim/vim91/compiler/typedoc.vim",
@@ -1134,6 +1135,7 @@
 				"/usr/share/vim/vim91/ftplugin/snakemake.vim",
 				"/usr/share/vim/vim91/ftplugin/solidity.vim",
 				"/usr/share/vim/vim91/ftplugin/solution.vim",
+				"/usr/share/vim/vim91/ftplugin/soy.vim",
 				"/usr/share/vim/vim91/ftplugin/spajson.vim",
 				"/usr/share/vim/vim91/ftplugin/spec.vim",
 				"/usr/share/vim/vim91/ftplugin/sql.vim",
@@ -2735,6 +2737,6 @@
 		}
 	},
 	"source-name": "vim",
-	"source-release": "14",
-	"source-version": "9.1.1829"
+	"source-release": "15",
+	"source-version": "9.1.1896"
 }
