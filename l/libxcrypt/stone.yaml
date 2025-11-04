@@ -4,12 +4,12 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : libxcrypt
-version     : '4.4.38'
-release     : 8
+version     : '4.5.0'
+release     : 9
 homepage    : https://github.com/besser82/libxcrypt
 upstreams   :
-    - https://github.com/besser82/libxcrypt/releases/download/v4.4.38/libxcrypt-4.4.38.tar.xz:
-        hash: 80304b9c306ea799327f01d9a7549bdb28317789182631f1b54f4511b4206dd6
+    - https://github.com/besser82/libxcrypt/releases/download/v4.5.0/libxcrypt-4.5.0.tar.xz:
+        hash: 825e764e4ff2e6304adb814cda297074b222d54a04edbd8ebc7cf58fc3af857d
         unpack: false
         rename: libxcrypt.tar.xz
 summary     : Extended crypt library
@@ -25,9 +25,6 @@ setup       : |
     mkdir compat regular
     bsdtar-static -xf %(sourcedir)/libxcrypt.tar.xz --strip-components=1 -C compat
     bsdtar-static -xf %(sourcedir)/libxcrypt.tar.xz --strip-components=1 -C regular
-
-    # version script assignment of 'XCRYPT_2.0' to symbol 'crypt_gensalt_r' failed: symbol not defined
-    export LDFLAGS+=" -Wl,--undefined-version"
 
     function xcrypt_configure() {
         %configure \

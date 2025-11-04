@@ -120,6 +120,6 @@
 		}
 	},
 	"source-name": "libxcrypt",
-	"source-release": "8",
-	"source-version": "4.4.38"
+	"source-release": "9",
+	"source-version": "4.5.0"
 }
