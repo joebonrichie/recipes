@@ -4,12 +4,12 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : qt5-base
-version     : 5.15.17+kde.c5b9db06
-release     : 14
+version     : 5.15.18+kde.bebdfd54
+release     : 15
 homepage    : https://www.qt.io
 upstreams   :
     - git|https://invent.kde.org/qt/qt/qtbase.git:
-        ref: c5b9db065ca5682b0bee339197c847da8b2710c1
+        ref: bebdfd54917e25d1c100e6bd9f5dd53c2e645fd8
 summary     : Cross platform application and UI framework
 description : |
     Cross platform application and UI framework
@@ -37,12 +37,15 @@ builddeps   :
     - pkgconfig(libdrm)
     - pkgconfig(libinput)
     - pkgconfig(libjpeg)
+    - pkgconfig(libmariadb)
     - pkgconfig(libpcre2-8)
     - pkgconfig(libpng)
+    - pkgconfig(libproxy-1.0)
     - pkgconfig(libssl)
     - pkgconfig(libsystemd)
     - pkgconfig(libzstd)
     - pkgconfig(md4c)
+    - pkgconfig(mtdev)
     - pkgconfig(shared-mime-info)
     - pkgconfig(sqlite3)
     - pkgconfig(tslib)
@@ -58,7 +61,7 @@ builddeps   :
     - pkgconfig(zlib)
     - vulkan-headers
 setup       : |
-    # TODO build with MariaDB/Mysql, Postgresql
+    # TODO build with Postgresql
 
     %patch %(pkgdir)/0001-Adjust-build-flags.patch
     %patch %(pkgdir)/stateless/0001-Support-stateless-config-directories.patch
@@ -98,6 +101,7 @@ setup       : |
                 -headerdir %(includedir) \
                 -sysconfdir /etc/xdg \
                 -journald \
+                -libproxy \
                 -ltcg \
                 -no-mimetype-database \
                 -no-rpath \
@@ -139,10 +143,41 @@ packages    :
     - "%(name)":
         rundeps:
             - shared-mime-info
+
+    - "%(name)-gui":
+        summary: Qt5 GUI-related libraries
+        description: Qt5 GUI-related libraries
+        paths:
+            - /usr/lib/libQt5Egl*so.*
+            - /usr/lib/libQt5Gui.so.*
+            - /usr/lib/libQt5OpenGL.so.*
+            - /usr/lib/libQt5PrintSupport.so.*
+            - /usr/lib/libQt5Widgets.so.*
+            - /usr/lib/libQt5XcbQpa.so.*
+            - /usr/lib/qt5/plugins/egldeviceintegrations/*.so
+            - /usr/lib/qt5/plugins/generic/libqevdev*.so
+            - /usr/lib/qt5/plugins/generic/libqlibinputplugin.so
+            - /usr/lib/qt5/plugins/generic/libqtslibplugin.so
+            - /usr/lib/qt5/plugins/generic/libqtuiotouchplugin.so
+            - /usr/lib/qt5/plugins/imageformats/*.so
+            - /usr/lib/qt5/plugins/platforminputcontexts/*.so
+            - /usr/lib/qt5/plugins/platforms/*.so
+            - /usr/lib/qt5/plugins/platformthemes/*.so
+            - /usr/lib/qt5/plugins/printsupport/*.so
+            - /usr/lib/qt5/plugins/xcbglintegrations/*.so
+
+    - "%(name)-mysql":
+        summary: Qt5 MySQL driver
+        description: Qt5 MySQL driver
+        paths:
+            - /usr/lib/qt5/plugins/sqldrivers/libqsqlmysql.so
+
     - "%(name)-devel":
         paths:
             - /usr/bin
         rundeps:
+            - "%(name)-gui"
+            - "%(name)-mysql"
             - binary(perl)
             - pkgconfig(fontconfig)
             - pkgconfig(freetype2)
