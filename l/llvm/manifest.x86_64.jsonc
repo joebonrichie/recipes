@@ -1375,7 +1375,7 @@
 				"/usr/lib/clang/21/include/zos_wrappers/builtins.h",
 				"/usr/lib/libclang-cpp.so.21.1",
 				"/usr/lib/libclang.so.21.1",
-				"/usr/lib/libclang.so.21.1.4"
+				"/usr/lib/libclang.so.21.1.5"
 			],
 			"name": "clang-libs",
 			"provides": [
@@ -4489,7 +4489,7 @@
 				"/usr/bin/lldb-instr",
 				"/usr/bin/lldb-server",
 				"/usr/lib/liblldb.so.21.1",
-				"/usr/lib/liblldb.so.21.1.4",
+				"/usr/lib/liblldb.so.21.1.5",
 				"/usr/lib/liblldbIntelFeatures.so.21.1",
 				"/usr/lib/python3.11/site-packages/lldb/__init__.py",
 				"/usr/lib/python3.11/site-packages/lldb/__pycache__/__init__.cpython-311.pyc",
@@ -10268,6 +10268,6 @@
 		}
 	},
 	"source-name": "llvm",
-	"source-release": "40",
-	"source-version": "21.1.4"
+	"source-release": "41",
+	"source-version": "21.1.5"
 }
