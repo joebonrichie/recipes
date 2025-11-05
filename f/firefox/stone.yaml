@@ -5,7 +5,7 @@
 #
 name        : firefox
 version     : 144.0.2
-release     : 45
+release     : 46
 homepage    : https://www.mozilla.org/
 upstreams   :
     - https://ftp.mozilla.org/pub/firefox/releases/144.0.2/source/firefox-144.0.2.source.tar.xz:
