@@ -1,8 +1,61 @@
-From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From mboxrd@z Thu Jan  1 00:00:00 1970
+Received: from out-179.mta1.migadu.com (out-179.mta1.migadu.com [95.215.58.179])
+	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+	(No client certificate requested)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 1F61025F98E
+	for <linux-kernel@vger.kernel.org>; Sun,  2 Nov 2025 21:53:46 +0000 (UTC)
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.client-ip=95.215.58.179
+ARC-Seal:i=1; a=rsa-sha256; d=subspace.kernel.org; s=arc-20240116;
+	t=1762120433; cv=none; b=rrEiHigWvrm6/IPk+QIss4IoifRnnrKX223lj7GTSbB/5ALwdVfFr4+paIWlgraXm1PpON/k2SNogcHv4fxiI6OnYC4DY2wcd8b4H3sofRCmkFe1IIAMNfkx/yhMe01n3/FYHYL6UuMOhti6eJ/AGN3gFRvTLO2KrZRLBrl1Kp4=
+ARC-Message-Signature:i=1; a=rsa-sha256; d=subspace.kernel.org;
+	s=arc-20240116; t=1762120433; c=relaxed/simple;
+	bh=5M5dfxKMxOgVQuwNsrjhqaiyq5YR2f8lFTDeqxaPNIs=;
+	h=From:To:Cc:Subject:Date:Message-ID:In-Reply-To:References:
+	 MIME-Version; b=OMRU8QbAMC1s4n00AmFuaWKWtN8mucquogyeNUIrBL5ziuqVVPq9nVIEnW5i8dVKP3MUec64d5UK3zQD42AAJdn+lKLSEEN0C87ZR03UjmR7BF5m09wPXlpAY4SOo+o+mndkRjdmTnIxW+E5hX3JEeYk/RBEBUuxyEnE1SFEPf8=
+ARC-Authentication-Results:i=1; smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=linux.dev; spf=pass smtp.mailfrom=linux.dev; dkim=pass (1024-bit key) header.d=linux.dev header.i=@linux.dev header.b=rGbAz/Hq; arc=none smtp.client-ip=95.215.58.179
+Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=linux.dev
+Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=linux.dev
+Authentication-Results: smtp.subspace.kernel.org;
+	dkim=pass (1024-bit key) header.d=linux.dev header.i=@linux.dev header.b="rGbAz/Hq"
+X-Report-Abuse: Please report any abuse attempt to abuse@migadu.com and include these headers.
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linux.dev; s=key1;
+	t=1762120425;
+	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+	 to:to:cc:cc:mime-version:mime-version:
+	 content-transfer-encoding:content-transfer-encoding:
+	 in-reply-to:in-reply-to:references:references;
+	bh=QL3UKpHLu5r1XOGPuTVafKA6rYdWFKZTBoB+dqZk8dI=;
+	b=rGbAz/HqsuRYKygSMwwpxBET+rnggjPBppyGm/kBcoD4AFEfWaXqUxQAlmoS9O/FFLv13K
+	3yKmdh2e3CWN7roIlMA5Yq/mOGMZ/ncOurmtZfz/iJA8FRMM7UVYSO3BJine2XkqPJcI66
+	hyoX0+F55PYkfit9iYJDY3SAdFOFZbo=
+From: Denis Benato <denis.benato@linux.dev>
+To: linux-kernel@vger.kernel.org
+Cc: platform-driver-x86@vger.kernel.org,
+	"Hans de Goede" <hansg@kernel.org>,
+	=?UTF-8?q?Ilpo=20J=C3=A4rvinen?= <ilpo.jarvinen@linux.intel.com>,
+	"Limonciello, Mario" <mario.limonciello@amd.com>,
+	"Luke D . Jones" <luke@ljones.dev>,
+	"Alok Tiwari" <alok.a.tiwari@oracle.com>,
+	"Derek John Clark" <derekjohn.clark@gmail.com>,
+	"Mateusz Schyboll" <dragonn@op.pl>,
+	porfet828@gmail.com,
+	"Denis Benato" <benato.denis96@gmail.com>,
+	Denis Benato <denis.benato@linux.dev>
+Subject: [PATCH v17 9/9] platform/x86: asus-armoury: add ppt_* and nv_* tuning knobs
+Date: Sun,  2 Nov 2025 22:53:19 +0100
+Message-ID: <20251102215319.3126879-10-denis.benato@linux.dev>
+In-Reply-To: <20251102215319.3126879-1-denis.benato@linux.dev>
+References: <20251102215319.3126879-1-denis.benato@linux.dev>
+Precedence: bulk
+X-Mailing-List: linux-kernel@vger.kernel.org
+List-Id: <linux-kernel.vger.kernel.org>
+List-Subscribe: <mailto:linux-kernel+subscribe@vger.kernel.org>
+List-Unsubscribe: <mailto:linux-kernel+unsubscribe@vger.kernel.org>
+MIME-Version: 1.0
+Content-Transfer-Encoding: 8bit
+X-Migadu-Flow: FLOW_OUT
+
 From: "Luke D. Jones" <luke@ljones.dev>
-Date: Thu, 30 Oct 2025 14:03:20 +0100
-Subject: [PATCH 09/26] platform/x86: asus-armoury: add ppt_* and nv_* tuning
- knobs
 
 Adds the ppt_* and nv_* tuning knobs that are available via WMI methods
 and adds proper min/max levels plus defaults.
@@ -38,7 +91,7 @@ Tested-by: Porfet Lillian <porfet828@gmail.com>
  3 files changed, 1560 insertions(+), 6 deletions(-)
 
 diff --git a/drivers/platform/x86/asus-armoury.c b/drivers/platform/x86/asus-armoury.c
-index 63579034756a..9f0bbdc45ca0 100644
+index b5a9783548a6..d57fbb5dc3d3 100644
 --- a/drivers/platform/x86/asus-armoury.c
 +++ b/drivers/platform/x86/asus-armoury.c
 @@ -30,6 +30,7 @@
@@ -103,7 +156,7 @@ index 63579034756a..9f0bbdc45ca0 100644
  	u32 mini_led_dev_id;
  	u32 gpu_mux_dev_id;
  };
-@@ -918,6 +949,15 @@ static ssize_t cores_performance_current_value_store(struct kobject *kobj,
+@@ -928,6 +959,15 @@ static ssize_t cores_performance_current_value_store(struct kobject *kobj,
  ASUS_ATTR_GROUP_CORES_RW(cores_performance, "cores_performance",
  			 "Set the max available performance cores");
  
@@ -119,7 +172,7 @@ index 63579034756a..9f0bbdc45ca0 100644
  static ssize_t cores_efficiency_min_value_show(struct kobject *kobj, struct kobj_attribute *attr,
  					       char *buf)
  {
-@@ -973,6 +1013,24 @@ ASUS_ATTR_GROUP_BOOL_RW(screen_auto_brightness, "screen_auto_brightness",
+@@ -983,6 +1023,24 @@ ASUS_ATTR_GROUP_BOOL_RW(screen_auto_brightness, "screen_auto_brightness",
  			"Set the panel brightness to Off<0> or On<1>");
  ASUS_ATTR_GROUP_BOOL_RO(egpu_connected, "egpu_connected", ASUS_WMI_DEVID_EGPU_CONNECTED,
  			"Show the eGPU connection status");
@@ -144,7 +197,7 @@ index 63579034756a..9f0bbdc45ca0 100644
  
  /* If an attribute does not require any special case handling add it here */
  static const struct asus_attr_group armoury_attr_groups[] = {
-@@ -983,6 +1041,16 @@ static const struct asus_attr_group armoury_attr_groups[] = {
+@@ -993,6 +1051,16 @@ static const struct asus_attr_group armoury_attr_groups[] = {
  	{ &cores_efficiency_attr_group, ASUS_WMI_DEVID_CORES_MAX },
  	{ &cores_performance_attr_group, ASUS_WMI_DEVID_CORES_MAX },
  
@@ -161,7 +214,7 @@ index 63579034756a..9f0bbdc45ca0 100644
  	{ &charge_mode_attr_group, ASUS_WMI_DEVID_CHARGE_MODE },
  	{ &boot_sound_attr_group, ASUS_WMI_DEVID_BOOT_SOUND },
  	{ &mcu_powersave_attr_group, ASUS_WMI_DEVID_MCU_POWERSAVE },
-@@ -991,8 +1059,75 @@ static const struct asus_attr_group armoury_attr_groups[] = {
+@@ -1001,8 +1069,76 @@ static const struct asus_attr_group armoury_attr_groups[] = {
  	{ &screen_auto_brightness_attr_group, ASUS_WMI_DEVID_SCREEN_AUTO_BRIGHTNESS },
  };
  
@@ -231,13 +284,14 @@ index 63579034756a..9f0bbdc45ca0 100644
 +
  static int asus_fw_attr_add(void)
  {
++	const struct rog_tunables *const ac_rog_tunables = asus_armoury.rog_tunables[ASUS_ROG_TUNABLE_DC];
 +	const struct power_limits *limits;
 +	bool should_create;
 +	const char *name;
  	int err, i;
  
  	asus_armoury.fw_attr_dev = device_create(&firmware_attributes_class, NULL, MKDEV(0, 0),
-@@ -1049,12 +1184,29 @@ static int asus_fw_attr_add(void)
+@@ -1059,12 +1195,28 @@ static int asus_fw_attr_add(void)
  		if (!armoury_has_devstate(armoury_attr_groups[i].wmi_devid))
  			continue;
  
@@ -252,10 +306,9 @@ index 63579034756a..9f0bbdc45ca0 100644
 +		name = armoury_attr_groups[i].attr_group->name;
 +
 +		/* Check if this is a power-related tunable requiring limits */
-+		if (asus_armoury.rog_tunables[ASUS_ROG_TUNABLE_AC] &&
-+		    asus_armoury.rog_tunables[ASUS_ROG_TUNABLE_AC]->power_limits &&
++		if (ac_rog_tunables && ac_rog_tunables->power_limits &&
 +		    is_power_tunable_attr(name)) {
-+			limits = asus_armoury.rog_tunables[ASUS_ROG_TUNABLE_AC]->power_limits;
++			limits = ac_rog_tunables->power_limits;
 +			/* Check only AC: if not present then DC won't be either */
 +			should_create = has_valid_limit(name, limits);
 +			if (!should_create)
@@ -273,7 +326,7 @@ index 63579034756a..9f0bbdc45ca0 100644
  		}
  	}
  
-@@ -1083,6 +1235,132 @@ static int asus_fw_attr_add(void)
+@@ -1093,6 +1245,132 @@ static int asus_fw_attr_add(void)
  
  /* Init / exit ****************************************************************/
  
@@ -406,7 +459,7 @@ index 63579034756a..9f0bbdc45ca0 100644
  static int __init asus_fw_init(void)
  {
  	char *wmi_uid;
-@@ -1113,6 +1391,9 @@ static int __init asus_fw_init(void)
+@@ -1123,6 +1401,9 @@ static int __init asus_fw_init(void)
  		asus_armoury.cpu_cores_changeable = true;
  	}
  
@@ -416,7 +469,7 @@ index 63579034756a..9f0bbdc45ca0 100644
  	return asus_fw_attr_add();
  }
  
-@@ -1135,6 +1416,9 @@ static void __exit asus_fw_exit(void)
+@@ -1145,6 +1426,9 @@ static void __exit asus_fw_exit(void)
  	sysfs_remove_file(&asus_armoury.fw_attr_kset->kobj, &pending_reboot.attr);
  	kset_unregister(asus_armoury.fw_attr_kset);
  	device_destroy(&firmware_attributes_class, MKDEV(0, 0));
@@ -427,7 +480,7 @@ index 63579034756a..9f0bbdc45ca0 100644
  
  module_init(asus_fw_init);
 diff --git a/drivers/platform/x86/asus-armoury.h b/drivers/platform/x86/asus-armoury.h
-index c9f89f873251..da4b0a2b90d4 100644
+index 9b5fedc083b0..24b68990e2ee 100644
 --- a/drivers/platform/x86/asus-armoury.h
 +++ b/drivers/platform/x86/asus-armoury.h
 @@ -8,6 +8,7 @@
@@ -435,10 +488,10 @@ index c9f89f873251..da4b0a2b90d4 100644
  #define _ASUS_ARMOURY_H_
  
 +#include <linux/dmi.h>
+ #include <linux/sysfs.h>
  #include <linux/types.h>
  #include <linux/platform_device.h>
- 
-@@ -188,4 +189,1270 @@
+@@ -225,4 +226,1270 @@ ssize_t armoury_attr_uint_show(struct kobject *kobj, struct kobj_attribute *attr
  		.name = _fsname, .attrs = _attrname##_attrs		\
  	}
  
@@ -509,7 +562,7 @@ index c9f89f873251..da4b0a2b90d4 100644
 +		    tunables->power_limits->_attr##_max)			\
 +			return -EINVAL;						\
 +										\
-+		return attr_uint_store(kobj, attr, buf, count,			\
++		return armoury_attr_uint_store(kobj, attr, buf, count,		\
 +				       tunables->power_limits->_attr##_min,	\
 +				       tunables->power_limits->_attr##_max,	\
 +				       &tunables->_attr, _wmi);			\
@@ -1681,7 +1734,7 @@ index c9f89f873251..da4b0a2b90d4 100644
 +	},
 +	{
 +		.matches = {
-+			DMI_MATCH(DMI_BOARD_NAME, "RC73"),
++			DMI_MATCH(DMI_BOARD_NAME, "RC73XA"),
 +		},
 +		.driver_data = &(struct power_data) {
 +			.ac_data = &(struct power_limits) {
@@ -1710,10 +1763,10 @@ index c9f89f873251..da4b0a2b90d4 100644
 +
  #endif /* _ASUS_ARMOURY_H_ */
 diff --git a/include/linux/platform_data/x86/asus-wmi.h b/include/linux/platform_data/x86/asus-wmi.h
-index 3d236f8498d8..8fedf818563f 100644
+index 2bda18bc4103..51b7ccddbdaf 100644
 --- a/include/linux/platform_data/x86/asus-wmi.h
 +++ b/include/linux/platform_data/x86/asus-wmi.h
-@@ -145,6 +145,9 @@
+@@ -144,6 +144,9 @@
  
  #define ASUS_WMI_DEVID_APU_MEM		0x000600C1
  
@@ -1723,3 +1776,7 @@ index 3d236f8498d8..8fedf818563f 100644
  /* gpu mux switch, 0 = dGPU, 1 = Optimus */
  #define ASUS_WMI_DEVID_GPU_MUX		0x00090016
  #define ASUS_WMI_DEVID_GPU_MUX_VIVO	0x00090026
+-- 
+2.51.2
+
+
