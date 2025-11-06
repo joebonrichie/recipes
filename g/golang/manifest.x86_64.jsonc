@@ -2824,8 +2824,6 @@
 				"/usr/lib/golang/src/crypto/internal/fips140/subtle/xor_generic.go",
 				"/usr/lib/golang/src/crypto/internal/fips140/subtle/xor_loong64.go",
 				"/usr/lib/golang/src/crypto/internal/fips140/subtle/xor_loong64.s",
-				"/usr/lib/golang/src/crypto/internal/fips140/subtle/xor_mips64x.s",
-				"/usr/lib/golang/src/crypto/internal/fips140/subtle/xor_mipsx.s",
 				"/usr/lib/golang/src/crypto/internal/fips140/subtle/xor_ppc64x.s",
 				"/usr/lib/golang/src/crypto/internal/fips140/subtle/xor_riscv64.s",
 				"/usr/lib/golang/src/crypto/internal/fips140/tls12/cast.go",
@@ -9683,6 +9681,7 @@
 				"/usr/lib/golang/test/fixedbugs/issue7550.go",
 				"/usr/lib/golang/test/fixedbugs/issue75569.go",
 				"/usr/lib/golang/test/fixedbugs/issue7590.go",
+				"/usr/lib/golang/test/fixedbugs/issue76008.go",
 				"/usr/lib/golang/test/fixedbugs/issue7648.dir/a.go",
 				"/usr/lib/golang/test/fixedbugs/issue7648.dir/b.go",
 				"/usr/lib/golang/test/fixedbugs/issue7648.go",
@@ -10608,6 +10607,6 @@
 		}
 	},
 	"source-name": "golang",
-	"source-release": "24",
-	"source-version": "1.25.3"
+	"source-release": "25",
+	"source-version": "1.25.4"
 }
