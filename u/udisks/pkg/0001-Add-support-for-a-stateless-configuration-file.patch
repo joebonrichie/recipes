@@ -1,4 +1,4 @@
-From 4f5e81d8682f4e98cb3e69980f515ea37629e201 Mon Sep 17 00:00:00 2001
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
 From: Francisco Boni <boboniboni@gmail.com>
 Date: Tue, 14 Dec 2021 06:45:04 -0300
 Subject: [PATCH] Add support for a stateless configuration file
@@ -14,7 +14,7 @@ case the /etc/udisks/udisks2.conf file does not exist.
  1 file changed, 24 insertions(+), 6 deletions(-)
 
 diff --git a/src/udisksconfigmanager.c b/src/udisksconfigmanager.c
-index 97d74845..6f6f1277 100644
+index ae612335..098fbaa0 100644
 --- a/src/udisksconfigmanager.c
 +++ b/src/udisksconfigmanager.c
 @@ -145,7 +145,9 @@ parse_config_file (UDisksConfigManager         *manager,
@@ -28,8 +28,8 @@ index 97d74845..6f6f1277 100644
    gchar *load_preference;
    gchar *encryption;
    gchar *module_i;
-@@ -153,17 +155,32 @@ parse_config_file (UDisksConfigManager         *manager,
-   gchar **modules_tmp;
+@@ -154,17 +156,32 @@ parse_config_file (UDisksConfigManager         *manager,
+   GError *l_error = NULL;
  
    /* Get modules and means of loading */
 -  conf_filename = g_build_filename (G_DIR_SEPARATOR_S,
@@ -49,13 +49,13 @@ index 97d74845..6f6f1277 100644
    /* Load config */
    config_file = g_key_file_new ();
    g_key_file_set_list_separator (config_file, ',');
--  if (g_key_file_load_from_file (config_file, conf_filename, G_KEY_FILE_NONE, NULL))
+-  if (g_key_file_load_from_file (config_file, conf_filename, G_KEY_FILE_NONE, &l_error))
 +
 +  if (g_key_file_load_from_file (config_file, user_conf_filename, G_KEY_FILE_NONE, NULL))
 +  {
 +        conf_filename = user_conf_filename;
 +  }
-+  else if (g_key_file_load_from_file (config_file, system_conf_filename, G_KEY_FILE_NONE, NULL))
++  else if (g_key_file_load_from_file (config_file, system_conf_filename, G_KEY_FILE_NONE, &l_error))
 +  {
 +        conf_filename = system_conf_filename;
 +  }
@@ -64,12 +64,16 @@ index 97d74845..6f6f1277 100644
      {
        if (out_modules != NULL)
          {
-@@ -225,11 +242,12 @@ parse_config_file (UDisksConfigManager         *manager,
-     }
-   else
+@@ -228,7 +245,7 @@ parse_config_file (UDisksConfigManager         *manager,
      {
--      udisks_warning ("Can't load configuration file %s", conf_filename);
-+      udisks_warning ("Can't load configuration file %s", system_conf_filename);
+       if (l_error != NULL)
+         {
+-          udisks_warning ("Can't load configuration file %s: %s", conf_filename, l_error->message);
++          udisks_warning ("Can't load configuration file %s: %s", system_conf_filename, l_error->message);
+           g_error_free (l_error);
+         }
+       else
+@@ -239,7 +256,8 @@ parse_config_file (UDisksConfigManager         *manager,
      }
  
    g_key_file_free (config_file);
@@ -79,6 +83,3 @@ index 97d74845..6f6f1277 100644
  }
  
  static void
--- 
-2.41.0
-
