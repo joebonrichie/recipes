@@ -60,8 +60,6 @@
 				"/usr/include/nspr/md/_aix64.cfg",
 				"/usr/include/nspr/md/_darwin.cfg",
 				"/usr/include/nspr/md/_freebsd.cfg",
-				"/usr/include/nspr/md/_hpux32.cfg",
-				"/usr/include/nspr/md/_hpux64.cfg",
 				"/usr/include/nspr/md/_linux.cfg",
 				"/usr/include/nspr/md/_netbsd.cfg",
 				"/usr/include/nspr/md/_nto.cfg",
@@ -138,6 +136,6 @@
 		}
 	},
 	"source-name": "nspr",
-	"source-release": "6",
-	"source-version": "4.37"
+	"source-release": "7",
+	"source-version": "4.38"
 }
