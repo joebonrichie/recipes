@@ -4,10 +4,10 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : libksane
-version     : 25.08.2
-release     : 3
+version     : 25.08.3
+release     : 4
 upstreams   :
-    - https://download.kde.org/stable/release-service/25.08.2/src/libksane-25.08.2.tar.xz : da6b7377609f07896007db05e3323291bb16fcd2d6cd9c2c1b58e0f999ffba33
+    - https://download.kde.org/stable/release-service/25.08.3/src/libksane-25.08.3.tar.xz : 730bf4efcc9b823ba98c681492e4139379ab0c3e602e1e6eff29c04f176d6f68
 homepage    : https://invent.kde.org/graphics/libksane
 license     : GPL-2.0-or-later
 summary     : SANE Library interface for KDE
