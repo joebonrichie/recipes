@@ -132,6 +132,7 @@
 				"/usr/share/locale/pl/LC_MESSAGES/neochat.mo",
 				"/usr/share/locale/pt/LC_MESSAGES/neochat.mo",
 				"/usr/share/locale/pt_BR/LC_MESSAGES/neochat.mo",
+				"/usr/share/locale/ro/LC_MESSAGES/neochat.mo",
 				"/usr/share/locale/ru/LC_MESSAGES/neochat.mo",
 				"/usr/share/locale/sa/LC_MESSAGES/neochat.mo",
 				"/usr/share/locale/sk/LC_MESSAGES/neochat.mo",
@@ -164,6 +165,6 @@
 		}
 	},
 	"source-name": "neochat",
-	"source-release": "9",
-	"source-version": "25.08.2"
+	"source-release": "10",
+	"source-version": "25.08.3"
 }
