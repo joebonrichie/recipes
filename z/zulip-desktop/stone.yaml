@@ -1,0 +1,34 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : zulip-desktop
+version     : 5.12.2
+release     : 1
+upstreams   :
+    - https://github.com/zulip/zulip-desktop/archive/v5.12.2.tar.gz : ffd0473910889797ba8f0944c7819f38c4210c44e2e886ff8cb63a2a2f2b75e5
+homepage    : https://zulipchat.com
+license     : Apache-2.0
+summary     : Desktop client for Zulip
+description : |
+    Real-time team chat based on the email threading model
+networking  : yes
+builddeps   :
+    - binary(npm)
+setup       : |
+    %patch %(pkgdir)/0001-Disable-auto-update.patch
+
+    npm install
+build       : |
+    npm run pack
+install     : |
+    zulipdir=%(libdir)/%(name)
+
+    %install_dir %(installroot)$zulipdir
+    cp -a dist/linux-unpacked/* %(installroot)$zulipdir
+
+    %install_file build/zulip.png -t %(installroot)%(datadir)/icons/hicolor/512x512/apps/
+
+    %install_file %(pkgdir)/Zulip.desktop -t %(installroot)%(datadir)/applications
+    %install_exe %(pkgdir)/zulip.sh %(installroot)%(bindir)/zulip
