@@ -5,7 +5,7 @@
 #
 name        : nautilus
 version     : "49.1"
-release     : 15
+release     : 16
 homepage    : https://apps.gnome.org/Nautilus/
 upstreams   :
     - https://download.gnome.org/sources/nautilus/49/nautilus-49.1.tar.xz : add2a0e410fd22da2851ddd0c5b3d22c9e9d8c33111511f336961e3b461b535e
@@ -36,15 +36,17 @@ builddeps   :
     - pkgconfig(libxml-2.0)
     - pkgconfig(tinysparql-3.0)
 rundeps     :
+    - glycin-thumbnailer # Needed for image thumbnails
     - localsearch
-    # Moss upgrade bug
-    - gstreamer-plugins-base
-environment : |
-    export CFLAGS="${CFLAGS} -Wno-error=missing-include-dirs"
 setup       : |
     %patch %(pkgdir)/default-terminal.patch
-    %meson -Ddocs=false
+    %meson \
+        -Ddocs=true
 build       : |
     %meson_build
 install     : |
     %meson_install
+packages    :
+    - "%(name)-devel":
+        paths:
+            - /usr/share/doc/nautilus/
