@@ -1,0 +1,92 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: Reilly Brogan <reilly@reillybrogan.com>
+Date: Sat, 8 Nov 2025 12:16:18 -0600
+Subject: [PATCH] Fix formatting for gsettings font configurations
+
+As mentioned in 487714 the new monospace font setting is causing issues with emacs. This is because the schema for [font settings](https://gitlab.gnome.org/GNOME/gsettings-desktop-schemas/-/blob/gnome-49/schemas/org.gnome.desktop.interface.gschema.xml.in?ref_type=heads#L107) specifies that they should be in `$fontFamily $fontStyle $pointSize` (IE `Hack Bold 14`) when we were adding it as `$fontFamily, $fontStyle $pointSize` (IE `Hack, Bold 14`).
+
+Fix this by removing the extra comma when inserting font settings into the gsettings database only. I verified that this format is indeed what it looks like when the setting is changed via gnome-tweaks.
+
+CCBUG: 487714
+---
+ kded/configvalueprovider.cpp | 8 ++++----
+ kded/configvalueprovider.h   | 4 ++--
+ kded/gtkconfig.cpp           | 9 +++++----
+ 3 files changed, 11 insertions(+), 10 deletions(-)
+
+diff --git a/kded/configvalueprovider.cpp b/kded/configvalueprovider.cpp
+index 643eb1c..376fe43 100644
+--- a/kded/configvalueprovider.cpp
++++ b/kded/configvalueprovider.cpp
+@@ -40,7 +40,7 @@ ConfigValueProvider::ConfigValueProvider()
+ {
+ }
+ 
+-QString ConfigValueProvider::fixedName() const
++QString ConfigValueProvider::fixedName(const bool isGsettingsFormat) const
+ {
+     static const QFont defaultFixed(QStringLiteral("Hack"), 10);
+ 
+@@ -49,10 +49,10 @@ QString ConfigValueProvider::fixedName() const
+     static QFont font;
+     font.fromString(fixedAsString);
+     const QString fontStyle = fontStyleHelper(font);
+-    return font.family() + QStringLiteral(", ") + fontStyle + ' ' + QString::number(font.pointSize());
++    return font.family() + (isGsettingsFormat ? " " : QStringLiteral(", ")) + fontStyle + ' ' + QString::number(font.pointSize());
+ }
+ 
+-QString ConfigValueProvider::fontName() const
++QString ConfigValueProvider::fontName(const bool isGsettingsFormat) const
+ {
+     static const QFont defaultFont(QStringLiteral("Noto Sans"), 10);
+ 
+@@ -61,7 +61,7 @@ QString ConfigValueProvider::fontName() const
+     static QFont font;
+     font.fromString(fontAsString);
+     const QString fontStyle = fontStyleHelper(font);
+-    return font.family() + QStringLiteral(", ") + fontStyle + ' ' + QString::number(font.pointSize());
++    return font.family() + (isGsettingsFormat ? " " : QStringLiteral(", ")) + fontStyle + ' ' + QString::number(font.pointSize());
+ }
+ 
+ QString ConfigValueProvider::fontStyleHelper(const QFont &font) const
+diff --git a/kded/configvalueprovider.h b/kded/configvalueprovider.h
+index 1b322ee..07bcaaa 100644
+--- a/kded/configvalueprovider.h
++++ b/kded/configvalueprovider.h
+@@ -18,8 +18,8 @@ class ConfigValueProvider
+ public:
+     ConfigValueProvider();
+ 
+-    QString fixedName() const;
+-    QString fontName() const;
++    QString fixedName(const bool isGsettingsFormat) const;
++    QString fontName(const bool isGsettingsFormat) const;
+     QString iconThemeName() const;
+     QString cursorThemeName() const;
+     QString soundThemeName() const;
+diff --git a/kded/gtkconfig.cpp b/kded/gtkconfig.cpp
+index f36113b..3003176 100644
+--- a/kded/gtkconfig.cpp
++++ b/kded/gtkconfig.cpp
+@@ -98,16 +98,17 @@ void GtkConfig::showGtkThemePreview(const QString &themeName) const
+ 
+ void GtkConfig::setFixed() const
+ {
+-    const QString configfixedName = configValueProvider->fixedName();
++    const QString configfixedName = configValueProvider->fixedName(true);
+     GSettingsEditor::setValue("monospace-font-name", configfixedName);
+ }
+ 
+ void GtkConfig::setFont() const
+ {
+-    const QString configFontName = configValueProvider->fontName();
++    const QString configFontName = configValueProvider->fontName(false);
++    const QString configFontNameGsettings = configValueProvider->fontName(true);
+     Gtk2ConfigEditor::setValue(QStringLiteral("gtk-font-name"), configFontName);
+-    GSettingsEditor::setValue("document-font-name", configFontName);
+-    GSettingsEditor::setValue("font-name", configFontName);
++    GSettingsEditor::setValue("document-font-name", configFontNameGsettings);
++    GSettingsEditor::setValue("font-name", configFontNameGsettings);
+     SettingsIniEditor::setValue(QStringLiteral("gtk-font-name"), configFontName);
+     XSettingsEditor::setValue(QStringLiteral("Gtk/FontName"), configFontName);
+ }
