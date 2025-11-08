@@ -255,6 +255,7 @@
 				"soname(libglib-2.0.so.0(x86_64))",
 				"soname(libgobject-2.0.so.0(x86_64))",
 				"soname(liblcms2.so.2(x86_64))",
+				"soname(libm.so.6(x86_64))",
 				"soname(libseccomp.so.2(x86_64))"
 			],
 			"files": [
@@ -271,6 +272,6 @@
 		}
 	},
 	"source-name": "glycin",
-	"source-release": "15",
-	"source-version": "2.0.4"
+	"source-release": "16",
+	"source-version": "2.0.5"
 }
