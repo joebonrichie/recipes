@@ -1,0 +1,6 @@
+releases:
+  id: 69977
+  rss: https://gitlab.gnome.org/GNOME/NetworkManager-openvpn/-/tags?format=atom
+security:
+  # Last checked 20251110
+  cpe: ~
