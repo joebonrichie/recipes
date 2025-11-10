@@ -1,11 +1,62 @@
-From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
-From: "Luke D. Jones" <luke@ljones.dev>
-Date: Thu, 30 Oct 2025 14:03:13 +0100
-Subject: [PATCH 02/26] platform/x86: asus-armoury: move existing tunings to
- asus-armoury module
+From mboxrd@z Thu Jan  1 00:00:00 1970
+Received: from out-174.mta1.migadu.com (out-174.mta1.migadu.com [95.215.58.174])
+	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+	(No client certificate requested)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id D6B8F225A34
+	for <linux-kernel@vger.kernel.org>; Sun,  2 Nov 2025 21:53:36 +0000 (UTC)
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.client-ip=95.215.58.174
+ARC-Seal:i=1; a=rsa-sha256; d=subspace.kernel.org; s=arc-20240116;
+	t=1762120420; cv=none; b=sOFLJ7ZVqFbCq+Z1JJ2NvKuigLCac72/6UI8hM2+6BshqZV5p1HOj0aBNrYDqQeV5Fkv8K7AIopzbrNrepw8bbj9uu2YW8MxauO80LNNkthr0cTPFBKxO7zw+sb5Kz+QtsA/47DupJ5aHraNbhJxcpCdULAMyjxnX3SSIyIHOKE=
+ARC-Message-Signature:i=1; a=rsa-sha256; d=subspace.kernel.org;
+	s=arc-20240116; t=1762120420; c=relaxed/simple;
+	bh=8P8VWxtCLT7DWQ4yS4ZIeX5CuWYKp09rbWi5Hy5rtlc=;
+	h=From:To:Cc:Subject:Date:Message-ID:In-Reply-To:References:
+	 MIME-Version:Content-Type; b=eTnuRXfJZBWe0WLbhoYpNEGC/kntVQWGBaMxkFVwrjbPvg0CtcZtzJ/0QP0ORtRcWSxNjjGzhQUSpIM1buJX7+snkjd/2CTBErBkV8FNGXAAXK7h9AMQNgZJp9lt5YAU5rDXYjA6vtx80bOnBQc83dEDA15tmtOjDgqkOrCjuxk=
+ARC-Authentication-Results:i=1; smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=linux.dev; spf=pass smtp.mailfrom=linux.dev; dkim=pass (1024-bit key) header.d=linux.dev header.i=@linux.dev header.b=XoxI7xP7; arc=none smtp.client-ip=95.215.58.174
+Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=linux.dev
+Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=linux.dev
+Authentication-Results: smtp.subspace.kernel.org;
+	dkim=pass (1024-bit key) header.d=linux.dev header.i=@linux.dev header.b="XoxI7xP7"
+X-Report-Abuse: Please report any abuse attempt to abuse@migadu.com and include these headers.
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linux.dev; s=key1;
+	t=1762120414;
+	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+	 content-transfer-encoding:content-transfer-encoding:
+	 in-reply-to:in-reply-to:references:references;
+	bh=JOLwrE5mYpBWBN/QUoklQH4NcsFS35ygJzCDuE9ps+8=;
+	b=XoxI7xP7Krl3HyM8PLaeT8mBt88ZxFBJ9OqL5lsDA2e5yeWb8dUcULVj9p+SNfkSaBLm5e
+	WFK0CxJRS/iS1qlnIKBFGyft7xJ6MtPwFjwCFG7C4jXRL5xxR0yRtU6dsAoWlPsL7witYg
+	KiEWvPyVnH7gZeM0JyP0lU1/sGKuFyc=
+From: Denis Benato <denis.benato@linux.dev>
+To: linux-kernel@vger.kernel.org
+Cc: platform-driver-x86@vger.kernel.org,
+	"Hans de Goede" <hansg@kernel.org>,
+	=?UTF-8?q?Ilpo=20J=C3=A4rvinen?= <ilpo.jarvinen@linux.intel.com>,
+	"Limonciello, Mario" <mario.limonciello@amd.com>,
+	"Luke D . Jones" <luke@ljones.dev>,
+	"Alok Tiwari" <alok.a.tiwari@oracle.com>,
+	"Derek John Clark" <derekjohn.clark@gmail.com>,
+	"Mateusz Schyboll" <dragonn@op.pl>,
+	porfet828@gmail.com,
+	"Denis Benato" <benato.denis96@gmail.com>,
+	Denis Benato <denis.benato@linux.dev>
+Subject: [PATCH v17 2/9] platform/x86: asus-armoury: move existing tunings to asus-armoury module
+Date: Sun,  2 Nov 2025 22:53:12 +0100
+Message-ID: <20251102215319.3126879-3-denis.benato@linux.dev>
+In-Reply-To: <20251102215319.3126879-1-denis.benato@linux.dev>
+References: <20251102215319.3126879-1-denis.benato@linux.dev>
+Precedence: bulk
+X-Mailing-List: linux-kernel@vger.kernel.org
+List-Id: <linux-kernel.vger.kernel.org>
+List-Subscribe: <mailto:linux-kernel+subscribe@vger.kernel.org>
+List-Unsubscribe: <mailto:linux-kernel+unsubscribe@vger.kernel.org>
 MIME-Version: 1.0
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
+X-Migadu-Flow: FLOW_OUT
+
+From: "Luke D. Jones" <luke@ljones.dev>
 
 The fw_attributes_class provides a much cleaner interface to all of the
 attributes introduced to asus-wmi. This patch moves all of these extra
@@ -35,18 +86,18 @@ Signed-off-by: Luke D. Jones <luke@ljones.dev>
  drivers/hid/hid-asus.c                        |   1 +
  drivers/platform/x86/Kconfig                  |  12 +
  drivers/platform/x86/Makefile                 |   1 +
- drivers/platform/x86/asus-armoury.c           | 756 ++++++++++++++++++
- drivers/platform/x86/asus-armoury.h           | 163 ++++
+ drivers/platform/x86/asus-armoury.c           | 763 ++++++++++++++++++
+ drivers/platform/x86/asus-armoury.h           | 200 +++++
  drivers/platform/x86/asus-wmi.c               |  10 +-
  .../platform_data/x86/asus-wmi-leds-ids.h     |  50 ++
- include/linux/platform_data/x86/asus-wmi.h    |  43 +-
- 8 files changed, 990 insertions(+), 46 deletions(-)
+ include/linux/platform_data/x86/asus-wmi.h    |  44 +-
+ 8 files changed, 1034 insertions(+), 47 deletions(-)
  create mode 100644 drivers/platform/x86/asus-armoury.c
  create mode 100644 drivers/platform/x86/asus-armoury.h
  create mode 100644 include/linux/platform_data/x86/asus-wmi-leds-ids.h
 
 diff --git a/drivers/hid/hid-asus.c b/drivers/hid/hid-asus.c
-index 8db9d4e7c3b0..c2f3989ec0cc 100644
+index a444d41e53b6..472bca54642b 100644
 --- a/drivers/hid/hid-asus.c
 +++ b/drivers/hid/hid-asus.c
 @@ -27,6 +27,7 @@
@@ -58,10 +109,10 @@ index 8db9d4e7c3b0..c2f3989ec0cc 100644
  #include <linux/usb.h> /* For to_usb_interface for T100 touchpad intf check */
  #include <linux/power_supply.h>
 diff --git a/drivers/platform/x86/Kconfig b/drivers/platform/x86/Kconfig
-index 6d238e120dce..5c1c07d1d232 100644
+index c122016d82f1..06ea761be25f 100644
 --- a/drivers/platform/x86/Kconfig
 +++ b/drivers/platform/x86/Kconfig
-@@ -250,6 +250,18 @@ config ASUS_WIRELESS
+@@ -262,6 +262,18 @@ config ASUS_WIRELESS
  	  If you choose to compile this driver as a module the module will be
  	  called asus-wireless.
  
@@ -81,10 +132,10 @@ index 6d238e120dce..5c1c07d1d232 100644
  	tristate "ASUS WMI Driver"
  	depends on ACPI_WMI
 diff --git a/drivers/platform/x86/Makefile b/drivers/platform/x86/Makefile
-index a0c5848513e3..4279f5443f30 100644
+index c7db2a88c11a..4b1220f9b194 100644
 --- a/drivers/platform/x86/Makefile
 +++ b/drivers/platform/x86/Makefile
-@@ -32,6 +32,7 @@ obj-$(CONFIG_APPLE_GMUX)	+= apple-gmux.o
+@@ -33,6 +33,7 @@ obj-$(CONFIG_APPLE_GMUX)	+= apple-gmux.o
  # ASUS
  obj-$(CONFIG_ASUS_LAPTOP)	+= asus-laptop.o
  obj-$(CONFIG_ASUS_WIRELESS)	+= asus-wireless.o
@@ -94,10 +145,10 @@ index a0c5848513e3..4279f5443f30 100644
  obj-$(CONFIG_ASUS_TF103C_DOCK)	+= asus-tf103c-dock.o
 diff --git a/drivers/platform/x86/asus-armoury.c b/drivers/platform/x86/asus-armoury.c
 new file mode 100644
-index 000000000000..c5fe61557582
+index 000000000000..8294fc8dcdd0
 --- /dev/null
 +++ b/drivers/platform/x86/asus-armoury.c
-@@ -0,0 +1,756 @@
+@@ -0,0 +1,763 @@
 +// SPDX-License-Identifier: GPL-2.0-or-later
 +/*
 + * Asus Armoury (WMI) attributes driver.
@@ -259,11 +310,13 @@ index 000000000000..c5fe61557582
 + * armoury_set_devstate() - Set the WMI function state.
 + * @attr: The kobj_attribute associated to called WMI function.
 + * @dev_id: The WMI method ID to call.
-+ * @retval:
-+ * * Pointer to where to store the value returned from WMI or NULL.
++ * @value: The new value to be set.
++ * @retval: Where to store the value returned from WMI or NULL.
 + *
 + * Intended usage is from sysfs attribute setting associated WMI function.
-+ * Before calling set the presence of the function should be checked.
++ * Before calling the presence of the function should be checked.
++ *
++ * Every WMI write MUST go through this function to enforce safety checks.
 + *
 + * Results !1 is usually considered a fail by ASUS, but some WMI methods
 + * (like eGPU or CPU cores) do use > 1 to return a status code or similar:
@@ -303,7 +356,7 @@ index 000000000000..c5fe61557582
 +	return 0;
 +}
 +
-+static int attr_enum_list(char *buf, size_t enum_values)
++static int armoury_attr_enum_list(char *buf, size_t enum_values)
 +{
 +	size_t i;
 +	int len = 0;
@@ -319,30 +372,9 @@ index 000000000000..c5fe61557582
 +	return len;
 +}
 +
-+/**
-+ * attr_uint_store() - Send an uint to WMI method if within min/max inclusive.
-+ * @kobj: Pointer to the driver object.
-+ * @attr: Pointer to the attribute calling this function.
-+ * @buf: The buffer to read from, this is parsed to `uint` type.
-+ * @count: Required by sysfs attribute macros, pass in from the callee attr.
-+ * @min: Minimum accepted value. Below this returns -EINVAL.
-+ * @max: Maximum accepted value. Above this returns -EINVAL.
-+ * @store_value: Pointer to where the parsed value should be stored.
-+ * @wmi_dev: The WMI function ID to use.
-+ *
-+ * This function is intended to be generic so it can be called from any "_store"
-+ * attribute which works only with integers.
-+ * Integer to be sent to the WMI method is range checked and
-+ * an error returned if out of range.
-+ *
-+ * If the value is valid and WMI is success then the sysfs attribute is notified
-+ * and if asus_bios_requires_reboot() is true then reboot attribute
-+ * is also notified.
-+ *
-+ * Returns: Either count, or an error.
-+ */
-+static ssize_t attr_uint_store(struct kobject *kobj, struct kobj_attribute *attr, const char *buf,
-+			      size_t count, u32 min, u32 max, u32 *store_value, u32 wmi_dev)
++ssize_t armoury_attr_uint_store(struct kobject *kobj, struct kobj_attribute *attr,
++				const char *buf, size_t count, u32 min, u32 max,
++				u32 *store_value, u32 wmi_dev)
 +{
 +	u32 value;
 +	int err;
@@ -368,6 +400,19 @@ index 000000000000..c5fe61557582
 +	return count;
 +}
 +
++ssize_t armoury_attr_uint_show(struct kobject *kobj, struct kobj_attribute *attr,
++				char *buf, u32 wmi_dev)
++{
++	u32 result;
++	int err;
++
++	err = armoury_get_devstate(attr, &result, wmi_dev);
++	if (err)
++		return err;
++
++	return sysfs_emit(buf, "%u\n", result);
++}
++
 +static ssize_t enum_type_show(struct kobject *kobj, struct kobj_attribute *attr,
 +			      char *buf)
 +{
@@ -375,43 +420,63 @@ index 000000000000..c5fe61557582
 +}
 +
 +/* Mini-LED mode **************************************************************/
++
++/* Values map for mini-led modes on 2023 and earlier models. */
++static u32 mini_led_mode1_map[] = {
++	[0] = ASUS_MINI_LED_OFF,
++	[1] = ASUS_MINI_LED_ON,
++};
++
++/* Values map for mini-led modes on 2024 and later models. */
++static u32 mini_led_mode2_map[] = {
++	[0] = ASUS_MINI_LED_2024_OFF,
++	[1] = ASUS_MINI_LED_2024_WEAK,
++	[2] = ASUS_MINI_LED_2024_STRONG,
++};
++
 +static ssize_t mini_led_mode_current_value_show(struct kobject *kobj,
 +						struct kobj_attribute *attr, char *buf)
 +{
-+	u32 value;
++	u32 *mini_led_mode_map;
++	size_t mini_led_mode_map_size;
++	u32 i, mode;
 +	int err;
 +
-+	err = armoury_get_devstate(attr, &value, asus_armoury.mini_led_dev_id);
++	switch (asus_armoury.mini_led_dev_id) {
++	case ASUS_WMI_DEVID_MINI_LED_MODE:
++		mini_led_mode_map = mini_led_mode1_map;
++		mini_led_mode_map_size = ARRAY_SIZE(mini_led_mode1_map);
++		break;
++
++	case ASUS_WMI_DEVID_MINI_LED_MODE2:
++		mini_led_mode_map = mini_led_mode2_map;
++		mini_led_mode_map_size = ARRAY_SIZE(mini_led_mode2_map);
++		break;
++
++	default:
++		pr_err("Unrecognized mini-LED device: %u\n", asus_armoury.mini_led_dev_id);
++		return -ENODEV;
++	}
++
++	err = armoury_get_devstate(attr, &mode, asus_armoury.mini_led_dev_id);
 +	if (err)
 +		return err;
 +
-+	value = FIELD_GET(ASUS_MINI_LED_MODE_MASK, 0);
++	mode = FIELD_GET(ASUS_MINI_LED_MODE_MASK, 0);
 +
-+	/*
-+	 * Remap the mode values to match previous generation mini-LED. The last gen
-+	 * WMI 0 == off, while on this version WMI 2 == off (flipped).
-+	 */
-+	if (asus_armoury.mini_led_dev_id == ASUS_WMI_DEVID_MINI_LED_MODE2) {
-+		switch (value) {
-+		case ASUS_MINI_LED_2024_WEAK:
-+			value = ASUS_MINI_LED_ON;
-+			break;
-+		case ASUS_MINI_LED_2024_STRONG:
-+			value = ASUS_MINI_LED_STRONG_MODE;
-+			break;
-+		case ASUS_MINI_LED_2024_OFF:
-+			value = ASUS_MINI_LED_OFF;
-+			break;
-+		}
-+	}
++	for (i = 0; i < mini_led_mode_map_size; i++)
++		return sysfs_emit(buf, "%u\n", mini_led_mode_map[i]);
 +
-+	return sysfs_emit(buf, "%u\n", value);
++	pr_warn("Unrecognized mini-LED mode: %u", mode);
++	return -EINVAL;
 +}
 +
 +static ssize_t mini_led_mode_current_value_store(struct kobject *kobj,
 +						 struct kobj_attribute *attr,
 +						 const char *buf, size_t count)
 +{
++	u32 *mini_led_mode_map;
++	size_t mini_led_mode_map_size;
 +	u32 mode;
 +	int err;
 +
@@ -419,37 +484,30 @@ index 000000000000..c5fe61557582
 +	if (err)
 +		return err;
 +
-+	if (asus_armoury.mini_led_dev_id == ASUS_WMI_DEVID_MINI_LED_MODE &&
-+	    mode > ASUS_MINI_LED_ON)
-+		return -EINVAL;
++	switch (asus_armoury.mini_led_dev_id) {
++	case ASUS_WMI_DEVID_MINI_LED_MODE:
++		mini_led_mode_map = mini_led_mode1_map;
++		mini_led_mode_map_size = ARRAY_SIZE(mini_led_mode1_map);
++		break;
 +
-+	/*
-+	 * Remap the mode values so expected behaviour is the same as the last
-+	 * generation of mini-LED with 0 == off, 1 == on.
-+	 */
-+	if (asus_armoury.mini_led_dev_id == ASUS_WMI_DEVID_MINI_LED_MODE2) {
-+		switch (mode) {
-+		case ASUS_MINI_LED_OFF:
-+			mode = ASUS_MINI_LED_2024_OFF;
-+			break;
-+		case ASUS_MINI_LED_ON:
-+			mode = ASUS_MINI_LED_2024_WEAK;
-+			break;
-+		case ASUS_MINI_LED_STRONG_MODE:
-+			mode = ASUS_MINI_LED_2024_STRONG;
-+			break;
-+		default:
-+			return -EINVAL;
-+		}
++	case ASUS_WMI_DEVID_MINI_LED_MODE2:
++		mini_led_mode_map = mini_led_mode2_map;
++		mini_led_mode_map_size = ARRAY_SIZE(mini_led_mode2_map);
++		break;
++
++	default:
++		pr_err("Unrecognized mini-LED devid: %u\n", asus_armoury.mini_led_dev_id);
++		return -EINVAL;
 +	}
 +
-+	err = armoury_set_devstate(attr, mode, NULL, asus_armoury.mini_led_dev_id);
-+	if (err)
-+		return err;
++	if (mode >= mini_led_mode_map_size) {
++		return pr_warn("mini-LED mode unrecognized device: %u\n", mode);
++		return -ENODEV;
++	}
 +
-+	sysfs_notify(kobj, NULL, attr->attr.name);
-+
-+	return count;
++	return armoury_attr_uint_store(kobj, attr, buf, count,
++				       0, mini_led_mode_map[mode],
++				       NULL, asus_armoury.mini_led_dev_id);
 +}
 +
 +static ssize_t mini_led_mode_possible_values_show(struct kobject *kobj,
@@ -457,9 +515,9 @@ index 000000000000..c5fe61557582
 +{
 +	switch (asus_armoury.mini_led_dev_id) {
 +	case ASUS_WMI_DEVID_MINI_LED_MODE:
-+		return sysfs_emit(buf, "0;1\n");
++		return armoury_attr_enum_list(buf, ARRAY_SIZE(mini_led_mode1_map));
 +	case ASUS_WMI_DEVID_MINI_LED_MODE2:
-+		return sysfs_emit(buf, "0;1;2\n");
++		return armoury_attr_enum_list(buf, ARRAY_SIZE(mini_led_mode2_map));
 +	default:
 +		return -ENODEV;
 +	}
@@ -687,12 +745,12 @@ index 000000000000..c5fe61557582
 +static ssize_t egpu_enable_possible_values_show(struct kobject *kobj, struct kobj_attribute *attr,
 +						char *buf)
 +{
-+	return attr_enum_list(buf, ARRAY_SIZE(egpu_status_map));
++	return armoury_attr_enum_list(buf, ARRAY_SIZE(egpu_status_map));
 +}
 +ASUS_ATTR_GROUP_ENUM(egpu_enable, "egpu_enable", "Enable the eGPU (also disables dGPU)");
 +
 +/* Simple attribute creation */
-+ASUS_ATTR_GROUP_ENUM_INT_RO(charge_mode, "charge_mode", ASUS_WMI_DEVID_CHARGE_MODE, "0;1;2",
++ASUS_ATTR_GROUP_ENUM_INT_RO(charge_mode, "charge_mode", ASUS_WMI_DEVID_CHARGE_MODE, "0;1;2\n",
 +			    "Show the current mode of charging");
 +ASUS_ATTR_GROUP_BOOL_RW(boot_sound, "boot_sound", ASUS_WMI_DEVID_BOOT_SOUND,
 +			"Set the boot POST sound");
@@ -856,24 +914,67 @@ index 000000000000..c5fe61557582
 +MODULE_ALIAS("wmi:" ASUS_NB_WMI_EVENT_GUID);
 diff --git a/drivers/platform/x86/asus-armoury.h b/drivers/platform/x86/asus-armoury.h
 new file mode 100644
-index 000000000000..9f2c98df5fd7
+index 000000000000..05d484d32244
 --- /dev/null
 +++ b/drivers/platform/x86/asus-armoury.h
-@@ -0,0 +1,163 @@
+@@ -0,0 +1,200 @@
 +/* SPDX-License-Identifier: GPL-2.0
 + *
 + * Definitions for kernel modules using asus-armoury driver
 + *
-+ *  Copyright (c) 2024 Luke Jones <luke@ljones.dev>
++ * Copyright (c) 2024 Luke Jones <luke@ljones.dev>
 + */
 +
 +#ifndef _ASUS_ARMOURY_H_
 +#define _ASUS_ARMOURY_H_
 +
++#include <linux/sysfs.h>
 +#include <linux/types.h>
 +#include <linux/platform_device.h>
 +
 +#define DRIVER_NAME "asus-armoury"
++
++/**
++ * armoury_attr_uint_store() - Send an uint to WMI method if within min/max.
++ * @kobj: Pointer to the driver object.
++ * @attr: Pointer to the attribute calling this function.
++ * @buf: The buffer to read from, this is parsed to `uint` type.
++ * @count: Required by sysfs attribute macros, pass in from the callee attr.
++ * @min: Minimum accepted value. Below this returns -EINVAL.
++ * @max: Maximum accepted value. Above this returns -EINVAL.
++ * @store_value: Pointer to where the parsed value should be stored.
++ * @wmi_dev: The WMI function ID to use.
++ *
++ * This function is intended to be generic so it can be called from any "_store"
++ * attribute which works only with integers.
++ *
++ * Integers to be sent to the WMI method is inclusive range checked and
++ * an error returned if out of range.
++ *
++ * If the value is valid and WMI is success then the sysfs attribute is notified
++ * and if asus_bios_requires_reboot() is true then reboot attribute
++ * is also notified.
++ *
++ * Returns: Either count, or an error.
++ */
++ssize_t armoury_attr_uint_store(struct kobject *kobj, struct kobj_attribute *attr,
++				const char *buf, size_t count, u32 min, u32 max,
++				u32 *store_value, u32 wmi_dev);
++
++/**
++ * armoury_attr_uint_show() - Receive an uint from a WMI method.
++ * @kobj: Pointer to the driver object.
++ * @attr: Pointer to the attribute calling this function.
++ * @buf: The buffer to write to, as an `uint` type.
++ * @wmi_dev: The WMI function ID to use.
++ *
++ * This function is intended to be generic so it can be called from any "_show"
++ * attribute which works only with integers.
++ *
++ * Returns: Either count, or an error.
++ */
++ssize_t armoury_attr_uint_show(struct kobject *kobj, struct kobj_attribute *attr,
++				char *buf, u32 wmi_dev);
 +
 +#define __ASUS_ATTR_RO(_func, _name)					\
 +	{								\
@@ -890,26 +991,20 @@ index 000000000000..9f2c98df5fd7
 +#define __ASUS_ATTR_RW(_func, _name) \
 +	__ATTR(_name, 0644, _func##_##_name##_show, _func##_##_name##_store)
 +
-+#define __WMI_STORE_INT(_attr, _min, _max, _wmi)			\
-+	static ssize_t _attr##_store(struct kobject *kobj,		\
-+				     struct kobj_attribute *attr,	\
-+				     const char *buf, size_t count)	\
-+	{								\
-+		return attr_uint_store(kobj, attr, buf, count, _min,	\
-+					_max, NULL, _wmi);		\
++#define __WMI_STORE_INT(_attr, _min, _max, _wmi)				\
++	static ssize_t _attr##_store(struct kobject *kobj,			\
++				     struct kobj_attribute *attr,		\
++				     const char *buf, size_t count)		\
++	{									\
++		return armoury_attr_uint_store(kobj, attr, buf, count, _min,	\
++					_max, NULL, _wmi);			\
 +	}
 +
 +#define ASUS_WMI_SHOW_INT(_attr, _fmt, _wmi)					\
 +	static ssize_t _attr##_show(struct kobject *kobj,			\
 +				    struct kobj_attribute *attr, char *buf)	\
 +	{									\
-+		u32 result;							\
-+		int err;							\
-+										\
-+		err = armoury_get_devstate(attr, &result, _wmi);		\
-+		if (err)							\
-+			return err;						\
-+		return sysfs_emit(buf, _fmt, result);				\
++		return armoury_attr_uint_show(kobj, attr, buf, _wmi);		\
 +	}
 +
 +/* Create functions and attributes for use in other macros or on their own */
@@ -1129,20 +1224,21 @@ index 000000000000..281b98ba0ca7
 +
 +#endif	/* __PLATFORM_DATA_X86_ASUS_WMI_LEDS_IDS_H */
 diff --git a/include/linux/platform_data/x86/asus-wmi.h b/include/linux/platform_data/x86/asus-wmi.h
-index dbd44d9fbb6f..71c68425b3b9 100644
+index dbd44d9fbb6f..8ea8925a0fc5 100644
 --- a/include/linux/platform_data/x86/asus-wmi.h
 +++ b/include/linux/platform_data/x86/asus-wmi.h
-@@ -6,6 +6,9 @@
- #include <linux/types.h>
- #include <linux/dmi.h>
+@@ -4,7 +4,9 @@
  
+ #include <linux/errno.h>
+ #include <linux/types.h>
+-#include <linux/dmi.h>
++
 +#define ASUS_WMI_MGMT_GUID	"97845ED0-4E6D-11DE-8A39-0800200C9A66"
 +#define ASUS_ACPI_UID_ASUSWMI	"ASUSWMI"
-+
+ 
  /* WMI Methods */
  #define ASUS_WMI_METHODID_SPEC	        0x43455053 /* BIOS SPECification */
- #define ASUS_WMI_METHODID_SFBD		0x44424653 /* Set First Boot Device */
-@@ -191,44 +194,4 @@ static inline int asus_wmi_evaluate_method(u32 method_id, u32 arg0, u32 arg1,
+@@ -191,44 +193,4 @@ static inline int asus_wmi_evaluate_method(u32 method_id, u32 arg0, u32 arg1,
  }
  #endif
  
@@ -1187,3 +1283,7 @@ index dbd44d9fbb6f..71c68425b3b9 100644
 -};
 -
  #endif	/* __PLATFORM_DATA_X86_ASUS_WMI_H */
+-- 
+2.51.2
+
+

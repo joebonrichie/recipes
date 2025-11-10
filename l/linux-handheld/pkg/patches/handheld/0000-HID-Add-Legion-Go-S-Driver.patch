@@ -2,7 +2,7 @@ From patchwork Thu Jul  3 00:49:38 2025
 Content-Type: text/plain; charset="utf-8"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
-X-Patchwork-Submitter: "Derek J. Clark" <derekjohn.clark@gmail.com>
+X-Patchwork-Submitter: Derek John Clark <derekjohn.clark@gmail.com>
 X-Patchwork-Id: 14141722
 Received: from mail-pf1-f174.google.com (mail-pf1-f174.google.com
  [209.85.210.174])
@@ -172,7 +172,7 @@ From patchwork Thu Jul  3 00:49:39 2025
 Content-Type: text/plain; charset="utf-8"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
-X-Patchwork-Submitter: "Derek J. Clark" <derekjohn.clark@gmail.com>
+X-Patchwork-Submitter: Derek John Clark <derekjohn.clark@gmail.com>
 X-Patchwork-Id: 14141723
 Received: from mail-pf1-f171.google.com (mail-pf1-f171.google.com
  [209.85.210.171])
@@ -329,7 +329,7 @@ From patchwork Thu Jul  3 00:49:40 2025
 Content-Type: text/plain; charset="utf-8"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
-X-Patchwork-Submitter: "Derek J. Clark" <derekjohn.clark@gmail.com>
+X-Patchwork-Submitter: Derek John Clark <derekjohn.clark@gmail.com>
 X-Patchwork-Id: 14141724
 X-Patchwork-Delegate: jikos@jikos.cz
 Received: from mail-pf1-f176.google.com (mail-pf1-f176.google.com
@@ -466,7 +466,7 @@ From patchwork Thu Jul  3 00:49:41 2025
 Content-Type: text/plain; charset="utf-8"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
-X-Patchwork-Submitter: "Derek J. Clark" <derekjohn.clark@gmail.com>
+X-Patchwork-Submitter: Derek John Clark <derekjohn.clark@gmail.com>
 X-Patchwork-Id: 14141725
 Received: from mail-pf1-f178.google.com (mail-pf1-f178.google.com
  [209.85.210.178])
@@ -881,7 +881,7 @@ From patchwork Thu Jul  3 00:49:42 2025
 Content-Type: text/plain; charset="utf-8"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
-X-Patchwork-Submitter: "Derek J. Clark" <derekjohn.clark@gmail.com>
+X-Patchwork-Submitter: Derek John Clark <derekjohn.clark@gmail.com>
 X-Patchwork-Id: 14141726
 Received: from mail-pf1-f180.google.com (mail-pf1-f180.google.com
  [209.85.210.180])
@@ -1227,7 +1227,7 @@ From patchwork Thu Jul  3 00:49:43 2025
 Content-Type: text/plain; charset="utf-8"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
-X-Patchwork-Submitter: "Derek J. Clark" <derekjohn.clark@gmail.com>
+X-Patchwork-Submitter: Derek John Clark <derekjohn.clark@gmail.com>
 X-Patchwork-Id: 14141727
 X-Patchwork-Delegate: jikos@jikos.cz
 Received: from mail-pf1-f179.google.com (mail-pf1-f179.google.com
