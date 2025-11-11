@@ -1,0 +1,25 @@
+#
+# SPDX-FileCopyrightText: © 2025 AerynOS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : rpmextract
+version     : 1.0
+release     : 11
+homepage    : https://gitlab.archlinux.org/archlinux/packaging/packages/rpmextract
+upstreams   :
+    - https://gitlab.archlinux.org/archlinux/packaging/packages/rpmextract/-/raw/main/rpmextract.sh:
+        hash: f14ccaeb5af46f1d4c62b1c3f8d2956f4345e235fe938f7ce8f1189fbf81b4bd
+        unpack: false
+    - https://gitlab.archlinux.org/archlinux/packaging/packages/rpmextract/-/raw/main/rpm2cpio:
+        hash: 10f4e1501f962753d186cb69f20e6a53d0568f1b6f1538b866ec9d9c3e9acaa5
+        unpack: false
+summary     : Script to convert or extract RPM archives (contains rpm2cpio)
+description : |
+    Script to convert or extract RPM archives (contains rpm2cpio)
+license     : GPL-2.0-only
+rundeps     :
+    - binary(bsdtar)
+install     : |
+    %install_exe %(sourcedir)/rpmextract.sh %(installroot)/usr/bin/rpmextract.sh
+    %install_exe %(sourcedir)/rpm2cpio %(installroot)/usr/bin/rpm2cpio
