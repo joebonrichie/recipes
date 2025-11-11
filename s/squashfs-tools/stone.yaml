@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : squashfs-tools
-version     : 4.7.2
-release     : 4
+version     : 4.7.4
+release     : 5
 homepage    : https://github.com/plougher/squashfs-tools
 upstreams   :
-    - https://github.com/plougher/squashfs-tools/archive/refs/tags/4.7.2.tar.gz : 4672b5c47d9418d3a5ae5b243defc6d9eae8275b9771022247c6a6082c815914
+    - https://github.com/plougher/squashfs-tools/releases/download/4.7.4/squashfs-tools-4.7.4.tar.gz : 91c49f9a1ed972ad00688a38222119e2baf49ba74cf5fda05729a79d7d59d335
 summary     : Manipulate SquashFS images
 description : |
     Manipulate SquashFS images
