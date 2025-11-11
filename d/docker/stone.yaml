@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : docker
-version     : 28.5.1
-release     : 12
+version     : 28.5.2
+release     : 13
 homepage    : https://www.docker.com
 upstreams   :
-    - https://github.com/docker/cli/archive/refs/tags/v28.5.1.tar.gz : 3872f03dd3d1e2769ecad57c8744743e72ad619f72f1897f4886fd44746337cd
+    - https://github.com/docker/cli/archive/refs/tags/v28.5.2.tar.gz : 5864ccdfceef3a9e8ddb29b4a555d5b82a551b5258067aac164b6156c6cfdc08
 summary     : The open-source application container engine
 description : |
     The open-source application container engine. This contains the docker cli.
