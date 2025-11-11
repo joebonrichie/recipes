@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : nspr
-version     : "4.38"
-release     : 7
+version     : "4.38.2"
+release     : 8
 homepage    : https://firefox-source-docs.mozilla.org/nspr/index.html
 upstreams   :
-    - https://archive.mozilla.org/pub/nspr/releases/v4.38/src/nspr-4.38.tar.gz : 72ee73ffcc6ef5e706965f855ecf470ec3986c3e188e12a8a8006e76f6b31a6f
+    - https://archive.mozilla.org/pub/nspr/releases/v4.38.2/src/nspr-4.38.2.tar.gz : e4092faeab77bdc9b32db1113e4215948ee768e26c4666db3b5a60b35f2c9105
 summary     : Netscape Portable Runtime Libraries
 description : |
     Portable runtime functions for Firefox and similar projects
