@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : moby
-version     : 28.5.1
-release     : 11
+version     : 28.5.2
+release     : 12
 homepage    : https://www.docker.com
 upstreams   :
-    - https://github.com/moby/moby/archive/refs/tags/v28.5.1.tar.gz : c17f48bbea209f00e62915dfdbb90e471d296202e466335e43fc9d5982ae3a6a
+    - https://github.com/moby/moby/archive/refs/tags/v28.5.2.tar.gz : 0e450c03c536a1304ba8fd26ca4c4ff96fac62182fd042fec90ffdf4a0969d40
 summary     : The open-source application container engine
 description : |
     The open-source application container engine. This package contains the Docker server.
