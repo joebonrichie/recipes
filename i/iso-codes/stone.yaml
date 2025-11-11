@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : iso-codes
-version     : 4.18.0
-release     : 5
+version     : 4.19.0
+release     : 6
 homepage    : https://salsa.debian.org/iso-codes-team/iso-codes
 upstreams   :
-    - https://salsa.debian.org/iso-codes-team/iso-codes/-/archive/v4.18.0/iso-codes-v4.18.0.tar.gz : 511f67bf4b51aa77f17c45adbff533242b50f1e370fe49a5706b6341902fac87
+    - https://salsa.debian.org/iso-codes-team/iso-codes/-/archive/v4.19.0/iso-codes-v4.19.0.tar.gz : 4b143a891feb7d1bb64e44fe3ef253ef36ba1185d1d129c1425338dc6e46e27d
 summary     : ISO standards (countries, languages, language scripts, and currency names)
 description : |
     This project provides lists of various ISO standards (countries, languages, language scripts, and currency names) in one place. It also provides their translations in gettext .po format.
