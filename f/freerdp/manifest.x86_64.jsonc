@@ -9,7 +9,7 @@
 				"pkgconfig(cups)",
 				"pkgconfig(fdk-aac)",
 				"pkgconfig(fuse3)",
-				"pkgconfig(json-c)",
+				"pkgconfig(jansson)",
 				"pkgconfig(libavcodec)",
 				"pkgconfig(libavutil)",
 				"pkgconfig(libcjson)",
@@ -97,7 +97,7 @@
 				"pkgconfig(cups)",
 				"pkgconfig(fdk-aac)",
 				"pkgconfig(fuse3)",
-				"pkgconfig(json-c)",
+				"pkgconfig(jansson)",
 				"pkgconfig(libavcodec)",
 				"pkgconfig(libavutil)",
 				"pkgconfig(libcjson)",
@@ -123,8 +123,8 @@
 			],
 			"depends": [
 				"freerdp",
-				"libwinpr-devel",
-				"pkgconfig(fuse3)"
+				"pkgconfig(fuse3)",
+				"pkgconfig(winpr3)"
 			],
 			"files": [
 				"/usr/include/freerdp3/freerdp/addin.h",
@@ -392,7 +392,7 @@
 				"pkgconfig(cups)",
 				"pkgconfig(fdk-aac)",
 				"pkgconfig(fuse3)",
-				"pkgconfig(json-c)",
+				"pkgconfig(jansson)",
 				"pkgconfig(libavcodec)",
 				"pkgconfig(libavutil)",
 				"pkgconfig(libcjson)",
@@ -452,17 +452,17 @@
 				"/usr/lib/freerdp3/proxy/libproxy-demo-plugin.so",
 				"/usr/lib/freerdp3/proxy/libproxy-dyn-channel-dump-plugin.so",
 				"/usr/lib/libfreerdp-client3.so.3",
-				"/usr/lib/libfreerdp-client3.so.3.17.2",
+				"/usr/lib/libfreerdp-client3.so.3.18.0",
 				"/usr/lib/libfreerdp-server-proxy3.so.3",
-				"/usr/lib/libfreerdp-server-proxy3.so.3.17.2",
+				"/usr/lib/libfreerdp-server-proxy3.so.3.18.0",
 				"/usr/lib/libfreerdp-server3.so.3",
-				"/usr/lib/libfreerdp-server3.so.3.17.2",
+				"/usr/lib/libfreerdp-server3.so.3.18.0",
 				"/usr/lib/libfreerdp-shadow-subsystem3.so.3",
-				"/usr/lib/libfreerdp-shadow-subsystem3.so.3.17.2",
+				"/usr/lib/libfreerdp-shadow-subsystem3.so.3.18.0",
 				"/usr/lib/libfreerdp-shadow3.so.3",
-				"/usr/lib/libfreerdp-shadow3.so.3.17.2",
+				"/usr/lib/libfreerdp-shadow3.so.3.18.0",
 				"/usr/lib/libfreerdp3.so.3",
-				"/usr/lib/libfreerdp3.so.3.17.2",
+				"/usr/lib/libfreerdp3.so.3.18.0",
 				"/usr/lib/librdtk0.so.0",
 				"/usr/lib/librdtk0.so.0.2.0",
 				"/usr/lib/libuwac0.so.0",
@@ -495,7 +495,7 @@
 				"pkgconfig(cups)",
 				"pkgconfig(fdk-aac)",
 				"pkgconfig(fuse3)",
-				"pkgconfig(json-c)",
+				"pkgconfig(jansson)",
 				"pkgconfig(libavcodec)",
 				"pkgconfig(libavutil)",
 				"pkgconfig(libcjson)",
@@ -524,16 +524,16 @@
 				"soname(libcrypto.so.3(x86_64))",
 				"soname(libgcc_s.so.1(x86_64))",
 				"soname(libicuuc.so.78(x86_64))",
-				"soname(libjson-c.so.5(x86_64))",
+				"soname(libjansson.so.4(x86_64))",
 				"soname(libk5crypto.so.3(x86_64))",
 				"soname(libkrb5.so.3(x86_64))",
 				"soname(libssl.so.3(x86_64))"
 			],
 			"files": [
 				"/usr/lib/libwinpr-tools3.so.3",
-				"/usr/lib/libwinpr-tools3.so.3.17.2",
+				"/usr/lib/libwinpr-tools3.so.3.18.0",
 				"/usr/lib/libwinpr3.so.3",
-				"/usr/lib/libwinpr3.so.3.17.2"
+				"/usr/lib/libwinpr3.so.3.18.0"
 			],
 			"name": "libwinpr",
 			"provides": [
@@ -548,7 +548,7 @@
 				"pkgconfig(cups)",
 				"pkgconfig(fdk-aac)",
 				"pkgconfig(fuse3)",
-				"pkgconfig(json-c)",
+				"pkgconfig(jansson)",
 				"pkgconfig(libavcodec)",
 				"pkgconfig(libavutil)",
 				"pkgconfig(libcjson)",
@@ -671,6 +671,6 @@
 		}
 	},
 	"source-name": "freerdp",
-	"source-release": "15",
-	"source-version": "3.17.2"
+	"source-release": "16",
+	"source-version": "3.18.0"
 }

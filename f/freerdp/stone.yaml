@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : freerdp
-version     : 3.17.2
-release     : 15
+version     : 3.18.0
+release     : 16
 homepage    : www.freerdp.com
 upstreams   :
-    - https://github.com/FreeRDP/FreeRDP/releases/download/3.17.2/freerdp-3.17.2.tar.gz : c42c712ad879bf06607b78b8c3fad98e08c82f73f4e0bc1693552900041e692a
+    - https://github.com/FreeRDP/FreeRDP/releases/download/3.18.0/freerdp-3.18.0.tar.gz : 70e89fdc92e3c2a429a7e61015ffd55bda4f6fefd76bb2978a91134d94869462
 summary     : FreeRDP is a free remote desktop protocol library and clients  
 description : |
     FreeRDP is a free implementation of the Remote Desktop Protocol (RDP), released 
@@ -23,7 +23,7 @@ builddeps   :
     - pkgconfig(cups)
     - pkgconfig(fdk-aac)
     - pkgconfig(fuse3)
-    - pkgconfig(json-c)
+    - pkgconfig(jansson)
     - pkgconfig(libavcodec)
     - pkgconfig(libavutil)
     - pkgconfig(libcjson)
@@ -87,8 +87,6 @@ packages    :
         rundeps:
             # Referenced by FreeRDP-Client3
             - pkgconfig(fuse3)
-            # Referenced by FreeRDPConfig.cmake
-            - "libwinpr-devel"
 
     - "libwinpr":
         summary: Windows Portable Runtime
