@@ -39,7 +39,6 @@
 				"/usr/include/numa.h",
 				"/usr/include/numacompat1.h",
 				"/usr/include/numaif.h",
-				"/usr/lib/libnuma.a",
 				"/usr/lib/libnuma.so",
 				"/usr/lib/pkgconfig/numa.pc",
 				"/usr/share/man/man2/move_pages.2",
@@ -67,6 +66,6 @@
 		}
 	},
 	"source-name": "numactl",
-	"source-release": "1",
+	"source-release": "2",
 	"source-version": "2.0.19"
 }
