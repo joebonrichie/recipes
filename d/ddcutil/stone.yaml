@@ -4,10 +4,10 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : ddcutil
-version     : 2.2.2
-release     : 3
+version     : 2.2.3
+release     : 4
 upstreams   :
-    - https://github.com/rockowitz/ddcutil/archive/v2.2.2.tar.gz : 6e328d584a08d58d9f3f4df587c953b9a62378eadc70d9661470e9e25b561f71
+    - https://github.com/rockowitz/ddcutil/archive/v2.2.3.tar.gz : fc95b7362932e79938b1c21ee83d9e54f1737bd403368fc2b926c9eb510e10e5
 homepage    : https://ddcutil.com/
 license     :
     - GPL-2.0-only
