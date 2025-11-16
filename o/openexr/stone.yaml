@@ -4,10 +4,10 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : openexr
-version     : 3.4.2
-release     : 4
+version     : 3.4.3
+release     : 5
 upstreams   :
-    - https://github.com/AcademySoftwareFoundation/openexr/releases/download/v3.4.2/openexr-3.4.2.tar.gz : 4246e9bbe706016b282e6503538e9a3ded72c67e6b25c4364d7571f04ce85a9a
+    - https://github.com/AcademySoftwareFoundation/openexr/releases/download/v3.4.3/openexr-3.4.3.tar.gz : db0c3f9a6bbfc6853d5ee21164ef151e616f07d6f2bac80339b3a0698d13fcc0
 homepage    : https://www.openexr.com/
 license     : BSD-3-Clause
 summary     : A high dynamic-range image file format library

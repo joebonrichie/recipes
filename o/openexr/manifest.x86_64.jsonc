@@ -279,20 +279,20 @@
 				"soname(libdeflate.so.0(x86_64))",
 				"soname(libgcc_s.so.1(x86_64))",
 				"soname(libm.so.6(x86_64))",
-				"soname(libopenjph.so.0.24(x86_64))",
+				"soname(libopenjph.so.0.25(x86_64))",
 				"soname(libstdc++.so.6(x86_64))"
 			],
 			"files": [
 				"/usr/lib/libIex-3_4.so.33",
-				"/usr/lib/libIex-3_4.so.33.3.4.2",
+				"/usr/lib/libIex-3_4.so.33.3.4.3",
 				"/usr/lib/libIlmThread-3_4.so.33",
-				"/usr/lib/libIlmThread-3_4.so.33.3.4.2",
+				"/usr/lib/libIlmThread-3_4.so.33.3.4.3",
 				"/usr/lib/libOpenEXR-3_4.so.33",
-				"/usr/lib/libOpenEXR-3_4.so.33.3.4.2",
+				"/usr/lib/libOpenEXR-3_4.so.33.3.4.3",
 				"/usr/lib/libOpenEXRCore-3_4.so.33",
-				"/usr/lib/libOpenEXRCore-3_4.so.33.3.4.2",
+				"/usr/lib/libOpenEXRCore-3_4.so.33.3.4.3",
 				"/usr/lib/libOpenEXRUtil-3_4.so.33",
-				"/usr/lib/libOpenEXRUtil-3_4.so.33.3.4.2"
+				"/usr/lib/libOpenEXRUtil-3_4.so.33.3.4.3"
 			],
 			"name": "openexr-libs",
 			"provides": [
@@ -305,6 +305,6 @@
 		}
 	},
 	"source-name": "openexr",
-	"source-release": "4",
-	"source-version": "3.4.2"
+	"source-release": "5",
+	"source-version": "3.4.3"
 }
