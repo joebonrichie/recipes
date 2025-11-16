@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : qemu
-version     : 10.1.0
-release     : 21
+version     : 10.1.2
+release     : 22
 homepage    : http://www.qemu.org/
 upstreams   :
-    - https://download.qemu.org/qemu-10.1.0.tar.xz : e0517349b50ca73ebec2fa85b06050d5c463ca65c738833bd8fc1f15f180be51
+    - https://download.qemu.org/qemu-10.1.2.tar.xz : 9d75f331c1a5cb9b6eb8fd9f64f563ec2eab346c822cb97f8b35cd82d3f11479
 summary     :  A generic and open source machine emulator and virtualizer
 description : |
      A generic and open source machine emulator and virtualizer
@@ -78,9 +78,10 @@ builddeps   :
     # - libcacard
     # - libxdp
 setup       : |
-    # TODO: Build ARM/AARCH64 support and split out
+    # TODO: Build RISCV support and split out
+    # TODO: binfmt support
     %configure \
-        --target-list=x86_64-linux-user,i386-linux-user,i386-softmmu,x86_64-softmmu \
+        --target-list=aarch64-softmmu,aarch64-linux-user,arm-softmmu,arm-linux-user,i386-softmmu,i386-linux-user,x86_64-softmmu,x86_64-linux-user \
         -Db_lto=true \
         -Db_lto_mode=thin \
         -Dmodules=enabled
@@ -97,7 +98,7 @@ install     : |
     mkdir -p %(installroot)%(tmpfilesdir)
     echo "d /var/log/qemu-ga 0755 root root -" >> %(installroot)%(tmpfilesdir)/qemu-guest-agent.conf
 
-    # TODO: Stop boulder emitting dependencies for these gys
+    # TODO: Stop boulder emitting dependencies for these guys
     rm -v %(installroot)%(datadir)/qemu/s390*
     rm -v %(installroot)%(datadir)/qemu/hppa*
 
@@ -444,11 +445,29 @@ packages    :
             - /usr/share/qemu/trace-events-all
 
     - "%(name)-user":
-        summary: QEMU user mode emulation
-        description: QEMU user mode emulation
+        summary: QEMU user mode emulation - x86/x86_64
+        description: QEMU user mode emulation - x86/x86_64
+        rundeps:
+            - "%(name)-common"
         paths:
             - /usr/bin/qemu-i386
             - /usr/bin/qemu-x86_64
+
+    - "%(name)-user-aarch64":
+        summary: QEMU user mode emulation - aarch64
+        description: QEMU user mode emulation - aarch64
+        rundeps:
+            - "%(name)-common"
+        paths:
+            - /usr/bin/qemu-aarch64
+
+    - "%(name)-user-arm":
+        summary: QEMU user mode emulation - arm
+        description: QEMU user mode emulation - arm
+        rundeps:
+            - "%(name)-common"
+        paths:
+            - /usr/bin/qemu-arm
 
     - "%(name)-system-x86":
         summary: QEMU system emulator for x86
@@ -471,6 +490,34 @@ packages    :
             - /usr/share/qemu/multiboot_dma.bin
             - /usr/share/qemu/pvh.bin
             - /usr/share/qemu/qboot.rom
+
+    - "%(name)-system-aarch64":
+        summary: QEMU system emulator for aarch64
+        description: QEMU system emulator for aarch64
+        rundeps:
+            - "%(name)-common"
+            # - "%(name)-system-x86-firmware"
+            # - edk2-ovmf # TODO: aarch64 edk2 firmware
+        paths:
+            - /usr/bin/qemu-system-aarch64
+
+    - "%(name)-system-arm":
+        summary: QEMU system emulator for arm
+        description: QEMU system emulator for arm
+        rundeps:
+            - "%(name)-common"
+            - "%(name)-system-arm-firmware"
+            # - edk2-ovmf # TODO: arm edk2 firmware
+        paths:
+            - /usr/bin/qemu-system-arm
+
+    - "%(name)-system-arm-firmware":
+        summary: Firmware for QEMU system emulator for arm
+        description: Firmware for QEMU system emulator for arm
+        paths:
+            - /usr/share/qemu/ast27x0_bootrom.bin
+            - /usr/share/qemu/npcm7xx_bootrom.bin
+            - /usr/share/qemu/npcm8xx_bootrom.bin
 
     - "%(name)-system-ppc-firmware":
         summary: Firmware for QEMU system emulator for PPC
@@ -570,13 +617,17 @@ packages    :
             - "%(name)-docs"
             - "%(name)-hw-s390x-virtio-gpu-ccw"
             - "%(name)-pr-helper"
+            - "%(name)-system-aarch64"
             - "%(name)-system-alpha-firmware"
+            - "%(name)-system-arm"
             - "%(name)-system-microblaze-firmware"
             - "%(name)-system-ppc-firmware"
             - "%(name)-system-sparc-firmware"
             - "%(name)-tests"
             - "%(name)-tools"
             - "%(name)-user"
+            - "%(name)-user-aarch64"
+            - "%(name)-user-arm"
             - "%(name)-vmsr-helper"
         paths:
             - /usr/share/doc/qemu-full/
