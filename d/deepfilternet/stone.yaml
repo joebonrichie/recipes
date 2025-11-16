@@ -1,0 +1,37 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : deepfilternet
+version     : 0.5.6
+release     : 1
+upstreams   :
+    - https://github.com/Rikorose/DeepFilterNet/archive/refs/tags/v0.5.6.tar.gz : 0f9a219d06c404bc4200f228e7e224f108cbbca04d7227a6de7d2ce974c2f579
+homepage    : https://github.com/Rikorose/DeepFilterNet
+license     : MIT
+summary     : Message Digest functions from BSD systems
+description : |
+    Message Digest functions from BSD systems
+networking  : true
+builddeps   :
+    - cmake(hdf5)
+    - pkgconfig(alsa)
+    - pkgconfig(jemalloc)
+    - binary(python3)
+environment : |
+    # Use packaged jemalloc
+    export JEMALLOC_OVERRIDE=%(libdir)/libjemalloc.a
+setup       : |
+    %patch %(pkgdir)/0001-ftbfs-rust-1.80.patch
+
+    %cargo_fetch
+build       : |
+    %cargo_build
+install     : |
+    %install_file %(cargo_target_dir)/liblibdf*.so -t %(installroot)%(libdir)
+    %install_file %(cargo_target_dir)/libdeep_filter_ladspa.so -t %(installroot)%(libdir)/ladspa
+packages    :
+    - "%(name)":
+        paths:
+            - /usr/lib/lib*.so
