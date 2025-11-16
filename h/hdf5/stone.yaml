@@ -1,0 +1,53 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : hdf5
+version     : 1.14.6
+release     : 1
+upstreams   :
+    - https://github.com/HDFGroup/hdf5/archive/hdf5_1.14.6/hdf5-1.14.6.tar.gz: 09ee1c671a87401a5201c06106650f62badeea5a3b3941e9b1e2e1e08317357f
+homepage    : https://www.hdfgroup.org/solutions/hdf5
+license     : BSD-3-Clause
+summary     : General purpose library and file format for storing scientific data
+description : |
+    HDF5 is a general purpose library and file format for storing scientific data.
+    HDF5 can store two primary objects: datasets and groups. A dataset is
+    essentially a multidimensional array of data elements, and a group is a
+    structure for organizing objects in an HDF5 file. Using these two basic
+    objects, one can create and store almost any kind of scientific data
+    structure, such as images, arrays of vectors, and structured and unstructured
+    grids. You can also mix and match them in HDF5 files according to your needs.
+builddeps   :
+    - binary(flang)
+    - binary(perl)
+    - cmake(libaec)
+    - pkgconfig(zlib)
+setup       : |
+    %cmake \
+        -DCMAKE_SKIP_INSTALL_RPATH=ON \
+        -DHDF5_BUILD_CPP_LIB=ON \
+        -DHDF5_BUILD_FORTRAN=true \
+        -DHDF5_INSTALL_CMAKE_DIR=lib/cmake/hdf5 \
+        -DHDF5_USE_GNU_DIRS=ON \
+        -DONLY_SHARED_LIBS=ON
+build       : |
+    %cmake_build
+install     : |
+    %cmake_install
+
+    # ?
+    rm -v %(installroot)%(datadir)/COPYING
+packages    :
+    - "%(name)-devel":
+        rundeps:
+            - cmake(libaec)
+            - pkgconfig(zlib)
+        paths:
+            - /usr/bin/h5*c++
+            - /usr/bin/h5*cc
+            - /usr/bin/h5*fc
+            - /usr/bin/mirror_server*
+            - /usr/lib/libhdf5.settings
+            - /usr/share/doc/HDF5/USING_HDF5_CMake.txt
