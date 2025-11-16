@@ -22,7 +22,6 @@
 				"/usr/bin/ctracer",
 				"/usr/bin/dtagnames",
 				"/usr/bin/fullcircle",
-				"/usr/bin/ostra-cg",
 				"/usr/bin/pahole",
 				"/usr/bin/pdwtags",
 				"/usr/bin/pfunct",
@@ -40,7 +39,6 @@
 				"/usr/share/dwarves/runtime/ctracer_relay.c",
 				"/usr/share/dwarves/runtime/ctracer_relay.h",
 				"/usr/share/dwarves/runtime/linux.blacklist.cu",
-				"/usr/share/dwarves/runtime/python/ostra.py",
 				"/usr/share/man/man1/pahole.1"
 			],
 			"name": "pahole",
@@ -50,7 +48,6 @@
 				"binary(ctracer)",
 				"binary(dtagnames)",
 				"binary(fullcircle)",
-				"binary(ostra-cg)",
 				"binary(pahole)",
 				"binary(pdwtags)",
 				"binary(pfunct)",
@@ -95,6 +92,6 @@
 		}
 	},
 	"source-name": "pahole",
-	"source-release": "1",
-	"source-version": "1.30"
+	"source-release": "2",
+	"source-version": "1.31"
 }
