@@ -10,6 +10,7 @@
 			],
 			"depends": [
 				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
+				"qt6-svg",
 				"qt6-wayland",
 				"soname(libQt6Core.so.6(x86_64))",
 				"soname(libQt6Gui.so.6(x86_64))",
@@ -41,6 +42,6 @@
 		}
 	},
 	"source-name": "qpwgraph",
-	"source-release": "4",
-	"source-version": "0.9.6"
+	"source-release": "5",
+	"source-version": "0.9.7"
 }
