@@ -52,6 +52,6 @@
 		}
 	},
 	"source-name": "pkcs11-helper",
-	"source-release": "1",
-	"source-version": "1.30.0"
+	"source-release": "2",
+	"source-version": "1.31.0"
 }
