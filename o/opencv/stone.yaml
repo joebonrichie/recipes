@@ -5,7 +5,7 @@
 #
 name        : opencv
 version     : 4.12.0
-release     : 10
+release     : 11
 upstreams   :
     - https://github.com/opencv/opencv/archive/refs/tags/4.12.0.tar.gz:
         hash: 44c106d5bb47efec04e531fd93008b3fcd1d27138985c5baf4eafac0e1ec9e9d
@@ -26,6 +26,7 @@ builddeps   :
     - cmake(Qt6Core5Compat)
     - cmake(Tiff)
     - cmake(VulkanHeaders)
+    - cmake(hdf5)
     - cmake(libavif)
     - cmake(libjpeg-turbo)
     - cmake(protobuf)
@@ -80,6 +81,7 @@ setup       : |
            -DBUILD_PROTOBUF=OFF \
            -DCMAKE_CXX_STANDARD=17 \
            -DCPU_BASELINE_REQUIRE="SSE;SSE2;SSE3;SSSE3;SSE4_1;SSE4_2;POPCNT" \
+           -DHDF5_NO_FIND_PACKAGE_CONFIG_FILE=ON \
            -DINSTALL_C_EXAMPLES=OFF \
            -DINSTALL_PYTHON_EXAMPLES=OFF \
            -DOPENCV_ENABLE_NONFREE=OFF \
