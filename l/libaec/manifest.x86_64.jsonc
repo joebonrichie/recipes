@@ -1,0 +1,44 @@
+/** Human readable report. This is not consumed by boulder */
+{
+	"manifest-version": "0.2",
+	"packages": {
+		"libaec": {
+			"depends": [
+				"soname(libc.so.6(x86_64))"
+			],
+			"files": [
+				"/usr/lib/libaec.so.0",
+				"/usr/lib/libaec.so.0.1.4",
+				"/usr/lib/libsz.so.2",
+				"/usr/lib/libsz.so.2.0.1"
+			],
+			"name": "libaec",
+			"provides": [
+				"soname(libaec.so.0(x86_64))",
+				"soname(libsz.so.2(x86_64))"
+			]
+		},
+		"libaec-devel": {
+			"depends": [
+				"libaec"
+			],
+			"files": [
+				"/usr/include/libaec.h",
+				"/usr/include/szlib.h",
+				"/usr/lib/cmake/libaec/libaec-config-version.cmake",
+				"/usr/lib/cmake/libaec/libaec-config.cmake",
+				"/usr/lib/cmake/libaec/libaec-targets-release.cmake",
+				"/usr/lib/cmake/libaec/libaec-targets.cmake",
+				"/usr/lib/libaec.so",
+				"/usr/lib/libsz.so"
+			],
+			"name": "libaec-devel",
+			"provides": [
+				"cmake(libaec)"
+			]
+		}
+	},
+	"source-name": "libaec",
+	"source-release": "1",
+	"source-version": "1.1.4"
+}

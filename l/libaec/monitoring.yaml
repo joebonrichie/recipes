@@ -1,0 +1,6 @@
+releases:
+  id: 15539
+  rss: https://gitlab.dkrz.de/k202009/libaec/-/tags?format=atom
+security:
+  # Last checked 20251116
+  cpe: ~
