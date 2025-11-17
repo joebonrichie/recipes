@@ -23,7 +23,7 @@
 			],
 			"files": [
 				"/usr/lib/libqtutilities-qt6.so.6",
-				"/usr/lib/libqtutilities-qt6.so.6.18.2"
+				"/usr/lib/libqtutilities-qt6.so.6.18.3"
 			],
 			"name": "qtutilities",
 			"provides": [
@@ -109,6 +109,6 @@
 		}
 	},
 	"source-name": "qtutilities",
-	"source-release": "4",
-	"source-version": "6.18.2"
+	"source-release": "5",
+	"source-version": "6.18.3"
 }
