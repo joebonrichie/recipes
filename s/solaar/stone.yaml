@@ -5,7 +5,7 @@
 #
 name        : solaar
 version     : 1.1.16
-release     : 2
+release     : 3
 upstreams   :
     - https://github.com/pwr-Solaar/Solaar/archive/refs/tags/1.1.16.tar.gz : 224cb48f8370d477e60c96c5c9b6f45cabe9f1655b629af661a0377814f3d703
 homepage    : https://pwr-solaar.github.io/Solaar/
@@ -22,3 +22,6 @@ build       : |
     %pyproject_build
 install     : |
     %pyproject_install
+
+    # Per the documentation we need an alternate rule for running under Wayland
+    %install_file rules.d-uinput/42-logitech-unify-permissions.rules -t %(installroot)%(udevrulesdir)
