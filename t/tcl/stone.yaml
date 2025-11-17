@@ -4,10 +4,10 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : tcl
-version     : 9.0.2
-release     : 2
+version     : 9.0.3
+release     : 3
 upstreams   :
-    - https://sourceforge.net/projects/tcl/files/Tcl/9.0.2/tcl9.0.2-src.tar.gz : e074c6a8d9ba2cddf914ba97b6677a552d7a52a3ca102924389a05ccb249b520
+    - https://sourceforge.net/projects/tcl/files/Tcl/9.0.3/tcl9.0.3-src.tar.gz : 2537ba0c86112c8c953f7c09d33f134dd45c0fb3a71f2d7f7691fd301d2c33a6
 homepage    : https://www.tcl.tk
 license     : TCL
 summary     : Tool Command Language, pronounced tickle
