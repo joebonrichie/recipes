@@ -21,9 +21,9 @@
 			],
 			"files": [
 				"/usr/lib/libnvme-mi.so.1",
-				"/usr/lib/libnvme-mi.so.1.16.0",
+				"/usr/lib/libnvme-mi.so.1.16.1",
 				"/usr/lib/libnvme.so.1",
-				"/usr/lib/libnvme.so.1.16.0"
+				"/usr/lib/libnvme.so.1.16.1"
 			],
 			"name": "libnvme",
 			"provides": [
@@ -102,6 +102,6 @@
 		}
 	},
 	"source-name": "libnvme",
-	"source-release": "6",
-	"source-version": "1.16"
+	"source-release": "7",
+	"source-version": "1.16.1"
 }
