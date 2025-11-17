@@ -7933,6 +7933,7 @@
 			"depends": [
 				"glibc",
 				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
+				"linux-headers",
 				"soname(ld-linux-x86-64.so.2(x86_64))",
 				"soname(libc.so.6(x86_64))"
 			],
@@ -8469,6 +8470,6 @@
 		}
 	},
 	"source-name": "glibc",
-	"source-release": "29",
-	"source-version": "2.42+git.e87844ec"
+	"source-release": "30",
+	"source-version": "2.42+git.17c3eab3"
 }

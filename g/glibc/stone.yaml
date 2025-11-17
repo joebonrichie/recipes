@@ -4,8 +4,8 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : glibc
-version     : 2.42+git.e87844ec
-release     : 29
+version     : 2.42+git.17c3eab3
+release     : 30
 summary     : The GNU libc libraries
 license     :
     - GPL-2.0-or-later
@@ -15,7 +15,8 @@ homepage    : https://www.gnu.org/software/libc
 description : |
     The GNU libc libraries
 upstreams   :
-    - git|https://sourceware.org/git/glibc.git: e87844ec42b77363a499ea4da6c4a6ab85eba310
+    - git|https://sourceware.org/git/glibc.git :
+        ref : 17c3eab387c3ceb6972e57888a89b1480793f81a
 builddeps   :
     - binary(bison)
     - binary(gperf)
@@ -151,6 +152,8 @@ packages    :
             - iana-etc
 
     - "%(name)-devel":
+        rundeps:
+            - linux-headers
         paths:
             - /usr/bin/mtrace
             - /usr/bin/pcprofiledump
