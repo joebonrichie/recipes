@@ -118,6 +118,7 @@
 				"/usr/include/urcu/uatomic/api.h",
 				"/usr/include/urcu/uatomic/arm.h",
 				"/usr/include/urcu/uatomic/builtins-generic.h",
+				"/usr/include/urcu/uatomic/builtins-x86.h",
 				"/usr/include/urcu/uatomic/builtins.h",
 				"/usr/include/urcu/uatomic/gcc.h",
 				"/usr/include/urcu/uatomic/generic.h",
@@ -261,6 +262,6 @@
 		}
 	},
 	"source-name": "liburcu",
-	"source-release": "5",
-	"source-version": "0.15.3"
+	"source-release": "6",
+	"source-version": "0.15.5"
 }
