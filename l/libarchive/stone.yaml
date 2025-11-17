@@ -4,22 +4,23 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : libarchive
-version     : 3.8.2
-release     : 16
+version     : 3.8.3
+release     : 17
 summary     : Multi-format archive and compression library
 license     : BSD-2-Clause
 homepage    : https://www.libarchive.org
 description : |
     Multi-format archive and compression library
 upstreams   :
-    - https://www.libarchive.org/downloads/libarchive-3.8.2.tar.gz:
-        hash: 5f2d3c2fde8dc44583a61165549dc50ba8a37c5947c90fc02c8e5ce7f1cfb80d
+    - https://www.libarchive.org/downloads/libarchive-3.8.3.tar.gz:
+        hash: a290c2d82bce7b806d1e5309558a7bd0ef39067a868f4622a0e32e71a4de8cb6
         unpack: false
         rename: libarchive.tar.gz
 builddeps   :
     - pkgconfig(bzip2)
     - pkgconfig(ext2fs)
     - pkgconfig(libacl)
+    - pkgconfig(libattr)
     - pkgconfig(libb2)
     - pkgconfig(libcrypto)
     - pkgconfig(liblz4)

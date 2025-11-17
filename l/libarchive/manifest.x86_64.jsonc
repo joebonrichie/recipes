@@ -8,6 +8,7 @@
 				"pkgconfig(bzip2)",
 				"pkgconfig(ext2fs)",
 				"pkgconfig(libacl)",
+				"pkgconfig(libattr)",
 				"pkgconfig(libb2)",
 				"pkgconfig(libcrypto)",
 				"pkgconfig(liblz4)",
@@ -38,6 +39,7 @@
 				"pkgconfig(bzip2)",
 				"pkgconfig(ext2fs)",
 				"pkgconfig(libacl)",
+				"pkgconfig(libattr)",
 				"pkgconfig(libb2)",
 				"pkgconfig(libcrypto)",
 				"pkgconfig(liblz4)",
@@ -68,6 +70,7 @@
 				"pkgconfig(bzip2)",
 				"pkgconfig(ext2fs)",
 				"pkgconfig(libacl)",
+				"pkgconfig(libattr)",
 				"pkgconfig(libb2)",
 				"pkgconfig(libcrypto)",
 				"pkgconfig(liblz4)",
@@ -98,6 +101,7 @@
 				"pkgconfig(bzip2)",
 				"pkgconfig(ext2fs)",
 				"pkgconfig(libacl)",
+				"pkgconfig(libattr)",
 				"pkgconfig(libb2)",
 				"pkgconfig(libcrypto)",
 				"pkgconfig(liblz4)",
@@ -141,6 +145,7 @@
 				"pkgconfig(bzip2)",
 				"pkgconfig(ext2fs)",
 				"pkgconfig(libacl)",
+				"pkgconfig(libattr)",
 				"pkgconfig(libb2)",
 				"pkgconfig(libcrypto)",
 				"pkgconfig(liblz4)",
@@ -171,6 +176,7 @@
 				"pkgconfig(bzip2)",
 				"pkgconfig(ext2fs)",
 				"pkgconfig(libacl)",
+				"pkgconfig(libattr)",
 				"pkgconfig(libb2)",
 				"pkgconfig(libcrypto)",
 				"pkgconfig(liblz4)",
@@ -197,7 +203,7 @@
 			],
 			"files": [
 				"/usr/lib/libarchive.so.13",
-				"/usr/lib/libarchive.so.13.8.2",
+				"/usr/lib/libarchive.so.13.8.3",
 				"/usr/share/man/man5/cpio.5",
 				"/usr/share/man/man5/libarchive-formats.5",
 				"/usr/share/man/man5/mtree.5",
@@ -214,6 +220,7 @@
 				"pkgconfig(bzip2)",
 				"pkgconfig(ext2fs)",
 				"pkgconfig(libacl)",
+				"pkgconfig(libattr)",
 				"pkgconfig(libb2)",
 				"pkgconfig(libcrypto)",
 				"pkgconfig(liblz4)",
@@ -278,6 +285,6 @@
 		}
 	},
 	"source-name": "libarchive",
-	"source-release": "16",
-	"source-version": "3.8.2"
+	"source-release": "17",
+	"source-version": "3.8.3"
 }
