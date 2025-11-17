@@ -43,12 +43,12 @@
 			"files": [
 				"/usr/bin/syncthingctl",
 				"/usr/bin/syncthingtray",
-				"/usr/lib/libsyncthingconnector.so.2.0.2",
-				"/usr/lib/libsyncthingconnector.so.30",
-				"/usr/lib/libsyncthingmodel.so.2.0.2",
-				"/usr/lib/libsyncthingmodel.so.30",
-				"/usr/lib/libsyncthingwidgets.so.2.0.2",
-				"/usr/lib/libsyncthingwidgets.so.30",
+				"/usr/lib/libsyncthingconnector.so.2.0.3",
+				"/usr/lib/libsyncthingconnector.so.31",
+				"/usr/lib/libsyncthingmodel.so.2.0.3",
+				"/usr/lib/libsyncthingmodel.so.31",
+				"/usr/lib/libsyncthingwidgets.so.2.0.3",
+				"/usr/lib/libsyncthingwidgets.so.31",
 				"/usr/share/applications/syncthingtray.desktop",
 				"/usr/share/bash-completion/completions/syncthingctl",
 				"/usr/share/bash-completion/completions/syncthingtray",
@@ -59,9 +59,9 @@
 			"provides": [
 				"binary(syncthingctl)",
 				"binary(syncthingtray)",
-				"soname(libsyncthingconnector.so.30(x86_64))",
-				"soname(libsyncthingmodel.so.30(x86_64))",
-				"soname(libsyncthingwidgets.so.30(x86_64))"
+				"soname(libsyncthingconnector.so.31(x86_64))",
+				"soname(libsyncthingmodel.so.31(x86_64))",
+				"soname(libsyncthingwidgets.so.31(x86_64))"
 			]
 		},
 		"syncthingtray-devel": {
@@ -223,9 +223,9 @@
 				"soname(libqtquickforkawesome-qt6.so.1(x86_64))",
 				"soname(libqtutilities-qt6.so.6(x86_64))",
 				"soname(libstdc++.so.6(x86_64))",
-				"soname(libsyncthingconnector.so.30(x86_64))",
-				"soname(libsyncthingmodel.so.30(x86_64))",
-				"soname(libsyncthingwidgets.so.30(x86_64))"
+				"soname(libsyncthingconnector.so.31(x86_64))",
+				"soname(libsyncthingmodel.so.31(x86_64))",
+				"soname(libsyncthingwidgets.so.31(x86_64))"
 			],
 			"files": [
 				"/usr/lib/qt6/plugins/kf6/kfileitemaction/libsyncthingfileitemaction.so",
@@ -261,6 +261,6 @@
 		}
 	},
 	"source-name": "syncthingtray",
-	"source-release": "6",
-	"source-version": "2.0.2"
+	"source-release": "7",
+	"source-version": "2.0.3"
 }
