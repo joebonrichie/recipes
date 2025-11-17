@@ -5,7 +5,7 @@
 #
 name        : git
 version     : 2.51.2
-release     : 19
+release     : 20
 summary     : Fast, scalable, distributed revision control system
 license     : GPL-2.0-only
 homepage    : https://git-scm.com
@@ -29,22 +29,28 @@ builddeps   :
     - docbook
 environment : |
     %export_docbook_catalogs
+
+    # Use symlinks instead of hardlinks, don't install git-web
+    MAKE_OPTS="INSTALL_SYMLINKS=1 NO_GITWEB=1"
 setup       : |
     %reconfigure \
         --disable-static \
         --with-editor=/usr/bin/nano \
-        --with-libpcre2 \
-        --without-tcltk \
+        --with-libpcre2
 build       : |
-    %make
-    %make man
-    %make -C contrib/subtree
-    %make -C contrib/credential/libsecret
+    %make $MAKE_OPTS
+    %make $MAKE_OPTS man
+    %make $MAKE_OPTS -C contrib/subtree
+    %make $MAKE_OPTS -C contrib/credential/libsecret
 install     : |
-    %make_install install-man
-    %make_install -C contrib/subtree
+    %make_install $MAKE_OPTS install-man
+    %make_install $MAKE_OPTS -C contrib/subtree
 
     %install_file contrib/completion/git-completion.bash %(installroot)%(datadir)/bash-completion/completions/git
+    ln -s git %(installroot)%(bashcompletionsdir)/gitk
+
+    %install_file %(pkgdir)/git-gui.desktop -t %(installroot)%(datadir)/applications
+
     %install_file contrib/completion/git-completion.zsh %(installroot)%(datadir)/zsh/site-functions/_git
     %install_exe contrib/credential/libsecret/git-credential-libsecret %(installroot)%(libdir)/git/git-core/.
 # TODO Checks
@@ -52,3 +58,26 @@ packages    :
     - "%(name)":
         paths:
             - /usr/share/man/man3/
+
+    - "%(name)-gui":
+        summary: Graphical interface to Git
+        description: Graphical interface to Git
+        rundeps:
+            - binary(wish)
+        paths:
+            - /usr/lib/git/git-core/git-citool
+            - /usr/lib/git/git-core/git-gui*
+            - /usr/share/git-gui/
+            - /usr/share/applications/git-gui.desktop
+
+    - "gitk":
+        summary: Git repository browser
+        description: Git repository browser
+        rundeps:
+            - "%(name)-gui"
+            - binary(wish)
+        paths:
+            - /usr/bin/gitk
+            - /usr/share/bash-completion/completions/gitk
+            - /usr/share/gitk/
+            - /usr/share/man/man1/gitk.1
