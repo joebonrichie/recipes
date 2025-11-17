@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : qtforkawesome
-version     : 0.3.1
-release     : 2
+version     : 0.3.2
+release     : 3
 upstreams   :
-    - https://github.com/Martchus/qtforkawesome/archive/refs/tags/v0.3.1.tar.gz:
-        hash: b797af12542c5a2c7d11025ffaf9bea2b5abc603cef57044cfc20d0f5e7c8587
+    - https://github.com/Martchus/qtforkawesome/archive/refs/tags/v0.3.2.tar.gz:
+        hash: 9215162e9dd73eb64047de5f2a21c654ce8e6df2994ebe558b7fd7a31b28bb52
         unpackdir: qtforkawesome
     - https://github.com/ForkAwesome/Fork-Awesome/archive/refs/tags/1.2.0.tar.gz:
         hash: 23fba5f191f204e0414c547bf4c9b10fd7ca42c151260e8f64698449a75fbdb3
