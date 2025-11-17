@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : libdrm
-version     : 2.4.128
-release     : 12
+version     : 2.4.129
+release     : 13
 homepage    : https://gitlab.freedesktop.org/mesa/drm
 upstreams   :
-    - https://dri.freedesktop.org/libdrm/libdrm-2.4.128.tar.xz : 3bb35db8700c2a0b569f2c6729a53f5495786856b310854c8de57782a22bddac
+    - https://dri.freedesktop.org/libdrm/libdrm-2.4.129.tar.xz : 5978183f978d697e26a50ba066174964efb0ab97caa1ecaa1b861fbe5ddf77dc
 summary     : Simplifies the interaction with the Linux DRM subsystem
 description : |
     libdrm provides wrapper functions for the ioctls to avoid exposing the kernel interface directly.
