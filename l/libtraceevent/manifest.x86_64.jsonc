@@ -12,7 +12,7 @@
 			],
 			"files": [
 				"/usr/lib/libtraceevent.so.1",
-				"/usr/lib/libtraceevent.so.1.8.4",
+				"/usr/lib/libtraceevent.so.1.8.6",
 				"/usr/lib/traceevent/plugins/libtraceevent-dynamic-list",
 				"/usr/lib/traceevent/plugins/plugin_cfg80211.so",
 				"/usr/lib/traceevent/plugins/plugin_function.so",
@@ -22,6 +22,7 @@
 				"/usr/lib/traceevent/plugins/plugin_kmem.so",
 				"/usr/lib/traceevent/plugins/plugin_kvm.so",
 				"/usr/lib/traceevent/plugins/plugin_mac80211.so",
+				"/usr/lib/traceevent/plugins/plugin_net.so",
 				"/usr/lib/traceevent/plugins/plugin_sched_switch.so",
 				"/usr/lib/traceevent/plugins/plugin_scsi.so",
 				"/usr/lib/traceevent/plugins/plugin_tlb.so",
@@ -38,6 +39,7 @@
 				"soname(traceevent/plugins/plugin_kmem.so(x86_64))",
 				"soname(traceevent/plugins/plugin_kvm.so(x86_64))",
 				"soname(traceevent/plugins/plugin_mac80211.so(x86_64))",
+				"soname(traceevent/plugins/plugin_net.so(x86_64))",
 				"soname(traceevent/plugins/plugin_sched_switch.so(x86_64))",
 				"soname(traceevent/plugins/plugin_scsi.so(x86_64))",
 				"soname(traceevent/plugins/plugin_tlb.so(x86_64))",
@@ -67,6 +69,6 @@
 		}
 	},
 	"source-name": "libtraceevent",
-	"source-release": "4",
-	"source-version": "1.8.4"
+	"source-release": "5",
+	"source-version": "1.8.6"
 }
