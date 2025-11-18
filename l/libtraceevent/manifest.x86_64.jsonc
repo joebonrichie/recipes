@@ -4,6 +4,7 @@
 	"packages": {
 		"libtraceevent": {
 			"build-depends": [
+				"binary(asciidoc)",
 				"binary(readelf)",
 				"pkgconfig(cunit)"
 			],
@@ -48,6 +49,7 @@
 		},
 		"libtraceevent-devel": {
 			"build-depends": [
+				"binary(asciidoc)",
 				"binary(readelf)",
 				"pkgconfig(cunit)"
 			],
@@ -69,6 +71,6 @@
 		}
 	},
 	"source-name": "libtraceevent",
-	"source-release": "5",
+	"source-release": "6",
 	"source-version": "1.8.6"
 }

@@ -5,7 +5,7 @@
 #                
 name        : libtraceevent
 version     : 1.8.6
-release     : 5
+release     : 6
 homepage    : https://git.kernel.org/pub/scm/libs/libtrace/libtraceevent.git/about/
 upstreams   :
     - https://git.kernel.org/pub/scm/libs/libtrace/libtraceevent.git/snapshot/libtraceevent-1.8.6.tar.gz : 812547d2f7b248485c183be2799b7041038ee44183000705609754b128c84c6f
@@ -16,7 +16,7 @@ license     :
     - GPL-2.0
     - LGPL-2.1
 builddeps   :
-    # - binary(asciidoc)
+    - binary(asciidoc)
     - binary(readelf)
     # - binary(xmlto)
     - pkgconfig(cunit)
