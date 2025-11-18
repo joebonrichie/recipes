@@ -4,10 +4,10 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : polkit-kde-agent
-version     : 6.5.2
-release     : 8
+version     : 6.5.3
+release     : 9
 upstreams   :
-    - https://download.kde.org/stable/plasma/6.5.2/polkit-kde-agent-1-6.5.2.tar.xz : 351ccd623fee873c1d7a70f40e0a05bf984ead14791cd9257b2b7bdd2ddc04cc
+    - https://download.kde.org/stable/plasma/6.5.3/polkit-kde-agent-1-6.5.3.tar.xz : 0b2b47981b51a95b1655a3ac3985ff04ceabbab3717eb4038e8fae6a8eb0759a
 homepage    : https://kde.org/plasma-desktop/
 license     : GPL-2.0-or-later
 summary     : Daemon providing a polkit authentication for KDE

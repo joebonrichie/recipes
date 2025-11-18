@@ -4,10 +4,10 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : libksysguard
-version     : 6.5.2
-release     : 12
+version     : 6.5.3
+release     : 13
 upstreams   :
-    - https://download.kde.org/stable/plasma/6.5.2/libksysguard-6.5.2.tar.xz : 4d23a22871ca947cf6fcba21e3bc4d1abd16aabb2f721199dfa34fd33f8945fb
+    - https://download.kde.org/stable/plasma/6.5.3/libksysguard-6.5.3.tar.xz : eb8d01fbcf6410a9d5ae78c538392524e20bbf4dc0a9619a3732a4731d5e7187
 homepage    : https://kde.org/plasma-desktop/
 license     :
     - GPL-2.0-or-later
