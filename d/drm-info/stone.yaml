@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : drm-info
-version     : 2.8.0
-release     : 3
+version     : 2.9.0
+release     : 4
 homepage    : https://gitlab.freedesktop.org/emersion/drm_info
 upstreams   :
-    - https://gitlab.freedesktop.org/emersion/drm_info/-/archive/v2.8.0/drm_info-v2.8.0.tar.gz : deaea3ae187e5026021e43c498a30d2163f599fc2eea4e98a9686bee0ca40fdf
+    - https://gitlab.freedesktop.org/emersion/drm_info/-/archive/v2.9.0/drm_info-v2.9.0.tar.gz : b1000e95eb4f57cfe7819c5b8afd880ac07dde25d9c3839ec52e0aeadeb83234
 summary     : Small utility to dump info about DRM devices
 description : |
     Small utility to dump info about DRM devices
@@ -16,6 +16,7 @@ license     : MIT
 builddeps   :
     - binary(sh)
     - pkgconfig(json-c)
+    - pkgconfig(libdisplay-info)
     - pkgconfig(libdrm)
     - pkgconfig(libpci)
     - pkgconfig(scdoc)
