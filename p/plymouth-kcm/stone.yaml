@@ -4,10 +4,10 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : plymouth-kcm
-version     : 6.5.2
-release     : 7
+version     : 6.5.3
+release     : 8
 upstreams   :
-    - https://download.kde.org/stable/plasma/6.5.2/plymouth-kcm-6.5.2.tar.xz : 09d45fab4df291c3bfe7c6fc142e2ea2645e38dfd4599675cd1a4ecc146638f0
+    - https://download.kde.org/stable/plasma/6.5.3/plymouth-kcm-6.5.3.tar.xz : 634b95f2e50335cb96810b7ded8da457f44069de49a51ec076bc5c7459445344
 homepage    : https://kde.org/plasma-desktop/
 license     : LGPL-2.0-or-later
 summary     : KCM to manage the Plymouth (Boot) theme
