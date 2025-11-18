@@ -4,10 +4,10 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : spectacle
-version     : 6.5.2
-release     : 11
+version     : 6.5.3
+release     : 12
 upstreams   :
-    - https://download.kde.org/stable/plasma/6.5.2/spectacle-6.5.2.tar.xz : 4641fb164ddb3cfdef77597d8db75218e0c8b7ab63c0bdfc20ca0c7a2420992e
+    - https://download.kde.org/stable/plasma/6.5.3/spectacle-6.5.3.tar.xz : cf150166ecd4b40c2fa7b3b4761cee22ff08b2cc8da68cf8cd6ffc0efc78c8b7
 homepage    : https://kde.org/plasma-desktop/
 license     : GPL-2.0-only
 summary     : KDE Screenshot Utility
