@@ -97,7 +97,7 @@
 			],
 			"files": [
 				"/usr/lib/libkworkspace6.so.6",
-				"/usr/lib/libkworkspace6.so.6.5.2"
+				"/usr/lib/libkworkspace6.so.6.5.3"
 			],
 			"name": "libkworkspace",
 			"provides": [
@@ -2175,6 +2175,7 @@
 				"/usr/share/locale/fr/LC_MESSAGES/kcm_soundtheme.mo",
 				"/usr/share/locale/fr/LC_MESSAGES/kcm_style.mo",
 				"/usr/share/locale/fr/LC_MESSAGES/kcm_users.mo",
+				"/usr/share/locale/fr/LC_MESSAGES/kcm_wallpaper.mo",
 				"/usr/share/locale/fr/LC_MESSAGES/kcminit.mo",
 				"/usr/share/locale/fr/LC_MESSAGES/kded_devicenotifications.mo",
 				"/usr/share/locale/fr/LC_MESSAGES/kded_donationmessage.mo",
@@ -5773,6 +5774,7 @@
 				"/usr/share/locale/zh_CN/LC_MESSAGES/kcm_soundtheme.mo",
 				"/usr/share/locale/zh_CN/LC_MESSAGES/kcm_style.mo",
 				"/usr/share/locale/zh_CN/LC_MESSAGES/kcm_users.mo",
+				"/usr/share/locale/zh_CN/LC_MESSAGES/kcm_wallpaper.mo",
 				"/usr/share/locale/zh_CN/LC_MESSAGES/kcminit.mo",
 				"/usr/share/locale/zh_CN/LC_MESSAGES/kded_devicenotifications.mo",
 				"/usr/share/locale/zh_CN/LC_MESSAGES/kded_donationmessage.mo",
@@ -5849,6 +5851,7 @@
 				"/usr/share/locale/zh_TW/LC_MESSAGES/kcm_soundtheme.mo",
 				"/usr/share/locale/zh_TW/LC_MESSAGES/kcm_style.mo",
 				"/usr/share/locale/zh_TW/LC_MESSAGES/kcm_users.mo",
+				"/usr/share/locale/zh_TW/LC_MESSAGES/kcm_wallpaper.mo",
 				"/usr/share/locale/zh_TW/LC_MESSAGES/kcminit.mo",
 				"/usr/share/locale/zh_TW/LC_MESSAGES/kded_devicenotifications.mo",
 				"/usr/share/locale/zh_TW/LC_MESSAGES/kded_donationmessage.mo",
@@ -7072,22 +7075,22 @@
 				"/usr/lib/kconf_update_bin/plasmashell-6.5-remove-stop-activity-shortcut",
 				"/usr/lib/kf6/plasma-sourceenv.sh",
 				"/usr/lib/libbatterycontrol.so.6",
-				"/usr/lib/libbatterycontrol.so.6.5.2",
+				"/usr/lib/libbatterycontrol.so.6.5.3",
 				"/usr/lib/libkfontinst.so.6",
-				"/usr/lib/libkfontinst.so.6.5.2",
+				"/usr/lib/libkfontinst.so.6.5.3",
 				"/usr/lib/libkfontinstui.so.6",
-				"/usr/lib/libkfontinstui.so.6.5.2",
+				"/usr/lib/libkfontinstui.so.6.5.3",
 				"/usr/lib/libklipper.so.6",
-				"/usr/lib/libklipper.so.6.5.2",
+				"/usr/lib/libklipper.so.6.5.3",
 				"/usr/lib/libklookandfeel.so.6",
-				"/usr/lib/libklookandfeel.so.6.5.2",
+				"/usr/lib/libklookandfeel.so.6.5.3",
 				"/usr/lib/libkmpris.so.6",
-				"/usr/lib/libkmpris.so.6.5.2",
+				"/usr/lib/libkmpris.so.6.5.3",
 				"/usr/lib/libkrdb.so",
 				"/usr/lib/libnotificationmanager.so.1",
-				"/usr/lib/libnotificationmanager.so.6.5.2",
+				"/usr/lib/libnotificationmanager.so.6.5.3",
 				"/usr/lib/libtaskmanager.so.6",
-				"/usr/lib/libtaskmanager.so.6.5.2",
+				"/usr/lib/libtaskmanager.so.6.5.3",
 				"/usr/lib/qt6/plugins/kf6/kded/appmenu.so",
 				"/usr/lib/qt6/plugins/kf6/kded/desktopnotifier.so",
 				"/usr/lib/qt6/plugins/kf6/kded/devicenotifications.so",
@@ -7273,6 +7276,6 @@
 		}
 	},
 	"source-name": "plasma-workspace",
-	"source-release": "23",
-	"source-version": "6.5.2"
+	"source-release": "24",
+	"source-version": "6.5.3"
 }
