@@ -120,6 +120,9 @@
 				"/usr/lib/libnvoptix.so.1",
 				"/usr/lib/libnvoptix.so.580.105.08",
 				"/usr/lib/libvdpau_nvidia.so",
+				"/usr/lib/nvidia/wine/_nvngx.dll",
+				"/usr/lib/nvidia/wine/nvngx.dll",
+				"/usr/lib/nvidia/wine/nvngx_dlssg.dll",
 				"/usr/lib/systemd/system/nvidia-hibernate.service",
 				"/usr/lib/systemd/system/nvidia-persistenced.service",
 				"/usr/lib/systemd/system/nvidia-powerd.service",
@@ -297,6 +300,6 @@
 		}
 	},
 	"source-name": "nvidia-graphics-driver",
-	"source-release": "32",
+	"source-release": "33",
 	"source-version": "580.105.08"
 }

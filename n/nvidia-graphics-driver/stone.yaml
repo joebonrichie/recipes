@@ -5,7 +5,7 @@
 #
 name        : nvidia-graphics-driver
 version     : "580.105.08"
-release     : 32
+release     : 33
 homepage    : https://www.nvidia.com/
 upstreams   :
     - https://us.download.nvidia.com/XFree86/Linux-x86_64/580.105.08/NVIDIA-Linux-x86_64-580.105.08.run:
@@ -32,28 +32,30 @@ install     : |
     sh %(sourcedir)/NVIDIA.run --extract-only --target extracted
     %install_dir %(installroot)%(libdir)/firmware/nvidia/%(version)
     %install_file extracted/firmware/*.bin %(installroot)%(libdir)/firmware/nvidia/%(version)/.
-    sh %(sourcedir)/NVIDIA.run --skip-module-load \
-                               --no-questions \
-                               --x-prefix=%(installroot)%(prefix) \
-                               --opengl-prefix=%(installroot)%(prefix) \
-                               --utility-prefix=%(installroot)%(prefix) \
-                               --log-file-name=%(workdir)/nvidia-installer.log \
-                               --ui=none \
-                               --no-kernel-modules \
-                               --no-x-check \
-                               --no-nouveau-check \
-                               --no-disable-nouveau \
-                               --no-sigwinch-workaround \
-                               --no-distro-scripts \
-                               --no-check-for-alternate-installs \
-                               --skip-depmod \
-                               --no-rebuild-initramfs \
-                               --glvnd-egl-config-path=%(installroot)%(datadir)/glvnd/egl_vendor.d \
-                               --egl-external-platform-config-path=%(installroot)%(datadir)/egl/egl_external_platform.d \
-                               --systemd-unit-prefix=%(installroot)%(libdir)/systemd/system \
-                               --systemd-sleep-prefix=%(installroot)%(libdir)/systemd/systemd-sleep \
-                               --compat32-libdir=/usr/lib32 \
-                               --compat32-prefix=%(installroot)
+    sh %(sourcedir)/NVIDIA.run \
+        --skip-module-load \
+        --no-questions \
+        --x-prefix=%(installroot)%(prefix) \
+        --opengl-prefix=%(installroot)%(prefix) \
+        --utility-prefix=%(installroot)%(prefix) \
+        --wine-prefix=%(installroot)%(prefix) \
+        --log-file-name=%(workdir)/nvidia-installer.log \
+        --ui=none \
+        --no-kernel-modules \
+        --no-x-check \
+        --no-nouveau-check \
+        --no-disable-nouveau \
+        --no-sigwinch-workaround \
+        --no-distro-scripts \
+        --no-check-for-alternate-installs \
+        --skip-depmod \
+        --no-rebuild-initramfs \
+        --glvnd-egl-config-path=%(installroot)%(datadir)/glvnd/egl_vendor.d \
+        --egl-external-platform-config-path=%(installroot)%(datadir)/egl/egl_external_platform.d \
+        --systemd-unit-prefix=%(installroot)%(libdir)/systemd/system \
+        --systemd-sleep-prefix=%(installroot)%(libdir)/systemd/systemd-sleep \
+        --compat32-libdir=/usr/lib32 \
+        --compat32-prefix=%(installroot)
     cat %(workdir)/nvidia-installer.log
     rm %(installroot)%(bindir)/{nvidia-installer,nvidia-uninstall}
 
