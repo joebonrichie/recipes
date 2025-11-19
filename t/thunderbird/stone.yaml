@@ -1,15 +1,16 @@
 #
-# SPDX-FileCopyrightText: © 2020-2024 Serpent OS Developers
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+# SPDX-FileCopyrightText: © 2025-     AerynOS Developers
 #
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : thunderbird
-version     : 140.4.0esr
-release     : 30
+version     : 145.0
+release     : 31
 homepage    : https://www.thunderbird.net/
 upstreams   :
-    - https://releases.mozilla.org/pub/thunderbird/releases/140.4.0esr/source/thunderbird-140.4.0esr.source.tar.xz:
-        hash: b0eb946d9e6d4b2adbfad0893a5c79caa11203a3906b0b5f26f0ccc4c9b28ff0
+    - https://releases.mozilla.org/pub/thunderbird/releases/145.0/source/thunderbird-145.0.source.tar.xz:
+        hash: 4c24f99c45ac909e79f71072549ffcc2866097a6f5fab1dfd41c51918978b9b1
         unpackdir: thunderbird
 summary     : Thunderbird Email Client
 description : |

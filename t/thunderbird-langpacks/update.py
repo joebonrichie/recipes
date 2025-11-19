@@ -24,10 +24,14 @@ if n != 2:
 
 version = sys.argv[1]
 
+# x.y.z (with optional esr label)
 version_regex = re.compile('[0-9]*\.[0-9]*\.[0-9]*(?:esr)?$')
 if not version_regex.match(version):
-    print_usage()
-    exit(1)
+    # x.y (with optional esr label)
+    version_regex = re.compile('[0-9]*\.[0-9]*(?:esr)?$')
+    if not version_regex.match(version):
+        print_usage()
+        exit(1)
 
 stone_recipe = Path("./stone.yaml")
 if not stone_recipe.is_file():
