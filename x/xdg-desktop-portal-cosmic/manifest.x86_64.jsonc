@@ -12,6 +12,7 @@
 			],
 			"depends": [
 				"binary(pipewire)",
+				"gvfs",
 				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
 				"soname(ld-linux-x86-64.so.2(x86_64))",
 				"soname(libc.so.6(x86_64))",
@@ -39,6 +40,6 @@
 		}
 	},
 	"source-name": "xdg-desktop-portal-cosmic",
-	"source-release": "21",
+	"source-release": "22",
 	"source-version": "1.0.0-beta.6.git+8641027"
 }
