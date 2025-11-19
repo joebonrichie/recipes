@@ -4,8 +4,8 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : llvm
-version     : 21.1.5
-release     : 41
+version     : 21.1.6
+release     : 42
 summary     : Low Level Virtual Machine
 license     :
     - Apache-2.0 WITH LLVM-exception
@@ -14,7 +14,7 @@ homepage    : https://www.llvm.org
 description : |
     Low Level Virtual Machine
 upstreams   :
-    - https://github.com/llvm/llvm-project/releases/download/llvmorg-21.1.5/llvm-project-21.1.5.src.tar.xz : 1794be4bf974e99a3fe1da4b2b9b1456c02ae9479c942f365441d8d207bd650c
+    - https://github.com/llvm/llvm-project/releases/download/llvmorg-21.1.6/llvm-project-21.1.6.src.tar.xz : ae67086eb04bed7ca11ab880349b5f1ab6f50e1b88cda376eaf8a845b935762b
 builddeps   :
     - binary(perl)
     - binary(python3)
