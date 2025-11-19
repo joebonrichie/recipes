@@ -13,6 +13,7 @@
 				"pkgconfig(xkbcommon)"
 			],
 			"depends": [
+				"gvfs",
 				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
 				"soname(ld-linux-x86-64.so.2(x86_64))",
 				"soname(libc.so.6(x86_64))",
@@ -45,6 +46,6 @@
 		}
 	},
 	"source-name": "cosmic-files",
-	"source-release": "24",
+	"source-release": "25",
 	"source-version": "1.0.0-beta.6.git+94b1570"
 }
