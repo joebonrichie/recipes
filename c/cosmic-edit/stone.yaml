@@ -5,7 +5,7 @@
 #
 name        : cosmic-edit
 version     : 1.0.0-beta.6.git+e66aa26
-release     : 23
+release     : 24
 homepage    : https://github.com/pop-os/cosmic-edit
 upstreams   :
     - git|https://github.com/pop-os/cosmic-edit : e66aa263a0c2adf10651e87c65734e45a4f0bbf5
@@ -18,6 +18,8 @@ builddeps   :
     - binary(just)
     - pkgconfig(glib-2.0)
     - pkgconfig(xkbcommon)
+rundeps     :
+    - gvfs # Used for file services
 networking  : yes
 setup       : |
     %cargo_fetch
