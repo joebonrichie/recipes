@@ -20,6 +20,8 @@
 				"pkgconfig(xkbcommon)"
 			],
 			"depends": [
+				"binary(gnome-keyring)",
+				"binary(xwayland-satellite)",
 				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
 				"soname(ld-linux-x86-64.so.2(x86_64))",
 				"soname(libc.so.6(x86_64))",
@@ -37,7 +39,9 @@
 				"soname(libpixman-1.so.0(x86_64))",
 				"soname(libseat.so.1(x86_64))",
 				"soname(libudev.so.1(x86_64))",
-				"soname(libxkbcommon.so.0(x86_64))"
+				"soname(libxkbcommon.so.0(x86_64))",
+				"xdg-desktop-portal-gnome",
+				"xdg-desktop-portal-gtk"
 			],
 			"files": [
 				"/usr/bin/niri",
@@ -60,6 +64,6 @@
 		}
 	},
 	"source-name": "niri",
-	"source-release": "11",
-	"source-version": "25.05.1"
+	"source-release": "12",
+	"source-version": "25.08"
 }

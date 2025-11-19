@@ -4,13 +4,15 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : niri
-version     : "25.05.1"
-release     : 11
+version     : "25.08"
+release     : 12
 summary     : Niri Desktop Compositor
 license     : GPL-3.0
 homepage    : https://github.com/YaLTeR/niri
 upstreams   :
-    - git|https://github.com/YaLTeR/niri : 61e306c1c6b13ae99bf7f51532a6aa86cd50d690 # v25.05.1
+    # We should be using the vendored archive, but because we're using a patch to update libdisplay-info we have to use the normal archive
+    # - https://github.com/YaLTeR/niri/releases/download/v25.08/niri-25.08-vendored-dependencies.tar.xz : 5a0a36b1a52985a60d5d6864c2ef7df2b0f5f9fea2a775662e7777cf536277bd
+    - https://github.com/YaLTeR/niri/archive/refs/tags/v25.08.tar.gz : 69f8227d621ee6389bcd5368a250c189e672d02528472dc5ef0e3eccf80cf0b8
 description : |
     A scrollable-tiling Wayland compositor
 builddeps   :
@@ -28,9 +30,15 @@ builddeps   :
     - pkgconfig(libudev)
     - pkgconfig(pango)
     - pkgconfig(xkbcommon)
+rundeps     :
+    - binary(xwayland-satellite)
+    # TODO: Flesh this out with recommendations from https://yalter.github.io/niri/Important-Software.html
+    - xdg-desktop-portal-gtk
+    - xdg-desktop-portal-gnome
+    - binary(gnome-keyring)
 networking  : yes
 setup       : |
-    %patch %(pkgdir)/0001-Allow-libdisplay-info-0.3.patch
+    %patch %(pkgdir)/0001-Allow-libdisplay-info-0.3.patch -N
 
     %cargo_fetch
 build       : |
