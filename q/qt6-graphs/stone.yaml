@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : qt6-graphs
-version     : 6.9.3
-release     : 1
+version     : 6.10.1
+release     : 2
 homepage    : https://www.qt.io
 upstreams   :
-    - https://download.qt.io/official_releases/qt/6.9/6.9.3/submodules/qtgraphs-everywhere-src-6.9.3.tar.xz : 50dc63d055125c30c0bf3a15dd1f71363e474f2fdcb35f927e754042440e048c
+    - https://download.qt.io/official_releases/qt/6.10/6.10.1/submodules/qtgraphs-everywhere-src-6.10.1.tar.xz : 4d4fa0b21fa3c6b72ad5056e2a06e96e4bfda651e0a824d1f8e896c9ce5e576e
 summary     : Qt Graphs for data visualization
 description : |
     Qt Graphs for data visualization
