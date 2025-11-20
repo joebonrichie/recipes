@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : qt6-serialport
-version     : 6.9.3
-release     : 4
+version     : 6.10.1
+release     : 5
 homepage    : https://www.qt.io
 upstreams   :
-    - https://download.qt.io/official_releases/qt/6.9/6.9.3/submodules/qtserialport-everywhere-src-6.9.3.tar.xz : 4b18ec030ff2644698c3f5c776894d8ffe5d3174c964d9bd8668429c943e8298
+    - https://download.qt.io/official_releases/qt/6.10/6.10.1/submodules/qtserialport-everywhere-src-6.10.1.tar.xz : 17b2f68435f67785a0c75fd70125f3e1892282efdab2098dcdac02d1d70f4c4c
 summary     : Qt6 Serial Port Module
 description : |
     Qt6 Serial Port provides the basic functionality, which includes configuring, I/O operations, getting and setting the control signals of the RS-232 pinouts.
