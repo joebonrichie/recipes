@@ -5,7 +5,7 @@
 #
 name        : kscreen
 version     : 6.5.3
-release     : 12
+release     : 13
 upstreams   :
     - https://download.kde.org/stable/plasma/6.5.3/kscreen-6.5.3.tar.xz : 7f09ef7546cef2484dffe091853d6928ada38a776d5fbf0b10d47ac96de9a0c7
 homepage    : https://kde.org/plasma-desktop/
