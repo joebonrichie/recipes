@@ -5,7 +5,7 @@
 #
 name        : qt6-base
 version     : 6.10.1
-release     : 19
+release     : 20
 homepage    : https://www.qt.io
 upstreams   :
     - https://download.qt.io/official_releases/qt/6.10/6.10.1/submodules/qtbase-everywhere-src-6.10.1.tar.xz : 5a6226f7e23db51fdc3223121eba53f3f5447cf0cc4d6cb82a3a2df7a65d265d
@@ -203,6 +203,10 @@ packages    :
             - pkgconfig(gl)
             - pkgconfig(libzstd)
             - pkgconfig(vulkan)
+            - pkgconfig(wayland-client)
+            - pkgconfig(wayland-cursor)
+            - pkgconfig(wayland-egl)
+            - pkgconfig(wayland-server)
             - pkgconfig(xcb-cursor)
             - pkgconfig(xcb-icccm)
             - pkgconfig(xcb-keysyms)
