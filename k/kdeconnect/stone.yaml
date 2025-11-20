@@ -5,7 +5,7 @@
 #
 name        : kdeconnect
 version     : 25.08.3
-release     : 8
+release     : 9
 upstreams   :
     - https://download.kde.org/stable/release-service/25.08.3/src/kdeconnect-kde-25.08.3.tar.xz : 6e41f1f22e85f5e70a92dd6ca3e6968364896de37afe5daeb7cda599f03e5e2b
 homepage    : https://kdeconnect.kde.org/
@@ -46,6 +46,9 @@ builddeps   :
     - pkgconfig(wayland-client)
     - pkgconfig(wayland-protocols)
 setup       : |
+    %patch %(pkgdir)/1d757349.patch
+    %patch %(pkgdir)/ftbfs-qt-6.10.1.patch
+
     # We may need WITH_X11=ON for xwayland, but for now we're trying without it so as to avoid packaging libfakekey
     %cmake_kf6 \
         -DWITH_X11=OFF
