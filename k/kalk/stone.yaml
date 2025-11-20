@@ -5,7 +5,7 @@
 #
 name        : kalk
 version     : 25.08.3
-release     : 9
+release     : 10
 upstreams   :
     - https://download.kde.org/stable/release-service/25.08.3/src/kalk-25.08.3.tar.xz : f218a9f9cda83e12440b0832c5bed5d7c54d80b335bc7785a634f87929b9dcd0
 homepage    : https://apps.kde.org/kalk/
