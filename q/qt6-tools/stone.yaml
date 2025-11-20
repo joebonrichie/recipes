@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : qt6-tools
-version     : 6.9.3
-release     : 11
+version     : 6.10.1
+release     : 12
 homepage    : https://www.qt.io
 upstreams   :
-    - https://download.qt.io/official_releases/qt/6.9/6.9.3/submodules/qttools-everywhere-src-6.9.3.tar.xz : 0cf7ab0e975fc57f5ce1375576a0a76e9ede25e6b01db3cf2339cd4d9750b4e9
+    - https://download.qt.io/official_releases/qt/6.10/6.10.1/submodules/qttools-everywhere-src-6.10.1.tar.xz : 8148408380ffea03101a26305c812b612ea30dbc07121e58707601522404d49b
 summary     : Qt6 QtTools Module
 description : |
     Qt is a set of libraries for developing applications.  This package contains base tools, like string, xml, and network handling.
