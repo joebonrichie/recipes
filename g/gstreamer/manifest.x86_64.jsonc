@@ -4024,6 +4024,6 @@
 		}
 	},
 	"source-name": "gstreamer",
-	"source-release": "35",
+	"source-release": "36",
 	"source-version": "1.26.8"
 }
