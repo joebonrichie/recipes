@@ -1,0 +1,80 @@
+/** Human readable report. This is not consumed by boulder */
+{
+	"manifest-version": "0.2",
+	"packages": {
+		"buildah": {
+			"build-depends": [
+				"binary(go)",
+				"binary(go-md2man)",
+				"pkgconfig(gpgme)",
+				"pkgconfig(libseccomp)",
+				"pkgconfig(sqlite3)",
+				"pkgconfig(systemd)",
+				"shadow-devel"
+			],
+			"depends": [
+				"binary(passt)",
+				"binary(runc)",
+				"binary(skopeo)",
+				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
+				"soname(libc.so.6(x86_64))",
+				"soname(libgpgme.so.45(x86_64))",
+				"soname(libseccomp.so.2(x86_64))",
+				"soname(libsqlite3.so.0(x86_64))",
+				"soname(libsubid.so.5(x86_64))"
+			],
+			"files": [
+				"/usr/bin/buildah",
+				"/usr/share/bash-completion/completions/buildah",
+				"/usr/share/man/man1/buildah-add.1",
+				"/usr/share/man/man1/buildah-bud.1",
+				"/usr/share/man/man1/buildah-build.1",
+				"/usr/share/man/man1/buildah-commit.1",
+				"/usr/share/man/man1/buildah-config.1",
+				"/usr/share/man/man1/buildah-containers.1",
+				"/usr/share/man/man1/buildah-copy.1",
+				"/usr/share/man/man1/buildah-from.1",
+				"/usr/share/man/man1/buildah-images.1",
+				"/usr/share/man/man1/buildah-info.1",
+				"/usr/share/man/man1/buildah-inspect.1",
+				"/usr/share/man/man1/buildah-login.1",
+				"/usr/share/man/man1/buildah-logout.1",
+				"/usr/share/man/man1/buildah-manifest-add.1",
+				"/usr/share/man/man1/buildah-manifest-annotate.1",
+				"/usr/share/man/man1/buildah-manifest-create.1",
+				"/usr/share/man/man1/buildah-manifest-exists.1",
+				"/usr/share/man/man1/buildah-manifest-inspect.1",
+				"/usr/share/man/man1/buildah-manifest-push.1",
+				"/usr/share/man/man1/buildah-manifest-remove.1",
+				"/usr/share/man/man1/buildah-manifest-rm.1",
+				"/usr/share/man/man1/buildah-manifest.1",
+				"/usr/share/man/man1/buildah-mkcw.1",
+				"/usr/share/man/man1/buildah-mount.1",
+				"/usr/share/man/man1/buildah-prune.1",
+				"/usr/share/man/man1/buildah-pull.1",
+				"/usr/share/man/man1/buildah-push.1",
+				"/usr/share/man/man1/buildah-rename.1",
+				"/usr/share/man/man1/buildah-rm.1",
+				"/usr/share/man/man1/buildah-rmi.1",
+				"/usr/share/man/man1/buildah-run.1",
+				"/usr/share/man/man1/buildah-source-add.1",
+				"/usr/share/man/man1/buildah-source-create.1",
+				"/usr/share/man/man1/buildah-source-pull.1",
+				"/usr/share/man/man1/buildah-source-push.1",
+				"/usr/share/man/man1/buildah-source.1",
+				"/usr/share/man/man1/buildah-tag.1",
+				"/usr/share/man/man1/buildah-umount.1",
+				"/usr/share/man/man1/buildah-unshare.1",
+				"/usr/share/man/man1/buildah-version.1",
+				"/usr/share/man/man1/buildah.1"
+			],
+			"name": "buildah",
+			"provides": [
+				"binary(buildah)"
+			]
+		}
+	},
+	"source-name": "buildah",
+	"source-release": "1",
+	"source-version": "1.42.1"
+}

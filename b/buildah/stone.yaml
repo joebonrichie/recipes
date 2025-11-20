@@ -1,0 +1,44 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : buildah
+version     : 1.42.1
+release     : 1
+upstreams   :
+    - https://github.com/containers/buildah/archive/refs/tags/v1.42.1.tar.gz : c162e769ab42437d8125e610b16633c68dee1e8196d5931f28379997b3ec2baf
+homepage    : https://buildah.io/
+license     : Apache-2.0 AND BSD-2-Clause AND BSD-3-Clause AND ISC AND MIT AND MPL-2.0
+summary     : A command line tool used for creating OCI Images
+description : |
+    The buildah package provides a command line tool which can be used to
+    * create a working container from scratch
+    or
+    * create a working container from an image as a starting point
+    * mount/umount a working container's root file system for manipulation
+    * save container's root file system layer to create a new image
+    * delete a working container or an image
+builddeps   :
+    - binary(go)
+    - binary(go-md2man)
+    - pkgconfig(gpgme)
+    - pkgconfig(libseccomp)
+    - pkgconfig(sqlite3)
+    - pkgconfig(systemd)
+    - shadow-devel
+rundeps     :
+    - binary(passt)
+    - binary(runc)
+    - binary(skopeo)
+build       : |
+    export CGO_LDFLAGS="${LDFLAGS}"
+    export CGO_CFLAGS="${CFLAGS}"
+    export CGO_CPPFLAGS="${CPPFLAGS}"
+    export CGO_CXXFLAGS="${CXXFLAGS}"
+
+    export BUILDTAGS="containers_image_ostree_stub libsqlite3 libsubid seccomp systemd"
+
+    %make PREFIX="%(prefix)" GOFLAGS="-buildmode=pie -trimpath"
+install     : |
+    %make_install PREFIX="%(prefix)" install.completions
