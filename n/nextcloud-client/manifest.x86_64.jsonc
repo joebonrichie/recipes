@@ -250,6 +250,6 @@
 		}
 	},
 	"source-name": "nextcloud-client",
-	"source-release": "2",
+	"source-release": "3",
 	"source-version": "4.0.1"
 }

@@ -5,7 +5,7 @@
 #
 name        : kf6-kcontacts
 version     : 6.20.0
-release     : 9
+release     : 10
 upstreams   :
     - https://download.kde.org/stable/frameworks/6.20/kcontacts-6.20.0.tar.xz : b253cd4864a3f3d4343485cc4bfe1b0344ccf5136ead2ada359e6933e09253de
 homepage    : https://community.kde.org/Frameworks

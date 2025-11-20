@@ -5,7 +5,7 @@
 #
 name        : kf6-kconfig
 version     : 6.20.0
-release     : 16
+release     : 17
 upstreams   :
     - https://download.kde.org/stable/frameworks/6.20/kconfig-6.20.0.tar.xz : daecf4989af9958144139e4918c22cd05b5a96527c51d737eae7c57718167d15
 homepage    : https://community.kde.org/Frameworks

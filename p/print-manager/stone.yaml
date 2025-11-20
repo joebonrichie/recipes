@@ -5,7 +5,7 @@
 #
 name        : print-manager
 version     : 6.5.3
-release     : 12
+release     : 13
 upstreams   :
     - https://download.kde.org/stable/plasma/6.5.3/print-manager-6.5.3.tar.xz : ebea6664bd1f3cd7a3033b9fc6f8797648221c5d7d739dba55243d3a7a477be2
 homepage    : https://kde.org/plasma-desktop/

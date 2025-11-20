@@ -5,7 +5,7 @@
 #
 name        : kf6-kuserfeedback
 version     : 6.20.0
-release     : 14
+release     : 15
 upstreams   :
     - https://download.kde.org/stable/frameworks/6.20/kuserfeedback-6.20.0.tar.xz : 638cd4e92137284de18620945441447391173a4f6785baa9e6b83855bba808b4
 homepage    : https://community.kde.org/Frameworks

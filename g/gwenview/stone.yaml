@@ -5,7 +5,7 @@
 #
 name        : gwenview
 version     : 25.08.3
-release     : 11
+release     : 12
 upstreams   :
     - https://download.kde.org/stable/release-service/25.08.3/src/gwenview-25.08.3.tar.xz : 2000c42d40ee3e92ce355f82d2fddd07d27f613f71cf2e65699cfe794a76eca1
 homepage    : https://apps.kde.org/gwenview/
