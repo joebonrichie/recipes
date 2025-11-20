@@ -5,7 +5,7 @@
 #
 name        : mimetreeparser
 version     : 25.08.3
-release     : 13
+release     : 14
 upstreams   :
     - https://download.kde.org/stable/release-service/25.08.3/src/mimetreeparser-25.08.3.tar.xz : ea16cf3fc87e1ca950a41494bd16efa0705d0061b55b545a89979843c835b977
 homepage    : https://kde.org
