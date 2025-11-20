@@ -1,0 +1,27 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : passt
+version     : 2025_09_19.623dbf6
+release     : 1
+upstreams   :
+    - https://passt.top/passt/snapshot/passt-2025_09_19.623dbf6.tar.zst : 5e4c2d7a25122be4f34a177f1fe9b00670ee5c8d9509835a276737999fce854a
+homepage    : https://passt.top/passt/about/
+license     : GPL-2.0-or-later AND BSD-3-Clause
+summary     : User-mode networking daemons for virtual machines and namespaces
+description : |
+    passt implements a translation layer between a Layer-2 network interface and
+    native Layer-4 sockets (TCP, UDP, ICMP/ICMPv6 echo) on a host. It doesn't
+    require any capabilities or privileges, and it can be used as a simple
+    replacement for Slirp.
+
+    pasta (same binary as passt, different command) offers equivalent functionality,
+    for network namespaces: traffic is forwarded using a tap interface inside the
+    namespace, without the need to create further interfaces on the host, hence not
+    requiring any capabilities or privileges.
+build       : |
+    %make VERSION="%(version)"
+install     : |
+    %make_install prefix=%(prefix)

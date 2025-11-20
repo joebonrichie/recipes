@@ -1,0 +1,38 @@
+/** Human readable report. This is not consumed by boulder */
+{
+	"manifest-version": "0.2",
+	"packages": {
+		"passt": {
+			"depends": [
+				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
+				"soname(libc.so.6(x86_64))"
+			],
+			"files": [
+				"/usr/bin/passt",
+				"/usr/bin/passt-repair",
+				"/usr/bin/passt.avx2",
+				"/usr/bin/pasta",
+				"/usr/bin/pasta.avx2",
+				"/usr/bin/qrap",
+				"/usr/share/doc/passt/README.md",
+				"/usr/share/doc/passt/demo.sh",
+				"/usr/share/man/man1/passt-repair.1",
+				"/usr/share/man/man1/passt.1",
+				"/usr/share/man/man1/pasta.1",
+				"/usr/share/man/man1/qrap.1"
+			],
+			"name": "passt",
+			"provides": [
+				"binary(passt)",
+				"binary(passt-repair)",
+				"binary(passt.avx2)",
+				"binary(pasta)",
+				"binary(pasta.avx2)",
+				"binary(qrap)"
+			]
+		}
+	},
+	"source-name": "passt",
+	"source-release": "1",
+	"source-version": "2025_09_19.623dbf6"
+}
