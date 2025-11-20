@@ -5,7 +5,7 @@
 #
 name        : plasma-nm
 version     : 6.5.3
-release     : 14
+release     : 15
 upstreams   :
     - https://download.kde.org/stable/plasma/6.5.3/plasma-nm-6.5.3.tar.xz : 9ad6961f0ce6c4d184efd6ee7cfe261fb44aaee9644eb4ca74c8daebc456efc3
 homepage    : https://kde.org/plasma-desktop/
