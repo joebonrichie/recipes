@@ -5,7 +5,7 @@
 #
 name        : powerdevil
 version     : 6.5.3
-release     : 14
+release     : 15
 upstreams   :
     - https://download.kde.org/stable/plasma/6.5.3/powerdevil-6.5.3.tar.xz : 29992cb910a5627548623bce5a3bf51e7fa6820c4cd650ea255b4d3dd08a3863
 homepage    : https://kde.org/plasma-desktop/
