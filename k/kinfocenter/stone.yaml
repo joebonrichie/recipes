@@ -5,7 +5,7 @@
 #
 name        : kinfocenter
 version     : 6.5.3
-release     : 14
+release     : 15
 upstreams   :
     - https://download.kde.org/stable/plasma/6.5.3/kinfocenter-6.5.3.tar.xz : c2b464ed580a0823d8d171fb2d1a533a6aa2da1b88b4142d360453c152834304
 homepage    : https://kde.org/plasma-desktop/
