@@ -97,6 +97,7 @@
 				"soname(libgcc_s.so.1(x86_64))",
 				"soname(libgpgmepp.so.7(x86_64))",
 				"soname(libm.so.6(x86_64))",
+				"soname(libqgpgmeqt6.so.15(x86_64))",
 				"soname(libstdc++.so.6(x86_64))"
 			],
 			"files": [
@@ -321,6 +322,6 @@
 		}
 	},
 	"source-name": "merkuro",
-	"source-release": "14",
+	"source-release": "15",
 	"source-version": "25.08.3"
 }
