@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : qt6-svg
-version     : 6.9.3
-release     : 8
+version     : 6.10.1
+release     : 9
 homepage    : https://www.qt.io
 upstreams   :
-    - https://download.qt.io/official_releases/qt/6.9/6.9.3/submodules/qtsvg-everywhere-src-6.9.3.tar.xz : db76aa3358cbbe6fce7da576ff4669cb9801920188c750d3b12783bbe97026e2
+    - https://download.qt.io/official_releases/qt/6.10/6.10.1/submodules/qtsvg-everywhere-src-6.10.1.tar.xz : c02f355a58f3bbcf404a628bf488b6aeb2d84a94c269afdb86f6e529343ab01f
 summary     : Qt6 SVG Module
 description : |
     Scalable Vector Graphics (SVG) is an XML-based language for describing two-dimensional vector graphics. Qt provides classes for rendering and displaying SVG drawings in widgets and on other paint devices.
