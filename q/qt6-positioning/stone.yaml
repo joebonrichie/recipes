@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : qt6-positioning
-version     : 6.9.3
-release     : 7
+version     : 6.10.1
+release     : 8
 homepage    : http://www.qt.io/
 upstreams   :
-    - https://download.qt.io/official_releases/qt/6.9/6.9.3/submodules/qtpositioning-everywhere-src-6.9.3.tar.xz : 0c87c980f704c17aadaf0bf8a03845dd0a60cc0313be24bd7b5b90685d5835b4
+    - https://download.qt.io/official_releases/qt/6.10/6.10.1/submodules/qtpositioning-everywhere-src-6.10.1.tar.xz : abb311ef1bd6e39f090d22480e265d13f8537d2e2f4c88f22d6519547f46be23
 summary     : Qt6 position, satellite and area monitoring classes
 description : |
     Provides access to position, satellite and area monitoring classes

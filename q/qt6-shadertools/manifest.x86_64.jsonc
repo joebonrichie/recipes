@@ -20,7 +20,7 @@
 			"files": [
 				"/usr/bin/qsb",
 				"/usr/lib/libQt6ShaderTools.so.6",
-				"/usr/lib/libQt6ShaderTools.so.6.9.3",
+				"/usr/lib/libQt6ShaderTools.so.6.10.1",
 				"/usr/lib/qt6/bin/qsb"
 			],
 			"name": "qt6-shadertools",
@@ -39,12 +39,12 @@
 				"qt6-shadertools"
 			],
 			"files": [
-				"/usr/include/qt6/QtShaderTools/6.9.3/QtShaderTools/private/qshaderrewriter_p.h",
-				"/usr/include/qt6/QtShaderTools/6.9.3/QtShaderTools/private/qspirvcompiler_p.h",
-				"/usr/include/qt6/QtShaderTools/6.9.3/QtShaderTools/private/qspirvshader_p.h",
-				"/usr/include/qt6/QtShaderTools/6.9.3/QtShaderTools/private/qspirvshaderremap_p.h",
-				"/usr/include/qt6/QtShaderTools/6.9.3/QtShaderTools/private/qtshadertoolsglobal_p.h",
-				"/usr/include/qt6/QtShaderTools/6.9.3/QtShaderTools/rhi/qshaderbaker.h",
+				"/usr/include/qt6/QtShaderTools/6.10.1/QtShaderTools/private/qshaderrewriter_p.h",
+				"/usr/include/qt6/QtShaderTools/6.10.1/QtShaderTools/private/qspirvcompiler_p.h",
+				"/usr/include/qt6/QtShaderTools/6.10.1/QtShaderTools/private/qspirvshader_p.h",
+				"/usr/include/qt6/QtShaderTools/6.10.1/QtShaderTools/private/qspirvshaderremap_p.h",
+				"/usr/include/qt6/QtShaderTools/6.10.1/QtShaderTools/private/qtshadertoolsglobal_p.h",
+				"/usr/include/qt6/QtShaderTools/6.10.1/QtShaderTools/rhi/qshaderbaker.h",
 				"/usr/include/qt6/QtShaderTools/QtShaderTools",
 				"/usr/include/qt6/QtShaderTools/QtShaderToolsDepends",
 				"/usr/include/qt6/QtShaderTools/QtShaderToolsVersion",
@@ -81,11 +81,11 @@
 				"/usr/lib/libQt6ShaderTools.prl",
 				"/usr/lib/libQt6ShaderTools.so",
 				"/usr/lib/pkgconfig/Qt6ShaderTools.pc",
-				"/usr/lib/qt6/metatypes/qt6shadertools_release_metatypes.json",
+				"/usr/lib/qt6/metatypes/qt6shadertools_metatypes.json",
 				"/usr/lib/qt6/mkspecs/modules/qt_lib_shadertools.pri",
 				"/usr/lib/qt6/mkspecs/modules/qt_lib_shadertools_private.pri",
 				"/usr/lib/qt6/modules/ShaderTools.json",
-				"/usr/lib/qt6/sbom/qtshadertools-6.9.3.spdx"
+				"/usr/lib/qt6/sbom/qtshadertools-6.10.1.spdx"
 			],
 			"name": "qt6-shadertools-devel",
 			"provides": [
@@ -98,6 +98,6 @@
 		}
 	},
 	"source-name": "qt6-shadertools",
-	"source-release": "10",
-	"source-version": "6.9.3"
+	"source-release": "11",
+	"source-version": "6.10.1"
 }
