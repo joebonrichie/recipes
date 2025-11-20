@@ -93,6 +93,6 @@
 		}
 	},
 	"source-name": "kjournald",
-	"source-release": "5",
+	"source-release": "6",
 	"source-version": "25.08.3"
 }
