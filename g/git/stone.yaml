@@ -5,7 +5,7 @@
 #
 name        : git
 version     : 2.52.0
-release     : 21
+release     : 22
 summary     : Fast, scalable, distributed revision control system
 license     : GPL-2.0-only
 homepage    : https://git-scm.com
@@ -55,6 +55,9 @@ install     : |
 # TODO Checks
 packages    :
     - "%(name)":
+        rundeps:
+            # /usr/lib/git/git-core/git-submodule: 1: /usr/lib/git/git-core/git-sh-setup: envsubst: not found
+            - binary(envsubst)
         paths:
             - /usr/share/man/man3/
 

@@ -19,6 +19,7 @@
 				"pkgconfig(zlib)"
 			],
 			"depends": [
+				"binary(envsubst)",
 				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
 				"soname(libc.so.6(x86_64))",
 				"soname(libcrypto.so.3(x86_64))",
@@ -645,6 +646,6 @@
 		}
 	},
 	"source-name": "git",
-	"source-release": "21",
+	"source-release": "22",
 	"source-version": "2.52.0"
 }
