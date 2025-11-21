@@ -5,7 +5,7 @@
 #
 name        : kwin
 version     : 6.5.3
-release     : 16
+release     : 17
 upstreams   :
     - https://download.kde.org/stable/plasma/6.5.3/kwin-6.5.3.tar.xz : 90eaf74d7733a591e5f9170b59a49ee0e3684de954ab756fef0421c035149f71
 homepage    : https://kde.org/plasma-desktop/
@@ -81,6 +81,9 @@ tuning      :
     - lto: full
     - optimize: speed
 setup       : |
+    # Remove with Plasma 6.6 (hopefully)
+    %patch %(pkgdir)/highfps.patch
+
     %cmake_kf6
 build       : |
     %cmake_build
