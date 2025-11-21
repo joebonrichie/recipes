@@ -1,0 +1,7 @@
+releases:
+  id: 242641
+  rss: https://github.com/containers/aardvark-dns/releases.atom
+security:
+  cpe:
+  - vendor: containers
+    product: aardvark-dns

@@ -1,0 +1,22 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : aardvark-dns
+version     : 1.17.0
+release     : 1
+upstreams   :
+    - https://github.com/containers/aardvark-dns/archive/refs/tags/v1.17.0.tar.gz : 42556bf547c435a8f0ccb586b4f5000da3106a58c26f82e22d9db81ee5bd7eb2
+homepage    : https://github.com/containers/aardvark-dns
+license     : Apache-2.0
+summary     : Authoritative DNS server for A/AAAA container records
+description : |
+    Authoritative DNS server for A/AAAA container records
+networking  : true
+setup       : |
+    %cargo_fetch
+build       : |
+    %cargo_build
+install     : |
+    %install_exe %(cargo_target_dir)/%(name) -t %(installroot)%(libdir)/podman
