@@ -22,7 +22,7 @@
 			],
 			"files": [
 				"/usr/lib/libkImageAnnotator.so.0",
-				"/usr/lib/libkImageAnnotator.so.0.7.1",
+				"/usr/lib/libkImageAnnotator.so.0.7.2",
 				"/usr/share/kImageAnnotator/translations/kImageAnnotator_ar.qm",
 				"/usr/share/kImageAnnotator/translations/kImageAnnotator_bg.qm",
 				"/usr/share/kImageAnnotator/translations/kImageAnnotator_ca.qm",
@@ -86,6 +86,6 @@
 		}
 	},
 	"source-name": "kimageannotator",
-	"source-release": "2",
-	"source-version": "0.7.1"
+	"source-release": "3",
+	"source-version": "0.7.2"
 }
