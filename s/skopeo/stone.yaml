@@ -5,7 +5,7 @@
 #
 name        : skopeo
 version     : 1.20.0
-release     : 1
+release     : 2
 upstreams   :
     - https://github.com/containers/skopeo/archive/refs/tags/v1.20.0.tar.gz : 0c19fe51b2cd8d1bd5e38c03b97421e318fc08153bdf5ef2f816a29889eacdef
 homepage    : https://github.com/containers/skopeo
@@ -23,6 +23,8 @@ builddeps   :
     - binary(go)
     - binary(go-md2man)
     - shadow-devel
+rundeps     :
+    - netavark
 setup       : |
     sed -i 's|.PHONY: bin/skopeo||' Makefile
     sed -i 's|-gcflags "$(GOGCFLAGS)"||' Makefile
