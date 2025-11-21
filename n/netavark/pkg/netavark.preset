@@ -1,0 +1,2 @@
+enable netavark-dhcp-proxy.service
+enable netavark-nftables-reload.service
