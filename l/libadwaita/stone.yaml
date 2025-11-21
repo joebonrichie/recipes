@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : libadwaita
-version     : 1.8.1
-release     : 19
+version     : 1.8.2
+release     : 20
 homepage    : https://gitlab.gnome.org/GNOME/libadwaita
 upstreams   :
-    - https://download.gnome.org/sources/libadwaita/1.8/libadwaita-1.8.1.tar.xz : 8b1d4d5f89373a5b6eea8d93ecdaee34cd26ad27a4dd396c06f5d9929fb313bc
+    - https://download.gnome.org/sources/libadwaita/1.8/libadwaita-1.8.2.tar.xz : 589a6e0f4191740e8690a7d3298e16fa0d4061341b551da7abb2f030b550adb1
 summary     : Building blocks for modern GNOME applications
 description : |
     Building blocks for modern GNOME applications
