@@ -5,7 +5,7 @@
 #
 name        : breeze
 version     : 6.5.3
-release     : 10
+release     : 11
 upstreams   :
     - https://download.kde.org/stable/plasma/6.5.3/breeze-6.5.3.tar.xz : d782875a4510c31435ccd5aad209eb519c0a4ddfdb7da392f54eae863c2e8699
 homepage    : https://kde.org/plasma-desktop/
@@ -34,6 +34,9 @@ tuning      :
     - lto: full
     - optimize: speed
 setup       : |
+    %patch %(pkgdir)/upstream-01.patch
+    %patch %(pkgdir)/upstream-02.patch
+
     %cmake_kf6 \
         -DBUILD_QT5=OFF \
         -DBUILD_QT6=ON
