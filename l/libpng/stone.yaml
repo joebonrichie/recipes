@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : libpng
-version     : 1.6.50
-release     : 8
+version     : 1.6.51
+release     : 9
 homepage    : http://www.libpng.org/pub/png/libpng.html
 upstreams   :
-    - https://downloads.sourceforge.net/project/libpng/libpng16/1.6.50/libpng-1.6.50.tar.xz : 4df396518620a7aa3651443e87d1b2862e4e88cad135a8b93423e01706232307
+    - https://downloads.sourceforge.net/project/libpng/libpng16/1.6.51/libpng-1.6.51.tar.xz : a050a892d3b4a7bb010c3a95c7301e49656d72a64f1fc709a90b8aded192bed2
 summary     : Official reference implementation of PNG
 description : |
     libpng is the official PNG reference library. It supports almost all PNG features, is extensible,
@@ -41,4 +41,4 @@ check       : |
     # emul32 pngtest-all fails
     %make check || :
 tuning      :
-    - lto : thin
+    - lto : full
