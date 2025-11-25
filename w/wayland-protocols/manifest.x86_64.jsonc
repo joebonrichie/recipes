@@ -132,7 +132,9 @@
 				"/usr/include/wayland-protocols/xdg-toplevel-tag-v1-enum.h",
 				"/usr/include/wayland-protocols/xwayland-keyboard-grab-unstable-v1-enum.h",
 				"/usr/include/wayland-protocols/xwayland-shell-v1-enum.h",
+				"/usr/include/wayland-protocols/xx-input-method-v2-enum.h",
 				"/usr/include/wayland-protocols/xx-session-management-v1-enum.h",
+				"/usr/include/wayland-protocols/xx-text-input-v3-enum.h",
 				"/usr/share/pkgconfig/wayland-protocols.pc"
 			],
 			"name": "wayland-protocols-devel",
@@ -142,6 +144,6 @@
 		}
 	},
 	"source-name": "wayland-protocols",
-	"source-release": "11",
-	"source-version": "1.45"
+	"source-release": "12",
+	"source-version": "1.46"
 }
