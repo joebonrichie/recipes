@@ -1,0 +1,19 @@
+#
+# SPDX-FileCopyrightText: © 2020-2024 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : containers-common
+version     : "1"
+release     : 1
+homepage    : https://github.com/containers/container-libs
+# No upstreams!
+summary     : Common config files for various container tools
+description : |
+    Common config files for various container tools
+license     : MPL-2.0
+rundeps     :
+    - netavark
+install     : |
+    %install_file %(pkgdir)/policy.json %(installroot)%(vendordir)/containers/policy.json
+    %install_file %(pkgdir)/registries.yaml %(installroot)%(vendordir)/containers/registries.d/default.yaml

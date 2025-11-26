@@ -1,0 +1,19 @@
+/** Human readable report. This is not consumed by boulder */
+{
+	"manifest-version": "0.2",
+	"packages": {
+		"containers-common": {
+			"depends": [
+				"netavark"
+			],
+			"files": [
+				"/usr/share/defaults/containers/policy.json",
+				"/usr/share/defaults/containers/registries.d/default.yaml"
+			],
+			"name": "containers-common"
+		}
+	},
+	"source-name": "containers-common",
+	"source-release": "1",
+	"source-version": "1"
+}
