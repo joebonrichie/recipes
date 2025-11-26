@@ -5,7 +5,7 @@
 #
 name        : buildah
 version     : 1.42.1
-release     : 1
+release     : 2
 upstreams   :
     - https://github.com/containers/buildah/archive/refs/tags/v1.42.1.tar.gz : c162e769ab42437d8125e610b16633c68dee1e8196d5931f28379997b3ec2baf
 homepage    : https://buildah.io/
@@ -39,6 +39,10 @@ build       : |
 
     export BUILDTAGS="containers_image_ostree_stub libsqlite3 libsubid seccomp systemd"
 
-    %make PREFIX="%(prefix)" GOFLAGS="-buildmode=pie -trimpath"
+    # The containers/image prefix has changed domain names so in order to ensure that we use the correct setting regardless of which one is used just use both
+    %make PREFIX="%(prefix)" \
+        GOFLAGS="-buildmode=pie -trimpath" \
+        EXTRA_LDFLAGS="-X github.com/containers/image/v5/signature.systemDefaultPolicyPath=%(vendordir)/containers/policy.json \
+                       -X go.podman.io/image/v5/signature.systemDefaultPolicyPath=%(vendordir)/containers/policy.json"
 install     : |
     %make_install PREFIX="%(prefix)" install.completions
