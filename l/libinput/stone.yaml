@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : libinput
-version     : 1.29.2
-release     : 10
+version     : 1.30.0
+release     : 11
 homepage    : https://www.freedesktop.org/wiki/Software/libinput
 upstreams   :
-    - https://gitlab.freedesktop.org/libinput/libinput/-/archive/1.29.2/libinput-1.29.2.tar.gz : 02631a861fc6b9fb9ca6ae51cf863334e0699bf60c91c389ac420f3fa0053bdc
+    - https://gitlab.freedesktop.org/libinput/libinput/-/archive/1.30.0/libinput-1.30.0.tar.gz : fcce701746b8f5ee57c6724e963496d2223a9639856c6d1b811cff38e6dd4465
 summary     : Library to handle input devices in Wayland and provides a generic X.Org input driver
 description : |
     %(name) is a library to handle input devices in Wayland compositors and to provide a generic X.Org input driver. It provides device detection, device handling, input device event processing and abstraction so minimize the amount of custom input code compositors need to provide the common set of functionality that users expect.
@@ -17,6 +17,7 @@ builddeps   :
     - pkgconfig(libevdev)
     - pkgconfig(libudev)
     - pkgconfig(libwacom)
+    - pkgconfig(lua)
     - pkgconfig(mtdev)
 setup       : |
     %meson \

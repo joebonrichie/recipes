@@ -7,12 +7,14 @@
 				"pkgconfig(libevdev)",
 				"pkgconfig(libudev)",
 				"pkgconfig(libwacom)",
+				"pkgconfig(lua)",
 				"pkgconfig(mtdev)"
 			],
 			"depends": [
 				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
 				"soname(libc.so.6(x86_64))",
 				"soname(libevdev.so.2(x86_64))",
+				"soname(liblua.so.5.4(x86_64))",
 				"soname(libm.so.6(x86_64))",
 				"soname(libmtdev.so.1(x86_64))",
 				"soname(libudev.so.1(x86_64))",
@@ -135,6 +137,7 @@
 				"pkgconfig(libevdev)",
 				"pkgconfig(libudev)",
 				"pkgconfig(libwacom)",
+				"pkgconfig(lua)",
 				"pkgconfig(mtdev)"
 			],
 			"depends": [
@@ -153,6 +156,6 @@
 		}
 	},
 	"source-name": "libinput",
-	"source-release": "10",
-	"source-version": "1.29.2"
+	"source-release": "11",
+	"source-version": "1.30.0"
 }
