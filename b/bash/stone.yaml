@@ -5,7 +5,7 @@
 #
 name        : bash
 version     : 5.3.3
-release     : 26
+release     : 27
 homepage    : http://www.gnu.org/software/bash/bash.html
 upstreams   :
     # Use a mirror because the GNU http server is flaky AF
@@ -34,7 +34,7 @@ setup       : |
 
     %patch %(pkgdir)/stateless.patch
 
-    export CFLAGS="$CFLAGS -DRECYCLES_PIDS -DSYSLOG_HISTORY -DSYSLOG_SHOPT=0 -DDEFAULT_PATH_VALUE='\"/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin\"'"
+    export CFLAGS+=" -DRECYCLES_PIDS -DSYSLOG_HISTORY -DSYSLOG_SHOPT=0 -DDEFAULT_PATH_VALUE='\"/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin\"'"
 
     # often hangs
     rm tests/run-jobs
@@ -72,6 +72,7 @@ install     : |
 check       : |
     %make check
 workload    : |
+    %make -C examples/loadables all others
     %make check
 tuning      :
     # Full seems to cause tests/run-assoc and tests/run-type to hang. This is possibly a Clang 20 bug and should be retested in the future
