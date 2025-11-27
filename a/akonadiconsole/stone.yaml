@@ -1,0 +1,54 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : akonadiconsole
+version     : 25.08.3
+release     : 1
+upstreams   :
+    - https://download.kde.org/stable/release-service/25.08.3/src/akonadiconsole-25.08.3.tar.xz : 08901d226059e64ea47145f0fe0e97104a9fee7a3d49b1d69ce795c469ef44da
+homepage    : https://invent.kde.org/pim/akonadiconsole
+license     :
+    - GPL-2.0-or-later
+    - GPL-3.0-only
+    - LGPL-2.0-or-later
+summary     : Akonadi management and debugging console
+description : |
+    Akonadi management and debugging console
+builddeps   :
+    # Temporary, boulder doesn't handle build ordering resolution correctly when builddeps are added by macros, so add ECM manually
+    - cmake(ECM)
+    - cmake(KF6CalendarCore)
+    - cmake(KF6Completion)
+    - cmake(KF6Config)
+    - cmake(KF6Contacts)
+    - cmake(KF6Crash)
+    - cmake(KF6DBusAddons)
+    - cmake(KF6DocTools)
+    - cmake(KF6I18n)
+    - cmake(KF6ItemModels)
+    - cmake(KF6ItemViews)
+    - cmake(KF6KIO)
+    - cmake(KF6TextWidgets)
+    - cmake(KF6WidgetsAddons)
+    - cmake(KF6XmlGui)
+    - cmake(KPim6Akonadi)
+    - cmake(KPim6AkonadiContactWidgets)
+    - cmake(KPim6AkonadiMime)
+    - cmake(KPim6AkonadiSearch)
+    - cmake(KPim6CalendarSupport)
+    - cmake(KPim6Libkdepim)
+    - cmake(KPim6MessageViewer)
+    - cmake(KPim6Mime)
+    - cmake(xapian)
+setup       : |
+    %cmake_kf6
+build       : |
+    %cmake_build
+install     : |
+    %cmake_install
+# packages    :
+#     - "%(name)-docs":
+#         paths:
+#             - /usr/share/doc
