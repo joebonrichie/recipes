@@ -16,6 +16,10 @@
 				"/usr/bin/gh",
 				"/usr/share/bash-completion/completions/gh",
 				"/usr/share/fish/vendor_completions.d/gh.fish",
+				"/usr/share/man/man1/gh-agent-task-create.1",
+				"/usr/share/man/man1/gh-agent-task-list.1",
+				"/usr/share/man/man1/gh-agent-task-view.1",
+				"/usr/share/man/man1/gh-agent-task.1",
 				"/usr/share/man/man1/gh-alias-delete.1",
 				"/usr/share/man/man1/gh-alias-import.1",
 				"/usr/share/man/man1/gh-alias-list.1",
@@ -117,6 +121,7 @@
 				"/usr/share/man/man1/gh-pr-merge.1",
 				"/usr/share/man/man1/gh-pr-ready.1",
 				"/usr/share/man/man1/gh-pr-reopen.1",
+				"/usr/share/man/man1/gh-pr-revert.1",
 				"/usr/share/man/man1/gh-pr-review.1",
 				"/usr/share/man/man1/gh-pr-status.1",
 				"/usr/share/man/man1/gh-pr-unlock.1",
@@ -152,6 +157,8 @@
 				"/usr/share/man/man1/gh-release-edit.1",
 				"/usr/share/man/man1/gh-release-list.1",
 				"/usr/share/man/man1/gh-release-upload.1",
+				"/usr/share/man/man1/gh-release-verify-asset.1",
+				"/usr/share/man/man1/gh-release-verify.1",
 				"/usr/share/man/man1/gh-release-view.1",
 				"/usr/share/man/man1/gh-release.1",
 				"/usr/share/man/man1/gh-repo-archive.1",
@@ -230,6 +237,6 @@
 		}
 	},
 	"source-name": "github-cli",
-	"source-release": "8",
-	"source-version": "2.79.0"
+	"source-release": "9",
+	"source-version": "2.83.1"
 }
