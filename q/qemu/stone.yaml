@@ -5,7 +5,7 @@
 #
 name        : qemu
 version     : 10.1.2
-release     : 23
+release     : 24
 homepage    : http://www.qemu.org/
 upstreams   :
     - https://download.qemu.org/qemu-10.1.2.tar.xz : 9d75f331c1a5cb9b6eb8fd9f64f563ec2eab346c822cb97f8b35cd82d3f11479
@@ -90,7 +90,8 @@ install     : |
     %make_install
 
     %install_dir %(installroot)%(libdir)/binfmt.d/
-    ./scripts/qemu-binfmt-conf.sh \
+    # Dash seems to mangle the formatting of the output binfmt files so use bash explicitly
+    bash ./scripts/qemu-binfmt-conf.sh \
         --systemd ALL \
         --exportdir "%(installroot)%(libdir)/binfmt.d/" \
         --qemu-path "%(bindir)" \
