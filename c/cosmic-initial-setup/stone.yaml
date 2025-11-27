@@ -4,13 +4,13 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : cosmic-initial-setup
-version     : 1.0.0-beta.7.git+f8cba7d
-release     : 7
+version     : 1.0.0-beta.8.git+0dcf117
+release     : 8
 summary     : Cosmic Initial Setup
 license     : GPL-3.0
 homepage    : https://github.com/pop-os/cosmic-initial-setup
 upstreams   :
-    - git|https://github.com/pop-os/cosmic-initial-setup.git : f8cba7d2f658e2bf61b99e89ca7afc32c2fb75a3
+    - git|https://github.com/pop-os/cosmic-initial-setup.git : 0dcf117adbf64d62993cb9397d13f070640f4fc3
 description : |
     Cosmic Desktop Intial Setup Application
 builddeps   :
