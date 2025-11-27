@@ -4,8 +4,8 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : bash
-version     : 5.3.3
-release     : 27
+version     : 5.3.8
+release     : 28
 homepage    : http://www.gnu.org/software/bash/bash.html
 upstreams   :
     # Use a mirror because the GNU http server is flaky AF
@@ -31,6 +31,11 @@ setup       : |
     %patch %(pkgdir)/bash53-001 -p0
     %patch %(pkgdir)/bash53-002 -p0
     %patch %(pkgdir)/bash53-003 -p0
+    %patch %(pkgdir)/bash53-004 -p0
+    %patch %(pkgdir)/bash53-005 -p0
+    %patch %(pkgdir)/bash53-006 -p0
+    %patch %(pkgdir)/bash53-007 -p0
+    %patch %(pkgdir)/bash53-008 -p0
 
     %patch %(pkgdir)/stateless.patch
 
