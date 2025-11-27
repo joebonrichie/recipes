@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : linux-firmware
-version     : "20251111"
-release     : 33
+version     : "20251125"
+release     : 34
 homepage    : https://kernel.org
 upstreams   :
-    - git|https://gitlab.com/kernel-firmware/linux-firmware.git : 6fc940781a013ad837ed8fea326d2b897467bbc3
+    - git|https://gitlab.com/kernel-firmware/linux-firmware.git : 4ee5122b3f58e4c07951746c4425e2f4f42e860f
 summary     : Firmware to allow devices to function correctly
 description : |
     Firmware to allow devices to function correctly
@@ -112,6 +112,7 @@ packages    :
         paths:
             - /usr/lib/firmware/cirrus
             - /usr/lib/firmware/cs42l43.bin*
+            - /usr/lib/firmware/sdca
 
     - "%(name)-intel-graphics":
         summary: Support for Intel iGPUs and IPUs
