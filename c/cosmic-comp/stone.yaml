@@ -4,13 +4,13 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : cosmic-comp
-version     : 1.0.0-beta.7.git+282d76e
-release     : 28
+version     : 1.0.0-beta.8.git+6025f48
+release     : 29
 summary     : Cosmic Desktop Compositor
 license     : GPL-3.0
 homepage    : https://github.com/pop-os/cosmic-comp
 upstreams   :
-    - git|https://github.com/pop-os/cosmic-comp.git : 282d76ef3418dcb632be4db59142db5c3273979b
+    - git|https://github.com/pop-os/cosmic-comp.git : 6025f483d6de78e476a7006bb9ba9ad6c932446e
 description : |
     Cosmic Desktop Compositor
 builddeps   :
