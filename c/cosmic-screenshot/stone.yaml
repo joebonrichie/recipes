@@ -4,13 +4,13 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : cosmic-screenshot
-version     : 1.0.0-beta.7.git+f8225a5
-release     : 21
+version     : 1.0.0-beta.8.git+8e5a554
+release     : 22
 summary     : Cosmic Screenshot Tool
 license     : GPL-3.0
 homepage    : https://github.com/pop-os/cosmic-screenshot
 upstreams   :
-    - git|https://github.com/pop-os/cosmic-screenshot.git : f8225a56266b83da11caf8bb9d3d624136dd0a77
+    - git|https://github.com/pop-os/cosmic-screenshot.git : 8e5a554834c8d6055b1ce585fa1df78b59fcf6ad
 description : |
     Cosmic Screenshot Tool
 builddeps   :
