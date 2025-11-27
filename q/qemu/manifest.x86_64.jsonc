@@ -2879,6 +2879,7 @@
 				"python(sphinx-rtd-theme)"
 			],
 			"depends": [
+				"edk2-aarch64",
 				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
 				"qemu-common",
 				"soname(libaio.so.1(x86_64))",
@@ -4505,7 +4506,8 @@
 				"soname(libz.so.1(x86_64))"
 			],
 			"files": [
-				"/usr/bin/qemu-aarch64"
+				"/usr/bin/qemu-aarch64",
+				"/usr/lib/binfmt.d/qemu-aarch64.conf"
 			],
 			"name": "qemu-user-aarch64",
 			"provides": [
@@ -4585,7 +4587,8 @@
 				"soname(libz.so.1(x86_64))"
 			],
 			"files": [
-				"/usr/bin/qemu-arm"
+				"/usr/bin/qemu-arm",
+				"/usr/lib/binfmt.d/qemu-arm.conf"
 			],
 			"name": "qemu-user-arm",
 			"provides": [
@@ -4749,6 +4752,6 @@
 		}
 	},
 	"source-name": "qemu",
-	"source-release": "22",
+	"source-release": "23",
 	"source-version": "10.1.2"
 }
