@@ -5,7 +5,7 @@
 #
 name        : wine
 version     : "10.19"
-release     : 16
+release     : 17
 homepage    : https://www.winehq.org
 upstreams   :
     - https://dl.winehq.org/wine/source/10.x/wine-10.19.tar.xz : 7cec58323c6f2aaee7aca93517379cbbfef96e2c2c580c68ff85dd000cbbdd46
@@ -80,8 +80,7 @@ install     : |
     # when building 64+32 compat, only bare name is emitted, add *64 names for compat
     ln -srv %(installroot)/%(bindir)/wine %(installroot)/%(bindir)/wine64
 
-    # binfmt trigger
-    %install_file %(pkgdir)/trigger.yaml %(installroot)/usr/share/moss/triggers/sys.d/wine_binfmt.yaml
+    # binfmt
     %install_file %(pkgdir)/wine-binfmt.conf %(installroot)%(libdir)/binfmt.d/wine.conf
 
     # Ensure that ntsync is loaded

@@ -1738,7 +1738,6 @@
 				"/usr/share/man/man1/winepath.1",
 				"/usr/share/man/man1/wineserver.1",
 				"/usr/share/man/pl.UTF-8/man1/wine.1",
-				"/usr/share/moss/triggers/sys.d/wine_binfmt.yaml",
 				"/usr/share/wine/fonts/coue1255.fon",
 				"/usr/share/wine/fonts/coue1256.fon",
 				"/usr/share/wine/fonts/coue1257.fon",
@@ -3929,6 +3928,6 @@
 		}
 	},
 	"source-name": "wine",
-	"source-release": "16",
+	"source-release": "17",
 	"source-version": "10.19"
 }
