@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : moby
-version     : 28.5.2
-release     : 12
+version     : 29.0.4
+release     : 13
 homepage    : https://www.docker.com
 upstreams   :
-    - https://github.com/moby/moby/archive/refs/tags/v28.5.2.tar.gz : 0e450c03c536a1304ba8fd26ca4c4ff96fac62182fd042fec90ffdf4a0969d40
+    - https://github.com/moby/moby/archive/refs/tags/docker-v29.0.4.tar.gz : e028e04310493c903eb70f5fa36178940f16e38cf8bfcf97ae525d60dbd5f8af
 summary     : The open-source application container engine
 description : |
     The open-source application container engine. This package contains the Docker server.
@@ -16,9 +16,11 @@ license     :
     - Apache-2.0
 networking  : yes
 builddeps   :
+    - binary(git)
     - binary(go)
     - binary(go-md2man)
     - binary(make)
+    - pkgconfig(libnftables)
     - pkgconfig(libsystemd)
     - linux-headers
 rundeps     :
@@ -36,7 +38,7 @@ build      : |
     export CGO_LDFLAGS="${CGO_LDFLAGS}"    
 
     # Git commit corresponding to the version tag
-    export GITCOMMIT="$(git ls-remote https://github.com/moby/moby.git refs/tags/v%(version)^{} |awk '{print $1}')"
+    export GITCOMMIT="$(git ls-remote https://github.com/moby/moby.git refs/tags/docker-v%(version)^{} |awk '{print $1}')"
     export DOCKER_GITCOMMIT=${GITCOMMIT}
 
     # dockerd
@@ -66,9 +68,6 @@ install    : |
     # sysusers configuration
     %sysusers '# Docker daemon user'
     %sysusers 'g docker - -'
-
-    # udev rules
-    %install_file contrib/udev/80-docker.rules -t %(installroot)%(udevrulesdir)
 
     # man pages
     %install_file man/man8/dockerd.8 -t %(installroot)%(mandir)/man8/
