@@ -1289,6 +1289,7 @@
 				"/usr/share/man/man8/udevadm.8",
 				"/usr/share/mime/packages/io.systemd.xml",
 				"/usr/share/moss/helpers/systemd-hook.sh",
+				"/usr/share/moss/triggers/sys.d/systemd_binfmt.yaml",
 				"/usr/share/moss/triggers/sys.d/systemd_etcfiles.yaml",
 				"/usr/share/moss/triggers/sys.d/systemd_machine_id.yaml",
 				"/usr/share/moss/triggers/sys.d/systemd_presets.yaml",
@@ -2694,6 +2695,6 @@
 		}
 	},
 	"source-name": "systemd",
-	"source-release": "70",
+	"source-release": "71",
 	"source-version": "257.10"
 }
