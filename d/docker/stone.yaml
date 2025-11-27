@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : docker
-version     : 28.5.2
-release     : 13
+version     : 29.0.4
+release     : 14
 homepage    : https://www.docker.com
 upstreams   :
-    - https://github.com/docker/cli/archive/refs/tags/v28.5.2.tar.gz : 5864ccdfceef3a9e8ddb29b4a555d5b82a551b5258067aac164b6156c6cfdc08
+    - https://github.com/docker/cli/archive/refs/tags/v29.0.4.tar.gz : 93a159241fcb1a6abe00b1f5e567a723d28ba5e264cb2159e5010438a2fac4b3
 summary     : The open-source application container engine
 description : |
     The open-source application container engine. This contains the docker cli.
@@ -57,6 +57,3 @@ install    : |
     %install_file contrib/completion/bash/docker %(installroot)/%(completionsdir)/docker
     %install_file contrib/completion/zsh/_docker %(installroot)/%(datadir)/zsh/site-functions/_docker
     %install_file contrib/completion/fish/docker.fish %(installroot)/%(datadir)/fish/vendor_completions.d/docker.fish
-
-    # nano dockerfile syntax highlighting
-    %install_file %(pkgdir)/Dockerfile.nanorc -t %(installroot)/%(datadir)/nano/

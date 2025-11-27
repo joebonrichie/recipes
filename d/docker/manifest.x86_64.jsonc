@@ -184,16 +184,6 @@
 				"/usr/share/man/man1/docker-system.1",
 				"/usr/share/man/man1/docker-tag.1",
 				"/usr/share/man/man1/docker-top.1",
-				"/usr/share/man/man1/docker-trust-inspect.1",
-				"/usr/share/man/man1/docker-trust-key-generate.1",
-				"/usr/share/man/man1/docker-trust-key-load.1",
-				"/usr/share/man/man1/docker-trust-key.1",
-				"/usr/share/man/man1/docker-trust-revoke.1",
-				"/usr/share/man/man1/docker-trust-sign.1",
-				"/usr/share/man/man1/docker-trust-signer-add.1",
-				"/usr/share/man/man1/docker-trust-signer-remove.1",
-				"/usr/share/man/man1/docker-trust-signer.1",
-				"/usr/share/man/man1/docker-trust.1",
 				"/usr/share/man/man1/docker-unpause.1",
 				"/usr/share/man/man1/docker-update.1",
 				"/usr/share/man/man1/docker-version.1",
@@ -208,7 +198,6 @@
 				"/usr/share/man/man1/docker.1",
 				"/usr/share/man/man5/Dockerfile.5",
 				"/usr/share/man/man5/docker-config-json.5",
-				"/usr/share/nano/Dockerfile.nanorc",
 				"/usr/share/zsh/site-functions/_docker"
 			],
 			"name": "docker",
@@ -218,6 +207,6 @@
 		}
 	},
 	"source-name": "docker",
-	"source-release": "13",
-	"source-version": "28.5.2"
+	"source-release": "14",
+	"source-version": "29.0.4"
 }
