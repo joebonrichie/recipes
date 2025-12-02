@@ -4,8 +4,8 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : glibc
-version     : 2.42+git.17c3eab3
-release     : 30
+version     : 2.42+git.8aaf4b73
+release     : 31
 summary     : The GNU libc libraries
 license     :
     - GPL-2.0-or-later
@@ -16,7 +16,7 @@ description : |
     The GNU libc libraries
 upstreams   :
     - git|https://sourceware.org/git/glibc.git :
-        ref : 17c3eab387c3ceb6972e57888a89b1480793f81a
+        ref : 8aaf4b732d7650c2db3beb4dc8bb70eab5b022c3
 builddeps   :
     - binary(bison)
     - binary(gperf)
@@ -44,14 +44,14 @@ environment : |
     # TODO: Enable sframe once LLVM supports it
     export COMMON_GLIBC_OPTIONS="\
         %(options_configure) \
-                --disable-build-nscd \
-                --disable-nscd \
-                --disable-sframe \
-                --enable-bind-now \
-                --enable-kernel=5.15 \
-                --enable-multi-arch \
-                --enable-stack-protector=strong \
-                --with-selinux=no
+            --disable-build-nscd \
+            --disable-nscd \
+            --disable-sframe \
+            --enable-bind-now \
+            --enable-kernel=6.1 \
+            --enable-multi-arch \
+            --enable-stack-protector=strong \
+            --with-selinux=no
     "
 setup       : |
     %patch %(pkgdir)/perf/0001-Remove-RELR-dependency-check.patch
