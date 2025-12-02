@@ -1,0 +1,21 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : tomlplusplus
+version     : 3.4.0
+release     : 1
+upstreams   :
+    - https://github.com/marzer/tomlplusplus/archive/refs/tags/v3.4.0.tar.gz : 8517f65938a4faae9ccf8ebb36631a38c1cadfb5efa85d9a72e15b9e97d25155
+homepage    : https://marzer.github.io/tomlplusplus
+license     : MIT
+summary     : TOML config file parser and serializer library
+description : |
+    TOML config file parser and serializer for C++
+setup       : |
+    %meson
+build       : |
+    %meson_build
+install     : |
+    %meson_install
