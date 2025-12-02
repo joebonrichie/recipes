@@ -203,7 +203,7 @@
 			],
 			"files": [
 				"/usr/lib/libarchive.so.13",
-				"/usr/lib/libarchive.so.13.8.3",
+				"/usr/lib/libarchive.so.13.8.4",
 				"/usr/share/man/man5/cpio.5",
 				"/usr/share/man/man5/libarchive-formats.5",
 				"/usr/share/man/man5/mtree.5",
@@ -285,6 +285,6 @@
 		}
 	},
 	"source-name": "libarchive",
-	"source-release": "17",
-	"source-version": "3.8.3"
+	"source-release": "18",
+	"source-version": "3.8.4"
 }
