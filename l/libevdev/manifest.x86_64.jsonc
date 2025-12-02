@@ -54,6 +54,6 @@
 		}
 	},
 	"source-name": "libevdev",
-	"source-release": "7",
-	"source-version": "1.13.5"
+	"source-release": "8",
+	"source-version": "1.13.6"
 }
