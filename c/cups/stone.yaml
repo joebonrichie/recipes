@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : cups
-version     : 2.4.14
-release     : 17
+version     : 2.4.15
+release     : 18
 homepage    : https://openprinting.github.io/cups/
 upstreams   :
-    - https://github.com/OpenPrinting/cups/releases/download/v2.4.14/cups-2.4.14-source.tar.gz : 660288020dd6f79caf799811c4c1a3207a48689899ac2093959d70a3bdcb7699
+    - https://github.com/OpenPrinting/cups/releases/download/v2.4.15/cups-2.4.15-source.tar.gz : eff0bbd48ff1abcbb8e46e28e85aefaffa391a1d9c4d8dc92ab3822a13008d7f
 summary     : CUPS uses IPP Everywhere™ to support printing to local and network printers.
 description : |
     The current standards-based, open source printing system developed by OpenPrinting for Linux® and other Unix®-like operating systems. CUPS uses IPP Everywhere™ to support printing to local and network printers.
@@ -29,6 +29,8 @@ tuning      :
     - optimize: size # This doesn't need to be fast, so we might as well make it small
 setup       : |
     %patch %(pkgdir)/0001-stateless-cupsd.patch
+    %patch %(pkgdir)/1439.patch
+
     %configure \
         --with-cups-user=lp \
         --with-cups-group=lp \
