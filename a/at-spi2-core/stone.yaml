@@ -5,7 +5,7 @@
 #
 name        : at-spi2-core
 version     : 2.58.1
-release     : 16
+release     : 17
 homepage    : https://wiki.gnome.org/Accessibility
 upstreams   :
     - https://download.gnome.org/sources/at-spi2-core/2.58/at-spi2-core-2.58.1.tar.xz : 7f374a6a38cd70ff4b32c9d3a0310bfa804d946fed4c9e69a7d49facdcb95e9c
@@ -33,7 +33,9 @@ rundeps     :
 setup       : |
     %patch %(pkgdir)/0001-at-spi2-core-Stateless-XDG-autostart-directories.patch
     %meson \
-        -Ddefault_bus=dbus-broker
+        -Ddefault_bus=dbus-broker \
+        -Dgtk2_atk_adaptor=false
+
 build       : |
     %meson_build
 install     : |
@@ -61,7 +63,6 @@ packages    :
         summary: A GTK+ module that bridges ATK to D-Bus at-spi
         description: A GTK+ module that bridges ATK to D-Bus at-spi
         paths:
-            - /usr/lib/gtk-2.0/modules/libatk-bridge.so
             - /usr/lib/gnome-settings-daemon-3.0/gtk-modules/at-spi2-atk.desktop
             - /usr/lib/libatk-bridge-2.0.so.*
 
