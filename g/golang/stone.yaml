@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : golang
-version     : 1.25.4
-release     : 25
+version     : 1.25.5
+release     : 26
 homepage    : https://go.dev
 upstreams   :
-    - https://go.dev/dl/go1.25.4.linux-amd64.tar.gz : 9fa5ffeda4170de60f67f3aa0f824e426421ba724c21e133c1e35d6159ca1bec
+    - https://go.dev/dl/go1.25.5.linux-amd64.tar.gz : 9e9b755d63b36acf30c12a9a3fc379243714c1c6d3dd72861da637f336ebb35b
 summary     : The Go programming language
 description : |
     Go is an open source programming language that makes it easy to build simple, reliable, and efficient software.
