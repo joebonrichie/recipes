@@ -5,6 +5,7 @@
 		"cups-browsed": {
 			"build-depends": [
 				"binary(gdbus-codegen)",
+				"binary(tar)",
 				"pkgconfig(avahi-client)",
 				"pkgconfig(cups)",
 				"pkgconfig(libcupsfilters)",
@@ -50,6 +51,6 @@
 		}
 	},
 	"source-name": "cups-browsed",
-	"source-release": "3",
-	"source-version": "2.1.0"
+	"source-release": "4",
+	"source-version": "2.1.1"
 }
