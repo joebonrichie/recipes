@@ -25,18 +25,15 @@
 				"soname(libdbus-1.so.3(x86_64))",
 				"soname(libgio-2.0.so.0(x86_64))",
 				"soname(libglib-2.0.so.0(x86_64))",
-				"soname(libgmodule-2.0.so.0(x86_64))",
 				"soname(libgobject-2.0.so.0(x86_64))"
 			],
 			"files": [
 				"/usr/lib/gnome-settings-daemon-3.0/gtk-modules/at-spi2-atk.desktop",
-				"/usr/lib/gtk-2.0/modules/libatk-bridge.so",
 				"/usr/lib/libatk-bridge-2.0.so.0",
 				"/usr/lib/libatk-bridge-2.0.so.0.0.0"
 			],
 			"name": "at-spi2-atk",
 			"provides": [
-				"soname(gtk-2.0/modules/libatk-bridge.so(x86_64))",
 				"soname(libatk-bridge-2.0.so.0(x86_64))"
 			]
 		},
@@ -397,6 +394,6 @@
 		}
 	},
 	"source-name": "at-spi2-core",
-	"source-release": "16",
+	"source-release": "17",
 	"source-version": "2.58.1"
 }
