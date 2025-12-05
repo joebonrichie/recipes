@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : virtiofsd
-version     : 1.13.2
-release     : 2
+version     : 1.13.3
+release     : 3
 homepage    : https://gitlab.com/virtio-fs/virtiofsd
 upstreams   :
-    - https://gitlab.com/virtio-fs/virtiofsd/-/archive/v1.13.2/virtiofsd-v1.13.2.tar.gz : 3d611cc8c0ed9d028cd472fa6f31a491dc5623485e469af1a99f02ac6549c7c7
+    - https://gitlab.com/virtio-fs/virtiofsd/-/archive/v1.13.3/virtiofsd-v1.13.3.tar.gz : 9d5e67e7b19f52a8d3c411acf9beed6206e9352226cbf1e2bdaa4ed609a927ce
 summary     : Vhost-user virtio-fs device backend
 description : |
     Vhost-user virtio-fs device backend written in Rust
