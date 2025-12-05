@@ -324,6 +324,7 @@
 				"/usr/lib32/libGLX_indirect.so.0",
 				"/usr/lib32/libGLX_mesa.so.0",
 				"/usr/lib32/libGLX_mesa.so.0.0.0",
+				"/usr/lib32/libVkLayer_MESA_anti_lag.so",
 				"/usr/lib32/libVkLayer_MESA_device_select.so",
 				"/usr/lib32/libVkLayer_MESA_overlay.so",
 				"/usr/lib32/libVkLayer_MESA_screenshot.so",
@@ -348,6 +349,7 @@
 				"soname(gbm/dri_gbm.so(386))",
 				"soname(libEGL_mesa.so.0(386))",
 				"soname(libGLX_mesa.so.0(386))",
+				"soname(libVkLayer_MESA_anti_lag.so(386))",
 				"soname(libVkLayer_MESA_device_select.so(386))",
 				"soname(libVkLayer_MESA_overlay.so(386))",
 				"soname(libVkLayer_MESA_screenshot.so(386))",
@@ -1044,6 +1046,7 @@
 				"vulkan-loader"
 			],
 			"files": [
+				"/usr/lib/libVkLayer_MESA_anti_lag.so",
 				"/usr/lib/libVkLayer_MESA_device_select.so",
 				"/usr/lib/libvulkan_gfxstream.so",
 				"/usr/lib/libvulkan_intel.so",
@@ -1060,10 +1063,12 @@
 				"/usr/share/vulkan/icd.d/nouveau_icd.x86_64.json",
 				"/usr/share/vulkan/icd.d/radeon_icd.x86_64.json",
 				"/usr/share/vulkan/icd.d/virtio_icd.x86_64.json",
+				"/usr/share/vulkan/implicit_layer.d/VkLayer_MESA_anti_lag.json",
 				"/usr/share/vulkan/implicit_layer.d/VkLayer_MESA_device_select.json"
 			],
 			"name": "mesa-vulkan-drivers",
 			"provides": [
+				"soname(libVkLayer_MESA_anti_lag.so(x86_64))",
 				"soname(libVkLayer_MESA_device_select.so(x86_64))",
 				"soname(libvulkan_gfxstream.so(x86_64))",
 				"soname(libvulkan_intel.so(x86_64))",
@@ -1149,6 +1154,6 @@
 		}
 	},
 	"source-name": "mesa",
-	"source-release": "57",
+	"source-release": "58",
 	"source-version": "25.3.1"
 }

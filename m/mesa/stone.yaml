@@ -6,7 +6,7 @@
 name        : mesa
 version     : 25.3.1
 # Note: keep mesa-clc in-sync with this package version-wise
-release     : 57
+release     : 58
 homepage    : https://mesa3d.org/
 upstreams   :
     - https://mesa.freedesktop.org/archive/mesa-25.3.1.tar.xz : 059d0d985622f49588f01aa29152804f4da8ffe6add046e00a52923379c2d8da
@@ -110,7 +110,7 @@ setup       : |
         -Dvideo-codecs=all \
         -Dmicrosoft-clc=disabled \
         -Dvulkan-drivers=amd,intel,intel_hasvk,swrast,virtio$EXTRA_VK_DRIVERS \
-        -Dvulkan-layers=device-select,overlay,screenshot,vram-report-limit \
+        -Dvulkan-layers=anti-lag,device-select,overlay,screenshot,vram-report-limit \
         --wrap-mode=default
 build       : |
     %meson_build
@@ -212,9 +212,11 @@ packages    :
             - vulkan-loader
         paths:
             - /usr/lib/libvulkan_*.so
+            - /usr/lib/libVkLayer_MESA_anti_lag.so
             - /usr/lib/libVkLayer_MESA_device_select.so
             - /usr/share/drirc.d/00-radv-defaults.conf
             - /usr/share/vulkan/icd.d/*.x86_64.json
+            - /usr/share/vulkan/implicit_layer.d/VkLayer_MESA_anti_lag.json
             - /usr/share/vulkan/implicit_layer.d/VkLayer_MESA_device_select.json
 
     - "%(name)-vulkan-layers":
