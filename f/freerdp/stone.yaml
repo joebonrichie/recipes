@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : freerdp
-version     : 3.18.0
-release     : 16
+version     : 3.19.0
+release     : 17
 homepage    : www.freerdp.com
 upstreams   :
-    - https://github.com/FreeRDP/FreeRDP/releases/download/3.18.0/freerdp-3.18.0.tar.gz : 70e89fdc92e3c2a429a7e61015ffd55bda4f6fefd76bb2978a91134d94869462
+    - https://github.com/FreeRDP/FreeRDP/releases/download/3.19.0/freerdp-3.19.0.tar.gz : f3d021e56e5fee789149f875887850185c310b96240c998c15a864e4fb1aaf46
 summary     : FreeRDP is a free remote desktop protocol library and clients  
 description : |
     FreeRDP is a free implementation of the Remote Desktop Protocol (RDP), released 
