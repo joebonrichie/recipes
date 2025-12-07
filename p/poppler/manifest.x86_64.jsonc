@@ -44,13 +44,13 @@
 				"soname(libz.so.1(x86_64))"
 			],
 			"files": [
-				"/usr/lib/libpoppler.so.154",
-				"/usr/lib/libpoppler.so.154.0.0",
+				"/usr/lib/libpoppler.so.155",
+				"/usr/lib/libpoppler.so.155.0.0",
 				"/usr/share/locale/ca/LC_MESSAGES/pdfsig.mo"
 			],
 			"name": "poppler",
 			"provides": [
-				"soname(libpoppler.so.154(x86_64))"
+				"soname(libpoppler.so.155(x86_64))"
 			]
 		},
 		"poppler-cpp": {
@@ -75,7 +75,7 @@
 			],
 			"depends": [
 				"soname(libc.so.6(x86_64))",
-				"soname(libpoppler.so.154(x86_64))",
+				"soname(libpoppler.so.155(x86_64))",
 				"soname(libstdc++.so.6(x86_64))"
 			],
 			"files": [
@@ -304,7 +304,7 @@
 				"soname(libglib-2.0.so.0(x86_64))",
 				"soname(libgobject-2.0.so.0(x86_64))",
 				"soname(libm.so.6(x86_64))",
-				"soname(libpoppler.so.154(x86_64))",
+				"soname(libpoppler.so.155(x86_64))",
 				"soname(libstdc++.so.6(x86_64))"
 			],
 			"files": [
@@ -397,7 +397,7 @@
 				"soname(libc.so.6(x86_64))",
 				"soname(libfreetype.so.6(x86_64))",
 				"soname(liblcms2.so.2(x86_64))",
-				"soname(libpoppler.so.154(x86_64))",
+				"soname(libpoppler.so.155(x86_64))",
 				"soname(libstdc++.so.6(x86_64))"
 			],
 			"files": [
@@ -482,7 +482,7 @@
 				"soname(libfreetype.so.6(x86_64))",
 				"soname(liblcms2.so.2(x86_64))",
 				"soname(libm.so.6(x86_64))",
-				"soname(libpoppler.so.154(x86_64))",
+				"soname(libpoppler.so.155(x86_64))",
 				"soname(libstdc++.so.6(x86_64))"
 			],
 			"files": [
@@ -532,6 +532,6 @@
 		}
 	},
 	"source-name": "poppler",
-	"source-release": "14",
-	"source-version": "25.11.0"
+	"source-release": "15",
+	"source-version": "25.12.0"
 }
