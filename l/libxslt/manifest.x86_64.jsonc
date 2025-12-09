@@ -17,9 +17,9 @@
 			"files": [
 				"/usr/bin/xsltproc",
 				"/usr/lib/libexslt.so.0",
-				"/usr/lib/libexslt.so.0.8.24",
+				"/usr/lib/libexslt.so.0.8.25",
 				"/usr/lib/libxslt.so.1",
-				"/usr/lib/libxslt.so.1.1.43",
+				"/usr/lib/libxslt.so.1.1.45",
 				"/usr/share/man/man1/xsltproc.1"
 			],
 			"name": "libxslt",
@@ -58,6 +58,7 @@
 				"/usr/include/libxslt/security.h",
 				"/usr/include/libxslt/templates.h",
 				"/usr/include/libxslt/transform.h",
+				"/usr/include/libxslt/transformInternals.h",
 				"/usr/include/libxslt/variables.h",
 				"/usr/include/libxslt/xslt.h",
 				"/usr/include/libxslt/xsltInternals.h",
@@ -181,6 +182,6 @@
 		}
 	},
 	"source-name": "libxslt",
-	"source-release": "5",
-	"source-version": "1.1.43"
+	"source-release": "6",
+	"source-version": "1.1.45"
 }
