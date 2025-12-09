@@ -26,6 +26,7 @@
 		},
 		"pkgset-aeryn-base-desktop": {
 			"depends": [
+				"libva-intel-hybrid-driver",
 				"libva-intel-media-driver",
 				"mesa-dri-drivers",
 				"mesa-libegl",
@@ -83,6 +84,6 @@
 		}
 	},
 	"source-name": "pkgset-aeryn",
-	"source-release": "18",
-	"source-version": "2025.10"
+	"source-release": "19",
+	"source-version": "2025.12"
 }
