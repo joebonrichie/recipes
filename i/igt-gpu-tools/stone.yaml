@@ -1,0 +1,41 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : igt-gpu-tools
+version     : 2.2
+release     : 1
+upstreams   :
+    - https://xorg.freedesktop.org/releases/individual/app/igt-gpu-tools-2.2.tar.xz : 88178558b352a5e8a287954cb2eef05d775aedfacf43b88251509ea014b6182d
+homepage    : https://gitlab.freedesktop.org/drm/igt-gpu-tools
+license     : MIT
+summary     : Tools for development and testing of the Intel DRM driver
+description : |
+    IGT GPU Tools is a collection of tools for development and testing of the DRM drivers. There are many macro-level test suites that get used against the drivers, including xtest, rendercheck, piglit, and oglconform, but failures from those can be difficult to track down to kernel changes, and many require complicated build procedures or specific testing environments to get useful results. Therefore, IGT GPU Tools includes low-level tools and tests specifically for development and testing of the DRM Drivers.
+builddeps   :
+    - binary(bison)
+    - binary(flex)
+    - binary(rst2man)
+    - pkgconfig(alsa)
+    - pkgconfig(cairo)
+    - pkgconfig(glib-2.0)
+    - pkgconfig(gsl)
+    - pkgconfig(json-c)
+    - pkgconfig(libcurl)
+    - pkgconfig(libdrm)
+    - pkgconfig(libdw)
+    - pkgconfig(libkmod)
+    - pkgconfig(libproc2)
+    - pkgconfig(libudev)
+    - pkgconfig(libunwind)
+    - pkgconfig(pixman-1)
+    - pkgconfig(xrandr)
+    - pkgconfig(xv)
+    # xmlrpc-c
+setup       : |
+    %meson
+build       : |
+    %meson_build
+install     : |
+    %meson_install
