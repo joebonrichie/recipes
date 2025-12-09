@@ -1,0 +1,20 @@
+#
+# SPDX-FileCopyrightText: © 2020-2024 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : prismlauncher
+version     : 1
+release     : 2
+homepage    : https://github.com/PrismLauncher/PrismLauncher
+# upstreams   :
+#     - https://github.com/PrismLauncher/PrismLauncher/releases/download/9.4/PrismLauncher-9.4.tar.gz : 77ab52239c2a2a9f77d7c4607e1d9cf40970f9240d2f5061b116a7b1b8fd0277
+summary     : TYPO package - pending deletion
+description : |
+    TYPO package - pending deletion
+license     : BSD-2-Clause
+rundeps     :
+    - prism-launcher
+install     : |
+    %install_dir %(installroot)%(docdir)/typos/%(name)
+    echo "prism-launcher" > %(installroot)%(docdir)/typos/%(name)/TRANSITION

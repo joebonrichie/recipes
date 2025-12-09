@@ -1,0 +1,18 @@
+/** Human readable report. This is not consumed by boulder */
+{
+	"manifest-version": "0.2",
+	"packages": {
+		"prismlauncher": {
+			"depends": [
+				"prism-launcher"
+			],
+			"files": [
+				"/usr/share/doc/typos/prismlauncher/TRANSITION"
+			],
+			"name": "prismlauncher"
+		}
+	},
+	"source-name": "prismlauncher",
+	"source-release": "2",
+	"source-version": "1"
+}
