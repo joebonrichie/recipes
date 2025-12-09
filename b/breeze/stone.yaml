@@ -4,10 +4,10 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : breeze
-version     : 6.5.3
-release     : 11
+version     : 6.5.4
+release     : 12
 upstreams   :
-    - https://download.kde.org/stable/plasma/6.5.3/breeze-6.5.3.tar.xz : d782875a4510c31435ccd5aad209eb519c0a4ddfdb7da392f54eae863c2e8699
+    - https://download.kde.org/stable/plasma/6.5.4/breeze-6.5.4.tar.xz : 2b50b2e8ff250ca782ff65f8ea5140121d544d8b8ba4eaa345d6224e8076c3d1
 homepage    : https://kde.org/plasma-desktop/
 license     :
     - BSD-3-Clause
@@ -34,9 +34,6 @@ tuning      :
     - lto: full
     - optimize: speed
 setup       : |
-    %patch %(pkgdir)/upstream-01.patch
-    %patch %(pkgdir)/upstream-02.patch
-
     %cmake_kf6 \
         -DBUILD_QT5=OFF \
         -DBUILD_QT6=ON
