@@ -148,6 +148,7 @@
 				"/usr/share/locale/id/LC_MESSAGES/kcm_kscreen.mo",
 				"/usr/share/locale/id/LC_MESSAGES/kscreen_common.mo",
 				"/usr/share/locale/id/LC_MESSAGES/plasma_applet_org.kde.kscreen.mo",
+				"/usr/share/locale/is/LC_MESSAGES/hdrcalibrator.mo",
 				"/usr/share/locale/is/LC_MESSAGES/kcm_kscreen.mo",
 				"/usr/share/locale/is/LC_MESSAGES/kscreen_common.mo",
 				"/usr/share/locale/is/LC_MESSAGES/plasma_applet_org.kde.kscreen.mo",
@@ -264,6 +265,6 @@
 		}
 	},
 	"source-name": "kscreen",
-	"source-release": "13",
-	"source-version": "6.5.3"
+	"source-release": "14",
+	"source-version": "6.5.4"
 }
