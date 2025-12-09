@@ -4,10 +4,10 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : kglobalacceld
-version     : 6.5.3
-release     : 12
+version     : 6.5.4
+release     : 13
 upstreams   :
-    - https://download.kde.org/stable/plasma/6.5.3/kglobalacceld-6.5.3.tar.xz : 47a9c9815b1dd34fd9ec77f2826ce959216f01275853375936434f12dc9287d2
+    - https://download.kde.org/stable/plasma/6.5.4/kglobalacceld-6.5.4.tar.xz : 1606b5016b6fa554e3a660fc03e59fd340269de52d6ca4ee3a62e6b79dd858d2
 homepage    : https://kde.org/plasma-desktop/
 license     :
     - LGPL-2.0-or-later
