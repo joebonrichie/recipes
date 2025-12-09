@@ -689,6 +689,7 @@
 				"/usr/share/locale/id/LC_MESSAGES/kcmkwinscreenedges.mo",
 				"/usr/share/locale/id/LC_MESSAGES/kcmkwm.mo",
 				"/usr/share/locale/id/LC_MESSAGES/kwin.mo",
+				"/usr/share/locale/is/LC_MESSAGES/kcm_animations.mo",
 				"/usr/share/locale/is/LC_MESSAGES/kcm_kwin_effects.mo",
 				"/usr/share/locale/is/LC_MESSAGES/kcm_kwin_scripts.mo",
 				"/usr/share/locale/is/LC_MESSAGES/kcm_kwin_virtualdesktops.mo",
@@ -1755,9 +1756,9 @@
 			],
 			"files": [
 				"/usr/lib/libkcmkwincommon.so.6",
-				"/usr/lib/libkcmkwincommon.so.6.5.3",
+				"/usr/lib/libkcmkwincommon.so.6.5.4",
 				"/usr/lib/libkwin.so.6",
-				"/usr/lib/libkwin.so.6.5.3",
+				"/usr/lib/libkwin.so.6.5.4",
 				"/usr/share/qlogging-categories6/org_kde_kwin.categories"
 			],
 			"name": "kwin-libs",
@@ -1768,6 +1769,6 @@
 		}
 	},
 	"source-name": "kwin",
-	"source-release": "17",
-	"source-version": "6.5.3"
+	"source-release": "18",
+	"source-version": "6.5.4"
 }
