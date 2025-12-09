@@ -156,6 +156,6 @@
 		}
 	},
 	"source-name": "libinput",
-	"source-release": "11",
-	"source-version": "1.30.0"
+	"source-release": "12",
+	"source-version": "1.30.1"
 }
