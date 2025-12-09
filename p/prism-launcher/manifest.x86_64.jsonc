@@ -2,7 +2,7 @@
 {
 	"manifest-version": "0.2",
 	"packages": {
-		"prismlauncher": {
+		"prism-launcher": {
 			"build-depends": [
 				"binary(java-17)",
 				"binary(scdoc)",
@@ -32,7 +32,9 @@
 				"soname(libc.so.6(x86_64))",
 				"soname(libcmark.so.0.31.1(x86_64))",
 				"soname(libgcc_s.so.1(x86_64))",
+				"soname(libglfw.so.3(x86_64))",
 				"soname(libm.so.6(x86_64))",
+				"soname(libopenal.so.1(x86_64))",
 				"soname(libstdc++.so.6(x86_64))",
 				"soname(libtomlplusplus.so.3(x86_64))",
 				"soname(libz.so.1(x86_64))"
@@ -50,13 +52,13 @@
 				"/usr/share/mime/packages/modrinth-mrpack-mime.xml",
 				"/usr/share/qlogging-categories6/prismlauncher.categories"
 			],
-			"name": "prismlauncher",
+			"name": "prism-launcher",
 			"provides": [
 				"binary(prismlauncher)"
 			]
 		}
 	},
-	"source-name": "prismlauncher",
+	"source-name": "prism-launcher",
 	"source-release": "1",
 	"source-version": "9.4"
 }

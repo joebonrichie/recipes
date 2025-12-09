@@ -3,7 +3,7 @@
 #
 # SPDX-License-Identifier: MPL-2.0
 #
-name        : prismlauncher
+name        : prism-launcher
 version     : 9.4
 release     : 1
 homepage    : https://github.com/PrismLauncher/PrismLauncher
@@ -31,14 +31,19 @@ builddeps   :
 rundeps     :
     - binary(gamemoderun)
     - binary(java-21)
+    - soname(libglfw.so.3(x86_64))
+    - soname(libopenal.so.1(x86_64))
     - qt6-wayland
 setup       : |
     export JAVA_HOME=/usr/lib/jvm/openjdk-17
     export PATH=$JAVA_HOME/bin:$PATH
 
+    # Launcher_GLFW_LIBRARY_NAME and Launcher_OPENAL_LIBRARY_NAME need to match the correct sonames of those libraries
     %cmake \
         -DLauncher_BUILD_PLATFORM="aerynos" \
-        -DLauncher_QT_VERSION_MAJOR="6"
+        -DLauncher_ENABLE_JAVA_DOWNLOADER=ON \
+        -DLauncher_GLFW_LIBRARY_NAME="libglfw.so.3" \
+        -DLauncher_OPENAL_LIBRARY_NAME="libopenal.so.1"
 build       : |
     %cmake_build
 install     : |
