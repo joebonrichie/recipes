@@ -20,6 +20,7 @@
 				"cmake(KF6XmlGui)",
 				"cmake(LayerShellQt)",
 				"cmake(PlasmaQuick)",
+				"cmake(Qt6CorePrivate)",
 				"cmake(Qt6Quick)",
 				"pkgconfig(pam)",
 				"pkgconfig(wayland-server)"
@@ -63,7 +64,7 @@
 			"files": [
 				"/usr/lib/kf6/kscreenlocker_greet",
 				"/usr/lib/libKScreenLocker.so.6",
-				"/usr/lib/libKScreenLocker.so.6.5.3",
+				"/usr/lib/libKScreenLocker.so.6.5.4",
 				"/usr/lib/qt6/plugins/plasma/kcms/systemsettings/kcm_screenlocker.so",
 				"/usr/share/applications/kcm_screenlocker.desktop",
 				"/usr/share/knotifications6/ksmserver.notifyrc",
@@ -269,6 +270,7 @@
 				"cmake(KF6XmlGui)",
 				"cmake(LayerShellQt)",
 				"cmake(PlasmaQuick)",
+				"cmake(Qt6CorePrivate)",
 				"cmake(Qt6Quick)",
 				"pkgconfig(pam)",
 				"pkgconfig(wayland-server)"
@@ -297,6 +299,6 @@
 		}
 	},
 	"source-name": "kscreenlocker",
-	"source-release": "10",
-	"source-version": "6.5.3"
+	"source-release": "11",
+	"source-version": "6.5.4"
 }
