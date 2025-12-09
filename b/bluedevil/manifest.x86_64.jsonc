@@ -293,6 +293,8 @@
 				"/usr/share/doc/HTML/it/kcontrol/bluedevil/index.docbook",
 				"/usr/share/doc/HTML/nl/kcontrol/bluedevil/index.cache.bz2",
 				"/usr/share/doc/HTML/nl/kcontrol/bluedevil/index.docbook",
+				"/usr/share/doc/HTML/pt_BR/kcontrol/bluedevil/index.cache.bz2",
+				"/usr/share/doc/HTML/pt_BR/kcontrol/bluedevil/index.docbook",
 				"/usr/share/doc/HTML/ru/kcontrol/bluedevil/index.cache.bz2",
 				"/usr/share/doc/HTML/ru/kcontrol/bluedevil/index.docbook",
 				"/usr/share/doc/HTML/sl/kcontrol/bluedevil/index.cache.bz2",
@@ -313,6 +315,6 @@
 		}
 	},
 	"source-name": "bluedevil",
-	"source-release": "13",
-	"source-version": "6.5.3"
+	"source-release": "14",
+	"source-version": "6.5.4"
 }

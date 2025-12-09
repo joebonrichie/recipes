@@ -55,7 +55,7 @@
 			"files": [
 				"/usr/bin/krdpserver",
 				"/usr/lib/libKRdp.so.6",
-				"/usr/lib/libKRdp.so.6.5.3",
+				"/usr/lib/libKRdp.so.6.5.4",
 				"/usr/lib/qt6/plugins/plasma/kcms/systemsettings/kcm_krdpserver.so",
 				"/usr/lib/systemd/user-preset/00-krdp.preset",
 				"/usr/lib/systemd/user/app-org.kde.krdpserver.service",
@@ -97,6 +97,8 @@
 				"/usr/share/locale/hu/LC_MESSAGES/krdpserver.mo",
 				"/usr/share/locale/ia/LC_MESSAGES/kcm_krdpserver.mo",
 				"/usr/share/locale/ia/LC_MESSAGES/krdpserver.mo",
+				"/usr/share/locale/is/LC_MESSAGES/kcm_krdpserver.mo",
+				"/usr/share/locale/is/LC_MESSAGES/krdpserver.mo",
 				"/usr/share/locale/it/LC_MESSAGES/kcm_krdpserver.mo",
 				"/usr/share/locale/it/LC_MESSAGES/krdpserver.mo",
 				"/usr/share/locale/ka/LC_MESSAGES/kcm_krdpserver.mo",
@@ -180,6 +182,6 @@
 		}
 	},
 	"source-name": "krdp",
-	"source-release": "12",
-	"source-version": "6.5.3"
+	"source-release": "13",
+	"source-version": "6.5.4"
 }

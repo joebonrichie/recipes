@@ -170,7 +170,7 @@
 				"/usr/lib/kf6/kimpanel-ibus-panel",
 				"/usr/lib/kf6/kimpanel-ibus-panel-launcher",
 				"/usr/lib/libkglobalaccelmodel.so.6",
-				"/usr/lib/libkglobalaccelmodel.so.6.5.3",
+				"/usr/lib/libkglobalaccelmodel.so.6.5.4",
 				"/usr/lib/qt6/plugins/attica_kde.so",
 				"/usr/lib/qt6/plugins/kf6/kded/device_automounter.so",
 				"/usr/lib/qt6/plugins/kf6/kded/kded_touchpad.so",
@@ -1623,6 +1623,7 @@
 				"/usr/share/locale/is/LC_MESSAGES/kcmqtquicksettings.mo",
 				"/usr/share/locale/is/LC_MESSAGES/knetattach.mo",
 				"/usr/share/locale/is/LC_MESSAGES/org.kde.plasma.emojier.mo",
+				"/usr/share/locale/is/LC_MESSAGES/plasma-desktop-sddm-theme.mo",
 				"/usr/share/locale/is/LC_MESSAGES/plasma_applet_org.kde.desktopcontainment.mo",
 				"/usr/share/locale/is/LC_MESSAGES/plasma_applet_org.kde.panel.mo",
 				"/usr/share/locale/is/LC_MESSAGES/plasma_applet_org.kde.plasma.keyboardlayout.mo",
@@ -1635,6 +1636,7 @@
 				"/usr/share/locale/is/LC_MESSAGES/plasma_applet_org.kde.plasma.taskmanager.mo",
 				"/usr/share/locale/is/LC_MESSAGES/plasma_applet_org.kde.plasma.trash.mo",
 				"/usr/share/locale/is/LC_MESSAGES/plasma_applet_org.kde.plasma.windowlist.mo",
+				"/usr/share/locale/is/LC_MESSAGES/plasma_runner_keys.mo",
 				"/usr/share/locale/is/LC_MESSAGES/plasma_runner_kwin.mo",
 				"/usr/share/locale/is/LC_MESSAGES/plasma_runner_plasma-desktop.mo",
 				"/usr/share/locale/is/LC_MESSAGES/plasma_shell_org.kde.plasma.desktop.mo",
@@ -4438,6 +4440,6 @@
 		}
 	},
 	"source-name": "plasma-desktop",
-	"source-release": "19",
-	"source-version": "6.5.3"
+	"source-release": "20",
+	"source-version": "6.5.4"
 }

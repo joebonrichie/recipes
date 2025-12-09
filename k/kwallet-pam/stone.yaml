@@ -4,10 +4,10 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : kwallet-pam
-version     : 6.5.3
-release     : 9
+version     : 6.5.4
+release     : 10
 upstreams   :
-    - https://download.kde.org/stable/plasma/6.5.3/kwallet-pam-6.5.3.tar.xz : 36f1f829b7e89c976eede377e6c121ae9d1b44025ca27b55656f257d188d0c74
+    - https://download.kde.org/stable/plasma/6.5.4/kwallet-pam-6.5.4.tar.xz : 66d9e0e36deea2ce77134bb24c34cbf8dcf623170462b4a9042f7f0e64c27ddf
 homepage    : https://kde.org/plasma-desktop/
 license     : LGPL-2.1-only
 summary     : KWallet PAM integration
