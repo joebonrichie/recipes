@@ -160,3 +160,7 @@
 - rustls-ffi-32bit
 - rustls-ffi-32bit-devel
 - rustls-ffi-dbginfo
+
+### Renamed
+- prismlauncher
+- intel-vaapi-driver
