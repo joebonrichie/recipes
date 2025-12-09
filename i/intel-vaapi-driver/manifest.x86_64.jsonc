@@ -1,0 +1,29 @@
+/** Human readable report. This is not consumed by boulder */
+{
+	"manifest-version": "0.2",
+	"packages": {
+		"intel-vaapi-driver": {
+			"build-depends": [
+				"pkgconfig(libdrm)",
+				"pkgconfig(libva)",
+				"pkgconfig(x11)"
+			],
+			"depends": [
+				"soname(libc.so.6(x86_64))",
+				"soname(libdrm.so.2(x86_64))",
+				"soname(libdrm_intel.so.1(x86_64))",
+				"soname(libm.so.6(x86_64))"
+			],
+			"files": [
+				"/usr/lib/dri/i965_drv_video.so"
+			],
+			"name": "intel-vaapi-driver",
+			"provides": [
+				"soname(dri/i965_drv_video.so(x86_64))"
+			]
+		}
+	},
+	"source-name": "intel-vaapi-driver",
+	"source-release": "1",
+	"source-version": "2.4.5"
+}
