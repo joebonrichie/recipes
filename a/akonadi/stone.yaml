@@ -5,7 +5,7 @@
 #
 name        : akonadi
 version     : 25.08.3
-release     : 15
+release     : 16
 upstreams   :
     - https://download.kde.org/stable/release-service/25.08.3/src/akonadi-25.08.3.tar.xz : f867fd1e16d9d637a92dab334dc4170f20f58be13367392094ec539e3eee017a
 homepage    : https://kde.org
@@ -29,6 +29,8 @@ builddeps   :
     - cmake(Qt6CorePrivate)
     - pkgconfig(liblzma)
 setup       : |
+    %patch %(pkgdir)/upstream-01.patch
+
     # TODO: Build with postgresql support maybe
     %cmake_kf6 \
         -DDATABASE_BACKEND=SQLITE \
