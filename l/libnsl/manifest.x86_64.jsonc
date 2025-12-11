@@ -1,0 +1,54 @@
+/** Human readable report. This is not consumed by boulder */
+{
+	"manifest-version": "0.2",
+	"packages": {
+		"libnsl": {
+			"build-depends": [
+				"pkgconfig(libtirpc)"
+			],
+			"depends": [
+				"soname(ld-linux-x86-64.so.2(x86_64))",
+				"soname(libc.so.6(x86_64))",
+				"soname(libtirpc.so.3(x86_64))"
+			],
+			"files": [
+				"/usr/lib/libnsl.so.3",
+				"/usr/lib/libnsl.so.3.0.0",
+				"/usr/share/doc/libnsl/AUTHORS",
+				"/usr/share/doc/libnsl/NEWS",
+				"/usr/share/doc/libnsl/README"
+			],
+			"name": "libnsl",
+			"provides": [
+				"soname(libnsl.so.3(x86_64))"
+			]
+		},
+		"libnsl-devel": {
+			"build-depends": [
+				"pkgconfig(libtirpc)"
+			],
+			"depends": [
+				"libnsl",
+				"pkgconfig(libtirpc)"
+			],
+			"files": [
+				"/usr/include/rpcsvc/yp.h",
+				"/usr/include/rpcsvc/yp.x",
+				"/usr/include/rpcsvc/yp_prot.h",
+				"/usr/include/rpcsvc/ypclnt.h",
+				"/usr/include/rpcsvc/yppasswd.h",
+				"/usr/include/rpcsvc/yppasswd.x",
+				"/usr/include/rpcsvc/ypupd.h",
+				"/usr/lib/libnsl.so",
+				"/usr/lib/pkgconfig/libnsl.pc"
+			],
+			"name": "libnsl-devel",
+			"provides": [
+				"pkgconfig(libnsl)"
+			]
+		}
+	},
+	"source-name": "libnsl",
+	"source-release": "1",
+	"source-version": "2.0.1"
+}
