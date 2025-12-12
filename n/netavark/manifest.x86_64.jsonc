@@ -1,0 +1,31 @@
+/** Human readable report. This is not consumed by boulder */
+{
+	"manifest-version": "0.2",
+	"packages": {
+		"netavark": {
+			"build-depends": [
+				"binary(protoc)"
+			],
+			"depends": [
+				"aardvark-dns",
+				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
+				"soname(ld-linux-x86-64.so.2(x86_64))",
+				"soname(libc.so.6(x86_64))",
+				"soname(libgcc_s.so.1(x86_64))",
+				"soname(libm.so.6(x86_64))",
+				"sysbinary(nft)"
+			],
+			"files": [
+				"/usr/lib/podman/netavark",
+				"/usr/lib/systemd/system-preset/netavark.preset",
+				"/usr/lib/systemd/system/netavark-dhcp-proxy.service",
+				"/usr/lib/systemd/system/netavark-dhcp-proxy.socket",
+				"/usr/lib/systemd/system/netavark-nftables-reload.service"
+			],
+			"name": "netavark"
+		}
+	},
+	"source-name": "netavark",
+	"source-release": "2",
+	"source-version": "1.17.1"
+}

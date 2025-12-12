@@ -4,8 +4,8 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : glibc
-version     : 2.41+git.bcd4cf9d
-release     : 20
+version     : 2.42+git.8aaf4b73
+release     : 31
 summary     : The GNU libc libraries
 license     :
     - GPL-2.0-or-later
@@ -15,7 +15,8 @@ homepage    : https://www.gnu.org/software/libc
 description : |
     The GNU libc libraries
 upstreams   :
-    - git|https://sourceware.org/git/glibc.git: bcd4cf9d5ff22ed561ad72d0de072c95c0766470
+    - git|https://sourceware.org/git/glibc.git :
+        ref : 8aaf4b732d7650c2db3beb4dc8bb70eab5b022c3
 builddeps   :
     - binary(bison)
     - binary(gperf)
@@ -27,21 +28,6 @@ builddeps   :
     - binary(python3)
     - binary(zstd)
     - gcc-32bit
-packages    :
-    - "%(name)-devel":
-        paths:
-            - /usr/bin/mtrace
-            - /usr/bin/pcprofiledump
-            - /usr/bin/xtrace
-            - /usr/lib/*.o
-            - /usr/lib/libc_malloc_debug.so*
-    - "%(name)-32bit":
-        paths:
-            - /usr/lib/ld-linux.so.2
-    - "%(name)-32bit-devel":
-        paths:
-            - /usr/lib32/*.o
-            - /usr/lib32/libc_malloc_debug.so*
 toolchain   : gnu
 emul32      : true
 tuning      :
@@ -55,21 +41,24 @@ tuning      :
     - optimize: speed
     - symbolic: nonweak
 environment : |
+    # TODO: Enable sframe once LLVM supports it
     export COMMON_GLIBC_OPTIONS="\
         %(options_configure) \
-                --disable-build-nscd \
-                --disable-nscd \
-                --enable-bind-now \
-                --enable-kernel=5.15 \
-                --enable-multi-arch \
-                --enable-stack-protector=strong \
-                --with-selinux=no
+            --disable-build-nscd \
+            --disable-nscd \
+            --disable-sframe \
+            --enable-bind-now \
+            --enable-kernel=6.1 \
+            --enable-multi-arch \
+            --enable-stack-protector=strong \
+            --with-selinux=no
     "
 setup       : |
     %patch %(pkgdir)/perf/0001-Remove-RELR-dependency-check.patch
     %patch %(pkgdir)/aerynos/0001-sysdeps-Add-support-for-default-directories.patch
     %patch %(pkgdir)/aerynos/0001-Force-correct-RTLDLIST-for-ldd.patch
     %patch %(pkgdir)/aerynos/0001-Compress-charmaps-with-zstd.patch
+    %patch %(pkgdir)/aerynos/0001-downstream-Update-default-PATH.patch
     %patch %(pkgdir)/stateless/make-hosts-file-stateless.patch
     %patch %(pkgdir)/stateless/Support-fallback-stateless-shells-path.patch
     %patch %(pkgdir)/stateless/Use-a-stateless-ld.so.conf.patch
@@ -124,6 +113,7 @@ profiles    :
             %patch %(pkgdir)/aerynos/0001-sysdeps-Add-support-for-default-directories.patch
             %patch %(pkgdir)/aerynos/0001-Force-correct-RTLDLIST-for-ldd.patch
             %patch %(pkgdir)/aerynos/0001-Compress-charmaps-with-zstd.patch
+            %patch %(pkgdir)/aerynos/0001-downstream-Update-default-PATH.patch
             %patch %(pkgdir)/stateless/make-hosts-file-stateless.patch
             %patch %(pkgdir)/stateless/Support-fallback-stateless-shells-path.patch
             %patch %(pkgdir)/stateless/Use-a-stateless-ld.so.conf.patch
@@ -156,3 +146,26 @@ profiles    :
             # Support old compiled 32bit binaries
             %install_dir %(installroot)/usr/lib
             ln -sv ../lib32/ld-linux.so.2 %(installroot)/usr/lib/ld-linux.so.2
+packages    :
+    - "%(name)":
+        rundeps:
+            - iana-etc
+
+    - "%(name)-devel":
+        rundeps:
+            - linux-headers
+        paths:
+            - /usr/bin/mtrace
+            - /usr/bin/pcprofiledump
+            - /usr/bin/xtrace
+            - /usr/lib/*.o
+            - /usr/lib/libc_malloc_debug.so*
+
+    - "%(name)-32bit":
+        paths:
+            - /usr/lib/ld-linux.so.2
+
+    - "%(name)-32bit-devel":
+        paths:
+            - /usr/lib32/*.o
+            - /usr/lib32/libc_malloc_debug.so*

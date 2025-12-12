@@ -51,8 +51,7 @@
 			],
 			"name": "attr-32bit",
 			"provides": [
-				"soname(libattr.so.1(386))",
-				"soname(libattr.so.1(x86))"
+				"soname(libattr.so.1(386))"
 			]
 		},
 		"attr-32bit-devel": {
@@ -97,6 +96,6 @@
 		}
 	},
 	"source-name": "attr",
-	"source-release": "5",
+	"source-release": "6",
 	"source-version": "2.5.2"
 }

@@ -1,0 +1,32 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : psmisc
+version     : 23.7
+release     : 1
+homepage    : https://gitlab.com/psmisc/psmisc/
+upstreams   :
+    - https://gitlab.com/psmisc/psmisc/-/archive/v23.7/psmisc-v23.7.tar.gz : 8f2526ce7ac6ef4976454cd63095fa10e467ef745cf33dc4f91df0bd7b10b905
+summary     : This package contains miscellaneous utilities that use the proc file-system.
+description : |
+    A package of small utilities that use the proc file-system.
+    - fuser - Identifies processes using files or sockets
+    - killall - kills processes by name, e.g. killall -HUP named
+    - prtstat - prints statistics of a process
+    - pslog - prints log path(s) of a process
+    - pstree - shows the currently running processes as a tree
+    - peekfd - shows the data travelling over a file descriptor
+license     : GPL-2.0-or-later
+builddeps   :
+    # binary(po4a) TODO: package me up!
+    - binary(tar)
+    - pkgconfig(ncurses)
+setup       : |
+    %autogen
+build       : |
+    %make
+install     : |
+    %make_install
+

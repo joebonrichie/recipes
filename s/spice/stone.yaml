@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : spice
-version     : 0.15.2
-release     : 1
+version     : 0.16.0
+release     : 5
 homepage    : https://gitlab.freedesktop.org/spice
 upstreams   :
-    - https://gitlab.freedesktop.org/-/project/62/uploads/29ef6b318d554e835a02e2141f888437/spice-0.15.2.tar.bz2 : 6d9eb6117f03917471c4bc10004abecff48a79fb85eb85a1c45f023377015b81
+    - https://gitlab.freedesktop.org/-/project/62/uploads/54a0f9f5d1840e1ad8060cb560f3dde6/spice-0.16.0.tar.bz2 : 0a6ec9528f05371261bbb2d46ff35e7b5c45ff89bb975a99af95a5f20ff4717d
 summary     : SPICE Server Component
 description : |
     SPICE is a remote display system built for virtual environments which
@@ -18,21 +18,26 @@ description : |
 license     :
     - LGPL-2.1
 builddeps   :
-    - binary(cmake)
+    - binary(asciidoc)
     - pkgconfig(gdk-pixbuf-2.0)
     - pkgconfig(glib-2.0)
     - pkgconfig(gstreamer-1.0)
+    - pkgconfig(gstreamer-app-1.0)
     - pkgconfig(libjpeg)
     - pkgconfig(liblz4)
     - pkgconfig(libsasl2)
     - pkgconfig(openssl)
+    - pkgconfig(opus)
     - pkgconfig(orc-0.4)
     - pkgconfig(pixman-1)
     - pkgconfig(spice-protocol)
     - python-pyparsing
     - python-six
+    # - pkgconfig(libcacard)
+    # TODO: Needs source-highlight for man page
 setup       : |
-    %meson
+    %meson \
+        -Dmanual=false
 build       : |
     %meson_build
 install     : |

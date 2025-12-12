@@ -1,0 +1,109 @@
+#
+# SPDX-FileCopyrightText: © 2020-2024 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : pkgset-aeryn
+version     : "2025.12" # I guess let's just match the OS version for now
+release     : 19
+homepage    : https://aerynos.com/
+# No upstreams!
+summary     : pkgset virtual packages
+description : |
+    pkgset virtual packages
+license     : MPL-2.0
+install     : |
+    for i in base virtual utilities base-desktop; do
+        %install_dir %(installroot)%(docdir)/%(name)-${i}
+        echo "This file will disappear when virtual packages are introduced" > %(installroot)%(docdir)/%(name)-${i}/README
+    done
+packages    :
+    - "%(name)-base":
+        summary: Base packages required to boot an AerynOS system
+        description: |
+            Base packages required to boot an AerynOS system. Do not remove this package as you may render your system unbootable.
+        rundeps:
+            - binary(bash)
+            - binary(dash)
+            - binary(moss)
+            - binary(setfont)
+            - binary(sudo)
+            # need dbus on boot and we want to use the fast implementation
+            - dbus-broker
+            - kmod
+            - linux-pam
+            - lvm2
+            - shadow
+            - systemd
+            - tzdata
+            - util-linux
+            - uutils-coreutils
+        paths:
+            - /usr/share/doc/pkgset-aeryn-base/README
+
+    - "%(name)-utilities":
+        summary: Useful utilities that are commonly installed
+        description: |
+            Useful utilities that are commonly installed on Linux systems. It is not recommended to uninstall this package.
+        rundeps:
+            - bash-completion
+            - binary(clear)
+            - binary(file)
+            - binary(find)
+            - binary(gawk)
+            - binary(grep)
+            - binary(less)
+            - binary(lspci)
+            - binary(nano)
+            - binary(ping)
+            - binary(ps)
+            - binary(sed)
+            - binary(ssh)
+            - binary(tar)
+            - binary(wget)
+            - binary(which)
+            - sysbinary(ip)
+        paths:
+            - /usr/share/doc/pkgset-aeryn-utilities/README
+
+    - "%(name)-virtual":
+        summary: Useful packages for integrating with virtualized environments
+        description: |
+            Useful packages for integrating with virtualized environments. It is safe to remove this package if booting on physical hardware.
+        rundeps:
+            - hyperv-daemons
+            - qemu-guest-agent
+            - spice-vdagent
+            # TODO open-vm-tools for VMWare
+        paths:
+            - /usr/share/doc/pkgset-aeryn-virtual/README
+
+    - "%(name)-base-desktop":
+        summary: Base packages common to graphical environments
+        description: |
+            Base packages common to graphical environments. It is not recommened to uninstall this package unless you are only interested in non-graphical usage.
+        rundeps:
+            # Intel/AMD/virt drivers
+            - libva-intel-hybrid-driver
+            - libva-intel-media-driver
+            - mesa-dri-drivers
+            - mesa-libegl
+            - mesa-libgl
+            - mesa-vulkan-drivers
+
+            # Audio
+            - pipewire
+            - wireplumber
+
+            # Networking
+            - networkmanager
+            - networkmanager-bluetooth
+            - networkmanager-wifi
+            - networkmanager-wwan
+
+            # Used by many graphical daemons
+            - polkit
+
+            - "%(name)-base"
+        paths:
+            - /usr/share/doc/pkgset-aeryn-base-desktop/README

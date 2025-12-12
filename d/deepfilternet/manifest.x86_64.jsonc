@@ -1,0 +1,35 @@
+/** Human readable report. This is not consumed by boulder */
+{
+	"manifest-version": "0.2",
+	"packages": {
+		"deepfilternet": {
+			"build-depends": [
+				"binary(python3)",
+				"cmake(hdf5)",
+				"pkgconfig(alsa)",
+				"pkgconfig(jemalloc)"
+			],
+			"depends": [
+				"soname(ld-linux-x86-64.so.2(x86_64))",
+				"soname(libc.so.6(x86_64))",
+				"soname(libgcc_s.so.1(x86_64))",
+				"soname(libhdf5.so.310(x86_64))",
+				"soname(libm.so.6(x86_64))"
+			],
+			"files": [
+				"/usr/lib/ladspa/libdeep_filter_ladspa.so",
+				"/usr/lib/liblibdf.so",
+				"/usr/lib/liblibdfdata.so"
+			],
+			"name": "deepfilternet",
+			"provides": [
+				"soname(ladspa/libdeep_filter_ladspa.so(x86_64))",
+				"soname(liblibdf.so(x86_64))",
+				"soname(liblibdfdata.so(x86_64))"
+			]
+		}
+	},
+	"source-name": "deepfilternet",
+	"source-release": "1",
+	"source-version": "0.5.6"
+}

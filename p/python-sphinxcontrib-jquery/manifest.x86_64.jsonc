@@ -1,0 +1,35 @@
+/** Human readable report. This is not consumed by boulder */
+{
+	"manifest-version": "0.2",
+	"packages": {
+		"python-sphinxcontrib-jquery": {
+			"build-depends": [
+				"python(flit-core)"
+			],
+			"depends": [
+				"python(sphinx)",
+				"python-libs"
+			],
+			"files": [
+				"/usr/lib/python3.11/site-packages/sphinxcontrib/jquery/__init__.py",
+				"/usr/lib/python3.11/site-packages/sphinxcontrib/jquery/__pycache__/__init__.cpython-311.opt-1.pyc",
+				"/usr/lib/python3.11/site-packages/sphinxcontrib/jquery/__pycache__/__init__.cpython-311.pyc",
+				"/usr/lib/python3.11/site-packages/sphinxcontrib/jquery/_sphinx_javascript_frameworks_compat.js",
+				"/usr/lib/python3.11/site-packages/sphinxcontrib/jquery/jquery-3.6.0.js",
+				"/usr/lib/python3.11/site-packages/sphinxcontrib/jquery/jquery.js",
+				"/usr/lib/python3.11/site-packages/sphinxcontrib_jquery-4.1.dist-info/METADATA",
+				"/usr/lib/python3.11/site-packages/sphinxcontrib_jquery-4.1.dist-info/RECORD",
+				"/usr/lib/python3.11/site-packages/sphinxcontrib_jquery-4.1.dist-info/WHEEL",
+				"/usr/lib/python3.11/site-packages/sphinxcontrib_jquery-4.1.dist-info/licenses/LICENCE"
+			],
+			"name": "python-sphinxcontrib-jquery",
+			"provides": [
+				"python(sphinxcontrib-jquery(3.11))",
+				"python(sphinxcontrib-jquery)"
+			]
+		}
+	},
+	"source-name": "python-sphinxcontrib-jquery",
+	"source-release": "1",
+	"source-version": "4.1"
+}

@@ -5,7 +5,7 @@
 #
 name        : wmenu
 version     : 0.1.9
-release     : 1
+release     : 2
 homepage    : https://codeberg.org/adnano/wmenu
 upstreams   :
     - https://codeberg.org/adnano/wmenu/archive/0.1.9.tar.gz : 1b457dfdbf8404748a036d8ee4fab1853d5dd28b132531321b7afc78e85bc1cd

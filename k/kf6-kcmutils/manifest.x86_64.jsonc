@@ -10,6 +10,7 @@
 				"cmake(KF6I18n)",
 				"cmake(KF6KIO)",
 				"cmake(KF6XmlGui)",
+				"cmake(Qt6CorePrivate)",
 				"cmake(Qt6Qml)"
 			],
 			"depends": [
@@ -31,51 +32,36 @@
 				"soname(libQt6Quick.so.6(x86_64))",
 				"soname(libQt6QuickWidgets.so.6(x86_64))",
 				"soname(libQt6Widgets.so.6(x86_64))",
-				"soname(libc++.so.1(x86_64))",
-				"soname(libc.so.6(x86_64))"
+				"soname(libc.so.6(x86_64))",
+				"soname(libstdc++.so.6(x86_64))"
 			],
 			"files": [
 				"/usr/bin/kcmshell6",
 				"/usr/lib/kf6/kcmdesktopfilegenerator",
 				"/usr/lib/libKF6KCMUtils.so.6",
-				"/usr/lib/libKF6KCMUtils.so.6.12.0",
+				"/usr/lib/libKF6KCMUtils.so.6.20.0",
 				"/usr/lib/libKF6KCMUtilsCore.so.6",
-				"/usr/lib/libKF6KCMUtilsCore.so.6.12.0",
+				"/usr/lib/libKF6KCMUtilsCore.so.6.20.0",
 				"/usr/lib/libKF6KCMUtilsQuick.so.6",
-				"/usr/lib/libKF6KCMUtilsQuick.so.6.12.0",
+				"/usr/lib/libKF6KCMUtilsQuick.so.6.20.0",
 				"/usr/lib/qt6/qml/org/kde/kcmutils/AbstractKCM.qml",
-				"/usr/lib/qt6/qml/org/kde/kcmutils/AbstractKCM.qmlc",
 				"/usr/lib/qt6/qml/org/kde/kcmutils/ContextualHelpButton.qml",
-				"/usr/lib/qt6/qml/org/kde/kcmutils/ContextualHelpButton.qmlc",
 				"/usr/lib/qt6/qml/org/kde/kcmutils/GridDelegate.qml",
-				"/usr/lib/qt6/qml/org/kde/kcmutils/GridDelegate.qmlc",
 				"/usr/lib/qt6/qml/org/kde/kcmutils/GridView.qml",
-				"/usr/lib/qt6/qml/org/kde/kcmutils/GridView.qmlc",
 				"/usr/lib/qt6/qml/org/kde/kcmutils/GridViewKCM.qml",
-				"/usr/lib/qt6/qml/org/kde/kcmutils/GridViewKCM.qmlc",
 				"/usr/lib/qt6/qml/org/kde/kcmutils/PluginDelegate.qml",
-				"/usr/lib/qt6/qml/org/kde/kcmutils/PluginDelegate.qmlc",
 				"/usr/lib/qt6/qml/org/kde/kcmutils/PluginSelector.qml",
-				"/usr/lib/qt6/qml/org/kde/kcmutils/PluginSelector.qmlc",
 				"/usr/lib/qt6/qml/org/kde/kcmutils/ScrollView.qml",
-				"/usr/lib/qt6/qml/org/kde/kcmutils/ScrollView.qmlc",
 				"/usr/lib/qt6/qml/org/kde/kcmutils/ScrollViewKCM.qml",
-				"/usr/lib/qt6/qml/org/kde/kcmutils/ScrollViewKCM.qmlc",
 				"/usr/lib/qt6/qml/org/kde/kcmutils/SettingHighlighter.qml",
-				"/usr/lib/qt6/qml/org/kde/kcmutils/SettingHighlighter.qmlc",
 				"/usr/lib/qt6/qml/org/kde/kcmutils/SettingStateBinding.qml",
-				"/usr/lib/qt6/qml/org/kde/kcmutils/SettingStateBinding.qmlc",
 				"/usr/lib/qt6/qml/org/kde/kcmutils/SimpleKCM.qml",
-				"/usr/lib/qt6/qml/org/kde/kcmutils/SimpleKCM.qmlc",
 				"/usr/lib/qt6/qml/org/kde/kcmutils/kcmutilsqmlplugin.qmltypes",
 				"/usr/lib/qt6/qml/org/kde/kcmutils/kde-qmlmodule.version",
 				"/usr/lib/qt6/qml/org/kde/kcmutils/libkcmutilsqmlplugin.so",
 				"/usr/lib/qt6/qml/org/kde/kcmutils/private/AboutPlugin.qml",
-				"/usr/lib/qt6/qml/org/kde/kcmutils/private/AboutPlugin.qmlc",
 				"/usr/lib/qt6/qml/org/kde/kcmutils/private/GridDelegateMenu.qml",
-				"/usr/lib/qt6/qml/org/kde/kcmutils/private/GridDelegateMenu.qmlc",
 				"/usr/lib/qt6/qml/org/kde/kcmutils/private/GridViewInternal.qml",
-				"/usr/lib/qt6/qml/org/kde/kcmutils/private/GridViewInternal.qmlc",
 				"/usr/lib/qt6/qml/org/kde/kcmutils/private/kcmutilsprivateqmlplugin.qmltypes",
 				"/usr/lib/qt6/qml/org/kde/kcmutils/private/kde-qmlmodule.version",
 				"/usr/lib/qt6/qml/org/kde/kcmutils/private/libkcmutilsprivateqmlplugin.so",
@@ -168,6 +154,7 @@
 				"/usr/share/locale/ml/LC_MESSAGES/kcmutils6.mo",
 				"/usr/share/locale/mr/LC_MESSAGES/kcmutils6.mo",
 				"/usr/share/locale/ms/LC_MESSAGES/kcmutils6.mo",
+				"/usr/share/locale/nb/LC_MESSAGES/kcmshell6.mo",
 				"/usr/share/locale/nb/LC_MESSAGES/kcmutils6.mo",
 				"/usr/share/locale/nds/LC_MESSAGES/kcmutils6.mo",
 				"/usr/share/locale/ne/LC_MESSAGES/kcmutils6.mo",
@@ -244,9 +231,12 @@
 				"cmake(KF6I18n)",
 				"cmake(KF6KIO)",
 				"cmake(KF6XmlGui)",
+				"cmake(Qt6CorePrivate)",
 				"cmake(Qt6Qml)"
 			],
 			"depends": [
+				"cmake(KF6ConfigWidgets)",
+				"cmake(KF6CoreAddons)",
 				"kf6-kcmutils"
 			],
 			"files": [
@@ -277,7 +267,6 @@
 				"/usr/lib/cmake/KF6KCMUtils/KF6KCMUtilsConfig.cmake",
 				"/usr/lib/cmake/KF6KCMUtils/KF6KCMUtilsConfigVersion.cmake",
 				"/usr/lib/cmake/KF6KCMUtils/KF6KCMUtilsMacros.cmake",
-				"/usr/lib/cmake/KF6KCMUtils/KF6KCMUtilsQchTargets.cmake",
 				"/usr/lib/cmake/KF6KCMUtils/KF6KCMUtilsTargets-release.cmake",
 				"/usr/lib/cmake/KF6KCMUtils/KF6KCMUtilsTargets.cmake",
 				"/usr/lib/cmake/KF6KCMUtils/KF6KCMUtilsToolingTargets-release.cmake",
@@ -286,9 +275,7 @@
 				"/usr/lib/cmake/KF6KCMUtils/kcmutilsgeneratemoduledata.h.in",
 				"/usr/lib/libKF6KCMUtils.so",
 				"/usr/lib/libKF6KCMUtilsCore.so",
-				"/usr/lib/libKF6KCMUtilsQuick.so",
-				"/usr/share/doc/qt6/KF6KCMUtils.qch",
-				"/usr/share/doc/qt6/KF6KCMUtils.tags"
+				"/usr/lib/libKF6KCMUtilsQuick.so"
 			],
 			"name": "kf6-kcmutils-devel",
 			"provides": [
@@ -297,6 +284,6 @@
 		}
 	},
 	"source-name": "kf6-kcmutils",
-	"source-release": "2",
-	"source-version": "6.12.0"
+	"source-release": "18",
+	"source-version": "6.20.0"
 }

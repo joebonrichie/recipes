@@ -1,0 +1,34 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : kio-gdrive
+version     : 25.12.0
+release     : 10
+upstreams   :
+    - https://download.kde.org/stable/release-service/25.12.0/src/kio-gdrive-25.12.0.tar.xz : 67b3e2263fc8c69c061b09658fd77ed50c4d8d69a358d40c0e6d4ddea6f9477e
+homepage    : https://apps.kde.org/kio_gdrive/
+license     : GPL-2.0-only
+summary     : KIO access for Google Drive
+description : |
+    KIO GDrive enables KIO-aware applications (such as Dolphin, Kate or Gwenview) to access and edit Google Drive files on the cloud.
+builddeps   :
+    # Temporary, boulder doesn't handle build ordering resolution correctly when builddeps are added by macros, so add ECM manually
+    - cmake(ECM)
+    - cmake(KAccounts6)
+    - cmake(KF6DocTools)
+    - cmake(KF6I18n)
+    - cmake(KF6KIO)
+    - cmake(KF6Notifications)
+    - cmake(KF6Purpose)
+    - cmake(KPim6GAPI)
+rundeps     :
+    - kaccounts-providers
+    - accounts-qml-module-qt6 # QML dep
+setup       : |
+    %cmake_kf6
+build       : |
+    %cmake_build
+install     : |
+    %cmake_install

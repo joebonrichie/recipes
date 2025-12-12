@@ -4,22 +4,35 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : libnvme
-version     : 1.11.1
-release     : 2
+version     : "1.16.1"
+release     : 7
 homepage    : https://github.com/linux-nvme/libnvme
 upstreams   :
-    - https://github.com/linux-nvme/libnvme/archive/refs/tags/v1.11.1.tar.gz : 6d5d8ba2cc4c94a61a994c9f7f25b3b26ef973fb5c0daa37729890903f37a1f1
+    - https://github.com/linux-nvme/libnvme/archive/refs/tags/v1.16.1.tar.gz : ce1d9d393feb84c4e82ca096db2bdb7dd4a5fd1997d711cc1904796944f2c579
 summary     : C Library for NVM Express on Linux
 description : |
     This is the libnvme development C library. libnvme provides type definitions for NVMe specification structures, enumerations, and bit fields, helper functions to construct, dispatch, and decode commands and payloads, and utilities to connect, scan, and manage nvme devices on a Linux system.
 license     : LGPL-2.1-or-later
 builddeps   :
+    - binary(swig)
+    - pkgconfig(dbus-1)
     - pkgconfig(json-c)
     - pkgconfig(libkeyutils)
+    - pkgconfig(liburing)
     - pkgconfig(openssl)
+    - pkgconfig(python3)
 setup       : |
-    %meson
+    %meson \
+        -Dlibdbus=auto
 build       : |
     %meson_build
 install     : |
     %meson_install
+packages    :
+    - "python-%(name)":
+        summary: Python bindings for %(name)
+        description: Python bindings for %(name)
+        rundeps:
+            - "%(name)"
+        paths:
+            - /usr/lib/python3*/site-packages/

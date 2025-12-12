@@ -1,0 +1,38 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : gtk-layer-shell
+version     : '0.10.0'
+release     : 3
+homepage    : https://github.com/wmww/gtk-layer-shell
+upstreams   :
+    - https://github.com/wmww/gtk-layer-shell/archive/refs/tags/v0.10.0.tar.gz : ed9bb801d6d9252defba41104820ace595dac824dc8972a758ee2ad134e10505
+summary     : Layer Shell is a Wayland protocol for desktop shell components
+description : |
+    A library to write GTK applications that use Layer Shell. Layer Shell
+    is a Wayland protocol for desktop shell components, such as panels,
+    notifications and wallpapers. You can use it to anchor your windows
+    to a corner or edge of the output, or stretch them across the entire
+    output. It supports all Layer Shell features including popups and popovers.
+license     : LGPL-3.0-or-later
+builddeps   :
+    - binary(python3)
+    - binary(vapigen)
+    - pkgconfig(gobject-introspection-1.0)
+    - pkgconfig(gtk+-3.0)
+    - pkgconfig(wayland-client)
+    - pkgconfig(wayland-protocols)
+    - pkgconfig(wayland-scanner)
+    - pkgconfig(wayland-server)
+setup       : |
+    %meson
+build       : |
+    %meson_build
+install     : |
+    %meson_install
+packages    :
+    - "%(name)-devel":
+        paths:
+            - /usr/share/vala/

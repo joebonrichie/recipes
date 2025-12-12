@@ -2,22 +2,192 @@
 {
 	"manifest-version": "0.2",
 	"packages": {
-		"libarchive": {
+		"bsdcat": {
 			"build-depends": [
+				"libxml2-static",
 				"pkgconfig(bzip2)",
 				"pkgconfig(ext2fs)",
 				"pkgconfig(libacl)",
+				"pkgconfig(libattr)",
 				"pkgconfig(libb2)",
 				"pkgconfig(libcrypto)",
 				"pkgconfig(liblz4)",
 				"pkgconfig(liblzma)",
-				"pkgconfig(libxml-2.0)",
+				"pkgconfig(libstone)",
 				"pkgconfig(libzstd)",
 				"pkgconfig(lzo2)",
-				"pkgconfig(zlib)"
+				"pkgconfig(zlib)",
+				"tar"
 			],
 			"depends": [
 				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
+				"soname(libarchive.so.13(x86_64))",
+				"soname(libc.so.6(x86_64))"
+			],
+			"files": [
+				"/usr/bin/bsdcat",
+				"/usr/share/man/man1/bsdcat.1"
+			],
+			"name": "bsdcat",
+			"provides": [
+				"binary(bsdcat)"
+			]
+		},
+		"bsdcpio": {
+			"build-depends": [
+				"libxml2-static",
+				"pkgconfig(bzip2)",
+				"pkgconfig(ext2fs)",
+				"pkgconfig(libacl)",
+				"pkgconfig(libattr)",
+				"pkgconfig(libb2)",
+				"pkgconfig(libcrypto)",
+				"pkgconfig(liblz4)",
+				"pkgconfig(liblzma)",
+				"pkgconfig(libstone)",
+				"pkgconfig(libzstd)",
+				"pkgconfig(lzo2)",
+				"pkgconfig(zlib)",
+				"tar"
+			],
+			"depends": [
+				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
+				"soname(libarchive.so.13(x86_64))",
+				"soname(libc.so.6(x86_64))"
+			],
+			"files": [
+				"/usr/bin/bsdcpio",
+				"/usr/share/man/man1/bsdcpio.1"
+			],
+			"name": "bsdcpio",
+			"provides": [
+				"binary(bsdcpio)"
+			]
+		},
+		"bsdtar": {
+			"build-depends": [
+				"libxml2-static",
+				"pkgconfig(bzip2)",
+				"pkgconfig(ext2fs)",
+				"pkgconfig(libacl)",
+				"pkgconfig(libattr)",
+				"pkgconfig(libb2)",
+				"pkgconfig(libcrypto)",
+				"pkgconfig(liblz4)",
+				"pkgconfig(liblzma)",
+				"pkgconfig(libstone)",
+				"pkgconfig(libzstd)",
+				"pkgconfig(lzo2)",
+				"pkgconfig(zlib)",
+				"tar"
+			],
+			"depends": [
+				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
+				"soname(libarchive.so.13(x86_64))",
+				"soname(libc.so.6(x86_64))"
+			],
+			"files": [
+				"/usr/bin/bsdtar",
+				"/usr/share/man/man1/bsdtar.1"
+			],
+			"name": "bsdtar",
+			"provides": [
+				"binary(bsdtar)"
+			]
+		},
+		"bsdtar-static": {
+			"build-depends": [
+				"libxml2-static",
+				"pkgconfig(bzip2)",
+				"pkgconfig(ext2fs)",
+				"pkgconfig(libacl)",
+				"pkgconfig(libattr)",
+				"pkgconfig(libb2)",
+				"pkgconfig(libcrypto)",
+				"pkgconfig(liblz4)",
+				"pkgconfig(liblzma)",
+				"pkgconfig(libstone)",
+				"pkgconfig(libzstd)",
+				"pkgconfig(lzo2)",
+				"pkgconfig(zlib)",
+				"tar"
+			],
+			"depends": [
+				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
+				"soname(ld-linux-x86-64.so.2(x86_64))",
+				"soname(libacl.so.1(x86_64))",
+				"soname(libb2.so.1(x86_64))",
+				"soname(libbz2.so.1.0(x86_64))",
+				"soname(libc.so.6(x86_64))",
+				"soname(libcrypto.so.3(x86_64))",
+				"soname(libgcc_s.so.1(x86_64))",
+				"soname(liblz4.so.1(x86_64))",
+				"soname(liblzma.so.5(x86_64))",
+				"soname(liblzo2.so.2(x86_64))",
+				"soname(libm.so.6(x86_64))",
+				"soname(libstdc++.so.6(x86_64))",
+				"soname(libstone.so.0.24(x86_64))",
+				"soname(libz.so.1(x86_64))",
+				"soname(libzstd.so.1(x86_64))"
+			],
+			"files": [
+				"/usr/bin/bsdtar-static",
+				"/usr/share/man/man1/bsdtar-static.1"
+			],
+			"name": "bsdtar-static",
+			"provides": [
+				"binary(bsdtar-static)"
+			]
+		},
+		"bsdunzip": {
+			"build-depends": [
+				"libxml2-static",
+				"pkgconfig(bzip2)",
+				"pkgconfig(ext2fs)",
+				"pkgconfig(libacl)",
+				"pkgconfig(libattr)",
+				"pkgconfig(libb2)",
+				"pkgconfig(libcrypto)",
+				"pkgconfig(liblz4)",
+				"pkgconfig(liblzma)",
+				"pkgconfig(libstone)",
+				"pkgconfig(libzstd)",
+				"pkgconfig(lzo2)",
+				"pkgconfig(zlib)",
+				"tar"
+			],
+			"depends": [
+				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
+				"soname(libarchive.so.13(x86_64))",
+				"soname(libc.so.6(x86_64))"
+			],
+			"files": [
+				"/usr/bin/bsdunzip",
+				"/usr/share/man/man1/bsdunzip.1"
+			],
+			"name": "bsdunzip",
+			"provides": [
+				"binary(bsdunzip)"
+			]
+		},
+		"libarchive": {
+			"build-depends": [
+				"libxml2-static",
+				"pkgconfig(bzip2)",
+				"pkgconfig(ext2fs)",
+				"pkgconfig(libacl)",
+				"pkgconfig(libattr)",
+				"pkgconfig(libb2)",
+				"pkgconfig(libcrypto)",
+				"pkgconfig(liblz4)",
+				"pkgconfig(liblzma)",
+				"pkgconfig(libstone)",
+				"pkgconfig(libzstd)",
+				"pkgconfig(lzo2)",
+				"pkgconfig(zlib)",
+				"tar"
+			],
+			"depends": [
 				"soname(libacl.so.1(x86_64))",
 				"soname(libb2.so.1(x86_64))",
 				"soname(libbz2.so.1.0(x86_64))",
@@ -26,21 +196,14 @@
 				"soname(liblz4.so.1(x86_64))",
 				"soname(liblzma.so.5(x86_64))",
 				"soname(liblzo2.so.2(x86_64))",
-				"soname(libxml2.so.2(x86_64))",
+				"soname(libstone.so.0.24(x86_64))",
+				"soname(libxml2.so.16(x86_64))",
 				"soname(libz.so.1(x86_64))",
 				"soname(libzstd.so.1(x86_64))"
 			],
 			"files": [
-				"/usr/bin/bsdcat",
-				"/usr/bin/bsdcpio",
-				"/usr/bin/bsdtar",
-				"/usr/bin/bsdunzip",
 				"/usr/lib/libarchive.so.13",
-				"/usr/lib/libarchive.so.13.7.4",
-				"/usr/share/man/man1/bsdcat.1",
-				"/usr/share/man/man1/bsdcpio.1",
-				"/usr/share/man/man1/bsdtar.1",
-				"/usr/share/man/man1/bsdunzip.1",
+				"/usr/lib/libarchive.so.13.8.4",
 				"/usr/share/man/man5/cpio.5",
 				"/usr/share/man/man5/libarchive-formats.5",
 				"/usr/share/man/man5/mtree.5",
@@ -48,26 +211,25 @@
 			],
 			"name": "libarchive",
 			"provides": [
-				"binary(bsdcat)",
-				"binary(bsdcpio)",
-				"binary(bsdtar)",
-				"binary(bsdunzip)",
 				"soname(libarchive.so.13(x86_64))"
 			]
 		},
 		"libarchive-devel": {
 			"build-depends": [
+				"libxml2-static",
 				"pkgconfig(bzip2)",
 				"pkgconfig(ext2fs)",
 				"pkgconfig(libacl)",
+				"pkgconfig(libattr)",
 				"pkgconfig(libb2)",
 				"pkgconfig(libcrypto)",
 				"pkgconfig(liblz4)",
 				"pkgconfig(liblzma)",
-				"pkgconfig(libxml-2.0)",
+				"pkgconfig(libstone)",
 				"pkgconfig(libzstd)",
 				"pkgconfig(lzo2)",
-				"pkgconfig(zlib)"
+				"pkgconfig(zlib)",
+				"tar"
 			],
 			"depends": [
 				"libarchive",
@@ -123,6 +285,6 @@
 		}
 	},
 	"source-name": "libarchive",
-	"source-release": "9",
-	"source-version": "3.7.7"
+	"source-release": "18",
+	"source-version": "3.8.4"
 }

@@ -1,0 +1,56 @@
+/** Human readable report. This is not consumed by boulder */
+{
+	"manifest-version": "0.2",
+	"packages": {
+		"soxr": {
+			"depends": [
+				"soname(libc.so.6(x86_64))",
+				"soname(libm.so.6(x86_64))",
+				"soname(libomp.so(x86_64))"
+			],
+			"files": [
+				"/usr/lib/libsoxr-lsr.so.0",
+				"/usr/lib/libsoxr-lsr.so.0.1.9",
+				"/usr/lib/libsoxr.so.0",
+				"/usr/lib/libsoxr.so.0.1.2",
+				"/usr/share/doc/libsoxr/LICENCE",
+				"/usr/share/doc/libsoxr/NEWS",
+				"/usr/share/doc/libsoxr/README"
+			],
+			"name": "soxr",
+			"provides": [
+				"soname(libsoxr-lsr.so.0(x86_64))",
+				"soname(libsoxr.so.0(x86_64))"
+			]
+		},
+		"soxr-devel": {
+			"depends": [
+				"soxr"
+			],
+			"files": [
+				"/usr/include/soxr-lsr.h",
+				"/usr/include/soxr.h",
+				"/usr/lib/libsoxr-lsr.so",
+				"/usr/lib/libsoxr.so",
+				"/usr/lib/pkgconfig/soxr-lsr.pc",
+				"/usr/lib/pkgconfig/soxr.pc",
+				"/usr/share/doc/libsoxr/examples/1-single-block.c",
+				"/usr/share/doc/libsoxr/examples/1a-lsr.c",
+				"/usr/share/doc/libsoxr/examples/2-stream.C",
+				"/usr/share/doc/libsoxr/examples/3-options-input-fn.c",
+				"/usr/share/doc/libsoxr/examples/4-split-channels.c",
+				"/usr/share/doc/libsoxr/examples/5-variable-rate.c",
+				"/usr/share/doc/libsoxr/examples/README",
+				"/usr/share/doc/libsoxr/examples/examples-common.h"
+			],
+			"name": "soxr-devel",
+			"provides": [
+				"pkgconfig(soxr)",
+				"pkgconfig(soxr-lsr)"
+			]
+		}
+	},
+	"source-name": "soxr",
+	"source-release": "1",
+	"source-version": "0.1.3"
+}

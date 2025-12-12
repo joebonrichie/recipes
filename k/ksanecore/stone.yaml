@@ -1,0 +1,32 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : ksanecore
+version     : 25.12.0
+release     : 5
+upstreams   :
+    - https://download.kde.org/stable/release-service/25.12.0/src/ksanecore-25.12.0.tar.xz : 617d01d96ea78bad4c3d681517e64b16f037f9ca387c25a05ecefbc59e3cdb32
+homepage    : https://invent.kde.org/libraries/ksanecore
+license     :
+    - LGPL-2.1-only
+    - LGPL-3.0-only
+summary     : Library providing logic to interface scanners
+description : |
+    KSaneCore is a library that provides a Qt interface for the SANE library for scanner hardware.
+builddeps   :
+    # Temporary, boulder doesn't handle build ordering resolution correctly when builddeps are added by macros, so add ECM manually
+    - cmake(ECM)
+    - cmake(KF6I18n)
+    - pkgconfig(sane-backends)
+setup       : |
+    %cmake_kf6
+build       : |
+    %cmake_build
+install     : |
+    %cmake_install
+# packages    :
+#     - "%(name)-docs":
+#         paths:
+#             - /usr/share/doc

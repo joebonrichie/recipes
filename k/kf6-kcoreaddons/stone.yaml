@@ -4,10 +4,10 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : kf6-kcoreaddons
-version     : 6.12.0
-release     : 3
+version     : 6.20.0
+release     : 16
 upstreams   :
-    - https://download.kde.org/stable/frameworks/6.12/kcoreaddons-6.12.0.tar.xz : 7b37e8d4e185bcdd8bfd166c739f7adbcb0730cdf140d64a308f7b96b1845736
+    - https://download.kde.org/stable/frameworks/6.20/kcoreaddons-6.20.0.tar.xz : c1d45587616df5eaa3667a028b1f7f909c9c7230ac42d62da69cfb2ac46cd505
 homepage    : https://community.kde.org/Frameworks
 license     :
     - GPL-2.0-only
@@ -20,10 +20,11 @@ description : |
 builddeps   :
     # Temporary, boulder doesn't handle build ordering resolution correctly when builddeps are added by macros, so add ECM manually
     - cmake(ECM)
+    - cmake(Qt6CorePrivate)
     - cmake(Qt6Qml)
     # TODO package pyside bindings, note that they need to be subpackaged. Let's wait till something needs them
 setup       : |
-    %cmake_kf6
+    %cmake_kf6 -DBUILD_PYTHON_BINDINGS=OFF
 build       : |
     %cmake_build
 install     : |

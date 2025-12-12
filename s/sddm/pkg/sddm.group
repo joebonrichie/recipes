@@ -1,5 +1,5 @@
 {
-    "groupName" : "cosmic-greeter",
-    "gid" : 23,
+    "groupName" : "sddm",
+    "gid" : 953,
     "disposition" : "system"
 }

@@ -4,7 +4,6 @@
 	"packages": {
 		"libxmlb": {
 			"build-depends": [
-				"binary(cmake)",
 				"binary(diff)",
 				"binary(python3)",
 				"pkgconfig(gio-2.0)",
@@ -27,7 +26,6 @@
 				"/usr/lib/girepository-1.0/Xmlb-2.0.typelib",
 				"/usr/lib/libxmlb.so.2",
 				"/usr/lib/libxmlb.so.2.0.0",
-				"/usr/share/gir-1.0/Xmlb-2.0.gir",
 				"/usr/share/man/man1/xb-tool.1"
 			],
 			"name": "libxmlb",
@@ -38,7 +36,6 @@
 		},
 		"libxmlb-devel": {
 			"build-depends": [
-				"binary(cmake)",
 				"binary(diff)",
 				"binary(python3)",
 				"pkgconfig(gio-2.0)",
@@ -76,7 +73,8 @@
 				"/usr/include/libxmlb-2/libxmlb/xb-version.h",
 				"/usr/include/libxmlb-2/xmlb.h",
 				"/usr/lib/libxmlb.so",
-				"/usr/lib/pkgconfig/xmlb.pc"
+				"/usr/lib/pkgconfig/xmlb.pc",
+				"/usr/share/gir-1.0/Xmlb-2.0.gir"
 			],
 			"name": "libxmlb-devel",
 			"provides": [
@@ -85,6 +83,6 @@
 		}
 	},
 	"source-name": "libxmlb",
-	"source-release": "4",
-	"source-version": "0.3.22"
+	"source-release": "8",
+	"source-version": "0.3.24"
 }

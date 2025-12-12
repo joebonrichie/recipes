@@ -4,7 +4,6 @@
 	"packages": {
 		"cosmic-notifications": {
 			"build-depends": [
-				"binary(cargo)",
 				"binary(just)",
 				"binary(which)",
 				"pkgconfig(dbus-1)",
@@ -15,8 +14,8 @@
 				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
 				"soname(ld-linux-x86-64.so.2(x86_64))",
 				"soname(libc.so.6(x86_64))",
+				"soname(libgcc_s.so.1(x86_64))",
 				"soname(libm.so.6(x86_64))",
-				"soname(libunwind.so.1(x86_64))",
 				"soname(libxkbcommon.so.0(x86_64))"
 			],
 			"files": [
@@ -32,6 +31,6 @@
 		}
 	},
 	"source-name": "cosmic-notifications",
-	"source-release": "11",
-	"source-version": "1.0.0-alpha.6"
+	"source-release": "25",
+	"source-version": "1.0.0-git+0908418"
 }

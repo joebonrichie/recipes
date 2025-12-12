@@ -4,10 +4,10 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : ffmpegthumbs
-version     : 24.12.3
-release     : 2
+version     : 25.12.0
+release     : 16
 upstreams   :
-    - https://download.kde.org/stable/release-service/24.12.3/src/ffmpegthumbs-24.12.3.tar.xz : 2d22f2342f38cb4c09c17a691ffebcf9a09b2025a501f45e688b952319c10de9
+    - https://download.kde.org/stable/release-service/25.12.0/src/ffmpegthumbs-25.12.0.tar.xz : e4784eefd1af57ed066092ce591bce8515cffda5d99668d7e7191af05ccc6bcf
 homepage    : https://kde.org/applications/multimedia/org.kde.ffmpegthumbs
 license     : GPL-2.0-or-later
 summary     : Video thumbnail generator
@@ -19,8 +19,14 @@ builddeps   :
     - cmake(KF6Config)
     - cmake(KF6KIO)
     - pkgconfig(libavcodec)
+    - pkgconfig(libavfilter)
+    - pkgconfig(libavformat)
+    - pkgconfig(libavdevice)
+    - pkgconfig(libavutil)
+    - pkgconfig(libswscale)
 setup       : |
-    %cmake_kf6 -DBUILD_WITH_QT6=ON
+    %cmake_kf6 \
+        -DBUILD_WITH_QT6=ON
 build       : |
     %cmake_build
 install     : |

@@ -1,0 +1,60 @@
+/** Human readable report. This is not consumed by boulder */
+{
+	"manifest-version": "0.2",
+	"packages": {
+		"pkgset-aeryn-cosmic-full": {
+			"depends": [
+				"pkgset-aeryn-cosmic-recommended"
+			],
+			"files": [
+				"/usr/share/doc/pkgset-aeryn-cosmic-full/README"
+			],
+			"name": "pkgset-aeryn-cosmic-full"
+		},
+		"pkgset-aeryn-cosmic-minimal": {
+			"depends": [
+				"binary(cosmic-app-library)",
+				"binary(cosmic-applets)",
+				"binary(cosmic-bg)",
+				"binary(cosmic-comp)",
+				"binary(cosmic-edit)",
+				"binary(cosmic-files)",
+				"binary(cosmic-greeter)",
+				"binary(cosmic-idle)",
+				"binary(cosmic-initial-setup)",
+				"binary(cosmic-launcher)",
+				"binary(cosmic-notifications)",
+				"binary(cosmic-osd)",
+				"binary(cosmic-panel)",
+				"binary(cosmic-randr)",
+				"binary(cosmic-screenshot)",
+				"binary(cosmic-session)",
+				"binary(cosmic-settings)",
+				"binary(cosmic-settings-daemon)",
+				"binary(cosmic-store)",
+				"binary(cosmic-term)",
+				"binary(cosmic-workspaces)",
+				"cosmic-icons",
+				"pkgset-aeryn-base-desktop",
+				"xdg-desktop-portal-cosmic"
+			],
+			"files": [
+				"/usr/share/doc/pkgset-aeryn-cosmic-minimal/README"
+			],
+			"name": "pkgset-aeryn-cosmic-minimal"
+		},
+		"pkgset-aeryn-cosmic-recommended": {
+			"depends": [
+				"binary(cosmic-player)",
+				"pkgset-aeryn-cosmic-minimal"
+			],
+			"files": [
+				"/usr/share/doc/pkgset-aeryn-cosmic-recommended/README"
+			],
+			"name": "pkgset-aeryn-cosmic-recommended"
+		}
+	},
+	"source-name": "pkgset-aeryn-cosmic",
+	"source-release": "7",
+	"source-version": "2025.10"
+}

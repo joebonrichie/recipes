@@ -1,0 +1,46 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : yakuake
+version     : 25.12.0
+release     : 12
+upstreams   :
+    - https://download.kde.org/stable/release-service/25.12.0/src/yakuake-25.12.0.tar.xz : 5a3f8854e74094b161cd1d628745b17545b5a9c41cb2dfe11c744e524bfb3c9e
+homepage    : https://apps.kde.org/yakuake/
+license     : GPL-2.0-or-later
+summary     : A quake style dropdown terminal.
+description : |
+    A quake-inspired dropdown terminal window.  Qt-based, robust, and highly configurable.
+builddeps   :
+    # Temporary, boulder doesn't handle build ordering resolution correctly when builddeps are added by macros, so add ECM manually
+    - cmake(ECM)
+    - cmake(KF6Archive)
+    - cmake(KF6Config)
+    - cmake(KF6CoreAddons)
+    - cmake(KF6Crash)
+    - cmake(KF6DBusAddons)
+    - cmake(KF6GlobalAccel)
+    - cmake(KF6I18n)
+    - cmake(KF6IconThemes)
+    - cmake(KF6KIO)
+    - cmake(KF6NewStuff)
+    - cmake(KF6Notifications)
+    - cmake(KF6NotifyConfig)
+    - cmake(KF6Parts)
+    - cmake(KF6StatusNotifierItem)
+    - cmake(KF6WidgetsAddons)
+    - cmake(KF6WindowSystem)
+    - cmake(KWayland)
+    - cmake(Qt6CorePrivate)
+    - cmake(Qt6Svg)
+rundeps     :
+    - konsole-part
+    - qt6-wayland
+setup       : |
+    %cmake_kf6
+build       : |
+    %cmake_build
+install     : |
+    %cmake_install

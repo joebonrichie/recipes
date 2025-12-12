@@ -1,0 +1,37 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : kcalutils
+version     : 25.12.0
+release     : 9
+upstreams   :
+    - https://download.kde.org/stable/release-service/25.12.0/src/kcalutils-25.12.0.tar.xz : 43048134e055ffa3e757fde34ebd1bedec8dff6f268e73ec70c8ceffb9433cc0
+homepage    : https://kde.org
+license     : LGPL-2.1-or-later
+summary     : This library provides a set of utility functions that help applications access and use calendar data via the KCalCore library
+description : |
+    This library provides a set of utility functions that help applications access and use calendar data via the KCalCore library.
+builddeps   :
+    # Temporary, boulder doesn't handle build ordering resolution correctly when builddeps are added by macros, so add ECM manually
+    - cmake(ECM)
+    - cmake(KF6CalendarCore)
+    - cmake(KF6Codecs)
+    - cmake(KF6CoreAddons)
+    - cmake(KF6I18n)
+    - cmake(KF6IconThemes)
+    - cmake(KF6TextTemplate)
+    - cmake(KF6WidgetsAddons)
+    - cmake(KPim6IdentityManagementCore)
+setup       : |
+    %cmake_kf6
+build       : |
+    %cmake_build
+install     : |
+    %cmake_install
+packages    :
+    - "%(name)-devel":
+        rundeps:
+            - cmake(KF6Config)
+            - cmake(KF6CoreAddons)

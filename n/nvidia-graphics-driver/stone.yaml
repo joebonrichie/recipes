@@ -4,16 +4,16 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : nvidia-graphics-driver
-version     : 570.133.07
-release     : 22
+version     : "580.105.08"
+release     : 33
 homepage    : https://www.nvidia.com/
 upstreams   :
-    - https://us.download.nvidia.com/XFree86/Linux-x86_64/570.133.07/NVIDIA-Linux-x86_64-570.133.07.run:
-        hash: 2d43e64c581be5ef554de9888b1aa90037ef6d45f54284d3d9dcedc08dc4dc26
+    - https://us.download.nvidia.com/XFree86/Linux-x86_64/580.105.08/NVIDIA-Linux-x86_64-580.105.08.run:
+        hash: d9c6e8188672f3eb74dd04cfa69dd58479fa1d0162c8c28c8d17625763293475
         unpack: false
         rename: NVIDIA.run
-    - https://download.nvidia.com/XFree86/nvidia-persistenced/nvidia-persistenced-570.133.07.tar.bz2:
-        hash: 3e35adcd1e6ba09b0db81eb52bf13060ab1ce77ea0d18d1e0930b7dbddace0a6
+    - https://download.nvidia.com/XFree86/nvidia-persistenced/nvidia-persistenced-580.105.08.tar.bz2:
+        hash: d5d2423980fb2994bbbcb8703def9aa00e575a0ca17c9e86fea42ae12d158a4c
         rename: nvidia-persistenced.tar.bz2
         extract: false
 summary     : The proprietary NVIDIA graphics driver
@@ -23,52 +23,39 @@ license     : Proprietary
 strip       : false
 builddeps   :
     - glibc-32bit
-    - binary(sh)
+    - binary(bzip2)
+    - binary(tar)
     - pkgconfig32(libglvnd)
     - pkgconfig32(vulkan)
-    - pkgconfig32(osmesa)
-rundeps     :
-    - egl-gbm
-    - egl-wayland
-    - eglexternalplatform
-    - nvidia-open-gpu-kernel-modules
-packages    :
-    - "%(name)":
-        paths:
-            # Prevent emission of -devel subpackage
-            - /usr/lib/lib*.so*
-    - "%(name)-32bit":
-        paths:
-            - /usr/lib32/lib*.so*
-        rundeps:
-            - egl-gbm-32bit
-            - egl-wayland-32bit
+    - sysbinary(modprobe)
 install     : |
     sh %(sourcedir)/NVIDIA.run --extract-only --target extracted
     %install_dir %(installroot)%(libdir)/firmware/nvidia/%(version)
     %install_file extracted/firmware/*.bin %(installroot)%(libdir)/firmware/nvidia/%(version)/.
-    sh %(sourcedir)/NVIDIA.run --skip-module-load \
-                               --no-questions \
-                               --x-prefix=%(installroot)%(prefix) \
-                               --opengl-prefix=%(installroot)%(prefix) \
-                               --utility-prefix=%(installroot)%(prefix) \
-                               --log-file-name=%(workdir)/nvidia-installer.log \
-                               --ui=none \
-                               --no-kernel-modules \
-                               --no-x-check \
-                               --no-nouveau-check \
-                               --no-disable-nouveau \
-                               --no-sigwinch-workaround \
-                               --no-distro-scripts \
-                               --no-check-for-alternate-installs \
-                               --skip-depmod \
-                               --no-rebuild-initramfs \
-                               --glvnd-egl-config-path=%(installroot)%(datadir)/glvnd/egl_vendor.d \
-                               --egl-external-platform-config-path=%(installroot)%(datadir)/egl/egl_external_platform.d \
-                               --systemd-unit-prefix=%(installroot)%(libdir)/systemd/system \
-                               --systemd-sleep-prefix=%(installroot)%(libdir)/systemd/systemd-sleep \
-                               --compat32-libdir=/usr/lib32 \
-                               --compat32-prefix=%(installroot)
+    sh %(sourcedir)/NVIDIA.run \
+        --skip-module-load \
+        --no-questions \
+        --x-prefix=%(installroot)%(prefix) \
+        --opengl-prefix=%(installroot)%(prefix) \
+        --utility-prefix=%(installroot)%(prefix) \
+        --wine-prefix=%(installroot)%(prefix) \
+        --log-file-name=%(workdir)/nvidia-installer.log \
+        --ui=none \
+        --no-kernel-modules \
+        --no-x-check \
+        --no-nouveau-check \
+        --no-disable-nouveau \
+        --no-sigwinch-workaround \
+        --no-distro-scripts \
+        --no-check-for-alternate-installs \
+        --skip-depmod \
+        --no-rebuild-initramfs \
+        --glvnd-egl-config-path=%(installroot)%(datadir)/glvnd/egl_vendor.d \
+        --egl-external-platform-config-path=%(installroot)%(datadir)/egl/egl_external_platform.d \
+        --systemd-unit-prefix=%(installroot)%(libdir)/systemd/system \
+        --systemd-sleep-prefix=%(installroot)%(libdir)/systemd/systemd-sleep \
+        --compat32-libdir=/usr/lib32 \
+        --compat32-prefix=%(installroot)
     cat %(workdir)/nvidia-installer.log
     rm %(installroot)%(bindir)/{nvidia-installer,nvidia-uninstall}
 
@@ -109,14 +96,46 @@ install     : |
     %tmpfiles "D /run/nvidia-persistenced 0755 nvidia-persistenced nvidia-persistenced -"
     popd
 
-    # conflicts by egl-wayland/egl-gbm
-    rm -v %(installroot)%(libdir)/libnvidia-egl-wayland*
-    rm -v %(installroot)/usr/lib32/libnvidia-egl-wayland*
-    rm -v %(installroot)%(libdir)/libnvidia-egl-gbm*
-    rm -v %(installroot)/usr/lib32/libnvidia-egl-gbm*
+    # conflicts by egl-wayland/egl-gbm/egl-x11
+    rm -v %(installroot)%(libdir){,32}/libnvidia-egl-wayland*
+    rm -v %(installroot)%(libdir){,32}/libnvidia-egl-gbm*
+    rm -v %(installroot)%(libdir){,32}/libnvidia-egl-xcb*
+    rm -v %(installroot)%(libdir){,32}/libnvidia-egl-xlib*
+    rm -v %(installroot)%(datadir)/egl/egl_external_platform.d/10_nvidia_wayland.json
+    rm -v %(installroot)%(datadir)/egl/egl_external_platform.d/15_nvidia_gbm.json
+    rm -v %(installroot)%(datadir)/egl/egl_external_platform.d/20_nvidia_xcb.json
+    rm -v %(installroot)%(datadir)/egl/egl_external_platform.d/20_nvidia_xlib.json
+    rmdir -v %(installroot)%(datadir)/egl/egl_external_platform.d \
+             %(installroot)%(datadir)/egl/
+
+    # Conflicts with ocl-icd
+    # TODO: Make sure this works with opencl
+    rm -v %(installroot)%(libdir){,32}/libOpenCL*
+
+    # We don't support GLESv1 on Aeryn
+    rm -v %(installroot)%(libdir){,32}/libGLESv1_CM_nvidia*
 
     # Finally, documentation files for nvidia-settings
     %install_file extracted/nvidia-application-profiles-%(version)-key-documentation %(installroot)%(datadir)/nvidia/nvidia-application-profiles-%(version)-key-documentation
     %install_file extracted/nvidia-application-profiles-%(version)-rc %(installroot)%(datadir)/nvidia/nvidia-application-profiles-%(version)-rc
 
     chmod 4755 %(installroot)%(bindir)/nvidia-modprobe
+packages    :
+    - "%(name)":
+        paths:
+            # Prevent emission of -devel subpackage
+            - /usr/lib/lib*.so*
+        rundeps     :
+            - egl-gbm
+            - egl-wayland
+            - egl-x11
+            - eglexternalplatform
+            - nvidia-open-gpu-kernel-modules
+
+    - "%(name)-32bit":
+        paths:
+            - /usr/lib32/lib*.so*
+        rundeps:
+            - egl-gbm-32bit
+            - egl-wayland-32bit
+            - egl-x11-32bit

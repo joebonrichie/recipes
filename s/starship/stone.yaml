@@ -4,12 +4,12 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : starship
-version     : "1.22.1"
-release     : 10
+version     : 1.24.1
+release     : 16
 license     : ISC
 homepage    : https://starship.rs/
 upstreams   :
-    - https://github.com/starship/starship/archive/refs/tags/v1.22.1.tar.gz : 5434a3d1ca16987a1dd30146c36aaa4371dbe1c7f1a7995c0cf12ab3eb9326d7
+    - https://github.com/starship/starship/archive/refs/tags/v1.24.1.tar.gz : 4f2ac4181c3dea66f84bf8c97a3cb39dd218c27c8e4ade4de149d3834a87c428
 summary     : The minimal, blazing-fast, and infinitely customizable prompt for any shell!
 description : |
     The minimal, blazing-fast, and infinitely customizable prompt for any shell!
@@ -24,7 +24,7 @@ tuning      :
     - optimize: speed
     - lto: thin
 setup       : |
-    %install_file %(pkgdir)/serpent-os.toml docs/public/presets/toml/serpent-os.toml
+    %install_file %(pkgdir)/aeryn-os.toml docs/public/presets/toml/aeryn-os.toml
     %cargo_fetch
 build       : |
     %cargo_build
@@ -40,7 +40,7 @@ install     : |
     target/*/release/starship completions fish > %(installroot)/%(datadir)/fish/vendor_completions.d/starship.fish
 
     # Default initialisation
-    %install_file %(pkgdir)/50-starship.sh %(installroot)%(vendordir)%(sysconfdir)/profile.d/50-starship.sh
+    %install_file %(pkgdir)/50-starship.sh %(installroot)%(vendordir)/profile.d/50-starship.sh
 check      : |
     # $HOME .config tests fail and TERM=dumb causing issues in a couple of tests
     %cargo_test || :

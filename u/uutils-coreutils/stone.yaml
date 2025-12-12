@@ -4,37 +4,24 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : uutils-coreutils
-version     : 0.0.30
-release     : 21
+version     : 0.4.0
+release     : 28
 homepage    : https://uutils.github.io/coreutils/
 upstreams   :
-    - git|https://github.com/uutils/coreutils.git : 088599f41602e0b0505543a010ec59f5f81e74b1
+    - https://github.com/uutils/coreutils/archive/refs/tags/0.4.0.tar.gz : 5f0c3f97b807e72edccc844c6a685ec9862199f16a665df07de5b1d20ec21233
 summary     : Cross-platform Rust rewrite of the GNU coreutils
 description : |
     Cross-platform Rust rewrite of the GNU coreutils
 license     : MIT
 networking  : true
-packages    :
-    - coreutils:
-        summary: Transitional package for uutils-coreutils-coreutils
-        paths:
-            - /usr/share/doc/uutils-coreutils/TRANSITION
-        rundeps:
-            - uutils-coreutils
-    - coreutils-dbginfo:
-        summary: Transitional package for uutils-coreutils-coreutils-dbginfo
-        paths:
-            - /usr/share/doc/uutils-coreutils/TRANSITION.dbginfo
-        rundeps:
-            - uutils-coreutils-dbginfo
 builddeps   :
-    - binary(g++) # libstdc++...
     - pkgconfig(libacl)
+    - pkgconfig(systemd)
 tuning      :
     - optimize: size
-    - lto: full
+    - lto: thin
 environment : |
-    export UUTILS_FEATURES="feat_acl,unix"
+    export UUTILS_FEATURES="feat_acl,feat_systemd_logind,unix,uudoc"
     export RUSTFLAGS="$RUSTFLAGS -C codegen-units=1"
 setup       : |
     # broken / needs rebasing
@@ -59,12 +46,12 @@ install     : |
                 # Install binaries
                 ln -v %(installroot)%(bindir)/coreutils %(installroot)%(bindir)/${item}
                 # Install completions
-                ./%(cargo_target_dir)/coreutils completion ${item} bash > %(installroot)%(datadir)/bash-completion/completions/${item} && [ -s %(installroot)%(datadir)/bash-completion/completions/${item} ] || rm -f %(installroot)%(datadir)/bash-completion/completions/${item}
-                ./%(cargo_target_dir)/coreutils completion ${item} zsh > %(installroot)%(datadir)/zsh/site-functions/_${item} && [ -s %(installroot)%(datadir)/zsh/site-functions/_${item} ] || rm -f %(installroot)%(datadir)/zsh/site-functions/_${item}
-                ./%(cargo_target_dir)/coreutils completion ${item} fish > %(installroot)%(datadir)/fish/vendor_completions.d/${item}.fish && [ -s %(installroot)%(datadir)/fish/vendor_completions.d/${item}.fish ] || rm -f %(installroot)%(datadir)/fish/vendor_completions.d/${item}.fish
+                ./%(cargo_target_dir)/uudoc completion ${item} bash > %(installroot)%(datadir)/bash-completion/completions/${item} && [ -s %(installroot)%(datadir)/bash-completion/completions/${item} ] || rm -f %(installroot)%(datadir)/bash-completion/completions/${item}
+                ./%(cargo_target_dir)/uudoc completion ${item} zsh > %(installroot)%(datadir)/zsh/site-functions/_${item} && [ -s %(installroot)%(datadir)/zsh/site-functions/_${item} ] || rm -f %(installroot)%(datadir)/zsh/site-functions/_${item}
+                ./%(cargo_target_dir)/uudoc completion ${item} fish > %(installroot)%(datadir)/fish/vendor_completions.d/${item}.fish && [ -s %(installroot)%(datadir)/fish/vendor_completions.d/${item}.fish ] || rm -f %(installroot)%(datadir)/fish/vendor_completions.d/${item}.fish
 
                 # Now install manpages
-                ./%(cargo_target_dir)/coreutils manpage ${item} > %(installroot)%(mandir)/man1/${item}.1 && [ -s %(installroot)%(mandir)/man1/${item}.1 ] || rm -f %(installroot)%(mandir)/man1/${item}.1
+                ./%(cargo_target_dir)/uudoc manpage ${item} > %(installroot)%(mandir)/man1/${item}.1 && [ -s %(installroot)%(mandir)/man1/${item}.1 ] || rm -f %(installroot)%(mandir)/man1/${item}.1
                 ;;
         esac
     done
@@ -75,3 +62,16 @@ install     : |
     echo "${TRANSITION}-dbginfo" > %(installroot)%(docdir)/%(name)/TRANSITION.dbginfo
 check       : |
     %cargo_test || :
+packages    :
+    - coreutils:
+        summary: Transitional package for uutils-coreutils-coreutils
+        paths:
+            - /usr/share/doc/uutils-coreutils/TRANSITION
+        rundeps:
+            - uutils-coreutils
+    - coreutils-dbginfo:
+        summary: Transitional package for uutils-coreutils-coreutils-dbginfo
+        paths:
+            - /usr/share/doc/uutils-coreutils/TRANSITION.dbginfo
+        rundeps:
+            - uutils-coreutils-dbginfo

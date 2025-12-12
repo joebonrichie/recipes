@@ -1,0 +1,87 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: Florian Loitsch <florian@loitsch.com>
+Date: Sat, 10 May 2025 15:37:54 +0200
+Subject: [PATCH] Add higher bound for cmake. (#246)
+
+---
+ .github/workflows/ci.yml | 40 +++++++++++++++++++++++++++++++++++-----
+ CMakeLists.txt           |  5 ++++-
+ 2 files changed, 39 insertions(+), 6 deletions(-)
+
+diff --git a/.github/workflows/ci.yml b/.github/workflows/ci.yml
+index a9ed08f..f794bc6 100644
+--- a/.github/workflows/ci.yml
++++ b/.github/workflows/ci.yml
+@@ -11,16 +11,45 @@ jobs:
+       matrix:
+         container: [ ubuntu-latest, macos-latest, windows-latest ]
+         build_type: [ Debug, Release ]
++        # When updating the CMake version, make sure to also update the CMakeLists.txt.
++        cmake_version: ["3.15", "4.0.1", latest, latestrc]
++        include:
++          - container: windows-2019
++            cmake_version: "3.15"
++            build_type: Debug
++          - container: windows-2019
++            cmake_version: "3.15"
++            build_type: Release
++        exclude:
++          - container: windows-latest
++            cmake_version: "3.15"
+ 
+-
+-    # The CMake configure and build commands are platform agnostic and should work equally well on Windows or Mac.
+-    # You can convert this to a matrix build if you need cross-platform coverage.
+-    # See: https://docs.github.com/en/free-pro-team@latest/actions/learn-github-actions/managing-complex-workflows#using-a-build-matrix
+     runs-on: ${{ matrix.container }}
+ 
++    name: ${{ matrix.container }} - ${{ matrix.build_type }} - CMake ${{ matrix.cmake_version }}
++
+     steps:
+       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+ 
++      - name: Set up CMake
++        uses: lukka/get-cmake@ea004816823209b8d1211e47b216185caee12cc5  # v4.02
++        with:
++          cmakeVersion: ${{ matrix.cmake_version }}
++
++      - name: Check for cmake warnings
++        if: runner.os != 'Windows'
++        shell: bash
++        run: |
++          mkdir -p build-warning
++          cd build-warning
++          cmake -S .. 2>&1 | tee cmake-warnings.log
++          # Check for warnings in the log file.
++          if grep -q "CMake Warning" cmake-warnings.log; then
++            echo "CMake warnings found!"
++            cat cmake-warnings.log
++            exit 1
++          fi
++
+       - name: Configure
+         shell: bash
+         # Configure CMake in a 'buildX' subdirectory.
+@@ -29,7 +58,8 @@ jobs:
+         run: |
+           mkdir -p buildX
+           cd buildX
+-          cmake -DBUILD_TESTING=ON \
++          cmake \
++            -DBUILD_TESTING=ON \
+             -DCMAKE_BUILD_TYPE=${{ matrix.build_type }} \
+             -DCMAKE_INSTALL_PREFIX:PATH=${{ github.workspace }}/install_dir \
+             -DBUILD_SHARED_LIBS=ON \
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 8749ef8..f91d308 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -1,4 +1,7 @@
+-cmake_minimum_required(VERSION 3.0)
++# This project likely works with older versions, such as 3.5, but that
++# configuration is not tested.
++# When changing the minimum required versions make sure to update the CI.
++cmake_minimum_required(VERSION 3.15...4.0.1)
+ project(double-conversion VERSION 3.3.0)
+ 
+ option(BUILD_SHARED_LIBS "Build shared libraries (.dll/.so) instead of static ones (.lib/.a)" OFF)

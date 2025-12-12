@@ -1,0 +1,24 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: Joey Riches <josephriches@gmail.com>
+Date: Wed, 10 May 2023 17:47:20 +0100
+Subject: [PATCH] path-lookup: Include stateless xdg path by default
+
+---
+ src/xdg-autostart-generator/xdg-autostart-generator.c | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+diff --git a/src/xdg-autostart-generator/xdg-autostart-generator.c b/src/xdg-autostart-generator/xdg-autostart-generator.c
+index 47252c2e36..67469c24de 100644
+--- a/src/xdg-autostart-generator/xdg-autostart-generator.c
++++ b/src/xdg-autostart-generator/xdg-autostart-generator.c
+@@ -34,7 +34,9 @@ static int xdg_base_dirs(char ***ret_config_dirs, char ***ret_data_dirs) {
+         if (e)
+                 config_dirs = strv_split(e, ":");
+         else
+-                config_dirs = strv_new("/etc/xdg");
++                config_dirs = strv_new("/run/xdg",
++                                       "/etc/xdg",
++                                       "/usr/share/xdg");
+         if (!config_dirs)
+                 return -ENOMEM;
+ 

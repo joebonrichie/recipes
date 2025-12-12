@@ -1,0 +1,21 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: Reilly Brogan <reilly@reillybrogan.com>
+Date: Mon, 11 Aug 2025 11:15:12 -0500
+Subject: [PATCH] stateless config
+
+---
+ src/lftp.cc | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/src/lftp.cc b/src/lftp.cc
+index a78cd02..0bcb5bd 100644
+--- a/src/lftp.cc
++++ b/src/lftp.cc
+@@ -566,6 +566,7 @@ int   main(int argc,char **argv)
+    Log::global=new Log("debug");
+    Log::global->SetCB(tty_clear);
+ 
++   source_if_exist("/usr/share/defaults/lftp.conf");
+    source_if_exist(SYSCONFDIR"/lftp.conf");
+ 
+    if(!pick_option(argc,argv,"--norc")) {

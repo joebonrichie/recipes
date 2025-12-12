@@ -1,5 +1,5 @@
 releases:
-  id: 13254
+  id: 300958 # Python 3.11
   rss: ~
 security:
   cpe:

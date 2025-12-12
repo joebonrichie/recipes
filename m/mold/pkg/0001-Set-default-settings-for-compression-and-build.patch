@@ -9,10 +9,10 @@ Set the default to compress debug sections with zstd, and also set the default t
  1 file changed, 3 insertions(+), 3 deletions(-)
 
 diff --git a/src/mold.h b/src/mold.h
-index ce74a26e..4de962f4 100644
+index 382a6f78..59dc84a7 100644
 --- a/src/mold.h
 +++ b/src/mold.h
-@@ -1771,9 +1771,9 @@ struct BuildId {
+@@ -2075,9 +2075,9 @@ struct BuildId {
      }
    }
  
@@ -23,13 +23,13 @@ index ce74a26e..4de962f4 100644
 +  i64 hash_size = 20;
  };
  
- typedef enum { COMPRESS_NONE, COMPRESS_ZLIB, COMPRESS_ZSTD } CompressKind;
-@@ -1895,7 +1895,7 @@ struct Context {
-     BsymbolicKind Bsymbolic = BSYMBOLIC_NONE;
-     BuildId build_id;
-     CetReportKind z_cet_report = CET_REPORT_NONE;
--    CompressKind compress_debug_sections = COMPRESS_NONE;
-+    CompressKind compress_debug_sections = COMPRESS_ZSTD;
-     MultiGlob undefined_glob;
-     SeparateCodeKind z_separate_code = NOSEPARATE_CODE;
-     ShuffleSectionsKind shuffle_sections = SHUFFLE_SECTIONS_NONE;
+ typedef enum {
+@@ -2282,7 +2282,7 @@ struct Context {
+     bool z_shstk = false;
+     bool z_start_stop_visibility_protected = false;
+     bool z_text = false;
+-    i64 compress_debug_sections = ELFCOMPRESS_NONE;
++    i64 compress_debug_sections = ELFCOMPRESS_ZSTD;
+     i64 filler = -1;
+     i64 spare_dynamic_tags = 5;
+     i64 spare_program_headers = 0;

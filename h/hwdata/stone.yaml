@@ -4,19 +4,17 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : hwdata
-version     : 0.394
-release     : 14
+version     : "0.402"
+release     : 23
 homepage    : https://github.com/vcrhonek/hwdata
 upstreams   :
-    - https://github.com/vcrhonek/hwdata/archive/refs/tags/v0.394.tar.gz : b7c3fd7214a3b7c49d2661db127a712dc11cffd1799f793947aa1cb20aaf3298
+    - https://github.com/vcrhonek/hwdata/archive/refs/tags/v0.402.tar.gz : e390fe2f5f5ef7ed9ccbe62eb7cd40d4ee2b57389e7869c0dc96433c81812e7a
 summary     : Hardware identification + configuration data
 description : |
     hwdata contains various hardware identification and configuration data, such as the pci.ids and usb.ids databases.
 license     :
     - GPL-2.0-or-later
 setup       : |
-    # Upstream PR here: https://github.com/uutils/coreutils/pull/7867
-    %patch %(pkgdir)/remove-unsupported-in-uutils-coreutils-install-T-argument.patch
     %configure
 build       : |
     %make

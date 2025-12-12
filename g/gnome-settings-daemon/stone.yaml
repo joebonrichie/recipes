@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : gnome-settings-daemon
-version     : 48.0
-release     : 10
+version     : "49.1"
+release     : 14
 homepage    : https://gitlab.gnome.org/GNOME/gnome-settings-daemon
 upstreams   :
-    - https://download.gnome.org/sources/gnome-settings-daemon/48/gnome-settings-daemon-48.0.tar.xz : f3da20ab4a2ba56fd3e97b991f2bc267973d5619bd58bfa516410aa036305e45
+    - https://download.gnome.org/sources/gnome-settings-daemon/49/gnome-settings-daemon-49.1.tar.xz : 2a9957fc4f91c3b9127b49484179bef485120d9c1c208e44d44e6a746e6cc1c1
 summary     : Configures parameters of a GNOME session.
 description : |
     The GNOME Settings Daemon is responsible for setting various parameters of a GNOME Session and the applications that run under it.
@@ -22,15 +22,13 @@ builddeps   :
     - pkgconfig(colord)
     - pkgconfig(cups)
     - pkgconfig(gcr-4)
-    - pkgconfig(gdk-wayland-3.0)
     - pkgconfig(geocode-glib-2.0)
     - pkgconfig(glib-2.0)
-    - pkgconfig(gnome-desktop-3.0)
+    - pkgconfig(gnome-desktop-4)
     - pkgconfig(gsettings-desktop-schemas)
-    - pkgconfig(gtk+-3.0)
     - pkgconfig(gudev-1.0)
     - pkgconfig(gweather4)
-    - pkgconfig(libcanberra-gtk3)
+    - pkgconfig(libcanberra)
     - pkgconfig(libgeoclue-2.0)
     - pkgconfig(libnm)
     - pkgconfig(libnotify)
@@ -47,7 +45,8 @@ builddeps   :
 rundeps     :
     - cups-filters
 setup       : |
-    %meson -Dusb-protection=false
+    %meson \
+        -Dusb-protection=false
 build       : |
     %meson_build
 install     : |

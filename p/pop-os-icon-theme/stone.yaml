@@ -5,7 +5,7 @@
 #
 name        : pop-os-icon-theme
 version     : 3.5.1
-release     : 3
+release     : 4
 homepage    : https://github.com/pop-os/icon-theme
 upstreams   :
     - https://github.com/pop-os/icon-theme/archive/refs/tags/v3.5.1.tar.gz : 92e73f252e5e9c8a1124623a7d421410ef43c798a4a992955e6eb4f666f5c8a0

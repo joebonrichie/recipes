@@ -1,0 +1,30 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : kldap
+version     : 25.12.0
+release     : 8
+upstreams   :
+    - https://download.kde.org/stable/release-service/25.12.0/src/kldap-25.12.0.tar.xz : b1259b04af9c503d1d997a71f8c9405c2b8996f27ee8ee3a667463ec26334a57
+homepage    : https://kde.org
+license     : LGPL-2.1-or-later
+summary     : Allows LDAP accessing with a convenient Qt style C++ API
+description : |
+    Allows LDAP accessing with a convenient Qt style C++ API.
+builddeps   :
+    # Temporary, boulder doesn't handle build ordering resolution correctly when builddeps are added by macros, so add ECM manually
+    - cmake(ECM)
+    - cmake(KF6DocTools)
+    - cmake(KF6I18n)
+    - cmake(KF6KIO)
+    - cmake(Qt6Keychain)
+    - pkgconfig(ldap)
+    - pkgconfig(libsasl2)
+setup       : |
+    %cmake_kf6
+build       : |
+    %cmake_build
+install     : |
+    %cmake_install

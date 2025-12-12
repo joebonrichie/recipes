@@ -1,0 +1,36 @@
+/** Human readable report. This is not consumed by boulder */
+{
+	"manifest-version": "0.2",
+	"packages": {
+		"libfreeaptx": {
+			"depends": [
+				"soname(libc.so.6(x86_64))"
+			],
+			"files": [
+				"/usr/lib/libfreeaptx.so.0",
+				"/usr/lib/libfreeaptx.so.0.2.2"
+			],
+			"name": "libfreeaptx",
+			"provides": [
+				"soname(libfreeaptx.so.0(x86_64))"
+			]
+		},
+		"libfreeaptx-devel": {
+			"depends": [
+				"libfreeaptx"
+			],
+			"files": [
+				"/usr/include/freeaptx.h",
+				"/usr/lib/libfreeaptx.so",
+				"/usr/lib/pkgconfig/libfreeaptx.pc"
+			],
+			"name": "libfreeaptx-devel",
+			"provides": [
+				"pkgconfig(libfreeaptx)"
+			]
+		}
+	},
+	"source-name": "libfreeaptx",
+	"source-release": "1",
+	"source-version": "0.2.2"
+}

@@ -1,0 +1,5 @@
+releases:
+  id: 382157
+  rss: https://github.com/flamegraph-rs/flamegraph/releases.atom
+security:
+  cpe: ~ # Last checked 2025-08-09

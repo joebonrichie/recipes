@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : mesa-clc
-version     : 25.0.5
-release     : 2
+version     : 25.3.1
+release     : 21
 homepage    : https://mesa3d.org/
 upstreams   :
-    - https://mesa.freedesktop.org/archive/mesa-25.0.5.tar.xz : c0d245dea0aa4b49f74b3d474b16542e4a8799791cd33d676c69f650ad4378d0
+    - https://mesa.freedesktop.org/archive/mesa-25.3.1.tar.xz : 059d0d985622f49588f01aa29152804f4da8ffe6add046e00a52923379c2d8da
 summary     : Tool used for building OpenCL C to SPIR-V
 description : |
     %(name) tool used for building OpenCL C to SPIR-V
@@ -17,26 +17,27 @@ license     :
     - MIT
 builddeps   :
     - cmake(Clang)
+    - binary(glslangValidator)
     - binary(llvm-config)
     - pkgconfig(LLVMSPIRVLib)
     - pkgconfig(SPIRV-Tools)
     - pkgconfig(libclc)
     - pkgconfig(libdrm)
     - pkgconfig(expat)
-    - python-mako
-    - python-pyyaml
+    - python(mako)
+    - python(pyyaml)
 setup       : |
     %meson \
-            -Dgallium-drivers="" \
-            -Dglx=disabled \
-            -Dmesa-clc=enabled \
-            -Dinstall-mesa-clc=true \
-            -Dlibunwind=disabled \
-            -Dplatforms="" \
-            -Dvulkan-drivers="" \
-            -Dzstd=disabled
+        -Dgallium-drivers="" \
+        -Dglx=disabled \
+        -Dmesa-clc=enabled \
+        -Dinstall-mesa-clc=true \
+        -Dlibunwind=disabled \
+        -Dplatforms="" \
+        -Dvulkan-drivers="" \
+        -Dzstd=disabled
 build       : |
     %meson_build
 install     : |
     %install_bin %(builddir)/src/compiler/clc/mesa_clc
-    %install_bin %(builddir)/src/compiler/spirv/vtn_bindgen
+    %install_bin %(builddir)/src/compiler/spirv/vtn_bindgen2

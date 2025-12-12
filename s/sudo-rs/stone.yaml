@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : sudo-rs
-version     : "0.2.3"
-release     : 8
+version     : 0.2.10
+release     : 17
 homepage    : https://github.com/trifectatechfoundation/sudo-rs
 upstreams   :
-    - https://github.com/trifectatechfoundation/sudo-rs/archive/refs/tags/v0.2.3.tar.gz : 2371c91644185c2bcf1f02408c2cc7a79b1dd1ba740088a9a16f0f947b649cdc
+    - https://github.com/trifectatechfoundation/sudo-rs/archive/refs/tags/v0.2.10.tar.gz : c0f65665145da9aebc664013c426bff4eb55a1eb893ed0416e65de312b4a71e9
 summary     : A memory safe implementation of sudo and su
 description : |
     A safety oriented and memory safe implementation of sudo and su written in Rust.
@@ -16,39 +16,24 @@ license     :
     - Apache-2.0
     - MIT
 builddeps   :
-    - pkgconfig(pam)
     - binary(go-md2man)
-packages    :
-    - sudo:
-        summary: Transitional package for sudo-rs
-        paths:
-            - /usr/share/doc/sudo-rs/TRANSITION
-        rundeps:
-            - sudo-rs
-    - sudo-dbginfo:
-        summary: Transitional package for sudo-rs-dbginfo
-        paths:
-            - /usr/share/doc/sudo-rs/TRANSITION.dbginfo
-        rundeps:
-            - sudo-rs-dbginfo
-    - sudo-devel:
-        summary: Transitional package for sudo-rs-devel
-        paths:
-            - /usr/share/doc/sudo-rs/TRANSITION.devel
-        rundeps:
-            - sudo-rs
+    - pkgconfig(pam)
 networking  : true
 tuning      :
     - lto: thin
 setup       : |
     %patch %(pkgdir)/0001-vi-sudo-Support-stateless-default-paths.patch
+    %patch %(pkgdir)/0001-downstream-Update-default-PATH.patch
     %cargo_fetch
 build       : |
-    %cargo_build --all-features
+    %cargo_build --features pam-login
 install     : |
     %cargo_install sudo su visudo
+
+    # su and sudo setuid permissions
     chmod 4755 %(installroot)%(bindir)/su
     chmod 4755 %(installroot)%(bindir)/sudo
+
     %install_dir %(installroot)%(sbindir)
     mv %(installroot)%(bindir)/visudo %(installroot)%(sbindir)/visudo
 
@@ -56,15 +41,15 @@ install     : |
     %install_dir %(installroot)%(mandir)/man8
 
     %install_file %(pkgdir)/sudo.conf %(installroot)%(libdir)/tmpfiles.d/sudo.conf
-    %install_file %(pkgdir)/sudo.pam %(installroot)%(vendordir)/etc/pam.d/sudo
-    %install_file %(pkgdir)/sudo.pam %(installroot)%(vendordir)/etc/pam.d/sudo-i
-    %install_file %(pkgdir)/su.pam %(installroot)/%(vendordir)%(sysconfdir)/pam.d/su
-    %install_file %(pkgdir)/su.pam %(installroot)/%(vendordir)%(sysconfdir)/pam.d/su-i
+    %install_file %(pkgdir)/sudo.pam %(installroot)%(vendordir)/pam.d/sudo
+    %install_file %(pkgdir)/sudo.pam %(installroot)%(vendordir)/pam.d/sudo-i
+    %install_file %(pkgdir)/su.pam %(installroot)/%(vendordir)/pam.d/su
+    %install_file %(pkgdir)/su.pam %(installroot)/%(vendordir)/pam.d/su-l
 
-    %install_file %(pkgdir)/sudoers %(installroot)%(vendordir)/etc/sudo/sudoers
+    %install_file %(pkgdir)/sudoers %(installroot)%(vendordir)/sudo/sudoers
 
     # We own special permission on the dir now
-    install -d -m 00750 %(installroot)%(vendordir)/etc/sudo/sudoers.d
+    install -d -m 00750 %(installroot)%(vendordir)/sudo/sudoers.d
 
     go-md2man -in docs/man/su.1.md -out %(installroot)%(mandir)/man1/su.1
     go-md2man -in docs/man/sudo.8.md -out %(installroot)%(mandir)/man8/sudo.8
@@ -79,3 +64,24 @@ install     : |
 check       : |
     # Currently stateless will break some tests involving /etc/hosts
     %cargo_test --all-features || true
+packages    :
+    - sudo:
+        summary: Transitional package for sudo-rs
+        paths:
+            - /usr/share/doc/sudo-rs/TRANSITION
+        rundeps:
+            - sudo-rs
+
+    - sudo-dbginfo:
+        summary: Transitional package for sudo-rs-dbginfo
+        paths:
+            - /usr/share/doc/sudo-rs/TRANSITION.dbginfo
+        rundeps:
+            - sudo-rs-dbginfo
+
+    - sudo-devel:
+        summary: Transitional package for sudo-rs-devel
+        paths:
+            - /usr/share/doc/sudo-rs/TRANSITION.devel
+        rundeps:
+            - sudo-rs

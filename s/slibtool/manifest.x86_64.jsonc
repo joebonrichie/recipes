@@ -38,7 +38,10 @@
 				"/usr/share/slibtool/ar-lib",
 				"/usr/share/slibtool/ltmain.sh",
 				"/usr/share/slibtool/slibtool.m4",
-				"/usr/share/slibtool/slibtool.sh"
+				"/usr/share/slibtool/slibtool.sh",
+				"/usr/share/slibtool/sltdl.h.in",
+				"/usr/share/slibtool/sltdl.m4",
+				"/usr/share/slibtool/sltdl.mk.in"
 			],
 			"name": "slibtool",
 			"provides": [
@@ -69,6 +72,6 @@
 		}
 	},
 	"source-name": "slibtool",
-	"source-release": "8",
-	"source-version": "0.6.1"
+	"source-release": "15",
+	"source-version": "0.7.4"
 }

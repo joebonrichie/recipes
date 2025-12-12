@@ -4,28 +4,27 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : cmake
-version     : 3.31.6
-release     : 8
+version     : 4.1.3
+release     : 16
 homepage    : https://cmake.org/
 upstreams   :
-    - https://www.cmake.org/files/v3.31/cmake-3.31.6.tar.gz : 653427f0f5014750aafff22727fb2aa60c6c732ca91808cfb78ce22ddd9e55f0
+    - https://www.cmake.org/files/v4.1/cmake-4.1.3.tar.gz : 765879a53d178bf1e1509768de4c9a672dabaa20047a9f3809571558e783be88
 summary     : Cross-platform build system
 description : |
     CMake is an open-source, cross-platform family of tools designed to build, test and package software. CMake is used to control the software compilation process using simple platform and compiler independent configuration files, and generate native makefiles and workspaces that can be used in the compiler environment of your choice.
 license     :
     - BSD-3-Clause
-packages    :
-    - "%(name)":
-        paths:
-            - /usr/share/aclocal
 builddeps   :
     - binary(flang)
+    - cmake(Qt6Gui)
     - pkgconfig(expat)
     - pkgconfig(libarchive)
     - pkgconfig(libcurl)
     - pkgconfig(libuv)
     - pkgconfig(ncurses)
     - pkgconfig(zlib)
+    - python(sphinx)
+    # TODO: system librhash
 tuning      :
     - icf: all
     - lto: full
@@ -34,16 +33,37 @@ tuning      :
     - symbolic
 setup       : |
     %cmake \
+        -DBUILD_QtDialog=ON \
         -DBUILD_TESTING=OFF \
         -DCMAKE_DOC_DIR=share/doc/cmake \
         -DCMAKE_INSTALL_DO_STRIP=OFF \
+        -DCMAKE_MAN_DIR=share/man \
         -DCMAKE_USE_SYSTEM_CURL=ON \
         -DCMAKE_USE_SYSTEM_EXPAT=ON \
         -DCMAKE_USE_SYSTEM_LIBARCHIVE=ON \
         -DCMAKE_USE_SYSTEM_LIBUV=ON \
         -DCMAKE_USE_SYSTEM_ZLIB=ON \
-        -DCMake_TEST_NO_NETWORK=ON
+        -DCMake_TEST_NO_NETWORK=ON \
+        -DSPHINX_MAN=ON
 build       : |
     %cmake_build
 install     : |
     %cmake_install
+packages    :
+    - "%(name)":
+        paths:
+            - /usr/share/aclocal
+
+    - "%(name)-gui":
+        # TODO: Add appdata
+        summary: "Qt based GUI for %(name)"
+        description: "Qt based GUI for %(name)"
+        rundeps:
+            - "%(name)"
+            - qt6-wayland
+        paths:
+            - /usr/bin/cmake-gui
+            - /usr/share/applications
+            - /usr/share/icons
+            - /usr/share/mime
+            - /usr/share/man/man1/cmake-gui*

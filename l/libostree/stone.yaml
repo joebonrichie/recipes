@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : libostree
-version     : 2024.9
-release     : 7
+version     : "2025.7"
+release     : 15
 homepage    : https://ostreedev.github.io/ostree/
 upstreams   :
-    - https://github.com/ostreedev/ostree/releases/download/v2024.9/libostree-2024.9.tar.xz : 4356170ec5f7a09428b6add77e2c6f31d4049ab765ee67cf929bfa3b750d3e1b
+    - https://github.com/ostreedev/ostree/releases/download/v2025.7/libostree-2025.7.tar.xz : af8d080b9585e7fd1faba8f022967e1c268ae62e20ecf32ee7b364c1e307570b
 summary     : Operating system and container binary deployment and upgrades
 description : |
     The core OSTree model is like git in that it checksums individual files and has a content-addressed-object store. It's unlike git in that it "checks out" the files via hardlinks, and they thus need to be immutable to prevent corruption. Therefore, another way to think of OSTree is that it's just a more polished version of Linux VServer hardlinks.
@@ -26,9 +26,10 @@ license     :
     - LGPL-2.1-or-later
 builddeps   :
     - binary(bison)
+    - binary(gjs)
     - binary(python)
     - binary(xsltproc)
-    - docbook
+    - pkgconfig(avahi-client)
     - pkgconfig(e2p)
     - pkgconfig(fuse3)
     - pkgconfig(glib-2.0)
@@ -36,14 +37,20 @@ builddeps   :
     - pkgconfig(gpgme-glib)
     - pkgconfig(libarchive)
     - pkgconfig(libcurl)
-    - pkgconfig(libsoup-3.0)
     - pkgconfig(liblzma)
+    - pkgconfig(libsoup-3.0)
     - pkgconfig(libsystemd)
     - pkgconfig(openssl)
+    - docbook
+    - docbook-xsl
+environment : |
+    %export_docbook_catalogs
 setup       : |
-    sed -e '/Werror=missing-include-dirs/d' -i configure
-    %configure --with-curl \
-               --with-crypto=openssl
+    %patch %(pkgdir)/remove-gcc-override.patch
+
+    %configure \
+        --with-curl \
+        --with-crypto=openssl
 build       : |
     %make
 install     : |
@@ -51,5 +58,13 @@ install     : |
     # we're not an ostree distribution
     rm -rf %(installroot)%(libdir)/systemd/
     rm -rf %(installroot)%(libdir)/tmpfiles.d
-# g-ir-scanner shitting the bed with clang
-toolchain   : gnu
+
+    # We don't support grub
+    rm -rfv %(installroot)%(libdir)/libostree/libostree/grub2-15_ostree
+    rmdir -v %(installroot)%(libdir)/libostree/libostree/ \
+             %(installroot)%(libdir)/libostree/
+packages    :
+    - "%(name)-libs":
+        paths:
+            - /usr/lib/libostree-1.so.*
+            - /usr/lib/girepository-1.0/OSTree-1.0.typelib

@@ -7,7 +7,7 @@
 				"binary(msgfmt)",
 				"binary(perl)",
 				"binary(xsltproc)",
-				"docbook",
+				"docbook-xsl",
 				"pkgconfig(duktape)",
 				"pkgconfig(expat)",
 				"pkgconfig(gio-2.0)",
@@ -24,6 +24,8 @@
 				"soname(libglib-2.0.so.0(x86_64))",
 				"soname(libgobject-2.0.so.0(x86_64))",
 				"soname(libpam.so.0(x86_64))",
+				"soname(libpolkit-agent-1.so.0(x86_64))",
+				"soname(libpolkit-gobject-1.so.0(x86_64))",
 				"soname(libsystemd.so.0(x86_64))"
 			],
 			"files": [
@@ -31,12 +33,6 @@
 				"/usr/bin/pkcheck",
 				"/usr/bin/pkexec",
 				"/usr/bin/pkttyagent",
-				"/usr/lib/girepository-1.0/Polkit-1.0.typelib",
-				"/usr/lib/girepository-1.0/PolkitAgent-1.0.typelib",
-				"/usr/lib/libpolkit-agent-1.so.0",
-				"/usr/lib/libpolkit-agent-1.so.0.0.0",
-				"/usr/lib/libpolkit-gobject-1.so.0",
-				"/usr/lib/libpolkit-gobject-1.so.0.0.0",
 				"/usr/lib/polkit-1/polkit-agent-helper-1",
 				"/usr/lib/polkit-1/polkitd",
 				"/usr/lib/systemd/system/polkit.service",
@@ -47,14 +43,11 @@
 				"/usr/lib/userdb/polkitd.user",
 				"/usr/share/dbus-1/system-services/org.freedesktop.PolicyKit1.service",
 				"/usr/share/dbus-1/system.d/org.freedesktop.PolicyKit1.conf",
-				"/usr/share/defaults/etc/pam.d/polkit-1",
-				"/usr/share/gettext/its/polkit.its",
-				"/usr/share/gettext/its/polkit.loc",
-				"/usr/share/gir-1.0/Polkit-1.0.gir",
-				"/usr/share/gir-1.0/PolkitAgent-1.0.gir",
+				"/usr/share/defaults/pam.d/polkit-1",
 				"/usr/share/locale/cs/LC_MESSAGES/polkit-1.mo",
 				"/usr/share/locale/da/LC_MESSAGES/polkit-1.mo",
 				"/usr/share/locale/de/LC_MESSAGES/polkit-1.mo",
+				"/usr/share/locale/hi/LC_MESSAGES/polkit-1.mo",
 				"/usr/share/locale/hr/LC_MESSAGES/polkit-1.mo",
 				"/usr/share/locale/hu/LC_MESSAGES/polkit-1.mo",
 				"/usr/share/locale/id/LC_MESSAGES/polkit-1.mo",
@@ -68,6 +61,7 @@
 				"/usr/share/locale/ro/LC_MESSAGES/polkit-1.mo",
 				"/usr/share/locale/ru/LC_MESSAGES/polkit-1.mo",
 				"/usr/share/locale/sk/LC_MESSAGES/polkit-1.mo",
+				"/usr/share/locale/sl/LC_MESSAGES/polkit-1.mo",
 				"/usr/share/locale/sv/LC_MESSAGES/polkit-1.mo",
 				"/usr/share/locale/tr/LC_MESSAGES/polkit-1.mo",
 				"/usr/share/locale/uk/LC_MESSAGES/polkit-1.mo",
@@ -79,8 +73,10 @@
 				"/usr/share/man/man1/pkttyagent.1",
 				"/usr/share/man/man8/polkit.8",
 				"/usr/share/man/man8/polkitd.8",
+				"/usr/share/moss/triggers/sys.d/reload_polkit.yaml",
 				"/usr/share/polkit-1/actions/org.freedesktop.policykit.policy",
 				"/usr/share/polkit-1/policyconfig-1.dtd",
+				"/usr/share/polkit-1/rules.d/00-ntp-and-time-zones.rules",
 				"/usr/share/polkit-1/rules.d/50-default.rules"
 			],
 			"name": "polkit",
@@ -88,9 +84,7 @@
 				"binary(pkaction)",
 				"binary(pkcheck)",
 				"binary(pkexec)",
-				"binary(pkttyagent)",
-				"soname(libpolkit-agent-1.so.0(x86_64))",
-				"soname(libpolkit-gobject-1.so.0(x86_64))"
+				"binary(pkttyagent)"
 			]
 		},
 		"polkit-devel": {
@@ -98,7 +92,7 @@
 				"binary(msgfmt)",
 				"binary(perl)",
 				"binary(xsltproc)",
-				"docbook",
+				"docbook-xsl",
 				"pkgconfig(duktape)",
 				"pkgconfig(expat)",
 				"pkgconfig(gio-2.0)",
@@ -144,16 +138,54 @@
 				"/usr/lib/libpolkit-agent-1.so",
 				"/usr/lib/libpolkit-gobject-1.so",
 				"/usr/lib/pkgconfig/polkit-agent-1.pc",
-				"/usr/lib/pkgconfig/polkit-gobject-1.pc"
+				"/usr/lib/pkgconfig/polkit-gobject-1.pc",
+				"/usr/share/gettext/its/polkit.its",
+				"/usr/share/gettext/its/polkit.loc",
+				"/usr/share/gir-1.0/Polkit-1.0.gir",
+				"/usr/share/gir-1.0/PolkitAgent-1.0.gir"
 			],
 			"name": "polkit-devel",
 			"provides": [
 				"pkgconfig(polkit-agent-1)",
 				"pkgconfig(polkit-gobject-1)"
 			]
+		},
+		"polkit-libs": {
+			"build-depends": [
+				"binary(msgfmt)",
+				"binary(perl)",
+				"binary(xsltproc)",
+				"docbook-xsl",
+				"pkgconfig(duktape)",
+				"pkgconfig(expat)",
+				"pkgconfig(gio-2.0)",
+				"pkgconfig(gobject-introspection-1.0)",
+				"pkgconfig(libsystemd)",
+				"pkgconfig(pam)"
+			],
+			"depends": [
+				"soname(libc.so.6(x86_64))",
+				"soname(libgio-2.0.so.0(x86_64))",
+				"soname(libglib-2.0.so.0(x86_64))",
+				"soname(libgobject-2.0.so.0(x86_64))",
+				"soname(libsystemd.so.0(x86_64))"
+			],
+			"files": [
+				"/usr/lib/girepository-1.0/Polkit-1.0.typelib",
+				"/usr/lib/girepository-1.0/PolkitAgent-1.0.typelib",
+				"/usr/lib/libpolkit-agent-1.so.0",
+				"/usr/lib/libpolkit-agent-1.so.0.0.0",
+				"/usr/lib/libpolkit-gobject-1.so.0",
+				"/usr/lib/libpolkit-gobject-1.so.0.0.0"
+			],
+			"name": "polkit-libs",
+			"provides": [
+				"soname(libpolkit-agent-1.so.0(x86_64))",
+				"soname(libpolkit-gobject-1.so.0(x86_64))"
+			]
 		}
 	},
 	"source-name": "polkit",
-	"source-release": "4",
-	"source-version": "124"
+	"source-release": "9",
+	"source-version": "126"
 }

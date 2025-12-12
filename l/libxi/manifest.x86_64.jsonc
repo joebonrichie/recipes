@@ -45,8 +45,7 @@
 			],
 			"name": "libxi-32bit",
 			"provides": [
-				"soname(libXi.so.6(386))",
-				"soname(libXi.so.6(x86))"
+				"soname(libXi.so.6(386))"
 			]
 		},
 		"libxi-32bit-devel": {
@@ -176,6 +175,6 @@
 		}
 	},
 	"source-name": "libxi",
-	"source-release": "4",
+	"source-release": "5",
 	"source-version": "1.8.2"
 }

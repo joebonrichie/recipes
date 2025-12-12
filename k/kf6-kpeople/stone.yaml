@@ -1,0 +1,35 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : kf6-kpeople
+version     : 6.20.0
+release     : 8
+upstreams   :
+    - https://download.kde.org/stable/frameworks/6.20/kpeople-6.20.0.tar.xz : 72f7751d589e7d7204665a1adf8751abdbdbd6e4b582662c313ec79ddb013fb2
+homepage    : https://community.kde.org/Frameworks
+license     : LGPL-2.1-only
+summary     : Provides access to all contacts and aggregates them by person
+description : |
+    KPeople offers unified access to our contacts from different sources, grouping them by person while still exposing all the data. Furthermore, KPeople will also provide facilities to integrate the data provided in user interfaces by providing QML and Qt Widgets components.
+builddeps   :
+    # Temporary, boulder doesn't handle build ordering resolution correctly when builddeps are added by macros, so add ECM manually
+    - cmake(ECM)
+    - cmake(KF6Contacts)
+    - cmake(KF6CoreAddons)
+    - cmake(KF6I18n)
+    - cmake(KF6ItemViews)
+    - cmake(KF6WidgetsAddons)
+    - cmake(Qt6CorePrivate)
+    - cmake(Qt6Qml)
+setup       : |
+    %cmake_kf6
+build       : |
+    %cmake_build
+install     : |
+    %cmake_install
+packages    :
+    - "%(name)-devel":
+        rundeps:
+            - cmake(Qt6Widgets)

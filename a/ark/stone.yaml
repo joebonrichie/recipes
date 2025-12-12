@@ -4,10 +4,10 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : ark
-version     : 24.12.3
-release     : 2
+version     : 25.12.0
+release     : 16
 upstreams   :
-    - https://download.kde.org/stable/release-service/24.12.3/src/ark-24.12.3.tar.xz : 4eb1d43878f55169bfb27a65e6f0d7f6093a69d56d905fdff249138653fe4abf
+    - https://download.kde.org/stable/release-service/25.12.0/src/ark-25.12.0.tar.xz : a1107e01049f345782c20b2abae3171ecb6e963bb02ffbb814e0357b024bb5c0
 homepage    : https://kde.org/applications/utilities/org.kde.ark
 license     : GPL-2.0-or-later
 summary     : A graphical file compression/decompression utility
@@ -36,12 +36,22 @@ builddeps   :
 rundeps     :
     - qt6-wayland
 setup       : |
+    %patch %(pkgdir)/0001-Add-read-only-for-stone-mimetype.patch
+
     %cmake_kf6
 build       : |
     %cmake_build
 install     : |
     %cmake_install
+packages    :
+    - "%(name)-libs":
+        paths:
+            - /usr/lib/libkerfuffle.so.*
+            - /usr/lib/qt6/plugins/kerfuffle/
+            - /usr/lib/qt6/plugins/kf6/kfileitemaction/
+            - /usr/lib/qt6/plugins/kf6/kio_dnd/extracthere.so
+            - /usr/lib/qt6/plugins/kf6/parts/arkpart.so
 
-    # remove docs
-    rm -rf %(installroot)/%(datadir)/doc
-
+    - "%(name)-docs":
+        paths:
+            - /usr/share/doc

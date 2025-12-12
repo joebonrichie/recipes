@@ -61,6 +61,7 @@ diff -up lmdb-LMDB_0.9.19/libraries/liblmdb/Makefile.orig lmdb-LMDB_0.9.19/libra
 -mtest4:	mtest4.o liblmdb.a
 -mtest5:	mtest5.o liblmdb.a
 -mtest6:	mtest6.o liblmdb.a
+-mplay:	mplay.o liblmdb.a
 +mdb_stat: mdb_stat.o liblmdb.so
 +mdb_copy: mdb_copy.o liblmdb.so
 +mdb_dump: mdb_dump.o liblmdb.so
@@ -71,6 +72,7 @@ diff -up lmdb-LMDB_0.9.19/libraries/liblmdb/Makefile.orig lmdb-LMDB_0.9.19/libra
 +mtest4:	mtest4.o liblmdb.so
 +mtest5:	mtest5.o liblmdb.so
 +mtest6:	mtest6.o liblmdb.so
++mplay:	mplay.o liblmdb.so
  
  mdb.o: mdb.c lmdb.h midl.h
  	$(CC) $(CFLAGS) $(CPPFLAGS) -c mdb.c

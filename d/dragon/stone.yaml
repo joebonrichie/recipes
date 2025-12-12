@@ -4,10 +4,10 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : dragon
-version     : 24.12.3
-release     : 2
+version     : 25.12.0
+release     : 19
 upstreams   :
-    - https://download.kde.org/stable/release-service/24.12.3/src/dragon-24.12.3.tar.xz : f86568f82d9dc85da5900f48327260636ed73fa5ff80c890665d21a8c9c14b84
+    - https://download.kde.org/stable/release-service/25.12.0/src/dragon-25.12.0.tar.xz : cef32684cc197f0c561b2b18ddf53bb3a9acf0a8c9ce2298dc884931ef46ee99
 homepage    : https://apps.kde.org/dragonplayer/
 license     : GPL-2.0-or-later
 summary     : Video player from KDE
@@ -16,23 +16,18 @@ description : |
 builddeps   :
     # Temporary, boulder doesn't handle build ordering resolution correctly when builddeps are added by macros, so add ECM manually
     - cmake(ECM)
-    - cmake(KF6Config)
-    - cmake(KF6ConfigWidgets)
     - cmake(KF6CoreAddons)
     - cmake(KF6Crash)
-    - cmake(KF6DBusAddons)
     - cmake(KF6DocTools)
     - cmake(KF6I18n)
-    - cmake(KF6JobWidgets)
     - cmake(KF6KIO)
-    - cmake(KF6Parts)
-    - cmake(KF6Solid)
-    - cmake(KF6WidgetsAddons)
+    - cmake(KF6Kirigami)
     - cmake(KF6WindowSystem)
-    - cmake(KF6XmlGui)
-    - cmake(Phonon4Qt6)
+    - cmake(Qt6Multimedia)
+    - cmake(Qt6CorePrivate)
+    - pkgconfig(libavcodec)
 rundeps     :
-    - phonon-backend-mpv-qt6
+    - kf6-kirigami
     - qt6-wayland
 setup       : |
     %cmake_kf6

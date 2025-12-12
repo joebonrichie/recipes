@@ -5,7 +5,7 @@
 #
 name        : xhost
 version     : 1.0.10
-release     : 3
+release     : 4
 homepage    : https://www.x.org/releases/individual/app
 upstreams   :
     - https://www.x.org/releases/individual/app/xhost-1.0.10.tar.xz : a8afd70059479c712948b895e41c35a4a8bfcede3ba2d5a4b855c88bbb725be1

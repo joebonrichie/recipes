@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : gnome-characters
-version     : 48.0
-release     : 2
+version     : 49.1
+release     : 5
 homepage    : https://apps.gnome.org/Characters/
 upstreams   :
-    - https://download.gnome.org/sources/gnome-characters/48/gnome-characters-48.0.tar.xz : a2c32ca54d911db2404420350d3442e691a2dce8b0f5d00899f66cff8c3c8d71
+    - https://download.gnome.org/sources/gnome-characters/49/gnome-characters-49.1.tar.xz : 795c0fe434e602dc783391fb5830dbc7d8e1ea05ca77210fb140e2f6f40a145c
 summary     : Character map application
 description : |
     Characters is a simple utility application to find and insert unusual characters. It allows you to quickly find the character you are looking for by searching for keywords.
@@ -20,6 +20,7 @@ builddeps   :
     - binary(update-desktop-database)
     - pkgconfig(gio-2.0)
     - pkgconfig(gjs-1.0)
+    - pkgconfig(gobject-introspection-1.0)
     - pkgconfig(gtk4)
     - pkgconfig(libadwaita-1)
     - pkgconfig(pango)

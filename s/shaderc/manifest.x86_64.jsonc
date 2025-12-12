@@ -5,6 +5,7 @@
 		"shaderc": {
 			"build-depends": [
 				"binary(asciidoctor)",
+				"binary(perl)",
 				"binary(python)",
 				"cmake(SPIRV-Headers)",
 				"cmake(SPIRV-Tools)",
@@ -14,10 +15,10 @@
 				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
 				"soname(libSPIRV-Tools-opt.so(x86_64))",
 				"soname(libSPIRV-Tools.so(x86_64))",
-				"soname(libc++.so.1(x86_64))",
 				"soname(libc.so.6(x86_64))",
-				"soname(libglslang.so.15(x86_64))",
-				"soname(libunwind.so.1(x86_64))"
+				"soname(libgcc_s.so.1(x86_64))",
+				"soname(libglslang.so.16(x86_64))",
+				"soname(libstdc++.so.6(x86_64))"
 			],
 			"files": [
 				"/usr/bin/glslc",
@@ -33,6 +34,7 @@
 		"shaderc-devel": {
 			"build-depends": [
 				"binary(asciidoctor)",
+				"binary(perl)",
 				"binary(python)",
 				"cmake(SPIRV-Headers)",
 				"cmake(SPIRV-Tools)",
@@ -61,6 +63,6 @@
 		}
 	},
 	"source-name": "shaderc",
-	"source-release": "5",
-	"source-version": "2025.1"
+	"source-release": "10",
+	"source-version": "2025.4"
 }

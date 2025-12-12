@@ -1,0 +1,28 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: Reilly Brogan <reilly@reillybrogan.com>
+Date: Tue, 26 Aug 2025 12:39:09 -0500
+Subject: [PATCH] downstream: Update default PATH
+
+---
+ Src/init.c | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
+
+diff --git a/Src/init.c b/Src/init.c
+index 871d46b12..b0c426e92 100644
+--- a/Src/init.c
++++ b/Src/init.c
+@@ -977,10 +977,10 @@ setupvals(char *cmd, char *runscript, char *zsh_name)
+ 
+     /* Set default path */
+     path    = (char **) zalloc(sizeof(*path) * 5);
+-    path[0] = ztrdup("/bin");
+-    path[1] = ztrdup("/usr/bin");
+-    path[2] = ztrdup("/usr/ucb");
+-    path[3] = ztrdup("/usr/local/bin");
++    path[0] = ztrdup("/usr/local/bin");
++    path[1] = ztrdup("/usr/local/sbin");
++    path[2] = ztrdup("/usr/bin");
++    path[3] = ztrdup("/usr/sbin");
+     path[4] = NULL;
+ 
+     cdpath   = mkarray(NULL);

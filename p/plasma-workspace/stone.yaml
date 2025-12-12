@@ -1,0 +1,212 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : plasma-workspace
+version     : 6.5.4
+release     : 26
+upstreams   :
+    - https://download.kde.org/stable/plasma/6.5.4/plasma-workspace-6.5.4.tar.xz : 494b671d70f67ee382feaed0dca72ed67fe7a423a6338e2cdb2411f93bce741e
+homepage    : https://kde.org/plasma-desktop/
+license     :
+    - GFDL-1.2
+    - GPL-2.0
+    - LGPL-2.1
+summary     : KDE Plasma workspace
+description : |
+    KDE Plasma workspace
+builddeps   :
+    - cmake(AppStreamQt)
+    - cmake(Breeze)
+    # Temporary, boulder doesn't handle build ordering resolution correctly when builddeps are added by macros, so add ECM manually
+    - cmake(ECM)
+    - cmake(KF6Archive)
+    - cmake(KF6Auth)
+    - cmake(KF6Baloo)
+    - cmake(KF6ColorScheme)
+    - cmake(KF6CoreAddons)
+    - cmake(KF6Crash)
+    - cmake(KF6DBusAddons)
+    - cmake(KF6Declarative)
+    - cmake(KF6DocTools)
+    - cmake(KF6GlobalAccel)
+    - cmake(KF6GuiAddons)
+    - cmake(KF6Holidays)
+    - cmake(KF6I18n)
+    - cmake(KF6IconThemes)
+    - cmake(KF6IdleTime)
+    - cmake(KF6ItemModels)
+    - cmake(KF6KCMUtils)
+    - cmake(KF6KDED)
+    - cmake(KF6KIO)
+    - cmake(KF6Kirigami)
+    - cmake(KF6KirigamiAddons)
+    - cmake(KF6NetworkManagerQt)
+    - cmake(KF6NewStuff)
+    - cmake(KF6Notifications)
+    - cmake(KF6NotifyConfig)
+    - cmake(KF6Package)
+    - cmake(KF6Parts)
+    - cmake(KF6Prison)
+    - cmake(KF6QuickCharts)
+    - cmake(KF6Runner)
+    - cmake(KF6Screen)
+    - cmake(KF6StatusNotifierItem)
+    - cmake(KF6Svg)
+    - cmake(KF6TextEditor)
+    - cmake(KF6TextWidgets)
+    - cmake(KF6UserFeedback)
+    - cmake(KF6Wallet)
+    - cmake(KExiv2Qt6)
+    - cmake(KNightTime)
+    - cmake(KSysGuard)
+    - cmake(KWayland)
+    - cmake(KWinDBusInterface)
+    - cmake(LayerShellQt)
+    - cmake(Phonon4Qt6)
+    - cmake(Plasma)
+    - cmake(Plasma5Support)
+    - cmake(PlasmaActivities)
+    - cmake(PlasmaActivitiesStats)
+    - cmake(PlasmaWaylandProtocols)
+    - cmake(QCoro6)
+    - cmake(Qt6Core5Compat)
+    - cmake(Qt6CorePrivate)
+    - cmake(Qt6Location)
+    - cmake(Qt6Qml)
+    - cmake(Qt6ShaderTools)
+    - cmake(Qt6Svg)
+    - cmake(Qt6WaylandClient)
+    - cmake(ScreenSaverDBusInterface)
+    - pkgconfig(fontconfig)
+    - pkgconfig(libcanberra)
+    - pkgconfig(libpipewire-0.3)
+    - pkgconfig(libqalculate)
+    - pkgconfig(libxcrypt)
+    - iso-codes
+    - kio-extras
+    - kio-fuse
+
+    # Libs that can be removed once we can do WITH_X11=OFF
+    - pkgconfig(ice)
+    - pkgconfig(sm)
+
+    # AppMenuGtkModule
+tuning      :
+    - lto: full
+    - optimize: speed
+setup       : |
+    %patch %(pkgdir)/0001-Remove-wayland-from-session-name.patch
+    %patch %(pkgdir)/0001-Use-stateless-dir-for-menu.patch
+    %patch %(pkgdir)/0001-Use-plasma-keyboard-for-SDDM-input.patch
+
+    # Regrettably we can't set WITH_X11=OFF yet because the font KCM relies on it to build. For now we can just cleanup the session bits afterwords
+    %cmake_kf6 \
+        -DGLIBC_LOCALE_GEN=OFF \
+        -DGLIBC_LOCALE_PREGENERATED=ON \
+        -DINSTALL_SDDM_WAYLAND_SESSION=ON \
+        -DWITH_X11=ON
+build       : |
+    %cmake_build
+install     : |
+    %cmake_install
+
+    # PAM
+    %install_file %(pkgdir)/pam.d/* -t %(installroot)%(vendordir)/pam.d/
+
+    # Purge X11 session bits
+    rm -rfv %(installroot)%(datadir)/xsessions \
+            %(installroot)%(bindir)/startplasma-x11 \
+            %(installroot)%(libdir)/systemd/user/plasma-workspace-x11.target
+packages    :
+    - "%(name)":
+        rundeps:
+            - accountsservice # DBUS service used by kcm_users
+            - iso-codes # Translations of country names in digital clock applet
+            - kactivitymanagerd
+            - kf6-kirigami # QML dep
+            - kf6-kirigami-addons # QML dep
+            - kf6-kquickcharts # QML dep
+            - kio-extras # Many extras including thumbnail support for common formats
+            - kio-fuse # Provide KIO support to legacy applications
+            - kwin # Doesn't work with any other compositor
+            - ocean-sound-theme # Default sound theme
+            - plasma-integration # Plugin used for reloading fonts
+            - plasma-keyboard # Used for SDDM virtual keyboard
+            - qt6-virtualkeyboard # QML dep
+            - systemd # Used for session init
+            # - xrdb # Used for fonts, can we get away without it?
+            # - xprop # Can we avoid this?
+            - xwaylandvideobridge # Used for streaming Wayland windows to Xwayland clients
+
+            # Power management
+            - powerdevil
+
+    - "libkworkspace":
+        summary: Runtime libkworkspace6 library
+        description: Runtime libkworkspace6 library
+        paths:
+            - /usr/lib/libkworkspace6.so.*
+
+    # This is split out to resolve build ordering issues with powerdevil. This package will likely need to be checked on future updates
+    # to ensure that it doesn't depend on any other devel files in plasma-workspace-devel
+    # ALTERNATIVELY, if we could exclude plasma-workspace as a rundep of plasma-workspace-devel (which technically only needs plasma-workspace-libs)
+    # then it should be possible to fix the ordering issue as well.
+    - "libkworkspace-devel":
+        summary: Runtime libkworkspace6 library - devel files
+        description: Runtime libkworkspace6 library - devel files
+        rundeps:
+            - libkworkspace
+            - cmake(Qt6Core)
+        paths:
+            - /usr/include/kworkspace6/
+            - /usr/lib/cmake/LibKWorkspace/
+            - /usr/lib/libkworkspace6.so
+
+    - "%(name)-libs":
+        summary: "Library files for %(name)"
+        description: |
+            Library files for %(name), typically pulled in as a dependency of another package.
+        rundeps:
+            - phonon-backend-mpv-qt6 # Phonon backend
+        paths:
+            - /usr/lib/libbatterycontrol.so.*
+            - /usr/lib/libkfontinst*.so.*
+            - /usr/lib/libklipper.so.*
+            - /usr/lib/libklookandfeel.so.*
+            - /usr/lib/libkmpris.so.*
+            - /usr/lib/libkrdb.so # Why isn't this versioned?
+            - /usr/lib/libnotificationmanager.so.*
+            - /usr/lib/libtaskmanager.so.*
+            - /usr/lib/kconf_update_bin/
+            - /usr/lib/kf6/plasma-sourceenv.sh
+            - /usr/lib/qt6/plugins/kf6/kded/*.so
+            - /usr/lib/qt6/plugins/kf6/kfileitemaction/*.so
+            - /usr/lib/qt6/plugins/kf6/kio/*.so
+            - /usr/lib/qt6/plugins/kf6/krunner/*.so
+            - /usr/lib/qt6/plugins/kf6/packagestructure/*.so
+            - /usr/lib/qt6/plugins/kf6/parts/*.so
+            - /usr/lib/qt6/plugins/kf6/thumbcreator/*.so
+            - /usr/lib/qt6/plugins/phonon_platform/*.so
+            - /usr/lib/qt6/plugins/plasma/applets/*.so
+            - /usr/lib/qt6/plugins/plasma/containmentactions/*.so
+            - /usr/lib/qt6/plugins/plasma/kcminit/*.so
+            - /usr/lib/qt6/plugins/plasma/kcms/systemsettings/kcm_*.so
+            - /usr/lib/qt6/plugins/plasma/kcms/systemsettings_qwidgets/*.so
+            - /usr/lib/qt6/plugins/plasma5support/dataengine/*.so
+            - /usr/lib/qt6/plugins/plasmacalendarplugins/*.so
+            - /usr/share/kconf_update/
+            - /usr/share/kglobalaccel/
+            - /usr/share/xdg/taskmanagerrulesrc
+
+    - "%(name)-devel":
+        rundeps:
+            - "libkworkspace-devel"
+            - cmake(KF6ItemModels)
+        paths:
+            - /usr/share/dbus-1/interfaces/
+
+    - "%(name)-docs":
+        paths:
+            - /usr/share/doc

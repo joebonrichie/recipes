@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : nautilus
-version     : 48.0
-release     : 6
+version     : "49.2"
+release     : 17
 homepage    : https://apps.gnome.org/Nautilus/
 upstreams   :
-    - https://download.gnome.org/sources/nautilus/48/nautilus-48.0.tar.xz : f9e6a4cbe1d5bb7ad59ac44f0d439edd4b0507bf07d3d90a2e7e7e6d3f416d57
+    - https://download.gnome.org/sources/nautilus/49/nautilus-49.2.tar.xz : 2576b34bed2781a89f09051ec9fcae3ae17eb7172cd7be678f592aa14e4c26b1
 summary     : Access and organize files
 description : |
     Files, also known as Nautilus, is the default file manager of the GNOME desktop. It provides a simple and integrated way of managing your files and browsing your file system. Nautilus supports all the basic functions of a file manager and more. It can search and manage your files and folders, both locally and on a network, read and write data to and from removable media, run scripts, and launch apps. It has three views: Icon Grid, Icon List, and Tree List. Its functions can be extended with plugins and scripts.
@@ -16,6 +16,7 @@ license     :
     - GPL-3.0-or-later
     - LGPL-2.1-or-later
 builddeps   :
+    - binary(gi-docgen)
     - binary(localsearch)
     - binary(msgfmt)
     - binary(update-desktop-database)
@@ -27,6 +28,7 @@ builddeps   :
     - pkgconfig(gnome-desktop-4)
     - pkgconfig(gobject-introspection-1.0)
     - pkgconfig(gstreamer-1.0)
+    - pkgconfig(gstreamer-tag-1.0)
     - pkgconfig(gtk4)
     - pkgconfig(libadwaita-1)
     - pkgconfig(libportal)
@@ -34,13 +36,17 @@ builddeps   :
     - pkgconfig(libxml-2.0)
     - pkgconfig(tinysparql-3.0)
 rundeps     :
+    - glycin-thumbnailer # Needed for image thumbnails
     - localsearch
-environment : |
-    export CFLAGS="${CFLAGS} -Wno-error=missing-include-dirs"
 setup       : |
     %patch %(pkgdir)/default-terminal.patch
-    %meson -Ddocs=false
+    %meson \
+        -Ddocs=true
 build       : |
     %meson_build
 install     : |
     %meson_install
+packages    :
+    - "%(name)-devel":
+        paths:
+            - /usr/share/doc/nautilus/

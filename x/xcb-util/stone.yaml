@@ -5,7 +5,7 @@
 #
 name        : xcb-util
 version     : 0.4.1
-release     : 1
+release     : 2
 homepage    : https://gitlab.freedesktop.org/xorg/lib/libxcb-util
 upstreams   :
     - https://www.x.org/releases/individual/lib/xcb-util-0.4.1.tar.xz : 5abe3bbbd8e54f0fa3ec945291b7e8fa8cfd3cccc43718f8758430f94126e512

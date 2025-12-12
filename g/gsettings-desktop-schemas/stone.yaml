@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : gsettings-desktop-schemas
-version     : 48.0
-release     : 6
+version     : "49.1"
+release     : 10
 homepage    : https://gitlab.gnome.org/GNOME/gsettings-desktop-schemas
 upstreams   :
-    - https://download.gnome.org/sources/gsettings-desktop-schemas/48/gsettings-desktop-schemas-48.0.tar.xz : e68f155813bf18f865a8b2c8e9d473588b6ccadcafbb666ab788857c6c2d1bd3
+    - https://download.gnome.org/sources/gsettings-desktop-schemas/49/gsettings-desktop-schemas-49.1.tar.xz : 777a7f83d5e5a8076b9bf809cb24101b1b1ba9c230235e3c3de8e13968ed0e63
 summary     : A collection of GSettings schemas for settings shared by various components of a GNOME Desktop.
 description : |
     A collection of GSettings schemas for settings shared by various components of a GNOME Desktop.
@@ -17,6 +17,10 @@ license     :
 builddeps   :
     - binary(msgfmt)
     - pkgconfig(gobject-introspection-1.0)
+rundeps     :
+    # Adwaita fonts are the gsettings defaults as of https://gitlab.gnome.org/GNOME/gsettings-desktop-schemas/-/commit/067cb4b155b67db6f358a666d4bdced7059c6e00/
+    # Make sure they are installed otherwise things break if they don't read other sources for fonts
+    - adwaita-fonts
 setup       : |
     %meson
 build       : |

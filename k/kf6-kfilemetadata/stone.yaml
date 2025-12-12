@@ -4,10 +4,10 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : kf6-kfilemetadata
-version     : 6.12.0
-release     : 2
+version     : 6.20.0
+release     : 14
 upstreams   :
-    - https://download.kde.org/stable/frameworks/6.12/kfilemetadata-6.12.0.tar.xz : 5fb39a3705154317eeff78b7eba776b51a44634a1216b60ebe7f62ecc11318f7
+    - https://download.kde.org/stable/frameworks/6.20/kfilemetadata-6.20.0.tar.xz : 3316505dc826cede409c6062ce87ca17680147a760544036c31739fbf7557f97
 homepage    : https://community.kde.org/Frameworks
 license     :
     - BSD-3-Clause
@@ -24,11 +24,17 @@ builddeps   :
     - cmake(KF6Config)
     - cmake(KF6CoreAddons)
     - cmake(KF6I18n)
+    - cmake(QMobipocket6)
     - cmake(exiv2)
+    - cmake(taglib)
     - pkgconfig(libattr)
     - pkgconfig(libavcodec)
+    - pkgconfig(libavformat)
     - pkgconfig(poppler-qt6)
-    # Todo: Build with taglib, epub, qmobipocket6, libappimage
+    - ebook-tools-devel
+    # Todo:
+    # - libappimage
+    # - CatDoc
 setup       : |
     %cmake_kf6
 build       : |

@@ -1,0 +1,22 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: Reilly Brogan <reilly@reillybrogan.com>
+Date: Thu, 17 Jul 2025 22:46:44 -0500
+Subject: [PATCH] downstream: Use correct libexec
+
+---
+ 50-virtiofsd.json | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/50-virtiofsd.json b/50-virtiofsd.json
+index f9b0f56..1d33eb9 100644
+--- a/50-virtiofsd.json
++++ b/50-virtiofsd.json
+@@ -1,7 +1,7 @@
+ {
+   "description": "virtiofsd vhost-user-fs",
+   "type": "fs",
+-  "binary": "/usr/libexec/virtiofsd",
++  "binary": "/usr/lib/qemu/virtiofsd",
+   "features": [
+       "migrate-precopy",
+       "separate-options"

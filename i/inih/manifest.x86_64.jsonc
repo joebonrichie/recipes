@@ -4,21 +4,36 @@
 	"packages": {
 		"inih": {
 			"depends": [
-				"soname(libc++.so.1(x86_64))",
-				"soname(libc.so.6(x86_64))",
-				"soname(libunwind.so.1(x86_64))"
+				"soname(libc.so.6(x86_64))"
 			],
 			"files": [
-				"/usr/lib/libINIReader.so.0",
 				"/usr/lib/libinih.so.0"
 			],
 			"name": "inih",
 			"provides": [
-				"soname(libINIReader.so.0(x86_64))",
 				"soname(libinih.so.0(x86_64))"
 			]
 		},
+		"inih-cpp": {
+			"depends": [
+				"soname(libc.so.6(x86_64))",
+				"soname(libgcc_s.so.1(x86_64))",
+				"soname(libinih.so.0(x86_64))",
+				"soname(libstdc++.so.6(x86_64))"
+			],
+			"files": [
+				"/usr/lib/libINIReader.so.0"
+			],
+			"name": "inih-cpp",
+			"provides": [
+				"soname(libINIReader.so.0(x86_64))"
+			]
+		},
 		"inih-devel": {
+			"depends": [
+				"inih",
+				"inih-cpp"
+			],
 			"files": [
 				"/usr/include/INIReader.h",
 				"/usr/include/ini.h",
@@ -35,6 +50,6 @@
 		}
 	},
 	"source-name": "inih",
-	"source-release": "3",
-	"source-version": "58"
+	"source-release": "7",
+	"source-version": "62"
 }

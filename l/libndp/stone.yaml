@@ -5,7 +5,7 @@
 #
 name        : libndp
 version     : '1.9'
-release     : 3
+release     : 4
 homepage    : https://github.com/jpirko/libndp
 upstreams   :
     # NOTE: using a knownsane distcheck style origin

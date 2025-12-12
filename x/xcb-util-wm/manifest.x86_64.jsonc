@@ -27,7 +27,8 @@
 				"pkgconfig(xcb)"
 			],
 			"depends": [
-				"pkgconfig(xcb)"
+				"pkgconfig(xcb)",
+				"xcb-util-wm"
 			],
 			"files": [
 				"/usr/include/xcb/xcb_ewmh.h",
@@ -45,6 +46,6 @@
 		}
 	},
 	"source-name": "xcb-util-wm",
-	"source-release": "1",
+	"source-release": "2",
 	"source-version": "0.4.2"
 }

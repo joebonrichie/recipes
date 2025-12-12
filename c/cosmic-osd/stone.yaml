@@ -4,25 +4,24 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : cosmic-osd
-version     : 1.0.0-alpha.6
-release     : 10
+version     : 1.0.0-git+4a3d2b4
+release     : 24
 summary     : Cosmic Desktop OSD
 license     : GPL-3.0
 homepage    : https://github.com/pop-os/cosmic-osd
 upstreams   :
-    - git|https://github.com/pop-os/cosmic-osd.git : 5dd5f23148af65b0ec5add6d88f38694ab34584c
+    - git|https://github.com/pop-os/cosmic-osd.git : 4a3d2b4aa366d4c70b780a4ae4c03c4ea86b5dd1
 description : |
     Cosmic Desktop OSD
 builddeps   :
-    - binary(cargo)
     - binary(just)
+    - pkgconfig(libinput)
+    - pkgconfig(libpipewire-0.3)
     - pkgconfig(libpulse)
     - pkgconfig(xkbcommon)
 rundeps     :
     - polkit
 networking  : yes
-tuning      :
-    - lto: thin
 environment : |
     export POLKIT_AGENT_HELPER_1=%(libdir)/polkit-1/polkit-agent-helper-1
 setup       : |
@@ -30,4 +29,4 @@ setup       : |
 build       : |
     %cargo_build
 install     : |
-    %make_install prefix=%(prefix) TARGET=%(target_triple)/release
+    CARGO_TARGET_DIR="target/%(target_triple)" just rootdir=%(installroot) install

@@ -4,49 +4,58 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : polkit
-version     : 124
-release     : 4
+version     : "126"
+release     : 9
 summary     : Application-level authorization toolkit
 license     : GPL-2.0-or-later
-homepage    : https://gitlab.freedesktop.org/polkit/polkit
+homepage    : https://github.com/polkit-org/polkit
 description : |
     polkit is an application-level toolkit for defining and handling the policy that allows unprivileged processes to speak to privileged processes: It is a framework for centralizing the decision making process with respect to granting access to privileged operations for unprivileged applications. See the polkit(8) manual page for more detailed information.
 upstreams   :
-    - https://gitlab.freedesktop.org/polkit/polkit/-/archive/124/polkit-124.tar.gz: 72457d96a0538fd03a3ca96a6bf9b7faf82184d4d67c793eb759168e4fd49e20
+    - https://github.com/polkit-org/polkit/archive/refs/tags/126.tar.gz: 2814a7281989f6baa9e57bd33bbc5e148827e2721ccef22aaf28ab2b376068e8
 builddeps   :
     - binary(msgfmt)
     - binary(perl)
     - binary(xsltproc)
-    - docbook
     - pkgconfig(duktape)
     - pkgconfig(expat)
     - pkgconfig(gio-2.0)
     - pkgconfig(gobject-introspection-1.0)
     - pkgconfig(libsystemd)
     - pkgconfig(pam)
-toolchain   : gnu
+    - docbook
+    - docbook-xsl
+environment : |
+    %export_docbook_catalogs
 setup       : |
     %patch %(pkgdir)/stateless/0001-pkexec-Support-a-stateless-configuration.patch
+    %patch %(pkgdir)/upstream-01.patch
 
-    %meson -Dos_type=redhat \
-           -Dsession_tracking=libsystemd-login \
-           -Dexamples=false \
-           -Dman=true \
-           -Dgtk_doc=false \
-           -Dtests=false
+    %meson \
+        -Dos_type=redhat \
+        -Dsession_tracking=logind \
+        -Dexamples=false \
+        -Dman=true \
+        -Dgtk_doc=false \
+        -Dtests=false
     # TODO build gtk_docs
 build       : |
     %meson_build
 install     : |
     %meson_install
 
+    # Trigger to reload dbus whenever necessary
+    %install_file %(pkgdir)/trigger.yaml %(installroot)/usr/share/moss/triggers/sys.d/reload_polkit.yaml
+
     # tmpfiles
+    # Delete the upstream version
+    rm -v %(installroot)%(tmpfilesdir)/polkit-tmpfiles.conf
     %tmpfiles "d /var/empty 0755 - - -"
-    %tmpfiles "d /etc/polkit-1/rules.d 0755 - - -"
+    %tmpfiles "d /etc/polkit-1/rules.d 0750 root polkitd -"
 
     # Statelessness
-    %install_dir %(installroot)/%(vendordir)/etc
-    mv %(installroot)/usr/lib/pam.d/ %(installroot)/%(vendordir)/etc
+    %install_dir %(installroot)/%(vendordir)
+    mv %(installroot)/usr/lib/pam.d/ %(installroot)/%(vendordir)
 
     # userdb
     %install_file %(pkgdir)/polkitd.group %(installroot)%(libdir)/userdb/polkitd.group
@@ -55,4 +64,21 @@ install     : |
     ln -s polkitd.user %(installroot)%(libdir)/userdb/27.user
     rm -fr %(installroot)%(libdir)/sysusers.d
 
+    # Allow the active user to change the timezone or NTP settings
+    # https://community.kde.org/Distributions/Packaging_Recommendations#Polkit_configuration
+    %install_file %(pkgdir)/00-ntp-and-time-zones.rules %(installroot)%(datadir)/polkit-1/rules.d/00-ntp-and-time-zones.rules
+
+    # TODO: Capabilities
+
 # TODO checks (needs python-dbusmock)
+packages    :
+    - "%(name)-libs":
+        summary: Libraries for %(name)
+        description: Libraries for %(name)
+        paths:
+            - /usr/lib/lib*.so.*
+            - /usr/lib/girepository-1.0/*.typelib
+
+    - "%(name)-devel":
+        paths:
+            - /usr/share/gettext/its/

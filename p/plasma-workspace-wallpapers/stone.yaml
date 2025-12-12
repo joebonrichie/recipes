@@ -1,0 +1,30 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : plasma-workspace-wallpapers
+version     : 6.5.4
+release     : 9
+upstreams   :
+    - https://download.kde.org/stable/plasma/6.5.4/plasma-workspace-wallpapers-6.5.4.tar.xz : 93d6f24d6e0a8d91578bc07df2abfc95e88268c4a4fdd66f2471a1c6bf9f62fb
+homepage    : https://kde.org/plasma-desktop/
+license     : 
+    - GPL-2.0-or-later
+    - LGPL-3.0-or-later
+summary     : Wallpapers for Plasma Workspaces
+description : |
+    Wallpapers for Plasma Workspaces
+builddeps   :
+    # Temporary, boulder doesn't handle build ordering resolution correctly when builddeps are added by macros, so add ECM manually
+    - cmake(ECM)
+tuning      :
+    - lto: full
+    - optimize: speed
+setup       : |
+    %cmake_kf6 \
+        -DBUILD_WITH_QT6=ON
+build       : |
+    %cmake_build
+install     : |
+    %cmake_install

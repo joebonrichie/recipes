@@ -8,6 +8,7 @@
 				"pkgconfig(libusb-1.0)"
 			],
 			"depends": [
+				"hwdata",
 				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
 				"soname(libc.so.6(x86_64))",
 				"soname(libudev.so.1(x86_64))",
@@ -18,6 +19,7 @@
 				"/usr/bin/lsusb.py",
 				"/usr/bin/usb-devices",
 				"/usr/bin/usbhid-dump",
+				"/usr/share/man/man1/lsusb.py.1",
 				"/usr/share/man/man1/usb-devices.1",
 				"/usr/share/man/man8/lsusb.8",
 				"/usr/share/man/man8/usbhid-dump.8"
@@ -29,26 +31,9 @@
 				"binary(usb-devices)",
 				"binary(usbhid-dump)"
 			]
-		},
-		"usbutils-devel": {
-			"build-depends": [
-				"pkgconfig(libudev)",
-				"pkgconfig(libusb-1.0)"
-			],
-			"depends": [
-				"pkgconfig(libudev)",
-				"pkgconfig(libusb-1.0)"
-			],
-			"files": [
-				"/usr/lib/pkgconfig/usbutils.pc"
-			],
-			"name": "usbutils-devel",
-			"provides": [
-				"pkgconfig(usbutils)"
-			]
 		}
 	},
 	"source-name": "usbutils",
-	"source-release": "1",
-	"source-version": "017"
+	"source-release": "5",
+	"source-version": "019"
 }

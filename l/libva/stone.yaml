@@ -5,7 +5,7 @@
 #
 name        : libva
 version     : 2.22.0
-release     : 5
+release     : 6
 homepage    : https://github.com/intel/libva
 upstreams   :
     - https://github.com/intel/libva/releases/download/2.22.0/libva-2.22.0.tar.bz2 : e3da2250654c8d52b3f59f8cb3f3d8e7fb1a2ee64378dbc400fbc5663de7edb8

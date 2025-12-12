@@ -4,13 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : rust
-version     : 1.87.0
-release     : 16
+version     : 1.92.0
+release     : 30
 homepage    : https://www.rust-lang.org/
 upstreams   :
-    - https://static.rust-lang.org/dist/rustc-1.87.0-src.tar.xz : 8623b8651893e8c6aebfa45b6a90645a4f652f7b18189a0992a90d11ac2631f4
-    - git|https://github.com/rust-lang/llvm-project.git :
-        ref: 8448283b4bd34ea00d76fd4f18ec730b549d6e1d # rustc/20.1-2025-02-13
+    - https://static.rust-lang.org/dist/rustc-1.92.0-src.tar.xz : ebee170bfe4c4dfc59521a101de651e5534f4dae889756a5c97ca9ea40d0c307
 summary     : Rust programming language compiler + tools
 description : |
     Rust programming language compiler + tools
@@ -26,11 +24,10 @@ license     :
     - MIT
     - Zlib
 # Enable this when bootstrapping
-networking  : true
+# networking  : true
 builddeps   :
     - binary(FileCheck)
     - binary(cargo)
-    - binary(cc)
     - binary(cmake)
     - binary(llvm-config)
     - binary(ln)
@@ -38,17 +35,16 @@ builddeps   :
     - binary(python)
     - binary(strip)
     - binary(which)
-    - pkgconfig32(libunwind)
     - pkgconfig(jemalloc)
     - pkgconfig(libcurl)
     - pkgconfig(libffi)
     - pkgconfig(libgit2)
     - pkgconfig(libxml-2.0)
+    - pkgconfig(oniguruma)
     - pkgconfig(openssl)
     - pkgconfig(sqlite3)
     - pkgconfig(zlib)
-    - gcc-32bit-devel
-    - glibc-32bit-devel
+    - clang-32bit
 environment : |
     # Don't set these here, all configuration should come from config.toml or the package.yml
     unset RUSTFLAGS
@@ -56,24 +52,16 @@ environment : |
     # Force use of libsqlite3, libgit2, and libssh2 system libs
     export LIBSQLITE3_SYS_USE_PKG_CONFIG=1
     export LIBSSH2_SYS_USE_PKG_CONFIG=1
-    # export LIBGIT2_NO_VENDOR=1
+    export LIBGIT2_NO_VENDOR=1
+    export RUSTONIG_SYSTEM_LIBONIG=1
 
     # Todo: Figure out how to link this against a dynamic libjemalloc
     export JEMALLOC_OVERRIDE=%(libdir)/libjemalloc.a
+
+    # This needs to match which llvm we're building against. This should generally be `/usr/bin/llvm-config` but if we're using a versioned
+    # package that will need to point to the versioned llvm-config
+    LLVM_CONFIG=%(bindir)/llvm-config
 setup       : |
-    # The build process for Rust seems to partially use the included LLVM source during the build
-    #  even if ultimately it links against the system LLVM. This causes a failure of the PGO build
-    #  due to the profiles being generated with a different version (the included LLVM) than what is
-    #  used for the final build (the system LLVM). To work around this we override the included LLVM
-    #  source with the rustc version that reasonably corresponds to the major version of our system
-    #  LLVM. This is also means that said source needs to be changed when the system LLVM changes.
-    rm -rf src/llvm-project
-    cp -r %(sourcedir)/llvm-project.git src/llvm-project
-
-    sed -e 's|@@LTO@@|thin-local|g' %(pkgdir)/config.toml.in > config.toml.pgo
-
-    sed -e 's|@@LTO@@|fat|g' %(pkgdir)/config.toml.in > config.toml.release
-
     # Ensure that we use the system sqlite3
     %patch %(pkgdir)/0001-unbundle-sqlite.patch -d src/tools/cargo
     find ./vendor/libsqlite3-sys*/sqlite3/ -mindepth 1 -delete -print
@@ -84,18 +72,41 @@ setup       : |
     find ./vendor/libssh2-sys*/libssh2/ -mindepth 1 -delete -print
     find ./vendor/libz-sys*/src/zlib{,-ng}/ -mindepth 1 -delete -print
     find ./vendor/openssl-src*/openssl/ -mindepth 1 -delete -print
-    # find ./vendor/libgit2-sys*/libgit2/ -mindepth 1 -delete -print
+    find ./vendor/libgit2-sys*/libgit2/ -mindepth 1 -delete -print
 
     # Fix bootstrap checking checksums for all the files we just deleted
     find vendor -name .cargo-checksum.json -print \
         -exec sed -i.uncheck -e 's/"files":{[^}]*}/"files":{ }/' '{}' '+'
+
+    %patch %(pkgdir)/ldd-default.patch
 build       : |
+    LLVM_VERSION=$(llvm-config --version)
+    LLVM_MAJOR="$( cut -d '.' -f 1 <<< "${LLVM_VERSION}" )"
+    COMPILER_RT_DIR="%(libdir)/clang/${LLVM_MAJOR}/lib/linux"
+
+    if [[ " ${PATH[*]} " =~ "ccache" ]]; then
+        CCACHE_ENABLE="true"
+    else
+        CCACHE_ENABLE="false"
+    fi
+
+    # build.full-bootstrap=true is necessary to force the build to use the stage 1 rustc to build a stage 2 libstd. We need that for profiling data
+    # We want some kind of lto enabled so that we get profiling data from it, and thin-lto is much faster to build than full lto.
     python ./x.py build \
-            --build-dir %(workdir)/build-pgo \
-            --config config.toml.pgo \
-            --jobs %(jobs) \
-            --rust-profile-generate %(workdir)/rustc-pgo-profile-data \
-            --stage 2
+        --build-dir %(workdir)/build-pgo \
+        --config %(pkgdir)/config.toml \
+        --jobs %(jobs) \
+        --set build.ccache=${CCACHE_ENABLE} \
+        --set build.full-bootstrap=true \
+        --set rust.lto=thin-local \
+        --set target.i686-unknown-linux-gnu.llvm-config="${LLVM_CONFIG}" \
+        --set target.i686-unknown-linux-gnu.optimized-compiler-builtins="${COMPILER_RT_DIR}/libclang_rt.builtins-i386.a" \
+        --set target.i686-unknown-linux-gnu.profiler="${COMPILER_RT_DIR}/libclang_rt.profile-i386.a" \
+        --set target.x86_64-unknown-linux-gnu.llvm-config="${LLVM_CONFIG}" \
+        --set target.x86_64-unknown-linux-gnu.optimized-compiler-builtins="${COMPILER_RT_DIR}/libclang_rt.builtins-x86_64.a" \
+        --set target.x86_64-unknown-linux-gnu.profiler="${COMPILER_RT_DIR}/libclang_rt.profile-x86_64.a" \
+        --rust-profile-generate %(workdir)/rustc-pgo-profile-data \
+        --stage 2
 
     llvm-profdata merge -output=%(workdir)/rustc-pgo-profile-data/rustc-pgo.profdata %(workdir)/rustc-pgo-profile-data/default_*.profraw
 
@@ -103,10 +114,19 @@ build       : |
     # causes a lot of redundant and unnecessary builds if we attempt to do the build with various stages (IE build the compiler first, then the
     # tools, then install it last). To prevent this from happening just let `install` figure out what it wants.
     DESTDIR=%(installroot) python3 x.py install \
-            --build-dir %(workdir)/build-release \
-            --config config.toml.release \
-            --jobs %(jobs) \
-            --rust-profile-use %(workdir)/rustc-pgo-profile-data/rustc-pgo.profdata
+        --build-dir %(workdir)/build-release \
+        --config %(pkgdir)/config.toml \
+        --jobs %(jobs) \
+        --set build.ccache=${CCACHE_ENABLE} \
+        --set build.full-bootstrap=false \
+        --set rust.lto=fat \
+        --set target.i686-unknown-linux-gnu.llvm-config="${LLVM_CONFIG}" \
+        --set target.i686-unknown-linux-gnu.optimized-compiler-builtins="${COMPILER_RT_DIR}/libclang_rt.builtins-i386.a" \
+        --set target.i686-unknown-linux-gnu.profiler="${COMPILER_RT_DIR}/libclang_rt.profile-i386.a" \
+        --set target.x86_64-unknown-linux-gnu.llvm-config="${LLVM_CONFIG}" \
+        --set target.x86_64-unknown-linux-gnu.optimized-compiler-builtins="${COMPILER_RT_DIR}/libclang_rt.builtins-x86_64.a" \
+        --set target.x86_64-unknown-linux-gnu.profiler="${COMPILER_RT_DIR}/libclang_rt.profile-x86_64.a" \
+        --rust-profile-use %(workdir)/rustc-pgo-profile-data/rustc-pgo.profdata
 install     : |
     install -Dm00644 %(installroot)/etc/bash_completion.d/* -t %(installroot)/usr/share/bash-completion/completions
     rm -rvf %(installroot)/etc
@@ -121,6 +141,7 @@ packages    :
         rundeps:
             - binary(clang)
             - binary(lld)
+            - compiler-rt
 
     - "%(name)-32bit":
         paths:
@@ -128,6 +149,7 @@ packages    :
         rundeps:
             - "%(name)"
             - clang-32bit
+            - compiler-rt-32bit
 
     - "%(name)-devel":
         paths:

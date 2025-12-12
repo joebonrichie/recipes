@@ -1,0 +1,30 @@
+#
+# SPDX-FileCopyrightText: © 2020-2024 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : python-charset-normalizer
+version     : 3.4.3
+release     : 2
+homepage    : https://github.com/ousret/charset_normalizer
+upstreams   :
+    - https://pypi.debian.net/charset-normalizer/charset_normalizer-3.4.3.tar.gz : 6fce4b8500244f6fcb71465d4a4930d132ba9ab8e71a7859e6a5d59851068d14
+summary     : Truly universal encoding detector in pure Python
+description : |
+    The Real First Universal Charset Detector. Open, modern and actively maintained alternative to Chardet.
+license     : MIT
+builddeps   :
+    - python(mypy)
+    - python(setuptools)
+    - python(setuptools-scm)
+rundeps     :
+    - binary(python3)
+checkdeps   :
+    - python(pytest)
+build       : |
+    %pyproject_build
+install     : |
+    %pyproject_install
+check       : |
+    # TODO replace with pytest macro
+    PYTHONPATH="$PWD"/build/lib pytest

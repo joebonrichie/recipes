@@ -1,0 +1,47 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: Reilly Brogan <reilly@reillybrogan.com>
+Date: Wed, 9 Jul 2025 14:04:25 -0500
+Subject: [PATCH] Skip components
+
+---
+ CMakeLists.txt     | 8 ++------
+ cmake/plugin.cmake | 7 +++++++
+ 2 files changed, 9 insertions(+), 6 deletions(-)
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index a7943f9899..1959b20c1b 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -193,12 +193,8 @@ IF(UNIX)
+ ENDIF()
+ OPTION (WITH_UNIT_TESTS "Compile MySQL with unit tests" ON)
+ 
+-IF (WITHOUT_SERVER)
+-  SET (SKIP_COMPONENTS "Server|IniFiles|SupportFiles|Readme")
+-ELSE()
+-  SET (SKIP_COMPONENTS "N-O-N-E")
+-ENDIF()
+-
++set (SKIP_COMPONENTS "N-O-N-E" CACHE STRING "foo")
++message(SKIP_COMPONENTS="${SKIP_COMPONENTS}")
+ 
+ SET(MEMPROTECT_DEFAULT ON)
+ 
+diff --git a/cmake/plugin.cmake b/cmake/plugin.cmake
+index 008b2562ff..f04302e956 100644
+--- a/cmake/plugin.cmake
++++ b/cmake/plugin.cmake
+@@ -54,6 +54,13 @@ MACRO(MYSQL_ADD_PLUGIN)
+   STRING(TOUPPER ${plugin} plugin)
+   STRING(TOLOWER ${plugin} target)
+ 
++
++  IF(ARG_COMPONENT)
++    IF (ARG_COMPONENT MATCHES ${SKIP_COMPONENTS})
++      RETURN()
++    ENDIF()
++  ENDIF()
++
+   IF (ARG_MANDATORY)
+     UNSET(PLUGIN_${plugin} CACHE)
+     SET(PLUGIN_${plugin} "YES")

@@ -9,6 +9,9 @@
 			"name": "atk"
 		},
 		"atk-devel": {
+			"depends": [
+				"atk"
+			],
 			"files": [
 				"/usr/share/doc/atk-devel/README.md"
 			],
@@ -16,6 +19,6 @@
 		}
 	},
 	"source-name": "atk",
-	"source-release": "3",
+	"source-release": "4",
 	"source-version": "2.38.0"
 }

@@ -16,7 +16,7 @@ index 71d3d1b..3f84dd2 100644
  Description: ttf library for Simple DirectMedia Layer with FreeType 2 support
  Version: @VERSION@
 -Requires: sdl2 >= @SDL_VERSION@
-+Requires: sdl2_compat >= @SDL_VERSION@
++Requires: sdl2-compat >= @SDL_VERSION@
  Libs: -L${libdir} -lSDL2_ttf
  Cflags: -I${includedir}/SDL2
  Requires.private: @PC_REQUIRES@

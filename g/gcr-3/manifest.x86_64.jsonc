@@ -57,9 +57,6 @@
 				"/usr/share/applications/gcr-viewer.desktop",
 				"/usr/share/dbus-1/services/org.gnome.keyring.PrivatePrompter.service",
 				"/usr/share/dbus-1/services/org.gnome.keyring.SystemPrompter.service",
-				"/usr/share/gir-1.0/Gck-1.gir",
-				"/usr/share/gir-1.0/Gcr-3.gir",
-				"/usr/share/gir-1.0/GcrUi-3.gir",
 				"/usr/share/glib-2.0/schemas/org.gnome.crypto.pgp.gschema.xml",
 				"/usr/share/icons/hicolor/16x16/apps/gcr-gnupg.png",
 				"/usr/share/icons/hicolor/16x16/apps/gcr-key-pair.png",
@@ -281,6 +278,9 @@
 				"/usr/lib/pkgconfig/gcr-3.pc",
 				"/usr/lib/pkgconfig/gcr-base-3.pc",
 				"/usr/lib/pkgconfig/gcr-ui-3.pc",
+				"/usr/share/gir-1.0/Gck-1.gir",
+				"/usr/share/gir-1.0/Gcr-3.gir",
+				"/usr/share/gir-1.0/GcrUi-3.gir",
 				"/usr/share/vala/vapi/gck-1.deps",
 				"/usr/share/vala/vapi/gck-1.vapi",
 				"/usr/share/vala/vapi/gcr-3.deps",
@@ -299,6 +299,6 @@
 		}
 	},
 	"source-name": "gcr-3",
-	"source-release": "2",
+	"source-release": "3",
 	"source-version": "3.41.2"
 }

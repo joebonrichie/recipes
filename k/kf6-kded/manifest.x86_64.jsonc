@@ -23,8 +23,8 @@
 				"soname(libQt6DBus.so.6(x86_64))",
 				"soname(libQt6Gui.so.6(x86_64))",
 				"soname(libQt6Widgets.so.6(x86_64))",
-				"soname(libc++.so.1(x86_64))",
-				"soname(libc.so.6(x86_64))"
+				"soname(libc.so.6(x86_64))",
+				"soname(libstdc++.so.6(x86_64))"
 			],
 			"files": [
 				"/usr/bin/kded6",
@@ -33,6 +33,7 @@
 				"/usr/share/dbus-1/interfaces/org.kde.kded6.xml",
 				"/usr/share/dbus-1/services/org.kde.kded6.service",
 				"/usr/share/man/ca/man8/kded6.8",
+				"/usr/share/man/ca@valencia/man8/kded6.8",
 				"/usr/share/man/es/man8/kded6.8",
 				"/usr/share/man/fr/man8/kded6.8",
 				"/usr/share/man/it/man8/kded6.8",
@@ -73,6 +74,6 @@
 		}
 	},
 	"source-name": "kf6-kded",
-	"source-release": "2",
-	"source-version": "6.12.0"
+	"source-release": "11",
+	"source-version": "6.20.0"
 }

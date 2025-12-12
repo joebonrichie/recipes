@@ -1,0 +1,27 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : signon-kwallet-extension
+version     : 25.12.0
+release     : 9
+upstreams   :
+    - https://download.kde.org/stable/release-service/25.12.0/src/signon-kwallet-extension-25.12.0.tar.xz : 30c1875417866b6ee3cfcb2087da1d69fc9b0316ef980572870cb7c2d17ab71e
+homepage    : https://kde.org/
+license     : GPL-2.0-or-later
+summary     : KWallet integration for signon framework
+description : |
+    KWallet integration for signon framework
+builddeps   :
+    # Temporary, boulder doesn't handle build ordering resolution correctly when builddeps are added by macros, so add ECM manually
+    - cmake(ECM)
+    - cmake(KF6Wallet)
+    - pkgconfig(SignOnExtension)
+setup       : |
+    %cmake_kf6 \
+        -DBUILD_WITH_QT6=ON
+build       : |
+    %cmake_build
+install     : |
+    %cmake_install

@@ -6,8 +6,10 @@
 			"build-depends": [
 				"binary(bison)",
 				"binary(flex)",
+				"binary(python3)",
 				"clang-devel",
 				"pkgconfig(Qt6Core)",
+				"pkgconfig(Qt6Svg)",
 				"pkgconfig(spdlog)",
 				"pkgconfig(sqlite3)"
 			],
@@ -15,15 +17,15 @@
 				"graphviz",
 				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
 				"soname(ld-linux-x86-64.so.2(x86_64))",
-				"soname(libc++.so.1(x86_64))",
 				"soname(libc.so.6(x86_64))",
-				"soname(libclang-cpp.so.19.1(x86_64))",
-				"soname(libclang.so.19.1(x86_64))",
-				"soname(libfmt.so.10(x86_64))",
+				"soname(libclang-cpp.so.21.1(x86_64))",
+				"soname(libclang.so.21.1(x86_64))",
+				"soname(libfmt.so.12(x86_64))",
+				"soname(libgcc_s.so.1(x86_64))",
 				"soname(libm.so.6(x86_64))",
-				"soname(libspdlog.so.1.12(x86_64))",
+				"soname(libspdlog.so.1.16(x86_64))",
 				"soname(libsqlite3.so.0(x86_64))",
-				"soname(libunwind.so.1(x86_64))"
+				"soname(libstdc++.so.6(x86_64))"
 			],
 			"files": [
 				"/usr/bin/doxygen",
@@ -38,8 +40,10 @@
 			"build-depends": [
 				"binary(bison)",
 				"binary(flex)",
+				"binary(python3)",
 				"clang-devel",
 				"pkgconfig(Qt6Core)",
+				"pkgconfig(Qt6Svg)",
 				"pkgconfig(spdlog)",
 				"pkgconfig(sqlite3)"
 			],
@@ -51,10 +55,10 @@
 				"soname(libQt6Gui.so.6(x86_64))",
 				"soname(libQt6Widgets.so.6(x86_64))",
 				"soname(libQt6Xml.so.6(x86_64))",
-				"soname(libc++.so.1(x86_64))",
 				"soname(libc.so.6(x86_64))",
+				"soname(libgcc_s.so.1(x86_64))",
 				"soname(libm.so.6(x86_64))",
-				"soname(libunwind.so.1(x86_64))"
+				"soname(libstdc++.so.6(x86_64))"
 			],
 			"files": [
 				"/usr/bin/doxywizard",
@@ -67,6 +71,6 @@
 		}
 	},
 	"source-name": "doxygen",
-	"source-release": "1",
-	"source-version": "1.13.2"
+	"source-release": "10",
+	"source-version": "1.15.0"
 }

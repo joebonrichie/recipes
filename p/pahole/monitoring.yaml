@@ -1,0 +1,6 @@
+releases:
+  id: 231624
+  rss: ~
+security:
+  # No known CPE, last checked 2025-06-03
+  cpe: ~

@@ -1,0 +1,2 @@
+disable waydroid-pre.service
+disable waydroid-container.service

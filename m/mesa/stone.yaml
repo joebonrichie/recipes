@@ -4,31 +4,18 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : mesa
-version     : 25.0.5
+version     : 25.3.1
 # Note: keep mesa-clc in-sync with this package version-wise
-release     : 33
+release     : 58
 homepage    : https://mesa3d.org/
 upstreams   :
-    - https://mesa.freedesktop.org/archive/mesa-25.0.5.tar.xz : c0d245dea0aa4b49f74b3d474b16542e4a8799791cd33d676c69f650ad4378d0
+    - https://mesa.freedesktop.org/archive/mesa-25.3.1.tar.xz : 059d0d985622f49588f01aa29152804f4da8ffe6add046e00a52923379c2d8da
 summary     : Mesa 3D graphics library
 description : |
     The Mesa project began as an open-source implementation of the OpenGL specification - a system for rendering interactive 3D graphics. Over the years the project has grown to implement more graphics APIs, including OpenGL ES, OpenCL, OpenMAX, VDPAU, VA-API, Vulkan and EGL. A variety of device drivers allows the Mesa libraries to be used in many different environments ranging from software emulation to complete hardware acceleration for modern GPUs. Mesa ties into several other open-source projects: the Direct Rendering Infrastructure, X.org, and Wayland to provide OpenGL support on Linux, FreeBSD, and other operating systems.
 license     :
     - BSD-2-Clause
     - MIT
-packages    :
-    - "%(name)":
-        paths:
-            # Fix splitting for vulkan `.so` files
-            - /usr/lib/libgallium*.so
-            - /usr/lib/libVk*.so
-            - /usr/lib/libvulkan_*.so
-    - "%(name)-32bit":
-        paths:
-            - /usr/lib32/libgallium*.so
-            - /usr/lib32/libVk*.so
-            - /usr/lib32/libvulkan_*.so
-            - /usr/share/vulkan/icd.d/*.i686.json
 networking  : true
 builddeps   :
     - binary(bindgen)
@@ -46,6 +33,8 @@ builddeps   :
     - gcc-32bit-devel
     - lm_sensors-devel
     - pkgconfig(libclc)
+    - pkgconfig(libdisplay-info)
+    - pkgconfig(sysprof-capture-4)
     - pkgconfig(wayland-protocols)
     - pkgconfig32(LLVMSPIRVLib)
     - pkgconfig32(SPIRV-Tools)
@@ -68,9 +57,10 @@ builddeps   :
     - pkgconfig32(xshmfence)
     - pkgconfig32(xxf86vm)
     - pkgconfig32(zlib)
-    - python-mako
-    - python-ply
-    - python-pyyaml
+    - python(mako)
+    - python(ply)
+    - python(pyyaml)
+    - libatomic-32bit
     - rust-32bit
 tuning      :
     - lto: false
@@ -80,48 +70,187 @@ emul32      : true
 profiles    :
     - emul32:
         environment: |
+            _IS_64BIT_BOOL="false"
+            _IS_64BIT_FEAT="disabled"
+
             export LLVM_CONFIG="llvm-config32"
             export RUSTC="rustc --target=%(target_triple)"
             export BINDGEN_EXTRA_CLANG_ARGS="--target=%(target_triple)"
             export EXTRA_VK_DRIVERS=""
+        install     : |
+            %meson_install
+            ln -sv libGLX_mesa.so.0 %(installroot)%(libdir)/libGLX_indirect.so.0
 environment : |
-    export EXTRA_VK_DRIVERS=",gfxstream,nouveau"
+    _IS_64BIT_BOOL="true"
+    _IS_64BIT_FEAT="enabled"
+
+    EXTRA_VK_DRIVERS=",gfxstream,nouveau"
 setup       : |
-    # Include package release in version string so Chromium invalidates
-    # its GPU cache; otherwise it can cause pages to render incorrectly.
-    # https://issues.chromium.org/issues/40267041
-    # Note that this was fixed in upstream Chromium in Mar 2024 and backported
-    # to supported Electron releases shortly thereafter. This workaround can
-    # probably be removed around the end of 2025 as the only affect apps will
-    # those using old versions of Electron.
-    echo "%(version)-aeryn.%(release)" >VERSION
+    %patch %(pkgdir)/0001-Install-opencl-ICD-to-datadir.patch
 
     # Fix build with Sphinx 8.2
     %patch %(pkgdir)/0001-docs-Fix-build-with-Sphinx-8.2.patch
 
     %meson \
+        -Ddisplay-info=${_IS_64BIT_FEAT} \
         -Degl=enabled \
         -Dgallium-drivers=crocus,i915,iris,llvmpipe,nouveau,r300,r600,radeonsi,softpipe,svga,virgl,zink \
         -Dgallium-extra-hud=true \
-        -Dgallium-nine=true \
+        -Dgallium-rusticl=${_IS_64BIT_BOOL} \
         -Dgallium-va=enabled \
-        -Dgallium-vdpau=enabled \
-        -Dgallium-xa=enabled \
         -Dgbm=enabled \
         -Dgles1=disabled \
         -Dglvnd=enabled \
         -Dllvm=enabled \
         -Dmesa-clc=system \
-        -Dosmesa=true \
+        -Dsysprof=${_IS_64BIT_BOOL} \
         -Dzstd=enabled \
         -Dplatforms=x11,wayland \
         -Dshared-llvm=enabled \
         -Dvideo-codecs=all \
         -Dmicrosoft-clc=disabled \
         -Dvulkan-drivers=amd,intel,intel_hasvk,swrast,virtio$EXTRA_VK_DRIVERS \
-        -Dvulkan-layers=device-select,overlay,screenshot,vram-report-limit
+        -Dvulkan-layers=anti-lag,device-select,overlay,screenshot,vram-report-limit \
+        --wrap-mode=default
 build       : |
     %meson_build
 install     : |
     %meson_install
     ln -sv libGLX_mesa.so.0 %(installroot)%(libdir)/libGLX_indirect.so.0
+
+    %install_dir %(installroot)%(docdir)/%(name)
+    echo "This file will disappear when virtual packages are introduced" > %(installroot)%(docdir)/%(name)/README
+
+    %install_dir %(installroot)%(docdir)/%(name)-devel
+    echo "DEPRECATED" > %(installroot)%(docdir)/%(name)-devel/README
+packages    :
+    - "libgbm":
+        summary: Mesa gbm runtime library
+        description: Mesa gbm runtime library
+        paths:
+            - /usr/lib/libgbm.so.*
+
+    - "libgbm-devel":
+        summary: Mesa gbm runtime library - devel
+        description: Mesa gbm runtime library - devel
+        rundeps:
+            - "libgbm"
+        paths:
+            - /usr/include/gbm*.h
+            - /usr/lib/pkgconfig/gbm.pc
+            - /usr/lib/libgbm.so
+
+    - "%(name)-libgl":
+        summary: Mesa libGL runtime libraries
+        description: Mesa libGL runtime libraries
+        rundeps:
+            - libglvnd-glx
+        paths:
+            - /usr/lib/libGLX_mesa.so.*
+            - /usr/lib/libGLX_indirect.so.*
+
+    - "%(name)-libgl-devel":
+        summary: Mesa libGL runtime libraries - devel
+        description: Mesa libGL runtime libraries - devel
+        rundeps:
+            - "%(name)-libgl"
+        paths:
+            - /usr/include/GL
+            - /usr/lib/pkgconfig/dri.pc
+            - /usr/lib/libGLX_mesa.so
+
+    - "%(name)-libegl":
+        summary: Mesa libEGL runtime libraries
+        description: Mesa libEGL runtime libraries
+        rundeps:
+            - libglvnd-egl
+
+            # For unknown reasons it appears that this gets dlopened sometimes during EGL init
+            # if libGLESv2.so isn't present whatever called it will fail even though it would work
+            # perfectly fine if mesa were built without GLESv2 support. Just add it as a rundep until
+            # the cause is known, or we stop supporting GLESv2
+
+            # Currently this is known to happen when clicking the tab overview in ptyxis
+            - libglvnd-gles
+        paths:
+            - /usr/lib/libEGL_mesa.so.*
+            - /usr/share/glvnd
+
+    - "%(name)-libegl-devel":
+        summary: Mesa libEGL runtime libraries - devel
+        description: Mesa libEGL runtime libraries - devel
+        rundeps:
+            - "%(name)-libegl"
+        paths:
+            - /usr/include/EGL
+            - /usr/lib/libEGL_mesa.so
+
+    - "%(name)-libopencl":
+        summary: Mesa OpenCL runtime library
+        description: Mesa OpenCL runtime library
+        rundeps:
+            # This might need additional deps
+            - ocl-icd
+        paths:
+            - /usr/lib/libRusticlOpenCL.so*
+            - /usr/share/OpenCL/
+
+    - "%(name)-dri-drivers":
+        summary: Mesa-based DRI drivers (includes VAAPI/VDPAU support)
+        description: Mesa-based DRI drivers (includes VAAPI/VDPAU support)
+        paths:
+            - /usr/lib/dri/*.so
+            - /usr/lib/dri/*drv_video.so
+            - /usr/lib/gbm/dri_gbm.so
+            - /usr/lib/libgallium-*.so
+            - /usr/share/drirc.d/00-mesa-defaults.conf
+
+    - "%(name)-vulkan-drivers":
+        summary: Mesa Vulkan drivers
+        description: Mesa Vulkan drivers
+        rundeps:
+            - vulkan-loader
+        paths:
+            - /usr/lib/libvulkan_*.so
+            - /usr/lib/libVkLayer_MESA_anti_lag.so
+            - /usr/lib/libVkLayer_MESA_device_select.so
+            - /usr/share/drirc.d/00-radv-defaults.conf
+            - /usr/share/vulkan/icd.d/*.x86_64.json
+            - /usr/share/vulkan/implicit_layer.d/VkLayer_MESA_anti_lag.json
+            - /usr/share/vulkan/implicit_layer.d/VkLayer_MESA_device_select.json
+
+    - "%(name)-vulkan-layers":
+        summary: Additional Mesa Vulkan layers
+        description: Additional Mesa Vulkan layers
+        paths:
+            - /usr/bin/*.py
+            - /usr/lib/libVkLayer_MESA_overlay.so
+            - /usr/lib/libVkLayer_MESA_screenshot.so
+            - /usr/lib/libVkLayer_MESA_vram_report_limit.so
+            - /usr/share/vulkan/explicit_layer.d
+
+    - "%(name)-32bit":
+        paths:
+            - /usr/lib32/libgallium*.so
+            - /usr/lib32/libVk*.so
+            - /usr/lib32/libvulkan_*.so
+            - /usr/share/vulkan/icd.d/*.i686.json
+
+    - "%(name)":
+        summary: Meta-package for Mesa drivers
+        description: Meta-package for Mesa drivers
+        rundeps:
+            - "%(name)-dri-drivers"
+            - "%(name)-libegl"
+            - "%(name)-libgl"
+            - "%(name)-vulkan-drivers"
+
+    - "%(name)-devel":
+        summary: Deprecated package
+        description: Deprecated package
+        rundeps:
+            - libgbm-devel
+            - "%(name)-libgl-devel"
+            - "%(name)-libegl-devel"
+        paths:
+            - /usr/share/doc/mesa-devel/README

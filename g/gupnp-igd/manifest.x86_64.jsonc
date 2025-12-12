@@ -1,0 +1,59 @@
+/** Human readable report. This is not consumed by boulder */
+{
+	"manifest-version": "0.2",
+	"packages": {
+		"gupnp-igd": {
+			"build-depends": [
+				"pkgconfig(glib-2.0)",
+				"pkgconfig(gobject-introspection-1.0)",
+				"pkgconfig(gupnp-1.6)"
+			],
+			"depends": [
+				"soname(libc.so.6(x86_64))",
+				"soname(libgio-2.0.so.0(x86_64))",
+				"soname(libglib-2.0.so.0(x86_64))",
+				"soname(libgobject-2.0.so.0(x86_64))",
+				"soname(libgssdp-1.6.so.0(x86_64))",
+				"soname(libgupnp-1.6.so.0(x86_64))"
+			],
+			"files": [
+				"/usr/lib/girepository-1.0/GUPnPIgd-1.6.typelib",
+				"/usr/lib/libgupnp-igd-1.6.so.0",
+				"/usr/lib/libgupnp-igd-1.6.so.0.0.0"
+			],
+			"name": "gupnp-igd",
+			"provides": [
+				"soname(libgupnp-igd-1.6.so.0(x86_64))"
+			]
+		},
+		"gupnp-igd-devel": {
+			"build-depends": [
+				"pkgconfig(glib-2.0)",
+				"pkgconfig(gobject-introspection-1.0)",
+				"pkgconfig(gupnp-1.6)"
+			],
+			"depends": [
+				"gupnp-igd",
+				"pkgconfig(glib-2.0)",
+				"pkgconfig(gobject-2.0)",
+				"pkgconfig(gssdp-1.6)",
+				"pkgconfig(gthread-2.0)",
+				"pkgconfig(gupnp-1.6)"
+			],
+			"files": [
+				"/usr/include/gupnp-igd-1.6/libgupnp-igd/gupnp-simple-igd-thread.h",
+				"/usr/include/gupnp-igd-1.6/libgupnp-igd/gupnp-simple-igd.h",
+				"/usr/lib/libgupnp-igd-1.6.so",
+				"/usr/lib/pkgconfig/gupnp-igd-1.6.pc",
+				"/usr/share/gir-1.0/GUPnPIgd-1.6.gir"
+			],
+			"name": "gupnp-igd-devel",
+			"provides": [
+				"pkgconfig(gupnp-igd-1.6)"
+			]
+		}
+	},
+	"source-name": "gupnp-igd",
+	"source-release": "1",
+	"source-version": "1.6.0"
+}

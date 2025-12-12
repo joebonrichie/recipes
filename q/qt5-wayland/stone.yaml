@@ -4,11 +4,12 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : qt5-wayland
-version     : 5.15.16+kde.9340737a
-release     : 3
+version     : 5.15.18+kde.df49b9f3
+release     : 7
 homepage    : https://www.qt.io
 upstreams   :
-    - git|https://invent.kde.org/qt/qt/qtwayland.git: 9340737a208b5dd4eda98eb74808951ddaef66c5
+    - git|https://invent.kde.org/qt/qt/qtwayland.git:
+        ref: df49b9f3badce793a0a9ea850cf1a02cc5bafef6
 summary    : Qt 5 Wayland Library
 description: |
     QtWayland is a Qt 5 module that wraps the functionality of Wayland
@@ -25,6 +26,7 @@ builddeps   :
     - pkgconfig(wayland-egl-backend)
     - pkgconfig(wayland-server)
     - pkgconfig(xcomposite)
+    - pkgconfig(xext)
 setup       : |
     %patch %(pkgdir)/qtwayland-decoration-support-backports-from-qt6.patch
 

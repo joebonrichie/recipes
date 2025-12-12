@@ -1,0 +1,35 @@
+#
+# SPDX-FileCopyrightText: © 2020-2024 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : newt
+version     : 0.52.25
+release     : 1
+homepage    : https://pagure.io/newt
+upstreams   :
+    - https://releases.pagure.org/newt/newt-0.52.25.tar.gz : ef0ca9ee27850d1a5c863bb7ff9aa08096c9ed312ece9087b30f3a426828de82
+summary     : A library for text mode user interfaces
+description : |
+    A library for text mode user interfaces
+license     : LGPL-2.0-or-later
+builddeps   :
+    - binary(ar)
+    - pkgconfig(popt)
+    - pkgconfig(python3)
+    - pkgconfig(slang)
+setup       : |
+    %configure \
+        --with-python=python3
+build       : |
+    %make
+install     : |
+    %make_install
+
+    rm -rfv %(installroot)%(libdir)/lib*.a
+packages    :
+    - "python-%(name)":
+        summary: Python bindings for newt
+        description: Python bindings for newt
+        paths:
+            - /usr/lib/python3.*/site-packages/

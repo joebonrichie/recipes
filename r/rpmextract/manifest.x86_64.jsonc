@@ -1,0 +1,23 @@
+/** Human readable report. This is not consumed by boulder */
+{
+	"manifest-version": "0.2",
+	"packages": {
+		"rpmextract": {
+			"depends": [
+				"binary(bsdtar)"
+			],
+			"files": [
+				"/usr/bin/rpm2cpio",
+				"/usr/bin/rpmextract.sh"
+			],
+			"name": "rpmextract",
+			"provides": [
+				"binary(rpm2cpio)",
+				"binary(rpmextract.sh)"
+			]
+		}
+	},
+	"source-name": "rpmextract",
+	"source-release": "11",
+	"source-version": "1.0"
+}

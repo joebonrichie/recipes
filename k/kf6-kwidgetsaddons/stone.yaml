@@ -4,10 +4,10 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : kf6-kwidgetsaddons
-version     : 6.12.0
-release     : 3
+version     : 6.20.0
+release     : 12
 upstreams   :
-    - https://download.kde.org/stable/frameworks/6.12/kwidgetsaddons-6.12.0.tar.xz : 02ce60ac8ba2e717180715f7fb70b024d30c436f82fab6ce1a544696a9f0c1cd
+    - https://download.kde.org/stable/frameworks/6.20/kwidgetsaddons-6.20.0.tar.xz : 39974b85cdffd8c6d6e0a5c0684927a21e071c1e63d7cce3888331f0169a4837
 homepage    : https://community.kde.org/Frameworks
 license     :
     - BSD-3-Clause
@@ -25,7 +25,7 @@ builddeps   :
     - cmake(ECM)
     # TODO package pyside bindings, note that they need to be subpackaged. Let's wait till something needs them
 setup       : |
-    %cmake_kf6
+    %cmake_kf6 -DBUILD_PYTHON_BINDINGS=OFF
 build       : |
     %cmake_build
 install     : |

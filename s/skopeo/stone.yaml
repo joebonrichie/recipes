@@ -1,0 +1,46 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : skopeo
+version     : 1.21.0
+release     : 4
+upstreams   :
+    - https://github.com/containers/skopeo/archive/refs/tags/v1.21.0.tar.gz : f76eeddf697a3cc7a872e3077ab4d0fdbebe9f3c6171462e3e9feb84368b3fac
+homepage    : https://github.com/containers/skopeo
+license     : Apache-2.0
+summary     : Inspect container images and repositories on registries
+description : |
+    Command line utility to inspect images and repositories directly on Docker
+    registries without the need to pull them
+builddeps   :
+    - pkgconfig(glib-2.0)
+    - pkgconfig(gpgme)
+    - pkgconfig(libassuan)
+    - pkgconfig(libbtrfsutil)
+    - pkgconfig(sqlite3)
+    - binary(go)
+    - binary(go-md2man)
+    - shadow-devel
+rundeps     :
+    - containers-common
+setup       : |
+    sed -i 's|.PHONY: bin/skopeo||' Makefile
+    sed -i 's|-gcflags "$(GOGCFLAGS)"||' Makefile
+build       : |
+    export CGO_LDFLAGS="${LDFLAGS}"
+    export CGO_CFLAGS="${CFLAGS}"
+    export CGO_CPPFLAGS="${CPPFLAGS}"
+    export CGO_CXXFLAGS="${CXXFLAGS}"
+
+    export BUILDTAGS="containers_image_ostree_stub libsqlite3 libsubid"
+
+    # The containers/image prefix has changed domain names so in order to ensure that we use the correct setting regardless of which one is used just use both
+    %make bin/skopeo \
+        GO_DYN_FLAGS="-buildmode=pie -trimpath" \
+        EXTRA_LDFLAGS="-X github.com/containers/image/v5/signature.systemDefaultPolicyPath=%(vendordir)/containers/policy.json \
+                       -X go.podman.io/image/v5/signature.systemDefaultPolicyPath=%(vendordir)/containers/policy.json"
+    %make docs
+install     : |
+    %make_install PREFIX="%(prefix)"

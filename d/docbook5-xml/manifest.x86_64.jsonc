@@ -1,0 +1,49 @@
+/** Human readable report. This is not consumed by boulder */
+{
+	"manifest-version": "0.2",
+	"packages": {
+		"docbook5-xml": {
+			"build-depends": [
+				"binary(bsdtar-static)",
+				"binary(xmlcatalog)"
+			],
+			"depends": [
+				"binary(xmlcatalog)"
+			],
+			"files": [
+				"/usr/share/defaults/docbook/docbook5-xml/catalog",
+				"/usr/share/xml/docbook/schema/dtd/5.0/catalog.xml",
+				"/usr/share/xml/docbook/schema/dtd/5.0/docbook.dtd",
+				"/usr/share/xml/docbook/schema/rng/5.0/catalog.xml",
+				"/usr/share/xml/docbook/schema/rng/5.0/docbook.rnc",
+				"/usr/share/xml/docbook/schema/rng/5.0/docbook.rng",
+				"/usr/share/xml/docbook/schema/rng/5.0/docbookxi.rnc",
+				"/usr/share/xml/docbook/schema/rng/5.0/docbookxi.rng",
+				"/usr/share/xml/docbook/schema/rng/5.1/assembly.rnc",
+				"/usr/share/xml/docbook/schema/rng/5.1/assembly.rng",
+				"/usr/share/xml/docbook/schema/rng/5.1/catalog.xml",
+				"/usr/share/xml/docbook/schema/rng/5.1/dbits.rnc",
+				"/usr/share/xml/docbook/schema/rng/5.1/dbits.rng",
+				"/usr/share/xml/docbook/schema/rng/5.1/docbook.rnc",
+				"/usr/share/xml/docbook/schema/rng/5.1/docbook.rng",
+				"/usr/share/xml/docbook/schema/rng/5.1/docbookxi.rnc",
+				"/usr/share/xml/docbook/schema/rng/5.1/docbookxi.rng",
+				"/usr/share/xml/docbook/schema/sch/5.0/catalog.xml",
+				"/usr/share/xml/docbook/schema/sch/5.0/docbook.sch",
+				"/usr/share/xml/docbook/schema/sch/5.1/assembly.sch",
+				"/usr/share/xml/docbook/schema/sch/5.1/catalog.xml",
+				"/usr/share/xml/docbook/schema/sch/5.1/dbits.sch",
+				"/usr/share/xml/docbook/schema/sch/5.1/docbook.sch",
+				"/usr/share/xml/docbook/schema/sch/5.1/docbookxi.sch",
+				"/usr/share/xml/docbook/schema/xsd/5.0/catalog.xml",
+				"/usr/share/xml/docbook/schema/xsd/5.0/docbook.xsd",
+				"/usr/share/xml/docbook/schema/xsd/5.0/xlink.xsd",
+				"/usr/share/xml/docbook/schema/xsd/5.0/xml.xsd"
+			],
+			"name": "docbook5-xml"
+		}
+	},
+	"source-name": "docbook5-xml",
+	"source-release": "1",
+	"source-version": "5.1"
+}

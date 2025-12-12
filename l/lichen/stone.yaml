@@ -1,16 +1,18 @@
 #
-# SPDX-FileCopyrightText: © 2020-2024 Serpent OS Developers
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+# SPDX-FileCopyrightText: © 2025- AerynOS Developers
 #
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : lichen
-version     : 0.1.0
-release     : 29
+version     : "0.1.0+git.aff1e8d"
+release     : 42
 summary     : OS installer
 license     : MPL-2.0
 homepage    : https://github.com/AerynOS/lichen
 upstreams   :
-    - git|https://github.com/AerynOS/lichen.git : 9ceaf5b8c032099e0a5b7b5b510507bb5103d116
+    - git|https://github.com/AerynOS/lichen.git :
+        ref : aff1e8d80e909fd6ebfc2ccefb5b4f1d73c45b21
 description : |
     Experimental OS installer
 builddeps   :
@@ -18,11 +20,11 @@ builddeps   :
 networking  : yes
 rundeps     :
     - binary(moss)
-    - iso-codes
     - sysbinary(mkfs.ext4)
     - sysbinary(mkfs.f2fs)
     - sysbinary(mkfs.vfat)
     - sysbinary(mkfs.xfs)
+    - iso-codes
 setup       : |
     %cargo_fetch
 build       : |

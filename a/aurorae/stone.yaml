@@ -1,0 +1,45 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : aurorae
+version     : 6.5.4
+release     : 12
+upstreams   :
+    - https://download.kde.org/stable/plasma/6.5.4/aurorae-6.5.4.tar.xz : fbcf087a428036be5e7dfc47e676f73b364713a6b33d66dffa50ea6bdeefb176
+homepage    : https://kde.org/plasma-desktop/
+license     :
+    - GPL-2.0-or-later
+    - MIT
+    - CC0-1.0
+summary     : Themable window decorations for KWin
+description : |
+    Themable window decorations for KWin
+builddeps   :
+    # Temporary, boulder doesn't handle build ordering resolution correctly when builddeps are added by macros, so add ECM manually
+    - cmake(ECM)
+    - cmake(Qt6Quick)
+    - cmake(KDecoration3)
+    - cmake(KF6ColorScheme)
+    - cmake(KF6Config)
+    - cmake(KF6CoreAddons)
+    - cmake(KF6I18n)
+    - cmake(KF6KCMUtils)
+    - cmake(KF6NewStuff)
+    - cmake(KF6Package)
+    - cmake(KF6Svg)
+tuning      :
+    - lto: full
+    - optimize: speed
+setup       : |
+    %cmake_kf6
+build       : |
+    %cmake_build
+install     : |
+    %cmake_install
+packages    :
+    - "%(name)":
+        rundeps:
+            # QML dep
+            - kf6-ksvg

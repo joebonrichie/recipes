@@ -1,0 +1,82 @@
+/** Human readable report. This is not consumed by boulder */
+{
+	"manifest-version": "0.2",
+	"packages": {
+		"check": {
+			"depends": [
+				"soname(libc.so.6(x86_64))",
+				"soname(libm.so.6(x86_64))"
+			],
+			"files": [
+				"/usr/bin/checkmk",
+				"/usr/lib/libcheck.so.0",
+				"/usr/lib/libcheck.so.0.0.0",
+				"/usr/share/info/check.info",
+				"/usr/share/man/man1/checkmk.1"
+			],
+			"name": "check",
+			"provides": [
+				"binary(checkmk)",
+				"soname(libcheck.so.0(x86_64))"
+			]
+		},
+		"check-devel": {
+			"depends": [
+				"check"
+			],
+			"files": [
+				"/usr/include/check.h",
+				"/usr/include/check_stdint.h",
+				"/usr/lib/libcheck.so",
+				"/usr/lib/pkgconfig/check.pc",
+				"/usr/share/aclocal/check.m4"
+			],
+			"name": "check-devel",
+			"provides": [
+				"pkgconfig(check)"
+			]
+		},
+		"check-docs": {
+			"files": [
+				"/usr/share/doc/check/COPYING.LESSER",
+				"/usr/share/doc/check/ChangeLog",
+				"/usr/share/doc/check/NEWS",
+				"/usr/share/doc/check/README",
+				"/usr/share/doc/check/example/Makefile.am",
+				"/usr/share/doc/check/example/README",
+				"/usr/share/doc/check/example/configure.ac",
+				"/usr/share/doc/check/example/src/Makefile.am",
+				"/usr/share/doc/check/example/src/main.c",
+				"/usr/share/doc/check/example/src/money.1.c",
+				"/usr/share/doc/check/example/src/money.1.h",
+				"/usr/share/doc/check/example/src/money.2.h",
+				"/usr/share/doc/check/example/src/money.3.c",
+				"/usr/share/doc/check/example/src/money.4.c",
+				"/usr/share/doc/check/example/src/money.5.c",
+				"/usr/share/doc/check/example/src/money.6.c",
+				"/usr/share/doc/check/example/src/money.c",
+				"/usr/share/doc/check/example/src/money.h",
+				"/usr/share/doc/check/example/tests/Makefile.am",
+				"/usr/share/doc/check/example/tests/check_money.1.c",
+				"/usr/share/doc/check/example/tests/check_money.2.c",
+				"/usr/share/doc/check/example/tests/check_money.3.c",
+				"/usr/share/doc/check/example/tests/check_money.6.c",
+				"/usr/share/doc/check/example/tests/check_money.7.c",
+				"/usr/share/doc/check/example/tests/check_money.c"
+			],
+			"name": "check-docs"
+		},
+		"check-static": {
+			"depends": [
+				"check-devel"
+			],
+			"files": [
+				"/usr/lib/libcheck.a"
+			],
+			"name": "check-static"
+		}
+	},
+	"source-name": "check",
+	"source-release": "1",
+	"source-version": "0.15.2"
+}

@@ -1,0 +1,6 @@
+releases:
+  id: 242438
+  rss: https://github.com/ValveSoftware/gamescope/tags.atom
+security:
+  # No known CPE, last checked 2025-02-11
+  cpe: ~

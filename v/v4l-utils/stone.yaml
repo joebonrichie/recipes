@@ -1,0 +1,175 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : v4l-utils
+version     : 1.32.0
+release     : 1
+upstreams   :
+    - https://linuxtv.org/downloads/v4l-utils/v4l-utils-1.32.0.tar.xz : 6828828a17775526eb93fb258a9294d1d1073d633c344dd71ecd4e7a1ffb7dfc
+homepage    : https://linuxtv.org/
+license     :
+    - GPL-2.0-or-later
+    - LGPL-2.1-or-later
+summary     : Utilities for video4linux and DVB devices
+description : |
+    v4l-utils is a collection of various video4linux (V4L), RC core and DVB
+    utilities. The main v4l-utils package contains cx18-ctl, ivtv-ctl, v4l2-ctl
+    and v4l2-sysfs-path.
+builddeps   :
+    - binary(doxygen)
+    - binary(gettext)
+    - binary(linguist6)
+    - binary(perl)
+    - binary(qmake6)
+    - binary(qmlcachegen6)
+    - pkgconfig(Qt6Core)
+    - pkgconfig(Qt6Core5Compat)
+    - pkgconfig(Qt6Gui)
+    - pkgconfig(Qt6Widgets)
+    - pkgconfig(SDL2_image)
+    - pkgconfig(alsa)
+    - pkgconfig(gl)
+    - pkgconfig(glu)
+    - pkgconfig(json-c)
+    - pkgconfig(libbpf)
+    - pkgconfig(libelf)
+    - pkgconfig(libjpeg)
+    - pkgconfig(libudev)
+    - pkgconfig(sdl2)
+    - pkgconfig(systemd)
+    - pkgconfig(x11)
+    # xmlrpc-c
+setup       : |
+    %meson \
+        -Ddoxygen-html=false \
+        -Ddoxygen-man=true
+build       : |
+    %meson_build
+install     : |
+    %meson_install
+
+    # Driver removed from upstream
+    rm -v %(installroot)%(bindir)/decode_tm6000
+
+    %install_dir %(installroot)%(libdir)/gconv-modules.d/
+    mv %(installroot)%(libdir)/gconv/gconv-modules %(installroot)%(libdir)/gconv-modules.d/libdvbv5.conf
+packages    :
+    - libv4l:
+        summary: Collection of video4linux support libraries
+        description: |
+            libv4l is a collection of libraries which adds a thin abstraction layer on
+            top of video4linux2 devices. The purpose of this (thin) layer is to make it
+            easy for application writers to support a wide variety of devices without
+            having to write separate code for different devices in the same class. libv4l
+            consists of 3 different libraries: libv4lconvert, libv4l1 and libv4l2.
+
+            libv4lconvert offers functions to convert from any (known) pixel-format
+            to V4l2_PIX_FMT_BGR24 or V4l2_PIX_FMT_YUV420.
+
+            libv4l1 offers the (deprecated) v4l1 API on top of v4l2 devices, independent
+            of the drivers for those devices supporting v4l1 compatibility (which many
+            v4l2 drivers do not).
+
+            libv4l2 offers the v4l2 API on top of v4l2 devices, while adding for the
+            application transparent libv4lconvert conversion where necessary.
+        paths:
+            - /usr/lib/libv4l*.so.*
+            - /usr/lib/libv4l/v4l*.so
+
+    - libv4l-devel:
+        summary: Development files for libv4l
+        description: |
+            The libv4l-devel package contains libraries and header files for
+            developing applications that use libv4l.
+        rundeps:
+            - libv4l
+        paths:
+            - /usr/include/libv4l*.h
+            - /usr/lib/libv4l/ov*
+            - /usr/lib/libv4l/libv4l2tracer.so
+            - /usr/lib/libv4l*.so
+            - /usr/lib/pkgconfig/libv4l*.pc
+
+    # This is defined twice to ensure that the glob works
+    - libv4l:
+        paths:
+            - /usr/lib/libv4l/v4l*.so
+
+    - qv4l2:
+        summary: QT v4l2 test control and streaming test application
+        description: |
+            QT v4l2 test control and streaming test application.
+        rundeps:
+            - qt6-wayland
+        paths:
+            - /usr/bin/qv4l2
+            - /usr/bin/qvidcap
+            - /usr/share/applications/qv*.desktop
+            - /usr/share/icons/hicolor/*/apps/qv*.png
+            - /usr/share/icons/hicolor/scalable/apps/qv*.svg
+            - /usr/share/man/man1/qv*.1*
+
+    - libdvbv5:
+        summary: Libraries to control, scan and zap on Digital TV channels
+        description: |
+            Libraries to control, scan and zap on Digital TV channels
+        paths:
+            - /usr/lib/libdvbv5.so.*
+            - /usr/share/locale/**/libdvbv5.mo
+
+    - libdvbv5-gconv:
+        summary: Gconv files with the charsets For Digital TV.
+        description: |
+            Some digital TV standards define their own charsets. Add library
+            support for them: EN 300 468 and ARIB STD-B24
+        paths:
+            - /usr/lib/gconv/*.so
+            - /usr/lib/gconv-modules.d/libdvbv5.conf
+
+    - libdvbv5-devel:
+        summary: Development files for libdvbv5
+        description: |
+            The libdvbv5-devel package contains libraries and header
+            files for developing applications that use libdvbv5.
+        rundeps:
+            - libdvbv5
+        paths:
+            - /usr/include/libdvbv5/
+            - /usr/lib/libdvbv5.so
+            - /usr/lib/pkgconfig/libdvbv5.pc
+
+    - dvb-tools:
+        summary: Utilities for DVB driver
+        description: |
+            Utilities and tools for DVB receivers.
+        paths:
+            - /usr/bin/cx18-ctl
+            - /usr/bin/dvb*
+            - /usr/bin/ivtv-ctl
+            - /usr/share/man/man1/dvb*.1*
+
+    - rc-tools:
+        summary: Utilities for RC core
+        description: |
+            Utilities for Infrared receivers and transmitters using RC core.
+        paths:
+            - /usr/bin/ir-*
+            - /usr/lib/udev/rc_keymaps/
+            - /usr/lib/udev/rules.d/70-infrared.rules
+            - /usr/lib/systemd/system/systemd-udevd.service.d/50-rc_keymap.conf
+            - /usr/share/man/man1/ir-*.1*
+            - /usr/share/man/man5/rc_keymap.5*
+
+    - "%(name)-devel-tools":
+        summary: Utilities for v4l2 / DVB driver development and debugging
+        description: |
+            Utilities for v4l2 driver authors: v4l2-compliance and
+            v4l2-dbg.
+        paths:
+            - /usr/bin/cec-compliance
+            - /usr/bin/v4l2-compliance
+            - /usr/sbin/v4l2-dbg
+            - /usr/share/man/man1/cec-compliance.1*
+            - /usr/share/man/man1/v4l2-compliance.1*

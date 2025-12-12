@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : snapshot
-version     : 48.0.1
-release     : 3
+version     : 49.1
+release     : 9
 homepage    : https://apps.gnome.org/Snapshot/
 upstreams   :
-    - https://download.gnome.org/sources/snapshot/48/snapshot-48.0.1.tar.xz : 393176859a20b7d235dfc303031ba20c686441106988dc911dd91b7b6d66e1fd
+    - https://download.gnome.org/sources/snapshot/49/snapshot-49.1.tar.xz : 3558f6f8e0d38b2950b6bad9b9eec238249bedfedce70fb58a28cad6945e6ce9
 summary     : Take pictures and videos
 description : |
     Take pictures and videos on your computer, tablet, or phone.
@@ -29,7 +29,10 @@ builddeps   :
     - pkgconfig(libadwaita-1)
     - pkgconfig(libseccomp)
 rundeps     :
-    - gst-plugins-rs
+    - gstreamer-plugin-gtk4
+    - gstreamer-plugin-pipewire
+    # Basic image/video support
+    - gstreamer-plugins-good
 setup       : |
     %meson
 build       : |

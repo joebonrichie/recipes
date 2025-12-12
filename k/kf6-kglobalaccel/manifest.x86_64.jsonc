@@ -4,19 +4,20 @@
 	"packages": {
 		"kf6-kglobalaccel": {
 			"build-depends": [
-				"cmake(ECM)"
+				"cmake(ECM)",
+				"cmake(Qt6CorePrivate)"
 			],
 			"depends": [
 				"soname(libQt6Core.so.6(x86_64))",
 				"soname(libQt6DBus.so.6(x86_64))",
 				"soname(libQt6Gui.so.6(x86_64))",
 				"soname(libQt6Widgets.so.6(x86_64))",
-				"soname(libc++.so.1(x86_64))",
-				"soname(libc.so.6(x86_64))"
+				"soname(libc.so.6(x86_64))",
+				"soname(libstdc++.so.6(x86_64))"
 			],
 			"files": [
 				"/usr/lib/libKF6GlobalAccel.so.6",
-				"/usr/lib/libKF6GlobalAccel.so.6.12.0",
+				"/usr/lib/libKF6GlobalAccel.so.6.20.0",
 				"/usr/share/dbus-1/interfaces/kf6_org.kde.KGlobalAccel.xml",
 				"/usr/share/dbus-1/interfaces/kf6_org.kde.kglobalaccel.Component.xml",
 				"/usr/share/locale/af/LC_MESSAGES/kglobalaccel6_qt.qm",
@@ -131,7 +132,8 @@
 		},
 		"kf6-kglobalaccel-devel": {
 			"build-depends": [
-				"cmake(ECM)"
+				"cmake(ECM)",
+				"cmake(Qt6CorePrivate)"
 			],
 			"depends": [
 				"kf6-kglobalaccel"
@@ -145,12 +147,9 @@
 				"/usr/include/KF6/KGlobalAccel/kglobalshortcutinfo.h",
 				"/usr/lib/cmake/KF6GlobalAccel/KF6GlobalAccelConfig.cmake",
 				"/usr/lib/cmake/KF6GlobalAccel/KF6GlobalAccelConfigVersion.cmake",
-				"/usr/lib/cmake/KF6GlobalAccel/KF6GlobalAccelQchTargets.cmake",
 				"/usr/lib/cmake/KF6GlobalAccel/KF6GlobalAccelTargets-release.cmake",
 				"/usr/lib/cmake/KF6GlobalAccel/KF6GlobalAccelTargets.cmake",
-				"/usr/lib/libKF6GlobalAccel.so",
-				"/usr/share/doc/qt6/KF6GlobalAccel.qch",
-				"/usr/share/doc/qt6/KF6GlobalAccel.tags"
+				"/usr/lib/libKF6GlobalAccel.so"
 			],
 			"name": "kf6-kglobalaccel-devel",
 			"provides": [
@@ -159,6 +158,6 @@
 		}
 	},
 	"source-name": "kf6-kglobalaccel",
-	"source-release": "2",
-	"source-version": "6.12.0"
+	"source-release": "15",
+	"source-version": "6.20.0"
 }

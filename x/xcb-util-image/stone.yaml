@@ -5,7 +5,7 @@
 #
 name        : xcb-util-image
 version     : 0.4.1
-release     : 1
+release     : 2
 homepage    : https://gitlab.freedesktop.org/xorg/lib/libxcb-image
 upstreams   :
     - https://xcb.freedesktop.org/dist/xcb-util-image-0.4.1.tar.xz : ccad8ee5dadb1271fd4727ad14d9bd77a64e505608766c4e98267d9aede40d3d

@@ -1,0 +1,40 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : akonadi-contacts
+version     : 25.12.0
+release     : 9
+upstreams   :
+    - https://download.kde.org/stable/release-service/25.12.0/src/akonadi-contacts-25.12.0.tar.xz : 5f528186eec38a6f9dad1d9c367f5941b9ccbdee77d6129f1c6e5d6f13525475
+homepage    : https://kde.org
+license     : LGPL-2.1-or-later
+summary     : Libraries and daemons to implement Contact Management in Akonadi
+description : |
+    Libraries and daemons to implement Contact Management in Akonadi.
+builddeps   :
+    # Temporary, boulder doesn't handle build ordering resolution correctly when builddeps are added by macros, so add ECM manually
+    - cmake(ECM)
+    - cmake(KF6Contacts)
+    - cmake(KF6GuiAddons)
+    - cmake(KF6I18n)
+    - cmake(KF6IconThemes)
+    - cmake(KF6KIO)
+    - cmake(KF6Prison)
+    - cmake(KF6TextUtils)
+    - cmake(KF6TextWidgets)
+    - cmake(KF6XmlGui)
+    - cmake(KPim6Akonadi)
+    - cmake(KPim6GrantleeTheme)
+    - cmake(KPim6Mime)
+setup       : |
+    %cmake_kf6
+build       : |
+    %cmake_build
+install     : |
+    %cmake_install
+packages    :
+    - "%(name)-devel":
+        rundeps:
+            - cmake(KPim6GrantleeTheme)

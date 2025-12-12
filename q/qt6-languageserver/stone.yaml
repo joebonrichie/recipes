@@ -4,17 +4,17 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : qt6-languageserver
-version     : 6.8.2
-release     : 2
+version     : 6.10.1
+release     : 9
 homepage    : https://www.qt.io
 upstreams   :
-    - https://download.qt.io/official_releases/qt/6.8/6.8.2/submodules/qtlanguageserver-everywhere-src-6.8.2.tar.xz : 9eeb74ac15334c08777548c01e4ede80a4e2d36f1ebcb322423f24f14c2785fb
+    - https://download.qt.io/official_releases/qt/6.10/6.10.1/submodules/qtlanguageserver-everywhere-src-6.10.1.tar.xz : 3360526b4f4d556673b31e29a49e15d02da52d5eaa53b0204d56a0ba160a556c
 summary     : An implementation of the Language Server Protocol
 description : |
     An implementation of the Language Server Protocol
 license     : GPL-3.0-or-later
 builddeps   :
-    - pkgconfig(Qt6Core)
+    - cmake(Qt6CorePrivate)
 setup       : |
     %patch %(pkgdir)/0001-downstream-Build-libs-shared.patch
 

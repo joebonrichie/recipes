@@ -4,10 +4,10 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : kf6-kitemviews
-version     : 6.12.0
-release     : 3
+version     : 6.20.0
+release     : 12
 upstreams   :
-    - https://download.kde.org/stable/frameworks/6.12/kitemviews-6.12.0.tar.xz : f8d5ff2e4e5234bce8ed56889d8b3d7e94554ec8b40e397d2e9ac2ffc117e3d3
+    - https://download.kde.org/stable/frameworks/6.20/kitemviews-6.20.0.tar.xz : 63f6d64780d3eb1bfdd2f2f9036026a2cdc163b676168c29c2797544f9ad6305
 homepage    : https://community.kde.org/Frameworks
 license     :
     - GPL-2.0-or-later

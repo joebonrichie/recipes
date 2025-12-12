@@ -37,20 +37,20 @@
 				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
 				"soname(ld-linux-x86-64.so.2(x86_64))",
 				"soname(libc.so.6(x86_64))",
-				"soname(libpam.so.0(x86_64))",
-				"soname(libunwind.so.1(x86_64))"
+				"soname(libgcc_s.so.1(x86_64))",
+				"soname(libpam.so.0(x86_64))"
 			],
 			"files": [
 				"/usr/bin/su",
 				"/usr/bin/sudo",
 				"/usr/lib/tmpfiles.d/sudo.conf",
 				"/usr/sbin/visudo",
-				"/usr/share/defaults/etc/pam.d/su",
-				"/usr/share/defaults/etc/pam.d/su-i",
-				"/usr/share/defaults/etc/pam.d/sudo",
-				"/usr/share/defaults/etc/pam.d/sudo-i",
-				"/usr/share/defaults/etc/sudo/sudoers",
-				"/usr/share/defaults/etc/sudo/sudoers.d",
+				"/usr/share/defaults/pam.d/su",
+				"/usr/share/defaults/pam.d/su-l",
+				"/usr/share/defaults/pam.d/sudo",
+				"/usr/share/defaults/pam.d/sudo-i",
+				"/usr/share/defaults/sudo/sudoers",
+				"/usr/share/defaults/sudo/sudoers.d",
 				"/usr/share/man/man1/su.1",
 				"/usr/share/man/man8/sudo.8",
 				"/usr/share/man/man8/visudo.8"
@@ -64,6 +64,6 @@
 		}
 	},
 	"source-name": "sudo-rs",
-	"source-release": "8",
-	"source-version": "0.2.3"
+	"source-release": "17",
+	"source-version": "0.2.10"
 }

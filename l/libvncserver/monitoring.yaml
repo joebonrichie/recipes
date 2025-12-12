@@ -1,0 +1,9 @@
+releases:
+  id: 1756
+  rss: https://github.com/LibVNC/libvncserver/releases.atom
+security:
+  cpe:
+  - vendor: libvncserver_project
+    product: libvncserver
+  - vendor: libvnc_project
+    product: libvncserver

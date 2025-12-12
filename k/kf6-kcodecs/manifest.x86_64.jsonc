@@ -9,12 +9,12 @@
 			],
 			"depends": [
 				"soname(libQt6Core.so.6(x86_64))",
-				"soname(libc++.so.1(x86_64))",
-				"soname(libc.so.6(x86_64))"
+				"soname(libc.so.6(x86_64))",
+				"soname(libstdc++.so.6(x86_64))"
 			],
 			"files": [
 				"/usr/lib/libKF6Codecs.so.6",
-				"/usr/lib/libKF6Codecs.so.6.12.0",
+				"/usr/lib/libKF6Codecs.so.6.20.0",
 				"/usr/share/locale/af/LC_MESSAGES/kcodecs6_qt.qm",
 				"/usr/share/locale/ar/LC_MESSAGES/kcodecs6_qt.qm",
 				"/usr/share/locale/as/LC_MESSAGES/kcodecs6_qt.qm",
@@ -146,12 +146,9 @@
 				"/usr/include/KF6/KCodecs/kencodingprober.h",
 				"/usr/lib/cmake/KF6Codecs/KF6CodecsConfig.cmake",
 				"/usr/lib/cmake/KF6Codecs/KF6CodecsConfigVersion.cmake",
-				"/usr/lib/cmake/KF6Codecs/KF6CodecsQchTargets.cmake",
 				"/usr/lib/cmake/KF6Codecs/KF6CodecsTargets-release.cmake",
 				"/usr/lib/cmake/KF6Codecs/KF6CodecsTargets.cmake",
-				"/usr/lib/libKF6Codecs.so",
-				"/usr/share/doc/qt6/KF6Codecs.qch",
-				"/usr/share/doc/qt6/KF6Codecs.tags"
+				"/usr/lib/libKF6Codecs.so"
 			],
 			"name": "kf6-kcodecs-devel",
 			"provides": [
@@ -160,6 +157,6 @@
 		}
 	},
 	"source-name": "kf6-kcodecs",
-	"source-release": "3",
-	"source-version": "6.12.0"
+	"source-release": "12",
+	"source-version": "6.20.0"
 }

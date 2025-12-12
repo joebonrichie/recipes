@@ -1,5 +1,5 @@
-# Begin /usr/share/defaults/etc/bashrc
+# Begin /usr/share/defaults/bashrc
 
-source /usr/share/defaults/etc/serpent-stateless-shell-conf.sh
+source /usr/share/defaults/aeryn-stateless-shell-conf.sh
 
-# End /usr/share/defaults/etc/bashrc
+# End /usr/share/defaults/bashrc

@@ -7,11 +7,13 @@
 				"binary(msgfmt)",
 				"pkgconfig(gobject-introspection-1.0)"
 			],
+			"depends": [
+				"adwaita-fonts"
+			],
 			"files": [
 				"/usr/lib/girepository-1.0/GDesktopEnums-3.0.typelib",
 				"/usr/share/GConf/gsettings/gsettings-desktop-schemas.convert",
 				"/usr/share/GConf/gsettings/wm-schemas.convert",
-				"/usr/share/gir-1.0/GDesktopEnums-3.0.gir",
 				"/usr/share/glib-2.0/schemas/org.gnome.desktop.a11y.applications.gschema.xml",
 				"/usr/share/glib-2.0/schemas/org.gnome.desktop.a11y.gschema.xml",
 				"/usr/share/glib-2.0/schemas/org.gnome.desktop.a11y.interface.gschema.xml",
@@ -101,6 +103,7 @@
 				"/usr/share/locale/tr/LC_MESSAGES/gsettings-desktop-schemas.mo",
 				"/usr/share/locale/ug/LC_MESSAGES/gsettings-desktop-schemas.mo",
 				"/usr/share/locale/uk/LC_MESSAGES/gsettings-desktop-schemas.mo",
+				"/usr/share/locale/uz/LC_MESSAGES/gsettings-desktop-schemas.mo",
 				"/usr/share/locale/vi/LC_MESSAGES/gsettings-desktop-schemas.mo",
 				"/usr/share/locale/zh_CN/LC_MESSAGES/gsettings-desktop-schemas.mo",
 				"/usr/share/locale/zh_HK/LC_MESSAGES/gsettings-desktop-schemas.mo",
@@ -118,6 +121,7 @@
 			],
 			"files": [
 				"/usr/include/gsettings-desktop-schemas/gdesktop-enums.h",
+				"/usr/share/gir-1.0/GDesktopEnums-3.0.gir",
 				"/usr/share/pkgconfig/gsettings-desktop-schemas.pc"
 			],
 			"name": "gsettings-desktop-schemas-devel",
@@ -127,6 +131,6 @@
 		}
 	},
 	"source-name": "gsettings-desktop-schemas",
-	"source-release": "6",
-	"source-version": "48.0"
+	"source-release": "10",
+	"source-version": "49.1"
 }

@@ -1,0 +1,38 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : plymouth-kcm
+version     : 6.5.4
+release     : 9
+upstreams   :
+    - https://download.kde.org/stable/plasma/6.5.4/plymouth-kcm-6.5.4.tar.xz : 5fecf959485c7d61673976e306b3f3e141971df55cd4725d4567312e83804087
+homepage    : https://kde.org/plasma-desktop/
+license     : LGPL-2.0-or-later
+summary     : KCM to manage the Plymouth (Boot) theme
+description : |
+    KCM to manage the Plymouth (Boot) theme
+builddeps   :
+    # Temporary, boulder doesn't handle build ordering resolution correctly when builddeps are added by macros, so add ECM manually
+    - cmake(ECM)
+    - cmake(KF6Auth)
+    - cmake(KF6Archive)
+    - cmake(KF6Config)
+    - cmake(KF6I18n)
+    - cmake(KF6KCMUtils)
+    - cmake(KF6KIO)
+    - cmake(KF6NewStuff)
+    - cmake(KF6NewStuffCore)
+    - cmake(Qt6Quick)
+    - pkgconfig(ply-boot-client)
+    - pkgconfig(ply-splash-core)
+tuning      :
+    - lto: full
+    - optimize: speed
+setup       : |
+    %cmake_kf6
+build       : |
+    %cmake_build
+install     : |
+    %cmake_install

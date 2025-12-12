@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : gtk-doc
-version     : 1.34.0
-release     : 2
+version     : 1.35.1
+release     : 8
 homepage    : https://download.gnome.org/sources/gtk-doc/1.34
 upstreams   :
-    - https://download.gnome.org/sources/gtk-doc/1.34/gtk-doc-1.34.0.tar.xz : b20b72b32a80bc18c7f975c9d4c16460c2276566a0b50f87d6852dff3aa7861c
+    - https://download.gnome.org/sources/gtk-doc/1.35/gtk-doc-1.35.1.tar.xz : 611c9f24edd6d88a8ae9a79d73ab0dc63c89b81e90ecc31d6b9005c5f05b25e2
 summary     : Documentation generator for C code
 description : |
     GTK-Doc is used to document C code. It is typically used to document the public
@@ -24,6 +24,7 @@ builddeps   :
     - pkgconfig(glib-2.0)
     - python(pygments)
 rundeps     :
+    - binary(xsltproc)
     - python(pygments)
     - docbook
 setup       : |

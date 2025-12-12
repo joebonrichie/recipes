@@ -4,10 +4,10 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : kf6-knotifications
-version     : 6.12.0
-release     : 3
+version     : 6.20.0
+release     : 16
 upstreams   :
-    - https://download.kde.org/stable/frameworks/6.12/knotifications-6.12.0.tar.xz : d2825473bcc4f77423b5266a5b92e818a9a98b1d672b1c29d8f237dd11e99026
+    - https://download.kde.org/stable/frameworks/6.20/knotifications-6.20.0.tar.xz : aae6d928eaf52540b642bd9c7ea6293e2c0d0f53612e5fb4f0a6001692f8055a
 homepage    : https://community.kde.org/Frameworks
 license     :
     - BSD-3-Clause
@@ -21,11 +21,12 @@ builddeps   :
     # Temporary, boulder doesn't handle build ordering resolution correctly when builddeps are added by macros, so add ECM manually
     - cmake(ECM)
     - cmake(KF6Config)
+    - cmake(Qt6CorePrivate)
     - cmake(Qt6Qml)
     - pkgconfig(libcanberra)
     # TODO package pyside bindings, note that they need to be subpackaged. Let's wait till something needs them
 setup       : |
-    %cmake_kf6
+    %cmake_kf6 -DBUILD_PYTHON_BINDINGS=OFF
 build       : |
     %cmake_build
 install     : |

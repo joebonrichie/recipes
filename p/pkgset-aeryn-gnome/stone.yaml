@@ -1,0 +1,76 @@
+#
+# SPDX-FileCopyrightText: © 2020-2024 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : pkgset-aeryn-gnome
+version     : "2025.10" # I guess let's just match the OS version for now
+release     : 6
+homepage    : https://aerynos.com/
+# No upstreams!
+summary     : pkgset virtual packages - GNOME Desktop
+description : |
+    pkgset virtual packages - GNOME Desktop
+license     : MPL-2.0
+install     : |
+    for i in minimal recommended full; do
+        %install_dir %(installroot)%(docdir)/%(name)-${i}
+        echo "This file will disappear when virtual packages are introduced" > %(installroot)%(docdir)/%(name)-${i}/README
+    done
+packages    :
+    - "%(name)-minimal":
+        summary: Minimal packages for a GNOME Desktop session
+        description: |
+            Minimal packages for a GNOME Desktop session
+        rundeps:
+            # Use only Core Gnome apps, except ptyxis
+            - binary(file-roller)
+            - binary(gnome-calculator)
+            - binary(gnome-control-center)
+            - binary(gnome-software)
+            - binary(gnome-system-monitor)
+            - binary(gnome-text-editor)
+            - binary(nautilus)
+            - binary(ptyxis)
+            - gnome-backgrounds
+            - gnome-desktop-defaults
+            - pkgset-aeryn-base-desktop
+            - sysbinary(gdm)
+        paths:
+            - /usr/share/doc/%(name)-minimal/README
+
+    - "%(name)-recommended":
+        summary: GNOME Desktop plus recommended applications
+        description: |
+            GNOME Desktop plus recommended applications
+        rundeps:
+            #Gnome core apps
+            - "%(name)-minimal"
+            - binary(baobab)
+            - binary(gnome-calendar)
+            - binary(gnome-characters)
+            - binary(gnome-clocks)
+            - binary(gnome-contacts)
+            - binary(gnome-disks)
+            - binary(gnome-font-viewer)
+            - binary(gnome-tweaks)
+            - binary(gnome-weather)
+            - binary(loupe)
+            - binary(org.gnome.Decibels)
+            - binary(papers)
+            - binary(showtime)
+            - binary(snapshot)
+        paths:
+            - /usr/share/doc/%(name)-recommended/README
+
+    - "%(name)-full":
+        summary: GNOME Desktop plus all GNOME applications
+        description: |
+            GNOME Desktop plus all GNOME applications
+        rundeps:
+            # Gnome Circle apps and others
+            - "%(name)-recommended"
+            - binary(resources)
+            - binary(celluloid)
+        paths:
+            - /usr/share/doc/%(name)-full/README

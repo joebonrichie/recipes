@@ -4,18 +4,20 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : steam
-version     : 1.0.0.82
-release     : 14
+version     : 1.0.0.85
+release     : 22
 homepage    : https://store.steampowered.com/
 upstreams   :
-    - https://repo.steampowered.com/steam/pool/steam/s/steam/steam_1.0.0.82.tar.gz : afa2f1dd6271fd2b645ba30b8f3ab40afd3654e354241a31cbd51000f7e6fc77
+    - https://repo.steampowered.com/steam/pool/steam/s/steam/steam_1.0.0.85.tar.gz : 7f2d374a2fb413ced5b8125151456219d918a255872b4bb77016cbccf38bb7f1
 summary     : Steam Client (WIP Packaging)
 description : |
     steam is a digital distribution platform developed by Valve Corporation, which offers digital rights management (DRM), multiplayer gaming, video streaming and social networking services.
 license     : Distributable
 rundeps     :
     - binary(cmp)
+    - binary(lsb_release)
     - binary(tar)
+    - binary(xdg-user-dir)
     - binary(zenity)
     - soname(libGL.so.1(386))
     - soname(libGLX_mesa.so.0(386))
@@ -35,10 +37,13 @@ rundeps     :
     - soname(libz.so.1(386))
 setup      : |
     %patch %(pkgdir)/rules.patch
+    %patch %(pkgdir)/0001-work-around-steam-crash-with-DRI_PRIME.patch
 install     : |
     %make_install
-    mv %(installroot)%(bindir)/steam %(installroot)%(libdir)/steam/steam
-    %install_exe %(pkgdir)/steam.sh %(installroot)%(bindir)/steam
+
+    # Replace steam with wrapper
+    %install_exe %(pkgdir)/steam-wrapper.sh %(installroot)%(bindir)/steam
+
     %install_dir %(installroot)%(libdir)/udev/rules.d
     %install_file subprojects/steam-devices/* %(installroot)%(libdir)/udev/rules.d/.
     rm -v %(installroot)%(libdir)/udev/rules.d/LICENSE

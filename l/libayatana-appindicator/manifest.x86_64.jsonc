@@ -1,0 +1,72 @@
+/** Human readable report. This is not consumed by boulder */
+{
+	"manifest-version": "0.2",
+	"packages": {
+		"libayatana-appindicator": {
+			"build-depends": [
+				"binary(valac)",
+				"pkgconfig(ayatana-indicator3-0.4)",
+				"pkgconfig(dbusmenu-gtk3-0.4)",
+				"pkgconfig(glib-2.0)",
+				"pkgconfig(gobject-introspection-1.0)",
+				"pkgconfig(gtk+-3.0)"
+			],
+			"depends": [
+				"soname(libayatana-indicator3.so.7(x86_64))",
+				"soname(libc.so.6(x86_64))",
+				"soname(libdbusmenu-glib.so.4(x86_64))",
+				"soname(libdbusmenu-gtk3.so.4(x86_64))",
+				"soname(libgdk-3.so.0(x86_64))",
+				"soname(libgio-2.0.so.0(x86_64))",
+				"soname(libglib-2.0.so.0(x86_64))",
+				"soname(libgobject-2.0.so.0(x86_64))",
+				"soname(libgtk-3.so.0(x86_64))"
+			],
+			"files": [
+				"/usr/lib/girepository-1.0/AyatanaAppIndicator3-0.1.typelib",
+				"/usr/lib/libappindicator3.so.1",
+				"/usr/lib/libappindicator3.so.1.0.0",
+				"/usr/lib/libayatana-appindicator3.so.1",
+				"/usr/lib/libayatana-appindicator3.so.1.0.0"
+			],
+			"name": "libayatana-appindicator",
+			"provides": [
+				"soname(libayatana-appindicator3.so.1(x86_64))"
+			]
+		},
+		"libayatana-appindicator-devel": {
+			"build-depends": [
+				"binary(valac)",
+				"pkgconfig(ayatana-indicator3-0.4)",
+				"pkgconfig(dbusmenu-gtk3-0.4)",
+				"pkgconfig(glib-2.0)",
+				"pkgconfig(gobject-introspection-1.0)",
+				"pkgconfig(gtk+-3.0)"
+			],
+			"depends": [
+				"libayatana-appindicator",
+				"pkgconfig(ayatana-indicator3-0.4)",
+				"pkgconfig(dbusmenu-glib-0.4)",
+				"pkgconfig(glib-2.0)",
+				"pkgconfig(gtk+-3.0)"
+			],
+			"files": [
+				"/usr/include/libayatana-appindicator3-0.1/libayatana-appindicator/app-indicator-enum-types.h",
+				"/usr/include/libayatana-appindicator3-0.1/libayatana-appindicator/app-indicator.h",
+				"/usr/lib/libappindicator3.so",
+				"/usr/lib/libayatana-appindicator3.so",
+				"/usr/lib/pkgconfig/ayatana-appindicator3-0.1.pc",
+				"/usr/share/gir-1.0/AyatanaAppIndicator3-0.1.gir",
+				"/usr/share/vala/vapi/ayatana-appindicator3-0.1.deps",
+				"/usr/share/vala/vapi/ayatana-appindicator3-0.1.vapi"
+			],
+			"name": "libayatana-appindicator-devel",
+			"provides": [
+				"pkgconfig(ayatana-appindicator3-0.1)"
+			]
+		}
+	},
+	"source-name": "libayatana-appindicator",
+	"source-release": "1",
+	"source-version": "0.5.94"
+}

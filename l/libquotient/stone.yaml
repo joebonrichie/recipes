@@ -1,0 +1,37 @@
+#
+# SPDX-FileCopyrightText: © 2020-2024 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : libquotient
+version     : 0.9.5
+release     : 8
+homepage    : https://quotient-im.github.io/libQuotient/
+upstreams   :
+    - https://github.com/quotient-im/libQuotient/archive/refs/tags/0.9.5.tar.gz : 24366dd59aca7b991756e45c3c8823c43fc6a8fdb161ea6dcce5b666c6300766
+summary     : GnuPG Made Easy library (C++ bindings)
+description : |
+    GnuPG Made Easy library (C++ bindings)
+license     : LGPL-2.1-or-later
+builddeps   :
+    - cmake(Olm)
+    - cmake(Qt6Core)
+    - cmake(Qt6CorePrivate)
+    - cmake(Qt6Keychain)
+    - pkgconfig(libcrypto)
+setup       : |
+    %cmake \
+        -DBUILD_SHARED_LIBS=ON \
+        -DQuotient_INSTALL_TESTS:BOOL=OFF
+build       : |
+    %cmake_build
+install     : |
+    %cmake_install
+
+    # remove android bits
+    rm -rfv %(installroot)/usr/share
+packages    :
+    - "%(name)-devel":
+        rundeps:
+            - cmake(Olm)
+            - pkgconfig(libcrypto)

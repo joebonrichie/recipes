@@ -7,7 +7,7 @@
 				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
 				"soname(ld-linux-x86-64.so.2(x86_64))",
 				"soname(libc.so.6(x86_64))",
-				"soname(libunwind.so.1(x86_64))"
+				"soname(libgcc_s.so.1(x86_64))"
 			],
 			"files": [
 				"/usr/bin/hyperfine"
@@ -19,6 +19,6 @@
 		}
 	},
 	"source-name": "hyperfine",
-	"source-release": "2",
+	"source-release": "5",
 	"source-version": "1.19.0"
 }

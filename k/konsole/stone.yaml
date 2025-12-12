@@ -4,10 +4,10 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : konsole
-version     : 24.12.3
-release     : 3
+version     : 25.12.0
+release     : 16
 upstreams   :
-    - https://download.kde.org/stable/release-service/24.12.3/src/konsole-24.12.3.tar.xz : fe7c25e0dbf93c2d2a36988f479cd3202d8c8c58656395ce13e248c591c10241
+    - https://download.kde.org/stable/release-service/25.12.0/src/konsole-25.12.0.tar.xz : bfe39ed22b830c99e37583ad0e67eb28e912c43235b3ab478986374676234a34
 homepage    : https://kde.org/applications/system/org.kde.konsole
 license     :
     - GFDL-1.2-or-later
@@ -40,7 +40,6 @@ builddeps   :
     - cmake(KF6WidgetsAddons)
     - cmake(KF6WindowSystem)
     - cmake(KF6XmlGui)
-    - cmake(Qt6Core5Compat)
     - cmake(Qt6Multimedia)
     - pkgconfig(icu-uc)
 rundeps     :
@@ -52,5 +51,19 @@ build       : |
 install     : |
     %cmake_install
 
+    # Default settings
+    %install_file %(pkgdir)/konsolerc -t %(installroot)%(datadir)/xdg/
+
     # remove docs
     rm -rf %(installroot)/%(datadir)/doc
+packages    :
+    # Mostly for Yakuake
+    - "%(name)-part":
+        summary: "%(name) kpart plugin"
+        description: |
+            %(name) kpart plugin
+        paths:
+            - /usr/lib/libkonsoleapp.so.*
+            - /usr/lib/libkonsoleprivate.so.*
+            - /usr/lib/qt6/plugins/konsoleplugins/
+            - /usr/lib/qt6/plugins/kf6/parts/

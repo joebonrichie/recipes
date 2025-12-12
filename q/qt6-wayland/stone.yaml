@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : qt6-wayland
-version     : 6.8.2
-release     : 4
+version     : 6.10.1
+release     : 13
 homepage    : https://www.qt.io
 upstreams   :
-    - https://download.qt.io/official_releases/qt/6.8/6.8.2/submodules/qtwayland-everywhere-src-6.8.2.tar.xz : 5e46157908295f2bf924462d8c0855b0508ba338ced9e810891fefa295dc9647
+    - https://download.qt.io/official_releases/qt/6.10/6.10.1/submodules/qtwayland-everywhere-src-6.10.1.tar.xz : 49bf6db800227a6b2c971f4c5d03dd1e81297e7ffb296ce4a96437304f27cb13
 summary     : Qt6 Wayland Library
 description : |
     The Qt Wayland Compositor is a module that provides convenient and powerful QML and C++ APIs for developing custom display servers based on the Wayland protocol. The display server, often called a compositor, displays content from client applications that support the Wayland protocol.
@@ -17,21 +17,19 @@ license     :
     - GPL-3.0-or-later
     - LGPL-3.0-or-later
 builddeps   :
-    - pkgconfig(Qt6Qml)
-    - pkgconfig(Qt6Svg)
+    - cmake(Qt6CorePrivate)
+    - cmake(Qt6Qml)
+    - cmake(Qt6Svg)
     - pkgconfig(libdrm)
     - pkgconfig(wayland-protocols)
     - pkgconfig(wayland-scanner)
     - pkgconfig(x11)
 setup       : |
-    %patch %(pkgdir)/wayland-1.23.patch
-
     %cmake_qt6
 build       : |
     %cmake_build
 install     : |
     %cmake_install
-    %qml_cache_qt6
 packages    :
     - "%(name)-devel":
         paths:

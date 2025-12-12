@@ -5,7 +5,7 @@
 #
 name        : tree
 version     : 2.2.1
-release     : 3
+release     : 4
 homepage    : https://oldmanprogrammer.net/source.php?dir=projects/tree
 upstreams   :
     - https://oldmanprogrammer.net/tar/tree/tree-2.2.1.tgz : 68ac45dc78c0c311ada06200ffc3c285e74223ba208061f8d15ffac25e44b2ec

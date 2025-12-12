@@ -1,0 +1,7 @@
+releases:
+  id: 14498
+  rss: ~
+security:
+  cpe:
+  - vendor: xiph
+    product: speex

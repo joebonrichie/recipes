@@ -1,0 +1,7 @@
+releases:
+  id: 13142
+  rss: https://gitlab.gnome.org/GNOME/gtk-vnc/-/tags?format=atom
+security:
+  cpe:
+  - vendor: gnome
+    product: gtk-vnc

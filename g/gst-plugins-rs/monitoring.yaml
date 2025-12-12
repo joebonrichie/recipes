@@ -1,5 +1,6 @@
 releases:
-  id: 328366
+  # Yes, there's a separate ID for gst-plugins-rs but we want to keep versioning in-sync with gstreamer
+  id: 1263
   rss: ~
 security:
   cpe: ~ # last checked 2024/12/23

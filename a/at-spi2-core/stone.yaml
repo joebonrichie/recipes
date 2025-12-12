@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : at-spi2-core
-version     : 2.56.1
-release     : 8
+version     : 2.58.2
+release     : 18
 homepage    : https://wiki.gnome.org/Accessibility
 upstreams   :
-    - https://download.gnome.org/sources/at-spi2-core/2.56/at-spi2-core-2.56.1.tar.xz : fd177fecd8c95006ff0a355eafd7066fe110a2e17eb5eb5fe17ff70e49a4eace
+    - https://download.gnome.org/sources/at-spi2-core/2.58/at-spi2-core-2.58.2.tar.xz : a2823b962ed16cdd5cb1fc5365029fd218394d852acd4098b321854bd6692f6e
 summary     : Base DBus XML interfaces for accessibility, the accessibility registry daemon, and atspi library.
 description : |
     This repository contains the DBus interface definitions for AT-SPI (Assistive Technology Service Provider Interface) — the core of an accessibility stack for free software systems.  It also contains the basic daemons of the accessibility stack, the ATK library to make applications and GUI toolkits accessible, and the internal hooks between AT-SPI and ATK.
@@ -28,10 +28,50 @@ builddeps   :
     - pkgconfig(x11)
     - pkgconfig(xi)
     - pkgconfig(xtst)
+rundeps     :
+    - binary(xprop) # /usr/share/xdg/Xwayland-session.d/00-at-spi
 setup       : |
     %patch %(pkgdir)/0001-at-spi2-core-Stateless-XDG-autostart-directories.patch
-    %meson -Ddefault_bus=dbus-broker
+    %meson \
+        -Ddefault_bus=dbus-broker \
+        -Dgtk2_atk_adaptor=false
+
 build       : |
     %meson_build
 install     : |
     %meson_install
+packages    :
+    - "%(name)-atk":
+        summary: Interfaces for accessibility support
+        description: Interfaces for accessibility support
+        paths:
+            - /usr/lib/libatk-1.0.so.*
+            - /usr/lib/girepository-1.0/Atk-1.0.typelib
+
+    - "%(name)-atk-devel":
+        summary: Interfaces for accessibility support - devel
+        description: Interfaces for accessibility support - devel
+        rundeps:
+            - "%(name)-atk"
+        paths:
+            - /usr/include/atk-1.0/
+            - /usr/lib/libatk-1.0.so
+            - /usr/lib/pkgconfig/atk.pc
+            - /usr/share/gir-1.0/Atk-1.0.gir
+
+    - "at-spi2-atk":
+        summary: A GTK+ module that bridges ATK to D-Bus at-spi
+        description: A GTK+ module that bridges ATK to D-Bus at-spi
+        paths:
+            - /usr/lib/gnome-settings-daemon-3.0/gtk-modules/at-spi2-atk.desktop
+            - /usr/lib/libatk-bridge-2.0.so.*
+
+    - "at-spi2-atk-devel":
+        summary: A GTK+ module that bridges ATK to D-Bus at-spi - devel
+        description: A GTK+ module that bridges ATK to D-Bus at-spi - devel
+        rundeps:
+            - "at-spi2-atk"
+        paths:
+            - /usr/include/at-spi2-atk/2.0/atk-bridge.h
+            - /usr/lib/libatk-bridge-2.0.so
+            - /usr/lib/pkgconfig/atk-bridge-2.0.pc

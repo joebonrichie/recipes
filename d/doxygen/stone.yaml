@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : doxygen
-version     : 1.13.2
-release     : 1
+version     : 1.15.0
+release     : 10
 homepage    :  https://www.doxygen.org/
 upstreams   :
-    - https://github.com/doxygen/doxygen/archive/refs/tags/Release_1_13_2.tar.gz : 4c9d9c8e95c2af4163ee92bcb0f3af03b2a4089402a353e4715771e8d3701c48
+    - https://github.com/doxygen/doxygen/archive/refs/tags/Release_1_15_0.tar.gz : b2a79d92a934d4dcda2bb0006e65adbabfcfe83343e024d5f598ff3a62c23dda
 summary     : The de-facto standard tool for generating documentation from annotated C++ sources
 description : |
     The de-facto standard tool for generating documentation from annotated C++ sources
@@ -16,19 +16,22 @@ license     : GPL-2.0-only
 builddeps  :
     - binary(bison)
     - binary(flex)
+    - binary(python3)
     - pkgconfig(Qt6Core)
+    - pkgconfig(Qt6Svg)
     - pkgconfig(spdlog)
     - pkgconfig(sqlite3)
     - clang-devel
 rundeps    :
     - graphviz
 setup      : |
-    %patch %(pkgdir)/ftbfs-llvm-19.patch
     %cmake \
-          -Dbuild_wizard=ON \
-          -Duse_libclang:BOOL=ON \
-          -Duse_sys_spdlog:BOOL=ON \
-          -Duse_sys_sqlite3:BOOL=ON
+        -Dbuild_wizard=ON \
+        -Duse_libc++:BOOL=OFF \
+        -Duse_libclang:BOOL=ON \
+        -Duse_sys_fmt:BOOL=ON \
+        -Duse_sys_spdlog:BOOL=ON \
+        -Duse_sys_sqlite3:BOOL=ON
 build       : |
     %cmake_build
 install     : |

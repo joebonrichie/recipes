@@ -27,7 +27,7 @@ index f42a3bb..8bde35e 100644
 +    {
 +      shellFile = "/etc/shells";
 +    } else {
-+      shellFile = "/usr/share/defaults/etc/shells";
++      shellFile = "/usr/share/defaults/shells";
 +    }
 +
    error = NULL;

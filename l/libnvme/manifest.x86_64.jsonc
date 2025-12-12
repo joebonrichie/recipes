@@ -4,21 +4,26 @@
 	"packages": {
 		"libnvme": {
 			"build-depends": [
+				"binary(swig)",
+				"pkgconfig(dbus-1)",
 				"pkgconfig(json-c)",
 				"pkgconfig(libkeyutils)",
-				"pkgconfig(openssl)"
+				"pkgconfig(liburing)",
+				"pkgconfig(openssl)",
+				"pkgconfig(python3)"
 			],
 			"depends": [
 				"soname(libc.so.6(x86_64))",
 				"soname(libcrypto.so.3(x86_64))",
+				"soname(libdbus-1.so.3(x86_64))",
 				"soname(libjson-c.so.5(x86_64))",
 				"soname(libkeyutils.so.1(x86_64))"
 			],
 			"files": [
 				"/usr/lib/libnvme-mi.so.1",
-				"/usr/lib/libnvme-mi.so.1.11.1",
+				"/usr/lib/libnvme-mi.so.1.16.1",
 				"/usr/lib/libnvme.so.1",
-				"/usr/lib/libnvme.so.1.11.1"
+				"/usr/lib/libnvme.so.1.16.1"
 			],
 			"name": "libnvme",
 			"provides": [
@@ -28,12 +33,17 @@
 		},
 		"libnvme-devel": {
 			"build-depends": [
+				"binary(swig)",
+				"pkgconfig(dbus-1)",
 				"pkgconfig(json-c)",
 				"pkgconfig(libkeyutils)",
-				"pkgconfig(openssl)"
+				"pkgconfig(liburing)",
+				"pkgconfig(openssl)",
+				"pkgconfig(python3)"
 			],
 			"depends": [
 				"libnvme",
+				"pkgconfig(dbus-1)",
 				"pkgconfig(json-c)",
 				"pkgconfig(libkeyutils)",
 				"pkgconfig(openssl)"
@@ -62,9 +72,36 @@
 				"pkgconfig(libnvme)",
 				"pkgconfig(libnvme-mi)"
 			]
+		},
+		"python-libnvme": {
+			"build-depends": [
+				"binary(swig)",
+				"pkgconfig(dbus-1)",
+				"pkgconfig(json-c)",
+				"pkgconfig(libkeyutils)",
+				"pkgconfig(liburing)",
+				"pkgconfig(openssl)",
+				"pkgconfig(python3)"
+			],
+			"depends": [
+				"libnvme",
+				"soname(libc.so.6(x86_64))",
+				"soname(libnvme.so.1(x86_64))"
+			],
+			"files": [
+				"/usr/lib/python3.11/site-packages/libnvme/__init__.py",
+				"/usr/lib/python3.11/site-packages/libnvme/__pycache__/__init__.cpython-311.pyc",
+				"/usr/lib/python3.11/site-packages/libnvme/__pycache__/nvme.cpython-311.pyc",
+				"/usr/lib/python3.11/site-packages/libnvme/_nvme.cpython-311-x86_64-linux-gnu.so",
+				"/usr/lib/python3.11/site-packages/libnvme/nvme.py"
+			],
+			"name": "python-libnvme",
+			"provides": [
+				"soname(python3.11/site-packages/libnvme/_nvme.cpython-311-x86_64-linux-gnu.so(x86_64))"
+			]
 		}
 	},
 	"source-name": "libnvme",
-	"source-release": "2",
-	"source-version": "1.11.1"
+	"source-release": "7",
+	"source-version": "1.16.1"
 }

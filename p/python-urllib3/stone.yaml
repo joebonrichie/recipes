@@ -1,0 +1,31 @@
+#
+# SPDX-FileCopyrightText: © 2020-2024 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : python-urllib3
+version     : 2.5.0
+release     : 1
+homepage    : https://urllib3.readthedocs.io/
+upstreams   :
+    - https://pypi.debian.net/urllib3/urllib3-2.5.0.tar.gz : 3fc47733c7e419d4bc3f6b3dc2b4f890bb743906a30d56ba4a5bfa4bbff92760
+summary     : Python HTTP library with thread-safe connection pooling, file post, and more
+description : |
+    urllib3 is a powerful, sanity-friendly HTTP client for Python. Much of the Python ecosystem already uses urllib3 and you should too. urllib3 brings many critical features that are missing from the Python standard libraries.
+license     : MIT
+builddeps   :
+    - python(hatch-vcs)
+    - python(hatchling)
+    - python(setuptools-scm)
+rundeps     :
+    - python-libs
+# checkdeps   :
+#     - python(pytest)
+# TODO trustme for tests
+build       : |
+    %pyproject_build
+install     : |
+    %pyproject_install
+# check       : |
+#     python_version=$(python -c 'import sys; print(".".join(map(str, sys.version_info[:2])))')
+#     PYTHONPATH="%(installroot)/usr/lib/python$python_version/site-packages" pytest

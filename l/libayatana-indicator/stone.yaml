@@ -1,0 +1,32 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : libayatana-indicator
+version     : 0.9.4
+release     : 1
+upstreams   :
+    - https://github.com/AyatanaIndicators/libayatana-indicator/archive/refs/tags/0.9.4.tar.gz : a18d3c682e29afd77db24366f8475b26bda22b0e16ff569a2ec71cd6eb4eac95
+homepage    : https://github.com/AyatanaIndicators/libayatana-indicator
+license     : GPL-3.0-or-later
+summary     : Common components of the libayatana project
+description : |
+    The Ayatana Indicators project is the continuation of Application Indicators and System Indicators, two technologies developed by Canonical Ltd. for the Unity7 desktop.
+    Application Indicators are a GTK implementation of the StatusNotifierItem Specification (SNI) that was originally submitted to freedesktop.org by KDE.
+builddeps   :
+    - pkgconfig(gio-unix-2.0)
+    - pkgconfig(glib-2.0)
+    - pkgconfig(gmodule-2.0)
+    - pkgconfig(gtk+-3.0)
+    - pkgconfig(libayatana-ido3-0.4)
+setup       : |
+    %cmake
+build       : |
+    %cmake_build
+install     : |
+    %cmake_install
+packages    :
+    - "%(name)-devel":
+        paths:
+            - /usr/share/libayatana-indicator/80indicator-debugging

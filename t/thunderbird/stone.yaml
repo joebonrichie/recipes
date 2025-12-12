@@ -1,69 +1,156 @@
 #
-# SPDX-FileCopyrightText: © 2020-2024 Serpent OS Developers
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+# SPDX-FileCopyrightText: © 2025-     AerynOS Developers
 #
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : thunderbird
-version     : 136.0.1
-release     : 17
+version     : 146.0
+release     : 32
 homepage    : https://www.thunderbird.net/
 upstreams   :
-    - https://releases.mozilla.org/pub/thunderbird/releases/136.0.1/source/thunderbird-136.0.1.source.tar.xz : 687a2ca31d6f23bb68c2c225ef593ecd8dc025dad9a1a3ef44b0f19ed24b2ffe
+    - https://releases.mozilla.org/pub/thunderbird/releases/146.0/source/thunderbird-146.0.source.tar.xz:
+        hash: bd28bba1a10a709709eeaff40d605d523f58daf9f7c0d46798107129c1190c08
+        unpackdir: thunderbird
 summary     : Thunderbird Email Client
 description : |
     Thunderbird Email Client
 license     : MPL-2.0
 builddeps   :
     - binary(cbindgen)
-    - binary(cc)
-    - binary(g++)
+    - binary(dbus-run-session) # PGO
     - binary(m4)
     - binary(make)
     - binary(nasm)
-    - binary(npm)
-    - binary(objdump)
+    - binary(node)
     - binary(python3)
     - binary(rustc)
+    - binary(tar)
     - binary(unzip)
+    - binary(weston) # PGO
+    - binary(wlheadless-run) # PGO
     - pkgconfig(alsa)
+    - pkgconfig(gbm)
     - pkgconfig(gtk+-3.0)
-    - pkgconfig(ice)
+    - pkgconfig(icu-uc)
+    - pkgconfig(libdrm)
     - pkgconfig(libevent)
     - pkgconfig(libjpeg)
-    - pkgconfig(libpng)
+    - pkgconfig(libpipewire-0.3)
+    # - pkgconfig(libpng) # Not patched with APNG support
     - pkgconfig(libpulse)
+    - pkgconfig(librnp)
     - pkgconfig(libwebp)
     - pkgconfig(nspr)
     - pkgconfig(nss)
+    - pkgconfig(pango)
     - pkgconfig(pixman-1)
-    - pkgconfig(librnp)
-    - pkgconfig(sm)
     - pkgconfig(vpx)
-    - pkgconfig(zlib)
+    - pkgconfig(xkbcommon)
 rundeps     :
     - rnp
+    - thunderbird-langpacks
     - xdg-desktop-portal
+networking  : true # PGO
 environment : |
+    # Set this to 1 if you want to create a release build, 0 if you're just doing builds locally for testing purposes
+    # Note that you still need to do a full release build locally and test it before pushing it
+    # 2025-06-11: This seems to freeze during the tests for unknown reasons
+    FULL_BUILD=0
+
     export MOZ_NOSPAM=1
-    export MACH_BUILD_PYTHON_NATIVE_PACKAGE_SOURCE=pip
-    # Not working with libc++ 18, reevaluate with LLVM 19
-    export CXXFLAGS="${CXXFLAGS} -stdlib=libstdc++"
+    export PIP_NETWORK_INSTALL_RESTRICTED_VIRTUALENVS=mach
+    export MACH_BUILD_PYTHON_NATIVE_PACKAGE_SOURCE="none"
+    export MOZ_BUILD_DATE="$(date -u${SOURCE_DATE_EPOCH:+d @$SOURCE_DATE_EPOCH} +%%Y%%m%%d%%H%%M%%S)"
+
+    # sccache is currently broken with this build for unknown reasons. Disable it for now
+    # │B│  0:22.32 sccache: caused by: No such file or directory (os error 2)
+    # │B│  0:22.34 error: could not compile `unicode-ident` (lib)
+    unset RUSTC_WRAPPER
 setup       : |
-    # %patch %(pkgdir)/icu74.patch
-    %install_file %(pkgdir)/mozconfig .
+    # %patch %(pkgdir)/patches/pgo.patch
+    %patch %(pkgdir)/patches/0001-Fix-Firefox-Thunderbird-envvar-conflicts.patch
+    %patch %(pkgdir)/patches/0001-Allow-installing-addons-from-user-scope.patch
+    %patch %(pkgdir)/patches/0001-icu-78-build-fix.patch
+
+    cp %(pkgdir)/build/mozconfig .
+    sed -e 's|@@JOBCOUNT@@|%(jobs)|' -e 's|@@LIBDIR@@|%(libdir)|' -i mozconfig
+
+    if [ $FULL_BUILD -ne 0 ]; then
+        # PGO build, no LTO
+        echo "ac_add_options --enable-profile-generate=cross" >> mozconfig
+    else
+        # Might as well do it with LTO
+        echo "ac_add_options MOZ_LTO=cross,full" >> mozconfig
+        echo "ac_add_options --enable-lto=cross,full" >> mozconfig
+    fi
+
+    ./mach configure
 build       : |
     ./mach build
+    if [ $FULL_BUILD -ne 0 ]; then
+        ./mach package
+
+        # PGO
+        # Much of this taken from https://github.com/chaotic-aur/packages/blob/main/firefox-nightly/PKGBUILD
+        env \
+            LLVM_PROFDATA=llvm-profdata \
+            JARLOG_FILE="${PWD}/jarlog" \
+            XDG_RUNTIME_DIR="$(mktemp -p $(pwd) -d xdg-runtime-XXXXXX)" \
+            LIBGL_ALWAYS_SOFTWARE=true \
+            MOZ_DISABLE_CONTENT_SANDBOX=1 \
+            MOZ_DISABLE_GMP_SANDBOX=1 \
+            MOZ_DISABLE_GPU_SANDBOX=1 \
+            MOZ_DISABLE_RDD_SANDBOX=1 \
+            MOZ_DISABLE_SOCKET_PROCESS_SANDBOX=1 \
+            MOZ_DISABLE_UTILITY_SANDBOX=1 \
+            MOZ_DISABLE_VR_SANDBOX=1 \
+            GTK_A11Y=none \
+            NO_AT_BRIDGE=1 \
+            MOZ_REMOTE_SETTINGS_DEVTOOLS=1 \
+        dbus-run-session \
+            wlheadless-run \
+                -c weston --width=1920 --height=1080 \
+                -- ./mach python build/pgo/profileserver.py
+
+        # Make sure PGO data is present
+        stat -c "Profile data found (%%s bytes)" merged.profdata
+        test -s merged.profdata
+        stat -c "Jar log found (%%s bytes)" jarlog
+        test -s jarlog
+
+        # Delete instrumented browser
+        ./mach clobber objdir
+
+        # Reset mozconfig
+        rm mozconfig && cp %(pkgdir)/build/mozconfig .
+        sed -e 's|@@JOBCOUNT@@|%(jobs)|' -e 's|@@LIBDIR@@|%(libdir)|' -i mozconfig
+
+        # Enable LTO
+        echo "ac_add_options MOZ_LTO=cross,full" >> mozconfig
+        echo "ac_add_options --enable-lto=cross,full" >> mozconfig
+
+        # PGO
+        echo "ac_add_options --enable-profile-use=cross" >> mozconfig
+        echo "ac_add_options --with-pgo-profile-path=${PWD}/merged.profdata" >> mozconfig
+        echo "ac_add_options --with-pgo-jarlog=${PWD}/jarlog" >> mozconfig
+
+        ./mach build
+    fi
 install     : |
     DESTDIR=%(installroot) ./mach install
 
-    %install_file comm/mail/branding/thunderbird/default16.png %(installroot)%(datadir)/icons/hicolor/16x16/apps/thunderbird.png
-    %install_file comm/mail/branding/thunderbird/default22.png %(installroot)%(datadir)/icons/hicolor/22x22/apps/thunderbird.png
-    %install_file comm/mail/branding/thunderbird/default24.png %(installroot)%(datadir)/icons/hicolor/24x24/apps/thunderbird.png
-    %install_file comm/mail/branding/thunderbird/default32.png %(installroot)%(datadir)/icons/hicolor/32x32/apps/thunderbird.png
-    %install_file comm/mail/branding/thunderbird/default48.png %(installroot)%(datadir)/icons/hicolor/48x48/apps/thunderbird.png
-    %install_file comm/mail/branding/thunderbird/default128.png %(installroot)%(datadir)/icons/hicolor/128x128/apps/thunderbird.png
-    %install_file comm/mail/branding/thunderbird/default256.png %(installroot)%(datadir)/icons/hicolor/256x256/apps/thunderbird.png
-    %install_file %(pkgdir)/thunderbird-symbolic.svg %(installroot)%(datadir)/icons/hicolor/symbolic/apps/thunderbird-symbolic.svg
-    %install_file %(pkgdir)/thunderbird.desktop %(installroot)%(datadir)/applications/thunderbird.desktop
+    for i in 16 22 24 32 48 128 256; do
+        install -dm00755 %(installroot)/%(datadir)/icons/hicolor/${i}x${i}/apps
+        ln -srv %(installroot)/%(libdir)/thunderbird/chrome/icons/default/default${i}.png %(installroot)/%(datadir)/icons/hicolor/${i}x${i}/apps/net.thunderbird.Thunderbird.png
+    done
 
-    %install_file %(pkgdir)/distribution.ini %(installroot)%(libdir)/thunderbird/distribution/distribution.ini
+    %install_file %(pkgdir)/install/thunderbird-symbolic.svg %(installroot)%(datadir)/icons/hicolor/symbolic/apps/thunderbird-symbolic.svg
+    %install_file %(pkgdir)/install/net.thunderbird.Thunderbird.desktop %(installroot)%(datadir)/applications/net.thunderbird.Thunderbird.desktop
+
+    %install_file %(pkgdir)/install/distribution.ini %(installroot)%(libdir)/thunderbird/distribution/distribution.ini
+    %install_file %(pkgdir)/install/prefs.js %(installroot)/%(libdir)/thunderbird/defaults/pref/prefs.js
+
+    # Use a wrapper script to configure langpacks
+    rm -v %(installroot)/%(bindir)/thunderbird
+    install -D -m 00755 %(pkgdir)/install/thunderbird-wrapper.sh %(installroot)/%(bindir)/thunderbird

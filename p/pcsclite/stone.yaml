@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : pcsclite
-version     : 2.3.1
-release     : 1
+version     : 2.4.0
+release     : 4
 homepage    : https://pcsclite.apdu.fr
 upstreams   :
-    - https://github.com/LudovicRousseau/PCSC/archive/refs/tags/2.3.1.tar.gz : 7fcb59f66a323f63cf1ab492579a57d899806835c52ba377af9ac57df68bf39b
+    - https://github.com/LudovicRousseau/PCSC/archive/refs/tags/2.4.0.tar.gz : 3d20f3d23c29260fed9195529d30ec3e9f1db60a8a835b4be68716d97751f2e7
 summary     : PC/SC implementation
 description : |
     PC/SC implementation
@@ -20,6 +20,7 @@ license     :
 builddeps   :
     - binary(doxygen)
     - binary(flex)
+    - binary(pod2man)
     - pkgconfig(libsystemd)
     - pkgconfig(libudev)
     - pkgconfig(libusb-1.0)
@@ -31,4 +32,14 @@ build       : |
     %meson_build
 install     : |
     %meson_install
-    rm %(installroot)/%(libdir)/*.a
+packages    :
+    - "%(name)-libs":
+        paths:
+            - /usr/lib/libpcsclite.so.*
+            - /usr/lib/libpcsclite_real.so.*
+            - /usr/lib/libpcscspy.so.*
+
+    - "%(name)":
+        rundeps:
+            - "%(name)-libs"
+            - binary(python3) # pcsc-spy

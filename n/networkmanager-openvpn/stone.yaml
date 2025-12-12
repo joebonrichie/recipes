@@ -1,0 +1,52 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : networkmanager-openvpn
+version     : 1.12.3
+release     : 1
+upstreams   :
+    - https://download.gnome.org/sources/NetworkManager-openvpn/1.12/NetworkManager-openvpn-1.12.3.tar.xz : 4bda1c8559bb8c35f6f131c09edae90cdfccd0314e8b8cb98ac55e09b6005adc
+homepage    : https://www.gnome.org/projects/NetworkManager/
+license     : GPL-2.0-or-later
+summary     : NetworkManager VPN plugin for OpenVPN
+description : |
+    This package contains software for integrating VPN capabilities with
+    the OpenVPN server with NetworkManager.
+builddeps   :
+    - binary(msgfmt)
+    - pkgconfig(glib-2.0)
+    - pkgconfig(gmodule-2.0)
+    - pkgconfig(gtk+-3.0)
+    - pkgconfig(gtk4)
+    - pkgconfig(libnma)
+    - pkgconfig(libnma-gtk4)
+    - pkgconfig(libsecret-1)
+setup       : |
+    %configure \
+        --with-dist-version=%(version)-%(release) \
+        --with-gtk4
+build       : |
+    %make
+install     : |
+    %make_install
+
+    %sysusers "u nm-openvpn - 'Default user for running openvpn spawned by NetworkManager' - -"
+packages    :
+    - "%(name)":
+        rundeps:
+            - networkmanager
+            - openvpn
+
+    - "%(name)-gnome":
+        summary: NetworkManager VPN plugin for OpenVPN - GNOME files
+        description: NetworkManager VPN plugin for OpenVPN - GNOME files
+        rundeps:
+            - "%(name)"
+            - shared-mime-info
+        paths:
+            - /usr/lib/networkmanager-openvpn/nm-openvpn-auth-dialog
+            - /usr/lib/NetworkManager/libnm-gtk4-vpn-plugin-openvpn-editor.so
+            - /usr/lib/NetworkManager/libnm-vpn-plugin-openvpn-editor.so
+            - /usr/share/metainfo/network-manager-openvpn.metainfo.xml

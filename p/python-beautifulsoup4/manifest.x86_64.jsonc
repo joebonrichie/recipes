@@ -1,0 +1,76 @@
+/** Human readable report. This is not consumed by boulder */
+{
+	"manifest-version": "0.2",
+	"packages": {
+		"python-beautifulsoup4": {
+			"build-depends": [
+				"python(hatchling)"
+			],
+			"depends": [
+				"python(soupsieve)",
+				"python(typing-extensions)",
+				"python-libs"
+			],
+			"files": [
+				"/usr/lib/python3.11/site-packages/beautifulsoup4-4.14.2.dist-info/METADATA",
+				"/usr/lib/python3.11/site-packages/beautifulsoup4-4.14.2.dist-info/RECORD",
+				"/usr/lib/python3.11/site-packages/beautifulsoup4-4.14.2.dist-info/WHEEL",
+				"/usr/lib/python3.11/site-packages/beautifulsoup4-4.14.2.dist-info/licenses/AUTHORS",
+				"/usr/lib/python3.11/site-packages/beautifulsoup4-4.14.2.dist-info/licenses/LICENSE",
+				"/usr/lib/python3.11/site-packages/bs4/__init__.py",
+				"/usr/lib/python3.11/site-packages/bs4/__pycache__/__init__.cpython-311.opt-1.pyc",
+				"/usr/lib/python3.11/site-packages/bs4/__pycache__/__init__.cpython-311.pyc",
+				"/usr/lib/python3.11/site-packages/bs4/__pycache__/_deprecation.cpython-311.opt-1.pyc",
+				"/usr/lib/python3.11/site-packages/bs4/__pycache__/_deprecation.cpython-311.pyc",
+				"/usr/lib/python3.11/site-packages/bs4/__pycache__/_typing.cpython-311.opt-1.pyc",
+				"/usr/lib/python3.11/site-packages/bs4/__pycache__/_typing.cpython-311.pyc",
+				"/usr/lib/python3.11/site-packages/bs4/__pycache__/_warnings.cpython-311.opt-1.pyc",
+				"/usr/lib/python3.11/site-packages/bs4/__pycache__/_warnings.cpython-311.pyc",
+				"/usr/lib/python3.11/site-packages/bs4/__pycache__/css.cpython-311.opt-1.pyc",
+				"/usr/lib/python3.11/site-packages/bs4/__pycache__/css.cpython-311.pyc",
+				"/usr/lib/python3.11/site-packages/bs4/__pycache__/dammit.cpython-311.opt-1.pyc",
+				"/usr/lib/python3.11/site-packages/bs4/__pycache__/dammit.cpython-311.pyc",
+				"/usr/lib/python3.11/site-packages/bs4/__pycache__/diagnose.cpython-311.opt-1.pyc",
+				"/usr/lib/python3.11/site-packages/bs4/__pycache__/diagnose.cpython-311.pyc",
+				"/usr/lib/python3.11/site-packages/bs4/__pycache__/element.cpython-311.opt-1.pyc",
+				"/usr/lib/python3.11/site-packages/bs4/__pycache__/element.cpython-311.pyc",
+				"/usr/lib/python3.11/site-packages/bs4/__pycache__/exceptions.cpython-311.opt-1.pyc",
+				"/usr/lib/python3.11/site-packages/bs4/__pycache__/exceptions.cpython-311.pyc",
+				"/usr/lib/python3.11/site-packages/bs4/__pycache__/filter.cpython-311.opt-1.pyc",
+				"/usr/lib/python3.11/site-packages/bs4/__pycache__/filter.cpython-311.pyc",
+				"/usr/lib/python3.11/site-packages/bs4/__pycache__/formatter.cpython-311.opt-1.pyc",
+				"/usr/lib/python3.11/site-packages/bs4/__pycache__/formatter.cpython-311.pyc",
+				"/usr/lib/python3.11/site-packages/bs4/_deprecation.py",
+				"/usr/lib/python3.11/site-packages/bs4/_typing.py",
+				"/usr/lib/python3.11/site-packages/bs4/_warnings.py",
+				"/usr/lib/python3.11/site-packages/bs4/builder/__init__.py",
+				"/usr/lib/python3.11/site-packages/bs4/builder/__pycache__/__init__.cpython-311.opt-1.pyc",
+				"/usr/lib/python3.11/site-packages/bs4/builder/__pycache__/__init__.cpython-311.pyc",
+				"/usr/lib/python3.11/site-packages/bs4/builder/__pycache__/_html5lib.cpython-311.opt-1.pyc",
+				"/usr/lib/python3.11/site-packages/bs4/builder/__pycache__/_html5lib.cpython-311.pyc",
+				"/usr/lib/python3.11/site-packages/bs4/builder/__pycache__/_htmlparser.cpython-311.opt-1.pyc",
+				"/usr/lib/python3.11/site-packages/bs4/builder/__pycache__/_htmlparser.cpython-311.pyc",
+				"/usr/lib/python3.11/site-packages/bs4/builder/__pycache__/_lxml.cpython-311.opt-1.pyc",
+				"/usr/lib/python3.11/site-packages/bs4/builder/__pycache__/_lxml.cpython-311.pyc",
+				"/usr/lib/python3.11/site-packages/bs4/builder/_html5lib.py",
+				"/usr/lib/python3.11/site-packages/bs4/builder/_htmlparser.py",
+				"/usr/lib/python3.11/site-packages/bs4/builder/_lxml.py",
+				"/usr/lib/python3.11/site-packages/bs4/css.py",
+				"/usr/lib/python3.11/site-packages/bs4/dammit.py",
+				"/usr/lib/python3.11/site-packages/bs4/diagnose.py",
+				"/usr/lib/python3.11/site-packages/bs4/element.py",
+				"/usr/lib/python3.11/site-packages/bs4/exceptions.py",
+				"/usr/lib/python3.11/site-packages/bs4/filter.py",
+				"/usr/lib/python3.11/site-packages/bs4/formatter.py",
+				"/usr/lib/python3.11/site-packages/bs4/py.typed"
+			],
+			"name": "python-beautifulsoup4",
+			"provides": [
+				"python(beautifulsoup4)"
+			]
+		}
+	},
+	"source-name": "python-beautifulsoup4",
+	"source-release": "2",
+	"source-version": "4.14.2"
+}

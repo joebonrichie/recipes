@@ -4,17 +4,16 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : cosmic-greeter
-version     : 1.0.0-alpha.6
-release     : 17
+version     : 1.0.0-git+d5c4746
+release     : 32
 summary     : Cosmic Desktop Greeter
 license     : GPL-3.0
 homepage    : https://github.com/pop-os/cosmic-greeter
 upstreams   :
-    - git|https://github.com/pop-os/cosmic-greeter.git : 5527c9b866d45baa6f0dbd55778a3f57466391ab
+    - git|https://github.com/pop-os/cosmic-greeter.git : d5c4746a5a640bf65aa2fde9843e8bc3c0250175
 description : |
     Cosmic Desktop Greeter
 builddeps   :
-    - binary(cargo)
     - binary(just)
     - pkgconfig(dbus-1)
     - pkgconfig(libinput)
@@ -26,9 +25,9 @@ builddeps   :
 rundeps     :
     - binary(greetd)
     - cosmic-wallpapers
+    # Temporary workaround until we have some kind of virtual package that defines the base system
+    - linux-pam
 networking  : yes
-tuning      :
-    - lto: thin
 setup       : |
     %cargo_fetch
     %patch %(pkgdir)/0001-debian-Port-sample-service-pam-to-Serpent-OS.patch
@@ -50,4 +49,4 @@ install     : |
     %install_file %(pkgdir)/cosmic-greeter.toml %(installroot)%(datadir)/greetd/cosmic-greeter.toml
 
     # pam bits
-    %install_file debian/cosmic-greeter.pam %(installroot)%(vendordir)%(sysconfdir)/pam.d/cosmic-greeter
+    %install_file debian/cosmic-greeter.pam %(installroot)%(vendordir)/pam.d/cosmic-greeter

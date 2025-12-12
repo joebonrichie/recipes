@@ -4,10 +4,10 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : kf6-kcodecs
-version     : 6.12.0
-release     : 3
+version     : 6.20.0
+release     : 12
 upstreams   :
-    - https://download.kde.org/stable/frameworks/6.12/kcodecs-6.12.0.tar.xz : 6e5852954a9e83750e346f8603e8146010cdc8d7d544a5e5d5eb46d93c94a911
+    - https://download.kde.org/stable/frameworks/6.20/kcodecs-6.20.0.tar.xz : 15920b9a859341b13831e6ed49baceea2e728c796fdd082128e51f8e127ff3a0
 homepage    : https://community.kde.org/Frameworks
 license     :
     - BSD-3-Clause

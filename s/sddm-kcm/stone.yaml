@@ -1,0 +1,36 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : sddm-kcm
+version     : 6.5.4
+release     : 11
+upstreams   :
+    - https://download.kde.org/stable/plasma/6.5.4/sddm-kcm-6.5.4.tar.xz : e09f9c61b589d1e180e445d3098c8d2ee690ff926566ae7dc3a201d410afdeb7
+homepage    : https://kde.org/plasma-desktop/
+license     : GPL-2.0-or-later
+summary     : Config module for SDDM
+description : |
+    Hosts the KCM module for SDDM. This module allows for configuring SDDM in Plasma System Settings.
+builddeps   :
+    # Temporary, boulder doesn't handle build ordering resolution correctly when builddeps are added by macros, so add ECM manually
+    - cmake(ECM)
+    - cmake(KF6CoreAddons)
+    - cmake(KF6Auth)
+    - cmake(KF6KIO)
+    - cmake(KF6I18n)
+    - cmake(KF6Archive)
+    - cmake(KF6NewStuff)
+    - cmake(KF6KCMUtils)
+    - cmake(KF6Service)
+    - cmake(Qt6Quick)
+tuning      :
+    - lto: full
+    - optimize: speed
+setup       : |
+    %cmake_kf6
+build       : |
+    %cmake_build
+install     : |
+    %cmake_install

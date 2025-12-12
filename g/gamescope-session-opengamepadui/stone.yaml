@@ -5,7 +5,7 @@
 #
 name        : gamescope-session-opengamepadui
 version     : r22.f9aafe5
-release     : 1
+release     : 2
 homepage    : https://github.com/ShadowBlip/gamescope-session-opengamepadui
 upstreams   :
     - git|https://github.com/ShadowBlip/gamescope-session-opengamepadui.git : f9aafe5fd7ec7adedf7e7cd06d03709e5ec601ef

@@ -4,15 +4,15 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : gnu-efi
-version     : 4.0.0
-release     : 3
+version     : 4.0.4
+release     : 6
 summary     : EFI development library
 license     : BSD
 homepage    : https://sourceforge.net/projects/gnu-efi/
 description : |
     Develop EFI applications for ARM-64, ARM-32, x86_64, IA-64 (IPF), and IA-32 (x86) platforms using the GNU toolchain and the EFI development environment.
 upstreams   :
-    - https://github.com/ncroxon/gnu-efi/archive/refs/tags/4.0.0.tar.gz: a2e5dfd25e7fc0cd2027d75dc2517b4c74d94f801ff4784eca557ac1b9835899
+    - https://github.com/ncroxon/gnu-efi/archive/refs/tags/4.0.4.tar.gz: 40b61e842a4efcbf80f3e53b2f220c044e8cfe46eb4dd6396c83b751240b1c0d
 builddeps   :
     - binary(objcopy) # llvm-objcopy does not support EFI targets
 environment : |

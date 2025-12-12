@@ -4,12 +4,12 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : qt5-tools
-version     : 5.15.16+kde.15deb8f2
-release     : 7
+version     : 5.15.18+kde.fa40a2d3
+release     : 13
 homepage    : https://www.qt.io
 upstreams   :
     - git|https://invent.kde.org/qt/qt/qttools.git:
-        ref: 15deb8f202b838b4dd1b2ff84e852171e8587881
+        ref: fa40a2d3373b89be0cd0a43fe0c1d047e3d34058
         # Relative submodules
         staging: no
 summary     : Qt5 QtTools Module

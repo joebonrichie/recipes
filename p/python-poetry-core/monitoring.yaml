@@ -1,0 +1,7 @@
+releases:
+  id: 71155
+  rss: https://github.com/python-poetry/poetry-core/releases.atom
+security:
+  cpe:
+  - vendor: python-poetry
+    product: poetry

@@ -1,0 +1,7 @@
+releases:
+  id: 6529
+  rss: https://pypi.org/rss/project/pip/releases.xml
+security:
+  cpe:
+  - vendor: pypa
+    product: pip

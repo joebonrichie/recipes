@@ -5,7 +5,7 @@
 #
 name        : xdg-desktop-portal-gtk
 version     : 1.15.3
-release     : 3
+release     : 4
 homepage    : https://github.com/flatpak/xdg-desktop-portal-gtk
 upstreams   :
     - https://github.com/flatpak/xdg-desktop-portal-gtk/releases/download/1.15.3/xdg-desktop-portal-gtk-1.15.3.tar.xz : 47a3743d2419a8601e691db37e85bb5fac5ae4b26842177065cd5f22ada23b37

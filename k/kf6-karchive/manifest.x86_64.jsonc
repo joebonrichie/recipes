@@ -5,20 +5,23 @@
 		"kf6-karchive": {
 			"build-depends": [
 				"cmake(ECM)",
-				"pkgconfig(bzip2)"
+				"pkgconfig(bzip2)",
+				"pkgconfig(liblzma)",
+				"pkgconfig(openssl)"
 			],
 			"depends": [
 				"soname(libQt6Core.so.6(x86_64))",
 				"soname(libbz2.so.1.0(x86_64))",
-				"soname(libc++.so.1(x86_64))",
 				"soname(libc.so.6(x86_64))",
+				"soname(libcrypto.so.3(x86_64))",
 				"soname(liblzma.so.5(x86_64))",
+				"soname(libstdc++.so.6(x86_64))",
 				"soname(libz.so.1(x86_64))",
 				"soname(libzstd.so.1(x86_64))"
 			],
 			"files": [
 				"/usr/lib/libKF6Archive.so.6",
-				"/usr/lib/libKF6Archive.so.6.12.0",
+				"/usr/lib/libKF6Archive.so.6.20.0",
 				"/usr/share/locale/ar/LC_MESSAGES/karchive6_qt.qm",
 				"/usr/share/locale/ast/LC_MESSAGES/karchive6_qt.qm",
 				"/usr/share/locale/bg/LC_MESSAGES/karchive6_qt.qm",
@@ -49,6 +52,7 @@
 				"/usr/share/locale/pa/LC_MESSAGES/karchive6_qt.qm",
 				"/usr/share/locale/pl/LC_MESSAGES/karchive6_qt.qm",
 				"/usr/share/locale/pt/LC_MESSAGES/karchive6_qt.qm",
+				"/usr/share/locale/pt_BR/LC_MESSAGES/karchive6_qt.qm",
 				"/usr/share/locale/ro/LC_MESSAGES/karchive6_qt.qm",
 				"/usr/share/locale/ru/LC_MESSAGES/karchive6_qt.qm",
 				"/usr/share/locale/sa/LC_MESSAGES/karchive6_qt.qm",
@@ -71,7 +75,9 @@
 		"kf6-karchive-devel": {
 			"build-depends": [
 				"cmake(ECM)",
-				"pkgconfig(bzip2)"
+				"pkgconfig(bzip2)",
+				"pkgconfig(liblzma)",
+				"pkgconfig(openssl)"
 			],
 			"depends": [
 				"kf6-karchive"
@@ -105,12 +111,9 @@
 				"/usr/include/KF6/KArchive/kzipfileentry.h",
 				"/usr/lib/cmake/KF6Archive/KF6ArchiveConfig.cmake",
 				"/usr/lib/cmake/KF6Archive/KF6ArchiveConfigVersion.cmake",
-				"/usr/lib/cmake/KF6Archive/KF6ArchiveQchTargets.cmake",
 				"/usr/lib/cmake/KF6Archive/KF6ArchiveTargets-release.cmake",
 				"/usr/lib/cmake/KF6Archive/KF6ArchiveTargets.cmake",
-				"/usr/lib/libKF6Archive.so",
-				"/usr/share/doc/qt6/KF6Archive.qch",
-				"/usr/share/doc/qt6/KF6Archive.tags"
+				"/usr/lib/libKF6Archive.so"
 			],
 			"name": "kf6-karchive-devel",
 			"provides": [
@@ -119,6 +122,6 @@
 		}
 	},
 	"source-name": "kf6-karchive",
-	"source-release": "3",
-	"source-version": "6.12.0"
+	"source-release": "14",
+	"source-version": "6.20.0"
 }

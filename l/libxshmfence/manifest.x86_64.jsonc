@@ -32,8 +32,7 @@
 			],
 			"name": "libxshmfence-32bit",
 			"provides": [
-				"soname(libxshmfence.so.1(386))",
-				"soname(libxshmfence.so.1(x86))"
+				"soname(libxshmfence.so.1(386))"
 			]
 		},
 		"libxshmfence-32bit-devel": {
@@ -72,6 +71,6 @@
 		}
 	},
 	"source-name": "libxshmfence",
-	"source-release": "3",
+	"source-release": "4",
 	"source-version": "1.3.3"
 }

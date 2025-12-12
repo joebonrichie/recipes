@@ -26,9 +26,7 @@
 				"/usr/lib/libgnome-autoar-0.so.0",
 				"/usr/lib/libgnome-autoar-0.so.0.2.1",
 				"/usr/lib/libgnome-autoar-gtk-0.so.0",
-				"/usr/lib/libgnome-autoar-gtk-0.so.0.2.1",
-				"/usr/share/gir-1.0/GnomeAutoar-0.1.gir",
-				"/usr/share/gir-1.0/GnomeAutoarGtk-0.1.gir"
+				"/usr/lib/libgnome-autoar-gtk-0.so.0.2.1"
 			],
 			"name": "gnome-autoar",
 			"provides": [
@@ -67,6 +65,8 @@
 				"/usr/lib/libgnome-autoar-gtk-0.so",
 				"/usr/lib/pkgconfig/gnome-autoar-0.pc",
 				"/usr/lib/pkgconfig/gnome-autoar-gtk-0.pc",
+				"/usr/share/gir-1.0/GnomeAutoar-0.1.gir",
+				"/usr/share/gir-1.0/GnomeAutoarGtk-0.1.gir",
 				"/usr/share/vala/vapi/gnome-autoar-0.deps",
 				"/usr/share/vala/vapi/gnome-autoar-0.vapi",
 				"/usr/share/vala/vapi/gnome-autoar-gtk-0.deps",
@@ -80,6 +80,6 @@
 		}
 	},
 	"source-name": "gnome-autoar",
-	"source-release": "2",
+	"source-release": "3",
 	"source-version": "0.4.5"
 }

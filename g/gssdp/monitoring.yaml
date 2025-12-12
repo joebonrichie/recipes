@@ -1,0 +1,5 @@
+releases:
+  id: 1262
+  rss: https://gitlab.gnome.org/GNOME/gssdp/-/tags?format=atom
+security:
+  cpe: ~ # Last checked 2025-03-27

@@ -1,0 +1,49 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : sof-bin
+version     : "2025.05.1"
+release     : 1
+upstreams   :
+    - https://github.com/thesofproject/sof-bin/releases/download/v2025.05.1/sof-bin-2025.05.1.tar.gz : 60d54eae32694332a2120b7c44e4af403a14fe1fdf4c58d72981102b191d259c
+homepage    : https://www.sofproject.org
+license     :
+    - BSD-3-Clause
+    - ISC
+summary     : Sound Open Firmware
+description : |
+    Sound Open Firmware
+builddeps   :
+    - binary(find)
+    - binary(rsync)
+# Make sure none of the signed firmware gets stripped
+debug       : false
+strip       : false
+install     : |
+    %install_dir %(installroot)%(libdir)/firmware/intel %(installroot)%(bindir)
+
+    FW_DEST="%(installroot)%(libdir)/firmware/intel" \
+    TOOLS_DEST="%(installroot)%(bindir)" \
+      ./install.sh
+
+    # Fix permissions
+    find %(installroot) -type d -exec chmod 755 {} +
+
+    # Respect SOURCE_DATE_EPOCH
+    find %(installroot) -exec touch --date="@$SOURCE_DATE_EPOCH" --no-dereference {} +
+packages    :
+    - "sof-firmware":
+        summary     : Sound Open Firmware
+        description : Sound Open Firmware
+        paths:
+            - /usr/lib/firmware/
+
+    - "sof-tools":
+        summary     : Sound Open Firmware - tools
+        description : Sound Open Firmware - tools
+        rundeps:
+            - binary(python3)
+        paths:
+            - /usr/bin/

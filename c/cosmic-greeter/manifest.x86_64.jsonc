@@ -4,7 +4,6 @@
 	"packages": {
 		"cosmic-greeter": {
 			"build-depends": [
-				"binary(cargo)",
 				"binary(just)",
 				"clang-devel",
 				"pkgconfig(dbus-1)",
@@ -18,16 +17,18 @@
 				"binary(greetd)",
 				"cosmic-wallpapers",
 				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
+				"linux-pam",
 				"soname(ld-linux-x86-64.so.2(x86_64))",
 				"soname(libc.so.6(x86_64))",
+				"soname(libgcc_s.so.1(x86_64))",
 				"soname(libm.so.6(x86_64))",
 				"soname(libpam.so.0(x86_64))",
-				"soname(libunwind.so.1(x86_64))",
 				"soname(libxkbcommon.so.0(x86_64))"
 			],
 			"files": [
 				"/usr/bin/cosmic-greeter",
 				"/usr/bin/cosmic-greeter-daemon",
+				"/usr/bin/cosmic-greeter-start",
 				"/usr/lib/systemd/system/cosmic-greeter-daemon.service",
 				"/usr/lib/systemd/system/cosmic-greeter.service",
 				"/usr/lib/tmpfiles.d/cosmic-greeter.conf",
@@ -36,17 +37,18 @@
 				"/usr/lib/userdb/cosmic-greeter.group",
 				"/usr/lib/userdb/cosmic-greeter.user",
 				"/usr/share/dbus-1/system.d/com.system76.CosmicGreeter.conf",
-				"/usr/share/defaults/etc/pam.d/cosmic-greeter",
+				"/usr/share/defaults/pam.d/cosmic-greeter",
 				"/usr/share/greetd/cosmic-greeter.toml"
 			],
 			"name": "cosmic-greeter",
 			"provides": [
 				"binary(cosmic-greeter)",
-				"binary(cosmic-greeter-daemon)"
+				"binary(cosmic-greeter-daemon)",
+				"binary(cosmic-greeter-start)"
 			]
 		}
 	},
 	"source-name": "cosmic-greeter",
-	"source-release": "17",
-	"source-version": "1.0.0-alpha.6"
+	"source-release": "32",
+	"source-version": "1.0.0-git+d5c4746"
 }

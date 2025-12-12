@@ -1,0 +1,31 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : python-dbus
+version     : 1.4.0
+release     : 1
+homepage    : https://www.freedesktop.org/wiki/Software/DBusBindings/
+upstreams   :
+    - https://dbus.freedesktop.org/releases/dbus-python/dbus-python-1.4.0.tar.xz : c36b28f10ffcc8f1f798aca973bcc132f91f33eb9b6b8904381b4077766043d5
+license     : MIT
+summary     : D-Bus module for Python
+description : |
+    Easy access to dbus from Python
+builddeps   :
+    - pkgconfig(dbus-1)
+    - pkgconfig(glib-2.0)
+    - pkgconfig(python3)
+    - python(pyproject-metadata)
+setup      : |
+    %meson
+build      : |
+    %meson_build
+install    : |
+    %meson_install
+    %python_compile
+
+    sitepkg=$(python -c 'import site; print(site.getsitepackages()[0])')
+    %install_dir %(installroot)$sitepkg/dbus_python.egg-info/
+    cp -rv dbus_python.egg-info/* %(installroot)$sitepkg/dbus_python.egg-info/

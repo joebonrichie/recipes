@@ -14,12 +14,12 @@
 				"pkgconfig(xkbcommon)"
 			],
 			"depends": [
-				"soname(libc++.so.1(x86_64))",
 				"soname(libc.so.6(x86_64))",
 				"soname(libepoxy.so.0(x86_64))",
 				"soname(libgio-2.0.so.0(x86_64))",
 				"soname(libglib-2.0.so.0(x86_64))",
 				"soname(libgobject-2.0.so.0(x86_64))",
+				"soname(libstdc++.so.6(x86_64))",
 				"soname(libwayland-client.so.0(x86_64))",
 				"soname(libwayland-egl.so.1(x86_64))",
 				"soname(libwayland-server.so.0(x86_64))",
@@ -27,7 +27,7 @@
 			],
 			"files": [
 				"/usr/lib/libWPEBackend-fdo-1.0.so.1",
-				"/usr/lib/libWPEBackend-fdo-1.0.so.1.9.4"
+				"/usr/lib/libWPEBackend-fdo-1.0.so.1.10.2"
 			],
 			"name": "wpebackend-fdo",
 			"provides": [
@@ -46,7 +46,8 @@
 				"pkgconfig(xkbcommon)"
 			],
 			"depends": [
-				"pkgconfig(wpe-1.0)"
+				"pkgconfig(wpe-1.0)",
+				"wpebackend-fdo"
 			],
 			"files": [
 				"/usr/include/wpe-fdo-1.0/wpe/exported-buffer-shm.h",
@@ -79,6 +80,6 @@
 		}
 	},
 	"source-name": "wpebackend-fdo",
-	"source-release": "1",
-	"source-version": "1.14.2"
+	"source-release": "5",
+	"source-version": "1.16.1"
 }

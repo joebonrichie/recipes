@@ -4,15 +4,15 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : gettext
-version     : 0.23.1
-release     : 5
+version     : '0.26'
+release     : 10
 summary     : GNU locale utilities
 license     : GPL-3.0-or-later
 homepage    : https://www.gnu.org/software/gettext/gettext.html
 description : |
     GNU locale utilities.
 upstreams   :
-    - https://mirrors.kernel.org/gnu/gettext/gettext-0.23.1.tar.gz : 52a578960fe308742367d75cd1dff8552c5797bd0beba7639e12bdcda28c0e49
+    - https://mirrors.kernel.org/gnu/gettext/gettext-0.26.tar.gz : 39acf4b0371e9b110b60005562aace5b3631fed9b1bb9ecccfc7f56e58bb1d7f
 builddeps   :
     - pkgconfig(libxml-2.0)
     - pkgconfig(ncursesw)
@@ -20,7 +20,8 @@ builddeps   :
 checkdeps   :
     - binary(gzip)
 setup       : |
-    %configure --disable-static
+    %configure \
+        --disable-static
 build       : |
     %make
 install     : |
@@ -32,6 +33,59 @@ check       : |
     # FAIL: test-ctype_alnum test-ctype_alpha test-ctype_graph test-ctype_print test-ctype_punct
     %make check || :
 packages    :
+    - "%(name)-libs":
+        summary: "Library files for %(name)"
+        description: |
+            Library files for %(name), typically pulled in as a dependency of another package.
+        paths:
+            - /usr/lib/libasprintf.so.0*
+            - /usr/lib/libgettextpo.so.0*
+            - /usr/lib/libgettextlib-0.*.so
+            - /usr/lib/libgettextsrc-0.*.so
+
+    # Moss upgrade workaround
+    - "%(name)":
+        rundeps:
+            - "%(name)-libs"
+
+    - "%(name)-devel":
+        paths:
+            - /usr/bin/autopoint
+            - /usr/bin/gettextize
+            - /usr/lib/preloadable_libintl.so
+            - /usr/share/gettext/config.rpath
+            - /usr/share/gettext/*.h
+            - /usr/share/gettext/msgunfmt*
+            - /usr/share/gettext/m4
+            - /usr/share/gettext/projects
+            - /usr/share/gettext/javaversion.class
+            - /usr/share/info/autosprintf*
+            - /usr/share/man/man1/autopoint*
+            - /usr/share/man/man1/gettextize*
+
     - "%(name)-docs":
         paths:
             - /usr/share/doc/*
+
+    - "envsubst":
+        summary: Substitutes the values of environment variables
+        description: Substitutes the values of environment variables
+        paths:
+            - /usr/bin/envsubst
+            - /usr/share/man/man1/envsubst*
+
+    - "libtextstyle":
+        summary: Text styling library
+        description: Text styling library
+        paths:
+            - /usr/lib/libtextstyle.so.*
+
+    - "libtextstyle-devel":
+        summary: Text styling library - devel package
+        description: Text styling library - devel package
+        paths:
+            - /usr/include/textstyle.h
+            - /usr/include/textstyle/
+            - /usr/lib/libtextstyle.so
+            - /usr/share/info/libtextstyle*
+            - /usr/share/doc/libtextstyle

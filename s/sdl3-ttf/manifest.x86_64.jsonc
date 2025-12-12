@@ -1,0 +1,61 @@
+/** Human readable report. This is not consumed by boulder */
+{
+	"manifest-version": "0.2",
+	"packages": {
+		"sdl3-ttf": {
+			"build-depends": [
+				"pkgconfig(freetype2)",
+				"pkgconfig(sdl3)"
+			],
+			"depends": [
+				"soname(libSDL3.so.0(x86_64))",
+				"soname(libc.so.6(x86_64))",
+				"soname(libfreetype.so.6(x86_64))",
+				"soname(libharfbuzz.so.0(x86_64))"
+			],
+			"files": [
+				"/usr/lib/libSDL3_ttf.so.0",
+				"/usr/lib/libSDL3_ttf.so.0.2.2",
+				"/usr/share/licenses/SDL3_ttf/LICENSE.txt"
+			],
+			"name": "sdl3-ttf",
+			"provides": [
+				"soname(libSDL3_ttf.so.0(x86_64))"
+			]
+		},
+		"sdl3-ttf-devel": {
+			"build-depends": [
+				"pkgconfig(freetype2)",
+				"pkgconfig(sdl3)"
+			],
+			"depends": [
+				"pkgconfig(freetype2)",
+				"pkgconfig(harfbuzz)",
+				"pkgconfig(sdl3)",
+				"sdl3-ttf"
+			],
+			"files": [
+				"/usr/include/SDL3_ttf/SDL_textengine.h",
+				"/usr/include/SDL3_ttf/SDL_ttf.h",
+				"/usr/lib/cmake/SDL3_ttf/Findharfbuzz.cmake",
+				"/usr/lib/cmake/SDL3_ttf/Findplutosvg.cmake",
+				"/usr/lib/cmake/SDL3_ttf/Findplutovg.cmake",
+				"/usr/lib/cmake/SDL3_ttf/PkgConfigHelper.cmake",
+				"/usr/lib/cmake/SDL3_ttf/SDL3_ttf-shared-targets-release.cmake",
+				"/usr/lib/cmake/SDL3_ttf/SDL3_ttf-shared-targets.cmake",
+				"/usr/lib/cmake/SDL3_ttf/SDL3_ttfConfig.cmake",
+				"/usr/lib/cmake/SDL3_ttf/SDL3_ttfConfigVersion.cmake",
+				"/usr/lib/libSDL3_ttf.so",
+				"/usr/lib/pkgconfig/sdl3-ttf.pc"
+			],
+			"name": "sdl3-ttf-devel",
+			"provides": [
+				"cmake(SDL3_ttf)",
+				"pkgconfig(sdl3-ttf)"
+			]
+		}
+	},
+	"source-name": "sdl3-ttf",
+	"source-release": "1",
+	"source-version": "3.2.2"
+}

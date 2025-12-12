@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : gjs
-version     : 1.84.1
-release     : 7
+version     : 1.86.0
+release     : 12
 homepage    : https://gitlab.gnome.org/GNOME/gjs
 upstreams   :
-    - https://download.gnome.org/sources/gjs/1.84/gjs-1.84.1.tar.xz : 44796b91318dbbe221a13909f00fd872ef92f38c68603e0e3574e46bc6bac32c
+    - https://download.gnome.org/sources/gjs/1.86/gjs-1.86.0.tar.xz : 63448f7a57804d4c2a8d0c7f5e90e224d04d4eb2d560142c076c65a8eda00799
 summary     : GNOME Javascript Bindings
 description : |
     GNOME JavaScript bindings and `gjs` interpreter
@@ -33,17 +33,37 @@ builddeps   :
     - pkgconfig(gobject-2.0)
     - pkgconfig(gobject-introspection-1.0)
     - pkgconfig(gthread-2.0)
+    - pkgconfig(gtk4)
     - pkgconfig(libffi)
-    - pkgconfig(mozjs-128)
+    - pkgconfig(mozjs-140)
+    - pkgconfig(readline)
+    - pkgconfig(sysprof-capture-4)
+    # Dtrace
 checkdeps   :
     - pkgconfig(gtk+-3.0)
 tuning      :
     - symbolic: false
 setup       : |
-    %meson -Dinstalled_tests=false
+    %meson \
+        -Dinstalled_tests=false
 build       : |
     %meson_build
 install     : |
     %meson_install
 check       : |
     %meson_test || :
+packages    :
+    - "%(name)":
+        rundeps:
+            - gobject-introspection-runtime
+
+    - "%(name)-devel":
+        paths:
+            - /usr/share/gjs-1.0/lsan/
+            - /usr/share/gjs-1.0/valgrind/
+
+    - "%(name)-tests":
+        summary: Tests for the %(name) package
+        description: Tests for the %(name) package
+        paths:
+            - /usr/lib/gjs/installed-tests/

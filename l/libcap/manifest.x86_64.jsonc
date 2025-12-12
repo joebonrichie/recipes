@@ -2,8 +2,24 @@
 {
 	"manifest-version": "0.2",
 	"packages": {
+		"captree": {
+			"build-depends": [
+				"binary(go)",
+				"linux-headers",
+				"pkgconfig32(pam)"
+			],
+			"files": [
+				"/usr/sbin/captree",
+				"/usr/share/man/man8/captree.8"
+			],
+			"name": "captree",
+			"provides": [
+				"sysbinary(captree)"
+			]
+		},
 		"libcap": {
 			"build-depends": [
+				"binary(go)",
 				"linux-headers",
 				"pkgconfig32(pam)"
 			],
@@ -14,9 +30,9 @@
 			],
 			"files": [
 				"/usr/lib/libcap.so.2",
-				"/usr/lib/libcap.so.2.71",
+				"/usr/lib/libcap.so.2.77",
 				"/usr/lib/libpsx.so.2",
-				"/usr/lib/libpsx.so.2.71",
+				"/usr/lib/libpsx.so.2.77",
 				"/usr/lib/security/pam_cap.so",
 				"/usr/sbin/capsh",
 				"/usr/sbin/getcap",
@@ -24,7 +40,7 @@
 				"/usr/sbin/setcap",
 				"/usr/share/man/man1/capsh.1",
 				"/usr/share/man/man5/capability.conf.5",
-				"/usr/share/man/man8/captree.8",
+				"/usr/share/man/man7/cap_text_formats.7",
 				"/usr/share/man/man8/getcap.8",
 				"/usr/share/man/man8/getpcaps.8",
 				"/usr/share/man/man8/pam_cap.8",
@@ -43,6 +59,7 @@
 		},
 		"libcap-32bit": {
 			"build-depends": [
+				"binary(go)",
 				"linux-headers",
 				"pkgconfig32(pam)"
 			],
@@ -54,23 +71,21 @@
 			],
 			"files": [
 				"/usr/lib32/libcap.so.2",
-				"/usr/lib32/libcap.so.2.71",
+				"/usr/lib32/libcap.so.2.77",
 				"/usr/lib32/libpsx.so.2",
-				"/usr/lib32/libpsx.so.2.71",
+				"/usr/lib32/libpsx.so.2.77",
 				"/usr/lib32/security/pam_cap.so"
 			],
 			"name": "libcap-32bit",
 			"provides": [
 				"soname(libcap.so.2(386))",
-				"soname(libcap.so.2(x86))",
 				"soname(libpsx.so.2(386))",
-				"soname(libpsx.so.2(x86))",
-				"soname(security/pam_cap.so(386))",
-				"soname(security/pam_cap.so(x86))"
+				"soname(security/pam_cap.so(386))"
 			]
 		},
 		"libcap-32bit-devel": {
 			"build-depends": [
+				"binary(go)",
 				"linux-headers",
 				"pkgconfig32(pam)"
 			],
@@ -92,6 +107,7 @@
 		},
 		"libcap-devel": {
 			"build-depends": [
+				"binary(go)",
 				"linux-headers",
 				"pkgconfig32(pam)"
 			],
@@ -184,9 +200,24 @@
 				"pkgconfig(libcap)",
 				"pkgconfig(libpsx)"
 			]
+		},
+		"libcap-staticlib": {
+			"build-depends": [
+				"binary(go)",
+				"linux-headers",
+				"pkgconfig32(pam)"
+			],
+			"depends": [
+				"libcap-devel"
+			],
+			"files": [
+				"/usr/lib/libcap.a",
+				"/usr/lib/libpsx.a"
+			],
+			"name": "libcap-staticlib"
 		}
 	},
 	"source-name": "libcap",
-	"source-release": "7",
-	"source-version": "2.71"
+	"source-release": "12",
+	"source-version": "2.77"
 }

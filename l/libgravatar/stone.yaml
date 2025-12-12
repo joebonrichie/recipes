@@ -1,0 +1,31 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : libgravatar
+version     : 25.12.0
+release     : 8
+upstreams   :
+    - https://download.kde.org/stable/release-service/25.12.0/src/libgravatar-25.12.0.tar.xz : e44b573a3de25cc59cc7e147e8579939aef72c457be2e3e4ad4c16d3d9f4af7e
+homepage    : https://kde.org
+license     :
+    - GPL-2.0-only
+    - LGPL-2.1-or-later
+summary     : KDE PIM library providing Gravatar support
+description : |
+    KDE PIM library providing Gravatar support.
+builddeps   :
+    # Temporary, boulder doesn't handle build ordering resolution correctly when builddeps are added by macros, so add ECM manually
+    - cmake(ECM)
+    - cmake(KF6Config)
+    - cmake(KF6ConfigWidgets)
+    - cmake(KF6CoreAddons)
+    - cmake(KF6I18n)
+    - cmake(KF6WidgetsAddons)
+setup       : |
+    %cmake_kf6
+build       : |
+    %cmake_build
+install     : |
+    %cmake_install

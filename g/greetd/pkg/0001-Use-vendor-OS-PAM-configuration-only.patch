@@ -17,7 +17,7 @@ index b215c4a..f49408a 100644
  
  pub async fn main(config: Config) -> Result<(), Error> {
 -    let service = if Path::new(&format!("/etc/pam.d/{}", config.file.general.service)).exists() {
-+    let service = if Path::new(&format!("/usr/share/defaults/etc/pam.d/{}", config.file.general.service)).exists() {
++    let service = if Path::new(&format!("/usr/share/defaults/pam.d/{}", config.file.general.service)).exists() {
          &config.file.general.service
      } else if Path::new(&format!("/usr/lib/pam.d/{}", config.file.general.service)).exists() {
          &config.file.general.service
@@ -26,7 +26,7 @@ index b215c4a..f49408a 100644
  
      let greeter_service = if Path::new(&format!(
 -        "/etc/pam.d/{}",
-+        "/usr/share/defaults/etc/pam.d/{}",
++        "/usr/share/defaults/pam.d/{}",
          config.file.default_session.service
      ))
      .exists()

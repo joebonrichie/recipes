@@ -4,17 +4,20 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : git
-version     : 2.47.1
-release     : 12
+version     : 2.52.0
+release     : 22
 summary     : Fast, scalable, distributed revision control system
 license     : GPL-2.0-only
 homepage    : https://git-scm.com
 description : |
     Git is a fast, scalable, distributed revision control system with an unusually rich command set that provides both high-level operations and full access to internals.
 upstreams   :
-    - https://www.kernel.org/pub/software/scm/git/git-2.47.1.tar.gz: f4c4e98667800585d218dfdf415eb72f73baa7abcac4569e2ce497970f8d6665
+    - https://www.kernel.org/pub/software/scm/git/git-2.52.0.tar.gz: 6880cb1e737e26f81cf7db9957ab2b5bb2aa1490d87619480b860816e0c10c32
 builddeps   :
+    - binary(asciidoc)
     - binary(msgfmt)
+    - binary(tar)
+    - binary(xmlto)
     - pkgconfig(expat)
     - pkgconfig(gobject-2.0)
     - pkgconfig(libcurl)
@@ -23,20 +26,60 @@ builddeps   :
     - pkgconfig(libxcrypt)
     - pkgconfig(openssl)
     - pkgconfig(zlib)
+    - docbook
+environment : |
+    %export_docbook_catalogs
+
+    # Use symlinks instead of hardlinks, don't install git-web
+    MAKE_OPTS="INSTALL_SYMLINKS=1 NO_GITWEB=1"
 setup       : |
-    %reconfigure --disable-static \
+    %reconfigure \
         --with-editor=/usr/bin/nano \
-        --with-libpcre2 \
-        --without-tcltk \
+        --with-libpcre2
 build       : |
-    %make
-    %make -C contrib/subtree
-    %make -C contrib/credential/libsecret
+    %make $MAKE_OPTS
+    %make $MAKE_OPTS man
+    %make $MAKE_OPTS -C contrib/subtree
+    %make $MAKE_OPTS -C contrib/credential/libsecret
 install     : |
-    %make_install
-    %make_install -C contrib/subtree
+    %make_install $MAKE_OPTS install-man
+    %make_install $MAKE_OPTS -C contrib/subtree
 
     %install_file contrib/completion/git-completion.bash %(installroot)%(datadir)/bash-completion/completions/git
+    ln -s git %(installroot)%(bashcompletionsdir)/gitk
+
+    %install_file %(pkgdir)/git-gui.desktop -t %(installroot)%(datadir)/applications
+
     %install_file contrib/completion/git-completion.zsh %(installroot)%(datadir)/zsh/site-functions/_git
     %install_exe contrib/credential/libsecret/git-credential-libsecret %(installroot)%(libdir)/git/git-core/.
 # TODO Checks
+packages    :
+    - "%(name)":
+        rundeps:
+            # /usr/lib/git/git-core/git-submodule: 1: /usr/lib/git/git-core/git-sh-setup: envsubst: not found
+            - binary(envsubst)
+        paths:
+            - /usr/share/man/man3/
+
+    - "%(name)-gui":
+        summary: Graphical interface to Git
+        description: Graphical interface to Git
+        rundeps:
+            - binary(wish)
+        paths:
+            - /usr/lib/git/git-core/git-citool
+            - /usr/lib/git/git-core/git-gui*
+            - /usr/share/git-gui/
+            - /usr/share/applications/git-gui.desktop
+
+    - "gitk":
+        summary: Git repository browser
+        description: Git repository browser
+        rundeps:
+            - "%(name)-gui"
+            - binary(wish)
+        paths:
+            - /usr/bin/gitk
+            - /usr/share/bash-completion/completions/gitk
+            - /usr/share/gitk/
+            - /usr/share/man/man1/gitk.1

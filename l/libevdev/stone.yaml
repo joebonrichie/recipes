@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : libevdev
-version     : 1.13.3
-release     : 4
+version     : 1.13.6
+release     : 8
 homepage    : https://www.freedesktop.org/wiki/Software/libevdev
 upstreams   :
-    - https://www.freedesktop.org/software/libevdev/libevdev-1.13.3.tar.xz : abf1aace86208eebdd5d3550ffded4c8d73bb405b796d51c389c9d0604cbcfbf
+    - https://www.freedesktop.org/software/libevdev/libevdev-1.13.6.tar.xz : 73f215eccbd8233f414737ac06bca2687e67c44b97d2d7576091aa9718551110
 summary     : Wrapper library for evdev devices
 description : |
     libevdev is a wrapper library for evdev devices. It moves the common
@@ -17,8 +17,17 @@ description : |
     etc.
 license     : MIT
 setup       : |
-    %meson -Ddocumentation=disabled -Dtests=disabled
+    %meson \
+        -Ddocumentation=disabled \
+        -Dtests=disabled
 build       : |
     %meson_build
 install     : |
     %meson_install
+packages    :
+    - "%(name)-utils":
+        summary: Kernel Evdev Device Wrapper Library Utilities Package
+        description: Kernel Evdev Device Wrapper Library Utilities Package
+        paths:
+            - /usr/bin/
+            - /usr/share/man/man1/

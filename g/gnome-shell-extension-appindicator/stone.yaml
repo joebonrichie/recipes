@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : gnome-shell-extension-appindicator
-version     : 59
-release     : 3
+version     : 61
+release     : 6
 homepage    : https://github.com/ubuntu/gnome-shell-extension-appindicator
 upstreams   :
-    - https://github.com/ubuntu/gnome-shell-extension-appindicator/archive/refs/tags/v59.tar.gz : 37d8fb1bf800bbcb6b302fcc599758b36c23b8d166922262d004660b1e521b93
+    - https://github.com/ubuntu/gnome-shell-extension-appindicator/archive/refs/tags/v61.tar.gz : 48555dd9c9437f835c9b01238f69a8643d2b17dffd7dbb8e23ccf2e97bb4d8de
 summary     : AppIndicator / SNI support in GNOME Shell
 description : |
     AppIndicator / SNI support in GNOME Shell
@@ -17,9 +17,10 @@ license     :
 builddeps   :
     - binary(glib-compile-schemas)
     - binary(jq)
+    - binary(msgfmt)
 setup       : |
-    %patch %(pkgdir)/gnome-48.patch
-    %meson -D local_install=disabled
+    %meson \
+        -Dlocal_install=disabled
 build       : |
     %meson_build
 install     : |

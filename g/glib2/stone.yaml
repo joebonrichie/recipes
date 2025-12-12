@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : glib2
-version     : 2.84.0
-release     : 24
+version     : 2.86.3
+release     : 34
 homepage    : https://gitlab.gnome.org/GNOME/glib
 upstreams   :
-    - https://download.gnome.org/sources/glib/2.84/glib-2.84.0.tar.xz : f8823600cb85425e2815cfad82ea20fdaa538482ab74e7293d58b3f64a5aff6a
+    - https://download.gnome.org/sources/glib/2.86/glib-2.86.3.tar.xz : b3211d8d34b9df5dca05787ef0ad5d7ca75dec998b970e1aab0001d229977c65
 summary     : Low-level core library that forms the basis for projects such as GTK+ and GNOME
 description : |
     GLib is the low-level core library that forms the basis for projects such
@@ -23,29 +23,19 @@ license     :
     - LLVM-exception
     - MIT
 builddeps   :
+    - binary(rst2man)
     - binary(xgettext)
+    # - binary(xsltproc)
     - pkgconfig(bash-completion)
     - pkgconfig(gobject-introspection-1.0)
+    - pkgconfig(sysprof-capture-4)
     - pkgconfig32(libelf)
     - pkgconfig32(libffi)
     - pkgconfig32(libpcre2-8)
     - pkgconfig32(mount)
     - pkgconfig32(zlib)
     - python-packaging
-packages    :
-    - "%(name)-32bit-devel":
-        paths:
-            - /usr/share/gdb/auto-load/usr/lib32
-            - /usr/lib32/glib-2.0/include
-    - "%(name)-devel":
-        paths:
-            - /usr/share/gdb/auto-load/usr/lib
-            - /usr/lib/glib-2.0/include
 emul32      : true
-rundeps     :
-    - binary(python3)
-    - elfutils-libs
-    - python-packaging
 environment : |
     export CFLAGS="${CFLAGS} -Wno-error=missing-include-dirs"
 profiles    :
@@ -53,7 +43,11 @@ profiles    :
         setup: |
             %patch %(pkgdir)/0001-glib-gutils-Support-stateless-fallback-XDG_CONFIG_DI.patch
             %patch %(pkgdir)/0001-gdesktopappinfo-Support-ptyxis-for-executing-.deskto.patch
-            %meson -Dtests=false -Dinstalled_tests=false -Dintrospection=disabled
+            %meson \
+                -Dinstalled_tests=false \
+                -Dintrospection=disabled \
+                -Dsysprof=disabled \
+                -Dtests=false
         build: |
             %meson_build
         install: |
@@ -61,7 +55,11 @@ profiles    :
 setup       : |
     %patch %(pkgdir)/0001-glib-gutils-Support-stateless-fallback-XDG_CONFIG_DI.patch
     %patch %(pkgdir)/0001-gdesktopappinfo-Support-ptyxis-for-executing-.deskto.patch
-    %meson -Dtests=false -Dinstalled_tests=false
+
+    %meson \
+        -Dinstalled_tests=false \
+        -Dman-pages=true \
+        -Dtests=false
 build       : |
     %meson_build
 install     : |
@@ -69,3 +67,48 @@ install     : |
     %python_compile
     %install_file %(pkgdir)/trigger.yaml %(installroot)/usr/share/moss/triggers/tx.d/glib2.yaml
     %install_file %(pkgdir)/glibconfig.h %(installroot)%(includedir)/glib-2.0/glibconfig.h
+packages    :
+    - "%(name)-32bit-devel":
+        paths:
+            - /usr/share/gdb/auto-load/usr/lib32
+            - /usr/lib32/glib-2.0/include
+
+    - "%(name)-devel":
+        rundeps:
+            - binary(python3)
+            - python(packaging)
+        paths:
+            - /usr/bin/gdbus-codegen
+            - /usr/bin/gi-compile-repository
+            - /usr/bin/gi-decompile-typelib
+            - /usr/bin/gi-inspect-typelib
+            - /usr/bin/glib-compile-resources
+            - /usr/bin/glib-genmarshal
+            - /usr/bin/glib-gettextize
+            - /usr/bin/glib-mkenums
+            - /usr/bin/gobject-query
+            - /usr/bin/gresource
+            - /usr/bin/gtester
+            - /usr/bin/gtester-report
+            - /usr/share/bash-completion/completions/gresource
+            - /usr/share/gdb/auto-load/usr/lib
+            - /usr/share/gettext/
+            - /usr/share/glib-2.0/codegen/
+            - /usr/share/glib-2.0/dtds
+            - /usr/share/glib-2.0/gdb
+            - /usr/share/glib-2.0/gettext
+            - /usr/share/glib-2.0/schemas
+            - /usr/share/glib-2.0/valgrind
+            - /usr/lib/glib-2.0/include
+            - /usr/share/man/man1/gdbus-codegen.1*
+            - /usr/share/man/man1/gi-compile-repository.1*
+            - /usr/share/man/man1/gi-decompile-typelib.1*
+            - /usr/share/man/man1/gi-inspect-typelib.1*
+            - /usr/share/man/man1/glib-compile-resources.1*
+            - /usr/share/man/man1/glib-genmarshal.1*
+            - /usr/share/man/man1/glib-gettextize.1*
+            - /usr/share/man/man1/glib-mkenums.1*
+            - /usr/share/man/man1/gobject-query.1*
+            - /usr/share/man/man1/gresource.1*
+            - /usr/share/man/man1/gtester-report.1*
+            - /usr/share/man/man1/gtester.1*

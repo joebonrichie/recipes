@@ -1,0 +1,28 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : libfreeaptx
+version     : "0.2.2"
+release     : 1
+upstreams   :
+    - https://github.com/regularhunter/libfreeaptx/archive/refs/tags/0.2.2.tar.gz : 5ab5ebddf3f2eb7ce47a505b87460b00fc1ede99c70010796d3575ab31ea80bf
+homepage    : https://github.com/iamthehorker/libfreeaptx/
+license     : LGPL-2.1-or-later
+summary     : Open Source implementation of Audio Processing Technology codec (aptX) forked from libopenaptx 0.2.0
+description : |
+    Open Source implementation of Audio Processing Technology codec (aptX) forked from libopenaptx 0.2.0
+environment : |
+    export PREFIX=%(prefix)
+setup       : |
+    sed -i "s|PREFIX |&?|" Makefile
+    sed -i "s|CFLAGS |&?|" Makefile
+    sed -i "s|LDFLAGS |&?|" Makefile
+build       : |
+    %make
+install     : |
+    %make_install
+
+    # Nothing needs these currently
+    rm -rfv %(installroot)%(bindir)

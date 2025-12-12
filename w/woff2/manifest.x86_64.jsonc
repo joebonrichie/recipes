@@ -1,0 +1,84 @@
+/** Human readable report. This is not consumed by boulder */
+{
+	"manifest-version": "0.2",
+	"packages": {
+		"woff2": {
+			"build-depends": [
+				"pkgconfig(libbrotlidec)"
+			],
+			"depends": [
+				"soname(libbrotlidec.so.1(x86_64))",
+				"soname(libbrotlienc.so.1(x86_64))",
+				"soname(libc.so.6(x86_64))",
+				"soname(libgcc_s.so.1(x86_64))",
+				"soname(libstdc++.so.6(x86_64))"
+			],
+			"files": [
+				"/usr/lib/libwoff2common.so.1.0.2",
+				"/usr/lib/libwoff2dec.so.1.0.2",
+				"/usr/lib/libwoff2enc.so.1.0.2"
+			],
+			"name": "woff2",
+			"provides": [
+				"soname(libwoff2common.so.1.0.2(x86_64))",
+				"soname(libwoff2dec.so.1.0.2(x86_64))",
+				"soname(libwoff2enc.so.1.0.2(x86_64))"
+			]
+		},
+		"woff2-devel": {
+			"build-depends": [
+				"pkgconfig(libbrotlidec)"
+			],
+			"depends": [
+				"pkgconfig(libbrotlidec)",
+				"pkgconfig(libbrotlienc)",
+				"woff2"
+			],
+			"files": [
+				"/usr/include/woff2/decode.h",
+				"/usr/include/woff2/encode.h",
+				"/usr/include/woff2/output.h",
+				"/usr/lib/libwoff2common.so",
+				"/usr/lib/libwoff2dec.so",
+				"/usr/lib/libwoff2enc.so",
+				"/usr/lib/pkgconfig/libwoff2common.pc",
+				"/usr/lib/pkgconfig/libwoff2dec.pc",
+				"/usr/lib/pkgconfig/libwoff2enc.pc"
+			],
+			"name": "woff2-devel",
+			"provides": [
+				"pkgconfig(libwoff2common)",
+				"pkgconfig(libwoff2dec)",
+				"pkgconfig(libwoff2enc)"
+			]
+		},
+		"woff2-tools": {
+			"build-depends": [
+				"pkgconfig(libbrotlidec)"
+			],
+			"depends": [
+				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
+				"soname(libc.so.6(x86_64))",
+				"soname(libgcc_s.so.1(x86_64))",
+				"soname(libstdc++.so.6(x86_64))",
+				"soname(libwoff2common.so.1.0.2(x86_64))",
+				"soname(libwoff2dec.so.1.0.2(x86_64))",
+				"soname(libwoff2enc.so.1.0.2(x86_64))"
+			],
+			"files": [
+				"/usr/bin/woff2_compress",
+				"/usr/bin/woff2_decompress",
+				"/usr/bin/woff2_info"
+			],
+			"name": "woff2-tools",
+			"provides": [
+				"binary(woff2_compress)",
+				"binary(woff2_decompress)",
+				"binary(woff2_info)"
+			]
+		}
+	},
+	"source-name": "woff2",
+	"source-release": "2",
+	"source-version": "1.0.2"
+}

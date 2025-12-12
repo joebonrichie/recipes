@@ -1,0 +1,31 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : unicode-cldr
+version     : "48" # Updating this package? ibus should be rebuilt to pick up the changes
+release     : 2
+upstreams   :
+    - https://unicode.org/Public/cldr/48/core.zip:
+        hash: 06c7c698d6fd8d67cefac15a0206b0109b00e0ef1636f86f84449fa959561f74
+        unpack: false
+homepage    : https://unicode.org/cldr
+license     : Unicode-DFS-2016
+summary     : Emoji annotation files in CLDR
+description : |
+    Emoji annotation files in CLDR
+setup       : |
+    bsdtar-static --no-same-owner -xf %(sourcedir)/core.zip --strip-components=0
+install     : |
+    _cldrdir="%(datadir)/unicode/cldr"
+
+    %install_dir %(installroot)/${_cldrdir}/common
+    cp -ra common/annotations common/annotationsDerived common/dtd %(installroot)/${_cldrdir}/common/
+packages    :
+    - "%(name)-dtd":
+        paths:
+            - /usr/share/unicode/cldr/common/dtd/
+    - "%(name)":
+        rundeps:
+            - "%(name)-dtd"

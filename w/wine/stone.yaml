@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : wine
-version     : 10.2
-release     : 1
+version     : "11.0-rc1"
+release     : 18
 homepage    : https://www.winehq.org
 upstreams   :
-    - https://dl.winehq.org/wine/source/10.x/wine-10.2.tar.xz : 9d90dfb6cf10b810a7b4789f0067712b4730d3ea2a88b91f1be273b2ad04243f
+    - https://dl.winehq.org/wine/source/11.0/wine-11.0-rc1.tar.xz : 84ede94dca350012ade19237fbde36117463593e37c94becbdab4c692025c78d
 summary     : Wine is a program which allows running Microsoft Windows programs on Unix.
 description : |
     Wine is a program which allows running Microsoft Windows programs
@@ -23,25 +23,33 @@ builddeps   :
     - binary(flex)
     - binary(readelf)
     - binary(wayland-scanner)
+    - pkgconfig(OpenCL)
+    - pkgconfig(OpenCL-Headers)
+    - pkgconfig(alsa)
+    - pkgconfig(bluez)
     - pkgconfig(cups)
     - pkgconfig(dbus-1)
-    - pkgconfig(d3d)
     - pkgconfig(dri)
     - pkgconfig(egl)
+    - pkgconfig(fontconfig)
     - pkgconfig(gbm)
     - pkgconfig(gnutls)
     - pkgconfig(gstreamer-1.0)
+    - pkgconfig(gstreamer-tag-1.0)
     - pkgconfig(krb5)
     - pkgconfig(libavcodec)
     - pkgconfig(libavformat)
     - pkgconfig(libavutil)
+    - pkgconfig(libgphoto2)
     - pkgconfig(libpcap)
+    - pkgconfig(libpcsclite)
     - pkgconfig(libpulse)
     - pkgconfig(libudev)
     - pkgconfig(libusb-1.0)
+    - pkgconfig(libv4l2)
     - pkgconfig(odbc)
-    - pkgconfig(osmesa)
-    - pkgconfig(sdl2_compat)
+    - pkgconfig(sane-backends)
+    - pkgconfig(sdl2-compat)
     - pkgconfig(vulkan)
     - pkgconfig(wayland-eglstream)
     - pkgconfig(wayland-client)
@@ -54,12 +62,16 @@ builddeps   :
     - pkgconfig(xinerama)
     - pkgconfig(freetype2)
     - gettext-devel
+    # libnetapi libcapi20
 setup       : |
     %patch %(pkgdir)/llvm-libunwind.patch
-    %patch %(pkgdir)/0001-Prefer-wayland-over-x11.patch
 
-    %configure --enable-archs=i386,x86_64 \
-               --enable-win64
+    # Temporarily disabled until properly tested
+    # %patch %(pkgdir)/0001-Prefer-wayland-over-x11.patch
+
+    %configure \
+        --enable-archs=i386,x86_64 \
+        --enable-win64
 build       : |
     %make
 install     : |
@@ -67,6 +79,12 @@ install     : |
 
     # when building 64+32 compat, only bare name is emitted, add *64 names for compat
     ln -srv %(installroot)/%(bindir)/wine %(installroot)/%(bindir)/wine64
+
+    # binfmt
+    %install_file %(pkgdir)/wine-binfmt.conf %(installroot)%(libdir)/binfmt.d/wine.conf
+
+    # Ensure that ntsync is loaded
+    %install_file %(pkgdir)/ntsync.conf %(installroot)%(libdir)/modules-load.d/10-ntsync.conf
 packages    :
     - "%(name)-devel":
         paths:

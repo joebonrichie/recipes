@@ -15,7 +15,7 @@
 			],
 			"files": [
 				"/usr/lib/libvulkan.so.1",
-				"/usr/lib/libvulkan.so.1.4.309"
+				"/usr/lib/libvulkan.so.1.4.335"
 			],
 			"name": "vulkan-loader",
 			"provides": [
@@ -36,12 +36,11 @@
 			],
 			"files": [
 				"/usr/lib32/libvulkan.so.1",
-				"/usr/lib32/libvulkan.so.1.4.309"
+				"/usr/lib32/libvulkan.so.1.4.335"
 			],
 			"name": "vulkan-loader-32bit",
 			"provides": [
-				"soname(libvulkan.so.1(386))",
-				"soname(libvulkan.so.1(x86))"
+				"soname(libvulkan.so.1(386))"
 			]
 		},
 		"vulkan-loader-32bit-devel": {
@@ -78,6 +77,7 @@
 				"pkgconfig32(xrandr)"
 			],
 			"depends": [
+				"cmake(VulkanHeaders)",
 				"vulkan-loader"
 			],
 			"files": [
@@ -95,6 +95,6 @@
 		}
 	},
 	"source-name": "vulkan-loader",
-	"source-release": "11",
-	"source-version": "1.4.309.0"
+	"source-release": "17",
+	"source-version": "1.4.335.0"
 }

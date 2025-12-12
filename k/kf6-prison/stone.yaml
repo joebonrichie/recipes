@@ -1,0 +1,32 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : kf6-prison
+version     : 6.20.0
+release     : 12
+upstreams   :
+    - https://download.kde.org/stable/frameworks/6.20/prison-6.20.0.tar.xz : 36ec6f82ecc3c06618d455cc1698ab11754d642fab3f1b850a7cf01ce11b3d1f
+homepage    : https://community.kde.org/Frameworks
+license     :
+    - BSD-3-Clause
+    - MIT
+summary     : Qt api to produce QRCode barcode
+description : |
+    Qt api to produce QRCode barcode
+builddeps   :
+    # Temporary, boulder doesn't handle build ordering resolution correctly when builddeps are added by macros, so add ECM manually
+    - cmake(ECM)
+    - cmake(Qt6CorePrivate)
+    - cmake(Qt6Multimedia)
+    - cmake(Qt6Quick)
+    - pkgconfig(libqrencode)
+    - pkgconfig(zxing)
+    # TODO: libdmtx
+setup       : |
+    %cmake_kf6
+build       : |
+    %cmake_build
+install     : |
+    %cmake_install

@@ -1,0 +1,43 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : hyphen
+version     : 2.8.8
+release     : 1
+upstreams   :
+    - https://sourceforge.net/projects/hunspell/files/Hyphen/2.8/hyphen-2.8.8.tar.gz : 304636d4eccd81a14b6914d07b84c79ebb815288c76fe027b9ebff6ff24d5705
+homepage    : https://hunspell.sf.net
+license     : GPL-2.0-only OR LGPL-2.1-or-later OR MPL-1.1
+summary     : A text hyphenation library
+description : |
+    Hyphen is a library for high quality hyphenation and justification.
+builddeps   :
+    - binary(patch)
+setup       : |
+    %configure \
+        --disable-static
+build       : |
+    %make
+install     : |
+    %make_install
+
+    pushd %(installroot)%(datadir)/hyphen/
+    en_US_aliases="en_AG en_AU en_BS en_BW en_BZ en_CA en_DK en_GB en_GH en_HK en_IE en_IN en_JM en_MW en_NA en_NZ en_PH en_SG en_TT en_ZA en_ZM en_ZW"
+    for lang in $en_US_aliases; do
+        ln -s hyph_en_US.dic hyph_$lang.dic
+    done
+    popd
+packages    :
+    - "%(name)-devel":
+        paths:
+            - /usr/bin/substrings.pl
+
+    - "%(name)-en":
+        summary: English hyphenation rules
+        description: English hyphenation rules
+        rundeps:
+            - "%(name)"
+        paths:
+            - /usr/share/hyphen/hyph_en*.dic

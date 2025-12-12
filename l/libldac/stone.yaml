@@ -1,0 +1,24 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : libldac
+version     : 2.0.2.3
+release     : 1
+upstreams   :
+    - git|https://github.com/EHfive/ldacBT.git : af2dd23979453bcd1cad7c4086af5fb421a955c5
+    # - git|https://gitlab.com/eh5/libldac.git : 97b85220085eb98a18556f81ecc5612274d619e4
+homepage    : https://android.googlesource.com/platform/external/libldac
+license     : Apache-2.0
+summary     : LDAC Bluetooth encoder library
+description : |
+    LDAC Bluetooth encoder library
+setup      : |
+    %patch %(pkgdir)/ftbfs-cmake-4.patch
+
+    %cmake
+build      : |
+    %cmake_build
+install    : |
+    %cmake_install

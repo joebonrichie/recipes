@@ -1,0 +1,47 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : scx-scheds
+version     : 1.0.17
+release     : 5
+homepage    : https://github.com/sched-ext/scx
+upstreams   :
+    - https://github.com/sched-ext/scx/archive/refs/tags/v1.0.17.tar.gz : 2f9dbce619f6fd547fabcd4ef1220fe125f1277218e9d8bfbabdb4063c8417b9
+summary     : sched_ext schedulers and tools
+description : |
+    sched_ext schedulers and tools
+networking  : yes
+license     :
+    - MIT
+builddeps   :
+    - binary(bpftool)
+    - binary(cargo)
+    - binary(make)
+    - binary(jq)
+    - binary(protoc)
+    - pkgconfig(libbpf)
+    - pkgconfig(libelf)
+    - pkgconfig(libseccomp)
+    - pkgconfig(libsystemd)
+setup       : |
+    %meson \
+        -Dbpftool=disabled \
+        -Dlibbpf_a=disabled \
+        -Dvendordir=%(vendordir)
+    %cargo_fetch
+build       : |
+    %meson_build
+install     : |
+    %meson_install
+
+    # Unsupported, use scx_loader
+    # rm -v %(installroot)%(libdir)/systemd/system/scx.service
+
+    # Overwrite shipped default config with our own
+    %install_file %(pkgdir)/config.toml %(installroot)%(vendordir)/scx_loader/config.toml
+packages    :
+    - "%(name)-devel":
+        paths:
+            - /usr/bin/vmlinux_docify

@@ -1,0 +1,44 @@
+/** Human readable report. This is not consumed by boulder */
+{
+	"manifest-version": "0.2",
+	"packages": {
+		"python-pyproject-metadata": {
+			"build-depends": [
+				"python(flit-core)"
+			],
+			"depends": [
+				"python(packaging)"
+			],
+			"files": [
+				"/usr/lib/python3.11/site-packages/pyproject_metadata-0.9.1.dist-info/METADATA",
+				"/usr/lib/python3.11/site-packages/pyproject_metadata-0.9.1.dist-info/RECORD",
+				"/usr/lib/python3.11/site-packages/pyproject_metadata-0.9.1.dist-info/WHEEL",
+				"/usr/lib/python3.11/site-packages/pyproject_metadata-0.9.1.dist-info/licenses/LICENSE",
+				"/usr/lib/python3.11/site-packages/pyproject_metadata/__init__.py",
+				"/usr/lib/python3.11/site-packages/pyproject_metadata/__pycache__/__init__.cpython-311.opt-1.pyc",
+				"/usr/lib/python3.11/site-packages/pyproject_metadata/__pycache__/__init__.cpython-311.pyc",
+				"/usr/lib/python3.11/site-packages/pyproject_metadata/__pycache__/constants.cpython-311.opt-1.pyc",
+				"/usr/lib/python3.11/site-packages/pyproject_metadata/__pycache__/constants.cpython-311.pyc",
+				"/usr/lib/python3.11/site-packages/pyproject_metadata/__pycache__/errors.cpython-311.opt-1.pyc",
+				"/usr/lib/python3.11/site-packages/pyproject_metadata/__pycache__/errors.cpython-311.pyc",
+				"/usr/lib/python3.11/site-packages/pyproject_metadata/__pycache__/project_table.cpython-311.opt-1.pyc",
+				"/usr/lib/python3.11/site-packages/pyproject_metadata/__pycache__/project_table.cpython-311.pyc",
+				"/usr/lib/python3.11/site-packages/pyproject_metadata/__pycache__/pyproject.cpython-311.opt-1.pyc",
+				"/usr/lib/python3.11/site-packages/pyproject_metadata/__pycache__/pyproject.cpython-311.pyc",
+				"/usr/lib/python3.11/site-packages/pyproject_metadata/constants.py",
+				"/usr/lib/python3.11/site-packages/pyproject_metadata/errors.py",
+				"/usr/lib/python3.11/site-packages/pyproject_metadata/project_table.py",
+				"/usr/lib/python3.11/site-packages/pyproject_metadata/py.typed",
+				"/usr/lib/python3.11/site-packages/pyproject_metadata/pyproject.py"
+			],
+			"name": "python-pyproject-metadata",
+			"provides": [
+				"python(pyproject-metadata(3.11))",
+				"python(pyproject-metadata)"
+			]
+		}
+	},
+	"source-name": "python-pyproject-metadata",
+	"source-release": "1",
+	"source-version": "0.9.1"
+}

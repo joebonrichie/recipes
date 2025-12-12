@@ -8,13 +8,13 @@
 			],
 			"files": [
 				"/usr/lib/libpcre2-16.so.0",
-				"/usr/lib/libpcre2-16.so.0.13.0",
+				"/usr/lib/libpcre2-16.so.0.15.0",
 				"/usr/lib/libpcre2-32.so.0",
-				"/usr/lib/libpcre2-32.so.0.13.0",
+				"/usr/lib/libpcre2-32.so.0.15.0",
 				"/usr/lib/libpcre2-8.so.0",
-				"/usr/lib/libpcre2-8.so.0.13.0",
+				"/usr/lib/libpcre2-8.so.0.15.0",
 				"/usr/lib/libpcre2-posix.so.3",
-				"/usr/lib/libpcre2-posix.so.3.0.5"
+				"/usr/lib/libpcre2-posix.so.3.0.7"
 			],
 			"name": "pcre2",
 			"provides": [
@@ -27,28 +27,24 @@
 		"pcre2-32bit": {
 			"depends": [
 				"pcre2",
-				"soname(libc.so.6(x86))"
+				"soname(libc.so.6(386))"
 			],
 			"files": [
 				"/usr/lib32/libpcre2-16.so.0",
-				"/usr/lib32/libpcre2-16.so.0.13.0",
+				"/usr/lib32/libpcre2-16.so.0.15.0",
 				"/usr/lib32/libpcre2-32.so.0",
-				"/usr/lib32/libpcre2-32.so.0.13.0",
+				"/usr/lib32/libpcre2-32.so.0.15.0",
 				"/usr/lib32/libpcre2-8.so.0",
-				"/usr/lib32/libpcre2-8.so.0.13.0",
+				"/usr/lib32/libpcre2-8.so.0.15.0",
 				"/usr/lib32/libpcre2-posix.so.3",
-				"/usr/lib32/libpcre2-posix.so.3.0.5"
+				"/usr/lib32/libpcre2-posix.so.3.0.7"
 			],
 			"name": "pcre2-32bit",
 			"provides": [
 				"soname(libpcre2-16.so.0(386))",
-				"soname(libpcre2-16.so.0(x86))",
 				"soname(libpcre2-32.so.0(386))",
-				"soname(libpcre2-32.so.0(x86))",
 				"soname(libpcre2-8.so.0(386))",
-				"soname(libpcre2-8.so.0(x86))",
-				"soname(libpcre2-posix.so.3(386))",
-				"soname(libpcre2-posix.so.3(x86))"
+				"soname(libpcre2-posix.so.3(386))"
 			]
 		},
 		"pcre2-32bit-devel": {
@@ -103,6 +99,6 @@
 		}
 	},
 	"source-name": "pcre2",
-	"source-release": "4",
-	"source-version": "10.44"
+	"source-release": "8",
+	"source-version": "10.47"
 }

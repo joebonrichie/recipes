@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : golang
-version     : 1.24.2
-release     : 15
+version     : 1.25.5
+release     : 26
 homepage    : https://go.dev
 upstreams   :
-    - https://go.dev/dl/go1.24.2.linux-amd64.tar.gz : 68097bd680839cbc9d464a0edce4f7c333975e27a90246890e9f1078c7e702ad
+    - https://go.dev/dl/go1.25.5.linux-amd64.tar.gz : 9e9b755d63b36acf30c12a9a3fc379243714c1c6d3dd72861da637f336ebb35b
 summary     : The Go programming language
 description : |
     Go is an open source programming language that makes it easy to build simple, reliable, and efficient software.
@@ -19,6 +19,7 @@ builddeps   :
     - binary(go)
 rundeps     :
     - binary(ld.so) # Basically needs glibc for the internal linker implementation
+    - ca-certificates # Certificate validation during module downloading
 environment : |
     # This can mess up the automatic goroot detection if set. Explicitly unset it just in case it has made it's way into the buildenv
     unset GOROOT
@@ -33,12 +34,8 @@ environment : |
     # Note, this is also propagated into the default build config for the distribution. ALL linux AMD64 binaries built with this golang distribution will default to v2
     export GOAMD64=v2
 setup       : |
-    %patch %(pkgdir)/stateless/x509-certificate-path.patch
     %patch %(pkgdir)/0001-downstream-Default-to-clang-linker.patch
     %patch %(pkgdir)/go.env-toolchain-local.patch
-
-    # Upstream, fixes a segfault with kernel >= 6.11 (affects Docker)
-    %patch %(pkgdir)/fix_vgetrandom_state_segfault.patch
 build       : |
     cd src && ./make.bash -v
 install     : |

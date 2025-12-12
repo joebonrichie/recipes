@@ -4,13 +4,13 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : nvidia-open-gpu-kernel-modules
-version     : 570.133.07
-release     : 33
+version     : "580.105.08"
+release     : 59
 homepage    : https://github.com/NVIDIA/open-gpu-kernel-modules
 upstreams   :
-    - https://download.nvidia.com/XFree86/NVIDIA-kernel-module-source/NVIDIA-kernel-module-source-570.133.07.tar.xz : 31b3876fa657e57a144aaa4f2ac99dba3ab065af2a3e1225d685458bf40b729e
-    - https://us.download.nvidia.com/XFree86/Linux-x86_64/570.133.07/NVIDIA-Linux-x86_64-570.133.07.run:
-        hash: 2d43e64c581be5ef554de9888b1aa90037ef6d45f54284d3d9dcedc08dc4dc26
+    - https://download.nvidia.com/XFree86/NVIDIA-kernel-module-source/NVIDIA-kernel-module-source-580.105.08.tar.xz : 59c518a2014f83efaf2a9f539b3097c55e74e8878aca01aedb59e92e3116080d
+    - https://us.download.nvidia.com/XFree86/Linux-x86_64/580.105.08/NVIDIA-Linux-x86_64-580.105.08.run:
+        hash: d9c6e8188672f3eb74dd04cfa69dd58479fa1d0162c8c28c8d17625763293475
         unpack: false
         rename: NVIDIA.run
 summary     : NVIDIA open GPU kernel modules
@@ -19,10 +19,13 @@ description : |
 license     : GPL-2.0-only
 builddeps   :
     - binary(cpio)
+    - binary(eu-readelf)
     - binary(jq)
     - binary(zstd)
     - linux-desktop
     - linux-desktop-devel
+rundeps     :
+    - sysbinary(depmod)
 tuning      :
     - asneeded: false
     - base: false
@@ -35,26 +38,39 @@ tuning      :
     - compress-debug: false
 environment : |
     export KERNEL_UNAME=`jq --raw-output .version /usr/lib/kernel/*.desktop/boot.json` || exit 1
-setup       : |
-    %patch %(pkgdir)/fix-hdmi-names.patch
+
+    # TODO: Fix this just rejecting all LDFLAGS
+    unset LDFLAGS
 build       : |
     %make CC=%(cc) LD=%(ld) KERNEL_UNAME=$KERNEL_UNAME NV_VERBOSE=1 modules
 install     : |
-    %install_dir %(installroot)%(libdir)/modules/$KERNEL_UNAME/kernel/drivers/video
     %install_dir %(installroot)%(libdir)/kernel/$KERNEL_UNAME
 
-    # zstd compress all .ko and install them to the video driver directory
-    for module in $(find . -name '*.ko'); do
-        # llvm-strip --strip-unneeded $module
-        zstd -19 -T0 -c $module -o %(installroot)%(libdir)/modules/$KERNEL_UNAME/kernel/drivers/video/$(basename $module).zst
+    %install_file kernel-open/*.ko -t %(installroot)%(libdir)/modules/$KERNEL_UNAME/kernel/drivers/video
+
+    # Manually construct the debug info from the kernel modules
+    %install_dir %(installroot)%(libdir)/debug/.build-id
+    pushd %(installroot)
+    module_list=()
+    while IFS=  read -r -d $'\0'; do
+        module_list+=("$REPLY")
+    done < <(find .%(libdir)/modules -type f -name "*.ko" -print0)
+    for module in "${module_list[@]}"; do
+        build_id=$(eu-readelf -n ${module} | grep Bui | awk '{print $3}')
+        debug_path="%(libdir)/debug/.build-id/${build_id:0:2}/${build_id: 2}.debug"
+        %install_dir $(dirname .${debug_path})
+        llvm-objcopy --only-keep-debug "${module}" ".${debug_path}"
+        llvm-objcopy --add-gnu-debuglink ".${debug_path}" "${module}"
+        llvm-strip -g --strip-unneeded "${module}"
     done
+    popd
 
     # Create an initrd for the firmware and .ko files
     sh %(sourcedir)/NVIDIA.run --extract-only --target extracted
     mkdir -p initrd/eb-nvidia
     mkdir -p initrd/eb-nvidia-fw/%(version)
     %install_file extracted/firmware/*.bin initrd/eb-nvidia-fw/%(version)/.
-    find . -name '*.ko' -exec cp -v {} initrd/eb-nvidia \;
+    find %(installroot)%(libdir)/modules -name '*.ko' -exec cp -v {} initrd/eb-nvidia \;
     touch initrd/.dracut-depmod-invalidate
     pushd initrd
     find . | cpio -o -H newc | zstd -19 -T0 -c > %(installroot)%(libdir)/kernel/$KERNEL_UNAME/60-nvidia.initrd
@@ -63,3 +79,6 @@ install     : |
     %install_file %(pkgdir)/20-nvidia.cmdline %(installroot)%(libdir)/kernel/$KERNEL_UNAME/60-nvidia.cmdline
     %install_file %(pkgdir)/nvidia-noview.conf %(installroot)%(libdir)/modprobe.d/nvidia-noview.conf
     %install_file %(pkgdir)/nvidia-uvm.conf %(installroot)%(libdir)/modules-load.d/nvidia-uvm.conf
+
+    # Compress modules with zstd
+    find "%(installroot)%(libdir)/modules" -name '*.ko' -print -exec zstd {} \; -exec rm -v {} \;

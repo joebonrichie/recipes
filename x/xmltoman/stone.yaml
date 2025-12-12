@@ -5,7 +5,7 @@
 #
 name        : xmltoman
 version     : '0.6'
-release     : 1
+release     : 2
 homepage    : https://github.com/atsb/xmltoman
 upstreams   :
     - https://github.com/atsb/xmltoman/archive/refs/tags/0.6.tar.gz : cdd5063ca8beb6fe51ec6ab85f70d31fc8ed034e85e32dd9b7c0b7142bb72fb6

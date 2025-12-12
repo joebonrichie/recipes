@@ -1,0 +1,60 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : kio-extras
+version     : 25.12.0
+release     : 11
+upstreams   :
+    - https://download.kde.org/stable/release-service/25.12.0/src/kio-extras-25.12.0.tar.xz : 453563fef8563e67680daf5ace17b4f1a5abd2cbdf80d50e1cf9bdadbde8df41
+homepage    : https://kde.org/
+license     : GPL-2.0-or-later
+summary     : Additional components to increase the functionality of KIO
+description : |
+    Additional components to increase the functionality of KIO
+builddeps   :
+    - binary(gperf)
+    # Temporary, boulder doesn't handle build ordering resolution correctly when builddeps are added by macros, so add ECM manually
+    - cmake(ECM)
+    - cmake(KDSoapWSDiscoveryClient)
+    - cmake(KExiv2Qt6)
+    - cmake(KF6Archive)
+    - cmake(KF6Config)
+    - cmake(KF6ConfigWidgets)
+    - cmake(KF6CoreAddons)
+    - cmake(KF6DBusAddons)
+    - cmake(KF6DNSSD)
+    - cmake(KF6DocTools)
+    - cmake(KF6GuiAddons)
+    - cmake(KF6I18n)
+    - cmake(KF6KCMUtils)
+    - cmake(KF6KIO)
+    - cmake(KF6Notifications)
+    - cmake(KF6Solid)
+    - cmake(KF6SyntaxHighlighting)
+    - cmake(OpenEXR)
+    - cmake(PlasmaActivities)
+    - cmake(PlasmaActivitiesStats)
+    - cmake(QCoro6)
+    - cmake(Qt6Svg)
+    - cmake(taglib)
+    - pkgconfig(libimobiledevice-1.0)
+    - pkgconfig(libmtp)
+    - pkgconfig(libplist-2.0)
+    - pkgconfig(libproxy-1.0)
+    - pkgconfig(libssh)
+    - pkgconfig(libtirpc)
+    - pkgconfig(smbclient)
+    # TODO:
+    # - libappimage
+setup       : |
+    %cmake_kf6
+build       : |
+    %cmake_build
+install     : |
+    %cmake_install
+packages    :
+    - "%(name)-docs":
+        paths:
+            - /usr/share/doc

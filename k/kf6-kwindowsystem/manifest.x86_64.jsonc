@@ -6,6 +6,7 @@
 			"build-depends": [
 				"cmake(ECM)",
 				"cmake(PlasmaWaylandProtocols)",
+				"cmake(Qt6CorePrivate)",
 				"cmake(Qt6Qml)",
 				"cmake(Qt6WaylandClient)",
 				"pkgconfig(wayland-protocols)",
@@ -21,9 +22,9 @@
 				"soname(libQt6WaylandClient.so.6(x86_64))",
 				"soname(libX11.so.6(x86_64))",
 				"soname(libXfixes.so.3(x86_64))",
-				"soname(libc++.so.1(x86_64))",
 				"soname(libc.so.6(x86_64))",
 				"soname(libm.so.6(x86_64))",
+				"soname(libstdc++.so.6(x86_64))",
 				"soname(libwayland-client.so.0(x86_64))",
 				"soname(libxcb-keysyms.so.1(x86_64))",
 				"soname(libxcb-res.so.0(x86_64))",
@@ -31,7 +32,7 @@
 			],
 			"files": [
 				"/usr/lib/libKF6WindowSystem.so.6",
-				"/usr/lib/libKF6WindowSystem.so.6.12.0",
+				"/usr/lib/libKF6WindowSystem.so.6.20.0",
 				"/usr/lib/qt6/plugins/kf6/kwindowsystem/KF6WindowSystemKWaylandPlugin.so",
 				"/usr/lib/qt6/plugins/kf6/kwindowsystem/KF6WindowSystemX11Plugin.so",
 				"/usr/lib/qt6/qml/org/kde/kwindowsystem/KWindowSystem.qmltypes",
@@ -155,6 +156,7 @@
 			"build-depends": [
 				"cmake(ECM)",
 				"cmake(PlasmaWaylandProtocols)",
+				"cmake(Qt6CorePrivate)",
 				"cmake(Qt6Qml)",
 				"cmake(Qt6WaylandClient)",
 				"pkgconfig(wayland-protocols)",
@@ -207,13 +209,10 @@
 				"/usr/include/KF6/KWindowSystem/private/kwindowsystemplugininterface_p.h",
 				"/usr/lib/cmake/KF6WindowSystem/KF6WindowSystemConfig.cmake",
 				"/usr/lib/cmake/KF6WindowSystem/KF6WindowSystemConfigVersion.cmake",
-				"/usr/lib/cmake/KF6WindowSystem/KF6WindowSystemQchTargets.cmake",
 				"/usr/lib/cmake/KF6WindowSystem/KF6WindowSystemTargets-release.cmake",
 				"/usr/lib/cmake/KF6WindowSystem/KF6WindowSystemTargets.cmake",
 				"/usr/lib/libKF6WindowSystem.so",
-				"/usr/lib/pkgconfig/KF6WindowSystem.pc",
-				"/usr/share/doc/qt6/KF6WindowSystem.qch",
-				"/usr/share/doc/qt6/KF6WindowSystem.tags"
+				"/usr/lib/pkgconfig/KF6WindowSystem.pc"
 			],
 			"name": "kf6-kwindowsystem-devel",
 			"provides": [
@@ -223,6 +222,6 @@
 		}
 	},
 	"source-name": "kf6-kwindowsystem",
-	"source-release": "2",
-	"source-version": "6.12.0"
+	"source-release": "15",
+	"source-version": "6.20.0"
 }

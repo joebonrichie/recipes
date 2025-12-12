@@ -4,8 +4,8 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : systemd
-version     : 254.24
-release     : 48
+version     : "257.10"
+release     : 72
 summary     : A System and Service Manager
 license     :
     - GPL-2.0-or-later
@@ -15,54 +15,298 @@ homepage    : http://www.freedesktop.org/wiki/Software/systemd
 description : |
     A System and Service Manager
 upstreams   :
-    - https://github.com/systemd/systemd-stable/archive/refs/tags/v254.24.tar.gz: 9f9ecbec18b91c85ff911ece120c89e2fd523f86f29b45d5112aa88e8d5068e7
+    - https://github.com/systemd/systemd/archive/refs/tags/v257.10.tar.gz: 5a2f477e6268630f6e2829c7bb3e442017549798a4122635817934eaa0c6ac10
 builddeps   :
+    - binary(bpftool)
+    - binary(gcc)
     - binary(gperf)
     - binary(m4)
     - binary(readelf.py)
+    - binary(rsync)
     - binary(xsltproc)
-    - pkgconfig(gnutls)
+    - pkgconfig(blkid)
+    - pkgconfig(bzip2)
+    - pkgconfig(dbus-1)
+    - pkgconfig(fdisk)
+    - pkgconfig(glib-2.0)
     - pkgconfig(gpg-error)
+    - pkgconfig(libacl)
+    - pkgconfig(libarchive)
+    - pkgconfig(libattr)
+    - pkgconfig(libbpf)
     - pkgconfig(libcryptsetup)
+    - pkgconfig(libcurl)
     - pkgconfig(libdw)
-    - pkgconfig(libgcrypt)
+    - pkgconfig(libffi)
+    - pkgconfig(libfido2)
+    - pkgconfig(libidn2)
     - pkgconfig(libkmod)
+    - pkgconfig(liblz4)
+    - pkgconfig(liblzma)
+    - pkgconfig(libmicrohttpd)
+    - pkgconfig(libpcre2-8)
+    - pkgconfig(libqrencode)
+    - pkgconfig(libseccomp)
+    - pkgconfig(openssl)
+    - pkgconfig(p11-kit-1)
+    - pkgconfig(pam)
     - pkgconfig(polkit-gobject-1)
     - pkgconfig(pwquality)
     - pkgconfig(tss2-esys)
-    - pkgconfig32(blkid)
-    - pkgconfig32(bzip2)
-    - pkgconfig32(dbus-1)
-    - pkgconfig32(fdisk)
-    - pkgconfig32(glib-2.0)
-    - pkgconfig32(libacl)
-    - pkgconfig32(libattr)
+    - pkgconfig(xkbcommon)
+    - pkgconfig(zlib)
     - pkgconfig32(libcap)
-    - pkgconfig32(libcurl)
-    - pkgconfig32(libffi)
-    - pkgconfig32(libidn2)
-    - pkgconfig32(liblz4)
-    - pkgconfig32(liblzma)
-    - pkgconfig32(libpcre2-8)
-    - pkgconfig32(libseccomp)
     - pkgconfig32(libxcrypt)
     - pkgconfig32(libzstd)
     - pkgconfig32(mount)
-    - pkgconfig32(openssl)
-    - pkgconfig32(pam)
-    - pkgconfig32(xkbcommon)
-    - pkgconfig32(zlib)
+    - python(jinja2)
     - docbook
+    - docbook-xsl
     - gettext-devel
-    - gnu-efi-devel
-    - python-jinja
+    # libaudit (+32bit)
 rundeps     :
+    # Dash is now the default system shell (/usr/bin/sh) so we need to ensure it is always present and pulled in on existing systems
+    - binary(dash)
     - binary(ntp-daemon)
     - binary(setfont)
     - system-accounts
+    - terminus-font
     - tzdata
 emul32      : true
+environment : |
+    %export_docbook_catalogs
+setup       : |
+    %patch %(pkgdir)/patches/downstream/0001-tmpfiles-Make-var-cache-ldconfig-world-readable.patch
+    %patch %(pkgdir)/patches/downstream/0001-downstream-Disable-kernel-auditing-by-default.patch
+    %patch %(pkgdir)/patches/downstream/0001-tmpfiles-Allow-nsswitch-clobber-at-non-boot-interval.patch
+    %patch %(pkgdir)/patches/downstream/0001-gpt-auto-generate-Stop-automounting-xbootldr-and-esp.patch
+    %patch %(pkgdir)/patches/downstream/0001-path-lookup-Include-stateless-xdg-path-by-default.patch
+    %patch %(pkgdir)/patches/downstream/0001-Don-t-build-32bit-EFI-stub.patch
+
+    # Upstream patches
+    # None for now
+
+    # ERROR: File fuzz-unit-file/dm-back-slash.swap does not exist.
+    mv "test/fuzz/fuzz-unit-file/dm-back\x2dslash.swap" "test/fuzz/fuzz-unit-file/dm-back-slash.swap"
+
+    _IS_64BIT_BOOL="true"
+    _IS_64BIT_FEAT="enabled"
+    if [[ %(target_triple) = i686* ]]; then
+        _IS_64BIT_BOOL="false"
+        _IS_64BIT_FEAT="disabled"
+    fi
+
+    # TODO:
+    # - Figure out what to do about run0. Do we keep it? If so it should be tested and configured
+    # - Make sure that openssh works with the stateless paths that systemd installs
+    %meson \
+        -Dacl=${_IS_64BIT_FEAT} \
+        -Dadm-gid=16 \
+        -Dadm-group=true \
+        -Danalyze=${_IS_64BIT_BOOL} \
+        -Daudio-gid=11 \
+        -Dbacklight=${_IS_64BIT_BOOL} \
+        -Dbinfmt=${_IS_64BIT_BOOL} \
+        -Dblkid=${_IS_64BIT_FEAT} \
+        -Dbootloader=${_IS_64BIT_FEAT} \
+        -Dbpf-compiler="clang" \
+        -Dbpf-framework=${_IS_64BIT_FEAT} \
+        -Dbzip2=${_IS_64BIT_FEAT} \
+        -Dcdrom-gid=15 \
+        -Dcoredump=${_IS_64BIT_BOOL} \
+        -Dcreate-log-dirs=false \
+        -Ddefault-compression=zstd \
+        -Ddefault-dnssec=no \
+        -Ddefault-timeout-sec=5 \
+        -Ddialout-gid=10 \
+        -Ddisk-gid=8 \
+        -Ddns-over-tls=${_IS_64BIT_BOOL} \
+        -Defi=${_IS_64BIT_BOOL} \
+        -Delfutils=${_IS_64BIT_FEAT} \
+        -Denvironment-d=${_IS_64BIT_BOOL} \
+        -Dfdisk=${_IS_64BIT_FEAT} \
+        -Dfirstboot=${_IS_64BIT_BOOL} \
+        -Dfuzz-tests=false \
+        -Dgshadow=${_IS_64BIT_BOOL} \
+        -Dhibernate=${_IS_64BIT_BOOL} \
+        -Dhomed=${_IS_64BIT_FEAT} \
+        -Dhostnamed=${_IS_64BIT_BOOL} \
+        -Didn=${_IS_64BIT_BOOL} \
+        -Dima=${_IS_64BIT_BOOL} \
+        -Dinitrd=${_IS_64BIT_BOOL} \
+        -Dinstall-sysconfdir=false \
+        -Dinstall-tests=false \
+        -Dipe=${_IS_64BIT_BOOL} \
+        -Dkernel-install=false \
+        -Dkmem-gid=3 \
+        -Dkmod=${_IS_64BIT_FEAT} \
+        -Dkvm-gid=61 \
+        -Dldconfig=${_IS_64BIT_BOOL} \
+        -Dlibarchive=${_IS_64BIT_FEAT} \
+        -Dlibcryptsetup=${_IS_64BIT_FEAT} \
+        -Dlibcurl=${_IS_64BIT_FEAT} \
+        -Dlibfido2=${_IS_64BIT_FEAT} \
+        -Dlibidn2=${_IS_64BIT_FEAT} \
+        -Dlocaled=${_IS_64BIT_BOOL} \
+        -Dlogind=${_IS_64BIT_BOOL} \
+        -Dlp-gid=9 \
+        -Dmachined=${_IS_64BIT_BOOL} \
+        -Dman=${_IS_64BIT_FEAT} \
+        -Dmicrohttpd=${_IS_64BIT_FEAT} \
+        -Dmode=release \
+        -Dmountfsd=${_IS_64BIT_BOOL} \
+        -Dnetworkd=${_IS_64BIT_BOOL} \
+        -Dnobody-group=nobody \
+        -Dnobody-user=nobody \
+        -Dnsresourced=${_IS_64BIT_BOOL} \
+        -Dnss-systemd=true \
+        -Dok-color=highlight-blue \
+        -Doomd=${_IS_64BIT_BOOL} \
+        -Dopenssl=${_IS_64BIT_FEAT} \
+        -Dp11kit=${_IS_64BIT_FEAT} \
+        -Dpam=${_IS_64BIT_FEAT} \
+        -Dpamconfdir="%(vendordir)/pam.d" \
+        -Dpamlibdir="%(libdir)/security" \
+        -Dpcre2=${_IS_64BIT_FEAT} \
+        -Dpolkit=${_IS_64BIT_FEAT} \
+        -Dportabled=${_IS_64BIT_BOOL} \
+        -Dpstore=${_IS_64BIT_BOOL} \
+        -Dpwquality=${_IS_64BIT_FEAT} \
+        -Dqrencode=${_IS_64BIT_FEAT} \
+        -Dquotacheck=${_IS_64BIT_BOOL} \
+        -Drandomseed=${_IS_64BIT_BOOL} \
+        -Drender-gid=30 \
+        -Drepart=${_IS_64BIT_FEAT} \
+        -Drfkill=${_IS_64BIT_BOOL} \
+        -Drpmmacrosdir=no \
+        -Dsbat-distro="aerynos" \
+        -Dsbat-distro-summary="AerynOS" \
+        -Dsbat-distro-pkgname="%(name)" \
+        -Dsbat-distro-version="%(version)" \
+        -Dsbat-distro-url="https://aerynos.com/" \
+        -Dseccomp=${_IS_64BIT_FEAT} \
+        -Dsgx-gid=405 \
+        -Dshellprofiledir="%(vendordir)/profile.d" \
+        -Dslow-tests=false \
+        -Dsmack=${_IS_64BIT_BOOL} \
+        -Dsplit-bin=true \
+        -Dsshconfdir="%(vendordir)/ssh/ssh_config.d" \
+        -Dsshdconfdir="%(vendordir)/ssh/sshd_config.d" \
+        -Dstatus-unit-format-default=combined \
+        -Dstoragetm=${_IS_64BIT_BOOL} \
+        -Dsysext=${_IS_64BIT_BOOL} \
+        -Dsysupdate=disabled \
+        -Dsysupdated=disabled \
+        -Dsysusers=${_IS_64BIT_BOOL} \
+        -Dsysvinit-path="" \
+        -Dtape-gid=4 \
+        -Dtests=false \
+        -Dtimedated=${_IS_64BIT_BOOL} \
+        -Dtimesyncd=${_IS_64BIT_BOOL} \
+        -Dtmpfiles=${_IS_64BIT_BOOL} \
+        -Dtpm=${_IS_64BIT_BOOL} \
+        -Dtpm2=${_IS_64BIT_FEAT} \
+        -Dtty-gid=5 \
+        -Duser-path=/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin \
+        -Duserdb=${_IS_64BIT_BOOL}  \
+        -Dusers-gid=100 \
+        -Dutmp=${_IS_64BIT_BOOL} \
+        -Dutmp-gid=13 \
+        -Dvconsole=${_IS_64BIT_BOOL} \
+        -Dvideo-gid=12 \
+        -Dwheel-gid=28 \
+        -Dwheel-group=true \
+        -Dxdg-autostart=${_IS_64BIT_BOOL} \
+        -Dxkbcommon=${_IS_64BIT_FEAT} \
+        -Dzlib=${_IS_64BIT_FEAT}
+build       : |
+    %meson_build
+install     : |
+    %meson_install
+    if [[ %(target_triple) = i686* ]]; then
+        # Don't need these for the systemd libs
+        rm -rfv %(installroot)%(libdir)/systemd/
+
+        exit 0
+    fi
+
+    # Stateless: Clean up /var directories, they are created via tmpfiles already
+    rmdir %(installroot)/var/lib/systemd %(installroot)/var/lib %(installroot)/var
+
+    # Don't clobber pam!
+    rm -rf %(installroot)%(datadir)/factory/etc/pam.d
+
+    # config.
+    %install_file %(pkgdir)/configs/00-journald.conf %(installroot)%(libdir)/systemd/journald.conf.d/00-journald.conf
+    %install_file %(pkgdir)/configs/10-timeout-abort.conf %(installroot)%(libdir)/systemd/system/service.d/10-timeout-abort.conf
+    %install_file %(pkgdir)/configs/00-timeouts.conf %(installroot)%(libdir)/systemd/system.conf.d/00-timeouts.conf
+    %install_file %(pkgdir)/configs/00-timeouts.conf %(installroot)%(libdir)/systemd/user.conf.d/00-timeouts.conf
+    %install_file %(pkgdir)/configs/10-map-count.conf %(installroot)%(libdir)/sysctl.d/10-map-count.conf
+
+    # Default to BFQ scheduler for rotational drives, and kyber for sata/nvme SSDs
+    %install_file %(pkgdir)/configs/60-block-scheduler.rules -t %(installroot)%(udevrulesdir)
+
+    # Helper script for use by other triggers
+    %install_exe %(pkgdir)/systemd-hook.sh %(installroot)/usr/share/moss/helpers/systemd-hook.sh
+
+    # install necessary system triggers
+    %install_file %(pkgdir)/systemd_etcfiles.yaml %(installroot)/usr/share/moss/triggers/sys.d/systemd_etcfiles.yaml
+    %install_file %(pkgdir)/systemd_tmpfiles.yaml %(installroot)/usr/share/moss/triggers/sys.d/systemd_tmpfiles.yaml
+    %install_file %(pkgdir)/systemd_sysusers.yaml %(installroot)/usr/share/moss/triggers/sys.d/systemd_sysusers.yaml
+    %install_file %(pkgdir)/systemd_binfmt.yaml %(installroot)/usr/share/moss/triggers/sys.d/systemd_binfmt.yaml
+    %install_file %(pkgdir)/systemd_presets.yaml %(installroot)/usr/share/moss/triggers/sys.d/systemd_presets.yaml
+    %install_file %(pkgdir)/systemd_machine_id.yaml %(installroot)/usr/share/moss/triggers/sys.d/systemd_machine_id.yaml
+
+    # And transaction triggers
+    %install_file %(pkgdir)/systemd_hwdb.yaml %(installroot)/usr/share/moss/triggers/tx.d/systemd_hwdb.yaml
+
+    %install_exe -t %(installroot)/usr/lib/systemd/system-environment-generators %(pkgdir)/configs/50-xdg-{config,data}-dirs
 packages    :
+    - "%(name)":
+        rundeps:
+            # These dependencies are all dlopen()ed
+            - soname(libbpf.so.1(x86_64))
+            - soname(libcryptsetup.so.12(x86_64))
+            - soname(libidn2.so.0(x86_64))
+            - soname(libkmod.so.2(x86_64))
+            - soname(libpcre2-8.so.0(x86_64))
+            - soname(libpwquality.so.1(x86_64))
+            - soname(libqrencode.so.4(x86_64))
+            - soname(libxkbcommon.so.0(x86_64))
+            - soname(libzstd.so.1(x86_64))
+            # systemd-coredump and systemd-analyze
+            - soname(libdw.so.1(x86_64))
+            - soname(libelf.so.1(x86_64))
+
+    - "%(name)-32bit":
+        rundeps:
+            # Somewhere between Systemd v254 and v257 compression algorithms were switched to dlopen. Our build supports xz/lz4/zstd but since
+            # zstd is the default make that the only required dependency
+            - soname(libzstd.so.1(386))
+
+    - "%(name)-journal-remote":
+        summary: tools for sending and receiving remote journal logs
+        description: |
+            This package provides tools for sending and receiving remote journal logs:
+
+             * systemd-journal-remote
+             * systemd-journal-upload
+             * systemd-journal-gatewayd
+        rundeps:
+            - "%(name)"
+        paths:
+            - /usr/lib/systemd/systemd-journal-gatewayd
+            - /usr/lib/systemd/systemd-journal-remote
+            - /usr/lib/systemd/systemd-journal-upload
+            - /usr/lib/systemd/system/systemd-journal-gatewayd*
+            - /usr/lib/systemd/system/systemd-journal-remote*
+            - /usr/lib/systemd/system/systemd-journal-upload*
+            - /usr/lib/sysusers.d/systemd-remote.conf
+            - /usr/share/man/man5/journal-remote.conf*.5
+            - /usr/share/man/man5/journal-upload.conf*.5
+            - /usr/share/man/man8/systemd-journal-*.8
+            - /usr/share/systemd/gatewayd/
+
     - "%(name)-networkd":
         summary: systemd-networkd
         description: systemd-networkd
@@ -81,141 +325,12 @@ packages    :
             - /usr/share/man/man8/*network*
             - /usr/share/polkit-1/actions/*network*
             - /usr/share/polkit-1/rules.d/*network*
-toolchain   : gnu
-profiles    :
-    - emul32:
-        setup: |
-            %patch %(pkgdir)/patches/0016-tmpfiles-Make-var-cache-ldconfig-world-readable.patch
-            %patch %(pkgdir)/patches/systemd-245-disable-audit-by-default.patch
-            %patch %(pkgdir)/patches/0001-tmpfiles-Allow-nsswitch-clobber-at-non-boot-interval.patch
-            %patch %(pkgdir)/patches/0001-gpt-auto-generate-Stop-automounting-xbootldr-and-esp.patch
-            %patch %(pkgdir)/patches/0009-path-lookup-Include-stateless-xdg-path-by-default.patch
-            %patch %(pkgdir)/patches/protocols.patch
 
-            %meson \
-                    -Dbpf-framework=false \
-                    -Defi=false \
-                    -Dbootloader=false \
-                    -Dfuzz-tests=false \
-                    -Dinstall-tests=false \
-                    -Dmode=release \
-                    -Dpamlibdir="%(libdir)/security" \
-                    -Dpamconfdir="%(vendordir)/etc/pam.d" \
-                    -Dpcre2=true \
-                    -Drpmmacrosdir=no \
-                    -Dslow-tests=false \
-                    -Dsplit-bin=true \
-                    -Dsplit-usr=false \
-                    -Dtests=false \
-                    -Drepart=false \
-                    -Dsysupdate=false \
-                    -Duserdb=false \
-                    -Dhomed=false \
-                    -Dlogind=false \
-                    -Dnetworkd=false \
-                    -Drfkill=false \
-                    -Dportabled=false \
-                    -Dmachined=false \
-                    -Dpstore=false \
-                    -Dcoredump=false \
-                    -Dlibcryptsetup=false \
-                    -Dgcrypt=false \
-                    -Dtpm=false \
-                    -Dkmod=false \
-                    -Dgnutls=false \
-                    -Dkernel-install=false \
-                    -Dinstall-sysconfdir=false \
-                    -Dnss-systemd=true \
-                    -Dman=false
-        install: |
-            %meson_install
-setup       : |
-    %patch %(pkgdir)/patches/0016-tmpfiles-Make-var-cache-ldconfig-world-readable.patch
-    %patch %(pkgdir)/patches/systemd-245-disable-audit-by-default.patch
-    %patch %(pkgdir)/patches/0001-tmpfiles-Allow-nsswitch-clobber-at-non-boot-interval.patch
-    %patch %(pkgdir)/patches/0001-gpt-auto-generate-Stop-automounting-xbootldr-and-esp.patch
-    %patch %(pkgdir)/patches/0009-path-lookup-Include-stateless-xdg-path-by-default.patch
-    %patch %(pkgdir)/patches/protocols.patch
-
-    %meson \
-        -Dbpf-framework=false \
-        -Defi=true \
-        -Dbootloader=true \
-        -Dfuzz-tests=false \
-        -Dinstall-tests=false \
-        -Dmode=release \
-        -Dpamlibdir="%(libdir)/security" \
-        -Dpamconfdir="%(vendordir)/etc/pam.d" \
-        -Dpcre2=true \
-        -Drpmmacrosdir=no \
-        -Dslow-tests=false \
-        -Dsplit-bin=true \
-        -Dsplit-usr=false \
-        -Dtests=false \
-        -Drepart=true \
-        -Dsysupdate=false \
-        -Duserdb=true \
-        -Dhomed=true \
-        -Dinstall-sysconfdir=false \
-        -Dnss-systemd=true \
-        -Dman=true \
-        -Dxdg-autostart=true \
-        -Ddefault-compression=zstd \
-        -Dkmod=true \
-        -Dpwquality=true \
-        -Dacl=true \
-        -Dfdisk=true \
-        -Dblkid=true \
-        -Dkernel-install=false \
-        -Dok-color=highlight-blue \
-        -Ddefault-dnssec=no \
-        -Ddefault-timeout-sec=5 \
-        -Dadm-group=true \
-        -Dwheel-group=true \
-        -Dnobody-user=nobody \
-        -Dnobody-group=nobody \
-        -Dadm-gid=16 \
-        -Daudio-gid=11 \
-        -Dcdrom-gid=15 \
-        -Ddialout-gid=10 \
-        -Ddisk-gid=8 \
-        -Dinput-gid=97 \
-        -Dkmem-gid=3 \
-        -Dkvm-gid=61 \
-        -Dlp-gid=9 \
-        -Drender-gid=30 \
-        -Dsgx-gid=405 \
-        -Dtape-gid=4 \
-        -Dtty-gid=5 \
-        -Dusers-gid=100 \
-        -Dutmp-gid=13 \
-        -Dvideo-gid=12 \
-        -Dwheel-gid=28 # formally the "sudo" group in Solus..
-build       : |
-    %meson_build
-install     : |
-    %meson_install
-
-    # Stateless: Clean up /var directories, they are created via tmpfiles already
-    rmdir %(installroot)/var/lib/systemd %(installroot)/var/lib
-    rmdir %(installroot)/var/log/journal %(installroot)/var/log %(installroot)/var
-
-    # Don't clobber pam!
-    rm -rf %(installroot)%(datadir)/factory/etc/pam.d
-
-    # config.
-    %install_file %(pkgdir)/config/00-journald.conf %(installroot)%(libdir)/systemd/journald.conf.d/00-journald.conf
-
-    # install necessary system triggers
-    %install_file %(pkgdir)/systemd_etcfiles.yaml %(installroot)/usr/share/moss/triggers/sys.d/systemd_etcfiles.yaml
-    %install_file %(pkgdir)/systemd_tmpfiles.yaml %(installroot)/usr/share/moss/triggers/sys.d/systemd_tmpfiles.yaml
-    %install_file %(pkgdir)/systemd_sysusers.yaml %(installroot)/usr/share/moss/triggers/sys.d/systemd_sysusers.yaml
-    %install_file %(pkgdir)/systemd_presets.yaml %(installroot)/usr/share/moss/triggers/sys.d/systemd_presets.yaml
-    %install_file %(pkgdir)/systemd_machine_id.yaml %(installroot)/usr/share/moss/triggers/sys.d/systemd_machine_id.yaml
-
-    # And transaction triggers
-    %install_file %(pkgdir)/systemd_hwdb.yaml %(installroot)/usr/share/moss/triggers/tx.d/systemd_hwdb.yaml
-
-    rm -v %(installroot)%(libdir)/systemd/boot/efi/*32.efi*
-
-    %install_exe -t %(installroot)/usr/lib/systemd/system-environment-generators %(pkgdir)/config/50-xdg-{config,data}-dirs
+    - "%(name)-ukify":
+        summary: Tool to build Unified Kernel Images (Unsupported)
+        description: Tool to build Unified Kernel Images (Unsupported)
+        # Probably needs python-pefile
+        paths:
+            - /usr/bin/ukify
+            - /usr/lib/systemd/ukify
+            - /usr/share/man/man1/ukify.1

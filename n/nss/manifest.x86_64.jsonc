@@ -2,8 +2,9 @@
 {
 	"manifest-version": "0.2",
 	"packages": {
-		"nss": {
+		"ca-certificates-mozilla": {
 			"build-depends": [
+				"binary(openssl)",
 				"binary(perl)",
 				"binary(python3)",
 				"pkgconfig(nspr)",
@@ -11,7 +12,23 @@
 				"pkgconfig(zlib)"
 			],
 			"depends": [
-				"ca-certificates",
+				"binary(update-ca-trust)"
+			],
+			"files": [
+				"/usr/share/ca-certificates/trust-source/mozilla.trust.p11-kit"
+			],
+			"name": "ca-certificates-mozilla"
+		},
+		"nss": {
+			"build-depends": [
+				"binary(openssl)",
+				"binary(perl)",
+				"binary(python3)",
+				"pkgconfig(nspr)",
+				"pkgconfig(sqlite3)",
+				"pkgconfig(zlib)"
+			],
+			"depends": [
 				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
 				"soname(libc.so.6(x86_64))",
 				"soname(libnspr4.so(x86_64))",
@@ -21,7 +38,6 @@
 			],
 			"files": [
 				"/usr/bin/certutil",
-				"/usr/bin/nss-config",
 				"/usr/bin/pk12util",
 				"/usr/lib/libfreebl3.so",
 				"/usr/lib/libfreeblpriv3.so",
@@ -38,7 +54,6 @@
 			"name": "nss",
 			"provides": [
 				"binary(certutil)",
-				"binary(nss-config)",
 				"binary(pk12util)",
 				"soname(libfreebl3.so(x86_64))",
 				"soname(libfreeblpriv3.so(x86_64))",
@@ -55,6 +70,7 @@
 		},
 		"nss-devel": {
 			"build-depends": [
+				"binary(openssl)",
 				"binary(perl)",
 				"binary(python3)",
 				"pkgconfig(nspr)",
@@ -66,6 +82,7 @@
 				"pkgconfig(nspr)"
 			],
 			"files": [
+				"/usr/bin/nss-config",
 				"/usr/include/nss/alghmac.h",
 				"/usr/include/nss/base.h",
 				"/usr/include/nss/base64.h",
@@ -129,6 +146,7 @@
 				"/usr/include/nss/lgglue.h",
 				"/usr/include/nss/lowkeyi.h",
 				"/usr/include/nss/lowkeyti.h",
+				"/usr/include/nss/ml_dsat.h",
 				"/usr/include/nss/nss.h",
 				"/usr/include/nss/nssb64.h",
 				"/usr/include/nss/nssb64t.h",
@@ -326,11 +344,12 @@
 			],
 			"name": "nss-devel",
 			"provides": [
+				"binary(nss-config)",
 				"pkgconfig(nss)"
 			]
 		}
 	},
 	"source-name": "nss",
-	"source-release": "22",
-	"source-version": "3.109"
+	"source-release": "37",
+	"source-version": "3.119"
 }

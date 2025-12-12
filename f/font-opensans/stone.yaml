@@ -5,7 +5,7 @@
 #
 name        : font-opensans
 version     : 3.003
-release     : 1
+release     : 2
 homepage    : https://fonts.google.com/specimen/Open+Sans
 upstreams   :
     - https://github.com/googlefonts/opensans/archive/bd7e37632246368c60fdcbd374dbf9bad11969b6.tar.gz : a1b16d859522daa826fb093d791ee252a1627274ef1b90f2773d670eb73a2a92

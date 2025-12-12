@@ -4,10 +4,11 @@
 	"packages": {
 		"gdm": {
 			"build-depends": [
-				"binary(dconf)",
 				"binary(itstool)",
 				"binary(msgmerge)",
 				"pkgconfig(accountsservice)",
+				"pkgconfig(check)",
+				"pkgconfig(dconf)",
 				"pkgconfig(gio-2.0)",
 				"pkgconfig(gio-unix-2.0)",
 				"pkgconfig(glib-2.0)",
@@ -23,7 +24,6 @@
 				"pkgconfig(xau)"
 			],
 			"depends": [
-				"binary(Xwayland)",
 				"binary(gnome-session)",
 				"binary(gnome-shell)",
 				"gdm-libs",
@@ -47,7 +47,7 @@
 				"/usr/lib/gdm/gdm-wayland-session",
 				"/usr/lib/security/pam_gdm.so",
 				"/usr/lib/systemd/system/gdm.service",
-				"/usr/lib/systemd/user/gnome-session@gnome-login.target.d/session.conf",
+				"/usr/lib/systemd/user/gnome-session@gnome-login.target.d/gnome-login.session.conf",
 				"/usr/lib/userdb/21.group",
 				"/usr/lib/userdb/21.user",
 				"/usr/lib/userdb/gdm.group",
@@ -55,19 +55,17 @@
 				"/usr/sbin/gdm",
 				"/usr/share/dbus-1/system.d/gdm.conf",
 				"/usr/share/dconf/profile/gdm",
-				"/usr/share/defaults/etc/pam.d/gdm-autologin",
-				"/usr/share/defaults/etc/pam.d/gdm-fingerprint",
-				"/usr/share/defaults/etc/pam.d/gdm-launch-environment",
-				"/usr/share/defaults/etc/pam.d/gdm-password",
-				"/usr/share/defaults/etc/pam.d/gdm-smartcard",
+				"/usr/share/defaults/pam.d/gdm-autologin",
+				"/usr/share/defaults/pam.d/gdm-fingerprint",
+				"/usr/share/defaults/pam.d/gdm-launch-environment",
+				"/usr/share/defaults/pam.d/gdm-password",
+				"/usr/share/defaults/pam.d/gdm-smartcard",
 				"/usr/share/gdm/gdb-cmd",
 				"/usr/share/gdm/gdm.schemas",
 				"/usr/share/gdm/greeter-dconf-defaults",
 				"/usr/share/gdm/greeter/applications/mime-dummy-handler.desktop",
 				"/usr/share/gdm/greeter/applications/mimeapps.list",
-				"/usr/share/gdm/greeter/autostart/orca-autostart.desktop",
 				"/usr/share/gdm/locale.alias",
-				"/usr/share/gir-1.0/Gdm-1.0.gir",
 				"/usr/share/gnome-session/sessions/gnome-login.session",
 				"/usr/share/help/C/gdm/index.docbook",
 				"/usr/share/help/C/gdm/legal.xml",
@@ -171,6 +169,7 @@
 				"/usr/share/locale/hr/LC_MESSAGES/gdm.mo",
 				"/usr/share/locale/hu/LC_MESSAGES/gdm.mo",
 				"/usr/share/locale/hy/LC_MESSAGES/gdm.mo",
+				"/usr/share/locale/ia/LC_MESSAGES/gdm.mo",
 				"/usr/share/locale/id/LC_MESSAGES/gdm.mo",
 				"/usr/share/locale/is/LC_MESSAGES/gdm.mo",
 				"/usr/share/locale/it/LC_MESSAGES/gdm.mo",
@@ -245,10 +244,11 @@
 		},
 		"gdm-devel": {
 			"build-depends": [
-				"binary(dconf)",
 				"binary(itstool)",
 				"binary(msgmerge)",
 				"pkgconfig(accountsservice)",
+				"pkgconfig(check)",
+				"pkgconfig(dconf)",
 				"pkgconfig(gio-2.0)",
 				"pkgconfig(gio-unix-2.0)",
 				"pkgconfig(glib-2.0)",
@@ -282,7 +282,8 @@
 				"/usr/include/gdm/gdm-user-switching.h",
 				"/usr/lib/libgdm.so",
 				"/usr/lib/pkgconfig/gdm-pam-extensions.pc",
-				"/usr/lib/pkgconfig/gdm.pc"
+				"/usr/lib/pkgconfig/gdm.pc",
+				"/usr/share/gir-1.0/Gdm-1.0.gir"
 			],
 			"name": "gdm-devel",
 			"provides": [
@@ -292,10 +293,11 @@
 		},
 		"gdm-libs": {
 			"build-depends": [
-				"binary(dconf)",
 				"binary(itstool)",
 				"binary(msgmerge)",
 				"pkgconfig(accountsservice)",
+				"pkgconfig(check)",
+				"pkgconfig(dconf)",
 				"pkgconfig(gio-2.0)",
 				"pkgconfig(gio-unix-2.0)",
 				"pkgconfig(glib-2.0)",
@@ -334,6 +336,6 @@
 		}
 	},
 	"source-name": "gdm",
-	"source-release": "16",
-	"source-version": "48.0"
+	"source-release": "27",
+	"source-version": "49.2"
 }

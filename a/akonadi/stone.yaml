@@ -1,0 +1,63 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : akonadi
+version     : 25.12.0
+release     : 17
+upstreams   :
+    - https://download.kde.org/stable/release-service/25.12.0/src/akonadi-25.12.0.tar.xz : 89d0ffc9e6f065857e5d6ffb085f352c998ae2f31c9ddf812f5696d3d16660dc
+homepage    : https://kde.org
+license     : LGPL-2.1-or-later
+summary     : KDE centralized database to store, index and retrieve the user's personal information
+description : |
+    The Akonadi framework is responsible for providing applications with a centralized database to store, index and retrieve the user's personal information. This includes the user's emails, contacts, calendars, events, journals, alarms, notes, etc.
+builddeps   :
+    # Temporary, boulder doesn't handle build ordering resolution correctly when builddeps are added by macros, so add ECM manually
+    - cmake(ECM)
+    - cmake(KAccounts6)
+    - cmake(KF6Config)
+    - cmake(KF6ConfigWidgets)
+    - cmake(KF6CoreAddons)
+    - cmake(KF6Crash)
+    - cmake(KF6I18n)
+    - cmake(KF6IconThemes)
+    - cmake(KF6ItemModels)
+    - cmake(KF6WindowSystem)
+    - cmake(KF6XmlGui)
+    - cmake(Qt6CorePrivate)
+    - pkgconfig(liblzma)
+setup       : |
+    %patch %(pkgdir)/upstream-01.patch
+
+    # TODO: Build with postgresql support maybe
+    %cmake_kf6 \
+        -DDATABASE_BACKEND=SQLITE \
+        -DINSTALL_APPARMOR=OFF \
+        -DMYSQLD_EXECUTABLE="/usr/sbin/mysqld" \
+        -DMYSQLD_SCRIPTS_PATH="/usr/bin/mysql_install_db"
+build       : |
+    %cmake_build
+install     : |
+    %cmake_install
+packages    :
+    - "%(name)-mysql":
+        summary: Mysql server support for %(name)
+        description: Mysql server support for %(name)
+        rundeps:
+            - "%(name)"
+            - binary(mysql_install_db)
+            - sysbinary(mysqld)
+            - qt6-base-mysql
+        paths:
+            - /usr/share/xdg/akonadi/
+
+    - "%(name)-devel":
+        rundeps:
+            - cmake(KF6ItemModels)
+            - cmake(KF6XmlGui)
+        paths:
+            - /usr/share/dbus-1/interfaces/
+            - /usr/lib/qt6/plugins/pim6/akonadi/akonadi_test_searchplugin.so
+            - /usr/share/kdevappwizard/

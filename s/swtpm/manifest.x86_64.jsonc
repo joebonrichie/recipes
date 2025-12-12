@@ -1,0 +1,181 @@
+/** Human readable report. This is not consumed by boulder */
+{
+	"manifest-version": "0.2",
+	"packages": {
+		"swtpm": {
+			"build-depends": [
+				"binary(expect)",
+				"binary(nm)",
+				"binary(socat)",
+				"pkgconfig(gmp)",
+				"pkgconfig(gnutls)",
+				"pkgconfig(json-glib-1.0)",
+				"pkgconfig(libcrypto)",
+				"pkgconfig(libseccomp)",
+				"pkgconfig(libtpms)",
+				"sysbinary(ss)"
+			],
+			"depends": [
+				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
+				"soname(libc.so.6(x86_64))",
+				"soname(libcrypto.so.3(x86_64))",
+				"soname(libgio-2.0.so.0(x86_64))",
+				"soname(libglib-2.0.so.0(x86_64))",
+				"soname(libgobject-2.0.so.0(x86_64))",
+				"soname(libjson-glib-1.0.so.0(x86_64))",
+				"soname(libseccomp.so.2(x86_64))",
+				"soname(libtpms.so.0(x86_64))",
+				"soname(swtpm/libswtpm_libtpms.so.0(x86_64))"
+			],
+			"files": [
+				"/usr/bin/swtpm",
+				"/usr/share/man/man8/swtpm.8"
+			],
+			"name": "swtpm",
+			"provides": [
+				"binary(swtpm)"
+			]
+		},
+		"swtpm-devel": {
+			"build-depends": [
+				"binary(expect)",
+				"binary(nm)",
+				"binary(socat)",
+				"pkgconfig(gmp)",
+				"pkgconfig(gnutls)",
+				"pkgconfig(json-glib-1.0)",
+				"pkgconfig(libcrypto)",
+				"pkgconfig(libseccomp)",
+				"pkgconfig(libtpms)",
+				"sysbinary(ss)"
+			],
+			"depends": [
+				"swtpm"
+			],
+			"files": [
+				"/usr/include/swtpm/tpm_ioctl.h",
+				"/usr/lib/swtpm/libswtpm_libtpms.so",
+				"/usr/share/man/man3/swtpm_ioctls.3"
+			],
+			"name": "swtpm-devel"
+		},
+		"swtpm-libs": {
+			"build-depends": [
+				"binary(expect)",
+				"binary(nm)",
+				"binary(socat)",
+				"pkgconfig(gmp)",
+				"pkgconfig(gnutls)",
+				"pkgconfig(json-glib-1.0)",
+				"pkgconfig(libcrypto)",
+				"pkgconfig(libseccomp)",
+				"pkgconfig(libtpms)",
+				"sysbinary(ss)"
+			],
+			"depends": [
+				"soname(libc.so.6(x86_64))",
+				"soname(libcrypto.so.3(x86_64))",
+				"soname(libgio-2.0.so.0(x86_64))",
+				"soname(libglib-2.0.so.0(x86_64))",
+				"soname(libgobject-2.0.so.0(x86_64))",
+				"soname(libjson-glib-1.0.so.0(x86_64))",
+				"soname(libseccomp.so.2(x86_64))",
+				"soname(libtpms.so.0(x86_64))"
+			],
+			"files": [
+				"/usr/lib/swtpm/libswtpm_libtpms.so.0",
+				"/usr/lib/swtpm/libswtpm_libtpms.so.0.0.0"
+			],
+			"name": "swtpm-libs",
+			"provides": [
+				"soname(swtpm/libswtpm_libtpms.so.0(x86_64))"
+			]
+		},
+		"swtpm-tools": {
+			"build-depends": [
+				"binary(expect)",
+				"binary(nm)",
+				"binary(socat)",
+				"pkgconfig(gmp)",
+				"pkgconfig(gnutls)",
+				"pkgconfig(json-glib-1.0)",
+				"pkgconfig(libcrypto)",
+				"pkgconfig(libseccomp)",
+				"pkgconfig(libtpms)",
+				"sysbinary(ss)"
+			],
+			"depends": [
+				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
+				"soname(libc.so.6(x86_64))",
+				"soname(libcrypto.so.3(x86_64))",
+				"soname(libgio-2.0.so.0(x86_64))",
+				"soname(libglib-2.0.so.0(x86_64))",
+				"soname(libgmp.so.10(x86_64))",
+				"soname(libgnutls.so.30(x86_64))",
+				"soname(libgobject-2.0.so.0(x86_64))",
+				"soname(libjson-glib-1.0.so.0(x86_64))",
+				"soname(libtasn1.so.6(x86_64))",
+				"soname(libtpms.so.0(x86_64))",
+				"swtpm",
+				"tpm2-tss"
+			],
+			"files": [
+				"/usr/bin/swtpm_bios",
+				"/usr/bin/swtpm_cert",
+				"/usr/bin/swtpm_ioctl",
+				"/usr/bin/swtpm_localca",
+				"/usr/bin/swtpm_setup",
+				"/usr/lib/sysusers.d/swtpm-tools.conf",
+				"/usr/lib/tmpfiles.d/swtpm-tools.conf",
+				"/usr/share/defaults/swtpm/swtpm-localca.conf",
+				"/usr/share/defaults/swtpm/swtpm-localca.options",
+				"/usr/share/defaults/swtpm/swtpm_setup.conf",
+				"/usr/share/man/man5/swtpm-localca.conf.5",
+				"/usr/share/man/man5/swtpm-localca.options.5",
+				"/usr/share/man/man5/swtpm_setup.conf.5",
+				"/usr/share/man/man8/swtpm-localca.8",
+				"/usr/share/man/man8/swtpm_bios.8",
+				"/usr/share/man/man8/swtpm_cert.8",
+				"/usr/share/man/man8/swtpm_ioctl.8",
+				"/usr/share/man/man8/swtpm_localca.8",
+				"/usr/share/man/man8/swtpm_setup.8",
+				"/usr/share/swtpm/swtpm-create-user-config-files",
+				"/usr/share/swtpm/swtpm-localca"
+			],
+			"name": "swtpm-tools",
+			"provides": [
+				"binary(swtpm_bios)",
+				"binary(swtpm_cert)",
+				"binary(swtpm_ioctl)",
+				"binary(swtpm_localca)",
+				"binary(swtpm_setup)"
+			]
+		},
+		"swtpm-tools-pkcs11": {
+			"build-depends": [
+				"binary(expect)",
+				"binary(nm)",
+				"binary(socat)",
+				"pkgconfig(gmp)",
+				"pkgconfig(gnutls)",
+				"pkgconfig(json-glib-1.0)",
+				"pkgconfig(libcrypto)",
+				"pkgconfig(libseccomp)",
+				"pkgconfig(libtpms)",
+				"sysbinary(ss)"
+			],
+			"depends": [
+				"binary(expect)",
+				"swtpm-tools"
+			],
+			"files": [
+				"/usr/share/man/man8/swtpm-create-tpmca.8",
+				"/usr/share/swtpm/swtpm-create-tpmca"
+			],
+			"name": "swtpm-tools-pkcs11"
+		}
+	},
+	"source-name": "swtpm",
+	"source-release": "1",
+	"source-version": "0.10.1"
+}

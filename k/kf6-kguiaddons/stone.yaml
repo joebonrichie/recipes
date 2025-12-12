@@ -4,10 +4,10 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : kf6-kguiaddons
-version     : 6.12.0
-release     : 3
+version     : 6.20.0
+release     : 16
 upstreams   :
-    - https://download.kde.org/stable/frameworks/6.12/kguiaddons-6.12.0.tar.xz : e394826cade1c5d9491166f3a3f4d0c3d625bf27106352678a06d2ec5364c532
+    - https://download.kde.org/stable/frameworks/6.20/kguiaddons-6.20.0.tar.xz : 33caf5ae46f1a6214f56596180e0c6ccb4af2cce0dcae060ae4fb7078260a476
 homepage    : https://community.kde.org/Frameworks
 license     :
     - GPL-3.0-only
@@ -18,13 +18,15 @@ description : |
 builddeps   :
     # Temporary, boulder doesn't handle build ordering resolution correctly when builddeps are added by macros, so add ECM manually
     - cmake(ECM)
+    - cmake(Qt6CorePrivate)
     - cmake(Qt6Qml)
     - cmake(Qt6WaylandClient)
     - cmake(PlasmaWaylandProtocols)
+    - pkgconfig(wayland-protocols)
     - pkgconfig(x11)
     # TODO package pyside bindings, note that they need to be subpackaged. Let's wait till something needs them
 setup       : |
-    %cmake_kf6
+    %cmake_kf6 -DBUILD_PYTHON_BINDINGS=OFF
 build       : |
     %cmake_build
 install     : |

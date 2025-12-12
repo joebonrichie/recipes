@@ -1,0 +1,27 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : solaar
+version     : 1.1.17
+release     : 4
+upstreams   :
+    - https://github.com/pwr-Solaar/Solaar/archive/refs/tags/1.1.17.tar.gz : 6879ba70b64c81ebb9c6c087de2108096a1d924d7452bc456ea855ce197ca152
+homepage    : https://pwr-solaar.github.io/Solaar/
+license     : GPL-2.0-or-later
+summary     : Solaar is a Linux device manager for Logitech's Unifying Receiver peripherals.
+description : |
+    Solaar is a Linux device manager for Logitech's Unifying Receiver peripherals.
+builddeps   :
+    - python(setuptools)
+rundeps     :
+    - binary(python3)
+    - libayatana-appindicator
+build       : |
+    %pyproject_build
+install     : |
+    %pyproject_install
+
+    # Per the documentation we need an alternate rule for running under Wayland
+    %install_file rules.d-uinput/42-logitech-unify-permissions.rules -t %(installroot)%(udevrulesdir)

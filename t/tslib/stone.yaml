@@ -1,0 +1,35 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : tslib
+version     : "1.24"
+release     : 2
+upstreams   :
+    - https://github.com/libts/tslib/releases/download/1.24/tslib-1.24.tar.xz : 58d9941ffaa269c399f00d0d308184c96087f7acf69aa8e3c6645e852f993ba2
+homepage    : https://github.com/kergoth/tslib
+license     : LGPL-2.1-only
+summary     : Touchscreen Access Library
+description : |
+    The idea of tslib is to have a core library that provides standardised
+    services, and a set of plugins to manage the conversion and filtering as
+    needed.
+
+    The plugins for a particular touchscreen are loaded automatically by the
+    library under the control of a static configuration file, ts.conf.
+    ts.conf gives the library basic configuration information.  Each line
+    specifies one module, and the parameters for that module.  The modules
+    are loaded in order, with the first one processing the touchscreen data
+    first.
+builddeps   :
+    - pkgconfig(sdl2)
+setup       : |
+    %patch %(pkgdir)/0001-Stateless.patch
+
+    %reconfigure \
+        --with-sdl2
+build       : |
+    %make
+install     : |
+    %make_install

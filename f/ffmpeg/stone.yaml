@@ -4,11 +4,19 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : ffmpeg
-version     : '7.1'
-release     : 3
+version     : '8.0.1'
+release     : 18
 homepage    : https://ffmpeg.org/releases
 upstreams   :
-    - https://ffmpeg.org/releases/ffmpeg-7.1.tar.xz : 40973d44970dbc83ef302b0609f2e74982be2d85916dd2ee7472d30678a7abe6
+    - https://ffmpeg.org/releases/ffmpeg-8.0.1.tar.xz:
+        hash: 05ee0b03119b45c0bdb4df654b96802e909e0a752f72e4fe3794f487229e5a41
+        unpack: false
+        rename: current.tar.xz
+
+    - https://ffmpeg.org/releases/ffmpeg-7.1.2.tar.xz:
+        hash: 089bc60fb59d6aecc5d994ff530fd0dcb3ee39aa55867849a2bbc4e555f9c304
+        unpack: false
+        rename: compat.tar.xz
 summary     : FFmpeg is a complete, cross-platform solution to record, convert and stream audio and video.
 description : |
     FFmpeg is a complete, cross-platform solution to record, convert and stream audio and video.
@@ -18,68 +26,462 @@ license     :
     - LGPL-2.1-or-later
     - LGPL-3.0
 builddeps   :
+    - binary(makeinfo)
     - binary(nasm)
+    - binary(pod2man)
+    # - cmake(glslang)
     - cmake(VulkanHeaders)
+    - pkgconfig(OpenCL)
     - pkgconfig(SvtAv1Enc)
+    - pkgconfig(alsa)
     - pkgconfig(aom)
     - pkgconfig(dav1d)
-    - pkgconfig(fdk-aac)
+    - pkgconfig(dvdnav)
+    - pkgconfig(ffnvcodec)
     - pkgconfig(fontconfig)
     - pkgconfig(freetype2)
+    - pkgconfig(fribidi)
+    - pkgconfig(lc3)
+    - pkgconfig(lcms2)
+    - pkgconfig(libass)
+    - pkgconfig(libbs2b)
+    - pkgconfig(libcdio)
+    - pkgconfig(libcdio_paranoia)
+    - pkgconfig(libdrm)
     - pkgconfig(libjpeg)
+    - pkgconfig(libjxl)
     - pkgconfig(liblzma)
+    - pkgconfig(openh264)
+    - pkgconfig(libplacebo)
     - pkgconfig(libpng)
     - pkgconfig(libpulse)
+    - pkgconfig(libqrencode)
+    - pkgconfig(librsvg-2.0)
+    - pkgconfig(libssh)
     - pkgconfig(libssl)
+    - pkgconfig(libv4l2)
     - pkgconfig(libva)
     - pkgconfig(libwebp)
     - pkgconfig(libxml-2.0)
+    - pkgconfig(lilv-0)
+    - pkgconfig(lv2)
+    - pkgconfig(opengl)
     - pkgconfig(opus)
     - pkgconfig(rav1e)
+    - pkgconfig(shaderc)
+    - pkgconfig(snappy)
     - pkgconfig(sndio)
+    - pkgconfig(soxr)
+    - pkgconfig(speex)
+    - pkgconfig(theoradec)
+    - pkgconfig(vdpau)
     - pkgconfig(vorbis)
+    - pkgconfig(vpl)
     - pkgconfig(vpx)
     - pkgconfig(vulkan)
     - pkgconfig(x11)
+    - pkgconfig(x264)
+    - pkgconfig(x265)
     - pkgconfig(xcb)
+    - pkgconfig(xv)
+    - gsm-devel
+    - ladspa-devel
     - lame-devel
+# TODO
+# - Figure out build issue with glslang
+# hwaccels:
+# - nvdec/nvenc (llvm-cuda?)
+# Codecs:
+# - libbluray
+# - libiec61883
+# - libjack
+# - libmodplug
+# - libopenjpeg
+# - libopenmpt
+# - librubberband
+# - libsrt
+# - libvidstab
+# - libvmaf
+# - libxvid
+# - libzimg
+# - libzmq
+# - vapoursynth
+# - frei0r
+# - lcevc_dec
+# - libtesseract
+# - libmysofa
+# - avisynth
+# - libgme
+# - libcodec2
+# - libilbc
+# - libtwolame
+# - libvvenc
+# - libxeve
+# - libaribb24
+# - libaribcaption
+# - libxevd
+# - libzvbi
+# outdev/indev
+# - caca
+# - libiec61883
+
+# Intentionally not enabled for now
+# - openal
+setup       : |
+    mkdir compat current
+    bsdtar-static xf %(sourcedir)/compat.tar.xz --strip-components=1 -C compat
+    bsdtar-static xf %(sourcedir)/current.tar.xz --strip-components=1 -C current
+
+    pushd compat
+    %patch %(pkgdir)/0001-Don-t-print-in-columns.patch
+    %patch %(pkgdir)/0001-configure-explicitly-disable-spirv_compiler.patch
+    %patch %(pkgdir)/CVE-2025-22921.patch
+    %patch %(pkgdir)/chromium.patch
+
+    ./configure \
+        --prefix=%(prefix) \
+        --incdir=%(includedir)/ffmpeg-7.1 \
+        --libdir=%(libdir)/ffmpeg-7.1 \
+        --cc=%(cc) \
+        --cxx=%(cxx) \
+        --ld=%(cxx) \
+        --nm=%(nm) \
+        --disable-static \
+        --disable-stripping \
+        --enable-lto \
+        --enable-shared \
+        --enable-gpl \
+        --enable-lcms2 \
+        --enable-ladspa \
+        --enable-libaom \
+        --enable-libass \
+        --enable-libbs2b \
+        --enable-libcdio \
+        --enable-libdav1d \
+        --enable-libdrm \
+        --enable-libdvdnav \
+        --enable-libdvdread \
+        --enable-libfontconfig \
+        --enable-libfreetype \
+        --enable-libfribidi \
+        --enable-libgsm \
+        --enable-libharfbuzz \
+        --enable-libjxl \
+        --enable-liblc3 \
+        --enable-libmp3lame \
+        --enable-libopus \
+        --enable-libplacebo \
+        --enable-libpulse \
+        --enable-libqrencode \
+        --enable-librav1e \
+        --enable-librsvg \
+        --enable-libshaderc \
+        --enable-libsnappy \
+        --enable-libsoxr \
+        --enable-libspeex \
+        --enable-libssh \
+        --enable-libsvtav1 \
+        --enable-libtheora \
+        --enable-libv4l2 \
+        --enable-libvorbis \
+        --enable-libvpl \
+        --enable-libvpx \
+        --enable-libwebp \
+        --enable-libx264 \
+        --enable-libx265 \
+        --enable-libxcb \
+        --enable-libxml2 \
+        --enable-lv2 \
+        --enable-nvdec \
+        --enable-nvenc \
+        --enable-opencl \
+        --enable-opengl \
+        --enable-openssl \
+        --enable-vaapi \
+        --enable-version3 \
+        --enable-vulkan
+    popd
+
+    pushd current
+    %patch %(pkgdir)/0001-Don-t-print-in-columns.patch
+    %patch %(pkgdir)/chromium.patch
+
+    ./configure \
+        --prefix=%(prefix) \
+        --cc=%(cc) \
+        --cxx=%(cxx) \
+        --ld=%(cxx) \
+        --nm=%(nm) \
+        --disable-static \
+        --disable-stripping \
+        --enable-lto \
+        --enable-shared \
+        --enable-gpl \
+        --enable-ladspa \
+        --enable-lcms2 \
+        --enable-libaom \
+        --enable-libass \
+        --enable-libbs2b \
+        --enable-libcdio \
+        --enable-libdav1d \
+        --enable-libdrm \
+        --enable-libdvdnav \
+        --enable-libdvdread \
+        --enable-libfontconfig \
+        --enable-libfreetype \
+        --enable-libfribidi \
+        --enable-libgsm \
+        --enable-libharfbuzz \
+        --enable-libjxl \
+        --enable-liblc3 \
+        --enable-libmp3lame \
+        --enable-libopenh264 \
+        --enable-libopus \
+        --enable-libplacebo \
+        --enable-libpulse \
+        --enable-libqrencode \
+        --enable-librav1e \
+        --enable-librsvg \
+        --enable-libshaderc \
+        --enable-libsnappy \
+        --enable-libsoxr \
+        --enable-libspeex \
+        --enable-libssh \
+        --enable-libsvtav1 \
+        --enable-libtheora \
+        --enable-libv4l2 \
+        --enable-libvorbis \
+        --enable-libvpl \
+        --enable-libvpx \
+        --enable-libwebp \
+        --enable-libx264 \
+        --enable-libx265 \
+        --enable-libxcb \
+        --enable-libxml2 \
+        --enable-lv2 \
+        --enable-nvdec \
+        --enable-nvenc \
+        --enable-opencl \
+        --enable-opengl \
+        --enable-openssl \
+        --enable-vaapi \
+        --enable-version3 \
+        --enable-vulkan
+    popd
+build       : |
+    pushd compat
+    export CCACHE_BASEDIR="${pwd}"
+    %make V=1
+    popd
+
+    pushd current
+    export CCACHE_BASEDIR="${pwd}"
+    %make V=1
+    popd
+install     : |
+    pushd compat
+    %make_install
+
+    # Version libs
+    pushd %(installroot)
+    f=""
+    for f in usr/lib/ffmpeg-7.1/*; do
+        if [[ $f == *.so ]]; then
+            ln -srf -- usr/lib/"$(readlink "$f")" "$f"
+            mv "$f" "${f%%.so}-7.1.so"
+        elif [[ ! -d $f ]]; then
+            mv "$f" usr/lib
+        fi
+    done
+
+    # Rename pkgconfigs so they don't conflict
+    mv %(installroot)%(libdir)/ffmpeg-7.1/pkgconfig %(installroot)%(libdir)/pkgconfig
+    cd %(installroot)%(libdir)/pkgconfig
+    for i in *.pc; do
+        mv $i ${i%.pc}-7.1.pc
+    done
+
+    # Fixup pkgconfig dependencies
+    for b in avcodec avdevice avfilter avformat avutil postproc swresample swscale; do
+        sed -i "s|lib$b|lib$b-7.1|g" *.pc
+        sed -i "s|-l$b|-l$b-7.1|g" *.pc
+    done
+    popd
+
+    # Delete everything unversioned
+    rm -rfv %(installroot)%(bindir)/ \
+            %(installroot)%(datadir)/ffmpeg \
+            %(installroot)%(docdir) \
+            %(installroot)%(mandir)/man1 \
+            %(installroot)%(mandir)/man3
+    rmdir -v %(installroot)%(mandir) \
+             %(installroot)%(datadir)
+    popd
+
+    pushd current
+    %make_install
+    popd
 tuning      :
-    - lto: thin
+    # - lto: full # Handled by configure flag
     - optimize: speed
 packages    :
-    - "%(name)-devel":
+    - "libavcodec":
+        summary: FFmpeg codec library
         paths:
-            - /usr/share/ffmpeg/examples
-            - /usr/share/man/man3
-setup       : |
-    ./configure --prefix=%(prefix) \
-                --cc=%(cc) \
-                --cxx=%(cxx) \
-                --ld=%(cxx) \
-                --nm=%(nm) \
-                --disable-static \
-                --disable-stripping \
-                --enable-lto \
-                --enable-shared \
-                --enable-gpl \
-                --enable-libaom \
-                --enable-libdav1d \
-                --enable-libfdk-aac \
-                --enable-libfontconfig \
-                --enable-libfreetype \
-                --enable-libmp3lame \
-                --enable-libopus \
-                --enable-libpulse \
-                --enable-librav1e \
-                --enable-libsvtav1 \
-                --enable-libvorbis \
-                --enable-libvpx \
-                --enable-libwebp \
-                --enable-nonfree \
-                --enable-openssl \
-                --enable-vaapi \
-                --enable-vulkan
-build       : |
-    %make
-install     : |
-    %make_install
+            - /usr/lib/libavcodec.so.*
+
+    - "libavcodec-devel":
+        summary: FFmpeg codec library - Devel files
+        rundeps:
+            - libavcodec
+        paths:
+            - /usr/include/libavcodec/
+            - /usr/include/ffmpeg-*/libavcodec/
+            - /usr/lib/libavcodec.so
+            - /usr/lib/ffmpeg-*/libavcodec-*.so
+            - /usr/lib/pkgconfig/libavcodec.pc
+            - /usr/lib/pkgconfig/libavcodec-*.pc
+            - /usr/share/man/man3/libavcodec.*
+
+    - "libavdevice":
+        summary: FFmpeg device library
+        paths:
+            - /usr/lib/libavdevice.so.*
+
+    - "libavdevice-devel":
+        summary: FFmpeg device library - Devel files
+        rundeps:
+            - libavdevice
+        paths:
+            - /usr/include/libavdevice/
+            - /usr/include/ffmpeg-*/libavdevice/
+            - /usr/lib/libavdevice.so
+            - /usr/lib/ffmpeg-*/libavdevice-*.so
+            - /usr/lib/pkgconfig/libavdevice.pc
+            - /usr/lib/pkgconfig/libavdevice-*.pc
+            - /usr/share/man/man3/libavdevice.*
+
+    - "libavfilter":
+        summary: FFmpeg audio and video filtering library
+        paths:
+            - /usr/lib/libavfilter.so.*
+
+    - "libavfilter-devel":
+        summary: FFmpeg audio and video filtering library - Devel files
+        rundeps:
+            - libavfilter
+        paths:
+            - /usr/include/libavfilter/
+            - /usr/include/ffmpeg-*/libavfilter/
+            - /usr/lib/libavfilter.so
+            - /usr/lib/ffmpeg-*/libavfilter-*.so
+            - /usr/lib/pkgconfig/libavfilter.pc
+            - /usr/lib/pkgconfig/libavfilter-*.pc
+            - /usr/share/man/man3/libavfilter.*
+
+    - "libavformat":
+        summary: FFmpeg's stream format library
+        paths:
+            - /usr/lib/libavformat.so.*
+
+    - "libavformat-devel":
+        summary: FFmpeg's stream format library - Devel files
+        rundeps:
+            - libavformat
+        paths:
+            - /usr/include/libavformat/
+            - /usr/include/ffmpeg-*/libavformat/
+            - /usr/lib/libavformat.so
+            - /usr/lib/ffmpeg-*/libavformat-*.so
+            - /usr/lib/pkgconfig/libavformat.pc
+            - /usr/lib/pkgconfig/libavformat-*.pc
+            - /usr/share/man/man3/libavformat.*
+
+    - "libavutil":
+        summary: FFmpeg's utility library
+        paths:
+            - /usr/lib/libavutil.so.*
+
+    - "libavutil-devel":
+        summary: FFmpeg's utility library - Devel files
+        rundeps:
+            - libavutil
+        paths:
+            - /usr/include/libavutil/
+            - /usr/include/ffmpeg-*/libavutil/
+            - /usr/lib/libavutil.so
+            - /usr/lib/ffmpeg-*/libavutil-*.so
+            - /usr/lib/pkgconfig/libavutil.pc
+            - /usr/lib/pkgconfig/libavutil-*.pc
+            - /usr/share/man/man3/libavutil.*
+
+    - "libpostproc":
+        summary: FFmpeg post-processing library
+        paths:
+            - /usr/lib/libpostproc.so.*
+
+    - "libpostproc-devel":
+        summary: FFmpeg post-processing library - Devel files
+        rundeps:
+            - libpostproc
+        paths:
+            - /usr/include/libpostproc/
+            - /usr/include/ffmpeg-*/libpostproc/
+            - /usr/lib/libpostproc.so
+            - /usr/lib/ffmpeg-*/libpostproc-*.so
+            - /usr/lib/pkgconfig/libpostproc.pc
+            - /usr/lib/pkgconfig/libpostproc-*.pc
+            - /usr/share/man/man3/libpostproc.*
+
+    - "libswscale":
+        summary: FFmpeg image scaling and colorspace/pixel conversion library
+        paths:
+            - /usr/lib/libswscale.so.*
+
+    - "libswscale-devel":
+        summary: FFmpeg image scaling and colorspace/pixel conversion library - Devel files
+        rundeps:
+            - libswscale
+        paths:
+            - /usr/include/libswscale/
+            - /usr/include/ffmpeg-*/libswscale/
+            - /usr/lib/libswscale.so
+            - /usr/lib/ffmpeg-*/libswscale-*.so
+            - /usr/lib/pkgconfig/libswscale.pc
+            - /usr/lib/pkgconfig/libswscale-*.pc
+            - /usr/share/man/man3/libswscale.*
+
+    - "libswresample":
+        summary: FFmpeg software resampling library
+        paths:
+            - /usr/lib/libswresample.so.*
+
+    - "libswresample-devel":
+        summary: FFmpeg software resampling library - Devel files
+        rundeps:
+            - libswresample
+        paths:
+            - /usr/include/libswresample/
+            - /usr/include/ffmpeg-*/libswresample/
+            - /usr/lib/libswresample.so
+            - /usr/lib/ffmpeg-*/libswresample-*.so
+            - /usr/lib/pkgconfig/libswresample.pc
+            - /usr/lib/pkgconfig/libswresample-*.pc
+            - /usr/share/man/man3/libswresample.*
+
+    - "%(name)-devel":
+        rundeps:
+            - libavcodec-devel
+            - libavdevice-devel
+            - libavfilter-devel
+            - libavformat-devel
+            - libavutil-devel
+            - libpostproc-devel
+            - libswscale-devel
+            - libswresample-devel
+        paths:
+            - /usr/share/ffmpeg/examples/
+
+    - "%(name)-docs":
+        paths:
+            - /usr/share/doc/

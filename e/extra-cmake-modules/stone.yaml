@@ -4,10 +4,10 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : extra-cmake-modules
-version     : 6.12.0
-release     : 3
+version     : 6.20.0
+release     : 15
 upstreams   :
-    - https://download.kde.org/stable/frameworks/6.12/extra-cmake-modules-6.12.0.tar.xz : e54e87365e193c806966e9698320bde81981219574721ff1970a98163c8ed5a0
+    - https://download.kde.org/stable/frameworks/6.20/extra-cmake-modules-6.20.0.tar.xz : 3711de8572db5da618efe3f28cc094ca25a1abb0bddffc63dced12c4f8caae5f
 homepage    : https://community.kde.org/Frameworks
 license     :
     - BSD-2-Clause
@@ -20,8 +20,8 @@ builddeps   :
     - binary(doxygen)
     - cmake(Qt6)
     - cmake(Qt6ToolsTools)
-    # - python-sphinx
-    # TODO need python-sphinx
+    - python(sphinx)
+    - python(sphinxcontrib-qthelp)
 rundeps     :
     - binary(doxygen)
     - cmake(Qt6) # We default to Qt6
@@ -36,3 +36,7 @@ build       : |
     %cmake_build
 install     : |
     %cmake_install
+packages    :
+    - "%(name)-docs":
+        paths:
+            - /usr/share/doc

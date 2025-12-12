@@ -4,10 +4,10 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : kf6-solid
-version     : 6.12.0
-release     : 3
+version     : 6.20.0
+release     : 18
 upstreams   :
-    - https://download.kde.org/stable/frameworks/6.12/solid-6.12.0.tar.xz : 4bd96b394723be533a30404804be40be495dfae05a4430c011223d603d7d8666
+    - https://download.kde.org/stable/frameworks/6.20/solid-6.20.0.tar.xz : 0328381845a11cfcfa8c18c8d60c9df7b85a07bcd7b1bd36b71c7eb3cc3492d6
 homepage    : https://community.kde.org/Frameworks
 license     :
     - BSD-3-Clause
@@ -21,8 +21,10 @@ builddeps   :
     - binary(flex)
     # Temporary, boulder doesn't handle build ordering resolution correctly when builddeps are added by macros, so add ECM manually
     - cmake(ECM)
+    - cmake(Qt6CorePrivate)
+    - pkgconfig(libimobiledevice-1.0)
+    - pkgconfig(libplist-2.0)
     - pkgconfig(mount)
-    # TODO add imobiledevice and plist for IOS support
     # TODO add mediaplayerinfo
 setup       : |
     %cmake_kf6
@@ -30,3 +32,10 @@ build       : |
     %cmake_build
 install     : |
     %cmake_install
+packages    :
+    - "%(name)":
+        rundeps:
+            - udisks
+            - udisks-btrfs
+            - udisks-lvm2
+            - upower

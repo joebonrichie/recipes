@@ -1,0 +1,5 @@
+releases:
+  id: 13121
+  rss: https://gitlab.gnome.org/GNOME/folks/-/tags?format=atom
+security:
+  cpe: ~ # Last checked 2025-09-02

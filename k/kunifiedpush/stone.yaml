@@ -1,0 +1,31 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : kunifiedpush
+version     : 25.12.0
+release     : 8
+upstreams   :
+    - https://download.kde.org/stable/release-service/25.12.0/src/kunifiedpush-25.12.0.tar.xz : 37591d1dd1291678e0d34470ecfa7f6cf188a3723ab0db117042d11d43b60ffe
+homepage    : https://invent.kde.org/libraries/kunifiedpush
+license     : LGPL-2.0-or-later
+summary     : UnifiedPush client library
+description : |
+    UnifiedPush client library and distributor daemon
+builddeps   :
+    # Temporary, boulder doesn't handle build ordering resolution correctly when builddeps are added by macros, so add ECM manually
+    - cmake(ECM)
+    - cmake(KF6CoreAddons)
+    - cmake(KF6I18n)
+    - cmake(KF6KCMUtils)
+    - cmake(KF6Service)
+    - cmake(KF6Solid)
+    - cmake(Qt6WebSockets)
+    - pkgconfig(openssl)
+setup       : |
+    %cmake_kf6
+build       : |
+    %cmake_build
+install     : |
+    %cmake_install

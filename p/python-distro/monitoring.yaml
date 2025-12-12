@@ -1,0 +1,6 @@
+releases:
+  id: 12202
+  rss: https://pypi.org/rss/project/distro/releases.xml
+security:
+  # No known CPE. Checked 20250710
+  cpe: ~ # NO, amazon:open_distro IS NOT this package

@@ -1,0 +1,49 @@
+/** Human readable report. This is not consumed by boulder */
+{
+	"manifest-version": "0.2",
+	"packages": {
+		"python-soupsieve": {
+			"build-depends": [
+				"python(hatchling)"
+			],
+			"depends": [
+				"python-libs"
+			],
+			"files": [
+				"/usr/lib/python3.11/site-packages/soupsieve-2.7.dist-info/METADATA",
+				"/usr/lib/python3.11/site-packages/soupsieve-2.7.dist-info/RECORD",
+				"/usr/lib/python3.11/site-packages/soupsieve-2.7.dist-info/WHEEL",
+				"/usr/lib/python3.11/site-packages/soupsieve-2.7.dist-info/licenses/LICENSE.md",
+				"/usr/lib/python3.11/site-packages/soupsieve/__init__.py",
+				"/usr/lib/python3.11/site-packages/soupsieve/__meta__.py",
+				"/usr/lib/python3.11/site-packages/soupsieve/__pycache__/__init__.cpython-311.opt-1.pyc",
+				"/usr/lib/python3.11/site-packages/soupsieve/__pycache__/__init__.cpython-311.pyc",
+				"/usr/lib/python3.11/site-packages/soupsieve/__pycache__/__meta__.cpython-311.opt-1.pyc",
+				"/usr/lib/python3.11/site-packages/soupsieve/__pycache__/__meta__.cpython-311.pyc",
+				"/usr/lib/python3.11/site-packages/soupsieve/__pycache__/css_match.cpython-311.opt-1.pyc",
+				"/usr/lib/python3.11/site-packages/soupsieve/__pycache__/css_match.cpython-311.pyc",
+				"/usr/lib/python3.11/site-packages/soupsieve/__pycache__/css_parser.cpython-311.opt-1.pyc",
+				"/usr/lib/python3.11/site-packages/soupsieve/__pycache__/css_parser.cpython-311.pyc",
+				"/usr/lib/python3.11/site-packages/soupsieve/__pycache__/css_types.cpython-311.opt-1.pyc",
+				"/usr/lib/python3.11/site-packages/soupsieve/__pycache__/css_types.cpython-311.pyc",
+				"/usr/lib/python3.11/site-packages/soupsieve/__pycache__/pretty.cpython-311.opt-1.pyc",
+				"/usr/lib/python3.11/site-packages/soupsieve/__pycache__/pretty.cpython-311.pyc",
+				"/usr/lib/python3.11/site-packages/soupsieve/__pycache__/util.cpython-311.opt-1.pyc",
+				"/usr/lib/python3.11/site-packages/soupsieve/__pycache__/util.cpython-311.pyc",
+				"/usr/lib/python3.11/site-packages/soupsieve/css_match.py",
+				"/usr/lib/python3.11/site-packages/soupsieve/css_parser.py",
+				"/usr/lib/python3.11/site-packages/soupsieve/css_types.py",
+				"/usr/lib/python3.11/site-packages/soupsieve/pretty.py",
+				"/usr/lib/python3.11/site-packages/soupsieve/py.typed",
+				"/usr/lib/python3.11/site-packages/soupsieve/util.py"
+			],
+			"name": "python-soupsieve",
+			"provides": [
+				"python(soupsieve)"
+			]
+		}
+	},
+	"source-name": "python-soupsieve",
+	"source-release": "1",
+	"source-version": "2.7"
+}

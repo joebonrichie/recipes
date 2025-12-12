@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : gnome-shell
-version     : 48.0
-release     : 29
+version     : "49.2"
+release     : 42
 homepage    : https://gitlab.gnome.org/GNOME/gnome-shell
 upstreams   :
-    - https://download.gnome.org/sources/gnome-shell/48/gnome-shell-48.0.tar.xz : 36aac2edcdc7588aaadb658cd4687df262b37ba0b667102dcbefbff0c2232bc3
+    - https://download.gnome.org/sources/gnome-shell/49/gnome-shell-49.2.tar.xz : d13b855d8df99debf7eccf810b6e054fdb0aeb87ef8b131918a6e4c9197a02c7
 summary     : The core GNOME desktop experience
 description : |
     GNOME Shell provides core user interface functions for the GNOME desktop,
@@ -21,14 +21,15 @@ license     :
     - GPL-3.0-or-later
     - LGPL-2.1-or-later
 builddeps   :
-    # - binary(a2x)
     - binary(gjs)
     - binary(msgfmt)
     - binary(perl)
     - binary(python3)
+    - binary(rst2man)
     - binary(rtkitctl)
     - binary(wireplumber)
     - pkgconfig(atk-bridge-2.0)
+    - pkgconfig(bash-completion)
     - pkgconfig(gcr-4)
     - pkgconfig(gdk-pixbuf-2.0)
     - pkgconfig(gdk-x11-3.0)
@@ -38,7 +39,6 @@ builddeps   :
     - pkgconfig(gnome-autoar-0)
     - pkgconfig(gnome-desktop-4)
     - pkgconfig(gnome-keybindings)
-    - pkgconfig(gobject-introspection-1.0)
     - pkgconfig(gsettings-desktop-schemas)
     - pkgconfig(gtk4)
     - pkgconfig(ibus-1.0)
@@ -51,15 +51,14 @@ builddeps   :
     - pkgconfig(libstartup-notification-1.0)
     - pkgconfig(libsystemd)
     - pkgconfig(libxml-2.0)
-    - pkgconfig(mutter-clutter-16)
-    - pkgconfig(osmesa)
+    - pkgconfig(mutter-clutter-17)
     - pkgconfig(polkit-agent-1)
     - pkgconfig(systemd)
     - pkgconfig(x11)
 rundeps     :
-    - adwaita-icon-theme
     - binary(Xwayland)
     - binary(rtkitctl)
+    - adwaita-icon-theme
     - font-cantarell
     - gdm-libs
     - geoclue
@@ -72,12 +71,13 @@ rundeps     :
     - libnma
     - librsvg
     - shared-mime-info
+    - webkitgtk60 # For captive portals
     - xdg-desktop-portal-gnome
-    - xkeyboard-config
 setup       : |
     # Redonkulous logo sizes are redonkulous
     %patch %(pkgdir)/3674.patch
-    %meson -Dtests=false -Dman=false
+    %meson \
+        -Dtests=false
 build       : |
     %meson_build
 install     : |

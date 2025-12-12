@@ -15,7 +15,7 @@ index 59966f8..5c9823a 100644
 +++ b/etc/meson.build
 @@ -1 +1 @@
 -install_data('UPower.conf', install_dir: get_option('sysconfdir') / 'UPower')
-+install_data('UPower.conf', install_dir: get_option('datadir') / 'defaults/etc/UPower')
++install_data('UPower.conf', install_dir: get_option('datadir') / 'defaults/UPower')
 diff --git a/meson.build b/meson.build
 index 4f0aa21..a8cd89e 100644
 --- a/meson.build
@@ -57,7 +57,7 @@ index c80105f..271ce2e 100644
 -		filename = g_build_filename (PACKAGE_SYSCONF_DIR,"UPower", "UPower.conf", NULL);
 +	paths[0] = g_strdup (g_getenv ("UPOWER_CONF_FILE_NAME"));
 +	paths[1] = g_build_filename (PACKAGE_SYSCONF_DIR, "UPower", "UPower.conf", NULL);
-+	paths[2] = g_build_filename (PACKAGE_DATA_DIR, "defaults", "etc", "UPower", "UPower.conf", NULL);
++	paths[2] = g_build_filename (PACKAGE_DATA_DIR, "defaults", "UPower", "UPower.conf", NULL);
  
 -	/* load */
 -	ret = g_key_file_load_from_file (config->priv->keyfile,

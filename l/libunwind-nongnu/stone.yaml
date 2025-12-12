@@ -1,0 +1,36 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : libunwind-nongnu
+version     : 1.8.3
+release     : 3
+upstreams   :
+    - https://github.com/libunwind/libunwind/releases/download/v1.8.3/libunwind-1.8.3.tar.gz : be30d910e67f58d82e753231f1357f326a1a088acf126b21ff77e60aab19b90b
+homepage    : https://www.nongnu.org/libunwind
+license     : MIT
+summary     : Open-source implementation of the libunwind API
+description : |
+    Open-source implementation of the libunwind API
+builddeps   :
+    - pkgconfig(liblzma)
+    - pkgconfig(zlib)
+setup       : |
+    %patch %(pkgdir)/rename-libunwind-nongnu.patch
+
+    %reconfigure \
+        --includedir=%(includedir)/%(name) \
+        --disable-static \
+        --enable-cxx-exceptions \
+        --enable-setjmp=no
+build       : |
+    %make
+install     : |
+    %make_install
+packages    :
+    - "%(name)-tests":
+        summary: Test binaries for %(name)
+        description: Test binaries for %(name)
+        paths:
+            - /usr/lib/libunwind-nongnu/

@@ -6,6 +6,7 @@
 			"build-depends": [
 				"binary(msgmerge)",
 				"cmake(ECM)",
+				"cmake(Qt6CorePrivate)",
 				"cmake(Qt6Qml)",
 				"pkgconfig(iso-codes)"
 			],
@@ -13,16 +14,16 @@
 				"binary(msgmerge)",
 				"soname(libQt6Core.so.6(x86_64))",
 				"soname(libQt6Qml.so.6(x86_64))",
-				"soname(libc++.so.1(x86_64))",
-				"soname(libc.so.6(x86_64))"
+				"soname(libc.so.6(x86_64))",
+				"soname(libstdc++.so.6(x86_64))"
 			],
 			"files": [
 				"/usr/lib/libKF6I18n.so.6",
-				"/usr/lib/libKF6I18n.so.6.12.0",
+				"/usr/lib/libKF6I18n.so.6.20.0",
 				"/usr/lib/libKF6I18nLocaleData.so.6",
-				"/usr/lib/libKF6I18nLocaleData.so.6.12.0",
+				"/usr/lib/libKF6I18nLocaleData.so.6.20.0",
 				"/usr/lib/libKF6I18nQml.so.6",
-				"/usr/lib/libKF6I18nQml.so.6.12.0",
+				"/usr/lib/libKF6I18nQml.so.6.20.0",
 				"/usr/lib/qt6/plugins/kf6/ktranscript.so",
 				"/usr/lib/qt6/qml/org/kde/i18n/localeData/kde-qmlmodule.version",
 				"/usr/lib/qt6/qml/org/kde/i18n/localeData/ki18nlocaledataqmlplugin.qmltypes",
@@ -173,6 +174,7 @@
 			"build-depends": [
 				"binary(msgmerge)",
 				"cmake(ECM)",
+				"cmake(Qt6CorePrivate)",
 				"cmake(Qt6Qml)",
 				"pkgconfig(iso-codes)"
 			],
@@ -207,7 +209,6 @@
 				"/usr/lib/cmake/KF6I18n/KF6I18nConfig.cmake",
 				"/usr/lib/cmake/KF6I18n/KF6I18nConfigVersion.cmake",
 				"/usr/lib/cmake/KF6I18n/KF6I18nMacros.cmake",
-				"/usr/lib/cmake/KF6I18n/KF6I18nQchTargets.cmake",
 				"/usr/lib/cmake/KF6I18n/KF6I18nTargets-release.cmake",
 				"/usr/lib/cmake/KF6I18n/KF6I18nTargets.cmake",
 				"/usr/lib/cmake/KF6I18n/build-pofiles.cmake",
@@ -216,9 +217,7 @@
 				"/usr/lib/cmake/KF6I18n/ts-pmap-compile.py",
 				"/usr/lib/libKF6I18n.so",
 				"/usr/lib/libKF6I18nLocaleData.so",
-				"/usr/lib/libKF6I18nQml.so",
-				"/usr/share/doc/qt6/KF6I18n.qch",
-				"/usr/share/doc/qt6/KF6I18n.tags"
+				"/usr/lib/libKF6I18nQml.so"
 			],
 			"name": "kf6-ki18n-devel",
 			"provides": [
@@ -227,6 +226,6 @@
 		}
 	},
 	"source-name": "kf6-ki18n",
-	"source-release": "3",
-	"source-version": "6.12.0"
+	"source-release": "16",
+	"source-version": "6.20.0"
 }

@@ -1,0 +1,23 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : python-pyproject-metadata
+version     : 0.9.1
+release     : 1
+homepage    : https://github.com/FFY00/python-pyproject-metadata
+upstreams   :
+    - https://pypi.debian.net/pyproject-metadata/pyproject_metadata-0.9.1.tar.gz : b8b2253dd1b7062b78cf949a115f02ba7fa4114aabe63fa10528e9e1a954a816
+license     : MIT
+summary     : PEP 621 metadata parsing
+description : |
+    Dataclass for PEP 621 metadata with support for core metadata generation.
+builddeps   :
+    - python(flit-core)
+build       : |
+    %pyproject_build
+install     : |
+    %pyproject_install
+#check       : |
+#    %python3_test pytest -v

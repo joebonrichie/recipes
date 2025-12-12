@@ -1,0 +1,40 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : kidentitymanagement
+version     : 25.12.0
+release     : 12
+upstreams   :
+    - https://download.kde.org/stable/release-service/25.12.0/src/kidentitymanagement-25.12.0.tar.xz : 798e059bb92218a27effe440ad6616203a43e04fe552d7a7b8d9e99eef06b6db
+homepage    : https://kde.org
+license     : LGPL-2.1-or-later
+summary     : Manage PIM identity
+description : |
+    Manage PIM identity.
+builddeps   :
+    # Temporary, boulder doesn't handle build ordering resolution correctly when builddeps are added by macros, so add ECM manually
+    - cmake(ECM)
+    - cmake(KF6CoreAddons)
+    - cmake(KF6I18n)
+    - cmake(KF6KIO)
+    - cmake(KF6KirigamiAddons)
+    - cmake(KF6TextCustomEditor)
+    - cmake(KF6XmlGui)
+    - cmake(KPim6TextEdit)
+    - cmake(Qt6CorePrivate)
+    - cmake(Qt6Quick)
+setup       : |
+    %cmake_kf6
+build       : |
+    %cmake_build
+install     : |
+    %cmake_install
+packages    :
+    - "%(name)-devel":
+        rundeps:
+            - cmake(KF6CoreAddons)
+            - cmake(KPim6TextEdit)
+        paths:
+            - /usr/share/dbus-1/interfaces/

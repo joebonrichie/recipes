@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : elfutils
-version     : 0.192
-release     : 6
+version     : "0.194"
+release     : 10
 homepage    : https://sourceware.org/elfutils
 upstreams   :
-    - https://sourceware.org/elfutils/ftp/0.192/elfutils-0.192.tar.bz2 : 616099beae24aba11f9b63d86ca6cc8d566d968b802391334c91df54eab416b4
+    - https://sourceware.org/elfutils/ftp/0.194/elfutils-0.194.tar.bz2 : 09e2ff033d39baa8b388a2d7fbc5390bfde99ae3b7c67c7daaf7433fbcf0f01e
 summary     : Collection of utilities and libraries to read, create and modify ELF binary files
 description : |
     elfutils is a collection of utilities and libraries to read, create and modify ELF binary files, find and handle DWARF debug data, symbols, thread state and stacktraces for processes and core files on GNU/Linux.
@@ -23,28 +23,17 @@ builddeps   :
     - pkgconfig32(libzstd)
     - pkgconfig32(zlib)
 emul32      : true
-packages    :
-    - "%(name)-libs":
-        summary: Libraries for elfutils
-        description: |
-            Libraries for elfutils
-        paths:
-            - /usr/lib/lib*-*.so
-            - /usr/lib/lib*.so.*
-    - "%(name)-32bit":
-        paths:
-            - /usr/lib32/lib*-*.so
-            - /usr/lib32/lib*.so.*
 setup: |
     %patch %(pkgdir)/rename-stack.patch
 
-    %configure --disable-static \
-                --disable-debuginfod \
-                --disable-libdebuginfod \
-                --with-zlib \
-                --with-bzlib \
-                --with-lzma \
-                --with-zstd
+    %configure \
+        --disable-static \
+        --disable-debuginfod \
+        --disable-libdebuginfod \
+        --with-zlib \
+        --with-bzlib \
+        --with-lzma \
+        --with-zstd
 build       : |
     %make VERBOSE=1
 install     : |
@@ -56,3 +45,53 @@ install     : |
     find %(installroot)/%(libdir) -type f -name '*.a' -delete -print
 #check       : |
 #    %make check
+packages    :
+    - "%(name)-libs":
+        summary: Libraries for elfutils
+        description: |
+            Libraries for elfutils
+        paths:
+            - /usr/lib/lib*-*.so
+            - /usr/lib/lib*.so.*
+
+    - "%(name)-32bit":
+        paths:
+            - /usr/lib32/lib*-*.so
+            - /usr/lib32/lib*.so.*
+
+    - "libelf":
+        summary: Library to read and write ELF files
+        description: Library to read and write ELF files
+        paths:
+            - /usr/lib/libelf-*.so
+            - /usr/lib/libelf.so.*
+
+    - "libelf-32bit":
+        summary: Library to read and write ELF files - 32bit
+        description: Library to read and write ELF files - 32bit
+        paths:
+            - /usr/lib32/libelf-*.so
+            - /usr/lib32/libelf.so.*
+
+    - "libelf-devel":
+        summary: Library to read and write ELF files
+        description: Library to read and write ELF files
+        rundeps:
+            - libelf
+        paths:
+            - /usr/include/gelf.h
+            - /usr/include/libelf.h
+            - /usr/include/nlist.h
+            - /usr/lib/pkgconfig/libelf.pc
+            - /usr/lib/libelf.so
+            - /usr/share/man/man3/*elf*
+
+    - "libelf-32bit-devel":
+        summary: Library to read and write ELF files
+        description: Library to read and write ELF files
+        rundeps:
+            - libelf-32bit
+            - libelf-devel
+        paths:
+            - /usr/lib32/libelf.so
+            - /usr/lib32/pkgconfig/libelf.pc

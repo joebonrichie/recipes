@@ -1,0 +1,31 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : libtpms
+version     : 0.10.1
+release     : 1
+upstreams   :
+    - https://github.com/stefanberger/libtpms/archive/refs/tags/v0.10.1.tar.gz : ebc24f3191d90f6cf0b4d4200cd876db4bd224b3c565708bbea0a82ee275e0fb
+homepage    : https://github.com/stefanberger/libtpms
+license     :
+    - BSD-3-Clause
+    - TCGL
+summary     : Library providing Trusted Platform Module (TPM) functionality
+description : |
+    A library providing TPM functionality for VMs. Targeted for integration into Qemu.
+builddeps   :
+    - pkgconfig(openssl)
+setup       : |
+    %autogen
+    %configure \
+        --disable-static \
+        --with-openssl \
+        --with-tpm2
+build       : |
+    %make \
+        LIBTOOL=rclibtool
+install     : |
+    %make_install \
+        LIBTOOL=rclibtool

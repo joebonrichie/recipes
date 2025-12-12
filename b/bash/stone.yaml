@@ -4,11 +4,13 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : bash
-version     : 5.2.37
-release     : 21
+version     : 5.3.8
+release     : 28
 homepage    : http://www.gnu.org/software/bash/bash.html
 upstreams   :
-    - https://ftp.gnu.org/gnu/bash/bash-5.2.37.tar.gz : 9599b22ecd1d5787ad7d3b7bf0c59f312b3396d1e281175dd1f8a4014da621ff
+    # Use a mirror because the GNU http server is flaky AF
+    # - https://ftp.gnu.org/gnu/bash/bash-5.3.tar.gz : 0d5cd86965f869a26cf64f4b71be7b96f90a3ba8b3d74e27e8e9d9d5550f31ba
+    - https://mirror.kumi.systems/gnu/bash/bash-5.3.tar.gz : 0d5cd86965f869a26cf64f4b71be7b96f90a3ba8b3d74e27e8e9d9d5550f31ba
 summary     : GNU Bourne-Again Shell
 description : |
     Bash is a sh-compatible command interpreter that executes
@@ -24,38 +26,63 @@ builddeps   :
     - pkgconfig(ncursesw)
     - pkgconfig(readline)
 setup       : |
+    # TODO: We need a reliable method to see if there are patches upstream. Possible a custom check in ent
+
+    %patch %(pkgdir)/bash53-001 -p0
+    %patch %(pkgdir)/bash53-002 -p0
+    %patch %(pkgdir)/bash53-003 -p0
+    %patch %(pkgdir)/bash53-004 -p0
+    %patch %(pkgdir)/bash53-005 -p0
+    %patch %(pkgdir)/bash53-006 -p0
+    %patch %(pkgdir)/bash53-007 -p0
+    %patch %(pkgdir)/bash53-008 -p0
+
     %patch %(pkgdir)/stateless.patch
 
-    export CFLAGS="$CFLAGS -DRECYCLES_PIDS -DSYSLOG_HISTORY -DSYSLOG_SHOPT=0"
+    export CFLAGS+=" -DRECYCLES_PIDS -DSYSLOG_HISTORY -DSYSLOG_SHOPT=0 -DDEFAULT_PATH_VALUE='\"/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin\"'"
 
     # often hangs
     rm tests/run-jobs
 
-    %configure \
+    # ensure that while this build is ongoing, /usr/bin/sh is guaranteed to
+    # exist and be owned by bash.
+    [[ -f /usr/bin/sh ]] && ls -l /usr/bin/sh && rm -vf /usr/bin/sh
+    ln -srv /usr/bin/bash /usr/bin/sh
+    ls -l /usr/bin/sh
+
+    # Avoid relying on /bin/sh if at all possible
+    %configure_with_bash \
         --without-bash-malloc \
         --with-installed-readline \
         --with-curses \
         --enable-history \
-        --enable-readline \
-        --enable-nls
+        --enable-nls \
+        --enable-readline
 build       : |
     %make
 install     : |
     %make_install
-    %install_file %(pkgdir)/bashrc %(installroot)%(vendordir)%(sysconfdir)/bashrc
-    %install_file %(pkgdir)/profile %(installroot)%(vendordir)%(sysconfdir)/profile
-    %install_file %(pkgdir)/serpent-stateless-shell-conf.sh %(installroot)%(vendordir)%(sysconfdir)/serpent-stateless-shell-conf.sh
-    %install_file %(pkgdir)/40-prompt.sh %(installroot)%(vendordir)%(sysconfdir)/profile.d/40-prompt.sh
-    %install_file %(pkgdir)/41-alias.sh %(installroot)%(vendordir)%(sysconfdir)/profile.d/41-alias.sh
+    %install_file %(pkgdir)/bashrc %(installroot)%(vendordir)/bashrc
+    %install_file %(pkgdir)/profile %(installroot)%(vendordir)/profile
+    %install_file %(pkgdir)/aeryn-stateless-shell-conf.sh %(installroot)%(vendordir)/aeryn-stateless-shell-conf.sh
+    %install_file %(pkgdir)/40-prompt.sh %(installroot)%(vendordir)/profile.d/40-prompt.sh
+    %install_file %(pkgdir)/41-alias.sh %(installroot)%(vendordir)/profile.d/41-alias.sh
 
-    ln -svf bash "%(installroot)%(bindir)/sh"
-    ln -sv bash.1 "%(installroot)%(mandir)/man1/sh.1"
+    # let dash own this for quicker ./configure runs during boulder builds
+    # ln -svf bash "%(installroot)%(bindir)/sh"
+    # ln -sv bash.1 "%(installroot)%(mandir)/man1/sh.1"
 
     # These are useless
     rm -rfv %(installroot)%(libdir)/bash/Makefile.*
 check       : |
     %make check
 workload    : |
+    %make -C examples/loadables all others
     %make check
 tuning      :
-    - lto : full
+    # Full seems to cause tests/run-assoc and tests/run-type to hang. This is possibly a Clang 20 bug and should be retested in the future
+    - lto : thin
+packages    :
+    - "%(name)-devel":
+        paths:
+            - /usr/lib/bash/loadables.h

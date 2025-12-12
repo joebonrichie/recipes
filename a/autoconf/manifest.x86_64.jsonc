@@ -7,6 +7,11 @@
 				"binary(m4)",
 				"binary(perl)"
 			],
+			"depends": [
+				"binary(m4)",
+				"binary(perl)",
+				"binary(slibtool)"
+			],
 			"files": [
 				"/usr/bin/autoconf",
 				"/usr/bin/autoheader",
@@ -84,6 +89,6 @@
 		}
 	},
 	"source-name": "autoconf",
-	"source-release": "4",
+	"source-release": "5",
 	"source-version": "2.72"
 }

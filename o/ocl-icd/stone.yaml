@@ -1,0 +1,36 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : ocl-icd
+version     : '2.3.4'
+release     : 4
+homepage    : https://github.com/KhronosGroup/OpenCL-Headers/
+upstreams   :
+    - https://github.com/OCL-dev/ocl-icd/archive/refs/tags/v2.3.4.tar.gz : 1a302b71b7304cca5a36f69d017b1af2b762cc4c2dd1c0c0e2fc1933db25c9cc
+summary     : Vendor Neutral OpenCL Implementation
+description : |
+    Vendor Neutral OpenCL Implementation
+license     : BSD-2-Clause
+builddeps   :
+    - binary(a2x)
+    - binary(ruby)
+    - binary(xmlto)
+    - pkgconfig(OpenCL-Headers)
+    - docbook
+environment : |
+    %export_docbook_catalogs
+setup       : |
+    %reconfigure \
+        --disable-static \
+        --enable-custom-vendordir=/usr/share/OpenCL/vendors
+build       : |
+    %make
+install     : |
+    %make_install
+packages    :
+    - "%(name)-devel":
+        paths:
+            - /usr/bin/cllayerinfo
+            - /usr/share/doc/ocl-icd/

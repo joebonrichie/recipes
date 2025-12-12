@@ -1,0 +1,5 @@
+releases:
+  id: 3721
+  rss: https://gitlab.com/psmisc/psmisc/-/releases.atom
+security:
+  cpe: ~ # No CPE found, last checked (2025-09-03)

@@ -1,20 +1,19 @@
 #
-# SPDX-FileCopyrightText: © 2020-2024 Serpent OS Developers
+# SPDX-FileCopyrightText: © 2020-2025 AerynOS Developers
 #
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : cosmic-workspaces
-version     : 1.0.0-alpha.6
-release     : 13
-summary     : Cosmic Desktop Workspaces
-license     : GPL-3.0
-homepage    : https://github.com/pop-os/cosmic-workspaces
+version     : 1.0.0-git.954a45c
+release     : 25
+homepage    : https://github.com/pop-os/cosmic-workspaces-epoch
 upstreams   :
-    - git|https://github.com/pop-os/cosmic-workspaces-epoch.git : 7f877f72a373514d298259ad7c6a6b3a5e10432c
+    - git|https://github.com/pop-os/cosmic-workspaces-epoch.git : 954a45ca4c06c7292a6c2faaf63036db07ca0536
+summary     : Cosmic Desktop Workspaces
 description : |
     Cosmic Desktop Workspaces
+license     : GPL-3.0
 builddeps   :
-    - binary(cargo)
     - binary(just)
     - binary(which)
     - pkgconfig(dbus-1)
@@ -22,9 +21,7 @@ builddeps   :
     - pkgconfig(libinput)
     - pkgconfig(libudev)
     - pkgconfig(xkbcommon)
-networking  : yes
-tuning      :
-    - lto: thin
+networking  : true
 setup       : |
     %cargo_fetch
 build       : |

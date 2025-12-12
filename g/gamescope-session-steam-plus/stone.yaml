@@ -5,7 +5,7 @@
 #
 name        : gamescope-session-steam-plus
 version     : r1.6835776
-release     : 1
+release     : 2
 homepage    : https://github.com/ChimeraOS/gamescope
 upstreams   :
     - git|https://github.com/ShadowBlip/gamescope-session-steam-plus.git : 6835776876a2b9e5fc819bd8d98f06ae51fa6394

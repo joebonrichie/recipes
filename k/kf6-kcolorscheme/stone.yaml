@@ -4,10 +4,10 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : kf6-kcolorscheme
-version     : 6.12.0
-release     : 4
+version     : 6.20.0
+release     : 17
 upstreams   :
-    - https://download.kde.org/stable/frameworks/6.12/kcolorscheme-6.12.0.tar.xz : f4226999c7b9c9da8de9ed9e3174fca49f7864da0da1d0bc9668c4448f667512
+    - https://download.kde.org/stable/frameworks/6.20/kcolorscheme-6.20.0.tar.xz : 1505acc69b2cc1be9ad325a70ab9669bb8d316fc5d601ccf4032be22fab8c0c2
 homepage    : https://community.kde.org/Frameworks
 license     :
     - GPL-3.0-only
@@ -21,6 +21,7 @@ builddeps   :
     - cmake(KF6Config)
     - cmake(KF6GuiAddons)
     - cmake(KF6I18n)
+    - cmake(Qt6CorePrivate)
 setup       : |
     %cmake_kf6
 build       : |

@@ -1,0 +1,262 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : webkitgtk
+version     : 2.50.3
+release     : 5
+upstreams   :
+    - https://webkitgtk.org/releases/webkitgtk-2.50.3.tar.xz : 70a006b4695bb6b2e157e801f5a0d029f4110f050c6f0882decd8a3bf594d54f
+homepage    : https://webkitgtk.org
+license     : LGPL-2.1-only
+summary     : GTK web content engine library
+description : |
+    GTK web content engine library
+builddeps   :
+    - binary(bwrap)
+    - binary(gettext)
+    - binary(gi-docgen)
+    - binary(gperf)
+    - binary(perl)
+    - binary(python3)
+    - binary(unifdef)
+    - binary(xdg-dbus-proxy)
+    - pkgconfig(atspi-2)
+    - pkgconfig(cairo)
+    - pkgconfig(enchant-2)
+    - pkgconfig(epoxy)
+    - pkgconfig(expat)
+    - pkgconfig(fontconfig)
+    - pkgconfig(freetype2)
+    - pkgconfig(gbm)
+    - pkgconfig(glib-2.0)
+    - pkgconfig(gobject-introspection-1.0)
+    - pkgconfig(gstreamer-1.0)
+    - pkgconfig(gstreamer-allocators-1.0)
+    - pkgconfig(gstreamer-app-1.0)
+    - pkgconfig(gstreamer-audio-1.0)
+    - pkgconfig(gstreamer-codecparsers-1.0)
+    - pkgconfig(gstreamer-fft-1.0)
+    - pkgconfig(gstreamer-gl-1.0)
+    - pkgconfig(gstreamer-mpegts-1.0)
+    - pkgconfig(gstreamer-pbutils-1.0)
+    - pkgconfig(gstreamer-plugins-base-1.0)
+    - pkgconfig(gstreamer-rtp-1.0)
+    - pkgconfig(gstreamer-sdp-1.0)
+    - pkgconfig(gstreamer-tag-1.0)
+    - pkgconfig(gstreamer-transcoder-1.0)
+    - pkgconfig(gstreamer-video-1.0)
+    - pkgconfig(gstreamer-webrtc-1.0)
+    - pkgconfig(gtk+-3.0)
+    - pkgconfig(gtk+-unix-print-3.0)
+    - pkgconfig(gtk4)
+    - pkgconfig(gtk4-unix-print)
+    - pkgconfig(harfbuzz)
+    - pkgconfig(icu-i18n)
+    - pkgconfig(icu-uc)
+    - pkgconfig(lcms2)
+    - pkgconfig(libavif)
+    - pkgconfig(libdrm)
+    - pkgconfig(libgcrypt)
+    - pkgconfig(libjpeg)
+    - pkgconfig(libjxl)
+    - pkgconfig(libpng)
+    - pkgconfig(libseccomp)
+    - pkgconfig(libsecret-1)
+    - pkgconfig(libsoup-3.0)
+    - pkgconfig(libtasn1)
+    - pkgconfig(libwebp)
+    - pkgconfig(libwoff2common)
+    - pkgconfig(libxml-2.0)
+    - pkgconfig(libxslt)
+    - pkgconfig(manette-0.2)
+    - pkgconfig(ruby)
+    - pkgconfig(sqlite3)
+    - pkgconfig(sysprof-capture-4)
+    - pkgconfig(wayland-client)
+    - pkgconfig(wayland-egl)
+    - pkgconfig(wayland-protocols)
+    - pkgconfig(wayland-server)
+    - pkgconfig(x11)
+    - pkgconfig(xext)
+    - pkgconfig(zlib)
+    - hyphen-devel
+    # TODO:
+    # - flite ?
+setup       : |
+    # USE_SOUP2=OFF can be dropped in webkitgtk v2.52
+    function cmake_webkitgtk() {
+        %cmake \
+            -DENABLE_SPEECH_SYNTHESIS=OFF \
+            -DPORT=GTK \
+            -DUSE_FLITE=OFF \
+            -DUSE_LIBBACKTRACE=OFF \
+            -DUSE_SOUP2=OFF \
+            "$@"
+    }
+
+    # We only want one webdriver binary, so build it in the gtk4 build
+    cmake_webkitgtk \
+        -B gtk41 \
+        -DENABLE_WEBDRIVER=OFF \
+        -DUSE_GTK4=OFF
+
+    cmake_webkitgtk \
+        -B gtk6 \
+        -DENABLE_WEBDRIVER=ON \
+        -DUSE_GTK4=ON
+build       : |
+    _build_of=0
+    for b in gtk41 gtk6; do
+
+        # Add which build we are on to the ninja output
+        # Make sure to update the number of builds if we add an additional variant
+        # I have no idea why we can't use ++ or let bash syntax
+        _build_of=$( expr ${_build_of} + 1 )
+        export NINJA_STATUS="[${_build_of}/2][%%f/%%t %%es] "
+
+        %ccache_zero
+        BUILDDIR=${b}
+        env CCACHE_BASEDIR="${PWD}/${b}" %cmake_build
+        %ccache_stats
+    done
+install     : |
+    for b in gtk41 gtk6; do
+        BUILDDIR=${b}
+        %cmake_install
+    done
+packages    :
+    - webkit2gtk41:
+        summary: WebKitGTK for GTK 3 and libsoup 3
+        description: |
+            WebKitGTK is the port of the WebKit web rendering engine to the
+            GTK platform. This package contains WebKitGTK for GTK 3 and libsoup 3.
+        rundeps:
+            - binary(bwrap)
+            - binary(xdg-dbus-proxy)
+            - libglvnd-gles
+            # These should be recommends, or soft deps
+            # geoclue2
+            # gstreamer plugins bad
+            # gstreamer plugins good
+            # xdg desktop portal gtk
+        paths:
+            - /usr/lib/libwebkit2gtk-4.1.so.*
+            - /usr/lib/girepository-1.0/WebKit2*-4.1.typelib
+            - /usr/lib/webkit2gtk-4.1/
+            - /usr/lib/webkitgtk/webkit2gtk-4.1/ # minibrowser and jsc are split out to later packages
+            - /usr/share/locale/**/WebKitGTK-4.1.mo
+
+    - webkit2gtk41-devel:
+        summary: Development files for webkit2gtk41
+        description: |
+            The webkit2gtk41-devel package contains libraries, build data, and header
+            files for developing applications that use webkit2gtk41.
+        rundeps:
+            - webkit2gtk41
+        paths:
+            - /usr/include/webkitgtk-4.1/
+            - /usr/lib/libwebkit2gtk-4.1.so
+            - /usr/lib/webkitgtk/webkit2gtk-4.1/MiniBrowser
+            - /usr/lib/pkgconfig/webkit2gtk*-4.1.pc
+            - /usr/share/gir-1.0/WebKit2*-4.1.gir
+
+    - javascriptcoregtk41:
+        summary: JavaScript engine from webkit2gtk41
+        description: This package contains the JavaScript engine from webkit2gtk41.
+        paths:
+            - /usr/lib/libjavascriptcoregtk-4.1.so.*
+            - /usr/lib/girepository-1.0/JavaScriptCore-4.1.typelib
+
+    - javascriptcoregtk41-devel:
+        summary: Development files for JavaScript engine from webkit2gtk41
+        description: |
+            The javascriptcoregtk41-devel package contains libraries, build data, and header
+            files for developing applications that use JavaScript engine from webkit2gtk41.
+        rundeps:
+            - javascriptcoregtk41
+        paths:
+            - /usr/include/webkitgtk-4.1/JavaScriptCore/
+            - /usr/include/webkitgtk-4.1/jsc/
+            - /usr/lib/libjavascriptcoregtk-4.1.so
+            - /usr/lib/webkitgtk/webkit2gtk-4.1/jsc
+            - /usr/lib/pkgconfig/javascriptcoregtk-4.1.pc
+            - /usr/share/gir-1.0/JavaScriptCore-4.1.gir
+
+    - webkit2gtk41-docs:
+        summary: Documentation files for webkit2gtk41
+        description: This package contains developer documentation for webkit2gtk41.
+        rundeps:
+            - webkit2gtk41
+        paths:
+            - /usr/share/doc/javascriptcoregtk-4.1/
+            - /usr/share/doc/webkit2gtk-4.1/
+            - /usr/share/doc/webkit2gtk-web-extension-4.1/
+
+    - webkitgtk60:
+        summary: WebKitGTK for GTK 4
+        description: |
+            WebKitGTK is the port of the WebKit web rendering engine to the	
+            GTK platform. This package contains WebKitGTK for GTK 4.
+        rundeps:
+            - binary(bwrap)
+            - binary(xdg-dbus-proxy)
+            - libglvnd-gles
+            # These should be recommends, or soft deps
+            # geoclue2
+            # gstreamer plugins bad
+            # gstreamer plugins good
+            # xdg desktop portal gtk
+        paths:
+            - /usr/bin/WebKitWebDriver
+            - /usr/lib/libwebkitgtk-6.0.so.*
+            - /usr/lib/girepository-1.0/WebKit*-6.0.typelib
+            - /usr/lib/webkitgtk-6.0/
+            - /usr/lib/webkitgtk/webkitgtk-6.0/ # minibrowser and jsc are split out to later packages
+            - /usr/share/locale/**/WebKitGTK-6.0.mo
+
+    - webkitgtk60-devel:
+        summary: Development files for webkitgtk60
+        description: |
+            The webkitgtk60-devel package contains libraries, build data, and header
+            files for developing applications that use webkitgtk60.
+        rundeps:
+            - webkitgtk60
+        paths:
+            - /usr/include/webkitgtk-6.0/
+            - /usr/lib/libwebkitgtk-6.0.so
+            - /usr/lib/webkitgtk/webkitgtk-6.0/MiniBrowser
+            - /usr/lib/pkgconfig/webkitgtk*-6.0.pc
+            - /usr/share/gir-1.0/WebKit*-6.0.gir
+
+    - javascriptcoregtk60:
+        summary: JavaScript engine from webkitgtk60
+        description: This package contains the JavaScript engine from webkitgtk60.
+        paths:
+            - /usr/lib/libjavascriptcoregtk-6.0.so.*
+            - /usr/lib/girepository-1.0/JavaScriptCore-6.0.typelib
+
+    - javascriptcoregtk60-devel:
+        summary: Development files for JavaScript engine from webkitgtk60
+        description: |
+            The javascriptcoregtk60-devel package contains libraries, build data, and header
+            files for developing applications that use JavaScript engine from webkitgtk60.
+        rundeps:
+            - javascriptcoregtk60
+        paths:
+            - /usr/include/webkitgtk-6.0/jsc/
+            - /usr/lib/libjavascriptcoregtk-6.0.so
+            - /usr/lib/webkitgtk/webkitgtk-6.0/jsc
+            - /usr/lib/pkgconfig/javascriptcoregtk-6.0.pc
+            - /usr/share/gir-1.0/JavaScriptCore-6.0.gir
+
+    - webkitgtk60-docs:
+        summary: Documentation files for webkitgtk60
+        description: This package contains developer documentation for webkitgtk60.
+        rundeps:
+            - webkitgtk60
+        paths:
+            - /usr/share/doc/javascriptcoregtk-6.0/
+            - /usr/share/doc/webkitgtk-6.0/
+            - /usr/share/doc/webkitgtk-web-process-extension-6.0/

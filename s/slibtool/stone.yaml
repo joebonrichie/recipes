@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : slibtool
-version     : 0.6.1
-release     : 8
-homepage    : https://github.com/midipix-project/slibtool
+version     : 0.7.4
+release     : 15
+homepage    : https://dev.midipix.org/cross/slibtool
 upstreams   :
-    - https://dl.midipix.org/slibtool/slibtool-0.6.1.tar.gz : 6266f64d726ac92d69e03fec262408a34b970e10be39efc245662febd76cb079
+    - https://dl.midipix.org/slibtool/slibtool-0.7.4.tar.gz : bad9e038f3a490568135845631dff6b0ba5861d9d9cd558b84cd58504131b184
 summary     : a surrogate libtool implementation, written in C
 description : |
     `slibtool` is an independent reimplementation of the widely used libtool,
@@ -30,15 +30,14 @@ license     :
 builddeps   :
     - binary(m4)
 setup       : |
-    # No idea why but this causes the build to fail
-    %patch %(pkgdir)/0001-Revert-build-system-ccenv_set_cc_underscore-rewrite-.patch
-    %patch %(pkgdir)/0001-Work-if-invoked-as-libtoolize.patch
-    %patch %(pkgdir)/0001-Fix-space-breaking-macros.patch
-    %patch %(pkgdir)/0001-default-to-llvm.patch
-
     ./configure \
         --prefix=%(prefix) \
-        --libdir=%(libdir)
+        --libdir=%(libdir) \
+        --toolchain=llvm \
+        --with-preferred-host-ar=llvm-ar \
+        --with-preferred-host-as=llvm-as \
+        --with-preferred-host-nm=llvm-nm \
+        --with-preferred-host-ranlib=llvm-ranlib
 build       : |
     %make
 install     : |

@@ -19,7 +19,7 @@
 				"soname(libgobject-2.0.so.0(x86_64))",
 				"soname(libjson-glib-1.0.so.0(x86_64))",
 				"soname(libsoup-3.0.so.0(x86_64))",
-				"soname(libxml2.so.2(x86_64))"
+				"soname(libxml2.so.16(x86_64))"
 			],
 			"files": [
 				"/usr/lib/girepository-1.0/Rest-1.0.typelib",
@@ -27,9 +27,7 @@
 				"/usr/lib/librest-1.0.so.0",
 				"/usr/lib/librest-1.0.so.0.0.0",
 				"/usr/lib/librest-extras-1.0.so.0",
-				"/usr/lib/librest-extras-1.0.so.0.0.0",
-				"/usr/share/gir-1.0/Rest-1.0.gir",
-				"/usr/share/gir-1.0/RestExtras-1.0.gir"
+				"/usr/lib/librest-extras-1.0.so.0.0.0"
 			],
 			"name": "librest",
 			"provides": [
@@ -48,6 +46,7 @@
 				"pkgconfig(libxml-2.0)"
 			],
 			"depends": [
+				"librest",
 				"pkgconfig(glib-2.0)",
 				"pkgconfig(json-glib-1.0)",
 				"pkgconfig(libsoup-3.0)",
@@ -58,6 +57,7 @@
 				"/usr/include/rest-1.0/rest-extras/flickr-proxy.h",
 				"/usr/include/rest-1.0/rest-extras/lastfm-proxy-call.h",
 				"/usr/include/rest-1.0/rest-extras/lastfm-proxy.h",
+				"/usr/include/rest-1.0/rest-extras/rest-extras.h",
 				"/usr/include/rest-1.0/rest-extras/youtube-proxy.h",
 				"/usr/include/rest-1.0/rest/rest-enum-types.h",
 				"/usr/include/rest-1.0/rest/rest-oauth2-proxy-call.h",
@@ -76,6 +76,8 @@
 				"/usr/lib/librest-extras-1.0.so",
 				"/usr/lib/pkgconfig/rest-1.0.pc",
 				"/usr/lib/pkgconfig/rest-extras-1.0.pc",
+				"/usr/share/gir-1.0/Rest-1.0.gir",
+				"/usr/share/gir-1.0/RestExtras-1.0.gir",
 				"/usr/share/vala/vapi/rest-1.0.deps",
 				"/usr/share/vala/vapi/rest-1.0.vapi",
 				"/usr/share/vala/vapi/rest-extras-1.0.deps",
@@ -89,6 +91,6 @@
 		}
 	},
 	"source-name": "librest",
-	"source-release": "1",
-	"source-version": "0.9.1"
+	"source-release": "4",
+	"source-version": "0.10.2"
 }

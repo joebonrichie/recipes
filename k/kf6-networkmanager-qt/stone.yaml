@@ -1,0 +1,35 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : kf6-networkmanager-qt
+version     : 6.20.0
+release     : 10
+upstreams   :
+    - https://download.kde.org/stable/frameworks/6.20/networkmanager-qt-6.20.0.tar.xz : 6856fecb2933abcdad0a789a179e4054cf24901dc29f943f0036a3e15cf43e86
+homepage    : https://community.kde.org/Frameworks
+license     :
+    - BSD-3-Clause
+    - GPL-2.0-only
+    - LGPL-2.1-only
+summary     : Qt wrapper for NetworkManager DBus API
+description : |
+    Qt wrapper for NetworkManager DBus API
+builddeps   :
+    # Temporary, boulder doesn't handle build ordering resolution correctly when builddeps are added by macros, so add ECM manually
+    - cmake(ECM)
+    - cmake(Qt6CorePrivate)
+    - cmake(Qt6Qml)
+    - pkgconfig(gio-2.0)
+    - pkgconfig(libnm)
+setup       : |
+    %cmake_kf6
+build       : |
+    %cmake_build
+install     : |
+    %cmake_install
+packages    :
+    - "%(name)-devel":
+        rundeps:
+            - pkgconfig(libnm)

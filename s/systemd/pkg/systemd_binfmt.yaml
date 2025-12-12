@@ -1,0 +1,14 @@
+name: systemd_binfmt
+description: |
+    Ensure that new binfmt formats are picked up immediately
+after: systemd_tmpfiles
+
+handlers:
+    systemd_binfmt:
+        run: /usr/share/moss/helpers/systemd-hook.sh
+        args: ["binfmt"]
+
+paths:
+    "/usr/lib/binfmt.d/*.conf" :
+        handlers:
+            - systemd_binfmt

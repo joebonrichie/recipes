@@ -1,0 +1,6 @@
+releases:
+  id: 137683
+  rss: https://github.com/YaLTeR/wl-clipboard-rs/tags.atom
+security:
+  # Last checked 20250730
+  cpe: ~

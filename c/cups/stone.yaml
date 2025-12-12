@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : cups
-version     : 2.4.11
-release     : 9
+version     : 2.4.16
+release     : 20
 homepage    : https://openprinting.github.io/cups/
 upstreams   :
-    - https://github.com/OpenPrinting/cups/releases/download/v2.4.11/cups-2.4.11-source.tar.gz : 9a88fe1da3a29a917c3fc67ce6eb3178399d68e1a548c6d86c70d9b13651fd71
+    - https://github.com/OpenPrinting/cups/releases/download/v2.4.16/cups-2.4.16-source.tar.gz : 0339587204b4f9428dd0592eb301dec0bf9ea6ea8dce5d9690d56be585aba92d
 summary     : CUPS uses IPP Everywhere™ to support printing to local and network printers.
 description : |
     The current standards-based, open source printing system developed by OpenPrinting for Linux® and other Unix®-like operating systems. CUPS uses IPP Everywhere™ to support printing to local and network printers.
@@ -17,14 +17,21 @@ license     :
 builddeps   :
     - binary(xdg-open)
     - pkgconfig(avahi-client)
+    - pkgconfig(libacl)
     - pkgconfig(libcrypt)
     - pkgconfig(libssl)
     - pkgconfig(libsystemd)
     - pkgconfig(libusb-1.0)
     - pkgconfig(pam)
     - libpaper-devel
+rundeps     :
+    - cups-filters
+tuning      :
+    - lto: full
+    - optimize: size # This doesn't need to be fast, so we might as well make it small
 setup       : |
     %patch %(pkgdir)/0001-stateless-cupsd.patch
+
     %configure \
         --with-cups-user=lp \
         --with-cups-group=lp \
@@ -42,8 +49,8 @@ install     : |
 
     %install_dir %(installroot)/usr/share/defaults/etc/
     mv %(installroot)/etc/* %(installroot)/usr/share/defaults/etc/
-    %install_file %(pkgdir)/cups.pam %(installroot)%(vendordir)%(sysconfdir)/pam.d/cups
-    ln -s cups %(installroot)%(vendordir)%(sysconfdir)/pam.d/cups.N
+    %install_file %(pkgdir)/cups.pam %(installroot)%(vendordir)/pam.d/cups
+    ln -s cups %(installroot)%(vendordir)/pam.d/cups.N
 
     %tmpfiles "d     /etc/cups           0755 root lp      -   -"
     %tmpfiles "d     /run/cups           0755 root lp      -   -"
@@ -54,3 +61,52 @@ install     : |
     %tmpfiles "d     /var/cache/cups/rss 0750 root lp      -   -"
 
     rm -rvf %(installroot)/{var,run,etc}
+packages    :
+    - "%(name)-libs":
+        summary: "Library files for %(name)"
+        description: |
+            Library files for %(name), typically pulled in as a dependency of another package.
+        paths:
+            - /usr/lib/libcups*.so.*
+
+    - "%(name)-client":
+        paths:
+            - /usr/bin/cancel
+            - /usr/bin/lp*
+            - /usr/sbin/lpc
+            - /usr/share/man/man1/cancel*
+            - /usr/share/man/man1/lp*
+            - /usr/share/man/man8/lpc.8*
+
+    - "%(name)":
+        rundeps:
+            - "%(name)-libs"
+        paths:
+            - /usr/bin/lpadmin
+            - /usr/bin/lpinfo
+            - /usr/bin/lpmove
+
+    - "%(name)-lpd":
+        rundeps:
+            - "%(name)"
+        paths:
+            - /usr/lib/cups/daemon/cups-lpd
+            - /usr/lib/systemd/system/cups-lpd*.*
+            - /usr/share/man/man8/cups-lpd.8
+
+    - "%(name)-ipptool":
+        paths:
+            - /usr/bin/ipp*
+            - /usr/share/cups/ipptool
+            - /usr/share/man/man*/ipp*
+
+    - "%(name)-printerapp":
+        paths:
+            - /usr/bin/ippeveprinter
+            - /usr/lib/cups/command/ippeve*
+            - /usr/share/man/man*/ippeve*
+
+    - "%(name)-devel":
+        paths:
+            - /usr/bin/cups-config
+            - /usr/share/man/man1/cups-config.1

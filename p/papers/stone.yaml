@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : papers
-version     : 48.0
-release     : 2
+version     : "49.2"
+release     : 12
 homepage    : https://apps.gnome.org/Papers/
 upstreams   :
-    - https://download.gnome.org/sources/papers/48/papers-48.0.tar.xz : c1e4e93e50ae5ad3b54796aa2dd948b799ec2571820edef6d4735aedc1efcea6
+    - https://download.gnome.org/sources/papers/49/papers-49.2.tar.xz : 49a9ca2f62c5598f8e6ca4e67c87f4f59c5ec0de704d3b299d5164c91d1f6a41
 summary     : Read documents
 description : |
     A document viewer for the GNOME desktop. You can view, search or annotate documents in many different formats.
@@ -16,27 +16,30 @@ description : |
 license     : GPL-2.0-or-later
 networking  : yes
 builddeps   :
+    - binary(blueprint-compiler)
     - binary(cargo)
+    - binary(gi-docgen)
     - binary(itstool)
     - binary(msgfmt)
     - binary(update-desktop-database)
     - pkgconfig(cairo)
-    # pkgconfig(ddjvuapi)
+    - pkgconfig(ddjvuapi)
     - pkgconfig(exempi-2.0)
     - pkgconfig(gdk-pixbuf-2.0)
     - pkgconfig(glib-2.0)
     - pkgconfig(gmodule-2.0)
+    - pkgconfig(gobject-introspection-1.0)
     - pkgconfig(gthread-2.0)
     - pkgconfig(gtk4-unix-print)
+    - pkgconfig(libadwaita-1)
     - pkgconfig(libarchive)
     # pkgconfig(libgxps)
-    - pkgconfig(libadwaita-1)
     - pkgconfig(libnautilus-extension-4)
-    # pkgconfig(libspectre)
+    - pkgconfig(libspectre)
     - pkgconfig(libspelling-1)
     - pkgconfig(libtiff-4)
     - pkgconfig(poppler-glib)
-    # pkgconfig(sysprof-capture-4)
+    - pkgconfig(sysprof-capture-4)
 setup       : |
     %meson
 build       : |

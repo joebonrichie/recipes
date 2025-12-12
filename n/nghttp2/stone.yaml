@@ -4,22 +4,46 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : nghttp2
-version     : 1.64.0
-release     : 7
+version     : 1.68.0
+release     : 13
 homepage    : https://nghttp2.org
 upstreams   :
-    - https://github.com/nghttp2/nghttp2/releases/download/v1.64.0/nghttp2-1.64.0.tar.xz : 88bb94c9e4fd1c499967f83dece36a78122af7d5fb40da2019c56b9ccc6eb9dd
+    - https://github.com/nghttp2/nghttp2/releases/download/v1.68.0/nghttp2-1.68.0.tar.xz : 5511d3128850e01b5b26ec92bf39df15381c767a63441438b25ad6235def902c
 summary     : C implementation of the HTTP/2.0 protocol
 description : |
    nghttp2 is an implementation of the Hypertext Transfer Protocol version 2 in C.
 
    The framing layer of HTTP/2 is implemented as a reusable C library. On top of that, we have implemented an HTTP/2 client, server and proxy. We have also developed load test and benchmarking tools for HTTP/2.
 license     : MIT
+builddeps   :
+    - binary(python3)
+    - pkgconfig(jansson)
+    - pkgconfig(jemalloc)
+    - pkgconfig(libbpf)
+    - pkgconfig(libbrotlidec)
+    - pkgconfig(libcares)
+    - pkgconfig(libevent)
+    - pkgconfig(libxml-2.0)
+    - pkgconfig(openssl)
+    - pkgconfig(systemd)
+    # libev, libngtcp2, libnghttp3
 emul32      : true
+profiles    :
+    - emul32:
+        setup: |
+            %cmake \
+                -DCMAKE_INSTALL_LIBDIR=%(libdir) \
+                -DENABLE_LIB_ONLY=ON \
+                -DENABLE_STATIC_LIB=OFF
 setup       : |
-    %cmake -DENABLE_STATIC_LIB=OFF \
-           -DCMAKE_INSTALL_LIBDIR=%(libdir)
+    %cmake \
+        -DCMAKE_INSTALL_LIBDIR=%(libdir) \
+        -DENABLE_STATIC_LIB=OFF
 build       : |
     %cmake_build
 install     : |
     %cmake_install
+packages    :
+    - "%(name)-libs":
+        paths:
+            - /usr/lib/libnghttp2.so.*

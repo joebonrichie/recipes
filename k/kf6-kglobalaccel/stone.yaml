@@ -4,10 +4,10 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : kf6-kglobalaccel
-version     : 6.12.0
-release     : 2
+version     : 6.20.0
+release     : 15
 upstreams   :
-    - https://download.kde.org/stable/frameworks/6.12/kglobalaccel-6.12.0.tar.xz : 1c5e7e4d9b6862eb36a1f6c23fd9fff4b4bcf0b4fad740bae5ca58e15c8407f4
+    - https://download.kde.org/stable/frameworks/6.20/kglobalaccel-6.20.0.tar.xz : ee2abd91df47a6ae478f86e67f463487e30032f3c0d8cfd77f2d6b9567c86db4
 homepage    : https://community.kde.org/Frameworks
 license     :
     - LGPL-2.0-only
@@ -19,6 +19,7 @@ description : |
 builddeps   :
     # Temporary, boulder doesn't handle build ordering resolution correctly when builddeps are added by macros, so add ECM manually
     - cmake(ECM)
+    - cmake(Qt6CorePrivate)
 setup       : |
     %cmake_kf6
 build       : |

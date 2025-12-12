@@ -10,12 +10,12 @@
 				"soname(libQt6Core.so.6(x86_64))",
 				"soname(libQt6Gui.so.6(x86_64))",
 				"soname(libQt6Widgets.so.6(x86_64))",
-				"soname(libc++.so.1(x86_64))",
-				"soname(libc.so.6(x86_64))"
+				"soname(libc.so.6(x86_64))",
+				"soname(libstdc++.so.6(x86_64))"
 			],
 			"files": [
 				"/usr/lib/libKF6ItemViews.so.6",
-				"/usr/lib/libKF6ItemViews.so.6.12.0",
+				"/usr/lib/libKF6ItemViews.so.6.20.0",
 				"/usr/share/locale/af/LC_MESSAGES/kitemviews6_qt.qm",
 				"/usr/share/locale/ar/LC_MESSAGES/kitemviews6_qt.qm",
 				"/usr/share/locale/as/LC_MESSAGES/kitemviews6_qt.qm",
@@ -134,8 +134,8 @@
 				"soname(libKF6ItemViews.so.6(x86_64))",
 				"soname(libQt6Core.so.6(x86_64))",
 				"soname(libQt6Gui.so.6(x86_64))",
-				"soname(libc++.so.1(x86_64))",
-				"soname(libc.so.6(x86_64))"
+				"soname(libc.so.6(x86_64))",
+				"soname(libstdc++.so.6(x86_64))"
 			],
 			"files": [
 				"/usr/include/KF6/KItemViews/KCategorizedSortFilterProxyModel",
@@ -158,13 +158,10 @@
 				"/usr/include/KF6/KItemViews/kwidgetitemdelegate.h",
 				"/usr/lib/cmake/KF6ItemViews/KF6ItemViewsConfig.cmake",
 				"/usr/lib/cmake/KF6ItemViews/KF6ItemViewsConfigVersion.cmake",
-				"/usr/lib/cmake/KF6ItemViews/KF6ItemViewsQCHTargets.cmake",
 				"/usr/lib/cmake/KF6ItemViews/KF6ItemViewsTargets-release.cmake",
 				"/usr/lib/cmake/KF6ItemViews/KF6ItemViewsTargets.cmake",
 				"/usr/lib/libKF6ItemViews.so",
-				"/usr/lib/qt6/plugins/designer/kitemviews6widgets.so",
-				"/usr/share/doc/qt6/KF6ItemViews.qch",
-				"/usr/share/doc/qt6/KF6ItemViews.tags"
+				"/usr/lib/qt6/plugins/designer/kitemviews6widgets.so"
 			],
 			"name": "kf6-kitemviews-devel",
 			"provides": [
@@ -174,6 +171,6 @@
 		}
 	},
 	"source-name": "kf6-kitemviews",
-	"source-release": "3",
-	"source-version": "6.12.0"
+	"source-release": "12",
+	"source-version": "6.20.0"
 }

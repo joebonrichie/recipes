@@ -4,33 +4,74 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : opencv
-version     : 4.11.0
-release     : 1
+version     : 4.12.0
+release     : 11
 upstreams   :
-    - https://github.com/opencv/opencv/archive/refs/tags/4.11.0.tar.gz : 9a7c11f924eff5f8d8070e297b322ee68b9227e003fd600d4b8122198091665f
+    - https://github.com/opencv/opencv/archive/refs/tags/4.12.0.tar.gz:
+        hash: 44c106d5bb47efec04e531fd93008b3fcd1d27138985c5baf4eafac0e1ec9e9d
+        unpackdir: opencv
+    - https://github.com/opencv/opencv_contrib/archive/4.12.0/opencv_contrib-4.12.0.tar.gz:
+        hash: 4197722b4c5ed42b476d42e29beb29a52b6b25c34ec7b4d589c3ae5145fee98e
+        unpackdir: opencv/contrib
 homepage    : https://opencv.org
 license     : BSD-3-Clause
 summary     : An open source computer vision and machine learning software library
 description : |
     OpenCV is an open source computer vision and machine learning software library
 builddeps   :
+    - binary(flang)
     - binary(nasm)
+    - cmake(OpenEXR)
     - cmake(OpenJPEG)
     - cmake(Qt6Core5Compat)
     - cmake(Tiff)
     - cmake(VulkanHeaders)
+    - cmake(hdf5)
     - cmake(libavif)
     - cmake(libjpeg-turbo)
     - cmake(protobuf)
+    - pkgconfig(OpenCL)
+    - pkgconfig(freetype2)
     - pkgconfig(gstreamer-plugins-base-1.0)
+    - pkgconfig(harfbuzz)
     - pkgconfig(libavcodec)
+    - pkgconfig(libavformat)
+    - pkgconfig(libswscale)
+    - pkgconfig(libjxl)
     - pkgconfig(libpng)
     - pkgconfig(libva)
     - pkgconfig(openblas)
     - pkgconfig(zlib)
-    # TODO libgif, openexr, eigen (?), opencl
+    - protobuf-staticlib
+    # TODO eigen (?), tesseract
 setup       : |
+    %patch %(pkgdir)/ftbfs-qt-6.9.patch
+    %patch %(pkgdir)/ftbfs-ffmpeg-8.0.patch
+
     # TODO build extra modules, python module, etc, VTK, GTK
+
+    # Using `BUILD_OPENCV_*` options we disable all extra modules from opencv_contrib that we don't explicitly need
+    # To make this easier on ourselves let's allowlist the modules we want and disable every other one
+    # Technically we don't need plot but tracking checks for it so it can build samples (which we don't end up installing anyway)
+    modules=(bgsegm plot tracking)
+    contrib_cmake_args=""
+    pushd contrib/modules
+    directories=(*)
+    for dir in "${directories[@]}"
+    do
+        if [ -d "$dir" ]; then
+            if [[ " ${modules[*]} " =~ " ${dir} " ]]; then
+                contrib_cmake_args+="-DBUILD_opencv_${dir}=ON "
+            else
+                contrib_cmake_args+="-DBUILD_opencv_${dir}=OFF "
+            fi
+        fi
+    done
+    popd
+
+    # I think this is a openblas issue, none of this should be required
+    export FC=flang
+    export LDFLAGS+=" -lopenblas"
 
     # Add x86-64v2 CPU flags to baseline (See `cmake/OpenCVCompilerOptimizations.cmake`)
     %cmake \
@@ -40,21 +81,26 @@ setup       : |
            -DBUILD_PROTOBUF=OFF \
            -DCMAKE_CXX_STANDARD=17 \
            -DCPU_BASELINE_REQUIRE="SSE;SSE2;SSE3;SSSE3;SSE4_1;SSE4_2;POPCNT" \
+           -DHDF5_NO_FIND_PACKAGE_CONFIG_FILE=ON \
            -DINSTALL_C_EXAMPLES=OFF \
            -DINSTALL_PYTHON_EXAMPLES=OFF \
            -DOPENCV_ENABLE_NONFREE=OFF \
+           -DOPENCV_EXTRA_MODULES_PATH=contrib/modules \
            -DOPENCV_SKIP_FEATURES2D_DOWNLOADING=OFF \
            -DOPENCV_GENERATE_PKGCONFIG=ON \
            -DOPENCV_GENERATE_SETUPVARS=OFF \
            -DPROTOBUF_UPDATE_FILES=ON \
            -DWITH_ADE=OFF \
            -DWITH_FLATBUFFERS=OFF \
+           -DWITH_JPEGXL=ON \
+           -DWITH_LAPACK=ON \
            -DWITH_OPENMP=ON \
            -DWITH_IPP=OFF \
            -DWITH_QT=ON \
            -DWITH_VA=ON \
            -DWITH_VULKAN=ON \
-           -DVULKAN_INCLUDE_DIRS=%(includedir)/vulkan
+           -DVULKAN_INCLUDE_DIRS=%(includedir)/vulkan \
+           ${contrib_cmake_args}
 build       : |
     %cmake_build
 install     : |
@@ -69,6 +115,7 @@ packages    :
         paths:
             - /usr/share/opencv4/*.supp
         rundeps:
+            - "%(name)-bgsegm"
             - "%(name)-calib3d"
             - "%(name)-core"
             - "%(name)-dnn"
@@ -80,13 +127,18 @@ packages    :
             - "%(name)-ml"
             - "%(name)-objdetect"
             - "%(name)-photo"
+            - "%(name)-plot"
             - "%(name)-stitching"
+            - "%(name)-tracking"
             - "%(name)-video"
             - "%(name)-videoio"
 
     # Most other distros just subpackage every individual library. That seems easiest rather than
     # trying to bundle some together into similar groupings. Autodep will just handle all of the
     # rundeps and revdeps for us.
+    - "%(name)-bgsegm": # opencv_contrib module
+        paths:
+            - /usr/lib/libopencv_bgsegm.so.*
     - "%(name)-calib3d":
         paths:
             - /usr/lib/libopencv_calib3d.so.*
@@ -117,9 +169,15 @@ packages    :
     - "%(name)-photo":
         paths:
             - /usr/lib/libopencv_photo.so.*
+    - "%(name)-plot": # opencv_contrib module
+        paths:
+            - /usr/lib/libopencv_plot.so.*
     - "%(name)-stitching":
         paths:
             - /usr/lib/libopencv_stitching.so.*
+    - "%(name)-tracking": # opencv_contrib module
+        paths:
+            - /usr/lib/libopencv_tracking.so.*
     - "%(name)-video":
         paths:
             - /usr/lib/libopencv_video.so.*

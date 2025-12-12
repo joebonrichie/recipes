@@ -34,8 +34,7 @@
 			],
 			"name": "libpciaccess-32bit",
 			"provides": [
-				"soname(libpciaccess.so.0(386))",
-				"soname(libpciaccess.so.0(x86))"
+				"soname(libpciaccess.so.0(386))"
 			]
 		},
 		"libpciaccess-32bit-devel": {
@@ -76,6 +75,6 @@
 		}
 	},
 	"source-name": "libpciaccess",
-	"source-release": "4",
+	"source-release": "5",
 	"source-version": "0.18.1"
 }

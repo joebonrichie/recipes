@@ -1,0 +1,6 @@
+releases:
+    id: 328356
+    rss: https://gitlab.gnome.org/GNOME/libdex/-/tags?format=atom
+security:
+    # Last checked 2025-08-16
+    cpe: ~

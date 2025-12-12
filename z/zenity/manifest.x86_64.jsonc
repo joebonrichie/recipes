@@ -4,9 +4,11 @@
 	"packages": {
 		"zenity": {
 			"build-depends": [
+				"binary(help2man)",
 				"binary(itstool)",
 				"binary(msgfmt)",
-				"pkgconfig(libadwaita-1)"
+				"pkgconfig(libadwaita-1)",
+				"pkgconfig(webkitgtk-6.0)"
 			],
 			"depends": [
 				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
@@ -16,7 +18,8 @@
 				"soname(libglib-2.0.so.0(x86_64))",
 				"soname(libgobject-2.0.so.0(x86_64))",
 				"soname(libgtk-4.so.1(x86_64))",
-				"soname(libpango-1.0.so.0(x86_64))"
+				"soname(libpango-1.0.so.0(x86_64))",
+				"soname(libwebkitgtk-6.0.so.4(x86_64))"
 			],
 			"files": [
 				"/usr/bin/zenity",
@@ -936,11 +939,13 @@
 				"/usr/share/locale/tr/LC_MESSAGES/zenity.mo",
 				"/usr/share/locale/ug/LC_MESSAGES/zenity.mo",
 				"/usr/share/locale/uk/LC_MESSAGES/zenity.mo",
+				"/usr/share/locale/uz/LC_MESSAGES/zenity.mo",
 				"/usr/share/locale/vi/LC_MESSAGES/zenity.mo",
 				"/usr/share/locale/xh/LC_MESSAGES/zenity.mo",
 				"/usr/share/locale/zh_CN/LC_MESSAGES/zenity.mo",
 				"/usr/share/locale/zh_HK/LC_MESSAGES/zenity.mo",
-				"/usr/share/locale/zh_TW/LC_MESSAGES/zenity.mo"
+				"/usr/share/locale/zh_TW/LC_MESSAGES/zenity.mo",
+				"/usr/share/man/man1/zenity.1"
 			],
 			"name": "zenity",
 			"provides": [
@@ -949,6 +954,6 @@
 		}
 	},
 	"source-name": "zenity",
-	"source-release": "2",
-	"source-version": "4.0.5"
+	"source-release": "6",
+	"source-version": "4.2.1"
 }

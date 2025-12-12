@@ -1,5 +1,5 @@
 releases:
-  id: 233872
-  rss: ~
+  id: 233879 # v2
+  rss: https://github.com/microsoft/mimalloc/tags.atom
 security:
   cpe: ~ # No known CPE. Last checked 20230104

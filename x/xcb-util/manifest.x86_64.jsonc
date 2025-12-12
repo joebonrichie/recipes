@@ -24,7 +24,8 @@
 				"pkgconfig(xcb)"
 			],
 			"depends": [
-				"pkgconfig(xcb)"
+				"pkgconfig(xcb)",
+				"xcb-util"
 			],
 			"files": [
 				"/usr/include/xcb/xcb_atom.h",
@@ -47,6 +48,6 @@
 		}
 	},
 	"source-name": "xcb-util",
-	"source-release": "1",
+	"source-release": "2",
 	"source-version": "0.4.1"
 }

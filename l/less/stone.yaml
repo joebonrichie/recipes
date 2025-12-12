@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : less
-version     : 668
-release     : 9
+version     : "685"
+release     : 13
 homepage    : https://www.greenwoodsoftware.com/less
 upstreams   :
-    - https://github.com/gwsw/less/archive/refs/tags/v668.tar.gz : 69d6c5587c361e4f2ae051b6c483ca979a0381e2b8145d3d2af37cea29577b6f
+    - https://github.com/gwsw/less/archive/refs/tags/v685.tar.gz : 507699ab586a420600bbbb21266ea4ddce6953af4ed3442eba9c5f36ea362c91
 summary     : Text file browser and pager
 description : |
     Text file browser and pager
@@ -21,7 +21,8 @@ builddeps   :
     - pkgconfig(ncursesw)
 setup       : |
     make -f Makefile.aut distfiles
-    %configure --with-regex=pcre2
+    %configure \
+        --with-regex=pcre2
 build       : |
     %make
 install     : |
@@ -30,5 +31,5 @@ install     : |
     # Make it clear that the default pager configuration is owned by the less package itself
     %install_dir %(installroot)%(vendordir)/%(name)
     %install_file %(pkgdir)/10_default_PAGER_less.sh %(installroot)%(vendordir)/%(name)/
-    %install_dir %(installroot)%(vendordir)/etc/profile.d
-    ln -srv %(installroot)%(vendordir)/%(name)/10_default_PAGER_less.sh %(installroot)%(vendordir)/etc/profile.d/
+    %install_dir %(installroot)%(vendordir)/profile.d
+    ln -srv %(installroot)%(vendordir)/%(name)/10_default_PAGER_less.sh %(installroot)%(vendordir)/profile.d/

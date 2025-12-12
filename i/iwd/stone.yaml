@@ -4,23 +4,29 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : iwd
-version     : 3.3
-release     : 3
+version     : "3.10"
+release     : 6
 homepage    : https://iwd.wiki.kernel.org/
 upstreams   :
-    - https://mirrors.edge.kernel.org/pub/linux/network/wireless/iwd-3.3.tar.xz : 8189e15e701112f871fb5f5e9351f007c9098754b4168ed43cc5422a3adc0255
+    - https://mirrors.edge.kernel.org/pub/linux/network/wireless/iwd-3.10.tar.xz : 640bff22540e1714f71772a83123aff6f810b7eb9d7d6df1e10fb2695beb5115
 summary     : iNet Wireless Daemon
 description : |
     iNet Wireless Daemon
 license     :
     - LGPL-2.1-or-later
 builddeps   :
+    - binary(rst2man)
     - pkgconfig(dbus-1)
     - pkgconfig(libedit)
     - pkgconfig(readline)
     - pkgconfig(systemd)
 setup       : |
-    CONF_SHELL=/bin/bash %configure --enable-libedit
+    %configure_with_bash \
+        --enable-hwsim \
+        --enable-libedit \
+        --enable-ofono \
+        --enable-tools \
+        --enable-wired
 build       : |
     %make
 install     : |

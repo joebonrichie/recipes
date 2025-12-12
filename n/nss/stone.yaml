@@ -4,39 +4,48 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : nss
-version     : 3.109
-release     : 22
+version     : "3.119"
+release     : 37
 summary     : Network Security Services
 license     : MPL-2.0
 homepage    : https://wiki.mozilla.org/NSS
 description : |
     Network Security Services (NSS) is a set of libraries designed to support cross-platform development of security-enabled client and server applications.
 upstreams   :
-    - https://ftp.mozilla.org/pub/security/nss/releases/NSS_3_109_RTM/src/nss-3.109.tar.gz : bea46c256118cd8910202f05339627d75291f13b80054527df58419b9d29c18b
+    - https://ftp.mozilla.org/pub/security/nss/releases/NSS_3_119_RTM/src/nss-3.119.tar.gz : e8412db6c9d6f531e8adfe8a122ec33a8fae920681ff47231a1349bdd399f0e9
 builddeps   :
+    - binary(openssl)
     - binary(perl)
     - binary(python3)
     - pkgconfig(nspr)
     - pkgconfig(sqlite3)
     - pkgconfig(zlib)
-rundeps     :
-    - ca-certificates
-packages    :
-    - "%(name)":
-        paths:
-            - /usr/lib/*.so
-toolchain   : gnu
 setup       : |
     %patch %(pkgdir)/nss-3.97-standalone-1.patch
+    %patch %(pkgdir)/respect-ldflags.patch
+
+    cd nss
+    mkdir -p certs
+    ln -srft certs lib/ckfw/builtins/{certdata.txt,nssckbi.h}
 build       : |
     cd nss
     %make BUILT_OPT=1 \
-          USE_SYSTEM_ZLIB=1 \
+          NSPR_INCLUDE_DIR=%(includedir)/nspr \
+          NSS_DISABLE_GTESTS=1 \
           NSS_ENABLE_WERROR=0 \
           NSS_USE_SYSTEM_SQLITE=1 \
-          NSPR_INCLUDE_DIR=%(includedir)/nspr \
           USE_64=1 \
-          NSS_DISABLE_GTESTS=1
+          USE_SYSTEM_ZLIB=1 \
+          NATIVE_CC="${CC}" \
+          AR="${AR} rc \$@" \
+          NATIVE_FLAGS="${CFLAGS}" \
+          NATIVE_LDFLAGS="${LDFLAGS}"
+
+    # Build ca-certificates-mozilla
+    pushd certs
+    %(pkgdir)/certdata2pem.py
+    popd
+    %(pkgdir)/bundle.sh
 install     : |
     # NSS
     %install_dir %(installroot)%(libdir)
@@ -46,6 +55,25 @@ install     : |
         %install_file $f %(installroot)%(includedir)/nss/.
     done
     for i in certutil nss-config pk12util; do
-        %install_file dist/Linux*/bin/${i} %(installroot)%(bindir)/${i}
+        %install_exe dist/Linux*/bin/${i} %(installroot)%(bindir)/${i}
     done
     %install_file dist/Linux*/lib/pkgconfig/nss.pc %(installroot)%(libdir)/pkgconfig/nss.pc
+
+    # ca-certificates-mozilla
+    %install_file nss/ca-bundle.trust.p11-kit %(installroot)%(datadir)/ca-certificates/trust-source/mozilla.trust.p11-kit
+packages    :
+    - "%(name)":
+        paths:
+            - /usr/lib/*.so
+
+    - "%(name)-devel":
+        paths:
+            - /usr/bin/nss-config
+
+    - "ca-certificates-mozilla":
+        summary: Mozilla's set of trusted CA certificates
+        description: Mozilla's set of trusted CA certificates
+        rundeps:
+            - binary(update-ca-trust)
+        paths:
+            - /usr/share/ca-certificates

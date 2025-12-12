@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : pango
-version     : 1.56.3
-release     : 7
+version     : 1.56.4
+release     : 12
 homepage    : https://pango.gnome.org/
 upstreams   :
-    - https://download.gnome.org/sources/pango/1.56/pango-1.56.3.tar.xz : 2606252bc25cd8d24e1b7f7e92c3a272b37acd6734347b73b47a482834ba2491
+    - https://download.gnome.org/sources/pango/1.56/pango-1.56.4.tar.xz : 17065e2fcc5f5a5bdbffc884c956bfc7c451a96e8c4fb2f8ad837c6413cb5a01
 summary     : Pango is a library for layout and rendering of text, with an emphasis on internationalization
 description : |
     Pango is a library for layout and rendering of text, with an emphasis on internationalization. Pango can be used anywhere that text layout is needed; however, most of the work on Pango so far has been done using the GTK widget toolkit as a test platform. Pango forms the core of text and font handling for GTK.
@@ -23,6 +23,7 @@ license     :
     - MPL-1.1
     - OFL-1.1
 builddeps   :
+    - binary(rst2man)
     - pkgconfig(cairo)
     - pkgconfig(fontconfig)
     - pkgconfig(freetype2)
@@ -33,11 +34,14 @@ builddeps   :
     - pkgconfig(gobject-introspection-1.0)
     - pkgconfig(harfbuzz)
     - pkgconfig(libthai)
-    # pkgconfig(sysprof-capture-4)
+    - pkgconfig(sysprof-capture-4)
     - pkgconfig(xft)
     - pkgconfig(xrender)
 setup       : |
-    %meson -Dintrospection=enabled
+    %meson \
+        -Dintrospection=enabled \
+        -Dman-pages=true \
+        -Dsysprof=enabled
 build       : |
     %meson_build
 install     : |
@@ -47,8 +51,4 @@ check       : |
 workload    : |
     %meson_test || :
 tuning      :
-    - lto : thin
-packages    :
-    - "%(name)-devel":
-        paths:
-            - /usr/bin/*
+    - lto : full

@@ -4,7 +4,6 @@
 	"packages": {
 		"cosmic-comp": {
 			"build-depends": [
-				"binary(cargo)",
 				"binary(just)",
 				"pkgconfig(gbm)",
 				"pkgconfig(libdisplay-info)",
@@ -21,16 +20,15 @@
 				"shared-mime-info",
 				"soname(ld-linux-x86-64.so.2(x86_64))",
 				"soname(libc.so.6(x86_64))",
-				"soname(libdisplay-info.so.2(x86_64))",
+				"soname(libdisplay-info.so.3(x86_64))",
 				"soname(libgbm.so.1(x86_64))",
+				"soname(libgcc_s.so.1(x86_64))",
 				"soname(libinput.so.10(x86_64))",
 				"soname(libm.so.6(x86_64))",
 				"soname(libpixman-1.so.0(x86_64))",
 				"soname(libseat.so.1(x86_64))",
 				"soname(libudev.so.1(x86_64))",
-				"soname(libunwind.so.1(x86_64))",
-				"soname(libxkbcommon.so.0(x86_64))",
-				"xkeyboard-config"
+				"soname(libxkbcommon.so.0(x86_64))"
 			],
 			"files": [
 				"/usr/bin/cosmic-comp",
@@ -44,6 +42,6 @@
 		}
 	},
 	"source-name": "cosmic-comp",
-	"source-release": "15",
-	"source-version": "1.0.0-alpha.6"
+	"source-release": "31",
+	"source-version": "1.0.0-git+fa88002"
 }

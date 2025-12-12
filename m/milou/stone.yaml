@@ -1,0 +1,35 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : milou
+version     : 6.5.4
+release     : 14
+upstreams   :
+    - https://download.kde.org/stable/plasma/6.5.4/milou-6.5.4.tar.xz : dd569381ea2825a47ebb3f4b998fd35d753411f45350efb00566df681441b5f7
+homepage    : https://kde.org/plasma-desktop/
+license     :
+    - GPL-2.0-or-later
+    - LGPL-2.1-only
+summary     : A dedicated search application built on top of Baloo
+description : |
+    A dedicated search application built on top of Baloo
+builddeps   :
+    # Temporary, boulder doesn't handle build ordering resolution correctly when builddeps are added by macros, so add ECM manually
+    - cmake(ECM)
+    - cmake(KF6Config)
+    - cmake(KF6I18n)
+    - cmake(KF6Runner)
+    - cmake(KF6Svg)
+    - cmake(Plasma)
+    - cmake(Qt6CorePrivate)
+tuning      :
+    - lto: full
+    - optimize: speed
+setup       : |
+    %cmake_kf6
+build       : |
+    %cmake_build
+install     : |
+    %cmake_install

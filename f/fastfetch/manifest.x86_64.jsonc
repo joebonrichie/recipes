@@ -5,15 +5,17 @@
 		"fastfetch": {
 			"build-depends": [
 				"cmake(VulkanHeaders)",
+				"pkgconfig(ImageMagick)",
+				"pkgconfig(OpenCL)",
 				"pkgconfig(dbus-1)",
 				"pkgconfig(dconf)",
+				"pkgconfig(ddcutil)",
 				"pkgconfig(egl)",
 				"pkgconfig(gio-2.0)",
 				"pkgconfig(glib-2.0)",
 				"pkgconfig(libdrm)",
 				"pkgconfig(libelf)",
 				"pkgconfig(libpulse)",
-				"pkgconfig(osmesa)",
 				"pkgconfig(pciaccess)",
 				"pkgconfig(sqlite3)",
 				"pkgconfig(vulkan)",
@@ -49,6 +51,11 @@
 				"/usr/share/fastfetch/presets/examples/22.jsonc",
 				"/usr/share/fastfetch/presets/examples/23.jsonc",
 				"/usr/share/fastfetch/presets/examples/24.jsonc",
+				"/usr/share/fastfetch/presets/examples/25.jsonc",
+				"/usr/share/fastfetch/presets/examples/26.jsonc",
+				"/usr/share/fastfetch/presets/examples/27.jsonc",
+				"/usr/share/fastfetch/presets/examples/28.jsonc",
+				"/usr/share/fastfetch/presets/examples/29.jsonc",
 				"/usr/share/fastfetch/presets/examples/3.jsonc",
 				"/usr/share/fastfetch/presets/examples/4.jsonc",
 				"/usr/share/fastfetch/presets/examples/5.jsonc",
@@ -72,6 +79,6 @@
 		}
 	},
 	"source-name": "fastfetch",
-	"source-release": "4",
-	"source-version": "2.33.0"
+	"source-release": "11",
+	"source-version": "2.51.1"
 }

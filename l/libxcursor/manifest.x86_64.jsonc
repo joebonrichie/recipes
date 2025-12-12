@@ -44,8 +44,7 @@
 			],
 			"name": "libxcursor-32bit",
 			"provides": [
-				"soname(libXcursor.so.1(386))",
-				"soname(libXcursor.so.1(x86))"
+				"soname(libXcursor.so.1(386))"
 			]
 		},
 		"libxcursor-32bit-devel": {
@@ -160,6 +159,6 @@
 		}
 	},
 	"source-name": "libxcursor",
-	"source-release": "3",
+	"source-release": "4",
 	"source-version": "1.2.3"
 }

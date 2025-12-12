@@ -5,7 +5,7 @@
 #
 name        : sratom
 version     : 0.6.18
-release     : 1
+release     : 2
 homepage    : https://gitlab.com/lv2/sratom
 upstreams   :
     - https://gitlab.com/lv2/sratom/-/archive/v0.6.18/sratom-v0.6.18.tar.gz : 2b08ee0d28b06a63693ea2741cf9fbf2098d488e6370709ec5ccd4ff9f25bd59

@@ -1,0 +1,47 @@
+/** Human readable report. This is not consumed by boulder */
+{
+	"manifest-version": "0.2",
+	"packages": {
+		"dnsmasq": {
+			"build-depends": [
+				"binary(xgettext)",
+				"pkgconfig(dbus-1)",
+				"pkgconfig(gmp)",
+				"pkgconfig(nettle)"
+			],
+			"depends": [
+				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
+				"soname(libc.so.6(x86_64))"
+			],
+			"files": [
+				"/usr/bin/dnsmasq",
+				"/usr/lib/systemd/system/dnsmasq.service",
+				"/usr/lib/sysusers.d/dnsmasq.conf",
+				"/usr/share/dbus-1/system.d/uk.org.thekelleys.dnsmasq.conf",
+				"/usr/share/defaults/dnsmasq/dnsmasq.conf",
+				"/usr/share/dnsmasq/trust-anchors.conf",
+				"/usr/share/locale/de/LC_MESSAGES/dnsmasq.mo",
+				"/usr/share/locale/es/LC_MESSAGES/dnsmasq.mo",
+				"/usr/share/locale/fi/LC_MESSAGES/dnsmasq.mo",
+				"/usr/share/locale/fr/LC_MESSAGES/dnsmasq.mo",
+				"/usr/share/locale/id/LC_MESSAGES/dnsmasq.mo",
+				"/usr/share/locale/it/LC_MESSAGES/dnsmasq.mo",
+				"/usr/share/locale/ka/LC_MESSAGES/dnsmasq.mo",
+				"/usr/share/locale/no/LC_MESSAGES/dnsmasq.mo",
+				"/usr/share/locale/pl/LC_MESSAGES/dnsmasq.mo",
+				"/usr/share/locale/pt_BR/LC_MESSAGES/dnsmasq.mo",
+				"/usr/share/locale/ro/LC_MESSAGES/dnsmasq.mo",
+				"/usr/share/man/es/man8/dnsmasq.8",
+				"/usr/share/man/fr/man8/dnsmasq.8",
+				"/usr/share/man/man8/dnsmasq.8"
+			],
+			"name": "dnsmasq",
+			"provides": [
+				"binary(dnsmasq)"
+			]
+		}
+	},
+	"source-name": "dnsmasq",
+	"source-release": "1",
+	"source-version": "2.91"
+}

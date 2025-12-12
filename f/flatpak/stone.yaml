@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : flatpak
-version     : 1.14.10
-release     : 10
+version     : 1.16.1
+release     : 15
 homepage    : https://www.flatpak.org/
 upstreams   :
-    - https://github.com/flatpak/flatpak/releases/download/1.15.10/flatpak-1.15.10.tar.xz : 6aa67ca29b4f4da74654888446710b16c9fcfe640c324a51c5025087eecbf42f
+    - https://github.com/flatpak/flatpak/releases/download/1.16.1/flatpak-1.16.1.tar.xz : 2b47e8f2d90d35d29339ed78e1a6eabb36eefa9cfa5a5ca3b0d1f27502c43675
     - https://dl.flathub.org/repo/flathub.flatpakrepo:
         hash: 3371dd250e61d9e1633630073fefda153cd4426f72f4afa0c3373ae2e8fea03a
         unpack: false
@@ -21,6 +21,7 @@ license     :
 builddeps   :
     - binary(bison)
     - binary(bwrap)
+    - binary(xdg-dbus-proxy)
     - binary(m4)
     - binary(msgfmt)
     - binary(python)
@@ -28,7 +29,6 @@ builddeps   :
     - binary(xmlto)
     - binary(xsltproc)
     - binary(yacc)
-    - docbook
     - pkgconfig(appstream)
     - pkgconfig(dconf)
     - pkgconfig(fuse3)
@@ -48,25 +48,32 @@ builddeps   :
     - pkgconfig(polkit-agent-1)
     - pkgconfig(wayland-protocols)
     - pkgconfig(xau)
-    - python-pyparsing
+    - python(pyparsing)
+    - docbook
+    - docbook-xsl
 networking  : true
 rundeps     :
     - binary(bwrap)
+    - binary(fusermount3)
+    - binary(xdg-dbus-proxy)
+environment : |
+    %export_docbook_catalogs
 setup       : |
-    %patch %(pkgdir)/5688.patch
-    %meson -Ddbus_config_dir=/usr/share/dbus-1/system.d \
-           -Ddocbook_docs=disabled \
-           -Dgir=enabled \
-           -Dtests=false \
-           -Dhttp_backend=curl \
-           -Dlibzstd=enabled \
-           -Dsystem_fusermount=fusermount3 \
-           -Dsystem_bubblewrap=%(bindir)/bwrap
+    %meson \
+        -Ddbus_config_dir=/usr/share/dbus-1/system.d \
+        -Ddocbook_docs=disabled \
+        -Dgir=enabled \
+        -Dhttp_backend=curl \
+        -Dlibzstd=enabled \
+        -Dsystem_fusermount=fusermount3 \
+        -Dsystem_bubblewrap=%(bindir)/bwrap \
+        -Dsystem_dbus_proxy=%(bindir)/xdg-dbus-proxy \
+        -Dtests=false
 build       : |
     %meson_build
 install     : |
     %meson_install
 
-    %install_dir %(installroot)/usr/share/defaults/etc/profile.d/
-    mv %(installroot)/etc/profile.d/flatpak.sh %(installroot)/usr/share/defaults/etc/profile.d/70-flatpak.sh
+    %install_dir %(installroot)/usr/share/defaults/profile.d/
+    mv %(installroot)/etc/profile.d/flatpak.sh %(installroot)/usr/share/defaults/profile.d/70-flatpak.sh
     %install_file %(pkgdir)/flathub.flatpakrepo %(installroot)%(datadir)/flatpak/remotes.d/flathub.flatpakrepo

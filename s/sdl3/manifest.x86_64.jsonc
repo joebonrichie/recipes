@@ -13,6 +13,7 @@
 				"pkgconfig(libdrm)",
 				"pkgconfig(libpipewire-0.3)",
 				"pkgconfig(libpulse)",
+				"pkgconfig(liburing-ffi)",
 				"pkgconfig(libusb-1.0)",
 				"pkgconfig(sndio)",
 				"pkgconfig(wayland-client)",
@@ -30,6 +31,7 @@
 				"soname(libgbm.so.1(x86_64))",
 				"soname(libm.so.6(x86_64))",
 				"soname(libpipewire-0.3.so.0(x86_64))",
+				"soname(libusb-1.0.so.0(x86_64))",
 				"soname(libwayland-client.so.0(x86_64))",
 				"soname(libwayland-cursor.so.0(x86_64))",
 				"soname(libwayland-egl.so.1(x86_64))",
@@ -37,7 +39,7 @@
 			],
 			"files": [
 				"/usr/lib/libSDL3.so.0",
-				"/usr/lib/libSDL3.so.0.2.0",
+				"/usr/lib/libSDL3.so.0.2.28",
 				"/usr/share/licenses/SDL3/LICENSE.txt"
 			],
 			"name": "sdl3",
@@ -56,6 +58,7 @@
 				"pkgconfig(libdrm)",
 				"pkgconfig(libpipewire-0.3)",
 				"pkgconfig(libpulse)",
+				"pkgconfig(liburing-ffi)",
 				"pkgconfig(libusb-1.0)",
 				"pkgconfig(sndio)",
 				"pkgconfig(wayland-client)",
@@ -72,6 +75,7 @@
 				"pkgconfig(libdecor-0)",
 				"pkgconfig(libdrm)",
 				"pkgconfig(libpipewire-0.3)",
+				"pkgconfig(libusb-1.0)",
 				"pkgconfig(wayland-client)",
 				"pkgconfig(wayland-cursor)",
 				"pkgconfig(wayland-egl)",
@@ -164,6 +168,8 @@
 				"/usr/include/SDL3/SDL_version.h",
 				"/usr/include/SDL3/SDL_video.h",
 				"/usr/include/SDL3/SDL_vulkan.h",
+				"/usr/lib/cmake/SDL3/FindLibUSB.cmake",
+				"/usr/lib/cmake/SDL3/PkgConfigHelper.cmake",
 				"/usr/lib/cmake/SDL3/SDL3Config.cmake",
 				"/usr/lib/cmake/SDL3/SDL3ConfigVersion.cmake",
 				"/usr/lib/cmake/SDL3/SDL3headersTargets.cmake",
@@ -183,6 +189,6 @@
 		}
 	},
 	"source-name": "sdl3",
-	"source-release": "1",
-	"source-version": "3.2.0"
+	"source-release": "9",
+	"source-version": "3.2.28"
 }

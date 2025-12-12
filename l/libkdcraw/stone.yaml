@@ -1,0 +1,28 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : libkdcraw
+version     : 25.12.0
+release     : 8
+upstreams   :
+    - https://download.kde.org/stable/release-service/25.12.0/src/libkdcraw-25.12.0.tar.xz : 5156401a59784313a660eec0dc553327c21ef0af028fc314525926d12af84fd4
+homepage    : https://kde.org/
+license     :
+    - GFDL-1.2-or-later
+    - GPL-2.0-or-later
+summary     : C++ interface to LibRaw
+description : |
+    Libkdcraw is a C++ interface around LibRaw library used to decode RAW picture files.
+builddeps   :
+    # Temporary, boulder doesn't handle build ordering resolution correctly when builddeps are added by macros, so add ECM manually
+    - cmake(ECM)
+    - pkgconfig(libraw)
+setup       : |
+    %cmake_kf6 \
+        -DBUILD_WITH_QT6=ON
+build       : |
+    %cmake_build
+install     : |
+    %cmake_install

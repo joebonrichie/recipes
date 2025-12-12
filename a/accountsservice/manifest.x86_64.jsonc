@@ -18,7 +18,7 @@
 			"depends": [
 				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
 				"soname(libc.so.6(x86_64))",
-				"soname(libcrypt.so.1(x86_64))",
+				"soname(libcrypt.so.2(x86_64))",
 				"soname(libgio-2.0.so.0(x86_64))",
 				"soname(libglib-2.0.so.0(x86_64))",
 				"soname(libgobject-2.0.so.0(x86_64))",
@@ -38,7 +38,6 @@
 				"/usr/share/dbus-1/interfaces/org.freedesktop.Accounts.xml",
 				"/usr/share/dbus-1/system-services/org.freedesktop.Accounts.service",
 				"/usr/share/dbus-1/system.d/org.freedesktop.Accounts.conf",
-				"/usr/share/gir-1.0/AccountsService-1.0.gir",
 				"/usr/share/locale/af/LC_MESSAGES/accounts-service.mo",
 				"/usr/share/locale/ar/LC_MESSAGES/accounts-service.mo",
 				"/usr/share/locale/as/LC_MESSAGES/accounts-service.mo",
@@ -113,9 +112,7 @@
 				"/usr/share/locale/zh_CN/LC_MESSAGES/accounts-service.mo",
 				"/usr/share/locale/zh_HK/LC_MESSAGES/accounts-service.mo",
 				"/usr/share/locale/zh_TW/LC_MESSAGES/accounts-service.mo",
-				"/usr/share/polkit-1/actions/org.freedesktop.accounts.policy",
-				"/usr/share/vala/vapi/accountsservice.deps",
-				"/usr/share/vala/vapi/accountsservice.vapi"
+				"/usr/share/polkit-1/actions/org.freedesktop.accounts.policy"
 			],
 			"name": "accountsservice",
 			"provides": [
@@ -148,7 +145,10 @@
 				"/usr/include/accountsservice-1.0/act/act-user.h",
 				"/usr/include/accountsservice-1.0/act/act.h",
 				"/usr/lib/libaccountsservice.so",
-				"/usr/lib/pkgconfig/accountsservice.pc"
+				"/usr/lib/pkgconfig/accountsservice.pc",
+				"/usr/share/gir-1.0/AccountsService-1.0.gir",
+				"/usr/share/vala/vapi/accountsservice.deps",
+				"/usr/share/vala/vapi/accountsservice.vapi"
 			],
 			"name": "accountsservice-devel",
 			"provides": [
@@ -157,6 +157,6 @@
 		}
 	},
 	"source-name": "accountsservice",
-	"source-release": "3",
+	"source-release": "6",
 	"source-version": "23.13.9"
 }

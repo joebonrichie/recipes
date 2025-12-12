@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : cosmic-edit
-version     : 1.0.0-alpha.6
-release     : 13
+version     : 1.0.0-git+5c2cb02
+release     : 28
 homepage    : https://github.com/pop-os/cosmic-edit
 upstreams   :
-    - git|https://github.com/pop-os/cosmic-edit : 4b75c32bffecf735f8393af9ddb32a89a237d3c2
+    - git|https://github.com/pop-os/cosmic-edit : 5c2cb022cfebff78e4b5fc22022f081d114c556b
 summary     : Cosmic Desktop Text Editor
 description : |
     Cosmic desktop Text Editor
@@ -16,10 +16,11 @@ license     :
     - GPL-3.0
 builddeps   :
     - binary(just)
+    - pkgconfig(glib-2.0)
     - pkgconfig(xkbcommon)
+rundeps     :
+    - gvfs # Used for file services
 networking  : yes
-tuning      :
-    - lto: thin
 setup       : |
     %cargo_fetch
 build       : |

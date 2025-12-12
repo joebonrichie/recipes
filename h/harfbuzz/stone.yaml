@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : harfbuzz
-version     : 10.4.0
-release     : 13
+version     : 12.2.0
+release     : 25
 homepage    : https://harfbuzz.github.io/
 upstreams   :
-    - https://github.com/harfbuzz/harfbuzz/releases/download/10.4.0/harfbuzz-10.4.0.tar.xz : 480b6d25014169300669aa1fc39fb356c142d5028324ea52b3a27648b9beaad8
+    - https://github.com/harfbuzz/harfbuzz/releases/download/12.2.0/harfbuzz-12.2.0.tar.xz : ecb603aa426a8b24665718667bda64a84c1504db7454ee4cadbd362eea64e545
 summary     : HarfBuzz text shaping engine
 description : |
     HarfBuzz is a text shaping library. Using the HarfBuzz library allows programs to convert a sequence of Unicode input into properly formatted and positioned glyph output—for any writing system and language.
@@ -16,6 +16,7 @@ license     :
     - MIT
     - HPND
 builddeps   :
+    - binary(help2man)
     - pkgconfig(cairo)
     - pkgconfig(freetype2)
     - pkgconfig(glib-2.0)
@@ -24,12 +25,30 @@ builddeps   :
     - pkgconfig(graphite2)
     - pkgconfig(icu-uc)
 setup       : |
-    %meson -Dgraphite=enabled -Dintrospection=enabled
+    %meson \
+        -Dgraphite2=enabled \
+        -Dintrospection=enabled
 build       : |
     %meson_build
 install     : |
     %meson_install
 packages    :
-    - "%(name)-devel":
+    - "%(name)-cairo":
+        summary: Harfbuzz cairo support library
+        description: Harfbuzz cairo support library
         paths:
-            - /usr/bin
+            - /usr/lib/libharfbuzz-cairo.so.*
+
+    - "%(name)-icu":
+        summary: Harfbuzz ICU support library
+        description: Harfbuzz ICU support library
+        paths:
+            - /usr/lib/libharfbuzz-icu.so.*
+
+    - "%(name)-devel":
+        rundeps:
+            - "%(name)-cairo"
+            - "%(name)-icu"
+        paths:
+            - /usr/bin/
+            - /usr/share/man/

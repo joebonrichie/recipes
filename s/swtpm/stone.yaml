@@ -1,0 +1,93 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : swtpm
+version     : 0.10.1
+release     : 1
+upstreams   :
+    - https://github.com/stefanberger/swtpm/archive/refs/tags/v0.10.1.tar.gz : f8da11cadfed27e26d26c5f58a7b8f2d14d684e691927348906b5891f525c684
+homepage    : https://github.com/stefanberger/swtpm
+license     :
+    - BSD-3-Clause
+    - TCGL
+summary     : TPM Emulator
+description : |
+    TPM emulator built on libtpms providing TPM functionality for QEMU VMs.
+builddeps   :
+    - binary(expect)
+    - binary(nm)
+    - binary(socat)
+    - pkgconfig(gmp)
+    - pkgconfig(gnutls)
+    - pkgconfig(json-glib-1.0)
+    - pkgconfig(libcrypto)
+    - pkgconfig(libseccomp)
+    - pkgconfig(libtpms)
+checkdeps   :
+    - sysbinary(ss)
+environment : |
+    export PATH="/usr/bin:/usr/sbin"
+setup       : |
+    %patch %(pkgdir)/0001-Stateless.patch
+    %patch %(pkgdir)/ftbfs-slibtool.patch
+    %patch %(pkgdir)/0001-Disable-tests-that-fail-in-buildenv.patch
+    %patch %(pkgdir)/upstream-01.patch
+
+    unset CFLAGS CXXFLAGS LDFLAGS
+
+    %reconfigure_with_bash \
+        --disable-static \
+        --with-gnutls \
+        --with-seccomp \
+        --without-cuse
+build       : |
+    %make
+install     : |
+    %make_install
+
+    # Stateless
+    %install_file %(pkgdir)/swtpm.sysusers %(installroot)/%(sysusersdir)/swtpm-tools.conf
+    %install_file %(pkgdir)/swtpm.tmpfiles %(installroot)/%(tmpfilesdir)/swtpm-tools.conf
+
+    # No use for these
+    rm -rfv %(installroot)%(libdir)/swtpm/installed-tests/
+check       : |
+    %make check || (cat tests/test-suite.log && exit 1)
+packages    :
+    - "%(name)-libs":
+        paths:
+            - /usr/lib/swtpm/libswtpm_libtpms.so.*
+
+    - "%(name)-devel":
+        paths:
+            - /usr/lib/swtpm/libswtpm_libtpms.so
+
+    - "%(name)-tools":
+        summary: Tools for the TPM emulator
+        description: Tools for the TPM emulator
+        rundeps:
+            - "%(name)"
+            - tpm2-tss
+            # - gnutls-util # TODO: after gnutls is split
+        paths:
+            - /usr/bin/swtpm_*
+            - /usr/share/man/man5/
+            - /usr/share/man/man8/swtpm_*
+            - /usr/share/man/man8/swtpm-localca*
+            - /usr/share/defaults/swtpm/
+            - /usr/share/swtpm/
+            - /usr/lib/sysusers.d/
+            - /usr/lib/tmpfiles.d/
+
+    - "%(name)-tools-pkcs11":
+        summary: Tools for creating a local CA based on a TPM pkcs11 device
+        description: Tools for creating a local CA based on a TPM pkcs11 device
+        rundeps:
+            - "%(name)-tools"
+            # - tpm2-pkcs11 # TODO tpm2-tools
+            - binary(expect)
+        paths:
+            - /usr/share/man/man8/swtpm-create-tpmca.8*
+            - /usr/share/swtpm/swtpm-create-tpmca

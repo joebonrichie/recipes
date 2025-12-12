@@ -1,0 +1,25 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : python-httplib2
+version     : 0.31.0
+release     : 2
+upstreams   :
+    - https://github.com/httplib2/httplib2/archive/refs/tags/v0.31.0.tar.gz : 3fcfc1d27ac7568922a433a45ff1067fe2218a5d80960d380f05f31a2f9929a2
+homepage    : https://github.com/httplib2/httplib2
+license     : MIT
+summary     : Small, fast HTTP client library for Python
+description : |
+    Small, fast HTTP client library for Python. Features persistent connections, cache, Appengine support.
+builddeps   :
+    - python(setuptools)
+rundeps     :
+    - python-libs
+setup       : |
+    %patch %(pkgdir)/system-certs.patch
+build       : |
+    %pyproject_build
+install     : |
+    %pyproject_install

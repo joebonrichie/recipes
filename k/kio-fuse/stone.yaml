@@ -1,0 +1,28 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : kio-fuse
+version     : 5.1.1
+release     : 3
+upstreams   :
+    - https://download.kde.org/stable/kio-fuse/kio-fuse-5.1.1.tar.xz : adf6aa7ce055c0987e716a93ac01f3c0a97c1280421443cd6b21e0e71d763d14
+homepage    : https://community.kde.org/Frameworks
+license     : GPL-3.0-or-later
+summary     : FUSE interface for KIO
+description : |
+    FUSE interface for KIO
+builddeps   :
+    # Temporary, boulder doesn't handle build ordering resolution correctly when builddeps are added by macros, so add ECM manually
+    - cmake(ECM)
+    - cmake(KF6CoreAddons)
+    - cmake(KF6KIO)
+    - pkgconfig(fuse3)
+setup       : |
+    %cmake_kf6 \
+        -DQT_MAJOR_VERSION=6
+build       : |
+    %cmake_build
+install     : |
+    %cmake_install

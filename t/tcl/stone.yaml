@@ -1,0 +1,69 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : tcl
+version     : 9.0.3
+release     : 3
+upstreams   :
+    - https://sourceforge.net/projects/tcl/files/Tcl/9.0.3/tcl9.0.3-src.tar.gz : 2537ba0c86112c8c953f7c09d33f134dd45c0fb3a71f2d7f7691fd301d2c33a6
+homepage    : https://www.tcl.tk
+license     : TCL
+summary     : Tool Command Language, pronounced tickle
+description : |
+    Tcl is a powerful but easy to use dynamic programming language suitable for a wide range of uses including web and desktop applications, along with networking, administration, and more.
+builddeps   :
+    - binary(zip)
+    - pkgconfig(zlib)
+    # TODO: package libtommath, systemtap
+environment : |
+    cd unix
+
+    _version_major_minor=$(echo %(version) | cut -d. -f1-2)
+setup       : |
+    # We don't currently need any of these
+    rm -rf ../pkgs/*
+
+    %configure \
+        --enable-shared \
+        --enable-symbols
+build       : |
+    %make \
+        TCL_LIBRARY=%(datadir)/tcl${_version_major_minor}
+install     : |
+    %make_install \
+        install-libraries install-msgs \
+        TCL_LIBRARY=%(datadir)/tcl${_version_major_minor}
+    
+    cd ../
+    ln -s tclsh${_version_major_minor} %(installroot)%(bindir)/tclsh
+
+    # For linking with `-ltcl`
+    ln -s libtcl${_version_major_minor}.so %(installroot)%(libdir)/libtcl.so
+
+    # Install private headers
+    mkdir -p %(installroot)/%(includedir)/tcl-private/{generic,unix}
+    find generic unix -name "*.h" -exec cp -p '{}' %(installroot)/%(includedir)/tcl-private/'{}' ';'
+    pushd %(installroot)/%(includedir)
+    for i in *.h ; do
+        [ -f %(installroot)/%(includedir)/tcl-private/generic/$i ] && ln -sf ../../$i %(installroot)/%(includedir)/tcl-private/generic ;
+    done
+    popd
+
+    # Remove build traces and switch to correct private headers dir
+    sed -i -e "s|$PWD/unix|%(libdir)|; s|$PWD|%(includedir)/tcl-private|" %(installroot)/%(libdir)/tclConfig.sh
+packages    :
+    - "%(name)":
+        paths:
+            - /usr/lib/libtcl9.0.so
+
+    - "%(name)-devel":
+        paths:
+            - /usr/lib/tclConfig.sh
+            - /usr/lib/tclooConfig.sh
+
+    - "%(name)-docs":
+        paths:
+            - /usr/share/man/mann/
+            - /usr/share/man/man3/

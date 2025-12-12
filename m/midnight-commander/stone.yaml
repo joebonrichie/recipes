@@ -5,7 +5,7 @@
 #
 name        : midnight-commander
 version     : 4.8.33
-release     : 1
+release     : 2
 homepage    : http://www.midnight-commander.org/
 upstreams   :
     - https://github.com/MidnightCommander/mc/archive/refs/tags/4.8.33.tar.gz : 092e440930fda43574739e45a8b41af384b974e6720184b6707d127b84082c51

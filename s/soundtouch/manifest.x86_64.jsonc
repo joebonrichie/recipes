@@ -5,15 +5,15 @@
 		"soundtouch": {
 			"depends": [
 				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
-				"soname(libc++.so.1(x86_64))",
 				"soname(libc.so.6(x86_64))",
+				"soname(libgcc_s.so.1(x86_64))",
 				"soname(libm.so.6(x86_64))",
-				"soname(libunwind.so.1(x86_64))"
+				"soname(libstdc++.so.6(x86_64))"
 			],
 			"files": [
 				"/usr/bin/soundstretch",
 				"/usr/lib/libSoundTouch.so.2",
-				"/usr/lib/libSoundTouch.so.2.3.3"
+				"/usr/lib/libSoundTouch.so.2.4.0"
 			],
 			"name": "soundtouch",
 			"provides": [
@@ -47,6 +47,6 @@
 		}
 	},
 	"source-name": "soundtouch",
-	"source-release": "1",
-	"source-version": "2.3.3"
+	"source-release": "4",
+	"source-version": "2.4.0"
 }

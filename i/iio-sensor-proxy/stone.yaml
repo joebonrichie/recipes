@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : iio-sensor-proxy
-version     : 3.5
-release     : 1
+version     : "3.8"
+release     : 4
 homepage    : https://gitlab.freedesktop.org/hadess/iio-sensor-proxy/
 upstreams   :
-    - https://gitlab.freedesktop.org/hadess/iio-sensor-proxy/-/archive/3.5/iio-sensor-proxy-3.5.tar.gz : 8689425f2287626a95d95b1e1e5b62e497d09dd08cf411084ed22166d4a49da5
+    - https://gitlab.freedesktop.org/hadess/iio-sensor-proxy/-/archive/3.8/iio-sensor-proxy-3.8.tar.gz : f7fb74bf75a7046be14926d4be3d1804f7fb048641116dce0bc0be847131f9d6
 summary     : Proxies sensor devices (accelerometers, light sensors, compass) to applications through D-Bus
 description : |
     Proxies sensor devices (accelerometers, light sensors, compass) to applications through D-Bus

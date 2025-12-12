@@ -62,6 +62,6 @@
 		}
 	},
 	"source-name": "plasma-wayland-protocols",
-	"source-release": "1",
-	"source-version": "1.16.0"
+	"source-release": "4",
+	"source-version": "1.19.0"
 }

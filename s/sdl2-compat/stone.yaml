@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : sdl2-compat
-version     : 2.30.51
-release     : 1
+version     : 2.32.60
+release     : 7
 homepage    : https://github.com/libsdl-org/sdl2-compat
 upstreams   :
-    - https://github.com/libsdl-org/sdl2-compat/releases/download/release-2.30.51/sdl2-compat-2.30.51.tar.gz : 6154a1b29d3ee0ef483e0b575819a2b5b413daeae7bd782085387943bbee17d2
+    - https://github.com/libsdl-org/sdl2-compat/releases/download/release-2.32.60/sdl2-compat-2.32.60.tar.gz : 5ef7b1ddd315d5c57f0cece9cf97e1ce044581b1b692044440e61463c25aece8
 summary     : Simple DirectMedia Library - Compat library
 description : |
     Simple DirectMedia Library - Compat library
@@ -27,6 +27,9 @@ build       : |
     %cmake_build
 install     : |
     %cmake_install
+
+    # Compat symlink so we don't need to keep patching shit to use sdl2-compat
+    ln -s sdl2-compat.pc %(installroot)%(libdir)/pkgconfig/sdl2.pc
 packages    :
     - "%(name)-devel":
         paths:

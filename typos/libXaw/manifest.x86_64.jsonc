@@ -1,0 +1,30 @@
+/** Human readable report. This is not consumed by boulder */
+{
+	"manifest-version": "0.2",
+	"packages": {
+		"libXaw": {
+			"files": [
+				"/usr/share/doc/libXaw/README"
+			],
+			"name": "libXaw"
+		},
+		"libXaw-devel": {
+			"depends": [
+				"libXaw"
+			],
+			"files": [
+				"/usr/share/doc/libXaw-devel/README"
+			],
+			"name": "libXaw-devel"
+		},
+		"libXaw-docs": {
+			"files": [
+				"/usr/share/doc/libXaw-docs/README"
+			],
+			"name": "libXaw-docs"
+		}
+	},
+	"source-name": "libXaw",
+	"source-release": "3",
+	"source-version": "1.0.16"
+}

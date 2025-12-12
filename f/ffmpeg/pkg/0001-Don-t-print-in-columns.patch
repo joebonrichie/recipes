@@ -1,0 +1,24 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: Reilly Brogan <reilly@reillybrogan.com>
+Date: Sat, 6 Sep 2025 17:19:21 -0500
+Subject: [PATCH] Don't print in columns
+
+Don't print in columns. It makes diffing output more annoying than it needs to be
+
+---
+ configure | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/configure b/configure
+index 732de59292..7448ac3b65 100755
+--- a/configure
++++ b/configure
+@@ -4394,7 +4394,7 @@ die_unknown(){
+ print_in_columns() {
+     tr ' ' '\n' | sort | tr '\r\n' '  ' | awk -v col_width=24 -v width="$ncols" '
+     {
+-        num_cols = width > col_width ? int(width / col_width) : 1;
++        num_cols = 1;
+         num_rows = int((NF + num_cols-1) / num_cols);
+         y = x = 1;
+         for (y = 1; y <= num_rows; y++) {

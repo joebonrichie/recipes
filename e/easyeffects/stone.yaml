@@ -4,48 +4,64 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : easyeffects
-version     : 7.2.3
-release     : 1
+version     : 8.0.6
+release     : 12
 homepage    : https://github.com/wwmm/easyeffects
 upstreams   :
-    - https://github.com/wwmm/easyeffects/archive/refs/tags/v7.2.3.tar.gz : 5d3afa96901c86c4fa065aa40db11800a7cdfd9d393f1de9b44bb126eee4b01e
-summary     : Audio effects for PipeWire applications (WIP Packaging)
+    - https://github.com/wwmm/easyeffects/archive/refs/tags/v8.0.6.tar.gz : b5f49cda58d738734eab6a4562e56a6a6139449ca14032c720296220600d9438
+summary     : Audio effects for PipeWire applications
 description : |
     Limiter, compressor, convolver, equalizer and auto volume and many other plugins for PipeWire applications 
 license     : GPL-3.0
 builddeps   : 
-    - binary(itstool)
-    - binary(msgfmt)
+    - cmake(ECM)
+    - cmake(KF6Config)
+    - cmake(KF6ConfigWidgets)
+    - cmake(KF6CoreAddons)
+    - cmake(KF6I18n)
+    - cmake(KF6IconThemes)
+    - cmake(KF6Kirigami)
+    - cmake(KF6KirigamiAddons)
+    - cmake(KF6QQC2DesktopStyle)
+    - cmake(Qt6CorePrivate)
+    - cmake(Qt6Graphs)
+    - cmake(Qt6Qml)
+    - cmake(Qt6WebEngineQuick)
+    - cmake(TBB)
     - pkgconfig(fftw3)
     - pkgconfig(fftw3f)
-    - pkgconfig(fmt)
-    - pkgconfig(gio-2.0)
     - pkgconfig(gsl)
-    - pkgconfig(gtk4)
-    - pkgconfig(libadwaita-1)
-    - pkgconfig(libbs2b)
     - pkgconfig(libebur128)
+    - pkgconfig(libbs2b)
     - pkgconfig(libpipewire-0.3)
+    - pkgconfig(libportal)
+    - pkgconfig(libportal-qt6)
     - pkgconfig(lilv-0)
     - pkgconfig(nlohmann_json)
     - pkgconfig(rnnoise)
     - pkgconfig(samplerate)
-    - pkgconfig(sigc++-3.0)
     - pkgconfig(sndfile)
     - pkgconfig(soundtouch)
     - pkgconfig(speexdsp)
-    - pkgconfig(tbb)
-    - desktop-file-utils
+    - pkgconfig(webrtc-audio-processing-2)
     - ladspa-devel
     - zita-convolver-devel
 rundeps     :
+    # Qt6 Wayland support
+    - qt6-wayland
+    # Runtime deps
+    - binary(pipewire)
+    - deepfilternet
     - lsp-plugins-lv2
+    # QML deps:
+    - kf6-kirigami
+    - kf6-kirigami-addons
+    - kf6-qqc2-desktop-style
+    - qt6-graphs
+    - qt6-webengine
 setup       : |
-    %patch %(pkgdir)/0001-pipewire-1.4.0-client-rt.conf.patch
-
-    %meson -Denable-libcpp-workarounds=true
+    %cmake
 build       : |
-    %meson_build
+    %cmake_build
 install     : |
-    %meson_install
-
+    %cmake_install

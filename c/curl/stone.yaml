@@ -4,30 +4,44 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : curl
-version     : 8.11.1
-release     : 20
+version     : 8.17.0
+release     : 27
 summary     : A utility for fetching files from remote servers
 license     : MIT
 homepage    : https://curl.se/
 description : |
     A utility for fetching files from remote servers.
 upstreams   :
-    - https://curl.se/download/curl-8.11.1.tar.gz: a889ac9dbba3644271bd9d1302b5c22a088893719b72be3487bc3d401e5c4e80
+    - https://curl.se/download/curl-8.17.0.tar.gz: e8e74cdeefe5fb78b3ae6e90cd542babf788fa9480029cfcee6fd9ced42b7910
 builddeps:
     - pkgconfig32(jansson)
     - pkgconfig32(libbrotlidec)
+    - pkgconfig32(libcrypto)
     - pkgconfig32(libnghttp2)
     - pkgconfig32(libpsl)
     - pkgconfig32(libzstd)
-    - pkgconfig32(rustls)
+    # - pkgconfig32(rustls)
     - pkgconfig32(zlib)
+    - pkgconfig(krb5-gssapi)
+    - pkgconfig(ldap)
+    - pkgconfig(libnghttp3)
+    - pkgconfig(libssh2)
 emul32      : true
+profiles    :
+    - emul32:
+        environment: |
+            _extra_args="--disable-libssh2 --disable-ldap"
+    - x86_64:
+        environment: |
+            _extra_args="--with-ldap --with-libssh2 --with-gssapi"
 setup       : |
+    # rustls temporarily disabled due to build failures
     %configure \
         --disable-static \
-        --with-ca-bundle=%(vendordir)/etc/ssl/certs/ca-certificates.crt \
-        --with-rustls \
-        --without-openssl
+        --with-ca-bundle="/etc/ssl/certs/ca-certificates.crt" \
+        --with-openssl \
+        --with-openssl-quic \
+        $_extra_args
 build       : |
     %make
 install     : |
@@ -36,3 +50,14 @@ install     : |
 tune        :
     - nosemantic
     - optimize: size
+packages    :
+    - "%(name)-libs":
+        rundeps:
+            - ca-certificates
+        paths:
+            - /usr/lib/libcurl.so.*
+
+    - "%(name)-devel":
+        paths:
+            - /usr/bin/curl-config
+            - /usr/share/man/man1/curl-config*

@@ -1,0 +1,70 @@
+/** Human readable report. This is not consumed by boulder */
+{
+	"manifest-version": "0.2",
+	"packages": {
+		"libayatana-ido": {
+			"build-depends": [
+				"binary(valac)",
+				"pkgconfig(glib-2.0)",
+				"pkgconfig(gobject-introspection-1.0)",
+				"pkgconfig(gtk+-3.0)"
+			],
+			"depends": [
+				"soname(libc.so.6(x86_64))",
+				"soname(libcairo.so.2(x86_64))",
+				"soname(libgdk-3.so.0(x86_64))",
+				"soname(libgdk_pixbuf-2.0.so.0(x86_64))",
+				"soname(libgio-2.0.so.0(x86_64))",
+				"soname(libglib-2.0.so.0(x86_64))",
+				"soname(libgobject-2.0.so.0(x86_64))",
+				"soname(libgtk-3.so.0(x86_64))",
+				"soname(libm.so.6(x86_64))",
+				"soname(libpango-1.0.so.0(x86_64))",
+				"soname(libpangocairo-1.0.so.0(x86_64))"
+			],
+			"files": [
+				"/usr/lib/girepository-1.0/AyatanaIdo3-0.4.typelib",
+				"/usr/lib/libayatana-ido3-0.4.so.0",
+				"/usr/lib/libayatana-ido3-0.4.so.0.0.0"
+			],
+			"name": "libayatana-ido",
+			"provides": [
+				"soname(libayatana-ido3-0.4.so.0(x86_64))"
+			]
+		},
+		"libayatana-ido-devel": {
+			"build-depends": [
+				"binary(valac)",
+				"pkgconfig(glib-2.0)",
+				"pkgconfig(gobject-introspection-1.0)",
+				"pkgconfig(gtk+-3.0)"
+			],
+			"depends": [
+				"libayatana-ido",
+				"pkgconfig(glib-2.0)",
+				"pkgconfig(gtk+-3.0)"
+			],
+			"files": [
+				"/usr/include/libayatana-ido3-0.4/libayatana-ido/ayatanamenuitemfactory.h",
+				"/usr/include/libayatana-ido3-0.4/libayatana-ido/idocalendarmenuitem.h",
+				"/usr/include/libayatana-ido3-0.4/libayatana-ido/idoentrymenuitem.h",
+				"/usr/include/libayatana-ido3-0.4/libayatana-ido/idorange.h",
+				"/usr/include/libayatana-ido3-0.4/libayatana-ido/idoscalemenuitem.h",
+				"/usr/include/libayatana-ido3-0.4/libayatana-ido/idoswitchmenuitem.h",
+				"/usr/include/libayatana-ido3-0.4/libayatana-ido/idotimeline.h",
+				"/usr/include/libayatana-ido3-0.4/libayatana-ido/libayatana-ido.h",
+				"/usr/lib/libayatana-ido3-0.4.so",
+				"/usr/lib/pkgconfig/libayatana-ido3-0.4.pc",
+				"/usr/share/gir-1.0/AyatanaIdo3-0.4.gir",
+				"/usr/share/vala/vapi/libayatana-ido3-0.4.vapi"
+			],
+			"name": "libayatana-ido-devel",
+			"provides": [
+				"pkgconfig(libayatana-ido3-0.4)"
+			]
+		}
+	},
+	"source-name": "libayatana-ido",
+	"source-release": "1",
+	"source-version": "0.10.4"
+}

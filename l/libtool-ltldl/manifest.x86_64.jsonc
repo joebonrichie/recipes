@@ -8,7 +8,7 @@
 			],
 			"files": [
 				"/usr/lib/libltdl.so.7",
-				"/usr/lib/libltdl.so.7.3.2",
+				"/usr/lib/libltdl.so.7.3.3",
 				"/usr/share/doc/libtool/COPYING.lib"
 			],
 			"name": "libtool-ltldl",
@@ -17,6 +17,9 @@
 			]
 		},
 		"libtool-ltldl-devel": {
+			"depends": [
+				"libtool-ltldl"
+			],
 			"files": [
 				"/usr/include/libltdl/lt_dlloader.h",
 				"/usr/include/libltdl/lt_error.h",
@@ -28,6 +31,6 @@
 		}
 	},
 	"source-name": "libtool-ltldl",
-	"source-release": "1",
-	"source-version": "2.4.7"
+	"source-release": "3",
+	"source-version": "2.5.4"
 }

@@ -4,45 +4,43 @@
 	"packages": {
 		"icu": {
 			"build-depends": [
+				"binary(doxygen)",
 				"binary(python3)"
 			],
 			"depends": [
+				"icu-libs",
 				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
-				"soname(libc++.so.1(x86_64))",
 				"soname(libc.so.6(x86_64))",
-				"soname(libm.so.6(x86_64))",
-				"soname(libunwind.so.1(x86_64))"
+				"soname(libgcc_s.so.1(x86_64))",
+				"soname(libicui18n.so.78(x86_64))",
+				"soname(libicuio.so.78(x86_64))",
+				"soname(libicutu.so.78(x86_64))",
+				"soname(libicuuc.so.78(x86_64))",
+				"soname(libstdc++.so.6(x86_64))"
 			],
 			"files": [
-				"/usr/lib/libicudata.so.77",
-				"/usr/lib/libicudata.so.77.1",
-				"/usr/lib/libicui18n.so.77",
-				"/usr/lib/libicui18n.so.77.1",
-				"/usr/lib/libicuio.so.77",
-				"/usr/lib/libicuio.so.77.1",
-				"/usr/lib/libicutest.so.77",
-				"/usr/lib/libicutest.so.77.1",
-				"/usr/lib/libicutu.so.77",
-				"/usr/lib/libicutu.so.77.1",
-				"/usr/lib/libicuuc.so.77",
-				"/usr/lib/libicuuc.so.77.1",
+				"/usr/bin/derb",
+				"/usr/bin/genbrk",
+				"/usr/bin/gencfu",
+				"/usr/bin/gencnval",
+				"/usr/bin/gendict",
+				"/usr/bin/genrb",
+				"/usr/bin/icuexportdata",
+				"/usr/bin/makeconv",
+				"/usr/bin/pkgdata",
+				"/usr/bin/uconv",
 				"/usr/sbin/escapesrc",
 				"/usr/sbin/genccode",
 				"/usr/sbin/gencmn",
 				"/usr/sbin/gennorm2",
 				"/usr/sbin/gensprep",
 				"/usr/sbin/icupkg",
-				"/usr/share/icu/77.1/LICENSE",
-				"/usr/share/icu/77.1/config/mh-linux",
-				"/usr/share/icu/77.1/install-sh",
-				"/usr/share/icu/77.1/mkinstalldirs",
 				"/usr/share/man/man1/derb.1",
 				"/usr/share/man/man1/genbrk.1",
 				"/usr/share/man/man1/gencfu.1",
 				"/usr/share/man/man1/gencnval.1",
 				"/usr/share/man/man1/gendict.1",
 				"/usr/share/man/man1/genrb.1",
-				"/usr/share/man/man1/icu-config.1",
 				"/usr/share/man/man1/icuexportdata.1",
 				"/usr/share/man/man1/makeconv.1",
 				"/usr/share/man/man1/pkgdata.1",
@@ -54,12 +52,16 @@
 			],
 			"name": "icu",
 			"provides": [
-				"soname(libicudata.so.77(x86_64))",
-				"soname(libicui18n.so.77(x86_64))",
-				"soname(libicuio.so.77(x86_64))",
-				"soname(libicutest.so.77(x86_64))",
-				"soname(libicutu.so.77(x86_64))",
-				"soname(libicuuc.so.77(x86_64))",
+				"binary(derb)",
+				"binary(genbrk)",
+				"binary(gencfu)",
+				"binary(gencnval)",
+				"binary(gendict)",
+				"binary(genrb)",
+				"binary(icuexportdata)",
+				"binary(makeconv)",
+				"binary(pkgdata)",
+				"binary(uconv)",
 				"sysbinary(escapesrc)",
 				"sysbinary(genccode)",
 				"sysbinary(gencmn)",
@@ -70,47 +72,62 @@
 		},
 		"icu-32bit": {
 			"build-depends": [
+				"binary(doxygen)",
 				"binary(python3)"
 			],
 			"depends": [
 				"icu",
-				"soname(libc++.so.1(386))",
+				"soname(ld-linux.so.2(386))",
 				"soname(libc.so.6(386))",
+				"soname(libgcc_s.so.1(386))",
 				"soname(libm.so.6(386))",
-				"soname(libunwind.so.1(386))"
+				"soname(libstdc++.so.6(386))"
 			],
 			"files": [
 				"/usr/lib32/libicudata.so.77",
 				"/usr/lib32/libicudata.so.77.1",
+				"/usr/lib32/libicudata.so.78",
+				"/usr/lib32/libicudata.so.78.1",
 				"/usr/lib32/libicui18n.so.77",
 				"/usr/lib32/libicui18n.so.77.1",
+				"/usr/lib32/libicui18n.so.78",
+				"/usr/lib32/libicui18n.so.78.1",
 				"/usr/lib32/libicuio.so.77",
 				"/usr/lib32/libicuio.so.77.1",
+				"/usr/lib32/libicuio.so.78",
+				"/usr/lib32/libicuio.so.78.1",
 				"/usr/lib32/libicutest.so.77",
 				"/usr/lib32/libicutest.so.77.1",
+				"/usr/lib32/libicutest.so.78",
+				"/usr/lib32/libicutest.so.78.1",
 				"/usr/lib32/libicutu.so.77",
 				"/usr/lib32/libicutu.so.77.1",
+				"/usr/lib32/libicutu.so.78",
+				"/usr/lib32/libicutu.so.78.1",
 				"/usr/lib32/libicuuc.so.77",
-				"/usr/lib32/libicuuc.so.77.1"
+				"/usr/lib32/libicuuc.so.77.1",
+				"/usr/lib32/libicuuc.so.78",
+				"/usr/lib32/libicuuc.so.78.1"
 			],
 			"name": "icu-32bit",
 			"provides": [
 				"soname(libicudata.so.77(386))",
-				"soname(libicudata.so.77(x86))",
+				"soname(libicudata.so.78(386))",
 				"soname(libicui18n.so.77(386))",
-				"soname(libicui18n.so.77(x86))",
+				"soname(libicui18n.so.78(386))",
 				"soname(libicuio.so.77(386))",
-				"soname(libicuio.so.77(x86))",
+				"soname(libicuio.so.78(386))",
 				"soname(libicutest.so.77(386))",
-				"soname(libicutest.so.77(x86))",
+				"soname(libicutest.so.78(386))",
 				"soname(libicutu.so.77(386))",
-				"soname(libicutu.so.77(x86))",
+				"soname(libicutu.so.78(386))",
 				"soname(libicuuc.so.77(386))",
-				"soname(libicuuc.so.77(x86))"
+				"soname(libicuuc.so.78(386))"
 			]
 		},
 		"icu-32bit-devel": {
 			"build-depends": [
+				"binary(doxygen)",
 				"binary(python3)"
 			],
 			"depends": [
@@ -118,8 +135,8 @@
 				"icu-devel"
 			],
 			"files": [
-				"/usr/lib32/icu/77.1/Makefile.inc",
-				"/usr/lib32/icu/77.1/pkgdata.inc",
+				"/usr/lib32/icu/78.1/Makefile.inc",
+				"/usr/lib32/icu/78.1/pkgdata.inc",
 				"/usr/lib32/icu/Makefile.inc",
 				"/usr/lib32/icu/current",
 				"/usr/lib32/icu/pkgdata.inc",
@@ -142,32 +159,19 @@
 		},
 		"icu-devel": {
 			"build-depends": [
+				"binary(doxygen)",
 				"binary(python3)"
 			],
 			"depends": [
 				"icu",
 				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
-				"soname(libc++.so.1(x86_64))",
 				"soname(libc.so.6(x86_64))",
-				"soname(libicui18n.so.77(x86_64))",
-				"soname(libicuio.so.77(x86_64))",
-				"soname(libicutu.so.77(x86_64))",
-				"soname(libicuuc.so.77(x86_64))",
-				"soname(libunwind.so.1(x86_64))"
+				"soname(libicutu.so.78(x86_64))",
+				"soname(libicuuc.so.78(x86_64))"
 			],
 			"files": [
-				"/usr/bin/derb",
-				"/usr/bin/genbrk",
-				"/usr/bin/gencfu",
-				"/usr/bin/gencnval",
-				"/usr/bin/gendict",
-				"/usr/bin/genrb",
 				"/usr/bin/icu-config",
-				"/usr/bin/icuexportdata",
 				"/usr/bin/icuinfo",
-				"/usr/bin/makeconv",
-				"/usr/bin/pkgdata",
-				"/usr/bin/uconv",
 				"/usr/include/unicode/alphaindex.h",
 				"/usr/include/unicode/appendable.h",
 				"/usr/include/unicode/basictz.h",
@@ -364,6 +368,8 @@
 				"/usr/include/unicode/utf32.h",
 				"/usr/include/unicode/utf8.h",
 				"/usr/include/unicode/utf_old.h",
+				"/usr/include/unicode/utfiterator.h",
+				"/usr/include/unicode/utfstring.h",
 				"/usr/include/unicode/utmscale.h",
 				"/usr/include/unicode/utrace.h",
 				"/usr/include/unicode/utrans.h",
@@ -371,8 +377,8 @@
 				"/usr/include/unicode/uvernum.h",
 				"/usr/include/unicode/uversion.h",
 				"/usr/include/unicode/vtzone.h",
-				"/usr/lib/icu/77.1/Makefile.inc",
-				"/usr/lib/icu/77.1/pkgdata.inc",
+				"/usr/lib/icu/78.1/Makefile.inc",
+				"/usr/lib/icu/78.1/pkgdata.inc",
 				"/usr/lib/icu/Makefile.inc",
 				"/usr/lib/icu/current",
 				"/usr/lib/icu/pkgdata.inc",
@@ -384,29 +390,96 @@
 				"/usr/lib/libicuuc.so",
 				"/usr/lib/pkgconfig/icu-i18n.pc",
 				"/usr/lib/pkgconfig/icu-io.pc",
-				"/usr/lib/pkgconfig/icu-uc.pc"
+				"/usr/lib/pkgconfig/icu-uc.pc",
+				"/usr/share/icu/78.1/LICENSE",
+				"/usr/share/icu/78.1/config/mh-linux",
+				"/usr/share/icu/78.1/install-sh",
+				"/usr/share/icu/78.1/mkinstalldirs",
+				"/usr/share/man/man1/icu-config.1"
 			],
 			"name": "icu-devel",
 			"provides": [
-				"binary(derb)",
-				"binary(genbrk)",
-				"binary(gencfu)",
-				"binary(gencnval)",
-				"binary(gendict)",
-				"binary(genrb)",
 				"binary(icu-config)",
-				"binary(icuexportdata)",
 				"binary(icuinfo)",
-				"binary(makeconv)",
-				"binary(pkgdata)",
-				"binary(uconv)",
 				"pkgconfig(icu-i18n)",
 				"pkgconfig(icu-io)",
 				"pkgconfig(icu-uc)"
 			]
+		},
+		"icu-libs": {
+			"build-depends": [
+				"binary(doxygen)",
+				"binary(python3)"
+			],
+			"depends": [
+				"soname(ld-linux-x86-64.so.2(x86_64))",
+				"soname(libc.so.6(x86_64))",
+				"soname(libgcc_s.so.1(x86_64))",
+				"soname(libm.so.6(x86_64))",
+				"soname(libstdc++.so.6(x86_64))"
+			],
+			"files": [
+				"/usr/lib/libicudata.so.77",
+				"/usr/lib/libicudata.so.77.1",
+				"/usr/lib/libicudata.so.78",
+				"/usr/lib/libicudata.so.78.1",
+				"/usr/lib/libicui18n.so.77",
+				"/usr/lib/libicui18n.so.77.1",
+				"/usr/lib/libicui18n.so.78",
+				"/usr/lib/libicui18n.so.78.1",
+				"/usr/lib/libicuio.so.77",
+				"/usr/lib/libicuio.so.77.1",
+				"/usr/lib/libicuio.so.78",
+				"/usr/lib/libicuio.so.78.1",
+				"/usr/lib/libicutest.so.77",
+				"/usr/lib/libicutest.so.77.1",
+				"/usr/lib/libicutest.so.78",
+				"/usr/lib/libicutest.so.78.1",
+				"/usr/lib/libicutu.so.77",
+				"/usr/lib/libicutu.so.77.1",
+				"/usr/lib/libicutu.so.78",
+				"/usr/lib/libicutu.so.78.1",
+				"/usr/lib/libicuuc.so.77",
+				"/usr/lib/libicuuc.so.77.1",
+				"/usr/lib/libicuuc.so.78",
+				"/usr/lib/libicuuc.so.78.1"
+			],
+			"name": "icu-libs",
+			"provides": [
+				"soname(libicudata.so.77(x86_64))",
+				"soname(libicudata.so.78(x86_64))",
+				"soname(libicui18n.so.77(x86_64))",
+				"soname(libicui18n.so.78(x86_64))",
+				"soname(libicuio.so.77(x86_64))",
+				"soname(libicuio.so.78(x86_64))",
+				"soname(libicutest.so.77(x86_64))",
+				"soname(libicutest.so.78(x86_64))",
+				"soname(libicutu.so.77(x86_64))",
+				"soname(libicutu.so.78(x86_64))",
+				"soname(libicuuc.so.77(x86_64))",
+				"soname(libicuuc.so.78(x86_64))"
+			]
+		},
+		"icu-static": {
+			"build-depends": [
+				"binary(doxygen)",
+				"binary(python3)"
+			],
+			"depends": [
+				"icu-devel"
+			],
+			"files": [
+				"/usr/lib/libicudata.a",
+				"/usr/lib/libicui18n.a",
+				"/usr/lib/libicuio.a",
+				"/usr/lib/libicutest.a",
+				"/usr/lib/libicutu.a",
+				"/usr/lib/libicuuc.a"
+			],
+			"name": "icu-static"
 		}
 	},
 	"source-name": "icu",
-	"source-release": "7",
-	"source-version": "77.1"
+	"source-release": "11",
+	"source-version": "78.1"
 }

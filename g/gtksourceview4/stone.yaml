@@ -1,0 +1,37 @@
+#
+# SPDX-FileCopyrightText: © 2020-2024 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : gtksourceview4
+version     : 4.8.4
+release     : 1
+homepage    : https://wiki.gnome.org/Projects/GtkSourceView
+upstreams   :
+    - https://download.gnome.org/sources/gtksourceview/4.8/gtksourceview-4.8.4.tar.xz : 7ec9d18fb283d1f84a3a3eff3b7a72b09a10c9c006597b3fbabbb5958420a87d
+summary     : A text editor widget for code editing
+description : |
+    GtkSourceView is a GNOME library that extends GtkTextView, the standard GTK+
+    widget for multiline text editing. GtkSourceView adds support for syntax
+    highlighting, undo/redo, file loading and saving, search and replace, a
+    completion system, printing, displaying line numbers, and other features
+    typical of a source code editor.
+license     : LGPL-2.1-only
+builddeps   :
+    - binary(g-ir-scanner)
+    - binary(msgfmt)
+    - pkgconfig(glib-2.0)
+    - pkgconfig(gobject-introspection-1.0)
+    - pkgconfig(gtk+-3.0)
+    - pkgconfig(vapigen)
+setup       : |
+    # sed -i '/missing-include-dirs/d' meson.build
+    %meson
+build       : |
+    %meson_build
+install     : |
+    %meson_install
+packages    :
+    - "%(name)-devel":
+        paths:
+            - /usr/share/vala/

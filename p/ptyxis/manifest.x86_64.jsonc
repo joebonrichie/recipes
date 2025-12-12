@@ -47,21 +47,26 @@
 				"/usr/share/locale/fr/LC_MESSAGES/ptyxis.mo",
 				"/usr/share/locale/he/LC_MESSAGES/ptyxis.mo",
 				"/usr/share/locale/hi/LC_MESSAGES/ptyxis.mo",
+				"/usr/share/locale/hu/LC_MESSAGES/ptyxis.mo",
 				"/usr/share/locale/id/LC_MESSAGES/ptyxis.mo",
 				"/usr/share/locale/it/LC_MESSAGES/ptyxis.mo",
 				"/usr/share/locale/ja/LC_MESSAGES/ptyxis.mo",
 				"/usr/share/locale/ka/LC_MESSAGES/ptyxis.mo",
+				"/usr/share/locale/kab/LC_MESSAGES/ptyxis.mo",
 				"/usr/share/locale/ko/LC_MESSAGES/ptyxis.mo",
 				"/usr/share/locale/nb/LC_MESSAGES/ptyxis.mo",
 				"/usr/share/locale/nl/LC_MESSAGES/ptyxis.mo",
+				"/usr/share/locale/oc/LC_MESSAGES/ptyxis.mo",
 				"/usr/share/locale/pt_BR/LC_MESSAGES/ptyxis.mo",
 				"/usr/share/locale/ru/LC_MESSAGES/ptyxis.mo",
 				"/usr/share/locale/sl/LC_MESSAGES/ptyxis.mo",
 				"/usr/share/locale/sr/LC_MESSAGES/ptyxis.mo",
 				"/usr/share/locale/sv/LC_MESSAGES/ptyxis.mo",
+				"/usr/share/locale/th/LC_MESSAGES/ptyxis.mo",
 				"/usr/share/locale/tr/LC_MESSAGES/ptyxis.mo",
 				"/usr/share/locale/uk/LC_MESSAGES/ptyxis.mo",
 				"/usr/share/locale/zh_CN/LC_MESSAGES/ptyxis.mo",
+				"/usr/share/locale/zh_TW/LC_MESSAGES/ptyxis.mo",
 				"/usr/share/man/man1/ptyxis.1",
 				"/usr/share/metainfo/org.gnome.Ptyxis.metainfo.xml"
 			],
@@ -72,6 +77,6 @@
 		}
 	},
 	"source-name": "ptyxis",
-	"source-release": "5",
-	"source-version": "48.1"
+	"source-release": "11",
+	"source-version": "49.2"
 }

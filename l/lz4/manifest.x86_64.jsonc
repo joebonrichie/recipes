@@ -39,8 +39,7 @@
 			],
 			"name": "lz4-32bit",
 			"provides": [
-				"soname(liblz4.so.1(386))",
-				"soname(liblz4.so.1(x86))"
+				"soname(liblz4.so.1(386))"
 			]
 		},
 		"lz4-32bit-devel": {
@@ -75,6 +74,6 @@
 		}
 	},
 	"source-name": "lz4",
-	"source-release": "3",
+	"source-release": "4",
 	"source-version": "1.10.0"
 }

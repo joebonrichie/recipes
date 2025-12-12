@@ -32,8 +32,7 @@
 			],
 			"name": "libxau-32bit",
 			"provides": [
-				"soname(libXau.so.6(386))",
-				"soname(libXau.so.6(x86))"
+				"soname(libXau.so.6(386))"
 			]
 		},
 		"libxau-32bit-devel": {
@@ -83,6 +82,6 @@
 		}
 	},
 	"source-name": "libxau",
-	"source-release": "4",
+	"source-release": "5",
 	"source-version": "1.0.12"
 }

@@ -5,6 +5,7 @@
 		"kf6-kcoreaddons": {
 			"build-depends": [
 				"cmake(ECM)",
+				"cmake(Qt6CorePrivate)",
 				"cmake(Qt6Qml)"
 			],
 			"depends": [
@@ -12,15 +13,15 @@
 				"soname(libQt6DBus.so.6(x86_64))",
 				"soname(libQt6Network.so.6(x86_64))",
 				"soname(libQt6Qml.so.6(x86_64))",
-				"soname(libc++.so.1(x86_64))",
 				"soname(libc.so.6(x86_64))",
+				"soname(libgcc_s.so.1(x86_64))",
 				"soname(libm.so.6(x86_64))",
-				"soname(libudev.so.1(x86_64))",
-				"soname(libunwind.so.1(x86_64))"
+				"soname(libstdc++.so.6(x86_64))",
+				"soname(libudev.so.1(x86_64))"
 			],
 			"files": [
 				"/usr/lib/libKF6CoreAddons.so.6",
-				"/usr/lib/libKF6CoreAddons.so.6.12.0",
+				"/usr/lib/libKF6CoreAddons.so.6.20.0",
 				"/usr/lib/qt6/qml/org/kde/coreaddons/kcoreaddonsplugin.qmltypes",
 				"/usr/lib/qt6/qml/org/kde/coreaddons/kde-qmlmodule.version",
 				"/usr/lib/qt6/qml/org/kde/coreaddons/libkcoreaddonsplugin.so",
@@ -148,10 +149,12 @@
 		"kf6-kcoreaddons-devel": {
 			"build-depends": [
 				"cmake(ECM)",
+				"cmake(Qt6CorePrivate)",
 				"cmake(Qt6Qml)"
 			],
 			"depends": [
-				"kf6-kcoreaddons"
+				"kf6-kcoreaddons",
+				"pkgconfig(Qt6Core)"
 			],
 			"files": [
 				"/usr/include/KF6/KCoreAddons/KAboutComponent",
@@ -188,6 +191,7 @@
 				"/usr/include/KF6/KCoreAddons/KShell",
 				"/usr/include/KF6/KCoreAddons/KSignalHandler",
 				"/usr/include/KF6/KCoreAddons/KStringHandler",
+				"/usr/include/KF6/KCoreAddons/KSystemClockSkewNotifier",
 				"/usr/include/KF6/KCoreAddons/KTextToHTML",
 				"/usr/include/KF6/KCoreAddons/KUrlMimeData",
 				"/usr/include/KF6/KCoreAddons/KUser",
@@ -224,26 +228,26 @@
 				"/usr/include/KF6/KCoreAddons/kshell.h",
 				"/usr/include/KF6/KCoreAddons/ksignalhandler.h",
 				"/usr/include/KF6/KCoreAddons/kstringhandler.h",
+				"/usr/include/KF6/KCoreAddons/ksystemclockskewnotifier.h",
 				"/usr/include/KF6/KCoreAddons/ktexttohtml.h",
 				"/usr/include/KF6/KCoreAddons/kurlmimedata.h",
 				"/usr/include/KF6/KCoreAddons/kuser.h",
 				"/usr/lib/cmake/KF6CoreAddons/KF6CoreAddonsConfig.cmake",
 				"/usr/lib/cmake/KF6CoreAddons/KF6CoreAddonsConfigVersion.cmake",
 				"/usr/lib/cmake/KF6CoreAddons/KF6CoreAddonsMacros.cmake",
-				"/usr/lib/cmake/KF6CoreAddons/KF6CoreAddonsQchTargets.cmake",
 				"/usr/lib/cmake/KF6CoreAddons/KF6CoreAddonsTargets-release.cmake",
 				"/usr/lib/cmake/KF6CoreAddons/KF6CoreAddonsTargets.cmake",
 				"/usr/lib/libKF6CoreAddons.so",
-				"/usr/share/doc/qt6/KF6CoreAddons.qch",
-				"/usr/share/doc/qt6/KF6CoreAddons.tags"
+				"/usr/lib/pkgconfig/KF6CoreAddons.pc"
 			],
 			"name": "kf6-kcoreaddons-devel",
 			"provides": [
-				"cmake(KF6CoreAddons)"
+				"cmake(KF6CoreAddons)",
+				"pkgconfig(KF6CoreAddons)"
 			]
 		}
 	},
 	"source-name": "kf6-kcoreaddons",
-	"source-release": "3",
-	"source-version": "6.12.0"
+	"source-release": "16",
+	"source-version": "6.20.0"
 }

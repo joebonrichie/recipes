@@ -4,10 +4,10 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : kf6-kirigami
-version     : 6.12.0
-release     : 3
+version     : 6.20.0
+release     : 17
 upstreams   :
-    - https://download.kde.org/stable/frameworks/6.12/kirigami-6.12.0.tar.xz : d177eae18aad36e6f41d307104e45a8fcc68db147dbb333f6ddb178a28464e7c
+    - https://download.kde.org/stable/frameworks/6.20/kirigami-6.20.0.tar.xz : b67fea7225ccef4cefd0a9d3a547483150129167c47595736eac457986f709d9
 homepage    : https://community.kde.org/Frameworks
 license     : LGPL-2.0-or-later
 summary     : QtQuick components for mobile and desktop UI development.
@@ -17,6 +17,7 @@ builddeps   :
     - binary(bzip2)
     # Temporary, boulder doesn't handle build ordering resolution correctly when builddeps are added by macros, so add ECM manually
     - cmake(ECM)
+    - cmake(Qt6CorePrivate)
     - cmake(Qt6Quick)
     - cmake(Qt6ShaderTools)
     - cmake(Qt6Svg)
@@ -26,7 +27,6 @@ build       : |
     %cmake_build
 install     : |
     %cmake_install
-    %qml_cache_qt6
 packages    :
     - "%(name)-devel":
         paths:

@@ -1,0 +1,38 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 AerynOS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : cosmic-initial-setup
+version     : 1.0.0-git+32a9cd9
+release     : 10
+summary     : Cosmic Initial Setup
+license     : GPL-3.0
+homepage    : https://github.com/pop-os/cosmic-initial-setup
+upstreams   :
+    - git|https://github.com/pop-os/cosmic-initial-setup.git : 32a9cd9a223f814cb6960aa652845fa930d2d586
+description : |
+    Cosmic Desktop Intial Setup Application
+builddeps   :
+    - binary(git-lfs)
+    - binary(just)
+    - pkgconfig(flatpak)
+    - pkgconfig(libinput)
+    - pkgconfig(libudev)
+    - pkgconfig(openssl)
+    - pkgconfig(xkbcommon)
+networking  : yes
+setup       : |
+    git remote set-url origin https://github.com/pop-os/cosmic-initial-setup.git
+    git lfs install
+    git lfs pull
+
+    %patch %(pkgdir)/0001-Allow-xdg-directory-to-be-overridden.patch
+
+    %cargo_fetch
+build       : |
+    %cargo_build
+install     : |
+    CARGO_TARGET_DIR="target/%(target_triple)" \
+    XDG_INSTALL_DIR="%(datadir)/xdg" \
+        just rootdir=%(installroot) install

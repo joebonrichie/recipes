@@ -1,5 +1,6 @@
 releases:
   id: 116
-  rss: ~
+  rss: https://github.com/asciinema/asciinema/releases.atom
 security:
+  # No known CPE, last checked 2025-08-01
   cpe: ~

@@ -70,6 +70,7 @@
 				"pkgconfig(libsoup-3.0)"
 			],
 			"depends": [
+				"geocode-glib",
 				"pkgconfig(gio-2.0)"
 			],
 			"files": [
@@ -94,6 +95,6 @@
 		}
 	},
 	"source-name": "geocode-glib",
-	"source-release": "1",
+	"source-release": "2",
 	"source-version": "3.26.4"
 }

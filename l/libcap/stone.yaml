@@ -4,24 +4,61 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : libcap
-version     : 2.71
-release     : 7
+version     : "2.77"
+release     : 12
 summary     : Library for getting and setting POSIX.1e capabilities
-license     : GPL-3.0-or-later
+license     :
+    - BSD-3-Clause
+    - GPL-2.0-only
 homepage    : https://sites.google.com/site/fullycapable
 description : |
     Library for getting and setting POSIX.1e capabilities
 upstreams   :
-    - https://mirrors.edge.kernel.org/pub/linux/libs/security/linux-privs/libcap2/libcap-2.71.tar.xz: b7006c9af5168315f35fc734bf1a8d2aa70766bd8b8c4340962e05b19c35b900
+    - https://mirrors.edge.kernel.org/pub/linux/libs/security/linux-privs/libcap2/libcap-2.77.tar.xz: 897bc18b44afc26c70e78cead3dbb31e154acc24bee085a5a09079a88dbf6f52
 builddeps   :
     - pkgconfig32(pam)
+    - binary(go)
     - linux-headers
 emul32      : true
 setup       : |
     # Static linking broken
     sed -i Makefile -e '/\-C tests/d'
 build       : |
-    %make BUILD_CC="%(cc)" CC="%(cc)" AR=%(ar) RANLIB=llvm-ranlib OBJCOPY=llvm-objcopy DYNAMIC=yes KERNEL_HEADERS=%(includedir)
+    _extra_opts="GOLANG=no"
+    if [[ %(target_triple) != i686* ]]; then
+        _extra_opts="all"
+    fi
+
+    %make \
+        BUILD_CC="%(cc)" \
+        CC="%(cc)" \
+        AR=%(ar) \
+        RANLIB=%(ranlib) \
+        OBJCOPY=%(objcopy) \
+        DYNAMIC=yes \
+        KERNEL_HEADERS=%(includedir) \
+        CGO_REQUIRED=1 \
+        CGO_CFLAGS="${CFLAGS}" \
+        CGO_LDFLAGS="${LDFLAGS}" \
+        GO_BUILD_FLAGS="-buildmode=pie -a -v -x -ldflags='-compressdwarf=false -B gobuildid'" \
+        $_extra_opts
 install     : |
     %make_install RAISE_SETFCAP=no prefix=/usr lib=lib%(libsuffix)
-    rm %(installroot)/%(libdir)/lib*.a
+
+    # Don't need 32bit static libs
+    if [[ %(target_triple) == i686* ]]; then
+        rm -fv %(installroot)%(libdir)/lib*.a
+    fi
+packages    :
+    - "%(name)-staticlib":
+        rundeps:
+            - "%(name)-devel"
+        paths:
+            - /usr/lib/lib*.a
+
+    - "captree":
+        summary: Capability inspection utility
+        description: Capability inspection utility
+        paths:
+            - /usr/sbin/captree
+            - /usr/share/man/man8/captree.8*

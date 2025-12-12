@@ -5,7 +5,7 @@
 #
 name        : swaybg
 version     : 1.2.1
-release     : 2
+release     : 3
 homepage    : https://github.com/swaywm/swaybg
 upstreams   :
     - https://github.com/swaywm/swaybg/releases/download/v1.2.1/swaybg-1.2.1.tar.gz : 6af1fdf0e57b1cc5345febed786b761fea0e170943a82639f94cfaed7df84f8f

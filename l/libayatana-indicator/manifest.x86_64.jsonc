@@ -1,0 +1,69 @@
+/** Human readable report. This is not consumed by boulder */
+{
+	"manifest-version": "0.2",
+	"packages": {
+		"libayatana-indicator": {
+			"build-depends": [
+				"pkgconfig(gio-unix-2.0)",
+				"pkgconfig(glib-2.0)",
+				"pkgconfig(gmodule-2.0)",
+				"pkgconfig(gtk+-3.0)",
+				"pkgconfig(libayatana-ido3-0.4)"
+			],
+			"depends": [
+				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
+				"soname(libayatana-ido3-0.4.so.0(x86_64))",
+				"soname(libc.so.6(x86_64))",
+				"soname(libgdk-3.so.0(x86_64))",
+				"soname(libgdk_pixbuf-2.0.so.0(x86_64))",
+				"soname(libgio-2.0.so.0(x86_64))",
+				"soname(libglib-2.0.so.0(x86_64))",
+				"soname(libgmodule-2.0.so.0(x86_64))",
+				"soname(libgobject-2.0.so.0(x86_64))",
+				"soname(libgtk-3.so.0(x86_64))"
+			],
+			"files": [
+				"/usr/lib/libayatana-indicator/libayatana-indicator/ayatana-indicator-loader3",
+				"/usr/lib/libayatana-indicator3.so.7",
+				"/usr/lib/libayatana-indicator3.so.7.0.0"
+			],
+			"name": "libayatana-indicator",
+			"provides": [
+				"soname(libayatana-indicator3.so.7(x86_64))"
+			]
+		},
+		"libayatana-indicator-devel": {
+			"build-depends": [
+				"pkgconfig(gio-unix-2.0)",
+				"pkgconfig(glib-2.0)",
+				"pkgconfig(gmodule-2.0)",
+				"pkgconfig(gtk+-3.0)",
+				"pkgconfig(libayatana-ido3-0.4)"
+			],
+			"depends": [
+				"libayatana-indicator",
+				"pkgconfig(gtk+-3.0)",
+				"pkgconfig(libayatana-ido3-0.4)"
+			],
+			"files": [
+				"/usr/include/libayatana-indicator3-0.4/libayatana-indicator/indicator-desktop-shortcuts.h",
+				"/usr/include/libayatana-indicator3-0.4/libayatana-indicator/indicator-image-helper.h",
+				"/usr/include/libayatana-indicator3-0.4/libayatana-indicator/indicator-ng.h",
+				"/usr/include/libayatana-indicator3-0.4/libayatana-indicator/indicator-object.h",
+				"/usr/include/libayatana-indicator3-0.4/libayatana-indicator/indicator-service-manager.h",
+				"/usr/include/libayatana-indicator3-0.4/libayatana-indicator/indicator-service.h",
+				"/usr/include/libayatana-indicator3-0.4/libayatana-indicator/indicator.h",
+				"/usr/lib/libayatana-indicator3.so",
+				"/usr/lib/pkgconfig/ayatana-indicator3-0.4.pc",
+				"/usr/share/libayatana-indicator/80indicator-debugging"
+			],
+			"name": "libayatana-indicator-devel",
+			"provides": [
+				"pkgconfig(ayatana-indicator3-0.4)"
+			]
+		}
+	},
+	"source-name": "libayatana-indicator",
+	"source-release": "1",
+	"source-version": "0.9.4"
+}

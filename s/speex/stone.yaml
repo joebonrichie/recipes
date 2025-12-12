@@ -1,0 +1,36 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : speex
+version     : 1.2.1
+release     : 1
+upstreams   :
+    - http://downloads.xiph.org/releases/speex/speex-1.2.1.tar.gz : 4b44d4f2b38a370a2d98a78329fefc56a0cf93d1c1be70029217baae6628feea
+homepage    : https://www.speex.org/
+license     : BSD-2-Clause
+summary     : Audio compression format designed for speech and its converter application
+description : |
+    Speex is an Open Source/Free Software patent-free audio compression format designed for speech. The Speex Project aims to lower the barrier of entry for voice applications by providing a free alternative to expensive proprietary speech codecs. The package also contains a command-line tool to convert to/from Speex codec.
+builddeps   :
+    - pkgconfig(ogg)
+    - pkgconfig(speexdsp)
+setup       : |
+    %configure \
+        --disable-static
+build       : |
+    %make
+install     : |
+    %make_install
+packages    :
+    - "%(name)-tools":
+        summary: Tools package for %(name)
+        description: The tools package for %(name)
+        paths:
+            - /usr/bin/
+            - /usr/share/man/man1/
+
+    - "%(name)-docs":
+        paths:
+            - /usr/share/doc/

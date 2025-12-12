@@ -1,0 +1,89 @@
+/** Human readable report. This is not consumed by boulder */
+{
+	"manifest-version": "0.2",
+	"packages": {
+		"pkgset-aeryn-base": {
+			"depends": [
+				"binary(bash)",
+				"binary(dash)",
+				"binary(moss)",
+				"binary(setfont)",
+				"binary(sudo)",
+				"dbus-broker",
+				"kmod",
+				"linux-pam",
+				"lvm2",
+				"shadow",
+				"systemd",
+				"tzdata",
+				"util-linux",
+				"uutils-coreutils"
+			],
+			"files": [
+				"/usr/share/doc/pkgset-aeryn-base/README"
+			],
+			"name": "pkgset-aeryn-base"
+		},
+		"pkgset-aeryn-base-desktop": {
+			"depends": [
+				"libva-intel-hybrid-driver",
+				"libva-intel-media-driver",
+				"mesa-dri-drivers",
+				"mesa-libegl",
+				"mesa-libgl",
+				"mesa-vulkan-drivers",
+				"networkmanager",
+				"networkmanager-bluetooth",
+				"networkmanager-wifi",
+				"networkmanager-wwan",
+				"pipewire",
+				"pkgset-aeryn-base",
+				"polkit",
+				"wireplumber"
+			],
+			"files": [
+				"/usr/share/doc/pkgset-aeryn-base-desktop/README"
+			],
+			"name": "pkgset-aeryn-base-desktop"
+		},
+		"pkgset-aeryn-utilities": {
+			"depends": [
+				"bash-completion",
+				"binary(clear)",
+				"binary(file)",
+				"binary(find)",
+				"binary(gawk)",
+				"binary(grep)",
+				"binary(less)",
+				"binary(lspci)",
+				"binary(nano)",
+				"binary(ping)",
+				"binary(ps)",
+				"binary(sed)",
+				"binary(ssh)",
+				"binary(tar)",
+				"binary(wget)",
+				"binary(which)",
+				"sysbinary(ip)"
+			],
+			"files": [
+				"/usr/share/doc/pkgset-aeryn-utilities/README"
+			],
+			"name": "pkgset-aeryn-utilities"
+		},
+		"pkgset-aeryn-virtual": {
+			"depends": [
+				"hyperv-daemons",
+				"qemu-guest-agent",
+				"spice-vdagent"
+			],
+			"files": [
+				"/usr/share/doc/pkgset-aeryn-virtual/README"
+			],
+			"name": "pkgset-aeryn-virtual"
+		}
+	},
+	"source-name": "pkgset-aeryn",
+	"source-release": "19",
+	"source-version": "2025.12"
+}

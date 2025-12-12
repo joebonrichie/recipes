@@ -1,0 +1,29 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : wireless-regdb
+version     : 2025.07.10
+release     : 1
+upstreams   :
+    - git|https://git.kernel.org/pub/scm/linux/kernel/git/wens/wireless-regdb.git : e05260afb7203dd0a7ba6faf9a30c86faf19a24e
+homepage    : https://wireless.wiki.kernel.org/en/developers/regulatory/wireless-regdb
+license     : ISC
+summary     : Central Regulatory Domain Database
+description : |
+    Central Regulatory Domain Database
+rundeps     :
+    - sysbinary(iw)
+build       : |
+    cp %(pkgdir)/wireless-regdom .
+    for dom in $(grep ^country db.txt | cut -d' ' -f2 | sed 's|:||g'); do
+        echo "#WIRELESS_REGDOM=\"${dom}\"" >> wireless-regdom
+    done
+install     : |
+    %make_install \
+        FIRMWARE_PATH=%(libdir)/firmware
+
+    %install_file wireless-regdom -t %(installroot)%(vendordir)/
+    %install_file %(pkgdir)/85-regulatory.rules -t %(installroot)%(udevrulesdir)/
+    %install_exe %(pkgdir)/set-wireless-regdom -t %(installroot)%(sbindir)

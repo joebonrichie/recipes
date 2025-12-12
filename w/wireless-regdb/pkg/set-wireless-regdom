@@ -1,0 +1,12 @@
+#!/usr/bin/sh
+
+unset WIRELESS_REGDOM
+if [ -f /etc/conf.d/wireless-regdom ]; then
+  . /etc/conf.d/wireless-regdom
+else
+  . /usr/share/defaults/wireless-regdom
+fi
+
+if [ -n "${WIRELESS_REGDOM}" ]; then
+  iw reg set ${WIRELESS_REGDOM}
+fi

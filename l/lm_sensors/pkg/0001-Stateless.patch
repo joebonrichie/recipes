@@ -1,0 +1,31 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: Reilly Brogan <reilly@reillybrogan.com>
+Date: Wed, 2 Jul 2025 19:06:33 -0500
+Subject: [PATCH] Stateless
+
+Signed-off-by: Reilly Brogan <reilly@reillybrogan.com>
+---
+ lib/init.c | 3 +++
+ 1 file changed, 3 insertions(+)
+
+diff --git a/lib/init.c b/lib/init.c
+index 1e053444..f1c12c85 100644
+--- a/lib/init.c
++++ b/lib/init.c
+@@ -44,6 +44,7 @@
+ #define DEFAULT_CONFIG_FILE	ETCDIR "/sensors3.conf"
+ #define ALT_CONFIG_FILE		ETCDIR "/sensors.conf"
+ #define DEFAULT_CONFIG_DIR	ETCDIR "/sensors.d"
++#define VENDOR_CONFIG_FILE	"/usr/share/defaults/sensors3.conf"
+ 
+ /* Wrapper around sensors_yyparse(), which clears the locale so that
+    the decimal numbers are always parsed properly. */
+@@ -199,6 +200,8 @@ int sensors_init(FILE *input)
+ 		input = fopen(name = DEFAULT_CONFIG_FILE, "r");
+ 		if (!input && errno == ENOENT)
+ 			input = fopen(name = ALT_CONFIG_FILE, "r");
++		if (!input && errno == ENOENT)
++			input = fopen(name = VENDOR_CONFIG_FILE, "r");
+ 		if (input) {
+ 			res = parse_config(input, name);
+ 			fclose(input);

@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : protobuf
-version     : 29.3
-release     : 3
+version     : "31.0"
+release     : 8
 homepage    : https://github.com/protocolbuffers/protobuf
 upstreams   :
-    - https://github.com/protocolbuffers/protobuf/releases/download/v29.3/protobuf-29.3.tar.gz : 008a11cc56f9b96679b4c285fd05f46d317d685be3ab524b2a310be0fbad987e
+    - https://github.com/protocolbuffers/protobuf/releases/download/v31.0/protobuf-31.0.tar.gz : 29372fc269325b491126d204931eda436bf9a593f46b3467fac42c40f9b32944
 summary     : Protocol Buffers - Google's data interchange format
 description : |
     Protocol Buffers - Google's data interchange format
@@ -16,23 +16,27 @@ license     : BSD-3-Clause
 builddeps   :
     - cmake(absl)
     - pkgconfig(zlib)
-packages    :
-    # Lack of soname for utf8range bits
-    - "%(name)":
-        paths:
-            - /usr/lib/libutf8*.so
-    # Force all binaries into devel package
-    - "%(name)-devel":
-        paths:
-            - /usr/bin/*
 setup       : |
-    %cmake -Dprotobuf_LOCAL_DEPENDENCIES_ONLY=OFF . \
-           -DBUILD_SHARED_LIBS=ON \
-           -DCMAKE_SKIP_RPATH=ON \
-           -DCMAKE_SKIP_INSTALL_RPATH=ON \
-           -Dprotobuf_BUILD_TESTS=OFF \
-           -Dprotobuf_ABSL_PROVIDER=package
+    %cmake \
+        -DBUILD_SHARED_LIBS=ON \
+        -DCMAKE_SKIP_INSTALL_RPATH=ON \
+        -DCMAKE_SKIP_RPATH=ON \
+        -Dprotobuf_ABSL_PROVIDER=package \
+        -Dprotobuf_BUILD_TESTS=OFF \
+        -Dprotobuf_LOCAL_DEPENDENCIES_ONLY=OFF
 build       : |
     %cmake_build
 install     : |
     %cmake_install
+packages    :
+    - "%(name)-devel":
+        paths:
+            - /usr/bin/*
+
+    - "%(name)-staticlib":
+        summary: Static libs for %(name)
+        description: Static libs for %(name)
+        rundeps:
+            - "%(name)-devel"
+        paths:
+            - /usr/lib/lib*.a

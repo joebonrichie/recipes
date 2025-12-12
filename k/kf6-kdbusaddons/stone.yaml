@@ -4,10 +4,10 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : kf6-kdbusaddons
-version     : 6.12.0
-release     : 2
+version     : 6.20.0
+release     : 15
 upstreams   :
-    - https://download.kde.org/stable/frameworks/6.12/kdbusaddons-6.12.0.tar.xz : c236c70922b9640a7dfe3ac810b0d743555df4aeb9453675e56a449eec1ec521
+    - https://download.kde.org/stable/frameworks/6.20/kdbusaddons-6.20.0.tar.xz : 5db2f6b7235238070224ee8a5225f41ffdb3249d558a81a7c06a8e54d67729f7
 homepage    : https://community.kde.org/Frameworks
 license     :
     - LGPL-2.0-only
@@ -19,6 +19,7 @@ description : |
 builddeps   :
     # Temporary, boulder doesn't handle build ordering resolution correctly when builddeps are added by macros, so add ECM manually
     - cmake(ECM)
+    - cmake(Qt6CorePrivate)
 setup       : |
     %cmake_kf6
 build       : |

@@ -1,0 +1,6 @@
+releases:
+  id: 11058
+  rss: https://github.com/libfuse/sshfs/releases.atom
+security:
+  # Last checked 20250815
+  cpe: ~

@@ -1,0 +1,100 @@
+#
+# SPDX-FileCopyrightText: © 2025- AerynOS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : nerd-fonts
+version     : 3.4.0
+release     : 4
+homepage    : https://github.com/ryanoasis/nerd-fonts
+upstreams   :
+    - https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/NerdFontsSymbolsOnly.tar.xz:
+        hash: 7f8c090da3b0eaa7108646bf34cbbb6ed13d5358a72460522108b06c7ecd716a
+        unpack: false
+    - https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/CascadiaCode.tar.xz:
+        hash: 804b3d311665a059140466fe142cc76cf14ef0695b7c4d3a174f7f8fba46b6e3
+        unpack: false
+    - https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/FiraCode.tar.xz:
+        hash: d83fb093e0e05a531cd6f19886a6ceb884a4fa5ea3b53cf099fc1f30c5b3e47d
+        unpack: false
+    - https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/IBMPlexMono.tar.xz:
+        hash: 95e6ecaa5dfb9a96f27a6b6edc7be396fb6df30bc311a6f7e15cad56a30051c2
+        unpack: false
+    - https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/RobotoMono.tar.xz:
+        hash: 4bc63bf0105c664e466e62cb2fd1c143b310877de93dc35b3b5d48e0e4cb6702
+        unpack: false
+    - https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/Terminus.tar.xz:
+        hash: e857b18a99701528f873275b6012792caf6e30c34c512ee92cda51520140054f
+        unpack: false
+    - https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/ZedMono.tar.xz:
+        hash: 7dfff6bb0e45143c33703c3fdf3ff77b00f3617fef29671c7ff6af166dcf31a0
+        unpack: false
+summary     : Nerd fonts
+description : |
+    Nerd fonts
+license     : MIT
+install     : |
+    %install_dir %(installroot)%(datadir)/fonts/truetype %(installroot)/usr/share/fontconfig/conf.avail
+
+    for i in %(sourcedir)/*; do
+        bsdtar-static --no-same-owner -xf ${i} --strip-components=0 -C %(installroot)%(datadir)/fonts/truetype
+    done
+
+    # Fontconfig config files
+    mv %(installroot)%(datadir)/fonts/truetype/*.conf %(installroot)/usr/share/fontconfig/conf.avail/
+
+    # Cleanup
+    rm -fv %(installroot)%(datadir)/fonts/truetype/LICENSE \
+           %(installroot)%(datadir)/fonts/truetype/LICENSE.txt \
+           %(installroot)%(datadir)/fonts/truetype/README.md
+
+packages    :
+    - "font-symbols-nerd":
+        summary: Symbols only nerd font
+        description: Nerd font with symbols only
+        license: MIT
+        paths:
+            - /usr/share/fontconfig/conf.avail/10-nerd-font-symbols.conf
+            - /usr/share/fonts/truetype/SymbolsNerdFont*.ttf
+
+    - "font-firacode-nerd":
+        summary: Patched font Fira (Fura) Code from nerd fonts library
+        description: Patched font Fira (Fura) Code from nerd fonts library
+        license: MIT
+        paths:
+            - /usr/share/fonts/truetype/FiraCodeNerdFont*.ttf
+
+    - "font-cascadia-code":
+        summary: Patched font Cascadia Code (Caskaydia) from nerd fonts library
+        description: Patched font Cascadia Code (Caskaydia) from nerd fonts library
+        license: OFL-1.1-RFN
+        paths:
+            - /usr/share/fonts/truetype/CaskaydiaCoveNerdFont*.ttf
+
+    - "font-ibmplex-mono-nerd":
+        summary: Patched font IBM Plex Mono (Blex) from nerd fonts library
+        description: Patched font IBM Plex Mono (Blex) from nerd fonts library
+        license: OFL-1.1-RFN
+        paths:
+            - /usr/share/fonts/truetype/BlexMonoNerdFont*.ttf
+
+    - "font-roboto-mono-nerd":
+        summary: Patched font Roboto Mono from nerd fonts library
+        description: Patched font Roboto Mono from nerd fonts library
+        license: Apache-2.0
+        paths:
+            - /usr/share/fonts/truetype/RobotoMonoNerdFont*.ttf
+
+    - "font-terminus-nerd":
+        summary: Patched font Terminus (Terminess) from nerd fonts library
+        description: Patched font Terminus (Terminess) from nerd fonts library
+        license: OFL-1.1-RFN
+        paths:
+            - /usr/share/fonts/truetype/TerminessNerdFont*.ttf
+
+    - "font-zed-mono-nerd":
+        summary: Patched font Zed Mono from nerd fonts library
+        description: Patched font Zed Mono from nerd fonts library
+        license: OFL-1.1-RFN
+        paths:
+            - /usr/share/fonts/truetype/ZedMonoNerdFont*.ttf

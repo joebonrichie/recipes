@@ -1,0 +1,23 @@
+#
+# SPDX-FileCopyrightText: © 2020-2024 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : python-sphinx-issues
+version     : 5.0.1
+release     : 1
+homepage    : https://github.com/sloria/sphinx-issues
+upstreams   :
+    - https://pypi.debian.net/sphinx-issues/sphinx_issues-5.0.1.tar.gz : 6da131d4545af00be4b48ec7c4086ea82c1371a05116bbe5779f57cff34bf16a
+summary     : Sphinx extension for linking to your project's issue tracker
+description : |
+    Sphinx extension for linking to your project's issue tracker
+license     : MIT
+builddeps   :
+    - python(flit-core)
+rundeps     :
+    - python-libs
+build       : |
+    %pyproject_build
+install     : |
+    %pyproject_install

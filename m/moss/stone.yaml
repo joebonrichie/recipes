@@ -1,18 +1,20 @@
 #
 # SPDX-FileCopyrightText: © 2020-2024 Serpent OS Developers
+# SPDX-FileCopyrightText: © 2025- AerynOS Developers
 #
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : moss
-version     : 0.25.1+git.be31107
-release     : 80
-summary     : AerynOS system state manager
+version     : '0.25.6+git.2a68f98'
+release     : 98
+summary     : AerynOS package & system state manager
 license     : MPL-2.0
 homepage    : https://github.com/AerynOS/os-tools
 upstreams   :
-    - git|https://github.com/AerynOS/os-tools.git : be31107cda511e8f2c29d5b551f9db894d6bde3a
+    - git|https://github.com/AerynOS/os-tools.git :
+        ref : 2a68f985c0514512613d40bd5e06999859c188d5
 description : |
-    Advanced package & system state manager with atomic transactions and content deduplication
+    Advanced package & system state manager with atomic transactions and content deduplication.
 builddeps   :
     - binary(cargo)
 networking  : yes
@@ -54,7 +56,7 @@ install     : |
     %install_file stone.xml %(installroot)%(datadir)/mime/packages/stone.xml
 
     # Install command-not-found helper
-    %install_file %(pkgdir)/80-command-not-found.sh %(installroot)%(vendordir)%(sysconfdir)/profile.d/80-command-not-found.sh
+    %install_file %(pkgdir)/80-command-not-found.sh %(installroot)%(vendordir)/profile.d/80-command-not-found.sh
 
     %install_dir %(installroot)%(libdir)/dracut/modules.d/90moss
     %install_file boot/module/module-setup.sh %(installroot)%(libdir)/dracut/modules.d/90moss/module-setup.sh

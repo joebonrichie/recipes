@@ -1,0 +1,66 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : expect
+version     : 5.45.4.1
+release     : 1
+upstreams   :
+    - https://www.tcl3d.org/bawt/download/InputLibs/expect-5.45.4.1.7z : ef36fad58fefb64844d261f1537594ddf441bd393012bd58c78372898a99e8d7
+homepage    : https://www.nist.gov/services-resources/software/expect
+license     : Public-Domain
+summary     : Expect is a tool for automating and testing interactive applications
+description : |
+    Expect is a tool for automating interactive applications such as telnet, ftp, passwd, fsck, rlogin, tip, etc. Expect is also useful for testing these same applications.
+builddeps   :
+    - binary(bsdtar-static)
+    - pkgconfig(tcl)
+setup       : |
+    %patch %(pkgdir)/expect-5.43.0-log_file.patch
+    %patch %(pkgdir)/expect-5.43.0-pkgpath.patch
+    %patch %(pkgdir)/expect-5.45.4.1-compile.patch
+    %patch %(pkgdir)/expect-5.45-man-page.patch
+    %patch %(pkgdir)/expect-5.45-exp-log-buf-overflow.patch
+    %patch %(pkgdir)/expect-5.45-re-memleak.patch
+    %patch %(pkgdir)/expect-5.45-match-gt-numchars-segfault.patch
+    %patch %(pkgdir)/expect-5.45-fd-leak.patch
+    %patch %(pkgdir)/expect-5.45.4-unification-of-usage-and-man-page.patch
+    %patch %(pkgdir)/expect-5.32.2-random.patch
+    %patch %(pkgdir)/expect-5.45-mkpasswd-dash.patch
+    %patch %(pkgdir)/expect-5.45-passmass-su-full-path.patch
+
+    chmod +x configure
+    %configure \
+        --enable-shared
+build       : |
+    %make
+install     : |
+    %make_install
+
+    # remove cryptdir/decryptdir, as Linux has no crypt command
+    rm -f %(installroot)%(bindir)/{cryptdir,decryptdir,autopasswd}
+    rm -f %(installroot)%(mandir)/man1/{cryptdir,decryptdir}.1*
+
+    # rename mkpasswd, as it collides with more powerful variant from whois package
+    mv %(installroot)%(bindir)/mkpasswd %(installroot)%(bindir)/mkpasswd-expect
+    mv %(installroot)%(mandir)/man1/mkpasswd.1 %(installroot)%(mandir)/man1/mkpasswd-expect.1
+    sed -i 's/mkpasswd/mkpasswd-expect/g;s/MKPASSWD/MKPASSWD-EXPECT/g' %(installroot)%(mandir)/man1/mkpasswd-expect.1
+    sed -i 's/mkpasswd/mkpasswd-expect/g' %(installroot)%(bindir)/mkpasswd-expect
+packages    :
+    - "%(name)":
+        paths:
+            - /usr/lib/libexpect*.so
+
+    - "expectk":
+        summary: A program-script interaction and testing utility
+        description: A program-script interaction and testing utility
+        rundeps:
+            - "%(name)"
+        paths:
+            - /usr/bin/multixterm
+            - /usr/bin/tknewsbiff
+            - /usr/bin/tkpasswd
+            - /usr/bin/xpstat
+            - /usr/share/man/man1/multixterm.1*
+            - /usr/share/man/man1/tknewsbiff.1*

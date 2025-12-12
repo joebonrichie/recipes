@@ -1,0 +1,120 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: Reilly Brogan <reilly@reillybrogan.com>
+Date: Thu, 29 May 2025 22:18:32 -0500
+Subject: [PATCH] posix: Also force common toolchain vars for Aeryn
+
+---
+ SCons/Platform/posix.py      | 21 +++++++++++++++++++++
+ SCons/Platform/posix.py.orig | 15 ++++++++++++---
+ SCons/Tool/cc.py             |  3 ++-
+ SCons/Tool/cxx.py            |  3 ++-
+ SCons/Tool/link.py           |  3 ++-
+ 5 files changed, 39 insertions(+), 6 deletions(-)
+
+diff --git a/SCons/Platform/posix.py b/SCons/Platform/posix.py
+index 40f9ca87..cc44c440 100644
+--- a/SCons/Platform/posix.py
++++ b/SCons/Platform/posix.py
+@@ -34,6 +34,7 @@ import subprocess
+ from SCons.Platform import TempFileMunge
+ from SCons.Platform.virtualenv import ImportVirtualenv
+ from SCons.Platform.virtualenv import ignore_virtualenv, enable_virtualenv
++import SCons.Util
+ 
+ exitvalmap = {
+     2 : 127,
+@@ -87,6 +88,26 @@ def generate(env) -> None:
+         if 'ENV' in env:
+             new_env.update(env['ENV'])
+         env['ENV'] = new_env
++
++        # Furthermore, force common compiler/linker variables as well
++        envvar_mapping = {
++            'AR': 'AR',
++            'AS': 'AS',
++            'ASFLAGS': 'ASFLAGS',
++            'CC': 'CC',
++            'CXX': 'CXX',
++            'CFLAGS': 'CFLAGS',
++            'CXXFLAGS': 'CXXFLAGS',
++            'CPPFLAGS': 'CPPFLAGS',
++            'LDFLAGS': 'LINKFLAGS',
++        }
++
++        for envvar, toolvar in envvar_mapping.items():
++            if toolvar not in env and envvar in env['ENV']:
++                val = env['ENV'][envvar]
++                if toolvar.endswith('FLAGS'):
++                    val = SCons.Util.CLVar(val)
++                env[toolvar] = val
+     else:
+         if 'ENV' not in env:
+             env['ENV']        = {}
+diff --git a/SCons/Platform/posix.py.orig b/SCons/Platform/posix.py.orig
+index b655b77d..40f9ca87 100644
+--- a/SCons/Platform/posix.py.orig
++++ b/SCons/Platform/posix.py.orig
+@@ -80,9 +80,18 @@ def generate(env) -> None:
+     pspawn = piped_env_spawn
+     # Note that this means that 'escape' is no longer used
+ 
+-    if 'ENV' not in env:
+-        env['ENV']        = {}
+-    env['ENV']['PATH']    = '/usr/local/bin:/opt/bin:/bin:/usr/bin:/snap/bin'
++    # Force pass-through of environment variables in Aeryn builds
++    import os
++    if os.environ.get('AERYN_SCONS_ENV_PASSTHROUGH', False):
++        new_env = os.environ.copy()
++        if 'ENV' in env:
++            new_env.update(env['ENV'])
++        env['ENV'] = new_env
++    else:
++        if 'ENV' not in env:
++            env['ENV']        = {}
++        env['ENV']['PATH']    = '/usr/local/bin:/opt/bin:/bin:/usr/bin:/snap/bin'
++
+     env['OBJPREFIX']      = ''
+     env['OBJSUFFIX']      = '.o'
+     env['SHOBJPREFIX']    = '$OBJPREFIX'
+diff --git a/SCons/Tool/cc.py b/SCons/Tool/cc.py
+index e9cbe530..d0d28127 100644
+--- a/SCons/Tool/cc.py
++++ b/SCons/Tool/cc.py
+@@ -80,7 +80,8 @@ def generate(env) -> None:
+ 
+     if 'CC' not in env:
+         env['CC']    = env.Detect(compilers) or compilers[0]
+-    env['CFLAGS']    = SCons.Util.CLVar('')
++    if 'CFLAGS' not in env:
++        env['CFLAGS'] = SCons.Util.CLVar('')
+     env['CCCOM']     = '$CC -o $TARGET -c $CFLAGS $CCFLAGS $_CCCOMCOM $SOURCES'
+     env['SHCC']      = '$CC'
+     env['SHCFLAGS'] = SCons.Util.CLVar('$CFLAGS')
+diff --git a/SCons/Tool/cxx.py b/SCons/Tool/cxx.py
+index 2cf3299f..04e18cfa 100644
+--- a/SCons/Tool/cxx.py
++++ b/SCons/Tool/cxx.py
+@@ -69,7 +69,8 @@ def generate(env) -> None:
+ 
+     if 'CXX' not in env:
+         env['CXX']    = env.Detect(compilers) or compilers[0]
+-    env['CXXFLAGS']   = SCons.Util.CLVar('')
++    if 'CXXFLAGS' not in env:
++        env['CXXFLAGS'] = SCons.Util.CLVar('')
+     env['CXXCOM']     = '$CXX -o $TARGET -c $CXXFLAGS $CCFLAGS $_CCCOMCOM $SOURCES'
+     env['SHCXX']      = '$CXX'
+     env['SHCXXFLAGS'] = SCons.Util.CLVar('$CXXFLAGS')
+diff --git a/SCons/Tool/link.py b/SCons/Tool/link.py
+index cd8b2f88..395a3040 100644
+--- a/SCons/Tool/link.py
++++ b/SCons/Tool/link.py
+@@ -49,7 +49,8 @@ def generate(env) -> None:
+ 
+     env['SMARTLINK'] = smart_link
+     env['LINK'] = "$SMARTLINK"
+-    env['LINKFLAGS'] = SCons.Util.CLVar('')
++    if 'LINKFLAGS' not in env:
++        env['LINKFLAGS'] = SCons.Util.CLVar('')
+ 
+     # __RPATH is only set to something ($_RPATH typically) on platforms that support it.
+     env['LINKCOM'] = '$LINK -o $TARGET $LINKFLAGS $__RPATH $SOURCES $_LIBDIRFLAGS $_LIBFLAGS'

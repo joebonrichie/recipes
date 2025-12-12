@@ -5,7 +5,7 @@
 		"libdrm": {
 			"build-depends": [
 				"binary(nm)",
-				"pkgconfig(pciaccess)",
+				"binary(rst2man)",
 				"pkgconfig32(pciaccess)"
 			],
 			"depends": [
@@ -14,16 +14,19 @@
 			],
 			"files": [
 				"/usr/lib/libdrm.so.2",
-				"/usr/lib/libdrm.so.2.124.0",
+				"/usr/lib/libdrm.so.2.130.0",
 				"/usr/lib/libdrm_amdgpu.so.1",
-				"/usr/lib/libdrm_amdgpu.so.1.124.0",
+				"/usr/lib/libdrm_amdgpu.so.1.130.0",
 				"/usr/lib/libdrm_intel.so.1",
-				"/usr/lib/libdrm_intel.so.1.124.0",
+				"/usr/lib/libdrm_intel.so.1.130.0",
 				"/usr/lib/libdrm_nouveau.so.2",
-				"/usr/lib/libdrm_nouveau.so.2.124.0",
+				"/usr/lib/libdrm_nouveau.so.2.130.0",
 				"/usr/lib/libdrm_radeon.so.1",
-				"/usr/lib/libdrm_radeon.so.1.124.0",
-				"/usr/share/libdrm/amdgpu.ids"
+				"/usr/lib/libdrm_radeon.so.1.130.0",
+				"/usr/share/libdrm/amdgpu.ids",
+				"/usr/share/man/man7/drm-kms.7",
+				"/usr/share/man/man7/drm-memory.7",
+				"/usr/share/man/man7/drm.7"
 			],
 			"name": "libdrm",
 			"provides": [
@@ -37,44 +40,40 @@
 		"libdrm-32bit": {
 			"build-depends": [
 				"binary(nm)",
-				"pkgconfig(pciaccess)",
+				"binary(rst2man)",
 				"pkgconfig32(pciaccess)"
 			],
 			"depends": [
 				"libdrm",
 				"soname(libc.so.6(386))",
+				"soname(libgcc_s.so.1(386))",
 				"soname(libpciaccess.so.0(386))"
 			],
 			"files": [
 				"/usr/lib32/libdrm.so.2",
-				"/usr/lib32/libdrm.so.2.124.0",
+				"/usr/lib32/libdrm.so.2.130.0",
 				"/usr/lib32/libdrm_amdgpu.so.1",
-				"/usr/lib32/libdrm_amdgpu.so.1.124.0",
+				"/usr/lib32/libdrm_amdgpu.so.1.130.0",
 				"/usr/lib32/libdrm_intel.so.1",
-				"/usr/lib32/libdrm_intel.so.1.124.0",
+				"/usr/lib32/libdrm_intel.so.1.130.0",
 				"/usr/lib32/libdrm_nouveau.so.2",
-				"/usr/lib32/libdrm_nouveau.so.2.124.0",
+				"/usr/lib32/libdrm_nouveau.so.2.130.0",
 				"/usr/lib32/libdrm_radeon.so.1",
-				"/usr/lib32/libdrm_radeon.so.1.124.0"
+				"/usr/lib32/libdrm_radeon.so.1.130.0"
 			],
 			"name": "libdrm-32bit",
 			"provides": [
 				"soname(libdrm.so.2(386))",
-				"soname(libdrm.so.2(x86))",
 				"soname(libdrm_amdgpu.so.1(386))",
-				"soname(libdrm_amdgpu.so.1(x86))",
 				"soname(libdrm_intel.so.1(386))",
-				"soname(libdrm_intel.so.1(x86))",
 				"soname(libdrm_nouveau.so.2(386))",
-				"soname(libdrm_nouveau.so.2(x86))",
-				"soname(libdrm_radeon.so.1(386))",
-				"soname(libdrm_radeon.so.1(x86))"
+				"soname(libdrm_radeon.so.1(386))"
 			]
 		},
 		"libdrm-32bit-devel": {
 			"build-depends": [
 				"binary(nm)",
-				"pkgconfig(pciaccess)",
+				"binary(rst2man)",
 				"pkgconfig32(pciaccess)"
 			],
 			"depends": [
@@ -106,7 +105,7 @@
 		"libdrm-devel": {
 			"build-depends": [
 				"binary(nm)",
-				"pkgconfig(pciaccess)",
+				"binary(rst2man)",
 				"pkgconfig32(pciaccess)"
 			],
 			"depends": [
@@ -166,7 +165,10 @@
 				"/usr/lib/pkgconfig/libdrm_amdgpu.pc",
 				"/usr/lib/pkgconfig/libdrm_intel.pc",
 				"/usr/lib/pkgconfig/libdrm_nouveau.pc",
-				"/usr/lib/pkgconfig/libdrm_radeon.pc"
+				"/usr/lib/pkgconfig/libdrm_radeon.pc",
+				"/usr/share/man/man3/drmAvailable.3",
+				"/usr/share/man/man3/drmHandleEvent.3",
+				"/usr/share/man/man3/drmModeGetResources.3"
 			],
 			"name": "libdrm-devel",
 			"provides": [
@@ -179,6 +181,6 @@
 		}
 	},
 	"source-name": "libdrm",
-	"source-release": "6",
-	"source-version": "2.4.124"
+	"source-release": "14",
+	"source-version": "2.4.130"
 }

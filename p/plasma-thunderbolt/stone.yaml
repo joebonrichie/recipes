@@ -1,0 +1,51 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : plasma-thunderbolt
+version     : 6.5.4
+release     : 11
+upstreams   :
+    - https://download.kde.org/stable/plasma/6.5.4/plasma-thunderbolt-6.5.4.tar.xz : 02e92521f85bb6a9336b6abd73ac78cd22f232a5d4f614c47a44d5efb0c6b3a8
+homepage    : https://kde.org/plasma-desktop/
+license     :
+    - GPL-2.0-or-later
+    - GPL-3.0-or-later
+    - LGPL-2.0-or-later
+    - LGPL-2.1-or-later
+summary     : Plasma integration for controlling Thunderbolt devices
+description : |
+    Plasma integration for controlling Thunderbolt devices
+builddeps   :
+    # Temporary, boulder doesn't handle build ordering resolution correctly when builddeps are added by macros, so add ECM manually
+    - cmake(ECM)
+    - cmake(KF6CoreAddons)
+    - cmake(KF6DBusAddons)
+    - cmake(KF6I18n)
+    - cmake(KF6KCMUtils)
+    - cmake(KF6Notifications)
+    - cmake(Qt6Quick)
+    - bolt
+tuning      :
+    - lto: full
+    - optimize: speed
+setup       : |
+    %cmake_kf6
+build       : |
+    %cmake_build
+install     : |
+    %cmake_install
+
+    %install_dir %(installroot)%(docdir)/%(name)-devel
+    echo "DEPRECATED" > %(installroot)%(docdir)/%(name)-devel/README
+packages    :
+    - "%(name)":
+        rundeps:
+            - bolt
+        paths:
+            - /usr/lib/libkbolt.so
+
+    - "%(name)-devel":
+        paths:
+            - /usr/share/doc/plasma-thunderbolt-devel/

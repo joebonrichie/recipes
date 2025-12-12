@@ -1,0 +1,31 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : opencl-headers
+version     : '2025.07.22'
+release     : 2
+homepage    : https://github.com/KhronosGroup/OpenCL-Headers/
+upstreams   :
+    - https://github.com/KhronosGroup/OpenCL-Headers/archive/refs/tags/v2025.07.22.tar.gz : 98f0a3ea26b4aec051e533cb1750db2998ab8e82eda97269ed6efe66ec94a240
+summary     : C language headers for the OpenCL API
+description : |
+    C language headers for the OpenCL API
+license     : Apache-2.0
+setup       : |
+    %cmake \
+        -DOPENCL_HEADERS_BUILD_TESTING=OFF \
+        -DOPENCL_HEADERS_BUILD_CXX_TESTS=OFF
+build       : |
+    %cmake_build
+install     : |
+    %cmake_install
+
+    # Get rid of Direct3D stuffs
+    rm -vf %(installroot)/%(includedir)/CL/{cl_d3d,cl_dx9}*.h
+packages    :
+    # Headers only package
+    - "%(name)" :
+        paths :
+            - /*

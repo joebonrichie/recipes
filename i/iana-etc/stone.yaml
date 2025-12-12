@@ -1,0 +1,22 @@
+#
+# SPDX-FileCopyrightText: © 2020-2024 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : iana-etc
+version     : "20250929"
+release     : 2
+homepage    : https://github.com/Mic92/iana-etc
+upstreams   :
+    - https://github.com/Mic92/iana-etc/releases/download/20250929/iana-etc-20250929.tar.gz : d14ade2780bda8296ce70859a36d1dfc20c6f6d1cf3e97a513becceaf228559d
+summary     : /etc/protocols and /etc/services
+description : |
+    Build /etc/protocols and /etc/services files from IANA's Assigned Internet Protocol Numbers
+license     : MIT
+install     : |
+    %install_file protocols -t %(installroot)%(vendordir)
+    %install_file services -t %(installroot)%(vendordir)
+
+    # Stateless
+    %tmpfiles "L+ /etc/protocols - - - - ../usr/share/defaults/protocols"
+    %tmpfiles "L+ /etc/services - - - - ../usr/share/defaults/services"

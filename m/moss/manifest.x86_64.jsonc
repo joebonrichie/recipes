@@ -12,8 +12,8 @@
 				"os-info",
 				"soname(ld-linux-x86-64.so.2(x86_64))",
 				"soname(libc.so.6(x86_64))",
-				"soname(libm.so.6(x86_64))",
-				"soname(libunwind.so.1(x86_64))"
+				"soname(libgcc_s.so.1(x86_64))",
+				"soname(libm.so.6(x86_64))"
 			],
 			"files": [
 				"/usr/bin/moss",
@@ -23,7 +23,7 @@
 				"/usr/lib/moss/moss-fstx.sh",
 				"/usr/lib/systemd/system/moss-fstx.service",
 				"/usr/share/bash-completion/completions/moss",
-				"/usr/share/defaults/etc/profile.d/80-command-not-found.sh",
+				"/usr/share/defaults/profile.d/80-command-not-found.sh",
 				"/usr/share/fish/completions/moss.fish",
 				"/usr/share/man/man1/moss-boot-status.1",
 				"/usr/share/man/man1/moss-boot.1",
@@ -44,11 +44,13 @@
 				"/usr/share/man/man1/moss-repo-remove.1",
 				"/usr/share/man/man1/moss-repo-update.1",
 				"/usr/share/man/man1/moss-repo.1",
+				"/usr/share/man/man1/moss-search-file.1",
 				"/usr/share/man/man1/moss-search.1",
 				"/usr/share/man/man1/moss-state-activate.1",
 				"/usr/share/man/man1/moss-state-active.1",
 				"/usr/share/man/man1/moss-state-list.1",
 				"/usr/share/man/man1/moss-state-prune.1",
+				"/usr/share/man/man1/moss-state-query.1",
 				"/usr/share/man/man1/moss-state-remove.1",
 				"/usr/share/man/man1/moss-state-verify.1",
 				"/usr/share/man/man1/moss-state.1",
@@ -65,6 +67,6 @@
 		}
 	},
 	"source-name": "moss",
-	"source-release": "80",
-	"source-version": "0.25.1+git.be31107"
+	"source-release": "98",
+	"source-version": "0.25.6+git.2a68f98"
 }

@@ -47,8 +47,7 @@
 			],
 			"name": "libpsl-32bit",
 			"provides": [
-				"soname(libpsl.so.5(386))",
-				"soname(libpsl.so.5(x86))"
+				"soname(libpsl.so.5(386))"
 			]
 		},
 		"libpsl-32bit-devel": {
@@ -93,6 +92,6 @@
 		}
 	},
 	"source-name": "libpsl",
-	"source-release": "3",
+	"source-release": "4",
 	"source-version": "0.21.5"
 }

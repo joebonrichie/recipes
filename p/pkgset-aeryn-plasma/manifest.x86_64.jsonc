@@ -1,0 +1,95 @@
+/** Human readable report. This is not consumed by boulder */
+{
+	"manifest-version": "0.2",
+	"packages": {
+		"pkgset-aeryn-plasma-full": {
+			"depends": [
+				"dragon",
+				"filelight",
+				"kaddressbook",
+				"kcalc",
+				"kdeconnect",
+				"konversation",
+				"krdc",
+				"neochat",
+				"pkgset-aeryn-plasma-recommended",
+				"yakuake"
+			],
+			"files": [
+				"/usr/share/doc/pkgset-aeryn-plasma-full/README"
+			],
+			"name": "pkgset-aeryn-plasma-full"
+		},
+		"pkgset-aeryn-plasma-minimal": {
+			"depends": [
+				"ark",
+				"bluedevil",
+				"breeze-gtk-theme",
+				"discover",
+				"dolphin",
+				"drkonqi",
+				"flatpak-kcm",
+				"kaccounts-providers",
+				"kalk",
+				"kclock",
+				"kde-cli-tools",
+				"kde-gtk-config",
+				"kdeplasma-addons",
+				"kinfocenter",
+				"kio-admin",
+				"kio-gdrive",
+				"konsole",
+				"krdp",
+				"kscreen",
+				"ksshaskpass",
+				"kwallet-pam",
+				"kwalletmanager",
+				"kwrite",
+				"milou",
+				"pkgset-aeryn-base-desktop",
+				"plasma-browser-integration",
+				"plasma-desktop",
+				"plasma-disks",
+				"plasma-nm",
+				"plasma-pa",
+				"plasma-systemmonitor",
+				"plasma-thunderbolt",
+				"plasma-welcome",
+				"plasma-workspace-wallpapers",
+				"plymouth-kcm",
+				"polkit-kde-agent",
+				"powerdevil",
+				"print-manager",
+				"spectacle"
+			],
+			"files": [
+				"/usr/share/doc/pkgset-aeryn-plasma-minimal/README"
+			],
+			"name": "pkgset-aeryn-plasma-minimal"
+		},
+		"pkgset-aeryn-plasma-recommended": {
+			"depends": [
+				"elisa",
+				"gwenview",
+				"haruna",
+				"kate",
+				"kdegraphics-thumbnailers",
+				"kdepim-addons",
+				"kjournald",
+				"kmag",
+				"merkuro",
+				"okular",
+				"partitionmanager",
+				"pkgset-aeryn-plasma-minimal",
+				"skanlite"
+			],
+			"files": [
+				"/usr/share/doc/pkgset-aeryn-plasma-recommended/README"
+			],
+			"name": "pkgset-aeryn-plasma-recommended"
+		}
+	},
+	"source-name": "pkgset-aeryn-plasma",
+	"source-release": "16",
+	"source-version": "2025.10"
+}

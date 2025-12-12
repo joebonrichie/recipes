@@ -1,0 +1,54 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : python-pillow
+version     : 11.3.0
+release     : 1
+homepage    : https://python-pillow.github.io/
+upstreams   :
+    - https://github.com/python-pillow/Pillow/archive/refs/tags/11.3.0.tar.gz : fa4aca745b1e1c733589ebf0ef19491b145dd4225c4aa06958963b4e7f0734cf
+summary    : The friendly PIL fork (Python Imaging Library)
+description: |
+    Pillow is the "friendly PIL fork" by Alex Clark and Contributors. PIL is the Python Imaging Library by Fredrik Lundh and Contributors.
+license     : MIT-CMU
+builddeps   :
+    - binary(gs)
+    - pkgconfig(freetype2)
+    - pkgconfig(fribidi)
+    - pkgconfig(harfbuzz)
+    - pkgconfig(lcms2)
+    - pkgconfig(libavif)
+    - pkgconfig(libjpeg)
+    - pkgconfig(libopenjp2)
+    - pkgconfig(libtiff-4)
+    - pkgconfig(libwebp)
+    - pkgconfig(python3)
+    - pkgconfig(zlib)
+    - python(setuptools)
+    # libimagequant
+    # raqm
+rundeps     :
+    - binary(gs)
+build       : |
+    # TODO: Docs (Needs sphinx-removed-in)
+    %pyproject_build
+install     : |
+    %pyproject_install
+
+    _python_version=$(python -c 'import sys; print(".".join(map(str, sys.version_info[:2])))')
+    %install_file src/libImaging/*.h -t %(installroot)%(includedir)/python${_python_version}/Imaging/
+packages    :
+    - "%(name)-tk":
+        summary: Tk interface for %(name)
+        description: Tk interface for %(name)
+        rundeps:
+            - "%(name)"
+            # TODO: python-tkinter
+        paths:
+            - /usr/lib/python*/site-packages/PIL/_imagingtk*
+            - /usr/lib/python*/site-packages/PIL/ImageTk*
+            - /usr/lib/python*/site-packages/PIL/SpiderImagePlugin*
+            - /usr/lib/python*/site-packages/PIL/__pycache__/ImageTk*
+            - /usr/lib/python*/site-packages/PIL/__pycache__/SpiderImagePlugin*

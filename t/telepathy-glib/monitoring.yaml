@@ -1,0 +1,5 @@
+releases:
+  id: 6062
+  rss: https://gitlab.freedesktop.org/telepathy/telepathy-glib/-/tags?format=atom
+security:
+  cpe: ~ # Last checked 2025-09-02

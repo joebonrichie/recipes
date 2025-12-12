@@ -248,6 +248,6 @@
 		}
 	},
 	"source-name": "network-manager-applet",
-	"source-release": "2",
+	"source-release": "3",
 	"source-version": "1.36.0"
 }

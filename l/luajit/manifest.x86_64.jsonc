@@ -7,14 +7,14 @@
 				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
 				"soname(ld-linux-x86-64.so.2(x86_64))",
 				"soname(libc.so.6(x86_64))",
-				"soname(libm.so.6(x86_64))",
-				"soname(libunwind.so.1(x86_64))"
+				"soname(libgcc_s.so.1(x86_64))",
+				"soname(libm.so.6(x86_64))"
 			],
 			"files": [
 				"/usr/bin/luajit",
-				"/usr/bin/luajit-2.1.1737090214",
+				"/usr/bin/luajit-2.1.1761786044",
 				"/usr/lib/libluajit-5.1.so.2",
-				"/usr/lib/libluajit-5.1.so.2.1.1737090214",
+				"/usr/lib/libluajit-5.1.so.2.1.1761786044",
 				"/usr/lib/lua/5.1",
 				"/usr/share/lua/5.1",
 				"/usr/share/luajit-2.1/jit/bc.lua",
@@ -41,7 +41,7 @@
 			"name": "luajit",
 			"provides": [
 				"binary(luajit)",
-				"binary(luajit-2.1.1737090214)",
+				"binary(luajit-2.1.1761786044)",
 				"soname(libluajit-5.1.so.2(x86_64))"
 			]
 		},
@@ -66,6 +66,6 @@
 		}
 	},
 	"source-name": "luajit",
-	"source-release": "1",
-	"source-version": "2.1-20250117"
+	"source-release": "5",
+	"source-version": "2.1-20251030"
 }

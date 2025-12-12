@@ -1,0 +1,41 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : kf6-kirigami-addons
+version     : 1.10.0
+release     : 8
+upstreams   :
+    - https://download.kde.org/stable/kirigami-addons/kirigami-addons-1.10.0.tar.xz : c98f92bf7c452e12f6dc403404215413db3959fe904ad830ead0db6bb09b3d11
+homepage    : https://invent.kde.org/libraries/kirigami-addons
+license     : GPL-2.0-or-later
+summary     : Convergent visual components ("widgets") for Kirigami-based applications
+description : |
+    Convergent visual components ("widgets") for Kirigami-based applications
+builddeps   :
+    # Temporary, boulder doesn't handle build ordering resolution correctly when builddeps are added by macros, so add ECM manually
+    - cmake(ECM)
+    - cmake(KF6ColorScheme)
+    - cmake(KF6Config)
+    - cmake(KF6CoreAddons)
+    - cmake(KF6Crash)
+    - cmake(KF6GlobalAccel)
+    - cmake(KF6GuiAddons)
+    - cmake(KF6I18n)
+    - cmake(KF6IconThemes)
+    - cmake(KF6Kirigami)
+    - cmake(Qt6CorePrivate)
+tuning      :
+    - lto: full
+    - optimize: speed
+setup       : |
+    %cmake_kf6
+build       : |
+    %cmake_build
+install     : |
+    %cmake_install
+packages    :
+    - "%(name)-devel":
+        paths:
+            - /usr/share/kdevappwizard/

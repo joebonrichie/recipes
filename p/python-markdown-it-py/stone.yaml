@@ -1,0 +1,23 @@
+#
+# SPDX-FileCopyrightText: © 2020-2024 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : python-markdown-it-py
+version     : 4.0.0
+release     : 2
+homepage    : https://github.com/executablebooks/markdown-it-py
+upstreams   :
+    - https://pypi.debian.net/markdown-it-py/markdown_it_py-4.0.0.tar.gz : cb0a2b4aa34f932c007117b194e945bd74e0ec24133ceb5bac59009cda1cb9f3
+summary     : Markdown parser done right
+description : |
+    Markdown parser, done right. 100% CommonMark support, extensions, syntax plugins & high speed.
+license     : MIT
+builddeps   :
+    - python(flit-core)
+rundeps     :
+    - binary(python3)
+build       : |
+    %pyproject_build
+install     : |
+    %pyproject_install

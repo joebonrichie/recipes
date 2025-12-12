@@ -1,0 +1,40 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : kactivitymanagerd
+version     : 6.5.4
+release     : 10
+upstreams   :
+    - https://download.kde.org/stable/plasma/6.5.4/kactivitymanagerd-6.5.4.tar.xz : 25b6cbb084709ae05482f1b4344bb4359866a4cdfb966538e310889af2497348
+homepage    : https://kde.org/plasma-desktop/
+license     :
+    - GPL-2.0-or-later
+    - GPL-3.0-or-later
+summary     : Core components for the KDE Activity concept
+description : |
+    Core components for the KDE Activity concept
+builddeps   :
+    - cmake(Boost)
+    # Temporary, boulder doesn't handle build ordering resolution correctly when builddeps are added by macros, so add ECM manually
+    - cmake(ECM)
+    - cmake(KF6Crash)
+    - cmake(KF6DBusAddons)
+    - cmake(KF6GlobalAccel)
+    - cmake(KF6I18n)
+    - cmake(KF6KIO)
+    - cmake(KF6XmlGui)
+tuning      :
+    - lto: full
+    - optimize: speed
+setup       : |
+    %cmake_kf6
+build       : |
+    %cmake_build
+install     : |
+    %cmake_install
+packages    :
+    - "%(name)":
+        paths:
+            - /usr/lib/libkactivitymanagerd_plugin.so

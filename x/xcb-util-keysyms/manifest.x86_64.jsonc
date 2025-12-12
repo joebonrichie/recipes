@@ -36,8 +36,7 @@
 			],
 			"name": "xcb-util-keysyms-32bit",
 			"provides": [
-				"soname(libxcb-keysyms.so.1(386))",
-				"soname(libxcb-keysyms.so.1(x86))"
+				"soname(libxcb-keysyms.so.1(386))"
 			]
 		},
 		"xcb-util-keysyms-32bit-devel": {
@@ -80,6 +79,6 @@
 		}
 	},
 	"source-name": "xcb-util-keysyms",
-	"source-release": "2",
+	"source-release": "3",
 	"source-version": "0.4.1"
 }

@@ -1,0 +1,6 @@
+releases:
+  id: 402
+  rss: https://gitlab.freedesktop.org/dbus/dbus-python/-/tags?format=atom
+security:
+  # No known CPE. Checked 20250730
+  cpe: ~ # NO, freedesktop:dbus IS NOT this package

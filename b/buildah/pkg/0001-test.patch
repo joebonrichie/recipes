@@ -1,0 +1,22 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: Reilly Brogan <reilly@reillybrogan.com>
+Date: Fri, 21 Nov 2025 13:48:14 -0600
+Subject: [PATCH] test
+
+---
+ vendor/go.podman.io/image/v5/signature/policy_config.go | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/vendor/go.podman.io/image/v5/signature/policy_config.go b/vendor/go.podman.io/image/v5/signature/policy_config.go
+index 50f445148..51f83c313 100644
+--- a/vendor/go.podman.io/image/v5/signature/policy_config.go
++++ b/vendor/go.podman.io/image/v5/signature/policy_config.go
+@@ -32,7 +32,7 @@ import (
+ // systemDefaultPolicyPath is the policy path used for DefaultPolicy().
+ // You can override this at build time with
+ // -ldflags '-X go.podman.io/image/v5/signature.systemDefaultPolicyPath=$your_path'
+-var systemDefaultPolicyPath = builtinDefaultPolicyPath
++var systemDefaultPolicyPath = "/usr/share/defaults/containers/policy.json"
+ 
+ // userPolicyFile is the path to the per user policy path.
+ var userPolicyFile = filepath.FromSlash(".config/containers/policy.json")

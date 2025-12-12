@@ -10,6 +10,7 @@
 				"cmake(KF6ColorScheme)",
 				"cmake(KF6I18n)",
 				"cmake(KF6WidgetsAddons)",
+				"cmake(Qt6CorePrivate)",
 				"cmake(Qt6Qml)",
 				"cmake(Qt6Svg)"
 			],
@@ -29,16 +30,16 @@
 				"soname(libQt6Qml.so.6(x86_64))",
 				"soname(libQt6Quick.so.6(x86_64))",
 				"soname(libQt6Widgets.so.6(x86_64))",
-				"soname(libc++.so.1(x86_64))",
 				"soname(libc.so.6(x86_64))",
-				"soname(libm.so.6(x86_64))"
+				"soname(libm.so.6(x86_64))",
+				"soname(libstdc++.so.6(x86_64))"
 			],
 			"files": [
 				"/usr/bin/kiconfinder6",
 				"/usr/lib/libKF6IconThemes.so.6",
-				"/usr/lib/libKF6IconThemes.so.6.12.0",
+				"/usr/lib/libKF6IconThemes.so.6.20.0",
 				"/usr/lib/libKF6IconWidgets.so.6",
-				"/usr/lib/libKF6IconWidgets.so.6.12.0",
+				"/usr/lib/libKF6IconWidgets.so.6.20.0",
 				"/usr/lib/qt6/plugins/kiconthemes6/iconengines/KIconEnginePlugin.so",
 				"/usr/lib/qt6/qml/org/kde/iconthemes/iconthemesplugin.qmltypes",
 				"/usr/lib/qt6/qml/org/kde/iconthemes/kde-qmlmodule.version",
@@ -152,6 +153,7 @@
 				"cmake(KF6ColorScheme)",
 				"cmake(KF6I18n)",
 				"cmake(KF6WidgetsAddons)",
+				"cmake(Qt6CorePrivate)",
 				"cmake(Qt6Qml)",
 				"cmake(Qt6Svg)"
 			],
@@ -160,8 +162,8 @@
 				"soname(libKF6IconWidgets.so.6(x86_64))",
 				"soname(libQt6Core.so.6(x86_64))",
 				"soname(libQt6Gui.so.6(x86_64))",
-				"soname(libc++.so.1(x86_64))",
-				"soname(libc.so.6(x86_64))"
+				"soname(libc.so.6(x86_64))",
+				"soname(libstdc++.so.6(x86_64))"
 			],
 			"files": [
 				"/usr/include/KF6/KIconThemes/KIconColors",
@@ -187,16 +189,11 @@
 				"/usr/include/KF6/KIconWidgets/kpixmapsequenceloader.h",
 				"/usr/lib/cmake/KF6IconThemes/KF6IconThemesConfig.cmake",
 				"/usr/lib/cmake/KF6IconThemes/KF6IconThemesConfigVersion.cmake",
-				"/usr/lib/cmake/KF6IconThemes/KF6IconThemesQchTargets.cmake",
 				"/usr/lib/cmake/KF6IconThemes/KF6IconThemesTargets-release.cmake",
 				"/usr/lib/cmake/KF6IconThemes/KF6IconThemesTargets.cmake",
 				"/usr/lib/libKF6IconThemes.so",
 				"/usr/lib/libKF6IconWidgets.so",
-				"/usr/lib/qt6/plugins/designer/kiconthemes6widgets.so",
-				"/usr/share/doc/qt6/KF6IconThemes.qch",
-				"/usr/share/doc/qt6/KF6IconThemes.tags",
-				"/usr/share/doc/qt6/KF6IconWidgets.qch",
-				"/usr/share/doc/qt6/KF6IconWidgets.tags"
+				"/usr/lib/qt6/plugins/designer/kiconthemes6widgets.so"
 			],
 			"name": "kf6-kiconthemes-devel",
 			"provides": [
@@ -206,6 +203,6 @@
 		}
 	},
 	"source-name": "kf6-kiconthemes",
-	"source-release": "3",
-	"source-version": "6.12.0"
+	"source-release": "16",
+	"source-version": "6.20.0"
 }

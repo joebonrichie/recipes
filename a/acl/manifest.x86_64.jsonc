@@ -59,8 +59,7 @@
 			],
 			"name": "acl-32bit",
 			"provides": [
-				"soname(libacl.so.1(386))",
-				"soname(libacl.so.1(x86))"
+				"soname(libacl.so.1(386))"
 			]
 		},
 		"acl-32bit-devel": {
@@ -139,6 +138,6 @@
 		}
 	},
 	"source-name": "acl",
-	"source-release": "4",
+	"source-release": "5",
 	"source-version": "2.3.2"
 }

@@ -17,27 +17,27 @@
 				"soname(libgcc_s.so.1(x86_64))",
 				"soname(libglib-2.0.so.0(x86_64))",
 				"soname(libgobject-2.0.so.0(x86_64))",
+				"soname(libicui18n.so.78(x86_64))",
+				"soname(libicuuc.so.78(x86_64))",
 				"soname(libstdc++.so.6(x86_64))",
-				"soname(libxml2.so.2(x86_64))"
+				"soname(libxml2.so.16(x86_64))"
 			],
 			"files": [
 				"/usr/lib/girepository-1.0/ICal-3.0.typelib",
 				"/usr/lib/girepository-1.0/ICalGLib-3.0.typelib",
 				"/usr/lib/libical-glib.so.3",
-				"/usr/lib/libical-glib.so.3.0.18",
+				"/usr/lib/libical-glib.so.3.0.20",
 				"/usr/lib/libical.so.3",
-				"/usr/lib/libical.so.3.0.18",
+				"/usr/lib/libical.so.3.0.20",
+				"/usr/lib/libical/libical/ical-glib-src-generator",
 				"/usr/lib/libical_cxx.so.3",
-				"/usr/lib/libical_cxx.so.3.0.18",
+				"/usr/lib/libical_cxx.so.3.0.20",
 				"/usr/lib/libicalss.so.3",
-				"/usr/lib/libicalss.so.3.0.18",
+				"/usr/lib/libicalss.so.3.0.20",
 				"/usr/lib/libicalss_cxx.so.3",
-				"/usr/lib/libicalss_cxx.so.3.0.18",
+				"/usr/lib/libicalss_cxx.so.3.0.20",
 				"/usr/lib/libicalvcal.so.3",
-				"/usr/lib/libicalvcal.so.3.0.18",
-				"/usr/libexec/libical/ical-glib-src-generator",
-				"/usr/share/gir-1.0/ICal-3.0.gir",
-				"/usr/share/gir-1.0/ICalGLib-3.0.gir"
+				"/usr/lib/libicalvcal.so.3.0.20"
 			],
 			"name": "libical",
 			"provides": [
@@ -61,7 +61,8 @@
 			"depends": [
 				"libical",
 				"pkgconfig(glib-2.0)",
-				"pkgconfig(gobject-2.0)"
+				"pkgconfig(gobject-2.0)",
+				"pkgconfig(icu-i18n)"
 			],
 			"files": [
 				"/usr/include/libical-glib/i-cal-array.h",
@@ -163,6 +164,8 @@
 				"/usr/lib/libicalvcal.so",
 				"/usr/lib/pkgconfig/libical-glib.pc",
 				"/usr/lib/pkgconfig/libical.pc",
+				"/usr/share/gir-1.0/ICal-3.0.gir",
+				"/usr/share/gir-1.0/ICalGLib-3.0.gir",
 				"/usr/share/vala/vapi/libical-glib.vapi"
 			],
 			"name": "libical-devel",
@@ -174,6 +177,6 @@
 		}
 	},
 	"source-name": "libical",
-	"source-release": "3",
-	"source-version": "3.0.18"
+	"source-release": "8",
+	"source-version": "3.0.20"
 }

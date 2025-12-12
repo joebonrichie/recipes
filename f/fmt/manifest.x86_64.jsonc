@@ -4,17 +4,17 @@
 	"packages": {
 		"fmt": {
 			"depends": [
-				"soname(libc++.so.1(x86_64))",
 				"soname(libc.so.6(x86_64))",
-				"soname(libunwind.so.1(x86_64))"
+				"soname(libgcc_s.so.1(x86_64))",
+				"soname(libstdc++.so.6(x86_64))"
 			],
 			"files": [
-				"/usr/lib/libfmt.so.10",
-				"/usr/lib/libfmt.so.10.2.1"
+				"/usr/lib/libfmt.so.12",
+				"/usr/lib/libfmt.so.12.1.0"
 			],
 			"name": "fmt",
 			"provides": [
-				"soname(libfmt.so.10(x86_64))"
+				"soname(libfmt.so.12(x86_64))"
 			]
 		},
 		"fmt-devel": {
@@ -23,6 +23,7 @@
 			],
 			"files": [
 				"/usr/include/fmt/args.h",
+				"/usr/include/fmt/base.h",
 				"/usr/include/fmt/chrono.h",
 				"/usr/include/fmt/color.h",
 				"/usr/include/fmt/compile.h",
@@ -50,6 +51,6 @@
 		}
 	},
 	"source-name": "fmt",
-	"source-release": "2",
-	"source-version": "10.2.1"
+	"source-release": "9",
+	"source-version": "12.1.0"
 }

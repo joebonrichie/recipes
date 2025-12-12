@@ -1,0 +1,62 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : libplasma
+version     : 6.5.4
+release     : 16
+upstreams   :
+    - https://download.kde.org/stable/plasma/6.5.4/libplasma-6.5.4.tar.xz : 1ee9f37a6f1c26bec035360d09d81b44d7b6ed8c3f60a155d8b864c3a65006ee
+homepage    : https://kde.org/plasma-desktop/
+license     :
+    - BSD-3-Clause
+    - GPL-2.0-or-later
+    - LGPL-2.0-or-later
+    - LGPL-2.1-only
+    - LGPL-2.1-or-later
+summary     : Plasma library and runtime components
+description : |
+    Plasma library and runtime components
+builddeps   :
+    - binary(bzip2)
+    # Temporary, boulder doesn't handle build ordering resolution correctly when builddeps are added by macros, so add ECM manually
+    - cmake(ECM)
+    - cmake(KF6Archive)
+    - cmake(KF6ColorScheme)
+    - cmake(KF6Config)
+    - cmake(KF6CoreAddons)
+    - cmake(KF6GlobalAccel)
+    - cmake(KF6GuiAddons)
+    - cmake(KF6I18n)
+    - cmake(KF6IconThemes)
+    - cmake(KF6KIO)
+    - cmake(KF6KirigamiPlatform)
+    - cmake(KF6Notifications)
+    - cmake(KF6Package)
+    - cmake(KF6WindowSystem)
+    - cmake(KF6Svg)
+    - cmake(PlasmaActivities)
+    - cmake(PlasmaWaylandProtocols)
+    - cmake(Qt6CorePrivate)
+    - cmake(Qt6Qml)
+    - cmake(Qt6Quick)
+    - cmake(Qt6Svg)
+    - cmake(Qt6WaylandClient)
+tuning      :
+    - lto: full
+    - optimize: speed
+setup       : |
+    %cmake_kf6
+build       : |
+    %cmake_build
+install     : |
+    %cmake_install
+packages    :
+    - "%(name)-devel":
+        rundeps:
+            - cmake(KF6CoreAddons)
+            - cmake(KF6Package)
+            - cmake(KF6WindowSystem)
+        paths:
+            - /usr/share/kdevappwizard

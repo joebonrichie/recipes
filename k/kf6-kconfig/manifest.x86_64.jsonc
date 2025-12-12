@@ -5,6 +5,7 @@
 		"kf6-kconfig": {
 			"build-depends": [
 				"cmake(ECM)",
+				"cmake(Qt6CorePrivate)",
 				"cmake(Qt6Qml)"
 			],
 			"depends": [
@@ -15,9 +16,9 @@
 				"soname(libQt6Qml.so.6(x86_64))",
 				"soname(libQt6Quick.so.6(x86_64))",
 				"soname(libQt6Xml.so.6(x86_64))",
-				"soname(libc++.so.1(x86_64))",
 				"soname(libc.so.6(x86_64))",
-				"soname(libm.so.6(x86_64))"
+				"soname(libm.so.6(x86_64))",
+				"soname(libstdc++.so.6(x86_64))"
 			],
 			"files": [
 				"/usr/bin/kreadconfig6",
@@ -25,11 +26,11 @@
 				"/usr/lib/kf6/kconf_update",
 				"/usr/lib/kf6/kconfig_compiler_kf6",
 				"/usr/lib/libKF6ConfigCore.so.6",
-				"/usr/lib/libKF6ConfigCore.so.6.12.0",
+				"/usr/lib/libKF6ConfigCore.so.6.20.0",
 				"/usr/lib/libKF6ConfigGui.so.6",
-				"/usr/lib/libKF6ConfigGui.so.6.12.0",
+				"/usr/lib/libKF6ConfigGui.so.6.20.0",
 				"/usr/lib/libKF6ConfigQml.so.6",
-				"/usr/lib/libKF6ConfigQml.so.6.12.0",
+				"/usr/lib/libKF6ConfigQml.so.6.20.0",
 				"/usr/lib/qt6/qml/org/kde/config/KF6ConfigQml.qmltypes",
 				"/usr/lib/qt6/qml/org/kde/config/kde-qmlmodule.version",
 				"/usr/lib/qt6/qml/org/kde/config/libKF6ConfigQmlplugin.so",
@@ -145,6 +146,7 @@
 		"kf6-kconfig-devel": {
 			"build-depends": [
 				"cmake(ECM)",
+				"cmake(Qt6CorePrivate)",
 				"cmake(Qt6Qml)"
 			],
 			"depends": [
@@ -202,14 +204,11 @@
 				"/usr/lib/cmake/KF6Config/KF6ConfigConfig.cmake",
 				"/usr/lib/cmake/KF6Config/KF6ConfigConfigVersion.cmake",
 				"/usr/lib/cmake/KF6Config/KF6ConfigMacros.cmake",
-				"/usr/lib/cmake/KF6Config/KF6ConfigQchTargets.cmake",
 				"/usr/lib/cmake/KF6Config/KF6ConfigTargets-release.cmake",
 				"/usr/lib/cmake/KF6Config/KF6ConfigTargets.cmake",
 				"/usr/lib/libKF6ConfigCore.so",
 				"/usr/lib/libKF6ConfigGui.so",
-				"/usr/lib/libKF6ConfigQml.so",
-				"/usr/share/doc/qt6/KF6Config.qch",
-				"/usr/share/doc/qt6/KF6Config.tags"
+				"/usr/lib/libKF6ConfigQml.so"
 			],
 			"name": "kf6-kconfig-devel",
 			"provides": [
@@ -218,6 +217,6 @@
 		}
 	},
 	"source-name": "kf6-kconfig",
-	"source-release": "4",
-	"source-version": "6.12.0"
+	"source-release": "17",
+	"source-version": "6.20.0"
 }

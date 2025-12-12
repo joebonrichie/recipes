@@ -5,7 +5,7 @@
 #
 name        : tracker
 version     : 3.7.3
-release     : 5
+release     : 6
 homepage    : https://tracker.gnome.org/overview/
 summary     : Transition Package
 description : |

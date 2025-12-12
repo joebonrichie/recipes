@@ -5,7 +5,7 @@
 #
 name        : glib-networking
 version     : 2.80.1
-release     : 6
+release     : 7
 homepage    : https://gitlab.gnome.org/GNOME/glib-networking
 upstreams   :
     - https://download.gnome.org/sources/glib-networking/2.80/glib-networking-2.80.1.tar.xz : b80e2874157cd55071f1b6710fa0b911d5ac5de106a9ee2a4c9c7bee61782f8e

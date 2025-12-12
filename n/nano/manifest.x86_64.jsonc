@@ -4,6 +4,7 @@
 	"packages": {
 		"nano": {
 			"build-depends": [
+				"binary(msgfmt)",
 				"pkgconfig(libmagic)",
 				"pkgconfig(ncursesw)",
 				"pkgconfig(zlib)"
@@ -115,6 +116,6 @@
 		}
 	},
 	"source-name": "nano",
-	"source-release": "33",
-	"source-version": "8.3"
+	"source-release": "38",
+	"source-version": "8.7"
 }

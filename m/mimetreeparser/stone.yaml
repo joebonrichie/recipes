@@ -1,0 +1,45 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : mimetreeparser
+version     : 25.12.0
+release     : 15
+upstreams   :
+    - https://download.kde.org/stable/release-service/25.12.0/src/mimetreeparser-25.12.0.tar.xz : 63662367842e25b8e13c7523d0542847a1cffb36c72072bfe3b2942eccdd7841
+homepage    : https://kde.org
+license     :
+    - BSD-2-Clause
+    - BSD-3-Clause
+    - CC0-1.0
+    - FSFULLR
+    - GPL-2.0-only
+    - GPL-2.0-or-later
+    - GPL-3.0-only
+    - LGPL-2.0-only
+    - LGPL-2.0-or-later
+    - LGPL-2.1-only
+    - LGPL-3.0-only
+summary     : Parser for MIME trees
+description : |
+    A parser for a MIME tree and is based on KMime. The goal is given a MIME tree to extract a list of parts (e.g. text, html) and a list of attachments, check the validity of the signatures and decrypt any encrypted part.
+builddeps   :
+    # Temporary, boulder doesn't handle build ordering resolution correctly when builddeps are added by macros, so add ECM manually
+    - cmake(ECM)
+    - cmake(Gpgmepp)
+    - cmake(KF6CalendarCore)
+    - cmake(KF6ColorScheme)
+    - cmake(KF6I18n)
+    - cmake(KF6WidgetsAddons)
+    - cmake(KPim6Mbox)
+    - cmake(KPim6Libkleo)
+    - cmake(KPim6Mime)
+    - cmake(Qt6CorePrivate)
+    - cmake(Qt6Qml)
+setup       : |
+    %cmake_kf6
+build       : |
+    %cmake_build
+install     : |
+    %cmake_install

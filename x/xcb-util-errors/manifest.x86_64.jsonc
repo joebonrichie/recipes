@@ -1,0 +1,52 @@
+/** Human readable report. This is not consumed by boulder */
+{
+	"manifest-version": "0.2",
+	"packages": {
+		"xcb-util-errors": {
+			"build-depends": [
+				"binary(doxygen)",
+				"binary(python3)",
+				"pkgconfig(xcb)",
+				"pkgconfig(xcb-proto)",
+				"pkgconfig(xorg-macros)"
+			],
+			"depends": [
+				"soname(libc.so.6(x86_64))",
+				"soname(libxcb.so.1(x86_64))"
+			],
+			"files": [
+				"/usr/lib/libxcb-errors.so.0",
+				"/usr/lib/libxcb-errors.so.0.0.0"
+			],
+			"name": "xcb-util-errors",
+			"provides": [
+				"soname(libxcb-errors.so.0(x86_64))"
+			]
+		},
+		"xcb-util-errors-devel": {
+			"build-depends": [
+				"binary(doxygen)",
+				"binary(python3)",
+				"pkgconfig(xcb)",
+				"pkgconfig(xcb-proto)",
+				"pkgconfig(xorg-macros)"
+			],
+			"depends": [
+				"pkgconfig(xcb)",
+				"xcb-util-errors"
+			],
+			"files": [
+				"/usr/include/xcb/xcb_errors.h",
+				"/usr/lib/libxcb-errors.so",
+				"/usr/lib/pkgconfig/xcb-errors.pc"
+			],
+			"name": "xcb-util-errors-devel",
+			"provides": [
+				"pkgconfig(xcb-errors)"
+			]
+		}
+	},
+	"source-name": "xcb-util-errors",
+	"source-release": "1",
+	"source-version": "1.0.1"
+}

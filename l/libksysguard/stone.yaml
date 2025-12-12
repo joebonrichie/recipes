@@ -1,0 +1,50 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : libksysguard
+version     : 6.5.4
+release     : 15
+upstreams   :
+    - https://download.kde.org/stable/plasma/6.5.4/libksysguard-6.5.4.tar.xz : 74f370be24722afa2ae79acf3d73edc6a23f0ecba8e0b717de973f5d0da0508e
+homepage    : https://kde.org/plasma-desktop/
+license     :
+    - GPL-2.0-or-later
+    - LGPL-2.1-only
+summary     : Task management and system monitoring library
+description : |
+    Task management and system monitoring library
+builddeps   :
+    # Temporary, boulder doesn't handle build ordering resolution correctly when builddeps are added by macros, so add ECM manually
+    - cmake(ECM)
+    - cmake(Qt6CorePrivate)
+    - cmake(Qt6Qml)
+    - cmake(KF6Auth)
+    - cmake(KF6CoreAddons)
+    - cmake(KF6Config)
+    - cmake(KF6I18n)
+    - cmake(KF6NewStuff)
+    - cmake(KF6Package)
+    - cmake(KF6Service)
+    - cmake(KF6Solid)
+    - pkgconfig(libcap)
+    - pkgconfig(libdrm)
+    - pkgconfig(libnl-3.0)
+    - pkgconfig(libpcap)
+    - lm_sensors-devel
+tuning      :
+    - lto: full
+    - optimize: speed
+setup       : |
+    %cmake_kf6
+build       : |
+    %cmake_build
+install     : |
+    %cmake_install
+
+    # TODO once we support capabilities this will need to be fixed
+packages    :
+    - "%(name)-devel":
+        rundeps:
+            - cmake(KF6I18n)

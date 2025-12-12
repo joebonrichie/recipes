@@ -4,18 +4,17 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : libadwaita
-version     : 1.7.0
-release     : 9
+version     : 1.8.2
+release     : 20
 homepage    : https://gitlab.gnome.org/GNOME/libadwaita
 upstreams   :
-    - https://download.gnome.org/sources/libadwaita/1.7/libadwaita-1.7.0.tar.xz : 58bf99b8a9f8b0171964de0ae741d01d5a09db3662134fa67541c99a8ed7dec0
+    - https://download.gnome.org/sources/libadwaita/1.8/libadwaita-1.8.2.tar.xz : 589a6e0f4191740e8690a7d3298e16fa0d4061341b551da7abb2f030b550adb1
 summary     : Building blocks for modern GNOME applications
 description : |
     Building blocks for modern GNOME applications
 license     :
     - LGPL-2.1-only
 builddeps   :
-    - binary(cmake)
     - binary(msgfmt)
     - binary(sassc)
     - binary(vapigen)
@@ -29,3 +28,14 @@ build       : |
     %meson_build
 install     : |
     %meson_install
+packages    :
+    - "%(name)-demos":
+        paths:
+            - /usr/bin/adwaita-1-demo
+            - /usr/share/applications/
+            - /usr/share/icons/hicolor/
+            - /usr/share/metainfo/
+
+    - "%(name)-devel":
+        paths:
+            - /usr/share/vala/

@@ -26,8 +26,7 @@
 			],
 			"name": "jansson-32bit",
 			"provides": [
-				"soname(libjansson.so.4(386))",
-				"soname(libjansson.so.4(x86))"
+				"soname(libjansson.so.4(386))"
 			]
 		},
 		"jansson-32bit-devel": {
@@ -66,6 +65,6 @@
 		}
 	},
 	"source-name": "jansson",
-	"source-release": "3",
-	"source-version": "2.14"
+	"source-release": "4",
+	"source-version": "2.14.1"
 }

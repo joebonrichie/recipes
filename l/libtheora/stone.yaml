@@ -1,0 +1,34 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : libtheora
+version     : 1.2.0
+release     : 1
+upstreams   :
+    - https://downloads.xiph.org/releases/theora/libtheora-1.2.0.tar.gz : 279327339903b544c28a92aeada7d0dcfd0397b59c2f368cc698ac56f515906e
+homepage    : https://www.theora.org
+license     : BSD-3-Clause
+summary     : Open source video format
+description : |
+    Theora is a free and open video compression format.
+builddeps   :
+    - pkgconfig(ogg)
+checkdeps   :
+    - pkgconfig(libpng)
+    - pkgconfig(libtiff-4)
+    - pkgconfig(vorbis)
+setup       : |
+    %configure \
+        --disable-static
+build       : |
+    %make
+install     : |
+    %make_install
+check       : |
+    %make check
+packages    :
+    - "%(name)-docs":
+        paths:
+            - /usr/share/doc/

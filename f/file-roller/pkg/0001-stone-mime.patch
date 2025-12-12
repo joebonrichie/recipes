@@ -17,7 +17,7 @@ index f8c4eac0..1d048b3b 100644
  application/x-rar-compressed;
  application/x-rpm;
  application/x-source-rpm;
-+application/x-stone-binary;
++application/x-stone;
  application/x-rzip;
  application/x-rzip-compressed-tar;
  application/x-tar;
@@ -29,7 +29,7 @@ index 14045729..d48e99ae 100644
  	"application/x-lzma-compressed-tar",
  	"application/x-rar",
  	"application/x-rpm",
-+	"application/x-stone-binary",
++	"application/x-stone",
  	"application/x-tar",
  	"application/x-tarz",
  	"application/x-tzo",
@@ -37,7 +37,7 @@ index 14045729..d48e99ae 100644
  	    || (strcmp (mime_type, "application/x-lha") == 0)
  	    || (strcmp (mime_type, "application/x-rar") == 0)
  	    || (strcmp (mime_type, "application/x-rpm") == 0)
-+	    || (strcmp (mime_type, "application/x-stone-binary") == 0)
++	    || (strcmp (mime_type, "application/x-stone") == 0)
  	    || (strcmp (mime_type, "application/x-xar") == 0))
  	{
  		return capabilities;
@@ -49,7 +49,7 @@ index 91d6bd07..1c677eaa 100644
  	{ "application/x-rpm",                     ".rpm",      0 },
  	{ "application/x-rzip",                    ".rz",       0 },
  	{ "application/x-rzip-compressed-tar",     ".tar.rz",   0 },
-+	{ "application/x-stone-binary",            ".stone",    0 },
++	{ "application/x-stone",                   ".stone",    0 },
  	{ "application/x-tar",                     ".tar",      0 },
  	{ "application/x-tarz",                    ".tar.Z",    0 },
  	{ "application/x-tzo",                     ".tar.lzo",  0 },
@@ -57,7 +57,7 @@ index 91d6bd07..1c677eaa 100644
  	{ ".sit", "application/x-stuffit" },
  	{ ".snap", "application/vnd.snap" },
  	{ ".sqsh", "application/vnd.squashfs" },
-+	{ ".stone", "application/x-stone-binary" },
++	{ ".stone", "application/x-stone" },
  	{ ".swm", "application/x-ms-wim" },
  	{ ".tar", "application/x-tar" },
  	{ ".tar.br", "application/x-brotli-compressed-tar" },

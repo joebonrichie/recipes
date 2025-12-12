@@ -8,21 +8,24 @@
 				"pkgconfig(zlib)"
 			],
 			"depends": [
+				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
 				"soname(ld-linux-x86-64.so.2(x86_64))",
-				"soname(libc++.so.1(x86_64))",
 				"soname(libc.so.6(x86_64))",
+				"soname(libgcc_s.so.1(x86_64))",
 				"soname(libm.so.6(x86_64))",
 				"soname(libminizip.so.1(x86_64))",
-				"soname(libunwind.so.1(x86_64))",
+				"soname(libstdc++.so.6(x86_64))",
 				"soname(libz.so.1(x86_64))"
 			],
 			"files": [
-				"/usr/lib/libassimp.so.5",
-				"/usr/lib/libassimp.so.5.4.3"
+				"/usr/bin/assimp",
+				"/usr/lib/libassimp.so.6",
+				"/usr/lib/libassimp.so.6.0.2"
 			],
 			"name": "assimp",
 			"provides": [
-				"soname(libassimp.so.5(x86_64))"
+				"binary(assimp)",
+				"soname(libassimp.so.6(x86_64))"
 			]
 		},
 		"assimp-devel": {
@@ -31,7 +34,9 @@
 				"pkgconfig(zlib)"
 			],
 			"depends": [
-				"assimp"
+				"assimp",
+				"pkgconfig(minizip)",
+				"pkgconfig(zlib)"
 			],
 			"files": [
 				"/usr/include/assimp/AssertHandler.h",
@@ -123,10 +128,10 @@
 				"/usr/include/assimp/vector3.h",
 				"/usr/include/assimp/vector3.inl",
 				"/usr/include/assimp/version.h",
-				"/usr/lib/cmake/assimp-5.4/assimpConfig.cmake",
-				"/usr/lib/cmake/assimp-5.4/assimpConfigVersion.cmake",
-				"/usr/lib/cmake/assimp-5.4/assimpTargets-release.cmake",
-				"/usr/lib/cmake/assimp-5.4/assimpTargets.cmake",
+				"/usr/lib/cmake/assimp-6.0/assimpConfig.cmake",
+				"/usr/lib/cmake/assimp-6.0/assimpConfigVersion.cmake",
+				"/usr/lib/cmake/assimp-6.0/assimpTargets-release.cmake",
+				"/usr/lib/cmake/assimp-6.0/assimpTargets.cmake",
 				"/usr/lib/libassimp.so",
 				"/usr/lib/pkgconfig/assimp.pc"
 			],
@@ -138,6 +143,6 @@
 		}
 	},
 	"source-name": "assimp",
-	"source-release": "1",
-	"source-version": "5.4.3"
+	"source-release": "6",
+	"source-version": "6.0.2"
 }

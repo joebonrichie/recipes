@@ -1,0 +1,81 @@
+/** Human readable report. This is not consumed by boulder */
+{
+	"manifest-version": "0.2",
+	"packages": {
+		"gamemode": {
+			"build-depends": [
+				"pkgconfig(dbus-1)",
+				"pkgconfig(inih)",
+				"pkgconfig(libsystemd)",
+				"pkgconfig(systemd)"
+			],
+			"depends": [
+				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
+				"soname(libc.so.6(x86_64))",
+				"soname(libdbus-1.so.3(x86_64))",
+				"soname(libinih.so.0(x86_64))",
+				"soname(libsystemd.so.0(x86_64))"
+			],
+			"files": [
+				"/usr/bin/gamemode-simulate-game",
+				"/usr/bin/gamemoded",
+				"/usr/bin/gamemodelist",
+				"/usr/bin/gamemoderun",
+				"/usr/lib/gamemode/cpucorectl",
+				"/usr/lib/gamemode/cpugovctl",
+				"/usr/lib/gamemode/gpuclockctl",
+				"/usr/lib/gamemode/procsysctl",
+				"/usr/lib/libgamemode.so.0",
+				"/usr/lib/libgamemode.so.0.0.0",
+				"/usr/lib/libgamemodeauto.so.0",
+				"/usr/lib/libgamemodeauto.so.0.0.0",
+				"/usr/lib/systemd/user/gamemoded.service",
+				"/usr/lib/sysusers.d/gamemode.conf",
+				"/usr/share/dbus-1/services/com.feralinteractive.GameMode.service",
+				"/usr/share/gamemode/gamemode.ini",
+				"/usr/share/man/man1/gamemode-simulate-game.1",
+				"/usr/share/man/man1/gamemodelist.1",
+				"/usr/share/man/man1/gamemoderun.1",
+				"/usr/share/man/man8/gamemoded.8",
+				"/usr/share/metainfo/io.github.feralinteractive.gamemode.metainfo.xml",
+				"/usr/share/polkit-1/actions/com.feralinteractive.GameMode.policy",
+				"/usr/share/polkit-1/rules.d/gamemode.rules"
+			],
+			"name": "gamemode",
+			"provides": [
+				"binary(gamemode-simulate-game)",
+				"binary(gamemoded)",
+				"binary(gamemodelist)",
+				"binary(gamemoderun)",
+				"soname(libgamemode.so.0(x86_64))",
+				"soname(libgamemodeauto.so.0(x86_64))"
+			]
+		},
+		"gamemode-devel": {
+			"build-depends": [
+				"pkgconfig(dbus-1)",
+				"pkgconfig(inih)",
+				"pkgconfig(libsystemd)",
+				"pkgconfig(systemd)"
+			],
+			"depends": [
+				"gamemode"
+			],
+			"files": [
+				"/usr/include/gamemode_client.h",
+				"/usr/lib/libgamemode.so",
+				"/usr/lib/libgamemodeauto.so",
+				"/usr/lib/pkgconfig/gamemode.pc",
+				"/usr/lib/pkgconfig/libgamemodeauto.pc"
+			],
+			"name": "gamemode-devel",
+			"provides": [
+				"pkgconfig(gamemode)",
+				"pkgconfig(libgamemodeauto)"
+			]
+		}
+	},
+	"source-name": "gamemode",
+	"source-release": "1",
+	"source-version": "1.8.2"
+}

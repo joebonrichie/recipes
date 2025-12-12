@@ -4,31 +4,42 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : niri
-version     : "0.1.9"
-release     : 5
+version     : "25.08"
+release     : 12
 summary     : Niri Desktop Compositor
 license     : GPL-3.0
 homepage    : https://github.com/YaLTeR/niri
 upstreams   :
-    - git|https://github.com/YaLTeR/niri : v0.1.9
+    # We should be using the vendored archive, but because we're using a patch to update libdisplay-info we have to use the normal archive
+    # - https://github.com/YaLTeR/niri/releases/download/v25.08/niri-25.08-vendored-dependencies.tar.xz : 5a0a36b1a52985a60d5d6864c2ef7df2b0f5f9fea2a775662e7777cf536277bd
+    - https://github.com/YaLTeR/niri/archive/refs/tags/v25.08.tar.gz : 69f8227d621ee6389bcd5368a250c189e672d02528472dc5ef0e3eccf80cf0b8
 description : |
     A scrollable-tiling Wayland compositor
 builddeps   :
     - binary(cargo)
-    - binary(mold)
     - pkgconfig(gbm)
+    - pkgconfig(gdk-pixbuf-2.0)
     - pkgconfig(glib-2.0)
+    - pkgconfig(gtk4)
+    - pkgconfig(libadwaita-1)
+    - pkgconfig(libdisplay-info)
     - pkgconfig(libinput)
     - pkgconfig(libpipewire-0.3)
     - pkgconfig(libseat)
+    - pkgconfig(libspa-0.2)
     - pkgconfig(libudev)
     - pkgconfig(pango)
     - pkgconfig(xkbcommon)
-    - pkgconfig(libdisplay-info)
+rundeps     :
+    - binary(xwayland-satellite)
+    # TODO: Flesh this out with recommendations from https://yalter.github.io/niri/Important-Software.html
+    - xdg-desktop-portal-gtk
+    - xdg-desktop-portal-gnome
+    - binary(gnome-keyring)
 networking  : yes
-environment : |
-    export RUSTFLAGS="$RUSTFLAGS -Clink-arg=-fuse-ld=mold"
 setup       : |
+    %patch %(pkgdir)/0001-Allow-libdisplay-info-0.3.patch -N
+
     %cargo_fetch
 build       : |
     RUST_BACKTRACE=1 nice %cargo_build
@@ -44,3 +55,13 @@ install     : |
     %install_dir %(installroot)%(docdir)/%(name)
     %install_file resources/default-config.kdl %(installroot)%(docdir)/%(name)/.
     %install_file README.md %(installroot)%(docdir)/%(name)/.
+
+    # generate shell completions
+    for shell in bash fish zsh; do
+        %(installroot)%(bindir)/niri \
+            completions "$shell" > "$shell-completions"
+    done
+
+    %install_file bash-completions %(installroot)%(bashcompletionsdir)/niri
+    %install_file fish-completions %(installroot)%(zshcompletionsdir)/niri.fish
+    %install_file zsh-completions %(installroot)%(fishcompletionsdir)/_niri

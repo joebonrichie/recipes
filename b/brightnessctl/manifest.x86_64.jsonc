@@ -1,0 +1,28 @@
+/** Human readable report. This is not consumed by boulder */
+{
+	"manifest-version": "0.2",
+	"packages": {
+		"brightnessctl": {
+			"build-depends": [
+				"pkgconfig(libsystemd)"
+			],
+			"depends": [
+				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
+				"soname(libc.so.6(x86_64))",
+				"soname(libm.so.6(x86_64))",
+				"soname(libsystemd.so.0(x86_64))"
+			],
+			"files": [
+				"/usr/bin/brightnessctl",
+				"/usr/share/man/man1/brightnessctl.1"
+			],
+			"name": "brightnessctl",
+			"provides": [
+				"binary(brightnessctl)"
+			]
+		}
+	},
+	"source-name": "brightnessctl",
+	"source-release": "1",
+	"source-version": "0.5.1"
+}

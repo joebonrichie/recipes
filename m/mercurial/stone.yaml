@@ -4,17 +4,20 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : mercurial
-version     : 6.9
-release     : 3
+version     : "7.1.1"
+release     : 6
 homepage    : https://www.mercurial-scm.org
 upstreams   :
-    - https://www.mercurial-scm.org/release/mercurial-6.9.tar.gz : 629604293df2be8171ec856bf4f8b4faa8e4305af13607dce0f89f74132836d6
+    - https://www.mercurial-scm.org/release/mercurial-7.1.1.tar.gz : 47cf66ba89c175536faf844c9b4cd962eb432afb516c073e51f436bf3f0bc148
 summary     : Mercurial Source Code Management
 description : |
     Mercurial Source Code Management
 license     : GPL-2.0
 builddeps   :
+    - binary(msgfmt)
     - pkgconfig(python3)
+    - python(setuptools)
+    - python(setuptools-scm)
 rundeps     :
     - binary(python3)
 build       : |

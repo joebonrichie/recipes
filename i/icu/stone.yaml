@@ -4,39 +4,137 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : icu
-version     : '77.1'
-release     : 7
+version     : '78.1'
+release     : 11
 homepage    : https://icu.unicode.org/
 upstreams   :
-    - https://github.com/unicode-org/icu/releases/download/release-77-1/icu4c-77_1-src.tgz : 588e431f77327c39031ffbb8843c0e3bc122c211374485fa87dc5f3faff24061
+    - https://github.com/unicode-org/icu/releases/download/release-78.1/icu4c-78.1-sources.tgz:
+        hash: 6217f58ca39b23127605cfc6c7e0d3475fe4b0d63157011383d716cb41617886
+        unpackdir: current
+
+    # Don't delete this section, just comment it out if it's not needed. The build recipe accounts for it possibly not existing
+    - https://github.com/unicode-org/icu/releases/download/release-77-1/icu4c-77_1-src.tgz:
+        hash: 588e431f77327c39031ffbb8843c0e3bc122c211374485fa87dc5f3faff24061
+        unpackdir: compat
 summary     : International Components for Unicode
 description : |
     The International Components for Unicode (ICU) package is a mature, widely used set of C/C++ libraries providing Unicode and Globalization support for software applications. ICU is widely portable and gives applications the same results on all platforms.
 license     : MIT
 emul32      : yes
+builddeps   :
+    - binary(doxygen)
 checkdeps   :
     - binary(python3)
-environment : |
-    cd source
+profiles    :
+    - emul32:
+        setup       : |
+            if [ -d ../compat ]; then
+                pushd ../compat/source
+
+                # thunderbird to show Calendar and sidebar properly.
+                # https://bugzilla.mozilla.org/show_bug.cgi?id=1843007
+                # https://unicode-org.atlassian.net/browse/ICU-22132
+                %patch %(pkgdir)/ICU-22132.patch -p2
+
+                %configure \
+                    --disable-static
+                popd
+            fi
+
+            cd source
+            # thunderbird to show Calendar and sidebar properly.
+            # https://bugzilla.mozilla.org/show_bug.cgi?id=1843007
+            # https://unicode-org.atlassian.net/browse/ICU-22132
+            %patch %(pkgdir)/ICU-22132.patch -p2
+
+            %configure \
+                --disable-static
+        check       : |
+            cd source
+            # Currently failing on i686
+            %make check || :
 setup       : |
+    if [ -d ../compat ]; then
+        pushd ../compat/source
+
+        # thunderbird to show Calendar and sidebar properly.
+        # https://bugzilla.mozilla.org/show_bug.cgi?id=1843007
+        # https://unicode-org.atlassian.net/browse/ICU-22132
+        %patch %(pkgdir)/ICU-22132.patch -p2
+
+        %configure
+        popd
+    fi
+
+    cd source
+
     # thunderbird to show Calendar and sidebar properly.
     # https://bugzilla.mozilla.org/show_bug.cgi?id=1843007
     # https://unicode-org.atlassian.net/browse/ICU-22132
     %patch %(pkgdir)/ICU-22132.patch -p2
 
-    %configure --disable-static
+    # Static libs for static bsdtar
+    %configure \
+        --enable-static
 build       : |
-    %make
+    if [ -d ../compat ]; then
+        pushd ../compat/source
+            %ccache_zero
+            env CCACHE_BASEDIR="${pwd}" %make
+            %ccache_stats
+        popd
+    fi
+
+    cd source
+    %ccache_zero
+    env CCACHE_BASEDIR="${pwd}" %make
+    %ccache_stats
 install     : |
+    if [ -d ../compat ]; then
+        pushd ../compat/source
+            mkdir tmp
+            make install DESTDIR="${pwd}/tmp"
+
+            # Only copy the sonames
+            %install_dir %(installroot)/%(libdir)
+            find ${pwd}/tmp/%(libdir) -name "*.so.*" -print -exec mv {} %(installroot)/%(libdir) \;
+        popd
+    fi
+
+    cd source
     %make_install
 check       : |
-    # Currently failing on i686
-    %make check || :
+    cd source
+    %make check
+tuning      :
+    - lto: full
 packages    :
+    - "%(name)-libs":
+        summary: "Library files for %(name)"
+        description: |
+            Library files for %(name), typically pulled in as a dependency of another package.
+        paths:
+            - /usr/lib/lib*.so.*
+
+    # Workaround moss issue with moving libraries to libs package
+    - "%(name)":
+        rundeps:
+            - "%(name)-libs"
+
     - "%(name)-devel":
         paths:
-            - "/usr/bin/"
-            - "/usr/lib/icu"
+            - /usr/bin/icu-config
+            - /usr/bin/icuinfo
+            - /usr/lib/icu
+            - /usr/share/icu
+            - /usr/share/man/man1/icu-config*
+
+    - "%(name)-static":
+        paths:
+            - /usr/lib/lib*.a
+        rundeps:
+            - "%(name)-devel"
+
     - "%(name)-32bit-devel":
         paths:
             - "/usr/lib32/icu"

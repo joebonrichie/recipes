@@ -4,20 +4,55 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : fmt
-version     : 10.2.1
-release     : 2
+version     : 12.1.0
+release     : 9
 homepage    : https://fmt.dev/
 upstreams   :
-    - https://github.com/fmtlib/fmt/archive/refs/tags/10.2.1.tar.gz : 1250e4cc58bf06ee631567523f48848dc4596133e163f02615c97f78bab6c811
+    - https://github.com/fmtlib/fmt/archive/refs/tags/12.1.0.tar.gz:
+        hash: ea7de4299689e12b6dddd392f9896f08fb0777ac7168897a244a6d6085043fea
+        unpackdir: current
+
+    # Don't delete this section, just comment it out if it's not needed. The build recipe accounts for it possibly not existing
+    # - https://github.com/fmtlib/fmt/archive/refs/tags/11.2.0.tar.gz:
+    #     hash: bc23066d87ab3168f27cef3e97d545fa63314f5c79df5ea444d41d56f962c6af
+    #     unpackdir: compat
 summary     : Small, safe and fast formatting C++ library
 description : |
     {fmt} is an open-source formatting library for C++. It can be used as a safe and fast alternative to (s)printf and IOStreams.
 license     : BSD-2-Clause
 setup       : |
-    %patch %(pkgdir)/0001-Fix-handling-of-static-separator.patch
+    if [ -d ../compat ]; then
+        pushd ../compat
 
-    %cmake -DBUILD_SHARED_LIBS=ON
+        %cmake \
+            -DBUILD_SHARED_LIBS=ON
+        popd
+    fi
+
+    %cmake \
+        -DBUILD_SHARED_LIBS=ON
 build       : |
-    %cmake_build
+    if [ -d ../compat ]; then
+        pushd ../compat
+            %ccache_zero
+            env CCACHE_BASEDIR="${pwd}" %cmake_build
+            %ccache_stats
+        popd
+    fi
+
+    %ccache_zero
+    env CCACHE_BASEDIR="${pwd}" %cmake_build
+    %ccache_stats
 install     : |
+    if [ -d ../compat ]; then
+        pushd ../compat
+            mkdir tmp
+            DESTDIR="${pwd}/tmp" cmake --install "%(builddir)" --verbose
+
+            # Only copy the sonames
+            %install_dir %(installroot)/%(libdir)
+            find ${pwd}/tmp/%(libdir) -name "libfmt.so.*" -print -exec mv {} %(installroot)/%(libdir) \;
+        popd
+    fi
+
     %cmake_install

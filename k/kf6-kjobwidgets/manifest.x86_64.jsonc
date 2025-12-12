@@ -7,7 +7,8 @@
 				"cmake(ECM)",
 				"cmake(KF6CoreAddons)",
 				"cmake(KF6Notifications)",
-				"cmake(KF6WidgetsAddons)"
+				"cmake(KF6WidgetsAddons)",
+				"cmake(Qt6CorePrivate)"
 			],
 			"depends": [
 				"soname(libKF6CoreAddons.so.6(x86_64))",
@@ -17,12 +18,12 @@
 				"soname(libQt6DBus.so.6(x86_64))",
 				"soname(libQt6Gui.so.6(x86_64))",
 				"soname(libQt6Widgets.so.6(x86_64))",
-				"soname(libc++.so.1(x86_64))",
-				"soname(libc.so.6(x86_64))"
+				"soname(libc.so.6(x86_64))",
+				"soname(libstdc++.so.6(x86_64))"
 			],
 			"files": [
 				"/usr/lib/libKF6JobWidgets.so.6",
-				"/usr/lib/libKF6JobWidgets.so.6.12.0",
+				"/usr/lib/libKF6JobWidgets.so.6.20.0",
 				"/usr/share/dbus-1/interfaces/kf6_org.kde.JobView.xml",
 				"/usr/share/dbus-1/interfaces/kf6_org.kde.JobViewServer.xml",
 				"/usr/share/dbus-1/interfaces/kf6_org.kde.JobViewV2.xml",
@@ -142,7 +143,8 @@
 				"cmake(ECM)",
 				"cmake(KF6CoreAddons)",
 				"cmake(KF6Notifications)",
-				"cmake(KF6WidgetsAddons)"
+				"cmake(KF6WidgetsAddons)",
+				"cmake(Qt6CorePrivate)"
 			],
 			"depends": [
 				"kf6-kjobwidgets"
@@ -150,6 +152,7 @@
 			"files": [
 				"/usr/include/KF6/KJobWidgets/KAbstractWidgetJobTracker",
 				"/usr/include/KF6/KJobWidgets/KDialogJobUiDelegate",
+				"/usr/include/KF6/KJobWidgets/KInhibitionJobTracker",
 				"/usr/include/KF6/KJobWidgets/KNotificationJobUiDelegate",
 				"/usr/include/KF6/KJobWidgets/KStatusBarJobTracker",
 				"/usr/include/KF6/KJobWidgets/KUiServerJobTracker",
@@ -157,6 +160,7 @@
 				"/usr/include/KF6/KJobWidgets/KWidgetJobTracker",
 				"/usr/include/KF6/KJobWidgets/kabstractwidgetjobtracker.h",
 				"/usr/include/KF6/KJobWidgets/kdialogjobuidelegate.h",
+				"/usr/include/KF6/KJobWidgets/kinhibitionjobtracker.h",
 				"/usr/include/KF6/KJobWidgets/kjobwidgets_export.h",
 				"/usr/include/KF6/KJobWidgets/kjobwidgets_version.h",
 				"/usr/include/KF6/KJobWidgets/knotificationjobuidelegate.h",
@@ -166,12 +170,9 @@
 				"/usr/include/KF6/KJobWidgets/kwidgetjobtracker.h",
 				"/usr/lib/cmake/KF6JobWidgets/KF6JobWidgetsConfig.cmake",
 				"/usr/lib/cmake/KF6JobWidgets/KF6JobWidgetsConfigVersion.cmake",
-				"/usr/lib/cmake/KF6JobWidgets/KF6JobWidgetsQchTargets.cmake",
 				"/usr/lib/cmake/KF6JobWidgets/KF6JobWidgetsTargets-release.cmake",
 				"/usr/lib/cmake/KF6JobWidgets/KF6JobWidgetsTargets.cmake",
-				"/usr/lib/libKF6JobWidgets.so",
-				"/usr/share/doc/qt6/KF6JobWidgets.qch",
-				"/usr/share/doc/qt6/KF6JobWidgets.tags"
+				"/usr/lib/libKF6JobWidgets.so"
 			],
 			"name": "kf6-kjobwidgets-devel",
 			"provides": [
@@ -180,6 +181,6 @@
 		}
 	},
 	"source-name": "kf6-kjobwidgets",
-	"source-release": "2",
-	"source-version": "6.12.0"
+	"source-release": "15",
+	"source-version": "6.20.0"
 }

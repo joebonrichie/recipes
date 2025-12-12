@@ -1,0 +1,31 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : libfyaml
+version     : "0.9"
+release     : 1
+upstreams   :
+    - https://github.com/pantoniou/libfyaml/releases/download/v0.9/libfyaml-0.9.tar.gz : 7731edc5dfcc345d5c5c9f6ce597133991a689dabede393cd77bae89b327cd6d
+homepage    : https://github.com/pantoniou/libfyaml
+license     : MIT
+summary     : Fully feature complete YAML parser and emitter
+description : |
+    Fully feature complete YAML parser and emitter, supporting the latest YAML spec and passing the full YAML testsuite
+builddeps   :
+    - binary(jq)
+    - binary(sphinx-build)
+    - pkgconfig(yaml-0.1)
+setup       : |
+    %configure \
+        --disable-static
+build       : |
+    %make
+install     : |
+    %make_install
+packages    :
+    - "%(name)-tools":
+        paths:
+            - /usr/bin/
+            - /usr/share/man/man1/

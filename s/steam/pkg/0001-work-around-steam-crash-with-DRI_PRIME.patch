@@ -1,0 +1,24 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: Reilly Brogan <reilly@reillybrogan.com>
+Date: Tue, 5 Aug 2025 23:14:57 -0500
+Subject: [PATCH] work around steam crash with DRI_PRIME
+
+Workaround for https://github.com/ValveSoftware/steam-for-linux/issues/9383
+
+---
+ steam.desktop | 2 --
+ 1 file changed, 2 deletions(-)
+
+diff --git a/steam.desktop b/steam.desktop
+index 66f2aa5..cbdb94c 100644
+--- a/steam.desktop
++++ b/steam.desktop
+@@ -34,8 +34,6 @@ Type=Application
+ Categories=Network;FileTransfer;Game;
+ MimeType=x-scheme-handler/steam;x-scheme-handler/steamlink;
+ Actions=Store;Community;Library;Servers;Screenshots;News;Settings;BigPicture;Friends;
+-PrefersNonDefaultGPU=true
+-X-KDE-RunOnDiscreteGpu=true
+ 
+ [Desktop Action Store]
+ Name=Store

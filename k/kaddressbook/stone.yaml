@@ -1,0 +1,60 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : kaddressbook
+version     : 25.12.0
+release     : 9
+upstreams   :
+    - https://download.kde.org/stable/release-service/25.12.0/src/kaddressbook-25.12.0.tar.xz : 8fc971227c1ae1d059adf8e4d217f2d3facaca69fdd4979af73f097b9417d95e
+homepage    : https://apps.kde.org/kaddressbook/
+license     :
+    - GFDL-1.2-or-later
+    - GPL-2.0-or-later
+summary     : KDE Contact Manager
+description : |
+    KAddressBook stores all the personal details of your family, friends and other contacts.
+builddeps   :
+    # Temporary, boulder doesn't handle build ordering resolution correctly when builddeps are added by macros, so add ECM manually
+    - cmake(ECM)
+    - cmake(KF6ColorScheme)
+    - cmake(KF6CoreAddons)
+    - cmake(KF6Crash)
+    - cmake(KF6DBusAddons)
+    - cmake(KF6DocTools)
+    - cmake(KF6IconThemes)
+    - cmake(KF6KCMUtils)
+    - cmake(KF6UserFeedback)
+    - cmake(KPim6Akonadi)
+    - cmake(KPim6AkonadiContactWidgets)
+    - cmake(KPim6AkonadiSearch)
+    - cmake(KPim6GrantleeTheme)
+    - cmake(KPim6KontactInterface)
+    - cmake(KPim6LdapCore)
+    - cmake(KPim6LdapWidgets)
+    - cmake(KPim6Libkdepim)
+    - cmake(KPim6PimCommonActivities)
+    - cmake(KPim6PimCommonAkonadi)
+    - cmake(PlasmaActivities)
+rundeps     :
+    - kdepim-runtime
+    - qt6-wayland
+setup       : |
+    %cmake_kf6
+build       : |
+    %cmake_build
+install     : |
+    %cmake_install
+packages    :
+    - "%(name)-libs":
+        paths:
+            - /usr/lib/libKPim6AddressbookImportExport.so.*
+            - /usr/lib/libkaddressbookprivate.so.*
+            - /usr/lib/qt6/plugins/kaddressbookpart.so
+            - /usr/lib/qt6/plugins/pim6/kcms/kaddressbook/
+            - /usr/lib/qt6/plugins/pim6/kontact/
+
+    - "%(name)-docs":
+        paths:
+            - /usr/share/doc

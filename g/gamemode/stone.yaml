@@ -1,0 +1,29 @@
+#
+# SPDX-FileCopyrightText: © 2025- AerynOS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : gamemode
+version     : 1.8.2
+release     : 1
+homepage    : https://github.com/FeralInteractive/gamemode
+upstreams   :
+    - https://github.com/FeralInteractive/gamemode/archive/refs/tags/1.8.2.tar.gz : 2b4a20894822caf04767af6a1601130d6b718fc30b8a77895607341b1674740f
+summary     : Optimise Linux system performance on demand
+description : |
+    Optimise Linux system performance on demand
+license     : 
+    - BSD-3-Clause
+builddeps   :
+    - pkgconfig(dbus-1)
+    - pkgconfig(inih)
+    - pkgconfig(libsystemd)
+    - pkgconfig(systemd)
+setup       : |
+    %patch %(pkgdir)/steam-hack.patch
+
+    %meson
+build       : |
+    %meson_build
+install     : |
+    %meson_install

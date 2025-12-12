@@ -4,10 +4,10 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : kf6-kidletime
-version     : 6.12.0
-release     : 2
+version     : 6.20.0
+release     : 11
 upstreams   :
-    - https://download.kde.org/stable/frameworks/6.12/kidletime-6.12.0.tar.xz : d8a888a8c803314eba97adf20e48f9d59604c480bb03428b7ee83270100fa6c3
+    - https://download.kde.org/stable/frameworks/6.20/kidletime-6.20.0.tar.xz : ecbcac5e062a27d3161747d6bf49dd603281a378d26c048915e762ab194540d9
 homepage    : https://community.kde.org/Frameworks
 license     :
     - GPL-2.0-or-later

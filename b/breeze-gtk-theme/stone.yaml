@@ -1,0 +1,34 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : breeze-gtk-theme
+version     : 6.5.4
+release     : 9
+upstreams   :
+    - https://download.kde.org/stable/plasma/6.5.4/breeze-gtk-6.5.4.tar.xz : 9caa0ed40bfc9d6e5cb99782faeba052713f1b99fcebfaa326e1802d168a364b
+homepage    : https://kde.org/plasma-desktop/
+license     :
+    - BSD-3-Clause
+    - LGPL-2.1-only
+summary     : GTK Theme Built to Match KDE's Breeze
+description : |
+    A GTK Theme Built to Match KDE's Breeze
+builddeps   :
+    - binary(python3)
+    - binary(sassc)
+    - cmake(Breeze)
+    # Temporary, boulder doesn't handle build ordering resolution correctly when builddeps are added by macros, so add ECM manually
+    - cmake(ECM)
+    - pkgconfig(cairo)
+    - python(pycairo)
+tuning      :
+    - lto: full
+    - optimize: speed
+setup       : |
+    %cmake_kf6
+build       : |
+    %cmake_build
+install     : |
+    %cmake_install

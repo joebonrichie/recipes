@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : evolution-data-server
-version     : 3.56.0
-release     : 12
+version     : 3.58.2
+release     : 22
 homepage    : https://gitlab.gnome.org/GNOME/evolution-data-server
 upstreams   :
-    - https://download.gnome.org/sources/evolution-data-server/3.56/evolution-data-server-3.56.0.tar.xz : 7ae5482aa4ee2894467716c5be982500e1d511dddf4ab29b68fdb107d7f8a8ff
+    - https://download.gnome.org/sources/evolution-data-server/3.58/evolution-data-server-3.58.2.tar.xz : 6942ecfc39ebb36b0b4363adff00771c1c2dfa34f54e80ec92c3baa3feb020fb
 summary     : Calendar, contacts and task backend management
 description : |
     The Evolution Data Server provides a single database for common, desktop-wide information,
@@ -40,19 +40,19 @@ builddeps   :
     - pkgconfig(libsoup-3.0)
     - pkgconfig(libxml-2.0)
     - pkgconfig(nss)
-    # - pkgconfig(webkit2gtk-4.1)
-    # - pkgconfig(webkitgtk-6.0)
+    - pkgconfig(webkit2gtk-4.1)
+    - pkgconfig(webkitgtk-6.0)
+    # libphonenumber
 packages    :
     - "%(name)-devel":
         paths:
             - /usr/share/vala/vapi
 setup       : |
-    %cmake -DENABLE_OAUTH2_WEBKITGTK=OFF -DENABLE_OAUTH2_WEBKITGTK4=OFF \
-           -DWITH_LIBDB=OFF \
-           -DENABLE_INTROSPECTION=ON \
-           -DENABLE_VALA_BINDINGS=ON \
-           -DSYSCONF_INSTALL_DIR="%(datadir)"
-
+    %cmake \
+        -DENABLE_INTROSPECTION=ON \
+        -DENABLE_VALA_BINDINGS=ON \
+        -DWITH_LIBDB=OFF \
+        -DSYSCONF_INSTALL_DIR="%(datadir)"
 build       : |
     %cmake_build
 install     : |

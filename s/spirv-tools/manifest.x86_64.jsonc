@@ -9,17 +9,19 @@
 			],
 			"depends": [
 				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
+				"soname(libSPIRV-Tools-diff.so(x86_64))",
 				"soname(libSPIRV-Tools-link.so(x86_64))",
 				"soname(libSPIRV-Tools-lint.so(x86_64))",
 				"soname(libSPIRV-Tools-opt.so(x86_64))",
 				"soname(libSPIRV-Tools-reduce.so(x86_64))",
 				"soname(libSPIRV-Tools.so(x86_64))",
-				"soname(libc++.so.1(x86_64))",
-				"soname(libc.so.6(x86_64))"
+				"soname(libc.so.6(x86_64))",
+				"soname(libstdc++.so.6(x86_64))"
 			],
 			"files": [
 				"/usr/bin/spirv-as",
 				"/usr/bin/spirv-cfg",
+				"/usr/bin/spirv-diff",
 				"/usr/bin/spirv-dis",
 				"/usr/bin/spirv-lesspipe.sh",
 				"/usr/bin/spirv-link",
@@ -33,6 +35,7 @@
 			"provides": [
 				"binary(spirv-as)",
 				"binary(spirv-cfg)",
+				"binary(spirv-diff)",
 				"binary(spirv-dis)",
 				"binary(spirv-lesspipe.sh)",
 				"binary(spirv-link)",
@@ -49,9 +52,10 @@
 				"pkgconfig(python3)"
 			],
 			"depends": [
-				"soname(libc++.so.1(386))",
 				"soname(libc.so.6(386))",
+				"soname(libgcc_s.so.1(386))",
 				"soname(libm.so.6(386))",
+				"soname(libstdc++.so.6(386))",
 				"spirv-tools"
 			],
 			"files": [
@@ -66,19 +70,12 @@
 			"name": "spirv-tools-32bit",
 			"provides": [
 				"soname(libSPIRV-Tools-diff.so(386))",
-				"soname(libSPIRV-Tools-diff.so(x86))",
 				"soname(libSPIRV-Tools-link.so(386))",
-				"soname(libSPIRV-Tools-link.so(x86))",
 				"soname(libSPIRV-Tools-lint.so(386))",
-				"soname(libSPIRV-Tools-lint.so(x86))",
 				"soname(libSPIRV-Tools-opt.so(386))",
-				"soname(libSPIRV-Tools-opt.so(x86))",
 				"soname(libSPIRV-Tools-reduce.so(386))",
-				"soname(libSPIRV-Tools-reduce.so(x86))",
 				"soname(libSPIRV-Tools-shared.so(386))",
-				"soname(libSPIRV-Tools-shared.so(x86))",
-				"soname(libSPIRV-Tools.so(386))",
-				"soname(libSPIRV-Tools.so(x86))"
+				"soname(libSPIRV-Tools.so(386))"
 			]
 		},
 		"spirv-tools-32bit-devel": {
@@ -185,9 +182,9 @@
 				"pkgconfig(python3)"
 			],
 			"depends": [
-				"soname(libc++.so.1(x86_64))",
 				"soname(libc.so.6(x86_64))",
-				"soname(libm.so.6(x86_64))"
+				"soname(libm.so.6(x86_64))",
+				"soname(libstdc++.so.6(x86_64))"
 			],
 			"files": [
 				"/usr/lib/libSPIRV-Tools-diff.so",
@@ -211,6 +208,6 @@
 		}
 	},
 	"source-name": "spirv-tools",
-	"source-release": "9",
-	"source-version": "2025.1"
+	"source-release": "14",
+	"source-version": "2025.5"
 }

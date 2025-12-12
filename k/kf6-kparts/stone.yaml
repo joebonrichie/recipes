@@ -4,10 +4,10 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : kf6-kparts
-version     : 6.12.0
-release     : 3
+version     : 6.20.0
+release     : 12
 upstreams   :
-    - https://download.kde.org/stable/frameworks/6.12/kparts-6.12.0.tar.xz : b897aa324103ef974ce513955473fe65feaeaba4ddf99fb4cc86772114fa930c
+    - https://download.kde.org/stable/frameworks/6.20/kparts-6.20.0.tar.xz : 9e71e3d20c9525f66533dd7a5846f0d982eefdd7425bfbadecd6a17908ebd709
 homepage    : https://community.kde.org/Frameworks
 license     :
     - LGPL-2.0-only

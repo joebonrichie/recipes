@@ -15,21 +15,19 @@
 			"depends": [
 				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
 				"soname(ld-linux-x86-64.so.2(x86_64))",
-				"soname(libc++.so.1(x86_64))",
 				"soname(libc.so.6(x86_64))",
+				"soname(libgcc_s.so.1(x86_64))",
 				"soname(libm.so.6(x86_64))",
-				"soname(libunwind.so.1(x86_64))",
+				"soname(libstdc++.so.6(x86_64))",
 				"soname(libz.so.1(x86_64))"
 			],
 			"files": [
 				"/usr/bin/js128",
-				"/usr/bin/js128-config",
 				"/usr/lib/libmozjs-128.so"
 			],
 			"name": "mozjs-128",
 			"provides": [
 				"binary(js128)",
-				"binary(js128-config)",
 				"soname(libmozjs-128.so(x86_64))"
 			]
 		},
@@ -47,6 +45,7 @@
 				"mozjs-128"
 			],
 			"files": [
+				"/usr/bin/js128-config",
 				"/usr/include/mozjs-128/BaseProfiler.h",
 				"/usr/include/mozjs-128/BaseProfilerSharedLibraries.h",
 				"/usr/include/mozjs-128/BaseProfilingCategory.h",
@@ -603,11 +602,12 @@
 			],
 			"name": "mozjs-128-devel",
 			"provides": [
+				"binary(js128-config)",
 				"pkgconfig(mozjs-128)"
 			]
 		}
 	},
 	"source-name": "mozjs-128",
-	"source-release": "6",
-	"source-version": "128.8.0"
+	"source-release": "11",
+	"source-version": "128.14.0"
 }

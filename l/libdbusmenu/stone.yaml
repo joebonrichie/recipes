@@ -1,0 +1,93 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : libdbusmenu
+version     : '16.04.0'
+release     : 2
+homepage    : https://launchpad.net/libdbusmenu
+upstreams   :
+    - https://launchpad.net/libdbusmenu/16.04/16.04.0/+download/libdbusmenu-16.04.0.tar.gz : b9cc4a2acd74509435892823607d966d424bd9ad5d0b00938f27240a1bfa878a
+summary     : Library for passing menus over DBus
+description : |
+    This is a small library designed to make sharing and displaying
+    of menu structures over DBus simple and easy to use.  It works
+    for both QT and GTK+ and makes building menus simple.
+license     :
+    - LGPL-2.1-only
+    - LGPL-3.0-only
+    - GPL-3.0-only
+builddeps   :
+    - binary(intltool-update)
+    - binary(msgfmt)
+    - binary(msgmerge)
+    - binary(vapigen)
+    - binary(xgettext)
+    - binary(xsltproc)
+    - pkgconfig(gio-2.0)
+    - pkgconfig(gio-unix-2.0)
+    - pkgconfig(glib-2.0)
+    - pkgconfig(gobject-introspection-1.0)
+    - pkgconfig(gtk+-3.0)
+    - pkgconfig(json-glib-1.0)
+setup       : |
+    %configure \
+        --disable-dumper \
+        --disable-gtk-doc-html \
+        --disable-gtk-doc \
+        --disable-static \
+        --with-gtk=3
+build       : |
+    %make
+install     : |
+    %make_install -j 1
+
+    # Remove benchmarking tool written in python2
+    rm %(installroot)%(libexecdir)/dbusmenu-bench
+packages    :
+    - "%(name)-devel":
+        paths:
+            - /usr/lib/libdbusmenu/dbusmenu-testapp
+            - /usr/share/libdbusmenu/json/test-gtk-label.json
+            - /usr/share/vala/vapi/Dbusmenu-0.4.vapi
+
+    - "%(name)-jsonloader":
+        summary: Test lib development files
+        description: Test lib development files
+        paths:
+            - /usr/lib/libdbusmenu-jsonloader.so.*
+
+    - "%(name)-jsonloader-devel":
+        summary: Test lib development files - devel
+        description: Test lib development files - devel
+        rundeps:
+            - "%(name)-jsonloader"
+        paths:
+            - /usr/include/libdbusmenu-glib-0.4/libdbusmenu-jsonloader/
+            - /usr/lib/libdbusmenu-jsonloader.so
+            - /usr/lib/pkgconfig/dbusmenu-jsonloader-0.4.pc
+
+    - "%(name)-gtk3":
+        summary: Library for passing menus over DBus - gtk3 bindings
+        description: Library for passing menus over DBus - gtk3 bindings
+        paths:
+            - /usr/lib/libdbusmenu-gtk3.so.*
+            - /usr/lib/girepository-1.0/DbusmenuGtk3-0.4.typelib
+
+    - "%(name)-gtk3-devel":
+        summary: Library for passing menus over DBus - gtk3 bindings - devel
+        description: Library for passing menus over DBus - gtk3 bindings - devel
+        rundeps:
+            - "%(name)-gtk3"
+        paths:
+            - /usr/include/libdbusmenu-gtk3-0.4/
+            - /usr/lib/libdbusmenu-gtk3.so
+            - /usr/lib/pkgconfig/dbusmenu-gtk3-0.4.pc
+            - /usr/share/gir-1.0/DbusmenuGtk3-0.4.gir
+            - /usr/share/vala/vapi/DbusmenuGtk3-0.4.vapi
+
+    - "%(name)-docs":
+        paths:
+            - /usr/share/doc/libdbusmenu/README.dbusmenu-bench
+            - /usr/share/doc/libdbusmenu/examples/glib-server-nomenu.c

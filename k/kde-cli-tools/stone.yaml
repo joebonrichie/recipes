@@ -1,0 +1,47 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : kde-cli-tools
+version     : 6.5.4
+release     : 12
+upstreams   :
+    - https://download.kde.org/stable/plasma/6.5.4/kde-cli-tools-6.5.4.tar.xz : 88fe4335429ccec842de90eaa881930eccd29bc947528caf6fe12c93e609efb6
+homepage    : https://kde.org/plasma-desktop/
+license     :
+    - GPL-2.0-or-later
+    - LGPL-2.1-only
+summary     : Tools to better interact with the system
+description : |
+    Tools based on KDE Frameworks 6 to better interact with the system.
+builddeps   :
+    # Temporary, boulder doesn't handle build ordering resolution correctly when builddeps are added by macros, so add ECM manually
+    - cmake(ECM)
+    - cmake(KF6Config)
+    - cmake(KF6CoreAddons)
+    - cmake(KF6DocTools)
+    - cmake(KF6I18n)
+    - cmake(KF6IconThemes)
+    - cmake(KF6KCMUtils)
+    - cmake(KF6KIO)
+    - cmake(KF6Parts)
+    - cmake(KF6Service)
+    - cmake(KF6Su)
+    - cmake(KF6WidgetsAddons)
+    - cmake(KF6WindowSystem)
+    - cmake(Qt6CorePrivate)
+    - cmake(Qt6Svg)
+tuning      :
+    - lto: full
+    - optimize: speed
+setup       : |
+    %cmake_kf6
+build       : |
+    %cmake_build
+install     : |
+    %cmake_install
+packages    :
+    - "%(name)-docs":
+        paths:
+            - /usr/share/doc

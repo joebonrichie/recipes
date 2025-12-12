@@ -26,7 +26,7 @@ _chroot target:
     cd {{ invocation_directory() }}; {{boulder}} {{boulder_args}} chroot {{ if path_exists(target) == "true" { target } else { error("Missing stone.yaml file") } }}
 
 _bump target:
-    cd {{ invocation_directory() }}; {{boulder}} {{boulder_args}} recipe bump
+    cd {{ invocation_directory() }}; {{boulder}} recipe bump
 bump: (_bump build_file)
 
 # check existing monitoring.yaml files in the tree for missing mandatory fields

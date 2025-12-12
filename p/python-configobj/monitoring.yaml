@@ -1,0 +1,7 @@
+releases:
+  id: 3809
+  rss: https://pypi.org/rss/project/configobj/releases.xml
+security:
+  cpe:
+  - vendor: configobj_project
+    product: configobj

@@ -1,0 +1,7 @@
+releases:
+  id: 324014
+  rss: ~
+security:
+  cpe:
+  - vendor: webkitgtk
+    product: webkitgtk

@@ -4,27 +4,87 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : libportal
-version     : 0.9.0
-release     : 4
+version     : 0.9.1
+release     : 11
 homepage    : https://libportal.org/
 upstreams   :
-    - https://github.com/flatpak/libportal/releases/download/0.9.0/libportal-0.9.0.tar.xz : 113910f06f39387328805397053d20c7acafb7388d8e6cd5e06e05efb9690735
+    - https://github.com/flatpak/libportal/releases/download/0.9.1/libportal-0.9.1.tar.xz : de801ee349ed3c255a9af3c01b1a401fab5b3fc1c35eb2fd7dfb35d4b8194d7f
 summary     : Flatpak portal library
 description : |
     libportal provides GIO-style async APIs for most Flatpak portals
 license     :
     - LGPL-3.0-or-later
 builddeps   :
+    - cmake(Qt6CorePrivate) # qpa/qplatformintegration.h
+    - pkgconfig(Qt6Gui)
     - pkgconfig(gobject-introspection-1.0)
     - pkgconfig(gtk+-3.0)
     - pkgconfig(gtk4)
     - vala
 setup       : |
-    # todo: qt5 enablement!
-    %meson -Ddocs=false
+    %patch %(pkgdir)/ftbfs-qt-6.9.patch
+
+    %meson \
+        -Ddocs=false
 build       : |
     %meson_build
 install     : |
     %meson_install
-# g-ir-scanner shitting the bed with clang
-toolchain   : gnu
+packages    :
+    - "%(name)-devel":
+        paths:
+            - /usr/share/vala/vapi/libportal.*
+
+    - "%(name)-gtk3":
+        summary: GTK+ 3 libraries for %(name)
+        description: GTK+ 3 libraries for %(name)
+        paths:
+            - /usr/lib/libportal-gtk3.so.*
+            - /usr/lib/girepository-1.0/XdpGtk3-1.0.typelib
+
+    - "%(name)-gtk3-devel":
+        summary: GTK+ 3 libraries for %(name) - devel
+        description: GTK+ 3 libraries for %(name) - devel
+        rundeps:
+            - "%(name)-gtk3"
+        paths:
+            - /usr/include/libportal-gtk3/
+            - /usr/lib/pkgconfig/libportal-gtk3.pc
+            - /usr/lib/libportal-gtk3.so
+            - /usr/share/gir-1.0/XdpGtk3-1.0.gir
+            - /usr/share/vala/vapi/libportal-gtk3*
+
+    - "%(name)-gtk4":
+        summary: GTK 4 libraries for %(name)
+        description: GTK 4 libraries for %(name)
+        paths:
+            - /usr/lib/libportal-gtk4.so.*
+            - /usr/lib/girepository-1.0/XdpGtk4-1.0.typelib
+
+    - "%(name)-gtk4-devel":
+        summary: GTK 4 libraries for %(name) - devel
+        description: GTK 4 libraries for %(name) - devel
+        rundeps:
+            - "%(name)-gtk4"
+        paths:
+            - /usr/include/libportal-gtk4/
+            - /usr/lib/pkgconfig/libportal-gtk4.pc
+            - /usr/lib/libportal-gtk4.so
+            - /usr/share/gir-1.0/XdpGtk4-1.0.gir
+            - /usr/share/vala/vapi/libportal-gtk4*
+
+    - "%(name)-qt6":
+        summary: Qt6 libraries for %(name)
+        description: Qt6 libraries for %(name)
+        paths:
+            - /usr/lib/libportal-qt6.so.*
+
+    - "%(name)-qt6-devel":
+        summary: Qt6 libraries for %(name) - devel
+        description: Qt6 libraries for %(name) - devel
+        rundeps:
+            - "%(name)-qt6"
+        paths:
+            - /usr/include/libportal-qt6/
+            - /usr/lib/pkgconfig/libportal-qt6.pc
+            - /usr/lib/libportal-qt6.so

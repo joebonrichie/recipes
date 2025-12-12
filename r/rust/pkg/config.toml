@@ -1,0 +1,73 @@
+# To get the most recent change-id go to `src/bootstrap/src/utils/change_tracker.rs` for the Rust version
+# you're updating to, and find the bottom-most entry. Make sure you review all change entries between the
+# previous ID and the new one to see if anything should be changed in this config.
+change-id = 147888
+
+# Inherit from src/bootstrap/defaults/bootstrap.dist.toml
+profile = "dist"
+
+[llvm]
+link-shared = true
+targets = "X86" # TODO get AARCH64 building
+
+[build]
+rustc = "/usr/bin/rustc"
+cargo = "/usr/bin/cargo"
+docs = false
+# Triggers the build of tools. Cargo, in our case.
+extended = true
+# Enabled via per-target config
+profiler = false
+sanitizers = false
+description = "AerynOS"
+target = ["i686-unknown-linux-gnu", "x86_64-unknown-linux-gnu"]
+tools = [
+    "analysis",
+    "cargo",
+    "clippy",
+    "rustdoc",
+    "rustfmt",
+    "rust-analyzer",
+    "rust-analyzer-proc-macro-srv",
+    "rust-demangler",
+    "src",
+]
+vendor = true
+
+[install]
+prefix = "/usr"
+
+[rust]
+channel = "stable"
+default-linker = "clang"
+jemalloc = true
+new-symbol-mangling = true
+optimize = true
+rpath = false
+strip = false
+llvm-libunwind = "no"
+lld = false
+bootstrap-override-lld = "external"
+llvm-bitcode-linker = false
+
+[target.i686-unknown-linux-gnu]
+cc = "clang"
+cxx = "clang++"
+linker = "clang"
+ar = "/usr/bin/llvm-ar"
+ranlib = "/usr/bin/llvm-ranlib"
+
+[target.x86_64-unknown-linux-gnu]
+cc = "clang"
+cxx = "clang++"
+linker = "clang"
+ar = "/usr/bin/llvm-ar"
+ranlib = "/usr/bin/llvm-ranlib"
+
+# TODO: Fix the flags for this build so it doesn't try to use -mcpu=x86whatever causing the aarch64 build to fail
+# [target.aarch64-unknown-linux-gnu]
+# cc = "clang"
+# cxx = "clang++"
+# linker = "clang"
+# ar = "/usr/bin/llvm-ar"
+# ranlib = "/usr/bin/llvm-ranlib"

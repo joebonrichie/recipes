@@ -7,7 +7,7 @@
       "id": "aerynos",
       "id_like": "linux",
       "name": "AerynOS",
-      "display": "AerynOS 2025.03",
+      "display": "AerynOS 2025.12",
       "ansi_color": "1;35",
       "former_identities": [
         {
@@ -37,10 +37,10 @@
       ]
     },
     "version": {
-      "full": "2025.03",
-      "short": "2025.03",
-      "build_id": "2025.03",
-      "released": "2025-03-23T00:00:00Z"
+      "full": "2025.12",
+      "short": "2025.12",
+      "build_id": "2025.12",
+      "released": "2025-12-09T12:00:00Z"
     }
   },
   "system": {
@@ -86,7 +86,7 @@
       "cadence": {
         "type": "rolling",
         "sync_interval": "weekly",
-        "sync_day": "Friday"
+        "sync_day": "Tuesday"
       },
       "approach": "full-system"
     }
@@ -124,16 +124,16 @@
           "scope": "developer-docs"
         },
       "blog": {
-        "url": "https://aerynos.org/blog",
+        "url": "https://aerynos.com/blog",
         "display_name": "AerynOS Blog",
         "scope": "public"
       }
     },
     "social": {
       "matrix": {
-        "url": "https://matrix.to/#/#aerynos:matrix.org",
-        "display_name": "Matrix Chat Room",
-        "platform": "matrix"
+        "url": "https://aerynos.zulipchat.com",
+        "display_name": "Zulip Server",
+        "platform": "zulip"
       },
       "youtube": {
         "url": "https://www.youtube.com/@AerynOS",
@@ -142,11 +142,6 @@
       }
     },
     "funding": {
-      "github": {
-        "url": "https://github.com/sponsors/ikeycode",
-        "display_name": "GitHub Sponsors",
-        "platform": "github"
-      },
       "kofi": {
         "url": "https://ko-fi.com/AerynOS",
         "display_name": "Ko-fi",

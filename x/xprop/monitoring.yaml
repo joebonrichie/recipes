@@ -1,0 +1,5 @@
+releases:
+  id: 14958
+  rss: https://gitlab.freedesktop.org/xorg/app/xprop/-/tags?format=atom
+security:
+  cpe: ~ # No CPE found, last checked (2025-09-03)

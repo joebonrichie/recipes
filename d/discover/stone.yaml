@@ -1,0 +1,69 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : discover
+version     : 6.5.4
+release     : 12
+upstreams   :
+    - https://download.kde.org/stable/plasma/6.5.4/discover-6.5.4.tar.xz : a15abcd809288f6ff1f975c4e16c1e6a399d5e1e0f02b88550c53d0ddd108e4e
+homepage    : https://apps.kde.org/discover/
+license     : GPL-2.0-or-later
+summary     : Discover helps you find and install applications, games, and tools.
+description : |
+    Discover helps you find and install applications, games, and tools. You can search or browse by category, and look at screenshots and read reviews to help you pick the perfect app. With Discover, you can manage software from multiple sources, including your operating system's software repository, Flatpak repos, the Snap store, or even AppImages from store.kde.org. Finally, Discover also allows you to find, install, and manage add-ons for Plasma and all your favorite KDE apps!
+builddeps   :
+    - cmake(AppStreamQt)
+    # Temporary, boulder doesn't handle build ordering resolution correctly when builddeps are added by macros, so add ECM manually
+    - cmake(ECM)
+    - cmake(KF6Archive)
+    - cmake(KF6Attica)
+    - cmake(KF6Auth)
+    - cmake(KF6CoreAddons)
+    - cmake(KF6Config)
+    - cmake(KF6Crash)
+    - cmake(KF6DBusAddons)
+    - cmake(KF6I18n)
+    - cmake(KF6IconThemes)
+    - cmake(KF6IdleTime)
+    - cmake(KF6ItemModels)
+    - cmake(KF6KCMUtils)
+    - cmake(KF6KIO)
+    - cmake(KF6Kirigami)
+    - cmake(KF6KirigamiAddons)
+    - cmake(KF6NewStuff)
+    - cmake(KF6Notifications)
+    - cmake(KF6Purpose)
+    - cmake(KF6StatusNotifierItem)
+    - cmake(KF6UserFeedback)
+    - cmake(KF6XmlGui)
+    - cmake(QCoro6)
+    - cmake(Qt6Quick)
+    - cmake(Qt6WebView)
+    - pkgconfig(flatpak)
+    - pkgconfig(libmarkdown)
+    - pkgconfig(ostree-1)
+    # TODO:
+    # - fwupd
+    # - packagekitqt
+rundeps    :
+    - kf6-kirigami
+    - kf6-kitemmodels
+    - kf6-purpose
+    - kf6-qqc2-desktop-style
+    - qt6-wayland
+tuning      :
+    - lto: full
+    - optimize: speed
+setup       : |
+    %patch %(pkgdir)/0001-downstream-Nuke-rpath.patch
+    %cmake_kf6
+build       : |
+    %cmake_build
+install     : |
+    %cmake_install
+packages    :
+    - "%(name)":
+        paths:
+            - /usr/lib/lib*.so

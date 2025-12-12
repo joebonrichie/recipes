@@ -11,18 +11,18 @@
 				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
 				"soname(ld-linux-x86-64.so.2(x86_64))",
 				"soname(libc.so.6(x86_64))",
-				"soname(libm.so.6(x86_64))",
-				"soname(libunwind.so.1(x86_64))"
+				"soname(libgcc_s.so.1(x86_64))",
+				"soname(libm.so.6(x86_64))"
 			],
 			"files": [
 				"/usr/bin/rav1e",
-				"/usr/lib/librav1e.so.0.7",
-				"/usr/lib/librav1e.so.0.7.1"
+				"/usr/lib/librav1e.so.0.8",
+				"/usr/lib/librav1e.so.0.8.1"
 			],
 			"name": "rav1e",
 			"provides": [
 				"binary(rav1e)",
-				"soname(librav1e.so.0.7(x86_64))"
+				"soname(librav1e.so.0.8(x86_64))"
 			]
 		},
 		"rav1e-devel": {
@@ -45,6 +45,6 @@
 		}
 	},
 	"source-name": "rav1e",
-	"source-release": "1",
-	"source-version": "0.7.1"
+	"source-release": "5",
+	"source-version": "0.8.1"
 }

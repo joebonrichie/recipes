@@ -1,0 +1,41 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : openvpn
+version     : 2.6.17
+release     : 4
+upstreams   :
+    - https://swupdate.openvpn.net/community/releases/openvpn-2.6.17.tar.gz : 4cc8e63f710d3001493b13d8a32cf22a214d5e4f71dd37d93831e2fd3208b370
+homepage    : https://openvpn.net/community/
+license     :
+    - GPL-2.0-only
+    - BSD-4-Clause
+    - OpenSSL
+    - Zlib
+summary     : OpenVPN Client
+description : |
+    An easy-to-use, robust, and highly configurable VPN (Virtual Private Network)
+builddeps   :
+    - binary(rst2man)
+    - pkgconfig(libcap-ng)
+    - pkgconfig(liblz4)
+    - pkgconfig(libnl-genl-3.0)
+    - pkgconfig(libpkcs11-helper-1)
+    - pkgconfig(libsystemd)
+    - pkgconfig(lzo2)
+    - pkgconfig(openssl)
+    - pkgconfig(p11-kit-1)
+    - pkgconfig(pam)
+setup       : |
+    %reconfigure \
+        --enable-async-push \
+        --enable-pkcs11 \
+        --enable-systemd \
+        --enable-x509-alt-username \
+        --with-crypto-library=openssl
+build       : |
+    %make
+install     : |
+    %make_install

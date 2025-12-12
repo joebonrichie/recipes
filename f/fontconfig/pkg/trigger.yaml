@@ -5,8 +5,15 @@ description: |
 handlers:
     fonts:
         run: /usr/bin/fc-cache
+        args: []
 
 paths:
-    "/usr/share/fonts/*" :
+    "/usr/share/fonts/**" :
+        handlers:
+            - fonts
+    "/usr/share/fontconfig/conf.avail/*.conf" :
+        handlers:
+            - fonts
+    "/usr/share/fontconfig/conf.default/*.conf" :
         handlers:
             - fonts

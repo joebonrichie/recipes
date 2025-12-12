@@ -4,16 +4,18 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : kf6-breeze-icons
-version     : 6.12.0
-release     : 3
+version     : 6.20.0
+release     : 13
 upstreams   :
-    - https://download.kde.org/stable/frameworks/6.12/breeze-icons-6.12.0.tar.xz : 1af979a67c0539f27a8fcbff973c91245584bfb260dd64c206bc691575cbb668
+    - https://download.kde.org/stable/frameworks/6.20/breeze-icons-6.20.0.tar.xz : 0a47b28a04a086ccb5b4afb51d6677180006819d0d9302524721689bfa4ad13c
 homepage    : https://community.kde.org/Frameworks
 license     : LGPL-3.0-or-later
 summary     : Breeze icon theme
 description : |
     Breeze-icons is a freedesktop.org compatible icon theme.
 builddeps   :
+    - binary(gtk-update-icon-cache)
+    - binary(python3)
     # Temporary, boulder doesn't handle build ordering resolution correctly when builddeps are added by macros, so add ECM manually
     - cmake(ECM)
     - python(lxml)
@@ -23,6 +25,10 @@ build       : |
     %cmake_build
 install     : |
     %cmake_install
+
+    for i in %(installroot)%(datadir)/icons/*/; do
+        gtk-update-icon-cache -f $i
+    done
 packages    :
     # Separate out the icons because in the future KF7 could be providing the icon theme while we still build the KF6 library
     - "breeze-icons":

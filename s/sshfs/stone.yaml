@@ -1,0 +1,30 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : sshfs
+version     : 3.7.5
+release     : 2
+upstreams   :
+    - https://github.com/libfuse/sshfs/archive/refs/tags/sshfs-3.7.5.tar.gz : 99d294101f1b8997653a84c35674c2e50c18323ea2c449412c0ed46b9d31ac35
+homepage    : https://github.com/libfuse/sshfs
+license     : GPL-2.0-only
+summary     : A network filesystem client to connect to SSH servers
+description : |
+    SSHFS allows you to mount a remote filesystem using SFTP. Most SSH servers support and enable this SFTP access by default, so SSHFS is very simple to use - there's nothing to do on the server-side.
+builddeps   :
+    - binary(rst2man)
+    - pkgconfig(fuse3)
+    - pkgconfig(glib-2.0)
+rundeps     :
+    - binary(sftp)
+    - binary(ssh)
+setup       : |
+    %patch %(pkgdir)/man-fuse3.patch
+
+    %meson
+build       : |
+    %meson_build
+install     : |
+    %meson_install

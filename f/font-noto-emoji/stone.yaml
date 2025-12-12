@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : font-noto-emoji
-version     : 2.047
-release     : 2
+version     : "2.051"
+release     : 5
 homepage    : https://github.com/googlefonts/noto-emoji
 upstreams   :
-    - https://github.com/googlefonts/noto-emoji/archive/refs/tags/v2.047.tar.gz : 2cfaf5a427eb26334cdb30d98e4a0c005b660504a339249dc54373e566f09b50
+    - https://github.com/googlefonts/noto-emoji/archive/refs/tags/v2.051.tar.gz : 04f3d1e5605edebebac00a7a0becb390a4a3ead015066905b27935b30c18e745
 summary     : Noto Emoji fonts
 description : |
     Noto Emoji (Stands for No Tofu) is an open source emoji library that provides standard Unicode emoji support and tools for working with them including:
