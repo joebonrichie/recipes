@@ -1,0 +1,7 @@
+releases:
+  id: 17345
+  rss: https://github.com/thkukuk/libnsl/releases.atom
+security:
+  cpe:
+    - vendor: libnsl_project
+      product: libnsl

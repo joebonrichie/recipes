@@ -1,0 +1,20 @@
+name        : libnsl
+version     : 2.0.1
+release     : 1
+upstreams:
+  - https://github.com/thkukuk/libnsl/releases/download/v2.0.1/libnsl-2.0.1.tar.xz: 5c9e470b232a7acd3433491ac5221b4832f0c71318618dc6aa04dd05ffcd8fd9
+summary     : Public client interface library for NIS(YP)
+license     : LGPL-2.1-only
+homepage    : https://github.com/thkukuk/libnsl
+description : |
+    Public client interface library for NIS(YP) and NIS+
+builddeps   :
+    - pkgconfig(libtirpc)
+setup       : |
+    %configure \
+        --disable-static
+build       : |
+    %make
+install     : |
+    %make_install
+    %install_file AUTHORS NEWS README -t %(installroot)/%(docdir)/%(name)
