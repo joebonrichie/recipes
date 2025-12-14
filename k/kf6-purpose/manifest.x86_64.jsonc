@@ -16,12 +16,14 @@
 				"cmake(KF6Service)",
 				"cmake(Qt6CorePrivate)",
 				"kf6-kdeclarative",
+				"kf6-kitemmodels",
 				"kf6-prison"
 			],
 			"depends": [
 				"accounts-qml-module-qt6",
 				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
 				"kf6-kdeclarative",
+				"kf6-kitemmodels",
 				"kf6-prison",
 				"soname(libKF6ConfigCore.so.6(x86_64))",
 				"soname(libKF6CoreAddons.so.6(x86_64))",
@@ -46,9 +48,9 @@
 			"files": [
 				"/usr/lib/kf6/purposeprocess",
 				"/usr/lib/libKF6Purpose.so.6",
-				"/usr/lib/libKF6Purpose.so.6.20.0",
+				"/usr/lib/libKF6Purpose.so.6.21.0",
 				"/usr/lib/libKF6PurposeWidgets.so.6",
-				"/usr/lib/libKF6PurposeWidgets.so.6.20.0",
+				"/usr/lib/libKF6PurposeWidgets.so.6.21.0",
 				"/usr/lib/qt6/plugins/kf6/kfileitemaction/sharefileitemaction.so",
 				"/usr/lib/qt6/plugins/kf6/purpose/barcodeplugin.so",
 				"/usr/lib/qt6/plugins/kf6/purpose/bluetoothplugin.so",
@@ -411,6 +413,19 @@
 				"/usr/share/locale/id/LC_MESSAGES/purpose6_reviewboard.mo",
 				"/usr/share/locale/id/LC_MESSAGES/purpose6_saveas.mo",
 				"/usr/share/locale/id/LC_MESSAGES/purpose6_youtube.mo",
+				"/usr/share/locale/is/LC_MESSAGES/libpurpose6_quick.mo",
+				"/usr/share/locale/is/LC_MESSAGES/libpurpose6_widgets.mo",
+				"/usr/share/locale/is/LC_MESSAGES/purpose6_barcode.mo",
+				"/usr/share/locale/is/LC_MESSAGES/purpose6_bluetooth.mo",
+				"/usr/share/locale/is/LC_MESSAGES/purpose6_fileitemaction.mo",
+				"/usr/share/locale/is/LC_MESSAGES/purpose6_imgur.mo",
+				"/usr/share/locale/is/LC_MESSAGES/purpose6_kdeconnect.mo",
+				"/usr/share/locale/is/LC_MESSAGES/purpose6_kdeconnectsms.mo",
+				"/usr/share/locale/is/LC_MESSAGES/purpose6_nextcloud.mo",
+				"/usr/share/locale/is/LC_MESSAGES/purpose6_pastebin.mo",
+				"/usr/share/locale/is/LC_MESSAGES/purpose6_reviewboard.mo",
+				"/usr/share/locale/is/LC_MESSAGES/purpose6_saveas.mo",
+				"/usr/share/locale/is/LC_MESSAGES/purpose6_youtube.mo",
 				"/usr/share/locale/it/LC_MESSAGES/libpurpose6_quick.mo",
 				"/usr/share/locale/it/LC_MESSAGES/libpurpose6_widgets.mo",
 				"/usr/share/locale/it/LC_MESSAGES/purpose6_barcode.mo",
@@ -796,6 +811,7 @@
 				"cmake(KF6Service)",
 				"cmake(Qt6CorePrivate)",
 				"kf6-kdeclarative",
+				"kf6-kitemmodels",
 				"kf6-prison"
 			],
 			"depends": [
@@ -829,6 +845,6 @@
 		}
 	},
 	"source-name": "kf6-purpose",
-	"source-release": "12",
-	"source-version": "6.20.0"
+	"source-release": "13",
+	"source-version": "6.21.0"
 }
