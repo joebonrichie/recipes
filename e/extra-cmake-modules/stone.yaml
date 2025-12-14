@@ -4,10 +4,10 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : extra-cmake-modules
-version     : 6.20.0
-release     : 15
+version     : 6.21.0
+release     : 16
 upstreams   :
-    - https://download.kde.org/stable/frameworks/6.20/extra-cmake-modules-6.20.0.tar.xz : 3711de8572db5da618efe3f28cc094ca25a1abb0bddffc63dced12c4f8caae5f
+    - https://download.kde.org/stable/frameworks/6.21/extra-cmake-modules-6.21.0.tar.xz : 267c5467cd6555a0af0d4010f0ec06971f80f1bd5c90563424a8593bc0976a70
 homepage    : https://community.kde.org/Frameworks
 license     :
     - BSD-2-Clause
