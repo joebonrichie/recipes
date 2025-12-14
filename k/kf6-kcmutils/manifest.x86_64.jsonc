@@ -39,11 +39,11 @@
 				"/usr/bin/kcmshell6",
 				"/usr/lib/kf6/kcmdesktopfilegenerator",
 				"/usr/lib/libKF6KCMUtils.so.6",
-				"/usr/lib/libKF6KCMUtils.so.6.20.0",
+				"/usr/lib/libKF6KCMUtils.so.6.21.0",
 				"/usr/lib/libKF6KCMUtilsCore.so.6",
-				"/usr/lib/libKF6KCMUtilsCore.so.6.20.0",
+				"/usr/lib/libKF6KCMUtilsCore.so.6.21.0",
 				"/usr/lib/libKF6KCMUtilsQuick.so.6",
-				"/usr/lib/libKF6KCMUtilsQuick.so.6.20.0",
+				"/usr/lib/libKF6KCMUtilsQuick.so.6.21.0",
 				"/usr/lib/qt6/qml/org/kde/kcmutils/AbstractKCM.qml",
 				"/usr/lib/qt6/qml/org/kde/kcmutils/ContextualHelpButton.qml",
 				"/usr/lib/qt6/qml/org/kde/kcmutils/GridDelegate.qml",
@@ -131,6 +131,7 @@
 				"/usr/share/locale/ia/LC_MESSAGES/kcmutils6.mo",
 				"/usr/share/locale/id/LC_MESSAGES/kcmshell6.mo",
 				"/usr/share/locale/id/LC_MESSAGES/kcmutils6.mo",
+				"/usr/share/locale/is/LC_MESSAGES/kcmshell6.mo",
 				"/usr/share/locale/is/LC_MESSAGES/kcmutils6.mo",
 				"/usr/share/locale/it/LC_MESSAGES/kcmshell6.mo",
 				"/usr/share/locale/it/LC_MESSAGES/kcmutils6.mo",
@@ -284,6 +285,6 @@
 		}
 	},
 	"source-name": "kf6-kcmutils",
-	"source-release": "18",
-	"source-version": "6.20.0"
+	"source-release": "19",
+	"source-version": "6.21.0"
 }
