@@ -22,9 +22,9 @@
 			],
 			"files": [
 				"/usr/lib/libKF6UserFeedbackCore.so.6",
-				"/usr/lib/libKF6UserFeedbackCore.so.6.20.0",
+				"/usr/lib/libKF6UserFeedbackCore.so.6.21.0",
 				"/usr/lib/libKF6UserFeedbackWidgets.so.6",
-				"/usr/lib/libKF6UserFeedbackWidgets.so.6.20.0",
+				"/usr/lib/libKF6UserFeedbackWidgets.so.6.21.0",
 				"/usr/lib/qt6/qml/org/kde/userfeedback/KF6UserFeedbackQml.qmltypes",
 				"/usr/lib/qt6/qml/org/kde/userfeedback/kde-qmlmodule.version",
 				"/usr/lib/qt6/qml/org/kde/userfeedback/libKF6UserFeedbackQml.so",
@@ -73,6 +73,7 @@
 				"/usr/share/locale/ia/LC_MESSAGES/userfeedbackprovider6_qt.qm",
 				"/usr/share/locale/id/LC_MESSAGES/userfeedbackconsole6_qt.qm",
 				"/usr/share/locale/id/LC_MESSAGES/userfeedbackprovider6_qt.qm",
+				"/usr/share/locale/is/LC_MESSAGES/userfeedbackprovider6_qt.qm",
 				"/usr/share/locale/it/LC_MESSAGES/userfeedbackconsole6_qt.qm",
 				"/usr/share/locale/it/LC_MESSAGES/userfeedbackprovider6_qt.qm",
 				"/usr/share/locale/ja/LC_MESSAGES/userfeedbackconsole6_qt.qm",
@@ -195,6 +196,6 @@
 		}
 	},
 	"source-name": "kf6-kuserfeedback",
-	"source-release": "15",
-	"source-version": "6.20.0"
+	"source-release": "16",
+	"source-version": "6.21.0"
 }

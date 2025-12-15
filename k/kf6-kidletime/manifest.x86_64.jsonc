@@ -6,6 +6,7 @@
 			"build-depends": [
 				"cmake(ECM)",
 				"cmake(PlasmaWaylandProtocols)",
+				"cmake(Qt6CorePrivate)",
 				"cmake(Qt6WaylandClient)",
 				"pkgconfig(wayland-protocols)",
 				"pkgconfig(x11)",
@@ -29,7 +30,7 @@
 			],
 			"files": [
 				"/usr/lib/libKF6IdleTime.so.6",
-				"/usr/lib/libKF6IdleTime.so.6.20.0",
+				"/usr/lib/libKF6IdleTime.so.6.21.0",
 				"/usr/lib/qt6/plugins/kf6/org.kde.kidletime.platforms/KF6IdleTimeWaylandPlugin.so",
 				"/usr/lib/qt6/plugins/kf6/org.kde.kidletime.platforms/KF6IdleTimeXcbPlugin0.so",
 				"/usr/lib/qt6/plugins/kf6/org.kde.kidletime.platforms/KF6IdleTimeXcbPlugin1.so",
@@ -48,6 +49,7 @@
 			"build-depends": [
 				"cmake(ECM)",
 				"cmake(PlasmaWaylandProtocols)",
+				"cmake(Qt6CorePrivate)",
 				"cmake(Qt6WaylandClient)",
 				"pkgconfig(wayland-protocols)",
 				"pkgconfig(x11)",
@@ -76,6 +78,6 @@
 		}
 	},
 	"source-name": "kf6-kidletime",
-	"source-release": "11",
-	"source-version": "6.20.0"
+	"source-release": "12",
+	"source-version": "6.21.0"
 }

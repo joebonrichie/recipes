@@ -4,10 +4,10 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : kf6-prison
-version     : 6.20.0
-release     : 12
+version     : 6.21.0
+release     : 13
 upstreams   :
-    - https://download.kde.org/stable/frameworks/6.20/prison-6.20.0.tar.xz : 36ec6f82ecc3c06618d455cc1698ab11754d642fab3f1b850a7cf01ce11b3d1f
+    - https://download.kde.org/stable/frameworks/6.21/prison-6.21.0.tar.xz : 048ba596cd8e08d36faa1179ec37af483ea9ec101710186d75298117bc098a2b
 homepage    : https://community.kde.org/Frameworks
 license     :
     - BSD-3-Clause
