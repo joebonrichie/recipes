@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : just
-version     : 1.44.1
-release     : 13
+version     : 1.45.0
+release     : 14
 homepage    : https://github.com/casey/just
 upstreams   :
-    - https://github.com/casey/just/archive/refs/tags/1.44.1.tar.gz : ad93602b25c87de0f3cb90c5970a5b8f5ccca6fb87ae393be7e85477d6bbd268
+    - https://github.com/casey/just/archive/refs/tags/1.45.0.tar.gz : e43dfa0f541fd8a115fb61de7c30d949d2f169d155fb1776abeaba9be7eb0e07
 summary     : just is a handy way to save and run project-specific commands.
 description : |
     just is a handy way to save and run project-specific commands.
