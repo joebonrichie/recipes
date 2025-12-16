@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : wayland-protocols
-version     : "1.46"
-release     : 12
+version     : "1.47"
+release     : 13
 homepage    : https://gitlab.freedesktop.org/wayland/wayland-protocols
 upstreams   :
-    - https://gitlab.freedesktop.org/wayland/wayland-protocols/-/archive/1.46/wayland-protocols-1.46.tar.bz2 : 6677e1ca64479d1e44b7268af98602ae0fb7c1cd48be5cab677eab1d4f3f9c0b
+    - https://gitlab.freedesktop.org/wayland/wayland-protocols/-/archive/1.47/wayland-protocols-1.47.tar.bz2 : d725e99a5cec5393911d72975c432b0230a030a2675cfa7566f1708cabe75ca4
 summary     : Contains Wayland protocols that add functionality not available in the Wayland core protocol
 description : |
     Contains Wayland protocols that add functionality not available in the Wayland core protocol. Such protocols either add completely new functionality, or extend the functionality of some other protocol either in Wayland core, or some other protocol in wayland-protocols.

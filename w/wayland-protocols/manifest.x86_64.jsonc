@@ -144,6 +144,6 @@
 		}
 	},
 	"source-name": "wayland-protocols",
-	"source-release": "12",
-	"source-version": "1.46"
+	"source-release": "13",
+	"source-version": "1.47"
 }
