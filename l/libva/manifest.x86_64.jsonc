@@ -23,13 +23,13 @@
 			],
 			"files": [
 				"/usr/lib/libva-drm.so.2",
-				"/usr/lib/libva-drm.so.2.2200.0",
+				"/usr/lib/libva-drm.so.2.2300.0",
 				"/usr/lib/libva-wayland.so.2",
-				"/usr/lib/libva-wayland.so.2.2200.0",
+				"/usr/lib/libva-wayland.so.2.2300.0",
 				"/usr/lib/libva-x11.so.2",
-				"/usr/lib/libva-x11.so.2.2200.0",
+				"/usr/lib/libva-x11.so.2.2300.0",
 				"/usr/lib/libva.so.2",
-				"/usr/lib/libva.so.2.2200.0"
+				"/usr/lib/libva.so.2.2300.0"
 			],
 			"name": "libva",
 			"provides": [
@@ -61,13 +61,13 @@
 			],
 			"files": [
 				"/usr/lib32/libva-drm.so.2",
-				"/usr/lib32/libva-drm.so.2.2200.0",
+				"/usr/lib32/libva-drm.so.2.2300.0",
 				"/usr/lib32/libva-wayland.so.2",
-				"/usr/lib32/libva-wayland.so.2.2200.0",
+				"/usr/lib32/libva-wayland.so.2.2300.0",
 				"/usr/lib32/libva-x11.so.2",
-				"/usr/lib32/libva-x11.so.2.2200.0",
+				"/usr/lib32/libva-x11.so.2.2300.0",
 				"/usr/lib32/libva.so.2",
-				"/usr/lib32/libva.so.2.2200.0"
+				"/usr/lib32/libva.so.2.2300.0"
 			],
 			"name": "libva-32bit",
 			"provides": [
@@ -176,6 +176,6 @@
 		}
 	},
 	"source-name": "libva",
-	"source-release": "6",
-	"source-version": "2.22.0"
+	"source-release": "7",
+	"source-version": "2.23.0"
 }
