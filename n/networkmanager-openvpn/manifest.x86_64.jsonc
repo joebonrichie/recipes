@@ -149,6 +149,6 @@
 		}
 	},
 	"source-name": "networkmanager-openvpn",
-	"source-release": "1",
+	"source-release": "2",
 	"source-version": "1.12.3"
 }

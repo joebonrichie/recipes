@@ -5,7 +5,7 @@
 #
 name        : networkmanager-openvpn
 version     : 1.12.3
-release     : 1
+release     : 2
 upstreams   :
     - https://download.gnome.org/sources/NetworkManager-openvpn/1.12/NetworkManager-openvpn-1.12.3.tar.xz : 4bda1c8559bb8c35f6f131c09edae90cdfccd0314e8b8cb98ac55e09b6005adc
 homepage    : https://www.gnome.org/projects/NetworkManager/
@@ -24,6 +24,8 @@ builddeps   :
     - pkgconfig(libnma-gtk4)
     - pkgconfig(libsecret-1)
 setup       : |
+    %patch %(pkgdir)/CVE-2025-9615.patch
+
     %configure \
         --with-dist-version=%(version)-%(release) \
         --with-gtk4
