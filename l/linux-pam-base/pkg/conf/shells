@@ -11,3 +11,4 @@
 /usr/bin/dash
 /usr/bin/fish
 /usr/bin/zsh
+/usr/bin/systemd-home-fallback-shell
