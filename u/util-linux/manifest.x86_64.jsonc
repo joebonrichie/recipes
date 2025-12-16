@@ -649,6 +649,7 @@
 				"/usr/share/bash-completion/completions/bits",
 				"/usr/share/bash-completion/completions/blkdiscard",
 				"/usr/share/bash-completion/completions/blkid",
+				"/usr/share/bash-completion/completions/blkpr",
 				"/usr/share/bash-completion/completions/blkzone",
 				"/usr/share/bash-completion/completions/blockdev",
 				"/usr/share/bash-completion/completions/cal",
@@ -701,6 +702,7 @@
 				"/usr/share/bash-completion/completions/lsblk",
 				"/usr/share/bash-completion/completions/lsclocks",
 				"/usr/share/bash-completion/completions/lscpu",
+				"/usr/share/bash-completion/completions/lsfd",
 				"/usr/share/bash-completion/completions/lsipc",
 				"/usr/share/bash-completion/completions/lsirq",
 				"/usr/share/bash-completion/completions/lslocks",
@@ -1088,6 +1090,7 @@
 				"soname(ld-linux.so.2(386))",
 				"soname(libc.so.6(386))",
 				"soname(libeconf.so.0(386))",
+				"soname(libgcc_s.so.1(386))",
 				"util-linux"
 			],
 			"files": [
@@ -1192,6 +1195,6 @@
 		}
 	},
 	"source-name": "util-linux",
-	"source-release": "17",
-	"source-version": "2.41.2"
+	"source-release": "18",
+	"source-version": "2.41.3"
 }
