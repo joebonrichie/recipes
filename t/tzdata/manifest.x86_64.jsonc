@@ -4,6 +4,7 @@
 	"packages": {
 		"tzdata": {
 			"build-depends": [
+				"binary(bsdtar-static)",
 				"binary(make)"
 			],
 			"files": [
@@ -1811,6 +1812,6 @@
 		}
 	},
 	"source-name": "tzdata",
-	"source-release": "7",
-	"source-version": "2025b"
+	"source-release": "8",
+	"source-version": "2025c"
 }
