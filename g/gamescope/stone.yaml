@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : gamescope
-version     : 3.16.17
-release     : 3
+version     : 3.16.18
+release     : 4
 homepage    : https://github.com/ValveSoftware/gamescope
 upstreams   :
-    - git|https://github.com/ValveSoftware/gamescope.git : cf288b95fa376a15f30fe8d1a9f750cad54742df
+    - git|https://github.com/ValveSoftware/gamescope.git : 08a4595b2bda6901792e2225a6b2f0c39266ebfd
     - git|https://github.com/misyltoad/GamescopeShaders.git : 64d7a0570e15dc5c9aeef084278b9eb4cc1abb25
 summary     : SteamOS session compositing window manager
 description : |
@@ -56,14 +56,6 @@ builddeps   :
 rundeps     :
     - binary(Xwayland)
 setup       : |
-    # Build fixes
-    %patch %(pkgdir)/ftbfs-libdisplay-info-0.3.patch
-    %patch %(pkgdir)/openvr-system-cpp.patch -d subprojects/openvr
-
-    # Upstream backports
-    %patch %(pkgdir)/1828.patch
-    %patch %(pkgdir)/1867.patch
-
     %meson \
         --wrap-mode=default \
         -Dforce_fallback_for="libliftoff,stb,vkroots,wlroots"
