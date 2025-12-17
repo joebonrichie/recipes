@@ -1,0 +1,7 @@
+releases:
+  id: 380832
+  rss: https://github.com/hoene/libmysofa/releases.atom
+security:
+  cpe:
+  - vendor: symonics
+    product: libmysofa
