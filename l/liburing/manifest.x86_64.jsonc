@@ -8,9 +8,9 @@
 			],
 			"files": [
 				"/usr/lib/liburing-ffi.so.2",
-				"/usr/lib/liburing-ffi.so.2.12",
+				"/usr/lib/liburing-ffi.so.2.13",
 				"/usr/lib/liburing.so.2",
-				"/usr/lib/liburing.so.2.12"
+				"/usr/lib/liburing.so.2.13"
 			],
 			"name": "liburing",
 			"provides": [
@@ -27,6 +27,7 @@
 				"/usr/include/liburing/barrier.h",
 				"/usr/include/liburing/compat.h",
 				"/usr/include/liburing/io_uring.h",
+				"/usr/include/liburing/io_uring/query.h",
 				"/usr/include/liburing/io_uring_version.h",
 				"/usr/lib/liburing-ffi.so",
 				"/usr/lib/liburing.so",
@@ -64,6 +65,7 @@
 				"/usr/share/man/man3/io_uring_get_events.3",
 				"/usr/share/man/man3/io_uring_get_probe.3",
 				"/usr/share/man/man3/io_uring_get_sqe.3",
+				"/usr/share/man/man3/io_uring_get_sqe128.3",
 				"/usr/share/man/man3/io_uring_major_version.3",
 				"/usr/share/man/man3/io_uring_minor_version.3",
 				"/usr/share/man/man3/io_uring_opcode_supported.3",
@@ -93,6 +95,7 @@
 				"/usr/share/man/man3/io_uring_prep_futex_wait.3",
 				"/usr/share/man/man3/io_uring_prep_futex_waitv.3",
 				"/usr/share/man/man3/io_uring_prep_futex_wake.3",
+				"/usr/share/man/man3/io_uring_prep_getsockname.3",
 				"/usr/share/man/man3/io_uring_prep_getxattr.3",
 				"/usr/share/man/man3/io_uring_prep_link.3",
 				"/usr/share/man/man3/io_uring_prep_link_timeout.3",
@@ -109,6 +112,7 @@
 				"/usr/share/man/man3/io_uring_prep_multishot_accept.3",
 				"/usr/share/man/man3/io_uring_prep_multishot_accept_direct.3",
 				"/usr/share/man/man3/io_uring_prep_nop.3",
+				"/usr/share/man/man3/io_uring_prep_nop128.3",
 				"/usr/share/man/man3/io_uring_prep_open.3",
 				"/usr/share/man/man3/io_uring_prep_open_direct.3",
 				"/usr/share/man/man3/io_uring_prep_openat.3",
@@ -157,6 +161,8 @@
 				"/usr/share/man/man3/io_uring_prep_timeout_update.3",
 				"/usr/share/man/man3/io_uring_prep_unlink.3",
 				"/usr/share/man/man3/io_uring_prep_unlinkat.3",
+				"/usr/share/man/man3/io_uring_prep_uring_cmd.3",
+				"/usr/share/man/man3/io_uring_prep_uring_cmd128.3",
 				"/usr/share/man/man3/io_uring_prep_waitid.3",
 				"/usr/share/man/man3/io_uring_prep_write.3",
 				"/usr/share/man/man3/io_uring_prep_write_fixed.3",
@@ -243,6 +249,6 @@
 		}
 	},
 	"source-name": "liburing",
-	"source-release": "2",
-	"source-version": "2.12"
+	"source-release": "3",
+	"source-version": "2.13"
 }
