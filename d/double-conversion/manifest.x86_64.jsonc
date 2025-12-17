@@ -10,7 +10,7 @@
 			],
 			"files": [
 				"/usr/lib/libdouble-conversion.so.3",
-				"/usr/lib/libdouble-conversion.so.3.3.0"
+				"/usr/lib/libdouble-conversion.so.3.4.0"
 			],
 			"name": "double-conversion",
 			"provides": [
@@ -38,15 +38,17 @@
 				"/usr/lib/cmake/double-conversion/double-conversionConfigVersion.cmake",
 				"/usr/lib/cmake/double-conversion/double-conversionTargets-release.cmake",
 				"/usr/lib/cmake/double-conversion/double-conversionTargets.cmake",
-				"/usr/lib/libdouble-conversion.so"
+				"/usr/lib/libdouble-conversion.so",
+				"/usr/lib/pkgconfig/double-conversion.pc"
 			],
 			"name": "double-conversion-devel",
 			"provides": [
-				"cmake(double-conversion)"
+				"cmake(double-conversion)",
+				"pkgconfig(double-conversion)"
 			]
 		}
 	},
 	"source-name": "double-conversion",
-	"source-release": "3",
-	"source-version": "3.3.1"
+	"source-release": "4",
+	"source-version": "3.4.0"
 }
