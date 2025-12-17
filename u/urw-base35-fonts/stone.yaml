@@ -5,7 +5,7 @@
 #
 name        : urw-base35-fonts
 version     : 20200910+git.3c0ba3b
-release     : 3
+release     : 4
 summary     : URW Base35 PostScript fonts
 license     : AGPL-3.0-or-later
 homepage    : https://github.com/ArtifexSoftware/urw-base35-fonts
@@ -20,10 +20,10 @@ install     : |
     cp -v fonts/*.otf %(installroot)%(datadir)/fonts/urw-base35
 
     # fontconfig
-    %install_dir %(installroot)%(datadir)/fonts/conf.d
+    %install_dir %(installroot)%(datadir)/fontconfig/conf.default
     %install_dir %(installroot)%(datadir)/fontconfig/conf.avail
 
     for item in fontconfig/*.conf ; do
         %install_file ${item} %(installroot)%(datadir)/fontconfig/conf.avail/69-$(basename ${item})
-        ln -s ../../fontconfig/conf.avail/69-$(basename ${item}) %(installroot)%(datadir)/fonts/conf.d/69-$(basename ${item})
+        ln -srv %(installroot)%(datadir)/fontconfig/conf.avail/69-$(basename ${item}) %(installroot)%(datadir)/fontconfig/conf.default/69-$(basename ${item})
     done
