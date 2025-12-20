@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : alsa-ucm-conf
-version     : 1.2.15
-release     : 7
+version     : 1.2.15.1
+release     : 8
 homepage    : https://www.alsa-project.org/wiki/Main_Page
 upstreams   :
-    - https://github.com/alsa-project/alsa-ucm-conf/archive/refs/tags/v1.2.15.tar.gz : 31e6b6c9f4496374d486f1c19e9f025d14956bf8fb97db0f1b66161befd61b6c
+    - https://github.com/alsa-project/alsa-ucm-conf/archive/refs/tags/v1.2.15.1.tar.gz : 05ae6ad956382d68022e00788276d952bb3b0a4c6bfd03b719995aff077c1b2a
 summary     : ALSA UCM configuration files
 description : |
     ALSA Use Case Manager configuration (and topologies)

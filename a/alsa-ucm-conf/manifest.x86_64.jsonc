@@ -431,6 +431,7 @@
 				"/usr/share/alsa/ucm2/codecs/cs42l43-dmic/init.conf",
 				"/usr/share/alsa/ucm2/codecs/cs42l43/init.conf",
 				"/usr/share/alsa/ucm2/codecs/cs42l45-dmic/init.conf",
+				"/usr/share/alsa/ucm2/codecs/cs42l45/init.conf",
 				"/usr/share/alsa/ucm2/codecs/cx2072x/DisableSeq.conf",
 				"/usr/share/alsa/ucm2/codecs/cx2072x/EnableSeq.conf",
 				"/usr/share/alsa/ucm2/codecs/cx2072x/HeadPhones.conf",
@@ -797,6 +798,6 @@
 		}
 	},
 	"source-name": "alsa-ucm-conf",
-	"source-release": "7",
-	"source-version": "1.2.15"
+	"source-release": "8",
+	"source-version": "1.2.15.1"
 }
