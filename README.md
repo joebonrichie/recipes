@@ -2,8 +2,6 @@
 
 This repository contains all of the recipes required to build AerynOS from source.
 
-[![Repository status](https://repology.org/badge/repository-big/serpentos.svg)](https://repology.org/repository/serpentos)
-
 
 ## Keeping the repository small while we develop our infra and tooling
 
