@@ -5,11 +5,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : containerd
-version     : 2.1.5
-release     : 12
+version     : 2.2.1
+release     : 13
 homepage    : https://containerd.io/
 upstreams   :
-    - https://github.com/containerd/containerd/archive/refs/tags/v2.1.5.tar.gz : f8def69e02ecff84c07e24350be0b834a3a8e1f6accf042cae4d504e52eb03d1
+    - https://github.com/containerd/containerd/archive/refs/tags/v2.2.1.tar.gz : af5707a26891486332142cc0ade4f0c543f707d3954838f5cecee73b833cf9b4
 summary     : An open and reliable container runtime
 description : |
     An open and reliable container runtime
@@ -23,9 +23,6 @@ builddeps   :
     - pkgconfig(libbtrfsutil)
 rundeps     :
     - binary(runc)
-environment : |
-    # Allows the go modules to be downloaded with mod vendor and properly reused later
-    export GOMODCACHE="${PWD}/.gocache"
 setup       : |
     sed -i 's|/usr/local/bin/containerd|/usr/bin/containerd|' containerd.service
 
