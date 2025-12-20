@@ -4,10 +4,10 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : sof-bin
-version     : "2025.05.1"
-release     : 1
+version     : "2025.12"
+release     : 2
 upstreams   :
-    - https://github.com/thesofproject/sof-bin/releases/download/v2025.05.1/sof-bin-2025.05.1.tar.gz : 60d54eae32694332a2120b7c44e4af403a14fe1fdf4c58d72981102b191d259c
+    - https://github.com/thesofproject/sof-bin/releases/download/v2025.12/sof-bin-2025.12.tar.gz : 2f7aed784d2fa092c750651e949727f2ae4e9e39cca2c6bfed420f618adf2a9e
 homepage    : https://www.sofproject.org
 license     :
     - BSD-3-Clause
