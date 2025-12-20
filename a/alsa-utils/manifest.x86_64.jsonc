@@ -134,6 +134,6 @@
 		}
 	},
 	"source-name": "alsa-utils",
-	"source-release": "7",
-	"source-version": "1.2.15"
+	"source-release": "8",
+	"source-version": "1.2.15.1"
 }
