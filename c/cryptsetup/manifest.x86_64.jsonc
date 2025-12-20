@@ -260,6 +260,6 @@
 		}
 	},
 	"source-name": "cryptsetup",
-	"source-release": "9",
-	"source-version": "2.8.1"
+	"source-release": "10",
+	"source-version": "2.8.3"
 }
