@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #                
 name        : dmidecode
-version     : 3.6
-release     : 2
+version     : 3.7
+release     : 3
 homepage    : https://download.savannah.gnu.org/releases/dmidecode
 upstreams   :
-    - https://download.savannah.gnu.org/releases/dmidecode/dmidecode-3.6.tar.xz : e40c65f3ec3dafe31ad8349a4ef1a97122d38f65004ed66575e1a8d575dd8bae
+    - https://download.savannah.gnu.org/releases/dmidecode/dmidecode-3.7.tar.xz : 2c3aed12c85a1e6a9410d406d5e417c455466dc1bc7c89278bb32cf7cad91e8a
 summary     : Dmidecode reports information about your system's hardware
 description : |
     Dmidecode reports information about your system's hardware as described in your system BIOS according to the SMBIOS/DMI standard (see a sample output).
