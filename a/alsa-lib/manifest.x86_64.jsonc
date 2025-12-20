@@ -178,6 +178,6 @@
 		}
 	},
 	"source-name": "alsa-lib",
-	"source-release": "13",
-	"source-version": "1.2.15+git.f30c3552"
+	"source-release": "14",
+	"source-version": "1.2.15.1"
 }
