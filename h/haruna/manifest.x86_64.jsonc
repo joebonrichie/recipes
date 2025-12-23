@@ -46,6 +46,7 @@
 				"soname(libKF6KIOCore.so.6(x86_64))",
 				"soname(libKF6KIOGui.so.6(x86_64))",
 				"soname(libKF6KIOWidgets.so.6(x86_64))",
+				"soname(libKF6Service.so.6(x86_64))",
 				"soname(libKF6WindowSystem.so.6(x86_64))",
 				"soname(libMpvQt.so.2(x86_64))",
 				"soname(libQt6Core.so.6(x86_64))",
@@ -124,6 +125,6 @@
 		}
 	},
 	"source-name": "haruna",
-	"source-release": "9",
-	"source-version": "1.6.0"
+	"source-release": "10",
+	"source-version": "1.7.0"
 }
