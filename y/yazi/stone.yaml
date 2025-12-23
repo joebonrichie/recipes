@@ -4,8 +4,8 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : yazi
-version     : v25.5.31
-release     : 1
+version     : 25.5.31
+release     : 2
 homepage    : https://github.com/sxyazi/yazi
 upstreams   :
     - https://github.com/sxyazi/yazi/archive/refs/tags/v25.5.31.tar.gz : 4d005e7c3f32b5574d51ab105597f3da3a4be2f7b5cd1bcb284143ad38253ed4
