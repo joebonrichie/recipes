@@ -37,10 +37,12 @@
 				"/usr/bin/wpexec",
 				"/usr/lib/systemd/user/wireplumber.service",
 				"/usr/lib/systemd/user/wireplumber@.service",
+				"/usr/share/bash-completion/completions/wpctl",
 				"/usr/share/doc/wireplumber/examples/wireplumber.conf.d/access.conf",
 				"/usr/share/doc/wireplumber/examples/wireplumber.conf.d/alsa.conf",
 				"/usr/share/doc/wireplumber/examples/wireplumber.conf.d/bluetooth.conf",
 				"/usr/share/doc/wireplumber/examples/wireplumber.conf.d/device.conf",
+				"/usr/share/doc/wireplumber/examples/wireplumber.conf.d/filter-graph.conf",
 				"/usr/share/doc/wireplumber/examples/wireplumber.conf.d/libcamera.conf",
 				"/usr/share/doc/wireplumber/examples/wireplumber.conf.d/linking.conf",
 				"/usr/share/doc/wireplumber/examples/wireplumber.conf.d/log.conf",
@@ -137,6 +139,7 @@
 				"/usr/share/wireplumber/scripts/linking/find-default-target.lua",
 				"/usr/share/wireplumber/scripts/linking/find-defined-target.lua",
 				"/usr/share/wireplumber/scripts/linking/find-filter-target.lua",
+				"/usr/share/wireplumber/scripts/linking/find-media-role-sink-target.lua",
 				"/usr/share/wireplumber/scripts/linking/find-media-role-target.lua",
 				"/usr/share/wireplumber/scripts/linking/find-user-target.lua.example",
 				"/usr/share/wireplumber/scripts/linking/get-filter-from-target.lua",
@@ -163,6 +166,8 @@
 				"/usr/share/wireplumber/scripts/node/audio-group.lua",
 				"/usr/share/wireplumber/scripts/node/create-item.lua",
 				"/usr/share/wireplumber/scripts/node/filter-forward-format.lua",
+				"/usr/share/wireplumber/scripts/node/filter-graph.lua",
+				"/usr/share/wireplumber/scripts/node/find-media-role-default-volume.lua",
 				"/usr/share/wireplumber/scripts/node/software-dsp.lua",
 				"/usr/share/wireplumber/scripts/node/state-stream.lua",
 				"/usr/share/wireplumber/scripts/node/suspend-node.lua",
@@ -289,7 +294,7 @@
 			"files": [
 				"/usr/lib/girepository-1.0/Wp-0.5.typelib",
 				"/usr/lib/libwireplumber-0.5.so.0",
-				"/usr/lib/libwireplumber-0.5.so.0.512.0",
+				"/usr/lib/libwireplumber-0.5.so.0.513.0",
 				"/usr/lib/wireplumber-0.5/libwireplumber-module-dbus-connection.so",
 				"/usr/lib/wireplumber-0.5/libwireplumber-module-default-nodes-api.so",
 				"/usr/lib/wireplumber-0.5/libwireplumber-module-file-monitor-api.so",
@@ -332,6 +337,6 @@
 		}
 	},
 	"source-name": "wireplumber",
-	"source-release": "11",
-	"source-version": "0.5.12"
+	"source-release": "12",
+	"source-version": "0.5.13"
 }
