@@ -5,7 +5,7 @@
 #
 name        : kmscon
 version     : 9.2.1
-release     : 1
+release     : 2
 upstreams   :
     - https://github.com/kmscon/kmscon/archive/refs/tags/v9.2.1.tar.gz : d801a3f0bbfff6940eb249ade41c28307ef846132b4e10a499abe76d535e24e8
 homepage    : https://www.freedesktop.org/wiki/Software/kmscon
@@ -39,7 +39,9 @@ install     : |
     %install_file %(pkgdir)/kmscon.preset %(installroot)%(libdir)/systemd/system-preset/kmscon.preset
 
     # Make it the default
-    ln -sv kmsconvt@.service %(installroot)%(libdir)/systemd/system/autovt@.service
+    # - we need to undo this until the issue with kmscon hogging the display
+    #   despite a display manager being active is fixed. Upstream is aware.
+    #ln -sv kmsconvt@.service %(installroot)%(libdir)/systemd/system/autovt@.service
 check       : |
     %meson_test
 packages    :

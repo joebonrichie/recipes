@@ -1,2 +1,2 @@
-enable kmscon.service	
-enable kmsconvt@.service
+disable kmscon.service
+disable kmsconvt@.service
