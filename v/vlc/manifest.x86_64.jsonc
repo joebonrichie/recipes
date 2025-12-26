@@ -96,7 +96,7 @@
 				"/usr/share/locale/am_ET/LC_MESSAGES/vlc.mo",
 				"/usr/share/locale/an/LC_MESSAGES/vlc.mo",
 				"/usr/share/locale/ar/LC_MESSAGES/vlc.mo",
-				"/usr/share/locale/as_IN/LC_MESSAGES/vlc.mo",
+				"/usr/share/locale/as/LC_MESSAGES/vlc.mo",
 				"/usr/share/locale/ast/LC_MESSAGES/vlc.mo",
 				"/usr/share/locale/be/LC_MESSAGES/vlc.mo",
 				"/usr/share/locale/bg/LC_MESSAGES/vlc.mo",
@@ -194,7 +194,7 @@
 				"/usr/share/locale/zh_CN/LC_MESSAGES/vlc.mo",
 				"/usr/share/locale/zh_TW/LC_MESSAGES/vlc.mo",
 				"/usr/share/locale/zu/LC_MESSAGES/vlc.mo",
-				"/usr/share/metainfo/vlc.appdata.xml",
+				"/usr/share/metainfo/org.videolan.vlc.appdata.xml",
 				"/usr/share/solid/actions/vlc-openbd.desktop",
 				"/usr/share/solid/actions/vlc-opencda.desktop",
 				"/usr/share/solid/actions/vlc-opendvd.desktop",
@@ -2073,6 +2073,7 @@
 				"/usr/lib/vlc/plugins/demux/libdemuxdump_plugin.so",
 				"/usr/lib/vlc/plugins/demux/libdiracsys_plugin.so",
 				"/usr/lib/vlc/plugins/demux/libdirectory_demux_plugin.so",
+				"/usr/lib/vlc/plugins/demux/libdmxmus_plugin.so",
 				"/usr/lib/vlc/plugins/demux/libes_plugin.so",
 				"/usr/lib/vlc/plugins/demux/libflacsys_plugin.so",
 				"/usr/lib/vlc/plugins/demux/libh26x_plugin.so",
@@ -2362,6 +2363,7 @@
 				"soname(vlc/plugins/demux/libdemuxdump_plugin.so(x86_64))",
 				"soname(vlc/plugins/demux/libdiracsys_plugin.so(x86_64))",
 				"soname(vlc/plugins/demux/libdirectory_demux_plugin.so(x86_64))",
+				"soname(vlc/plugins/demux/libdmxmus_plugin.so(x86_64))",
 				"soname(vlc/plugins/demux/libes_plugin.so(x86_64))",
 				"soname(vlc/plugins/demux/libflacsys_plugin.so(x86_64))",
 				"soname(vlc/plugins/demux/libh26x_plugin.so(x86_64))",
@@ -2933,6 +2935,6 @@
 		}
 	},
 	"source-name": "vlc",
-	"source-release": "11",
-	"source-version": "3.0.21+git.fe60420c"
+	"source-release": "12",
+	"source-version": "3.0.22"
 }

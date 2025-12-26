@@ -4,12 +4,10 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : vlc
-version     : 3.0.21+git.fe60420c
-release     : 11
+version     : 3.0.22
+release     : 12
 upstreams   :
-    # Use the latest from the 3.0.x series branch which has fixed VAAPI support for FFMPEG 7.x
-    - git|https://code.videolan.org/videolan/vlc.git : fe60420c4060e22c1660668f124b14da875f36be
-    # - https://download.videolan.org/pub/videolan/vlc/3.0.21/vlc-3.0.21.tar.xz : 24dbbe1d7dfaeea0994d5def0bbde200177347136dbfe573f5b6a4cee25afbb0
+    - https://download.videolan.org/pub/videolan/vlc/3.0.22/vlc-3.0.22.tar.xz : e2cc1cf0ae0902a09da5a37c249a8a4e4b5ec4dc095443b8e1493c6a7cc138ea
 homepage    : https://www.videolan.org/
 license     :
     - GPL-2.0-or-later
@@ -342,6 +340,7 @@ packages    :
             - /usr/lib/vlc/plugins/demux/libdemuxdump_plugin.so
             - /usr/lib/vlc/plugins/demux/libdiracsys_plugin.so
             - /usr/lib/vlc/plugins/demux/libdirectory_demux_plugin.so
+            - /usr/lib/vlc/plugins/demux/libdmxmus_plugin.so
             - /usr/lib/vlc/plugins/demux/libes_plugin.so
             - /usr/lib/vlc/plugins/demux/libflacsys_plugin.so
             - /usr/lib/vlc/plugins/demux/libh26x_plugin.so
