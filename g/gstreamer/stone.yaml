@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : gstreamer
-version     : 1.26.9
-release     : 37
+version     : 1.26.10
+release     : 38
 homepage    : https://gstreamer.freedesktop.org/
 upstreams   :
-    - https://gitlab.freedesktop.org/gstreamer/gstreamer/-/archive/1.26.9/gstreamer-1.26.9.tar.gz : 4f90fbae2e139622ee5de5d60108dfd8a99da96a075efeade70c15dfc5ea76b7
+    - https://gitlab.freedesktop.org/gstreamer/gstreamer/-/archive/1.26.10/gstreamer-1.26.10.tar.gz : 2839c9fa70fd4775d16bf4aa77cf339ca2f59b8e34b0944a832ad56db851b37f
 summary     : GStreamer multimedia framework
 description : |
     GStreamer can bridge to other multimedia frameworks in order to reuse existing components (e.g. codecs) and use platform input/output mechanisms.
