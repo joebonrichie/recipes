@@ -34,7 +34,6 @@
 				"/usr/lib/kmscon/mod-pango.so",
 				"/usr/lib/kmscon/mod-unifont.so",
 				"/usr/lib/systemd/system-preset/kmscon.preset",
-				"/usr/lib/systemd/system/autovt@.service",
 				"/usr/lib/systemd/system/kmscon.service",
 				"/usr/lib/systemd/system/kmsconvt@.service"
 			],
@@ -79,6 +78,6 @@
 		}
 	},
 	"source-name": "kmscon",
-	"source-release": "1",
+	"source-release": "2",
 	"source-version": "9.2.1"
 }
