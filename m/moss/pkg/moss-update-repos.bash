@@ -13,16 +13,16 @@ _SEEN_UNSTABLE_URI=0
 
 add-unstable-repo () {
     [[ "${_SEEN_UNSTABLE_URI}" == "1" ]] && return 0
-    echo "Adding current unstable repository (enabling by default) ..."
-    moss repo add unstable https://cdn.aerynos.dev/unstable/x86_64/stone.index -p 0 -c "unstable package stream"
-    moss repo enable unstable
+    echo "Adding current unstable-stream package repository (enabling by default) ..."
+    moss repo add unstable-stream https://cdn.aerynos.dev/unstable/x86_64/stone.index -p 0 -c "unstable-stream package repository"
+    moss repo enable unstable-stream
 }
 
 
 add-disabled-volatile-repo () {
-    echo "Adding current volatile repository (disabling by default) ..."
-    moss repo add volatile https://build.aerynos.dev/volatile/x86_64/stone.index -p 10 -c "volatile package stream (for packagers and testing only)"
-    moss repo disable volatile
+    echo "Adding current volatile-stream package repository (disabling by default) ..."
+    moss repo add volatile-stream https://build.aerynos.dev/volatile/x86_64/stone.index -p 10 -c "volatile-stream package repository (for packagers and testing only)"
+    moss repo disable volatile-stream
 }
 
 
