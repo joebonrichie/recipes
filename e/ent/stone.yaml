@@ -5,7 +5,7 @@
 #
 name        : ent
 version     : "0.1.0+908aef2"
-release     : 5
+release     : 6
 homepage    : https://github.com/AerynOS/ent
 upstreams   :
     - git|https://github.com/AerynOS/ent.git:
@@ -17,6 +17,9 @@ license     : MPL-2.0
 networking  : yes
 builddeps   :
     - pkgconfig(openssl)
+environment : |
+    # `ent check updates` does nothing unless we turn LTO off
+    export RUSTFLAGS+=" -Clto=off"
 setup       : |
     %cargo_fetch
 build       : |
