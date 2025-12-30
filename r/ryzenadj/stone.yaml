@@ -5,7 +5,7 @@
 #
 name        : ryzenadj
 version     : "0.18.0+git.4559447"
-release     : 4
+release     : 5
 homepage    : https://github.com/FlyGoat/RyzenAdj
 upstreams   :
     - git|https://github.com/FlyGoat/RyzenAdj.git :
