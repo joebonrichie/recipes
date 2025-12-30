@@ -4,8 +4,8 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : swayidle
-version     : v1.9.0
-release     : 1
+version     : 1.9.0
+release     : 2
 homepage    : https://github.com/swaywm/swayidle
 upstreams   :
     - https://github.com/swaywm/swayidle/releases/download/v1.9.0/swayidle-1.9.0.tar.gz : 6c1b769038b60250c88e47380cbb021cfa57a65f872bf4d6c340b5e3057096ac
