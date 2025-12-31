@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : wget
-version     : 2.2.0
-release     : 8
+version     : 2.2.1
+release     : 9
 homepage    : https://www.gnu.org/software/wget
 upstreams   :
-    - https://ftp.gnu.org/gnu/wget/wget2-2.2.0.tar.gz : 2b3b9c85b7fb26d33ca5f41f1f8daca71838d869a19b406063aa5c655294d357
+    - https://ftp.gnu.org/gnu/wget/wget2-2.2.1.tar.gz : d7544b13e37f18e601244fce5f5f40688ac1d6ab9541e0fbb01a32ee1fb447b4
 summary     : Retrieves files online supporting many known protocols
 description : |
     GNU Wget is a free software package for retrieving files using HTTP, HTTPS, FTP and FTPS, the most widely used Internet protocols. It is a non-interactive commandline tool, so it may easily be called from scripts, cron jobs, terminals without X-Windows support, etc.
@@ -36,9 +36,6 @@ builddeps   :
 setup       : |
     # we need to reconfigure, which means mangling the gettext version
     # otherwise libwget soname is garbage
-    %patch %(pkgdir)/0002-dont-truncate-no-clobber.patch
-    %patch %(pkgdir)/0003-Add-show-progress.patch
-    %patch %(pkgdir)/0004-Fix-redirect-regression.patch
 
     %configure  \
         --disable-static \
