@@ -5,7 +5,7 @@
 #
 name        : fish
 version     : 4.3.2
-release     : 16
+release     : 17
 homepage    : https://fishshell.com/
 upstreams   :
     - https://github.com/fish-shell/fish-shell/releases/download/4.3.2/fish-4.3.2.tar.xz : 36a09cfc7fc2d1f1d0b6f5caf3828998621721f8c60a7a31ec55679286a9fe1c
@@ -15,7 +15,9 @@ description : |
 license     : GPL-2.0-only
 networking  : true
 builddeps   :
+    - binary(man)
     - binary(msgfmt)
+    - binary(sphinx-build)
     - pkgconfig(libpcre2-32)
 # checkdeps   :
 #     - procps-ng
