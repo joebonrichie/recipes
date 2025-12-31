@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : flatpak
-version     : 1.16.1
-release     : 15
+version     : 1.16.2
+release     : 16
 homepage    : https://www.flatpak.org/
 upstreams   :
-    - https://github.com/flatpak/flatpak/releases/download/1.16.1/flatpak-1.16.1.tar.xz : 2b47e8f2d90d35d29339ed78e1a6eabb36eefa9cfa5a5ca3b0d1f27502c43675
+    - https://github.com/flatpak/flatpak/releases/download/1.16.2/flatpak-1.16.2.tar.xz : 69172d1b0d85c68f81e6ddf0115f8e1b05d73b1b010fea8d9ecb03bc8ad843eb
     - https://dl.flathub.org/repo/flathub.flatpakrepo:
         hash: 3371dd250e61d9e1633630073fefda153cd4426f72f4afa0c3373ae2e8fea03a
         unpack: false
@@ -51,6 +51,7 @@ builddeps   :
     - python(pyparsing)
     - docbook
     - docbook-xsl
+    # malcontent-0
 networking  : true
 rundeps     :
     - binary(bwrap)
