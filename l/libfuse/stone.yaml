@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : libfuse
-version     : 3.17.4
-release     : 10
+version     : 3.18.1
+release     : 11
 homepage    : https://github.com/libfuse/libfuse
 upstreams   :
-    - https://github.com/libfuse/libfuse/releases/download/fuse-3.17.4/fuse-3.17.4.tar.gz : df9e40ae927b73dc702d0bce7925c0c618af47ad0b13204fbf2be66e54d8528b
+    - https://github.com/libfuse/libfuse/releases/download/fuse-3.18.1/fuse-3.18.1.tar.gz : dd395c88f29c7540bbdd0b830260ab8092ccb241bb6e66f603643f715fb9322c
 summary     : Reference implementation of Filesystem in Userspace interface
 description : |
     FUSE (Filesystem in Userspace) is an interface for userspace programs to export a filesystem to the Linux kernel. The FUSE project consists of two components: the fuse kernel module (maintained in the regular kernel repositories) and the libfuse userspace library (maintained in this repository). libfuse provides the reference implementation for communicating with the FUSE kernel module.
@@ -17,6 +17,8 @@ license     :
     - LGPL-2.1-or-later
 builddeps   :
     - pkgconfig(libudev)
+    - pkgconfig(liburing)
+    - pkgconfig(numa)
 tuning      :
     # ld.lld: error: lib/libfuse3.so.3.17.1.p/fuse.c.o <inline asm>:7:1: default version symbol fuse_session_loop_mt@@FUSE_3.12 must be defined
     - lto: false
