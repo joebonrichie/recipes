@@ -24,7 +24,6 @@
 				"/usr/lib/python3.11/site-packages/meld/__pycache__/__init__.cpython-311.pyc",
 				"/usr/lib/python3.11/site-packages/meld/__pycache__/accelerators.cpython-311.pyc",
 				"/usr/lib/python3.11/site-packages/meld/__pycache__/actiongutter.cpython-311.pyc",
-				"/usr/lib/python3.11/site-packages/meld/__pycache__/build_helpers.cpython-311.pyc",
 				"/usr/lib/python3.11/site-packages/meld/__pycache__/chunkmap.cpython-311.pyc",
 				"/usr/lib/python3.11/site-packages/meld/__pycache__/conf.cpython-311.pyc",
 				"/usr/lib/python3.11/site-packages/meld/__pycache__/const.cpython-311.pyc",
@@ -58,7 +57,6 @@
 				"/usr/lib/python3.11/site-packages/meld/__pycache__/windowstate.cpython-311.pyc",
 				"/usr/lib/python3.11/site-packages/meld/accelerators.py",
 				"/usr/lib/python3.11/site-packages/meld/actiongutter.py",
-				"/usr/lib/python3.11/site-packages/meld/build_helpers.py",
 				"/usr/lib/python3.11/site-packages/meld/chunkmap.py",
 				"/usr/lib/python3.11/site-packages/meld/conf.py",
 				"/usr/lib/python3.11/site-packages/meld/const.py",
@@ -340,10 +338,11 @@
 				"/usr/share/locale/zh_CN/LC_MESSAGES/meld.mo",
 				"/usr/share/locale/zh_TW/LC_MESSAGES/meld.mo",
 				"/usr/share/man/man1/meld.1",
+				"/usr/share/meld/COPYING",
 				"/usr/share/meld/org.gnome.Meld.gresource",
 				"/usr/share/meld/styles/meld-base.style-scheme.xml",
 				"/usr/share/meld/styles/meld-dark.style-scheme.xml",
-				"/usr/share/metainfo/org.gnome.Meld.appdata.xml",
+				"/usr/share/metainfo/org.gnome.Meld.metainfo.xml",
 				"/usr/share/mime/packages/org.gnome.Meld.xml"
 			],
 			"name": "meld",
@@ -353,6 +352,6 @@
 		}
 	},
 	"source-name": "meld",
-	"source-release": "1",
-	"source-version": "3.23.0"
+	"source-release": "2",
+	"source-version": "3.23.1"
 }
