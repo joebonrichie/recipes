@@ -58,13 +58,13 @@
 			],
 			"files": [
 				"/usr/lib32/libformw.so.6",
-				"/usr/lib32/libformw.so.6.5",
+				"/usr/lib32/libformw.so.6.6",
 				"/usr/lib32/libmenuw.so.6",
-				"/usr/lib32/libmenuw.so.6.5",
+				"/usr/lib32/libmenuw.so.6.6",
 				"/usr/lib32/libncursesw.so.6",
-				"/usr/lib32/libncursesw.so.6.5",
+				"/usr/lib32/libncursesw.so.6.6",
 				"/usr/lib32/libpanelw.so.6",
-				"/usr/lib32/libpanelw.so.6.5",
+				"/usr/lib32/libpanelw.so.6.6",
 				"/usr/lib32/libtic.so.6",
 				"/usr/lib32/libtinfo.so.6"
 			],
@@ -89,7 +89,7 @@
 			],
 			"files": [
 				"/usr/lib32/libncurses++w.so.6",
-				"/usr/lib32/libncurses++w.so.6.5"
+				"/usr/lib32/libncurses++w.so.6.6"
 			],
 			"name": "ncurses-32bit-c++-libs",
 			"provides": [
@@ -3078,7 +3078,7 @@
 			],
 			"files": [
 				"/usr/lib/libncurses++w.so.6",
-				"/usr/lib/libncurses++w.so.6.5"
+				"/usr/lib/libncurses++w.so.6.6"
 			],
 			"name": "ncurses-c++-libs",
 			"provides": [
@@ -4077,13 +4077,13 @@
 			],
 			"files": [
 				"/usr/lib/libformw.so.6",
-				"/usr/lib/libformw.so.6.5",
+				"/usr/lib/libformw.so.6.6",
 				"/usr/lib/libmenuw.so.6",
-				"/usr/lib/libmenuw.so.6.5",
+				"/usr/lib/libmenuw.so.6.6",
 				"/usr/lib/libncursesw.so.6",
-				"/usr/lib/libncursesw.so.6.5",
+				"/usr/lib/libncursesw.so.6.6",
 				"/usr/lib/libpanelw.so.6",
-				"/usr/lib/libpanelw.so.6.5",
+				"/usr/lib/libpanelw.so.6.6",
 				"/usr/lib/libtic.so.6",
 				"/usr/lib/libtinfo.so.6"
 			],
@@ -4110,6 +4110,6 @@
 		}
 	},
 	"source-name": "ncurses",
-	"source-release": "19",
-	"source-version": "6.5-20251206"
+	"source-release": "20",
+	"source-version": "6.6-20251231"
 }
