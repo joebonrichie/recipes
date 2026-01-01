@@ -15,6 +15,9 @@
 				"/usr/bin/kubectl",
 				"/usr/share/bash-completion/completions/kubectl",
 				"/usr/share/fish/vendor_completions.d/kubectl.fish",
+				"/usr/share/man/man1/kubectl-alpha-kuberc-set.1",
+				"/usr/share/man/man1/kubectl-alpha-kuberc-view.1",
+				"/usr/share/man/man1/kubectl-alpha-kuberc.1",
 				"/usr/share/man/man1/kubectl-alpha.1",
 				"/usr/share/man/man1/kubectl-annotate.1",
 				"/usr/share/man/man1/kubectl-api-resources.1",
@@ -132,6 +135,6 @@
 		}
 	},
 	"source-name": "kubectl",
-	"source-release": "1",
-	"source-version": "1.34.2"
+	"source-release": "2",
+	"source-version": "1.35.0"
 }
