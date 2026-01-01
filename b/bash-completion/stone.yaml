@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : bash-completion
-version     : 2.16.0
-release     : 10
+version     : 2.17.0
+release     : 11
 homepage    : https://github.com/scop/bash-completion
 upstreams   :
-    - https://github.com/scop/bash-completion/releases/download/2.16.0/bash-completion-2.16.0.tar.xz : 3369bd5e418a75fb990863925aed5b420398acebb320ec4c0306b3eae23f107a
+    - https://github.com/scop/bash-completion/releases/download/2.17.0/bash-completion-2.17.0.tar.xz : dd9d825e496435fb3beba3ae7bea9f77e821e894667d07431d1d4c8c570b9e58
 summary     : Programmable completion functions for bash
 description : |
     bash-completion is a collection of command line command completions for the Bash shell, collection of helper functions to assist in creating new completions, and set of facilities for loading completions automatically on demand, as well as installing them.
@@ -18,6 +18,7 @@ builddeps   :
     - binary(coreutils)
 setup       : |
     %patch %(pkgdir)/0001-Use-a-stateless-configuration.patch
+
     %reconfigure
 build       : |
     %make
