@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : iso-codes
-version     : 4.19.0
-release     : 6
+version     : 4.20.1
+release     : 7
 homepage    : https://salsa.debian.org/iso-codes-team/iso-codes
 upstreams   :
-    - https://salsa.debian.org/iso-codes-team/iso-codes/-/archive/v4.19.0/iso-codes-v4.19.0.tar.gz : 4b143a891feb7d1bb64e44fe3ef253ef36ba1185d1d129c1425338dc6e46e27d
+    - https://salsa.debian.org/iso-codes-team/iso-codes/-/archive/v4.20.1/iso-codes-v4.20.1.tar.gz : 2d7d9f6084ab9ce6c534ce71a3dd5144b6e474f3c97616459a88f73f44a64bff
 summary     : ISO standards (countries, languages, language scripts, and currency names)
 description : |
     This project provides lists of various ISO standards (countries, languages, language scripts, and currency names) in one place. It also provides their translations in gettext .po format.
@@ -16,10 +16,9 @@ license     :
     - LGPL-2.1-or-later
 builddeps   :
     - binary(msgfmt)
-    - binary(python3)
 setup       : |
-    %configure
+    %meson
 build       : |
-    %make
+    %meson_build
 install     : |
-    %make_install
+    %meson_install

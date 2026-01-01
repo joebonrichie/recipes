@@ -4,8 +4,7 @@
 	"packages": {
 		"iso-codes": {
 			"build-depends": [
-				"binary(msgfmt)",
-				"binary(python3)"
+				"binary(msgfmt)"
 			],
 			"files": [
 				"/usr/share/iso-codes/json/iso_15924.json",
@@ -1215,8 +1214,7 @@
 		},
 		"iso-codes-devel": {
 			"build-depends": [
-				"binary(msgfmt)",
-				"binary(python3)"
+				"binary(msgfmt)"
 			],
 			"depends": [
 				"iso-codes"
@@ -1231,6 +1229,6 @@
 		}
 	},
 	"source-name": "iso-codes",
-	"source-release": "6",
-	"source-version": "4.19.0"
+	"source-release": "7",
+	"source-version": "4.20.1"
 }
