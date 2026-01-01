@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #                
 name        : libsodium
-version     : '1.0.20'
-release     : 2
+version     : 1.0.20+git.d44593f1
+release     : 3
 homepage    : https://libsodium.org
 upstreams   :
-    - https://github.com/jedisct1/libsodium/archive/refs/tags/1.0.20-RELEASE.tar.gz : 8e5aeca07a723a27bbecc3beef14b0068d37e7fc0e97f51b3f1c82d2a58005c1
+    - git|https://github.com/jedisct1/libsodium.git : d44593f1a5b7d31b5122689605b489577356f7e8 # Should be the latest of the stable branch, or a specific version branch if we're holding this back
 summary     : A modern, portable, easy to use crypto library
 description : |
     An easy-to-use software library for encryption, decryption, signatures, password hashing, and more.
