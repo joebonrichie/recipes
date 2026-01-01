@@ -4,14 +4,14 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : opencv
-version     : 4.12.0
-release     : 11
+version     : 4.13.0
+release     : 12
 upstreams   :
-    - https://github.com/opencv/opencv/archive/refs/tags/4.12.0.tar.gz:
-        hash: 44c106d5bb47efec04e531fd93008b3fcd1d27138985c5baf4eafac0e1ec9e9d
+    - https://github.com/opencv/opencv/archive/refs/tags/4.13.0.tar.gz:
+        hash: 1d40ca017ea51c533cf9fd5cbde5b5fe7ae248291ddf2af99d4c17cf8e13017d
         unpackdir: opencv
-    - https://github.com/opencv/opencv_contrib/archive/4.12.0/opencv_contrib-4.12.0.tar.gz:
-        hash: 4197722b4c5ed42b476d42e29beb29a52b6b25c34ec7b4d589c3ae5145fee98e
+    - https://github.com/opencv/opencv_contrib/archive/4.13.0/opencv_contrib-4.13.0.tar.gz:
+        hash: 1e0077a4fd2960a7d2f4c9e49d6ba7bb891cac2d1be36d7e8e47aa97a9d1039b
         unpackdir: opencv/contrib
 homepage    : https://opencv.org
 license     : BSD-3-Clause
@@ -35,6 +35,7 @@ builddeps   :
     - pkgconfig(gstreamer-plugins-base-1.0)
     - pkgconfig(harfbuzz)
     - pkgconfig(libavcodec)
+    - pkgconfig(libavdevice)
     - pkgconfig(libavformat)
     - pkgconfig(libswscale)
     - pkgconfig(libjxl)
@@ -45,9 +46,6 @@ builddeps   :
     - protobuf-staticlib
     # TODO eigen (?), tesseract
 setup       : |
-    %patch %(pkgdir)/ftbfs-qt-6.9.patch
-    %patch %(pkgdir)/ftbfs-ffmpeg-8.0.patch
-
     # TODO build extra modules, python module, etc, VTK, GTK
 
     # Using `BUILD_OPENCV_*` options we disable all extra modules from opencv_contrib that we don't explicitly need
@@ -75,32 +73,32 @@ setup       : |
 
     # Add x86-64v2 CPU flags to baseline (See `cmake/OpenCVCompilerOptimizations.cmake`)
     %cmake \
-           -DBUILD_EXAMPLES=OFF \
-           -DBUILD_PERF_TESTS=OFF \
-           -DBUILD_TESTS=OFF \
-           -DBUILD_PROTOBUF=OFF \
-           -DCMAKE_CXX_STANDARD=17 \
-           -DCPU_BASELINE_REQUIRE="SSE;SSE2;SSE3;SSSE3;SSE4_1;SSE4_2;POPCNT" \
-           -DHDF5_NO_FIND_PACKAGE_CONFIG_FILE=ON \
-           -DINSTALL_C_EXAMPLES=OFF \
-           -DINSTALL_PYTHON_EXAMPLES=OFF \
-           -DOPENCV_ENABLE_NONFREE=OFF \
-           -DOPENCV_EXTRA_MODULES_PATH=contrib/modules \
-           -DOPENCV_SKIP_FEATURES2D_DOWNLOADING=OFF \
-           -DOPENCV_GENERATE_PKGCONFIG=ON \
-           -DOPENCV_GENERATE_SETUPVARS=OFF \
-           -DPROTOBUF_UPDATE_FILES=ON \
-           -DWITH_ADE=OFF \
-           -DWITH_FLATBUFFERS=OFF \
-           -DWITH_JPEGXL=ON \
-           -DWITH_LAPACK=ON \
-           -DWITH_OPENMP=ON \
-           -DWITH_IPP=OFF \
-           -DWITH_QT=ON \
-           -DWITH_VA=ON \
-           -DWITH_VULKAN=ON \
-           -DVULKAN_INCLUDE_DIRS=%(includedir)/vulkan \
-           ${contrib_cmake_args}
+        -DBUILD_EXAMPLES=OFF \
+        -DBUILD_PERF_TESTS=OFF \
+        -DBUILD_TESTS=OFF \
+        -DBUILD_PROTOBUF=OFF \
+        -DCMAKE_CXX_STANDARD=17 \
+        -DCPU_BASELINE_REQUIRE="SSE;SSE2;SSE3;SSSE3;SSE4_1;SSE4_2;POPCNT" \
+        -DHDF5_NO_FIND_PACKAGE_CONFIG_FILE=ON \
+        -DINSTALL_C_EXAMPLES=OFF \
+        -DINSTALL_PYTHON_EXAMPLES=OFF \
+        -DOPENCV_ENABLE_NONFREE=OFF \
+        -DOPENCV_EXTRA_MODULES_PATH=contrib/modules \
+        -DOPENCV_SKIP_FEATURES2D_DOWNLOADING=OFF \
+        -DOPENCV_GENERATE_PKGCONFIG=ON \
+        -DOPENCV_GENERATE_SETUPVARS=OFF \
+        -DPROTOBUF_UPDATE_FILES=ON \
+        -DWITH_ADE=OFF \
+        -DWITH_FLATBUFFERS=OFF \
+        -DWITH_JPEGXL=ON \
+        -DWITH_LAPACK=ON \
+        -DWITH_OPENMP=ON \
+        -DWITH_IPP=OFF \
+        -DWITH_QT=ON \
+        -DWITH_VA=ON \
+        -DWITH_VULKAN=ON \
+        -DVULKAN_INCLUDE_DIRS=%(includedir)/vulkan \
+        ${contrib_cmake_args}
 build       : |
     %cmake_build
 install     : |

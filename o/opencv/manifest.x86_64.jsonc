@@ -20,6 +20,7 @@
 				"pkgconfig(gstreamer-plugins-base-1.0)",
 				"pkgconfig(harfbuzz)",
 				"pkgconfig(libavcodec)",
+				"pkgconfig(libavdevice)",
 				"pkgconfig(libavformat)",
 				"pkgconfig(libjxl)",
 				"pkgconfig(libpng)",
@@ -34,15 +35,15 @@
 				"soname(libc.so.6(x86_64))",
 				"soname(libgcc_s.so.1(x86_64))",
 				"soname(libm.so.6(x86_64))",
-				"soname(libopencv_calib3d.so.412(x86_64))",
-				"soname(libopencv_core.so.412(x86_64))",
-				"soname(libopencv_dnn.so.412(x86_64))",
-				"soname(libopencv_features2d.so.412(x86_64))",
-				"soname(libopencv_highgui.so.412(x86_64))",
-				"soname(libopencv_imgcodecs.so.412(x86_64))",
-				"soname(libopencv_imgproc.so.412(x86_64))",
-				"soname(libopencv_objdetect.so.412(x86_64))",
-				"soname(libopencv_videoio.so.412(x86_64))",
+				"soname(libopencv_calib3d.so.413(x86_64))",
+				"soname(libopencv_core.so.413(x86_64))",
+				"soname(libopencv_dnn.so.413(x86_64))",
+				"soname(libopencv_features2d.so.413(x86_64))",
+				"soname(libopencv_highgui.so.413(x86_64))",
+				"soname(libopencv_imgcodecs.so.413(x86_64))",
+				"soname(libopencv_imgproc.so.413(x86_64))",
+				"soname(libopencv_objdetect.so.413(x86_64))",
+				"soname(libopencv_videoio.so.413(x86_64))",
 				"soname(libstdc++.so.6(x86_64))"
 			],
 			"files": [
@@ -101,6 +102,7 @@
 				"pkgconfig(gstreamer-plugins-base-1.0)",
 				"pkgconfig(harfbuzz)",
 				"pkgconfig(libavcodec)",
+				"pkgconfig(libavdevice)",
 				"pkgconfig(libavformat)",
 				"pkgconfig(libjxl)",
 				"pkgconfig(libpng)",
@@ -114,19 +116,19 @@
 				"soname(libc.so.6(x86_64))",
 				"soname(libgcc_s.so.1(x86_64))",
 				"soname(libm.so.6(x86_64))",
-				"soname(libopencv_calib3d.so.412(x86_64))",
-				"soname(libopencv_core.so.412(x86_64))",
-				"soname(libopencv_imgproc.so.412(x86_64))",
-				"soname(libopencv_video.so.412(x86_64))",
+				"soname(libopencv_calib3d.so.413(x86_64))",
+				"soname(libopencv_core.so.413(x86_64))",
+				"soname(libopencv_imgproc.so.413(x86_64))",
+				"soname(libopencv_video.so.413(x86_64))",
 				"soname(libstdc++.so.6(x86_64))"
 			],
 			"files": [
-				"/usr/lib/libopencv_bgsegm.so.4.12.0",
-				"/usr/lib/libopencv_bgsegm.so.412"
+				"/usr/lib/libopencv_bgsegm.so.4.13.0",
+				"/usr/lib/libopencv_bgsegm.so.413"
 			],
 			"name": "opencv-bgsegm",
 			"provides": [
-				"soname(libopencv_bgsegm.so.412(x86_64))"
+				"soname(libopencv_bgsegm.so.413(x86_64))"
 			]
 		},
 		"opencv-calib3d": {
@@ -147,6 +149,7 @@
 				"pkgconfig(gstreamer-plugins-base-1.0)",
 				"pkgconfig(harfbuzz)",
 				"pkgconfig(libavcodec)",
+				"pkgconfig(libavdevice)",
 				"pkgconfig(libavformat)",
 				"pkgconfig(libjxl)",
 				"pkgconfig(libpng)",
@@ -161,19 +164,19 @@
 				"soname(libgcc_s.so.1(x86_64))",
 				"soname(libm.so.6(x86_64))",
 				"soname(libopenblas.so.0(x86_64))",
-				"soname(libopencv_core.so.412(x86_64))",
-				"soname(libopencv_features2d.so.412(x86_64))",
-				"soname(libopencv_flann.so.412(x86_64))",
-				"soname(libopencv_imgproc.so.412(x86_64))",
+				"soname(libopencv_core.so.413(x86_64))",
+				"soname(libopencv_features2d.so.413(x86_64))",
+				"soname(libopencv_flann.so.413(x86_64))",
+				"soname(libopencv_imgproc.so.413(x86_64))",
 				"soname(libstdc++.so.6(x86_64))"
 			],
 			"files": [
-				"/usr/lib/libopencv_calib3d.so.4.12.0",
-				"/usr/lib/libopencv_calib3d.so.412"
+				"/usr/lib/libopencv_calib3d.so.4.13.0",
+				"/usr/lib/libopencv_calib3d.so.413"
 			],
 			"name": "opencv-calib3d",
 			"provides": [
-				"soname(libopencv_calib3d.so.412(x86_64))"
+				"soname(libopencv_calib3d.so.413(x86_64))"
 			]
 		},
 		"opencv-core": {
@@ -194,6 +197,7 @@
 				"pkgconfig(gstreamer-plugins-base-1.0)",
 				"pkgconfig(harfbuzz)",
 				"pkgconfig(libavcodec)",
+				"pkgconfig(libavdevice)",
 				"pkgconfig(libavformat)",
 				"pkgconfig(libjxl)",
 				"pkgconfig(libpng)",
@@ -213,9 +217,10 @@
 				"soname(libz.so.1(x86_64))"
 			],
 			"files": [
-				"/usr/lib/libopencv_core.so.4.12.0",
-				"/usr/lib/libopencv_core.so.412",
+				"/usr/lib/libopencv_core.so.4.13.0",
+				"/usr/lib/libopencv_core.so.413",
 				"/usr/share/licenses/opencv4/SoftFloat-COPYING.txt",
+				"/usr/share/licenses/opencv4/dlpack-LICENSE",
 				"/usr/share/licenses/opencv4/ittnotify-BSD-3-Clause.txt",
 				"/usr/share/licenses/opencv4/ittnotify-GPL-2.0-only.txt",
 				"/usr/share/licenses/opencv4/mscr-chi_table_LICENSE.txt",
@@ -223,7 +228,7 @@
 			],
 			"name": "opencv-core",
 			"provides": [
-				"soname(libopencv_core.so.412(x86_64))"
+				"soname(libopencv_core.so.413(x86_64))"
 			]
 		},
 		"opencv-devel": {
@@ -244,6 +249,7 @@
 				"pkgconfig(gstreamer-plugins-base-1.0)",
 				"pkgconfig(harfbuzz)",
 				"pkgconfig(libavcodec)",
+				"pkgconfig(libavdevice)",
 				"pkgconfig(libavformat)",
 				"pkgconfig(libjxl)",
 				"pkgconfig(libpng)",
@@ -293,6 +299,7 @@
 				"/usr/include/opencv4/opencv2/core/cuda/border_interpolate.hpp",
 				"/usr/include/opencv4/opencv2/core/cuda/color.hpp",
 				"/usr/include/opencv4/opencv2/core/cuda/common.hpp",
+				"/usr/include/opencv4/opencv2/core/cuda/cuda_compat.hpp",
 				"/usr/include/opencv4/opencv2/core/cuda/datamov_utils.hpp",
 				"/usr/include/opencv4/opencv2/core/cuda/detail/color_detail.hpp",
 				"/usr/include/opencv4/opencv2/core/cuda/detail/reduce.hpp",
@@ -586,6 +593,7 @@
 				"pkgconfig(gstreamer-plugins-base-1.0)",
 				"pkgconfig(harfbuzz)",
 				"pkgconfig(libavcodec)",
+				"pkgconfig(libavdevice)",
 				"pkgconfig(libavformat)",
 				"pkgconfig(libjxl)",
 				"pkgconfig(libpng)",
@@ -602,18 +610,18 @@
 				"soname(libc.so.6(x86_64))",
 				"soname(libgcc_s.so.1(x86_64))",
 				"soname(libm.so.6(x86_64))",
-				"soname(libopencv_core.so.412(x86_64))",
-				"soname(libopencv_imgproc.so.412(x86_64))",
+				"soname(libopencv_core.so.413(x86_64))",
+				"soname(libopencv_imgproc.so.413(x86_64))",
 				"soname(libprotobuf.so.31.0.0(x86_64))",
 				"soname(libstdc++.so.6(x86_64))"
 			],
 			"files": [
-				"/usr/lib/libopencv_dnn.so.4.12.0",
-				"/usr/lib/libopencv_dnn.so.412"
+				"/usr/lib/libopencv_dnn.so.4.13.0",
+				"/usr/lib/libopencv_dnn.so.413"
 			],
 			"name": "opencv-dnn",
 			"provides": [
-				"soname(libopencv_dnn.so.412(x86_64))"
+				"soname(libopencv_dnn.so.413(x86_64))"
 			]
 		},
 		"opencv-features2d": {
@@ -634,6 +642,7 @@
 				"pkgconfig(gstreamer-plugins-base-1.0)",
 				"pkgconfig(harfbuzz)",
 				"pkgconfig(libavcodec)",
+				"pkgconfig(libavdevice)",
 				"pkgconfig(libavformat)",
 				"pkgconfig(libjxl)",
 				"pkgconfig(libpng)",
@@ -647,18 +656,18 @@
 				"soname(libc.so.6(x86_64))",
 				"soname(libgcc_s.so.1(x86_64))",
 				"soname(libm.so.6(x86_64))",
-				"soname(libopencv_core.so.412(x86_64))",
-				"soname(libopencv_flann.so.412(x86_64))",
-				"soname(libopencv_imgproc.so.412(x86_64))",
+				"soname(libopencv_core.so.413(x86_64))",
+				"soname(libopencv_flann.so.413(x86_64))",
+				"soname(libopencv_imgproc.so.413(x86_64))",
 				"soname(libstdc++.so.6(x86_64))"
 			],
 			"files": [
-				"/usr/lib/libopencv_features2d.so.4.12.0",
-				"/usr/lib/libopencv_features2d.so.412"
+				"/usr/lib/libopencv_features2d.so.4.13.0",
+				"/usr/lib/libopencv_features2d.so.413"
 			],
 			"name": "opencv-features2d",
 			"provides": [
-				"soname(libopencv_features2d.so.412(x86_64))"
+				"soname(libopencv_features2d.so.413(x86_64))"
 			]
 		},
 		"opencv-flann": {
@@ -679,6 +688,7 @@
 				"pkgconfig(gstreamer-plugins-base-1.0)",
 				"pkgconfig(harfbuzz)",
 				"pkgconfig(libavcodec)",
+				"pkgconfig(libavdevice)",
 				"pkgconfig(libavformat)",
 				"pkgconfig(libjxl)",
 				"pkgconfig(libpng)",
@@ -692,16 +702,16 @@
 				"soname(libc.so.6(x86_64))",
 				"soname(libgcc_s.so.1(x86_64))",
 				"soname(libm.so.6(x86_64))",
-				"soname(libopencv_core.so.412(x86_64))",
+				"soname(libopencv_core.so.413(x86_64))",
 				"soname(libstdc++.so.6(x86_64))"
 			],
 			"files": [
-				"/usr/lib/libopencv_flann.so.4.12.0",
-				"/usr/lib/libopencv_flann.so.412"
+				"/usr/lib/libopencv_flann.so.4.13.0",
+				"/usr/lib/libopencv_flann.so.413"
 			],
 			"name": "opencv-flann",
 			"provides": [
-				"soname(libopencv_flann.so.412(x86_64))"
+				"soname(libopencv_flann.so.413(x86_64))"
 			]
 		},
 		"opencv-highgui": {
@@ -722,6 +732,7 @@
 				"pkgconfig(gstreamer-plugins-base-1.0)",
 				"pkgconfig(harfbuzz)",
 				"pkgconfig(libavcodec)",
+				"pkgconfig(libavdevice)",
 				"pkgconfig(libavformat)",
 				"pkgconfig(libjxl)",
 				"pkgconfig(libpng)",
@@ -738,17 +749,17 @@
 				"soname(libQt6Widgets.so.6(x86_64))",
 				"soname(libc.so.6(x86_64))",
 				"soname(libgcc_s.so.1(x86_64))",
-				"soname(libopencv_core.so.412(x86_64))",
-				"soname(libopencv_imgproc.so.412(x86_64))",
+				"soname(libopencv_core.so.413(x86_64))",
+				"soname(libopencv_imgproc.so.413(x86_64))",
 				"soname(libstdc++.so.6(x86_64))"
 			],
 			"files": [
-				"/usr/lib/libopencv_highgui.so.4.12.0",
-				"/usr/lib/libopencv_highgui.so.412"
+				"/usr/lib/libopencv_highgui.so.4.13.0",
+				"/usr/lib/libopencv_highgui.so.413"
 			],
 			"name": "opencv-highgui",
 			"provides": [
-				"soname(libopencv_highgui.so.412(x86_64))"
+				"soname(libopencv_highgui.so.413(x86_64))"
 			]
 		},
 		"opencv-imgcodecs": {
@@ -769,6 +780,7 @@
 				"pkgconfig(gstreamer-plugins-base-1.0)",
 				"pkgconfig(harfbuzz)",
 				"pkgconfig(libavcodec)",
+				"pkgconfig(libavdevice)",
 				"pkgconfig(libavformat)",
 				"pkgconfig(libjxl)",
 				"pkgconfig(libpng)",
@@ -787,8 +799,8 @@
 				"soname(libjxl.so.0.11(x86_64))",
 				"soname(libjxl_threads.so.0.11(x86_64))",
 				"soname(libm.so.6(x86_64))",
-				"soname(libopencv_core.so.412(x86_64))",
-				"soname(libopencv_imgproc.so.412(x86_64))",
+				"soname(libopencv_core.so.413(x86_64))",
+				"soname(libopencv_imgproc.so.413(x86_64))",
 				"soname(libopenjp2.so.7(x86_64))",
 				"soname(libpng16.so.16(x86_64))",
 				"soname(libstdc++.so.6(x86_64))",
@@ -799,12 +811,12 @@
 				"soname(libz.so.1(x86_64))"
 			],
 			"files": [
-				"/usr/lib/libopencv_imgcodecs.so.4.12.0",
-				"/usr/lib/libopencv_imgcodecs.so.412"
+				"/usr/lib/libopencv_imgcodecs.so.4.13.0",
+				"/usr/lib/libopencv_imgcodecs.so.413"
 			],
 			"name": "opencv-imgcodecs",
 			"provides": [
-				"soname(libopencv_imgcodecs.so.412(x86_64))"
+				"soname(libopencv_imgcodecs.so.413(x86_64))"
 			]
 		},
 		"opencv-imgproc": {
@@ -825,6 +837,7 @@
 				"pkgconfig(gstreamer-plugins-base-1.0)",
 				"pkgconfig(harfbuzz)",
 				"pkgconfig(libavcodec)",
+				"pkgconfig(libavdevice)",
 				"pkgconfig(libavformat)",
 				"pkgconfig(libjxl)",
 				"pkgconfig(libpng)",
@@ -838,16 +851,16 @@
 				"soname(libc.so.6(x86_64))",
 				"soname(libgcc_s.so.1(x86_64))",
 				"soname(libm.so.6(x86_64))",
-				"soname(libopencv_core.so.412(x86_64))",
+				"soname(libopencv_core.so.413(x86_64))",
 				"soname(libstdc++.so.6(x86_64))"
 			],
 			"files": [
-				"/usr/lib/libopencv_imgproc.so.4.12.0",
-				"/usr/lib/libopencv_imgproc.so.412"
+				"/usr/lib/libopencv_imgproc.so.4.13.0",
+				"/usr/lib/libopencv_imgproc.so.413"
 			],
 			"name": "opencv-imgproc",
 			"provides": [
-				"soname(libopencv_imgproc.so.412(x86_64))"
+				"soname(libopencv_imgproc.so.413(x86_64))"
 			]
 		},
 		"opencv-ml": {
@@ -868,6 +881,7 @@
 				"pkgconfig(gstreamer-plugins-base-1.0)",
 				"pkgconfig(harfbuzz)",
 				"pkgconfig(libavcodec)",
+				"pkgconfig(libavdevice)",
 				"pkgconfig(libavformat)",
 				"pkgconfig(libjxl)",
 				"pkgconfig(libpng)",
@@ -881,16 +895,16 @@
 				"soname(libc.so.6(x86_64))",
 				"soname(libgcc_s.so.1(x86_64))",
 				"soname(libm.so.6(x86_64))",
-				"soname(libopencv_core.so.412(x86_64))",
+				"soname(libopencv_core.so.413(x86_64))",
 				"soname(libstdc++.so.6(x86_64))"
 			],
 			"files": [
-				"/usr/lib/libopencv_ml.so.4.12.0",
-				"/usr/lib/libopencv_ml.so.412"
+				"/usr/lib/libopencv_ml.so.4.13.0",
+				"/usr/lib/libopencv_ml.so.413"
 			],
 			"name": "opencv-ml",
 			"provides": [
-				"soname(libopencv_ml.so.412(x86_64))"
+				"soname(libopencv_ml.so.413(x86_64))"
 			]
 		},
 		"opencv-objdetect": {
@@ -911,6 +925,7 @@
 				"pkgconfig(gstreamer-plugins-base-1.0)",
 				"pkgconfig(harfbuzz)",
 				"pkgconfig(libavcodec)",
+				"pkgconfig(libavdevice)",
 				"pkgconfig(libavformat)",
 				"pkgconfig(libjxl)",
 				"pkgconfig(libpng)",
@@ -924,19 +939,19 @@
 				"soname(libc.so.6(x86_64))",
 				"soname(libgcc_s.so.1(x86_64))",
 				"soname(libm.so.6(x86_64))",
-				"soname(libopencv_calib3d.so.412(x86_64))",
-				"soname(libopencv_core.so.412(x86_64))",
-				"soname(libopencv_dnn.so.412(x86_64))",
-				"soname(libopencv_imgproc.so.412(x86_64))",
+				"soname(libopencv_calib3d.so.413(x86_64))",
+				"soname(libopencv_core.so.413(x86_64))",
+				"soname(libopencv_dnn.so.413(x86_64))",
+				"soname(libopencv_imgproc.so.413(x86_64))",
 				"soname(libstdc++.so.6(x86_64))"
 			],
 			"files": [
-				"/usr/lib/libopencv_objdetect.so.4.12.0",
-				"/usr/lib/libopencv_objdetect.so.412"
+				"/usr/lib/libopencv_objdetect.so.4.13.0",
+				"/usr/lib/libopencv_objdetect.so.413"
 			],
 			"name": "opencv-objdetect",
 			"provides": [
-				"soname(libopencv_objdetect.so.412(x86_64))"
+				"soname(libopencv_objdetect.so.413(x86_64))"
 			]
 		},
 		"opencv-photo": {
@@ -957,6 +972,7 @@
 				"pkgconfig(gstreamer-plugins-base-1.0)",
 				"pkgconfig(harfbuzz)",
 				"pkgconfig(libavcodec)",
+				"pkgconfig(libavdevice)",
 				"pkgconfig(libavformat)",
 				"pkgconfig(libjxl)",
 				"pkgconfig(libpng)",
@@ -970,17 +986,17 @@
 				"soname(libc.so.6(x86_64))",
 				"soname(libgcc_s.so.1(x86_64))",
 				"soname(libm.so.6(x86_64))",
-				"soname(libopencv_core.so.412(x86_64))",
-				"soname(libopencv_imgproc.so.412(x86_64))",
+				"soname(libopencv_core.so.413(x86_64))",
+				"soname(libopencv_imgproc.so.413(x86_64))",
 				"soname(libstdc++.so.6(x86_64))"
 			],
 			"files": [
-				"/usr/lib/libopencv_photo.so.4.12.0",
-				"/usr/lib/libopencv_photo.so.412"
+				"/usr/lib/libopencv_photo.so.4.13.0",
+				"/usr/lib/libopencv_photo.so.413"
 			],
 			"name": "opencv-photo",
 			"provides": [
-				"soname(libopencv_photo.so.412(x86_64))"
+				"soname(libopencv_photo.so.413(x86_64))"
 			]
 		},
 		"opencv-plot": {
@@ -1001,6 +1017,7 @@
 				"pkgconfig(gstreamer-plugins-base-1.0)",
 				"pkgconfig(harfbuzz)",
 				"pkgconfig(libavcodec)",
+				"pkgconfig(libavdevice)",
 				"pkgconfig(libavformat)",
 				"pkgconfig(libjxl)",
 				"pkgconfig(libpng)",
@@ -1013,17 +1030,17 @@
 			"depends": [
 				"soname(libc.so.6(x86_64))",
 				"soname(libgcc_s.so.1(x86_64))",
-				"soname(libopencv_core.so.412(x86_64))",
-				"soname(libopencv_imgproc.so.412(x86_64))",
+				"soname(libopencv_core.so.413(x86_64))",
+				"soname(libopencv_imgproc.so.413(x86_64))",
 				"soname(libstdc++.so.6(x86_64))"
 			],
 			"files": [
-				"/usr/lib/libopencv_plot.so.4.12.0",
-				"/usr/lib/libopencv_plot.so.412"
+				"/usr/lib/libopencv_plot.so.4.13.0",
+				"/usr/lib/libopencv_plot.so.413"
 			],
 			"name": "opencv-plot",
 			"provides": [
-				"soname(libopencv_plot.so.412(x86_64))"
+				"soname(libopencv_plot.so.413(x86_64))"
 			]
 		},
 		"opencv-stitching": {
@@ -1044,6 +1061,7 @@
 				"pkgconfig(gstreamer-plugins-base-1.0)",
 				"pkgconfig(harfbuzz)",
 				"pkgconfig(libavcodec)",
+				"pkgconfig(libavdevice)",
 				"pkgconfig(libavformat)",
 				"pkgconfig(libjxl)",
 				"pkgconfig(libpng)",
@@ -1057,20 +1075,20 @@
 				"soname(libc.so.6(x86_64))",
 				"soname(libgcc_s.so.1(x86_64))",
 				"soname(libm.so.6(x86_64))",
-				"soname(libopencv_calib3d.so.412(x86_64))",
-				"soname(libopencv_core.so.412(x86_64))",
-				"soname(libopencv_features2d.so.412(x86_64))",
-				"soname(libopencv_flann.so.412(x86_64))",
-				"soname(libopencv_imgproc.so.412(x86_64))",
+				"soname(libopencv_calib3d.so.413(x86_64))",
+				"soname(libopencv_core.so.413(x86_64))",
+				"soname(libopencv_features2d.so.413(x86_64))",
+				"soname(libopencv_flann.so.413(x86_64))",
+				"soname(libopencv_imgproc.so.413(x86_64))",
 				"soname(libstdc++.so.6(x86_64))"
 			],
 			"files": [
-				"/usr/lib/libopencv_stitching.so.4.12.0",
-				"/usr/lib/libopencv_stitching.so.412"
+				"/usr/lib/libopencv_stitching.so.4.13.0",
+				"/usr/lib/libopencv_stitching.so.413"
 			],
 			"name": "opencv-stitching",
 			"provides": [
-				"soname(libopencv_stitching.so.412(x86_64))"
+				"soname(libopencv_stitching.so.413(x86_64))"
 			]
 		},
 		"opencv-tracking": {
@@ -1091,6 +1109,7 @@
 				"pkgconfig(gstreamer-plugins-base-1.0)",
 				"pkgconfig(harfbuzz)",
 				"pkgconfig(libavcodec)",
+				"pkgconfig(libavdevice)",
 				"pkgconfig(libavformat)",
 				"pkgconfig(libjxl)",
 				"pkgconfig(libpng)",
@@ -1104,18 +1123,18 @@
 				"soname(libc.so.6(x86_64))",
 				"soname(libgcc_s.so.1(x86_64))",
 				"soname(libm.so.6(x86_64))",
-				"soname(libopencv_core.so.412(x86_64))",
-				"soname(libopencv_imgproc.so.412(x86_64))",
-				"soname(libopencv_video.so.412(x86_64))",
+				"soname(libopencv_core.so.413(x86_64))",
+				"soname(libopencv_imgproc.so.413(x86_64))",
+				"soname(libopencv_video.so.413(x86_64))",
 				"soname(libstdc++.so.6(x86_64))"
 			],
 			"files": [
-				"/usr/lib/libopencv_tracking.so.4.12.0",
-				"/usr/lib/libopencv_tracking.so.412"
+				"/usr/lib/libopencv_tracking.so.4.13.0",
+				"/usr/lib/libopencv_tracking.so.413"
 			],
 			"name": "opencv-tracking",
 			"provides": [
-				"soname(libopencv_tracking.so.412(x86_64))"
+				"soname(libopencv_tracking.so.413(x86_64))"
 			]
 		},
 		"opencv-video": {
@@ -1136,6 +1155,7 @@
 				"pkgconfig(gstreamer-plugins-base-1.0)",
 				"pkgconfig(harfbuzz)",
 				"pkgconfig(libavcodec)",
+				"pkgconfig(libavdevice)",
 				"pkgconfig(libavformat)",
 				"pkgconfig(libjxl)",
 				"pkgconfig(libpng)",
@@ -1150,19 +1170,19 @@
 				"soname(libgcc_s.so.1(x86_64))",
 				"soname(libm.so.6(x86_64))",
 				"soname(libomp.so(x86_64))",
-				"soname(libopencv_calib3d.so.412(x86_64))",
-				"soname(libopencv_core.so.412(x86_64))",
-				"soname(libopencv_dnn.so.412(x86_64))",
-				"soname(libopencv_imgproc.so.412(x86_64))",
+				"soname(libopencv_calib3d.so.413(x86_64))",
+				"soname(libopencv_core.so.413(x86_64))",
+				"soname(libopencv_dnn.so.413(x86_64))",
+				"soname(libopencv_imgproc.so.413(x86_64))",
 				"soname(libstdc++.so.6(x86_64))"
 			],
 			"files": [
-				"/usr/lib/libopencv_video.so.4.12.0",
-				"/usr/lib/libopencv_video.so.412"
+				"/usr/lib/libopencv_video.so.4.13.0",
+				"/usr/lib/libopencv_video.so.413"
 			],
 			"name": "opencv-video",
 			"provides": [
-				"soname(libopencv_video.so.412(x86_64))"
+				"soname(libopencv_video.so.413(x86_64))"
 			]
 		},
 		"opencv-videoio": {
@@ -1183,6 +1203,7 @@
 				"pkgconfig(gstreamer-plugins-base-1.0)",
 				"pkgconfig(harfbuzz)",
 				"pkgconfig(libavcodec)",
+				"pkgconfig(libavdevice)",
 				"pkgconfig(libavformat)",
 				"pkgconfig(libjxl)",
 				"pkgconfig(libpng)",
@@ -1194,6 +1215,7 @@
 			],
 			"depends": [
 				"soname(libavcodec.so.62(x86_64))",
+				"soname(libavdevice.so.62(x86_64))",
 				"soname(libavformat.so.62(x86_64))",
 				"soname(libavutil.so.60(x86_64))",
 				"soname(libc.so.6(x86_64))",
@@ -1208,23 +1230,23 @@
 				"soname(libgstriff-1.0.so.0(x86_64))",
 				"soname(libgstvideo-1.0.so.0(x86_64))",
 				"soname(libm.so.6(x86_64))",
-				"soname(libopencv_core.so.412(x86_64))",
-				"soname(libopencv_imgcodecs.so.412(x86_64))",
-				"soname(libopencv_imgproc.so.412(x86_64))",
+				"soname(libopencv_core.so.413(x86_64))",
+				"soname(libopencv_imgcodecs.so.413(x86_64))",
+				"soname(libopencv_imgproc.so.413(x86_64))",
 				"soname(libstdc++.so.6(x86_64))",
 				"soname(libswscale.so.9(x86_64))"
 			],
 			"files": [
-				"/usr/lib/libopencv_videoio.so.4.12.0",
-				"/usr/lib/libopencv_videoio.so.412"
+				"/usr/lib/libopencv_videoio.so.4.13.0",
+				"/usr/lib/libopencv_videoio.so.413"
 			],
 			"name": "opencv-videoio",
 			"provides": [
-				"soname(libopencv_videoio.so.412(x86_64))"
+				"soname(libopencv_videoio.so.413(x86_64))"
 			]
 		}
 	},
 	"source-name": "opencv",
-	"source-release": "11",
-	"source-version": "4.12.0"
+	"source-release": "12",
+	"source-version": "4.13.0"
 }
