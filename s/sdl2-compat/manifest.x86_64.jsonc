@@ -8,12 +8,12 @@
 				"pkgconfig(x11)"
 			],
 			"depends": [
-				"sdl3",
+				"soname(libSDL3.so.0(x86_64))",
 				"soname(libc.so.6(x86_64))"
 			],
 			"files": [
 				"/usr/lib/libSDL2-2.0.so.0",
-				"/usr/lib/libSDL2-2.0.so.0.3200.60",
+				"/usr/lib/libSDL2-2.0.so.0.3200.62",
 				"/usr/share/licenses/sdl2-compat/LICENSE.txt"
 			],
 			"name": "sdl2-compat",
@@ -152,6 +152,6 @@
 		}
 	},
 	"source-name": "sdl2-compat",
-	"source-release": "7",
-	"source-version": "2.32.60"
+	"source-release": "8",
+	"source-version": "2.32.62"
 }
