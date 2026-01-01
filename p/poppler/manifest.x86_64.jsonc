@@ -41,7 +41,8 @@
 				"soname(libsmime3.so(x86_64))",
 				"soname(libstdc++.so.6(x86_64))",
 				"soname(libtiff.so.6(x86_64))",
-				"soname(libz.so.1(x86_64))"
+				"soname(libz.so.1(x86_64))",
+				"urw-base35-fonts"
 			],
 			"files": [
 				"/usr/lib/libpoppler.so.155",
@@ -532,6 +533,6 @@
 		}
 	},
 	"source-name": "poppler",
-	"source-release": "15",
+	"source-release": "16",
 	"source-version": "25.12.0"
 }

@@ -5,7 +5,7 @@
 #
 name        : poppler
 version     : 25.12.0
-release     : 15
+release     : 16
 homepage    : https://poppler.freedesktop.org
 upstreams   :
     - https://poppler.freedesktop.org/poppler-25.12.0.tar.xz : c18b40eb36b1a0c5b86e29ca054bf0770304583da4f2cdd42fe86eca6a20de48
@@ -34,6 +34,11 @@ builddeps   :
     - poppler-data
 rundeps     :
     - poppler-data
+
+    # Needs some dingbats compatible font
+    # - https://en.wikipedia.org/wiki/PDF#Text
+    # - https://mail.kde.org/pipermail/distributions/2025-December/001657.html
+    - urw-base35-fonts
 setup       : |
     %cmake \
       -DENABLE_QT5=OFF \
