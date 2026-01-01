@@ -7,12 +7,15 @@
 				"pkgconfig(alsa)",
 				"pkgconfig(dbus-1)",
 				"pkgconfig(egl)",
+				"pkgconfig(fribidi)",
 				"pkgconfig(gbm)",
 				"pkgconfig(ibus-1.0)",
 				"pkgconfig(libdecor-0)",
 				"pkgconfig(libdrm)",
 				"pkgconfig(libpipewire-0.3)",
 				"pkgconfig(libpulse)",
+				"pkgconfig(libthai)",
+				"pkgconfig(libunwind-generic)",
 				"pkgconfig(liburing-ffi)",
 				"pkgconfig(libusb-1.0)",
 				"pkgconfig(sndio)",
@@ -21,8 +24,11 @@
 				"pkgconfig(xcursor)",
 				"pkgconfig(xext)",
 				"pkgconfig(xfixes)",
+				"pkgconfig(xi)",
 				"pkgconfig(xkbcommon)",
-				"pkgconfig(xrandr)"
+				"pkgconfig(xrandr)",
+				"pkgconfig(xscrnsaver)",
+				"pkgconfig(xtst)"
 			],
 			"depends": [
 				"soname(libc.so.6(x86_64))",
@@ -39,7 +45,7 @@
 			],
 			"files": [
 				"/usr/lib/libSDL3.so.0",
-				"/usr/lib/libSDL3.so.0.2.28",
+				"/usr/lib/libSDL3.so.0.4.0",
 				"/usr/share/licenses/SDL3/LICENSE.txt"
 			],
 			"name": "sdl3",
@@ -52,12 +58,15 @@
 				"pkgconfig(alsa)",
 				"pkgconfig(dbus-1)",
 				"pkgconfig(egl)",
+				"pkgconfig(fribidi)",
 				"pkgconfig(gbm)",
 				"pkgconfig(ibus-1.0)",
 				"pkgconfig(libdecor-0)",
 				"pkgconfig(libdrm)",
 				"pkgconfig(libpipewire-0.3)",
 				"pkgconfig(libpulse)",
+				"pkgconfig(libthai)",
+				"pkgconfig(libunwind-generic)",
 				"pkgconfig(liburing-ffi)",
 				"pkgconfig(libusb-1.0)",
 				"pkgconfig(sndio)",
@@ -66,8 +75,11 @@
 				"pkgconfig(xcursor)",
 				"pkgconfig(xext)",
 				"pkgconfig(xfixes)",
+				"pkgconfig(xi)",
 				"pkgconfig(xkbcommon)",
-				"pkgconfig(xrandr)"
+				"pkgconfig(xrandr)",
+				"pkgconfig(xscrnsaver)",
+				"pkgconfig(xtst)"
 			],
 			"depends": [
 				"pkgconfig(egl)",
@@ -97,6 +109,7 @@
 				"/usr/include/SDL3/SDL_copying.h",
 				"/usr/include/SDL3/SDL_cpuinfo.h",
 				"/usr/include/SDL3/SDL_dialog.h",
+				"/usr/include/SDL3/SDL_dlopennote.h",
 				"/usr/include/SDL3/SDL_egl.h",
 				"/usr/include/SDL3/SDL_endian.h",
 				"/usr/include/SDL3/SDL_error.h",
@@ -189,6 +202,6 @@
 		}
 	},
 	"source-name": "sdl3",
-	"source-release": "9",
-	"source-version": "3.2.28"
+	"source-release": "10",
+	"source-version": "3.4.0"
 }
