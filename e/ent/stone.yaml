@@ -4,12 +4,12 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : ent
-version     : "0.1.0+908aef2"
-release     : 6
+version     : "0.1.0+f154fa9"
+release     : 7
 homepage    : https://github.com/AerynOS/ent
 upstreams   :
     - git|https://github.com/AerynOS/ent.git:
-        ref : 908aef234e9dd5ffa6dfbed4dca0613e50681224
+        ref : f154fa915a75b7fd27c0e7695e147eec452712b5
 summary     : Tree management
 description : |
     ent is a tool for working with packaging recipes in git trees/monorepos. Primarily it is intended for use with Serpent OS packaging, and to a limited degree, Solus packaging.
@@ -17,9 +17,11 @@ license     : MPL-2.0
 networking  : yes
 builddeps   :
     - pkgconfig(openssl)
-environment : |
-    # `ent check updates` does nothing unless we turn LTO off
-    export RUSTFLAGS+=" -Clto=off"
+tuning      :
+    # Using thin lto in combination with -C codegen-units=16
+    # makes the ent binary compile, but not actually work
+    # It works with full lto, so let's just use that for now
+    - lto   : full
 setup       : |
     %cargo_fetch
 build       : |
