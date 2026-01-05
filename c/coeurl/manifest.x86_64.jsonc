@@ -16,7 +16,7 @@
 				"soname(libevent_pthreads-2.1.so.7(x86_64))",
 				"soname(libfmt.so.12(x86_64))",
 				"soname(libgcc_s.so.1(x86_64))",
-				"soname(libspdlog.so.1.16(x86_64))",
+				"soname(libspdlog.so.1.17(x86_64))",
 				"soname(libstdc++.so.6(x86_64))"
 			],
 			"files": [
@@ -55,6 +55,6 @@
 		}
 	},
 	"source-name": "coeurl",
-	"source-release": "6",
+	"source-release": "7",
 	"source-version": "0.3.1"
 }
