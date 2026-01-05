@@ -27,7 +27,7 @@
 				"soname(libgcc_s.so.1(x86_64))",
 				"soname(libglfw.so.3(x86_64))",
 				"soname(libm.so.6(x86_64))",
-				"soname(libspdlog.so.1.16(x86_64))",
+				"soname(libspdlog.so.1.17(x86_64))",
 				"soname(libwayland-client.so.0(x86_64))",
 				"soname(libxkbcommon.so.0(x86_64))"
 			],
@@ -81,6 +81,6 @@
 		}
 	},
 	"source-name": "mangohud",
-	"source-release": "11",
+	"source-release": "12",
 	"source-version": "0.8.2"
 }

@@ -5,7 +5,7 @@
 #
 name        : mangohud
 version     : 0.8.2
-release     : 11
+release     : 12
 homepage    : https://github.com/flightlessmango/MangoHud
 upstreams   :
     - https://github.com/flightlessmango/MangoHud/releases/download/v0.8.2/MangoHud-v0.8.2-Source.tar.xz : 9fe98da24f790f4489efc1e0c8e3ad0291c80efd882a406797d54dab82f8765b
