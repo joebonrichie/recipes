@@ -20,7 +20,7 @@
 				"soname(libgcc_s.so.1(x86_64))",
 				"soname(libolm.so.3(x86_64))",
 				"soname(libre2.so.11(x86_64))",
-				"soname(libspdlog.so.1.16(x86_64))",
+				"soname(libspdlog.so.1.17(x86_64))",
 				"soname(libstdc++.so.6(x86_64))"
 			],
 			"files": [
@@ -144,6 +144,6 @@
 		}
 	},
 	"source-name": "mtxclient",
-	"source-release": "8",
+	"source-release": "9",
 	"source-version": "0.10.1"
 }
