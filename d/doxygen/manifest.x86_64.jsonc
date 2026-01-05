@@ -23,7 +23,7 @@
 				"soname(libfmt.so.12(x86_64))",
 				"soname(libgcc_s.so.1(x86_64))",
 				"soname(libm.so.6(x86_64))",
-				"soname(libspdlog.so.1.16(x86_64))",
+				"soname(libspdlog.so.1.17(x86_64))",
 				"soname(libsqlite3.so.0(x86_64))",
 				"soname(libstdc++.so.6(x86_64))"
 			],
@@ -71,6 +71,6 @@
 		}
 	},
 	"source-name": "doxygen",
-	"source-release": "10",
+	"source-release": "11",
 	"source-version": "1.15.0"
 }
