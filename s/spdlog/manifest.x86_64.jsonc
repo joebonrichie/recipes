@@ -14,12 +14,12 @@
 				"soname(libstdc++.so.6(x86_64))"
 			],
 			"files": [
-				"/usr/lib/libspdlog.so.1.16",
-				"/usr/lib/libspdlog.so.1.16.0"
+				"/usr/lib/libspdlog.so.1.17",
+				"/usr/lib/libspdlog.so.1.17.0"
 			],
 			"name": "spdlog",
 			"provides": [
-				"soname(libspdlog.so.1.16(x86_64))"
+				"soname(libspdlog.so.1.17(x86_64))"
 			]
 		},
 		"spdlog-devel": {
@@ -136,6 +136,6 @@
 		}
 	},
 	"source-name": "spdlog",
-	"source-release": "6",
-	"source-version": "1.16.0"
+	"source-release": "7",
+	"source-version": "1.17.0"
 }
