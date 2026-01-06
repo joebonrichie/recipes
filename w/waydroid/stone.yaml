@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : waydroid
-version     : 1.6.0
+version     : 1.6.1
 release     : 3
 homepage    : https://waydro.id/
 upstreams   :
-    - https://github.com/waydroid/waydroid/archive/1.6.0/waydroid-1.6.0.tar.gz : aab88897a3a5578b4fc602a47d3357ad5d39b603e2e630ea2370a2fde3371f97
+    - https://github.com/waydroid/waydroid/archive/1.6.1/waydroid-1.6.1.tar.gz : f81ae0281701942a8beb749397a4fa8ce828c2dc727878b44d1385e23a921bcd
 license     : Apache-2.0
 summary     : Run Android apps on GNU/Linux
 description : |
@@ -24,13 +24,9 @@ setup       : |
     %patch %(pkgdir)/0001-Service-tweaks.patch
 install     : |
     %make_install \
-                  USE_NFTABLES=1 \
-                  APPS_MENU_DIR=/usr/share/xdg/menus/applications-merged
+        USE_NFTABLES=1 \
+        APPS_MENU_DIR=/usr/share/xdg/menus/applications-merged
     %python_compile
-
-    # Change absolute symlink to a relative one
-    link=$(readlink "%(installroot)/usr/bin/waydroid")
-    ln -srvf "%(installroot)${link}" "%(installroot)/usr/bin/waydroid"
 
     # The service is dbus-activated, so preset it as disabled so it only starts upon request
     %install_file %(pkgdir)/waydroid.preset -t %(installroot)/%(libdir)/systemd/system-preset
