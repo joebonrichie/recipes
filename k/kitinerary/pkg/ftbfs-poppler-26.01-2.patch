@@ -1,0 +1,48 @@
+From b9fb439d1e46e7fb735f83edb7a5bd1d6e950f25 Mon Sep 17 00:00:00 2001
+From: Volker Krause <vkrause@kde.org>
+Date: Tue, 6 Jan 2026 17:16:10 +0100
+Subject: [PATCH] Adapt to another Poppler 26.01 API change
+
+---
+ src/lib/pdf/pdfdocument.cpp | 12 +++++++++---
+ 1 file changed, 9 insertions(+), 3 deletions(-)
+
+diff --git a/src/lib/pdf/pdfdocument.cpp b/src/lib/pdf/pdfdocument.cpp
+index 7ad1405a4..cec279839 100644
+--- a/src/lib/pdf/pdfdocument.cpp
++++ b/src/lib/pdf/pdfdocument.cpp
+@@ -44,9 +44,12 @@ void PdfPagePrivate::load()
+ #if KPOPPLER_VERSION < QT_VERSION_CHECK(25, 1, 0)
+     std::unique_ptr<GooString> s(device.getText(pageRect->x1, pageRect->y1, pageRect->x2, pageRect->y2));
+     m_text = QString::fromUtf8(s->c_str());
+-#else
++#elif KPOPPLER_VERSION <QT_VERSION_CHECK(25, 12, 90)
+     const auto s = device.getText(pageRect->x1, pageRect->y1, pageRect->x2, pageRect->y2);
+     m_text = QString::fromUtf8(s.c_str());
++#else
++    const auto s = device.getText(PDFRectangle(pageRect->x1, pageRect->y1, pageRect->x2, pageRect->y2));
++    m_text = QString::fromUtf8(s.c_str());
+ #endif
+ 
+     m_images = std::move(device.m_images);
+@@ -114,12 +117,15 @@ QString PdfPage::textInRect(double left, double top, double right, double bottom
+     TextOutputDev device(nullptr, true, 0, false, false);
+     device.setTextEOL(eolUnix);
+     d->m_doc->m_popplerDoc->displayPageSlice(&device, d->m_pageNum + 1, 72, 72, rotate, false, true, false, -1, -1, -1, -1);
+-#if KPOPPLER_VERSION <QT_VERSION_CHECK(25, 1, 0)
++#if KPOPPLER_VERSION < QT_VERSION_CHECK(25, 1, 0)
+     std::unique_ptr<GooString> s(device.getText(l, t, r, b));
+     return QString::fromUtf8(s->c_str());
+-#else
++#elif KPOPPLER_VERSION <QT_VERSION_CHECK(25, 12, 90)
+     const auto s = device.getText(l, t, r, b);
+     return QString::fromUtf8(s.c_str());
++#else
++    const auto s = device.getText(PDFRectangle(l, t, r, b));
++    return QString::fromUtf8(s.c_str());
+ #endif
+ }
+ 
+-- 
+GitLab
+

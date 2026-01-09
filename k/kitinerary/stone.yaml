@@ -5,7 +5,7 @@
 #
 name        : kitinerary
 version     : 25.12.0
-release     : 12
+release     : 13
 upstreams   :
     - https://download.kde.org/stable/release-service/25.12.0/src/kitinerary-25.12.0.tar.xz : 75096a495263435e6e1dfaef8f9fb48fad21530c48aeaeba91f73e0d384d5f0c
 homepage    : https://invent.kde.org/pim/kitinerary
@@ -32,6 +32,11 @@ builddeps   :
     # TODO:
     # - libphonenumber
 setup       : |
+    %patch %(pkgdir)/ftbfs-poppler-26.01-1.patch
+    %patch %(pkgdir)/ftbfs-poppler-26.01-2.patch
+    %patch %(pkgdir)/ftbfs-poppler-26.01-3.patch
+    %patch %(pkgdir)/ftbfs-poppler-26.01-4.patch
+
     %cmake_kf6
 build       : |
     %cmake_build
