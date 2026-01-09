@@ -1,0 +1,39 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : pnpm
+version     : 10.27.0
+release     : 1
+homepage    : https://pnpm.io
+upstreams   :
+    - https://registry.npmjs.org/pnpm/-/pnpm-10.27.0.tgz : d3c7c3d12d87d177e32f01748d5994fb20cd5becf11670ee60530c374ffeabb3
+summary     : Fast, disk space efficient package manager
+description : |
+    Fast, disk space efficient package manager
+license     : MIT
+builddeps   :
+    - binary(npm-22)
+    - binary(npm-24)
+rundeps     :
+    - binary(make)
+    - binary(npm)
+    - binary(python) # This is technically required by node-gyp but that's not split
+install     : |
+    OLDPATH=${PATH}
+
+    # Nodejs-22 (non-default)
+    mkdir tmpinstall
+    export PATH=/usr/lib/nodejs-22/bin:$OLDPATH
+    npm install -g --prefix tmpinstall %(sourcedir)/pnpm-%(version).tgz
+
+    # We only care about the node_modules for non-default nodejs versions
+    mkdir -p %(installroot)%(libdir)/
+    mv tmpinstall/lib/node_modules %(installroot)%(libdir)/node_modules_22
+
+    # Nodejs-24 (default)
+    export PATH=/usr/lib/nodejs-24/bin:$OLDPATH
+    npm install -g --prefix %(installroot)%(prefix) %(sourcedir)/pnpm-%(version).tgz
+
+    mv %(installroot)%(libdir)/node_modules %(installroot)%(libdir)/node_modules_24
