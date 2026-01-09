@@ -4,19 +4,19 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : nodejs
-version     : '22'
-release     : 7
+version     : '24'
+release     : 8
 homepage    : https://nodejs.org/
-upstreams   :
-    - https://nodejs.org/dist/v22.14.0/node-v22.14.0.tar.gz : 6c4e31ed5702dc45cfd8c435af56a36a474427e1bd7afe74c346136060beba8a
+# upstreams   :
+#     - https://nodejs.org/dist/v22.14.0/node-v22.14.0.tar.gz : 6c4e31ed5702dc45cfd8c435af56a36a474427e1bd7afe74c346136060beba8a
 summary     : A JavaScript runtime environment.
 description : |
     Node.js is an open-source, cross-platform JavaScript runtime environment.
 license     : MIT
 rundeps     :
-    - binary(node-22)
+    - binary(node-24)
 environment : |
-    NODEJS_MAJOR=22
+    NODEJS_MAJOR=24
     NODEJS_PRIVATE_SITELIB=node_modules_$NODEJS_MAJOR
 install     : |
     # Setup symlinks to the default nodejs package

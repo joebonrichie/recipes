@@ -4,7 +4,7 @@
 	"packages": {
 		"nodejs": {
 			"depends": [
-				"binary(node-22)"
+				"binary(node-24)"
 			],
 			"files": [
 				"/usr/bin/corepack",
@@ -33,6 +33,6 @@
 		}
 	},
 	"source-name": "nodejs",
-	"source-release": "7",
-	"source-version": "22"
+	"source-release": "8",
+	"source-version": "24"
 }
