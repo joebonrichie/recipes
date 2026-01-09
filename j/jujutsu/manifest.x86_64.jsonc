@@ -47,6 +47,7 @@
 				"/usr/share/man/man1/jj-file-annotate.1",
 				"/usr/share/man/man1/jj-file-chmod.1",
 				"/usr/share/man/man1/jj-file-list.1",
+				"/usr/share/man/man1/jj-file-search.1",
 				"/usr/share/man/man1/jj-file-show.1",
 				"/usr/share/man/man1/jj-file-track.1",
 				"/usr/share/man/man1/jj-file-untrack.1",
@@ -135,6 +136,6 @@
 		}
 	},
 	"source-name": "jujutsu",
-	"source-release": "7",
-	"source-version": "0.36.0"
+	"source-release": "8",
+	"source-version": "0.37.0"
 }
