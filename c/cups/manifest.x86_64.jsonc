@@ -868,37 +868,12 @@
 				"pkgconfig(pam)"
 			],
 			"depends": [
-				"cups",
-				"pkgconfig(avahi-client)",
-				"pkgconfig(openssl)"
+				"cups"
 			],
 			"files": [
-				"/usr/bin/cups-config",
-				"/usr/include/cups/adminutil.h",
-				"/usr/include/cups/array.h",
-				"/usr/include/cups/backend.h",
-				"/usr/include/cups/cups.h",
-				"/usr/include/cups/dir.h",
-				"/usr/include/cups/file.h",
-				"/usr/include/cups/http.h",
-				"/usr/include/cups/ipp.h",
-				"/usr/include/cups/language.h",
-				"/usr/include/cups/ppd.h",
-				"/usr/include/cups/pwg.h",
-				"/usr/include/cups/raster.h",
-				"/usr/include/cups/sidechannel.h",
-				"/usr/include/cups/transcode.h",
-				"/usr/include/cups/versioning.h",
-				"/usr/lib/libcups.so",
-				"/usr/lib/libcupsimage.so",
-				"/usr/lib/pkgconfig/cups.pc",
-				"/usr/share/man/man1/cups-config.1"
+				"/usr/share/doc/cups-devel/README"
 			],
-			"name": "cups-devel",
-			"provides": [
-				"binary(cups-config)",
-				"pkgconfig(cups)"
-			]
+			"name": "cups-devel"
 		},
 		"cups-ipptool": {
 			"build-depends": [
@@ -1031,6 +1006,51 @@
 				"soname(libcupsimage.so.2(x86_64))"
 			]
 		},
+		"cups-libs-devel": {
+			"build-depends": [
+				"binary(xdg-open)",
+				"libpaper-devel",
+				"pkgconfig(avahi-client)",
+				"pkgconfig(libacl)",
+				"pkgconfig(libcrypt)",
+				"pkgconfig(libssl)",
+				"pkgconfig(libsystemd)",
+				"pkgconfig(libusb-1.0)",
+				"pkgconfig(pam)"
+			],
+			"depends": [
+				"cups-libs",
+				"pkgconfig(avahi-client)",
+				"pkgconfig(openssl)"
+			],
+			"files": [
+				"/usr/bin/cups-config",
+				"/usr/include/cups/adminutil.h",
+				"/usr/include/cups/array.h",
+				"/usr/include/cups/backend.h",
+				"/usr/include/cups/cups.h",
+				"/usr/include/cups/dir.h",
+				"/usr/include/cups/file.h",
+				"/usr/include/cups/http.h",
+				"/usr/include/cups/ipp.h",
+				"/usr/include/cups/language.h",
+				"/usr/include/cups/ppd.h",
+				"/usr/include/cups/pwg.h",
+				"/usr/include/cups/raster.h",
+				"/usr/include/cups/sidechannel.h",
+				"/usr/include/cups/transcode.h",
+				"/usr/include/cups/versioning.h",
+				"/usr/lib/libcups.so",
+				"/usr/lib/libcupsimage.so",
+				"/usr/lib/pkgconfig/cups.pc",
+				"/usr/share/man/man1/cups-config.1"
+			],
+			"name": "cups-libs-devel",
+			"provides": [
+				"binary(cups-config)",
+				"pkgconfig(cups)"
+			]
+		},
 		"cups-lpd": {
 			"build-depends": [
 				"binary(xdg-open)",
@@ -1092,6 +1112,6 @@
 		}
 	},
 	"source-name": "cups",
-	"source-release": "20",
+	"source-release": "21",
 	"source-version": "2.4.16"
 }
