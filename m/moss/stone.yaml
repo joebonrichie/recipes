@@ -6,7 +6,7 @@
 #
 name        : moss
 version     : "0.25.6+git.fb8e3a6"
-release     : 103
+release     : 104
 summary     : AerynOS package & system state manager
 license     : MPL-2.0
 homepage    : https://github.com/AerynOS/os-tools
@@ -50,7 +50,6 @@ install     : |
 
     # Install the base cmdline snippet
     %install_file %(pkgdir)/00-quiet.cmdline %(installroot)%(libdir)/kernel/cmdline.d/00-quiet.cmdline
-    %install_file %(pkgdir)/10-amdgpu.cmdline %(installroot)%(libdir)/kernel/cmdline.d/10-amdgpu.cmdline
 
     # Install the mime type
     %install_file stone.xml %(installroot)%(datadir)/mime/packages/stone.xml

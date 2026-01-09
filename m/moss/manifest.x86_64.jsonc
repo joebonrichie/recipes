@@ -19,7 +19,6 @@
 				"/usr/bin/moss",
 				"/usr/lib/dracut/modules.d/90moss/module-setup.sh",
 				"/usr/lib/kernel/cmdline.d/00-quiet.cmdline",
-				"/usr/lib/kernel/cmdline.d/10-amdgpu.cmdline",
 				"/usr/lib/moss/moss-fstx.sh",
 				"/usr/lib/systemd/system/moss-fstx.service",
 				"/usr/share/bash-completion/completions/moss",
@@ -71,6 +70,6 @@
 		}
 	},
 	"source-name": "moss",
-	"source-release": "103",
+	"source-release": "104",
 	"source-version": "0.25.6+git.fb8e3a6"
 }
