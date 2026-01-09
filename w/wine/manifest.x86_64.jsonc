@@ -98,7 +98,7 @@
 				"/usr/bin/winepath",
 				"/usr/bin/wineserver",
 				"/usr/lib/binfmt.d/wine.conf",
-				"/usr/lib/modules-load.d/10-ntsync.conf",
+				"/usr/lib/modules-load.d/10-wine.conf",
 				"/usr/lib/wine/i386-windows/acledit.dll",
 				"/usr/lib/wine/i386-windows/aclui.dll",
 				"/usr/lib/wine/i386-windows/activeds.dll",
@@ -3941,6 +3941,6 @@
 		}
 	},
 	"source-name": "wine",
-	"source-release": "19",
-	"source-version": "11.0-rc3"
+	"source-release": "20",
+	"source-version": "11.0-rc4"
 }
