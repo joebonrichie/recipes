@@ -4,10 +4,10 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : libtpms
-version     : 0.10.1
-release     : 1
+version     : 0.10.2
+release     : 2
 upstreams   :
-    - https://github.com/stefanberger/libtpms/archive/refs/tags/v0.10.1.tar.gz : ebc24f3191d90f6cf0b4d4200cd876db4bd224b3c565708bbea0a82ee275e0fb
+    - https://github.com/stefanberger/libtpms/archive/refs/tags/v0.10.2.tar.gz : edac03680f8a4a1c5c1d609a10e3f41e1a129e38ff5158f0c8deaedc719fb127
 homepage    : https://github.com/stefanberger/libtpms
 license     :
     - BSD-3-Clause

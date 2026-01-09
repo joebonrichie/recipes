@@ -12,7 +12,7 @@
 			],
 			"files": [
 				"/usr/lib/libtpms.so.0",
-				"/usr/lib/libtpms.so.0.10.1"
+				"/usr/lib/libtpms.so.0.10.2"
 			],
 			"name": "libtpms",
 			"provides": [
@@ -71,6 +71,6 @@
 		}
 	},
 	"source-name": "libtpms",
-	"source-release": "1",
-	"source-version": "0.10.1"
+	"source-release": "2",
+	"source-version": "0.10.2"
 }
