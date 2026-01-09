@@ -605,8 +605,7 @@
 				"/usr/share/alsa/ucm2/codecs/wsa884x/two-speakers/init.conf",
 				"/usr/share/alsa/ucm2/common/ctl/led.conf",
 				"/usr/share/alsa/ucm2/common/ctl/remap.conf",
-				"/usr/share/alsa/ucm2/common/direct-verb.conf",
-				"/usr/share/alsa/ucm2/common/direct.conf",
+				"/usr/share/alsa/ucm2/common/directm.conf",
 				"/usr/share/alsa/ucm2/common/linked-card.conf",
 				"/usr/share/alsa/ucm2/common/linked.conf",
 				"/usr/share/alsa/ucm2/common/pcm/hdmi.conf",
@@ -798,6 +797,6 @@
 		}
 	},
 	"source-name": "alsa-ucm-conf",
-	"source-release": "8",
-	"source-version": "1.2.15.1"
+	"source-release": "9",
+	"source-version": "1.2.15.2"
 }
