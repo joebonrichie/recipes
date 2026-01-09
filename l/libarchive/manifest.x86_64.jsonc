@@ -126,7 +126,6 @@
 				"soname(liblzo2.so.2(x86_64))",
 				"soname(libm.so.6(x86_64))",
 				"soname(libstdc++.so.6(x86_64))",
-				"soname(libstone.so.0.24(x86_64))",
 				"soname(libz.so.1(x86_64))",
 				"soname(libzstd.so.1(x86_64))"
 			],
@@ -203,7 +202,7 @@
 			],
 			"files": [
 				"/usr/lib/libarchive.so.13",
-				"/usr/lib/libarchive.so.13.8.4",
+				"/usr/lib/libarchive.so.13.8.5",
 				"/usr/share/man/man5/cpio.5",
 				"/usr/share/man/man5/libarchive-formats.5",
 				"/usr/share/man/man5/mtree.5",
@@ -285,6 +284,6 @@
 		}
 	},
 	"source-name": "libarchive",
-	"source-release": "18",
-	"source-version": "3.8.4"
+	"source-release": "19",
+	"source-version": "3.8.5"
 }
