@@ -1081,6 +1081,7 @@
 				"/usr/share/qemu/pxe-rtl8139.rom",
 				"/usr/share/qemu/pxe-virtio.rom",
 				"/usr/share/qemu/qemu-nsis.bmp",
+				"/usr/share/qemu/u-boot-sam460.bin",
 				"/usr/share/qemu/vgabios-ati.bin",
 				"/usr/share/qemu/vgabios-bochs-display.bin",
 				"/usr/share/qemu/vgabios-cirrus.bin",
@@ -1592,6 +1593,7 @@
 				"/usr/share/doc/qemu/system/devices/canokey.html",
 				"/usr/share/doc/qemu/system/devices/ccid.html",
 				"/usr/share/doc/qemu/system/devices/cxl.html",
+				"/usr/share/doc/qemu/system/devices/emmc.html",
 				"/usr/share/doc/qemu/system/devices/igb.html",
 				"/usr/share/doc/qemu/system/devices/ivshmem-flat.html",
 				"/usr/share/doc/qemu/system/devices/ivshmem.html",
@@ -1601,12 +1603,12 @@
 				"/usr/share/doc/qemu/system/devices/usb-u2f.html",
 				"/usr/share/doc/qemu/system/devices/usb.html",
 				"/usr/share/doc/qemu/system/devices/vfio-user.html",
-				"/usr/share/doc/qemu/system/devices/vhost-user-input.html",
-				"/usr/share/doc/qemu/system/devices/vhost-user-rng.html",
-				"/usr/share/doc/qemu/system/devices/vhost-user.html",
-				"/usr/share/doc/qemu/system/devices/virtio-gpu.html",
-				"/usr/share/doc/qemu/system/devices/virtio-pmem.html",
-				"/usr/share/doc/qemu/system/devices/virtio-snd.html",
+				"/usr/share/doc/qemu/system/devices/virtio/index.html",
+				"/usr/share/doc/qemu/system/devices/virtio/vhost-user-contrib.html",
+				"/usr/share/doc/qemu/system/devices/virtio/vhost-user.html",
+				"/usr/share/doc/qemu/system/devices/virtio/virtio-gpu.html",
+				"/usr/share/doc/qemu/system/devices/virtio/virtio-pmem.html",
+				"/usr/share/doc/qemu/system/devices/virtio/virtio-snd.html",
 				"/usr/share/doc/qemu/system/gdb.html",
 				"/usr/share/doc/qemu/system/generic-loader.html",
 				"/usr/share/doc/qemu/system/guest-loader.html",
@@ -1844,6 +1846,7 @@
 				"soname(libglib-2.0.so.0(x86_64))",
 				"soname(libgmodule-2.0.so.0(x86_64))",
 				"soname(libm.so.6(x86_64))",
+				"soname(libnuma.so.1(x86_64))",
 				"soname(libudev.so.1(x86_64))",
 				"soname(liburing.so.2(x86_64))"
 			],
@@ -2717,6 +2720,7 @@
 				"soname(libgmodule-2.0.so.0(x86_64))",
 				"soname(libgnutls.so.30(x86_64))",
 				"soname(libm.so.6(x86_64))",
+				"soname(libnuma.so.1(x86_64))",
 				"soname(libpam.so.0(x86_64))",
 				"soname(liburing.so.2(x86_64))",
 				"soname(libz.so.1(x86_64))",
@@ -2807,6 +2811,7 @@
 				"soname(libgmodule-2.0.so.0(x86_64))",
 				"soname(libgnutls.so.30(x86_64))",
 				"soname(libm.so.6(x86_64))",
+				"soname(libnuma.so.1(x86_64))",
 				"soname(libpam.so.0(x86_64))",
 				"soname(liburing.so.2(x86_64))"
 			],
@@ -2898,6 +2903,7 @@
 				"soname(libkeyutils.so.1(x86_64))",
 				"soname(liblzo2.so.2(x86_64))",
 				"soname(libm.so.6(x86_64))",
+				"soname(libnuma.so.1(x86_64))",
 				"soname(libpam.so.0(x86_64))",
 				"soname(libpixman-1.so.0(x86_64))",
 				"soname(libpng16.so.16(x86_64))",
@@ -3061,6 +3067,7 @@
 				"soname(libkeyutils.so.1(x86_64))",
 				"soname(liblzo2.so.2(x86_64))",
 				"soname(libm.so.6(x86_64))",
+				"soname(libnuma.so.1(x86_64))",
 				"soname(libpam.so.0(x86_64))",
 				"soname(libpixman-1.so.0(x86_64))",
 				"soname(libpng16.so.16(x86_64))",
@@ -3274,12 +3281,13 @@
 			"files": [
 				"/usr/share/qemu/dtb/bamboo.dtb",
 				"/usr/share/qemu/dtb/canyonlands.dtb",
+				"/usr/share/qemu/dtb/pegasos1.dtb",
+				"/usr/share/qemu/dtb/pegasos2.dtb",
 				"/usr/share/qemu/openbios-ppc",
 				"/usr/share/qemu/pnv-pnor.bin",
 				"/usr/share/qemu/qemu_vga.ndrv",
 				"/usr/share/qemu/skiboot.lid",
 				"/usr/share/qemu/slof.bin",
-				"/usr/share/qemu/u-boot-sam460-20100605.bin",
 				"/usr/share/qemu/u-boot.e500"
 			],
 			"name": "qemu-system-ppc-firmware"
@@ -3497,6 +3505,7 @@
 				"soname(libkeyutils.so.1(x86_64))",
 				"soname(liblzo2.so.2(x86_64))",
 				"soname(libm.so.6(x86_64))",
+				"soname(libnuma.so.1(x86_64))",
 				"soname(libpam.so.0(x86_64))",
 				"soname(libpixman-1.so.0(x86_64))",
 				"soname(libpng16.so.16(x86_64))",
@@ -4421,6 +4430,7 @@
 				"soname(libgmodule-2.0.so.0(x86_64))",
 				"soname(libgnutls.so.30(x86_64))",
 				"soname(libm.so.6(x86_64))",
+				"soname(libnuma.so.1(x86_64))",
 				"soname(liburing.so.2(x86_64))"
 			],
 			"files": [
@@ -4502,6 +4512,7 @@
 				"soname(libgmodule-2.0.so.0(x86_64))",
 				"soname(libgnutls.so.30(x86_64))",
 				"soname(libm.so.6(x86_64))",
+				"soname(libnuma.so.1(x86_64))",
 				"soname(liburing.so.2(x86_64))",
 				"soname(libz.so.1(x86_64))"
 			],
@@ -4583,6 +4594,7 @@
 				"soname(libgmodule-2.0.so.0(x86_64))",
 				"soname(libgnutls.so.30(x86_64))",
 				"soname(libm.so.6(x86_64))",
+				"soname(libnuma.so.1(x86_64))",
 				"soname(liburing.so.2(x86_64))",
 				"soname(libz.so.1(x86_64))"
 			],
@@ -4663,6 +4675,7 @@
 				"soname(libglib-2.0.so.0(x86_64))",
 				"soname(libgmodule-2.0.so.0(x86_64))",
 				"soname(libm.so.6(x86_64))",
+				"soname(libnuma.so.1(x86_64))",
 				"soname(libpixman-1.so.0(x86_64))",
 				"soname(libvirglrenderer.so.1(x86_64))"
 			],
@@ -4739,6 +4752,7 @@
 				"soname(libgmodule-2.0.so.0(x86_64))",
 				"soname(libgnutls.so.30(x86_64))",
 				"soname(libm.so.6(x86_64))",
+				"soname(libnuma.so.1(x86_64))",
 				"soname(libpam.so.0(x86_64))",
 				"soname(liburing.so.2(x86_64))"
 			],
@@ -4752,6 +4766,6 @@
 		}
 	},
 	"source-name": "qemu",
-	"source-release": "25",
-	"source-version": "10.1.3"
+	"source-release": "26",
+	"source-version": "10.2.0"
 }

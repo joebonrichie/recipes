@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : qemu
-version     : 10.1.3
-release     : 25
+version     : 10.2.0
+release     : 26
 homepage    : http://www.qemu.org/
 upstreams   :
-    - https://download.qemu.org/qemu-10.1.3.tar.xz : fbaa7a0d7a9a1deb5695b125916746ec28fe0de6275d4454f3e3bbaf8b339b53
+    - https://download.qemu.org/qemu-10.2.0.tar.xz : 9e30ad1b8b9f7b4463001582d1ab297f39cfccea5d08540c0ca6d6672785883a
 summary     :  A generic and open source machine emulator and virtualizer
 description : |
      A generic and open source machine emulator and virtualizer
@@ -540,6 +540,7 @@ packages    :
         paths:
             - /usr/share/qemu/dtb/bamboo.dtb
             - /usr/share/qemu/dtb/canyonlands.dtb
+            - /usr/share/qemu/dtb/pegasos*.dtb
             - /usr/share/qemu/openbios-ppc
             - /usr/share/qemu/pnv-pnor.bin
             - /usr/share/qemu/qemu_vga.ndrv
