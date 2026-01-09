@@ -148,5 +148,5 @@ install     : |
     # To use it do something like `export PATH=/usr/lib/nodejs-22/bin:$PATH`
     %install_dir %(installroot)/%(libdir)/nodejs-$NODEJS_MAJOR/bin
     for i in node npm npx corepack; do
-        ln -srv %(installroot)/%(bindir)/$i-$NODEJS_MAJOR %(installroot)/%(libdir)/nodejs-22/bin/$i
+        ln -srv %(installroot)/%(bindir)/$i-$NODEJS_MAJOR %(installroot)/%(libdir)/nodejs-$NODEJS_MAJOR/bin/$i
     done
