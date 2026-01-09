@@ -29,6 +29,7 @@
 			"files": [
 				"/usr/bin/steam",
 				"/usr/bin/steamdeps",
+				"/usr/lib/modules-load.d/10-steam.conf",
 				"/usr/lib/steam/bin_steam.sh",
 				"/usr/lib/steam/bin_steamdeps.py",
 				"/usr/lib/steam/bootstraplinux_ubuntu12_32.tar.xz",
@@ -58,6 +59,6 @@
 		}
 	},
 	"source-name": "steam",
-	"source-release": "22",
+	"source-release": "23",
 	"source-version": "1.0.0.85"
 }
