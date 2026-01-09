@@ -4,8 +4,8 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : libtasn1
-version     : 4.20.0
-release     : 3
+version     : 4.21.0
+release     : 4
 summary     : The ASN.1 library used in GNUTLS
 license     :
     - GPL-3.0-or-later
@@ -14,11 +14,12 @@ homepage    : https://www.gnu.org/software/libtasn1/
 description : |
     libtasn1 is a highly portable C library that encodes and decodes DER/BER data following an ASN.1 schema.
 upstreams   :
-    - https://ftp.gnu.org/gnu/libtasn1/libtasn1-4.20.0.tar.gz: 92e0e3bd4c02d4aeee76036b2ddd83f0c732ba4cda5cb71d583272b23587a76c
+    - https://ftp.gnu.org/gnu/libtasn1/libtasn1-4.21.0.tar.gz: 1d8a444a223cc5464240777346e125de51d8e6abf0b8bac742ac84609167dc87
 builddeps   :
     - binary(bison)
 setup       : |
-    %configure --disable-static
+    %configure \
+        --disable-static
 build       : |
     %make
 install     : |

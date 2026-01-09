@@ -11,7 +11,7 @@
 			],
 			"files": [
 				"/usr/lib/libtasn1.so.6",
-				"/usr/lib/libtasn1.so.6.6.4",
+				"/usr/lib/libtasn1.so.6.6.5",
 				"/usr/share/info/libtasn1.info"
 			],
 			"name": "libtasn1",
@@ -126,6 +126,6 @@
 		}
 	},
 	"source-name": "libtasn1",
-	"source-release": "3",
-	"source-version": "4.20.0"
+	"source-release": "4",
+	"source-version": "4.21.0"
 }
