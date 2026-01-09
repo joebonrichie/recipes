@@ -5,7 +5,7 @@
 #
 name        : typescript
 version     : 5.9.3
-release     : 5
+release     : 6
 homepage    : https://www.typescriptlang.org
 upstreams   :
     - https://registry.npmjs.org/typescript/-/typescript-5.9.3.tgz : 10e108c9cf7d5f2879053dff18515fb405abf2ccef63eaaf017d9c571687a1d3
@@ -14,13 +14,25 @@ description : |
     TypeScript is a language for application-scale JavaScript. TypeScript adds optional types to JavaScript that support tools for large-scale JavaScript applications for any browser, for any host, on any OS. TypeScript compiles to  readable, standards-based JavaScript.
 license     : Apache-2.0
 builddeps   :
-    - binary(npm)
+    - binary(npm-22)
+    - binary(npm-24)
     - pkgconfig(zlib)
 rundeps     :
     - binary(node)
 install     : |
-    npm install -g --prefix %(installroot)/usr %(sourcedir)/typescript-%(version).tgz
+    OLDPATH=${PATH}
 
-    # TODO: Create a nodejs macro that does this.
-    # Move to node_modules_22 since that's the only node version we currently have
-    mv %(installroot)%(libdir)/node_modules %(installroot)%(libdir)/node_modules_22
+    # Nodejs-22 (non-default)
+    mkdir tmpinstall
+    export PATH=/usr/lib/nodejs-22/bin:$OLDPATH
+    npm install -g --prefix tmpinstall %(sourcedir)/typescript-%(version).tgz
+
+    # We only care about the node_modules for non-default nodejs versions
+    mkdir -p %(installroot)%(libdir)/
+    mv tmpinstall/lib/node_modules %(installroot)%(libdir)/node_modules_22
+
+    # Nodejs-24 (default)
+    export PATH=/usr/lib/nodejs-24/bin:$OLDPATH
+    npm install -g --prefix %(installroot)%(prefix) %(sourcedir)/typescript-%(version).tgz
+
+    mv %(installroot)%(libdir)/node_modules %(installroot)%(libdir)/node_modules_24
