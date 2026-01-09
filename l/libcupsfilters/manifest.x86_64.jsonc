@@ -30,7 +30,7 @@
 				"soname(liblcms2_threaded.so.2(x86_64))",
 				"soname(libm.so.6(x86_64))",
 				"soname(libpng16.so.16(x86_64))",
-				"soname(libpoppler-cpp.so.2(x86_64))",
+				"soname(libpoppler-cpp.so.3(x86_64))",
 				"soname(libqpdf.so.30(x86_64))",
 				"soname(libstdc++.so.6(x86_64))",
 				"soname(libtiff.so.6(x86_64))"
@@ -117,6 +117,6 @@
 		}
 	},
 	"source-name": "libcupsfilters",
-	"source-release": "7",
+	"source-release": "8",
 	"source-version": "2.1.1"
 }
