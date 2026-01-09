@@ -19,6 +19,7 @@
 				"pkgconfig(openh264)",
 				"pkgconfig(rav1e)",
 				"pkgconfig(sdl2-compat)",
+				"pkgconfig(x264)",
 				"pkgconfig(x265)",
 				"pkgconfig(zlib)"
 			],
@@ -44,6 +45,7 @@
 				"pkgconfig(openh264)",
 				"pkgconfig(rav1e)",
 				"pkgconfig(sdl2-compat)",
+				"pkgconfig(x264)",
 				"pkgconfig(x265)",
 				"pkgconfig(zlib)"
 			],
@@ -62,7 +64,7 @@
 			],
 			"files": [
 				"/usr/lib/libheif.so.1",
-				"/usr/lib/libheif.so.1.20.2"
+				"/usr/lib/libheif.so.1.21.1"
 			],
 			"name": "libheif",
 			"provides": [
@@ -86,6 +88,7 @@
 				"pkgconfig(openh264)",
 				"pkgconfig(rav1e)",
 				"pkgconfig(sdl2-compat)",
+				"pkgconfig(x264)",
 				"pkgconfig(x265)",
 				"pkgconfig(zlib)"
 			],
@@ -115,6 +118,7 @@
 				"/usr/include/libheif/heif_security.h",
 				"/usr/include/libheif/heif_sequences.h",
 				"/usr/include/libheif/heif_tai_timestamps.h",
+				"/usr/include/libheif/heif_text.h",
 				"/usr/include/libheif/heif_tiling.h",
 				"/usr/include/libheif/heif_uncompressed.h",
 				"/usr/include/libheif/heif_version.h",
@@ -147,6 +151,7 @@
 				"pkgconfig(openh264)",
 				"pkgconfig(rav1e)",
 				"pkgconfig(sdl2-compat)",
+				"pkgconfig(x264)",
 				"pkgconfig(x265)",
 				"pkgconfig(zlib)"
 			],
@@ -184,12 +189,14 @@
 				"pkgconfig(openh264)",
 				"pkgconfig(rav1e)",
 				"pkgconfig(sdl2-compat)",
+				"pkgconfig(x264)",
 				"pkgconfig(x265)",
 				"pkgconfig(zlib)"
 			],
 			"depends": [
 				"soname(libc.so.6(x86_64))",
 				"soname(libdav1d.so.7(x86_64))",
+				"soname(libgcc_s.so.1(x86_64))",
 				"soname(libheif.so.1(x86_64))",
 				"soname(libstdc++.so.6(x86_64))"
 			],
@@ -218,6 +225,7 @@
 				"pkgconfig(openh264)",
 				"pkgconfig(rav1e)",
 				"pkgconfig(sdl2-compat)",
+				"pkgconfig(x264)",
 				"pkgconfig(x265)",
 				"pkgconfig(zlib)"
 			],
@@ -254,6 +262,7 @@
 				"pkgconfig(openh264)",
 				"pkgconfig(rav1e)",
 				"pkgconfig(sdl2-compat)",
+				"pkgconfig(x264)",
 				"pkgconfig(x265)",
 				"pkgconfig(zlib)"
 			],
@@ -289,6 +298,7 @@
 				"pkgconfig(openh264)",
 				"pkgconfig(rav1e)",
 				"pkgconfig(sdl2-compat)",
+				"pkgconfig(x264)",
 				"pkgconfig(x265)",
 				"pkgconfig(zlib)"
 			],
@@ -325,6 +335,7 @@
 				"pkgconfig(openh264)",
 				"pkgconfig(rav1e)",
 				"pkgconfig(sdl2-compat)",
+				"pkgconfig(x264)",
 				"pkgconfig(x265)",
 				"pkgconfig(zlib)"
 			],
@@ -359,6 +370,7 @@
 				"pkgconfig(openh264)",
 				"pkgconfig(rav1e)",
 				"pkgconfig(sdl2-compat)",
+				"pkgconfig(x264)",
 				"pkgconfig(x265)",
 				"pkgconfig(zlib)"
 			],
@@ -394,6 +406,7 @@
 				"pkgconfig(openh264)",
 				"pkgconfig(rav1e)",
 				"pkgconfig(sdl2-compat)",
+				"pkgconfig(x264)",
 				"pkgconfig(x265)",
 				"pkgconfig(zlib)"
 			],
@@ -429,6 +442,7 @@
 				"pkgconfig(openh264)",
 				"pkgconfig(rav1e)",
 				"pkgconfig(sdl2-compat)",
+				"pkgconfig(x264)",
 				"pkgconfig(x265)",
 				"pkgconfig(zlib)"
 			],
@@ -445,6 +459,42 @@
 			"name": "libheif-plugin-svtav1",
 			"provides": [
 				"soname(libheif/libheif-svtenc.so(x86_64))"
+			]
+		},
+		"libheif-plugin-x264": {
+			"build-depends": [
+				"binary(doxygen)",
+				"pkgconfig(SvtAv1Enc)",
+				"pkgconfig(aom)",
+				"pkgconfig(dav1d)",
+				"pkgconfig(libavcodec)",
+				"pkgconfig(libavutil)",
+				"pkgconfig(libde265)",
+				"pkgconfig(libjpeg)",
+				"pkgconfig(libopenjp2)",
+				"pkgconfig(libpng)",
+				"pkgconfig(libsharpyuv)",
+				"pkgconfig(libtiff-4)",
+				"pkgconfig(openh264)",
+				"pkgconfig(rav1e)",
+				"pkgconfig(sdl2-compat)",
+				"pkgconfig(x264)",
+				"pkgconfig(x265)",
+				"pkgconfig(zlib)"
+			],
+			"depends": [
+				"soname(libc.so.6(x86_64))",
+				"soname(libgcc_s.so.1(x86_64))",
+				"soname(libheif.so.1(x86_64))",
+				"soname(libstdc++.so.6(x86_64))",
+				"soname(libx264.so.165(x86_64))"
+			],
+			"files": [
+				"/usr/lib/libheif/libheif-x264.so"
+			],
+			"name": "libheif-plugin-x264",
+			"provides": [
+				"soname(libheif/libheif-x264.so(x86_64))"
 			]
 		},
 		"libheif-plugin-x265": {
@@ -464,6 +514,7 @@
 				"pkgconfig(openh264)",
 				"pkgconfig(rav1e)",
 				"pkgconfig(sdl2-compat)",
+				"pkgconfig(x264)",
 				"pkgconfig(x265)",
 				"pkgconfig(zlib)"
 			],
@@ -499,6 +550,7 @@
 				"pkgconfig(openh264)",
 				"pkgconfig(rav1e)",
 				"pkgconfig(sdl2-compat)",
+				"pkgconfig(x264)",
 				"pkgconfig(x265)",
 				"pkgconfig(zlib)"
 			],
@@ -539,6 +591,6 @@
 		}
 	},
 	"source-name": "libheif",
-	"source-release": "4",
-	"source-version": "1.20.2"
+	"source-release": "5",
+	"source-version": "1.21.1"
 }
