@@ -5,11 +5,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : linux-handheld
-version     : 6.17.13
-release     : 41
+version     : 6.18.5
+release     : 42
 homepage    : https://kernel.org/
 upstreams   :
-    - https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.17.13.tar.xz : 116802dc3ad1646163cc6ffe9bddba24a8069b569135ec0523cd799064f2edb9
+    - https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.18.5.tar.xz : 189d1f409cef8d0d234210e04595172df392f8cb297e14b447ed95720e2fd940
 summary     : The Linux Kernel for handheld systems
 description : |
     The Linux Kernel for handheld systems
@@ -71,9 +71,20 @@ environment : |
     export KBUILD_BUILD_USER=root
     export KBUILD_BUILD_TIMESTAMP=$(date --utc --date=@$SOURCE_DATE_EPOCH +%%F)
 setup       : |
-    for i in $(cat %(pkgdir)/patches/series) ; do
-        %patch %(pkgdir)/patches/$i
-    done
+    if [[ -f %(pkgdir)/patches/series ]]
+    then
+        # This retains patch order while removings blank lines
+        # and lines starting with a # character (with any number of preceding blanks)
+        # which should make the patch series file nicer to maintain due to comment support
+        PATCHES=($(sed -E -e '/^\s*$/d' -e '/^[[:space:]]*#.*$/d' %(pkgdir)/patches/series))
+        for p in "${PATCHES[@]}"
+        do
+            %patch "%(pkgdir)/patches/${p}"
+        done
+    else
+        echo -e "\nERROR: Please set up a pkg/patches/series file!\n"
+        exit 1
+    fi
 
     extraVersion="-%(release).handheld"
     sed -e "s/EXTRAVERSION =.*/EXTRAVERSION = $extraVersion/" -i Makefile
