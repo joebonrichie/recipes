@@ -18,7 +18,7 @@
 			],
 			"files": [
 				"/usr/lib/libKF6BluezQt.so.6",
-				"/usr/lib/libKF6BluezQt.so.6.21.0",
+				"/usr/lib/libKF6BluezQt.so.6.22.0",
 				"/usr/lib/qt6/qml/org/kde/bluezqt/DevicesModel.qml",
 				"/usr/lib/qt6/qml/org/kde/bluezqt/bluezqtextensionplugin.qmltypes",
 				"/usr/lib/qt6/qml/org/kde/bluezqt/kde-qmlmodule.version",
@@ -48,6 +48,7 @@
 			"files": [
 				"/usr/include/KF6/BluezQt/BluezQt/Adapter",
 				"/usr/include/KF6/BluezQt/BluezQt/Agent",
+				"/usr/include/KF6/BluezQt/BluezQt/Battery",
 				"/usr/include/KF6/BluezQt/BluezQt/Device",
 				"/usr/include/KF6/BluezQt/BluezQt/DevicesModel",
 				"/usr/include/KF6/BluezQt/BluezQt/GattApplication",
@@ -87,6 +88,7 @@
 				"/usr/include/KF6/BluezQt/BluezQt/Types",
 				"/usr/include/KF6/BluezQt/bluezqt/adapter.h",
 				"/usr/include/KF6/BluezQt/bluezqt/agent.h",
+				"/usr/include/KF6/BluezQt/bluezqt/battery.h",
 				"/usr/include/KF6/BluezQt/bluezqt/bluezqt_export.h",
 				"/usr/include/KF6/BluezQt/bluezqt/device.h",
 				"/usr/include/KF6/BluezQt/bluezqt/devicesmodel.h",
@@ -141,6 +143,6 @@
 		}
 	},
 	"source-name": "kf6-bluez-qt",
-	"source-release": "12",
-	"source-version": "6.21.0"
+	"source-release": "13",
+	"source-version": "6.22.0"
 }
