@@ -4,10 +4,10 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : akonadiconsole
-version     : 25.12.0
-release     : 2
+version     : 25.12.1
+release     : 3
 upstreams   :
-    - https://download.kde.org/stable/release-service/25.12.0/src/akonadiconsole-25.12.0.tar.xz : 188345910f718f10c9dc11bd8b745c18f0abf3e62be34c797aa5ee81e61e8555
+    - https://download.kde.org/stable/release-service/25.12.1/src/akonadiconsole-25.12.1.tar.xz : f45f3c6da94ca869f18e8c89123dff186a777de7cb53a8f4ad58090cfddd52f2
 homepage    : https://invent.kde.org/pim/akonadiconsole
 license     :
     - GPL-2.0-or-later
