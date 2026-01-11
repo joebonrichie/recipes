@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : linux-firmware
-version     : "20251125"
-release     : 34
+version     : "20260110"
+release     : 35
 homepage    : https://kernel.org
 upstreams   :
-    - git|https://gitlab.com/kernel-firmware/linux-firmware.git : 4ee5122b3f58e4c07951746c4425e2f4f42e860f
+    - git|https://gitlab.com/kernel-firmware/linux-firmware.git : 06a743fd69999590e88199bb9edba9d5b73d6ad1
 summary     : Firmware to allow devices to function correctly
 description : |
     Firmware to allow devices to function correctly
@@ -299,6 +299,7 @@ packages    :
             - /usr/lib/firmware/mts_*.fw*
             - /usr/lib/firmware/qat_4xxx*
             - /usr/lib/firmware/r8a779x_*.dlmem*
+            - /usr/lib/firmware/rcar_gen4_pcie.bin*
             - /usr/lib/firmware/rp2.fw*
             - /usr/lib/firmware/rsi_91x.fw*
             - /usr/lib/firmware/s2250*.fw*
