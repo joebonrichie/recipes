@@ -48,9 +48,9 @@
 			"files": [
 				"/usr/lib/kf6/purposeprocess",
 				"/usr/lib/libKF6Purpose.so.6",
-				"/usr/lib/libKF6Purpose.so.6.21.0",
+				"/usr/lib/libKF6Purpose.so.6.22.0",
 				"/usr/lib/libKF6PurposeWidgets.so.6",
-				"/usr/lib/libKF6PurposeWidgets.so.6.21.0",
+				"/usr/lib/libKF6PurposeWidgets.so.6.22.0",
 				"/usr/lib/qt6/plugins/kf6/kfileitemaction/sharefileitemaction.so",
 				"/usr/lib/qt6/plugins/kf6/purpose/barcodeplugin.so",
 				"/usr/lib/qt6/plugins/kf6/purpose/bluetoothplugin.so",
@@ -330,6 +330,20 @@
 				"/usr/share/locale/fr/LC_MESSAGES/purpose6_reviewboard.mo",
 				"/usr/share/locale/fr/LC_MESSAGES/purpose6_saveas.mo",
 				"/usr/share/locale/fr/LC_MESSAGES/purpose6_youtube.mo",
+				"/usr/share/locale/ga/LC_MESSAGES/libpurpose6_quick.mo",
+				"/usr/share/locale/ga/LC_MESSAGES/libpurpose6_widgets.mo",
+				"/usr/share/locale/ga/LC_MESSAGES/purpose6_barcode.mo",
+				"/usr/share/locale/ga/LC_MESSAGES/purpose6_bluetooth.mo",
+				"/usr/share/locale/ga/LC_MESSAGES/purpose6_fileitemaction.mo",
+				"/usr/share/locale/ga/LC_MESSAGES/purpose6_imgur.mo",
+				"/usr/share/locale/ga/LC_MESSAGES/purpose6_kdeconnect.mo",
+				"/usr/share/locale/ga/LC_MESSAGES/purpose6_kdeconnectsms.mo",
+				"/usr/share/locale/ga/LC_MESSAGES/purpose6_nextcloud.mo",
+				"/usr/share/locale/ga/LC_MESSAGES/purpose6_pastebin.mo",
+				"/usr/share/locale/ga/LC_MESSAGES/purpose6_phabricator.mo",
+				"/usr/share/locale/ga/LC_MESSAGES/purpose6_reviewboard.mo",
+				"/usr/share/locale/ga/LC_MESSAGES/purpose6_saveas.mo",
+				"/usr/share/locale/ga/LC_MESSAGES/purpose6_youtube.mo",
 				"/usr/share/locale/gl/LC_MESSAGES/libpurpose6_quick.mo",
 				"/usr/share/locale/gl/LC_MESSAGES/libpurpose6_widgets.mo",
 				"/usr/share/locale/gl/LC_MESSAGES/purpose6_barcode.mo",
@@ -845,6 +859,6 @@
 		}
 	},
 	"source-name": "kf6-purpose",
-	"source-release": "13",
-	"source-version": "6.21.0"
+	"source-release": "14",
+	"source-version": "6.22.0"
 }
