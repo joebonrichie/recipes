@@ -1,13 +1,14 @@
 # /etc/shells: valid login shells
-/bin/sh
 /bin/bash
-/bin/tcsh
 /bin/csh
+/bin/dash
 /bin/esh
 /bin/ksh
 /bin/sash
-/bin/dash
+/bin/sh
+/bin/tcsh
 /usr/bin/bash
+/usr/bin/brush
 /usr/bin/dash
 /usr/bin/fish
 /usr/bin/zsh
