@@ -36,12 +36,12 @@
 				"soname(libKF6Crash.so.6(x86_64))",
 				"soname(libKF6I18n.so.6(x86_64))",
 				"soname(libKF6IconThemes.so.6(x86_64))",
+				"soname(libKF6TextAddonsWidgets.so.1(x86_64))",
 				"soname(libKF6UserFeedbackCore.so.6(x86_64))",
 				"soname(libKF6UserFeedbackWidgets.so.6(x86_64))",
 				"soname(libKF6WidgetsAddons.so.6(x86_64))",
 				"soname(libKF6XmlGui.so.6(x86_64))",
 				"soname(libKPim6KontactInterface.so.6(x86_64))",
-				"soname(libKPim6PimCommon.so.6(x86_64))",
 				"soname(libQt6Core.so.6(x86_64))",
 				"soname(libQt6Gui.so.6(x86_64))",
 				"soname(libQt6Widgets.so.6(x86_64))",
@@ -500,6 +500,7 @@
 				"soname(libKF6KCMUtils.so.6(x86_64))",
 				"soname(libKF6KCMUtilsCore.so.6(x86_64))",
 				"soname(libKF6Parts.so.6(x86_64))",
+				"soname(libKF6TextAddonsWidgets.so.1(x86_64))",
 				"soname(libKF6UserFeedbackCore.so.6(x86_64))",
 				"soname(libKF6UserFeedbackWidgets.so.6(x86_64))",
 				"soname(libKF6WidgetsAddons.so.6(x86_64))",
@@ -528,9 +529,9 @@
 			],
 			"files": [
 				"/usr/lib/libKPim6AddressbookImportExport.so.6",
-				"/usr/lib/libKPim6AddressbookImportExport.so.6.6.0",
+				"/usr/lib/libKPim6AddressbookImportExport.so.6.6.1",
 				"/usr/lib/libkaddressbookprivate.so.6",
-				"/usr/lib/libkaddressbookprivate.so.6.6.0",
+				"/usr/lib/libkaddressbookprivate.so.6.6.1",
 				"/usr/lib/qt6/plugins/kaddressbookpart.so",
 				"/usr/lib/qt6/plugins/pim6/kcms/kaddressbook/kaddressbook_config_activities.so",
 				"/usr/lib/qt6/plugins/pim6/kcms/kaddressbook/kaddressbook_config_ldap.so",
@@ -552,6 +553,6 @@
 		}
 	},
 	"source-name": "kaddressbook",
-	"source-release": "9",
-	"source-version": "25.12.0"
+	"source-release": "10",
+	"source-version": "25.12.1"
 }
