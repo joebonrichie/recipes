@@ -5,7 +5,7 @@
 #
 name        : qt6-webengine
 version     : 6.10.1
-release     : 15
+release     : 16
 homepage    : https://www.qt.io
 upstreams   :
     - https://download.qt.io/official_releases/qt/6.10/6.10.1/submodules/qtwebengine-everywhere-src-6.10.1.tar.xz: 77b5ea6186a0429a6b8e656faedd5cd3e8019d33856ee59637698ab578ead1e3
@@ -15,7 +15,7 @@ upstreams   :
 # Don't edit anything between the BEGIN_UPSTREAMS and END_UPSTREAMS tags
 ##@@BEGIN_UPSTREAMS
     - git|https://invent.kde.org/qt/qt/qtwebengine-chromium.git:
-        ref: 0ce0aee905f765cf66e397ac1513349528c4b966
+        ref: 20e951054335bdc31e0e751dc4821f03a57f2a62
 ##@@END_UPSTREAMS
 summary     : Qt6 Webengine Module
 description : |
@@ -87,7 +87,7 @@ setup       : |
 
     %patch %(pkgdir)/disable-spellchecker-demo.patch
 
-    # %patch %(pkgdir)/qtwebengine-6.9.3-QTBUG-139424.patch
+    %patch %(pkgdir)/QTBUG-139335.patch
 
     # 3rdparty patches
     %patch %(pkgdir)/qtwebengine-link-pipewire.patch -d src/3rdparty
