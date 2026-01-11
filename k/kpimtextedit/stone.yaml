@@ -4,10 +4,10 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : kpimtextedit
-version     : 25.12.0
-release     : 9
+version     : 25.12.1
+release     : 10
 upstreams   :
-    - https://download.kde.org/stable/release-service/25.12.0/src/kpimtextedit-25.12.0.tar.xz : 4faf69b29d69474665e0f62daba3279a32576bbff3df767667ff8174b9f5f62e
+    - https://download.kde.org/stable/release-service/25.12.1/src/kpimtextedit-25.12.1.tar.xz : 0e7b0e614b314e491047277f102990b2b7b8b5959cf9c6b83c872966ff599fc4
 homepage    : https://kde.org
 license     : LGPL-2.1-or-later
 summary     : KPIMTextedit is a library that provides an enchanced text edit class, see TextEdit

@@ -4,10 +4,10 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : incidenceeditor
-version     : 25.12.0
-release     : 8
+version     : 25.12.1
+release     : 9
 upstreams   :
-    - https://download.kde.org/stable/release-service/25.12.0/src/incidenceeditor-25.12.0.tar.xz : 6da21ce4663ae11baf00687d4225c65cca81ceae9ca436aacfb684e7171ae7cf
+    - https://download.kde.org/stable/release-service/25.12.1/src/incidenceeditor-25.12.1.tar.xz : 9a121cadd5e79b36dcbf93487c1a6ce5c8e1397b5d3938c960a8d8308772acd4
 homepage    : https://kontact.kde.org/
 license     :
     - GPL-2.0-or-later

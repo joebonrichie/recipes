@@ -4,10 +4,10 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : dolphin
-version     : 25.12.0
-release     : 17
+version     : 25.12.1
+release     : 18
 upstreams   :
-    - https://download.kde.org/stable/release-service/25.12.0/src/dolphin-25.12.0.tar.xz : 02d67059c13c5a4cf74847f0f1c0cf9a6de47345ca80f2e3ba5ba8f408481bff
+    - https://download.kde.org/stable/release-service/25.12.1/src/dolphin-25.12.1.tar.xz : 86315327422175a483e3efc61f7e7fff954d4f760efdcfff5f8713a3d10db664
 homepage    : https://kde.org/applications/system/org.kde.dolphin
 license     :
     - GFDL-1.2-or-later

@@ -4,10 +4,10 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : kpkpass
-version     : 25.12.0
-release     : 11
+version     : 25.12.1
+release     : 12
 upstreams   :
-    - https://download.kde.org/stable/release-service/25.12.0/src/kpkpass-25.12.0.tar.xz : 592cfa16e8f7c7ab69c7498c0facde972c5d98e9cf3e199d9f5d3da99b3f53f6
+    - https://download.kde.org/stable/release-service/25.12.1/src/kpkpass-25.12.1.tar.xz : 44e8716849392ab3bbb2bac812d6abebb383843982c070f2520e34d9e8354d97
 homepage    : https://invent.kde.org/pim/kpkpass
 license     : LGPL-2.1-or-later
 summary     : Apple Wallet Pass reader

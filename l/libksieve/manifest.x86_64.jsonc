@@ -66,13 +66,13 @@
 			],
 			"files": [
 				"/usr/lib/libKPim6KManageSieve.so.6",
-				"/usr/lib/libKPim6KManageSieve.so.6.6.0",
+				"/usr/lib/libKPim6KManageSieve.so.6.6.1",
 				"/usr/lib/libKPim6KSieve.so.6",
-				"/usr/lib/libKPim6KSieve.so.6.6.0",
+				"/usr/lib/libKPim6KSieve.so.6.6.1",
 				"/usr/lib/libKPim6KSieveCore.so.6",
-				"/usr/lib/libKPim6KSieveCore.so.6.6.0",
+				"/usr/lib/libKPim6KSieveCore.so.6.6.1",
 				"/usr/lib/libKPim6KSieveUi.so.6",
-				"/usr/lib/libKPim6KSieveUi.so.6.6.0",
+				"/usr/lib/libKPim6KSieveUi.so.6.6.1",
 				"/usr/share/knsrcfiles/ksieve_script.knsrc",
 				"/usr/share/locale/ar/LC_MESSAGES/libksieve6.mo",
 				"/usr/share/locale/ast/LC_MESSAGES/libksieve6.mo",
@@ -293,6 +293,6 @@
 		}
 	},
 	"source-name": "libksieve",
-	"source-release": "8",
-	"source-version": "25.12.0"
+	"source-release": "9",
+	"source-version": "25.12.1"
 }

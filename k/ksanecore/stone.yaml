@@ -4,10 +4,10 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : ksanecore
-version     : 25.12.0
-release     : 5
+version     : 25.12.1
+release     : 6
 upstreams   :
-    - https://download.kde.org/stable/release-service/25.12.0/src/ksanecore-25.12.0.tar.xz : 617d01d96ea78bad4c3d681517e64b16f037f9ca387c25a05ecefbc59e3cdb32
+    - https://download.kde.org/stable/release-service/25.12.1/src/ksanecore-25.12.1.tar.xz : 5f86e1a6f36970e3b0a90e163f17746b83e00daf4b967a342e873947331d34fe
 homepage    : https://invent.kde.org/libraries/ksanecore
 license     :
     - LGPL-2.1-only

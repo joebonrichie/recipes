@@ -4,10 +4,10 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : grantleetheme
-version     : 25.12.0
-release     : 9
+version     : 25.12.1
+release     : 10
 upstreams   :
-    - https://download.kde.org/stable/release-service/25.12.0/src/grantleetheme-25.12.0.tar.xz : 1fe49ef046dff772e370045f39c70bc987310e863f9d20d946cd37cbb38b5c47
+    - https://download.kde.org/stable/release-service/25.12.1/src/grantleetheme-25.12.1.tar.xz : 1caf526b93127fb353ba620d6419e8554c5cc6fb8d5345464cf52c4d215e98cf
 homepage    : https://kde.org
 license     : LGPL-2.1-or-later
 summary     : GrantleeTheme library provides a class for loading theme packages containing sets of templates

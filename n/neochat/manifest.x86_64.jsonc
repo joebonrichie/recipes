@@ -58,6 +58,7 @@
 				"soname(libKF6DBusAddons.so.6(x86_64))",
 				"soname(libKF6I18n.so.6(x86_64))",
 				"soname(libKF6I18nQml.so.6(x86_64))",
+				"soname(libKF6IconThemes.so.6(x86_64))",
 				"soname(libKF6KIOCore.so.6(x86_64))",
 				"soname(libKF6KIOGui.so.6(x86_64))",
 				"soname(libKF6Notifications.so.6(x86_64))",
@@ -114,6 +115,7 @@
 				"/usr/share/locale/eu/LC_MESSAGES/neochat.mo",
 				"/usr/share/locale/fi/LC_MESSAGES/neochat.mo",
 				"/usr/share/locale/fr/LC_MESSAGES/neochat.mo",
+				"/usr/share/locale/ga/LC_MESSAGES/neochat.mo",
 				"/usr/share/locale/gl/LC_MESSAGES/neochat.mo",
 				"/usr/share/locale/he/LC_MESSAGES/neochat.mo",
 				"/usr/share/locale/hi/LC_MESSAGES/neochat.mo",
@@ -150,6 +152,7 @@
 				"/usr/share/man/it/man1/neochat.1",
 				"/usr/share/man/man1/neochat.1",
 				"/usr/share/man/nl/man1/neochat.1",
+				"/usr/share/man/pt_BR/man1/neochat.1",
 				"/usr/share/man/ru/man1/neochat.1",
 				"/usr/share/man/sl/man1/neochat.1",
 				"/usr/share/man/sv/man1/neochat.1",
@@ -166,6 +169,6 @@
 		}
 	},
 	"source-name": "neochat",
-	"source-release": "12",
-	"source-version": "25.12.0"
+	"source-release": "13",
+	"source-version": "25.12.1"
 }

@@ -4,10 +4,10 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : kunifiedpush
-version     : 25.12.0
-release     : 8
+version     : 25.12.1
+release     : 9
 upstreams   :
-    - https://download.kde.org/stable/release-service/25.12.0/src/kunifiedpush-25.12.0.tar.xz : 37591d1dd1291678e0d34470ecfa7f6cf188a3723ab0db117042d11d43b60ffe
+    - https://download.kde.org/stable/release-service/25.12.1/src/kunifiedpush-25.12.1.tar.xz : 68de794e3c120746a3697544f79039a8352302f7944513c991b8e32063656087
 homepage    : https://invent.kde.org/libraries/kunifiedpush
 license     : LGPL-2.0-or-later
 summary     : UnifiedPush client library
