@@ -4,10 +4,10 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : kmag
-version     : 25.12.0
-release     : 5
+version     : 25.12.1
+release     : 6
 upstreams   :
-    - https://download.kde.org/stable/release-service/25.12.0/src/kmag-25.12.0.tar.xz : 0a7c7e3ec7bcd2639915872d05716537eea7854bed2c299725eafcfa4cb5746d
+    - https://download.kde.org/stable/release-service/25.12.1/src/kmag-25.12.1.tar.xz : 3e51f0fb1734161a7ff7b70f02ea00c43f3da37f778b263af495f05690188204
 homepage    : https://apps.kde.org/kmag/
 license     :
     - GFDL-1.2-or-later
