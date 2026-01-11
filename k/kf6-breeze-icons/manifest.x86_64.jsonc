@@ -3459,6 +3459,8 @@
 				"/usr/share/icons/breeze-dark/actions/16/view-time-schedule-insert.svg",
 				"/usr/share/icons/breeze-dark/actions/16/view-time-schedule-symbolic.svg",
 				"/usr/share/icons/breeze-dark/actions/16/view-time-schedule.svg",
+				"/usr/share/icons/breeze-dark/actions/16/view-visible-off-symbolic.svg",
+				"/usr/share/icons/breeze-dark/actions/16/view-visible-off.svg",
 				"/usr/share/icons/breeze-dark/actions/16/view-visible-symbolic.svg",
 				"/usr/share/icons/breeze-dark/actions/16/view-visible.svg",
 				"/usr/share/icons/breeze-dark/actions/16/view-web-browser-dom-tree-symbolic.svg",
@@ -7357,6 +7359,8 @@
 				"/usr/share/icons/breeze-dark/actions/22/view-time-schedule.svg",
 				"/usr/share/icons/breeze-dark/actions/22/view-unsplit-effect-symbolic.svg",
 				"/usr/share/icons/breeze-dark/actions/22/view-unsplit-effect.svg",
+				"/usr/share/icons/breeze-dark/actions/22/view-visible-off-symbolic.svg",
+				"/usr/share/icons/breeze-dark/actions/22/view-visible-off.svg",
 				"/usr/share/icons/breeze-dark/actions/22/view-visible-symbolic.svg",
 				"/usr/share/icons/breeze-dark/actions/22/view-visible.svg",
 				"/usr/share/icons/breeze-dark/actions/22/view-web-browser-dom-tree-symbolic.svg",
@@ -11257,6 +11261,8 @@
 				"/usr/share/icons/breeze-dark/actions/24/view-time-schedule.svg",
 				"/usr/share/icons/breeze-dark/actions/24/view-unsplit-effect-symbolic.svg",
 				"/usr/share/icons/breeze-dark/actions/24/view-unsplit-effect.svg",
+				"/usr/share/icons/breeze-dark/actions/24/view-visible-off-symbolic.svg",
+				"/usr/share/icons/breeze-dark/actions/24/view-visible-off.svg",
 				"/usr/share/icons/breeze-dark/actions/24/view-visible-symbolic.svg",
 				"/usr/share/icons/breeze-dark/actions/24/view-visible.svg",
 				"/usr/share/icons/breeze-dark/actions/24/view-web-browser-dom-tree-symbolic.svg",
@@ -12453,6 +12459,7 @@
 				"/usr/share/icons/breeze-dark/apps/32/klipper-symbolic.svg",
 				"/usr/share/icons/breeze-dark/apps/32/knotes-symbolic.svg",
 				"/usr/share/icons/breeze-dark/apps/32/kup.svg",
+				"/usr/share/icons/breeze-dark/apps/32/org.kde.kjournaldbrowser.svg",
 				"/usr/share/icons/breeze-dark/apps/32/plasmavault-symbolic.svg",
 				"/usr/share/icons/breeze-dark/apps/32/plasmavault.svg",
 				"/usr/share/icons/breeze-dark/apps/32/preferences-system.svg",
@@ -12695,6 +12702,7 @@
 				"/usr/share/icons/breeze-dark/apps/48/org.kde.kile.svg",
 				"/usr/share/icons/breeze-dark/apps/48/org.kde.kiriki.svg",
 				"/usr/share/icons/breeze-dark/apps/48/org.kde.kiten.svg",
+				"/usr/share/icons/breeze-dark/apps/48/org.kde.kjournaldbrowser.svg",
 				"/usr/share/icons/breeze-dark/apps/48/org.kde.kjumpingcube.svg",
 				"/usr/share/icons/breeze-dark/apps/48/org.kde.kmplot.svg",
 				"/usr/share/icons/breeze-dark/apps/48/org.kde.knights.svg",
@@ -23348,6 +23356,8 @@
 				"/usr/share/icons/breeze/actions/16/view-time-schedule-insert.svg",
 				"/usr/share/icons/breeze/actions/16/view-time-schedule-symbolic.svg",
 				"/usr/share/icons/breeze/actions/16/view-time-schedule.svg",
+				"/usr/share/icons/breeze/actions/16/view-visible-off-symbolic.svg",
+				"/usr/share/icons/breeze/actions/16/view-visible-off.svg",
 				"/usr/share/icons/breeze/actions/16/view-visible-symbolic.svg",
 				"/usr/share/icons/breeze/actions/16/view-visible.svg",
 				"/usr/share/icons/breeze/actions/16/view-web-browser-dom-tree-symbolic.svg",
@@ -27246,6 +27256,8 @@
 				"/usr/share/icons/breeze/actions/22/view-time-schedule.svg",
 				"/usr/share/icons/breeze/actions/22/view-unsplit-effect-symbolic.svg",
 				"/usr/share/icons/breeze/actions/22/view-unsplit-effect.svg",
+				"/usr/share/icons/breeze/actions/22/view-visible-off-symbolic.svg",
+				"/usr/share/icons/breeze/actions/22/view-visible-off.svg",
 				"/usr/share/icons/breeze/actions/22/view-visible-symbolic.svg",
 				"/usr/share/icons/breeze/actions/22/view-visible.svg",
 				"/usr/share/icons/breeze/actions/22/view-web-browser-dom-tree-symbolic.svg",
@@ -31146,6 +31158,8 @@
 				"/usr/share/icons/breeze/actions/24/view-time-schedule.svg",
 				"/usr/share/icons/breeze/actions/24/view-unsplit-effect-symbolic.svg",
 				"/usr/share/icons/breeze/actions/24/view-unsplit-effect.svg",
+				"/usr/share/icons/breeze/actions/24/view-visible-off-symbolic.svg",
+				"/usr/share/icons/breeze/actions/24/view-visible-off.svg",
 				"/usr/share/icons/breeze/actions/24/view-visible-symbolic.svg",
 				"/usr/share/icons/breeze/actions/24/view-visible.svg",
 				"/usr/share/icons/breeze/actions/24/view-web-browser-dom-tree-symbolic.svg",
@@ -32342,6 +32356,7 @@
 				"/usr/share/icons/breeze/apps/32/klipper-symbolic.svg",
 				"/usr/share/icons/breeze/apps/32/knotes-symbolic.svg",
 				"/usr/share/icons/breeze/apps/32/kup.svg",
+				"/usr/share/icons/breeze/apps/32/org.kde.kjournaldbrowser.svg",
 				"/usr/share/icons/breeze/apps/32/plasmavault-symbolic.svg",
 				"/usr/share/icons/breeze/apps/32/plasmavault.svg",
 				"/usr/share/icons/breeze/apps/32/preferences-system.svg",
@@ -32584,6 +32599,7 @@
 				"/usr/share/icons/breeze/apps/48/org.kde.kile.svg",
 				"/usr/share/icons/breeze/apps/48/org.kde.kiriki.svg",
 				"/usr/share/icons/breeze/apps/48/org.kde.kiten.svg",
+				"/usr/share/icons/breeze/apps/48/org.kde.kjournaldbrowser.svg",
 				"/usr/share/icons/breeze/apps/48/org.kde.kjumpingcube.svg",
 				"/usr/share/icons/breeze/apps/48/org.kde.kmplot.svg",
 				"/usr/share/icons/breeze/apps/48/org.kde.knights.svg",
@@ -39806,7 +39822,7 @@
 			],
 			"files": [
 				"/usr/lib/libKF6BreezeIcons.so.6",
-				"/usr/lib/libKF6BreezeIcons.so.6.21.0"
+				"/usr/lib/libKF6BreezeIcons.so.6.22.0"
 			],
 			"name": "kf6-breeze-icons",
 			"provides": [
@@ -39841,6 +39857,6 @@
 		}
 	},
 	"source-name": "kf6-breeze-icons",
-	"source-release": "14",
-	"source-version": "6.21.0"
+	"source-release": "15",
+	"source-version": "6.22.0"
 }
