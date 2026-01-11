@@ -13,11 +13,11 @@
 			],
 			"files": [
 				"/usr/lib/liblcms2.so.2",
-				"/usr/lib/liblcms2.so.2.0.17",
+				"/usr/lib/liblcms2.so.2.0.18",
 				"/usr/lib/liblcms2_fast_float.so.2",
-				"/usr/lib/liblcms2_fast_float.so.2.0.17",
+				"/usr/lib/liblcms2_fast_float.so.2.0.18",
 				"/usr/lib/liblcms2_threaded.so.2",
-				"/usr/lib/liblcms2_threaded.so.2.0.17"
+				"/usr/lib/liblcms2_threaded.so.2.0.18"
 			],
 			"name": "lcms2",
 			"provides": [
@@ -84,6 +84,6 @@
 		}
 	},
 	"source-name": "lcms2",
-	"source-release": "5",
-	"source-version": "2.17"
+	"source-release": "6",
+	"source-version": "2.18"
 }
