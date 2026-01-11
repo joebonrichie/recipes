@@ -369,6 +369,8 @@
 				"/usr/share/doc/HTML/it/konversation/webbrowser_screen_co.png",
 				"/usr/share/doc/HTML/nl/konversation/index.cache.bz2",
 				"/usr/share/doc/HTML/nl/konversation/index.docbook",
+				"/usr/share/doc/HTML/pt_BR/konversation/index.cache.bz2",
+				"/usr/share/doc/HTML/pt_BR/konversation/index.docbook",
 				"/usr/share/doc/HTML/ru/konversation/index.cache.bz2",
 				"/usr/share/doc/HTML/ru/konversation/index.docbook",
 				"/usr/share/doc/HTML/sl/konversation/index.cache.bz2",
@@ -410,6 +412,6 @@
 		}
 	},
 	"source-name": "konversation",
-	"source-release": "5",
-	"source-version": "25.12.0"
+	"source-release": "6",
+	"source-version": "25.12.1"
 }
