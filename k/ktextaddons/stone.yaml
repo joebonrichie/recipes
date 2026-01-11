@@ -5,7 +5,7 @@
 #
 name        : ktextaddons
 version     : 1.9.0
-release     : 6
+release     : 7
 upstreams   :
     - https://download.kde.org/stable/ktextaddons/ktextaddons-1.9.0.tar.xz : 053bcf84e45c141042186a9115a8dd51a7262802fe9547745e44b419015b9694
 homepage    : https://invent.kde.org/libraries/ktextaddons
@@ -57,6 +57,7 @@ packages    :
         description: Various text handling addons - Qt6 bindings - Devel files
         rundeps:
             - "%(name)-qt6"
+            - cmake(Qt6TextToSpeech)
         paths:
             - /usr/include/KF6/
             - /usr/lib/cmake/KF6*/

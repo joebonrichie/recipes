@@ -457,6 +457,7 @@
 				"cmake(Qt6TextToSpeech)"
 			],
 			"depends": [
+				"cmake(Qt6TextToSpeech)",
 				"ktextaddons-qt6",
 				"soname(libKF6TextCustomEditor.so.1(x86_64))",
 				"soname(libKF6TextTranslator.so.1(x86_64))",
@@ -923,6 +924,6 @@
 		}
 	},
 	"source-name": "ktextaddons",
-	"source-release": "6",
+	"source-release": "7",
 	"source-version": "1.9.0"
 }
