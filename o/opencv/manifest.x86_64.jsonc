@@ -605,8 +605,8 @@
 			],
 			"depends": [
 				"soname(ld-linux-x86-64.so.2(x86_64))",
-				"soname(libabsl_hash.so.2508.0.0(x86_64))",
-				"soname(libabsl_log_internal_message.so.2508.0.0(x86_64))",
+				"soname(libabsl_hash.so.2601.0.0(x86_64))",
+				"soname(libabsl_log_internal_message.so.2601.0.0(x86_64))",
 				"soname(libc.so.6(x86_64))",
 				"soname(libgcc_s.so.1(x86_64))",
 				"soname(libm.so.6(x86_64))",
@@ -1247,6 +1247,6 @@
 		}
 	},
 	"source-name": "opencv",
-	"source-release": "12",
+	"source-release": "13",
 	"source-version": "4.13.0"
 }
