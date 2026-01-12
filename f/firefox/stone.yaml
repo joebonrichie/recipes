@@ -4,12 +4,12 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : firefox
-version     : 146.0.1
-release     : 50
+version     : 147.0
+release     : 51
 homepage    : https://www.mozilla.org/
 upstreams   :
-    - https://releases.mozilla.org/pub/firefox/releases/146.0.1/source/firefox-146.0.1.source.tar.xz:
-        hash: e9678a0e8473923953e1dc312c37919068623b6aa20adade16266049258191eb
+    - https://releases.mozilla.org/pub/firefox/releases/147.0/source/firefox-147.0.source.tar.xz:
+        hash: 222d8e63754f1e5b1789cb928d7f973e0168819c492bb0eb402b1d472e4fd9fe
         unpackdir: firefox
 summary     : Firefox web browser
 description : |
@@ -64,7 +64,6 @@ setup       : |
     # %%patch %(pkgdir)/patches/pgo.patch
     %patch %(pkgdir)/patches/0001-Fix-Firefox-Thunderbird-envvar-conflicts.patch
     %patch %(pkgdir)/patches/0001-Allow-installing-addons-from-user-scope.patch
-    %patch %(pkgdir)/patches/0001-icu-78-build-fix.patch
 
     # TODO: Figure out if we still need to enable unsigned addon loading considering we switched back to unmodified langpacks
 
