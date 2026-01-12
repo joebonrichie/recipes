@@ -1,0 +1,74 @@
+/** Human readable report. This is not consumed by boulder */
+{
+	"manifest-version": "0.2",
+	"packages": {
+		"gtk4-layer-shell": {
+			"build-depends": [
+				"binary(python3)",
+				"binary(vapigen)",
+				"pkgconfig(gobject-introspection-1.0)",
+				"pkgconfig(gtk4)",
+				"pkgconfig(wayland-client)",
+				"pkgconfig(wayland-protocols)",
+				"pkgconfig(wayland-scanner)",
+				"pkgconfig(wayland-server)"
+			],
+			"depends": [
+				"soname(libc.so.6(x86_64))",
+				"soname(libgio-2.0.so.0(x86_64))",
+				"soname(libglib-2.0.so.0(x86_64))",
+				"soname(libgobject-2.0.so.0(x86_64))",
+				"soname(libgtk-4.so.1(x86_64))",
+				"soname(libwayland-client.so.0(x86_64))"
+			],
+			"files": [
+				"/usr/lib/girepository-1.0/Gtk4LayerShell-1.0.typelib",
+				"/usr/lib/girepository-1.0/Gtk4SessionLock-1.0.typelib",
+				"/usr/lib/libgtk4-layer-shell.so.0",
+				"/usr/lib/libgtk4-layer-shell.so.1.3.0"
+			],
+			"name": "gtk4-layer-shell",
+			"provides": [
+				"soname(libgtk4-layer-shell.so.0(x86_64))"
+			]
+		},
+		"gtk4-layer-shell-devel": {
+			"build-depends": [
+				"binary(python3)",
+				"binary(vapigen)",
+				"pkgconfig(gobject-introspection-1.0)",
+				"pkgconfig(gtk4)",
+				"pkgconfig(wayland-client)",
+				"pkgconfig(wayland-protocols)",
+				"pkgconfig(wayland-scanner)",
+				"pkgconfig(wayland-server)"
+			],
+			"depends": [
+				"gtk4-layer-shell",
+				"pkgconfig(gtk4)",
+				"pkgconfig(wayland-client)",
+				"soname(libc.so.6(x86_64))",
+				"soname(libwayland-client.so.0(x86_64))"
+			],
+			"files": [
+				"/usr/include/gtk4-layer-shell/gtk4-layer-shell.h",
+				"/usr/include/gtk4-layer-shell/gtk4-session-lock.h",
+				"/usr/lib/libgtk4-layer-shell.so",
+				"/usr/lib/liblayer-shell-preload.so",
+				"/usr/lib/pkgconfig/gtk4-layer-shell-0.pc",
+				"/usr/share/gir-1.0/Gtk4LayerShell-1.0.gir",
+				"/usr/share/gir-1.0/Gtk4SessionLock-1.0.gir",
+				"/usr/share/vala/vapi/gtk4-layer-shell-0.deps",
+				"/usr/share/vala/vapi/gtk4-layer-shell-0.vapi"
+			],
+			"name": "gtk4-layer-shell-devel",
+			"provides": [
+				"pkgconfig(gtk4-layer-shell-0)",
+				"soname(liblayer-shell-preload.so(x86_64))"
+			]
+		}
+	},
+	"source-name": "gtk4-layer-shell",
+	"source-release": "1",
+	"source-version": "1.3.0"
+}
