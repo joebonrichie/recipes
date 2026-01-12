@@ -5,7 +5,7 @@
 #
 name        : elfutils
 version     : "0.194"
-release     : 10
+release     : 11
 homepage    : https://sourceware.org/elfutils
 upstreams   :
     - https://sourceware.org/elfutils/ftp/0.194/elfutils-0.194.tar.bz2 : 09e2ff033d39baa8b388a2d7fbc5390bfde99ae3b7c67c7daaf7433fbcf0f01e
@@ -16,20 +16,24 @@ license     :
     - GPL-2.0-or-later
 builddeps   :
     - binary(makeinfo)
+    - binary(msgfmt)
+    - pkgconfig(json-c)
+    - pkgconfig(libarchive)
     - pkgconfig(libcurl)
+    - pkgconfig(libmicrohttpd)
     - pkgconfig(sqlite3)
     - pkgconfig32(bzip2)
     - pkgconfig32(liblzma)
     - pkgconfig32(libzstd)
     - pkgconfig32(zlib)
 emul32      : true
-setup: |
+setup       : |
     %patch %(pkgdir)/rename-stack.patch
+    %patch %(pkgdir)/0001-config-Hardcode-profile-to-look-in-usr-share-default.patch
 
     %configure \
         --disable-static \
-        --disable-debuginfod \
-        --disable-libdebuginfod \
+        --enable-debuginfod \
         --with-zlib \
         --with-bzlib \
         --with-lzma \
@@ -45,6 +49,31 @@ install     : |
     find %(installroot)/%(libdir) -type f -name '*.a' -delete -print
 #check       : |
 #    %make check
+profiles    :
+    - emul32:
+        setup: |
+            %patch %(pkgdir)/rename-stack.patch
+
+            %configure \
+                --disable-static \
+                --disable-debuginfod \
+                --disable-libdebuginfod \
+                --with-libarchive=no \
+                --with-zlib \
+                --with-bzlib \
+                --with-lzma \
+                --with-zstd
+    - x86_64:
+        install: |
+            %make_install
+
+            %install_dir %(installroot)/%(vendordir)/profile.d
+            mv %(installroot)/etc/profile.d/* %(installroot)/%(vendordir)/profile.d/
+
+            %install_dir %(installroot)/%(vendordir)/debuginfod
+            echo "https://debuginfod.aerynos.dev" > %(installroot)/%(vendordir)/debuginfod/aerynos.urls
+
+            find %(installroot)/%(libdir) -type f -name '*.a' -delete -print
 packages    :
     - "%(name)-libs":
         summary: Libraries for elfutils
