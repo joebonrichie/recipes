@@ -5,7 +5,7 @@
 #
 name        : elfutils
 version     : "0.194"
-release     : 11
+release     : 12
 homepage    : https://sourceware.org/elfutils
 upstreams   :
     - https://sourceware.org/elfutils/ftp/0.194/elfutils-0.194.tar.bz2 : 09e2ff033d39baa8b388a2d7fbc5390bfde99ae3b7c67c7daaf7433fbcf0f01e
@@ -43,6 +43,12 @@ build       : |
 install     : |
     %make_install
 
+    %install_dir %(installroot)/%(vendordir)/profile.d
+    mv %(installroot)/etc/profile.d/* %(installroot)/%(vendordir)/profile.d/
+
+    %install_dir %(installroot)/%(vendordir)/debuginfod
+    echo "https://debuginfod.aerynos.dev" > %(installroot)/%(vendordir)/debuginfod/aerynos.urls
+
     # This had to be renamed during the build to fix a build failure, so rename it back
     mv %(installroot)/%(bindir)/eu-{eu,}stack
 
@@ -63,15 +69,11 @@ profiles    :
                 --with-bzlib \
                 --with-lzma \
                 --with-zstd
-    - x86_64:
         install: |
             %make_install
 
-            %install_dir %(installroot)/%(vendordir)/profile.d
-            mv %(installroot)/etc/profile.d/* %(installroot)/%(vendordir)/profile.d/
-
-            %install_dir %(installroot)/%(vendordir)/debuginfod
-            echo "https://debuginfod.aerynos.dev" > %(installroot)/%(vendordir)/debuginfod/aerynos.urls
+            # Easier than messing with renaming stack
+            rm -rf %(installroot)%(bindir)
 
             find %(installroot)/%(libdir) -type f -name '*.a' -delete -print
 packages    :
@@ -87,6 +89,36 @@ packages    :
         paths:
             - /usr/lib32/lib*-*.so
             - /usr/lib32/lib*.so.*
+
+    - "debuginfod":
+        summary: debuginfo-related http file-server daemon
+        description: debuginfo-related http file-server daemon
+        paths:
+            - /usr/bin/debuginfod*
+            - /usr/share/man/man1/debuginfod-find.1*
+            - /usr/share/man/man8/debuginfod*.8*
+
+    - "libdebuginfod":
+        summary: Library to interface with debuginfod
+        description: Library to interface with debuginfod
+        paths:
+            - /usr/lib/libdebuginfod-*.so
+            - /usr/lib/libdebuginfod.so.*
+            - /usr/share/defaults/
+            - /usr/share/fish/
+            - /usr/share/man/man7/debuginfod-client-config.7*
+
+    - "libdebuginfod-devel":
+        summary: Library to interface with debuginfod - Development files
+        description: Library to interface with debuginfod - Development files
+        rundeps:
+            - libdebuginfod
+            - libelf-devel
+        paths:
+            - /usr/include/elfutils/debuginfod.h
+            - /usr/lib/libdebuginfod.so
+            - /usr/lib/pkgconfig/libdebuginfod.pc
+            - /usr/share/man/man3/debuginfod*
 
     - "libelf":
         summary: Library to read and write ELF files

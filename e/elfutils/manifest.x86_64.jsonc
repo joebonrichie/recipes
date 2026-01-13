@@ -2,6 +2,48 @@
 {
 	"manifest-version": "0.2",
 	"packages": {
+		"debuginfod": {
+			"build-depends": [
+				"binary(makeinfo)",
+				"binary(msgfmt)",
+				"pkgconfig(json-c)",
+				"pkgconfig(libarchive)",
+				"pkgconfig(libcurl)",
+				"pkgconfig(libmicrohttpd)",
+				"pkgconfig(sqlite3)",
+				"pkgconfig32(bzip2)",
+				"pkgconfig32(liblzma)",
+				"pkgconfig32(libzstd)",
+				"pkgconfig32(zlib)"
+			],
+			"depends": [
+				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
+				"soname(libarchive.so.13(x86_64))",
+				"soname(libc.so.6(x86_64))",
+				"soname(libdebuginfod.so.1(x86_64))",
+				"soname(libdw.so.1(x86_64))",
+				"soname(libelf.so.1(x86_64))",
+				"soname(libgcc_s.so.1(x86_64))",
+				"soname(libjson-c.so.5(x86_64))",
+				"soname(liblzma.so.5(x86_64))",
+				"soname(libm.so.6(x86_64))",
+				"soname(libmicrohttpd.so.12(x86_64))",
+				"soname(libsqlite3.so.0(x86_64))",
+				"soname(libstdc++.so.6(x86_64))"
+			],
+			"files": [
+				"/usr/bin/debuginfod",
+				"/usr/bin/debuginfod-find",
+				"/usr/share/man/man1/debuginfod-find.1",
+				"/usr/share/man/man8/debuginfod.8",
+				"/usr/share/man/man8/debuginfod.service.8"
+			],
+			"name": "debuginfod",
+			"provides": [
+				"binary(debuginfod)",
+				"binary(debuginfod-find)"
+			]
+		},
 		"elfutils": {
 			"build-depends": [
 				"binary(makeinfo)",
@@ -18,36 +60,23 @@
 			],
 			"depends": [
 				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
-				"interpreter(/usr/lib32/ld-linux.so.2(386))",
 				"soname(ld-linux-x86-64.so.2(x86_64))",
 				"soname(libarchive.so.13(x86_64))",
 				"soname(libasm.so.1(x86_64))",
-				"soname(libc.so.6(386))",
 				"soname(libc.so.6(x86_64))",
 				"soname(libdebuginfod.so.1(x86_64))",
-				"soname(libdw.so.1(386))",
 				"soname(libdw.so.1(x86_64))",
-				"soname(libelf.so.1(386))",
 				"soname(libelf.so.1(x86_64))",
 				"soname(libgcc_s.so.1(x86_64))",
-				"soname(libjson-c.so.5(x86_64))",
-				"soname(liblzma.so.5(x86_64))",
-				"soname(libm.so.6(x86_64))",
-				"soname(libmicrohttpd.so.12(x86_64))",
-				"soname(libsqlite3.so.0(x86_64))",
-				"soname(libstdc++.so.6(386))",
 				"soname(libstdc++.so.6(x86_64))"
 			],
 			"files": [
-				"/usr/bin/debuginfod",
-				"/usr/bin/debuginfod-find",
 				"/usr/bin/eu-addr2line",
 				"/usr/bin/eu-ar",
 				"/usr/bin/eu-elfclassify",
 				"/usr/bin/eu-elfcmp",
 				"/usr/bin/eu-elfcompress",
 				"/usr/bin/eu-elflint",
-				"/usr/bin/eu-eustack",
 				"/usr/bin/eu-findtextrel",
 				"/usr/bin/eu-make-debug-archive",
 				"/usr/bin/eu-nm",
@@ -60,10 +89,6 @@
 				"/usr/bin/eu-strings",
 				"/usr/bin/eu-strip",
 				"/usr/bin/eu-unstrip",
-				"/usr/share/defaults/debuginfod/aerynos.urls",
-				"/usr/share/defaults/profile.d/debuginfod.csh",
-				"/usr/share/defaults/profile.d/debuginfod.sh",
-				"/usr/share/fish/vendor_conf.d/debuginfod.fish",
 				"/usr/share/locale/de/LC_MESSAGES/elfutils.mo",
 				"/usr/share/locale/en@boldquot/LC_MESSAGES/elfutils.mo",
 				"/usr/share/locale/en@quot/LC_MESSAGES/elfutils.mo",
@@ -71,25 +96,18 @@
 				"/usr/share/locale/ja/LC_MESSAGES/elfutils.mo",
 				"/usr/share/locale/pl/LC_MESSAGES/elfutils.mo",
 				"/usr/share/locale/uk/LC_MESSAGES/elfutils.mo",
-				"/usr/share/man/man1/debuginfod-find.1",
 				"/usr/share/man/man1/eu-elfclassify.1",
 				"/usr/share/man/man1/eu-readelf.1",
-				"/usr/share/man/man1/eu-srcfiles.1",
-				"/usr/share/man/man7/debuginfod-client-config.7",
-				"/usr/share/man/man8/debuginfod.8",
-				"/usr/share/man/man8/debuginfod.service.8"
+				"/usr/share/man/man1/eu-srcfiles.1"
 			],
 			"name": "elfutils",
 			"provides": [
-				"binary(debuginfod)",
-				"binary(debuginfod-find)",
 				"binary(eu-addr2line)",
 				"binary(eu-ar)",
 				"binary(eu-elfclassify)",
 				"binary(eu-elfcmp)",
 				"binary(eu-elfcompress)",
 				"binary(eu-elflint)",
-				"binary(eu-eustack)",
 				"binary(eu-findtextrel)",
 				"binary(eu-make-debug-archive)",
 				"binary(eu-nm)",
@@ -196,7 +214,6 @@
 			],
 			"files": [
 				"/usr/include/dwarf.h",
-				"/usr/include/elfutils/debuginfod.h",
 				"/usr/include/elfutils/elf-knowledge.h",
 				"/usr/include/elfutils/known-dwarf.h",
 				"/usr/include/elfutils/libasm.h",
@@ -206,26 +223,11 @@
 				"/usr/include/elfutils/libdwfl_stacktrace.h",
 				"/usr/include/elfutils/version.h",
 				"/usr/lib/libasm.so",
-				"/usr/lib/libdebuginfod.so",
 				"/usr/lib/libdw.so",
-				"/usr/lib/pkgconfig/libdebuginfod.pc",
-				"/usr/lib/pkgconfig/libdw.pc",
-				"/usr/share/man/man3/debuginfod_add_http_header.3",
-				"/usr/share/man/man3/debuginfod_begin.3",
-				"/usr/share/man/man3/debuginfod_end.3",
-				"/usr/share/man/man3/debuginfod_find_debuginfo.3",
-				"/usr/share/man/man3/debuginfod_find_executable.3",
-				"/usr/share/man/man3/debuginfod_find_metadata.3",
-				"/usr/share/man/man3/debuginfod_find_section.3",
-				"/usr/share/man/man3/debuginfod_find_source.3",
-				"/usr/share/man/man3/debuginfod_get_url.3",
-				"/usr/share/man/man3/debuginfod_get_user_data.3",
-				"/usr/share/man/man3/debuginfod_set_progressfn.3",
-				"/usr/share/man/man3/debuginfod_set_user_data.3"
+				"/usr/lib/pkgconfig/libdw.pc"
 			],
 			"name": "elfutils-devel",
 			"provides": [
-				"pkgconfig(libdebuginfod)",
 				"pkgconfig(libdw)"
 			]
 		},
@@ -247,9 +249,7 @@
 				"soname(ld-linux-x86-64.so.2(x86_64))",
 				"soname(libbz2.so.1.0(x86_64))",
 				"soname(libc.so.6(x86_64))",
-				"soname(libcurl.so.4(x86_64))",
 				"soname(libelf.so.1(x86_64))",
-				"soname(libjson-c.so.5(x86_64))",
 				"soname(liblzma.so.5(x86_64))",
 				"soname(libz.so.1(x86_64))",
 				"soname(libzstd.so.1(x86_64))"
@@ -257,16 +257,87 @@
 			"files": [
 				"/usr/lib/libasm-0.194.so",
 				"/usr/lib/libasm.so.1",
-				"/usr/lib/libdebuginfod-0.194.so",
-				"/usr/lib/libdebuginfod.so.1",
 				"/usr/lib/libdw-0.194.so",
 				"/usr/lib/libdw.so.1"
 			],
 			"name": "elfutils-libs",
 			"provides": [
 				"soname(libasm.so.1(x86_64))",
-				"soname(libdebuginfod.so.1(x86_64))",
 				"soname(libdw.so.1(x86_64))"
+			]
+		},
+		"libdebuginfod": {
+			"build-depends": [
+				"binary(makeinfo)",
+				"binary(msgfmt)",
+				"pkgconfig(json-c)",
+				"pkgconfig(libarchive)",
+				"pkgconfig(libcurl)",
+				"pkgconfig(libmicrohttpd)",
+				"pkgconfig(sqlite3)",
+				"pkgconfig32(bzip2)",
+				"pkgconfig32(liblzma)",
+				"pkgconfig32(libzstd)",
+				"pkgconfig32(zlib)"
+			],
+			"depends": [
+				"soname(libc.so.6(x86_64))",
+				"soname(libcurl.so.4(x86_64))",
+				"soname(libelf.so.1(x86_64))",
+				"soname(libjson-c.so.5(x86_64))"
+			],
+			"files": [
+				"/usr/lib/libdebuginfod-0.194.so",
+				"/usr/lib/libdebuginfod.so.1",
+				"/usr/share/defaults/debuginfod/aerynos.urls",
+				"/usr/share/defaults/profile.d/debuginfod.csh",
+				"/usr/share/defaults/profile.d/debuginfod.sh",
+				"/usr/share/fish/vendor_conf.d/debuginfod.fish",
+				"/usr/share/man/man7/debuginfod-client-config.7"
+			],
+			"name": "libdebuginfod",
+			"provides": [
+				"soname(libdebuginfod.so.1(x86_64))"
+			]
+		},
+		"libdebuginfod-devel": {
+			"build-depends": [
+				"binary(makeinfo)",
+				"binary(msgfmt)",
+				"pkgconfig(json-c)",
+				"pkgconfig(libarchive)",
+				"pkgconfig(libcurl)",
+				"pkgconfig(libmicrohttpd)",
+				"pkgconfig(sqlite3)",
+				"pkgconfig32(bzip2)",
+				"pkgconfig32(liblzma)",
+				"pkgconfig32(libzstd)",
+				"pkgconfig32(zlib)"
+			],
+			"depends": [
+				"libdebuginfod",
+				"libelf-devel"
+			],
+			"files": [
+				"/usr/include/elfutils/debuginfod.h",
+				"/usr/lib/libdebuginfod.so",
+				"/usr/lib/pkgconfig/libdebuginfod.pc",
+				"/usr/share/man/man3/debuginfod_add_http_header.3",
+				"/usr/share/man/man3/debuginfod_begin.3",
+				"/usr/share/man/man3/debuginfod_end.3",
+				"/usr/share/man/man3/debuginfod_find_debuginfo.3",
+				"/usr/share/man/man3/debuginfod_find_executable.3",
+				"/usr/share/man/man3/debuginfod_find_metadata.3",
+				"/usr/share/man/man3/debuginfod_find_section.3",
+				"/usr/share/man/man3/debuginfod_find_source.3",
+				"/usr/share/man/man3/debuginfod_get_url.3",
+				"/usr/share/man/man3/debuginfod_get_user_data.3",
+				"/usr/share/man/man3/debuginfod_set_progressfn.3",
+				"/usr/share/man/man3/debuginfod_set_user_data.3"
+			],
+			"name": "libdebuginfod-devel",
+			"provides": [
+				"pkgconfig(libdebuginfod)"
 			]
 		},
 		"libelf": {
@@ -457,6 +528,6 @@
 		}
 	},
 	"source-name": "elfutils",
-	"source-release": "11",
+	"source-release": "12",
 	"source-version": "0.194"
 }
