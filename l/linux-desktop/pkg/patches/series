@@ -47,6 +47,19 @@ surface/0038-acpi-allow-usage-of-acpi_tad-on-HW-reduced-platforms.patch
 surface/0039-HID-Add-hid-surface-driver-to-filter-BTN_0-FN-key.patch
 surface/0040-hid-multitouch-Prevent-mode-set-on-Surface-Laptop-St.patch
 
+# Add linux-asus patches
+asus/0002-hid-add-VID-PID-for-ASUS-ROG-RAIKIRI-PRO.patch
+# https://lkml.org/lkml/2025/11/2/427
+asus/v17-0001-platform-x86-asus-wmi-export-symbols-used-for-re.patch
+asus/v17-0002-platform-x86-asus-armoury-move-existing-tunings-.patch
+asus/v17-0003-platform-x86-asus-armoury-add-panel_hd_mode-attr.patch
+asus/v17-0004-platform-x86-asus-armoury-add-apu-mem-control-su.patch
+asus/v17-0005-platform-x86-asus-armoury-add-core-count-control.patch
+asus/v17-0006-platform-x86-asus-armoury-add-screen-auto-bright.patch
+asus/v17-0007-platform-x86-asus-wmi-deprecate-bios-features.patch
+asus/v17-0008-platform-x86-asus-wmi-rename-ASUS_WMI_DEVID_PPT_.patch
+asus/v17-0009-platform-x86-asus-armoury-add-ppt_-and-nv_-tunin.patch
+
 # amdgpu patches that make it easier to control
 # whether to use radeon or amdgpu from the kernel cmd-line
 0001-drm-amdgpu-enable-SI-and-CIK-support-by-default.patch
