@@ -5,7 +5,7 @@
 #
 name        : sysprof
 version     : "49.0"
-release     : 4
+release     : 5
 upstreams   :
     - https://download.gnome.org/sources/sysprof/49/sysprof-49.0.tar.xz : ff04139637785c841948862087a4323b981680d942296409321b574fcb282878
 homepage    : https://apps.gnome.org/Sysprof/
@@ -21,13 +21,13 @@ builddeps   :
     - pkgconfig(gtk4)
     - pkgconfig(json-glib-1.0)
     - pkgconfig(libadwaita-1)
+    - pkgconfig(libdebuginfod)
     - pkgconfig(libdex-1)
     - pkgconfig(libdw)
     - pkgconfig(libpanel-1)
     - pkgconfig(libunwind-generic)
     - pkgconfig(polkit-agent-1)
     - pkgconfig(polkit-gobject-1)
-    # libdebuginfod (whenever that's packaged)
 setup       : |
     %meson
 build       : |
