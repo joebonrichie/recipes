@@ -1,0 +1,27 @@
+#
+# SPDX-FileCopyrightText: © 2025- AerynOS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : zig
+version     : 0.15.2
+release     : 1
+homepage    : https://ziglang.org
+upstreams   :
+    - https://ziglang.org/download/0.15.2/zig-0.15.2.tar.xz : d9b30c7aa983fcff5eed2084d54ae83eaafe7ff3a84d8fb754d854165a6e521c
+summary     : General-purpose programming language and toolchain for maintaining robust, optimal, and reusable software
+description : |
+    A general-purpose programming language and toolchain for maintaining robust, optimal, and reusable software.
+license     : MIT
+builddeps   :
+    - clang-20-devel
+    - lld-20-devel
+    - llvm-20-devel
+setup       : |
+    %patch %(pkgdir)/0001-add-zstd-compressed-section-support.patch
+
+    %cmake
+build       : |
+    %cmake_build
+install     : |
+    %cmake_install

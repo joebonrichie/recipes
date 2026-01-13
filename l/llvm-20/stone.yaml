@@ -5,7 +5,7 @@
 #
 name        : llvm-20
 version     : 20.1.8
-release     : 4
+release     : 5
 summary     : Low Level Virtual Machine
 license     :
     - Apache-2.0 WITH LLVM-exception
@@ -41,7 +41,7 @@ tuning      :
     - symbolic
 environment : |
     # Full-fat (in the milk sense) build suitable for cross-compilation
-    _BUILD_TARGETS="AArch64;AMDGPU;ARM;BPF;RISCV;SPIRV;WebAssembly;X86"
+    _BUILD_TARGETS="AArch64;AMDGPU;ARM;AVR;BPF;Hexagon;Lanai;LoongArch;Mips;MSP430;NVPTX;PowerPC;RISCV;SPIRV;Sparc;SystemZ;VE;WebAssembly;X86;XCore"
     _PROJECTS="clang;lld;llvm"
     _RUNTIMES="compiler-rt"
 
