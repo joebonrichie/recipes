@@ -12,7 +12,7 @@
 			],
 			"files": [
 				"/usr/lib/libthai.so.0",
-				"/usr/lib/libthai.so.0.3.1",
+				"/usr/lib/libthai.so.0.3.2",
 				"/usr/share/libthai/thbrk.tri"
 			],
 			"name": "libthai",
@@ -56,6 +56,6 @@
 		}
 	},
 	"source-name": "libthai",
-	"source-release": "2",
-	"source-version": "0.1.29"
+	"source-release": "3",
+	"source-version": "0.1.30"
 }
