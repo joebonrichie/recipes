@@ -164,3 +164,7 @@
 ### Renamed
 - prismlauncher
 - intel-vaapi-driver
+
+### No longer used
+- python-ruamel-yaml-clib
+- python-ruamel-yaml-clib-dbginfo
