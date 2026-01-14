@@ -4,17 +4,18 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : folks
-version     : 0.15.9
-release     : 1
-homepage    : https://gitlab.gnome.org/GNOME/folks/-/wikis/Home
+version     : 0.15.12
+release     : 2
+homepage    : https://gitlab.gnome.org/GNOME/folks
 upstreams   :
-    - https://download.gnome.org/sources/folks/0.15/folks-0.15.9.tar.xz : 2311b37355c351f33f163fdc394874a22a0a0682c319493d6d8a6e420711415f
+    - https://download.gnome.org/sources/folks/0.15/folks-0.15.12.tar.xz : 21f44e2bdabb1ee7f8e41bb996d10ac7daf35c78c498177db0c00f580a20a914
 summary     : Folks is a contact aggregation library
 description : |
     Folks is a library that aggregates people from multiple sources (eg, Telepathy connection managers and eventually Evolution Data Server, Facebook, etc.) to create metacontacts.
 license     : LGPL-2.1-or-later
 builddeps   :
     - binary(g-ir-compiler)
+    - binary(msgfmt)
     - binary(vala)
     - pkgconfig(dbus-glib-1)
     - pkgconfig(evolution-data-server-1.2)
