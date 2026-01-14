@@ -29,6 +29,6 @@
 		}
 	},
 	"source-name": "sccache",
-	"source-release": "8",
-	"source-version": "0.12.0"
+	"source-release": "9",
+	"source-version": "0.13.0"
 }
