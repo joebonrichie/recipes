@@ -7,10 +7,10 @@
 				"python(flit-core)"
 			],
 			"files": [
-				"/usr/lib/python3.11/site-packages/pyparsing-3.2.3.dist-info/METADATA",
-				"/usr/lib/python3.11/site-packages/pyparsing-3.2.3.dist-info/RECORD",
-				"/usr/lib/python3.11/site-packages/pyparsing-3.2.3.dist-info/WHEEL",
-				"/usr/lib/python3.11/site-packages/pyparsing-3.2.3.dist-info/licenses/LICENSE",
+				"/usr/lib/python3.11/site-packages/pyparsing-3.3.1.dist-info/METADATA",
+				"/usr/lib/python3.11/site-packages/pyparsing-3.3.1.dist-info/RECORD",
+				"/usr/lib/python3.11/site-packages/pyparsing-3.3.1.dist-info/WHEEL",
+				"/usr/lib/python3.11/site-packages/pyparsing-3.3.1.dist-info/licenses/LICENSE",
 				"/usr/lib/python3.11/site-packages/pyparsing/__init__.py",
 				"/usr/lib/python3.11/site-packages/pyparsing/__pycache__/__init__.cpython-311.opt-1.pyc",
 				"/usr/lib/python3.11/site-packages/pyparsing/__pycache__/__init__.cpython-311.pyc",
@@ -33,6 +33,16 @@
 				"/usr/lib/python3.11/site-packages/pyparsing/__pycache__/util.cpython-311.opt-1.pyc",
 				"/usr/lib/python3.11/site-packages/pyparsing/__pycache__/util.cpython-311.pyc",
 				"/usr/lib/python3.11/site-packages/pyparsing/actions.py",
+				"/usr/lib/python3.11/site-packages/pyparsing/ai/__init__.py",
+				"/usr/lib/python3.11/site-packages/pyparsing/ai/__pycache__/__init__.cpython-311.opt-1.pyc",
+				"/usr/lib/python3.11/site-packages/pyparsing/ai/__pycache__/__init__.cpython-311.pyc",
+				"/usr/lib/python3.11/site-packages/pyparsing/ai/best_practices.md",
+				"/usr/lib/python3.11/site-packages/pyparsing/ai/show_best_practices/__init__.py",
+				"/usr/lib/python3.11/site-packages/pyparsing/ai/show_best_practices/__main__.py",
+				"/usr/lib/python3.11/site-packages/pyparsing/ai/show_best_practices/__pycache__/__init__.cpython-311.opt-1.pyc",
+				"/usr/lib/python3.11/site-packages/pyparsing/ai/show_best_practices/__pycache__/__init__.cpython-311.pyc",
+				"/usr/lib/python3.11/site-packages/pyparsing/ai/show_best_practices/__pycache__/__main__.cpython-311.opt-1.pyc",
+				"/usr/lib/python3.11/site-packages/pyparsing/ai/show_best_practices/__pycache__/__main__.cpython-311.pyc",
 				"/usr/lib/python3.11/site-packages/pyparsing/common.py",
 				"/usr/lib/python3.11/site-packages/pyparsing/core.py",
 				"/usr/lib/python3.11/site-packages/pyparsing/diagram/__init__.py",
@@ -54,12 +64,11 @@
 			],
 			"name": "python-pyparsing",
 			"provides": [
-				"python(pyparsing(3.11))",
 				"python(pyparsing)"
 			]
 		}
 	},
 	"source-name": "python-pyparsing",
-	"source-release": "5",
-	"source-version": "3.2.3"
+	"source-release": "6",
+	"source-version": "3.3.1"
 }
