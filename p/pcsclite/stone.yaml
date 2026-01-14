@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : pcsclite
-version     : 2.4.0
-release     : 5
+version     : 2.4.1
+release     : 6
 homepage    : https://pcsclite.apdu.fr
 upstreams   :
-    - https://github.com/LudovicRousseau/PCSC/archive/refs/tags/2.4.0.tar.gz : 3d20f3d23c29260fed9195529d30ec3e9f1db60a8a835b4be68716d97751f2e7
+    - https://github.com/LudovicRousseau/PCSC/archive/refs/tags/2.4.1.tar.gz : e7b6737f68c3b9a763fb0b0370d899cea091cced9d762ca8a6032c959576d5be
 summary     : PC/SC implementation
 description : |
     PC/SC implementation
