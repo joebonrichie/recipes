@@ -3,13 +3,16 @@
 	"manifest-version": "0.2",
 	"packages": {
 		"opus": {
+			"build-depends": [
+				"binary(doxygen)"
+			],
 			"depends": [
 				"soname(libc.so.6(x86_64))",
 				"soname(libm.so.6(x86_64))"
 			],
 			"files": [
 				"/usr/lib/libopus.so.0",
-				"/usr/lib/libopus.so.0.10.1"
+				"/usr/lib/libopus.so.0.11.0"
 			],
 			"name": "opus",
 			"provides": [
@@ -17,6 +20,9 @@
 			]
 		},
 		"opus-devel": {
+			"build-depends": [
+				"binary(doxygen)"
+			],
 			"depends": [
 				"opus"
 			],
@@ -34,9 +40,127 @@
 			"provides": [
 				"pkgconfig(opus)"
 			]
+		},
+		"opus-docs": {
+			"build-depends": [
+				"binary(doxygen)"
+			],
+			"files": [
+				"/usr/share/doc/opus/html/clipboard.js",
+				"/usr/share/doc/opus/html/cookie.js",
+				"/usr/share/doc/opus/html/customdoxygen.css",
+				"/usr/share/doc/opus/html/dir_d44c64559bbebec7f509842c48db8b23.html",
+				"/usr/share/doc/opus/html/dir_d44c64559bbebec7f509842c48db8b23.js",
+				"/usr/share/doc/opus/html/doxygen.svg",
+				"/usr/share/doc/opus/html/doxygen_crawl.html",
+				"/usr/share/doc/opus/html/dynsections.js",
+				"/usr/share/doc/opus/html/files.html",
+				"/usr/share/doc/opus/html/files_dup.js",
+				"/usr/share/doc/opus/html/globals.html",
+				"/usr/share/doc/opus/html/globals_defs.html",
+				"/usr/share/doc/opus/html/globals_func.html",
+				"/usr/share/doc/opus/html/globals_type.html",
+				"/usr/share/doc/opus/html/graph_legend.dot",
+				"/usr/share/doc/opus/html/graph_legend.html",
+				"/usr/share/doc/opus/html/group__opus__ctlvalues.html",
+				"/usr/share/doc/opus/html/group__opus__ctlvalues.js",
+				"/usr/share/doc/opus/html/group__opus__custom.html",
+				"/usr/share/doc/opus/html/group__opus__custom.js",
+				"/usr/share/doc/opus/html/group__opus__decoder.html",
+				"/usr/share/doc/opus/html/group__opus__decoder.js",
+				"/usr/share/doc/opus/html/group__opus__decoderctls.html",
+				"/usr/share/doc/opus/html/group__opus__decoderctls.js",
+				"/usr/share/doc/opus/html/group__opus__encoder.html",
+				"/usr/share/doc/opus/html/group__opus__encoder.js",
+				"/usr/share/doc/opus/html/group__opus__encoderctls.html",
+				"/usr/share/doc/opus/html/group__opus__encoderctls.js",
+				"/usr/share/doc/opus/html/group__opus__errorcodes.html",
+				"/usr/share/doc/opus/html/group__opus__errorcodes.js",
+				"/usr/share/doc/opus/html/group__opus__genericctls.html",
+				"/usr/share/doc/opus/html/group__opus__genericctls.js",
+				"/usr/share/doc/opus/html/group__opus__libinfo.html",
+				"/usr/share/doc/opus/html/group__opus__libinfo.js",
+				"/usr/share/doc/opus/html/group__opus__multistream.html",
+				"/usr/share/doc/opus/html/group__opus__multistream.js",
+				"/usr/share/doc/opus/html/group__opus__multistream__ctls.html",
+				"/usr/share/doc/opus/html/group__opus__multistream__ctls.js",
+				"/usr/share/doc/opus/html/group__opus__repacketizer.html",
+				"/usr/share/doc/opus/html/group__opus__repacketizer.js",
+				"/usr/share/doc/opus/html/index.html",
+				"/usr/share/doc/opus/html/jquery.js",
+				"/usr/share/doc/opus/html/menu.js",
+				"/usr/share/doc/opus/html/menudata.js",
+				"/usr/share/doc/opus/html/navtree.css",
+				"/usr/share/doc/opus/html/navtree.js",
+				"/usr/share/doc/opus/html/navtreedata.js",
+				"/usr/share/doc/opus/html/navtreeindex0.js",
+				"/usr/share/doc/opus/html/opus_8h.html",
+				"/usr/share/doc/opus/html/opus_8h.js",
+				"/usr/share/doc/opus/html/opus_8h__dep__incl.dot",
+				"/usr/share/doc/opus/html/opus_8h__incl.dot",
+				"/usr/share/doc/opus/html/opus_8h_source.html",
+				"/usr/share/doc/opus/html/opus__custom_8h.html",
+				"/usr/share/doc/opus/html/opus__custom_8h.js",
+				"/usr/share/doc/opus/html/opus__custom_8h__incl.dot",
+				"/usr/share/doc/opus/html/opus__custom_8h_source.html",
+				"/usr/share/doc/opus/html/opus__defines_8h.html",
+				"/usr/share/doc/opus/html/opus__defines_8h.js",
+				"/usr/share/doc/opus/html/opus__defines_8h__dep__incl.dot",
+				"/usr/share/doc/opus/html/opus__defines_8h__incl.dot",
+				"/usr/share/doc/opus/html/opus__defines_8h_source.html",
+				"/usr/share/doc/opus/html/opus__multistream_8h.html",
+				"/usr/share/doc/opus/html/opus__multistream_8h.js",
+				"/usr/share/doc/opus/html/opus__multistream_8h__incl.dot",
+				"/usr/share/doc/opus/html/opus__multistream_8h_source.html",
+				"/usr/share/doc/opus/html/opus__types_8h.html",
+				"/usr/share/doc/opus/html/opus__types_8h.js",
+				"/usr/share/doc/opus/html/opus__types_8h__dep__incl.dot",
+				"/usr/share/doc/opus/html/opus__types_8h_source.html",
+				"/usr/share/doc/opus/html/opus_logo.svg",
+				"/usr/share/doc/opus/html/search/all_0.js",
+				"/usr/share/doc/opus/html/search/all_1.js",
+				"/usr/share/doc/opus/html/search/all_2.js",
+				"/usr/share/doc/opus/html/search/all_3.js",
+				"/usr/share/doc/opus/html/search/all_4.js",
+				"/usr/share/doc/opus/html/search/all_5.js",
+				"/usr/share/doc/opus/html/search/all_6.js",
+				"/usr/share/doc/opus/html/search/all_7.js",
+				"/usr/share/doc/opus/html/search/all_8.js",
+				"/usr/share/doc/opus/html/search/all_9.js",
+				"/usr/share/doc/opus/html/search/all_a.js",
+				"/usr/share/doc/opus/html/search/all_b.js",
+				"/usr/share/doc/opus/html/search/all_c.js",
+				"/usr/share/doc/opus/html/search/all_d.js",
+				"/usr/share/doc/opus/html/search/defines_0.js",
+				"/usr/share/doc/opus/html/search/files_0.js",
+				"/usr/share/doc/opus/html/search/functions_0.js",
+				"/usr/share/doc/opus/html/search/groups_0.js",
+				"/usr/share/doc/opus/html/search/groups_1.js",
+				"/usr/share/doc/opus/html/search/groups_2.js",
+				"/usr/share/doc/opus/html/search/groups_3.js",
+				"/usr/share/doc/opus/html/search/groups_4.js",
+				"/usr/share/doc/opus/html/search/groups_5.js",
+				"/usr/share/doc/opus/html/search/groups_6.js",
+				"/usr/share/doc/opus/html/search/groups_7.js",
+				"/usr/share/doc/opus/html/search/groups_8.js",
+				"/usr/share/doc/opus/html/search/groups_9.js",
+				"/usr/share/doc/opus/html/search/groups_a.js",
+				"/usr/share/doc/opus/html/search/groups_b.js",
+				"/usr/share/doc/opus/html/search/groups_c.js",
+				"/usr/share/doc/opus/html/search/groups_d.js",
+				"/usr/share/doc/opus/html/search/pages_0.js",
+				"/usr/share/doc/opus/html/search/search.css",
+				"/usr/share/doc/opus/html/search/search.js",
+				"/usr/share/doc/opus/html/search/searchdata.js",
+				"/usr/share/doc/opus/html/search/typedefs_0.js",
+				"/usr/share/doc/opus/html/tabs.css",
+				"/usr/share/doc/opus/html/topics.html",
+				"/usr/share/doc/opus/html/topics.js"
+			],
+			"name": "opus-docs"
 		}
 	},
 	"source-name": "opus",
-	"source-release": "2",
-	"source-version": "1.5.2"
+	"source-release": "3",
+	"source-version": "1.6"
 }
