@@ -19,6 +19,7 @@
 			],
 			"files": [
 				"/usr/bin/xdg-user-dirs-gtk-update",
+				"/usr/lib/systemd/user/user-dirs-update-gtk.service",
 				"/usr/share/applications/user-dirs-update-gtk.desktop",
 				"/usr/share/locale/af/LC_MESSAGES/xdg-user-dirs-gtk.mo",
 				"/usr/share/locale/an/LC_MESSAGES/xdg-user-dirs-gtk.mo",
@@ -109,6 +110,6 @@
 		}
 	},
 	"source-name": "xdg-user-dirs-gtk",
-	"source-release": "3",
-	"source-version": "0.14"
+	"source-release": "4",
+	"source-version": "0.16"
 }

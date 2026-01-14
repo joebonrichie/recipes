@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : xdg-user-dirs-gtk
-version     : 0.14
-release     : 3
+version     : "0.16"
+release     : 4
 homepage    : https://gitlab.gnome.org/GNOME/xdg-user-dirs-gtk
 upstreams   :
-    - https://download.gnome.org/sources/xdg-user-dirs-gtk/0.14/xdg-user-dirs-gtk-0.14.tar.xz : 537fbe142b24736ed7894e4a01f69fd758cb6c7a677a382879529d217f4a2873
+    - https://download.gnome.org/sources/xdg-user-dirs-gtk/0.16/xdg-user-dirs-gtk-0.16.tar.xz : be825de7f89175db5ead0cd3744d2761109c70943251a87092259163025520a9
 summary     : GTK specific extensions for xdg-user-dirs
 description : |
     GTK specific extensions for xdg-user-dirs
