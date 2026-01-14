@@ -16,9 +16,9 @@
 			],
 			"files": [
 				"/usr/lib/libkdecorations3.so.6",
-				"/usr/lib/libkdecorations3.so.6.5.4",
+				"/usr/lib/libkdecorations3.so.6.5.5",
 				"/usr/lib/libkdecorations3private.so.2",
-				"/usr/lib/libkdecorations3private.so.6.5.4",
+				"/usr/lib/libkdecorations3private.so.6.5.5",
 				"/usr/share/locale/ar/LC_MESSAGES/kdecoration.mo",
 				"/usr/share/locale/ast/LC_MESSAGES/kdecoration.mo",
 				"/usr/share/locale/az/LC_MESSAGES/kdecoration.mo",
@@ -36,6 +36,7 @@
 				"/usr/share/locale/eu/LC_MESSAGES/kdecoration.mo",
 				"/usr/share/locale/fi/LC_MESSAGES/kdecoration.mo",
 				"/usr/share/locale/fr/LC_MESSAGES/kdecoration.mo",
+				"/usr/share/locale/ga/LC_MESSAGES/kdecoration.mo",
 				"/usr/share/locale/gl/LC_MESSAGES/kdecoration.mo",
 				"/usr/share/locale/he/LC_MESSAGES/kdecoration.mo",
 				"/usr/share/locale/hi/LC_MESSAGES/kdecoration.mo",
@@ -124,6 +125,6 @@
 		}
 	},
 	"source-name": "kdecoration",
-	"source-release": "12",
-	"source-version": "6.5.4"
+	"source-release": "13",
+	"source-version": "6.5.5"
 }

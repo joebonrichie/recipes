@@ -4,10 +4,10 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : plasma-workspace
-version     : 6.5.4
-release     : 26
+version     : 6.5.5
+release     : 27
 upstreams   :
-    - https://download.kde.org/stable/plasma/6.5.4/plasma-workspace-6.5.4.tar.xz : 494b671d70f67ee382feaed0dca72ed67fe7a423a6338e2cdb2411f93bce741e
+    - https://download.kde.org/stable/plasma/6.5.5/plasma-workspace-6.5.5.tar.xz : 29b0763bbbdd9e27416dce1fd939242d2588feef36c4cbae941c31964d531fd4
 homepage    : https://kde.org/plasma-desktop/
 license     :
     - GFDL-1.2

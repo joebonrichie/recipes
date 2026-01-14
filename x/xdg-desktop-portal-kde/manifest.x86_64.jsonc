@@ -86,6 +86,7 @@
 				"/usr/share/locale/eu/LC_MESSAGES/xdg-desktop-portal-kde.mo",
 				"/usr/share/locale/fi/LC_MESSAGES/xdg-desktop-portal-kde.mo",
 				"/usr/share/locale/fr/LC_MESSAGES/xdg-desktop-portal-kde.mo",
+				"/usr/share/locale/ga/LC_MESSAGES/xdg-desktop-portal-kde.mo",
 				"/usr/share/locale/gl/LC_MESSAGES/xdg-desktop-portal-kde.mo",
 				"/usr/share/locale/he/LC_MESSAGES/xdg-desktop-portal-kde.mo",
 				"/usr/share/locale/hi/LC_MESSAGES/xdg-desktop-portal-kde.mo",
@@ -129,6 +130,6 @@
 		}
 	},
 	"source-name": "xdg-desktop-portal-kde",
-	"source-release": "13",
-	"source-version": "6.5.4"
+	"source-release": "14",
+	"source-version": "6.5.5"
 }
