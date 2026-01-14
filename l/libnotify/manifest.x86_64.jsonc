@@ -55,6 +55,7 @@
 				"pkgconfig(glib-2.0)"
 			],
 			"files": [
+				"/usr/include/libnotify/notification-hints.h",
 				"/usr/include/libnotify/notification.h",
 				"/usr/include/libnotify/notify-enum-types.h",
 				"/usr/include/libnotify/notify-features.h",
@@ -71,6 +72,6 @@
 		}
 	},
 	"source-name": "libnotify",
-	"source-release": "6",
-	"source-version": "0.8.7"
+	"source-release": "7",
+	"source-version": "0.8.8"
 }
