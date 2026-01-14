@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #                
 name        : libtraceevent
-version     : 1.8.6
-release     : 6
+version     : 1.8.7
+release     : 7
 homepage    : https://git.kernel.org/pub/scm/libs/libtrace/libtraceevent.git/about/
 upstreams   :
-    - https://git.kernel.org/pub/scm/libs/libtrace/libtraceevent.git/snapshot/libtraceevent-1.8.6.tar.gz : 812547d2f7b248485c183be2799b7041038ee44183000705609754b128c84c6f
+    - https://git.kernel.org/pub/scm/libs/libtrace/libtraceevent.git/snapshot/libtraceevent-1.8.7.tar.gz : cec7167e885d2f022bc5a2b0f2c0c58110fa0575e5dba49d7b694f0a6fd7fa0c
 summary     : Linux kernel trace event library
 description : |
     The libtraceevent(3) library provides APIs to access kernel tracepoint events, located in the tracefs file system under the events directory.
