@@ -25,7 +25,7 @@
 			],
 			"files": [
 				"/usr/lib/girepository-1.0/Msg-1.typelib",
-				"/usr/lib/libmsgraph-1.so.0.3.3",
+				"/usr/lib/libmsgraph-1.so.0.3.4",
 				"/usr/lib/libmsgraph-1.so.1",
 				"/usr/share/doc/msgraph-1/RedHatDisplay-Black.woff",
 				"/usr/share/doc/msgraph-1/RedHatDisplay-Black.woff2",
@@ -306,6 +306,6 @@
 		}
 	},
 	"source-name": "msgraph",
-	"source-release": "6",
-	"source-version": "0.3.3"
+	"source-release": "7",
+	"source-version": "0.3.4"
 }
