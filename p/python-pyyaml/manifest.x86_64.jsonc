@@ -12,10 +12,10 @@
 				"soname(libyaml-0.so.2(x86_64))"
 			],
 			"files": [
-				"/usr/lib/python3.11/site-packages/PyYAML-6.0.2-py3.11.egg-info/PKG-INFO",
-				"/usr/lib/python3.11/site-packages/PyYAML-6.0.2-py3.11.egg-info/SOURCES.txt",
-				"/usr/lib/python3.11/site-packages/PyYAML-6.0.2-py3.11.egg-info/dependency_links.txt",
-				"/usr/lib/python3.11/site-packages/PyYAML-6.0.2-py3.11.egg-info/top_level.txt",
+				"/usr/lib/python3.11/site-packages/PyYAML-6.0.3-py3.11.egg-info/PKG-INFO",
+				"/usr/lib/python3.11/site-packages/PyYAML-6.0.3-py3.11.egg-info/SOURCES.txt",
+				"/usr/lib/python3.11/site-packages/PyYAML-6.0.3-py3.11.egg-info/dependency_links.txt",
+				"/usr/lib/python3.11/site-packages/PyYAML-6.0.3-py3.11.egg-info/top_level.txt",
 				"/usr/lib/python3.11/site-packages/_yaml/__init__.py",
 				"/usr/lib/python3.11/site-packages/_yaml/__pycache__/__init__.cpython-311.pyc",
 				"/usr/lib/python3.11/site-packages/yaml/__init__.py",
@@ -56,13 +56,12 @@
 			],
 			"name": "python-pyyaml",
 			"provides": [
-				"python(pyyaml(3.11))",
 				"python(pyyaml)",
 				"soname(python3.11/site-packages/yaml/_yaml.cpython-311-x86_64-linux-gnu.so(x86_64))"
 			]
 		}
 	},
 	"source-name": "python-pyyaml",
-	"source-release": "4",
-	"source-version": "6.0.2"
+	"source-release": "5",
+	"source-version": "6.0.3"
 }
