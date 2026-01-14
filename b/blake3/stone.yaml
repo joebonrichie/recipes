@@ -4,13 +4,13 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : blake3
-version     : 1.8.2
-release     : 5
+version     : 1.8.3
+release     : 6
 summary     : BLAKE3 hash algorithm
 license     : Apache-2.0
 homepage    : https://github.com/BLAKE3-team/BLAKE3
 upstreams   :
-    - https://github.com/BLAKE3-team/BLAKE3/archive/refs/tags/1.8.2.tar.gz : 6b51aefe515969785da02e87befafc7fdc7a065cd3458cf1141f29267749e81f
+    - https://github.com/BLAKE3-team/BLAKE3/archive/refs/tags/1.8.3.tar.gz : 5a11e3f834719b6c1cae7aced1e848a37013f6f10f97272e7849aa0da769f295
 description : |
     BLAKE3 hash algorithm
 builddeps   :
