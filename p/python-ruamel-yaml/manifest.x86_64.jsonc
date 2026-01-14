@@ -7,7 +7,6 @@
 				"python(setuptools)"
 			],
 			"depends": [
-				"python(ruamel-yaml-clib)",
 				"python-libs"
 			],
 			"files": [
@@ -42,6 +41,8 @@
 				"/usr/lib/python3.11/site-packages/ruamel/yaml/__pycache__/loader.cpython-311.pyc",
 				"/usr/lib/python3.11/site-packages/ruamel/yaml/__pycache__/main.cpython-311.opt-1.pyc",
 				"/usr/lib/python3.11/site-packages/ruamel/yaml/__pycache__/main.cpython-311.pyc",
+				"/usr/lib/python3.11/site-packages/ruamel/yaml/__pycache__/mergevalue.cpython-311.opt-1.pyc",
+				"/usr/lib/python3.11/site-packages/ruamel/yaml/__pycache__/mergevalue.cpython-311.pyc",
 				"/usr/lib/python3.11/site-packages/ruamel/yaml/__pycache__/nodes.cpython-311.opt-1.pyc",
 				"/usr/lib/python3.11/site-packages/ruamel/yaml/__pycache__/nodes.cpython-311.pyc",
 				"/usr/lib/python3.11/site-packages/ruamel/yaml/__pycache__/parser.cpython-311.opt-1.pyc",
@@ -73,6 +74,12 @@
 				"/usr/lib/python3.11/site-packages/ruamel/yaml/__pycache__/util.cpython-311.opt-1.pyc",
 				"/usr/lib/python3.11/site-packages/ruamel/yaml/__pycache__/util.cpython-311.pyc",
 				"/usr/lib/python3.11/site-packages/ruamel/yaml/anchor.py",
+				"/usr/lib/python3.11/site-packages/ruamel/yaml/clibz/__init__.py",
+				"/usr/lib/python3.11/site-packages/ruamel/yaml/clibz/__pycache__/__init__.cpython-311.opt-1.pyc",
+				"/usr/lib/python3.11/site-packages/ruamel/yaml/clibz/__pycache__/__init__.cpython-311.pyc",
+				"/usr/lib/python3.11/site-packages/ruamel/yaml/clibz/__pycache__/setup.cpython-311.opt-1.pyc",
+				"/usr/lib/python3.11/site-packages/ruamel/yaml/clibz/__pycache__/setup.cpython-311.pyc",
+				"/usr/lib/python3.11/site-packages/ruamel/yaml/clibz/setup.py",
 				"/usr/lib/python3.11/site-packages/ruamel/yaml/comments.py",
 				"/usr/lib/python3.11/site-packages/ruamel/yaml/compat.py",
 				"/usr/lib/python3.11/site-packages/ruamel/yaml/composer.py",
@@ -86,6 +93,7 @@
 				"/usr/lib/python3.11/site-packages/ruamel/yaml/events.py",
 				"/usr/lib/python3.11/site-packages/ruamel/yaml/loader.py",
 				"/usr/lib/python3.11/site-packages/ruamel/yaml/main.py",
+				"/usr/lib/python3.11/site-packages/ruamel/yaml/mergevalue.py",
 				"/usr/lib/python3.11/site-packages/ruamel/yaml/nodes.py",
 				"/usr/lib/python3.11/site-packages/ruamel/yaml/parser.py",
 				"/usr/lib/python3.11/site-packages/ruamel/yaml/py.typed",
@@ -102,20 +110,19 @@
 				"/usr/lib/python3.11/site-packages/ruamel/yaml/timestamp.py",
 				"/usr/lib/python3.11/site-packages/ruamel/yaml/tokens.py",
 				"/usr/lib/python3.11/site-packages/ruamel/yaml/util.py",
-				"/usr/lib/python3.11/site-packages/ruamel_yaml-0.18.10.dist-info/METADATA",
-				"/usr/lib/python3.11/site-packages/ruamel_yaml-0.18.10.dist-info/RECORD",
-				"/usr/lib/python3.11/site-packages/ruamel_yaml-0.18.10.dist-info/WHEEL",
-				"/usr/lib/python3.11/site-packages/ruamel_yaml-0.18.10.dist-info/licenses/LICENSE",
-				"/usr/lib/python3.11/site-packages/ruamel_yaml-0.18.10.dist-info/top_level.txt"
+				"/usr/lib/python3.11/site-packages/ruamel_yaml-0.19.1.dist-info/METADATA",
+				"/usr/lib/python3.11/site-packages/ruamel_yaml-0.19.1.dist-info/RECORD",
+				"/usr/lib/python3.11/site-packages/ruamel_yaml-0.19.1.dist-info/WHEEL",
+				"/usr/lib/python3.11/site-packages/ruamel_yaml-0.19.1.dist-info/licenses/LICENSE",
+				"/usr/lib/python3.11/site-packages/ruamel_yaml-0.19.1.dist-info/top_level.txt"
 			],
 			"name": "python-ruamel-yaml",
 			"provides": [
-				"python(ruamel-yaml(3.11))",
 				"python(ruamel-yaml)"
 			]
 		}
 	},
 	"source-name": "python-ruamel-yaml",
-	"source-release": "4",
-	"source-version": "0.18.10"
+	"source-release": "5",
+	"source-version": "0.19.1"
 }
