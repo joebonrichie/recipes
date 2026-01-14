@@ -19,7 +19,7 @@
 			"files": [
 				"/usr/lib/girepository-1.0/Qrtr-1.0.typelib",
 				"/usr/lib/libqrtr-glib.so.0",
-				"/usr/lib/libqrtr-glib.so.0.0.0"
+				"/usr/lib/libqrtr-glib.so.0.0.1"
 			],
 			"name": "libqrtr-glib",
 			"provides": [
@@ -59,6 +59,6 @@
 		}
 	},
 	"source-name": "libqrtr-glib",
-	"source-release": "3",
-	"source-version": "1.2.2"
+	"source-release": "4",
+	"source-version": "1.4.0"
 }

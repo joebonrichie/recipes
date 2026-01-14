@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : libqrtr-glib
-version     : 1.2.2
-release     : 3
-homepage    : https://gitlab.freedesktop.org/mobile-broadband/libqrtr-glib/-/archive/1.2.2
+version     : 1.4.0
+release     : 4
+homepage    : https://gitlab.freedesktop.org/mobile-broadband/libqrtr-glib
 upstreams   :
-    - https://gitlab.freedesktop.org/mobile-broadband/libqrtr-glib/-/archive/1.2.2/libqrtr-glib-1.2.2.tar.bz2 : 69ec8883d887a426c6402440b200fa53c41e9da8e098333369f2388d3559e856
+    - https://gitlab.freedesktop.org/mobile-broadband/libqrtr-glib/-/archive/1.4.0/libqrtr-glib-1.4.0.tar.bz2 : f22469fab6ae4256449ab13929566a8ecd555e15d06728682a8acf47f79460f5
 summary     : Qualcomm IPC Router protocol helper library
 description : |
     libqrtr-glib is a glib-based library to use and manage the QRTR (Qualcomm IPC Router) bus.
