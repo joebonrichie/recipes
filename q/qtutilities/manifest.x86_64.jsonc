@@ -23,7 +23,7 @@
 			],
 			"files": [
 				"/usr/lib/libqtutilities-qt6.so.6",
-				"/usr/lib/libqtutilities-qt6.so.6.18.4"
+				"/usr/lib/libqtutilities-qt6.so.6.19.0"
 			],
 			"name": "qtutilities",
 			"provides": [
@@ -54,6 +54,7 @@
 				"/usr/include/qtutilities-qt6/qtutilities/misc/dbusnotification.h",
 				"/usr/include/qtutilities-qt6/qtutilities/misc/desktoputils.h",
 				"/usr/include/qtutilities-qt6/qtutilities/misc/dialogutils.h",
+				"/usr/include/qtutilities-qt6/qtutilities/misc/disablewarningsmoc.h",
 				"/usr/include/qtutilities-qt6/qtutilities/misc/recentmenumanager.h",
 				"/usr/include/qtutilities-qt6/qtutilities/misc/trylocker.h",
 				"/usr/include/qtutilities-qt6/qtutilities/misc/undefxmlparsermacros.h",
@@ -109,6 +110,6 @@
 		}
 	},
 	"source-name": "qtutilities",
-	"source-release": "6",
-	"source-version": "6.18.4"
+	"source-release": "7",
+	"source-version": "6.19.0"
 }
