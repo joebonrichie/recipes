@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : libcloudproviders
-version     : 0.3.6
-release     : 5
+version     : 0.4.0
+release     : 6
 homepage    : https://gitlab.gnome.org/World/libcloudproviders
 upstreams   :
-    - https://download.gnome.org/sources/libcloudproviders/0.3/libcloudproviders-0.3.6.tar.xz : 3b75110b3a4fdef4c5c5a440e48701fe054d2ae061d156c89136bb5ba05e74b7
+    - https://download.gnome.org/sources/libcloudproviders/0.4/libcloudproviders-0.4.0.tar.xz : 247b228d1027b2683868e7d7080d38693a457e908aadd0c119d52de59a398064
 summary     : cloudproviders integration API
 description : |
     libcloudproviders is a DBus API that allows cloud storage sync clients to expose their services. Clients such as file managers and desktop environments can then provide integrated access to the cloud providers services.
