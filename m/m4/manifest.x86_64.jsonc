@@ -26,6 +26,7 @@
 				"/usr/share/locale/hr/LC_MESSAGES/m4.mo",
 				"/usr/share/locale/id/LC_MESSAGES/m4.mo",
 				"/usr/share/locale/ja/LC_MESSAGES/m4.mo",
+				"/usr/share/locale/ka/LC_MESSAGES/m4.mo",
 				"/usr/share/locale/ko/LC_MESSAGES/m4.mo",
 				"/usr/share/locale/nl/LC_MESSAGES/m4.mo",
 				"/usr/share/locale/pl/LC_MESSAGES/m4.mo",
@@ -47,6 +48,6 @@
 		}
 	},
 	"source-name": "m4",
-	"source-release": "4",
-	"source-version": "1.4.19"
+	"source-release": "5",
+	"source-version": "1.4.20"
 }
