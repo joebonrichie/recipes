@@ -19,7 +19,7 @@
 			],
 			"files": [
 				"/usr/lib/libpcap.so.1",
-				"/usr/lib/libpcap.so.1.10.5",
+				"/usr/lib/libpcap.so.1.10.6",
 				"/usr/share/man/man7/pcap-filter.7",
 				"/usr/share/man/man7/pcap-linktype.7",
 				"/usr/share/man/man7/pcap-tstamp.7"
@@ -150,6 +150,6 @@
 		}
 	},
 	"source-name": "libpcap",
-	"source-release": "5",
-	"source-version": "1.10.5"
+	"source-release": "6",
+	"source-version": "1.10.6"
 }
