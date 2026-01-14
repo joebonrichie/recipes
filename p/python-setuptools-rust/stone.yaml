@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : python-setuptools-rust
-version     : 1.11.1
-release     : 3
+version     : 1.12.0
+release     : 4
 homepage    : https://github.com/Lucretiel/autocommand
 upstreams   :
-    - https://pypi.debian.net/setuptools-rust/setuptools_rust-1.11.1.tar.gz : 7dabc4392252ced314b8050d63276e05fdc5d32398fc7d3cce1f6a6ac35b76c0
+    - https://pypi.debian.net/setuptools-rust/setuptools_rust-1.12.0.tar.gz : d94a93f0c97751c17014565f07bdc324bee45d396cd1bba83d8e7af92b945f0c
 summary     : Compile and distribute Python extensions written in rust as easily as if they were written in C
 description : |
     Compile and distribute Python extensions written in rust as easily as if they were written in C
