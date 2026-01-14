@@ -112,6 +112,7 @@
 				"/usr/share/locale/tg/LC_MESSAGES/gnome-calendar.mo",
 				"/usr/share/locale/th/LC_MESSAGES/gnome-calendar.mo",
 				"/usr/share/locale/tr/LC_MESSAGES/gnome-calendar.mo",
+				"/usr/share/locale/ug/LC_MESSAGES/gnome-calendar.mo",
 				"/usr/share/locale/uk/LC_MESSAGES/gnome-calendar.mo",
 				"/usr/share/locale/uz/LC_MESSAGES/gnome-calendar.mo",
 				"/usr/share/locale/vi/LC_MESSAGES/gnome-calendar.mo",
@@ -127,6 +128,6 @@
 		}
 	},
 	"source-name": "gnome-calendar",
-	"source-release": "4",
-	"source-version": "49.0.1"
+	"source-release": "5",
+	"source-version": "49.1"
 }
