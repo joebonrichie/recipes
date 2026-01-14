@@ -1,0 +1,25 @@
+#
+# SPDX-FileCopyrightText: © 2020-2024 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : gweather-locations
+version     : 2026.1
+release     : 1
+homepage    : https://wiki.gnome.org/Projects/LibGWeather
+upstreams   :
+    - https://download.gnome.org/sources/gweather-locations/2025/gweather-locations-2025.1.tar.xz : 5609ee04cf6ac4cc7721f3241bd8d69ffebf0f1b60210fadd88c869a4b884d87
+summary     : Location and time zone database used by libgweather
+description : |
+    Location and time zone database used by libgweather
+license     : GPL-2.0-or-later
+builddeps   :
+    - binary(msgfmt)
+    - binary(python3)
+    - python(pygobject)
+setup       : |
+    %meson
+build       : |
+    %meson_build
+install     : |
+    %meson_install
