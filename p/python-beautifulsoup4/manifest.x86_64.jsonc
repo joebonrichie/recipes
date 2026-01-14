@@ -12,11 +12,11 @@
 				"python-libs"
 			],
 			"files": [
-				"/usr/lib/python3.11/site-packages/beautifulsoup4-4.14.2.dist-info/METADATA",
-				"/usr/lib/python3.11/site-packages/beautifulsoup4-4.14.2.dist-info/RECORD",
-				"/usr/lib/python3.11/site-packages/beautifulsoup4-4.14.2.dist-info/WHEEL",
-				"/usr/lib/python3.11/site-packages/beautifulsoup4-4.14.2.dist-info/licenses/AUTHORS",
-				"/usr/lib/python3.11/site-packages/beautifulsoup4-4.14.2.dist-info/licenses/LICENSE",
+				"/usr/lib/python3.11/site-packages/beautifulsoup4-4.14.3.dist-info/METADATA",
+				"/usr/lib/python3.11/site-packages/beautifulsoup4-4.14.3.dist-info/RECORD",
+				"/usr/lib/python3.11/site-packages/beautifulsoup4-4.14.3.dist-info/WHEEL",
+				"/usr/lib/python3.11/site-packages/beautifulsoup4-4.14.3.dist-info/licenses/AUTHORS",
+				"/usr/lib/python3.11/site-packages/beautifulsoup4-4.14.3.dist-info/licenses/LICENSE",
 				"/usr/lib/python3.11/site-packages/bs4/__init__.py",
 				"/usr/lib/python3.11/site-packages/bs4/__pycache__/__init__.cpython-311.opt-1.pyc",
 				"/usr/lib/python3.11/site-packages/bs4/__pycache__/__init__.cpython-311.pyc",
@@ -71,6 +71,6 @@
 		}
 	},
 	"source-name": "python-beautifulsoup4",
-	"source-release": "2",
-	"source-version": "4.14.2"
+	"source-release": "3",
+	"source-version": "4.14.3"
 }
