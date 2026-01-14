@@ -113,6 +113,7 @@
 				"/usr/share/locale/eu/LC_MESSAGES/spectacle.mo",
 				"/usr/share/locale/fi/LC_MESSAGES/spectacle.mo",
 				"/usr/share/locale/fr/LC_MESSAGES/spectacle.mo",
+				"/usr/share/locale/ga/LC_MESSAGES/spectacle.mo",
 				"/usr/share/locale/gl/LC_MESSAGES/spectacle.mo",
 				"/usr/share/locale/he/LC_MESSAGES/spectacle.mo",
 				"/usr/share/locale/hi/LC_MESSAGES/spectacle.mo",
@@ -156,6 +157,7 @@
 				"/usr/share/man/it/man1/spectacle.1",
 				"/usr/share/man/man1/spectacle.1",
 				"/usr/share/man/nl/man1/spectacle.1",
+				"/usr/share/man/pt_BR/man1/spectacle.1",
 				"/usr/share/man/sl/man1/spectacle.1",
 				"/usr/share/man/sv/man1/spectacle.1",
 				"/usr/share/man/tr/man1/spectacle.1",
@@ -244,6 +246,6 @@
 		}
 	},
 	"source-name": "spectacle",
-	"source-release": "15",
-	"source-version": "6.5.4"
+	"source-release": "16",
+	"source-version": "6.5.5"
 }

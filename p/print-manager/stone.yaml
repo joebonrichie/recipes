@@ -4,10 +4,10 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : print-manager
-version     : 6.5.4
-release     : 14
+version     : 6.5.5
+release     : 15
 upstreams   :
-    - https://download.kde.org/stable/plasma/6.5.4/print-manager-6.5.4.tar.xz : 87762556b1327fce36d2d1eec4e40fc6903baddc5204f28ab7a4045e8464668b
+    - https://download.kde.org/stable/plasma/6.5.5/print-manager-6.5.5.tar.xz : 3a0486d53e7a317acc47c31a9cd3cc2a9bdb03196ee5f6a6befaba8d61f8ba25
 homepage    : https://kde.org/plasma-desktop/
 license     : GPL-2.0-or-later
 summary     : Tool for managing print jobs and printers
