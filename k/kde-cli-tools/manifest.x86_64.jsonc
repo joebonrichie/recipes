@@ -247,11 +247,14 @@
 				"/usr/share/locale/fy/LC_MESSAGES/kioclient.mo",
 				"/usr/share/locale/fy/LC_MESSAGES/kmimetypefinder.mo",
 				"/usr/share/locale/fy/LC_MESSAGES/kstart.mo",
+				"/usr/share/locale/ga/LC_MESSAGES/kbroadcastnotification.mo",
 				"/usr/share/locale/ga/LC_MESSAGES/kcm_filetypes.mo",
+				"/usr/share/locale/ga/LC_MESSAGES/kde-inhibit.mo",
 				"/usr/share/locale/ga/LC_MESSAGES/kdesu.mo",
 				"/usr/share/locale/ga/LC_MESSAGES/kioclient.mo",
 				"/usr/share/locale/ga/LC_MESSAGES/kmimetypefinder.mo",
 				"/usr/share/locale/ga/LC_MESSAGES/kstart.mo",
+				"/usr/share/locale/ga/LC_MESSAGES/plasma-open-settings.mo",
 				"/usr/share/locale/gl/LC_MESSAGES/kbroadcastnotification.mo",
 				"/usr/share/locale/gl/LC_MESSAGES/kcm_filetypes.mo",
 				"/usr/share/locale/gl/LC_MESSAGES/kde-inhibit.mo",
@@ -795,6 +798,6 @@
 		}
 	},
 	"source-name": "kde-cli-tools",
-	"source-release": "12",
-	"source-version": "6.5.4"
+	"source-release": "13",
+	"source-version": "6.5.5"
 }
