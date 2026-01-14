@@ -428,7 +428,24 @@
 				"/usr/share/locale/fr/LC_MESSAGES/plasmanetworkmanagement_sstpui.mo",
 				"/usr/share/locale/fr/LC_MESSAGES/plasmanetworkmanagement_strongswanui.mo",
 				"/usr/share/locale/fr/LC_MESSAGES/plasmanetworkmanagement_vpncui.mo",
+				"/usr/share/locale/ga/LC_MESSAGES/kcm_cellular_network.mo",
+				"/usr/share/locale/ga/LC_MESSAGES/kcm_mobile_hotspot.mo",
+				"/usr/share/locale/ga/LC_MESSAGES/kcm_mobile_wifi.mo",
 				"/usr/share/locale/ga/LC_MESSAGES/plasma_applet_org.kde.plasma.networkmanagement.mo",
+				"/usr/share/locale/ga/LC_MESSAGES/plasmanetworkmanagement-kcm.mo",
+				"/usr/share/locale/ga/LC_MESSAGES/plasmanetworkmanagement-kded.mo",
+				"/usr/share/locale/ga/LC_MESSAGES/plasmanetworkmanagement-libs.mo",
+				"/usr/share/locale/ga/LC_MESSAGES/plasmanetworkmanagement_fortisslvpnui.mo",
+				"/usr/share/locale/ga/LC_MESSAGES/plasmanetworkmanagement_iodineui.mo",
+				"/usr/share/locale/ga/LC_MESSAGES/plasmanetworkmanagement_l2tpui.mo",
+				"/usr/share/locale/ga/LC_MESSAGES/plasmanetworkmanagement_libreswanui.mo",
+				"/usr/share/locale/ga/LC_MESSAGES/plasmanetworkmanagement_openconnectui.mo",
+				"/usr/share/locale/ga/LC_MESSAGES/plasmanetworkmanagement_openvpnui.mo",
+				"/usr/share/locale/ga/LC_MESSAGES/plasmanetworkmanagement_pptpui.mo",
+				"/usr/share/locale/ga/LC_MESSAGES/plasmanetworkmanagement_sshui.mo",
+				"/usr/share/locale/ga/LC_MESSAGES/plasmanetworkmanagement_sstpui.mo",
+				"/usr/share/locale/ga/LC_MESSAGES/plasmanetworkmanagement_strongswanui.mo",
+				"/usr/share/locale/ga/LC_MESSAGES/plasmanetworkmanagement_vpncui.mo",
 				"/usr/share/locale/gl/LC_MESSAGES/kcm_cellular_network.mo",
 				"/usr/share/locale/gl/LC_MESSAGES/kcm_mobile_hotspot.mo",
 				"/usr/share/locale/gl/LC_MESSAGES/kcm_mobile_wifi.mo",
@@ -1136,6 +1153,6 @@
 		}
 	},
 	"source-name": "plasma-nm",
-	"source-release": "16",
-	"source-version": "6.5.4"
+	"source-release": "17",
+	"source-version": "6.5.5"
 }
