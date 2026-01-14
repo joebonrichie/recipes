@@ -19,11 +19,20 @@
 				"/usr/lib/tmpfiles.d/keyd.conf",
 				"/usr/share/doc/keyd/CHANGELOG.md",
 				"/usr/share/doc/keyd/DESIGN.md",
+				"/usr/share/doc/keyd/README.md",
+				"/usr/share/doc/keyd/examples/apple-magic-keyboard-touch-id.conf",
 				"/usr/share/doc/keyd/examples/capslock-esc-basic.conf",
 				"/usr/share/doc/keyd/examples/capslock-escape-with-vim-mode.conf",
+				"/usr/share/doc/keyd/examples/chromebook-linux.conf",
+				"/usr/share/doc/keyd/examples/extend-layer.conf",
+				"/usr/share/doc/keyd/examples/half-qwerty.conf",
+				"/usr/share/doc/keyd/examples/home-row-mods.conf",
 				"/usr/share/doc/keyd/examples/international-glyphs.conf",
+				"/usr/share/doc/keyd/examples/layer-carousel.conf",
 				"/usr/share/doc/keyd/examples/macos.conf",
 				"/usr/share/doc/keyd/examples/nav-layer.conf",
+				"/usr/share/doc/keyd/examples/shift-bar.conf",
+				"/usr/share/doc/keyd/examples/simlayer.conf",
 				"/usr/share/keyd/gnome-extension-45/extension.js",
 				"/usr/share/keyd/gnome-extension-45/metadata.json",
 				"/usr/share/keyd/gnome-extension/extension.js",
@@ -68,6 +77,8 @@
 				"/usr/share/keyd/layouts/gh",
 				"/usr/share/keyd/layouts/gn",
 				"/usr/share/keyd/layouts/gr",
+				"/usr/share/keyd/layouts/graphite",
+				"/usr/share/keyd/layouts/graphite-angle-kp",
 				"/usr/share/keyd/layouts/hr",
 				"/usr/share/keyd/layouts/hu",
 				"/usr/share/keyd/layouts/id",
@@ -140,6 +151,6 @@
 		}
 	},
 	"source-name": "keyd",
-	"source-release": "3",
-	"source-version": "2.5.0"
+	"source-release": "4",
+	"source-version": "2.6.0"
 }

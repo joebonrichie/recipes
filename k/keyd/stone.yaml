@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : keyd
-version     : 2.5.0
-release     : 3
+version     : 2.6.0
+release     : 4
 homepage    : https://github.com/rvaiya/keyd
 upstreams   :
-    - https://github.com/rvaiya/keyd/archive/refs/tags/v2.5.0.tar.gz : 93ec6c153ef673a7a8b4d8b686494dee11d182513f4531c71dce15a8db7f6c1c
+    - https://github.com/rvaiya/keyd/archive/refs/tags/v2.6.0.tar.gz : 697089681915b89d9e98caf93d870dbd4abce768af8a647d54650a6a90744e26
 summary     : A key remapping daemon for linux.
 description : |
     Linux lacks a good key remapping solution. In order to achieve satisfactory results a medley of tools need to be employed (e.g xcape, xmodmap) with the end result often being tethered to a specified environment (X11). keyd attempts to solve this problem by providing a flexible system wide daemon which remaps keys using kernel level input primitives (evdev, uinput).
@@ -18,11 +18,9 @@ builddeps   :
 build       : |
     %make PREFIX=/usr
 install     : |
-    %make_install PREFIX=/usr
+    %make_install PREFIX=/usr FORCE_SYSTEMD=1
 
-    %sysusers 'g keyd - -'
     %tmpfiles 'f /run/keyd.socket 0664 - - -'
     %tmpfiles 'd /etc/keyd 0755 - - -'
 
-    %install_file keyd.service %(installroot)%(libdir)/systemd/system/keyd.service
     %install_file %(pkgdir)/40-keyd.preset %(installroot)%(libdir)/systemd/system-preset/40-keyd.preset
