@@ -4,10 +4,10 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : nghttp3
-version     : 1.13.1
-release     : 3
+version     : 1.14.0
+release     : 4
 upstreams   :
-    - https://github.com/ngtcp2/nghttp3/releases/download/v1.13.1/nghttp3-1.13.1.tar.gz : 07160f28af3ddc3e8b95c8bbefe08c650e7cf303375141b6ca35cc89b319f70d
+    - https://github.com/ngtcp2/nghttp3/releases/download/v1.14.0/nghttp3-1.14.0.tar.gz : 375c64e039c2224cf1d86596ccc90bfcfe94f78c829761d5cc36f52384342313
 homepage    : https://nghttp2.org/nghttp3/
 license     : MIT
 summary     : HTTP/3 C Library
