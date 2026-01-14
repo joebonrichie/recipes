@@ -1766,6 +1766,6 @@
 		}
 	},
 	"source-name": "nodejs-24",
-	"source-release": "1",
-	"source-version": "24.12.0"
+	"source-release": "2",
+	"source-version": "24.13.0"
 }
