@@ -6,6 +6,7 @@
 			"build-depends": [
 				"binary(jq)",
 				"binary(sphinx-build)",
+				"pkgconfig(check)",
 				"pkgconfig(yaml-0.1)"
 			],
 			"depends": [
@@ -13,7 +14,7 @@
 			],
 			"files": [
 				"/usr/lib/libfyaml.so.0",
-				"/usr/lib/libfyaml.so.0.0.0"
+				"/usr/lib/libfyaml.so.0.9.2"
 			],
 			"name": "libfyaml",
 			"provides": [
@@ -24,6 +25,7 @@
 			"build-depends": [
 				"binary(jq)",
 				"binary(sphinx-build)",
+				"pkgconfig(check)",
 				"pkgconfig(yaml-0.1)"
 			],
 			"depends": [
@@ -31,11 +33,16 @@
 			],
 			"files": [
 				"/usr/include/libfyaml.h",
+				"/usr/lib/cmake/libfyaml/libfyaml-config-version.cmake",
+				"/usr/lib/cmake/libfyaml/libfyaml-config.cmake",
+				"/usr/lib/cmake/libfyaml/libfyaml-targets-release.cmake",
+				"/usr/lib/cmake/libfyaml/libfyaml-targets.cmake",
 				"/usr/lib/libfyaml.so",
 				"/usr/lib/pkgconfig/libfyaml.pc"
 			],
 			"name": "libfyaml-devel",
 			"provides": [
+				"cmake(libfyaml)",
 				"pkgconfig(libfyaml)"
 			]
 		},
@@ -43,6 +50,7 @@
 			"build-depends": [
 				"binary(jq)",
 				"binary(sphinx-build)",
+				"pkgconfig(check)",
 				"pkgconfig(yaml-0.1)"
 			],
 			"depends": [
@@ -51,34 +59,15 @@
 				"soname(libfyaml.so.0(x86_64))"
 			],
 			"files": [
-				"/usr/bin/fy-compose",
-				"/usr/bin/fy-dump",
-				"/usr/bin/fy-filter",
-				"/usr/bin/fy-join",
-				"/usr/bin/fy-testsuite",
-				"/usr/bin/fy-tool",
-				"/usr/bin/fy-ypath",
-				"/usr/share/man/man1/fy-compose.1",
-				"/usr/share/man/man1/fy-dump.1",
-				"/usr/share/man/man1/fy-filter.1",
-				"/usr/share/man/man1/fy-join.1",
-				"/usr/share/man/man1/fy-testsuite.1",
-				"/usr/share/man/man1/fy-tool.1",
-				"/usr/share/man/man1/fy-ypath.1"
+				"/usr/bin/fy-tool"
 			],
 			"name": "libfyaml-tools",
 			"provides": [
-				"binary(fy-compose)",
-				"binary(fy-dump)",
-				"binary(fy-filter)",
-				"binary(fy-join)",
-				"binary(fy-testsuite)",
-				"binary(fy-tool)",
-				"binary(fy-ypath)"
+				"binary(fy-tool)"
 			]
 		}
 	},
 	"source-name": "libfyaml",
-	"source-release": "1",
-	"source-version": "0.9"
+	"source-release": "2",
+	"source-version": "0.9.2"
 }
