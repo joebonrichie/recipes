@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : lsp-plugins
-version     : 1.2.25
-release     : 7
+version     : 1.2.26
+release     : 8
 homepage    : https://lsp-plug.in
 upstreams   :
-    - https://github.com/sadko4u/lsp-plugins/releases/download/1.2.25/lsp-plugins-src-1.2.25.tar.gz : a829b70df445ecb47ac24e53b42febd46200d9923b62bad94ca3478cb0e32673
+    - https://github.com/sadko4u/lsp-plugins/releases/download/1.2.26/lsp-plugins-src-1.2.26.tar.gz : 44832a99226417dd2efa74880990a3de71ab031d667d45ec3d06f795789c09f3
 summary     : Linux Studio Plugins Project
 description : |
     Linux Studio Plugins Project
