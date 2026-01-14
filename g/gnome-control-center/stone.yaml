@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : gnome-control-center
-version     : "49.2.2"
-release     : 28
+version     : "49.3"
+release     : 29
 homepage    : https://apps.gnome.org/Settings/
 upstreams   :
-    - https://download.gnome.org/sources/gnome-control-center/49/gnome-control-center-49.2.2.tar.xz : c23ae220d6c1237d285925de7801e0e36338b9cc1a8bb51c2e37e715e6b503ad
+    - https://download.gnome.org/sources/gnome-control-center/49/gnome-control-center-49.3.tar.xz : cf93d37164fa2e10be6f08f15eb917b1f1ea7f9dd9bac7de9ffdd812fa8d9cfc
 summary     : Utility to configure the GNOME desktop
 description : |
     Settings is the primary interface for configuring your system.
