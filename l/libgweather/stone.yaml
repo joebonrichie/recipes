@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : libgweather
-version     : 4.4.4
-release     : 7
+version     : 4.5.0
+release     : 8
 homepage    : https://wiki.gnome.org/Projects/LibGWeather
 upstreams   :
-    - https://download.gnome.org/sources/libgweather/4.4/libgweather-4.4.4.tar.xz : 7017677753cdf7d1fdc355e4bfcdb1eba8369793a8df24d241427a939cbf4283
+    - https://download.gnome.org/sources/libgweather/4.5/libgweather-4.5.0.tar.xz : e464c1aebe8117c8a170206d7baefe730393b7e98044c2cd97b3aa8604ef12aa
 summary     : Location and time zone database, and weather-lookup library
 description : |
     libgweather is a library to access weather information from online services for numerous locations.
@@ -16,22 +16,31 @@ license     :
     - GPL-2.0-or-later
 builddeps   :
     - binary(g-ir-scanner)
+    - binary(gi-docgen)
+    - binary(msgfmt)
     - pkgconfig(geocode-glib-2.0)
-    - pkgconfig(gobject-introspection-1.0)
     - pkgconfig(json-glib-1.0)
     - pkgconfig(libsoup-3.0)
     - pkgconfig(libxml-2.0)
     - pkgconfig(vapigen)
-    - python-pygobject-devel
-packages    :
-    - "%(name)-devel":
-        paths:
-            - /usr/share/vala/vapi
+    - pkgconfig(gweather-locations)
 setup       : |
-    %meson -Dintrospection=true \
-           -Dgtk_doc=false \
-           -Denable_vala=true
+    %meson \
+        -Denable_vala=true \
+        -Dintrospection=true
 build       : |
     %meson_build
 install     : |
     %meson_install
+packages    :
+    - "%(name)":
+        rundeps:
+            - gweather-locations
+
+    - "%(name)-devel":
+        paths:
+            - /usr/share/vala/vapi
+
+    - "%(name)-docs":
+        paths:
+            - /usr/share/doc
