@@ -108,10 +108,13 @@
 				"/usr/include/qpdf/auto_job_c_att.hh",
 				"/usr/include/qpdf/auto_job_c_copy_att.hh",
 				"/usr/include/qpdf/auto_job_c_enc.hh",
+				"/usr/include/qpdf/auto_job_c_global.hh",
+				"/usr/include/qpdf/auto_job_c_limits.hh",
 				"/usr/include/qpdf/auto_job_c_main.hh",
 				"/usr/include/qpdf/auto_job_c_pages.hh",
 				"/usr/include/qpdf/auto_job_c_set_page_labels.hh",
 				"/usr/include/qpdf/auto_job_c_uo.hh",
+				"/usr/include/qpdf/global.hh",
 				"/usr/include/qpdf/qpdf-c.h",
 				"/usr/include/qpdf/qpdfjob-c.h",
 				"/usr/include/qpdf/qpdflogger-c.h",
@@ -180,7 +183,7 @@
 			],
 			"files": [
 				"/usr/lib/libqpdf.so.30",
-				"/usr/lib/libqpdf.so.30.2.0"
+				"/usr/lib/libqpdf.so.30.3.0"
 			],
 			"name": "qpdf-libs",
 			"provides": [
@@ -189,6 +192,6 @@
 		}
 	},
 	"source-name": "qpdf",
-	"source-release": "5",
-	"source-version": "12.2.0"
+	"source-release": "6",
+	"source-version": "12.3.0"
 }
