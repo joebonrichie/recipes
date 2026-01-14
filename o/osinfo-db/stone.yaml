@@ -4,12 +4,12 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : osinfo-db
-version     : 20250606
-release     : 1
+version     : 20251212
+release     : 2
 homepage    : https://libosinfo.org
 upstreams   :
-    - https://releases.pagure.org/libosinfo/osinfo-db-20250606.tar.xz:
-        hash: 9940aa47df298073c51dcf8a4dcc855f494ab864c24cdbda46bd897957357fe1
+    - https://releases.pagure.org/libosinfo/osinfo-db-20251212.tar.xz:
+        hash: 06379250c91306c98cb9726af44eae5909dfdd5449f90331e904ae1221d8d5e7
         unpack: false
         rename: osinfo-db.tar.xz
 summary     : OS database for libosinfo
