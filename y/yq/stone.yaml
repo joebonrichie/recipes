@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : yq
-version     : 4.49.2
-release     : 11
+version     : 4.50.1
+release     : 12
 homepage    : https://mikefarah.gitbook.io/yq/
 upstreams   :
-    - https://github.com/mikefarah/yq/archive/refs/tags/v4.49.2.tar.gz : 648d96cc490a4e08edb6bf8ff9498360b405263e202663cd9c92322b3aa557ef
+    - https://github.com/mikefarah/yq/archive/refs/tags/v4.50.1.tar.gz : ec55f107fbfe1d8226c1d4d74def734672f9aa58165029819ddfb771339e53a1
 summary     : yq is a lightweight command-line YAML processor
 description : |
     A lightweight and portable command-line YAML processor. yq uses jq like syntax but works with yaml files as well as json. It doesn't yet support everything jq does - but it does support the most common operations and functions, and more is being added continuously.
