@@ -56,9 +56,9 @@
 			],
 			"files": [
 				"/usr/lib/libPlasma5Support.so.6",
-				"/usr/lib/libPlasma5Support.so.6.5.4",
+				"/usr/lib/libPlasma5Support.so.6.5.5",
 				"/usr/lib/libplasma-geolocation-interface.so.6",
-				"/usr/lib/libplasma-geolocation-interface.so.6.5.4",
+				"/usr/lib/libplasma-geolocation-interface.so.6.5.5",
 				"/usr/lib/libweather_ion.so.7",
 				"/usr/lib/libweather_ion.so.7.0.0",
 				"/usr/lib/qt6/plugins/plasma5support/dataengine/plasma_engine_activities.so",
@@ -212,7 +212,11 @@
 				"/usr/share/locale/fr/LC_MESSAGES/plasma_engine_weather.mo",
 				"/usr/share/locale/fy/LC_MESSAGES/plasma_engine_keystate.mo",
 				"/usr/share/locale/fy/LC_MESSAGES/plasma_engine_weather.mo",
+				"/usr/share/locale/ga/LC_MESSAGES/libplasma5support.mo",
+				"/usr/share/locale/ga/LC_MESSAGES/plasma_engine_devicenotifications.mo",
+				"/usr/share/locale/ga/LC_MESSAGES/plasma_engine_hotplug.mo",
 				"/usr/share/locale/ga/LC_MESSAGES/plasma_engine_keystate.mo",
+				"/usr/share/locale/ga/LC_MESSAGES/plasma_engine_powermanagement.mo",
 				"/usr/share/locale/ga/LC_MESSAGES/plasma_engine_soliddevice.mo",
 				"/usr/share/locale/ga/LC_MESSAGES/plasma_engine_weather.mo",
 				"/usr/share/locale/gl/LC_MESSAGES/libplasma5support.mo",
@@ -612,6 +616,6 @@
 		}
 	},
 	"source-name": "plasma5support",
-	"source-release": "13",
-	"source-version": "6.5.4"
+	"source-release": "14",
+	"source-version": "6.5.5"
 }
