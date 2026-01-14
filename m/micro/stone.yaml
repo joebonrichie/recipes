@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : micro
-version     : 2.0.14
-release     : 5
+version     : 2.0.15
+release     : 6
 homepage    : https://micro-editor.github.io/
 upstreams   :
-    - https://github.com/zyedidia/micro/archive/refs/tags/v2.0.14.tar.gz : 40177579beb3846461036387b649c629395584a4bbe970f61ba7591bd9c0185a
+    - https://github.com/zyedidia/micro/archive/refs/tags/v2.0.15.tar.gz : 612c775321c268c8f9e1767505ff378bca9b9ab66f5c41b69ecb2464ecf15084
 summary     : A modern and intuitive terminal-based text editor
 description : |
     A modern and intuitive terminal-based text editor
