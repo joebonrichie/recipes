@@ -52,8 +52,8 @@
 				"plasma-wayland-protocols"
 			],
 			"files": [
-				"/usr/lib/cmake/PlasmaWaylandProtocols/PlasmaWaylandProtocolsConfig.cmake",
-				"/usr/lib/cmake/PlasmaWaylandProtocols/PlasmaWaylandProtocolsConfigVersion.cmake"
+				"/usr/share/cmake/PlasmaWaylandProtocols/PlasmaWaylandProtocolsConfig.cmake",
+				"/usr/share/cmake/PlasmaWaylandProtocols/PlasmaWaylandProtocolsConfigVersion.cmake"
 			],
 			"name": "plasma-wayland-protocols-devel",
 			"provides": [
@@ -62,6 +62,6 @@
 		}
 	},
 	"source-name": "plasma-wayland-protocols",
-	"source-release": "4",
-	"source-version": "1.19.0"
+	"source-release": "5",
+	"source-version": "1.20.0"
 }
