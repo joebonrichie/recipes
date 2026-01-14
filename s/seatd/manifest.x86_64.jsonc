@@ -4,6 +4,7 @@
 	"packages": {
 		"seatd": {
 			"build-depends": [
+				"binary(scdoc)",
 				"pkgconfig(libsystemd)"
 			],
 			"depends": [
@@ -14,7 +15,9 @@
 			"files": [
 				"/usr/bin/seatd",
 				"/usr/bin/seatd-launch",
-				"/usr/lib/libseat.so.1"
+				"/usr/lib/libseat.so.1",
+				"/usr/share/man/man1/seatd-launch.1",
+				"/usr/share/man/man1/seatd.1"
 			],
 			"name": "seatd",
 			"provides": [
@@ -25,6 +28,7 @@
 		},
 		"seatd-devel": {
 			"build-depends": [
+				"binary(scdoc)",
 				"pkgconfig(libsystemd)"
 			],
 			"depends": [
@@ -43,6 +47,6 @@
 		}
 	},
 	"source-name": "seatd",
-	"source-release": "3",
-	"source-version": "0.9.1"
+	"source-release": "4",
+	"source-version": "0.9.2"
 }
