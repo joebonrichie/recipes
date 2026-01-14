@@ -452,17 +452,17 @@
 				"/usr/lib/freerdp3/proxy/libproxy-demo-plugin.so",
 				"/usr/lib/freerdp3/proxy/libproxy-dyn-channel-dump-plugin.so",
 				"/usr/lib/libfreerdp-client3.so.3",
-				"/usr/lib/libfreerdp-client3.so.3.20.0",
+				"/usr/lib/libfreerdp-client3.so.3.20.2",
 				"/usr/lib/libfreerdp-server-proxy3.so.3",
-				"/usr/lib/libfreerdp-server-proxy3.so.3.20.0",
+				"/usr/lib/libfreerdp-server-proxy3.so.3.20.2",
 				"/usr/lib/libfreerdp-server3.so.3",
-				"/usr/lib/libfreerdp-server3.so.3.20.0",
+				"/usr/lib/libfreerdp-server3.so.3.20.2",
 				"/usr/lib/libfreerdp-shadow-subsystem3.so.3",
-				"/usr/lib/libfreerdp-shadow-subsystem3.so.3.20.0",
+				"/usr/lib/libfreerdp-shadow-subsystem3.so.3.20.2",
 				"/usr/lib/libfreerdp-shadow3.so.3",
-				"/usr/lib/libfreerdp-shadow3.so.3.20.0",
+				"/usr/lib/libfreerdp-shadow3.so.3.20.2",
 				"/usr/lib/libfreerdp3.so.3",
-				"/usr/lib/libfreerdp3.so.3.20.0",
+				"/usr/lib/libfreerdp3.so.3.20.2",
 				"/usr/lib/librdtk0.so.0",
 				"/usr/lib/librdtk0.so.0.2.0",
 				"/usr/lib/libuwac0.so.0",
@@ -532,9 +532,9 @@
 			],
 			"files": [
 				"/usr/lib/libwinpr-tools3.so.3",
-				"/usr/lib/libwinpr-tools3.so.3.20.0",
+				"/usr/lib/libwinpr-tools3.so.3.20.2",
 				"/usr/lib/libwinpr3.so.3",
-				"/usr/lib/libwinpr3.so.3.20.0"
+				"/usr/lib/libwinpr3.so.3.20.2"
 			],
 			"name": "libwinpr",
 			"provides": [
@@ -672,6 +672,6 @@
 		}
 	},
 	"source-name": "freerdp",
-	"source-release": "19",
-	"source-version": "3.20.0"
+	"source-release": "20",
+	"source-version": "3.20.2"
 }
