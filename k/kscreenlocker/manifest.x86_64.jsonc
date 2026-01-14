@@ -64,7 +64,7 @@
 			"files": [
 				"/usr/lib/kf6/kscreenlocker_greet",
 				"/usr/lib/libKScreenLocker.so.6",
-				"/usr/lib/libKScreenLocker.so.6.5.4",
+				"/usr/lib/libKScreenLocker.so.6.5.5",
 				"/usr/lib/qt6/plugins/plasma/kcms/systemsettings/kcm_screenlocker.so",
 				"/usr/share/applications/kcm_screenlocker.desktop",
 				"/usr/share/knotifications6/ksmserver.notifyrc",
@@ -121,6 +121,7 @@
 				"/usr/share/locale/fr/LC_MESSAGES/kcm_screenlocker.mo",
 				"/usr/share/locale/fr/LC_MESSAGES/kscreenlocker.mo",
 				"/usr/share/locale/fr/LC_MESSAGES/kscreenlocker_greet.mo",
+				"/usr/share/locale/ga/LC_MESSAGES/kcm_screenlocker.mo",
 				"/usr/share/locale/ga/LC_MESSAGES/kscreenlocker.mo",
 				"/usr/share/locale/ga/LC_MESSAGES/kscreenlocker_greet.mo",
 				"/usr/share/locale/gl/LC_MESSAGES/kcm_screenlocker.mo",
@@ -299,6 +300,6 @@
 		}
 	},
 	"source-name": "kscreenlocker",
-	"source-release": "11",
-	"source-version": "6.5.4"
+	"source-release": "12",
+	"source-version": "6.5.5"
 }
