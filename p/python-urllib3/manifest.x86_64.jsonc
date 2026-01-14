@@ -12,10 +12,10 @@
 				"python-libs"
 			],
 			"files": [
-				"/usr/lib/python3.11/site-packages/urllib3-2.5.0.dist-info/METADATA",
-				"/usr/lib/python3.11/site-packages/urllib3-2.5.0.dist-info/RECORD",
-				"/usr/lib/python3.11/site-packages/urllib3-2.5.0.dist-info/WHEEL",
-				"/usr/lib/python3.11/site-packages/urllib3-2.5.0.dist-info/licenses/LICENSE.txt",
+				"/usr/lib/python3.11/site-packages/urllib3-2.6.3.dist-info/METADATA",
+				"/usr/lib/python3.11/site-packages/urllib3-2.6.3.dist-info/RECORD",
+				"/usr/lib/python3.11/site-packages/urllib3-2.6.3.dist-info/WHEEL",
+				"/usr/lib/python3.11/site-packages/urllib3-2.6.3.dist-info/licenses/LICENSE.txt",
 				"/usr/lib/python3.11/site-packages/urllib3/__init__.py",
 				"/usr/lib/python3.11/site-packages/urllib3/__pycache__/__init__.cpython-311.opt-1.pyc",
 				"/usr/lib/python3.11/site-packages/urllib3/__pycache__/__init__.cpython-311.pyc",
@@ -129,12 +129,11 @@
 			],
 			"name": "python-urllib3",
 			"provides": [
-				"python(urllib3(3.11))",
 				"python(urllib3)"
 			]
 		}
 	},
 	"source-name": "python-urllib3",
-	"source-release": "1",
-	"source-version": "2.5.0"
+	"source-release": "2",
+	"source-version": "2.6.3"
 }
