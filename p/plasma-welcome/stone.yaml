@@ -4,10 +4,10 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : plasma-welcome
-version     : 6.5.4
-release     : 14
+version     : 6.5.5
+release     : 15
 upstreams   :
-    - https://download.kde.org/stable/plasma/6.5.4/plasma-welcome-6.5.4.tar.xz : 854dea41165603ea2ccceb401a91c2200c7fe2f23d0abc231f94db715a2c2be8
+    - https://download.kde.org/stable/plasma/6.5.5/plasma-welcome-6.5.5.tar.xz : 32e29caa3507047f786857a0dd10830835837a0b5bb1d67d4b7f4e5540e00920
 homepage    : https://kde.org/plasma-desktop/
 license     :
     - BSD-3-Clause
