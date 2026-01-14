@@ -27,7 +27,7 @@
 			"files": [
 				"/usr/lib/girepository-1.0/Qmi-1.0.typelib",
 				"/usr/lib/libqmi-glib.so.5",
-				"/usr/lib/libqmi-glib.so.5.11.0"
+				"/usr/lib/libqmi-glib.so.5.12.0"
 			],
 			"name": "libqmi",
 			"provides": [
@@ -71,7 +71,9 @@
 				"/usr/include/libqmi-glib/qmi-enums-dsd.h",
 				"/usr/include/libqmi-glib/qmi-enums-fox.h",
 				"/usr/include/libqmi-glib/qmi-enums-gas.h",
+				"/usr/include/libqmi-glib/qmi-enums-ims.h",
 				"/usr/include/libqmi-glib/qmi-enums-imsa.h",
+				"/usr/include/libqmi-glib/qmi-enums-imsdcm.h",
 				"/usr/include/libqmi-glib/qmi-enums-imsp.h",
 				"/usr/include/libqmi-glib/qmi-enums-loc.h",
 				"/usr/include/libqmi-glib/qmi-enums-nas.h",
@@ -103,6 +105,7 @@
 				"/usr/include/libqmi-glib/qmi-gms.h",
 				"/usr/include/libqmi-glib/qmi-ims.h",
 				"/usr/include/libqmi-glib/qmi-imsa.h",
+				"/usr/include/libqmi-glib/qmi-imsdcm.h",
 				"/usr/include/libqmi-glib/qmi-imsp.h",
 				"/usr/include/libqmi-glib/qmi-loc.h",
 				"/usr/include/libqmi-glib/qmi-message-context.h",
@@ -176,6 +179,6 @@
 		}
 	},
 	"source-name": "libqmi",
-	"source-release": "4",
-	"source-version": "1.36.0"
+	"source-release": "5",
+	"source-version": "1.38.0"
 }
