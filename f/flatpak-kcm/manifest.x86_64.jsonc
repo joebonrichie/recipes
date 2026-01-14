@@ -50,6 +50,7 @@
 				"/usr/share/locale/eu/LC_MESSAGES/kcm_app-permissions.mo",
 				"/usr/share/locale/fi/LC_MESSAGES/kcm_app-permissions.mo",
 				"/usr/share/locale/fr/LC_MESSAGES/kcm_app-permissions.mo",
+				"/usr/share/locale/ga/LC_MESSAGES/kcm_app-permissions.mo",
 				"/usr/share/locale/gl/LC_MESSAGES/kcm_app-permissions.mo",
 				"/usr/share/locale/he/LC_MESSAGES/kcm_app-permissions.mo",
 				"/usr/share/locale/hi/LC_MESSAGES/kcm_app-permissions.mo",
@@ -89,6 +90,6 @@
 		}
 	},
 	"source-name": "flatpak-kcm",
-	"source-release": "9",
-	"source-version": "6.5.4"
+	"source-release": "10",
+	"source-version": "6.5.5"
 }
