@@ -10,10 +10,10 @@
 				"python(packaging)"
 			],
 			"files": [
-				"/usr/lib/python3.11/site-packages/pyproject_metadata-0.9.1.dist-info/METADATA",
-				"/usr/lib/python3.11/site-packages/pyproject_metadata-0.9.1.dist-info/RECORD",
-				"/usr/lib/python3.11/site-packages/pyproject_metadata-0.9.1.dist-info/WHEEL",
-				"/usr/lib/python3.11/site-packages/pyproject_metadata-0.9.1.dist-info/licenses/LICENSE",
+				"/usr/lib/python3.11/site-packages/pyproject_metadata-0.10.0.dist-info/METADATA",
+				"/usr/lib/python3.11/site-packages/pyproject_metadata-0.10.0.dist-info/RECORD",
+				"/usr/lib/python3.11/site-packages/pyproject_metadata-0.10.0.dist-info/WHEEL",
+				"/usr/lib/python3.11/site-packages/pyproject_metadata-0.10.0.dist-info/licenses/LICENSE",
 				"/usr/lib/python3.11/site-packages/pyproject_metadata/__init__.py",
 				"/usr/lib/python3.11/site-packages/pyproject_metadata/__pycache__/__init__.cpython-311.opt-1.pyc",
 				"/usr/lib/python3.11/site-packages/pyproject_metadata/__pycache__/__init__.cpython-311.pyc",
@@ -33,12 +33,11 @@
 			],
 			"name": "python-pyproject-metadata",
 			"provides": [
-				"python(pyproject-metadata(3.11))",
 				"python(pyproject-metadata)"
 			]
 		}
 	},
 	"source-name": "python-pyproject-metadata",
-	"source-release": "1",
-	"source-version": "0.9.1"
+	"source-release": "2",
+	"source-version": "0.10.0"
 }

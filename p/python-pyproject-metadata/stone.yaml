@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : python-pyproject-metadata
-version     : 0.9.1
-release     : 1
+version     : 0.10.0
+release     : 2
 homepage    : https://github.com/FFY00/python-pyproject-metadata
 upstreams   :
-    - https://pypi.debian.net/pyproject-metadata/pyproject_metadata-0.9.1.tar.gz : b8b2253dd1b7062b78cf949a115f02ba7fa4114aabe63fa10528e9e1a954a816
+    - https://pypi.debian.net/pyproject-metadata/pyproject_metadata-0.10.0.tar.gz : 7f5bd0ef398b60169556cb17ea261d715caf7f8561238151f51b2305084ba8d4
 license     : MIT
 summary     : PEP 621 metadata parsing
 description : |
