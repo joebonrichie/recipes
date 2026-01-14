@@ -11,10 +11,10 @@
 				"python-libs"
 			],
 			"files": [
-				"/usr/lib/python3.11/site-packages/idna-3.10.dist-info/METADATA",
-				"/usr/lib/python3.11/site-packages/idna-3.10.dist-info/RECORD",
-				"/usr/lib/python3.11/site-packages/idna-3.10.dist-info/WHEEL",
-				"/usr/lib/python3.11/site-packages/idna-3.10.dist-info/licenses/LICENSE.md",
+				"/usr/lib/python3.11/site-packages/idna-3.11.dist-info/METADATA",
+				"/usr/lib/python3.11/site-packages/idna-3.11.dist-info/RECORD",
+				"/usr/lib/python3.11/site-packages/idna-3.11.dist-info/WHEEL",
+				"/usr/lib/python3.11/site-packages/idna-3.11.dist-info/licenses/LICENSE.md",
 				"/usr/lib/python3.11/site-packages/idna/__init__.py",
 				"/usr/lib/python3.11/site-packages/idna/__pycache__/__init__.cpython-311.opt-1.pyc",
 				"/usr/lib/python3.11/site-packages/idna/__pycache__/__init__.cpython-311.pyc",
@@ -43,12 +43,11 @@
 			],
 			"name": "python-idna",
 			"provides": [
-				"python(idna(3.11))",
 				"python(idna)"
 			]
 		}
 	},
 	"source-name": "python-idna",
-	"source-release": "1",
-	"source-version": "3.10"
+	"source-release": "2",
+	"source-version": "3.11"
 }

@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : python-idna
-version     : "3.10"
-release     : 1
+version     : "3.11"
+release     : 2
 homepage    : https://github.com/Lucretiel/autocommand
 upstreams   :
-    - https://pypi.debian.net/idna/idna-3.10.tar.gz : 12f65c9b470abda6dc35cf8e63cc574b1c52b11df2c86030af0ac09b01b13ea9
+    - https://pypi.debian.net/idna/idna-3.11.tar.gz : 795dafcc9c04ed0c1fb032c2aa73654d8e8c5023a7df64a53f39190ada629902
 summary     : A python library to support the Internationalised Domain Names in Applications
 description : |
     A python library to support the Internationalised Domain Names in Applications.
