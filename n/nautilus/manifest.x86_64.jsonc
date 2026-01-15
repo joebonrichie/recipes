@@ -26,6 +26,7 @@
 			],
 			"depends": [
 				"glycin-thumbnailer",
+				"gvfs-fuse",
 				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
 				"localsearch",
 				"soname(libX11.so.6(x86_64))",
@@ -412,6 +413,6 @@
 		}
 	},
 	"source-name": "nautilus",
-	"source-release": "18",
+	"source-release": "19",
 	"source-version": "49.3"
 }

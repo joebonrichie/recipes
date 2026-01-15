@@ -5,7 +5,7 @@
 #
 name        : nautilus
 version     : "49.3"
-release     : 18
+release     : 19
 homepage    : https://apps.gnome.org/Nautilus/
 upstreams   :
     - https://download.gnome.org/sources/nautilus/49/nautilus-49.3.tar.xz : aa6bf376f08992362805eae01890b1bf5ad148f356aa7ccfe1f664eda88d413e
@@ -37,6 +37,7 @@ builddeps   :
     - pkgconfig(tinysparql-3.0)
 rundeps     :
     - glycin-thumbnailer # Needed for image thumbnails
+    - gvfs-fuse
     - localsearch
 setup       : |
     %patch %(pkgdir)/default-terminal.patch
