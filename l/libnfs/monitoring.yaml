@@ -1,0 +1,6 @@
+releases:
+  id: 7325
+  rss: https://github.com/sahlberg/libnfs/tags.atom
+security:
+  # Last checked 2026-01-15
+  cpe: ~

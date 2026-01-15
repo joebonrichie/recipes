@@ -1,0 +1,83 @@
+/** Human readable report. This is not consumed by boulder */
+{
+	"manifest-version": "0.2",
+	"packages": {
+		"libnfs": {
+			"build-depends": [
+				"pkgconfig(gnutls)"
+			],
+			"depends": [
+				"soname(libc.so.6(x86_64))",
+				"soname(libgnutls.so.30(x86_64))"
+			],
+			"files": [
+				"/usr/lib/libnfs.so.16.2.0",
+				"/usr/lib/libnfs.so.6.0.2"
+			],
+			"name": "libnfs",
+			"provides": [
+				"soname(libnfs.so.16.2.0(x86_64))"
+			]
+		},
+		"libnfs-devel": {
+			"build-depends": [
+				"pkgconfig(gnutls)"
+			],
+			"depends": [
+				"libnfs"
+			],
+			"files": [
+				"/usr/include/nfsc/libnfs-raw-mount.h",
+				"/usr/include/nfsc/libnfs-raw-nfs.h",
+				"/usr/include/nfsc/libnfs-raw-nfs4.h",
+				"/usr/include/nfsc/libnfs-raw-nlm.h",
+				"/usr/include/nfsc/libnfs-raw-nsm.h",
+				"/usr/include/nfsc/libnfs-raw-portmap.h",
+				"/usr/include/nfsc/libnfs-raw-rquota.h",
+				"/usr/include/nfsc/libnfs-raw.h",
+				"/usr/include/nfsc/libnfs-zdr.h",
+				"/usr/include/nfsc/libnfs.h",
+				"/usr/lib/cmake/libnfs/FindNFS.cmake",
+				"/usr/lib/cmake/libnfs/libnfs-config-release.cmake",
+				"/usr/lib/cmake/libnfs/libnfs-config-version.cmake",
+				"/usr/lib/cmake/libnfs/libnfs-config.cmake",
+				"/usr/lib/libnfs.so",
+				"/usr/lib/pkgconfig/libnfs.pc"
+			],
+			"name": "libnfs-devel",
+			"provides": [
+				"cmake(libnfs)",
+				"pkgconfig(libnfs)"
+			]
+		},
+		"libnfs-utils": {
+			"build-depends": [
+				"pkgconfig(gnutls)"
+			],
+			"depends": [
+				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
+				"soname(libc.so.6(x86_64))",
+				"soname(x86_64/libnfs-6.0.2.tar.gz/aerynos-builddir/lib/libnfs.so.16.2.0(x86_64))"
+			],
+			"files": [
+				"/usr/bin/nfs-cat",
+				"/usr/bin/nfs-cp",
+				"/usr/bin/nfs-ls",
+				"/usr/bin/nfs-stat",
+				"/usr/share/man/man1/nfs-cat.1",
+				"/usr/share/man/man1/nfs-cp.1",
+				"/usr/share/man/man1/nfs-ls.1"
+			],
+			"name": "libnfs-utils",
+			"provides": [
+				"binary(nfs-cat)",
+				"binary(nfs-cp)",
+				"binary(nfs-ls)",
+				"binary(nfs-stat)"
+			]
+		}
+	},
+	"source-name": "libnfs",
+	"source-release": "1",
+	"source-version": "6.0.2"
+}
