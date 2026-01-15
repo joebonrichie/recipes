@@ -59,6 +59,7 @@
 				"soname(libjson-c.so.5(x86_64))",
 				"soname(libm.so.6(x86_64))",
 				"soname(libnl-3.so.200(x86_64))",
+				"soname(libnuma.so.1(x86_64))",
 				"soname(libparted.so.2(x86_64))",
 				"soname(libpcap.so.1(x86_64))",
 				"soname(libpciaccess.so.0(x86_64))",
@@ -91,13 +92,13 @@
 				"/usr/lib/libnss_libvirt.so.2",
 				"/usr/lib/libnss_libvirt_guest.so.2",
 				"/usr/lib/libvirt-admin.so.0",
-				"/usr/lib/libvirt-admin.so.0.11010.0",
+				"/usr/lib/libvirt-admin.so.0.12000.0",
 				"/usr/lib/libvirt-lxc.so.0",
-				"/usr/lib/libvirt-lxc.so.0.11010.0",
+				"/usr/lib/libvirt-lxc.so.0.12000.0",
 				"/usr/lib/libvirt-qemu.so.0",
-				"/usr/lib/libvirt-qemu.so.0.11010.0",
+				"/usr/lib/libvirt-qemu.so.0.12000.0",
 				"/usr/lib/libvirt.so.0",
-				"/usr/lib/libvirt.so.0.11010.0",
+				"/usr/lib/libvirt.so.0.12000.0",
 				"/usr/lib/libvirt/connection-driver/libvirt_driver_ch.so",
 				"/usr/lib/libvirt/connection-driver/libvirt_driver_interface.so",
 				"/usr/lib/libvirt/connection-driver/libvirt_driver_lxc.so",
@@ -1024,6 +1025,6 @@
 		}
 	},
 	"source-name": "libvirt",
-	"source-release": "10",
-	"source-version": "11.10.0"
+	"source-release": "11",
+	"source-version": "12.0.0"
 }
