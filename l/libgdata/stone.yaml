@@ -1,0 +1,37 @@
+#
+# SPDX-FileCopyrightText: © 2020-2024 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : libgdata
+version     : 0.18.1
+release     : 1
+homepage    : https://wiki.gnome.org/Projects/libgdata
+upstreams   :
+    - https://download.gnome.org/sources/libgdata/0.18/libgdata-0.18.1.tar.xz : dd8592eeb6512ad0a8cf5c8be8c72e76f74bfe6b23e4dd93f0756ee0716804c7
+summary     : GLib-based library for accessing online service APIs using the GData protocol
+description : |
+    GLib-based library for accessing online service APIs using the GData protocol
+license     : GPL-2.0-or-later
+builddeps   :
+    - binary(msgfmt)
+    - pkgconfig(gcr-base-3)
+    - pkgconfig(goa-1.0)
+    - pkgconfig(gobject-2.0)
+    - pkgconfig(gobject-introspection-1.0)
+    - pkgconfig(gtk+-3.0)
+    - pkgconfig(json-glib-1.0)
+    - pkgconfig(libsoup-2.4)
+    - pkgconfig(libxml-2.0)
+    - pkgconfig(vapigen)
+setup       : |
+    %meson \
+        -Dalways_build_tests=false
+build       : |
+    %meson_build
+install     : |
+    %meson_install
+packages    :
+    - "%(name)-devel":
+        paths:
+            - /usr/share/vala/vapi

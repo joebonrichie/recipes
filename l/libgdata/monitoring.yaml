@@ -1,0 +1,6 @@
+releases:
+  id: 13145
+  rss: https://gitlab.gnome.org/GNOME/libgdata/-/tags?format=atom
+security:
+  # Last checked 20260115
+  cpe: ~
