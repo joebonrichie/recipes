@@ -1,0 +1,40 @@
+#
+# SPDX-FileCopyrightText: © 2020-2024 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : libsoup-2.4
+version     : 2.7.4+git.5739a0905
+release     : 1
+homepage    : https://gitlab.gnome.org/GNOME/libsoup
+upstreams   :
+    - git|https://gitlab.gnome.org/GNOME/libsoup.git : 5739a090529209c2afc13f482256573bcd9ce940
+summary     : libsoup is an HTTP client/server library for GNOME.
+description : |
+    libsoup is an HTTP client/server library for GNOME. It uses GObjects and the glib main loop, to integrate well with GNOME applications.
+license     : LGPL-2.0-or-later
+builddeps   :
+    - binary(g-ir-scanner)
+    - binary(krb5-config)
+    - binary(ntlm_auth)
+    - binary(valac)
+    - binary(xgettext)
+    - pkgconfig(glib-2.0)
+    - pkgconfig(libbrotlidec)
+    - pkgconfig(libxml-2.0)
+    - pkgconfig(libpsl)
+    - pkgconfig(sqlite3)
+    - pkgconfig(sysprof-capture-4)
+    - glib-networking
+rundeps     :
+    - glib-networking
+setup       : |
+    %meson
+build       : |
+    %meson_build
+install     : |
+    %meson_install
+packages    :
+    - "%(name)-devel":
+        paths:
+            - /usr/share/vala/
