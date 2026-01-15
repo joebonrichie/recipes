@@ -5,7 +5,7 @@
 #
 name        : gnome-online-accounts
 version     : 3.56.3
-release     : 22
+release     : 23
 homepage    : https://gitlab.gnome.org/GNOME/gnome-online-accounts
 upstreams   :
     - https://download.gnome.org/sources/gnome-online-accounts/3.56/gnome-online-accounts-3.56.3.tar.xz : 38596f17e0269f77e1623a6bf79569573c7bdf7b7cd863fb478a78ae664dea30
@@ -15,6 +15,7 @@ description : |
 license     :
     - LGPL-2.1-or-later
 builddeps   :
+    - binary(gi-docgen)
     - binary(msgfmt)
     - binary(vapigen)
     - binary(xsltproc)
@@ -33,15 +34,44 @@ builddeps   :
     - pkgconfig(rest-1.0)
     - docbook
     - docbook-xsl
-packages    :
-    - "%(name)-devel":
-        paths:
-            - /usr/share/vala/vapi
 environment : |
     %export_docbook_catalogs
 setup       : |
-    %meson -Ddocumentation=false
+    %meson \
+        -Ddocumentation=true
 build       : |
     %meson_build
 install     : |
     %meson_install
+
+    %install_dir %(installroot)%(docdir)/%(name)-devel/
+    echo "DEPRECATED" > %(installroot)%(docdir)/%(name)-devel/README
+packages    :
+    - "%(name)":
+        rundeps:
+            - gvfs-goa
+            # evolution-ews-core
+    - "%(name)-libs":
+        paths:
+            - /usr/lib/girepository-1.0/
+            - /usr/lib/libgoa*.so.*
+
+    - "%(name)-libs-devel":
+        rundeps:
+            - "%(name)-libs"
+        paths:
+            - /usr/include/
+            - /usr/lib/goa-1.0/include/
+            - /usr/lib/girepository-1.0/
+            - /usr/lib/libgoa*.so
+            - /usr/lib/pkgconfig/
+            - /usr/share/gir-1.0/
+            - /usr/share/vala/vapi/
+
+    - "%(name)-docs":
+        paths:
+            - /usr/share/doc
+
+    - "%(name)-devel":
+        paths:
+            - /usr/share/doc/%(name)-devel/
