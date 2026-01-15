@@ -5,7 +5,7 @@
 #
 name        : gvfs
 version     : 1.58.0
-release     : 16
+release     : 17
 homepage    : https://wiki.gnome.org/Projects/gvfs
 upstreams   :
     - https://download.gnome.org/sources/gvfs/1.58/gvfs-1.58.0.tar.xz : dd9be36873d0fcb309eb89a8d274770ce576287628a2cf111bd387e1c34f182f
@@ -17,6 +17,7 @@ license     :
     - LGPL-2.0-or-later
 builddeps   :
     - binary(msgfmt)
+    - binary(xsltproc)
     - pkgconfig(avahi-client)
     - pkgconfig(avahi-glib)
     - pkgconfig(dbus-1)
@@ -34,11 +35,11 @@ builddeps   :
     - pkgconfig(libcap)
     - pkgconfig(libcdio_paranoia)
     - pkgconfig(libgcrypt)
-    # - pkgconfig(libgdata)
+    - pkgconfig(libgdata)
     - pkgconfig(libgphoto2)
     - pkgconfig(libimobiledevice-1.0)
     - pkgconfig(libmtp)
-    # - pkgconfig(libnfs)
+    - pkgconfig(libnfs)
     - pkgconfig(libplist-2.0)
     - pkgconfig(libsecret-unstable)
     - pkgconfig(libsoup-3.0)
@@ -50,20 +51,156 @@ builddeps   :
     - pkgconfig(smbclient)
     - pkgconfig(systemd)
     - pkgconfig(udisks2)
-rundeps     :
-    - sysbinary(mount.fuse3)
-    - sysbinary(usbmuxd)
-    - udisks
-    - udisks-btrfs
-    - udisks-lvm2
+    - docbook
+    - docbook-xsl
 environment : |
     export LDFLAGS="${LDFLAGS} -Wl,--allow-shlib-undefined"
+
+    %export_docbook_catalogs
 setup       : |
     %meson \
         -Dbluray=false \
-        -Dgoogle=false \
-        -Dnfs=false
+        -Dman=true
 build       : |
     %meson_build
 install     : |
     %meson_install
+packages    :
+    - "%(name)":
+        rundeps:
+            - sysbinary(mount.fuse3)
+            - sysbinary(usbmuxd)
+            - udisks
+            - udisks-btrfs
+            - udisks-lvm2
+            # wsdd
+    - "%(name)-clients":
+        summary: Client modules of backends for the gio framework in GLib
+        description: |
+            The gvfs package provides client modules of backend implementations for the gio
+            framework in GLib.
+        paths:
+            - /usr/lib/gvfs/libgvfscommon.so
+            - /usr/lib/gio/modules/libgioremote-volume-monitor.so
+            - /usr/lib/gio/modules/libgvfsdbus.so
+            - /usr/share/locale/
+
+    - "%(name)-fuse":
+        summary: FUSE support for gvfs
+        description: |
+            This package provides support for applications not using gio
+            to access the gvfs filesystems.
+        rundeps:
+            - "%(name)"
+        paths:
+            - /usr/lib/gvfs/gvfsd-fuse
+            - /usr/lib/tmpfiles.d/gvfsd-fuse-tmpfiles.conf
+            - /usr/share/man/man1/gvfsd-fuse.1*
+
+    - "%(name)-smb":
+        summary: Windows fileshare support for gvfs
+        description: |
+            This package provides support for reading and writing files on windows
+            shares (SMB) to applications using gvfs.
+        rundeps:
+            - "%(name)"
+        paths:
+            - /usr/lib/gvfs/gvfsd-smb*
+            - /usr/share/gvfs/mounts/smb*.mount
+
+    - "%(name)-archive":
+        summary: Archiving support for gvfs
+        description: |
+            This package provides support for accessing files inside Zip and Tar archives,
+            as well as ISO images, to applications using gvfs.
+        rundeps:
+            - "%(name)"
+        paths:
+            - /usr/lib/gvfs/gvfsd-archive*
+            - /usr/share/gvfs/mounts/archive.mount
+
+    - "%(name)-gphoto2":
+        summary: gphoto2 support for gvfs
+        description: |
+            This package provides support for reading and writing files on
+            PTP based cameras (Picture Transfer Protocol) and MTP based
+            media players (Media Transfer Protocol) to applications using gvfs.
+        rundeps:
+            - "%(name)"
+        paths:
+            - /usr/lib/gvfs/gvfs-gphoto2-volume-monitor
+            - /usr/lib/gvfs/gvfsd-gphoto2
+            - /usr/lib/systemd/user/gvfs-gphoto2-volume-monitor.service
+            - /usr/share/dbus-1/services/org.gtk.vfs.GPhoto2VolumeMonitor.service
+            - /usr/share/gvfs/mounts/gphoto2.mount
+            - /usr/share/gvfs/remote-volume-monitors/gphoto2.monitor
+
+    - "%(name)-afc":
+        summary: AFC support for gvfs
+        description: |
+            This package provides support for reading files on mobile devices
+            including phones and music players to applications using gvfs.
+        rundeps:
+            - "%(name)"
+        paths:
+            - /usr/lib/gvfs/gvfs-afc-volume-monitor
+            - /usr/lib/gvfs/gvfsd-afc
+            - /usr/lib/systemd/user/gvfs-afc-volume-monitor.service
+            - /usr/share/dbus-1/services/org.gtk.vfs.AfcVolumeMonitor.service
+            - /usr/share/gvfs/mounts/afc.mount
+            - /usr/share/gvfs/remote-volume-monitors/afc.monitor
+
+    - "%(name)-afp":
+        summary: AFP support for gvfs
+        description: |
+            This package provides support for reading and writing files on
+            Mac OS X and original Mac OS network shares via Apple Filing Protocol
+            to applications using gvfs.
+        rundeps:
+            - "%(name)"
+        paths:
+            - /usr/lib/gvfs/gvfsd-afp*
+            - /usr/share/gvfs/mounts/afp*.mount
+
+    - "%(name)-mtp":
+        summary: MTP support for gvfs
+        description: |
+            This package provides support for reading and writing files on
+            MTP based devices (Media Transfer Protocol) to applications using gvfs.
+        rundeps:
+            - "%(name)"
+        paths:
+            - /usr/lib/gvfs/gvfs-mtp-volume-monitor
+            - /usr/lib/gvfs/gvfsd-mtp*
+            - /usr/lib/systemd/user/gvfs-mtp-volume-monitor.service
+            - /usr/share/dbus-1/services/org.gtk.vfs.MTPVolumeMonitor.service
+            - /usr/share/gvfs/mounts/mtp.mount
+            - /usr/share/gvfs/remote-volume-monitors/mtp.monitor
+
+    - "%(name)-nfs":
+        summary: NFS support for gvfs
+        description: |
+            This package provides support for reading and writing files on
+            NFS network shares (Network File System) to applications using gvfs.
+        rundeps:
+            - "%(name)"
+        paths:
+            - /usr/lib/gvfs/gvfsd-nfs
+            - /usr/share/gvfs/mounts/nfs.mount
+
+    - "%(name)-goa":
+        summary: GOA support for gvfs
+        description: |
+            This package provides seamless integration with gnome-online-accounts
+            file services.
+        rundeps:
+            - "%(name)"
+        paths:
+            - /usr/lib/gvfs/gvfs-goa-volume-monitor
+            - /usr/lib/gvfs/gvfsd-google
+            - /usr/lib/gvfs/gvfsd-onedrive
+            - /usr/lib/systemd/user/gvfs-goa-volume-monitor.service
+            - /usr/share/dbus-1/services/org.gtk.vfs.GoaVolumeMonitor.service
+            - /usr/share/gvfs/mounts/google.mount
+            - /usr/share/gvfs/mounts/onedrive.mount
+            - /usr/share/gvfs/remote-volume-monitors/goa.monitor
