@@ -5,7 +5,7 @@
 #
 name        : cosmic-files
 version     : 1.0.2-git+9dc4ac2
-release     : 33
+release     : 34
 homepage    : https://github.com/pop-os/cosmic-files
 upstreams   :
     - git|https://github.com/pop-os/cosmic-files : 9dc4ac21080edf82c98a26dfd524eae5680be100
@@ -23,7 +23,10 @@ builddeps   :
     - pkgconfig(libzstd)
     - pkgconfig(xkbcommon)
 rundeps     :
-    - gvfs # Used for file services
+    # Used for file services
+    - gvfs-fuse
+    - gvfs-nfs
+    - gvfs-smb
 networking  : yes
 environment : |
     # Force system libs
