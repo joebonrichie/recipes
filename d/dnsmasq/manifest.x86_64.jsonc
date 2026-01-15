@@ -31,9 +31,11 @@
 				"/usr/share/locale/pl/LC_MESSAGES/dnsmasq.mo",
 				"/usr/share/locale/pt_BR/LC_MESSAGES/dnsmasq.mo",
 				"/usr/share/locale/ro/LC_MESSAGES/dnsmasq.mo",
+				"/usr/share/locale/sv/LC_MESSAGES/dnsmasq.mo",
 				"/usr/share/man/es/man8/dnsmasq.8",
 				"/usr/share/man/fr/man8/dnsmasq.8",
-				"/usr/share/man/man8/dnsmasq.8"
+				"/usr/share/man/man8/dnsmasq.8",
+				"/usr/share/man/sv/man8/dnsmasq.8"
 			],
 			"name": "dnsmasq",
 			"provides": [
@@ -42,6 +44,6 @@
 		}
 	},
 	"source-name": "dnsmasq",
-	"source-release": "1",
-	"source-version": "2.91"
+	"source-release": "2",
+	"source-version": "2.92"
 }
