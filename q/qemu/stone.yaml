@@ -5,7 +5,7 @@
 #
 name        : qemu
 version     : 10.2.0
-release     : 26
+release     : 27
 homepage    : http://www.qemu.org/
 upstreams   :
     - https://download.qemu.org/qemu-10.2.0.tar.xz : 9e30ad1b8b9f7b4463001582d1ab297f39cfccea5d08540c0ca6d6672785883a
@@ -44,6 +44,7 @@ builddeps   :
     - pkgconfig(libgcrypt)
     - pkgconfig(libjpeg)
     - pkgconfig(libkeyutils)
+    - pkgconfig(libnfs)
     - pkgconfig(libpipewire-0.3)
     - pkgconfig(libpng)
     - pkgconfig(libpulse)
@@ -72,12 +73,14 @@ builddeps   :
     - python(sphinx-rtd-theme)
     - libaio-devel
     # TODO:
-    # - libnfs
     # - jack
     # - libiscsi
     # - libcacard
     # - libxdp
 setup       : |
+    %patch %(pkgdir)/0002-nfs-Add-support-for-libnfs-v2-api.patch
+    %patch %(pkgdir)/0008-Revert-meson.build-Disallow-libnfs-v6-to-fix-the-bro.patch
+
     # TODO: Build RISCV support and split out
     %configure \
         --target-list=aarch64-softmmu,aarch64-linux-user,arm-softmmu,arm-linux-user,i386-softmmu,i386-linux-user,x86_64-softmmu,x86_64-linux-user \
@@ -229,6 +232,14 @@ packages    :
             - "%(name)-common"
         paths:
             - /usr/lib/qemu/block-dmg-bz2.so
+
+    - "%(name)-block-nfs":
+        summary: QEMU NFS block driver
+        description: QEMU NFS block driver
+        rundeps:
+            - "%(name)-common"
+        paths:
+            - /usr/lib/qemu/block-nfs.so
 
     - "%(name)-block-ssh":
         summary: QEMU SSH block driver
@@ -601,6 +612,7 @@ packages    :
             - "%(name)-audio-spice"
             - "%(name)-block-curl"
             - "%(name)-block-dmg"
+            - "%(name)-block-nfs"
             - "%(name)-block-ssh"
             - "%(name)-chardev-spice"
             - "%(name)-hw-display-qxl"
