@@ -4,8 +4,8 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : glibc
-version     : 2.42+git.8aaf4b73
-release     : 31
+version     : 2.42+git.453e6b8d
+release     : 32
 summary     : The GNU libc libraries
 license     :
     - GPL-2.0-or-later
@@ -16,7 +16,7 @@ description : |
     The GNU libc libraries
 upstreams   :
     - git|https://sourceware.org/git/glibc.git :
-        ref : 8aaf4b732d7650c2db3beb4dc8bb70eab5b022c3
+        ref : 453e6b8dbab935257eb0802b0c97bca6b67ba30e
 builddeps   :
     - binary(bison)
     - binary(gperf)
