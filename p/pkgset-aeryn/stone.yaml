@@ -5,7 +5,7 @@
 #
 name        : pkgset-aeryn
 version     : "2025.12" # I guess let's just match the OS version for now
-release     : 20
+release     : 21
 homepage    : https://aerynos.com/
 # No upstreams!
 summary     : pkgset virtual packages
@@ -31,7 +31,8 @@ packages    :
             # need dbus on boot and we want to use the fast implementation
             - dbus-broker
             - kmod
-            - kmscon # TTY provider
+            # This causes crashes in some circumstances, so turn it off for now
+            # - kmscon # TTY provider
             - linux-pam
             - lvm2
             - shadow

@@ -11,7 +11,6 @@
 				"binary(sudo)",
 				"dbus-broker",
 				"kmod",
-				"kmscon",
 				"linux-pam",
 				"lvm2",
 				"shadow",
@@ -86,6 +85,6 @@
 		}
 	},
 	"source-name": "pkgset-aeryn",
-	"source-release": "20",
+	"source-release": "21",
 	"source-version": "2025.12"
 }
