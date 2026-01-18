@@ -1,0 +1,39 @@
+#
+# SPDX-FileCopyrightText: © 2020-2025 Serpent OS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : lact
+version     : 0.8.3
+release     : 1
+upstreams   :
+    - https://github.com/ilya-zlobintsev/LACT/archive/refs/tags/v0.8.3.tar.gz : f604b26fadfa4a53d5aaa7c8d8953dc8989710a8d68b3778efbde29ad7889bb0
+homepage    : https://github.com/ilya-zlobintsev/LACT
+license     : MIT
+summary     : Linux GPU Configuration Tool
+description : |
+    Linux GPU Configuration Tool
+networking  : true
+builddeps   :
+    - binary(cargo)
+    - binary(vulkaninfo)
+    - pkgconfig(OpenCL)
+    - pkgconfig(gobject-2.0)
+    - pkgconfig(graphene-gobject-1.0)
+    - pkgconfig(gtk4)
+    - pkgconfig(libdrm)
+rundeps     :
+    - binary(vulkaninfo)
+    - hwdata
+setup       : |
+    %patch %(pkgdir)/0001-Adapt-to-our-amdgpu-kernel-argument.patch
+    %patch %(pkgdir)/862.patch
+    %patch %(pkgdir)/863.patch
+build       : |
+    %make build-release
+install     : |
+    %make_install PREFIX=%(prefix)
+    %install_file %(pkgdir)/kernel-lact.cmdline %(installroot)%(libdir)/kernel/cmdline.d/70-lact.cmdline
+
+    # Enable system-wide upon install
+    %install_file %(pkgdir)/lact.preset -t %(installroot)/%(libdir)/systemd/system-preset
