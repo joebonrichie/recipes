@@ -9687,6 +9687,7 @@
 				"/usr/lib/golang/test/fixedbugs/issue7648.go",
 				"/usr/lib/golang/test/fixedbugs/issue7675.go",
 				"/usr/lib/golang/test/fixedbugs/issue7690.go",
+				"/usr/lib/golang/test/fixedbugs/issue76950.go",
 				"/usr/lib/golang/test/fixedbugs/issue7740.go",
 				"/usr/lib/golang/test/fixedbugs/issue7742.go",
 				"/usr/lib/golang/test/fixedbugs/issue7746.go",
@@ -10607,6 +10608,6 @@
 		}
 	},
 	"source-name": "golang",
-	"source-release": "26",
-	"source-version": "1.25.5"
+	"source-release": "27",
+	"source-version": "1.25.6"
 }
