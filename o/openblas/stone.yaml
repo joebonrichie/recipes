@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : openblas
-version     : 0.3.30
-release     : 7
+version     : 0.3.31
+release     : 8
 homepage    : https://github.com/OpenMathLib/OpenBLAS
 upstreams   :
-    - https://github.com/OpenMathLib/OpenBLAS/archive/refs/tags/v0.3.30.tar.gz : 27342cff518646afb4c2b976d809102e368957974c250a25ccc965e53063c95d
+    - https://github.com/OpenMathLib/OpenBLAS/archive/refs/tags/v0.3.31.tar.gz : 6dd2a63ac9d32643b7cc636eab57bf4e57d0ed1fff926dfbc5d3d97f2d2be3a6
 summary     : OpenBLAS is an optimized BLAS library based on GotoBLAS2 1.13 BSD version
 description : |
     OpenBLAS is an optimized BLAS library based on GotoBLAS2 1.13 BSD version
@@ -16,7 +16,7 @@ license     : BSD-3-Clause
 builddeps   :
     - binary(flang)
 setup       : |
-    %patch %(pkgdir)/openmp_link.patch
+    # %patch %(pkgdir)/openmp_link.patch
 
     %cmake \
         -DCMAKE_Fortran_COMPILER=flang \
