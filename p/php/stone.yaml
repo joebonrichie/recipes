@@ -4,16 +4,17 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : php
-version     : 8.4.14
-release     : 13
+version     : 8.5.2
+release     : 14
 homepage    : https://www.php.net/distributions
 upstreams   :
-    - https://www.php.net/distributions/php-8.4.14.tar.xz : bac90ee7cf738e814c89b6b27d4d2c4b70e50942a420837e1a22f5fd5f9867a3
+    - https://www.php.net/distributions/php-8.5.2.tar.xz : cb75a9b00a2806f7390dd64858ef42a47b443b3475769c8af6af33a18b1381f1
 summary     : PHP is a popular general-purpose scripting language
 description : |
     PHP is a popular general-purpose scripting language that is especially suited to web development.
 license     : PHP-3.01
 builddeps   :
+    - binary(bison)
     - binary(gawk)
     - pkgconfig(bzip2)
     - pkgconfig(enchant-2)
@@ -22,6 +23,7 @@ builddeps   :
     - pkgconfig(icu-uc)
     - pkgconfig(ldap)
     - pkgconfig(libargon2)
+    - pkgconfig(libavif)
     - pkgconfig(libcurl)
     - pkgconfig(libexslt)
     - pkgconfig(libffi)
@@ -31,6 +33,7 @@ builddeps   :
     - pkgconfig(libsasl2)
     - pkgconfig(libsodium)
     - pkgconfig(libssl)
+    - pkgconfig(tidy)
     - pkgconfig(libwebp)
     - pkgconfig(libxml-2.0)
     - pkgconfig(libzip)
@@ -38,9 +41,11 @@ builddeps   :
     - pkgconfig(readline)
     - pkgconfig(sqlite3)
     - pkgconfig(valgrind)
+    - pkgconfig(xpm)
     - pkgconfig(zlib)
     - gdbm-devel
-    # Todo build with system gd (remove freetype, webp option), libtidy
+    # Todo build with system gd (remove freetype, webp, libavif option)
+    # postgres
 tuning      :
     - lto: false # Causes a clang segfault
     - optimize: speed
@@ -48,42 +53,45 @@ environment : |
     export EXTENSION_DIR=%(libdir)/php/extensions
 setup       : |
     %configure \
-               --libdir=%(libdir)/php \
-               --enable-bcmath=shared \
-               --enable-calendar=shared \
-               --enable-dba=shared \
-               --enable-exif=shared \
-               --enable-gd \
-               --enable-intl=shared \
-               --enable-mbstring \
-               --enable-pcntl \
-               --enable-shmop=shared \
-               --enable-sockets=shared \
-               --with-bz2=shared \
-               --with-curl=shared \
-               --with-enchant=shared \
-               --with-external-pcre \
-               --with-freetype \
-               --with-ffi=shared \
-               --with-gdbm \
-               --with-gettext=shared \
-               --with-gmp=shared \
-               --with-iconv=shared \
-               --with-jpeg \
-               --with-ldap=shared \
-               --with-ldap-sasl \
-               --with-mysql-sock=/var/lib/mysql/mysqld.sock \
-               --with-openssl \
-               --with-openssl-argon2 \
-               --with-password-argon2 \
-               --with-pdo-mysql=shared \
-               --with-pdo-sqlite=shared \
-               --with-readline \
-               --with-sodium=shared \
-               --with-webp \
-               --with-xsl=shared \
-               --with-zip=shared \
-               --with-zlib
+        --libdir=%(libdir)/php \
+        --enable-bcmath=shared \
+        --enable-calendar=shared \
+        --enable-dba=shared \
+        --enable-exif=shared \
+        --enable-gd \
+        --enable-intl=shared \
+        --enable-mbstring \
+        --enable-pcntl \
+        --enable-shmop=shared \
+        --enable-sockets=shared \
+        --with-avif=shared \
+        --with-bz2=shared \
+        --with-curl=shared \
+        --with-enchant=shared \
+        --with-external-pcre \
+        --with-freetype \
+        --with-ffi=shared \
+        --with-gdbm \
+        --with-gettext=shared \
+        --with-gmp=shared \
+        --with-iconv=shared \
+        --with-jpeg \
+        --with-ldap=shared \
+        --with-ldap-sasl \
+        --with-mysql-sock=/var/lib/mysql/mysqld.sock \
+        --with-openssl \
+        --with-openssl-argon2 \
+        --with-password-argon2 \
+        --with-pdo-mysql=shared \
+        --with-pdo-sqlite=shared \
+        --with-readline \
+        --with-sodium=shared \
+        --with-tidy=shared \
+        --with-webp \
+        --with-xpm=shared \
+        --with-xsl=shared \
+        --with-zip=shared \
+        --with-zlib
 build       : |
     %make
 install     : |
