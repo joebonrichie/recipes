@@ -1,0 +1,63 @@
+/** Human readable report. This is not consumed by boulder */
+{
+	"manifest-version": "0.2",
+	"packages": {
+		"libtidy": {
+			"build-depends": [
+				"binary(xsltproc)"
+			],
+			"depends": [
+				"soname(libc.so.6(x86_64))"
+			],
+			"files": [
+				"/usr/lib/libtidy.so.5.8.0",
+				"/usr/lib/libtidy.so.58"
+			],
+			"name": "libtidy",
+			"provides": [
+				"soname(libtidy.so.58(x86_64))"
+			]
+		},
+		"tidy": {
+			"build-depends": [
+				"binary(xsltproc)"
+			],
+			"depends": [
+				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
+				"libtidy",
+				"soname(libc.so.6(x86_64))"
+			],
+			"files": [
+				"/usr/bin/tidy",
+				"/usr/share/man/man1/tidy.1"
+			],
+			"name": "tidy",
+			"provides": [
+				"binary(tidy)"
+			]
+		},
+		"tidy-devel": {
+			"build-depends": [
+				"binary(xsltproc)"
+			],
+			"depends": [
+				"tidy"
+			],
+			"files": [
+				"/usr/include/tidy.h",
+				"/usr/include/tidybuffio.h",
+				"/usr/include/tidyenum.h",
+				"/usr/include/tidyplatform.h",
+				"/usr/lib/libtidy.so",
+				"/usr/lib/pkgconfig/tidy.pc"
+			],
+			"name": "tidy-devel",
+			"provides": [
+				"pkgconfig(tidy)"
+			]
+		}
+	},
+	"source-name": "tidy",
+	"source-release": "1",
+	"source-version": "5.8.0"
+}
