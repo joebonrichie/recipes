@@ -5,7 +5,7 @@
 #
 name        : curl
 version     : 8.18.0
-release     : 28
+release     : 29
 summary     : A utility for fetching files from remote servers
 license     : MIT
 homepage    : https://curl.se/
@@ -20,7 +20,6 @@ builddeps:
     - pkgconfig32(libnghttp2)
     - pkgconfig32(libpsl)
     - pkgconfig32(libzstd)
-    # - pkgconfig32(rustls)
     - pkgconfig32(zlib)
     - pkgconfig(krb5-gssapi)
     - pkgconfig(ldap)
@@ -35,12 +34,14 @@ profiles    :
         environment: |
             _extra_args="--with-ldap --with-libssh2 --with-gssapi"
 setup       : |
-    # rustls temporarily disabled due to build failures
     %configure \
         --disable-static \
+        --enable-versioned-symbols \
         --with-ca-bundle="/etc/ssl/certs/ca-certificates.crt" \
+        --with-fish-functions-dir=/usr/share/fish/vendor_completions.d/ \
         --with-openssl \
         --with-openssl-quic \
+        --with-zsh-functions-dir=/usr/share/zsh/site-functions/ \
         $_extra_args
 build       : |
     %make
