@@ -14,25 +14,25 @@ upstreams   :
 description : |
     A scrollable-tiling Wayland compositor
 builddeps   :
-  - binary(cargo)
-  - pkgconfig(gbm)
-  - pkgconfig(gdk-pixbuf-2.0)
-  - pkgconfig(glib-2.0)
-  - pkgconfig(gtk4)
-  - pkgconfig(libadwaita-1)
-  - pkgconfig(libdisplay-info)
-  - pkgconfig(libinput)
-  - pkgconfig(libpipewire-0.3)
-  - pkgconfig(libseat)
-  - pkgconfig(libspa-0.2)
-  - pkgconfig(libudev)
-  - pkgconfig(pango)
-  - pkgconfig(xkbcommon)
+    - binary(cargo)
+    - pkgconfig(gbm)
+    - pkgconfig(gdk-pixbuf-2.0)
+    - pkgconfig(glib-2.0)
+    - pkgconfig(gtk4)
+    - pkgconfig(libadwaita-1)
+    - pkgconfig(libdisplay-info)
+    - pkgconfig(libinput)
+    - pkgconfig(libpipewire-0.3)
+    - pkgconfig(libseat)
+    - pkgconfig(libspa-0.2)
+    - pkgconfig(libudev)
+    - pkgconfig(pango)
+    - pkgconfig(xkbcommon)
 rundeps    :
-  - binary(gnome-keyring)
-  - binary(xwayland-satellite)
-  - xdg-desktop-portal-gnome
-  - xdg-desktop-portal-gtk
+    - binary(gnome-keyring)
+    - binary(xwayland-satellite)
+    - xdg-desktop-portal-gnome
+    - xdg-desktop-portal-gtk
 networking  : yes
 setup       : |
     %cargo_fetch
