@@ -471,7 +471,7 @@ class PackageDependenciesOrder(PullRequestCheck):
 
     @staticmethod
     def _sorted(deps: List[str]) -> List[str]:
-        providers = ['binary(', 'cmake(', 'font(', 'pkgconfig(', 'pkgconfig32(', 'sysbinary(']
+        providers = ['binary(', 'cmake(', 'font(', 'pkgconfig(', 'pkgconfig32(', 'python(' ,'sysbinary(']
         for dep in deps:
             if isinstance(dep, dict):
                 for k, v in dep.items():
