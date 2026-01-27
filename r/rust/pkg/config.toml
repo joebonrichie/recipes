@@ -1,7 +1,7 @@
 # To get the most recent change-id go to `src/bootstrap/src/utils/change_tracker.rs` for the Rust version
 # you're updating to, and find the bottom-most entry. Make sure you review all change entries between the
 # previous ID and the new one to see if anything should be changed in this config.
-change-id = 147888
+change-id = 148795
 
 # Inherit from src/bootstrap/defaults/bootstrap.dist.toml
 profile = "dist"
@@ -11,8 +11,8 @@ link-shared = true
 targets = "X86" # TODO get AARCH64 building
 
 [build]
-rustc = "/usr/bin/rustc"
-cargo = "/usr/bin/cargo"
+#rustc = "/usr/bin/rustc"
+#cargo = "/usr/bin/cargo"
 docs = false
 # Triggers the build of tools. Cargo, in our case.
 extended = true
