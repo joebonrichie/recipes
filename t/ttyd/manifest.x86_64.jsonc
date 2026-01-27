@@ -12,6 +12,7 @@
 			],
 			"depends": [
 				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
+				"libwebsockets",
 				"soname(libc.so.6(x86_64))",
 				"soname(libcrypto.so.3(x86_64))",
 				"soname(libjson-c.so.5(x86_64))",
@@ -30,6 +31,6 @@
 		}
 	},
 	"source-name": "ttyd",
-	"source-release": "1",
+	"source-release": "2",
 	"source-version": "1.7.7"
 }
