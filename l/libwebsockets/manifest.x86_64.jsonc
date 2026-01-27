@@ -12,13 +12,15 @@
 				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
 				"soname(libc.so.6(x86_64))",
 				"soname(libcrypto.so.3(x86_64))",
-				"soname(libssl.so.3(x86_64))"
+				"soname(libssl.so.3(x86_64))",
+				"soname(libuv.so.1(x86_64))"
 			],
 			"files": [
 				"/usr/bin/libwebsockets-test-client",
 				"/usr/bin/libwebsockets-test-lejp",
 				"/usr/bin/libwebsockets-test-server",
 				"/usr/bin/libwebsockets-test-server-extpoll",
+				"/usr/lib/libwebsockets-evlib_uv.so",
 				"/usr/lib/libwebsockets.so.21",
 				"/usr/share/libwebsockets-test-server/candide-uncompressed.zip",
 				"/usr/share/libwebsockets-test-server/candide.zip",
@@ -43,6 +45,7 @@
 				"binary(libwebsockets-test-lejp)",
 				"binary(libwebsockets-test-server)",
 				"binary(libwebsockets-test-server-extpoll)",
+				"soname(libwebsockets-evlib_uv.so(x86_64))",
 				"soname(libwebsockets.so.21(x86_64))"
 			]
 		},
@@ -53,10 +56,7 @@
 				"pkgconfig(zlib)"
 			],
 			"depends": [
-				"libwebsockets",
-				"soname(libc.so.6(x86_64))",
-				"soname(libuv.so.1(x86_64))",
-				"soname(libwebsockets.so.21(x86_64))"
+				"libwebsockets"
 			],
 			"files": [
 				"/usr/include/libwebsockets.h",
@@ -155,7 +155,6 @@
 				"/usr/lib/cmake/libwebsockets/LwsCheckRequirements.cmake",
 				"/usr/lib/cmake/libwebsockets/libwebsockets-config-version.cmake",
 				"/usr/lib/cmake/libwebsockets/libwebsockets-config.cmake",
-				"/usr/lib/libwebsockets-evlib_uv.so",
 				"/usr/lib/libwebsockets.a",
 				"/usr/lib/libwebsockets.so",
 				"/usr/lib/pkgconfig/libwebsockets.pc",
@@ -165,12 +164,11 @@
 			"provides": [
 				"cmake(libwebsockets)",
 				"pkgconfig(libwebsockets)",
-				"pkgconfig(libwebsockets_static)",
-				"soname(libwebsockets-evlib_uv.so(x86_64))"
+				"pkgconfig(libwebsockets_static)"
 			]
 		}
 	},
 	"source-name": "libwebsockets",
-	"source-release": "2",
+	"source-release": "3",
 	"source-version": "4.5.2"
 }
