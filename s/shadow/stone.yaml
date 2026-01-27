@@ -5,7 +5,7 @@
 #
 name        : shadow
 version     : 4.18.0
-release     : 6
+release     : 7
 summary     : PAM-using login and passwd utilities
 license     : BSD-3-Clause
 homepage    : https://github.com/shadow-maint/shadow
@@ -65,3 +65,7 @@ install     : |
         find %(installroot)/%(vendordir) -name "${file}" -type f -exec rm {} \; # pam files
         #find %(installroot)/usr/share/man -name "*${file}*" -type f -exec rm {} \; # man pages
     done
+
+    # Ensure /etc/sub{g,u}id files exist
+    %tmpfiles "f /etc/subuid 0644 root root -"
+    %tmpfiles "f /etc/subgid 0644 root root -"

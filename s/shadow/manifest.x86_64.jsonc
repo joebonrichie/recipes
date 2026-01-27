@@ -36,6 +36,7 @@
 				"/usr/bin/sg",
 				"/usr/lib/libsubid.so.5",
 				"/usr/lib/libsubid.so.5.0.0",
+				"/usr/lib/tmpfiles.d/shadow.conf",
 				"/usr/sbin/chgpasswd",
 				"/usr/sbin/chpasswd",
 				"/usr/sbin/groupadd",
@@ -163,6 +164,6 @@
 		}
 	},
 	"source-name": "shadow",
-	"source-release": "6",
+	"source-release": "7",
 	"source-version": "4.18.0"
 }
