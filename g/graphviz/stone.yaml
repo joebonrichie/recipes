@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : graphviz
-version     : 14.1.1
-release     : 13
+version     : 14.1.2
+release     : 14
 homepage    : https://www.graphviz.org
 upstreams   :
-    - https://gitlab.com/api/v4/projects/4207231/packages/generic/graphviz-releases/14.1.1/graphviz-14.1.1.tar.xz : a786db0c32a5b96e1b7c06b0bcfffe901cba601a6de2d5f365e9132ac88d36b1
+    - https://gitlab.com/api/v4/projects/4207231/packages/generic/graphviz-releases/14.1.2/graphviz-14.1.2.tar.xz : 65572cd29317cfb96eac8434fac1d8861c905e9b761bd0442beb2cfcc0211354
 summary     :  Graphviz is open source graph visualization software
 description : |
      Graphviz is open source graph visualization software
