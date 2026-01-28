@@ -27,7 +27,7 @@
 			],
 			"files": [
 				"/usr/lib/libqalculate.so.23",
-				"/usr/lib/libqalculate.so.23.3.9",
+				"/usr/lib/libqalculate.so.23.3.10",
 				"/usr/share/locale/ca/LC_MESSAGES/libqalculate.mo",
 				"/usr/share/locale/de/LC_MESSAGES/libqalculate.mo",
 				"/usr/share/locale/es/LC_MESSAGES/libqalculate.mo",
@@ -380,6 +380,6 @@
 		}
 	},
 	"source-name": "libqalculate",
-	"source-release": "7",
-	"source-version": "5.8.2"
+	"source-release": "8",
+	"source-version": "5.9.0"
 }
