@@ -168,3 +168,6 @@
 ### No longer used
 - python-ruamel-yaml-clib
 - python-ruamel-yaml-clib-dbginfo
+
+### Renamed
+- gnome-online-accounts-devel
