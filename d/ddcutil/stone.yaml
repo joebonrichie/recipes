@@ -4,10 +4,10 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : ddcutil
-version     : 2.2.3
-release     : 4
+version     : 2.2.5
+release     : 5
 upstreams   :
-    - https://github.com/rockowitz/ddcutil/archive/v2.2.3.tar.gz : fc95b7362932e79938b1c21ee83d9e54f1737bd403368fc2b926c9eb510e10e5
+    - https://github.com/rockowitz/ddcutil/archive/v2.2.5.tar.gz : dd17ee072124c1c2b28426dde6985b503abc475af9fcfc13336363590ba42155
 homepage    : https://ddcutil.com/
 license     :
     - GPL-2.0-only
@@ -34,6 +34,7 @@ tuning      :
     - optimize: speed
 setup       : |
     %patch %(pkgdir)/0001-Fix-build-with-slibtool.patch
+    %patch %(pkgdir)/0001-Fix-build-with-glibc-2.43.patch
 
     %reconfigure \
         --disable-build-timestamp
