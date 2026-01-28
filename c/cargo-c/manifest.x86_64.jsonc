@@ -38,6 +38,6 @@
 		}
 	},
 	"source-name": "cargo-c",
-	"source-release": "11",
-	"source-version": "0.10.19+cargo-0.93.0"
+	"source-release": "12",
+	"source-version": "0.10.20+cargo-0.94.0"
 }
