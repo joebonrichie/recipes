@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : cargo-flamegraph
-version     : 0.6.8
-release     : 2
+version     : 0.6.11
+release     : 3
 homepage    : https://github.com/flamegraph-rs/flamegraph
 upstreams   :
-    - https://github.com/flamegraph-rs/flamegraph/archive/refs/tags/v0.6.8.tar.gz : 2673a04bd4de142220d42706e0c25a4dea08aee52cdffbf87cca5738cec649ff
+    - https://github.com/flamegraph-rs/flamegraph/archive/refs/tags/v0.6.11.tar.gz : 371f81e674abe70cdaf3478d7d6ab04cee0b5af174767a858f45c5c42206089e
 summary     : A Rust-powered flamegraph generator
 description : |
     A Rust-powered flamegraph generator

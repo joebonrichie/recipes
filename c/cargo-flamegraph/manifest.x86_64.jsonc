@@ -26,6 +26,6 @@
 		}
 	},
 	"source-name": "cargo-flamegraph",
-	"source-release": "2",
-	"source-version": "0.6.8"
+	"source-release": "3",
+	"source-version": "0.6.11"
 }
