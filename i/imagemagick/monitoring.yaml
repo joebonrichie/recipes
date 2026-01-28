@@ -1,5 +1,5 @@
 releases:
-  id: 328484
+  id: 1372
   rss: https://github.com/ImageMagick/ImageMagick/releases.atom
 security:
   cpe:
