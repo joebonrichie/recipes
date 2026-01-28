@@ -5,9 +5,12 @@
 		"libsigc++": {
 			"build-depends": [
 				"binary(doxygen)",
+				"binary(mm-common-get)",
 				"binary(perl)",
 				"binary(python3)",
-				"binary(xsltproc)"
+				"binary(xsltproc)",
+				"cmake(Boost)",
+				"pkgconfig(mm-common-libstdc++)"
 			],
 			"depends": [
 				"soname(libc.so.6(x86_64))",
@@ -16,8 +19,7 @@
 			],
 			"files": [
 				"/usr/lib/libsigc-3.0.so.0",
-				"/usr/lib/libsigc-3.0.so.0.0.0",
-				"/usr/lib/sigc++-3.0/include/sigc++config.h"
+				"/usr/lib/libsigc-3.0.so.0.0.0"
 			],
 			"name": "libsigc++",
 			"provides": [
@@ -27,9 +29,12 @@
 		"libsigc++-devel": {
 			"build-depends": [
 				"binary(doxygen)",
+				"binary(mm-common-get)",
 				"binary(perl)",
 				"binary(python3)",
-				"binary(xsltproc)"
+				"binary(xsltproc)",
+				"cmake(Boost)",
+				"pkgconfig(mm-common-libstdc++)"
 			],
 			"depends": [
 				"libsigc++"
@@ -66,6 +71,7 @@
 				"/usr/include/sigc++-3.0/sigc++/sigc++.h",
 				"/usr/include/sigc++-3.0/sigc++/signal.h",
 				"/usr/include/sigc++-3.0/sigc++/signal_base.h",
+				"/usr/include/sigc++-3.0/sigc++/signal_connect.h",
 				"/usr/include/sigc++-3.0/sigc++/slot.h",
 				"/usr/include/sigc++-3.0/sigc++/trackable.h",
 				"/usr/include/sigc++-3.0/sigc++/tuple-utils/tuple_cdr.h",
@@ -77,7 +83,8 @@
 				"/usr/include/sigc++-3.0/sigc++/visit_each.h",
 				"/usr/include/sigc++-3.0/sigc++/weak_raw_ptr.h",
 				"/usr/lib/libsigc-3.0.so",
-				"/usr/lib/pkgconfig/sigc++-3.0.pc"
+				"/usr/lib/pkgconfig/sigc++-3.0.pc",
+				"/usr/lib/sigc++-3.0/include/sigc++config.h"
 			],
 			"name": "libsigc++-devel",
 			"provides": [
@@ -86,6 +93,6 @@
 		}
 	},
 	"source-name": "libsigc++",
-	"source-release": "4",
-	"source-version": "3.6.0"
+	"source-release": "5",
+	"source-version": "3.8.0"
 }
