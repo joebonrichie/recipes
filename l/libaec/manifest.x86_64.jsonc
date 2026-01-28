@@ -8,7 +8,7 @@
 			],
 			"files": [
 				"/usr/lib/libaec.so.0",
-				"/usr/lib/libaec.so.0.1.4",
+				"/usr/lib/libaec.so.0.1.5",
 				"/usr/lib/libsz.so.2",
 				"/usr/lib/libsz.so.2.0.1"
 			],
@@ -27,8 +27,8 @@
 				"/usr/include/szlib.h",
 				"/usr/lib/cmake/libaec/libaec-config-version.cmake",
 				"/usr/lib/cmake/libaec/libaec-config.cmake",
-				"/usr/lib/cmake/libaec/libaec-targets-release.cmake",
-				"/usr/lib/cmake/libaec/libaec-targets.cmake",
+				"/usr/lib/cmake/libaec/libaec_shared-targets-release.cmake",
+				"/usr/lib/cmake/libaec/libaec_shared-targets.cmake",
 				"/usr/lib/libaec.so",
 				"/usr/lib/libsz.so"
 			],
@@ -39,6 +39,6 @@
 		}
 	},
 	"source-name": "libaec",
-	"source-release": "1",
-	"source-version": "1.1.4"
+	"source-release": "2",
+	"source-version": "1.1.5"
 }
