@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : less
-version     : "685"
-release     : 13
+version     : "691"
+release     : 14
 homepage    : https://www.greenwoodsoftware.com/less
 upstreams   :
-    - https://github.com/gwsw/less/archive/refs/tags/v685.tar.gz : 507699ab586a420600bbbb21266ea4ddce6953af4ed3442eba9c5f36ea362c91
+    - https://github.com/gwsw/less/archive/refs/tags/v691.tar.gz : f802bdfdde243058388bf79c83a9737b78f8cdd7e2e30ac97d136478c9d1acdc
 summary     : Text file browser and pager
 description : |
     Text file browser and pager
