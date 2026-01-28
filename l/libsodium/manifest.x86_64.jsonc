@@ -9,7 +9,7 @@
 			],
 			"files": [
 				"/usr/lib/libsodium.so.26",
-				"/usr/lib/libsodium.so.26.2.0"
+				"/usr/lib/libsodium.so.26.3.0"
 			],
 			"name": "libsodium",
 			"provides": [
@@ -38,6 +38,7 @@
 				"/usr/include/sodium/crypto_core_ed25519.h",
 				"/usr/include/sodium/crypto_core_hchacha20.h",
 				"/usr/include/sodium/crypto_core_hsalsa20.h",
+				"/usr/include/sodium/crypto_core_keccak1600.h",
 				"/usr/include/sodium/crypto_core_ristretto255.h",
 				"/usr/include/sodium/crypto_core_salsa20.h",
 				"/usr/include/sodium/crypto_core_salsa2012.h",
@@ -47,6 +48,7 @@
 				"/usr/include/sodium/crypto_hash.h",
 				"/usr/include/sodium/crypto_hash_sha256.h",
 				"/usr/include/sodium/crypto_hash_sha512.h",
+				"/usr/include/sodium/crypto_ipcrypt.h",
 				"/usr/include/sodium/crypto_kdf.h",
 				"/usr/include/sodium/crypto_kdf_blake2b.h",
 				"/usr/include/sodium/crypto_kdf_hkdf_sha256.h",
@@ -81,6 +83,10 @@
 				"/usr/include/sodium/crypto_verify_16.h",
 				"/usr/include/sodium/crypto_verify_32.h",
 				"/usr/include/sodium/crypto_verify_64.h",
+				"/usr/include/sodium/crypto_xof_shake128.h",
+				"/usr/include/sodium/crypto_xof_shake256.h",
+				"/usr/include/sodium/crypto_xof_turboshake128.h",
+				"/usr/include/sodium/crypto_xof_turboshake256.h",
 				"/usr/include/sodium/export.h",
 				"/usr/include/sodium/randombytes.h",
 				"/usr/include/sodium/randombytes_internal_random.h",
@@ -99,6 +105,6 @@
 		}
 	},
 	"source-name": "libsodium",
-	"source-release": "3",
-	"source-version": "1.0.20+git.d44593f1"
+	"source-release": "4",
+	"source-version": "1.0.21+git.f6c18801"
 }
