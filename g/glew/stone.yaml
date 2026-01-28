@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : glew
-version     : 2.3.0
-release     : 4
+version     : 2.3.1
+release     : 5
 homepage    : https://github.com/nigels-com/glew
 upstreams   :
-    - https://github.com/nigels-com/glew/releases/download/glew-2.3.0/glew-2.3.0.tgz : b261a06dfc8b970e0a1974488530e58dd2390acf68acb05b45235cd6fb17a086
+    - https://github.com/nigels-com/glew/releases/download/glew-2.3.1/glew-2.3.1.tgz : b64790f94b926acd7e8f84c5d6000a86cb43967bd1e688b03089079799c9e889
 summary     : The OpenGL Extension Wrangler Library
 description : |
     The OpenGL Extension Wrangler Library (GLEW) is a cross-platform open-source C/C++ extension loading library. GLEW provides efficient run-time mechanisms for determining which OpenGL extensions are supported on the target platform. OpenGL core and extension functionality is exposed in a single header file.
