@@ -4,8 +4,8 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : glibc
-version     : 2.42+git.453e6b8d
-release     : 32
+version     : 2.43+git.144ba302
+release     : 33
 summary     : The GNU libc libraries
 license     :
     - GPL-2.0-or-later
@@ -16,7 +16,7 @@ description : |
     The GNU libc libraries
 upstreams   :
     - git|https://sourceware.org/git/glibc.git :
-        ref : 453e6b8dbab935257eb0802b0c97bca6b67ba30e
+        ref : 144ba302089cff5a2f2e1c9e1280faea9da9f8cc
 builddeps   :
     - binary(bison)
     - binary(gperf)
@@ -73,7 +73,9 @@ setup       : |
     echo "rootsbindir=%(sbindir)" >> configparms
     # Note this deliberately excludes libsuffix and is not an error
     echo "complocaledir=/usr/lib/locale" >> configparms
-    ../configure $COMMON_GLIBC_OPTIONS --enable-cet=permissive
+    ../configure \
+        $COMMON_GLIBC_OPTIONS \
+        --enable-cet=permissive
 build       : |
     %make -C build
 install     : |
@@ -129,7 +131,9 @@ profiles    :
             # Note this deliberately excludes libsuffix and is not an error
             echo "complocaledir=/usr/lib/locale" >> configparms
 
-            ../configure $COMMON_GLIBC_OPTIONS --disable-cet
+            ../configure \
+                $COMMON_GLIBC_OPTIONS \
+                --disable-cet
         install: |
             %make_install build DESTDIR="%(installroot)" -C build
 
