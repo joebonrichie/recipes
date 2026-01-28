@@ -4,11 +4,11 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : cryptsetup
-version     : 2.8.3
-release     : 10
+version     : 2.8.4
+release     : 11
 homepage    : https://gitlab.com/cryptsetup/cryptsetup
 upstreams   :
-    - https://gitlab.com/cryptsetup/cryptsetup/-/archive/v2.8.3/cryptsetup-v2.8.3.tar.gz : 2d84344876a8229a058d59a3b273368084c3899095a49494ee7294c5885c2cb9
+    - https://gitlab.com/cryptsetup/cryptsetup/-/archive/v2.8.4/cryptsetup-v2.8.4.tar.gz : 62359f340215c733245c1bf09c4c644d1b73dfeea93d6b67eecd82b2d407869d
 summary     : cryptsetup + LUKS
 description : |
     cryptsetup + LUKS - open source disk encryption
