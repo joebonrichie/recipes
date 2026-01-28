@@ -17,6 +17,6 @@
 		}
 	},
 	"source-name": "docker-buildx",
-	"source-release": "8",
-	"source-version": "0.30.1"
+	"source-release": "9",
+	"source-version": "0.31.0"
 }
