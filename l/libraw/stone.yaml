@@ -4,10 +4,10 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : libraw
-version     : 0.21.4
-release     : 4
+version     : 0.22.0
+release     : 5
 upstreams   :
-    - https://www.libraw.org/data/LibRaw-0.21.4.tar.gz : 6be43f19397e43214ff56aab056bf3ff4925ca14012ce5a1538a172406a09e63
+    - https://www.libraw.org/data/LibRaw-0.22.0.tar.gz : 1071e6e8011593c366ffdadc3d3513f57c90202d526e133174945ec1dd53f2a1
 homepage    : https://www.libraw.org/
 license     :
     - CDDL-1.0
@@ -16,7 +16,6 @@ summary     : LibRaw is a library for reading RAW files from digital cameras
 description : |
     LibRaw is a library for reading RAW files from digital cameras
 builddeps   :
-    - pkgconfig(jasper)
     - pkgconfig(lcms2)
     - pkgconfig(libjpeg)
     - pkgconfig(zlib)
