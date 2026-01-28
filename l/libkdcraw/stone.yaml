@@ -5,7 +5,7 @@
 #
 name        : libkdcraw
 version     : 25.12.1
-release     : 9
+release     : 10
 upstreams   :
     - https://download.kde.org/stable/release-service/25.12.1/src/libkdcraw-25.12.1.tar.xz : fc4a7461265a876680111b6be1d9147eb62971e9737078f757c0e6992c7c4857
 homepage    : https://kde.org/
