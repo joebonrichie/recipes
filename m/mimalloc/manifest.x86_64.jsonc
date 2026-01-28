@@ -48,6 +48,6 @@
 		}
 	},
 	"source-name": "mimalloc",
-	"source-release": "10",
-	"source-version": "2.2.6"
+	"source-release": "11",
+	"source-version": "2.2.7"
 }
