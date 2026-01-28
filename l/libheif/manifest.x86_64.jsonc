@@ -64,7 +64,7 @@
 			],
 			"files": [
 				"/usr/lib/libheif.so.1",
-				"/usr/lib/libheif.so.1.21.1"
+				"/usr/lib/libheif.so.1.21.2"
 			],
 			"name": "libheif",
 			"provides": [
@@ -591,6 +591,6 @@
 		}
 	},
 	"source-name": "libheif",
-	"source-release": "5",
-	"source-version": "1.21.1"
+	"source-release": "6",
+	"source-version": "1.21.2"
 }

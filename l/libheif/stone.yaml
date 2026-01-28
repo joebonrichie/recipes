@@ -4,10 +4,10 @@
 # SPDX-License-Identifier: MPL-2.0
 #
 name        : libheif
-version     : 1.21.1
-release     : 5
+version     : 1.21.2
+release     : 6
 upstreams   :
-    - https://github.com/strukturag/libheif/releases/download/v1.21.1/libheif-1.21.1.tar.gz : 9799b4b1c19006f052bcf399c761cc147e279762683cefaf16871dbb9b4ea2a1
+    - https://github.com/strukturag/libheif/releases/download/v1.21.2/libheif-1.21.2.tar.gz : 75f530b7154bc93e7ecf846edfc0416bf5f490612de8c45983c36385aa742b42
 homepage    : https://github.com/strukturag/libheif
 license     :
     - LGPL-3.0-or-later
